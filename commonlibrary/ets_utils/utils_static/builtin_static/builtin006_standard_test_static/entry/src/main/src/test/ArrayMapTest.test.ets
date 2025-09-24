@@ -361,7 +361,7 @@ export default function builtinsArrayMapPrototypebTest(){
         const caseName = 'builtinsArrayMapPrototypebTest1700';
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'c'];
-        let result = map(arr, (v, k, array) => (v + 1).toChar());
+        let result = map(arr, (v, k, array) => (v.toInt() + 1).toChar());
         expect([...result]).assertDeepEquals([c'b', c'c', c'd']);
         console.info(`${caseName}, test end`);
         Done();
@@ -418,7 +418,7 @@ export default function builtinsArrayMapPrototypebTest(){
         const caseName = 'builtinsArrayMapPrototypebTest2000';
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'c', c'd'];
-        let result = map(arr, (v, k, array) => (c'a' + k.toInt()).toChar());
+        let result = map(arr, (v, k, array) => (c'a'.toInt() + k.toInt()).toChar());
         expect([...result]).assertDeepEquals([c'a', c'b', c'c', c'd']);
         console.info(`${caseName}, test end`);
         Done();
@@ -456,7 +456,7 @@ export default function builtinsArrayMapPrototypebTest(){
         const caseName = 'builtinsArrayMapPrototypebTest2200';
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [];
-        let result = map(arr, (v, k, array) => (v + 1).toChar());
+        let result = map(arr, (v, k, array) => (v.toInt() + 1).toChar());
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -475,7 +475,7 @@ export default function builtinsArrayMapPrototypebTest(){
         const caseName = 'builtinsArrayMapPrototypebTest2300';
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a'];
-        let result = map(arr, (v, k, array) => (v + 1).toChar());
+        let result = map(arr, (v, k, array) => (v.toInt() + 1).toChar());
         expect([...result]).assertDeepEquals([c'b']);
         console.info(`${caseName}, test end`);
         Done();

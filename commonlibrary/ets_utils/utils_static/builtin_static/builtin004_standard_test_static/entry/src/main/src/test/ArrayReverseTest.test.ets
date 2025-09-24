@@ -423,9 +423,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x35, 0x36, 0x37];
+        const arr: FixedArray<char> = [0x35.toChar(), 0x36.toChar(), 0x37.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x37, 0x36, 0x35];
+        const expected: FixedArray<char> = [0x37.toChar(), 0x36.toChar(), 0x35.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -447,9 +447,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x37, 0x36, 0x35];
+        const arr: FixedArray<char> = [0x37.toChar(), 0x36.toChar(), 0x35.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x35, 0x36, 0x37];
+        const expected: FixedArray<char> = [0x35.toChar(), 0x36.toChar(), 0x37.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -471,9 +471,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x41, 0x61, 0x41];
+        const expected: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -495,9 +495,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar(), 0x61.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x61, 0x41, 0x61, 0x41];
+        const expected: FixedArray<char> = [0x61.toChar(), 0x41.toChar(), 0x61.toChar(), 0x41.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -520,9 +520,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30];
+        const arr: FixedArray<char> = [0x30.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x30];
+        const expected: FixedArray<char> = [0x30.toChar()];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -542,9 +542,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_2200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D];
+        const arr: FixedArray<char> = [0x6D.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x6D];
+        const expected: FixedArray<char> = [0x6D.toChar()];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -564,9 +564,9 @@ export default function Array_Reverse_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reverse_Test_static_2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x61, 0x62, 0x63, 0x64];
+        const arr: FixedArray<char> = [0x61.toChar(), 0x62.toChar(), 0x63.toChar(), 0x64.toChar()];
         reverse(arr);
-        const expected: FixedArray<char> = [0x64, 0x63, 0x62, 0x61];
+        const expected: FixedArray<char> = [0x64.toChar(), 0x63.toChar(), 0x62.toChar(), 0x61.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);

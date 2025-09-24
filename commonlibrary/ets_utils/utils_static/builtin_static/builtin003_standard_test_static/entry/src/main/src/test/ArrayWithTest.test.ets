@@ -880,10 +880,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const index: int = 0;
-        const result = with(arr, index, 0x39);
-        const expected: FixedArray<char> = [0x39, 0x31, 0x32, 0x33];
+        const result = with(arr, index, 0x39.toChar());
+        const expected: FixedArray<char> = [0x39.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -906,10 +906,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const index: int = 2;
-        const result = with(arr, index, 0x33);
-        const expected: FixedArray<char> = [0x30, 0x31, 0x33, 0x33];
+        const result = with(arr, index, 0x33.toChar());
+        const expected: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x33.toChar(), 0x33.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -932,10 +932,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4B, 0x4C, 0x4D, 0x4E, 0x4F];
+        const arr: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         const index: int = 4;
-        const result = with(arr, index, 0x41);
-        const expected: FixedArray<char> = [0x4B, 0x4C, 0x4D, 0x4E, 0x41];
+        const result = with(arr, index, 0x41.toChar());
+        const expected: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -959,10 +959,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4B, 0x4C, 0x4D, 0x4E, 0x4F];
+        const arr: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         const index: int = -3;
-        const result = with(arr, index, 0x41);
-        const expected: FixedArray<char> = [0x4B, 0x4C, 0x41, 0x4E, 0x4F];
+        const result = with(arr, index, 0x41.toChar());
+        const expected: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x41.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -986,10 +986,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x68, 0x69, 0x6A, 0x6B];
+        const arr: FixedArray<char> = [0x68.toChar(), 0x69.toChar(), 0x6A.toChar(), 0x6B.toChar()];
         const index: int = 1;
-        const result = with(arr, index, 0x6A);
-        const expected: FixedArray<char> = [0x68, 0x6A, 0x6A, 0x6B];
+        const result = with(arr, index, 0x6A.toChar());
+        const expected: FixedArray<char> = [0x68.toChar(), 0x6A.toChar(), 0x6A.toChar(), 0x6B.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1012,10 +1012,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x68, 0x69, 0x6A, 0x6B];
+        const arr: FixedArray<char> = [0x68.toChar(), 0x69.toChar(), 0x6A.toChar(), 0x6B.toChar()];
         const index: int = -4;
-        const result = with(arr, index, 0x6A);
-        const expected: FixedArray<char> = [0x6A, 0x69, 0x6A, 0x6B];
+        const result = with(arr, index, 0x6A.toChar());
+        const expected: FixedArray<char> = [0x6A.toChar(), 0x69.toChar(), 0x6A.toChar(), 0x6B.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1041,9 +1041,9 @@ export default function Array_With_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x31, 0x61, 0x32, 0x62, 0x33, 0x63];
+          const arr: FixedArray<char> = [0x31.toChar(), 0x61.toChar(), 0x32.toChar(), 0x62.toChar(), 0x33.toChar(), 0x63.toChar()];
           const index: int = 6;
-          with(arr, index, 0x36);
+          with(arr, index, 0x36.toChar());
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');
@@ -1070,9 +1070,9 @@ export default function Array_With_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x31, 0x61, 0x32, 0x62, 0x33, 0x63];
+          const arr: FixedArray<char> = [0x31.toChar(), 0x61.toChar(), 0x32.toChar(), 0x62.toChar(), 0x33.toChar(), 0x63.toChar()];
           const index: int = 10;
-          with(arr, index, 0x30);
+          with(arr, index, 0x30.toChar());
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');
@@ -1096,10 +1096,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const index: int = 0;
-        const result = with(arr, index, 0x39);
-        const expected: FixedArray<char> = [0x39, 0x31, 0x32, 0x33];
+        const result = with(arr, index, 0x39.toChar());
+        const expected: FixedArray<char> = [0x39.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1122,10 +1122,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const index: int = 2;
-        const result = with(arr, index, 0x33);
-        const expected: FixedArray<char> = [0x30, 0x31, 0x33, 0x33];
+        const result = with(arr, index, 0x33.toChar());
+        const expected: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x33.toChar(), 0x33.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1148,10 +1148,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4B, 0x4C, 0x4D, 0x4E, 0x4F];
+        const arr: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         const index = 1;
-        const result = with(arr, index, 0x5A);
-        const expected: FixedArray<char> = [0x4B, 0x5A, 0x4D, 0x4E, 0x4F];
+        const result = with(arr, index, 0x5A.toChar());
+        const expected: FixedArray<char> = [0x4B.toChar(), 0x5A.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1175,10 +1175,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4B, 0x4C, 0x4D, 0x4E, 0x4F];
+        const arr: FixedArray<char> = [0x4B.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         const index = -5;
-        const result = with(arr, index, 0x41);
-        const expected: FixedArray<char> = [0x41, 0x4C, 0x4D, 0x4E, 0x4F];
+        const result = with(arr, index, 0x41.toChar());
+        const expected: FixedArray<char> = [0x41.toChar(), 0x4C.toChar(), 0x4D.toChar(), 0x4E.toChar(), 0x4F.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1202,10 +1202,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x76, 0x77];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x76.toChar(), 0x77.toChar()];
         const index = 1;
-        const result = with(arr, index, 0x79);
-        const expected: FixedArray<char> = [0x75, 0x79, 0x77];
+        const result = with(arr, index, 0x79.toChar());
+        const expected: FixedArray<char> = [0x75.toChar(), 0x79.toChar(), 0x77.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1227,10 +1227,10 @@ export default function Array_With_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_With_static_4600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x76, 0x77];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x76.toChar(), 0x77.toChar()];
         const index = -2;
-        const result = with(arr, index, 0x30);
-        const expected: FixedArray<char> = [0x75, 0x30, 0x77];
+        const result = with(arr, index, 0x30.toChar());
+        const expected: FixedArray<char> = [0x75.toChar(), 0x30.toChar(), 0x77.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1255,9 +1255,9 @@ export default function Array_With_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x31, 0x61, 0x31, 0x61];
+          const arr: FixedArray<char> = [0x31.toChar(), 0x61.toChar(), 0x31.toChar(), 0x61.toChar()];
           const index = 5;
-          with(arr, index, 0x31);
+          with(arr, index, 0x31.toChar());
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');
@@ -1284,9 +1284,9 @@ export default function Array_With_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x31, 0x61, 0x31, 0x61];
+          const arr: FixedArray<char> = [0x31.toChar(), 0x61.toChar(), 0x31.toChar(), 0x61.toChar()];
           const index = 4;
-          with(arr, index, 0x30);
+          with(arr, index, 0x30.toChar());
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');

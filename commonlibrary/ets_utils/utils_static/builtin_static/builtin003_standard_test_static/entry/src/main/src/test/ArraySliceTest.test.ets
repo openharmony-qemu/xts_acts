@@ -1181,9 +1181,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_4900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x38, 0x35, 0x49];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x38.toChar(), 0x35.toChar(), 0x49.toChar()];
         const result = slice(arr, 2);
-        const expected: FixedArray<char> = [0x35, 0x49];
+        const expected: FixedArray<char> = [0x35.toChar(), 0x49.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1204,9 +1204,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x38, 0x35, 0x49];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x38.toChar(), 0x35.toChar(), 0x49.toChar()];
         const result = slice(arr, 0);
-        const expected: FixedArray<char> = [0x30, 0x38, 0x35, 0x49];
+        const expected: FixedArray<char> = [0x30.toChar(), 0x38.toChar(), 0x35.toChar(), 0x49.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1229,9 +1229,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x38, 0x35, 0x49];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x38.toChar(), 0x35.toChar(), 0x49.toChar()];
         const result = slice(arr, 3);
-        const expected: FixedArray<char> = [0x49];
+        const expected: FixedArray<char> = [0x49.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1251,9 +1251,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x4D, 0x4D];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x4D.toChar(), 0x4D.toChar()];
         const result = slice(arr, 1);
-        const expected: FixedArray<char> = [0x4D, 0x4D];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x4D.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1274,9 +1274,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6F, 0x4F, 0x6F, 0x4F];
+        const arr: FixedArray<char> = [0x6F.toChar(), 0x4F.toChar(), 0x6F.toChar(), 0x4F.toChar()];
         const result = slice(arr, -3);
-        const expected: FixedArray<char> = [0x4F, 0x6F, 0x4F];
+        const expected: FixedArray<char> = [0x4F.toChar(), 0x6F.toChar(), 0x4F.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1298,7 +1298,7 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6F, 0x4F, 0x6F, 0x4F];
+        const arr: FixedArray<char> = [0x6F.toChar(), 0x4F.toChar(), 0x6F.toChar(), 0x4F.toChar()];
         const result = slice(arr, 10);
         const expected: FixedArray<char> = [];
         expect(result.length).assertEqual(0);
@@ -1319,9 +1319,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6B, 0x6C, 0x6D, 0x6E, 0x6F];
+        const arr: FixedArray<char> = [0x6B.toChar(), 0x6C.toChar(), 0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar()];
         const result = slice(arr, 0);
-        const expected: FixedArray<char> = [0x6B, 0x6C, 0x6D, 0x6E, 0x6F];
+        const expected: FixedArray<char> = [0x6B.toChar(), 0x6C.toChar(), 0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1345,9 +1345,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x7A, 0x5A, 0x30, 0x5A, 0x7A];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x7A.toChar(), 0x5A.toChar(), 0x30.toChar(), 0x5A.toChar(), 0x7A.toChar()];
         const result = slice(arr, 3);
-        const expected: FixedArray<char> = [0x30, 0x5A, 0x7A];
+        const expected: FixedArray<char> = [0x30.toChar(), 0x5A.toChar(), 0x7A.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1369,9 +1369,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x38, 0x36, 0x33, 0x35, 0x31];
+        const arr: FixedArray<char> = [0x32.toChar(), 0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         const result = slice(arr, 0, 6);
-        const expected: FixedArray<char> = [0x32, 0x38, 0x36, 0x33, 0x35, 0x31];
+        const expected: FixedArray<char> = [0x32.toChar(), 0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1396,9 +1396,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x38, 0x36, 0x33, 0x35, 0x31];
+        const arr: FixedArray<char> = [0x32.toChar(), 0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         const result = slice(arr, 1, 4);
-        const expected: FixedArray<char> = [0x38, 0x36, 0x33];
+        const expected: FixedArray<char> = [0x38.toChar(), 0x36.toChar(), 0x33.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1420,9 +1420,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_5900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x38, 0x36, 0x33, 0x35, 0x31];
+        const arr: FixedArray<char> = [0x32.toChar(), 0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         const result = slice(arr, 3, 7);
-        const expected: FixedArray<char> = [0x33, 0x35, 0x31];
+        const expected: FixedArray<char> = [0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1444,9 +1444,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x38, 0x36, 0x33, 0x35, 0x31];
+        const arr: FixedArray<char> = [0x32.toChar(), 0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x35.toChar(), 0x31.toChar()];
         const result = slice(arr, -2, 5);
-        const expected: FixedArray<char> = [0x35];
+        const expected: FixedArray<char> = [0x35.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1466,9 +1466,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x43, 0x43, 0x43, 0x43];
+        const arr: FixedArray<char> = [0x43.toChar(), 0x43.toChar(), 0x43.toChar(), 0x43.toChar()];
         const result = slice(arr, 2, 4);
-        const expected: FixedArray<char> = [0x43, 0x43];
+        const expected: FixedArray<char> = [0x43.toChar(), 0x43.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1489,7 +1489,7 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x43, 0x43, 0x43, 0x43];
+        const arr: FixedArray<char> = [0x43.toChar(), 0x43.toChar(), 0x43.toChar(), 0x43.toChar()];
         const result = slice(arr, 2, 2);
         const expected: FixedArray<char> = [];
         expect(result.length).assertEqual(0);
@@ -1510,7 +1510,7 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6C, 0x6A, 0x69, 0x6B];
+        const arr: FixedArray<char> = [0x6C.toChar(), 0x6A.toChar(), 0x69.toChar(), 0x6B.toChar()];
         const result = slice(arr, 4, 8);
         const expected: FixedArray<char> = [];
         expect(result.length).assertEqual(0);
@@ -1531,9 +1531,9 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const result = slice(arr, 2, 5);
-        const expected: FixedArray<char> = [0x52, 0x74, 0x57];
+        const expected: FixedArray<char> = [0x52.toChar(), 0x74.toChar(), 0x57.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1555,11 +1555,11 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const start = 1;
         const end = 5;
         const result = slice(arr, start, end);
-        const expected: FixedArray<char> = [0x71, 0x52, 0x74, 0x57];
+        const expected: FixedArray<char> = [0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1582,10 +1582,10 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const end = 3;
         const result = slice(arr, undefined, end);
-        const expected: FixedArray<char> = [0x75, 0x71, 0x52];
+        const expected: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1607,10 +1607,10 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const start = 5;
         const result = slice(arr, start);
-        const expected: FixedArray<char> = [0x73];
+        const expected: FixedArray<char> = [0x73.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1630,7 +1630,7 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const start = 6;
         const result = slice(arr, start);
         const expected: FixedArray<char> = [];
@@ -1652,10 +1652,10 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_6900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
+        const arr: FixedArray<char> = [0x75.toChar(), 0x71.toChar(), 0x52.toChar(), 0x74.toChar(), 0x57.toChar(), 0x73.toChar()];
         const start = -2;
         const result = slice(arr, start);
-        const expected: FixedArray<char> = [0x57, 0x73];
+        const expected: FixedArray<char> = [0x57.toChar(), 0x73.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1676,11 +1676,11 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_7000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x31.toChar(), 0x32.toChar(), 0x36.toChar(), 0x32.toChar()];
         const start = 2;
         const end = -2;
         const result = slice(arr, start, end);
-        const expected: FixedArray<char> = [0x32];
+        const expected: FixedArray<char> = [0x32.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1700,11 +1700,11 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_7100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x31.toChar(), 0x32.toChar(), 0x36.toChar(), 0x32.toChar()];
         const start = 1;
         const end = 10;
         const result = slice(arr, start, end);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x36, 0x32];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x36.toChar(), 0x32.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1727,7 +1727,7 @@ export default function Array_Slice_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Test_static_7200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x31.toChar(), 0x32.toChar(), 0x36.toChar(), 0x32.toChar()];
         const start = 10;
         const end = 10;
         const result = slice(arr, start, end);
