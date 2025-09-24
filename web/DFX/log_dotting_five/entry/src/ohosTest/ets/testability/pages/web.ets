@@ -18,6 +18,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -30,13 +31,19 @@ struct Index {
   @State str: string = "emitClearMatches";
   @State text: boolean = false;
   @State mode: WebDarkMode = WebDarkMode.Off;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
+      eventId: 119790,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(119790)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -45,6 +52,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -70,14 +78,17 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("key==>" + this.str);
+          await waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitClearMatches": {
               try {
                 this.controllerTwo.clearMatches();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 17)
+                Utils.emitEvent(`${error.code}`, 119800)
               }
               break;
             }
@@ -86,7 +97,7 @@ struct Index {
                 this.controllerTwo.searchNext(true);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 18)
+                Utils.emitEvent(`${error.code}`, 119810)
               }
               break;
             }
@@ -95,7 +106,7 @@ struct Index {
                 this.controllerTwo.clearSslCache();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 19)
+                Utils.emitEvent(`${error.code}`, 119820)
               }
               break;
             }
@@ -104,7 +115,7 @@ struct Index {
                 this.controllerTwo.clearClientAuthenticationCache();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 20);
+                Utils.emitEvent(`${error.code}`, 119830);
               }
               break;
             }
@@ -113,7 +124,7 @@ struct Index {
                 this.controllerTwo.stop();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 21);
+                Utils.emitEvent(`${error.code}`, 119840);
               }
               break;
             }
@@ -122,7 +133,7 @@ struct Index {
                 this.controllerTwo.requestFocus();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 22);
+                Utils.emitEvent(`${error.code}`, 119850);
               }
               break;
             }
@@ -131,7 +142,7 @@ struct Index {
                 this.controllerTwo.zoomIn();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 23);
+                Utils.emitEvent(`${error.code}`, 119860);
               }
               break;
             }
@@ -140,7 +151,7 @@ struct Index {
                 this.controllerTwo.zoomOut();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 24);
+                Utils.emitEvent(`${error.code}`, 119870);
               }
               break;
             }
@@ -149,7 +160,7 @@ struct Index {
                 this.controllerTwo.requestFocus();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 25);
+                Utils.emitEvent(`${error.code}`, 119880);
               }
               break;
             }
@@ -158,7 +169,7 @@ struct Index {
                 this.controllerTwo.requestFocus();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 26);
+                Utils.emitEvent(`${error.code}`, 119890);
               }
               break;
             }
@@ -167,7 +178,7 @@ struct Index {
                 this.controllerTwo.getPageHeight();
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 27);
+                Utils.emitEvent(`${error.code}`, 119900);
               }
               break;
             }
@@ -176,7 +187,7 @@ struct Index {
                 this.controllerTwo.backOrForward(-2);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 28);
+                Utils.emitEvent(`${error.code}`, 119910);
               }
               break;
             }
@@ -186,7 +197,7 @@ struct Index {
                 console.log("url: " + url);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(`${error.code}`, 30);
+                Utils.emitEvent(`${error.code}`, 119920);
               }
               break;
             }
@@ -209,6 +220,9 @@ struct Index {
         .horizontalScrollBarAccess(true)
         .verticalScrollBarAccess(true)
         .pinchSmooth(true)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }

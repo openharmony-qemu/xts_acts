@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
-
+import { waitForComponent } from './WaitTest';
 
 export default function webInitTest() {
   describe('WebInitTest', () => {
@@ -31,12 +31,12 @@ export default function webInitTest() {
         if (!("WebInitTest" == pages.name)) {
           console.info("get WebInitTest state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebInitTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebInitTest page error: " + err);
       }
+      await waitForComponent("WebInitTestButton");
       done()
     });
 
@@ -49,9 +49,8 @@ export default function webInitTest() {
     * @tc.level       : Level 2
     */
     it('testSchemeName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSchemeName001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSchemeName001", '401', 300, done);
+      Utils.emitEvent("testSchemeName001", 119760)
+      Utils.registerEvent("testSchemeName001", '401', 119770, done);
       sendEventByKey('WebInitTestButton', 10, '');
     })
 
@@ -64,9 +63,8 @@ export default function webInitTest() {
     * @tc.level       : Level 2
     */
     it('testCustomizeSchemes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemes001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemes001", '401', 302, done);
+      Utils.emitEvent("testCustomizeSchemes001", 119760)
+      Utils.registerEvent("testCustomizeSchemes001", '401', 119780, done);
       sendEventByKey('WebInitTestButton', 10, '');
     })
   })
