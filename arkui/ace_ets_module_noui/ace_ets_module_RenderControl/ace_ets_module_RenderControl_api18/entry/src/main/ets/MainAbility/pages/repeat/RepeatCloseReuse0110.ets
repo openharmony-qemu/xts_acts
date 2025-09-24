@@ -20,7 +20,7 @@ struct RepeatCloseReuse0110 {
   private scroller: Scroller = new Scroller()
 
   aboutToAppear(): void {
-    for (let index = 0; index < 50; index++) {
+    for (let index = 0; index <= 50; index++) {
       this.dataArr.push('item_' + index)
     }
   }
@@ -47,7 +47,7 @@ struct RepeatCloseReuse0110 {
       .layoutWeight(1)
     }
     .height('90%')
-    .margin({top: '2%'})
+    .margin({top: '2%', bottom: '2%'})
   }
 }
 

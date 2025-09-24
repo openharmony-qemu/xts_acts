@@ -27,14 +27,14 @@ export default function ActsNotificationManagerPublishTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_Publish_TEST START')
 
     class Utils {
-      static info(str){
-        hilog.info(0,'bms test',str)
+      static info(str) {
+        hilog.info(0, 'bms test', str)
       }
-      static sleep(time){
-        return new Promise((resolve,reject) => {
+      static sleep(time) {
+        return new Promise((resolve, reject) => {
           setTimeout((data) => {
             resolve(data)
-          },time)
+          }, time)
         }).then(() => {
           console.info(`sleep ${time} over...`)
         })
@@ -465,14 +465,15 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Distributed_Search_1500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_ACTIVE_COUNT_TEST_0300 START`)
       try {
-        await notificationManager.getActiveNotifications((err, data) => {
+        await notificationManager.cancelAll()
+        notificationManager.getActiveNotifications((err, data) => {
           if (err) {
             console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            expect(data.length == 0).assertTrue()
             done()
           }
         })
@@ -491,9 +492,10 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('Sub_Notification_Ans_Distributed_Search_1600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1600 START`)
+      await notificationManager.cancelAll()
       await notificationManager.getActiveNotifications().then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data.length == 0).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
@@ -548,7 +550,7 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('Sub_Notification_Ans_Distributed_template_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0300 START`)
-      let templateName = 'test_templateName'
+      let templateName = 'downloadTemplate'
       try {
         await notificationManager.isSupportTemplate(templateName, (err, data) => {
           if (err) {
@@ -557,7 +559,7 @@ export default function ActsNotificationManagerPublishTest() {
             done()
           } else {
             console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
-            expect(true).assertTrue()
+            expect(data).assertTrue()
             done()
           }
         })
@@ -576,10 +578,10 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('Sub_Notification_Ans_Distributed_template_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0400 START`)
-      let templateName = 'test_templateName'
+      let templateName = 'downloadTemplate'
       await notificationManager.isSupportTemplate(templateName).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -754,9 +756,18 @@ export default function ActsNotificationManagerPublishTest() {
       try {
         notificationManager.publish(notificationRequest, (data) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-          expect(data).assertEqual(null);
+          notificationManager.getActiveNotifications((err, data) => {
+            if (err) {
+              console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
+              expect(data.length > 0).assertTrue()
+              done()
+            }
+          })
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
-          done();
         })
       } catch (err) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
@@ -1107,11 +1118,18 @@ export default function ActsNotificationManagerPublishTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
       try {
         await Utils.sleep(2500);
-        notificationManager.publish(notificationRequest, (data) => {
+        notificationManager.publish(notificationRequest, async (data) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-          expect(data).assertEqual(null);
+          await notificationManager.getActiveNotifications().then((data) => {
+            console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
+            expect(data.length > 0).assertTrue()
+            done()
+          }).catch((err) => {
+            console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          })
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
-          done();
         })
       } catch (err) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));

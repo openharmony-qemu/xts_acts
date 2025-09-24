@@ -67,11 +67,11 @@ export default function gridObjectSortComponentTest() {
       await Utils.sleep(2000);
 
       //点击GridObjectSortComponentItem中的item
-      let textItem1 = await driver.findComponent(ON.text('低电量模式'));
+      let textItem1 = await driver.findComponent(ON.text('移动数据'));
       await textItem1.click();
       await Utils.sleep(1000);
-      // 断言GridObjectSortComponentItem中存在‘截屏’。
-      let textItem2 = await driver.findComponent(ON.text('截屏'));
+      // 断言GridObjectSortComponentItem中存在‘位置信息’。
+      let textItem2 = await driver.findComponent(ON.text('位置信息'));
       expect(textItem2 !== null).assertTrue();
       console.info('[GridObjectSortComponentTest_0200] END');
       done();

@@ -20,6 +20,8 @@
     "MainAbility/pages/waterFlow/WaterFlowTypeNodePage",
     "MainAbility/pages/waterFlow/WaterFlowCNodePage",
     "MainAbility/pages/BindController/BindController",
-    "MainAbility/pages/scroll/ScrollScrollBarMarginTest"
+    "MainAbility/pages/scroll/ScrollScrollBarMarginTest",
+    "MainAbility/pages/row/RowTypeNodePage",
+    "MainAbility/pages/row/RowCNodePage"
   ]
 }

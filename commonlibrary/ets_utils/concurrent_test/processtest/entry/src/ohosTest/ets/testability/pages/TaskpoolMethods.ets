@@ -188,7 +188,7 @@ export function taskpoolTestFunc3(uname: number): Promise<number> {
     let taskSuccess = 0;
     try {
       const result = process.getThreadPriority(uname);
-      if (result) {
+      if (result <= 19 && result >= -20) {
         taskSuccess++;
         console.info(`taskpool call success, result: ${result}`);
       } else {
@@ -288,7 +288,7 @@ export function taskpoolTestFunc8(uname: number): Promise<number> {
       let pro = new process.ProcessManager();
       let tid = process.tid;
       let result = pro.getThreadPriority(tid);
-      if (result) {
+      if (result <= 19 && result >= -20) {
         taskSuccess++;
         console.info(`taskpool call success, result: ${result}`);
       } else {

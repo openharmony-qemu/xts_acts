@@ -46,7 +46,13 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.INTERNET"
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       }
     ]
   }

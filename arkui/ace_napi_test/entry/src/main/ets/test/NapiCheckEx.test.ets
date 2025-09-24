@@ -3272,6 +3272,804 @@ export default function napiCheckExTest() {
       }
       done();
     });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0001
+     * @tc.name Sendable001
+     * @tc.desc Test TestIsSendable - check if normal object is sendable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable001 START');
+      try {
+        let result: boolean = napitestex.TestIsSendable();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestIsSendable result: %{public}s', result.toString());
+        console.info('Sendable001 PASS');
+      } catch (err) {
+        console.error('Sendable001 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0002
+     * @tc.name Sendable002
+     * @tc.desc Test TestIsSendableTrue - check if sendable object is sendable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable002 START');
+      try {
+        let result: boolean = napitestex.TestIsSendableTrue();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestIsSendableTrue result: %{public}s', result.toString());
+        console.info('Sendable002 PASS');
+      } catch (err) {
+        console.error('Sendable002 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0003
+     * @tc.name Sendable003
+     * @tc.desc Test TestIsSendableNull - check if null/undefined is sendable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable003 START');
+      try {
+        let result: boolean = napitestex.TestIsSendableNull();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestIsSendableNull result: %{public}s', result.toString());
+        console.info('Sendable003 PASS');
+      } catch (err) {
+        console.error('Sendable003 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0004
+     * @tc.name Sendable004
+     * @tc.desc Test TestDefineSendableClass - define basic sendable class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable004 START');
+      try {
+        let result: boolean = napitestex.TestDefineSendableClass();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineSendableClass result: %{public}s', result.toString());
+        console.info('Sendable004 PASS');
+      } catch (err) {
+        console.error('Sendable004 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0005
+     * @tc.name Sendable005
+     * @tc.desc Test TestDefineSendableClassInherit - sendable class inheritance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable005 START');
+      try {
+        let result: boolean = napitestex.TestDefineSendableClassInherit();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineSendableClassInherit result: %{public}s', result.toString());
+        console.info('Sendable005 PASS');
+      } catch (err) {
+        console.error('Sendable005 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0006
+     * @tc.name Sendable006
+     * @tc.desc Test TestCreateSendableObject - create sendable object with properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable006 START');
+      try {
+        let result: boolean = napitestex.TestCreateSendableObject();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestCreateSendableObject result: %{public}s', result.toString());
+        console.info('Sendable006 PASS');
+      } catch (err) {
+        console.error('Sendable006 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0007
+     * @tc.name Sendable007
+     * @tc.desc Test TestCreateSendableArray - create sendable array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable007 START');
+      try {
+        let result: boolean = napitestex.TestCreateSendableArray();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestCreateSendableArray result: %{public}s', result.toString());
+        console.info('Sendable007 PASS');
+      } catch (err) {
+        console.error('Sendable007 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0008
+     * @tc.name Sendable008
+     * @tc.desc Test TestCreateSendableTypedArray - create sendable typed array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable008 START');
+      try {
+        let result: boolean = napitestex.TestCreateSendableTypedArray();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestCreateSendableTypedArray result: %{public}s', result.toString());
+        console.info('Sendable008 PASS');
+      } catch (err) {
+        console.error('Sendable008 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0009
+     * @tc.name Sendable009
+     * @tc.desc Test TestWrapSendable - basic sendable wrapping test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable009 START');
+      try {
+        let result: boolean = napitestex.TestWrapSendable();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestWrapSendable result: %{public}s', result.toString());
+        console.info('Sendable009 PASS');
+      } catch (err) {
+        console.error('Sendable009 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0010
+     * @tc.name Sendable010
+     * @tc.desc Test TestWrapSendableWithSize - sendable wrapping with size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable010 START');
+      try {
+        let result: boolean = napitestex.TestWrapSendableWithSize();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestWrapSendableWithSize result: %{public}s', result.toString());
+        console.info('Sendable010 PASS');
+      } catch (err) {
+        console.error('Sendable010 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0011
+     * @tc.name Sendable011
+     * @tc.desc Test TestWrapEnhance - enhanced wrapping interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable011 START');
+      try {
+        let result: boolean = napitestex.TestWrapEnhance();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestWrapEnhance result: %{public}s', result.toString());
+        console.info('Sendable011 PASS');
+      } catch (err) {
+        console.error('Sendable011 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0012
+     * @tc.name Sendable012
+     * @tc.desc Test TestUnwrapSendable - sendable unwrapping test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable012 START');
+      try {
+        let result: boolean = napitestex.TestUnwrapSendable();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestUnwrapSendable result: %{public}s', result.toString());
+        console.info('Sendable012 PASS');
+      } catch (err) {
+        console.error('Sendable012 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0013
+     * @tc.name Sendable013
+     * @tc.desc Test TestUnwrapSendableMultiple - multiple unwrapping test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable013 START');
+      try {
+        let result: boolean = napitestex.TestUnwrapSendableMultiple();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestUnwrapSendableMultiple result: %{public}s', result.toString());
+        console.info('Sendable013 PASS');
+      } catch (err) {
+        console.error('Sendable013 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0014
+     * @tc.name Sendable014
+     * @tc.desc Test TestRemoveWrapSendable - remove sendable wrapping test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable014 START');
+      try {
+        let result: boolean = napitestex.TestRemoveWrapSendable();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestRemoveWrapSendable result: %{public}s', result.toString());
+        console.info('Sendable014 PASS');
+      } catch (err) {
+        console.error('Sendable014 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_0015
+     * @tc.name Sendable015
+     * @tc.desc Test TestComplexSendableStructure - complex sendable structure test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Sendable015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Sendable015 START');
+      try {
+        let result: boolean = napitestex.TestComplexSendableStructure();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestComplexSendableStructure result: %{public}s', result.toString());
+        console.info('Sendable015 PASS');
+      } catch (err) {
+        console.error('Sendable015 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });   
+
+        /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0001
+     * @tc.name Class001
+     * @tc.desc Test TestDefineClass - define simple class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class001 START');
+      try {
+        let result: boolean = napitestex.TestDefineClass();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineClass result: %{public}s', result.toString());
+        console.info('Class001 PASS');
+      } catch (err) {
+        console.error('Class001 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0002
+     * @tc.name Class002
+     * @tc.desc Test TestDefineClassWithProps - define class with properties and methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class002 START');
+      try {
+        let result: boolean = napitestex.TestDefineClassWithProps();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineClassWithProps result: %{public}s', result.toString());
+        console.info('Class002 PASS');
+      } catch (err) {
+        console.error('Class002 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0003
+     * @tc.name Class003
+     * @tc.desc Test TestDefineClassLengthMismatch - class name length mismatch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class003 START');
+      try {
+        let result: boolean = napitestex.TestDefineClassLengthMismatch();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineClassLengthMismatch result: %{public}s', result.toString());
+        console.info('Class003 PASS');
+      } catch (err) {
+        console.error('Class003 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0004
+     * @tc.name Class004
+     * @tc.desc Test TestDefineClassNullName - class name is nullptr
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class004 START');
+      try {
+        let result: boolean = napitestex.TestDefineClassNullName();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineClassNullName result: %{public}s', result.toString());
+        console.info('Class004 PASS');
+      } catch (err) {
+        console.error('Class004 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0005
+     * @tc.name Class005
+     * @tc.desc Test TestDefineClassInvalidProps - property count non-zero but properties array is nullptr
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class005 START');
+      try {
+        let result: boolean = napitestex.TestDefineClassInvalidProps();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestDefineClassInvalidProps result: %{public}s', result.toString());
+        console.info('Class005 PASS');
+      } catch (err) {
+        console.error('Class005 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0006
+     * @tc.name Class006
+     * @tc.desc Test TestNewInstance - create instance with valid constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class006 START');
+      try {
+        let result: boolean = napitestex.TestNewInstance();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestNewInstance result: %{public}s', result.toString());
+        console.info('Class006 PASS');
+      } catch (err) {
+        console.error('Class006 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0007
+     * @tc.name Class007
+     * @tc.desc Test TestNewInstanceWithArgs - create instance with arguments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class007 START');
+      try {
+        let result: boolean = napitestex.TestNewInstanceWithArgs();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestNewInstanceWithArgs result: %{public}s', result.toString());
+        console.info('Class007 PASS');
+      } catch (err) {
+        console.error('Class007 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0008
+     * @tc.name Class008
+     * @tc.desc Test TestGetNewTargetConstructor - get new.target in constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class008 START');
+      try {
+        let result: boolean = napitestex.TestGetNewTargetConstructor();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestGetNewTargetConstructor result: %{public}s', result.toString());
+        console.info('Class008 PASS');
+      } catch (err) {
+        console.error('Class008 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0009
+     * @tc.name Class009
+     * @tc.desc Test TestGetNewTargetFunction - get new.target in normal function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class009 START');
+      try {
+        let result: boolean = napitestex.TestGetNewTargetFunction();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestGetNewTargetFunction result: %{public}s', result.toString());
+        console.info('Class009 PASS');
+      } catch (err) {
+        console.error('Class009 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0010
+     * @tc.name Class010
+     * @tc.desc Test TestWrap - wrap native object to JS object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class010 START');
+      try {
+        let result: boolean = napitestex.TestWrap();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestWrap result: %{public}s', result.toString());
+        console.info('Class010 PASS');
+      } catch (err) {
+        console.error('Class010 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0011
+     * @tc.name Class011
+     * @tc.desc Test TestWrapWithFinalize - wrap with finalize callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class011 START');
+      try {
+        let result: boolean = napitestex.TestWrapWithFinalize();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestWrapWithFinalize result: %{public}s', result.toString());
+        console.info('Class011 PASS');
+      } catch (err) {
+        console.error('Class011 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0012
+     * @tc.name Class012
+     * @tc.desc Test TestUnwrapNotWrapped - unwrap not wrapped object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class012 START');
+      try {
+        let result: boolean = napitestex.TestUnwrapNotWrapped();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestUnwrapNotWrapped result: %{public}s', result.toString());
+        console.info('Class012 PASS');
+      } catch (err) {
+        console.error('Class012 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0013
+     * @tc.name Class013
+     * @tc.desc Test TestUnwrapWrapped - unwrap wrapped object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class013 START');
+      try {
+        let result: boolean = napitestex.TestUnwrapWrapped();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestUnwrapWrapped result: %{public}s', result.toString());
+        console.info('Class013 PASS');
+      } catch (err) {
+        console.error('Class013 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0014
+     * @tc.name Class014
+     * @tc.desc Test TestRemoveWrapWrapped - remove wrapped object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class014 START');
+      try {
+        let result: boolean = napitestex.TestRemoveWrapWrapped();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestRemoveWrapWrapped result: %{public}s', result.toString());
+        console.info('Class014 PASS');
+      } catch (err) {
+        console.error('Class014 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0015
+     * @tc.name Class015
+     * @tc.desc Test TestRemoveWrapNotWrapped - remove not wrapped object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class015 START');
+      try {
+        let result: boolean = napitestex.TestRemoveWrapNotWrapped();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestRemoveWrapNotWrapped result: %{public}s', result.toString());
+        console.info('Class015 PASS');
+      } catch (err) {
+        console.error('Class015 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0016
+     * @tc.name Class016
+     * @tc.desc Test TestFullLifecycle - full lifecycle test: define class->create instance->wrap->unwrap->remove wrap
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class016 START');
+      try {
+        let result: boolean = napitestex.TestFullLifecycle();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestFullLifecycle result: %{public}s', result.toString());
+        console.info('Class016 PASS');
+      } catch (err) {
+        console.error('Class016 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0017
+     * @tc.name Class017
+     * @tc.desc Test TestMassWrapUnwrap - mass object wrap/unwrap test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class017 START');
+      try {
+        let result: boolean = napitestex.TestMassWrapUnwrap();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestMassWrapUnwrap result: %{public}s', result.toString());
+        console.info('Class017 PASS');
+      } catch (err) {
+        console.error('Class017 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0018
+     * @tc.name Class018
+     * @tc.desc Test TestMassClassDefine - mass class definition and instantiation test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class018 START');
+      try {
+        let result: boolean = napitestex.TestMassClassDefine();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestMassClassDefine result: %{public}s', result.toString());
+        console.info('Class018 PASS');
+      } catch (err) {
+        console.error('Class018 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0019
+     * @tc.name Class019
+     * @tc.desc Test TestClassDefineWithArgs - class definition and instance creation with arguments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class019 START');
+      try {
+        let result: boolean = napitestex.TestClassDefineWithArgs();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestClassDefineWithArgs result: %{public}s', result.toString());
+        console.info('Class019 PASS');
+      } catch (err) {
+        console.error('Class019 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0020
+     * @tc.name Class020
+     * @tc.desc Test TestMultiThreadClassDefine - multi-thread concurrent class definition and instantiation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class020 START');
+      try {
+        let result: boolean = napitestex.TestMultiThreadClassDefine();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestMultiThreadClassDefine result: %{public}s', result.toString());
+        console.info('Class020 PASS');
+      } catch (err) {
+        console.error('Class020 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0021
+     * @tc.name Class021
+     * @tc.desc Test TestMultiThreadWrapUnwrapRace - multi-thread shared object wrap/unwrap race
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class021 START');
+      try {
+        let result: boolean = napitestex.TestMultiThreadWrapUnwrapRace();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestMultiThreadWrapUnwrapRace result: %{public}s', result.toString());
+        console.info('Class021 PASS');
+      } catch (err) {
+        console.error('Class021 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0022
+     * @tc.name Class022
+     * @tc.desc Test TestClassInheritanceWrapping - class inheritance chain with wrapping combination
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class022 START');
+      try {
+        let result: boolean = napitestex.TestClassInheritanceWrapping();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestClassInheritanceWrapping result: %{public}s', result.toString());
+        console.info('Class022 PASS');
+      } catch (err) {
+        console.error('Class022 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_CLASS_0023
+     * @tc.name Class023
+     * @tc.desc Test TestMultipleWrapUnwrap - multiple wrap and unwrap operations test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Class023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('Class023 START');
+      try {
+        let result: boolean = napitestex.TestMultipleWrapUnwrap();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'TestMultipleWrapUnwrap result: %{public}s', result.toString());
+        console.info('Class023 PASS');
+      } catch (err) {
+        console.error('Class023 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });         
   })
 
   // NAPI Promise Test Cases

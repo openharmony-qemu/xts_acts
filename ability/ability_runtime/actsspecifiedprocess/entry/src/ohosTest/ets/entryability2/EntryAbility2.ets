@@ -32,6 +32,16 @@ async function publishEvent(err: BusinessError) {
   });
 }
 
+async function publishEvent400(err: BusinessError) {
+  let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+    code: err.code,
+    data: err.message,
+  };
+  commonEventManager.publish(Constant.event_400, commonEventPublishData, () => {
+    console.log('liubea-============>publish START_ABILITY_CALLBACK_998877 success==========>>');
+  });
+}
+
 const TEST_SUITE_NAME: string = 'StartSpecifiedProcessTest';
 
 export default class EntryAbility extends UIAbility {
@@ -81,6 +91,26 @@ export default class EntryAbility extends UIAbility {
         let code: number = (error as BusinessError).code;
         let message: string = (error as BusinessError).message;
         console.error(`demoteCurrentFromCandidateMasterProcess failed, error.code: ${code}, error.message: ${message}`);
+      }
+    }
+
+    if (want.parameters?.isExit === true || want.parameters?.isOnNewProcessRequest === true) {
+      console.info(`${TEST_SUITE_NAME}====> begin: exit`)
+      try {
+        application.exitMasterProcessRole()
+          .then(() => {
+            console.info('exit succeed');
+            publishEvent(resultCode);
+          })
+          .catch((err: BusinessError) => {
+            console.error(`demote failed, code is ${err.code}, message is ${err.message}`);
+            publishEvent(err);
+            publishEvent400(err);
+          });
+      } catch (error) {
+        let code: number = (error as BusinessError).code;
+        let message: string = (error as BusinessError).message;
+        console.error(`exitMasterProcessRole failed, error.code: ${code}, error.message: ${message}`);
       }
     }
   }

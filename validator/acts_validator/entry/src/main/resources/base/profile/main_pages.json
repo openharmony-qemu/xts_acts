@@ -164,6 +164,7 @@
     "pages/ArkUI/ModalTransition",
     "pages/ArkUI/BindContentCoverOption",
     "pages/ArkUI/EnableShowHideWithContentCover",
-    "pages/ArkUI/ImageAnimationControllerPage"
+    "pages/ArkUI/ImageAnimationControllerPage",
+    "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations"
   ]
 }

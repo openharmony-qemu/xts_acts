@@ -103,6 +103,18 @@ struct Index {
                 break;
               }
 
+              case 'emitActiveWebEngineVersion004': {
+                try {
+                  test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.ARKWEB_EVERGREEN);
+                  let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                  Utils.emitEvent(tmp_result, 20250940);
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
 
             }
           })

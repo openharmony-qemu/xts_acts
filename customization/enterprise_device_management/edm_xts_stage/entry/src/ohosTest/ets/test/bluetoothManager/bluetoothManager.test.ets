@@ -576,8 +576,10 @@ export default function bluetoothManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let deviceIds: string[] = [];
-        for (let i = 0; i < 1000; i++) {
-          deviceIds.push(i.toString().padStart(3, '0'));
+        while (deviceIds.length < 1000) {
+          const hexOctet = () => Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+          let macAddress: string = [0, 1, 2, 3, 4, 5].map((): string => hexOctet()).join(':');
+          deviceIds.push(macAddress);
         }
         bluetoothManager.addDisallowedBluetoothDevices(SELFWANT,deviceIds);
         let ret: Array<string> = bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
