@@ -3273,4 +3273,245 @@ export default function napiCheckExTest() {
       done();
     });
   })
+
+  // NAPI Promise Test Cases
+  describe('NapiPromiseTests', () => {
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0001
+     * @tc.name napiPromiseTest001
+     * @tc.desc 创建并解决Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest001 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest001();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest001 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0002
+     * @tc.name napiPromiseTest002
+     * @tc.desc 创建并拒绝Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest002 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest002();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest002 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0003
+     * @tc.name napiPromiseTest003
+     * @tc.desc 多次解决或拒绝Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest003 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest003();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest003 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0004
+     * @tc.name napiPromiseTest004
+     * @tc.desc 检查非Promise对象
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest004 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest004();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest004 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0005
+     * @tc.name napiPromiseTest005
+     * @tc.desc 异常情况处理
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest005 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest005();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest005 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0006
+     * @tc.name napiPromiseTest006
+     * @tc.desc Promise与线程安全函数组合
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest006 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest006();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest006 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0007
+     * @tc.name napiPromiseTest007
+     * @tc.desc Promise链式调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest007 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest007();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest007 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0008
+     * @tc.name napiPromiseTest008
+     * @tc.desc 尝试在promise解决后使用deferred
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest008 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest008();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest008 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0009
+     * @tc.name napiPromiseTest009
+     * @tc.desc 在存在pending exception时操作promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest009 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest009();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest009 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0010
+     * @tc.name napiPromiseTest010
+     * @tc.desc Promise作为函数返回值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest010 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest010();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest010 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0011
+     * @tc.name napiPromiseTest011
+     * @tc.desc 使用Promise方式异步任务开发
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest011 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest011();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest011 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0012
+     * @tc.name napiPromiseTest012
+     * @tc.desc 异步任务完成通知测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest012 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest012();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest012 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0013
+     * @tc.name napiPromiseTest013
+     * @tc.desc Promise与线程安全函数上下文共享
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest013 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest013();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest013 completed successfully');
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_PROMISE_0014
+     * @tc.name napiPromiseTest014
+     * @tc.desc 获取和使用libuv事件循环
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('napiPromiseTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest014 begin');
+      
+      let result: boolean = napitestex.NapiPromiseTest014();
+      expect(result).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest014 completed successfully');
+    });
+  });
 }
