@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
 import business_error from '@ohos.base'
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct webViewControllerPart2 {
@@ -41,18 +41,20 @@ struct webViewControllerPart2 {
   @State enterPageEnd: boolean = false
   @State numberOfMatches: number = 0
   @State searchNext: boolean = false
+  @State isReceive:number = -1
+  @State isComplete:number = -1
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153610,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(153610)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,6 +63,7 @@ struct webViewControllerPart2 {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -70,11 +73,14 @@ struct webViewControllerPart2 {
       Row() {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isComplete, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "testNativeEmbedStatus001": {
               try {
                 console.log('testNativeEmbedStatus001 :'+NativeEmbedStatus.ENTER_BFCACHE)
-                Utils.emitEvent(NativeEmbedStatus.ENTER_BFCACHE, 37021);
+                Utils.emitEvent(NativeEmbedStatus.ENTER_BFCACHE, 153620);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -84,7 +90,7 @@ struct webViewControllerPart2 {
             case "testNativeEmbedStatus002": {
               try {
                 console.log('testNativeEmbedStatus002 :'+NativeEmbedStatus.LEAVE_BFCACHE)
-                Utils.emitEvent(NativeEmbedStatus.LEAVE_BFCACHE, 37022);
+                Utils.emitEvent(NativeEmbedStatus.LEAVE_BFCACHE, 153630);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -95,6 +101,10 @@ struct webViewControllerPart2 {
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
         .key("onShowFileSelectorKey")
     }
   }

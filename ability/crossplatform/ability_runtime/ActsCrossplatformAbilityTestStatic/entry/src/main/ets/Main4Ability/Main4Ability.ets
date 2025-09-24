@@ -18,9 +18,6 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
 
 class Main4Ability extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {

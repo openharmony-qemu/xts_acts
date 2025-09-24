@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -6,7 +21,7 @@ import fs from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const FILE_CONTENT = 'hello world';
 
@@ -372,6 +387,31 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1300
+     * @tc.name fileIO_truncate_async_static_013
+     * @tc.desc Test the truncate() interface. Promise.
+     * Is a directory.
+     * @tc.size MEDIUM
+     * @tc.type Functoin
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('fileIO_truncate_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_truncate_async_static_013');
+      try {
+        fs.mkdirSync(fpath);
+        let truncateLen = 5;
+        await fs.truncate(fpath);
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.rmdirSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_013 has failed for' + JSON.stringify(e));
+        expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0000
      * @tc.name fileIO_test_truncate_sync_static_000
      * @tc.desc Test the truncateSync() interface.
@@ -558,5 +598,4 @@ export default function fileIOTruncate() {
     });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_truncate end');
-
 }

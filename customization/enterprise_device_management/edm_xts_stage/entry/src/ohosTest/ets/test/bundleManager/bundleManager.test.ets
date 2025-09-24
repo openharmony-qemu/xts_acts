@@ -34,7 +34,7 @@ import {
 import adminManager from '@ohos.enterprise.adminManager';
 import bundleManager from '@ohos.enterprise.bundleManager';
 import systemparameter from '@ohos.systemparameter';
-import { BmsBundleInfo, BundleManagerHelper } from './BundleManagerHelper';
+import { BmsBundleInfo, BmsBundleResourceInfo, BundleManagerHelper } from './BundleManagerHelper';
 
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
@@ -2516,6 +2516,8 @@ export default function bundleManagerTest() {
         let bmsBundleInfo: BmsBundleInfo | undefined = await bundleManagerHelper.getBmsBundleInfo();
         expect(bmsBundleInfo).not().assertUndefined();
         console.log('test_get_installed_bundle_list_005 edmBundleInfo name' + edmBundleInfo?.name);
+        let bundleResourceInfo: BmsBundleResourceInfo | undefined = bundleManagerHelper.getBmsBundleResourceInfo('com.edm.acts.normal');
+        expect(bundleResourceInfo).not().assertUndefined();
 
         expect(edmBundleInfo?.name === bmsBundleInfo?.name).assertTrue();
         expect(edmBundleInfo?.vendor === bmsBundleInfo?.vendor).assertTrue();
@@ -2532,7 +2534,7 @@ export default function bundleManagerTest() {
         expect(edmBundleInfo?.appInfo?.description === bmsBundleInfo?.appInfo?.description).assertTrue();
         expect(edmBundleInfo?.appInfo?.descriptionId === bmsBundleInfo?.appInfo?.descriptionId).assertTrue();
         expect(edmBundleInfo?.appInfo?.enabled === bmsBundleInfo?.appInfo?.enabled).assertTrue();
-        expect(edmBundleInfo?.appInfo?.label === bmsBundleInfo?.appInfo?.label).assertTrue();
+        expect(edmBundleInfo?.appInfo?.label === bundleResourceInfo?.label).assertTrue();
         expect(edmBundleInfo?.appInfo?.labelId === bmsBundleInfo?.appInfo?.labelId).assertTrue();
         expect(edmBundleInfo?.appInfo?.icon === bmsBundleInfo?.appInfo?.icon).assertTrue();
         expect(edmBundleInfo?.appInfo?.iconId === bmsBundleInfo?.appInfo?.iconId).assertTrue();

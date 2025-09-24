@@ -15,11 +15,10 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import appManager from '@ohos.app.ability.appManager';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 

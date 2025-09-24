@@ -16,14 +16,13 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import configurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 
@@ -300,6 +299,9 @@ export default function ConfigurationStatic() {
       hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.hasPointerDevice: ' + context.config.hasPointerDevice);
       expect(context.config.hasPointerDevice).not().assertUndefined();
       expect(context.config.hasPointerDevice).not().assertNull();
+      // hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontId: ' + context.config.fontId);
+      // expect(context.config.fontId).not().assertUndefined();
+      // expect(context.config.fontId).not().assertNull();
       hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontSizeScale: ' + context.config.fontSizeScale);
       expect(context.config.fontSizeScale).not().assertUndefined();
       expect(context.config.fontSizeScale).not().assertNull();

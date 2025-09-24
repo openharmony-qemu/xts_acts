@@ -120,13 +120,10 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0500
-     * @tc.name     : testGetDevices001
-     * @tc.desc     : Positive test: Get device list
-     * @tc.desc     : 【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0500
+     * @tc.name     testGetDevices001
+     * @tc.desc     Positive test: Get device list
+     * @tc.desc     【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
      */
     it('testGetDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices001 begin');
@@ -141,12 +138,28 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0900
-     * @tc.name     : testHasRight001
-     * @tc.desc     : Positive test: Permission query
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_RetValue_0100
+     * @tc.name     testGetDevices002
+     * @tc.desc     Positive test: Get device list is null
+     */
+    it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testGetDevices002 begin');
+      if (!isDeviceConnected) {
+        let res = usbMgr.getDevices();
+        console.info(TAG, 'usb case getDevices ret length: ' + res.length);
+        expect(res.length).assertEqual(0);
+        done();
+      } else {
+        done();
+        return;
+      }
+      
+    })
+
+    /**
+     * @tc.number   SUB_USB_HostManager_JS_Func_0900
+     * @tc.name     testHasRight001
+     * @tc.desc     Positive test: Permission query
      */
     it('testHasRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testHasRight001 begin');
@@ -164,12 +177,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0800
-     * @tc.name     : testRequestRight001
-     * @tc.desc     : Positive test: Request permission
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0800
+     * @tc.name     testRequestRight001
+     * @tc.desc     Positive test: Request permission
      */
     it('testRequestRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight001 begin');
@@ -191,12 +201,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1200
-     * @tc.name     : testRemoveRight001
-     * @tc.desc     : Positive test: Remove Permissions
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_1200
+     * @tc.name     testRemoveRight001
+     * @tc.desc     Positive test: Remove Permissions
      */
     it('testRemoveRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRemoveRight001 begin');
@@ -214,12 +221,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0100
-     * @tc.name     : testConnectDevice001
-     * @tc.desc     : Positive test: open device
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0100
+     * @tc.name     testConnectDevice001
+     * @tc.desc     Positive test: open device
      */
     it('testConnectDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice001 begin');
@@ -235,12 +239,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0300
-     * @tc.name     : testClosePipe001
-     * @tc.desc     : Positive test: close device
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_0300
+     * @tc.name     testClosePipe001
+     * @tc.desc     Positive test: close device
      */
     it('testClosePipe001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe001 begin');
@@ -256,12 +257,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1300
-     * @tc.name     : testClosePipe002
-     * @tc.desc     : Negative test: close device, busNum error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1300
+     * @tc.name     testClosePipe002
+     * @tc.desc     Negative test: close device, busNum error -23
      */
     it('testClosePipe002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe002 begin');
@@ -285,12 +283,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1400
-     * @tc.name     : testClosePipe003
-     * @tc.desc     : Negative test: close device, devAddress error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1400
+     * @tc.name     testClosePipe003
+     * @tc.desc     Negative test: close device, devAddress error -23
      */
     it('testClosePipe003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe003 begin');
@@ -310,12 +305,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1500
-     * @tc.name     : testClosePipe004
-     * @tc.desc     : Negative test: close device, devAddress && busNum error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1500
+     * @tc.name     testClosePipe004
+     * @tc.desc     Negative test: close device, devAddress && busNum error -23
      */
     it('testClosePipe004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe004 begin');
@@ -336,12 +328,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0700
-     * @tc.name     : testGetRawDescriptor001
-     * @tc.desc     : Positive test: Get the original USB descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_0700
+     * @tc.name     testGetRawDescriptor001
+     * @tc.desc     Positive test: Get the original USB descriptor
      */
     it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetRawDescriptor001 begin');
@@ -358,12 +347,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_FuncErr_0700
-     * @tc.name     : testGetRawDescriptor801Err001
-     * @tc.desc     : Positive test: Get the original USB descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_FuncErr_0700
+     * @tc.name     testGetRawDescriptor801Err001
+     * @tc.desc     Positive test: Get the original USB descriptor
      */
     it('testGetRawDescriptor801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try{
@@ -385,12 +371,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0600
-     * @tc.name     : testGetFileDescriptor001
-     * @tc.desc     : Positive test: Get file descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0600
+     * @tc.name     testGetFileDescriptor001
+     * @tc.desc     Positive test: Get file descriptor
      */
     it('testGetFileDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor001 begin');
@@ -407,12 +390,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_FuncErr_0600
-     * @tc.name     : testGetFileDescriptor801Err001
-     * @tc.desc     : Positive test: Get file descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_FuncErr_0600
+     * @tc.name     testGetFileDescriptor801Err001
+     * @tc.desc     Positive test: Get file descriptor
      */
     it('testGetFileDescriptor801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try{
@@ -434,12 +414,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2900
-     * @tc.name     : testGetFileDescriptor002
-     * @tc.desc     : Negative test: Get file descriptor, error busNum=255 devAddress=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Compatibility_2900
+     * @tc.name     testGetFileDescriptor002
+     * @tc.desc     Negative test: Get file descriptor, error busNum=255 devAddress=255
      */
     it('testGetFileDescriptor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor002 begin');
@@ -458,12 +435,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3000
-     * @tc.name     : testGetFileDescriptor003
-     * @tc.desc     : Negative test: Get file descriptor,error busNum=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSCore_Compatibility_3000
+     * @tc.name     testGetFileDescriptor003
+     * @tc.desc     Negative test: Get file descriptor,error busNum=255
      */
     it('testGetFileDescriptor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor003 begin');
@@ -482,12 +456,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3100
-     * @tc.name     : testGetFileDescriptor004
-     * @tc.desc     : Negative test: Get file descriptor,error devAddress=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3100
+     * @tc.name     testGetFileDescriptor004
+     * @tc.desc     Negative test: Get file descriptor,error devAddress=255
      */
     it('testGetFileDescriptor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor004 begin');
@@ -506,12 +477,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ErrCode_0700
-     * @tc.name     : testGetFileDescriptor005
-     * @tc.desc     : Negative test: Get file descriptor, parameter type error "invalid"
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_ErrCode_0700
+     * @tc.name     testGetFileDescriptor005
+     * @tc.desc     Negative test: Get file descriptor, parameter type error "invalid"
      */
     it('testGetFileDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor005 begin');
@@ -531,12 +499,9 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ErrCode_1600
-     * @tc.name     : testGetFileDescriptor006
-     * @tc.desc     : Negative test: Get file descriptor, parameter number exception, necessary parameters not input
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_ErrCode_1600
+     * @tc.name     testGetFileDescriptor006
+     * @tc.desc     Negative test: Get file descriptor, parameter number exception, necessary parameters not input
      */
     it('testGetFileDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor006 begin');

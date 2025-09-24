@@ -14,14 +14,7 @@
  */
 import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, afterEach, beforeEach } from "../../../hypium/index";
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityStage from '@ohos.app.ability.AbilityStage';
-import commonEventManager from '@ohos.commonEventManager';
-import Want from '@ohos.app.ability.Want';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import Utils from './Util.test';
-import hilog from '@ohos.hilog';
+
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 

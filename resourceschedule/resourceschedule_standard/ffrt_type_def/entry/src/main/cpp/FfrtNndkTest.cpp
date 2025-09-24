@@ -16,16 +16,7 @@
 #include <cstdio>
 #include <ffrt/fiber.h>
 #include "napi/native_api.h"
-#include "ffrt/task.h"
-#include "ffrt/type_def.h"
-#include "ffrt/condition_variable.h"
-#include "ffrt/mutex.h"
 #include "ffrt/shared_mutex.h"
-#include "ffrt/queue.h"
-#include "ffrt/sleep.h"
-#include "ffrt/loop.h"
-#include "ffrt/timer.h"
-
 
 void ForffrtFiberInitTest(void* arg)
 {
@@ -42,8 +33,19 @@ static napi_value ffrt_fiber_initTest(napi_env env, napi_callback_info info)
     return resultEnd;
 }
 
+static napi_value ffrt_rwlockattr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_rwlock_t* rwlock;
+    ffrt_rwlockattr_t attr;
+    int result = ffrt_rwlock_init(rwlock, &attr);
+    napi_create_int32(env, result == (ffrt_error || ffrt_error_nomem || ffrt_error_timedout) ? 1 : 0, &resultEnd);
+    return resultEnd;
+}
+
 napi_property_descriptor desc[] = {
-    { "ffrt_fiber_initTest", nullptr, ffrt_fiber_initTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_fiber_initTest", nullptr, ffrt_fiber_initTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ffrt_rwlockattr_tTest", nullptr, ffrt_rwlockattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

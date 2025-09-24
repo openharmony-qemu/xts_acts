@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } from "../../../hypium/index";
 import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -62,6 +62,10 @@ export default function ActsCommonEventSystemAPITest() {
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
+    })
+
+    afterEach(() =>{
+      await Utils.msSleep(500)
     })
 
 
@@ -857,6 +861,7 @@ export default function ActsCommonEventSystemAPITest() {
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
         count = 0;
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {

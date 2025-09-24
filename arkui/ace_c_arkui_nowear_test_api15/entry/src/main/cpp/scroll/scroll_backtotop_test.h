@@ -52,7 +52,6 @@ private:
         button2->SetHeight(SIZE_30);
         button2->SetId("Scroll/FlowTop");
         button2->SetLable("Scroll/FlowTop");
-        button2->SetMargin(SIZE_3);
         button2->RegisterOnClick([waterFlow, isWaterFlowBackToTop, scroll]() mutable {
             if (isWaterFlowBackToTop == true) {
                 isWaterFlowBackToTop = false;
@@ -71,7 +70,7 @@ private:
         reserveDown->SetBackgroundColor(COLOR_RED);
         reserveDown->SetBorderRadius(SIZE_10, SIZE_10, SIZE_10, SIZE_10);
         waterFlow->SetWidth(SIZE_110);
-        waterFlow->SetHeight(SIZE_200);
+        waterFlow->SetHeight(SIZE_70);
         waterFlow->SetWaterFlowRowsGap(SIZE_10);
         waterFlow->SetBackgroundColor(COLOR_GRAY);
         waterFlow->SetId("WaterFlow");
@@ -100,7 +99,7 @@ private:
         column->AddChild(reserveTop);
         column->AddChild(waterFlow);
         column->AddChild(reserveDown);
-        scroll->SetHeight(SIZE_150);
+        scroll->SetHeight(SIZE_60);
         scroll->AddChild(column);
         scroll->SetScrollScrollBar(ArkUI_ScrollBarDisplayMode::ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
         scroll->SetBorderWidth(1, 1, 1, 1);

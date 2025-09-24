@@ -17,6 +17,10 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 361000;
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = ""
 
@@ -27,49 +31,28 @@ export default function webViewNativeMediaPlayerHandler4() {
       let options : router.RouterOptions = {
         url: 'testability/pages/webViewNativeMediaPlayerHandler4',
       }
-
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewNativeMediaPlayerHandler4 state success " + JSON.stringify(pages));
         if (!("webViewNativeMediaPlayerHandler4" == pages.name)) {
           console.info("get webViewNativeMediaPlayerHandler4 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewNativeMediaPlayerHandler4 state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewNativeMediaPlayerHandler4 page error:" + err);
       }
+      await driver.waitForComponent(ON.id("webViewNativeMediaPlayerRateHandler4"), 10000);
+      console.log("waitForComponent webViewNativeMediaPlayerRateHandler4");
       done()
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(2000);
       done();
     })
 
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2800
      *@tc.name testWebViewNativeMediaPlayerHandleVideoSizeChange
      *@tc.desc test NativeMediaPlayerVSetPlayRate
@@ -79,15 +62,15 @@ export default function webViewNativeMediaPlayerHandler4() {
      */
     it('testWebViewNativeMediaPlayerHandleVideoSizeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerHandleVideoSizeChange"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerHandleVideoSizeChange", true, 1808,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerRateHandler4', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerHandleVideoSizeChange", true, 361010, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_5900
      *@tc.name testWebViewNativeMediaPlayerBufferedEndTime
      *@tc.desc test NativeMediaPlayerVSetPlayRate
@@ -97,15 +80,15 @@ export default function webViewNativeMediaPlayerHandler4() {
      */
     it('testWebViewNativeMediaPlayerBufferedEndTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerBufferedEndTime"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerBufferedEndTime", true, 1814,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerRateHandler4', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerBufferedEndTime", true, 361020, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3000
      *@tc.name testWebViewNativeMediaPlayerSeek500
      *@tc.desc test NativeMediaPlayerVSetPlayRate
@@ -115,15 +98,15 @@ export default function webViewNativeMediaPlayerHandler4() {
      */
     it('testWebViewNativeMediaPlayerSeek500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSeek500"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSeek500", true, 1809,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerRateHandler4', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerSeek500", true, 361030, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3300
      *@tc.name testWebViewNativeMediaPlayerSeek20
      *@tc.desc test NativeMediaPlayerVSetPlayRate
@@ -132,34 +115,32 @@ export default function webViewNativeMediaPlayerHandler4() {
      *@tc.level Level 1
      */
     it('testWebViewNativeMediaPlayerSeek20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "emitWebViewNativeMediaPlayerSeek20"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSeek20", true, 1811,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerRateHandler4', 10, '');
+      emitKey = "" +
+        ""
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerSeek20", true, 361040, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
-    /*
-         *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3100
-         *@tc.name testWebViewNativeMediaPlayerSeekNegative1
-         *@tc.desc test NativeMediaPlayerVSetPlayRate
-         *@tc.size MediumTest
-         *@tc.type Function
-         *@tc.level Level 1
-         */
+    /**
+    *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3100
+    *@tc.name testWebViewNativeMediaPlayerSeekNegative1
+    *@tc.desc test NativeMediaPlayerVSetPlayRate
+    *@tc.size MediumTest
+    *@tc.type Function
+    *@tc.level Level 1
+    */
     it('testWebViewNativeMediaPlayerSeekNegative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSeekNegative1"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSeekNegative1", true, 1810,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerRateHandler4', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerSeekNegative1", true, 361050, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
-
-
-
   })
 }

@@ -16,6 +16,8 @@
 #include "common/common.h"
 #include "manager/plugin_manager.h"
 #include "position/EdgesPositionTest.h"
+#include "PixelRound/PixelRoundTest.h"
+#include "textContentAlign/TextContentAlignTest.h"
 
 namespace ArkUICapiTest
 {
@@ -58,6 +60,10 @@ namespace ArkUICapiTest
             {"getPositionEdges", nullptr, EdgesPositionTest::getPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"reSetPositionEdges", nullptr, EdgesPositionTest::reSetPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"copyPositionEdges", nullptr, EdgesPositionTest::copyPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createPixelRoundNativeRoot", nullptr, PixelRoundTest::CreatePixelRoundNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPixelRound", nullptr, PixelRoundTest::SetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"getPixelRound", nullptr, PixelRoundTest::GetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"textContentAlignTest", nullptr, TextContentAlignTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,6 +31,9 @@ let isSourceTypeUrl: Boolean = false
 let isSourceTypeMse: Boolean = false
 let isPreloadMeta: Boolean = false
 let isPlaying: Boolean = false
+
+const EVENT_ID_SET_EMIT_KEY = 360000;
+
 interface AVPlayerListener {
     onPlaying() : void
     onPaused() : void
@@ -46,27 +49,17 @@ interface AVPlayerListener {
     onVideoSizeChanged(width: number, height: number) : void
 }
 
-interface PlayCommand {
-    func: Function;
-    name?: string;
-}
-
-interface CheckPlayCommandResult {
-    ignore: boolean;
-    index_to_remove: number;
-}
-
 class AVPlayerDemo {
-    private surfaceID: string = '';
-    private isSeek: boolean = true;
+    private surfaceID: string = ''; // surfaceID用于播放画面展示，具体的值需要通过Xcomponent接口获取，相关文档链接见上面Xcomponent创建方法
+    private isSeek: boolean = true; // 用于区分模式是否支持seek操作
+    private fileSize: number = -1;
     private fd: number = 0;
     private listener?: AVPlayerListener
-    public avPlayer?: media.AVPlayer;
-    prepared: boolean = false;
-    commands: PlayCommand[] = [];
-
-    setSurfaceID(surfaceId: string) {
-        this.surfaceID = surfaceId;
+    avPlayer?: media.AVPlayer;
+        
+    setSurfaceID(surface_id: string) {
+        console.log('setSurfaceID : ' + surface_id)
+        this.surfaceID = surface_id;
     }
     // 注册avplayer回调函数
     setAVPlayerCallback(avPlayer: media.AVPlayer, listener: AVPlayerListener) {
@@ -101,8 +94,6 @@ class AVPlayerDemo {
                 case 'prepared': // prepare调用成功后上报该状态机
                     isPlaying = true
                     console.info('AVPlayer state prepared called.');
-                    this.prepared = true;
-                    this.schedule();
                     break;
                 case 'playing': // play成功调用后触发该状态机上报
                     isPlaying = true
@@ -121,8 +112,7 @@ class AVPlayerDemo {
                     console.info('AVPlayer state stopped called.');
                     listener?.onEnded();
                     break;
-                case 'released':
-                    this.prepared = false;
+                case 'released': 
                     console.info('AVPlayer state released called.');
                     break;
                 default:
@@ -156,7 +146,7 @@ class AVPlayerDemo {
             listener?.onVideoSizeChanged(width, height);
         })
     }
-
+    
     // 以下demo为通过url设置网络地址来实现播放直播码流的demo
     async avPlayerLiveDemo(url: string, listener: AVPlayerListener) {
         this.listener = listener
@@ -164,11 +154,11 @@ class AVPlayerDemo {
         this.avPlayer = await media.createAVPlayer();
         // 创建状态机变化回调函数
         this.setAVPlayerCallback(this.avPlayer, listener);
-        this.isSeek = true; // 不支持seek操作
+        this.isSeek = false; // 不支持seek操作
         this.avPlayer.url = url;
     }
-
-    // 以下demo为通过使用资源管理接口获取打包在HAP内的媒体资源文件并通过fdSrc属性进行播放示例
+    
+    // 以下demo为通过使用资源管理接口获取打包在HAP内的媒体资源文件并通过fdSrc属性进行播放示例    
     async avPlayerFdSrcDemo(listener: AVPlayerListener) {
         // 创建avPlayer实例对象
         this.avPlayer = await media.createAVPlayer();
@@ -178,147 +168,40 @@ class AVPlayerDemo {
         // 返回类型为{fd,offset,length},fd为HAP包fd地址， offset为媒体资源拍你一辆，length为播放长度
         let context = getContext(this) as common.UIAbilityContext;
         let fileDescriptor = await context.resourceManager.getRawFd('mate50-pro-tvc.mp4');
-        let avFileDescriptor: media.AVFileDescriptor =
+        let avFileDescriptor: media.AVFileDescriptor = 
             { fd: fileDescriptor.fd, offset: fileDescriptor.offset, length: fileDescriptor.length };
-        this.isSeek = true; // 不支持seek操作
+        this.isSeek = false; // 不支持seek操作
         // 为fdSrc赋值出发initialized状态机上报
         this.avPlayer.fdSrc = avFileDescriptor;
     }
-
-    schedule() {
-        if (!this.avPlayer) {
-            return;
-        }
-        if (!this.prepared) {
-            return;
-        }
-        if (this.commands.length > 0) {
-            let command = this.commands.shift();
-            if (command) {
-                command.func();
-            }
-            if (this.commands.length > 0) {
-                setTimeout(() => {
-                    this.schedule();
-                });
-            }
-        }
-    }
-    private checkCommand(selfName: string, oppositeName: string) {
-        let index_to_remove = -1;
-        let ignore_this_action = false;
-        let index = this.commands.length - 1;
-        while (index >= 0) {
-            if (this.commands[index].name == selfName) {
-                ignore_this_action = true;
-                break;
-            }
-            if (this.commands[index].name == oppositeName) {
-                index_to_remove = index;
-                break;
-            }
-            index--;
-        }
-
-        let result : CheckPlayCommandResult = {
-            ignore: ignore_this_action,
-            index_to_remove: index_to_remove,
-        };
-        return result;
-    }
-
+    
     play() {
-        let commandName = 'play';
-        let checkResult = this.checkCommand(commandName, 'pause');
-        if (checkResult.ignore) {
-            console.log(`AVPlayer ${commandName} ignored.`);
-            this.schedule();
-            return;
-        }
-        if (checkResult.index_to_remove >= 0) {
-            let removedCommand = this.commands.splice(checkResult.index_to_remove, 1);
-            console.log(`AVPlayer ${JSON.stringify(removedCommand)} removed.`);
-            return;
-        }
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.play()');
-            this.avPlayer?.play();
-        }, name: commandName});
-        this.schedule();
+        console.info('AVPlayer.play()');
+        this.avPlayer?.play()
     }
     pause() {
-        let commandName = 'pause';
-        let checkResult = this.checkCommand(commandName, 'play');
-        console.log(`checkResult:${JSON.stringify(checkResult)}`);
-        if (checkResult.ignore) {
-            console.log(`AVPlayer ${commandName} ignored.`);
-            this.schedule();
-            return;
-        }
-        if (checkResult.index_to_remove >= 0) {
-            let removedCommand = this.commands.splice(checkResult.index_to_remove, 1);
-            console.log(`AVPlayer ${JSON.stringify(removedCommand)} removed.`);
-            return;
-        }
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.pause()');
-            this.avPlayer?.pause();
-        }, name: commandName});
-        this.schedule();
+        console.info('AVPlayer.pause()');
+        this.avPlayer?.pause()
     }
     release() {
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.release()');
-            this.avPlayer?.release();
-        }});
-        this.schedule();
+        console.info('AVPlayer.release()');
+        this.avPlayer?.release();
     }
     seek(time: number) {
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.seek(${time})`);
-            this.avPlayer?.seek(time * 1000);
-        }});
-        this.schedule();
+        console.info('AVPlayer.seek (' + time + ')');
+        this.listener?.onSeeking();
+        this.avPlayer?.seek(time * 1000);
     }
-    setVolume(volume: number) {
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setVolume(${volume})`);
-            this.avPlayer?.setVolume(volume);
-        }});
-        this.schedule();
-    }
-    setPlaybackRate(playbackRate: number) {
-        let speed = media.PlaybackSpeed.SPEED_FORWARD_1_00_X;
-        let delta = 0.05;
-        playbackRate += delta;
-        if (playbackRate < 1) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_0_75_X;
-        } else if (playbackRate < 1.25) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_00_X;
-        } else if (playbackRate < 1.5) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_25_X;
-        } else if (playbackRate < 2) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_75_X;
-        } else {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
-        }
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setSpeed(${speed})`);
-            this.avPlayer?.setSpeed(speed);
-        }});
-        this.schedule();
+    setVolume(number: number) {
+        console.info('AVPlayer.setVolume(' + number + ')');
+        this.avPlayer?.setVolume(number)
     }
     setSpeed(speed: number){
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setSpeed(${speed})`);
-            this.avPlayer?.setSpeed(speed);
-        }});
-        this.schedule();
+        this.avPlayer?.setSpeed(speed)
     }
 }
-
 class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
-
+    
     private rawHandler: webview.NativeMediaPlayerHandler;
     constructor(handler: webview.NativeMediaPlayerHandler) {
         this.rawHandler = handler
@@ -327,72 +210,72 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
         console.log('handle PlaybackStatus:')
         this.rawHandler.handleStatusChanged(status)
     }
-
+    
     handleVolumeChanged(volume: number): void {
         console.log('handle volume change :' + volume)
         this.rawHandler.handleVolumeChanged(volume)
     }
-
+    
     handleMutedChanged(muted: boolean): void {
         console.log('handle muted:' + muted)
         this.rawHandler.handleMutedChanged(muted)
     }
-
+    
     handlePlaybackRateChanged(playbackRate: number): void {
         console.log('handle playbackRate:' + playbackRate)
         this.rawHandler.handlePlaybackRateChanged(playbackRate)
     }
-
+    
     handleDurationChanged(duration: number): void {
         console.log('handle duration :' + duration)
         this.rawHandler.handleDurationChanged(duration)
     }
-
+    
     handleTimeUpdate(currentPlayTime: number): void {
         console.log('handle currentPlayTime :' + currentPlayTime)
         this.rawHandler.handleTimeUpdate(currentPlayTime)
     }
-
+    
     handleBufferedEndTimeChanged(bufferedEndTime: number): void {
         console.log('handle bufferedEndTime :' + bufferedEndTime)
         this.rawHandler.handleBufferedEndTimeChanged(bufferedEndTime)
     }
-
+           
     handleEnded(): void {
         console.log('handle end:')
         this.rawHandler.handleEnded()
     }
-
+    
     handleNetworkStateChanged(state: webview.NetworkState): void {
         console.log('handleNetworkStateChanged:' + state)
         this.rawHandler.handleNetworkStateChanged(state)
     }
-
+    
     handleReadyStateChanged(state: webview.ReadyState): void {
         console.log('handleReadyStateChanged :' + state)
         this.rawHandler.handleReadyStateChanged(state)
     }
-
+    
     handleFullscreenChanged(fullscreen: boolean): void {
         console.log('handle fullscreen :' + fullscreen)
         this.rawHandler.handleFullscreenChanged(fullscreen)
     }
-
+    
     handleSeeking(): void {
         console.log('handleSeeking:')
         this.rawHandler.handleSeeking()
     }
-
+    
     handleSeekFinished(): void {
         console.log('handleSeekFinished:')
         this.rawHandler.handleSeekFinished()
     }
-
+    
     handleError(error: webview.MediaError, errorMessage: string): void {
         console.log('handleError:' + 'mediaError' + errorMessage + ':' + errorMessage)
         this.rawHandler.handleError(error,errorMessage)
     }
-
+    
     handleVideoSizeChanged(width: number, height: number): void {
         console.log('handleVideoSizeChanged:')
         this.rawHandler.handleVideoSizeChanged(width,height)
@@ -404,7 +287,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
     private mediaHandler: webview.NativeMediaPlayerHandler;
     web: WebComponent;
     nativePlayer?: AVPlayerDemo;
-
+    
     constructor(web: WebComponent, handler: webview.NativeMediaPlayerHandler, videoInfo: webview.MediaInfo) {
         console.log('NativeMediaPlayerImpl.constructor, surface_id[' + videoInfo.surfaceInfo.id + ']');
         this.web = web;
@@ -415,19 +298,19 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
         } else {
             this.mediaSource = ''
         }
-
+        
         this.web.node_controller = new MyNodeController(
             this.web, this.surfaceId, this.mediaHandler, this, NodeRenderType.RENDER_TYPE_TEXTURE)
         this.web.node_controller.rebuild()
         this.web.show_native_media_player = true;
-
+        
         console.log('NativeMediaPlayerImpl.mediaSource : ' + this.mediaSource);
     }
-
+    
     setNativePlayer(nativePlayer: AVPlayerDemo) {
         this.nativePlayer = nativePlayer;
     }
-
+    
     updateRect(x: number, y: number, width: number, height: number): void {
         this.web.node_width = width;
         this.web.node_height = height;
@@ -450,7 +333,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
     }
     setMuted(muted: boolean) {
         console.log('[BrowserShell] ===gpz=== MediaPlayer.setMuted(' + muted + ')');
-
+        
         if(muted) {
             this.nativePlayer?.setVolume(0)
         } else {
@@ -477,7 +360,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
 class AVPlayerListenerImpl implements AVPlayerListener {
     handler: webview.NativeMediaPlayerHandler;
     component: MyComponent;
-
+    
     constructor(handler: webview.NativeMediaPlayerHandler, component: MyComponent) {
         this.handler = handler;
         this.component = component;
@@ -546,14 +429,14 @@ interface Params {
     handler: webview.NativeMediaPlayerHandler
     player: NativeMediaPlayerImpl
 }
-
+ 
 @Component
 struct MyComponent {
     params?: Params
     @State bkColor: Color = Color.Red
     mXComponentController: XComponentController = new XComponentController();
     @State player_changed: boolean = false;
-
+    
     videoController: VideoController = new VideoController();
     player?: AVPlayerDemo
     offset_x: number = 0
@@ -564,7 +447,7 @@ struct MyComponent {
     view_height: number = 0;
     video_width: number = 0;
     video_height: number = 0;
-
+    
     fullscreen: boolean = false;
 
     @Builder static ButtonBuilder(params: Params) {
@@ -574,7 +457,7 @@ struct MyComponent {
             .width('100%')
             .height('100%')
     }
-
+    
     onSizeChanged(width: number, height: number) {
         this.video_width = width;
         this.video_height = height;
@@ -583,31 +466,31 @@ struct MyComponent {
         this.video_height_percent = scaled_video_height / this.view_height * 100;
         console.log('[BrowserShell] onSizeChanged(' + width + ',' + height + '), video_height_percent[' + this.video_height_percent + ']')
     }
-
+    
     build() {
         Column() {
             Stack() {
                 XComponent({ id: 'video_player_id', type: XComponentType.SURFACE, controller: this.mXComponentController })
-                    .width(this.video_width_percent + '%')
-                    .height(this.video_height_percent + '%')
-                    .border({ width: 1, color: Color.Red })
-                    .onLoad(() => {
-                        if (!this.params) {
-                            console.log('this.params is null');
-                            return;
-                        }
-                        console.log('[BrowserShell] MyComponent.onLoad, params[' + this.params
-                            + '], text[' + this.params.text + '], text2[' + this.params.text2
-                            + '], web_tab[' + this.params.web_tab + '], handler[' + this.params.handler + ']');
-                        this.player = new AVPlayerDemo();
-                        this.params.player?.setNativePlayer(this.player);
-                        this.player.setSurfaceID(this.mXComponentController.getXComponentSurfaceId());
-                        this.player_changed = !this.player_changed;
-
-                        this.player.avPlayerLiveDemo(
-                            this.params.player.mediaSource,
-                            new AVPlayerListenerImpl(this.params.handler, this));
-                    })
+                  .width(this.video_width_percent + '%')
+                  .height(this.video_height_percent + '%')
+                  .border({ width: 1, color: Color.Red })
+                  .onLoad(() => {
+                      if (!this.params) {
+                          console.log('this.params is null');
+                          return;
+                      }
+                      console.log('[BrowserShell] MyComponent.onLoad, params[' + this.params
+                        + '], text[' + this.params.text + '], text2[' + this.params.text2
+                        + '], web_tab[' + this.params.web_tab + '], handler[' + this.params.handler + ']');
+                      this.player = new AVPlayerDemo();
+                      this.params.player?.setNativePlayer(this.player);
+                      this.player.setSurfaceID(this.mXComponentController.getXComponentSurfaceId());
+                      this.player_changed = !this.player_changed;
+                      
+                      this.player.avPlayerLiveDemo(
+                          this.params.player.mediaSource,
+                          new AVPlayerListenerImpl(this.params.handler, this));
+                  })
                 Column() {
                     Row() {
                         Button(this.params?.text)
@@ -650,37 +533,37 @@ struct MyComponent {
                             .onTouch((event: TouchEvent) => {
                                 event.stopPropagation();
                             })
-                    }
-                    .width('100%')
-                    .justifyContent(FlexAlign.SpaceEvenly)
-                    Row() {
-                        Slider({
-                            value: 100,
-                            step: 10,
-                            style: SliderStyle.InSet,
-                            direction: Axis.Vertical,
-                            reverse: true
-                        })
-                            .margin(10)
-                            .showSteps(true)
-                            .onTouch((event: TouchEvent) => {
-                                event.stopPropagation();
+                        }
+                        .width('100%')
+                        .justifyContent(FlexAlign.SpaceEvenly)                        
+                        Row() {
+                            Slider({
+                                value: 100,
+                                step: 10,
+                                style: SliderStyle.InSet,
+                                direction: Axis.Vertical,
+                                reverse: true
                             })
-
-                        Slider({
-                            value: 50,
-                            step: 10,
-                            style: SliderStyle.InSet,
-                            direction: Axis.Vertical,
-                        })
-                            .margin(10)
-                            .showSteps(true)
-                            .onTouch((event: TouchEvent) => {
-                                event.stopPropagation();
+                                .margin(10)
+                                .showSteps(true)
+                                .onTouch((event: TouchEvent) => {
+                                    event.stopPropagation();
+                                })
+                            
+                            Slider({
+                                value: 50,
+                                step: 10,
+                                style: SliderStyle.InSet,
+                                direction: Axis.Vertical,
                             })
-                    }
-                    .width('100%')
-                    .justifyContent(FlexAlign.SpaceBetween)
+                                .margin(10)
+                                .showSteps(true)
+                                .onTouch((event: TouchEvent) => {
+                                    event.stopPropagation();
+                                })
+                        }
+                        .width('100%')
+                        .justifyContent(FlexAlign.SpaceBetween)
                 }
             }
         }
@@ -693,7 +576,7 @@ struct MyComponent {
         .onAreaChange((oldValue: Area, newValue: Area) => {
             this.view_width = new Number(newValue.width).valueOf()
             this.view_height = new Number(newValue.height).valueOf()
-
+            
             this.onSizeChanged(this.video_width, this.video_height);
         })
     }
@@ -707,7 +590,7 @@ class MyNodeController extends NodeController {
     web_tab: WebComponent
     listener: webview.NativeMediaPlayerHandler
     player: NativeMediaPlayerImpl
-
+        
     constructor(web_tab: WebComponent, surfaceId: string, listener: webview.NativeMediaPlayerHandler, player: NativeMediaPlayerImpl, renderType: NodeRenderType) {
         super()
         this.web_tab = web_tab;
@@ -715,13 +598,13 @@ class MyNodeController extends NodeController {
         this.player = player;
         this.surfaceId_ = surfaceId
         this.renderType_ = renderType
-        console.log('[BrowserShell] MyNodeController, rootNode[' + this.rootNode +
+        console.log('[BrowserShell] MyNodeController, rootNode[' + this.rootNode + 
             '], web_tab[' + web_tab +
             '], listener[' + listener +
             '], surfaceId[' + surfaceId +
             ']')
     }
-
+    
     makeNode(UIContext: UIContext): FrameNode | null {
         this.rootNode = new BuilderNode(UIContext as UIContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
         this.build()
@@ -733,7 +616,7 @@ class MyNodeController extends NodeController {
     build() {
         if (this.rootNode) {
             this.rootNode.build(new WrappedBuilder(MyComponent.ButtonBuilder),
-                {'text': 'play', 'text2': 'pause', web_tab:this.web_tab, handler: this.listener, player: this.player})
+                                {'text': 'play', 'text2': 'pause', web_tab:this.web_tab, handler: this.listener, player: this.player})
         }
     }
 }
@@ -741,120 +624,136 @@ class MyNodeController extends NodeController {
 interface PageBeginParam {
     url: string
 }
-
+  
 @Entry
 @Component
 struct WebComponent {
-    controller: WebviewController = new webview.WebviewController();
-    nativePlayer? : webview.NativeMediaPlayerBridge
-    page_url: Resource = $rawfile('nativeMediaPlayerHandler.html')
-    node_controller?: MyNodeController
-    // 日志列表
-    @State messageList: Array<string> =[]
-    @State show_native_media_player: boolean = false;
-    @State node_width : number = 300;
-    @State node_height : number = 150;
-    @State isNoCallback : boolean = true;
-    @State shouldOverlay : boolean = true;
-    //@State node_offset : Position = {x: 0, y: 0};
+  controller: WebviewController = new webview.WebviewController();
+  nativePlayer? : webview.NativeMediaPlayerBridge
+  page_url: Resource = $rawfile('nativeMediaPlayerHandler.html')
+  node_controller?: MyNodeController
+  // 日志列表
+  @State messageList: Array<string> =[]
+  @State show_native_media_player: boolean = false;
+  @State node_width : number = 300;
+  @State node_height : number = 150;
+  @State isNoCallback : boolean = true;
+  @State shouldOverlay : boolean = true;
+  @State isPageEnd:number = -1;
+  @State isReceive: number = -1;
+  //@State node_offset : Position = {x: 0, y: 0};
 
-    area?: Area
-    @State emitKey: string = '';
+  
+  area?: Area
+  @State emitKey: string = '';
+  
+  onPageShow() {
+      let valueChangeEvent: events_emitter.InnerEvent = {
+          eventId: EVENT_ID_SET_EMIT_KEY,
+          priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
 
-    onPageShow() {
-        let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
-            priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    onPageHide() {
+        events_emitter.off(EVENT_ID_SET_EMIT_KEY)
     }
+  
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+      if (eventData != null) {
+          console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+          if (eventData.data != null && eventData.data.ACTION != null) {
+              this.emitKey = eventData.data.ACTION;
+          }
+      }
+  }
 
-    private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-        if (eventData != null) {
-            console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-            if (eventData.data != null && eventData.data.ACTION != null) {
-                this.emitKey = eventData.data.ACTION;
-            }
-        }
-    }
+  private retryPlayingGen = (emitKey: string) => {
+      return async () => {
+          let retryTime = 1
+          while(retryTime < 5) {
+              retryTime += 1
+              if (emitKey != this.emitKey) {
+                  return
+              }
+              if(!isPlaying) {
+                  this.controller.refresh()
+                  await Utils.sleep(3000)
+                  this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                      console.error('The play() return error is: ${error}');
+                      console.log('The play() return value is: ${result}');
+                  })
+              }
+          }
+      }
+  }
 
-    private retryPlayingGen = (emitKey: string) => {
-        return async () => {
-            let retryTime = 1
-            while(retryTime < 5) {
-                retryTime += 1
-                if (emitKey != this.emitKey) {
-                    return
-                }
-                if(!isPlaying) {
-                    this.controller.refresh()
-                    await Utils.sleep(3000)
-                    this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                        console.error('The play() return error is: ${error}');
-                        console.log('The play() return value is: ${result}');
-                    })
-                }
-            }
-        }
-    }
-
-    build() {
-        Column() {
-            Row() {
-                Button('web click').key('webViewNativeMediaPlayerEnableFalse').onClick(async () => {
-                    console.info('key==>' + this.emitKey)
-                    isPlaying = false
-                    this.controller.refresh()
-                    await Utils.sleep(2000)
-                    this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                        console.error('The play() return error is: ${error}');
-                        console.log('The play() return value is: ${result}');
-                    })
-                    switch (this.emitKey) {
-                        case 'emitWebViewNativeMediaPlayerEnableFalse': {
-                            this.isNoCallback = true
-                            this.shouldOverlay = true
-                            await Utils.sleep(2000)
-                            if( this.isNoCallback ) {
-                                Utils.emitEvent(true, 1539)
-                            }
-                            break;
-                        }
-                        case 'emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse': {
-                            this.isNoCallback = true
-                            this.shouldOverlay = false
-                            await Utils.sleep(2000)
-                            if( this.isNoCallback ) {
-                                Utils.emitEvent(true, 15392)
-                            }
-                            break;
-                        }
-                    }
+  build() {
+      Column() {
+          Row() {
+              Button('web click').key('webViewNativeMediaPlayerEnableFalse').onClick(async () => {
+                console.info('key==>' + this.emitKey)
+                isPlaying = false
+                this.controller.refresh();
+                await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.isReceive = -1;
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                    console.error('The play() return error is: ${error}');
+                    console.log('The play() return value is: ${result}');
                 })
-            }
-            Stack() {
-                Web({ src: this.page_url, controller: this.controller })
-                    .enableNativeMediaPlayer({ enable: false, shouldOverlay: this.shouldOverlay })
-                    .onPageBegin((event: PageBeginParam) => {
-                        console.error('enter onPageBegin, url:' + event.url);
-                        console.error(' in onPageBegin, onCreateNativeMediaPlayer:' + this.controller.onCreateNativeMediaPlayer);
-                        let callback: webview.CreateNativeMediaPlayerCallback =
-                            (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
-                                this.isNoCallback = false
-                                console.log('mediaInfo' + JSON.stringify(mediaInfo))
-                                this.nativePlayer = new NativeMediaPlayerImpl(this, new NativeMediaPlayerHandlerImpl(handler), mediaInfo);
-                                return this.nativePlayer;
-                            }
-                        this.controller.onCreateNativeMediaPlayer(callback);
-                        this.controller.pauseAllMedia();
-                        console.error('exit onPageBegin');
-                    })
-                    .width('100%')
-                    .height('100%')
+                switch (this.emitKey) {
+                    case 'emitWebViewNativeMediaPlayerEnableFalse': {
+                        this.isNoCallback = true;
+                        this.shouldOverlay = true;
+                        this.isPageEnd = -1;
+                        this.controller.refresh();
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webSetNetErrorCode2ButtonIsPageEnd', 1, 1000);
+                        if( this.isNoCallback ) {
+                            Utils.emitEvent(true, 360010)
+                        }
+                        break;
+                    }
+                    case 'emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse': {
+                        this.isNoCallback = true
+                        this.shouldOverlay = false
+                        this.isPageEnd = -1;
+                        this.controller.refresh();
+                        if( this.isNoCallback ) {
+                            Utils.emitEvent(true, 360020)
+                        }
+                        break;
+                    }
+                }
+              })
+          }
+          Stack() {
+              Web({ src: this.page_url, controller: this.controller })
+                .enableNativeMediaPlayer({ enable: false, shouldOverlay: this.shouldOverlay })
+                .onPageBegin((event: PageBeginParam) => {
+                    console.error('enter onPageBegin, url:' + event.url);
+                    console.error(' in onPageBegin, onCreateNativeMediaPlayer:' + this.controller.onCreateNativeMediaPlayer);
+                    let callback: webview.CreateNativeMediaPlayerCallback =
+                        (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
+                            this.isNoCallback = false
+                            console.log('mediaInfo' + JSON.stringify(mediaInfo))
+                            this.nativePlayer = new NativeMediaPlayerImpl(this, new NativeMediaPlayerHandlerImpl(handler), mediaInfo);
+                            return this.nativePlayer;
+                        }
+                    this.controller.onCreateNativeMediaPlayer(callback);
+                    this.controller.pauseAllMedia();
+                    console.error('exit onPageBegin');
+                })
+                .onPageEnd((event) => {
+                  console.log('onPageEnd url:' + event.url);
+                  this.isPageEnd = 1;
+               })
+                .width('100%')
+                .height('100%')
 
-            }
-        }
-    }
+          }
+      }
+  }
 }
                     
    

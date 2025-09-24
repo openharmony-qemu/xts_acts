@@ -9094,6 +9094,257 @@ static napi_value multiThreadComprehensiveTest(napi_env env, napi_callback_info 
     return CreateComprehensiveReturnObject(env, threadSafe, functionIsolated);
 }
 
+// 不同值严格相等比较：napi_strict_equals 比较两个不同的 napi_value，应返回 napi_ok 且结果为 false
+static napi_value NapiOthersAndModuleTest01(napi_env env, napi_callback_info info)
+{
+    napi_value v1;
+    napi_value v2;
+    int cValue1 = 123;
+    double cValue2 = 456.123;
+    NAPI_CALL(env, napi_create_int32(env, cValue1, &v1));
+    NAPI_CALL(env, napi_create_int32(env, cValue2, &v2));
+
+    bool isEqual = true;
+    NAPI_CALL(env, napi_strict_equals(env, v1, v2, &isEqual));
+
+    bool ok = (isEqual == false);
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 相同类型但值不同：例如 1 和 2，napi_strict_equals 应返回 false
+static napi_value NapiOthersAndModuleTest02(napi_env env, napi_callback_info info)
+{
+    napi_value v1;
+    napi_value v2;
+    int cValue1 = 1;
+    int cValue2 = 2;
+    NAPI_CALL(env, napi_create_int32(env, cValue1, &v1));
+    NAPI_CALL(env, napi_create_int32(env, cValue2, &v2));
+
+    bool isEqual = true;
+    NAPI_CALL(env, napi_strict_equals(env, v1, v2, &isEqual));
+
+    bool ok = (isEqual == false);
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 多线程反复调用 node_api_get_module_file_name，验证一致性与返回值
+typedef struct {
+    int id;
+    napi_env env;
+    const std::string *baseline;
+    bool ok;
+} ModuleFileNameArgs;
+
+static void* ThreadGetModuleFileName(void* arg)
+{
+    ModuleFileNameArgs* args = static_cast<ModuleFileNameArgs*>(arg);
+    const int kLoopTimes = 1000;
+    for (int i = 0; i < kLoopTimes; i++) {
+        const char* filename = nullptr;
+        napi_status s = node_api_get_module_file_name(args->env, &filename);
+        if (s != napi_ok || filename == nullptr) {
+            args->ok = false;
+            break;
+        }
+        if (strcmp(args->baseline->c_str(), filename) != 0) {
+            args->ok = false;
+            break;
+        }
+    }
+    return nullptr;
+}
+
+static napi_value NapiOthersAndModuleTest03(napi_env env, napi_callback_info info)
+{
+    // 预取 baseline 文件名
+    const char* filename = nullptr;
+    napi_status s = node_api_get_module_file_name(env, &filename);
+    NAPI_ASSERT(env, s == napi_ok, "node_api_get_module_file_name failed");
+    NAPI_ASSERT(env, filename != nullptr, "filename is null");
+    std::string baseline(filename);
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest03_cpp] baseline: %{public}s\n", baseline.c_str());
+
+    const int kThreadCount = 10;
+    pthread_t threads[kThreadCount];
+    ModuleFileNameArgs args[kThreadCount];
+
+    for (int i = 0; i < kThreadCount; i++) {
+        args[i].id = i;
+        args[i].env = env;
+        args[i].baseline = &baseline;
+        args[i].ok = true;
+        int err = pthread_create(&threads[i], nullptr, ThreadGetModuleFileName, &args[i]);
+        if (err != 0) {
+            args[i].ok = false;
+        }
+    }
+
+    for (int i = 0; i < kThreadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+
+    bool allOk = true;
+    for (int i = 0; i < kThreadCount; i++) {
+        if (!args[i].ok) {
+            allOk = false;
+            break;
+        }
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allOk, &result);
+    return result;
+}
+
+// 混合多线程调用 napi_get_node_version 与 napi_get_version，校验一致性与线程安全
+typedef struct {
+    int id;
+    napi_env env;
+    bool ok;
+    // 对于 napi_get_node_version 线程，校验字段一致性
+    std::string major;
+    std::string minor;
+    std::string patch;
+    std::string release;
+    // 对于 napi_get_version 线程，存储版本号
+    uint32_t napiVersion;
+    bool isNodeThread;
+} VersionArgs;
+
+static void* ThreadGetNodeVersion(void* arg)
+{
+    VersionArgs* args = static_cast<VersionArgs*>(arg);
+    const int kLoopTimes = 500;
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNodeVersion thread %{public}d start---\n",
+        args->id);
+    
+    for (int i = 0; i < kLoopTimes; i++) {
+        const napi_node_version* v = nullptr;
+        napi_status s = napi_get_node_version(args->env, &v);
+        OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNodeVersion thread %{public}d in loop "
+                             "%{public}d napi_get_node_version status: %{public}d\n", args->id, i, s);
+        if (s != napi_ok) {
+            args->ok = false;
+            break;
+        }
+        if (v == nullptr) {
+            // 根据官网文档，OpenHarmony不需要获取node的版本，故当前napi_get_node_version导出接口为空实现
+            continue;
+        }
+        std::string majorValue = std::to_string(v->major);
+        std::string minorValue = std::to_string(v->minor);
+        std::string patchValue = std::to_string(v->patch);
+        std::string releaseValue = (v->release != nullptr) ? v->release : "";
+        if (i == 0) {
+            args->major = majorValue;
+            args->minor = minorValue;
+            args->patch = patchValue;
+            args->release = releaseValue;
+        } else {
+            if (args->major != majorValue || args->minor != minorValue ||
+            args->patch != patchValue || args->release != releaseValue) {
+                args->ok = false;
+                break;
+            }
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNodeVersion thread %{public}d end---\n",
+        args->id);
+    return nullptr;
+}
+
+static void* ThreadGetNapiVersion(void* arg)
+{
+    VersionArgs* args = static_cast<VersionArgs*>(arg);
+    const int kLoopTimes = 500;
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNapiVersion thread %{public}d start---\n",
+        args->id);
+    
+    for (int i = 0; i < kLoopTimes; i++) {
+        uint32_t version = 0;
+        napi_status s = napi_get_version(args->env, &version);
+        OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNapiVersion thread %{public}d in loop "
+                             "%{public}d napi_get_version status: "
+                             "%{public}d, version: %{public}d\n", args->id, i, s, version);
+        if (s != napi_ok) {
+            args->ok = false;
+            break;
+        }
+        if (i == 0) {
+            args->napiVersion = version;
+        } else {
+            if (args->napiVersion != version) {
+                args->ok = false;
+                break;
+            }
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] ThreadGetNapiVersion thread %{public}d end---\n",
+        args->id);
+    return nullptr;
+}
+
+static napi_value NapiOthersAndModuleTest04(napi_env env, napi_callback_info info)
+{
+    const int kNodeThreads = 5;
+    const int kNapiThreads = 5;
+    const int kTotal = kNodeThreads + kNapiThreads;
+    pthread_t threads[kTotal];
+    VersionArgs args[kTotal];
+    OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] start\n");
+
+    // 创建 napi_get_node_version 线程
+    for (int i = 0; i < kNodeThreads; i++) {
+        args[i].id = i;
+        args[i].env = env;
+        args[i].ok = true;
+        args[i].isNodeThread = true;
+        int err = pthread_create(&threads[i], nullptr, ThreadGetNodeVersion, &args[i]);
+        OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] pthread_create "
+                             "ThreadGetNodeVersion %{public}d, err:%{public}d\n", i, err);
+        if (err != 0) {
+            args[i].ok = false;
+        }
+    }
+
+    // 创建 napi_get_version 线程
+    for (int i = 0; i < kNapiThreads; i++) {
+        int idx = kNodeThreads + i;
+        args[idx].id = idx;
+        args[idx].env = env;
+        args[idx].ok = true;
+        args[idx].isNodeThread = false;
+        int err = pthread_create(&threads[idx], nullptr, ThreadGetNapiVersion, &args[idx]);
+        OH_LOG_INFO(LOG_APP, "[testOthersAndModuleTest04_cpp] pthread_create "
+                             "ThreadGetNapiVersion %{public}d, err:%{public}d\n", idx, err);
+        if (err != 0) {
+            args[idx].ok = false;
+        }
+    }
+
+    for (int i = 0; i < kTotal; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+
+    // 聚合检查
+    bool allOk = true;
+    for (int i = 0; i < kTotal; i++) {
+        if (!args[i].ok || (i >= kNodeThreads && args[i].napiVersion == 0)) {
+            allOk = false;
+            break;
+        }
+    }
+    
+    napi_value result;
+    napi_get_boolean(env, allOk, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -9237,6 +9488,10 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("multiThreadCallFunctionTest", multiThreadCallFunctionTest),
         DECLARE_NAPI_FUNCTION("multiThreadGetCbInfoTest", multiThreadGetCbInfoTest),
         DECLARE_NAPI_FUNCTION("multiThreadComprehensiveTest", multiThreadComprehensiveTest),
+        DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest01", NapiOthersAndModuleTest01),
+        DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest02", NapiOthersAndModuleTest02),
+        DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest03", NapiOthersAndModuleTest03),
+        DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest04", NapiOthersAndModuleTest04),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));

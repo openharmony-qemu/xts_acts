@@ -316,3 +316,7 @@ export const multiThreadCreateFunctionTest: () => object;
 export const multiThreadCallFunctionTest: () => object;
 export const multiThreadGetCbInfoTest: () => object;
 export const multiThreadComprehensiveTest: () => object;
+export const NapiOthersAndModuleTest01: () => boolean;
+export const NapiOthersAndModuleTest02: () => boolean;
+export const NapiOthersAndModuleTest03: () => boolean;
+export const NapiOthersAndModuleTest04: () => boolean;

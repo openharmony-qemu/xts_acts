@@ -93,5 +93,28 @@ export default function getAttributeScroll() {
       console.info('[getAttributeScroll_0200] END');
       done();
     });
+    /**
+     * @tc.number    getAttributeScroll_003
+     * @tc.name      getAttributeScroll_0300
+     * @tc.desc      Test ScrollTypeNodePage undefined.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('getAttributeScroll_0300', Level.LEVEL3, async (done: Function) => {
+      console.info('[getAttributeScroll_0300] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let btn: Component = await driver.findComponent(ON.id('ScrollTypeNodePage_undefined'));
+      await btn.click();
+      console.info("[getAttributeScroll_0300] Click ScrollTypeNodePage_undefined.");
+      await CommonFunc.sleep(1500);
+      console.info("[getAttributeScroll_0300] AppStorage.get('ScrollTypeNodeUn'): " + AppStorage.get('ScrollTypeNodeUn'));
+      expect(AppStorage.get('ScrollTypeNodeUn')).assertEqual(undefined);
+      AppStorage.delete('ScrollTypeNodeUn')
+
+      console.info('[getAttributeScroll_0300] END');
+      done();
+    });
   })
 }

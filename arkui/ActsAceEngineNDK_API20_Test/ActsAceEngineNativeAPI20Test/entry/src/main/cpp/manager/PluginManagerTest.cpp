@@ -23,6 +23,12 @@ PluginManager PluginManager::pluginManager_;
 PluginManager::~PluginManager()
 {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Callback", "~PluginManager");
+    for (auto iter = nativeXComponentMap_.begin(); iter != nativeXComponentMap_.end(); ++iter) {
+        if (iter->second != nullptr) {
+            delete iter->second;
+            iter->second = nullptr;
+        }
+    }
     nativeXComponentMap_.clear();
 }
 
@@ -110,7 +116,17 @@ void PluginManager::SetNativeXComponent(std::string &id, OH_NativeXComponent *na
         return;
     }
 
-    nativeXComponentMap_[id] = nativeXComponent;
+    if (nativeXComponentMap_.find(id) == nativeXComponentMap_.end()) {
+        nativeXComponentMap_[id] = nativeXComponent;
+        return;
+    }
+
+    if (nativeXComponentMap_[id] != nativeXComponent) {
+        OH_NativeXComponent *tmp = nativeXComponentMap_[id];
+        delete tmp;
+        tmp = nullptr;
+        nativeXComponentMap_[id] = nativeXComponent;
+    }
 }
 
 OH_NativeXComponent *PluginManager::GetNativeXComponent(std::string &id)

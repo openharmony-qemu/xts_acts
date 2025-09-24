@@ -24,5 +24,7 @@ group("inputmethod") {
     "InputMethodTest_ets:ActsInputMethodEtsTest",
     "InputmethodTestApi20:ActsInputmethodApi20Test",
     "InputMethodWindManage:ActsInputMethodWindManageTest",
+    "InputMethodTest_ets_static:ActsInputMethodEtsStaticTest",
+    "InputMethodAuthorityTestStatic:ActsInputMethodAuthorityStaticTest",
   ]
 }

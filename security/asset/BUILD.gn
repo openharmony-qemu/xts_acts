@@ -19,6 +19,7 @@ group("asset") {
       "asset_js:ActsAssetJSFuncTest",
       "asset_js_noright:ActsAssetNorightJSFuncTest",
       "asset_ndk:ActsAssetNDKFuncTest",
+      "asset_store:ActsAssetStoreMainTest",
     ]
   }
 }
