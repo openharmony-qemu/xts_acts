@@ -21,6 +21,10 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import business_error from '@ohos.base';
 import window from '@ohos.window'
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 180001;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -35,6 +39,9 @@ struct WebInitTest {
   @State screenHeight: number = 0;
   @State avoidAreaChangeStr: string = '';
   @State consoleCorsError: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
   schemeList: webView.WebCustomScheme[] = [
     { schemeName: "jump1", isSupportCORS: true, isSupportFetch: true },
     { schemeName: "jump2", isSupportCORS: true, isSupportFetch: false },
@@ -89,14 +96,14 @@ struct WebInitTest {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -105,6 +112,7 @@ struct WebInitTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
         try {
           this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
@@ -146,17 +154,19 @@ struct WebInitTest {
           .key('WebInitTestButton')
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case 'emitWebViewAvoidArea05': {
                 try {
                   this.userAgentPC = this.controller.getUserAgent();
                   if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                    Utils.emitEvent('success', 6205);
+                    Utils.emitEvent('success', 180010);
                     break;
                   }
                   this.controller.loadUrl($rawfile('expandAreaCover.html'));
                   if (this.avoidAreaChangeStr.length > 0) {
-                    Utils.emitEvent('success', 6205);
+                    Utils.emitEvent('success', 180010);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -228,6 +238,10 @@ struct WebInitTest {
                 console.log('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue)
               }
             }
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
       .width('100%')
