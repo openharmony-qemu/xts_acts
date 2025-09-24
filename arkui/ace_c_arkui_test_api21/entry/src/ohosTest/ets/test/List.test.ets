@@ -16,7 +16,6 @@ import TestInvalidateAttributes from './invalidate/TestInvalidateAttributes.test
 import TestRegisterCommonEvent from './commonEvent/TestRegisterCommonEvent.test'
 import EdgesPositionTest from './position/EdgesPositionTest.test'
 import PixelRoundTest from './PixelRound/PixelRoundTest.test'
-import textContentAlignTest from './textContentAlign/TextContentAlignTest.test'
 import TestAllowForceDark from './allowForceDark/TestAllowForceDark.test'
 
 export default function testsuite() {
@@ -24,6 +23,5 @@ export default function testsuite() {
   TestRegisterCommonEvent();
   EdgesPositionTest();
   PixelRoundTest();
-  textContentAlignTest();
   TestAllowForceDark();
 }

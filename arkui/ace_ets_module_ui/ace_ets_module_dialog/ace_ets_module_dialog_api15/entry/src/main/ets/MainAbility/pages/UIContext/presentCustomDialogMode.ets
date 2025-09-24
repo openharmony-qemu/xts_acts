@@ -50,9 +50,10 @@ export struct MyComponent {
 @Builder
 function customDialogDemo() {
 
-  Column({ space: 5 }) {
+  Column({ space: 30 }) {
     Text('自定义弹窗')
-    Button(`router`)
+    Row() {
+      Button(`router`)
       .height('8%')
       .id('router')
       .onClick(() => {
@@ -60,13 +61,14 @@ function customDialogDemo() {
           url: 'MainAbility/pages/UIContext/index'
         }, router.RouterMode.Standard)
       })
-    Text('返回')
-      .height('8%')
-      .componentTextStyle()
-      .onClick(() => {
-        router.back(1)
-      })
-      .id('back')
+      Text('返回')
+        .height('8%')
+        .componentTextStyle()
+        .onClick(() => {
+          router.back(1)
+        })
+        .id('back')
+    }
   }
   .borderRadius(10)
   .backgroundColor(Color.White)
@@ -84,15 +86,12 @@ function paramTextStyle() {
 function componentTextStyle() {
   .fontSize(15)
   .backgroundColor(Color.Orange)
-  .margin(3)
-  .padding(3)
   .borderWidth(1.0)
 }
 
 @Extend(Column)
 function columnStyle() {
   .borderWidth(1.0)
-  .padding(10)
   .width('100%')
   .backgroundColor(Color.Pink)
 }
@@ -142,7 +141,7 @@ struct presentCustomDialogMode {
 
   build() {
     Scroll(this.scroller) {
-      Column({ space: 5 }) {
+      Column() {
         Row() {
           Text('关闭弹窗')
             .componentTextStyle()
@@ -153,7 +152,7 @@ struct presentCustomDialogMode {
         }
 
 
-        Column({ space: 5 }) {
+        Column({ space: 2 }) {
           Row({ space: 3 }) {
             MyComponent({
               title: 'levelMode: OVERLAY', func: () => {
@@ -210,7 +209,7 @@ struct presentCustomDialogMode {
         }
         .columnStyle()
 
-        Column({ space: 5 }) {
+        Column({ space: 2 }) {
           Text(`uiContext_presentCustomDialog`)
             .id('presentCustomDialog')
             .componentTextStyle()
@@ -235,7 +234,7 @@ struct presentCustomDialogMode {
                   onDidDisappear: this.DidDisappear,
 
                   maskRect: this.maskRect,
-                  alignment: DialogAlignment.Bottom
+                  alignment: DialogAlignment.Center
                 });
               } catch (error) {
                 let message = (error as BusinessError).message;

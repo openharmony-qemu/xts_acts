@@ -41,12 +41,12 @@ struct NavigationStack21 {
                       .textAlign(TextAlign.Center)
                     NavDestination()
                       .key('NavigationStack21NavDestination')
-                    .onBlur(()=>{
-                      this.flagBlur = 'BlurDone'
-                    })
-                    .onFocus(()=>{
-                      this.flagFocus = 'FocusDone'
-                    })
+                      .onBlur(()=>{
+                        this.flagBlur = 'BlurDone'
+                      })
+                      .onFocus(()=>{
+                        this.flagFocus = 'FocusDone'
+                      })
                   }
                 }.key(`NavigationStack21ListItem${item}`)
               },(item: number) => item.toString())
@@ -74,19 +74,20 @@ struct NavigationStack21 {
           .key('NavigationStack21True')
           .onClick(() => {
             this.bool = true
-          })
+          }).height('5%')
         Button('展开导航栏')
           .key('NavigationStack21False')
           .onClick(() => {
             this.bool = false
-          })
+          }).height('5%')
         Button('get').id('NavigationStack21get')
           .onClick(() => {
             this.getText = JSON.stringify(this.pageInfos.getAllPathName()?.length)
-          })
+          }).height('5%')
       }
       .border({width:1})
       .width('100%')
+      .height('85%')
     }
   }
 }

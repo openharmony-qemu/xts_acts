@@ -1033,7 +1033,7 @@ struct WebComponent {
             try {
               await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
               this.controller.startDownload('https://' +
-                'repo.huaweicloud.com/openharmony/os/4.1-Release/hispark_pegasus.tar.gz');
+                'mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz');
               console.log(this.str + '开始下载')
             } catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
