@@ -787,7 +787,7 @@ struct borderStylePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity,
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })

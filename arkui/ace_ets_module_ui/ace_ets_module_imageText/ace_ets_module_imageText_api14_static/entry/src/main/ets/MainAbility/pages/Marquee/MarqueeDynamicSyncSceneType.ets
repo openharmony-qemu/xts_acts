@@ -28,7 +28,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
   @State marqueeText: string = 'Running Marquee'
   private fromStart: boolean = true
   private step: number = 10
-  private loop: number = Number.POSITIVE_INFINITY
+  private loop: int = Number.POSITIVE_INFINITY as int
   controller: TextClockController = new TextClockController()
   convert2time(value: number): string{
     let date = new Date(Number(value+'000'));
