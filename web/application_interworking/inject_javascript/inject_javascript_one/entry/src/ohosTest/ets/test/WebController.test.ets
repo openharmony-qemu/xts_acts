@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,16 +32,16 @@ export default function webController() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webController state success " + JSON.stringify(pages));
+        console.info('get webController state success ' + JSON.stringify(pages));
         if (!("webController" == pages.name)) {
-          console.info("get webController state success " + JSON.stringify(pages.name));
+          console.info('get webController state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webController page success " + JSON.stringify(result));
+          console.info('push webController page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webController page error: " + err);
+        console.error('push webController page error: ' + err);
       }
+      await waitForComponent("WebControllerButton");
       done()
     });
 
@@ -50,8 +51,7 @@ export default function webController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("webController beforeEach start");
+      console.info('webController beforeEach start');
       done();
     })
 
@@ -64,9 +64,8 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testRegisterJavaScriptProxy001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 31008, done);
+      Utils.emitEvent("testRegisterJavaScriptProxy001", 172180)
+      Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172190, done);
       sendEventByKey('WebControllerButton', 10, '');
     })
 
@@ -79,9 +78,8 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDeleteJavaScriptRegister001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteJavaScriptRegister001", true, 31009, done);
+      Utils.emitEvent("testDeleteJavaScriptRegister001", 172180)
+      Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172200, done);
       sendEventByKey('WebControllerButton', 10, '');
     })
   })

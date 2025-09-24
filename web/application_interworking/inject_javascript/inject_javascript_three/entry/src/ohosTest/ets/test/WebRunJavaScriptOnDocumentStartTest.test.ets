@@ -17,6 +17,7 @@ import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level }
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,16 +32,16 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebRunJavaScriptOnDocumentStartTest state success " + JSON.stringify(pages));
+        console.info('get WebRunJavaScriptOnDocumentStartTest state success ' + JSON.stringify(pages));
         if (!("WebRunJavaScriptOnDocumentStartTest" == pages.name)) {
-          console.info("get WebRunJavaScriptOnDocumentStartTest state success " + JSON.stringify(pages.name));
+          console.info('get WebRunJavaScriptOnDocumentStartTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebRunJavaScriptOnDocumentStartTest page success " + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnDocumentStartTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebRunJavaScriptOnDocumentStartTest page error: " + err);
+        console.error('push WebRunJavaScriptOnDocumentStartTest page error: ' + err);
       }
+      await waitForComponent("WebRunJavaScriptOnDocumentStartTestButton");
       done()
     });
 
@@ -50,15 +51,13 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnDocumentStartTest beforeEach start");
+      console.info('WebRunJavaScriptOnDocumentStartTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebRunJavaScriptOnDocumentStartTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnDocumentStartTest afterEach end");
+      console.info('WebRunJavaScriptOnDocumentStartTest afterEach start');
+      console.info('WebRunJavaScriptOnDocumentStartTest afterEach end');
       done();
     })
 
@@ -72,9 +71,8 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
     * @tc.level      : Level 0
     */
     it('testWebRunJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnDocumentStart001", '"Red"', 20250221, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart001", 173130)
+      Utils.registerEvent("testWebRunJavaScriptOnDocumentStart001", '"Red"', 173140, done);
       sendEventByKey('WebRunJavaScriptOnDocumentStartTestButton', 10, '');
     })
 
@@ -87,9 +85,8 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
     * @tc.level      : Level 2
     */
     it('testWebRunJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnDocumentStart002", true, 2025040801, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart002", 173130)
+      Utils.registerEvent("testWebRunJavaScriptOnDocumentStart002", true, 173150, done);
       sendEventByKey('WebRunJavaScriptOnDocumentStartTestButton', 10, '');
     })
 

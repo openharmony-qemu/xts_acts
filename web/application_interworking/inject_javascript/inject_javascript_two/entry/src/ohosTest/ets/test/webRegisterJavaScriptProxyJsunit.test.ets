@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitRegisterJavaScriptProxy";
@@ -26,35 +27,18 @@ let emitKey = "emitRegisterJavaScriptProxy";
 export default function webRegisterJavaScriptProxyJsunit() {
 
   describe('NdkRegisterJavaScriptProxyTest', () => {
+    beforeAll(async (done: Function) => {
+      await waitForComponent("webcomponent");
+      done()
+    });
+
     beforeEach(async (done:Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("httpAuthHandler beforeEach start");
-      done();
-    })
-
-    afterEach(async (done:Function) => {
-      console.info("web afterEach start:"+emitKey);
-      try {
-        let backData :emitter.EventData= {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent:events_emitter.InnerEvent= {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info('httpAuthHandler beforeEach start');
       done();
     })
 
@@ -67,8 +51,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=>{
-      emitKey="emitRunJavaScript";
-      Utils.registerEvent("RegisterJavaScriptProxy","RunSuccess",23,done);
+      Utils.emitEvent("emitRegisterJavaScriptProxy", 172950)
+      Utils.registerEvent("RegisterJavaScriptProxy","RunSuccess",172960,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -81,8 +65,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('RunJavaScript',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitUnregisterJavaScriptProxy";
-      Utils.registerEvent("RunJavaScript","RunSuccess",24,done);
+      Utils.emitEvent("emitRunJavaScript", 172950)
+      Utils.registerEvent("RunJavaScript","RunSuccess",172970,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -95,8 +79,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('UnregisterJavaScriptProxy',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitSetJavaScriptProxyValidCallback";
-      Utils.registerEvent("UnregisterJavaScriptProxy","RunSuccess",25,done);
+      Utils.emitEvent("emitUnregisterJavaScriptProxy", 172950)
+      Utils.registerEvent("UnregisterJavaScriptProxy","RunSuccess",172980,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -109,8 +93,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('SetJavaScriptProxyValidCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitGetJavaScriptProxyValidCallback";
-      Utils.registerEvent("SetJavaScriptProxyValidCallback","RunSuccess",26,done);
+      Utils.emitEvent("emitSetJavaScriptProxyValidCallback", 172950)
+      Utils.registerEvent("SetJavaScriptProxyValidCallback","RunSuccess",172990,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -124,8 +108,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('GetJavaScriptProxyValidCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitSetDestroyCallback";
-      Utils.registerEvent("GetJavaScriptProxyValidCallback","RunSuccess",27,done);
+      Utils.emitEvent("emitGetJavaScriptProxyValidCallback", 172950)
+      Utils.registerEvent("GetJavaScriptProxyValidCallback","RunSuccess",173000,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -138,8 +122,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('SetDestroyCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitGetDestroyCallback";
-      Utils.registerEvent("SetDestroyCallback","RunSuccess",28,done);
+      Utils.emitEvent("emitSetDestroyCallback", 172950)
+      Utils.registerEvent("SetDestroyCallback","RunSuccess",173010,done);
       sendEventByKey('webcomponent',10,'');
     })
 
@@ -152,8 +136,8 @@ export default function webRegisterJavaScriptProxyJsunit() {
      *@tc.level Level 2
      */
     it('GetDestroyCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function)=>{
-      emitKey="emitGetDestroyCallback";
-      Utils.registerEvent("GetDestroyCallback","RunSuccess",29,done);
+      Utils.emitEvent("emitGetDestroyCallback", 172950)
+      Utils.registerEvent("GetDestroyCallback","RunSuccess",173020,done);
       sendEventByKey('webcomponent',10,'');
     })
   })

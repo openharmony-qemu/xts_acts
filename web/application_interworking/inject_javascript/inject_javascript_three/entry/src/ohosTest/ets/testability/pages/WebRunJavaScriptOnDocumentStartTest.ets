@@ -33,17 +33,19 @@ struct WebRunJavaScriptOnDocumentStartTest {
   @State isComplete: number = -1;
   private jsStart: string =
     'console.log("push new js on run start called")';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 173130,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(173130)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +54,7 @@ struct WebRunJavaScriptOnDocumentStartTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -62,12 +65,13 @@ struct WebRunJavaScriptOnDocumentStartTest {
         Button('WebRunJavaScriptOnDocumentStartTestButton click')
           .key('WebRunJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-            await Utils.sleep(2000);
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             switch (this.emitKey) {
               case 'emitWebRunJavaScriptOnDocumentStart001': {
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.result, 20250221)
+                Utils.emitEvent(this.result, 173140)
                 break;
               }
               case 'emitWebRunJavaScriptOnDocumentStart002': {
@@ -76,7 +80,7 @@ struct WebRunJavaScriptOnDocumentStartTest {
                   let check = (v1:Array<string>, v2:boolean): boolean => {
                     return v1.includes('push new js on run start called')
                   }
-                  await waitForAssert(()=>this.message, check, true, 2025040801, this.emitKey);
+                  await waitForAssert(()=>this.message, check, true, 173150, this.emitKey);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -112,6 +116,7 @@ struct WebRunJavaScriptOnDocumentStartTest {
         })
         .onPageEnd((event) => {
           if (event) {
+           this.isPageEnd = 0;
            this.isComplete = 0;
            console.log('runJavaScriptOnDocumentStart isComplete==>'+this.isComplete);
            console.log('runJavaScriptOnDocumentStart onPageEnd url:' + event.url);

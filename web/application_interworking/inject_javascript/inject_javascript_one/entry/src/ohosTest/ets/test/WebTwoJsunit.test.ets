@@ -18,6 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -32,16 +33,16 @@ export default function webTwoJsunit() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webTwo state success " + JSON.stringify(pages));
+        console.info('get webTwo state success ' + JSON.stringify(pages));
         if (!("RegisterJavaScriptProxy" == pages.name)) {
-          console.info("get webTwo state success " + JSON.stringify(pages.name));
+          console.info('get webTwo state success ' + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webTwo page success " + JSON.stringify(result));
+          console.info('push webTwo page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webTwo page error: " + err);
+        console.error('push webTwo page error: ' + err);
       }
+      await waitForComponent("webcomponenttwo");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -50,8 +51,7 @@ export default function webTwoJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("web beforeEach start");
+      console.info('web beforeEach start');
       done();
     })
     /* 
@@ -60,8 +60,8 @@ export default function webTwoJsunit() {
      *tc.desic Sets allow the Web access overview mode
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitRegisterJavaScriptProxyTwo";
-      Utils.registerEvent("RegisterJavaScriptProxy", '\"okok\"', 37, done);
+      Utils.emitEvent("emitRegisterJavaScriptProxyTwo", 172270)
+      Utils.registerEvent("RegisterJavaScriptProxy", '\"okok\"', 172280, done);
       sendEventByKey('webcomponenttwo', 10, '');
     })
   })

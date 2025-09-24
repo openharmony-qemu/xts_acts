@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 class TestClass {
   constructor(){
@@ -34,13 +35,19 @@ struct WebComponent {
   // 声明需要注册的对象
   @State testObj: TestClass = new TestClass();
   @State emitKey: string = '';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isRunJSEnd: number = -1;
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172350,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+  onPageHide() {
+    events_emitter.off(172350)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +55,7 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -56,16 +64,19 @@ struct WebComponent {
     Column() {
       Row() {
         Button('web click').key('webviewJavaScriptPermissionButton').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           console.info('key==>' + this.emitKey)
-          await Utils.sleep(2000)
           switch (this.emitKey) {
             case 'emitWebViewJavaScriptPermission': {
-              await Utils.sleep(4000)
+              this.isRunJSEnd = -1;
               this.webviewController.runJavaScript('callArkTS()', (error, result) => {
                 console.log(`The callArkTS() return value is: ${result}`);
+                this.isRunJSEnd = 0;
               })
-              await Utils.sleep(1000)
-              Utils.emitEvent('success', 20003)
+              await waitForExist(() =>  this.isRunJSEnd, this.emitKey, 0);
+              Utils.emitEvent('success', 172360)
             }
           }
         })
@@ -84,6 +95,12 @@ struct WebComponent {
             '[{"scheme":"https","host":"xxx.com","port":"","path":""},{"scheme":"resource","host":"rawfile","port":"","path":""}]},' +
             '{"methodName":"test11","urlPermissionList":[{"scheme":"q","host":"r","port":"","path":"t"},' +
             '{"scheme":"u","host":"v","port":"","path":""}]}]}}'
+        })
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebViewController onPageEnd url:' + event.url);
+          }
         })
     }
   }

@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error, { BusinessError } from '@ohos.base';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -24,28 +25,30 @@ struct webController {
   @State str: string = "emitUserAgent"
   @State console: string = ""
   @State javaScriptAccess: boolean = true
-
   @State registerJavaScriptProxyFlag: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172180,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(172180)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -58,7 +61,7 @@ struct webController {
     },
     register: (res: object) => {
       if (this.registerJavaScriptProxyFlag == true) {
-        Utils.emitEvent(String(res), 31008);
+        Utils.emitEvent(String(res), 172190);
       }
       return "web222"
     }
@@ -68,24 +71,29 @@ struct webController {
     Column() {
       Row() {
         Button("WebController click").key('WebControllerButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "testRegisterJavaScriptProxy001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: $rawfile('webPart1index.html') })
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.registerJavaScriptProxyFlag = true
                 this.controller.registerJavaScriptProxy({
                   object: this.jsObj,
                   name: "objName",
                   methodList: ["test", "toString", "register"]
                 })
+                this.isPageEnd = -1;
                 this.controller.refresh()
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({ script: "proxy()" })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31008)
+                Utils.emitEvent(String(error.code), 172190)
               }
               break;
             }
@@ -101,13 +109,13 @@ struct webController {
                 this.controller.runJavaScript({ script: "registerTest()" })
                 if (this.console !== "web222") {
                   let deleteEntireCookieCalled = true
-                  Utils.emitEvent(deleteEntireCookieCalled, 31009)
+                  Utils.emitEvent(deleteEntireCookieCalled, 172200)
                   return
                 }
-                Utils.emitEvent(false, 31009)
+                Utils.emitEvent(false, 172200)
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31009)
+                Utils.emitEvent(String(error.code), 172200)
               }
               break;
             }
@@ -117,6 +125,12 @@ struct webController {
 
       Web({ src: $rawfile('webPart1index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebController onPageEnd url:' + event.url);
+          }
+        })
     }
   }
 }

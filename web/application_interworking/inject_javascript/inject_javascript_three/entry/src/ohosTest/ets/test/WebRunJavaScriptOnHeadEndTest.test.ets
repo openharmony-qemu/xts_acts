@@ -17,6 +17,7 @@ import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level }
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function ActsWebRunJavaScriptHeadEndTest() {
@@ -30,16 +31,16 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebRunJavaScriptOnHeadEndTest state success " + JSON.stringify(pages));
+        console.info('get WebRunJavaScriptOnHeadEndTest state success ' + JSON.stringify(pages));
         if (!("WebRunJavaScriptOnHeadEndTest" == pages.name)) {
-          console.info("get WebRunJavaScriptOnHeadEndTest state success " + JSON.stringify(pages.name));
+          console.info('get WebRunJavaScriptOnHeadEndTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebRunJavaScriptOnHeadEndTest page success " + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnHeadEndTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebRunJavaScriptOnHeadEndTest page error: " + err);
+        console.error('push WebRunJavaScriptOnHeadEndTest page error: ' + err);
       }
+      await waitForComponent("WebRunJavaScriptOnHeadEndTestButton");
       done()
     });
 
@@ -49,15 +50,13 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnHeadEndTest beforeEach start");
+      console.info('WebRunJavaScriptOnHeadEndTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebRunJavaScriptOnHeadEndTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnHeadEndTest afterEach end");
+      console.info('WebRunJavaScriptOnHeadEndTest afterEach start');
+      console.info('WebRunJavaScriptOnHeadEndTest afterEach end');
       done();
     })
 
@@ -70,9 +69,8 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
     * @tc.level      : Level 1
     */
     it('testWebRunJavaScriptOnHeadEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd001", '"testValue"', 2025022103, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd001", 173160)
+      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd001", '"testValue"', 173170, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
@@ -85,8 +83,8 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
     * @tc.level      : Level 1
     */
     it('testWebRunJavaScriptOnHeadEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      await Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd002", 10)
-      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd002", '"test msg"', 2025022104, done);
+      await Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd002", 173160)
+      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd002", '"test msg"', 173180, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
@@ -99,9 +97,8 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
     * @tc.level      : Level 2
     */
     it('testWebRunJavaScriptOnHeadEnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd003", '"testValue1"', 2025022105, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd003", 173160)
+      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd003", '"testValue1"', 173190, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
@@ -114,9 +111,8 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
     * @tc.level      : Level 2
     */
     it('testWebRunJavaScriptOnHeadEnd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd004", true, 2025040803, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd004", 173160)
+      Utils.registerEvent("testWebRunJavaScriptOnHeadEnd004", true, 173200, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
