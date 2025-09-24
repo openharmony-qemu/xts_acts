@@ -41,4 +41,3 @@ export const copyPositionEdges: () => void;
 export const createPixelRoundNativeRoot: (content: NodeContent, tag: string) => void;
 export const setPixelRound: () => void;
 export const getPixelRound: ()=>string;
-export const textContentAlignTest: (a: string) => void;
