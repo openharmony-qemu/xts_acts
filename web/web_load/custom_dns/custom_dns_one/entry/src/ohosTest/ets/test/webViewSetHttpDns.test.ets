@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,10 +18,14 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-let emitKey = "emitSetHttpDnsSecureOnlyExample";
+let emitKey = "";
+const EVENT_ID_SET_EMIT_KEY = 340000;
 export default function webViewSetHttpDns() {
   describe('ActsAceWebDevWebViewSetHttpDnsTest',  () => {
     beforeAll(async  (done: Function) =>{
@@ -31,87 +35,70 @@ export default function webViewSetHttpDns() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webViewSetHttpDns state success " + JSON.stringify(pages));
+        console.info('get webViewSetHttpDns state success ' + JSON.stringify(pages));
         if (!("webViewSetHttpDns" == pages.name)) {
-          console.info("get webViewSetHttpDns state success " + JSON.stringify(pages.name));
+          console.info('get webViewSetHttpDns state success ' + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webViewSetHttpDns page success " + JSON.stringify(result));
+          console.info('push webViewSetHttpDns page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webViewSetHttpDns page error: " + err);
+        console.error('push webViewSetHttpDns page error: ' + err);
       }
+      await driver.waitForComponent(ON.id("webViewSetHttpDns"), 10000);
+      console.log('webViewSetHttpDns');
       done()
-    });
-    beforeEach(async  (done: Function) =>{
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-        console.info(`enable success`);
-        }).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-      })
-      await Utils.sleep(2000);
-      console.info("webViewSetHttpDns beforeEach start");
-      done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewSetHttpDns afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
-     *tc.name testSetHttpDnsSecureOnlyExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
+     * @tc.name     testSetHttpDnsSecureOnlyExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('testSetHttpDnsSecureOnlyExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitSetHttpDnsSecureOnlyUserDefine";
-      Utils.registerEvent("testSetHttpDnsSecureOnlyExample","baidu.com",354,done);
-      sendEventByKey('webViewSetHttpDns',10,'');
+
+      emitKey="emitSetHttpDnsSecureOnlyExample";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("emitSetHttpDnsSecureOnlyExample", "Example Domain",340010, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
-     *tc.name testSetHttpDnsSecureOnlyUserDefine
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
+     * @tc.name     testSetHttpDnsSecureOnlyUserDefine
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('testSetHttpDnsSecureOnlyUserDefine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitSetHttpDnsAutoExample";
-      Utils.registerEvent("testSetHttpDnsSecureOnlyUserDefine","success",356,done);
-      sendEventByKey('webViewSetHttpDns',10,'');
+
+      emitKey="emitSetHttpDnsSecureOnlyUserDefine";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("SetHttpDnsSecureOnlyUserDefine", "success",340020, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
-     *tc.name testSetHttpDnsAutoExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
+     * @tc.name     testSetHttpDnsAutoExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('testSetHttpDnsAutoExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitSetHttpDnsOffExample";
-      Utils.registerEvent("testSetHttpDnsAutoExample","华为 - 构建万物互联的智能世界",358,done);
-      sendEventByKey('webViewSetHttpDns',10,'');
+      emitKey="emitSetHttpDnsAutoExample";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("SetHttpDnsAutoExample", "Example Domain",340030, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
-     *tc.name testSetHttpDnsOffExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
+     * @tc.name     testSetHttpDnsOffExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('testSetHttpDnsOffExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsOffExample";
-      Utils.registerEvent("testSetHttpDnsOffExample","OpenAtom OpenHarmony",360,done);
-      sendEventByKey('webViewSetHttpDns',10,'');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("SetHttpDnsOffExample", "OpenAtom OpenHarmony",340040, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
     })
   })
 }
