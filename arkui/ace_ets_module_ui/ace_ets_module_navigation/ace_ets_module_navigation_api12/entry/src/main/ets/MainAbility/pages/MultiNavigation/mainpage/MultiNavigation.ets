@@ -57,7 +57,7 @@ export struct MultiNavigation {
         needRenderIsFullScreen: (param as SubNavigationStack).needRenderIsFullScreen,
         needRenderLeftClickCount: this.multiStack.needRenderLeftClickCount,
         navWidthRangeModifier: this.multiStack.navWidthRangeModifier,
-        onNavigationModeChange: this?.callback,
+        onNavigationModeChange: this.callback,
         needRenderDisplayMode: this.multiStack.needRenderDisplayMode,
       });
     } else {

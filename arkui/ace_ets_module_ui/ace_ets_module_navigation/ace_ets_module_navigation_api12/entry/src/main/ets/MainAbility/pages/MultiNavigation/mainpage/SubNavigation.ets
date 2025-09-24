@@ -93,7 +93,7 @@ export struct SubNavigation {
         })
       }
       .mode(this.getMode())
-      .onNavigationModeChange(this?.onNavigationModeChange)
+      .onNavigationModeChange(this.onNavigationModeChange)
       .hideBackButton(true)
       .hideTitleBar(true)
       .navDestination(this.SubNavDestination)
