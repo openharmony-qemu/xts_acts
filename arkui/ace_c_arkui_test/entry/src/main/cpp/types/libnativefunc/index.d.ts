@@ -1379,6 +1379,30 @@ export const testImageFillColor003: () => number;
 
 export const testImageFillColor004: () => number;
 
+export const testImageDynamicRangeMode001: () => number;
+
+export const testImageDynamicRangeMode002: () => number;
+
+export const testImageDynamicRangeMode003: () => number;
+
+export const testImageDynamicRangeMode004: () => number;
+
+export const testImageHdrBrightness001: () => number;
+
+export const testImageHdrBrightness002: () => number;
+
+export const testImageHdrBrightness003: () => number;
+
+export const testImageHdrBrightness004: () => number;
+
+export const testImageOrientation001: () => number;
+
+export const testImageOrientation002: () => number;
+
+export const testImageOrientation003: () => number;
+
+export const testImageOrientation004: () => number;
+
 export const testImageResizable001: () => number;
 
 export const testImageResizable002: () => number;
@@ -1388,6 +1412,58 @@ export const testImageResizable003: () => number;
 export const testImageResizable004: () => number;
 
 export const testImageResizable005: () => number;
+
+export const testImageSourceSize001: () => number;
+
+export const testImageSourceSize002: () => number;
+
+export const testImageSourceSize003: () => number;
+
+export const testImageSourceSize004: () => number;
+
+export const testImageSourceSize005: () => number;
+
+export const testImageSourceSize006: () => number;
+
+export const testImageMatrix001: () => number;
+
+export const testImageMatrix002: () => number;
+
+export const testImageMatrix003: () => number;
+
+export const testImageMatrix004: () => number;
+
+export const testImageMatrix005: () => number;
+
+export const testImageMatchTextDirection001: () => number;
+
+export const testImageMatchTextDirection002: () => number;
+
+export const testImageMatchTextDirection003: () => number;
+
+export const testImageMatchTextDirection004: () => number;
+
+export const testImageMatchTextDirection005: () => number;
+
+export const testImageCopyOption001: () => number;
+
+export const testImageCopyOption002: () => number;
+
+export const testImageCopyOption003: () => number;
+
+export const testImageCopyOption004: () => number;
+
+export const testImageCopyOption005: () => number;
+
+export const testImageEnableAnalyzer001: () => number;
+
+export const testImageEnableAnalyzer002: () => number;
+
+export const testImageEnableAnalyzer003: () => number;
+
+export const testImageEnableAnalyzer004: () => number;
+
+export const testImageEnableAnalyzer005: () => number;
 
 export const testImageAlt001: () => number;
 

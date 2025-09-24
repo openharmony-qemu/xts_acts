@@ -223,18 +223,26 @@
 #include "image/image_brightness_test.cpp"
 #include "image/image_clip_test.cpp"
 #include "image/image_colorfilter_test.cpp"
+#include "image/image_copyoption_test.cpp"
+#include "image/image_dynamicrangemode_test.cpp"
+#include "image/image_enableanalyzer_test.cpp"
+#include "image/image_hdrbrightness_test.cpp"
 #include "image/image_height_test.cpp"
+#include "image/image_imagematrix_test.cpp"
 #include "image/image_interpolation_test.cpp"
 #include "image/image_lineargradient_test.cpp"
+#include "image/image_matchtextdirection_test.cpp"
 #include "image/image_objectfit_test.cpp"
 #include "image/image_objectrepeat_test.cpp"
 #include "image/image_opacity_test.cpp"
+#include "image/image_orientation_test.cpp"
 #include "image/image_position_test.cpp"
 #include "image/image_radialgradient_test.cpp"
 #include "image/image_rotate_test.cpp"
 #include "image/image_saturate_test.cpp"
 #include "image/image_scale_test.cpp"
 #include "image/image_shadow_test.cpp"
+#include "image/image_sourcesize_test.cpp"
 #include "image/image_src_test.cpp"
 #include "image/image_sweepgradient_test.cpp"
 #include "image/image_transform_test.cpp"
@@ -2035,6 +2043,30 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testImageFillColor004", nullptr, TestImageFillColor004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"testImageDynamicRangeMode001", nullptr, TestImageDynamicRangeMode001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode002", nullptr, TestImageDynamicRangeMode002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode003", nullptr, TestImageDynamicRangeMode003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageHdrBrightness001", nullptr, TestImageHdrBrightness001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageHdrBrightness002", nullptr, TestImageHdrBrightness002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageHdrBrightness003", nullptr, TestImageHdrBrightness003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageHdrBrightness004", nullptr, TestImageHdrBrightness004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageOrientation001", nullptr, TestImageOrientation001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageOrientation002", nullptr, TestImageOrientation002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageOrientation003", nullptr, TestImageOrientation003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageOrientation004", nullptr, TestImageOrientation004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testImageResizable001", nullptr, TestImageResizable001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageResizable002", nullptr, TestImageResizable002, nullptr, nullptr, nullptr,
@@ -2044,6 +2076,58 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testImageResizable004", nullptr, TestImageResizable004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageResizable005", nullptr, TestImageResizable005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize001", nullptr, TestImageSourceSize001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize002", nullptr, TestImageSourceSize002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize003", nullptr, TestImageSourceSize003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize004", nullptr, TestImageSourceSize004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize005", nullptr, TestImageSourceSize005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageSourceSize006", nullptr, TestImageSourceSize006, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatrix001", nullptr, TestImageMatrix001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatrix002", nullptr, TestImageMatrix002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatrix003", nullptr, TestImageMatrix003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatrix004", nullptr, TestImageMatrix004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatrix005", nullptr, TestImageMatrix005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatchTextDirection001", nullptr, TestImageMatchTextDirection001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatchTextDirection002", nullptr, TestImageMatchTextDirection002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatchTextDirection003", nullptr, TestImageMatchTextDirection003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatchTextDirection004", nullptr, TestImageMatchTextDirection004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageMatchTextDirection005", nullptr, TestImageMatchTextDirection005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageCopyOption001", nullptr, TestImageCopyOption001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageCopyOption002", nullptr, TestImageCopyOption002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageCopyOption003", nullptr, TestImageCopyOption003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageCopyOption004", nullptr, TestImageCopyOption004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageCopyOption005", nullptr, TestImageCopyOption005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageEnableAnalyzer001", nullptr, TestImageEnableAnalyzer001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageEnableAnalyzer002", nullptr, TestImageEnableAnalyzer002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageEnableAnalyzer003", nullptr, TestImageEnableAnalyzer003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageEnableAnalyzer004", nullptr, TestImageEnableAnalyzer004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageEnableAnalyzer005", nullptr, TestImageEnableAnalyzer005, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testScrollWidth001", nullptr, TestScrollWidth001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testScrollWidth002", nullptr, TestScrollWidth002, nullptr, nullptr, nullptr, napi_default, nullptr},
