@@ -1,7 +1,7 @@
 {
     "description": "Configuration for ActsAVCode20Test Tests",
     "driver": {
-        "type": "OHAVCodeTest",
+        "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "bundle-name": "com.acts.actcodekittest",
         "module-name": "entry_test",
