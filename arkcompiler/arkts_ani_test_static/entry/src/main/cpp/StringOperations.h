@@ -1240,15 +1240,11 @@ ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]]
 
     // UTF-8 -> UTF-16
     std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> converter;
-    std::u16string utf16Converted;
-    utf16Converted = converter.from_bytes(utf8Buffer, utf8Buffer + resultSize);
+    std::u16string utf16Converted = converter.from_bytes(utf8Buffer, utf8Buffer + resultSize);
 
     // Create UTF-16 String
-    auto status2 = env->String_NewUTF16(
-        reinterpret_cast<const uint16_t*>(utf16Converted.c_str()),
-        utf16Converted.size(),
-        &utf16String
-    );
+    auto status2 = env->String_NewUTF16(reinterpret_cast<const uint16_t*>(utf16Converted.c_str()),
+                                        utf16Converted.size(), &utf16String);
     ASSERT_EQ(status2, ANI_OK);
     ASSERT_NE(utf16String, nullptr);
 
@@ -1262,8 +1258,7 @@ ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]]
 
     // UTF-16 Buffer -> UTF-8 String
     std::u16string utf16FromBuffer(utf16Buffer, utf16Buffer + result2);
-    std::string utf8FromBuffer;
-    utf8FromBuffer = converter.to_bytes(utf16FromBuffer);
+    std::string utf8FromBuffer = converter.to_bytes(utf16FromBuffer);
     ASSERT_EQ(utf8FromBuffer, testUtf8Str);
 
     // Compare UTF-16 Character Sequence
