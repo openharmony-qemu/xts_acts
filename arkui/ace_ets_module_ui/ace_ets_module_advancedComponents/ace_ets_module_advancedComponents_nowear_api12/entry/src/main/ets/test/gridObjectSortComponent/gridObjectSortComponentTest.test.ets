@@ -67,7 +67,7 @@ export default function gridObjectSortComponentTest() {
       await Utils.sleep(2000);
 
       //点击GridObjectSortComponentItem中的item
-      let textItem1 = await driver.findComponent(ON.text('移动数据'));
+      let textItem1 = await driver.findComponent(ON.text('低电量模式'));
       await textItem1.click();
       await Utils.sleep(1000);
       // 断言GridObjectSortComponentItem中存在‘位置信息’。
