@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { Driver, ON } from '@kit.TestKit';
+import { waitForExist} from '../../test/WaitTest.test';
 
 const EVENT_ID_SET_SUITE_KEY = 178201;
 const driver = Driver.create();
