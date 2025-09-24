@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef OSACCOUNT_NDK_AUDIO_CODE_TEST_H
-#define OSACCOUNT_NDK_AUDIO_CODE_TEST_H
+#ifndef OSACCOUNT_NATIVE_AUDIO_CODE_TEST_H
+#define OSACCOUNT_NATIVE_AUDIO_CODE_TEST_H
 #include <napi/native_api.h>
 
 napi_value EnumOHAudioChannelSet1(napi_env env, napi_callback_info info);
