@@ -54,11 +54,7 @@ export default function abilityTest() {
             found = true;
           }
         });
-        if (found) {
-          expect(true).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(found).assertTrue();
         console.info("====> testFaultlogExtension_0100 assert end");
         let result = testNapi.add(2, 3)
         console.info("====> testFaultlogExtension_0100 napi result: " + result);
