@@ -235,7 +235,7 @@ struct presentCustomDialogMode {
                   onDidDisappear: this.DidDisappear,
 
                   maskRect: this.maskRect,
-                  alignment: DialogAlignment.Bottom
+                  alignment: DialogAlignment.Center
                 });
               } catch (error) {
                 let message = (error as BusinessError).message;
