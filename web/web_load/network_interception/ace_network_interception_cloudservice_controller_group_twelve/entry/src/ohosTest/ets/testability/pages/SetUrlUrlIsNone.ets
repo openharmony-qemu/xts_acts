@@ -17,12 +17,14 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct testWebResponseSetUrlUrlIsNone {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
   @State str: string = ''
+  @State isReceive: number = -1;
 
   aboutToAppear() {
     console.log('Succeed OH_ArkWebResponse_SetUrl1');
@@ -34,14 +36,14 @@ struct testWebResponseSetUrlUrlIsNone {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124611,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124611)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,6 +52,7 @@ struct testWebResponseSetUrlUrlIsNone {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -59,18 +62,19 @@ struct testWebResponseSetUrlUrlIsNone {
       Button('SetUrl')
         .key('SetUrl')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
+          console.info('key==>' + this.str)
           console.log('Succeed OH_ArkWebResponse_SetUrl3');
           switch (this.str) {
             case 'testWebResponse_SetUrl_Url_IsNone': {
-              await Utils.sleep(1000);
               let result: number = testNapi.setUrl();
-              await Utils.sleep(1000);
               if (result == 0) {
                 console.log('Succeed OH_ArkWebResponse_SetUrl');
-                Utils.emitEvent(result, 5101);
+                Utils.emitEvent(result, 124680);
               } else {
                 console.log('Faild OH_ArkWebResponse_SetUrl');
-                Utils.emitEvent(result, 5101);
+                Utils.emitEvent(result, 124680);
               }
               break;
             }
