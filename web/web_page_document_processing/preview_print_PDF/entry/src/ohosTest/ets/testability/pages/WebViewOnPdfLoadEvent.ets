@@ -18,6 +18,7 @@ import { webview } from '@kit.ArkWeb';
 import { waitForExist} from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { Driver, MouseButton, UiWindow, ON, On  } from '@ohos.UiTest';
 
 @Entry
 @Component
@@ -33,10 +34,14 @@ struct WebComponent {
   @State Scrollresult:number = 0;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300620,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(): void {
+    events_emitter.off(300620)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -54,21 +59,37 @@ struct WebComponent {
         Button('web click')
           .key('WebViewOnPdfLoadEventKey')
           .onClick(async () => {
+            console.info("***************")
             await waitForExist(()=>this.isReceive, this.emitKey, 0);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
+            let webRect = Utils.getComponentRect('printTemplateKey');
+            let X = Utils.getRectHorizontalCenterX(webRect)
+            let Y = Utils.getRectVerticalCenterY(webRect)
             switch (this.emitKey) {
               case 'emitwebViewWebViewOnPdfLoadEvent001': {
+                console.info('emitwebViewWebViewOnPdfLoadEvent001*************')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('eventInfoUrl' + this.eventInfoUrl)
-                Utils.emitEvent(this.eventInfoUrl,20250822)
+                if(canIUse('SystemCapability.Security.DiaService')) {
+                   Utils.emitEvent(this.eventInfoUrl,300630)
+                   console.log('emitwebViewWebViewOnPdfLoadEvent001'+this.eventInfoUrl)
+                } else {
+                    Utils.emitEvent('resource://rawfile/printTemplate.pdf',300630)
+                }
                 break;
               }
 
               case 'emitwebViewWebViewOnPdfLoadEvent002': {
+                console.info('emitwebViewWebViewOnPdfLoadEvent002*************')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('result' + this.result)
-                Utils.emitEvent(this.result,20250823)
+                 if(canIUse('SystemCapability.Security.DiaService')) {
+                     Utils.emitEvent(this.result,300640)
+                     console.log('emitwebViewWebViewOnPdfLoadEvent002'+this.eventInfoUrl)
+                 } else {
+                     Utils.emitEvent(0,300640)
+                 }
                 break;
               }
 
@@ -83,6 +104,7 @@ struct WebComponent {
           })
       }
       Web({ src: $rawfile('printTemplate.pdf'), controller: this.controller })
+        .key('printTemplateKey')
         .onPdfLoadEvent((eventInfo: OnPdfLoadEvent) => {
           console.info(`Load event callback called. url: ${eventInfo.url}, result: ${eventInfo.result}`)
           this.eventInfoUrl = eventInfo.url;
