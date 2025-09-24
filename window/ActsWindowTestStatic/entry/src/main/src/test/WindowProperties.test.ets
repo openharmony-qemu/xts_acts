@@ -63,12 +63,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number     : testSetWindowPrivacyModePromiseErrCode1300002_0100
-         * @tc.name       : testSetWindowPrivacyModePromiseErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowPrivacyModePromiseErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowPrivacyModePromiseErrCode1300002_0100
+         * @tc.name         testSetWindowPrivacyModePromiseErrCode1300002_static_0100
+         * @tc.desc         testSetWindowPrivacyModePromiseErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowPrivacyModePromiseErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModePromiseErrCode1300002_static_0100";
@@ -94,12 +94,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number     : testSetWindowPrivacyModeCallbackErrCode1300002_0100
-         * @tc.name       : testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
-         * @tc.desc       : testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowPrivacyModeCallbackErrCode1300002_0100
+         * @tc.name         testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
+         * @tc.desc         testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowPrivacyModeCallbackErrCode1300002_static_0200', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModeCallbackErrCode1300002_static_0200";
@@ -128,12 +128,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
-         * @tc.name      : testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : Check whether the current window supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
+         * @tc.name        testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        Check whether the current window supports the wide color gamut mode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100';
@@ -164,12 +164,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
-         * @tc.name      : testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc      : Check whether the current window supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
+         * @tc.name        testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Check whether the current window supports the wide color gamut mode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100';
@@ -197,12 +197,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
-         * @tc.name      : testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
+         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100';
@@ -233,12 +233,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
-         * @tc.name      : testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
-         * @tc.desc      : Set the current window to wide gamut mode or default gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
+         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200';
@@ -265,12 +265,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
-         * @tc.name      : testSetWindowBackgroundColor_WindowStateAbnormal_static_0100
-         * @tc.desc      : Set the background color of the window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
+         * @tc.name        testSetWindowBackgroundColor_WindowStateAbnormal_static_0100
+         * @tc.desc        Set the background color of the window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetWindowBackgroundColor_WindowStateAbnormal_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowBackgroundColor_WindowStateAbnormal_static_0100';
@@ -293,12 +293,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
-         * @tc.name      : testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : Set whether the screen is steady on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
+         * @tc.name        testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        Set whether the screen is steady on
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100';
@@ -329,12 +329,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
-         * @tc.name      : testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
-         * @tc.desc      : Set whether the screen is steady on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
+         * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
+         * @tc.desc        Set whether the screen is steady on
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200';
@@ -362,12 +362,12 @@ export default function WindowPropertiesTest() {
             }
         })
 /**
-         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
-         * @tc.name      : test_getWindowProperties_mainWindow_static_0100
-         * @tc.desc      : test_getWindowProperties_mainWindow_static_0100
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+         * @tc.name        test_getWindowProperties_mainWindow_static_0100
+         * @tc.desc        test_getWindowProperties_mainWindow_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('test_getWindowProperties_mainWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_getWindowProperties_mainWindow_static_0100';
@@ -411,12 +411,12 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0200
-         * @tc.name      : test_getWindowProperties_mainWindow_static_0200
-         * @tc.desc      : test_getWindowProperties_mainWindow_static_0200
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level4
+         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0200
+         * @tc.name        test_getWindowProperties_mainWindow_static_0200
+         * @tc.desc        test_getWindowProperties_mainWindow_static_0200
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('test_getWindowProperties_mainWindow_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_getWindowProperties_mainWindow_static_0200';
@@ -441,12 +441,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number     : testOnDisplayIdChangeErrCode1300002_0100
-         * @tc.name       : testOnDisplayIdChangeErrCode1300002_static_0100
-         * @tc.desc       : testOnDisplayIdChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOnDisplayIdChangeErrCode1300002_0100
+         * @tc.name         testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.desc         testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
@@ -481,12 +481,12 @@ export default function WindowPropertiesTest() {
 
 
         /**
-         * @tc.number     : testOffDisplayIdChangeErrCode1300002_0100
-         * @tc.name       : testOffDisplayIdChangeErrCode1300002_static_0100
-         * @tc.desc       : testOffDisplayIdChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOffDisplayIdChangeErrCode1300002_0100
+         * @tc.name         testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.desc         testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffDisplayIdChangeErrCode1300002_static_0100";
@@ -519,12 +519,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number     : testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.name       : testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.desc       : testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.name         testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc         testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnWindowVisibilityChangeErrCode1300002_static_0100";
@@ -557,12 +557,12 @@ export default function WindowPropertiesTest() {
             
         })
         /**
-         * @tc.number     : testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.name       : testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.desc       : testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.name         testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc         testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOffWindowVisibilityChangeErrCode1300002_static_0100";
@@ -595,12 +595,12 @@ export default function WindowPropertiesTest() {
 
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
-         * @tc.name      : testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
-         * @tc.desc      : Enable this window to listen for status change events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
+         * @tc.name        testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
+         * @tc.desc        Enable this window to listen for status change events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done: () => void): Promise<void> => {
@@ -635,12 +635,12 @@ export default function WindowPropertiesTest() {
                 
             });
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
-         * @tc.name      : testWindowOffWindowVisibilityChange_RepeatOff_static_0200
-         * @tc.desc      : Enable this window to listen for status change events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
+         * @tc.name        testWindowOffWindowVisibilityChange_RepeatOff_static_0200
+         * @tc.desc        Enable this window to listen for status change events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowOffWindowVisibilityChange_RepeatOff_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff_static_0200';
@@ -702,12 +702,12 @@ export default function WindowPropertiesTest() {
             
         });
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
-         * @tc.name      : testWindowVisibilityChange_on_Function_Callback_static_0100
-         * @tc.desc      : window type windowVisibilityChange
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
+         * @tc.name        testWindowVisibilityChange_on_Function_Callback_static_0100
+         * @tc.desc        window type windowVisibilityChange
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testWindowVisibilityChange_on_Function_Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testWindowVisibilityChange_on_Function_Callback_static_0100";
@@ -736,12 +736,12 @@ export default function WindowPropertiesTest() {
             }
         });
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
-         * @tc.name      : testWindowVisibilityChange_off_Function_Callback_static_0200
-         * @tc.desc      : window type windowVisibilityChange
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
+         * @tc.name        testWindowVisibilityChange_off_Function_Callback_static_0200
+         * @tc.desc        window type windowVisibilityChange
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testWindowVisibilityChange_off_Function_Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testWindowVisibilityChange_off_Function_Callback_static_0200";
@@ -768,12 +768,12 @@ export default function WindowPropertiesTest() {
             }
         });
         /**
-         * @tc.number     : testOnSystemDensityChangeErrCode1300002_0100
-         * @tc.name       : testOnSystemDensityChangeErrCode1300002_static_0100
-         * @tc.desc       : testOnSystemDensityChangeErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.name         testOnSystemDensityChangeErrCode1300002_static_0100
+         * @tc.desc         testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnSystemDensityChangeErrCode1300002_static_0100";
@@ -806,12 +806,12 @@ export default function WindowPropertiesTest() {
             
         })
         /**
-         * @tc.number     : testOffSystemDensityChangeErrCode1300002_0100
-         * @tc.name       : testOffSystemDensityChangeErrCode1300002_static_0100
-         * @tc.desc       : testOffSystemDensityChangeErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.name         testOffSystemDensityChangeErrCode1300002_static_0100
+         * @tc.desc         testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName:string = "testOffSystemDensityChangeErrCode1300002_static_0100";
@@ -845,12 +845,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
-         * @tc.name      : testOnSetCustomDensity1_static_0100
-         * @tc.desc      : off systemDensityChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
+         * @tc.name        testOnSetCustomDensity1_static_0100
+         * @tc.desc        off systemDensityChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testOnSetCustomDensity1_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnSetCustomDensity1_static_0100';
@@ -891,12 +891,12 @@ export default function WindowPropertiesTest() {
         
 
         /**
-         * @tc.number     : testSetWindowFocusableErrCode1300002_0100
-         * @tc.name       : testSetWindowFocusableErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowFocusableErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowFocusableErrCode1300002_0100
+         * @tc.name         testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.desc         testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowFocusableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowFocusableErrCode1300002_static_0100";
@@ -928,12 +928,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number     : testSetWindowFocusablePromiseErrCode1300002_0100
-         * @tc.name       : testSetWindowFocusablePromiseErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowFocusablePromiseErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowFocusablePromiseErrCode1300002_0100
+         * @tc.name         testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.desc         testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowFocusablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowFocusablePromiseErrCode1300002_static_0100";
@@ -961,12 +961,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number     : testSetWindowTouchableErrCode1300002_0100
-         * @tc.name       : testSetWindowTouchableErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowTouchableErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowTouchableErrCode1300002_0100
+         * @tc.name         testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.desc         testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowTouchableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowTouchableErrCode1300002_static_0100";
@@ -998,12 +998,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number     : testSetWindowTouchablePromiseErrCode1300002_0100
-         * @tc.name       : testSetWindowTouchablePromiseErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowTouchablePromiseErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowTouchablePromiseErrCode1300002_0100
+         * @tc.name         testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.desc         testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowTouchablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowTouchablePromiseErrCode1300002_static_0100";
@@ -1032,12 +1032,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number     : testSnapshotErrCode1300002_0100
-         * @tc.name       : testSnapshotErrCode1300002_static_0100
-         * @tc.desc       : testSnapshotErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSnapshotErrCode1300002_0100
+         * @tc.name         testSnapshotErrCode1300002_static_0100
+         * @tc.desc         testSnapshotErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSnapshotErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSnapshotErrCode1300002_static_0100";
@@ -1078,12 +1078,12 @@ export default function WindowPropertiesTest() {
 
 
         /**
-         * @tc.number     : testSnapshotPromiseErrCode1300002_0100
-         * @tc.name       : testSnapshotPromiseErrCode1300002_static_0100
-         * @tc.desc       : testSnapshotPromiseErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSnapshotPromiseErrCode1300002_0100
+         * @tc.name         testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.desc         testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSnapshotPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSnapshotPromiseErrCode1300002_static_0100";
@@ -1114,12 +1114,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
-         * @tc.name      : testStatusBarContentColor_static_0100
-         * @tc.desc      : test_statusBarContentColor_static_0100
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+         * @tc.number      SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+         * @tc.name        testStatusBarContentColor_static_0100
+         * @tc.desc        test_statusBarContentColor_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testStatusBarContentColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_statusBarContentColor_static_0100';

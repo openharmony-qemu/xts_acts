@@ -63,12 +63,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0100
-         * @tc.name      : testOnOffWindowStatusChange_OnSubWindow_static_0100
-         * @tc.desc      : Enable listening for window mode changes
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0100
+         * @tc.name        testOnOffWindowStatusChange_OnSubWindow_static_0100
+         * @tc.desc        Enable listening for window mode changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testOnOffWindowStatusChange_OnSubWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testOnOffWindowStatusChange_OnSubWindow_static_0100';
@@ -122,12 +122,12 @@ export default function WindowLayoutTest() {
             done();
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0200
-         * @tc.name      : testOnOffWindowStatusChange_OnMainWindow_static_0200
-         * @tc.desc      : Enable listening for window mode changes
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0200
+         * @tc.name        testOnOffWindowStatusChange_OnMainWindow_static_0200
+         * @tc.desc        Enable listening for window mode changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testOnOffWindowStatusChange_OnMainWindow_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testOnOffWindowStatusChange_OnMainWindow_static_0200';
@@ -181,12 +181,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0100
-         * @tc.name      : testShowWindow_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : show window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0100
+         * @tc.name        testShowWindow_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        show window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testShowWindow_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testShowWindow_WindowStateAbnormal_Callback_static_0100';
@@ -211,12 +211,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0200
-         * @tc.name      : testShowWindow_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc      : show window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0200
+         * @tc.name        testShowWindow_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        show window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testShowWindow_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testShowWindow_WindowStateAbnormal_Promise_static_0100';
@@ -239,12 +239,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0100
-         * @tc.name      : testDestroyWindow_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc      : destroy window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0100
+         * @tc.name        testDestroyWindow_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        destroy window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDestroyWindow_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testDestroyWindow_WindowStateAbnormal_Promise_static_0100';
@@ -266,12 +266,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0200
-         * @tc.name      : testDestroyWindow_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : destroy window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0200
+         * @tc.name        testDestroyWindow_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        destroy window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDestroyWindow_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testDestroyWindow_WindowStateAbnormal_Callback_static_0100';
@@ -296,12 +296,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0100
-         * @tc.name      : testMoveWindowTo_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc      : Move window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0100
+         * @tc.name        testMoveWindowTo_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testMoveWindowTo_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testMoveWindowTo_WindowStateAbnormal_Promise_static_0100';
@@ -330,12 +330,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0200
-         * @tc.name      : testMoveWindowTo_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : Move window windowStateAbnormal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0200
+         * @tc.name        testMoveWindowTo_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        Move window windowStateAbnormal
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testMoveWindowTo_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testMoveWindowTo_WindowStateAbnormal_Callback_static_0100';
@@ -366,12 +366,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0100
-         * @tc.name      : testResize_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc      : Change the current window size
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0100
+         * @tc.name        testResize_WindowStateAbnormal_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testResize_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testResize_WindowStateAbnormal_Promise_static_0100';
@@ -399,12 +399,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0200
-         * @tc.name      : testResize_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc      : Change the current window size
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0200
+         * @tc.name        testResize_WindowStateAbnormal_Callback_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testResize_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testResize_WindowStateAbnormal_Callback_static_0100';
@@ -435,12 +435,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number     : testGetGlobalRectErrCode1300002_0100
-         * @tc.name       : testGetGlobalRectErrCode1300002_static_0100
-         * @tc.desc       : testGetGlobalRectErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testGetGlobalRectErrCode1300002_0100
+         * @tc.name         testGetGlobalRectErrCode1300002_static_0100
+         * @tc.desc         testGetGlobalRectErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testGetGlobalRectErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = "testGetGlobalRectErrCode1300002_static_0100";
@@ -472,12 +472,12 @@ export default function WindowLayoutTest() {
             
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
-         * @tc.name      : testgetGlobalRect_static_0200
-         * @tc.desc      : get the global rect.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
+         * @tc.name        testgetGlobalRect_static_0200
+         * @tc.desc        get the global rect.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testgetGlobalRect_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testgetGlobalRect_static_0200';
@@ -503,12 +503,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number     : testOnWindowHighlightChangeErrCode1300002_0100
-         * @tc.name       : testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc       : testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOnWindowHighlightChangeErrCode1300002_0100
+         * @tc.name         testOnWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.desc         testOnWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnWindowHighlightChangeErrCode1300002_static_0100";
@@ -541,12 +541,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number     : testOffWindowHighlightChangeErrCode1300002_0100
-         * @tc.name       : testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc       : testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testOffWindowHighlightChangeErrCode1300002_0100
+         * @tc.name         testOffWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.desc         testOffWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffWindowHighlightChangeErrCode1300002_static_0100";
@@ -579,12 +579,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
-         * @tc.name      : testOnRectChangeOptionsResizeSubWindow_static_0100
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
+         * @tc.name        testOnRectChangeOptionsResizeSubWindow_static_0100
+         * @tc.desc        Test the function value of testRectChangeOptions
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testOnRectChangeOptionsResizeSubWindow_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "TestOnRectChangeOptionsResizeSubWindow_static_0100";
@@ -612,12 +612,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
-         * @tc.name      : testRectChangeOptions_on_static_0200
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
+         * @tc.name        testRectChangeOptions_on_static_0200
+         * @tc.desc        Test the function value of testRectChangeOptions
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testRectChangeOptions_on_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let msgStr:string = "testRectChangeOptions_on_static_0200";
@@ -645,12 +645,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number    : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.name      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.desc      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.name        testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.desc        testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
@@ -685,12 +685,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
-         * @tc.name      : testRectChangeOptions_off_static_0100
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
+         * @tc.name        testRectChangeOptions_off_static_0100
+         * @tc.desc        Test the function value of testRectChangeOptions
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testRectChangeOptions_off_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let msgStr:string = "testRectChangeOptions_off_static_0100";

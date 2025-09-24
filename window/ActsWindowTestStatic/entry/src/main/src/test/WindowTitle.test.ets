@@ -62,12 +62,12 @@ export default function WindowTitleTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GETWINDOW_DECORHEIGHT_JS_API_0100
-         * @tc.name      : testGetWindowDecorHeight_static_0100
-         * @tc.desc      : test the function of GetWindowDecorHeight
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GETWINDOW_DECORHEIGHT_JS_API_0100
+         * @tc.name        testGetWindowDecorHeight_static_0100
+         * @tc.desc        test the function of GetWindowDecorHeight
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testGetWindowDecorHeight_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetWindowDecorHeight_static_0100';
@@ -93,12 +93,12 @@ export default function WindowTitleTest() {
             }
         })
 /**
-         * @tc.number     : testSetWindowDecorVisibleErrCode1300002_0100
-         * @tc.name       : testSetWindowDecorVisibleErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowDecorVisibleErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowDecorVisibleErrCode1300002_0100
+         * @tc.name         testSetWindowDecorVisibleErrCode1300002_static_0100
+         * @tc.desc         testSetWindowDecorVisibleErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowDecorVisibleErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowDecorVisibleErrCode1300002_static_0100";
@@ -136,12 +136,12 @@ export default function WindowTitleTest() {
             
         })
         /**
-         * @tc.number     : testSetWindowDecorHeightErrCode1300002_0100
-         * @tc.name       : testSetWindowDecorHeightErrCode1300002_static_0100
-         * @tc.desc       : testSetWindowDecorHeightErrCode1300002_static_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number       testSetWindowDecorHeightErrCode1300002_0100
+         * @tc.name         testSetWindowDecorHeightErrCode1300002_static_0100
+         * @tc.desc         testSetWindowDecorHeightErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetWindowDecorHeightErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testSetWindowDecorHeightErrCode1300002_static_0100";
@@ -173,12 +173,12 @@ export default function WindowTitleTest() {
             
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
-         * @tc.name      : test_setWindowDecorHeight_setDecorButtonStyle_static_0100
-         * @tc.desc      : test_setWindowDecorHeight_setDecorButtonStyle_static_0100
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.number      SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
+         * @tc.name        test_setWindowDecorHeight_setDecorButtonStyle_static_0100
+         * @tc.desc        test_setWindowDecorHeight_setDecorButtonStyle_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('test_setWindowDecorHeight_setDecorButtonStyle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_setWindowDecorHeight_setDecorButtonStyle_static_0100';

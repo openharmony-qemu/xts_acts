@@ -58,12 +58,12 @@ export default function abilityTest() {
       //console.info(`beforeAll isPCStatus: `+ isPCStatus);
     })
     /**
-     * @tc.number     : testGetMainWindowCallBack_static_0100
-     * @tc.name       : testGetMainWindowCallBack_static_0100
-     * @tc.desc       : testGetMainWindowCallBack_static_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number       testGetMainWindowCallBack_static_0100
+     * @tc.name         testGetMainWindowCallBack_static_0100
+     * @tc.desc         testGetMainWindowCallBack_static_0100
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
      */
     it("testGetMainWindowCallBack_static_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -83,12 +83,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testGetMainWindowPromise_static_0101
-     * @tc.name       : testGetMainWindowPromise_static_0101
-     * @tc.desc       : testGetMainWindowPromise_static_0101
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number       testGetMainWindowPromise_static_0101
+     * @tc.name         testGetMainWindowPromise_static_0101
+     * @tc.desc         testGetMainWindowPromise_static_0101
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
      */
     it("testGetMainWindowPromise_static_0101",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -106,12 +106,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testgetWindowProperties_static_0104
-     * @tc.name       : testgetWindowProperties_static_0104
-     * @tc.desc       : testgetWindowProperties_static_0104
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testgetWindowProperties_static_0104
+     * @tc.name         testgetWindowProperties_static_0104
+     * @tc.desc         testgetWindowProperties_static_0104
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testgetWindowProperties_static_0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -131,12 +131,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testsetWindowDecorHeight_static_0105
-     * @tc.name       : testsetWindowDecorHeight_static_0105
-     * @tc.desc       : testsetWindowDecorHeight_static_0105
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowDecorHeight_static_0105
+     * @tc.name         testsetWindowDecorHeight_static_0105
+     * @tc.desc         testsetWindowDecorHeight_static_0105
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowDecorHeight_static_0105",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -156,12 +156,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testgetWindowDecorHeight_static_0106
-     * @tc.name       : testgetWindowDecorHeight_static_0106
-     * @tc.desc       : testgetWindowDecorHeight_static_0106
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testgetWindowDecorHeight_static_0106
+     * @tc.name         testgetWindowDecorHeight_static_0106
+     * @tc.desc         testgetWindowDecorHeight_static_0106
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testgetWindowDecorHeight_static_0106",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -181,12 +181,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testsetWindowDecorVisible_static_0107
-     * @tc.name       : testsetWindowDecorVisible_static_0107
-     * @tc.desc       : testsetWindowDecorVisible_static_0107
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowDecorVisible_static_0107
+     * @tc.name         testsetWindowDecorVisible_static_0107
+     * @tc.desc         testsetWindowDecorVisible_static_0107
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowDecorVisible_static_0107",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -208,12 +208,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testgetLastWindowPromiseTest_static_0100
-     * @tc.name       : testgetLastWindowPromiseTest_static_0100
-     * @tc.desc       : testgetLastWindowPromiseTest_static_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testgetLastWindowPromiseTest_static_0100
+     * @tc.name         testgetLastWindowPromiseTest_static_0100
+     * @tc.desc         testgetLastWindowPromiseTest_static_0100
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testgetLastWindowPromiseTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -234,12 +234,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : testgetLastWindowCallbackTest_static_0100
-     * @tc.name       : testgetLastWindowCallbackTest_static_0100
-     * @tc.desc       : testgetLastWindowCallbackTest_static_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testgetLastWindowCallbackTest_static_0100
+     * @tc.name         testgetLastWindowCallbackTest_static_0100
+     * @tc.desc         testgetLastWindowCallbackTest_static_0100
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testgetLastWindowCallbackTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -262,12 +262,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : testsetSpecificSystemBarEnabled_static_0108
-     * @tc.name       : testsetSpecificSystemBarEnabled_static_0108
-     * @tc.desc       : testsetSpecificSystemBarEnabled_static_0108
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetSpecificSystemBarEnabled_static_0108
+     * @tc.name         testsetSpecificSystemBarEnabled_static_0108
+     * @tc.desc         testsetSpecificSystemBarEnabled_static_0108
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetSpecificSystemBarEnabled_static_0108",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -284,12 +284,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testsetWindowKeepScreenOnCallBack_static_0109
-     * @tc.name       : testsetWindowKeepScreenOnCallBack_static_0109
-     * @tc.desc       : testsetWindowKeepScreenOnCallBack_static_0109
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowKeepScreenOnCallBack_static_0109
+     * @tc.name         testsetWindowKeepScreenOnCallBack_static_0109
+     * @tc.desc         testsetWindowKeepScreenOnCallBack_static_0109
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowKeepScreenOnCallBack_static_0109",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -312,12 +312,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testsetWindowKeepScreenOnPromise_static_0110
-     * @tc.name       : testsetWindowKeepScreenOnPromise_static_0110
-     * @tc.desc       : testsetWindowKeepScreenOnPromise_static_0110
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowKeepScreenOnPromise_static_0110
+     * @tc.name         testsetWindowKeepScreenOnPromise_static_0110
+     * @tc.desc         testsetWindowKeepScreenOnPromise_static_0110
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowKeepScreenOnPromise_static_0110",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -334,12 +334,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testSetWindowTouchableCallBack_static_0111
-     * @tc.name       : testSetWindowTouchableCallBack_static_0111
-     * @tc.desc       : testSetWindowTouchableCallBack_static_0111
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testSetWindowTouchableCallBack_static_0111
+     * @tc.name         testSetWindowTouchableCallBack_static_0111
+     * @tc.desc         testSetWindowTouchableCallBack_static_0111
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testSetWindowTouchableCallBack_static_0111",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -362,12 +362,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testSetWindowTouchablePromise_static_0112
-     * @tc.name       : testSetWindowTouchablePromise_static_0112
-     * @tc.desc       : testSetWindowTouchablePromise_static_0112
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testSetWindowTouchablePromise_static_0112
+     * @tc.name         testSetWindowTouchablePromise_static_0112
+     * @tc.desc         testSetWindowTouchablePromise_static_0112
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testSetWindowTouchablePromise_static_0112",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -383,12 +383,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testsetWindowBackgroundColorSync_static_0114
-     * @tc.name       : testsetWindowBackgroundColorSync_static_0114
-     * @tc.desc       : testsetWindowBackgroundColorSync_static_0114
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowBackgroundColorSync_static_0114
+     * @tc.name         testsetWindowBackgroundColorSync_static_0114
+     * @tc.desc         testsetWindowBackgroundColorSync_static_0114
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowBackgroundColorSync_static_0114",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -405,12 +405,12 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.number     : testisWindowSupportWideGamutCallBack_static_0115
-     * @tc.name       : testisWindowSupportWideGamutCallBack_static_0115
-     * @tc.desc       : testisWindowSupportWideGamutCallBack_static_0115
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testisWindowSupportWideGamutCallBack_static_0115
+     * @tc.name         testisWindowSupportWideGamutCallBack_static_0115
+     * @tc.desc         testisWindowSupportWideGamutCallBack_static_0115
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testisWindowSupportWideGamutCallBack_static_0115",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -432,12 +432,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testisWindowSupportWideGamutPromise_static_0116
-     * @tc.name       : testisWindowSupportWideGamutPromise_static_0116
-     * @tc.desc       : testisWindowSupportWideGamutPromise_static_0116
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testisWindowSupportWideGamutPromise_static_0116
+     * @tc.name         testisWindowSupportWideGamutPromise_static_0116
+     * @tc.desc         testisWindowSupportWideGamutPromise_static_0116
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testisWindowSupportWideGamutPromise_static_0116",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -453,12 +453,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testsetWindowSystemBarPropertiesSync_static_0117
-     * @tc.name       : testsetWindowSystemBarPropertiesSync_static_0117
-     * @tc.desc       : testsetWindowSystemBarPropertiesSync_static_0117
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testsetWindowSystemBarPropertiesSync_static_0117
+     * @tc.name         testsetWindowSystemBarPropertiesSync_static_0117
+     * @tc.desc         testsetWindowSystemBarPropertiesSync_static_0117
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testsetWindowSystemBarPropertiesSync_static_0117",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -480,12 +480,12 @@ export default function abilityTest() {
         done();
       })
     /**
-     * @tc.number     : testSetWindowSystemBarPropertiesPromise_static_0129
-     * @tc.name       : testSetWindowSystemBarPropertiesPromise_static_0129
-     * @tc.desc       : testSetWindowSystemBarPropertiesPromise_static_0129
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testSetWindowSystemBarPropertiesPromise_static_0129
+     * @tc.name         testSetWindowSystemBarPropertiesPromise_static_0129
+     * @tc.desc         testSetWindowSystemBarPropertiesPromise_static_0129
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testSetWindowSystemBarPropertiesPromise_static_0129",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -512,12 +512,12 @@ export default function abilityTest() {
         done();
       });
     /**
-     * @tc.number     : testSetWindowLayoutFullScreenPromise_static_0130
-     * @tc.name       : testSetWindowLayoutFullScreenPromise_static_0130
-     * @tc.desc       : testSetWindowLayoutFullScreenPromise_static_0130
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testSetWindowLayoutFullScreenPromise_static_0130
+     * @tc.name         testSetWindowLayoutFullScreenPromise_static_0130
+     * @tc.desc         testSetWindowLayoutFullScreenPromise_static_0130
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testSetWindowLayoutFullScreenPromise_static_0130",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -538,12 +538,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : testSetImmersiveModeEnabledStateSync_static_0131
-     * @tc.name       : testSetImmersiveModeEnabledStateSync_static_0131
-     * @tc.desc       : testSetImmersiveModeEnabledStateSync_static_0131
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       testSetImmersiveModeEnabledStateSync_static_0131
+     * @tc.name         testSetImmersiveModeEnabledStateSync_static_0131
+     * @tc.desc         testSetImmersiveModeEnabledStateSync_static_0131
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("testSetImmersiveModeEnabledStateSync_static_0131",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -561,12 +561,12 @@ export default function abilityTest() {
         }
       });
     /**
-     * @tc.number     : onOffWindowStatusChangeTest_static_0132
-     * @tc.name       : onOffWindowStatusChangeTest_static_0132
-     * @tc.desc       : onOffWindowStatusChangeTest_static_0132
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffWindowStatusChangeTest_static_0132
+     * @tc.name         onOffWindowStatusChangeTest_static_0132
+     * @tc.desc         onOffWindowStatusChangeTest_static_0132
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffWindowStatusChangeTest_static_0132",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -606,12 +606,12 @@ export default function abilityTest() {
         done();
       });
     /**
-     * @tc.number     : onOffWindowSizeChangeTest_static_0133
-     * @tc.name       : onOffWindowSizeChangeTest_static_0133
-     * @tc.desc       : onOffWindowSizeChangeTest_static_0133
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffWindowSizeChangeTest_static_0133
+     * @tc.name         onOffWindowSizeChangeTest_static_0133
+     * @tc.desc         onOffWindowSizeChangeTest_static_0133
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffWindowSizeChangeTest_static_0133",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -641,12 +641,12 @@ export default function abilityTest() {
         done();
       });
         /**
-     * @tc.number     : onOffWindowRectChangeTest_static_0134
-     * @tc.name       : onOffWindowRectChangeTest_static_0134
-     * @tc.desc       : onOffWindowRectChangeTest_static_0134
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffWindowRectChangeTest_static_0134
+     * @tc.name         onOffWindowRectChangeTest_static_0134
+     * @tc.desc         onOffWindowRectChangeTest_static_0134
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffWindowRectChangeTest_static_0134",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -690,12 +690,12 @@ export default function abilityTest() {
 
     // 2. windowEvent监听测试
     /**
-     * @tc.number     : onOffWindowEventTest_static_0135
-     * @tc.name       : onOffWindowEventTest_static_0135
-     * @tc.desc       : onOffWindowEventTest_static_0135
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffWindowEventTest_static_0135
+     * @tc.name         onOffWindowEventTest_static_0135
+     * @tc.desc         onOffWindowEventTest_static_0135
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffWindowEventTest_static_0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -724,12 +724,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : onOffDialogTargetTouchTest_static_0136
-     * @tc.name       : onOffDialogTargetTouchTest_static_0136
-     * @tc.desc       : onOffDialogTargetTouchTest_static_0136
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffDialogTargetTouchTest_static_0136
+     * @tc.name         onOffDialogTargetTouchTest_static_0136
+     * @tc.desc         onOffDialogTargetTouchTest_static_0136
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffDialogTargetTouchTest_static_0136",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -759,12 +759,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : onOffTouchOutsideTest_static_0137
-     * @tc.name       : onOffTouchOutsideTest_static_0137
-     * @tc.desc       : onOffTouchOutsideTest_static_0137
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffTouchOutsideTest_static_0137
+     * @tc.name         onOffTouchOutsideTest_static_0137
+     * @tc.desc         onOffTouchOutsideTest_static_0137
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffTouchOutsideTest_static_0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -792,12 +792,12 @@ export default function abilityTest() {
         done();
       });
 /**
-     * @tc.number     : onOffNoInteractionDetectedTest_static_0138
-     * @tc.name       : onOffNoInteractionDetectedTest_static_0138
-     * @tc.desc       : onOffNoInteractionDetectedTest_static_0138
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       onOffNoInteractionDetectedTest_static_0138
+     * @tc.name         onOffNoInteractionDetectedTest_static_0138
+     * @tc.desc         onOffNoInteractionDetectedTest_static_0138
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("onOffNoInteractionDetectedTest_static_0138",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -832,12 +832,12 @@ export default function abilityTest() {
       });
     
     /**
-     * @tc.number     : getWindowAvoidAreaTest_static_0140
-     * @tc.name       : getWindowAvoidAreaTest_static_0140
-     * @tc.desc       : getWindowAvoidAreaTest_static_0140
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getWindowAvoidAreaTest_static_0140
+     * @tc.name         getWindowAvoidAreaTest_static_0140
+     * @tc.desc         getWindowAvoidAreaTest_static_0140
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getWindowAvoidAreaTest_static_0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -853,12 +853,12 @@ export default function abilityTest() {
         done();
       });
     /**
-     * @tc.number     : recoverTestPromise_static_0141
-     * @tc.name       : recoverTestPromise_static_0141
-     * @tc.desc       : recoverTestPromise_static_0141
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       recoverTestPromise_static_0141
+     * @tc.name         recoverTestPromise_static_0141
+     * @tc.desc         recoverTestPromise_static_0141
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("recoverTestPromise_static_0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -883,12 +883,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : recoverTestSync_static_0142
-     * @tc.name       : recoverTestSync_static_0142
-     * @tc.desc       : recoverTestSync_static_0142
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       recoverTestSync_static_0142
+     * @tc.name         recoverTestSync_static_0142
+     * @tc.desc         recoverTestSync_static_0142
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("recoverTestSync_static_0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -904,12 +904,12 @@ export default function abilityTest() {
 
     // setWindowColorSpaceTest
     /**
-     * @tc.number     : setWindowColorSpaceCallbackTest_static_0143
-     * @tc.name       : setWindowColorSpaceCallbackTest_static_0143
-     * @tc.desc       : setWindowColorSpaceCallbackTest_static_0143
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       setWindowColorSpaceCallbackTest_static_0143
+     * @tc.name         setWindowColorSpaceCallbackTest_static_0143
+     * @tc.desc         setWindowColorSpaceCallbackTest_static_0143
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("setWindowColorSpaceCallbackTest_static_0143",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -928,12 +928,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : setWindowColorSpacePromiseTest_static_0144
-     * @tc.name       : setWindowColorSpacePromiseTest_static_0144
-     * @tc.desc       : setWindowColorSpacePromiseTest_static_0144
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       setWindowColorSpacePromiseTest_static_0144
+     * @tc.name         setWindowColorSpacePromiseTest_static_0144
+     * @tc.desc         setWindowColorSpacePromiseTest_static_0144
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("setWindowColorSpacePromiseTest_static_0144",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -953,12 +953,12 @@ export default function abilityTest() {
 
     // setPreferredOrientationTest
     /**
-     * @tc.number     : setPreferredOrientationCallbackTest_static_0145
-     * @tc.name       : setPreferredOrientationCallbackTest_static_0145
-     * @tc.desc       : setPreferredOrientationCallbackTest_static_0145
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       setPreferredOrientationCallbackTest_static_0145
+     * @tc.name         setPreferredOrientationCallbackTest_static_0145
+     * @tc.desc         setPreferredOrientationCallbackTest_static_0145
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("setPreferredOrientationCallbackTest_static_0145",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -978,12 +978,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : setPreferredOrientationPromiseTest_static_0146
-     * @tc.name       : setPreferredOrientationPromiseTest_static_0146
-     * @tc.desc       : setPreferredOrientationPromiseTest_static_0146
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       setPreferredOrientationPromiseTest_static_0146
+     * @tc.name         setPreferredOrientationPromiseTest_static_0146
+     * @tc.desc         setPreferredOrientationPromiseTest_static_0146
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("setPreferredOrientationPromiseTest_static_0146",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1003,12 +1003,12 @@ export default function abilityTest() {
 
     // setWindowPrivacyModeTest
     /**
-     * @tc.number     : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
-     * @tc.name       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
-     * @tc.desc       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.name         setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.desc         setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("setWindowPrivacyModeCallbackAndPromiseTest_static_0147",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1037,12 +1037,12 @@ export default function abilityTest() {
 
     // display
     /**
-     * @tc.number     : isFoldableTest_static_0149
-     * @tc.name       : isFoldableTest_static_0149
-     * @tc.desc       : isFoldableTest_static_0149
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       isFoldableTest_static_0149
+     * @tc.name         isFoldableTest_static_0149
+     * @tc.desc         isFoldableTest_static_0149
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("isFoldableTest_static_0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1058,12 +1058,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : getFoldStatusTest_static_0150
-     * @tc.name       : getFoldStatusTest_static_0150
-     * @tc.desc       : getFoldStatusTest_static_0150
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getFoldStatusTest_static_0150
+     * @tc.name         getFoldStatusTest_static_0150
+     * @tc.desc         getFoldStatusTest_static_0150
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getFoldStatusTest_static_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1079,12 +1079,12 @@ export default function abilityTest() {
         }
       });
     /**
-     * @tc.number     : getGlobalRectTest_static_0151
-     * @tc.name       : getGlobalRectTest_static_0151
-     * @tc.desc       : getGlobalRectTest_static_0151
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getGlobalRectTest_static_0151
+     * @tc.name         getGlobalRectTest_static_0151
+     * @tc.desc         getGlobalRectTest_static_0151
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getGlobalRectTest_static_0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1107,12 +1107,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number     : getFoldDisplayModeTest_static_0152
-     * @tc.name       : getFoldDisplayModeTest_static_0152
-     * @tc.desc       : getFoldDisplayModeTest_static_0152
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getFoldDisplayModeTest_static_0152
+     * @tc.name         getFoldDisplayModeTest_static_0152
+     * @tc.desc         getFoldDisplayModeTest_static_0152
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getFoldDisplayModeTest_static_0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1129,12 +1129,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : getCurrentFoldCreaseRegionTest_static_0153
-     * @tc.name       : getCurrentFoldCreaseRegionTest_static_0153
-     * @tc.desc       : getCurrentFoldCreaseRegionTest_static_0153
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getCurrentFoldCreaseRegionTest_static_0153
+     * @tc.name         getCurrentFoldCreaseRegionTest_static_0153
+     * @tc.desc         getCurrentFoldCreaseRegionTest_static_0153
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getCurrentFoldCreaseRegionTest_static_0153",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1152,12 +1152,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : getDefaultDisplaySyncTest_static_0154
-     * @tc.name       : getDefaultDisplaySyncTest_static_0154
-     * @tc.desc       : getDefaultDisplaySyncTest_static_0154
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getDefaultDisplaySyncTest_static_0154
+     * @tc.name         getDefaultDisplaySyncTest_static_0154
+     * @tc.desc         getDefaultDisplaySyncTest_static_0154
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getDefaultDisplaySyncTest_static_0154",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1174,12 +1174,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : getDisplayByIdSyncTest_static_0155
-     * @tc.name       : getDisplayByIdSyncTest_static_0155
-     * @tc.desc       : getDisplayByIdSyncTest_static_0155
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getDisplayByIdSyncTest_static_0155
+     * @tc.name         getDisplayByIdSyncTest_static_0155
+     * @tc.desc         getDisplayByIdSyncTest_static_0155
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getDisplayByIdSyncTest_static_0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1197,12 +1197,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number     : getAllDisplaysCallbackTest_static_0156
-     * @tc.name       : getAllDisplaysCallbackTest_static_0156
-     * @tc.desc       : getAllDisplaysCallbackTest_static_0156
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       getAllDisplaysCallbackTest_static_0156
+     * @tc.name         getAllDisplaysCallbackTest_static_0156
+     * @tc.desc         getAllDisplaysCallbackTest_static_0156
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("getAllDisplaysCallbackTest_static_0156",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1228,12 +1228,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : displayAddListenerTest_static_0157
-     * @tc.name       : displayAddListenerTest_static_0157
-     * @tc.desc       : displayAddListenerTest_static_0157
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       displayAddListenerTest_static_0157
+     * @tc.name         displayAddListenerTest_static_0157
+     * @tc.desc         displayAddListenerTest_static_0157
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("displayAddListenerTest_static_0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1253,12 +1253,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number     : keyboardHeightChange_static_0158
-     * @tc.name       : keyboardHeightChange_static_0158
-     * @tc.desc       : keyboardHeightChange_static_0158
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       keyboardHeightChange_static_0158
+     * @tc.name         keyboardHeightChange_static_0158
+     * @tc.desc         keyboardHeightChange_static_0158
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("keyboardHeightChange_static_0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let callback: Callback<int> = (data: int): void => {
@@ -1278,12 +1278,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : keyboardDidShow_static_0159
-     * @tc.name       : keyboardDidShow_static_0159
-     * @tc.desc       : keyboardDidShow_static_0159
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       keyboardDidShow_static_0159
+     * @tc.name         keyboardDidShow_static_0159
+     * @tc.desc         keyboardDidShow_static_0159
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("keyboardDidShow_static_0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let callback: Callback<window.KeyboardInfo> = (data: window.KeyboardInfo): void => {
@@ -1310,12 +1310,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : keyboardDidHide_static_0160
-     * @tc.name       : keyboardDidHide_static_0160
-     * @tc.desc       : keyboardDidHide_static_0160
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number       keyboardDidHide_static_0160
+     * @tc.name         keyboardDidHide_static_0160
+     * @tc.desc         keyboardDidHide_static_0160
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it("keyboardDidHide_static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let callback: Callback<window.KeyboardInfo> = (data: window.KeyboardInfo): void => {
