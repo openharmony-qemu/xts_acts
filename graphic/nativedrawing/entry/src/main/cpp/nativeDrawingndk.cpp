@@ -1603,6 +1603,7 @@ static napi_value OHDrawingCreateTextStyleMnormal(napi_env env, napi_callback_in
 
 static napi_value OHDrawingCreateTextStyleNnormal(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
     if (txtStyle == nullptr) {
         OH_Drawing_DestroyTextStyle(txtStyle);
@@ -1612,7 +1613,6 @@ static napi_value OHDrawingCreateTextStyleNnormal(napi_env env, napi_callback_in
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_UNDERLINE);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
-    napi_value result = nullptr;
     if (txtStyle != nullptr) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -1674,6 +1674,7 @@ static napi_value OHDrawingCreateTextStyleQnormal(napi_env env, napi_callback_in
 
 static napi_value OHDrawingCreateTextStyleRnormal(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
     if (txtStyle == nullptr) {
         OH_Drawing_DestroyTextStyle(txtStyle);
@@ -1683,7 +1684,6 @@ static napi_value OHDrawingCreateTextStyleRnormal(napi_env env, napi_callback_in
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_OVERLINE);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
-    napi_value result = nullptr;
     if (txtStyle != nullptr) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -1711,6 +1711,7 @@ static napi_value OHDrawingCreateTextStyleSnormal(napi_env env, napi_callback_in
 
 static napi_value OHDrawingCreateTextStyleTnormal(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
     if (txtStyle == nullptr) {
         OH_Drawing_DestroyTextStyle(txtStyle);
@@ -1720,7 +1721,6 @@ static napi_value OHDrawingCreateTextStyleTnormal(napi_env env, napi_callback_in
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_LINE_THROUGH);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
-    napi_value result = nullptr;
     if (txtStyle != nullptr) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
