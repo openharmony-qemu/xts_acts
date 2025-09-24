@@ -31,7 +31,7 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function observerManagerCallStateTest() {
   describe('ObserverManagerCallStateTest', () => {
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0100
      * @tc.name  : testTelephonyObserverCallStateChangeOff0100
      * @tc.desc  : Unsubscribe to call status change event.
@@ -69,7 +69,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0200
      * @tc.name  : testTelephonyObserverCallStateChangeOff0200
      * @tc.desc  : Unsubscribe to call status change event
@@ -108,7 +108,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0400
      * @tc.name  : testTelephonyObserverCallStateChangeOff0400
      * @tc.desc  : Unsubscribe to call status change event
@@ -148,7 +148,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0500
      * @tc.name  : testTelephonyObserverCallStateChangeOn0500
      * @tc.desc  : Unsubscribe to call status change event
@@ -172,7 +172,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0600
      * @tc.name  : testTelephonyObserverCallStateChangeOn0600
      * @tc.desc  : Unsubscribe to call status change event
@@ -199,7 +199,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
      * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0700
      * @tc.name  : testTelephonyObserverCallStateChangeOff0700
      * @tc.desc  : Unsubscribe to call status change event
@@ -223,7 +223,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0100
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0100
     * @tc.desc  : Subscribe to call status change event
@@ -252,7 +252,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0200
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0200
     * @tc.desc  : Subscribe to call status change event
@@ -281,7 +281,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0300
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0300
     * @tc.desc  : Subscribe to call status change event
@@ -310,7 +310,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0400
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0400
     * @tc.desc  : Subscribe to call status change event
@@ -339,7 +339,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0500
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0500
     * @tc.desc  : Subscribe to call status change event
@@ -368,7 +368,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0600
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0600
     * @tc.desc  : Subscribe to call status change event
@@ -397,7 +397,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0700
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0700
     * @tc.desc  : Subscribe to call status change event
@@ -423,7 +423,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0800
     * @tc.name  : testTelephonyObserverCallStateChangeExOn0800
     * @tc.desc  : Subscribe to call status change event
@@ -449,7 +449,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0100
     * @tc.name  : testTelephonyObserverCallStateChangeExOff0100
     * @tc.desc  : Unsubscribe to call status change event
@@ -477,7 +477,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0200
     * @tc.name  : testTelephonyObserverCallStateChangeExOff0200
     * @tc.desc  : Unsubscribe to call status change event
@@ -506,7 +506,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0300
     * @tc.name  : testTelephonyObserverCallStateChangeExOff0300
     * @tc.desc  : Unsubscribe to call status change event
@@ -534,7 +534,7 @@ export default function observerManagerCallStateTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
+    /**
     * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0400
     * @tc.name  : testTelephonyObserverCallStateChangeExOff0400
     * @tc.desc  : Unsubscribe to call status change event
