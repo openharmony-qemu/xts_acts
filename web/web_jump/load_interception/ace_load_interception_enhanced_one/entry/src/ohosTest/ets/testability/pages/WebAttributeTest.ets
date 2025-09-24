@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,27 +16,8 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-import cert from '@ohos.security.cert';
-
-function Uint8ArrayToString(dataArray: Uint8Array) {
-  let dataString = ''
-  for (let i = 0; i < dataArray.length; i++) {
-    dataString += String.fromCharCode(dataArray[i])
-  }
-  return dataString
-}
-
-function ParseX509CertInfo(x509CertArray: Array<cert.X509Cert>) {
-  let res: string = 'getCertificate success: len = ' + x509CertArray.length;
-  for (let i = 0; i < x509CertArray.length; i++) {
-    res += ', index = ' + i + ', issuer name = '
-      + Uint8ArrayToString(x509CertArray[i].getIssuerName().data) + ', subject name = '
-      + Uint8ArrayToString(x509CertArray[i].getSubjectName().data) + ', valid start = '
-      + x509CertArray[i].getNotBeforeTime()
-      + ', valid end = ' + x509CertArray[i].getNotAfterTime()
-  }
-  return res
-}
+import { waitForExist } from '../../test/WaitTest.test';
+import { CommonConstants } from '../../test/Constant.test'
 
 @Entry
 @Component
@@ -44,46 +25,23 @@ struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State initialScale: number = 100
-  @State newScale: number = 0
-  @State oldScale: number = 0
   @State geolocationAccess: boolean = true
   @State blockNetwork: boolean = false
-  @State progress: string = ""
-  @State geoShow: boolean = false
-  @State pageBegin: string = ""
-  @State pageEnd: string = ""
-  @State alert: string = ""
-  @State confirm: string = ""
-  @State prompt: string = ""
   @State errorReceive: string = ""
-  @State isHttpErrorReceive: boolean = false
-  @State isLargeThan: boolean = false
-  @State httpErrorReceive: number = 0
-  @State isDownloadStart: boolean = false
-  @State newUrl: string = ""
-  @State isRefreshed: boolean = false
-  @State loadedUrl: string = ""
-  @State webInit: boolean = false
-  @State webCreated: boolean = false
-  @State searchResultCount: number = -1
-  @State onInterceptKeyEventCode: number = 0;
-  @State onFaviconReceivedCalled: boolean = false
-  @State outputStr: string = ''
-  @State handleCancel: boolean = false;
-  @State title: string = ''
-  @State onRequestSelectedCalled: boolean = false
-  @State testConsole: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isRequestErr: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 134350,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(134350)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -92,12 +50,8 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        try {
-          this.controller.loadUrl("resource://rawfile/index.html");
-        } catch (error) {
-          console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-        }
-        this.errorReceive = ''
+        this.isReceive = 0;
+        this.errorReceive = '';
       }
     }
   }
@@ -115,17 +69,24 @@ struct WebAttributeTest {
             console.log("onBlur==>")
           })
           .onClick(async () => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             console.info("key==>" + this.str)
             switch (this.str) {
               case "emitBlockNetWork001": {
                 try {
                   this.blockNetwork = true
-                  await Utils.sleep(1000)
-                  this.controller.loadUrl('https://openharmony.cn/')
-                  await Utils.sleep(2000)
-                  this.blockNetwork = false
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(this.errorReceive, 60418)
+
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.isRequestErr = -1;
+                  this.controller.loadUrl(CommonConstants.EXAMPLE_URL)
+                  await waitForExist(() => this.isRequestErr, this.str, 0);
+
+                  Utils.emitEvent(this.errorReceive, 134360)
                   break;
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -135,12 +96,18 @@ struct WebAttributeTest {
               case "emitBlockNetWork002": {
                 try {
                   this.blockNetwork = false;
-                  await Utils.sleep(1000)
-                  this.controller.loadUrl('https://openharmony.cn/');
-                  await Utils.sleep(4000)
+
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('index.html'));
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl(CommonConstants.EXAMPLE_URL)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
                   let testTitle = this.controller.getTitle();
                   console.log(`testTitle is: ${testTitle}`);
-                  Utils.emitEvent(testTitle, 60420)
+                  Utils.emitEvent(this.errorReceive, 134370)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -149,13 +116,16 @@ struct WebAttributeTest {
               case "emitBlockNetWork003": {
                 try {
                   this.blockNetwork = true
-                  await Utils.sleep(1000)
-                  this.errorReceive = ''
+
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('index.html'));
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('second.html'))
-                  await Utils.sleep(2000)
-                  this.blockNetwork = false
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(this.errorReceive, 60800)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  Utils.emitEvent(this.errorReceive, 134380)
                   break;
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -165,12 +135,15 @@ struct WebAttributeTest {
               case "emitBlockNetWork004": {
                 try {
                   this.blockNetwork = true
-                  await Utils.sleep(1000)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('index.html'));
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/index.html')
-                  await Utils.sleep(2000)
-                  this.blockNetwork = false
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(this.errorReceive, 60802)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  Utils.emitEvent(this.errorReceive, 134390)
                   break;
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -181,12 +154,16 @@ struct WebAttributeTest {
                 try {
                   let sandboxPath = Utils.copyRawFileToSandbox('second.html')
                   this.blockNetwork = true
-                  await Utils.sleep(1000)
+
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('index.html'));
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.isPageEnd = -1;
                   this.controller.loadUrl(`file://${sandboxPath}`)
-                  await Utils.sleep(2000)
-                  this.blockNetwork = false
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(this.errorReceive, 60805)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  Utils.emitEvent(this.errorReceive, 134400)
                   break;
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -212,23 +189,13 @@ struct WebAttributeTest {
           .onErrorReceive((event) => {
             console.log("onErrorReceive==>")
             if (event) {
+              this.isRequestErr = 0;
               this.errorReceive = event.request.getRequestUrl()
-              console.log('getErrorInfo:' + event.error.getErrorInfo())
-              console.log('getErrorCode:' + event.error.getErrorCode())
-              console.log('url:' + event.request.getRequestUrl())
-              console.log('isMainFrame:' + event.request.isMainFrame())
-              console.log('isRedirect:' + event.request.isRedirect())
-              console.log('isRequestGesture:' + event.request.isRequestGesture())
-              console.log('getRequestHeader_headerKey:' + event.request.getRequestHeader().toString())
-              let result = event.request.getRequestHeader()
-              console.log('The request header result size is ' + result.length)
-              for (let i of result) {
-                console.log('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue)
-                if (i.headerKey == 'customHeaderKey' && i.headerValue == 'customHeaderValue') {
-                  Utils.emitEvent(true, 412);
-                }
-              }
             }
+          })
+          .onPageEnd((event) => {
+            console.log('web pageEnd==>' + event.url);
+            this.isPageEnd = 0;
           })
       }
       .width('100%')

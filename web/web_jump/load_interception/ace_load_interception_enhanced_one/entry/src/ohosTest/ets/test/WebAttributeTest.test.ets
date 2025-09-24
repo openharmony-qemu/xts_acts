@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,13 +16,16 @@
 import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { CommonConstants } from './Constant.test'
+import { waitForComponent } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
 export default function webAttributeTest() {
 
   describe('WebAttributeTest', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/WebAttributeTest',
@@ -34,12 +37,12 @@ export default function webAttributeTest() {
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
+      await waitForComponent("WebAttributeTestButton");
       done()
     });
 
@@ -55,11 +58,9 @@ export default function webAttributeTest() {
 
     afterEach(async (done: Function) => {
       console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
       console.info("WebAttributeTest afterEach end");
       done();
     })
-
 
     /*
     * @tc.number      : SUB_WEB_BLOCKNETWORK_0100
@@ -70,9 +71,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 0
     */
     it('testBlockNetWork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitBlockNetWork001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork001", 'https://openharmony.cn/', 60418, done);
+      Utils.emitEvent("emitBlockNetWork001", 134350)
+      Utils.registerEvent("emitBlockNetWork001", CommonConstants.EXAMPLE_URL, 134360, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
@@ -85,9 +85,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testBlockNetWork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitBlockNetWork002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork002", 'OpenAtom OpenHarmony', 60420, done);
+      Utils.emitEvent("emitBlockNetWork002", 134350)
+      Utils.registerEvent("emitBlockNetWork002", '', 134370, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
@@ -100,9 +99,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testBlockNetWork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitBlockNetWork003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork003", '', 60800, done);
+      Utils.emitEvent("emitBlockNetWork003", 134350)
+      Utils.registerEvent("emitBlockNetWork003", '', 134380, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
@@ -115,9 +113,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testBlockNetWork004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitBlockNetWork004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork004", '', 60802, done);
+      Utils.emitEvent("emitBlockNetWork004", 134350)
+      Utils.registerEvent("emitBlockNetWork004", '', 134390, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
@@ -130,9 +127,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testBlockNetWork005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitBlockNetWork005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork005", '', 60805, done);
+      Utils.emitEvent("emitBlockNetWork005", 134350)
+      Utils.registerEvent("emitBlockNetWork005", '', 134400, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
   })
