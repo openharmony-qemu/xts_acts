@@ -121,7 +121,10 @@ struct IfElse0100 {
             .fontSize(9)
             .onClick(() => {
               let rect = this.scroller.getItemRect(this.swipeStartIndex) // Get child components size and position
-              if (!rect) return;
+              if (!rect) {
+                console.error('rect is null');
+                return;
+              }
               this.scroller.scrollToIndex(0); // Slide to the specified index
               this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
             })
@@ -133,7 +136,10 @@ struct IfElse0100 {
             .fontSize(9)
             .onClick(() => {
               let rect = this.scroller.getItemRect(this.swipeStartIndex); // Get child components size and position
-              if (!rect) return;
+              if (!rect) {
+                console.error('rect is null');
+                return;
+              }
               this.scroller.scrollToIndex(this.oneSource.length - 1 + this.twoSource.length -
                 1); // Slide to the specified index
               this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
