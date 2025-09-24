@@ -47,7 +47,7 @@ export default function RowTypeNodeTest() {
       console.info("RowTypeNode after each called");
     });
 
-    /*
+    /**
      * @tc.number    RowTypeNodeTest_0100
      * @tc.name      RowTypeNodeTest_0100
      * @tc.desc      Test RowTypeNode
