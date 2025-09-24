@@ -96,6 +96,7 @@ public:
     Camera_ErrorCode IsWhiteBalanceSupported(int32_t type);
     Camera_ErrorCode RegisterSystemPressureLevel();
     Camera_ErrorCode SessionGetSupportedEffectTypes(int32_t type);
+    Camera_ErrorCode RegisterControlCenterEffectStatusChange();
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;

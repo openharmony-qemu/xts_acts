@@ -697,6 +697,11 @@ static napi_value SessionGetSupportedEffectTypes(napi_env env, napi_callback_inf
     });
 }
 
+static napi_value RegisterControlCenterEffectStatusChange(napi_env env, napi_callback_info info)
+{
+    return ExecuteCameraFunction(env, info, [&]() { return g_ndkCamera->RegisterControlCenterEffectStatusChange(); });
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -732,6 +737,7 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("registerSystemPressureLevel", RegisterSystemPressureLevel),
         DECLARE_NAPI_FUNCTION("sessionGetSupportedEffectTypes", SessionGetSupportedEffectTypes),
         DECLARE_NAPI_FUNCTION("OHCameraFunctionHandle", OHCameraFunctionHandle),
+        DECLARE_NAPI_FUNCTION("registerControlCenterEffectStatusChange", RegisterControlCenterEffectStatusChange),
     };
 
     napi_define_properties(env, exports, desc.size(), desc.data());

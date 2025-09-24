@@ -967,10 +967,29 @@ Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(int32_t type)
     Camera_ErrorCode retGetTypes = OH_CaptureSession_GetSupportedEffectTypes(captureSession_, &effectType, &size);
     if (retGetTypes == CAMERA_OK) {
         if (size != 0 && effectType[0] == checkType) {
-            LogE("SessionGetSupportedEffectTypes is ok.");
+            LogD("SessionGetSupportedEffectTypes is ok.");
         }
         OH_CaptureSession_DeleteSupportedEffectTypes(captureSession_, effectType, size);
         return retGetTypes;
     }
     return ret;
+}
+
+void ControlCenterEffectStatusChange(Camera_CaptureSession* session, Camera_ControlCenterStatusInfo* controlInfo)
+{
+    Camera_ControlCenterStatusInfo checkInfo;
+    checkInfo.effectType = CONTROL_CENTER_EFFECT_TYPE_BEAUTY;
+    checkInfo.isActive = true;
+    if (controlInfo->isActive == checkInfo.isActive) {
+        LogD("SessionGetSupportedEffectTypes is ok.");
+    }
+}
+
+Camera_ErrorCode NDKCamera::RegisterControlCenterEffectStatusChange()
+{
+    if (CAMERA_OK != CreateSession()) {
+        return CAMERA_OK;
+    }
+    return OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallback(captureSession_,
+                                                                             ControlCenterEffectStatusChange);
 }

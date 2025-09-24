@@ -42,3 +42,4 @@ export const isWhiteBalanceSupported: (type: number) => number;
 export const registerSystemPressureLevel: () => number;
 export const sessionGetSupportedEffectTypes: (type: number) => number;
 export const OHCameraFunctionHandle: (fun: string, caseCode: number) => number;
+export const registerControlCenterEffectStatusChange: () => number;
