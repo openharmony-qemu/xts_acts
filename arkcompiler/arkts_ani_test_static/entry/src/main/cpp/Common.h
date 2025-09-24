@@ -23,7 +23,8 @@
 #include "hilog/log.h"
 #include <iconv.h>
 #include <cstring>
-#include <string>
+#include <codecvt>
+#include <locale>
 
 const uint32_t ANI_RES_INVALID_ARGS = 2;
 const uint32_t ANI_RES_INVALID_TYPE = 3;
