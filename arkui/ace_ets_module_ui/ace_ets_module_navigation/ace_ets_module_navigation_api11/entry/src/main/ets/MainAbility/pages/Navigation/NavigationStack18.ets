@@ -74,19 +74,20 @@ struct NavigationStack18 {
           .key('NavigationStack18True')
           .onClick(() => {
             this.bool = true
-          })
+          }).height('5%')
         Button('展开导航栏')
           .key('NavigationStack18False')
           .onClick(() => {
             this.bool = false
-          })
+          }).height('5%')
         Button('get').id('NavigationStack18get')
           .onClick(() => {
             this.getText = JSON.stringify(this.pageInfos.getAllPathName()?.length)
-          })
+          }).height('5%')
       }
       .border({width:1})
       .width('100%')
+      .height('85%')
     }
   }
 }
