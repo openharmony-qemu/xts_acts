@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+//import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitGetWebId";
@@ -28,28 +30,8 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      await waitForComponent("webcomponent");
       done();
     })
     /*
@@ -58,8 +40,8 @@ export default function webJsunit() {
      *tc.desic Gets the id for the current Web
      */
     it('getWebId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnTitleReceive";
-      Utils.registerEvent("getWebId", "webId", 120, done);
+      Utils.emitEvent("emitGetWebId", 151290)
+      Utils.registerEvent("getWebId", "webId", 151300, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /*
@@ -68,8 +50,8 @@ export default function webJsunit() {
      *tc.desic Triggered when the title of the main application document changes
      */
     it('onTitleReceive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebVisibility";
-      Utils.registerEvent("onTitleReceive", "index", 67, done);
+      Utils.emitEvent("emitOnTitleReceive", 151290)
+      Utils.registerEvent("onTitleReceive", "index", 151310, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /*
@@ -78,8 +60,8 @@ export default function webJsunit() {
      *tc.desic Web Visibility test
      */
     it('webVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetWebIdTwo";
-      Utils.registerEvent("webVisibility", 0, 90, done);
+      Utils.emitEvent("emitWebVisibility", 151290)
+      Utils.registerEvent("webVisibility", 0, 151320, done);
       sendEventByKey('webcomponent', 10, '');
     })
   })

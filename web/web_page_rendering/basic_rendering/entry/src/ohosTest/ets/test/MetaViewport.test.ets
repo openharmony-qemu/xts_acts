@@ -17,6 +17,8 @@ import Utils from './Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function MetaViewport() {
@@ -33,21 +35,20 @@ export default function MetaViewport() {
         if (!("MetaViewport" == pages.name)) {
           console.info("get MetaViewport state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push MetaViewport page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push MetaViewport page error: " + err);
       }
+      await waitForComponent("MetaViewport");
       done()
     });
     beforeEach(async (done: Function) => {
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      await config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,14 +62,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0100", true, 3701, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0100", 150290)
+      Utils.registerEvent("metaViewport0100", true, 150300, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -80,14 +76,10 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0200", true, 3702, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0200", 150290)
+      Utils.registerEvent("metaViewport0200", true, 150310, done);
+      waitAndClickComponent("MetaViewport",driver);
+
     })
 
     /*
@@ -99,14 +91,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0300", true, 3703, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0300", 150290)
+      Utils.registerEvent("metaViewport0300", true, 150320, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -118,14 +105,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0400", true, 3704, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0400", 150290)
+      Utils.registerEvent("metaViewport0400", true, 150330, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -136,34 +118,25 @@ export default function MetaViewport() {
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('metaViewport0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0500", true, 3705, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+   it('metaViewport0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("metaViewport0500", 150290)
+      Utils.registerEvent("metaViewport0500", true, 150340, done);
+     waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
     * @tc.number     : Acts_metaViewport_0600
     * @tc.name       : testMetaViewport006
+    *
     * @tc.desc       : test MetaViewport
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
     it('metaViewport0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0600", true, 3706, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0600", 150290)
+      Utils.registerEvent("metaViewport0600", true, 150350, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -175,14 +148,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0700", true, 3707, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0700", 150290)
+      Utils.registerEvent("metaViewport0700", true, 150360, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -194,14 +162,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0800", true, 3708, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0800", 150290)
+      Utils.registerEvent("metaViewport0800", true, 150370, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -213,14 +176,9 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport0900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport0900", true, 3709, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport0900", 150290)
+      Utils.registerEvent("metaViewport0900", true, 150380, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /*
@@ -232,14 +190,10 @@ export default function MetaViewport() {
     * @tc.level      : Level 2
     */
     it('metaViewport1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("metaViewport1000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("metaViewport1000", true, 3710, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("MetaViewport"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("metaViewport1000", 150290)
+      Utils.registerEvent("metaViewport1000", true, 150390, done);
+      waitAndClickComponent("MetaViewport",driver);
     })
   })
 }
+
