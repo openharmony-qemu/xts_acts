@@ -28,18 +28,19 @@ struct WebArkWebHttpBodyStream {
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State isEnd: number = -1
 
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 709,
+      eventId: 147101,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(709)
+    events_emitter.off(147101)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -89,7 +90,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_SetAsyncReadCallback001_requestStop', 1, 1000)
                   let setAsyncReadCallback:number = testNapi.setAsyncReadCallback()
                   console.info('setAsyncReadCallback:' + String(setAsyncReadCallback))
-                  Utils.emitEvent(setAsyncReadCallback,2025070901)
+                  Utils.emitEvent(setAsyncReadCallback,147100)
                   break
                 }
                 case 'ArkWebHttpBodyStreamAsyncReadCallback001': {
@@ -107,7 +108,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'ArkWebHttpBodyStreamAsyncReadCallback001_requestStop', 1, 1000)
                   let asyncReadCallback:number = testNapi.asyncReadCallback()
                   console.info('asyncReadCallback:' + String(asyncReadCallback))
-                  Utils.emitEvent(asyncReadCallback,2025070902)
+                  Utils.emitEvent(asyncReadCallback,147110)
                   break
                 }
                 case 'ArkWebHttpBodyStreamAsyncReadCallback002': {
@@ -125,7 +126,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'ArkWebHttpBodyStreamAsyncReadCallback002_requestStop', 1, 1000)
                   let asyncReadMore:number = testNapi.asyncReadMore()
                   console.info('asyncReadMore:' + String(asyncReadMore))
-                  Utils.emitEvent(asyncReadMore,2025070903)
+                  Utils.emitEvent(asyncReadMore,147120)
                   break
                 }
                 case 'ArkWebHttpBodyStreamAsyncReadCallback003': {
@@ -143,7 +144,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'ArkWebHttpBodyStreamAsyncReadCallback003_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070904)
+                  Utils.emitEvent(readBufferValue,147130)
                   break
                 }
                 case 'ArkWebHttpBodyStreamAsyncReadCallback004': {
@@ -161,7 +162,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'ArkWebHttpBodyStreamAsyncReadCallback004_requestStop', 1, 1000)
                   let asyncReadMore:number = testNapi.asyncReadMore()
                   console.info('asyncReadMore:' + String(asyncReadMore))
-                  Utils.emitEvent(asyncReadMore,2025070905)
+                  Utils.emitEvent(asyncReadMore,147140)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead001': {
@@ -179,7 +180,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead001_requestStop', 1, 1000)
                   let asyncRead:number = testNapi.asyncRead()
                   console.info('asyncRead:' + String(asyncRead))
-                  Utils.emitEvent(asyncRead,2025070906)
+                  Utils.emitEvent(asyncRead,147150)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead002': {
@@ -197,7 +198,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead002_requestStop', 1, 1000)
                   let asyncReadMore:number = testNapi.asyncReadMore()
                   console.info('asyncReadMore:' + String(asyncReadMore))
-                  Utils.emitEvent(asyncReadMore,2025070907)
+                  Utils.emitEvent(asyncReadMore,147160)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead003': {
@@ -215,7 +216,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead003_requestStop', 1, 1000)
                   let threadIdEqual:number = testNapi.threadIdEqual()
                   console.info('asyncReadMore:' + String(threadIdEqual))
-                  Utils.emitEvent(threadIdEqual,2025070908)
+                  Utils.emitEvent(threadIdEqual,147170)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead004': {
@@ -233,7 +234,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead004_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070909)
+                  Utils.emitEvent(readBufferValue,147180)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead005': {
@@ -251,7 +252,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead005_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070910)
+                  Utils.emitEvent(readBufferValue,147190)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead006': {
@@ -274,7 +275,7 @@ struct WebArkWebHttpBodyStream {
                     console.info('readBufferValue endsWith:--\r\n')
                     result = true
                   }
-                  Utils.emitEvent(result,2025070911)
+                  Utils.emitEvent(result,147200)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead007': {
@@ -292,7 +293,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead007_requestStop', 1, 1000)
                   let asyncReadMore:number = testNapi.asyncReadMore()
                   console.info('asyncReadMore:' + String(asyncReadMore))
-                  Utils.emitEvent(asyncReadMore,2025070912)
+                  Utils.emitEvent(asyncReadMore,147210)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead008': {
@@ -310,7 +311,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead008_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070913)
+                  Utils.emitEvent(readBufferValue,147220)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead009': {
@@ -328,7 +329,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead009_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070914)
+                  Utils.emitEvent(readBufferValue,147230)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead010': {
@@ -346,7 +347,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead010_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070915)
+                  Utils.emitEvent(readBufferValue,147240)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead011': {
@@ -364,7 +365,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead011_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070916)
+                  Utils.emitEvent(readBufferValue,147250)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead012': {
@@ -387,7 +388,7 @@ struct WebArkWebHttpBodyStream {
                     console.info('readBufferValue endsWith:--\r\n')
                     result = true
                   }
-                  Utils.emitEvent(result,2025070917)
+                  Utils.emitEvent(result,147260)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead013': {
@@ -405,7 +406,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead013_requestStop', 1, 1000)
                   let asyncReadMore:number = testNapi.asyncReadMore()
                   console.info('asyncReadMore:' + String(asyncReadMore))
-                  Utils.emitEvent(asyncReadMore,2025070918)
+                  Utils.emitEvent(asyncReadMore,147270)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead014': {
@@ -423,7 +424,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead014_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070919)
+                  Utils.emitEvent(readBufferValue,147280)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead015': {
@@ -441,7 +442,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead015_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070920)
+                  Utils.emitEvent(readBufferValue,147290)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead016': {
@@ -459,7 +460,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead0016_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070921)
+                  Utils.emitEvent(readBufferValue,147300)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead017': {
@@ -477,7 +478,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead0017_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070922)
+                  Utils.emitEvent(readBufferValue,147310)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead018': {
@@ -495,7 +496,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead0018_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070923)
+                  Utils.emitEvent(readBufferValue,147320)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead019': {
@@ -526,7 +527,7 @@ struct WebArkWebHttpBodyStream {
                   //获取的是上次执行的结果 : scheme_handler http body stream is nullptr
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070924)
+                  Utils.emitEvent(readBufferValue,147330)
                   break
                 }
                 case 'OH_ArkWebHttpBodyStream_AsyncRead020': {
@@ -544,7 +545,7 @@ struct WebArkWebHttpBodyStream {
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead020_requestStop', 1, 1000)
                   let readBufferValue:string = testNapi.readBufferValue()
                   console.info('readBufferValue:' + readBufferValue)
-                  Utils.emitEvent(readBufferValue,2025070925)
+                  Utils.emitEvent(readBufferValue,147340)
                   break
                 }
 

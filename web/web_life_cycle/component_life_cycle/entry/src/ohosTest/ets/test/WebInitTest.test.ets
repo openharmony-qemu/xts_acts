@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,28 +13,51 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, afterEach, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
+import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-export default function webInitTest() {
+const driver: Driver = Driver.create();
 
+export default function webInitTest() {
   describe('WebInitTest', () => {
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/WebInitTest',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get WebInitTest state success ' + JSON.stringify(pages));
+        if (!('WebInitTest' == pages.name)) {
+          console.info('get WebInitTest state success ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info('push WebInitTest page success ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push WebInitTest page error: ' + err);
+      }
+      await driver.waitForComponent(ON.id('WebInitTestButton'), 10000);
+      done()
+    });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("web beforeEach start");
+      console.info('WebInitTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
+      console.info('WebInitTest afterEach start');
+      console.info('WebInitTest afterEach end');
       done();
     })
 
@@ -47,10 +70,9 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testOnce001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnce001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnce001", true, 409, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent('emitOnce001', 138300)
+      Utils.registerEvent('testOnce001', true, 138310, done);
+      await Utils.waitAndClickComponent(driver, 'WebInitTestButton', 'emitOnce001');
     })
 
     /*
@@ -62,10 +84,9 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testOnce002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnce002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnce002", false, 410, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent('emitOnce002', 138300)
+      Utils.registerEvent('testOnce002', false, 138320, done);
+      await Utils.waitAndClickComponent(driver, 'WebInitTestButton', 'emitOnce002');
     })
   })
 }

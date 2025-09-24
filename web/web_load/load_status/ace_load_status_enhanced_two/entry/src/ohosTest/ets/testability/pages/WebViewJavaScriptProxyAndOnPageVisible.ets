@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
+import { waitForExist } from '../../test/WaitTest.test';
 
 class TestObj {
   constructor() {
@@ -40,19 +41,20 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
   @State sslErrorType: number = -1
   @State zoomCounts: number = 200
   @State fontSize: number = 28
-  @State onPageVisibleCalled: boolean = false
+  @State onPageVisibleCalled: boolean = true
   controller: webView.WebviewController = new webView.WebviewController();
-
+  @State isReceive:number = -1
+  @State isEnd:number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141721,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141721)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,6 +63,7 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -69,12 +72,15 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
     Column() {
       Row() {
         Button("web clicks").key('buttonJavaScriptProxyAndPageVisible').onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitOnPageVisible": {
               this.onPageVisibleCalled = false
-              await Utils.sleep(2000);
+              this.isEnd = -1;
               this.controller.loadUrl("resource://rawfile/icon.html")
+              await waitForExist(()=>this.isEnd, this.str, 0);
               break;
             }
           }
@@ -103,8 +109,10 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
         .onPageVisible((event) => {
           console.log('onPageVisible url:' + event.url)
           if (!this.onPageVisibleCalled) {
-            Utils.emitEvent(event.url + '', 1372)
-            this.onPageVisibleCalled = true
+            if(event.url == "resource://rawfile/icon.html"){
+              Utils.emitEvent(event.url + '', 141780)
+              this.onPageVisibleCalled = true
+            }
           }
         })
         .onSslErrorEventReceive((event) => {
@@ -114,6 +122,9 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
           }
         })
         .overviewModeAccess(false)
+        .onPageEnd(()=>{
+          this.isEnd = 0
+        })
     }
   }
 }

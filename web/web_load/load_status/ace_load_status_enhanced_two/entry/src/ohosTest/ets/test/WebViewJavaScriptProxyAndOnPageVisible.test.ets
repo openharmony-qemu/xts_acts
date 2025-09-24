@@ -17,8 +17,12 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function WebViewJavaScriptProxyAndOnPageVisible() {
 
@@ -34,7 +38,6 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         if (!("WebViewJavaScriptProxyAndOnPageVisible" == pages.name)) {
           console.info("get WebViewJavaScriptProxyAndOnPageVisible state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewJavaScriptProxyAndOnPageVisible page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,7 +51,6 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -63,10 +65,12 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     * @tc.level      : Level 1
     */
     it('testOnPageVisible001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPageVisible", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnPageVisible001", 'resource://rawfile/icon.html', 1372, done);
-      sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
+      Utils.emitEvent("emitOnPageVisible", 141721)
+      let isReturn = false;
+      Utils.registerEvent("testOnPageVisible001", 'resource://rawfile/icon.html', 141780, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("buttonJavaScriptProxyAndPageVisible",driver)
+      await waitForExist(()=>isReturn, "testOnPageVisible001", true,1000);
+      done();
     })
 
   })

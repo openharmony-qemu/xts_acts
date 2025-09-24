@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,17 +13,18 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver: Driver = Driver.create();
 
 export default function webCookieManagerConfigCookie() {
-
   describe('WebCookieManagerConfigCookieTestSuite', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/WebCookieManagerConfigCookie',
@@ -31,33 +32,32 @@ export default function webCookieManagerConfigCookie() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebCookieManagerConfigCookie state success " + JSON.stringify(pages));
-        if (!("WebCookieManagerConfigCookie" == pages.name)) {
-          console.info("get WebCookieManagerConfigCookie state success " + JSON.stringify(pages.name));
+        console.info('get WebCookieManagerConfigCookie state success ' + JSON.stringify(pages));
+        if (!('WebCookieManagerConfigCookie' == pages.name)) {
+          console.info('get WebCookieManagerConfigCookie state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebCookieManagerConfigCookie page success " + JSON.stringify(result));
+          console.info('push WebCookieManagerConfigCookie page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebCookieManagerConfigCookie page error: " + err);
+        console.error('push WebCookieManagerConfigCookie page error: ' + err);
       }
+      await driver.waitForComponent(ON.id('WebCookieManagerConfigCookieTestButton'), 10000);
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebCookieManagerConfigCookie beforeEach start");
+      console.info('WebCookieManagerConfigCookie beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebCookieManagerConfigCookieTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebCookieManagerConfigCookieTestSuite afterEach end");
+      console.info('WebCookieManagerConfigCookieTestSuite afterEach start');
+      console.info('WebCookieManagerConfigCookieTestSuite afterEach end');
       done();
     })
 
@@ -69,12 +69,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnly001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnly001", 'id=123', 2025032201, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnly001', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnly001', 'id=123', 135410, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly001');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0200
@@ -84,12 +84,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnly002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnly002", 'name=alin', 2025032202, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnly002', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnly002', 'name=alin', 135420, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly002');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0300
@@ -99,12 +99,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnly003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnly003", 'age=9', 2025032203, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnly003', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnly003', 'age=9', 135430, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly003');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0400
@@ -114,12 +114,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnly004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnly004", 'city=sh', 2025032204, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnly004', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnly004', 'city=sh', 135440, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly004');
+      })
 
 
     /*
@@ -130,12 +130,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnlyErrorCode005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnlyErrorCode005", 17100002, 2025032205, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnlyErrorCode005', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnlyErrorCode005', 17100002, 135450, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnlyErrorCode005');
+      })
 
 
     /*
@@ -146,12 +146,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieSyncIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncludeHttpOnlyErrorCode006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncludeHttpOnlyErrorCode006", 17100005, 2025032206, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieSyncIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieSyncIncludeHttpOnlyErrorCode006', 135400)
+        Utils.registerEvent('testConfigCookieSyncIncludeHttpOnlyErrorCode006', 17100005, 135460, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnlyErrorCode006');
+      })
 
     /*
        * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0100
@@ -161,12 +161,12 @@ export default function webCookieManagerConfigCookie() {
        * @tc.type       : Function
        * @tc.level      : Level 1
        */
-    it('testConfigCookieIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnly001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnly001", 'id=123', 2025032207, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnly001', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnly001', 'id=123', 135470, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly001');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0200
@@ -176,12 +176,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnly002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnly002", 'name=alin', 2025032208, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnly002', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnly002', 'name=alin', 135480, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly002');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0300
@@ -191,12 +191,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnly003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnly003", 'age=9', 2025032209, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnly003', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnly003', 'age=9', 135490, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly003');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0400
@@ -206,13 +206,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnly004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnly004", 'city=sh', 2025032210, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
-
+    it('testConfigCookieIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnly004', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnly004', 'city=sh', 135500, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly004');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_ERROR_CODE_0500
@@ -222,12 +221,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnlyErrorCode005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnlyErrorCode005", 17100002, 2025032211, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
+    it('testConfigCookieIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnlyErrorCode005', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnlyErrorCode005', 17100002, 135510, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnlyErrorCode005');
+      })
 
 
     /*
@@ -238,13 +237,12 @@ export default function webCookieManagerConfigCookie() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testConfigCookieIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieIncludeHttpOnlyErrorCode006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieIncludeHttpOnlyErrorCode006", 17100005, 2025032212, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
-    })
-
+    it('testConfigCookieIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testConfigCookieIncludeHttpOnlyErrorCode006', 135400)
+        Utils.registerEvent('testConfigCookieIncludeHttpOnlyErrorCode006', 17100005, 135520, done);
+        await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnlyErrorCode006');
+      })
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0100
@@ -255,12 +253,10 @@ export default function webCookieManagerConfigCookie() {
     * @tc.level      : Level 1
     */
     it('testConfigCookieErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieErrorCode001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieErrorCode001", 17100002, 2025032213, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
+      Utils.emitEvent('testConfigCookieErrorCode001', 135400)
+      Utils.registerEvent('testConfigCookieErrorCode001', 17100002, 135530, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieErrorCode001');
     })
-
 
     /*
     * @tc.number     : SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0200
@@ -271,12 +267,9 @@ export default function webCookieManagerConfigCookie() {
     * @tc.level      : Level 1
     */
     it('testConfigCookieErrorCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieErrorCode002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieErrorCode002", 17100005, 2025032214, done);
-      sendEventByKey('WebCookieManagerConfigCookieTestButton', 10, '');
+      Utils.emitEvent('testConfigCookieErrorCode002', 135400)
+      Utils.registerEvent('testConfigCookieErrorCode002', 17100005, 135540, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieErrorCode002');
     })
-
-
   })
 }

@@ -19,7 +19,10 @@ export const CloseAudioCapture: () => number; // 音频捕获器销毁
 export const CloseAudioRender: () => number; // 音频播放器销毁
 export const CreatCapturerRecorderWithParam: (rateValue  :number,channelCount: number,frameSizeValue :number,latencyMode :number,SampleFormat:number) => number; // 录音属性初始化
 export const TestRendererAudioStreamUsage: (usage: number) => number; // 播放流工作场景类型测试  usage取值范围 0-8 10-13
-
+export const DeInitOpenSlesTest: () => number;
+export const InitOpenSlesTest: () => number;
+export const TestOpenSlesRecorder: () => number;
+export const TestOpenSlesRecorderInValid: () => number;
 export const CreatAudioPlayerWithWavFile: (fileIndex: number) => number;
 export  const CreatAudioPlayerWithFileAndParam: (fileIndex: number,rendererInfo:number,channelCount: number,encodingType:number,frameSize:number,framesWritten:number,latencyMode:number,sampleFormat:number,samplingRate:number) => number;
 export const OHAudioStreamBuilderCreate: (a: number) => number; // 初始化builder

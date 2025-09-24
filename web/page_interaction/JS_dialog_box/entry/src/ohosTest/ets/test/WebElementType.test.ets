@@ -19,7 +19,13 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 let emitKey = "WebElementType01";
+
+const EVENT_ID_SET_SUITE_KEY = 177201;
+let driver = Driver.create();
+
 export default function WebElementTypeJsunit() {
   describe('WebElementTypeTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -33,7 +39,7 @@ export default function WebElementTypeJsunit() {
         if (!("WebElementType" == pages.name)) {
           console.info("get WebElementType state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebElementTypeButton"), 10000);
           console.info("push WebElementType page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -42,30 +48,10 @@ export default function WebElementTypeJsunit() {
       done()
     });
     beforeEach(async  (done: Function) =>{
-      await Utils.sleep(2000);
       console.info("WebElementType beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("WebElementType afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
   * @tc.number      : SUB_WEB_WEBELEMENTTYPE_0100
   * @tc.name        : WebElementType01
@@ -75,9 +61,12 @@ export default function WebElementTypeJsunit() {
   * @tc.level       : Level 1
   */
     it('WebElementType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="WebElementType01";
-      Utils.registerEvent("WebElementType01",'WebElementType',20250609,done);
-      sendEventByKey('WebElementTypeButton',10,'');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("WebElementType01", 'WebElementType', 177210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebElementTypeButton", "WebElementType01");
+      await Utils.waitForExist(() => isReturn, "WebElementType01" + '_returnCheck', true, 1000);
+      done();
     })
 
 

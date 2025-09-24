@@ -19,13 +19,14 @@ import testsuite from '../../test/List.test';
 import { waitForExist } from '../../test/WaitTest.test';
 import Utils from '../../test/Utils';
 import { URL } from '../../test/Config.test';
+import { webview } from '@kit.ArkWeb';
 
 let loadedUrl: string;
 
 @Entry
 @Component
 struct Index {
-  controller: WebController = new WebController();
+  controller: webview.WebviewController = new webview.WebviewController();
   @State str: string = 'emitOnPageBegin';
   @State loadedResource: string = '';
   @State progress: string = '';
@@ -61,12 +62,17 @@ struct Index {
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
   @State isComplete: number = -1;
+  @State isReceive: number = -1;
+  @State isEnd: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141321,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+  onPageHide(){
+    events_emitter.off(141321)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -75,6 +81,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -102,34 +109,42 @@ struct Index {
     Column() {
       Row() {
         Button('web click').key('webcomponent').onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0,1000);
+          this.isReceive = -1;
           console.info('key==>' + this.str);
           switch (this.str) {
             case 'emitOnResourceLoad': {
-              this.controller.loadUrl({ url: 'resource://rawfile/second.html' });
-              setTimeout(() => {
-                Utils.emitEvent(this.loadedResource, 108);
-              }, 3000)
+              this.isComplete = -1;
+              this.isEnd = -1;
+              this.controller.loadUrl($rawfile('second.html'))
+              await waitForExist(()=>this.isComplete, 'emitOnResourceLoad',0)
+              await waitForExist(()=>this.isEnd, 'emitOnResourceLoad',0)
+              Utils.emitEvent(this.loadedResource, 141350);
               break;
             }
             case 'emitOnPageBegin': {
+              this.isComplete = -1;
+              this.controller.loadUrl($rawfile('index.html'))
               await waitForExist(()=>this.isComplete, 'emitOnPageBegin',0)
-              Utils.emitEvent(this.pageBegin, 59);
+              Utils.emitEvent(this.pageBegin, 141330);
               break;
             }
             case 'emitOnPageEnd': {
-              Utils.emitEvent(this.pageBegin, 60);
+              this.isComplete = -1;
+              this.controller.loadUrl($rawfile('index.html'))
+              await waitForExist(()=>this.isComplete, 'emitOnPageBegin',0)
+              Utils.emitEvent(this.pageBegin, 141340);
               break;
             }
             case 'emitStop': {
-              this.controller.loadUrl({ url: URL })
+              this.controller.loadUrl('https://www.example.com')
               this.controller.stop()
-              setTimeout(() => {
-                let stopCalled = false;
-                if (this.pageEnd !== URL) {
-                  stopCalled = true;
-                }
-                Utils.emitEvent(stopCalled, 83);
-              }, 3000);
+              await waitForExist(()=>this.isComplete, 'emitStop',0)
+              let stopCalled = false;
+              if (this.pageEnd !== URL) {
+                stopCalled = true;
+              }
+              Utils.emitEvent(stopCalled, 141360);
               break;
             }
             default:
@@ -174,11 +189,6 @@ struct Index {
           methodList: ['test', 'toString'],
           controller: this.controller
         })
-        .onUrlLoadIntercept((event) => {
-          console.info('onUrlLoadIntercept==>' + event?.data);
-          loadedUrl = String(event?.data);
-          return false;
-        })
         .onRenderExited((event) => {
           console.info('onRenderExited==>' + event?.renderExitReason);
           Utils.emitEvent(event.renderExitReason, 106);
@@ -186,6 +196,9 @@ struct Index {
         .onResourceLoad((event) => {
           console.info('onResourceLoad==>' + event.url);
           this.loadedResource = event.url;
+          if(this.loadedResource == "resource://rawfile/second.html"){
+            this.isEnd = 0
+          }
         })
         .onProgressChange((event) => {
           if (this.isProgressFinish) {
@@ -205,16 +218,13 @@ struct Index {
           Utils.emitEvent('requestFocus', 126);
         })
         .onPageBegin((event) => {
+          this.isComplete = -1
           console.log('onPageBegin event.url===>'+event.url)
           this.pageBegin = event.url;
         })
         .onPageEnd((event) => {
           this.pageEnd = event.url;
           console.log('onPageEnd ==>' + event.url);
-          if (this.enterPageEnd) {
-            Utils.emitEvent(this.newScale, 97);
-            this.enterPageEnd = false;
-          }
           this.isComplete = 0
         })
         .onConsole((event) => {

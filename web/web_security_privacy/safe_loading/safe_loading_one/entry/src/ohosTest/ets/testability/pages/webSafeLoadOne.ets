@@ -21,6 +21,7 @@ import web_webview from '@ohos.web.webview';
 import fileio from '@ohos.fileio';
 import prompt from '@system.prompt';
 import cert from '@ohos.security.cert';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 
 
@@ -56,23 +57,22 @@ struct WebSageLoadOne {
   ports: web_webview.WebMessagePort[] | null = null;
   nativePort: web_webview.WebMessagePort | null = null;
   @State webMessResult: string = ''
-  testObj: ESObject = {
-    testOne: (data: ESObject): ESObject => {
-      Utils.emitEvent(data, 13)
-      return data;
-    },
-    toString: () => {
-      console.log('Web Component toString');
-    }
-  };
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
+      eventId: 160790,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
+
+  onPageHide() {
+    events_emitter.off(160790)
+  }
+
 
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info('web page valueChangeCallBack');
@@ -80,6 +80,7 @@ struct WebSageLoadOne {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -102,6 +103,9 @@ struct WebSageLoadOne {
     Column() {
       Row() {
         Button('web click').key('webcomponent').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info('key==>' + this.str);
           switch (this.str) {
             case 'emitSetHttpDnsSuccessAuto': {
@@ -111,6 +115,10 @@ struct WebSageLoadOne {
                 this.enterPageEndAuto = true;
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              if (this.enterPageEndAuto) {
+                Utils.emitEvent(this.controller.getTitle(), 160800);
+                this.enterPageEndAuto = false;
               }
               break;
             }
@@ -122,13 +130,17 @@ struct WebSageLoadOne {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
+              if (this.enterPageEndOff) {
+                Utils.emitEvent(this.controller.getTitle(), 160810);
+                this.enterPageEndOff = false;
+              }
               break;
             }
             case 'emitGetCustomUserAgent': {
               try {
                 let setUA = 'userAgent';
                 this.controller.setCustomUserAgent(setUA);
-                Utils.emitEvent(this.controller.getCustomUserAgent(), 522);
+                Utils.emitEvent(this.controller.getCustomUserAgent(), 160820);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -148,14 +160,6 @@ struct WebSageLoadOne {
           console.log('onDataResubmitted');
           event.handler.resend();
         })
-        .onSearchResultReceive(ret => {
-          let searchResult = ret.activeMatchOrdinal.toString() +
-          ret.numberOfMatches.toString();
-          console.log('searchResult' + searchResult);
-          setTimeout(() => {
-            Utils.emitEvent(searchResult, 16);
-          }, 3000)
-        })
         .onContextMenuShow((event) => {
           console.info(event.param.getMediaType() + event.param.getSelectionText() + event.param.getSourceType());
           console.info(event.param.getInputFieldType().toString());
@@ -169,156 +173,8 @@ struct WebSageLoadOne {
           event.response.setResponseIsReady(true);
         })
         .onPageEnd((event) => {
-          if (this.enterPageEnd) {
-            Utils.emitEvent(1, 446);
-            this.enterPageEnd = false;
-          }
-          if (this.enterPageEndAuto) {
-            Utils.emitEvent(this.controller.getTitle(), 518);
-            this.enterPageEndAuto = false;
-          }
-          if (this.enterPageEndOff) {
-            Utils.emitEvent(this.controller.getTitle(), 519);
-            this.enterPageEndOff = false;
-          }
-          if (this.getString) {
-            try {
-              this.controller.runJavaScriptExt(
-                'getStringForJs()',
-                (error, result) => {
-                  if (error) {
-                    console.info(`run JavaScript error: ` + JSON.stringify(error))
-                    return;
-                  }
-                  let type = result.getType();
-                  if (web_webview.JsMessageType.STRING == type) {
-                    this.msg1 = 'result type:' + typeof (result.getString());
-                    Utils.emitEvent(this.msg1, 500)
-                  }
-                });
-              console.info('urlgetstring: ', event.url);
-            } catch (error) {
-              console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-            }
-          }
-          if (this.getNum) {
-            try {
-              this.controller.runJavaScriptExt(
-                'getNumForJs()',
-                (error, result) => {
-                  if (error) {
-                    console.info(`run JavaScript error: ` + JSON.stringify(error));
-                    return;
-                  }
-                  let type = result.getType();
-                  if (web_webview.JsMessageType.NUMBER == type) {
-                    this.msg1 = 'result type:' + typeof (result.getNumber());
-                    Utils.emitEvent(this.msg1, 501);
-                  }
-                });
-              console.info('urlgetstring: ', event.url);
-            } catch (error) {
-              console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-            }
-          }
-          if (this.getBoo) {
-            try {
-              this.controller.runJavaScriptExt(
-                'getBooForJs()',
-                (error, result) => {
-                  if (error) {
-                    console.info(`run JavaScript error: ` + JSON.stringify(error));
-                    return;
-                  }
-                  let type = result.getType();
-                  if (web_webview.JsMessageType.BOOLEAN == type) {
-                    this.msg1 = 'result type:' + typeof (result.getBoolean());
-                    Utils.emitEvent(this.msg1, 502)
-                  }
-                });
-              console.info('urlgetstring: ', event.url);
-            } catch (error) {
-              console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-            }
-          }
-          if (this.getArrayBuffer) {
-            try {
-              this.controller.runJavaScriptExt(
-                'getArrayBufferForJs()',
-                (error, result) => {
-                  if (error) {
-                    console.info(`run JavaScript error: ` + JSON.stringify(error))
-                    return;
-                  }
-                  let type = result.getType();
-                  if (web_webview.JsMessageType.ARRAY_BUFFER == type) {
-                    this.msg1 = 'result type:' + typeof (result.getArrayBuffer());
-                    Utils.emitEvent(this.msg1, 503);
-                  }
-                });
-              console.info('urlgetstring: ', event.url);
-            } catch (error) {
-              console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-            }
-          }
-          if (this.getArray) {
-            try {
-              this.controller.runJavaScriptExt('getArrayForJs()')
-                .then((result) => {
-                  let type = result.getType();
-                  if (web_webview.JsMessageType.ARRAY == type) {
-                    this.msg1 = 'result type:' + typeof (result.getArray());
-                    Utils.emitEvent(this.msg1 + web_webview.JsMessageType.NOT_SUPPORT, 504);
-                  }
-                })
-              console.info('urlgetstring: ', event.url);
-            } catch (error) {
-              console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-            }
-          }
-          this.getString = false;
-          this.getNum = false;
-          this.getBoo = false;
-          this.getArrayBuffer = false;
-          this.getArray = false;
+          this.isPageEnd = 0;
 
-          this.ports = this.controller.createWebMessagePorts(true);
-          this.controller.postMessage('init_web_messageport', [this.ports[1]], '*');
-          this.nativePort = this.ports[0];
-          this.nativePort!.onMessageEventExt((result) => {
-            console.log('In eTS side got message');
-            try {
-              this.type = result.getType();
-              if (this.type == web_webview.WebMessageType.STRING) {
-                this.msg1 = 'result type:' + typeof (result.getString());
-                Utils.emitEvent(this.msg1, 505);
-              }
-              if (this.type == web_webview.WebMessageType.NUMBER) {
-                this.msg1 = 'result type:' + typeof (result.getNumber());
-                Utils.emitEvent(this.msg1 + web_webview.WebMessageType.NOT_SUPPORT, 508);
-              }
-              if (this.type == web_webview.WebMessageType.BOOLEAN) {
-                this.msg1 = 'result type:' + typeof (result.getBoolean());
-                Utils.emitEvent(this.msg1, 510);
-              }
-              if (this.type == web_webview.WebMessageType.ARRAY) {
-                this.msg1 = 'result type:' + typeof (result.getArray());
-                Utils.emitEvent(this.msg1, 512);
-              }
-              if (this.type == web_webview.WebMessageType.ARRAY_BUFFER) {
-                this.msg1 = 'result getArrayBuffer byteLength:' + ((result.getArrayBuffer().byteLength));
-                Utils.emitEvent(this.msg1, 514);
-              }
-              if (this.type == web_webview.WebMessageType.ERROR) {
-                this.msg1 = 'result type:' + typeof (result.getError());
-                Utils.emitEvent(this.msg1, 516);
-              }
-            } catch (resError) {
-              console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
-            }
-          })
-
-          console.log('url:' + event.url);
         })
         .darkMode(this.mode)
         .forceDarkAccess(false)

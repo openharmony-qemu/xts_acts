@@ -19,9 +19,9 @@ import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import PermissionsUtils from '../../test/PermissionsUtils';
-import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import { waitForExist} from '../../test/WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
 
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
@@ -36,6 +36,9 @@ interface PreviewBuilderParam {
       .autoResize(true)
   }.width($$.width).height($$.height)
 }
+
+const EVENT_ID_SET_SUITE_KEY = 177501;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -56,6 +59,8 @@ struct WebComponent {
   @State str: string = ""
   @State userAgentPC:string = "";
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOperateEnd: number = -1;
 
   @Builder
   MenuBuilder() {
@@ -74,14 +79,14 @@ struct WebComponent {
   }
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,7 +95,7 @@ struct WebComponent {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -98,29 +103,31 @@ struct WebComponent {
 
   build() {
     Column() {
-      Button("web click")
+      Row() {
+        Button("web click")
         .key('WebHapticFeedbackButton')
         .onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitWebHapticFeedback001": {
               try {
-                let driver = Driver.create();
+                await Utils.waitForReleaseDriver(this.str+"0",driver)
                 let buttonOne = await driver.findComponent(ON.id('menuDISABLED'));
                 await buttonOne.click();
-                await Utils.sleep(2000);
+                await Utils.waitForReleaseDriver(this.str,driver)
                 let buttonTwo = await driver.findComponent(ON.id('selectionMenuKey'));
                 await buttonTwo.longClick();
-                await Utils.sleep(1000);
+                await Utils.waitForReleaseDriver(this.str,driver)
                 this.userAgentPC = this.controller.getUserAgent();
                 if (!(this.userAgentPC).includes("PC")) {
                   let buttonThree = await driver.findComponent(ON.text('复制'));
                   await buttonThree.click();
-                  await Utils.sleep(1000);
-                  Utils.emitEvent('HapticFeedbackMode.DISABLED', 20250517)
+                  await Utils.waitForReleaseDriver(this.str,driver)
+                  Utils.emitEvent('HapticFeedbackMode.DISABLED', 177510)
                 } else {
-                  Utils.emitEvent('HapticFeedbackMode.DISABLED', 20250517)
+                  Utils.emitEvent('HapticFeedbackMode.DISABLED', 177510)
                 }
 
               } catch (error) {
@@ -131,21 +138,21 @@ struct WebComponent {
 
             case "emitWebHapticFeedback002": {
               try {
-                let driver = Driver.create();
+                await Utils.waitForReleaseDriver(this.str+"0",driver)
                 let buttonOne = await driver.findComponent(ON.id('menuENABLE'));
                 await buttonOne.click();
-                await Utils.sleep(2000);
+                await Utils.waitForReleaseDriver(this.str, driver)
                 let buttonTwo = await driver.findComponent(ON.id('selectionMenuKey'));
                 await buttonTwo.longClick();
-                await Utils.sleep(1000);
+                await Utils.waitForReleaseDriver(this.str, driver)
                 this.userAgentPC = this.controller.getUserAgent();
                 if (!(this.userAgentPC).includes("PC")) {
                   let buttonThree = await driver.findComponent(ON.text('复制'));
                   await buttonThree.click();
-                  await Utils.sleep(1000);
-                  Utils.emitEvent('HapticFeedbackMode.ENABLED', 20250518)
+                  await Utils.waitForReleaseDriver(this.str, driver)
+                  Utils.emitEvent('HapticFeedbackMode.ENABLED', 177520)
                 } else {
-                  Utils.emitEvent('HapticFeedbackMode.ENABLED', 20250518)
+                  Utils.emitEvent('HapticFeedbackMode.ENABLED', 177520)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -156,21 +163,21 @@ struct WebComponent {
 
             case "emitWebHapticFeedback003": {
               try {
-                let driver = Driver.create();
+                await Utils.waitForReleaseDriver(this.str, driver)
                 let buttonOne = await driver.findComponent(ON.id('menuAUTO'));
                 await buttonOne.click();
-                await Utils.sleep(2000);
+                await Utils.waitForReleaseDriver(this.str, driver)
                 let buttonTwo = await driver.findComponent(ON.id('selectionMenuKey'));
                 await buttonTwo.longClick();
-                await Utils.sleep(1000);
+                await Utils.waitForReleaseDriver(this.str, driver)
                 this.userAgentPC = this.controller.getUserAgent();
                 if (!(this.userAgentPC).includes("PC")) {
                   let buttonThree = await driver.findComponent(ON.text('复制'));
                   await buttonThree.click();
-                  await Utils.sleep(1000);
-                  Utils.emitEvent('HapticFeedbackMode.AUTO', 20250519)
+                  await Utils.waitForReleaseDriver(this.str+"3",driver)
+                  Utils.emitEvent('HapticFeedbackMode.AUTO', 177530)
                 } else {
-                  Utils.emitEvent('HapticFeedbackMode.AUTO', 20250519)
+                  Utils.emitEvent('HapticFeedbackMode.AUTO', 177530)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -179,10 +186,11 @@ struct WebComponent {
             }
           }
         })
+      }.height('5%')
 
       Row () {
         Text("MenuHapticFeedbackMode:"+this.menuHapticMode)
-      }
+      }.height('10%')
       Row () {
         Button('DISABLED')
           .margin({
@@ -226,9 +234,10 @@ struct WebComponent {
             })
             this.controller.refresh();
           })
-      }
+      }.height('10%')
 
       Web({ src: $rawfile("selectionMenu.html"), controller: this.controller })
+        .height('75%')
         .key('selectionMenuKey')
         .scale({x:this.scaleValue, y:this.scaleValue, z:1})
         .enableHapticFeedback(true)
@@ -289,6 +298,10 @@ struct WebComponent {
         )
         .onTouch(()=>{
           console.log("Web on Touch");
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
     .onTouch(()=>{

@@ -17,9 +17,12 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const driver = Driver.create();
 export default function WebViewEnumAndSetWebController() {
 
   describe('WebViewEnumAndSetWebControllerTest', () => {
@@ -34,7 +37,6 @@ export default function WebViewEnumAndSetWebController() {
         if (!("webTwo" == pages.name)) {
           console.info("get WebViewEnumAndSetWebController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewEnumAndSetWebController page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,15 +50,7 @@ export default function WebViewEnumAndSetWebController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
       done();
     })
 
@@ -70,10 +64,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 0
     */
     it('testCacheMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitCacheModeOnly", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCacheMode002", "cacheError", 1401, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitCacheModeOnly", 141711)
+      let isReturn = false;
+      Utils.registerEvent("testCacheMode002", "cacheError", 141740, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("buttonEnumAndSetWebController",driver)
+      await waitForExist(()=>isReturn, "testCacheMode002", true,1000);
+      done();
     })
 
     /*
@@ -85,10 +81,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testCacheMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCacheModeDefault", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCacheMode001", '"index"', 1402, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitCacheModeDefault", 141711)
+      let isReturn = false;
+      Utils.registerEvent("testCacheMode001", '"index"', 141750, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("buttonEnumAndSetWebController",driver)
+      await waitForExist(()=>isReturn, "testCacheMode001", true,1000);
+      done();
     })
 
     /*
@@ -100,10 +98,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testCacheMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCacheModeOnline", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCacheMode003", true, 1405, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitCacheModeOnline", 141711)
+      let isReturn = false;
+      Utils.registerEvent("testCacheMode003", true, 141760, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("buttonEnumAndSetWebController",driver)
+      await waitForExist(()=>isReturn, "testCacheMode003", true,1000);
+      done();
     })
 
     /*
@@ -115,10 +115,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testCacheMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCacheModeNone", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCacheMode004", "华为 - 构建万物互联的智能世界", 1406, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitCacheModeNone", 141711)
+      let isReturn = false;
+      Utils.registerEvent("testCacheMode004", "Example Domain", 141770, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("buttonEnumAndSetWebController",driver)
+      await waitForExist(()=>isReturn, "testCacheMode004", true,1000);
+      done();
     })
 
   })

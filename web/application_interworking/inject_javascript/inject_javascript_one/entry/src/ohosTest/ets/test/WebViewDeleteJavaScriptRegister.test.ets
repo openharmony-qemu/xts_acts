@@ -20,6 +20,7 @@ import router from '@ohos.router';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,19 +34,18 @@ export default function ActsAceDeleteJavaScriptRegister() {
         url: 'testability/pages/WebviewDeleteJavaScriptRegister',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
-        console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
+        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!("webviewDeleteJavaScriptRegister" == pages.name)) {
-          console.info("get index state success " + JSON.stringify(pages.name));
+          console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
-          console.info("push index state success " + JSON.stringify(result));
+          console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push index page error:" + err);
+        console.error('push index page error:' + err);
       }
+      await waitForComponent("deleteJavaScriptRegister_withOutRefresh");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -54,31 +54,9 @@ export default function ActsAceDeleteJavaScriptRegister() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(500);
       done();
     });
 
-    afterEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": ''
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
 
     /**
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0001
@@ -93,12 +71,11 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('deleteWithoutRefresh', 10)
-      await Utils.sleep(100)
+      Utils.emitEvent('deleteWithoutRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withOutRefresh', 10, '');
-      setTimeout(() => {
-        sendEventByKey('runJavaScript', 10, '');
-      }, 500)
+      // setTimeout(() => {
+      //   sendEventByKey('runJavaScript', 10, '');
+      // }, 500)
     });
 
     /**
@@ -116,12 +93,11 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('deleteWithRefresh', 10)
-      await Utils.sleep(100)
+      Utils.emitEvent('deleteWithRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withRefresh', 10, '');
-      setTimeout(() => {
-        sendEventByKey('runJavaScript', 10, '');
-      }, 1000)
+      //setTimeout(() => {
+       // sendEventByKey('runJavaScript', 10, '');
+      //}, 1000)
     });
 
 

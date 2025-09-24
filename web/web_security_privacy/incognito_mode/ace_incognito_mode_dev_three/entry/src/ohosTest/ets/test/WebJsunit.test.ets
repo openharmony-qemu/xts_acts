@@ -13,44 +13,32 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll,afterEach, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitGetStoredGeolocation";
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
+    beforeAll(async  (done: Function) =>{
+      await driver.waitForComponent(ON.id("webcomponent"), 10000);
+      console.log("waitForComponent webcomponent");
+      done();
+    });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 100,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -60,9 +48,9 @@ export default function webJsunit() {
      *tc.desic Save current page
      */
     it('GetStoredGeolocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitSetHttpDnsSuccess";
-      Utils.registerEvent("GetStoredGeolocation", "file:///", 120, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.registerEvent("GetStoredGeolocation", "file:///", 160590, done);
+      Utils.emitEvent("emitGetStoredGeolocation", 160580);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_037                                                                                                                                                           
@@ -70,9 +58,9 @@ export default function webJsunit() {
      *tc.desic Save current page
      */
     it('SetHttpDnsSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetAccessibleGeolocation";
-      Utils.registerEvent("SetHttpDnsSuccess", 1, 446, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.registerEvent("SetHttpDnsSuccess", 1, 160600, done);
+      Utils.emitEvent("emitSetHttpDnsSuccess", 160580);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_038                                                                                                                                                           
@@ -80,9 +68,9 @@ export default function webJsunit() {
      *tc.desic Save current page
      */
     it('GetAccessibleGeolocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetAccessibleGeolocationPromise";
-      Utils.registerEvent("GetAccessibleGeolocation", true, 451, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.registerEvent("GetAccessibleGeolocation", true, 160610, done);
+      Utils.emitEvent("emitGetAccessibleGeolocation", 160580);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_056                                                                                                                                                
@@ -90,9 +78,9 @@ export default function webJsunit() {
      *tc.desic Save current page
      */
     it('GetAccessibleGeolocationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetStoredGeolocationPromise";
-      Utils.registerEvent("GetAccessibleGeolocationPromise", true, 517, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.registerEvent("GetAccessibleGeolocationPromise", true, 160620, done);
+      Utils.emitEvent("emitGetAccessibleGeolocationPromise", 160580);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_060                                                                                                                                                              
@@ -100,9 +88,9 @@ export default function webJsunit() {
      *tc.desic Save current page
      */
     it('GetStoredGeolocationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetStoredGeolocationPromise";
-      Utils.registerEvent("GetStoredGeolocationPromise", "file:///", 521, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.registerEvent("GetStoredGeolocationPromise", "file:///", 160630, done);
+      Utils.emitEvent("emitGetStoredGeolocationPromise", 160580);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
   })
 }

@@ -21,6 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 
 import testNapi from 'libentry.so';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -35,7 +36,7 @@ struct webRegisterCustomsComponent {
     @State consoleMsg: string = ''
     @State isRegister: number = -1;
     @State isSet: number = -1;
-    
+    @State isReceive: number = -1;
     aboutToAppear() {
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
@@ -53,13 +54,13 @@ struct webRegisterCustomsComponent {
     
     onPageShow(){
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
+            eventId: 147301,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
     }
     onPageHide() {
-        events_emitter.off(10)
+        events_emitter.off(147301)
     }
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
         console.info("web page valueChangeCallBack");
@@ -67,6 +68,7 @@ struct webRegisterCustomsComponent {
             console.info("valueChangeCallBack:" + JSON.stringify(eventData));
             if (eventData.data != null && eventData.data.ACTION != null) {
                 this.str = eventData.data.ACTION;
+                this.isReceive = 0;
             }
         }
     }
@@ -77,92 +79,71 @@ struct webRegisterCustomsComponent {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
                     console.info("key==>" + this.str)
+                    await waitForExist(()=>this.isReceive, this.str, 0, 1000)
+                    await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
+                    this.isReceive = -1;
                     switch (this.str) {
                         case "emitRegisterCustoms": {
-                            await Utils.sleep(1000);
-                            
                             console.log("emitRegisterCustoms ==>" + this.isRegister);
-                            
                             if (this.isRegister == 0) {
-                                Utils.emitEvent(true, 7707);
+                                Utils.emitEvent(true, 147350);
                             } else {
-                                Utils.emitEvent(false, 7707);
+                                Utils.emitEvent(false, 147350);
                             }
                             break;
                         }
                         
                         case "emitSetSchemeHandler": {
-                            await Utils.sleep(1000);
-                            
                             console.log("emitSetSchemeHandler ==>" + this.isSet);
-                            
                             if (this.isSet == 0) {
-                                Utils.emitEvent(true, 7708);
+                                Utils.emitEvent(true, 147360);
                             } else {
-                                Utils.emitEvent(false, 7708);
+                                Utils.emitEvent(false, 147360);
                             }
                             break;
                         }
                         
                         case "emitClearSchemeHandlers": {
-                            await Utils.sleep(1000);
-                            
                             let result:number = testNapi.clearSchemeHandlers();
-                            
                             console.log("emitClearSchemeHandlers ==>" + result);
-                            
-                            await Utils.sleep(1000);
-                            
                             if (result == 0) {
-                                Utils.emitEvent(true, 7709);
+                                Utils.emitEvent(true, 147370);
                             } else {
-                                Utils.emitEvent(false, 7709);
+                                Utils.emitEvent(false, 147370);
                             }
                             break;
                         }
                         
                         case "emitServiceWorkerClearSchemeHandlers": {
-                            await Utils.sleep(1000);
-                            
                             let result:number = testNapi.serviceWorkerClearSchemeHandlers();
-                            await Utils.sleep(1000);                            
                             console.log("emitServiceWorkerClearSchemeHandlers ==>" + result);
-                            
                             if (result == 0) {
-                                Utils.emitEvent(true, 7710);
+                                Utils.emitEvent(true, 147380);
                             } else {
-                                Utils.emitEvent(false, 7710);
+                                Utils.emitEvent(false, 147380);
                             }
                             break;
                         }
                         
                         case "emitDestroySchemeHandler": {
-                            await Utils.sleep(1000);
-                            
-                            let result:number = testNapi.destroySchemeHandler();                            
-                            await Utils.sleep(1000);                            
+                            let result:number = testNapi.destroySchemeHandler();
                             console.log("emitDestroySchemeHandler ==>" + result);
-                            
                             if (result == 0) {
-                                Utils.emitEvent(true, 7711);
+                                Utils.emitEvent(true, 147390);
                             } else {
-                                Utils.emitEvent(false, 7711);
+                                Utils.emitEvent(false, 147390);
                             }
                             break;
                         }
 
                         case "emitWebResourceRequest_GetFrameUrl": {
-                            await Utils.sleep(1000);
                             console.log("emitWebResourceRequest_GetFrameUrl ==>");
-
                             let result:number = testNapi.getFrameUrl();
-                            await Utils.sleep(1000);
                             console.log("emitWebResourceRequest_GetFrameUrl ==>" + result);
-
                             if (result == 0) {
-                                Utils.emitEvent(true, 7744);
+                                Utils.emitEvent(true, 147400);
                             } else {
-                                Utils.emitEvent(false, 7744);
+                                Utils.emitEvent(false, 147400);
                             }
                             break;
                         }

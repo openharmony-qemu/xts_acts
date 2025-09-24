@@ -18,11 +18,14 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = "emitWebViewOnOverrideUrlLoading"
-
+const  driver = Driver.create();
 export default function webViewOnOverrideUrlLoading() {
   describe('ActsAceWebViewOnOverrideUrlLoading', () => {
       
@@ -32,14 +35,12 @@ export default function webViewOnOverrideUrlLoading() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewOnOverrideUrlLoading state success " + JSON.stringify(pages));
             if (!("webViewOnOverrideUrlLoading" == pages.name)) {
                 console.info("get webViewOnOverrideUrlLoading state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewOnOverrideUrlLoading page success " + JSON.stringify(result));
             }
         } catch (err) {
@@ -54,29 +55,9 @@ export default function webViewOnOverrideUrlLoading() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(1000);
       done();
     })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
+
 
 
     /*
@@ -88,8 +69,9 @@ export default function webViewOnOverrideUrlLoading() {
     * @tc.level      : Level 0
     */
     it('testWebViewwebViewOnOverrideUrlLoading', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.registerEvent("emitWebViewwebViewOnOverrideUrlLoading", "true", 10007, done);
-        sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
+        Utils.emitEvent(emitKey, 142001)
+        Utils.registerEvent("emitWebViewwebViewOnOverrideUrlLoading", "true",142010, done);
+        Utils.waitAndClickComponent("webViewOnOverrideUrlLoading",driver)
     })
   })
 }

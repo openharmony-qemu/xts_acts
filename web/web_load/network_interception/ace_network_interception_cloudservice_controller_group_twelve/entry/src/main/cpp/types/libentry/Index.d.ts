@@ -25,6 +25,6 @@ export const url_return: () => string ;
 export const judgment1: () => number;
 export const judgment2: () => number;
 export const returnsMethod: () => string;
-
+export const getRequestValue: () => string;
 
 export const initResourceManager: (resmgr: resourceManager.ResourceManager) => void;

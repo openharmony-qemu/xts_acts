@@ -16,6 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -30,25 +31,28 @@ struct WebJavaScriptOnDocumentStartTest {
       "   localStorage.setItem('color', 'Red');" +
       "}", scriptRules: ["*"] }
   ];
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172210,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(172210)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -59,7 +63,10 @@ struct WebJavaScriptOnDocumentStartTest {
         Button("WebJavaScriptOnDocumentStartTest click")
           .key('WebJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('key==>' + this.str)
             switch (this.str) {
 
               case "testJavaScriptOnDocumentStart001": {
@@ -70,7 +77,7 @@ struct WebJavaScriptOnDocumentStartTest {
                     }
                     if (result) {
                       console.info('getResult() return result: ' + result)
-                      Utils.emitEvent(result, 4500)
+                      Utils.emitEvent(result, 172220)
                     }
                   })
                 } catch (error) {
@@ -86,15 +93,16 @@ struct WebJavaScriptOnDocumentStartTest {
                       "   localStorage.setItem('color', 'Blue');" +
                       "}", scriptRules: ["123"] }
                   ];
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await Utils.sleep(2000)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)
                     }
                     if (result) {
                       console.info('getResult() return result: ' + result)
-                      Utils.emitEvent(result, 4501)
+                      Utils.emitEvent(result, 172230)
                     }
                   })
                 } catch (error) {
@@ -114,6 +122,7 @@ struct WebJavaScriptOnDocumentStartTest {
         .javaScriptOnDocumentStart(this.scripts)
         .onPageEnd((event) => {
           if (event) {
+            this.isPageEnd = 0;
             console.log('url:' + event.url)
           }
         })

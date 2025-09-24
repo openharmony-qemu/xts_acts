@@ -18,11 +18,14 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = ""
-
+const  driver = Driver.create();
 export default function ActsAceWebViewSdkTestFrameUrl() {
   describe('ActsAceWebViewSdkTestFrameUrl', () => {
       
@@ -32,14 +35,12 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewSdkTestFrameUrl state success " + JSON.stringify(pages));
             if (!("webViewSdkTestFrameUrl" == pages.name)) {
                 console.info("get webViewSdkTestFrameUrl state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewSdkTestFrameUrl state success " + JSON.stringify(result));
             }
         } catch (err) {
@@ -54,28 +55,7 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(2000);
         done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
     })
 
     /*
@@ -87,10 +67,13 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
      *@tc.level Level 1
      */
     it('testWebViewSdkTestMainFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        emitKey = "emitWebViewSdkTestMainFrameUrl"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebViewSdkTestMainFrameUrl", true, 1535, done);
-        sendEventByKey('webViewSdkTestFrameUrl', 10, '');
+      emitKey = "emitWebViewSdkTestMainFrameUrl"
+      Utils.emitEvent(emitKey, 142011);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkTestMainFrameUrl", true, 142020, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewSdkTestFrameUrl",driver);
+      await waitForExist(() => isReturn, "testWebViewSdkTestMainFrameUrl", true, 1000);
+      done();
     })
 
 
@@ -104,9 +87,12 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
      */
     it('testWebViewSdkTestLoadUrlFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestLoadUrlFrameUrl"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkTestLoadUrlFrameUrl", true, 1537, done);
-      sendEventByKey('webViewSdkTestFrameUrl', 10, '');
+      Utils.emitEvent(emitKey, 142011);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkTestLoadUrlFrameUrl", true, 142030, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewSdkTestFrameUrl",driver);
+      await waitForExist(() => isReturn, "emitWebViewSdkTestLoadUrlFrameUrl", true, 1000);
+      done();
     })
 
 
@@ -120,9 +106,12 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
      */
     it('testWebViewSdkTestSubFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestSubFrameUrl"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkTestSubFrameUrl", true, 1538, done);
-      sendEventByKey('webViewSdkTestFrameUrl', 10, '');
+      Utils.emitEvent(emitKey, 142011);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkTestSubFrameUrl", true, 142040, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewSdkTestFrameUrl",driver);
+      await waitForExist(() => isReturn, "testWebViewSdkTestSubFrameUrl", true, 1000);
+      done();
     })
 
     /*
@@ -135,9 +124,12 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
      */
     it('testWebViewSdkTestServiceWorkerFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestServiceWorkerFrameUrl"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkTestServiceWorkerFrameUrl", true, 1536, done);
-      sendEventByKey('webViewSdkTestFrameUrl', 10, '');
+      Utils.emitEvent(emitKey, 142011);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkTestServiceWorkerFrameUrl", true, 142050, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewSdkTestFrameUrl",driver);
+      await waitForExist(() => isReturn, "testWebViewSdkTestServiceWorkerFrameUrl", true, 1000);
+      done();
     })
   })
 }

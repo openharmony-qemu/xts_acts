@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -29,14 +30,17 @@ struct webViewWebResourceTypeProps2 {
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
-
-
+  @State isReceive: number = -1
+  @State isEnd: number = -1;
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 142021,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+  onPageHide() {
+    events_emitter.off(142021)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -44,6 +48,7 @@ struct webViewWebResourceTypeProps2 {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -55,60 +60,51 @@ struct webViewWebResourceTypeProps2 {
               .key('webViewWebResourceTypeProps2')
               .onClick(async () => {
                   console.info('key==>' + this.emitKey)
-                  await Utils.sleep(2000)
+                await waitForExist(() => this.isReceive, this.emitKey, 0)
+                this.isReceive = -1;
                   switch (this.emitKey) {
                     case 'emitWebView_webResourceType_SUB_RESOURCE': {
-                        this.controller.loadUrl('https://www.baidu.com')
-                        await Utils.sleep(2000)
                         console.log('webResourceTypeProp:' + webview.WebResourceType.SUB_RESOURCE)
                         if(webview.WebResourceType.SUB_RESOURCE.toString() === '6'){
-                          Utils.emitEvent(true, 1550)
+                          Utils.emitEvent(true, 142060)
                         }
                         break;
                     }
                     case 'emitWebView_webResourceType_SERVICE_WORKER': {
-                        this.controller.loadUrl('https://m.iqiyi.com')
-                        await Utils.sleep(2000)
                         console.log('webResourceTypeProp:' + webview.WebResourceType.SERVICE_WORKER)
                         if(webview.WebResourceType.SERVICE_WORKER.toString() === '15'){
-                          Utils.emitEvent(true, 1551)
+                          Utils.emitEvent(true, 142070)
                         }
                         break;
                     }
 
                     case 'emitWebView_webResourceType_PLUGIN_RESOURCE': {
-                      this.controller.loadUrl('https://www.baidu.com')
-                      await Utils.sleep(2000)
                       console.log('webResourceTypeProp:' + webview.WebResourceType.PLUGIN_RESOURCE)
                       if(webview.WebResourceType.PLUGIN_RESOURCE.toString() === '17'){
-                        Utils.emitEvent(true, 1552)
+                        Utils.emitEvent(true, 142080)
                       }
                       break;
                     }
 
                     case 'emitWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME': {
-                      this.controller.loadUrl('https://www.baidu.com')
-                      await Utils.sleep(2000)
                       console.log('webResourceTypeProp:' + webview.WebResourceType.NAVIGATION_PRELOAD_MAIN_FRAME)
                       if(webview.WebResourceType.NAVIGATION_PRELOAD_MAIN_FRAME.toString() === '19'){
-                        Utils.emitEvent(true, 1553)
+                        Utils.emitEvent(true, 142090)
                       }
                       break;
                     }
 
                     case 'emitWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME': {
-                      this.controller.loadUrl('https://www.baidu.com')
-                      await Utils.sleep(2000)
                       console.log('webResourceTypeProp:' + webview.WebResourceType.NAVIGATION_PRELOAD_SUB_FRAME)
                       if(webview.WebResourceType.NAVIGATION_PRELOAD_SUB_FRAME.toString() === '20'){
-                        Utils.emitEvent(true, 1554)
+                        Utils.emitEvent(true, 142100)
                       }
                       break;
                     }
                   }
               })
           }
-          Web({ src: '', controller: this.controller })
+          Web({ src: 'https://www.example.com', controller: this.controller })
                 .javaScriptAccess(this.javaScriptAccess)
                 .fileAccess(this.fileAccess)
                 .imageAccess(this.imageAccess)

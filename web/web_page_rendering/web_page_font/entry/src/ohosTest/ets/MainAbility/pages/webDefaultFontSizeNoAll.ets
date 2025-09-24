@@ -18,6 +18,7 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -33,10 +34,12 @@ struct webDefaultFontSizeNoAll {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State checkEleResult: Object[] = [];
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150050,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -48,6 +51,7 @@ struct webDefaultFontSizeNoAll {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
     
@@ -56,7 +60,10 @@ struct webDefaultFontSizeNoAll {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webDefaultFontSizeNoAll').onClick(() => {
+        Button("web click").key('webDefaultFontSizeNoAll').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitdefaultFontSizeAndminFontSizeNoAllWebC": {
@@ -64,8 +71,7 @@ struct webDefaultFontSizeNoAll {
                 this.controller.runJavaScript({
                   script: "getPageFontsize()", callback: (result) => {
                     this.checkEleResult = JSON.parse(result)
-                    Utils.sleep(2000)
-                    Utils.emitEvent(this.checkEleResult[1], 440)
+                    Utils.emitEvent(this.checkEleResult[1], 150060)
                     console.log(`The getPageFontsize() return value is: ${result}`);
                   }
                 })
@@ -86,6 +92,12 @@ struct webDefaultFontSizeNoAll {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 }

@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest.test';
 
 
 @Entry
@@ -32,17 +33,19 @@ struct WebViewEnumAndFontLibrary {
   @State zoomCount: number = 100
   @State minLogicalFontSize: number = 13
   @State databaseAccess: boolean = true
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150350,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(150350)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -51,6 +54,7 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -59,42 +63,50 @@ struct WebViewEnumAndFontLibrary {
     Column() {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitDefaultFontSize": {
               this.controller.runJavaScript("getFontSize()", async (error, result) => {
                 console.log("error" + error)
-                Utils.emitEvent(result, 1202)
+                Utils.emitEvent(result, 150360)
               })
               break;
             }
             case "emitDefaultFontSizeMax": {
               this.fontSize = 75
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("getFontSize()", async (error, result) => {
                 console.log("error" + error)
-                Utils.emitEvent(result, 1203)
+                Utils.emitEvent(result, 150370)
               })
               break;
             }
             case "emitDefaultFontSizeMin": {
               this.fontSize = -5
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("getFontSize()", async (error, result) => {
                 console.log("error" + error)
-                Utils.emitEvent(result, 1204)
+                Utils.emitEvent(result, 150380)
               })
               break;
             }
             case "emitMinFontSize": {
               this.minFontSize = 18
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexFontSize.html")
-              await Utils.sleep(2000);
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("getPageFontSize()", (error, result) => {
                 console.log("error" + error)
                 let count: number = Number(result)
                 if (this.minFontSize > 13 && this.minFontSize == count) {
-                  Utils.emitEvent(Number(result), 1205)
+                  Utils.emitEvent(Number(result), 150390)
                   this.minFontSize = 13
                 }
               })
@@ -121,6 +133,12 @@ struct WebViewEnumAndFontLibrary {
         .domStorageAccess(false)
         .onlineImageAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 }

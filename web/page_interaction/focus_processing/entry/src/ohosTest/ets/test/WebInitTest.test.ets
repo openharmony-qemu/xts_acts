@@ -16,8 +16,13 @@
 import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 178301;
+const driver = Driver.create();
 
 export default function webInitTest() {
 
@@ -29,13 +34,7 @@ export default function webInitTest() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
+      await driver.waitForComponent(ON.id("WebInitTestButton"), 10000);
       done();
     })
 
@@ -45,10 +44,12 @@ export default function webInitTest() {
      *tc.desic Gets the request focus
      */
     it('requestFocus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitGetRequestFocus", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("requestFocus", "requestFocus", 126, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("emitGetRequestFocus", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("requestFocus", "requestFocus", 178310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", "emitGetRequestFocus");
+      await Utils.waitForExist(() => isReturn, "requestFocus" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

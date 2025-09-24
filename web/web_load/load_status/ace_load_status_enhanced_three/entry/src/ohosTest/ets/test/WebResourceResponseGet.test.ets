@@ -16,9 +16,12 @@
 import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const driver = Driver.create();
 export default function webResourceResponseGet() {
 
   describe('WebResourceResponseGetTestSuite', () => {
@@ -29,7 +32,6 @@ export default function webResourceResponseGet() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webResourceResponseGet beforeEach start");
       done();
     })
@@ -43,10 +45,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 0
     */
     it('testGetRequestHeader001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testGetRequestHeader001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetRequestHeader001", true, 35010, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetRequestHeader001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetRequestHeader001", true, 141520, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetRequestHeader001", true,1000);
+      done();
     })
 
     /*
@@ -58,10 +62,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetRequestUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetRequestUrl001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetRequestUrl001", 'https://gitee.com/openharmony/123', 35011, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetRequestUrl001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetRequestUrl001", 'https://www.example.com/404', 141530, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetRequestUrl001", true,1000);
+      done();
     })
 
     /*
@@ -73,10 +79,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testIsRequestGesture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testIsRequestGesture001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testIsRequestGesture001", false, 35012, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testIsRequestGesture001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testIsRequestGesture001", false, 141540, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testIsRequestGesture001", true,1000);
+      done();
     })
 
     /*
@@ -88,10 +96,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testIsMainFrame001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testIsMainFrame001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testIsMainFrame001", true, 35013, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testIsMainFrame001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testIsMainFrame001", true, 141550, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testIsMainFrame001", true,1000);
+      done();
     })
 
     /*
@@ -103,10 +113,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testIsRedirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testIsRedirect001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testIsRedirect001", false, 35014, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testIsRedirect001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testIsRedirect001", false, 141560, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testIsRedirect001", true,1000);
+      done();
     })
 
     /*
@@ -118,10 +130,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetRequestMethod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetRequestMethod001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetRequestMethod001", "GET", 35015, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetRequestMethod001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetRequestMethod001", "GET", 141570, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetRequestMethod001", true,1000);
+      done();
     })
 
     /*
@@ -133,10 +147,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetResponseData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetResponseData001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseData001", "\"\"", 35016, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetResponseData001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseData001", "\"\"", 141580, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetResponseData001", true,1000);
+      done();
     })
 
     /*
@@ -148,10 +164,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetResponseEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetResponseEncoding001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseEncoding001", "utf-8", 35017, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetResponseEncoding001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseEncoding001", "", 141590, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetResponseEncoding001", true,1000);
+      done();
     })
 
     /*
@@ -163,10 +181,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetResponseMimeType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetResponseMimeType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseMimeType001", "text/html", 35018, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetResponseMimeType001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseMimeType001", "text/html", 141600, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetResponseMimeType001", true,1000);
+      done();
     })
 
     /*
@@ -178,10 +198,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetReasonMessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetReasonMessage001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetReasonMessage001", "Not Found", 35019, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetReasonMessage001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetReasonMessage001", "", 141610, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetReasonMessage001", true,1000);
+      done();
     })
 
     /*
@@ -193,10 +215,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetResponseHeader001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetResponseHeader001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseHeader001", true, 35020, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetResponseHeader001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseHeader001", true, 141620, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetResponseHeader001", true,1000);
+      done();
     })
 
     /*
@@ -208,10 +232,12 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testGetResponseCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetResponseCode001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseCode001", 404, 35021, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      Utils.emitEvent("testGetResponseCode001", 141511)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseCode001", 404, 141630, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
+      await waitForExist(()=>isReturn, "testGetResponseCode001", true,1000);
+      done();
     })
 
 

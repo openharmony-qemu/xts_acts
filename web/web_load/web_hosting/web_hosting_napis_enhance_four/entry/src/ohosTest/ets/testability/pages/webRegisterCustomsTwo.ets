@@ -21,6 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 
 import testNapi from 'libentry.so';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -31,6 +32,7 @@ struct webRegisterCustomsTwoComponent {
     heads: Header[] = new Array()
     @State consoleCorsError: boolean = false
     responseWeb: WebResourceResponse = new WebResourceResponse()
+    @State isReceive: number = -1;
     
     aboutToAppear() {
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
@@ -49,13 +51,13 @@ struct webRegisterCustomsTwoComponent {
     
     onPageShow(){
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
+            eventId: 147401,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
     }
     onPageHide() {
-        events_emitter.off(10)
+        events_emitter.off(147401)
     }
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
         console.info("web page valueChangeCallBack");
@@ -63,6 +65,7 @@ struct webRegisterCustomsTwoComponent {
             console.info("valueChangeCallBack:" + JSON.stringify(eventData));
             if (eventData.data != null && eventData.data.ACTION != null) {
                 this.str = eventData.data.ACTION;
+                this.isReceive = 0;
             }
         }
     }
@@ -72,19 +75,17 @@ struct webRegisterCustomsTwoComponent {
         Column() {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
+                    await waitForExist(()=>this.isReceive, this.str, 0);
+                    this.isReceive = -1
                     console.info("key==>" + this.str)
                     switch (this.str) {
                         case "emitWebServiceWorker_SetSchemeHandler": {
-                            await Utils.sleep(1000);
                             let result:number = testNapi.serviceWorkerSetSchemeHandler();
-                            await Utils.sleep(1000);
-                            
                             console.log("emitWebServiceWorker_SetSchemeHandler ==>" + result);
-                            
                             if (result == 0) {
-                                Utils.emitEvent(true, 7756);
+                                Utils.emitEvent(true, 147410);
                             } else {
-                                Utils.emitEvent(false, 7756);
+                                Utils.emitEvent(false, 147410);
                             }
                             break;
                         }
@@ -96,7 +97,7 @@ struct webRegisterCustomsTwoComponent {
                 .height('50%')
                 .width('100%')
                 .javaScriptAccess(true)
-                .fileAccess(true)                
+                .fileAccess(true)
         }
         .height('100%')
         

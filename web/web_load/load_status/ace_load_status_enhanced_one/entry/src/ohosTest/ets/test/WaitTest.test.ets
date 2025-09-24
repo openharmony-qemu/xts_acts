@@ -83,14 +83,13 @@ export async function waitForAssert<T,U>(
 export async function waitForExist<T> (
   stateGetter: () => T,
   testsuite: string,
-  expectValue: string | number | null = null,
+  expectValue: string | number | boolean | null = null,
   interval=3000,
   tryTime=20
 ):Promise<T>{
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     })
@@ -110,6 +109,7 @@ export async function waitForExist<T> (
         return currentValue
       }
     }
+    await sleep(interval);
     nums++;
   }
   if (!isSuccess) {

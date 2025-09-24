@@ -17,6 +17,7 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -31,7 +32,8 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
   @State isRegister: number = -1;
   @State isSet: number = -1;
   @State isStringReceived: boolean = false;
-
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   aboutToAppear() {
     testNapi.registerCustomSchemes();
     web_webview.WebviewController.initializeWebEngine();
@@ -42,14 +44,14 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124630,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124630)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -58,6 +60,7 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -67,19 +70,20 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
       Button('GetHeader')
         .key('GetHeader')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
           console.info('key==>' + this.str)
           switch (this.str) {
             case 'testWebRequestHeaderList_GetHeader_ValueParam_IsNone': {
               console.log('Execute testWebRequestHeaderList_GetHeader_ValueParam_IsNone');
-              await Utils.sleep(1000);
               let headerResult: number = testNapi.judgment2();
               console.log('HeaderList test result: ' + headerResult);
               if (headerResult != 0) {
                 console.log('OH_ArkWebRequestHeaderList_GetHeader call succeed ');
-                Utils.emitEvent(true, 5125);
+                Utils.emitEvent(true, 124870);
               } else {
                 console.log('OH_ArkWebRequestHeaderList_GetHeader call failed');
-                Utils.emitEvent(false, 5125);
+                Utils.emitEvent(false, 124870);
               }
               break;
             }

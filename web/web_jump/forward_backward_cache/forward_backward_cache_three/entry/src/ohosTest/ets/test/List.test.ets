@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,16 +13,22 @@
  * limitations under the License.
  */
 
-import webCookieManagerFetchCookieSync from './WebCookieManagerFetchCookieSync.test'
-import webCookieManagerFetchCookie from './WebCookieManagerFetchCookie.test'
+import webCookieManagerFetchCookieSyncOne from './WebCookieManagerFetchCookieSyncOne.test'
+import webCookieManagerFetchCookieSyncTwo from './WebCookieManagerFetchCookieSyncTwo.test'
+import webCookieManagerFetchCookieOne from './WebCookieManagerFetchCookieOne.test'
+import webCookieManagerFetchCookieTwo from './WebCookieManagerFetchCookieTwo.test'
+import webCookieManagerFetchCookieThree from './WebCookieManagerFetchCookieThree.test'
 import webCookieManagerExistCookie from './WebCookieManagerExistCookie.test'
 import webCookieManagerFetchCookieIncognito from './WebCookieManagerFetchCookieIncognito.test'
 import webCookieManagerConfigCookie from './WebCookieManagerConfigCookie.test'
 
 
 export default function testsuite() {
-  webCookieManagerFetchCookieSync()
-  webCookieManagerFetchCookie()
+  webCookieManagerFetchCookieSyncOne()
+  webCookieManagerFetchCookieSyncTwo()
+  webCookieManagerFetchCookieOne()
+  webCookieManagerFetchCookieTwo()
+  webCookieManagerFetchCookieThree()
   webCookieManagerExistCookie()
   webCookieManagerFetchCookieIncognito()
   webCookieManagerConfigCookie()

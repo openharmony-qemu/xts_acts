@@ -17,9 +17,12 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const driver = Driver.create();
 
 export default function webResourceError() {
 
@@ -36,7 +39,6 @@ export default function webResourceError() {
         if (!("webResourceError" == pages.name)) {
           console.info("get webResourceError state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webResourceError page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -51,7 +53,6 @@ export default function webResourceError() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webResourceError beforeEach start");
       done();
     })
@@ -65,12 +66,12 @@ export default function webResourceError() {
     * @tc.level      : Level 1
     */
     it('testGetErrorInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetErrorInfo001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetErrorInfo001", 'ERR_CERT_COMMON_NAME_INVALID', 36020, done);
-      sendEventByKey('WebResourceErrorButton', 10, '');
+      Utils.emitEvent("testGetErrorInfo001", 141501)
+      let isReturn = false;
+      Utils.registerEvent("testGetErrorInfo001", 'ERR_CERT_COMMON_NAME_INVALID', 141510, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceErrorButton",driver)
+      await waitForExist(()=>isReturn, "testGetErrorInfo001", true,1000);
+      done();
     })
-
-
   })
 }

@@ -35,10 +35,13 @@ struct WebComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141311,
       priority: events_emitter.EventPriority.LOW
     };
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+    events_emitter.once(valueChangeEvent, this.valueChangeCallBack);
+  }
+  onPageHide(){
+    events_emitter.off(141311)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,15 +93,14 @@ struct WebComponent {
         Button('web click').key('webWaitForAttachedButton').onClick(async () => {
           console.info('key==>' + this.str);
           await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case 'emitWaitForAttached': {
-              await Utils.sleep(1500);
               console.log('pbbmmmmmm' + this.flagOne);
               console.log('pbbeeeee' + this.flagTwo);
               console.log('pbbbbbbbbb' + this.flagThree);
-              await Utils.sleep(2000);
               if(this.flagOne && this.flagTwo && this.flagThree) {
-                Utils.emitEvent(true, 20250522);
+                Utils.emitEvent(true, 141320);
               }
               break;
             }

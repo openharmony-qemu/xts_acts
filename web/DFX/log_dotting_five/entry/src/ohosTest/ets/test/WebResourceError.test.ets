@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -36,12 +37,12 @@ export default function webResourceError() {
         if (!("webResourceError" == pages.name)) {
           console.info("get webResourceError state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webResourceError page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webResourceError page error: " + err);
       }
+      await waitForComponent("WebResourceErrorButton");
       done()
     });
 
@@ -51,7 +52,6 @@ export default function webResourceError() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webResourceError beforeEach start");
       done();
     })
@@ -65,9 +65,8 @@ export default function webResourceError() {
     * @tc.level      : Level 1
     */
     it('testGetErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetErrorCode001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetErrorCode001", -200, 36022, done);
+      Utils.emitEvent("testGetErrorCode001", 120010)
+      Utils.registerEvent("testGetErrorCode001", -200, 120020, done);
       sendEventByKey('WebResourceErrorButton', 10, '');
     })
   })
