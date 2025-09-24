@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 class TestObj {
   constructor() {
@@ -100,17 +101,19 @@ struct WebViewEnumAndFontLibraryTwo {
   @State PermissionRequestState: boolean = false
   @State userAgentPC:string = "";
   WebResult: WebContextMenuResult = new WebContextMenuResult;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160890,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(160890)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -119,6 +122,7 @@ struct WebViewEnumAndFontLibraryTwo {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -127,60 +131,66 @@ struct WebViewEnumAndFontLibraryTwo {
     Column() {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "emitProtectedResourceType": {
               if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent('TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 1101)
+                  Utils.emitEvent('TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 160900)
                   break;
                 }
                 this.PermissionRequestState = true
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/indexVideo.html")
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 let driver = Driver.create();
                 let button = await driver.findComponent(ON.id('webCenter'));
                 await button.click();
                 break;
               } else {
-                Utils.emitEvent('TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 1101)
+                Utils.emitEvent('TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 160900)
               }
             }
             case "emitOnPermissionRequestGetOrigin": {
               if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent('resource://rawfile/', 1102)
+                  Utils.emitEvent('resource://rawfile/', 160910)
                   break;
                 }
                 this.PermissionRequestState = false
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/indexVideo.html")
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 let driver = Driver.create();
                 let button = await driver.findComponent(ON.id('webCenter'));
                 await button.click();
                 break;
               } else {
-                Utils.emitEvent('resource://rawfile/', 1102)
+                Utils.emitEvent('resource://rawfile/', 160910)
               }
             }
             case "emitOnPermissionRequest": {
               if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 1103)
+                  Utils.emitEvent(true, 160920)
                   break;
                 }
                 this.Permission = true
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/indexVideo.html")
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 let driver = Driver.create();
                 let button = await driver.findComponent(ON.id('webCenter'));
                 await button.click();
                 break;
               } else {
-                Utils.emitEvent(true, 1103)
+                Utils.emitEvent(true, 160920)
               }
             }
           }
@@ -231,6 +241,7 @@ struct WebViewEnumAndFontLibraryTwo {
         .minLogicalFontSize(this.minLogicalFontSize)
         .forceDarkAccess(this.access)
         .onPageEnd(() => {
+          this.isPageEnd = 0;
           this.controller.runJavaScript("webTest()", (error, result) => {
             console.log("error" + error)
             this.webResultText = result
@@ -246,16 +257,16 @@ struct WebViewEnumAndFontLibraryTwo {
         .onPermissionRequest((event) => {
           console.log("emitProtectedResourceType >>>111")
           if (this.Permission) {
-            Utils.emitEvent(true, 1103)
+            Utils.emitEvent(true, 160920)
             this.Permission = false
           }
           if (event) {
             let returnArray = event?.request?.getAccessibleResource()
             if (this.PermissionRequestState) {
-              Utils.emitEvent(String(returnArray), 1101)
+              Utils.emitEvent(String(returnArray), 160900)
             } else {
               console.log("emitProtectedResourceType >>>> " + event.request.getOrigin())
-              Utils.emitEvent(String(event.request.getOrigin()), 1102)
+              Utils.emitEvent(String(event.request.getOrigin()), 160910)
             }
           }
         })
