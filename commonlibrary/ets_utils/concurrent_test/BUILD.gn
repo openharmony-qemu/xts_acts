@@ -29,7 +29,7 @@ group("concurrent_test") {
       "promisetest:ActsPromiseTest",
       "sharedarraybuffertest:ActsSharedArrayBufferTest",
       "taskpoolandtimer:ActsTaskPoolAndTimerTest",
-      "taskpoolasyncrunnertest:ActsTsakpoolAsyncrunnerTest",
+      "taskpoolasyncrunnertest:ActsTaskpoolAsyncrunnerTest",
       "taskpoolexecutedelayedtest:ActsTaskPoolExecuteDelayedTest",
       "taskpoolsequencerunnertest:ActsTaskPoolSequenceRunnerTest",
       "taskpoolsupplementtest:ActsTaskPoolSupplementTest",
