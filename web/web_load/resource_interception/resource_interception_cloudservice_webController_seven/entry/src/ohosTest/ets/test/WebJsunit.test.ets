@@ -12,13 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201850;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitImageAccessFalse";
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
@@ -28,28 +30,7 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -59,9 +40,13 @@ export default function webJsunit() {
      *tc.desic Sets Web can not automatically load image resources
      */
     it('imageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitImageAccessTrue";
-      Utils.registerEvent("imageAccessFalse", "null", 148, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitImageAccessFalse", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("imageAccessFalse",  "null", 201860, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'imageAccessFalse' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_028
@@ -69,9 +54,13 @@ export default function webJsunit() {
      *tc.desic Sets Web can  automatically load image resources
      */
     it('imageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnlineImageAccessFalse";
-      Utils.registerContainEvent("imageAccessTrue", "load complete", 150, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitImageAccessTrue", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("imageAccessTrue", '"load complete"', 201870, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'imageAccessTrue' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_029
@@ -79,9 +68,13 @@ export default function webJsunit() {
      *tc.desic Sets not to allow image resources to be loaded from the network
      */
     it('onlineImageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnlineImageAccessTrue";
-      Utils.registerEvent("onlineImageAccessFalse", "null", 156, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitOnlineImageAccessFalse", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("onlineImageAccessFalse",  "null", 201880, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'onlineImageAccessFalse' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_030
@@ -89,9 +82,13 @@ export default function webJsunit() {
      *tc.desic Sets  allow image resources to be loaded from the network
      */
     it('onlineImageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitCacheModeOnly";
-      Utils.registerContainEvent("onlineImageAccessTrue", "load image complete", 158, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitOnlineImageAccessTrue", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("onlineImageAccessTrue", '"load image complete"', 201890, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'onlineImageAccessTrue' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -100,9 +97,13 @@ export default function webJsunit() {
      *tc.desic load cache and not online
      */
     it('cacheModeOnly', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitCacheModeDefault";
-      Utils.registerEvent("cacheModeOnly", "cacheError", 182, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitCacheModeOnly", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("cacheModeOnly",  "cacheError", 201900, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'cacheModeOnly' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_034
@@ -110,9 +111,13 @@ export default function webJsunit() {
      *tc.desic load cache when they are available and not expired, otherwise load online
      */
     it('cacheModeDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitMixedModeNone";
-      Utils.registerContainEvent("cacheModeDefault", "index", 184, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitCacheModeDefault", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("cacheModeDefault", '"index"', 201910, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'cacheModeDefault' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_035
@@ -120,9 +125,13 @@ export default function webJsunit() {
      *tc.desic Sets Don't allow unsecure sources from a secure origin
      */
     it('mixedModeNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitMixedModeAll";
-      Utils.registerContainEvent("mixedModeNone", "insecure", 186, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitMixedModeNone", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("mixedModeNone", true, 201920, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'mixedModeNone' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_036
@@ -130,10 +139,13 @@ export default function webJsunit() {
      *tc.desic Sets Allows  all HTTP and HTTPS content can be loaded
      */
     it('mixedModeAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitFileAccessTrue";
-      Utils.registerEvent("mixedModeAll", 3, 188, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitMixedModeAll", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("mixedModeAll", 3, 201930, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webcomponent");
+      if (await Utils.waitForExist(() => isReturn, 'mixedModeAll' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
   })
 }

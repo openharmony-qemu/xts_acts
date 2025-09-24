@@ -14,10 +14,12 @@
  */
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
-import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202440;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,22 +36,23 @@ export default function webViewOnSslErrorEvent() {
         console.info("get webViewOnSslErrorEvent state success " + JSON.stringify(pages));
         if (!("webViewOnSslErrorEvent" == pages.name)) {
           console.info("get webViewOnSslErrorEvent state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webViewOnSslErrorEvent page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push webViewOnSslErrorEvent page success");
         }
       } catch (err) {
         console.error("push webViewOnSslErrorEvent page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewOnSslErrorEvent"), 10000);
+      console.log("waitForComponent webViewOnSslErrorEvent");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -63,15 +66,13 @@ export default function webViewOnSslErrorEvent() {
     * @tc.level      : Level 0
     */
     it('OnSslErrorEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OnSslErrorEvent0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnSslErrorEvent0100", 2, 400, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("webViewOnSslErrorEvent"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnSslErrorEvent0100", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("OnSslErrorEvent0100", 2, 202450, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewOnSslErrorEvent");
+      if (await Utils.waitForExist(() => isReturn, 'OnSslErrorEvent0100' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -83,15 +84,13 @@ export default function webViewOnSslErrorEvent() {
     * @tc.level      : Level 1
     */
     it('OnSslErrorEvent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnSslErrorEvent0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnSslErrorEvent0200", 3, 401, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("webViewOnSslErrorEvent"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnSslErrorEvent0200", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("OnSslErrorEvent0200", 3, 202460, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewOnSslErrorEvent");
+      if (await Utils.waitForExist(() => isReturn, 'OnSslErrorEvent0200' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -103,15 +102,13 @@ export default function webViewOnSslErrorEvent() {
     * @tc.level      : Level 1
     */
     it('OnSslErrorEvent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnSslErrorEvent0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnSslErrorEvent0300", false, 402, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("webViewOnSslErrorEvent"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnSslErrorEvent0300", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("OnSslErrorEvent0300", false, 202470, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewOnSslErrorEvent");
+      if (await Utils.waitForExist(() => isReturn, 'OnSslErrorEvent0300' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -123,16 +120,13 @@ export default function webViewOnSslErrorEvent() {
     * @tc.level      : Level 1
     */
     it('OnSslErrorEvent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnSslErrorEvent0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnSslErrorEvent0400", 2
-      , 403, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("webViewOnSslErrorEvent"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnSslErrorEvent0400", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("OnSslErrorEvent0400", 2, 202480, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewOnSslErrorEvent");
+      if (await Utils.waitForExist(() => isReturn, 'OnSslErrorEvent0400' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }

@@ -31,24 +31,6 @@ struct onErrorReceive02 {
   @State domStorageAccess: boolean = false;
   @State databaseAccess: boolean = true;
 
-  onPageShow() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  }
-
-  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("onErrorReceive02 page valueChangeCallBack");
-    if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data?.ACTION != null) {
-        this.str = eventData.data?.ACTION;
-      }
-    }
-  }
-
   build() {
     Column() {
       Row() {
@@ -75,7 +57,7 @@ struct onErrorReceive02 {
           if (event) {
             let isMainFrame = event.request.isMainFrame();
             console.log('isMainFrame:' + isMainFrame)
-            Utils.emitEvent(isMainFrame, 7120)
+            Utils.emitEvent(isMainFrame, 201990)
           }
         })
         .javaScriptAccess(this.javaScriptAccess)

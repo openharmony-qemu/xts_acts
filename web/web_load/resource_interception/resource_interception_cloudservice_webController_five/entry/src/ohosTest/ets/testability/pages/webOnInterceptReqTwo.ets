@@ -14,10 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+
+const EVENT_ID_SET_EMIT_KEY = 201660;
 
 @Entry
 @Component
@@ -25,7 +24,7 @@ struct webOnInterceptReqTwo {
   controller: WebController = new WebController();
   responseweb: WebResourceResponse = new WebResourceResponse()
   heads: Header[] = new Array()
-  @State str: string = "emitOnInterceptRequestSecondWebC";
+  @State str: string = "";
   @State webdata: string = "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -36,13 +35,19 @@ struct webOnInterceptReqTwo {
     "</body>\n" +
     "</html>"
   @State title: string = "test";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -51,6 +56,7 @@ struct webOnInterceptReqTwo {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -59,15 +65,14 @@ struct webOnInterceptReqTwo {
     Column() {
       Row() {
         Button("web click").key('webOnInterceptReqTwo').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'webOnInterceptReqTwoIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webOnInterceptReqTwoIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnInterceptRequestSecondWebC": {
               try {
-                this.controller.runJavaScript({
-                  script: "test()", callback: (res) => {
-                    Utils.emitEvent(this.title, 408);
-                  }
-                })
+                Utils.emitEvent(this.title, 201670);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -101,7 +106,10 @@ struct webOnInterceptReqTwo {
         .onTitleReceive((event) => {
           console.log('title:' + event.title);
           this.title = event.title;
-          Utils.emitEvent(this.title, 408);
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd ==>' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

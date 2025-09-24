@@ -15,6 +15,9 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "@ohos/hypium";
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
+
 export default class Utils {
     static sleep(time:number){
         return new Promise((resolve: (value: string) => void,reject:(value: string) => void)=>{
@@ -25,7 +28,7 @@ export default class Utils {
             console.info(`sleep ${time} over...`)
         })
     }
-    static registerEvent(testCaseName: string,expectedValue: ESObject,eventId: number,done: Function){
+    static registerEvent(testCaseName: string,expectedValue: ESObject,eventId: number,done: Function | null){
         console.info(`[${testCaseName}] START`);
         try{
             let callBack=(backData: events_emitter.EventData)=>{
@@ -36,7 +39,9 @@ export default class Utils {
             }catch(err){
                 console.info(`[${testCaseName}] err:`+JSON.stringify(err));
                 }
-                done()
+                if (done) {
+                    done()
+                }
             }
             let innerEvent: events_emitter.InnerEvent = {
                 eventId:eventId,
@@ -165,6 +170,77 @@ export default class Utils {
             events_emitter.on(innerEvent,callBack)
         }catch(err){
             console.info(`[${testCaseName}] err:`+JSON.stringify(err));
+        }
+    }
+
+    static async waitForExist<T> (
+        stateGetter: () => T,
+        testsuite: string,
+        expectValue: string | number | boolean | null = null,
+        interval=3000,
+        tryTime=20
+    ):Promise<T>{
+        let nums = 0;
+        let isSuccess = false;
+        while (nums < tryTime) {
+            const currentValue = await new Promise<T>((done) => {
+                setTimeout(()=>done(stateGetter()), 0);
+            })
+
+            if (expectValue == null) {
+                if (currentValue != null) {
+                    console.log(testsuite + ' debug wait for success exist');
+                    isSuccess = true;
+                    return currentValue
+                }
+            } else {
+                if (currentValue == expectValue) {
+                    console.log(testsuite + ' debug wait for success exist');
+                    isSuccess = true;
+                    return currentValue
+                }
+            }
+            await Utils.sleep(interval);
+            nums++;
+            console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+                + ', expectValue ' + expectValue);
+        }
+        if (!isSuccess) {
+            console.log(testsuite + ' debug wait for failed')
+        }
+        const currentValue = await new Promise<T>((result) => {
+            setTimeout(() => result(stateGetter()), 0);
+        });
+        console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+        return currentValue;
+    }
+
+    static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {
+        let retryTimes: number = 0;
+        let retry: boolean = true;
+        while (retry && retryTimes <= 3) {
+            retry = false;
+            try {
+                const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+                if (!buttonComponent) {
+                    console.error(`error: buttonConmponent is null.`);
+                    retry = true;
+                    await Utils.sleep(500);
+                    retryTimes++;
+                    console.log('retryTimes = ' + retryTimes);
+                    continue;
+                }
+                await buttonComponent.click();
+            } catch (e) {
+                const error = e as BusinessError;
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                if (error.code === 17000002) {
+                    retry = true;
+                    await Utils.sleep(500);
+                    retryTimes++;
+                    console.log('retryTimes = ' + retryTimes);
+                }
+            }
         }
     }
 }

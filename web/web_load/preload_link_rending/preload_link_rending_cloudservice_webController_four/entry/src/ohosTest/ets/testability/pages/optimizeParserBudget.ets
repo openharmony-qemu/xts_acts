@@ -14,29 +14,36 @@
  */
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
-import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_EMIT_KEY = 201250;
 
 @Entry
 @Component
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  @State str: string = "optimizeParserBudget01";
+  @State str: string = "";
   @State options: WebMediaOptions = { resumeInterval: 10, audioExclusive: true }
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -45,20 +52,19 @@ struct WebComponent {
 
       Row() {
         Button("web test").key('optimizeParserBudgetButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'optimizeParserBudgetButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'optimizeParserBudgetButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "optimizeParserBudget01": {
-              let driver = Driver.create();
-              await Utils.sleep(2000);
               let strJson = getInspectorByKey('ContentBudget');
               console.info("[textResize] component strJson:" + strJson);
               let obj: ESObject = JSON.parse(strJson);
               console.info("[testScrollBar001] textResize:" + obj.$attrs.content);
-              Utils.emitEvent(obj.$attrs.content, 20250218)
-              await Utils.sleep(1000);
+              Utils.emitEvent(obj.$attrs.content, 201260);
               break;
             }
-
           }
         })
       }
@@ -67,7 +73,10 @@ struct WebComponent {
       Text('optimizeParserBudget').fontSize(14).id('ContentBudget')
       Web({ src: 'www.example.com', controller: this.controller })
         .optimizeParserBudget(true)
-
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

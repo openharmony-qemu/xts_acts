@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202690;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webSslErrorTest() {
@@ -32,13 +36,14 @@ export default function webSslErrorTest() {
         console.info("get WebSslErrorTest state success " + JSON.stringify(pages));
         if (!("WebSslErrorTest" == pages.name)) {
           console.info("get WebSslErrorTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebSslErrorTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebSslErrorTest page success");
         }
       } catch (err) {
         console.error("push WebSslErrorTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebSslErrorTestButton"), 10000);
+      console.log("waitForComponent WebSslErrorTestButton");
       done()
     });
 
@@ -61,10 +66,13 @@ export default function webSslErrorTest() {
     * @tc.level      : Level 1
     */
     it('testSslErrorDateInvalid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitSslErrorDateInvalid", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSslErrorDateInvalid001", SslError.DateInvalid, 70892, done);
-      sendEventByKey('WebSslErrorTestButton', 10, '');
+      Utils.emitEvent("emitSslErrorDateInvalid", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSslErrorDateInvalid001", SslError.DateInvalid, 202700, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebSslErrorTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testSslErrorDateInvalid001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -76,11 +84,13 @@ export default function webSslErrorTest() {
     * @tc.level      : Level 1
     */
     it('testSslErrorUntrusted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitSslErrorUntrusted", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSslErrorUntrusted001", SslError.Untrusted, 70893, done);
-      sendEventByKey('WebSslErrorTestButton', 10, '');
+      Utils.emitEvent("emitSslErrorUntrusted", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSslErrorUntrusted001", SslError.Untrusted, 202710, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebSslErrorTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testSslErrorUntrusted001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
   })
 }

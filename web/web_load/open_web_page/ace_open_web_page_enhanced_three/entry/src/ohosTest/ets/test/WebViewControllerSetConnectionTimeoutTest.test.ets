@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201030;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,23 +38,23 @@ export default function webViewControllerSetConnectionTimeoutTest() {
         console.info("get WebViewControllerSetConnectionTimeoutTest state success " + JSON.stringify(pages));
         if (!("WebViewControllerSetConnectionTimeoutTest" == pages.name)) {
           console.info("get WebViewControllerSetConnectionTimeoutTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebViewControllerSetConnectionTimeoutTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebViewControllerSetConnectionTimeoutTest page success");
         }
       } catch (err) {
         console.error("push WebViewControllerSetConnectionTimeoutTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebViewControllerSetConnectionTimeoutTestButton"), 10000);
+      console.log("waitForComponent WebViewControllerSetConnectionTimeoutTestButton");
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerSetConnectionTimeoutTest beforeEach start");
       done();
     })
@@ -64,10 +68,13 @@ export default function webViewControllerSetConnectionTimeoutTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerSetConnectionTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerSetConnectionTimeout001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerSetConnectionTimeout001", 'ERR_TIMED_OUT', 4007, done);
-      sendEventByKey('WebViewControllerSetConnectionTimeoutTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerSetConnectionTimeout001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerSetConnectionTimeout001", "ERR_TIMED_OUT", 201040, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerSetConnectionTimeoutTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewControllerSetConnectionTimeout001' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -79,10 +86,13 @@ export default function webViewControllerSetConnectionTimeoutTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerSetConnectionTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerSetConnectionTimeout002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerSetConnectionTimeout002", 'ERR_TIMED_OUT', 4008, done);
-      sendEventByKey('WebViewControllerSetConnectionTimeoutTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerSetConnectionTimeout002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerSetConnectionTimeout002", "ERR_TIMED_OUT", 201050, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerSetConnectionTimeoutTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewControllerSetConnectionTimeout002' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -94,11 +104,13 @@ export default function webViewControllerSetConnectionTimeoutTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerSetConnectionTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerSetConnectionTimeout003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerSetConnectionTimeout003", 'ERR_TIMED_OUT', 4009, done);
-      sendEventByKey('WebViewControllerSetConnectionTimeoutTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerSetConnectionTimeout003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerSetConnectionTimeout003", "ERR_TIMED_OUT", 201060, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerSetConnectionTimeoutTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewControllerSetConnectionTimeout003' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
-
   })
 }

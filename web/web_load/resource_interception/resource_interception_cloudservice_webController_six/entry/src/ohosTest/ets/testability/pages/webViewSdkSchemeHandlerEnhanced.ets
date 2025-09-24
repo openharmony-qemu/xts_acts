@@ -15,10 +15,11 @@
 import events_emitter from '@ohos.events.emitter'
 import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
-import { waitForExist } from '../../test/WaitTest.test';
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
-import { WebNetErrorList } from '@ohos.web.netErrorList'
+
+const EVENT_ID_SET_EMIT_KEY = 201940;
+
 @Entry
 @Component
 struct webViewSdkSchemeHandlerEnhanced {
@@ -34,6 +35,8 @@ struct webViewSdkSchemeHandlerEnhanced {
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   requests:webview.WebSchemeHandlerRequest[] = []
   scheme1: webview.WebCustomScheme = {
     schemeName: 'custom', isSupportCORS: true, isSupportFetch: true
@@ -42,10 +45,14 @@ struct webViewSdkSchemeHandlerEnhanced {
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   aboutToAppear():void {
@@ -62,6 +69,7 @@ struct webViewSdkSchemeHandlerEnhanced {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 1;
           }
       }
   }
@@ -72,18 +80,23 @@ struct webViewSdkSchemeHandlerEnhanced {
               Button('web click')
               .key('webViewSdkSchemeHandlerEnhanced')
               .onClick(async () => {
-                  console.info('key==>' + this.emitKey)
+                  await Utils.waitForExist(()=>this.isReceive, 'webViewSdkSchemeHandlerEnhancedIsReceive', 1, 1000);
+                  console.info('key==>' + this.emitKey);
+                  this.isReceive = -1;
+
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('chunked_post_stream.html'))
-                  await waitForExist(()=>this.isComplete, 'ActsAceWebViewSdkSchemeHandlerEnhanced', 0, 1000)
-                  this.isComplete = -1
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+
                   this.controller.runJavaScript('test(\'https://www.example.com/xhr\')', (error, result) => {
                   })
-                  await Utils.sleep(1000)
+                  await Utils.waitForExist(()=>this.existHttpBodyStream?.isChunked(), 'checkExistHttpBodyStream', true, 1000);
+
                   switch (this.emitKey) {
                     case 'emitWebViewSdkSchemeHandler_isChunked_false': {
                       let isExistChunked = ( this.existHttpBodyStream?.isChunked() !== undefined )
                       if(this.httpBodyStream?.isChunked() === false || isExistChunked){
-                        Utils.emitEvent(true,1536)
+                        Utils.emitEvent(true,201950)
                       }
                       break;
                     }
@@ -91,7 +104,7 @@ struct webViewSdkSchemeHandlerEnhanced {
                     case 'emitWebViewSdkSchemeHandler_isEof_false': {
                       let isExistEof =  ( this.existHttpBodyStream?.isEof() !== undefined )
                       if(this.httpBodyStream?.isEof() === false || isExistEof){
-                        Utils.emitEvent(true,1537)
+                        Utils.emitEvent(true,201960)
                       }
                       break;
                     }
@@ -99,18 +112,16 @@ struct webViewSdkSchemeHandlerEnhanced {
                     case 'emitWebViewSdkSchemeHandler_isInMemory_false': {
                       let isInMemory =  ( this.existHttpBodyStream?.isInMemory() !== undefined )
                       if(this.httpBodyStream?.isInMemory() === false || isInMemory){
-                        Utils.emitEvent(true,1538)
+                        Utils.emitEvent(true,201970)
                       }
                       break;
                     }
                     case 'emitWebViewSdkSchemeHandler_isMainFrame_false': {
-                      await Utils.sleep(2000)
                       if(this.requests.length>0 && this.requests[0].isMainFrame() === false){
-                        Utils.emitEvent(true,1541)
+                        Utils.emitEvent(true,201980)
                       }
                       break;
                     }
-
                   }
               })
           }
@@ -128,7 +139,7 @@ struct webViewSdkSchemeHandlerEnhanced {
                     console.log('[schemeHandler] onRequestStart')
                     this.requests.push(request)
                     if(request.isMainFrame().toString() === 'false') {
-                      Utils.emitEvent(true,1541)
+                      Utils.emitEvent(true,201980)
                     }
                     console.log('request.getRequestUrl() start')
                     console.log('request.getRequestUrl() url' + request.getRequestUrl() )
@@ -149,31 +160,23 @@ struct webViewSdkSchemeHandlerEnhanced {
                       response.setHeaderByName('Access-Control-Allow-Origin', '*' ,true)
 
                       if(this.httpBodyStream?.isChunked().toString() == 'false') {
-                        Utils.emitEvent(true,1536)
+                        Utils.emitEvent(true, 201950)
                       }
                       if(this.httpBodyStream?.isEof().toString() == 'false') {
-                        Utils.emitEvent(true,1537)
+                        Utils.emitEvent(true, 201960)
                       }
 
                       if(this.httpBodyStream?.isInMemory().toString() == 'false') {
-                        Utils.emitEvent(true,1538)
+                        Utils.emitEvent(true, 201970)
                       }
-
-
-
-
                       resourceHandler.didReceiveResponse(response);
                       let buf = buffer.from(this.htmlData)
                       resourceHandler.didReceiveResponseBody(buf.buffer);
                       resourceHandler.didFinish();
                       return true
                     }
-
-
                     return false;
                 })
-
-
 
                 this.schemeHandler.onRequestStop((request: webview.WebSchemeHandlerRequest) => {
                   console.log('[schemeHandler] onRequestStop')
@@ -193,9 +196,8 @@ struct webViewSdkSchemeHandlerEnhanced {
             })
             .onPageEnd((event) => {
               console.log('onPageEnd ==>' + event.url);
-              this.isComplete = 0
+              this.isPageEnd = 1
             })
-
       }
   }
 }
