@@ -268,12 +268,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.number : SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
-         * @tc.name   : test_GetCutoutInfo_static_0100
-         * @tc.desc   : test_GetCutoutInfo
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 1
+         * @tc.number   SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
+         * @tc.name     test_GetCutoutInfo_static_0100
+         * @tc.desc     test_GetCutoutInfo
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 1
          */
         it('test_GetCutoutInfo_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName:string = 'test_GetCutoutInfo_static_0100';
@@ -433,12 +433,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
-         * @tc.name   : testGetAllDisplayPhysicalResolution_static_0100
-         * @tc.desc   : get all display physical resolution
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
+         * @tc.name      testGetAllDisplayPhysicalResolution_static_0100
+         * @tc.desc      get all display physical resolution
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testGetAllDisplayPhysicalResolution_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetAllDisplayPhysicalResolution_static_0100';
@@ -627,12 +627,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
-         * @tc.name   : testFoldAngleChange_On_Off_static_0100
-         * @tc.desc   : register and unregister fold angle changes
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
+         * @tc.name      testFoldAngleChange_On_Off_static_0100
+         * @tc.desc      register and unregister fold angle changes
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testFoldAngleChange_On_Off_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_On_Off_static_0100';
@@ -664,12 +664,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
-         * @tc.name   : testFoldAngleChange_ON_Off_Off_static_0200
-         * @tc.desc   : repeat unregister fold angle changes
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number   SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
+         * @tc.name     testFoldAngleChange_ON_Off_Off_static_0200
+         * @tc.desc     repeat unregister fold angle changes
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 3
          */
         it('testFoldAngleChange_ON_Off_Off_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_ON_Off_Off_static_0200';
@@ -709,12 +709,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
-         * @tc.name   : testFoldAngleChange_Off_static_0300
-         * @tc.desc   : unregister of the fold angle changes without register
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 0
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
+         * @tc.name      testFoldAngleChange_Off_static_0300
+         * @tc.desc      unregister of the fold angle changes without register
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 0
          */
         it('testFoldAngleChange_Off_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_Off_static_0300';
@@ -731,12 +731,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
-         * @tc.name   : testCaptureStatusChange_On_Off_static_0100
-         * @tc.desc   : register and unregister capture status
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
+         * @tc.name      testCaptureStatusChange_On_Off_static_0100
+         * @tc.desc      register and unregister capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_On_Off_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_On_Off_static_0100';
@@ -765,12 +765,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
-         * @tc.name   : testCaptureStatusChange_On_Off_Off_static_0200
-         * @tc.desc   : repeat unregister capture status
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
+         * @tc.name      testCaptureStatusChange_On_Off_Off_static_0200
+         * @tc.desc      repeat unregister capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_On_Off_Off_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_On_Off_Off_static_0200';
@@ -806,12 +806,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
-         * @tc.name   : testCaptureStatusChange_Off_static_0300
-         * @tc.desc   : unregister the capture status of the device without register
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
+         * @tc.name      testCaptureStatusChange_Off_static_0300
+         * @tc.desc      unregister the capture status of the device without register
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_Off_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_Off_static_0300';
@@ -828,12 +828,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
-         * @tc.name   : testIsCaptured_static_0100
-         * @tc.desc   : check current device capture status
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
+         * @tc.name      testIsCaptured_static_0100
+         * @tc.desc      check current device capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('testIsCaptured_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'testIsCaptured_static_0100';
@@ -893,12 +893,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
-         * @tc.name   : test_getAvailableArea_default_static_0100
-         * @tc.desc   : test_getAvailableArea_default
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
+         * @tc.name      test_getAvailableArea_default_static_0100
+         * @tc.desc      test_getAvailableArea_default
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('test_getAvailableArea_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_default_static_0100';
@@ -942,12 +942,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
-         * @tc.name   : test_getAvailableArea_subWindow_static_0200
-         * @tc.desc   : test_getAvailableArea_subWindow
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
+         * @tc.name      test_getAvailableArea_subWindow_static_0200
+         * @tc.desc      test_getAvailableArea_subWindow
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_getAvailableArea_subWindow_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_subWindow_static_0200';
@@ -1025,12 +1025,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
-         * @tc.name   : test_getAvailableArea_setWindowSystemBarEnable_static_0300
-         * @tc.desc   : test_getAvailableArea_setWindowSystemBarEnable
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
+         * @tc.name      test_getAvailableArea_setWindowSystemBarEnable_static_0300
+         * @tc.desc      test_getAvailableArea_setWindowSystemBarEnable
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_getAvailableArea_setWindowSystemBarEnable_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_setWindowSystemBarEnable_static_0300';
@@ -1086,12 +1086,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-         * @tc.name   : test_getAvailableArea_ststus_bar_hide_static_0400
-         * @tc.desc   : test_getAvailableArea_ststus_bar_hide
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
+         * @tc.name     test_getAvailableArea_ststus_bar_hide_static_0400
+         * @tc.desc     test_getAvailableArea_ststus_bar_hide
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 3
          */
         it('test_getAvailableArea_ststus_bar_hide_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_ststus_bar_hide_static_0400';
@@ -1161,12 +1161,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
-         * @tc.name   : test_on_availableAreaChange_static_0100
-         * @tc.desc   : test_on_availableAreaChange
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
+         * @tc.name      test_on_availableAreaChange_static_0100
+         * @tc.desc      test_on_availableAreaChange
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('test_on_availableAreaChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_static_0100';
@@ -1196,12 +1196,12 @@ export default function DisplayTest() {
         });
 
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-         * @tc.name   : test_on_availableAreaChange_triggers_static_0200
-         * @tc.desc   : test_on_availableAreaChange_triggers
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
+         * @tc.name      test_on_availableAreaChange_triggers_static_0200
+         * @tc.desc      test_on_availableAreaChange_triggers
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_triggers_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_triggers_static_0200';
@@ -1254,12 +1254,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-         * @tc.name   : test_on_availableAreaChange_Two_callback_static_0300
-         * @tc.desc   : test_on_availableAreaChange_Two_callback
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
+         * @tc.name      test_on_availableAreaChange_Two_callback_static_0300
+         * @tc.desc      test_on_availableAreaChange_Two_callback
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_Two_callback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_Two_callback_static_0300';
@@ -1319,12 +1319,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-         * @tc.name   : test_on_availableAreaChange_off_callback1_static_0400
-         * @tc.desc   : test_on_availableAreaChange_off_callback1
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
+         * @tc.name      test_on_availableAreaChange_off_callback1_static_0400
+         * @tc.desc      test_on_availableAreaChange_off_callback1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_off_callback1_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_off_callback1_static_0400';
@@ -1385,12 +1385,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-         * @tc.name   : test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.desc   : test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
+         * @tc.name      test_on_availableAreaChange_off_callback_all_static_0500
+         * @tc.desc      test_on_availableAreaChange_off_callback_all_static_0500
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_off_callback_all_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_off_callback_all_static_0500';
@@ -1450,12 +1450,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
-         * @tc.name   : test_off_availableAreaChange_static_0600
-         * @tc.desc   : test_off_availableAreaChange
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
+         * @tc.name     test_off_availableAreaChange_static_0600
+         * @tc.desc     test_off_availableAreaChange
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 2
          */
         it('test_off_availableAreaChange_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_off_availableAreaChange_static_0600';
