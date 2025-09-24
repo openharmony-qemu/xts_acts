@@ -678,7 +678,7 @@ napi_value GetDrawableDescriptorDataByName0100(napi_env env, napi_callback_info 
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     size_t strSize;
     char strBuf[256];
@@ -694,7 +694,7 @@ napi_value GetDrawableDescriptorDataByName0200(napi_env env, napi_callback_info 
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     size_t strSize;
     char strBuf[256];
@@ -710,7 +710,7 @@ napi_value GetDrawableDescriptorDataByName0300(napi_env env, napi_callback_info 
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     size_t strSize;
     char strBuf[256];
@@ -726,7 +726,7 @@ napi_value GetSymbol0100(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     uint32_t id = 0;
     uint32_t result = 0;
@@ -741,7 +741,7 @@ napi_value GetSymbol0200(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     uint32_t id = 0;
     uint32_t result = 0;
@@ -756,7 +756,7 @@ napi_value GetSymbol0300(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     uint32_t id = 0;
     uint32_t result = 0;
@@ -771,7 +771,7 @@ napi_value GetSymbol0400(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     uint32_t id = 0;
     uint32_t result = 0;
@@ -786,7 +786,7 @@ napi_value GetSymbol0500(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value argv[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
     
     uint32_t id = 0;
     uint32_t result = 0;
@@ -843,7 +843,7 @@ napi_value GetLocales0100(napi_env env, napi_callback_info info)
     uint32_t resultLen;
     bool includeSystem = false;
     int32_t res = OH_ResourceManager_GetLocales(g_mNativeResMgr, &resultValue, &resultLen, includeSystem);
-    OH_ResourceManager_ReleaseStringArray(&resultValue,resultLen);
+    OH_ResourceManager_ReleaseStringArray(&resultValue, resultLen);
     napi_value value = nullptr;
     napi_create_int32(env, res == SUCCESS ? 0 : -1, &value);
     return value;
@@ -866,7 +866,7 @@ napi_value GetLocalesData0100(napi_env env, napi_callback_info info)
     uint32_t resultLen;
     bool includeSystem = false;
     int32_t res = OH_ResourceManager_GetLocalesData(g_mNativeResMgr, &resultValue, &resultLen, includeSystem);
-    OH_ResourceManager_ReleaseStringArray(&resultValue,resultLen);
+    OH_ResourceManager_ReleaseStringArray(&resultValue, resultLen);
     napi_value value = nullptr;
     napi_create_int32(env, res == SUCCESS ? 0 : -1, &value);
     return value;

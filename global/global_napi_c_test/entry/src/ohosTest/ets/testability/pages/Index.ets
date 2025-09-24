@@ -60,7 +60,7 @@ struct Index {
                    this.index = (++this.index) % 18;
                    await mainWindow.setPreferredOrientation(this.index);
                  } else {
-                   console.error("Main window is not available. Cannot set orientation.");
+                   console.error('Main window is not available. Cannot set orientation.');
                  }
                })
              })

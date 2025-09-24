@@ -518,7 +518,7 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0100
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0100
     * @tc.name      TestGetColorByName0100
     * @tc.desc      overriding error code
     * @tc.size      MediumTest
@@ -539,7 +539,7 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0200
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0200
     * @tc.name      TestGetColorByName0200
     * @tc.desc      overriding error code
     * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0300
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0300
     * @tc.name      TestGetColorByName0300
     * @tc.desc      overriding error code
     * @tc.size      MediumTest
@@ -581,7 +581,7 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0400
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0400
     * @tc.name      TestGetColorByName0400
     * @tc.desc      overriding error code
     * @tc.size      MediumTest

@@ -37,6 +37,8 @@ const int NOT_FOUND_BY_NAME = 9001004;
 const int TOO_MUCH = 9001006;
 const int NO_OVERLAY_PATH = 9001010;
 const int RES_ID_FORMAT_ERROR = 9001007;
+const int count = 20;
+const int count2 = 10;
 
 napi_value GetResourceManager(napi_env env, napi_callback_info info);
 napi_value GetMediaBase640100(napi_env env, napi_callback_info info);

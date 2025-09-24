@@ -790,7 +790,7 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0100
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0100
     * @tc.name      TestGetDrawableDescriptorByName0100
     * @tc.desc      overriding error code
     * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0200
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0200
     * @tc.name      TestGetDrawableDescriptorByName0200
     * @tc.desc      overriding error code
     * @tc.size      MediumTest
@@ -832,7 +832,7 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0300
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0300
     * @tc.name      TestGetDrawableDescriptorByName0300
     * @tc.desc      overriding error code
     * @tc.size      MediumTest

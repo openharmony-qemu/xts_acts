@@ -268,7 +268,7 @@ napi_value GetConfigurations0500(napi_env env, napi_callback_info info)
     OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
     uint32_t res = config.mcc;
     int ret = -1;
-    if(res != -1) {
+    if (res != -1) {
         ret = 0;
     }
     napi_value value = nullptr;
@@ -283,7 +283,7 @@ napi_value GetConfigurations0600(napi_env env, napi_callback_info info)
     OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
     uint32_t res = config.mnc;
     int ret = -1;
-    if(res != -1) {
+    if (res != -1) {
         ret = 0;
     }
     napi_value value = nullptr;
@@ -295,18 +295,18 @@ napi_value GetConfigurations0700(napi_env env, napi_callback_info info)
 {
     ResourceManager_Configuration config;
     OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
-    for (uint32_t i = 0; i < 20; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         config.reserved[i] = i;
     }
     napi_value value = nullptr;
-    napi_create_int32(env, config.reserved[10] == 10 ? 0 : 1, &value);
+    napi_create_int32(env, config.reserved[count2] == count2 ? 0 : 1, &value);
     return value;
 }
 
 napi_value GetDirectionHorizontal0100(napi_env env, napi_callback_info info)
 {
     napi_value value = nullptr;
-    napi_create_int32(env,static_cast<int>(DIRECTION_HORIZONTAL), &value);
+    napi_create_int32(env, static_cast<int>(DIRECTION_HORIZONTAL), &value);
     return value;
 }
 
@@ -336,7 +336,7 @@ napi_value AddResource0100(napi_env env, napi_callback_info info)
     size_t strSize;
     char strBuf[256];
     napi_get_value_string_utf8(env, argv[0], strBuf, sizeof(strBuf), &strSize);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "AddResource0100", "AddResource0100: %{public}s",strBuf);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "AddResource0100", "AddResource0100: %{public}s", strBuf);
     int32_t res = OH_ResourceManager_AddResource(g_mNativeResMgr, strBuf);
     napi_value value = nullptr;
     napi_create_int32(env, res == SUCCESS ? 0 : 1, &value);
@@ -351,7 +351,7 @@ napi_value RemoveResource0100(napi_env env, napi_callback_info info)
     size_t strSize;
     char strBuf[256];
     napi_get_value_string_utf8(env, argv[0], strBuf, sizeof(strBuf), &strSize);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "RemoveResource0100", "RemoveResource0100: %{public}s",strBuf);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "RemoveResource0100", "RemoveResource0100: %{public}s", strBuf);
     OH_ResourceManager_AddResource(g_mNativeResMgr, strBuf);
     int32_t res = OH_ResourceManager_RemoveResource(g_mNativeResMgr, strBuf);
     napi_value value = nullptr;
