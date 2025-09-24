@@ -3679,7 +3679,7 @@ export default function UiTest() {
         it('testWaitForIdleFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(2000)
-            let idled = await driver.waitForIdle(6000,4000)
+            let idled = await driver.waitForIdle(6000,2000)
             expect(idled == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
