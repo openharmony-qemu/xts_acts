@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import {waitForExist} from '../../test/WaitTest';
 
 let loadedUrl: string;
 
@@ -58,13 +59,19 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160040,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160040)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,19 +80,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -100,16 +96,17 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("XXXXXXX key==>" + this.str);
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitUserAgent": {
               while (this.flag == false){
-                await Utils.sleep(2000);
               }
               this.controller.runJavaScript({
                 script: "getUserAgent()", callback: (res) => {
                   console.log("XXXXXXX res==>" +res);
-                  Utils.emitEvent(res, 100)
+                  Utils.emitEvent(res, 160050)
                 }
               });
               break;
@@ -152,12 +149,6 @@ struct Index {
         .initialScale(this.initialScale)
         .mixedMode(this.mixedMode)
         .userAgent("Mozila/5.0 (Linux; Andriod 9; VRD-AL10; HMSCore 6.3.0.331) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.0.4.1 MobileSafari/537.36")
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onPageEnd((event) => {
           console.log("XXXXXXX onPageEnd==>");
           this.flag = true
