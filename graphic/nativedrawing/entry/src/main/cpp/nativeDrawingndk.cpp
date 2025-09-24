@@ -247,6 +247,11 @@ static napi_value OHDrawingPenIsAntiAlias(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_Drawing_Pen *pen = OH_Drawing_PenCreate();
+    if (pen == nullptr) {
+        OH_Drawing_PenDestroy(pen);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OH_Drawing_PenSetAntiAlias(pen, false);
     if (OH_Drawing_PenIsAntiAlias(pen)) {
         napi_create_int32(env, FAIL, &result);
@@ -1599,6 +1604,11 @@ static napi_value OHDrawingCreateTextStyleMnormal(napi_env env, napi_callback_in
 static napi_value OHDrawingCreateTextStyleNnormal(napi_env env, napi_callback_info info)
 {
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
+    if (txtStyle == nullptr) {
+        OH_Drawing_DestroyTextStyle(txtStyle);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_UNDERLINE);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
@@ -1665,6 +1675,11 @@ static napi_value OHDrawingCreateTextStyleQnormal(napi_env env, napi_callback_in
 static napi_value OHDrawingCreateTextStyleRnormal(napi_env env, napi_callback_info info)
 {
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
+    if (txtStyle == nullptr) {
+        OH_Drawing_DestroyTextStyle(txtStyle);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_OVERLINE);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
@@ -1697,6 +1712,11 @@ static napi_value OHDrawingCreateTextStyleSnormal(napi_env env, napi_callback_in
 static napi_value OHDrawingCreateTextStyleTnormal(napi_env env, napi_callback_info info)
 {
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
+    if (txtStyle == nullptr) {
+        OH_Drawing_DestroyTextStyle(txtStyle);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OH_Drawing_SetTextStyleDecoration(txtStyle, TEXT_DECORATION_LINE_THROUGH);
     uint32_t color = OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF);
     OH_Drawing_SetTextStyleDecorationColor(txtStyle, color);
@@ -1720,7 +1740,15 @@ static OH_Drawing_TypographyCreate *TypographyCreate()
 
 static double TypographyGetLongestLine(OH_Drawing_TypographyCreate *handler, int fontSize)
 {
+    if (handler == nullptr) {
+        OH_Drawing_DestroyTypographyHandler(handler);
+        return 0.0;
+    }
     OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
+    if (txtStyle == nullptr) {
+        OH_Drawing_DestroyTextStyle(txtStyle);
+        return 0.0;
+    }
     OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
     OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
     const char *text = "test/n";
