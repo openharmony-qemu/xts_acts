@@ -1220,40 +1220,6 @@ ani_boolean test_String_UTF16_16([[maybe_unused]] ani_env *env, [[maybe_unused]]
     return ANI_TRUE;
 }
 
-// 添加UTF-16到UTF-8的转换函数
-bool Utf16ToUtf8(const std::u16string& utf16, std::string& utf8)
-{
-    utf8.clear();
-    if (utf16.empty()) {
-        return true;
-    }
-
-    // 计算所需缓冲区大小（UTF-16到UTF-8最大膨胀3倍）
-    size_t inputLen = utf16.size() * sizeof(char16_t);
-    size_t outputLen = inputLen * 3;
-    utf8.resize(outputLen);
-
-    // 准备iconv转换
-    iconv_t cd = iconv_open("UTF-8", "UTF-16LE"); // 假设是小端序，根据实际情况调整
-    if (cd == reinterpret_cast<iconv_t>(-1)) {
-        return false;
-    }
-
-    char* inBuf = reinterpret_cast<char*>(const_cast<char16_t*>(utf16.data()));
-    char* outBuf = &utf8[0];
-    size_t result = iconv(cd, &inBuf, &inputLen, &outBuf, &outputLen);
-    
-    iconv_close(cd);
-
-    if (result == static_cast<size_t>(-1)) {
-        return false;
-    }
-
-    // 调整字符串大小到实际转换后的长度
-    utf8.resize(utf8.size() - outputLen);
-    return true;
-}
-
 ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     const std::string testUtf8Str = "Hello, 世界🙂";
@@ -1272,22 +1238,21 @@ ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]]
     ASSERT_STREQ(utf8Buffer, "Hello, 世界🙂");
     ASSERT_EQ(resultSize, testUtf8Str.size());
 
-    // 从UTF-8缓冲区创建UTF-16字符串（注意：这里的转换方式可能需要根据实际情况调整）
-    std::u16string utf16Converted(reinterpret_cast<const char16_t *>(utf8Buffer),
-                                  reinterpret_cast<const char16_t *>(utf8Buffer + (resultSize + 1)));
+    // UTF-8 -> UTF-16
+    std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> converter;
+    std::u16string utf16Converted;
+    utf16Converted = converter.from_bytes(utf8Buffer, utf8Buffer + resultSize);
 
-    // 修复：将UTF-16字符串转换为UTF-8进行比较，避免直接使用c_str()的指针
-    // 每次比较时直接调用c_str()获取有效指针，不保存指针
-    std::string convertedToUtf8;
-    Utf16ToUtf8(utf16Converted, convertedToUtf8);
-    ASSERT_EQ(convertedToUtf8, std::string("Hello, 世界🙂"));
-
-    auto status2 = env->String_NewUTF16(reinterpret_cast<const uint16_t *>(utf16Converted.c_str()),
-                                        utf16Converted.size(),
-                                        &utf16String);
+    // Create UTF-16 String
+    auto status2 = env->String_NewUTF16(
+        reinterpret_cast<const uint16_t*>(utf16Converted.c_str()),
+        utf16Converted.size(),
+        &utf16String
+    );
     ASSERT_EQ(status2, ANI_OK);
     ASSERT_NE(utf16String, nullptr);
 
+    // Get UTF-16 Buffer
     const ani_size buffer16Size = 30U;
     uint16_t utf16Buffer[buffer16Size] = {0U};
     ani_size result2 = 0U;
@@ -1295,11 +1260,17 @@ ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]]
     ASSERT_EQ(status3, ANI_OK);
     ASSERT_EQ(result2, utf16Converted.size());
 
-    // 同样修复第二个ASSERT_STREQ的问题
-    std::u16string bufferToUtf16(reinterpret_cast<const char16_t*>(utf16Buffer), result2);
-    std::string bufferToUtf8;
-    Utf16ToUtf8(bufferToUtf16, bufferToUtf8);
-    ASSERT_EQ(bufferToUtf8, std::string("Hello, 世界🙂"));
+    // UTF-16 Buffer -> UTF-8 String
+    std::u16string utf16FromBuffer(utf16Buffer, utf16Buffer + result2);
+    std::string utf8FromBuffer;
+    utf8FromBuffer = converter.to_bytes(utf16FromBuffer);
+    ASSERT_EQ(utf8FromBuffer, testUtf8Str);
+
+    // Compare UTF-16 Character Sequence
+    ASSERT_EQ(result2, utf16Converted.size());
+    for (size_t i = 0; i < result2; ++i) {
+        ASSERT_EQ(utf16Buffer[i], static_cast<uint16_t>(utf16Converted[i]));
+    }
 
     return ANI_TRUE;
 }
