@@ -19,6 +19,7 @@ import { ComponentInfo, RectInfo } from './Interfaces';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
   static sleep(time: number) {
@@ -180,7 +181,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -212,7 +213,6 @@ export default class Utils {
       console.info("webFlag start to emit action state");
       events_emitter.emit(backEvent, backData);
       console.info("Utils sleep start");
-      await Utils.sleep(2000)
       console.info("Utils sleep over");
     } catch (err) {
       console.info("webFlag emit action state err: " + JSON.stringify(err));
@@ -245,5 +245,107 @@ export default class Utils {
 
   static getRectVerticalCenterY(rect: RectInfo): number {
     return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0));
+  }
+
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`${logFlag} error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+      }
+    }
+  }
+
+  static async waitForReleaseDriver(
+    testsuite: string = 'test',
+    driver: Driver,
+    idleTime: number = 500,
+    timeout: number = 6000,
+    maxRetries: number = 5){
+    let retryTimes = 0;
+    while (retryTimes < maxRetries) {
+      try {
+        const isIdled = await driver.waitForIdle(idleTime, timeout);
+        if (isIdled) {
+          console.log(`[release-${testsuite}] Driver 已空闲，操作执行成功`);
+          return
+        }
+        // 未空闲，重试
+        console.log(`[release-${testsuite}] 等待空闲超时，第 ${retryTimes + 1} 次重试...`);
+        retryTimes++;
+        await Utils.sleep(500); // 避免忙等
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`[release-${testsuite}] 操作失败 - Code: ${error.code}, Message: ${error.message}`);
+        retryTimes++;
+        if (retryTimes >= maxRetries) {
+          console.error(`[release-${testsuite}] 达到最大重试次数，放弃等待`);
+          return
+        }
+        await Utils.sleep(500);
+      }
+    }
+    return
   }
 }

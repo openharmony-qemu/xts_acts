@@ -32,6 +32,9 @@ class TestObj {
   }
 }
 
+const EVENT_ID_SET_SUITE_KEY = 183201;
+let driver = Driver.create();
+
 @Entry
 @Component
 struct WebViewEnumAndFontLibrary {
@@ -104,16 +107,20 @@ struct WebViewEnumAndFontLibrary {
   @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.None,ContextMenuMediaType.Image]
   @State FieldTypeArr:ContextMenuInputFieldType[] = [ContextMenuInputFieldType.None,ContextMenuInputFieldType.PlainText,ContextMenuInputFieldType.Password,ContextMenuInputFieldType.Number,ContextMenuInputFieldType.Telephone,ContextMenuInputFieldType.Other ]
 
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOnContextMenuShowEnd: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -122,6 +129,7 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -131,161 +139,174 @@ struct WebViewEnumAndFontLibrary {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitWebContextMenuParamX": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.menuX >= 0, 801)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.menuX >= 0, 183210)
               break;
             }
             case "emitWebContextMenuParamY": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.menuY >= 0, 802)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.menuY >= 0, 183220)
               break;
             }
             case "emitWebContextMenuParamGetLinkUrl": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
+              this.isOnContextMenuShowEnd = -1
               await button.longClick();
-              Utils.emitEvent(String(this.LinkUrl), 803)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              Utils.emitEvent(String(this.LinkUrl), 183230)
               break;
             }
             case "emitWebContextMenuParamGetUnfilteredLinkUrl": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
+              this.isOnContextMenuShowEnd = -1
               await button.longClick();
-              Utils.emitEvent(String(this.LinkUrl), 804)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              Utils.emitEvent(String(this.LinkUrl), 183240)
               break;
             }
             case "emitWebContextMenuParamGetSourceUrl": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
+              this.isOnContextMenuShowEnd = -1
               await button.longClick();
-              Utils.emitEvent(String(this.SourceUrl), 805)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              Utils.emitEvent(String(this.SourceUrl), 183250)
               break;
             }
             case "emitWebContextMenuParamExistsImageContents": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.ImageContent, 806)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.ImageContent, 183260)
               break;
             }
             case "emitWebContextMenuParamGetMediaType": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.MediaTypeArr[this.MediaType], 807)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.MediaTypeArr[this.MediaType], 183270)
               this.MediaType = 0
               break;
             }
             case "emitWebContextMenuParamGetSelectionText": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(String(this.SelectionText), 808)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(String(this.SelectionText), 183280)
               break;
             }
             case "emitWebContextMenuParamGetSourceType": {
               this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 809)
+                  Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 183290)
                   break;
                 }
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 809)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183290)
               break;
             }
             case "emitWebContextMenuParamGetSourceTypeNone": {
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.None], 20250423)
+                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.None], 183300)
                 break;
               }
-              let driver = Driver.create();
+
               await driver.triggerCombineKeys(2047, 2099);
-              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 20250423)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183300)
               break;
             }
 
             case "emitWebContextMenuParamGetInputFieldType": {
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.FieldTypeArr[this.InputFieldType], 810)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.FieldTypeArr[this.InputFieldType], 183310)
               break;
             }
             case "emitWebContextMenuParamIsEditable": {
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(this.isEditable, 811)
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.isEditable, 183320)
               break;
             }
             case "emitWebContextMenuParamGetEditStateFlags": {
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.sleep(2000);
-              Utils.emitEvent(Number(this.EditStateFlags), 812)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(Number(this.EditStateFlags), 183330)
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.FileSelectorMode = 0
               break;
             }
             case "emitContextMenuInputFieldTypeNone": {
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.FieldTypeArr[this.InputFieldType], 831)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(this.FieldTypeArr[this.InputFieldType], 183340)
               break;
             }
             case "emitContextMenuSourceTypeLongPress": {
               this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(2, 841)
+                  Utils.emitEvent(2, 183350)
                   break;
                 }
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 841)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183350)
               break;
             }
             case "emitContextMenuEditStateFlags": {
-              let driver = Driver.create();
+
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.sleep(2000);
-              Utils.emitEvent(Number(this.EditStateFlags), 851)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(Number(this.EditStateFlags), 183360)
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               break;
             }
             case "emitContextMenuMediaTypeNone": {
-              await Utils.sleep(2000);
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.MediaTypeArr[this.MediaType], 881)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(this.MediaTypeArr[this.MediaType], 183370)
               this.MediaType = 0
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               break;
             }
             case "onContextMenuShow": {
-              let driver = Driver.create();
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              Utils.emitEvent(Boolean(this.onContextMenuShowState), 1252);
+              await Utils.waitForReleaseDriver(this.str,driver)
+              Utils.emitEvent(Boolean(this.onContextMenuShowState), 183380);
               break;
             }
 
@@ -302,7 +323,6 @@ struct WebViewEnumAndFontLibrary {
           .key("images")
           .bindMenu(this.MenuBuilder)
           .onClick(async () => {
-            let driver = Driver.create();
             let button = await driver.findComponent(ON.type('webCenter'));
             await button.longClick();
           })
@@ -350,7 +370,8 @@ struct WebViewEnumAndFontLibrary {
           return true
         })
         .onErrorReceive((event) => {
-          console.log("error", event)
+          console.
+          log("error", event)
           if (event) {
             console.log('getErrorInfo:' + event.error.getErrorInfo())
             console.log('getErrorCode:' + event.error.getErrorCode())
@@ -403,7 +424,7 @@ struct WebViewEnumAndFontLibrary {
             console.info("onContextMenuShow getInputFieldType = " + event.param.getInputFieldType())
             console.info("onContextMenuShow isEditable = " + event.param.isEditable())
             console.info("onContextMenuShow getEditStateFlags = " + event.param.getEditStateFlags())
-            Utils.sleep(2000);
+            this.isOnContextMenuShowEnd = 1
           }
           return true
         })
@@ -413,6 +434,10 @@ struct WebViewEnumAndFontLibrary {
         .domStorageAccess(false)
         .onlineImageAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }
