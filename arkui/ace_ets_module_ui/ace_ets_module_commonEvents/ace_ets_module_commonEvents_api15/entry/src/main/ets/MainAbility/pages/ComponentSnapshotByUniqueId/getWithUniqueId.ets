@@ -49,8 +49,8 @@ struct SnapshotExample {
     Column() {
       Text(this.text).id('resultText')
       Row() {
-        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-        NodeContainer(this.myNodeController).width(200).height(200).margin(5)
+        Image(this.pixmap).width('20%').height('20%').border({ color: Color.Black, width: 2 }).margin(5)
+        NodeContainer(this.myNodeController).width('20%').height('20%').margin(5)
       }
 
       Button('Scale: ' + this.snapshotScale)
@@ -101,8 +101,8 @@ struct SnapshotExample {
           }
         }).margin(10)
     }
+    .height('90%')
     .width('100%')
-    .height('100%')
-    .alignItems(HorizontalAlign.Center)
+    .align(Alignment.Top)
   }
 }
