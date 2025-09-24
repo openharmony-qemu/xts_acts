@@ -86,7 +86,6 @@ struct WebComponent {
                 }
                 break;
             }
-
           case "blurMode02": {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
