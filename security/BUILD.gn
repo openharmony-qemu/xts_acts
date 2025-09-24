@@ -19,7 +19,7 @@ group("security") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "accessTokenStaticTest:ActsAccessTokenStaticTest",
+      "accessTokenTestStatic:ActsAccessTokenStaticTest",
       "access_token/AccessTokenTest:ActsAccessTokenApiTest",
       "access_token/AccessTokenTest_Normal_js:ActsAccessTokenApiJSNormalTest",
       "accesstokenNDKTest:ActsAccessTokenNDKTest",
@@ -35,7 +35,7 @@ group("security") {
       "dlp_permission_service:DlpTest",
       "huks",
       "requestPermissionOnSettingTestStatic:ActsRequestPermissionsOnSettingStaticTest",
-      "requestPermissionsFromUserStaticTest:ActsRequestPermissionsFromUserStaticTest",
+      "requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",
       "security_component/save_component_customize:ActsSaveButtonCustomizeTest",
       "security_component/security_component_pastebutton:ActsSecPasteButtonTest",
       "security_component/security_component_savebutton:ActsSecSaveButtonTest",

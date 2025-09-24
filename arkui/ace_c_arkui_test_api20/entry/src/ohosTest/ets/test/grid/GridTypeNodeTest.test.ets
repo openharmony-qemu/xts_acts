@@ -93,5 +93,33 @@ export default function GridTypeNodeTest() {
       console.info('[GridTypeNodeTest_0100] END');
       done();
     });
+    /**
+     * @tc.number    GridTypeNodeTest_0200
+     * @tc.name      GridTypeNodeTest_0200
+     * @tc.desc      Test GridTypeNodePage undefined.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('GridTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[GridTypeNodeTest_0200] START');
+      await Utils.sleep(1000);
+      let driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('GridTypeNodePage_undefined'));
+      await btn.click();
+      console.info("[GridTypeNodeTest_0200] Click GridTypeNodePage_undefined.");
+      await Utils.sleep(1500);
+      console.info("[GridTypeNodeTest_0200] AppStorage.get('GridTypeNodeUn'): " + AppStorage.get('GridTypeNodeUn'));
+      expect(AppStorage.get('GridTypeNodeUn')).assertEqual(undefined);
+
+      console.info("[GridTypeNodeTest_0200] AppStorage.get('GridItemTypeNodeUn'): " + AppStorage.get('GridItemTypeNodeUn'));
+      expect(AppStorage.get('GridItemTypeNodeUn')).assertEqual(undefined);
+
+      AppStorage.delete('GridTypeNodeUn')
+      AppStorage.delete('GridItemTypeNodeUn')
+
+      console.info('[GridTypeNodeTest_0200] END');
+      done();
+    });
   })
 }

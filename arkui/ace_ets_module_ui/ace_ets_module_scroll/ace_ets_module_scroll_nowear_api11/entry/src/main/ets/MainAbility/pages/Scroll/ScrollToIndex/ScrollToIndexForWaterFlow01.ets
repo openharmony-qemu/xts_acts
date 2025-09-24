@@ -63,8 +63,8 @@ struct ScrollToIndexForWaterFlow01 {
   @Styles buttonStyles() {
     .borderRadius(8)
     .backgroundColor(0x317aff)
-    .width(200)
-    .height(50)
+    .width('30%')
+    .height('5%')
   }
 
   build() {
@@ -106,26 +106,25 @@ struct ScrollToIndexForWaterFlow01 {
         .rowsGap(5)
         .backgroundColor(0xFAEEE0)
         .width('100%')
-        .height('100%')
+        .height('90%')
 
         Button('30', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
             console.log('跳转到30')
             this.scrollerForWaterFlow.scrollToIndex(30)
-          }).margin({ top: 10, left: 10 })
+          })
+          .margin({ top: '5%', left: '20%' })
         Button('-1', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
             console.log('跳转到-1，没有动画')
             this.scrollerForWaterFlow.scrollToIndex(-1)
-          }).margin({ top: 100, left: 10 })
+          })
+          .margin({ top: '10%', left: '20%' })
         Button('66-true', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
@@ -138,29 +137,30 @@ struct ScrollToIndexForWaterFlow01 {
               this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
               console.info(this.isSmooth + 'isSmooth')
             },1000)
-          }).margin({ top: 200, left: 10 })
+          })
+          .margin({ top: '15%', left: '20%' })
         Button('u-99-false', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
             console.log('跳转到99，无动画')
             this.scrollerForWaterFlow.scrollToIndex(99, false)
-          }).margin({ top: 300, left: 10 })
+          })
+          .margin({ top: '20%', left: '20%' })
 
         Button('moreColumns', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.scrollerForWaterFlow.scrollToIndex(0, false)
             this.moreItem = !this.moreItem
-          }).margin({ top: 400, left: 10 })
+          })
+          .margin({ top: '25%', left: '20%' })
         Button('nextPage', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             router.pushUrl({url:"pages/WaterFlowDomo1"})
-          }).margin({ top: 500, left: 10 })
+          })
+          .margin({ top: '30%', left: '20%' })
       }
     }
   }

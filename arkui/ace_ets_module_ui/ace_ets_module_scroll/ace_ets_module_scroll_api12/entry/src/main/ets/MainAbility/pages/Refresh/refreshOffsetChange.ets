@@ -69,7 +69,7 @@ struct RefreshOffsetOffsetExample {
                 ForEach(this.arr, (item: string) => {
                   Text('' + item)
                     .width('100%')
-                    .height(100)
+                    .height('20%')
                     .fontSize(16)
                     .textAlign(TextAlign.Center)
                     .borderRadius(10)
@@ -115,7 +115,7 @@ struct RefreshOffsetOffsetExample {
                 ListItem() {
                   Text('' + item)
                     .width('100%')
-                    .height(100)
+                    .height('20%')
                     .fontSize(16)
                     .textAlign(TextAlign.Center)
                     .borderRadius(10)
@@ -160,7 +160,7 @@ struct RefreshOffsetOffsetExample {
               ForEach(this.arr, (item: string) => {
                 Text('' + item)
                   .width('100%')
-                  .height(100)
+                  .height('20%')
                   .fontSize(16)
                   .textAlign(TextAlign.Center)
                   .borderRadius(10)
@@ -192,7 +192,7 @@ struct RefreshOffsetOffsetExample {
           .width('30%')
         }
       }
-      .height('90%')
+      .height('75%')
 
       Button('changeOrientation').id('changeOrientation')
         .height('5%')

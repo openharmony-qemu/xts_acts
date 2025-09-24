@@ -22,7 +22,8 @@ import {
   sleep,
   taskpoolTestFunc1,
   taskpoolTestFunc10,
-  taskpoolTestFunc2, taskpoolTestFunc3,
+  taskpoolTestFunc2,
+  taskpoolTestFunc3,
   taskpoolTestFunc4,
   taskpoolTestFunc5,
   taskpoolTestFunc6,
@@ -38,7 +39,8 @@ import {
   WorkThread16,
   WorkThread17,
   WorkThread18,
-  WorkThread9} from '../testability/pages/TaskpoolMethods';
+  WorkThread9
+} from '../testability/pages/TaskpoolMethods';
 
 const BASE_COUNT = 2;
 
@@ -358,7 +360,7 @@ export default function ProcessSupplementSecondTest() {
         try {
           let tid = process.tid;
           const result = process.getThreadPriority(tid);
-          if (result) {
+          if (result <= 19 && result >= -20) {
             console.info(` main thread result is ${result}`);
             successCount++;
             console.info(`${caseName}, main thread call ${i} success, result: ${result}`);
@@ -457,7 +459,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread11.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread11.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread11.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);
@@ -468,8 +470,6 @@ export default function ProcessSupplementSecondTest() {
       console.info(`${caseName}, test end`);
       Done();
     });
-
-
 
 
     /**
@@ -549,7 +549,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread12.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread12.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread12.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);
@@ -639,7 +639,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread13.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread13.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread13.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);
@@ -947,7 +947,7 @@ export default function ProcessSupplementSecondTest() {
           let pro = new process.ProcessManager();
           let tid = process.tid;
           let result = pro.getThreadPriority(tid);
-          if (result) {
+          if (result <= 19 && result >= -20) {
             console.info(` main thread result is ${result}`);
             successCount++;
             console.info(`${caseName}, main thread call ${i} success, result: ${result}`);
@@ -1047,7 +1047,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread16.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread16.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread16.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);
@@ -1137,7 +1137,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread17.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread17.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread17.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);
@@ -1226,7 +1226,7 @@ export default function ProcessSupplementSecondTest() {
         };
       });
       console.info(`${caseName}, starting Worker test`);
-      WorkThread18.workerStageModel.postMessage({  count: TEST_COUNT });
+      WorkThread18.workerStageModel.postMessage({ count: TEST_COUNT });
       await workerTestPromise;
       WorkThread18.workerStageModel.terminate();
       console.info(`${caseName}, Worker test results:`);

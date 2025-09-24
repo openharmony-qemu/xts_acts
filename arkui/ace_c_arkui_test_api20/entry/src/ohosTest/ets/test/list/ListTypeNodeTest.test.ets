@@ -101,5 +101,37 @@ export default function ListTypeNodeTest() {
       console.info('[ListTypeNodeTest_0100] END');
       done();
     });
+    /**
+     * @tc.number    ListTypeNodeTest_0200
+     * @tc.name      ListTypeNodeTest_0200
+     * @tc.desc      Test ListTypeNodePage undefined.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('ListTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[ListTypeNodeTest_0200] START');
+      await Utils.sleep(1000);
+      let driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('ListTypeNodePage_undefined'));
+      await btn.click();
+      console.info("[ListTypeNodeTest_0200] Click ListTypeNodePage_undefined.");
+      await Utils.sleep(1500);
+      console.info("[ListTypeNodeTest_0200] AppStorage.get('ListTypeNodeUn'): " + AppStorage.get('ListTypeNodeUn'));
+      expect(AppStorage.get('ListTypeNodeUn')).assertEqual(undefined);
+
+      console.info("[ListTypeNodeTest_0200] ListItemGroupTypeNodeUn: " + AppStorage.get('ListItemGroupTypeNodeUn'));
+      expect(AppStorage.get('ListItemGroupTypeNodeUn')).assertEqual(undefined);
+
+      console.info("[ListTypeNodeTest_0200] AppStorage.get('ListItemTypeNodeUn'): " + AppStorage.get('ListItemTypeNodeUn'));
+      expect(AppStorage.get('ListItemTypeNodeUn')).assertEqual(undefined);
+
+      AppStorage.delete('ListTypeNodeUn')
+      AppStorage.delete('ListItemGroupTypeNodeUn')
+      AppStorage.delete('ListItemTypeNodeUn')
+
+      console.info('[ListTypeNodeTest_0200] END');
+      done();
+    });
   })
 }
