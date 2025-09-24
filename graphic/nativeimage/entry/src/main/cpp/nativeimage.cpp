@@ -638,10 +638,16 @@ static napi_value OHNativeImageAcquireNativeWindowNullptr(napi_env env, napi_cal
 
 static napi_value OHNativeImageAcquireNativeWindowNormal(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     int backInfo = FAIL;
     OHNativeWindow *nativeWindow1 = nullptr;
     OHNativeWindow *nativeWindow2 = nullptr;
     OH_NativeImage *nativeImage = getNativeImage();
+    if (nativeImage == nullptr) {
+        OH_NativeImage_Destroy(&nativeImage);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     nativeWindow1 = OH_NativeImage_AcquireNativeWindow(nativeImage);
     if (nativeWindow1 != nullptr) {
         nativeWindow2 = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -649,8 +655,6 @@ static napi_value OHNativeImageAcquireNativeWindowNormal(napi_env env, napi_call
             backInfo = SUCCESS;
         }
     }
-    
-    napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
