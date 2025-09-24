@@ -48,7 +48,7 @@ struct Index {
                  console.info(`Main window orientation: ${display.getDefaultDisplaySync().orientation}`);
                };
 
-               display.on("change", callback);
+               display.on('change', callback);
                window.getLastWindow(this.getUIContext().getHostContext(), async (err: BusinessError, data) => {
                  const errCode: number = err.code;
                  if (errCode) {
