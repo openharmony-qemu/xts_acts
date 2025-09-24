@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
+import { waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
