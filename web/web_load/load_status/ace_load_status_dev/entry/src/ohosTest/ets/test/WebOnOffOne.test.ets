@@ -16,8 +16,11 @@
 import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
-let emitKey = "emitOnOffOne";
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
 
+let emitKey = "emitOnOffOne";
+const driver = Driver.create();
 export default function webOnOffOneTest() {
 
 
@@ -34,7 +37,6 @@ export default function webOnOffOneTest() {
         if (!("webOnOffOne" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,13 +50,6 @@ export default function webOnOffOneTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebAttributeTest afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_EMITONOFFONEONE_0100
     * @tc.name        : emitOnOffOne
@@ -65,12 +60,12 @@ export default function webOnOffOneTest() {
     */
 
     it('emitOnOffOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnOffOne", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("emitOnOffOne", true, 20250520, done);
-      sendEventByKey('webOnOffButton', 10, '');
+      Utils.emitEvent("emitOnOffOne", 141331)
+      let isReturn = false;
+      Utils.registerEvent("emitOnOffOne", true, 141370, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webOnOffButton",driver)
+      await waitForExist(()=>isReturn, "emitOnOffOne", true,1000);
+      done();
     })
-
-
   })
 }
