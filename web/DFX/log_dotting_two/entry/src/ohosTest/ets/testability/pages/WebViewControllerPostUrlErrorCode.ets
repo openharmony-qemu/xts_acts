@@ -17,6 +17,8 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_EMIT_KEY = 115670;
+
 class testObj {
   constructor() {
   }
@@ -42,19 +44,21 @@ struct WebViewControllerPostUrlErrorCode {
   @State str: string = ""
   @State callBackId: number = 0;
   @State javaScriptAccess: boolean = true;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   @State testObjTest: testObj = new testObj();
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -63,6 +67,7 @@ struct WebViewControllerPostUrlErrorCode {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -73,6 +78,8 @@ struct WebViewControllerPostUrlErrorCode {
         Button('PostUrlErrorCodeButton click')
           .key('PostUrlErrorCodeButton')
           .onClick(async () => {
+            await Utils.waitForExist(()=>this.isPageEnd, 'PostUrlErrorCodeButtonIsPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isReceive, 'PostUrlErrorCodeButtonIsReceive', 1, 1000);
             console.info("key==>" + this.str)
             switch (this.str) {
 
@@ -80,10 +87,10 @@ struct WebViewControllerPostUrlErrorCode {
                 try {
                   let postData = this.testObjTest.test("Name=test&Password=test");
                   this.controllerNull.postUrl('www.example.com', postData);
-                  Utils.emitEvent(this.no_error, 30001)
+                  Utils.emitEvent(this.no_error, 115680)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 30001)
+                  Utils.emitEvent(String(error.code), 115680)
                 }
                 break;
               }
@@ -92,10 +99,10 @@ struct WebViewControllerPostUrlErrorCode {
                 try {
                   let postData = this.testObjTest.test("Name=test&Password=test");
                   this.controller.postUrl('', postData);
-                  Utils.emitEvent(this.no_error, 30002)
+                  Utils.emitEvent(this.no_error, 115690)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 30002)
+                  Utils.emitEvent(String(error.code), 115690)
                 }
                 break;
               }
@@ -104,6 +111,10 @@ struct WebViewControllerPostUrlErrorCode {
 
         Web({ src: $rawfile('index.html'), controller: this.controller })
           .javaScriptAccess(this.javaScriptAccess)
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
+          })
       }
       .width('100%')
     }

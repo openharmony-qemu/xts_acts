@@ -16,20 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../test/Interfaces';
 
-class testObj {
-  constructor() {
-  }
-
-  test(): string {
-    return "ArkUI Web Component";
-  }
-
-  toString(): void {
-    console.log('Web Component toString');
-  }
-}
+const EVENT_ID_SET_EMIT_KEY = 114630;
 
 async function sendMessageToApp(controller: webView.WebviewController, functionName: string, callBackCode: number) {
   try {
@@ -37,18 +25,15 @@ async function sendMessageToApp(controller: webView.WebviewController, functionN
       functionName,
       (error, result) => {
         if (error) {
-          console.info(`run JavaScript error: ` + JSON.stringify(error))
-          Utils.emitEvent(String(error.code), callBackCode)
+          console.error(`run JavaScript error: ` + JSON.stringify(error))
           return;
         }
         if (result) {
           console.info(`The ${functionName} return value is: ${result}`)
         }
       });
-    await Utils.sleep(2000);
   } catch (resError) {
-    console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
-    Utils.emitEvent(String(resError.code), callBackCode)
+    console.error(`sendMessageToApp error code: ${resError.code}, Message: ${resError.message}`);
   }
 }
 
@@ -64,23 +49,24 @@ struct Index {
   @State webResult: string = ' ';
   @State javaScriptAccess: boolean = true;
   @State ports: webView.WebMessagePort[] = [];
-  @State testObj: testObj = new testObj();
   @State imageAccess: boolean = true;
   @State domStorageAccess: boolean = false;
   @State databaseAccess: boolean = true;
   @State callBackCode: number = -1;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -89,19 +75,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -109,199 +84,195 @@ struct Index {
     Column() {
       Row() {
         Button("webMessageExtErrorCode click").key('webMessageExtErrorCodeButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'webMessageExtErrorCodeButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webMessageExtErrorCodeButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "testWebMessageExtGetStringError001": {
-              this.callBackCode = 20200;
+              this.callBackCode = 114640;
               await sendMessageToApp(this.controller, 'postNumberToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetStringError002": {
-              this.callBackCode = 20201;
+              this.callBackCode = 114650;
               await sendMessageToApp(this.controller, 'postBooleanToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetStringError003": {
-              this.callBackCode = 20202;
+              this.callBackCode = 114660;
               await sendMessageToApp(this.controller, 'postArrayBufferToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetStringError004": {
-              this.callBackCode = 20203;
+              this.callBackCode = 114670;
               await sendMessageToApp(this.controller, 'postArrayToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetStringError005": {
-              this.callBackCode = 20204;
+              this.callBackCode = 114680;
               await sendMessageToApp(this.controller, 'postErrorToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetNumberError001": {
-              this.callBackCode = 20210;
+              this.callBackCode = 114690;
               await sendMessageToApp(this.controller, 'postStringToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetNumberError002": {
-              this.callBackCode = 20211;
+              this.callBackCode = 114700;
               await sendMessageToApp(this.controller, 'postBooleanToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetNumberError003": {
-              this.callBackCode = 20212;
+              this.callBackCode = 114710;
               await sendMessageToApp(this.controller, 'postArrayToApp()', this.callBackCode)
               break;
             }
             case "testWebMessageExtGetNumberError004": {
-              this.callBackCode = 20213;
+              this.callBackCode = 114720;
               await sendMessageToApp(this.controller, 'postArrayBufferToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetNumberError005": {
-              this.callBackCode = 20214;
+              this.callBackCode = 114730;
               await sendMessageToApp(this.controller, 'postErrorToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetBooleanError001": {
-              this.callBackCode = 20220;
+              this.callBackCode = 114740;
               await sendMessageToApp(this.controller, 'postStringToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetBooleanError002": {
-              this.callBackCode = 20221;
+              this.callBackCode = 114750;
               await sendMessageToApp(this.controller, 'postNumberToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetBooleanError003": {
-              this.callBackCode = 20222;
+              this.callBackCode = 114760;
               await sendMessageToApp(this.controller, 'postArrayBufferToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetBooleanError004": {
-              this.callBackCode = 20223;
+              this.callBackCode = 114770;
               await sendMessageToApp(this.controller, 'postArrayToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExtGetBooleanError005": {
-              this.callBackCode = 20224;
+              this.callBackCode = 114780;
               await sendMessageToApp(this.controller, 'postErrorToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayBufferError001": {
-              this.callBackCode = 20230;
+              this.callBackCode = 114790;
               await sendMessageToApp(this.controller, 'postStringToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayBufferError002": {
-              this.callBackCode = 20231;
+              this.callBackCode = 114800;
               await sendMessageToApp(this.controller, 'postNumberToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayBufferError003": {
-              this.callBackCode = 20232;
+              this.callBackCode = 114810;
               await sendMessageToApp(this.controller, 'postBooleanToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayBufferError004": {
-              this.callBackCode = 20233;
+              this.callBackCode = 114820;
               await sendMessageToApp(this.controller, 'postArrayToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayBufferError005": {
-              this.callBackCode = 20234;
+              this.callBackCode = 114830;
               await sendMessageToApp(this.controller, 'postErrorToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayError001": {
-              this.callBackCode = 20240;
+              this.callBackCode = 114840;
               await sendMessageToApp(this.controller, 'postStringToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayError002": {
-              this.callBackCode = 20241;
+              this.callBackCode = 114850;
               await sendMessageToApp(this.controller, 'postNumberToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayError003": {
-              this.callBackCode = 20242;
+              this.callBackCode = 114860;
               await sendMessageToApp(this.controller, 'postBooleanToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayError004": {
-              this.callBackCode = 20243;
+              this.callBackCode = 114870;
               await sendMessageToApp(this.controller, 'postArrayBufferToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetArrayError005": {
-              this.callBackCode = 20244;
+              this.callBackCode = 114880;
               await sendMessageToApp(this.controller, 'postErrorToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetErrorError001": {
-              this.callBackCode = 20250;
+              this.callBackCode = 114890;
               await sendMessageToApp(this.controller, 'postStringToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetErrorError002": {
-              this.callBackCode = 20251;
+              this.callBackCode = 114900;
               await sendMessageToApp(this.controller, 'postNumberToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetErrorError003": {
-              this.callBackCode = 20252;
+              this.callBackCode = 114910;
               await sendMessageToApp(this.controller, 'postBooleanToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetErrorError004": {
-              this.callBackCode = 20253;
+              this.callBackCode = 114920;
               await sendMessageToApp(this.controller, 'postArrayBufferToApp()', this.callBackCode)
               break;
             }
 
             case "testWebMessageExGetErrorError005": {
-              this.callBackCode = 20254;
+              this.callBackCode = 114930;
               await sendMessageToApp(this.controller, 'postArrayToApp()', this.callBackCode)
               break;
             }
-
           }
         })
       }
 
       Web({ src: $rawfile('onMessageEventExt.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onPageEnd(() => {
           console.log("onPageEnd==>")
           this.ports = this.controller.createWebMessagePorts(true);
@@ -361,10 +332,11 @@ struct Index {
               }
               Utils.emitEvent(this.no_error, this.callBackCode)
             } catch (resError) {
-              console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
+              console.log(`onMessageEventExt error code: ${resError.code}, Message: ${resError.message}`);
               Utils.emitEvent(String(resError.code), this.callBackCode)
             }
           });
+          this.isPageEnd = 1;
         })
         .imageAccess(this.imageAccess)
         .databaseAccess(this.databaseAccess)
