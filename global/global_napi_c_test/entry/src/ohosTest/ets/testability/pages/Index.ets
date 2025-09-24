@@ -14,10 +14,13 @@
  */
 
 import hilog from '@ohos.hilog';
+import { display, window } from '@kit.ArkUI';
+import { BusinessError } from '@ohos.base';
 
 @Entry
 @Component
 struct Index {
+  @State index: number = 0;
   aboutToAppear() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
@@ -29,7 +32,7 @@ struct Index {
                .fontSize(50)
                .fontWeight(FontWeight.Bold)
              Button() {
-               Text('next page')
+               Text('current: ' + this.index)
                  .fontSize(20)
                  .fontWeight(FontWeight.Bold)
              }.type(ButtonType.Capsule)
@@ -39,7 +42,27 @@ struct Index {
              .backgroundColor('#0D9FFB')
              .width('35%')
              .height('5%')
-             .onClick(()=>{
+             .onClick(async ()=>{
+               let mainWindow: window.Window;
+               let callback: Callback<number> = (data: number) => {
+                 console.info(`Main window orientation: ${display.getDefaultDisplaySync().orientation}`);
+               };
+
+               display.on("change", callback);
+               window.getLastWindow(this.getUIContext().getHostContext(), async (err: BusinessError, data) => {
+                 const errCode: number = err.code;
+                 if (errCode) {
+                   console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
+                   return;
+                 }
+                 mainWindow = data;
+                 if (mainWindow) {
+                   this.index = (++this.index) % 18;
+                   await mainWindow.setPreferredOrientation(this.index);
+                 } else {
+                   console.error("Main window is not available. Cannot set orientation.");
+                 }
+               })
              })
            }
              .width('100%')
