@@ -17,6 +17,7 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces.d';
 import events_emitter from '@ohos.events.emitter';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -33,17 +34,18 @@ struct WebMessagePortIsExtentionTypeTest {
   @State callBackId: number = 0;
   @State javaScriptAccess: boolean = true;
   @State databaseAccess: boolean = true;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170360,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170360)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +54,7 @@ struct WebMessagePortIsExtentionTypeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -72,8 +75,9 @@ struct WebMessagePortIsExtentionTypeTest {
     Row() {
       Column() {
         Button("IsExtentionType click").key('IsExtentionTypeButton').onClick(async () => {
-          console.info("key==>" + this.str)
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testIsExtentionType001": {
@@ -83,7 +87,7 @@ struct WebMessagePortIsExtentionTypeTest {
                 this.message.setArrayBuffer(buffer);
                 this.ports[0].postMessageEventExt(this.message);
               } catch (error) {
-                Utils.emitEvent(error.code, 100100)
+                Utils.emitEvent(error.code, 170370)
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
