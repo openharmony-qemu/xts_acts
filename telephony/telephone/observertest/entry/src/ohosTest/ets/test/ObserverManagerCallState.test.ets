@@ -237,7 +237,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: 0
@@ -266,7 +266,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: 1
@@ -295,7 +295,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: 2
@@ -324,7 +324,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: -1
@@ -353,7 +353,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: -2
@@ -382,7 +382,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         let options: observer.ObserverOptions = {
           slotId: 3
@@ -411,7 +411,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         done();
@@ -437,7 +437,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         observer.on(null, callback);
         done();
@@ -463,7 +463,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         //可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -491,7 +491,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         //可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -520,7 +520,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTure(data !== null);
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         //可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
