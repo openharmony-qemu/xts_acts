@@ -16,9 +16,9 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("ActsAVCodeMain20Test") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAVSessionMainTest"
-  subsystem_name = "av_code"
-  part_name = "multimedia"
+  hap_name = "ActsAVCodeMain20Test"
+  subsystem_name = "multimedia"
+  part_name = "av_code"
 }
 
 ohos_js_app_suite("ActsAVCode20Test") {

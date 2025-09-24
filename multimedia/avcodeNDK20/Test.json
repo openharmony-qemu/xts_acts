@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for ActsCode20Test Tests",
+    "description": "Configuration for ActsAVCode20Test Tests",
     "driver": {
         "type": "OHAVCodeTest",
         "test-timeout": "180000",
