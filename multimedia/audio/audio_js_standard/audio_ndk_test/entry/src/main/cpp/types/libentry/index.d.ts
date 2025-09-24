@@ -21,7 +21,6 @@ export const StartAudioRenderer: () => number;
 export const getFileList: (resmgr: resourceManager.ResourceManager, path: string) => Array<String>;
 export const createAudioStreamBuilder: () => number;
 export const audioCaptureGenerate: () => number;
-export const audioWorkGroup: () => number;
 export const audioCaptureGenerateErr: () => number;
 export const audioCaptureStart: () => number;
 export const audioCaptureStartErr: () => number;
