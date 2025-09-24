@@ -17,7 +17,7 @@ group("game") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "gamecontroller:ActsGameControllerTest",
+      "gamecontroller:ActsGameControllerStaticTest",
     ]
   }
 }

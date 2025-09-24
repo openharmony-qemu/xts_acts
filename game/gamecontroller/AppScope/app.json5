@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "ohos.acts.game.gamecontroller",
+    "bundleName": "ohos.acts.game.gamecontrollertest.static",
     "vendor": "acts",
     "versionCode": 1000000,
     "versionName": "1.0.0",
