@@ -21,6 +21,8 @@ import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
+
 
 
 export default class EntryAbility extends UIAbility {
@@ -47,13 +49,19 @@ struct Index {
   realm: string = "protected example";
   username_password: string[] = [];
   origin: string = "resource://rawfile/";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160500,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160500)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -62,19 +70,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -89,17 +86,21 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str);
           switch (this.str) {
             case "emitClearHistory": {
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "http://www.baidu.com/" });
-              setTimeout(() => {
-                this.controller.clearHistory();
-                setTimeout(() => {
-                  let clearHistoryCalled = this.controller.accessBackward();
-                  Utils.emitEvent(clearHistoryCalled, 82);
-                }, 5000);
-              }, 10000);
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.controller.clearHistory();
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let clearHistoryCalled = this.controller.accessBackward();
+              Utils.emitEvent(clearHistoryCalled, 160510);
               break;
             }
             case "emitAllowGeolocation": {
@@ -115,7 +116,7 @@ struct Index {
                   return;
                 }
                 this.text = this.origin + ", result: " + result;
-                Utils.emitEvent(this.text, 402);
+                Utils.emitEvent(this.text, 160520);
               })
               break;
             }
@@ -128,7 +129,7 @@ struct Index {
                   return;
                 }
                 this.text = origins.join();
-                Utils.emitEvent(this.text, 404);
+                Utils.emitEvent(this.text, 160530);
               })
               break;
             }
@@ -142,7 +143,7 @@ struct Index {
                   return;
                 }
                 this.text = origins.join();
-                Utils.emitEvent(this.text, 406);
+                Utils.emitEvent(this.text, 160540);
               })
               break;
             }
@@ -156,19 +157,11 @@ struct Index {
         .databaseAccess(true)
         .zoomAccess(this.zoomAccessValue)
         .textZoomRatio(this.textRatio)
-        .onConsole((event) => {
-          let level = event.message.getMessageLevel();
-          let msg = event.message.getMessage();
-          let lineNumber = event.message.getLineNumber().toString();
-          let sourceId = event.message.getSourceId();
-          console.log("lineNumber:" + lineNumber);
-          setTimeout(() => {
-            Utils.emitEvent(lineNumber, 420);
-          }, 3000);
-          setTimeout(() => {
-            Utils.emitEvent(sourceId, 422);
-          }, 3000);
-          return false;
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebController onPageEnd url:' + event.url);
+          }
         })
     }
   }
