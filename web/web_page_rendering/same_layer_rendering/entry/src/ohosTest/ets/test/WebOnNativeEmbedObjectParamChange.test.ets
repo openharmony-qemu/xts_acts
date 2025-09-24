@@ -100,22 +100,22 @@ export default function WebOnNativeEmbedObjectParamChange() {
     it('emitOnNativeEmbedObjectParamChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnNativeEmbedObjectParamChange002";
       Utils.emitEvent(emitKey, 130701);
-      Utils.registerEvent("emitOnNativeEmbedObjectParamChange002", NativeEmbedParamStatus.UPDATE, 20250924, done);
+      Utils.registerEvent("emitOnNativeEmbedObjectParamChange002",   NativeEmbedParamStatus.DELETE, 20250924, done);
       sendEventByKey('WebOnNativeEmbedObjectParamChangeButton', 10, '');
     })
 
     /**
-    * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0300
-    * @tc.name       emitOnNativeEmbedObjectParamChange003
-    * @tc.desc       emitOnNativeEmbedObjectParamChange003
-    * @tc.size_t     MediumTest
-    * @tc.type       Function
-    * @tc.level      Level 0
-    */
+     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0200
+     * @tc.name       emitOnNativeEmbedObjectParamChange003
+     * @tc.desc       emitOnNativeEmbedObjectParamChange003
+     * @tc.size_t     MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
     it('emitOnNativeEmbedObjectParamChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnNativeEmbedObjectParamChange003";
       Utils.emitEvent(emitKey, 130701);
-      Utils.registerEvent("emitOnNativeEmbedObjectParamChange003", NativeEmbedParamStatus.DELETE, 20250925, done);
+      Utils.registerEvent("emitOnNativeEmbedObjectParamChange003", NativeEmbedParamStatus.UPDATE, 20250925, done);
       sendEventByKey('WebOnNativeEmbedObjectParamChangeButton', 10, '');
     })
 

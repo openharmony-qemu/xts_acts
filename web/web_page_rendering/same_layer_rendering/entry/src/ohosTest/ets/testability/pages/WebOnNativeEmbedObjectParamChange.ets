@@ -177,10 +177,12 @@ struct WebIndex {
               }
               break;
             }
+
+
             case "emitOnNativeEmbedObjectParamChange002": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange002')
-                this.browserTabController.runJavaScript('modifyLastParamValue()')
+                this.browserTabController.runJavaScript('removeParam()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -190,7 +192,7 @@ struct WebIndex {
             case "emitOnNativeEmbedObjectParamChange003": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange003')
-                this.browserTabController.runJavaScript('removeParam()')
+                this.browserTabController.runJavaScript('modifyLastParamValue()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -289,10 +291,10 @@ struct WebIndex {
                     ", value: " + this.params[i].value);
                   if(this.params[i].status == NativeEmbedParamStatus.ADD) {
                     Utils.emitEvent(NativeEmbedParamStatus.ADD, 20250923)
+                  }  else if(this.params[i].status == NativeEmbedParamStatus.DELETE) {
+                    Utils.emitEvent(NativeEmbedParamStatus.DELETE, 20250924)
                   } else if(this.params[i].status == NativeEmbedParamStatus.UPDATE) {
-                    Utils.emitEvent(NativeEmbedParamStatus.UPDATE, 20250924)
-                  } else if(this.params[i].status == NativeEmbedParamStatus.DELETE) {
-                    Utils.emitEvent(NativeEmbedParamStatus.DELETE, 20250925)
+                    Utils.emitEvent(NativeEmbedParamStatus.UPDATE, 20250925)
                   }
                 }
               }
