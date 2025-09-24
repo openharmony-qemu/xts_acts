@@ -31,7 +31,7 @@ struct Webdoubleinnernucleus {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 162000,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -62,7 +62,7 @@ struct Webdoubleinnernucleus {
             // }
             case "emitWebDoubleInnerNucleus001": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
-              Utils.emitEvent(webview.WebviewController.getActiveWebEngineVersion(),20250902)
+              Utils.emitEvent(webview.WebviewController.getActiveWebEngineVersion(),162010)
               break;
             }
           }
@@ -74,9 +74,6 @@ struct Webdoubleinnernucleus {
           this.isPageEnd = 0;
           this.url = event.url;
         })
-
-
-
 
     }
   }
