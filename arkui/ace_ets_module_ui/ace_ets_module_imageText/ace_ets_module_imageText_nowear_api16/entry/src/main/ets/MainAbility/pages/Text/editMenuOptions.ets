@@ -59,194 +59,202 @@ struct editMenuOptionsExample {
   build() {
     Column() {
       Text('回调content:'+this.content)
-      Text(this.textLabelInfo)
-        .id('textLabelInfo')
-      Text(this.textAreaLabelInfo)
-        .id('textAreaLabelInfo')
-      Text(this.textInputLabelInfo)
-        .id('textInputLabelInfo')
-      Text(this.richEditorLabelInfo)
-        .id('richEditorLabelInfo')
-      Text(this.searchLabelInfo)
-        .id('searchLabelInfo')
+      Row(){
+        Text(this.textLabelInfo)
+          .width('10%')
+          .id('textLabelInfo')
+        Text(this.textAreaLabelInfo)
+          .width('10%')
+          .id('textAreaLabelInfo')
+        Text(this.textInputLabelInfo)
+          .width('10%')
+          .id('textInputLabelInfo')
+        Text(this.richEditorLabelInfo)
+          .width('10%')
+          .id('richEditorLabelInfo')
+        Text(this.searchLabelInfo)
+          .width('10%')
+          .id('searchLabelInfo')
+      }
       
+      Row(){
+        Text(this.text)
+          .width('10%')
+          .copyOption(CopyOptions.LocalDevice)
+          .editMenuOptions({
+            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textLabelInfo = menuItem.labelInfo
+                return false;
+              }
+              return true;
+            }
+          })
+          .id('text')
 
-      Text(this.text)
-        .fontSize(20)
-        .copyOption(CopyOptions.LocalDevice)
-        .editMenuOptions({
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textLabelInfo = menuItem.labelInfo
+        TextArea({ text: this.text })
+          .width('10%')
+          .height(56)
+          .editMenuOptions({
+            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textAreaLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textAreaLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textAreaLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textAreaLabelInfo = menuItem.labelInfo
+                return false;
+              }
               return true;
             }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textLabelInfo = menuItem.labelInfo
-              return false;
-            }
-            return true;
-          }
-        })
-        .id('text')
+          })
+          .id('textArea')
 
-      TextArea({ text: this.text })
-        .width('95%')
-        .height(56)
-        .editMenuOptions({
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textAreaLabelInfo = menuItem.labelInfo
+        TextInput({ text: this.text })
+          .width('10%')
+          .height(56)
+          .editMenuOptions({
+            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textInputLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.textInputLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textInputLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.textInputLabelInfo = menuItem.labelInfo
+                return false;
+              }
               return true;
             }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textAreaLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textAreaLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textAreaLabelInfo = menuItem.labelInfo
-              return false;
-            }
-            return true;
-          }
-        })
-        .id('textArea')
+          })
+          .id('textInput')
 
-      TextInput({ text: this.text })
-        .width('95%')
-        .height(56)
-        .editMenuOptions({
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textInputLabelInfo = menuItem.labelInfo
+        RichEditor(this.options)
+          .onReady(() => {
+            this.controller.addTextSpan('RichEditor扩展')
+          })
+          .editMenuOptions({
+            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.richEditorLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.richEditorLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.richEditorLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.richEditorLabelInfo = menuItem.labelInfo
+                return false;
+              }
               return true;
             }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.textInputLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textInputLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.textInputLabelInfo = menuItem.labelInfo
-              return false;
-            }
-            return true;
-          }
-        })
-        .id('textInput')
-
-      RichEditor(this.options)
-        .onReady(() => {
-          this.controller.addTextSpan('RichEditor扩展')
-        })
-        .editMenuOptions({
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.richEditorLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.richEditorLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.richEditorLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.richEditorLabelInfo = menuItem.labelInfo
-              return false;
-            }
-            return true;
-          }
-        })
-        .height(50)
-        .copyOptions(CopyOptions.InApp)
-        .id('richEditor')
+          })
+          .width('10%')
+          .copyOptions(CopyOptions.InApp)
+          .id('richEditor')
 
 
-      Search({value: 'search'})
-        .width('95%')
-        .copyOption(CopyOptions.InApp)
-        .height(50)
-        .editMenuOptions({
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.searchLabelInfo = menuItem.labelInfo
+        Search({value: 'search'})
+          .width('10%')
+          .copyOption(CopyOptions.InApp)
+          .height(50)
+          .editMenuOptions({
+            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.searchLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                this.content = menuItem.content
+                this.searchLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.searchLabelInfo = menuItem.labelInfo
+                return true;
+              }
+              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+                this.content = menuItem.content
+                this.searchLabelInfo = menuItem.labelInfo
+                return false;
+              }
               return true;
             }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-              this.content = menuItem.content
-              this.searchLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.searchLabelInfo = menuItem.labelInfo
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-              this.content = menuItem.content
-              this.searchLabelInfo = menuItem.labelInfo
-              return false;
-            }
-            return true;
-          }
-        })
-        .id('search')
-
+          })
+          .id('search')
+      }
       Search()
+        .margin({top:50})
         .id('search2')
     }
     .borderWidth(1)
