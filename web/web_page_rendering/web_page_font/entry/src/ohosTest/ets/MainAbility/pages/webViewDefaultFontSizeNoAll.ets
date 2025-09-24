@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -31,10 +32,12 @@ struct webViewDefaultFontSizeNoAll {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State checkEleResult: string = "";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150280,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -46,6 +49,7 @@ struct webViewDefaultFontSizeNoAll {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -53,7 +57,10 @@ struct webViewDefaultFontSizeNoAll {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webViewDefaultFontSizeNoAll').onClick(() => {
+        Button("web click").key('webViewDefaultFontSizeNoAll').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitdefaultFontSizeAndminFontSizeNoAll": {
@@ -62,7 +69,7 @@ struct webViewDefaultFontSizeNoAll {
                   this.checkEleResult = JSON.parse(result)
                   Utils.sleep(2000)
                   console.log(`The getPageFontsize() return value is: ${result}`);
-                  Utils.emitEvent(this.checkEleResult[1], 340)
+                  Utils.emitEvent(this.checkEleResult[1], 150290)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -81,6 +88,12 @@ struct webViewDefaultFontSizeNoAll {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 }

@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -32,14 +33,21 @@ struct webDefaultFontSize {
   @State defaultFontSize: number = 13;
   @State minFontSize: number = 13;
   @State checkEleResult: Object[] = [];
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150020,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
+
+    onPageHide() {
+    events_emitter.off(150020)
+  }
+
 
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webDefaultFontSize page valueChangeCallBack");
@@ -47,6 +55,7 @@ struct webDefaultFontSize {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -55,19 +64,23 @@ struct webDefaultFontSize {
     Column() {
       Row() {
         Button("web click").key('webDefaultFontSize').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitdefaultFontSize73AndminFontSize1WebC": {
               try {
                 this.defaultFontSize = 73;
                 this.minFontSize = 1;
-                await Utils.sleep(2000)
+                this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log("fonsize of emitdefaultFontSize73AndminFontSize1WebC is :" + this.defaultFontSize + this.minFontSize);
                 this.controller.runJavaScript({
                   script: "getPageFontsize()", callback: (result) => {
                     this.checkEleResult = JSON.parse(result)
-                    Utils.sleep(2000)
-                    Utils.emitEvent(this.checkEleResult[1], 432)
+                    Utils.emitEvent(this.checkEleResult[1], 150030)
                     console.log(`The getPageFontsize() return value is: ${result}`);
                   }
                 })
@@ -80,13 +93,11 @@ struct webDefaultFontSize {
               try {
                 this.defaultFontSize = 73;
                 this.minFontSize = 73;
-                await Utils.sleep(2000)
                 console.log("fonsize of emitdefaultFontSize73AndminFontSize73WebC is :" + this.defaultFontSize + this.minFontSize);
                 this.controller.runJavaScript({
                   script: "getPageFontsize()", callback: (result) => {
                     this.checkEleResult = JSON.parse(result)
-                    Utils.sleep(2000)
-                    Utils.emitEvent(this.checkEleResult[1], 434)
+                    Utils.emitEvent(this.checkEleResult[1], 150040)
                     console.log(`The getPageFontsize() return value is: ${result}`);
                   }
                 })
@@ -110,6 +121,12 @@ struct webDefaultFontSize {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 }
