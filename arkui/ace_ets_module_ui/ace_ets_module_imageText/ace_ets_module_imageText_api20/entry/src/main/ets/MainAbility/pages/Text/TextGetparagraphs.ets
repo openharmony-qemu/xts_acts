@@ -268,6 +268,7 @@ struct MeasureUtilsGetParagraphs {
             let paragraphArr = this.getUIContext().getMeasureUtils().getParagraphs(this.mutableStrAllContent2, { constraintWidth: LengthMetrics.px(500) })
             console.log('Test--获取文本最大行宽:' + paragraphArr[0].getMaxWidth())
             AppStorage.SetOrCreate('getMaxWidth', paragraphArr[0].getMaxWidth())
+            AppStorage.SetOrCreate('paragraphArrLength', paragraphArr.length)
             console.log('Test--获取文本总高度:' + paragraphArr[0].getHeight())
             console.log('Test--获取文本最长行宽:' + paragraphArr[0].getLongestLine())
             console.log('Test--获取文本最长一行的宽度:' + paragraphArr[0].getLongestLineWithIndent())
