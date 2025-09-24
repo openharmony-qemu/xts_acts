@@ -42,8 +42,8 @@ struct parentX {
             .key('onChildTouchTest').height(10)
         }
         .key('Column_CustomEvent')
-        .width(400)
-        .height(400)
+        .width(50)
+        .height(50)
         .backgroundColor(0xF1F3F5)
         .onChildTouchTest((touchinfo) => {
           let strategy_DEFAULT = TouchTestStrategy.DEFAULT
