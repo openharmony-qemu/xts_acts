@@ -20,25 +20,25 @@ import Utils from '../../MainAbility/common/Utils';
 export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
   describe('DialogDisableDateRangeAndMarkToday', () => {
     beforeAll(async () => {
-      console.info("DialogDisableDateRangeAndMarkToday beforeEach start");
+      console.info('DialogDisableDateRangeAndMarkToday beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPickerDialog/dialogDisableDateRangeAndMarkToday',
       }
       try {
         router.clear();
         let pages = router.getState();
-        if (!("dialogDisableDateRangeAndMarkToday" == pages.name)) {
+        if (!('dialogDisableDateRangeAndMarkToday' == pages.name)) {
           let result = await router.push(options);
           await Utils.sleep(2000);
         }
       } catch (err) {
-        console.error("push DialogDisableDateRangeAndMarkToday page error: " + err);
+        console.error('push DialogDisableDateRangeAndMarkToday page error: ' + err);
       }
     });
 
     afterEach(async () => {
       await Utils.sleep(2000);
-      console.info("DialogDisableDateRangeAndMarkToday after each called");
+      console.info('DialogDisableDateRangeAndMarkToday after each called');
     });
 
     /**
