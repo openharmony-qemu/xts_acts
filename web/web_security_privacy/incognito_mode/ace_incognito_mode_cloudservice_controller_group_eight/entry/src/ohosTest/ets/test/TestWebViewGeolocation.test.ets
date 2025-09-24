@@ -18,9 +18,9 @@ import Utils from './Util';
 import events_emitter from '@ohos.events.emitter';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import router from '@ohos.router';
-
-let emitKey = "";
-
+import { waitForComponent } from './WaitTest';
+import { Driver,ON } from '@ohos.UiTest'
+let driver = Driver.create();
 export default function ActsWebViewTest2() {
   const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -30,53 +30,25 @@ export default function ActsWebViewTest2() {
         url: 'testability/pages/TestWebViewGeolocation',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!('testWebView_Geolocation' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push index page error:' + err);
       }
+      await waitForComponent("getAccessibleGeolocation1");
       done()
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(500);
       done();
     });
 
-    afterEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      console.info('web afterEach start:' + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            'ACTION': ''
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('start send emitKey');
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info('emit emitKey  err: ' + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
-
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    });
 
     /**
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0017
@@ -86,14 +58,15 @@ export default function ActsWebViewTest2() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('SUB_ACE_WEB_INCOGNITO_API_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_getAccessibleGeolocation0003', 'Invalid origin.The origin format must follow defined in RFC 6454.', 5005, done,
+    it('SUB_ACE_WEB_INCOGNITO_API_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,   async (done: Function) => {
+      Utils.emitEvent("getAccessibleGeolocation1", 160260)
+      Utils.registerBaseEvent('testWebView_getAccessibleGeolocation0003', 'Invalid origin.The origin format must follow defined in RFC 6454.', 160270, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      sendEventByKey('getAccessibleGeolocation1', 10, '');
+      let component = await driver.findComponent(ON.id("getAccessibleGeolocation1"));
+      await component.click();
     });
 
 
@@ -106,7 +79,8 @@ export default function ActsWebViewTest2() {
      * @tc.level Level 1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_getAccessibleGeolocation0004', 'Invalid origin.The origin format must follow defined in RFC 6454.', 5006, done,
+      Utils.emitEvent("getAccessibleGeolocation2", 160260)
+      Utils.registerBaseEvent('testWebView_getAccessibleGeolocation0004', 'Invalid origin.The origin format must follow defined in RFC 6454.', 160280, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -123,7 +97,8 @@ export default function ActsWebViewTest2() {
      * @tc.level Level 1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_getStoredGeolocation0003', 'No data', 5007, done,
+      Utils.emitEvent("getStoredGeolocation1", 160260)
+      Utils.registerBaseEvent('testWebView_getStoredGeolocation0003', 'No data', 160290, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -140,7 +115,8 @@ export default function ActsWebViewTest2() {
      * @tc.level Level 1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_getStoredGeolocation0004', 'No data', 5008, done,
+      Utils.emitEvent("getStoredGeolocation2", 160260)
+      Utils.registerBaseEvent('testWebView_getStoredGeolocation0004', 'No data', 160300, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

@@ -16,6 +16,7 @@
 import { webview } from '@kit.ArkWeb';
 import { URL } from '../../test/Config';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
@@ -23,6 +24,33 @@ struct testWebView_Cookie {
   controller: webview.WebviewController = new webview.WebviewController();
   controller1: webview.WebviewController = new webview.WebviewController();
   origin: string = 'file:///';
+  @State str: string = ''
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
+  onPageShow(): void{
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 160210,
+      priority: events_emitter.EventPriority.LOW
+    };
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160210)
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
+    if (eventData.data != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data.ACTION != null) {
+        this.str = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
+
 
   aboutToAppear(): void{
     webview.WebCookieManager.clearAllCookiesSync()
@@ -35,10 +63,10 @@ struct testWebView_Cookie {
         .onClick(() => {
           try {
             webview.WebCookieManager.configCookieSync(URL, 'a=b');
-            Utils.emitEvent('success', 5001)
+            Utils.emitEvent('success', 160220)
           } catch (error) {
             console.error(`ErrorCode: {(error as BusinessError).message}`);
-            Utils.emitEvent(error.code, 5001)
+            Utils.emitEvent(error.code, 160220)
           }
         })
       Web({ src: 'www.example.com', controller: this.controller, incognitoMode: true })
@@ -48,10 +76,10 @@ struct testWebView_Cookie {
         .onClick(() => {
           try {
             webview.WebCookieManager.configCookieSync(URL, 'a=b');
-            Utils.emitEvent('success', 5002);
+            Utils.emitEvent('success', 160230);
           } catch (error) {
             console.error(`ErrorCode: {(error as BusinessError).message}`);
-            Utils.emitEvent(error.code, 5002)
+            Utils.emitEvent(error.code, 160230)
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
@@ -61,7 +89,7 @@ struct testWebView_Cookie {
         .onClick(() => {
           let result = webview.WebCookieManager.existCookie();
           console.log('result: ' + result);
-          Utils.emitEvent(result, 5003);
+          Utils.emitEvent(result, 160240);
         })
       Web({ src: 'www.example.com', controller: this.controller, incognitoMode: true })
 
@@ -71,7 +99,7 @@ struct testWebView_Cookie {
         .onClick(() => {
           let result = webview.WebCookieManager.existCookie();
           console.log('result: ' + result);
-          Utils.emitEvent(result, 5004);
+          Utils.emitEvent(result, 160250);
         })
       Web({ src: 'www.example.com', controller: this.controller })
     }
