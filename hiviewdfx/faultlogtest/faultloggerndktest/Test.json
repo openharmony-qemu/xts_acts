@@ -20,9 +20,7 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
-                "power-shell setmode 602",
-                "hilog -b X",
-				"hilog -b D -D 0x3D00"
+                "power-shell setmode 602"
             ]
         }
     ]
