@@ -74,7 +74,7 @@ export default function WebOnNativeEmbedObjectParamChange() {
     })
 
 
-    /*
+    /**
     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0100
     * @tc.name       emitOnNativeEmbedObjectParamChange001
     * @tc.desc       emitOnNativeEmbedObjectParamChange001
@@ -89,7 +89,7 @@ export default function WebOnNativeEmbedObjectParamChange() {
       sendEventByKey('WebOnNativeEmbedObjectParamChangeButton', 10, '');
     })
 
-    /*
+    /**
     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0200
     * @tc.name       emitOnNativeEmbedObjectParamChange002
     * @tc.desc       emitOnNativeEmbedObjectParamChange002
@@ -104,7 +104,7 @@ export default function WebOnNativeEmbedObjectParamChange() {
       sendEventByKey('WebOnNativeEmbedObjectParamChangeButton', 10, '');
     })
 
-    /*
+    /**
     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0300
     * @tc.name       emitOnNativeEmbedObjectParamChange003
     * @tc.desc       emitOnNativeEmbedObjectParamChange003
