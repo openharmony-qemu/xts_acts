@@ -17,12 +17,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
-
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+import { Driver } from '@ohos.UiTest';
+const driver = Driver.create();
 export default function webViewOnViewportFitChange() {
   describe('ActsAceWebViewOnViewportFitChange', () => {
-    beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
-        done();
+   beforeEach(async (done: Function) => {
+     await waitForComponent("webViewOnViewportFitChange");
+     done();
     })
 
     /*
@@ -34,9 +36,10 @@ export default function webViewOnViewportFitChange() {
      *@tc.level Level 0
      */
     it('testWebViewOnViewportFitChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.emitEvent("emitWebViewOnViewportFitChange", 10);
-        Utils.registerEvent("testWebViewOnViewportFitChange", true, 1340, done);
-        sendEventByKey('webViewOnViewportFitChange', 10, '');
+        Utils.emitEvent("emitWebViewOnViewportFitChange", 154030);
+        Utils.registerEvent("testWebViewOnViewportFitChange", true, 154040, done);
+        waitAndClickComponent("webViewOnViewportFitChange",driver);
+
     })
 
     /*
@@ -48,9 +51,9 @@ export default function webViewOnViewportFitChange() {
      *@tc.level Level 0
      */
     it('testWebView_ViewportFit_COVER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.emitEvent("emitWebView_ViewportFit_COVER", 10);
-        Utils.registerEvent("testWebView_ViewportFit_COVER", true, 1341, done);
-        sendEventByKey('webViewOnViewportFitChange', 10, '');
+        Utils.emitEvent("emitWebView_ViewportFit_COVER", 154030);
+        Utils.registerEvent("testWebView_ViewportFit_COVER", true, 154050, done);
+      waitAndClickComponent("webViewOnViewportFitChange",driver);
     })
   })
 }
