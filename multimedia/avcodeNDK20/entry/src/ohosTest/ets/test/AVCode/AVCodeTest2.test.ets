@@ -23,7 +23,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_001
      * @tc.name testAudioChannelSet001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet1.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet1 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -43,7 +43,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_002
      * @tc.name testAudioChannelSet002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet2.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet2 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -63,7 +63,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_003
      * @tc.name testAudioChannelSet003
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet3.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet3 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -83,7 +83,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_004
      * @tc.name testAudioChannelSet004
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet4.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet4 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -103,7 +103,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_005
      * @tc.name testAudioChannelSet005
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet5.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet5 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -123,7 +123,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_006
      * @tc.name testAudioChannelSet006
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet6.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet6 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -143,7 +143,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_007
      * @tc.name testAudioChannelSet007
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet7.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet7 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -163,7 +163,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_008
      * @tc.name testAudioChannelSet008
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet8.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet8 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -183,7 +183,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_009
      * @tc.name testAudioChannelSet009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet9.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet9 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -203,7 +203,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_010
      * @tc.name testAudioChannelSet010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet10.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet10 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -223,7 +223,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_011
      * @tc.name testAudioChannelSet011
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet11.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet11 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -243,7 +243,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_012
      * @tc.name testAudioChannelSet012
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet12.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet12 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -263,7 +263,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_013
      * @tc.name testAudioChannelSet013
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet13.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet13 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -283,7 +283,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_014
      * @tc.name testAudioChannelSet014
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet14.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet14 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -303,7 +303,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_015
      * @tc.name testAudioChannelSet015
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet15.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet15 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -323,7 +323,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_016
      * @tc.name testAudioChannelSet016
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet16.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet16 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -343,7 +343,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_017
      * @tc.name testAudioChannelSet017
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet17.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet17 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -363,7 +363,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_018
      * @tc.name testAudioChannelSet018
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet18.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet18 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -383,7 +383,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_019
      * @tc.name testAudioChannelSet019
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet19.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet19 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -403,7 +403,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_020
      * @tc.name testAudioChannelSet020
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet20.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet20 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -423,7 +423,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_021
      * @tc.name testAudioChannelSet021
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet21.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet21 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -443,7 +443,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_022
      * @tc.name testAudioChannelSet022
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet22.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet22 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -463,7 +463,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_023
      * @tc.name testAudioChannelSet023
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet23.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet23 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -483,7 +483,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_024
      * @tc.name testAudioChannelSet024
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet24.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet24 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -503,7 +503,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_025
      * @tc.name testAudioChannelSet025
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet25.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet25 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -523,7 +523,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_026
      * @tc.name testAudioChannelSet026
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet26.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet26 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -543,7 +543,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_027
      * @tc.name testAudioChannelSet027
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet27.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet27 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -563,7 +563,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_028
      * @tc.name testAudioChannelSet028
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet28.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet28 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -583,7 +583,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_029
      * @tc.name testAudioChannelSet029
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet29.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet29 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -603,7 +603,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelSet_030
      * @tc.name testAudioChannelSet030
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel set with EnumAudioChannelSet30 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -623,7 +623,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_001
      * @tc.name testAudioChannelLayout001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout1 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -643,7 +643,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_002
      * @tc.name testAudioChannelLayout002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout2 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -663,7 +663,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_003
      * @tc.name testAudioChannelLayout003
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout3 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -683,7 +683,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_004
      * @tc.name testAudioChannelLayout004
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout4 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -703,7 +703,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_005
      * @tc.name testAudioChannelLayout005
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout5 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -723,7 +723,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_006
      * @tc.name testAudioChannelLayout006
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout6 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -743,7 +743,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_007
      * @tc.name testAudioChannelLayout007
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout7 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -763,7 +763,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_008
      * @tc.name testAudioChannelLayout008
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout8 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -783,7 +783,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_009
      * @tc.name testAudioChannelLayout009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout9 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -803,7 +803,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_010
      * @tc.name testAudioChannelLayout010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout10 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -823,7 +823,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_011
      * @tc.name testAudioChannelLayout011
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout11 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -843,7 +843,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_012
      * @tc.name testAudioChannelLayout012
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout12 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -863,7 +863,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_013
      * @tc.name testAudioChannelLayout013
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout13 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -883,7 +883,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_014
      * @tc.name testAudioChannelLayout014
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout14 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -903,7 +903,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_015
      * @tc.name testAudioChannelLayout015
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout15 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -923,7 +923,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_016
      * @tc.name testAudioChannelLayout016
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout16 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -943,7 +943,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_017
      * @tc.name testAudioChannelLayout017
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout17 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -963,7 +963,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_018
      * @tc.name testAudioChannelLayout018
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout18 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -983,7 +983,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_019
      * @tc.name testAudioChannelLayout019
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout19 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1003,7 +1003,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_020
      * @tc.name testAudioChannelLayout020
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout20 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1023,7 +1023,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_021
      * @tc.name testAudioChannelLayout021
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout21 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1043,7 +1043,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_022
      * @tc.name testAudioChannelLayout022
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout22 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1063,7 +1063,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_023
      * @tc.name testAudioChannelLayout023
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout23 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1083,7 +1083,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_024
      * @tc.name testAudioChannelLayout024
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout24 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1103,7 +1103,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_025
      * @tc.name testAudioChannelLayout025
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout25 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1123,7 +1123,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_026
      * @tc.name testAudioChannelLayout026
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout26 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1143,7 +1143,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_027
      * @tc.name testAudioChannelLayout027
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout27 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1163,7 +1163,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_028
      * @tc.name testAudioChannelLayout028
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout28 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1183,7 +1183,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_029
      * @tc.name testAudioChannelLayout029
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout29 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1203,7 +1203,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_030
      * @tc.name testAudioChannelLayout030
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout30 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1223,7 +1223,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_031
      * @tc.name testAudioChannelLayout031
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout31 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1243,7 +1243,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_AudioChannelLayout_032
      * @tc.name testAudioChannelLayout032
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio channel layout with EnumAudioChannelLayout32 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1263,7 +1263,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVBufferDestroy_001
      * @tc.name testOHAVBufferDestroy001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV buffer destroy with AVCodeAVBufferDestroyErrInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1283,7 +1283,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVBufferGetBufferAttr_001
      * @tc.name testOHAVBufferGetBufferAttr001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV buffer get attribute with AVCodeAVBufferGetBufferAttrErrInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1303,7 +1303,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVBufferSetBufferAttr_001
      * @tc.name testOHAVBufferSetBufferAttr001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV buffer set attribute with AVCodeAVBufferSetBufferAttrErrInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1323,7 +1323,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVBufferGetParameter_001
      * @tc.name testOHAVBufferGetParameter001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV buffer get parameter with AVCodeAVBufferSetParameterErrInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1343,7 +1343,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVCapability_GetAudioSupportedSampleRateRanges_001
      * @tc.name testOHAVCapabilityGetAudioSupportedSampleRateRanges001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV capability get audio sample rates with AVCodeOHAVCapabilityGetAudioSupportedSampleRates function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1363,7 +1363,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AVCapabilityGetAudioChannelCountRange_001
      * @tc.name testOHAVCapabilityGetAudioChannelCountRange001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing AV capability get audio channel range with AVCodeOHAVCapabilityGetAudioChannelCountRange function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1383,7 +1383,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderDestroy_001
      * @tc.name testAVCodeOHAudioDecoderDestroy001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder destroy with AVCodeOHAudioDecoderDestroySuccess function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1403,7 +1403,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderDestroy_002
      * @tc.name testAVCodeOHAudioDecoderDestroy002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder destroy with AVCodeOHAudioDecoderDestroyInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1423,7 +1423,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderConfigure_002
      * @tc.name testAVCodeOHAudioDecoderConfigure002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder configure with AVCodeOHAudioDecoderConfigureInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1443,7 +1443,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderConfigure_010
      * @tc.name testAVCodeOHAudioDecoderConfigure010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder configure with AVCodeOHAudioDecoderConfigureUnsupport function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1463,7 +1463,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderPrepare_002
      * @tc.name testAVCodeOHAudioDecoderPrepare002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder prepare with AVCodeOHAudioDecoderPrepareInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1483,7 +1483,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderPrepare_010
      * @tc.name testAVCodeOHAudioDecoderPrepare010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder prepare with AVCodeOHAudioDecoderConfigureUnsupport function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1503,7 +1503,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderStart_002
      * @tc.name testAVCodeOHAudioDecoderStart002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder start with AVCodeOHAudioDecoderStartInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1523,7 +1523,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderStart_009
      * @tc.name testAVCodeOHAudioDecoderStart009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder start with AVCodeOHAudioDecoderStartInvalidState function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1543,7 +1543,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderStop_002
      * @tc.name testAVCodeOHAudioDecoderStop002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder stop with AVCodeOHAudioDecoderStopInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1563,7 +1563,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderStop_009
      * @tc.name testAVCodeOHAudioDecoderStop009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder stop with AVCodeOHAudioDecoderStopInvalidState function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1583,7 +1583,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_Flush_002
      * @tc.name testAVCodeOHAudioDecoderFlush002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder flush with AVCodeOHAudioDecoderFlushInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1603,7 +1603,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_Flush_009
      * @tc.name testAVCodeOHAudioDecoderFlush009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder flush with AVCodeOHAudioDecoderFlushInvalidState function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1623,7 +1623,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_Reset_002
      * @tc.name testAVCodeOHAudioDecoderReset002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder reset with AVCodeOHAudioDecoderResetInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1643,7 +1643,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_SetParameter_002
      * @tc.name testAVCodeOHAudioDecoderSetParameter002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder set parameter with AVCodeOHAudioDecoderSetParameterInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1663,7 +1663,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_PushInputData_002
      * @tc.name testAVCodeOHAudioDecoderPushInputData002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder push input data with AVCodeOHAudioDecoderPushInputDataInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1683,7 +1683,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_FreeOutputData_002
      * @tc.name testAVCodeOHAudioDecoderFreeOutputData002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder free output data with AVCodeOHAudioDecoderPushFreeOutputDataInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1703,7 +1703,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_FreeOutputData_001
      * @tc.name testAVCodeOHAudioDecoderFreeOutputData008
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder free output data with AVCodeOHAudioDecoderPushFreeOutputDataInvalidState function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1723,7 +1723,7 @@ export default function AVCodeTest2() {
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_IsValid_002
      * @tc.name testAVCodeOHAudioDecoderIsValid002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc testing audio decoder validity check with AVCodeOHAudioDecoderIsValidInvalidVal function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function

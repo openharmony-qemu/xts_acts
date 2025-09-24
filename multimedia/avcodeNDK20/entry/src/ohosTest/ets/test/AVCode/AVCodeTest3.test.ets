@@ -23,13 +23,12 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderDestroy_001
      * @tc.name testAVCodeOHAudioEncoderDestroy001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderDestroySuccess function correctly handles successful audio encoder destruction
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
      */
     it('testAVCodeOHAudioEncoderDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-
       async (done: Function) => {
         try {
           let result: number = libavcode.AVCodeOHAudioEncoderDestroySuccess();
@@ -44,7 +43,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderDestroy_002
      * @tc.name testAVCodeOHAudioEncoderDestroy002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderDestroyInvalidVal function properly handles invalid parameters during encoder destruction
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -64,7 +63,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderConfigure_002
      * @tc.name testAVCodeOHAudioEncoderConfigure002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureInvalidVal function validates invalid configuration parameters correctly
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -84,7 +83,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioCodecConfigure_001
      * @tc.name testAVCodeOHAudioEncoderConfigure010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configuration parameters properly
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -104,7 +103,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderPrepare_002
      * @tc.name testAVCodeOHAudioEncoderPrepare002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderPrepareInvalidVal function validates invalid parameters during encoder preparation
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -124,7 +123,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderPrepare_010
      * @tc.name testAVCodeOHAudioEncoderPrepare010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configurations during encoder preparation
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -144,7 +143,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderStart_002
      * @tc.name testAVCodeOHAudioEncoderStart002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderStartInvalidVal function validates invalid parameters during encoder startup
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -164,7 +163,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderStart_009
      * @tc.name testAVCodeOHAudioEncoderStart009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderStartInvalidState function handles invalid states during encoder startup
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -184,7 +183,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderStop_002
      * @tc.name testAVCodeOHAudioEncoderStop002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderStopInvalidState function handles invalid states during encoder stop operation
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -204,7 +203,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderStop_009
      * @tc.name testAVCodeOHAudioEncoderStop009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderStopInvalidState function handles error conditions during encoder stop
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -224,7 +223,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoder_Flush_002
      * @tc.name testAVCodeOHAudioEncoderFlush002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderFlushInvalidVal function validates invalid parameters during encoder flush
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -244,7 +243,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoder_Flush_009
      * @tc.name testAVCodeOHAudioEncoderFlush009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderFlushInvalidState function handles invalid states during encoder flush
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -264,7 +263,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoder_Reset_002
      * @tc.name testAVCodeOHAudioEncoderReset002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderResetInvalidVal function validates invalid parameters during encoder reset
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -284,7 +283,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoder_SetParameter_002
      * @tc.name testAVCodeOHAudioEncoderSetParameter002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderSetParameterInvalidVal function validates invalid parameters during encoder parameter setting
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -304,7 +303,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoder_PushInputData_002
      * @tc.name testAVCodeOHAudioEncoderPushInputData002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioEncoderPushInputDataInvalidVal function validates invalid input data
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -324,7 +323,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_001
      * @tc.name testAVCodeOHAudioCodecSetParameter001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterInvalidVal function validates invalid codec parameters
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -344,7 +343,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_002
      * @tc.name testAVCodeOHAudioCodecSetParameter002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterOperateNotPermit function handles unauthorized parameter changes
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -364,7 +363,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_003
      * @tc.name testAVCodeOHAudioCodecSetParameter003
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterOperateInvalidState function handles parameter changes in invalid states
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -384,7 +383,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_AudioCodec_PushInputBuffer_002
      * @tc.name testAVCodeOHAudioCodecPushInputBuffer002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that AVCodeOHAudioCodecPushInputBufferInvalidVal function validates invalid input buffers
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -401,30 +400,10 @@ export default function AVCodeTest3() {
         }
       });
 
-    // /**
-    //  * @tc.number SUB_AVCode_OH_AACProfile_001
-    //  * @tc.name testAVCodeOHAACProfile001
-    //  * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level Level1
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  */
-    // it('testAVCodeOHAACProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.EnumAACPROFILEHE();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAACProfile001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_001
      * @tc.name testAVCodeOHMPEG2Profile001
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile1 function correctly enumerates MPEG2 profile 1
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -444,7 +423,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_002
      * @tc.name testAVCodeOHMPEG2Profile002
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile2 function correctly enumerates MPEG2 profile 2
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -464,7 +443,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_003
      * @tc.name testAVCodeOHMPEG2Profile003
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile3 function correctly enumerates MPEG2 profile 3
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -484,7 +463,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_004
      * @tc.name testAVCodeOHMPEG2Profile004
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile4 function correctly enumerates MPEG2 profile 4
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -504,7 +483,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_005
      * @tc.name testAVCodeOHMPEG2Profile005
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile5 function correctly enumerates MPEG2 profile 5
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -524,7 +503,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_006
      * @tc.name testAVCodeOHMPEG2Profile006
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile6 function correctly enumerates MPEG2 profile 6
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -544,7 +523,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_007
      * @tc.name testAVCodeOHMPEG2Profile007
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile7 function correctly enumerates MPEG2 profile 7
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -564,7 +543,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_008
      * @tc.name testAVCodeOHMPEG2Profile008
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile8 function correctly enumerates MPEG2 profile 8
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -584,7 +563,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_009
      * @tc.name testAVCodeOHMPEG2Profile009
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile9 function correctly enumerates MPEG2 profile 9
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -604,7 +583,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_010
      * @tc.name testAVCodeOHMPEG2Profile010
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile10 function correctly enumerates MPEG2 profile 10
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -624,7 +603,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_011
      * @tc.name testAVCodeOHMPEG2Profile011
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile11 function correctly enumerates MPEG2 profile 11
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -644,7 +623,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_012
      * @tc.name testAVCodeOHMPEG2Profile012
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile12 function correctly enumerates MPEG2 profile 12
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -664,7 +643,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_013
      * @tc.name testAVCodeOHMPEG2Profile013
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile13 function correctly enumerates MPEG2 profile 13
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -684,7 +663,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_014
      * @tc.name testAVCodeOHMPEG2Profile014
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile14 function correctly enumerates MPEG2 profile 14
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -704,7 +683,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_015
      * @tc.name testAVCodeOHMPEG2Profile015
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile15 function correctly enumerates MPEG2 profile 15
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -724,7 +703,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_016
      * @tc.name testAVCodeOHMPEG2Profile016
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile16 function correctly enumerates MPEG2 profile 16
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -744,7 +723,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_017
      * @tc.name testAVCodeOHMPEG2Profile017
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile17 function correctly enumerates MPEG2 profile 17
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -764,7 +743,7 @@ export default function AVCodeTest3() {
     /**
      * @tc.number SUB_AVCode_OH_MPEG2Profile_018
      * @tc.name testAVCodeOHMPEG2Profile018
-     * @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     * @tc.desc Verify that EnumMPEGProfile18 function correctly enumerates MPEG2 profile 18
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -784,7 +763,7 @@ export default function AVCodeTest3() {
     /**
      @tc.number SUB_AVCode_OH_MPEG2Profile_019
      @tc.name testAVCodeOHMPEG2Profile019
-     @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     @tc.desc Verify that EnumMPEGProfile19 function correctly enumerates MPEG2 profile 19
      @tc.level Level1
      @tc.size MediumTest
      @tc.type Function
@@ -804,7 +783,7 @@ export default function AVCodeTest3() {
     /**
      @tc.number SUB_AVCode_OH_MPEG2Profile_020
      @tc.name testAVCodeOHMPEG2Profile020
-     @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     @tc.desc Verify that EnumMPEGProfile20 function correctly enumerates MPEG2 profile 20
      @tc.level Level1
      @tc.size MediumTest
      @tc.type Function
@@ -824,7 +803,7 @@ export default function AVCodeTest3() {
     /**
      @tc.number SUB_AVCode_OH_MPEG2Profile_021
      @tc.name testAVCodeOHMPEG2Profile021
-     @tc.desc testing audio channel layout with EnumAudioChannelSet30.
+     @tc.desc Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
      @tc.level Level1
      @tc.size MediumTest
      @tc.type Function
@@ -842,4 +821,3 @@ export default function AVCodeTest3() {
       });
   })
 }
-

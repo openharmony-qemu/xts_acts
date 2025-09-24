@@ -23,7 +23,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_001
      * @tc.name testAudioOHChannelSet001
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet1 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -43,7 +43,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_002
      * @tc.name testAudioOHChannelSet002
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet2 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -63,7 +63,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_003
      * @tc.name testAudioOHChannelSet003
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet3 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -83,7 +83,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_004
      * @tc.name testAudioOHChannelSet004
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet4 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -103,7 +103,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_005
      * @tc.name testAudioOHChannelSet005
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet5 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -123,7 +123,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_006
      * @tc.name testAudioOHChannelSet006
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet6 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -143,7 +143,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_007
      * @tc.name testAudioOHChannelSet007
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet7 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -163,7 +163,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_008
      * @tc.name testAudioOHChannelSet008
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet8 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -183,7 +183,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_009
      * @tc.name testAudioOHChannelSet009
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet9 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -203,7 +203,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_010
      * @tc.name testAudioOHChannelSet010
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet10 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -223,7 +223,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_011
      * @tc.name testAudioOHChannelSet011
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet11 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -243,7 +243,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_012
      * @tc.name testAudioOHChannelSet012
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet12 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -263,7 +263,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_013
      * @tc.name testAudioOHChannelSet013
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet13 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -283,7 +283,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_014
      * @tc.name testAudioOHChannelSet014
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet14 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -303,7 +303,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_015
      * @tc.name testAudioOHChannelSet015
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet15 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -323,7 +323,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_016
      * @tc.name testAudioOHChannelSet016
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet16 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -343,7 +343,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_017
      * @tc.name testAudioOHChannelSet017
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet17 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -363,7 +363,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_018
      * @tc.name testAudioOHChannelSet018
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet18 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -383,7 +383,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_019
      * @tc.name testAudioOHChannelSet019
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet19 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -403,7 +403,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_020
      * @tc.name testAudioOHChannelSet020
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet20 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -423,7 +423,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_021
      * @tc.name testAudioOHChannelSet021
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet21 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -443,7 +443,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_022
      * @tc.name testAudioOHChannelSet022
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet22 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -463,7 +463,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_023
      * @tc.name testAudioOHChannelSet023
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet23 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -483,7 +483,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_024
      * @tc.name testAudioOHChannelSet024
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet24 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -503,7 +503,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_025
      * @tc.name testAudioOHChannelSet025
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet25 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -523,7 +523,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_026
      * @tc.name testAudioOHChannelSet026
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet26 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -543,7 +543,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_027
      * @tc.name testAudioOHChannelSet027
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet27 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -563,7 +563,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_028
      * @tc.name testAudioOHChannelSet028
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet28 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -583,7 +583,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_029
      * @tc.name testAudioOHChannelSet029
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet29 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -603,7 +603,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_OH_ChannelSet_030
      * @tc.name testAudioOHChannelSet030
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_ChannelSet interface with EnumOHAudioChannelSet30 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -623,7 +623,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_001
      * @tc.name testAmbAttributeSet001
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet1 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -643,7 +643,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_002
      * @tc.name testAmbAttributeSet002
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet2 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -663,7 +663,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_003
      * @tc.name testAmbAttributeSet003
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet3 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -683,7 +683,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_004
      * @tc.name testAmbAttributeSet004
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet4 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -703,7 +703,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_005
      * @tc.name testAmbAttributeSet005
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet5 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -723,7 +723,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_006
      * @tc.name testAmbAttributeSet006
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet6 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -743,7 +743,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_007
      * @tc.name testAmbAttributeSet007
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet7 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -763,7 +763,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_AmbAttributeSet_008
      * @tc.name testAmbAttributeSet008
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Ambient_Attribute_Set interface with EnumAmbAttributeSet8 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -783,7 +783,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_001
      * @tc.name testAudioChannelLayout001
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout1 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -803,7 +803,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_002
      * @tc.name testAudioChannelLayout002
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout2 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -823,7 +823,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_003
      * @tc.name testAudioChannelLayout003
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout3 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -843,7 +843,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_004
      * @tc.name testAudioChannelLayout004
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout4 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -863,7 +863,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_005
      * @tc.name testAudioChannelLayout005
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout5 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -883,7 +883,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_006
      * @tc.name testAudioChannelLayout006
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout6 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -903,7 +903,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_007
      * @tc.name testAudioChannelLayout007
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout7 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -923,7 +923,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_008
      * @tc.name testAudioChannelLayout008
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout8 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -943,7 +943,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_009
      * @tc.name testAudioChannelLayout009
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout9 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -963,7 +963,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_010
      * @tc.name testAudioChannelLayout010
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout10 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -983,7 +983,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_011
      * @tc.name testAudioChannelLayout011
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout11 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1003,7 +1003,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_012
      * @tc.name testAudioChannelLayout012
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout12 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1023,7 +1023,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_013
      * @tc.name testAudioChannelLayout013
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout13 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1043,7 +1043,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_014
      * @tc.name testAudioChannelLayout014
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout14 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1063,7 +1063,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_015
      * @tc.name testAudioChannelLayout015
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout15 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1083,7 +1083,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_016
      * @tc.name testAudioChannelLayout016
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout16 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1103,7 +1103,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_017
      * @tc.name testAudioChannelLayout017
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout17 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1123,7 +1123,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_018
      * @tc.name testAudioChannelLayout018
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout18 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1143,7 +1143,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_019
      * @tc.name testAudioChannelLayout019
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout19 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1163,7 +1163,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_020
      * @tc.name testAudioChannelLayout020
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout20 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1183,7 +1183,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_021
      * @tc.name testAudioChannelLayout021
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout21 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1203,7 +1203,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_022
      * @tc.name testAudioChannelLayout022
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout22 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1223,7 +1223,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_023
      * @tc.name testAudioChannelLayout023
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout23 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1243,7 +1243,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_024
      * @tc.name testAudioChannelLayout024
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout24 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1263,7 +1263,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_025
      * @tc.name testAudioChannelLayout025
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout25 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1283,7 +1283,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_026
      * @tc.name testAudioChannelLayout026
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout26 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1303,7 +1303,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_027
      * @tc.name testAudioChannelLayout027
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout27 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1323,7 +1323,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_028
      * @tc.name testAudioChannelLayout028
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout28 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1343,7 +1343,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_029
      * @tc.name testAudioChannelLayout029
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout29 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1363,7 +1363,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_030
      * @tc.name testAudioChannelLayout030
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout30 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1383,7 +1383,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_031
      * @tc.name testAudioChannelLayout031
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout31 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1403,7 +1403,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_032
      * @tc.name testAudioChannelLayout032
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout32 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1423,7 +1423,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_033
      * @tc.name testAudioChannelLayout033
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout33 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1443,7 +1443,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_034
      * @tc.name testAudioChannelLayout034
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout34 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1463,7 +1463,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_035
      * @tc.name testAudioChannelLayout035
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout35 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1483,7 +1483,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_036
      * @tc.name testAudioChannelLayout036
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout36 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1503,7 +1503,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_037
      * @tc.name testAudioChannelLayout037
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout37 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1523,7 +1523,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_038
      * @tc.name testAudioChannelLayout038
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout38 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1543,7 +1543,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_039
      * @tc.name testAudioChannelLayout039
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout39 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1563,7 +1563,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_040
      * @tc.name testAudioChannelLayout040
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout40 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1583,7 +1583,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_041
      * @tc.name testAudioChannelLayout041
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout41 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1603,7 +1603,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_042
      * @tc.name testAudioChannelLayout042
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout42 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1623,7 +1623,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_043
      * @tc.name testAudioChannelLayout043
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout43 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1643,7 +1643,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_044
      * @tc.name testAudioChannelLayout044
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout44 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1663,7 +1663,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_045
      * @tc.name testAudioChannelLayout045
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout45 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1683,7 +1683,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_046
      * @tc.name testAudioChannelLayout046
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout46 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1703,7 +1703,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_047
      * @tc.name testAudioChannelLayout047
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout47 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -1723,7 +1723,7 @@ export default function AVCodeTest() {
     /**
      * @tc.number SUB_AVCode_Audio_ChannelLayout_048
      * @tc.name testAudioChannelLayout048
-     * @tc.desc testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.desc testing OH_Audio_Channel_Layout interface with EnumOHAudioChannelLayout48 function.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
