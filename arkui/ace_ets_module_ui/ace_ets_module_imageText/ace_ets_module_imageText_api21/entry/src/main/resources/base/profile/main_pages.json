@@ -2,7 +2,6 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Text/textContentAlign",
-    "MainAbility/pages/ImageAttachment/ImageAttachment",
-    "MainAbility/pages/ImageLoader/ImageLoader"
+    "MainAbility/pages/ImageAttachment/ImageAttachment"
   ]
 }

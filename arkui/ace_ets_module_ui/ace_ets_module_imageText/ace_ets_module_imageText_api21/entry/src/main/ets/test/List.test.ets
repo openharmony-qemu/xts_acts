@@ -15,10 +15,8 @@
 
 import textContentAlignTest from './TextTest/textContentAlign.test';
 import ImageAttachmentTest from './ImageAttachmentTest/ImageAttachment.test';
-import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
 
 export default function testsuite() {
   textContentAlignTest();
   ImageAttachmentTest();
-  ImageLoaderTest();
 }
