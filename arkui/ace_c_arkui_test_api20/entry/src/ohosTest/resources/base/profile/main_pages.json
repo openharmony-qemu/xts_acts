@@ -13,6 +13,8 @@
     "MainAbility/pages/scope/TestRunTaskInScope",
     "MainAbility/pages/list/ListTypeNodePage",
     "MainAbility/pages/list/ListCNodePage",
-    "MainAbility/pages/BindController/BindController"
+    "MainAbility/pages/BindController/BindController",
+    "MainAbility/pages/row/RowTypeNodePage",
+    "MainAbility/pages/row/RowCNodePage"
   ]
 }

@@ -26,6 +26,8 @@ import RunTaskInScopeTest from "./scope/RunTaskInScopeTest.test"
 import ListTypeNodeTest from './list/ListTypeNodeTest.test'
 import ListCNodeTest from './list/ListCNodeTest.test'
 import BindControllerTest from './BindController/BindController.test'
+import RowTypeNodeTest from './row/RowTypeNodeTest.test'
+import RowCNodeTest from './row/RowCNodeTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -42,4 +44,6 @@ export default function testsuite() {
   ListTypeNodeTest();
   ListCNodeTest();
   BindControllerTest();
+  RowTypeNodeTest();
+  RowCNodeTest();
 }

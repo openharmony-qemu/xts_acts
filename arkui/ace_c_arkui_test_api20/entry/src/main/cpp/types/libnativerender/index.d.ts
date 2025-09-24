@@ -31,3 +31,5 @@ export const testRunTaskInScope: (a: string) => void;
 export const createCrossLanguageListNode: (content: NodeContent, tag: string) => void;
 
 export const testBindController001: (a: string) => void;
+
+export const createCrossLanguageRowNode: (content: NodeContent, tag: string) => void;

@@ -24,6 +24,7 @@ add_library(nativerender SHARED
     scope/RunTaskInScopeTest.cpp
     list/ListCrossLanguageTest.cpp
     BindController/BindControllerTest.cpp
+    row/RowCrossLanguageTest.cpp
 )
 
 add_library(nativefunc SHARED
