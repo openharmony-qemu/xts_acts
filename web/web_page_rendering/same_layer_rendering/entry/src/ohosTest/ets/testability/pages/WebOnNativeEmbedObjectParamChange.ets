@@ -180,7 +180,7 @@ struct WebIndex {
             case "emitOnNativeEmbedObjectParamChange002": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange002')
-                this.browserTabController.runJavaScript('modifyLastParamValue()')
+                this.browserTabController.runJavaScript('modifyLastParamName()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
