@@ -16,23 +16,23 @@
 #ifndef NATIVE_XCOMPONENT_COMMON_H
 #define NATIVE_XCOMPONENT_COMMON_H
 
-#include <napi/native_api.h>
-#include <hilog/log.h>
-#include <cstdio>
-#include <arkui/native_interface.h>
 #include <ace/xcomponent/native_interface_xcomponent.h>
+#include <ace/xcomponent/native_xcomponent_key_event.h>
+#include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <arkui/native_node_napi.h>
-#include <string>
-#include <cstdint>
-#include <js_native_api_types.h>
-#include <window_manager/oh_window.h>
-#include <multimodalinput/oh_input_manager.h>
-#include <random>
-#include <list>
 #include <cstddef>
+#include <cstdint>
+#include <cstdio>
+#include <hilog/log.h>
+#include <js_native_api_types.h>
+#include <list>
+#include <multimodalinput/oh_input_manager.h>
+#include <napi/native_api.h>
+#include <random>
 #include <stdint.h>
-#include <ace/xcomponent/native_xcomponent_key_event.h>
+#include <string>
+#include <window_manager/oh_window.h>
 
 #define PARAM_0_POINT_5 0.5
 #define PARAM_1_POINT_5 1.5
@@ -77,7 +77,8 @@
 #define PARAM_100000 100000
 #define PARAM_192000 192000
 #define PARAM_128000 128000
-#define PARAM_162000000 162000000 
+#define PARAM_162000000 162000000
+#define PARAM_FLAG 0x00000001
 #define PARAM_NEGATIVE_1 (-1)
 #define PARAM_NEGATIVE_2 (-2)
 #define PARAM_NEGATIVE_9 (-9)
@@ -158,22 +159,22 @@
 #define PARAM_NEGATIVE_5 (-5)
 #define COLUMN_WIDTH_AND_HEIGHT 210
 
-#define DECLARE_KEYCODE_EVENT(name)                                                 \
-static napi_value GetKeyCodeEvent##name(napi_env env, napi_callback_info info)      \
-{                                                                                   \
-    napi_value retValue = 0;                                                        \
-    if (g_key##name##IsTrue) {                                                      \
-        napi_create_int32(env, g_key##name##IsTrue, &retValue);                     \
-    }
+#define DECLARE_KEYCODE_EVENT(name)                                                                                    \
+    static napi_value GetKeyCodeEvent##name(napi_env env, napi_callback_info info)                                     \
+    {                                                                                                                  \
+        napi_value retValue = 0;                                                                                       \
+        if (g_key##name##IsTrue) {                                                                                     \
+            napi_create_int32(env, g_key##name##IsTrue, &retValue);                                                    \
+        }
 
 /**
  * Log print domain.
  */
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
-static napi_property_descriptor XL(char* functionName, napi_callback func)
+static napi_property_descriptor XL(char *functionName, napi_callback func)
 {
-    return { functionName, nullptr, func, nullptr, nullptr, nullptr, napi_default, nullptr };
+    return {functionName, nullptr, func, nullptr, nullptr, nullptr, napi_default, nullptr};
 }
 
 #endif // NATIVE_XCOMPONENT_COMMON_H

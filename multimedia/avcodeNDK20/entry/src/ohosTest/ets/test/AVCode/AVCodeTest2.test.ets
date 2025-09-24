@@ -1380,46 +1380,6 @@ export default function AVCodeTest2() {
         }
       });
 
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AudioCodecDestroy_001
-    //  * @tc.name     testAVCodeOHAudioCodecDestroy001
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAudioCodecDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAudioCodecDestroyAVErrInvalidState();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAudioCodecDestroy001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AudioCodec_RegisterCallback_001
-    //  * @tc.name     testAVCodeOHAudioCodecRegisterCallback001
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAudioCodecRegisterCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAudioCodecRegisterCallback();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAudioCodecRegisterCallback001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoderDestroy_001
      * @tc.name testAVCodeOHAudioDecoderDestroy001
@@ -1720,26 +1680,6 @@ export default function AVCodeTest2() {
         }
       });
 
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AudioDecoder_PushInputData_008
-    //  * @tc.name     testAVCodeOHAudioDecoderPushInputData008
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAudioDecoderPushInputData008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAudioDecoderPushInputDataInvalidState();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAudioDecoderPushInputData008 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
     /**
      * @tc.number SUB_AVCode_OH_AudioDecoder_FreeOutputData_002
      * @tc.name testAVCodeOHAudioDecoderFreeOutputData002
@@ -1799,66 +1739,5 @@ export default function AVCodeTest2() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
-
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AVDataSource_001
-    //  * @tc.name     testAVCodeOHAVDataSource001
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAVDataSource001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAVDataSource();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAVDataSource001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-    //
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AVDataSource_Size_001
-    //  * @tc.name     testAVCodeOHAVDataSourceSize001
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAVDataSourceSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAVDataSource();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAVDataSourceSize001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-    //
-    // /**
-    //  * @tc.number   SUB_AVCode_OH_AVDataSource_ReadAT_001
-    //  * @tc.name     testAVCodeOHAVDataSourceReadAT001
-    //  * @tc.desc     testing audio channel layout with EnumAudioChannelSet30.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVCodeOHAVDataSourceReadAT001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavcode.AVCodeOHAVDataSource();
-    //       expect(result).assertEqual(0);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVCodeOHAVDataSourceReadAT001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
   })
 }

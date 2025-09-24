@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "AVCode/AVCode_Test.h"
 #include "common/Common.h"
 #include <cstdint>
