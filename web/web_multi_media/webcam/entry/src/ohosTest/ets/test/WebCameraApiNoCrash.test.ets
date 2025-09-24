@@ -18,6 +18,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function WebCameraApiNoCrash() {
@@ -34,12 +35,12 @@ export default function WebCameraApiNoCrash() {
         if (!("WebCameraApiNoCrash" == pages.name)) {
           console.info("get WebCameraApiNoCrash state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebCameraApiNoCrash page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebCameraApiNoCrash page error: " + err);
       }
+      await waitForComponent('WebCameraApiNoCrash')
       done()
     });
     beforeEach(async (done: Function) => {
@@ -48,7 +49,6 @@ export default function WebCameraApiNoCrash() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -62,15 +62,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 0
     */
     it('WebCameraApiNoCrash0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0100", true, 1401, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0100", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0100", true, 300410, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -82,15 +76,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0200", true, 1402, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0200", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0200", true, 300420, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -102,15 +90,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0300", true, 1403, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0300", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0300", true, 300430, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -122,15 +104,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0400", true, 1404, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0400", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0400", true, 300440, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -142,15 +118,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0500", true, 1405, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0500", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0500", true, 300450, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -162,15 +132,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0600", true, 1406, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0600", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0600", true, 300460, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -182,15 +146,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0700", true, 1407, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0700", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0700", true, 300470, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -202,15 +160,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0800", true, 1408, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0800", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0800", true, 300480, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -222,15 +174,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash0900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash0900", true, 1409, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash0900", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash0900", true, 300490, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
 
     /*
@@ -242,15 +188,9 @@ export default function WebCameraApiNoCrash() {
     * @tc.level      : Level 1
     */
     it('WebCameraApiNoCrash1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("WebCameraApiNoCrash1000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("WebCameraApiNoCrash1000", true, 1410, done);
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("WebCameraApiNoCrash1000", 300400)
+      Utils.registerEvent("WebCameraApiNoCrash1000", true, 300500, done);
+      sendEventByKey('WebCameraApiNoCrash', 10, '');
     })
   })
 }
