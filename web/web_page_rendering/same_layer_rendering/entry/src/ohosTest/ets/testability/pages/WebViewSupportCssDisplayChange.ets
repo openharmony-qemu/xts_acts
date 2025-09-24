@@ -7,9 +7,8 @@ import prompt from '@ohos.promptAction';
 import { router } from '@kit.ArkUI';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { waitForExist} from '../../test/WaitTest.test';
 import { BusinessError } from '@ohos.base';
-
+import { waitForExist,waitForComponent } from '../../test/WaitTest.test';
 @Observed
 declare class Params{
   elementId: string
@@ -140,6 +139,9 @@ struct WebIndex {
   }
   @State isReceive: number = -1;
   @State str:string = 'emitSupportCssDisplayChange0100'
+  @State isComplete: number = -1;
+  @State isChange: number = -1;
+  @State isRefresh: number = -1;
 
   aboutToAppear() {
     // 配置Web开启调试模式
@@ -147,12 +149,14 @@ struct WebIndex {
   }
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153940,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153940)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -169,15 +173,22 @@ struct WebIndex {
         Button("WebSupportCssDisplayChange").id('WebSupportCssDisplayChangeButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isComplete, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitSupportCssDisplayChange0100": {
               let value: string;
               try {
+
+                this.isComplete = -1;
+                this.browserTabController.loadUrl( $rawfile("testDisplay_embed.html"));
+                await waitForExist(() => this.isComplete, this.str, 0);
+                this.isChange = -1;
+                await Utils.sleep(2000);
                 let driver = Driver.create();
-                await driver.delayMs(1000);
                 let ButtonOne = await driver.findComponent(ON.text('changeDisplay'));
                 await ButtonOne.click();
-                await driver.delayMs(500);
+                await Utils.sleep(2000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -186,15 +197,21 @@ struct WebIndex {
             case "emitSupportCssDisplayChange0200": {
               let value: string;
               try {
+
+
+                this.isComplete = -1;
+                this.browserTabController.loadUrl( $rawfile("testDisplay_embed.html"));
+                await waitForExist(() => this.isComplete, this.str, 0);
+                await Utils.sleep(2000);
                 let driver = Driver.create();
-                await driver.delayMs(1000);
                 let ButtonOne = await driver.findComponent(ON.text('changeDisplay'));
                 await ButtonOne.click();
-                await driver.delayMs(500);
+                await Utils.sleep(2000);
+                let ButtonOne1 = await driver.findComponent(ON.text('changeDisplay'));
+                await ButtonOne1.click();
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
               break;
             }
           }
@@ -209,6 +226,10 @@ struct WebIndex {
         }, (embedId: string) => embedId)
         if (this.flag) {
           Web({ src: $rawfile("testDisplay_embed.html"), controller: this.browserTabController })
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
             .enableNativeEmbedMode(true)
             .nativeEmbedOptions(this.options)
             .onNativeEmbedLifecycleChange((embed) => {
@@ -228,7 +249,6 @@ struct WebIndex {
                 })
                 this.edges =
                   { left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px` }
-                //console.log("NativeEmbed surfaceId" + embed.surfaceId + "position:" `${embed.info?.position?.y as number}px`);
                 nodeController.setDestroy(false);
                 // 根据web传入的embed的id属性作为key，将nodeController存入Map
                 this.nodeControllerMap.set(componentId, nodeController)
@@ -276,14 +296,15 @@ struct WebIndex {
               })
             })
             .onNativeEmbedVisibilityChange((embed) => {
+              this.isChange = 0;
               if (embed.visibility) {
                 prompt.showToast({ message: `NativeEmbed visibility : visible, embedId: ` + embed.embedId })
                 console.log("NativeEmbed visibility visible");
-                Utils.emitEvent('visible', 20250612);
+                Utils.emitEvent('visible', 153960);
               } else {
                 prompt.showToast({ message: `NativeEmbed visibility : hidden, embedId: ` + embed.embedId })
                 console.log('NativeEmbed visibility Hidden');
-                Utils.emitEvent('Hidden', 20250611);
+                Utils.emitEvent('Hidden', 153950);
               }
               console.log("TestVideo embedId = " + embed.embedId);
               console.log("TestVideo visibility = " + embed.visibility);

@@ -17,6 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+import { Driver } from '@ohos.UiTest';
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = ""
 
@@ -29,26 +32,20 @@ export default function ActsAceWebViewObjectEmbed2() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewObjectEmbed2 state success " + JSON.stringify(pages));
         if (!("webViewObjectEmbed2" == pages.name)) {
           console.info("get webViewObjectEmbed2 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewObjectEmbed2 state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewObjectEmbed2 page error:" + err);
       }
+      await waitForComponent("webViewObjectEmbedButton2");
       done()
     });
-
-    beforeEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      done();
-    })
 
 
 
@@ -62,8 +59,8 @@ export default function ActsAceWebViewObjectEmbed2() {
      */
     it('testWebViewObjectEmbed02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed02"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbed02", 'success', 8015, done);
+      Utils.emitEvent(emitKey, 153640);
+      Utils.registerEvent("testWebViewObjectEmbed02", 'success', 153650, done);
       sendEventByKey('webViewObjectEmbedButton2', 10, '');
     })
   })

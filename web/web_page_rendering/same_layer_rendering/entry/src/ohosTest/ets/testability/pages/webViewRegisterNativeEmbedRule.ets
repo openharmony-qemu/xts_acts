@@ -18,6 +18,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { waitForExist } from '../../test/WaitTest.test';
 
 declare class Params {
     text : string
@@ -167,7 +168,6 @@ struct webViewRegisterNativeEmbedRule {
   @State num : number = 0
   @State eventType : string = '触碰类型'
   @State eventType2 : string = '触碰次数'
-  @State str : string = "emitWebViewRegisterNativeEmbedRule";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = true;
@@ -175,20 +175,25 @@ struct webViewRegisterNativeEmbedRule {
   @State onlineImageAccess: boolean = true;
   @State isObject : boolean = false;
   @State databaseAccess: boolean = true;
-  
+  @State isComplete: number = -1;
+  @State str: string = ''
+  @State isReceive: number = -1;
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 153840,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-  
+  onPageHide() {
+    events_emitter.off(153840)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.str = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -201,14 +206,15 @@ struct webViewRegisterNativeEmbedRule {
       Column({ space: 5 }) {
           Button("web click").key('webViewRegisterNativeEmbedRule')
             .onClick(async () => {
-                    await Utils.sleep(3000)
+              await waitForExist(() => this.isComplete, this.str, 0);
+              await waitForExist(() => this.isReceive, this.str, 0);
+              this.isReceive = -1;
                     switch (this.str) {
                         case "emitWebViewRegisterNativeEmbedRule": {
                             console.info('>>>>>registerNativeEmbedRule:' + this.isObject)
                             if ( this.isObject ) {
-                              Utils.emitEvent(this.isObject, 10003)
+                              Utils.emitEvent(this.isObject, 153850)
                             }
-
                             break;
                         }
                     }
@@ -235,6 +241,10 @@ struct webViewRegisterNativeEmbedRule {
                 .height(this.nodeContainer1Height)
                 .backgroundColor(Color.Yellow)            
               Web({ src: $rawfile("registerNativeEmbedRule.html"), controller: this.browserTabController })
+                .onPageEnd((event) => {
+                  console.log('web pageEnd==>' + event.url);
+                  this.isComplete = 0;
+                })
                 .enableNativeEmbedMode(true)
                 .registerNativeEmbedRule("object", "application/view")
                 .onNativeEmbedLifecycleChange((embed) => {

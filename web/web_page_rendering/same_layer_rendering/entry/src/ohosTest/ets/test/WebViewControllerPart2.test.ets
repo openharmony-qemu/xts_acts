@@ -17,6 +17,9 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerPart2() {
@@ -34,12 +37,12 @@ export default function webViewControllerPart2() {
         if (!("webViewControllerPart2" == pages.name)) {
           console.info("get webViewControllerPart2 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webViewControllerPart2 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewControllerPart2 page error: " + err);
       }
+      await waitForComponent("WebViewControllerPart2Button");
       done()
     });
 
@@ -49,7 +52,6 @@ export default function webViewControllerPart2() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewControllerPart2 beforeEach start");
       done();
     })
@@ -63,10 +65,9 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testNativeEmbedStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNativeEmbedStatus001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNativeEmbedStatus001", 3, 37021, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testNativeEmbedStatus001", 153610)
+      Utils.registerEvent("testNativeEmbedStatus001", 3, 153620, done);
+      waitAndClickComponent("WebViewControllerPart2Button",driver);
     })
 
    /*
@@ -78,10 +79,10 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testNativeEmbedStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNativeEmbedStatus002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNativeEmbedStatus002", 4, 37022, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testNativeEmbedStatus002", 153610)
+      Utils.registerEvent("testNativeEmbedStatus002", 4, 153630, done);
+      waitAndClickComponent("WebViewControllerPart2Button",driver);
+
     })
   })
 }
