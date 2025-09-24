@@ -294,6 +294,9 @@ public:
     Camera_ErrorCode CanAddVideoOutput(int useCaseCode);
     Camera_ErrorCode AddSecureOutput(int useCaseCode);
     Camera_ErrorCode OpenSecureCamera(int useCaseCode);
+    Camera_ErrorCode IsPhysicalCameraOrientationVariable(bool* isVariable);
+    Camera_ErrorCode GetPhysicalCameraOrientation(uint32_t* orientation);
+    Camera_ErrorCode UsePhysicalCameraOrientation(bool isUsed);
 
     Camera_ErrorCode CreatePreviewOutputUsedInPreconfig(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputUsedInPreconfig(char *photoSurfaceId, int useCaseCode);
