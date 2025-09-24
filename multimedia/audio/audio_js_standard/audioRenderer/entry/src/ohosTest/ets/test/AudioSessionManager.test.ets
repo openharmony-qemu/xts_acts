@@ -563,13 +563,13 @@ export default function audioSessionManagerTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
-    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
-    * @tc.desc      : setAudioSessionScene -6800101
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL2
+    /**
+    * @tc.number     SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.name       SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.desc       setAudioSessionScene -6800101
+    * @tc.size       MEDIUMTEST
+    * @tc.type       FUNCTION
+    * @tc.level      LEVEL2
     */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioManager:audio.AudioManager = audio.getAudioManager();
@@ -585,13 +585,13 @@ export default function audioSessionManagerTest() {
         done();
       }
     })
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
-    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
-    * @tc.desc      : setAudioSessionScene -6800101
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL2
+    /**
+    * @tc.number     SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
+    * @tc.name       SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
+    * @tc.desc       setAudioSessionScene -6800101
+    * @tc.size       MEDIUMTEST
+    * @tc.type       FUNCTION
+    * @tc.level      LEVEL2
     */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioManager:audio.AudioManager = audio.getAudioManager();
