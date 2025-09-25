@@ -39,7 +39,7 @@ struct TextInputTextAreaSearch{
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-    }.backgroundColor(Color.Gray)
+    }.backgroundColor(Color.Gray).height('50%')
   }
 
   build() {
@@ -48,7 +48,7 @@ struct TextInputTextAreaSearch{
         Text('test').width('100%')
       }
       .width('100%')
-      .height('70%')
+      .height('60%')
       TextInput({ controller: this.controller1 })
         // 绑定自定义键盘
         .customKeyboard(this.CustomKeyboardBuilder(), {supportAvoidance: true}).border({ width: 1 })

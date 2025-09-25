@@ -394,6 +394,6 @@ struct textAreaAutoFill {
           .borderStyle(BorderStyle.Solid)
           .enableAutoFill(true)
       }.height('5%')
-    }.height('100%')
+    }.height('90%')
   }
 }

@@ -28,8 +28,8 @@ struct Index {
     }],
     fontColor: Color.White,
     selectedFontColor: Color.White,
-    fontSize: '20vp',
-    selectedFontSize: '20vp',
+    fontSize: '8vp',
+    selectedFontSize: '8vp',
     fontWeight: FontWeight.Normal,
     selectedFontWeight: FontWeight.Bolder,
     backgroundColor: Color.Grey,
@@ -42,10 +42,14 @@ struct Index {
       { text: '单选图标文字2', icon: $r('app.media.app_icon'), selectedIcon: $r('sys.media.ohos_app_icon') },
       { text: '单选图标文字3', icon: $r('app.media.app_icon'), selectedIcon: $r('sys.media.ohos_app_icon') }
     ],
+    imageSize: { width: '10vp', height: '10vp' },
+    selectedFontSize: '8vp',
+    fontSize: '8vp',
     multiply: false
   })
   @State multipleTextCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
     buttons: [{ text: '多选文字1' }, { text: '多选文字2' }, { text: '多选文字3' }, { text: '多选文字4' }],
+    fontSize: '8vp',
     multiply: true
   })
   @State multipleIconTextCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
@@ -56,6 +60,9 @@ struct Index {
       { text: '多选图标文字4', icon: $r('app.media.app_icon'), selectedIcon: $r('sys.media.ohos_app_icon') },
       { text: '多选图标文字5', icon: $r('app.media.app_icon'), selectedIcon: $r('sys.media.ohos_app_icon') }
     ],
+    imageSize: { width: '10vp', height: '10vp' },
+    fontSize: '8vp',
+    selectedFontSize: '8vp',
     multiply: true
   })
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
@@ -68,7 +75,8 @@ struct Index {
       { icon: $r('app.media.app_icon'), selectedIcon: $r('sys.media.ohos_app_icon') }
     ],
     multiply: false,
-    imageSize: { width: '40vp', height: '40vp' },
+    imageSize: { width: '10vp', height: '10vp' },
+    fontSize: '8vp',
     buttonPadding: '2vp'
   })
   @State selectedIndexes1: number[] = [0]
@@ -81,12 +89,12 @@ struct Index {
   build() {
     Row() {
       Column({ space: 10 }) {
-        SegmentButton({ options: this.singleTextCapsuleOptions, selectedIndexes: $selectedIndexes1 })
-        SegmentButton({ options: this.singleIconTextCapsuleOptions, selectedIndexes: $selectedIndexes2 })
-        SegmentButton({ options: this.multipleTextCapsuleOptions, selectedIndexes: $selectedIndexes3 })
-        SegmentButton({ options: this.multipleIconTextCapsuleOptions, selectedIndexes: $selectedIndexes4 })
-        SegmentButton({ options: this.tabOptions, selectedIndexes: $selectedIndexes5 })
-        SegmentButton({ options: this.singleIconCapsuleOptions, selectedIndexes: $selectedIndexes6 })
+        SegmentButton({ options: this.singleTextCapsuleOptions, selectedIndexes: $selectedIndexes1 }).height('8%')
+        SegmentButton({ options: this.singleIconTextCapsuleOptions, selectedIndexes: $selectedIndexes2 }).height('8%')
+        SegmentButton({ options: this.multipleTextCapsuleOptions, selectedIndexes: $selectedIndexes3 }).height('8%')
+        SegmentButton({ options: this.multipleIconTextCapsuleOptions, selectedIndexes: $selectedIndexes4 }).height('8%')
+        SegmentButton({ options: this.tabOptions, selectedIndexes: $selectedIndexes5 }).height('8%')
+        SegmentButton({ options: this.singleIconCapsuleOptions, selectedIndexes: $selectedIndexes6 }).height('8%')
         Button('pop item').onClick(() => {
           this.singleTextCapsuleOptions.buttons.pop()
         }).height('5%')
@@ -102,13 +110,13 @@ struct Index {
         Button('splice item').onClick(() => {
           this.tabOptions.buttons.splice(0, 1, new SegmentButtonItemOptions({ text: 'splice button' }))
         }).height('5%')
-        .onAppear(() => {
-          let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-          let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-          hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-          hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-          // Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-        })
+          .onAppear(() => {
+            let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+            let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+            hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
+            hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
+            // Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+          })
       }
       .width('90%')
       .height('100%')

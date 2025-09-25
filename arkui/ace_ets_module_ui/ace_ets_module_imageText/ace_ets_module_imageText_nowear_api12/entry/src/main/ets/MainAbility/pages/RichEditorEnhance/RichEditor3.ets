@@ -145,24 +145,25 @@ struct RichEditor3 {
             this.paragraphStyleLeadingMargin += JSON.stringify((value as RichEditorTextSpanResult).paragraphStyle?.leadingMargin)
           }
         })
+        .height('15%')
       Row(){
         Text('PSTextAlign:').fontSize(10)
         Text(this.paragraphStyleTextAlign + this.paragraphStyleTextAlignDelete).id('PSTextAlign').fontSize(10)
-      }.width('100%')
+      }.width('100%').height('5%')
       Row(){
         Text('PSLeadingMargin:').fontSize(10)
         Text(this.paragraphStyleLeadingMargin + this.paragraphStyleLeadingMarginDelete).id('PSLeadingMargin').fontSize(10)
-      }.width('100%')
+      }.width('100%').height('5%')
       Row(){
         Text('LSBorderRadius:').fontSize(10)
         Text(this.layoutStyleBorderRadius + this.layoutStyleBorderRadiusDelete).id('LSBorderRadius').fontSize(10)
-      }.width('100%')
+      }.width('100%').height('5%')
       Row(){
         Text('LSMargin:').fontSize(10)
         Text(this.layoutStyleMargin + this.layoutStyleMarginDelete).id('LSMargin').fontSize(10)
-      }.width('100%')
+      }.width('100%').height('5%')
     }
     .width('100%')
-    .height('100%')
+    .height('90%')
   }
 }

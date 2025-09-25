@@ -109,7 +109,7 @@ struct TextAreaExampleBC1 {
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea1')
-        .height('10%')
+        .height('5%')
         .fontSize(this.fontSize)
         .fontColor(this.textColor)
         .textAlign(this.textAlign)
@@ -142,12 +142,12 @@ struct TextAreaExampleBC1 {
       Row(){
         Text(this.message1).key('change').width('45%')
         Text(this.message2).key('copy').width('45%')
-      }.height('10%')
+      }.height('5%')
       Row(){
         Text(this.message3).key('cut').width('45%')
         Text(this.message4).key('paste').width('45%')
-      }.height('10%')
-      Text(this.message5).key('isEdit').height('10%')
+      }.height('5%')
+      Text(this.message5).key('isEdit').height('5%')
       Row(){
       Button(`button1`)
         .backgroundColor('#007DFF')
@@ -172,7 +172,7 @@ struct TextAreaExampleBC1 {
         .key('textArea2')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
-        .height('10%')
+        .height('5%')
         .fontSize(16)
         .fontColor('#182431')
         .backgroundColor('#FFFFFF')
@@ -181,6 +181,6 @@ struct TextAreaExampleBC1 {
         })
       
 
-    }.width('100%').height('100%').backgroundColor('#F1F3F5')
+    }.width('100%').height('90%').backgroundColor('#F1F3F5')
   }
 }

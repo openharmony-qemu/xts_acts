@@ -99,8 +99,7 @@ struct TextAreaExample {
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea')
-        .height(56)
-        .margin(20)
+        .height('10%')
         .fontSize(this.fontSize)
         .fontColor('#182431')
         .textAlign(this.textAlign)
@@ -130,18 +129,18 @@ struct TextAreaExample {
       })
         .caretColor($r('sys.color.ohos_id_color_connected'))
         .key('textAreaResource')
+        .height('10%')
 
-      Text(this.message1).key('change')
-      Text(this.message2).key('copy')
-      Text(this.message3).key('cut')
-      Text(this.message4).key('paste')
+      Text(this.message1).key('change').height('5%')
+      Text(this.message2).key('copy').height('5%')
+      Text(this.message3).key('cut').height('5%')
+      Text(this.message4).key('paste').height('5%')
       Button('Set caretPosition 1')
         .backgroundColor('#007DFF')
-        .margin(15)
         .onClick(() => {
           // 设置光标位置到第一个字符后
           this.controller.caretPosition(1)
         })
-    }.width('100%').height('100%').backgroundColor('#F1F3F5')
+    }.width('100%').height('90%').backgroundColor('#F1F3F5')
   }
 }
