@@ -1462,7 +1462,9 @@ export default function drawingTsPath4Test() {
 
       try {
         for (let i = 0; i < getEnumCount(drawing.PathOp); i += 1) {
-          path.op(path, i)
+          let result = path.op(path, i);
+          console.info(msg + " path.op-----result:  " + result + " step is: " + i);
+          expect(result).assertEqual(true);
         }
         console.info(msg + 'reset successes');
       } catch (e) {
@@ -1602,7 +1604,9 @@ export default function drawingTsPath4Test() {
         for (let i = 0; i < 20; i += 1) {
           const dst = new drawing.Path();
           const e = Math.floor(Math.random() * getEnumCount(drawing.PathOp))
-          path.op(dst, e);
+          let result =  path.op(dst, e);
+          console.info(msg + " path.op-----result:  " + result + " step is: " + i);
+          expect(result).assertEqual(true);
         }
         console.info(msg + 'reset successes');
       } catch (e) {

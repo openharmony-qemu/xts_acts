@@ -228,10 +228,14 @@ export default function drawingTsCanvasPart5Test() {
       const msg = 'testCanvasIsClipEmptyNormal';
       const canvas = new drawing.Canvas(pixel);
       try {
-        canvas.isClipEmpty();
+        let result = canvas.isClipEmpty();
+        console.info(msg + " isClipEmpty 1 -----result:  "+ result);
+        expect(result).assertEqual(false);
         const path = new drawing.Path();
         canvas.clipPath(path);
-        canvas.isClipEmpty();
+        let result2 = canvas.isClipEmpty();
+        console.info(msg + " isClipEmpty 2 -----result2:  "+ result2);
+        expect(result2).assertEqual(true);
         console.info(msg + 'test successes');
       } catch (e) {
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
