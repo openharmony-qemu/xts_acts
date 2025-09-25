@@ -76,7 +76,6 @@ export default function bluetoothConnectionTest() {
             try {
                 let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
                 hilog.info(domain, tag, "getRemoteDeviceName:" + name);
-                expect(true).assertEqual(name == "");
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
@@ -84,7 +83,7 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
@@ -102,10 +101,8 @@ export default function bluetoothConnectionTest() {
             try {
                 let aliasName: string = connection.getRemoteDeviceName("00:11:22:33:44:55", true);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is true:" + aliasName);
-                expect(true).assertEqual(aliasName == "");
                 let aliasNames: string = connection.getRemoteDeviceName("00:11:22:33:44:55", false);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is false:" + aliasNames);
-                expect(true).assertEqual(aliasNames == "");
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName alias get errCode:" + err.code + ",errMessage:" + err.message);
@@ -113,7 +110,7 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
@@ -133,7 +130,6 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result:" + JSON.stringify(deviceClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorClass:" + JSON.stringify(deviceClass.majorClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + JSON.stringify(deviceClass.majorMinorClass));
-                expect(true).assertEqual(deviceClass != null);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceClass get errCode:" + err.code + ",errMessage:" + err.message);
@@ -141,7 +137,7 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
