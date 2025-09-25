@@ -1857,10 +1857,10 @@ export default function WindowLifecycle() {
           console.log(caseName + " callback: timer2 :" + timer);
           expect(timer).assertEqual(4);
           expect(arr.length).assertEqual(4);
-          expect(arr[0]).assertEqual(window.WindowStageLifecycleEventType.SHOWN);
-          expect(arr[1]).assertEqual(window.WindowStageLifecycleEventType.RESUMED);
-          expect(arr[2]).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
-          expect(arr[3]).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
+          expect(arr[0]).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
+          expect(arr[1]).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
+          expect(arr[2]).assertEqual(window.WindowStageLifecycleEventType.SHOWN);
+          expect(arr[3]).assertEqual(window.WindowStageLifecycleEventType.RESUMED);
           windowStage.off('windowStageLifecycleEvent', cb1);
           done();
 

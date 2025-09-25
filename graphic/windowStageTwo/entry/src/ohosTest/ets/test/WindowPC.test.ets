@@ -2850,23 +2850,11 @@ export default function windowPCTest() {
       let caseName = "testOnwindowStatusDidChange_mimimize";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      // if (isPCStatus == '' && isAutoWindow != 'true') {
-      //   expect(true).assertTrue();
-      //   done();
-      // } else {
         try {
           let windowClass = await windowStage.createSubWindow('testOnwindowStatusDidChange_mimimize');
-          // let windowStatusType = windowClass.getWindowStatus();
-          // console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-          // if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
-          //   await windowClass.recover();
-          //   await sleep(200);
-          // }
           await windowClass.setUIContent('testability/pages/First/index2');
-          await showWindow();
+          await windowClass.showWindow();
           await sleep(300);
-          // let windowRect = windowClass.getWindowProperties().windowRect;
-          // console.log(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
           const callback = async (data: window.WindowStatusType) => {
             console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
             expect(data).assertEqual(window.WindowStatusType.MINIMIZE);
@@ -2917,28 +2905,21 @@ export default function windowPCTest() {
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         
         const callback = async (data: window.WindowStatusType) => {
-            console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+            console.log(`${message} callback data: ${JSON.stringify(data)}`);
             expect(data).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
             windowClass.off('windowStatusDidChange', callback);
-            // await windowClass.destroyWindow();
             await sleep(200);
             done()
           }
           windowClass.on('windowStatusDidChange', callback);
-          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          console.log(message  + 'Succeeded on windowStatusDidChange ');
 
         // 模拟用户移动窗口到左边缘，可触发分屏
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
         await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 200, 200)
-        await sleep(1000)
-        // // 获取窗口状态 - 分屏
-        // windowStatus = windowClass.getWindowStatus()
-        // console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        // await sleep(1000)
-        // expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
-        // done()
+        await sleep(2000)
       } else {
         console.info(`${message} not support`);
         done()
