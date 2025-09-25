@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,48 +46,45 @@ export class KeyboardDelegate {
 
   public onCreate(): void {
     this.initWindow();
-    let that = this;
     inputMethodAbility.on("inputStop", () => {
       inputMethodAbility.off("inputStop", () => {
         console.log('====>inputMethodEngine delete inputStop notification.');
       });
       try {
-        that.mContext.destroy((err) => {
+        this.mContext.destroy((err) => {
           console.info(TAG + '====>inputMethodAbility destroy err:' + JSON.stringify(err));
         });
       } catch (err) {
         console.info(TAG + '====>inputMethodAbility destroy catch err:' + JSON.stringify(err));
         console.info(TAG + '====>inputMethodAbility destroy catch err:' + err);
       }
-    })
+    });
 
-    function subscriberCallback(err, data) {
+    function subscriberCallback(err, data): void {
       console.debug(TAG + '====>receive event err:' + JSON.stringify(err));
       console.debug(TAG + '====>receive event data:' + JSON.stringify(data));
       switch (data.code) {
         case 10:
           console.debug(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0010 event:' + data.event);
-          that.SUB_Misc_inputMethod_onHandleExtendAction_0010();
+          KeyboardDelegate.SUB_Misc_inputMethod_onHandleExtendAction_0010();
           break;
         case 20:
           console.debug(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0020 event:' + data.event);
-          that.SUB_Misc_inputMethod_onHandleExtendAction_0020();
+          KeyboardDelegate.SUB_Misc_inputMethod_onHandleExtendAction_0020();
           break;
         case 30:
           console.debug(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0030 event:' + data.event);
-          that.SUB_Misc_inputMethod_onHandleExtendAction_0030();
+          KeyboardDelegate.SUB_Misc_inputMethod_onHandleExtendAction_0030();
           break;
         case 40:
           console.debug(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0040 event:' + data.event);
-          that.SUB_Misc_inputMethod_onHandleExtendAction_0040();
+          KeyboardDelegate.SUB_Misc_inputMethod_onHandleExtendAction_0040();
           break;
-
-
       }
     }
 
     let commonEventSubscribeInfo = {
-      events: ["inputMethodDrawnControlTest"]
+      events: ['inputMethodDrawnControlTest']
     };
 
     let subscriber;
@@ -95,6 +92,13 @@ export class KeyboardDelegate {
       subscriber = data;
       commoneventmanager.subscribe(subscriber, subscriberCallback);
       console.debug(TAG + '====>scene subscribe finish====');
+    });
+  }
+
+  public test(win): void {
+    win.moveWindowTo(0, this.nonBarPosition).then(() => {
+      win.setUIContent('testability/pages/index').then(() => {
+      });
     });
   }
 
@@ -116,10 +120,7 @@ export class KeyboardDelegate {
 
     windowManager.createWindow(config).then((win) => {
       win.resize(dWidth, keyHeight).then(() => {
-        win.moveWindowTo(0, this.nonBarPosition).then(() => {
-          win.setUIContent('testability/pages/index').then(() => {
-          });
-        });
+        this.test(win);
       });
     });
   }
@@ -146,9 +147,9 @@ export class KeyboardDelegate {
     }
   }
 
-  private SUB_Misc_inputMethod_onHandleExtendAction_0010(): void {
+  static SUB_Misc_inputMethod_onHandleExtendAction_0010(): void {
     console.info(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0010 start');
-    inputMethodAbility.on("inputStart", async (KeyboardDelegate, InputClient) => {
+    inputMethodAbility.on('inputStart', async (KeyboardDelegate, InputClient) => {
       inputMethodAbility.off('inputStart');
       let t = setTimeout(async () => {
         clearTimeout(t);
@@ -159,9 +160,9 @@ export class KeyboardDelegate {
     });
   }
 
-  private SUB_Misc_inputMethod_onHandleExtendAction_0020(): void {
+  static SUB_Misc_inputMethod_onHandleExtendAction_0020(): void {
     console.info(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0020 start');
-    inputMethodAbility.on("inputStart", async (KeyboardDelegate, InputClient) => {
+    inputMethodAbility.on('inputStart', async (KeyboardDelegate, InputClient) => {
       inputMethodAbility.off('inputStart');
       let t = setTimeout(async () => {
         clearTimeout(t);
@@ -172,9 +173,9 @@ export class KeyboardDelegate {
     });
   }
 
-  private SUB_Misc_inputMethod_onHandleExtendAction_0030(): void {
+  static SUB_Misc_inputMethod_onHandleExtendAction_0030(): void {
     console.info(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0030 start');
-    inputMethodAbility.on("inputStart", async (KeyboardDelegate, InputClient) => {
+    inputMethodAbility.on('inputStart', async (KeyboardDelegate, InputClient) => {
       inputMethodAbility.off('inputStart');
       let t = setTimeout(async () => {
         clearTimeout(t);
@@ -185,9 +186,9 @@ export class KeyboardDelegate {
     });
   }
 
-  private SUB_Misc_inputMethod_onHandleExtendAction_0040(): void {
+  static SUB_Misc_inputMethod_onHandleExtendAction_0040(): void {
     console.info(TAG + '====>SUB_Misc_inputMethod_onHandleExtendAction_0040 start');
-    inputMethodAbility.on("inputStart", async (KeyboardDelegate, InputClient) => {
+    inputMethodAbility.on('inputStart', async (KeyboardDelegate, InputClient) => {
       inputMethodAbility.off('inputStart');
       let t = setTimeout(async () => {
         clearTimeout(t);

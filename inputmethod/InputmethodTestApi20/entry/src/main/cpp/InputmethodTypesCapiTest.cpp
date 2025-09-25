@@ -215,13 +215,13 @@ void HandleExtendActionFunc3(InputMethod_TextEditorProxy *textEditorProxy, Input
 }
 
 void GetLeftTextOfCursorFunc3(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                             size_t *length)
+                              size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetLeftTextOfCursorFunc3 successful.");
 }
 
 void GetRightTextOfCursorFunc3(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                              size_t *length)
+                               size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetRightTextOfCursorFunc3 successful.");
 }
@@ -233,14 +233,14 @@ int32_t GetTextIndexAtCursorFunc3(InputMethod_TextEditorProxy *textEditorProxy)
 }
 
 int32_t ReceivePrivateCommandFunc3(InputMethod_TextEditorProxy *textEditorProxy,
-                                  InputMethod_PrivateCommand *privateCommand[], size_t size)
-                                  {
+                                   InputMethod_PrivateCommand *privateCommand[], size_t size)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>ReceivePrivateCommandFunc3 successful.");
     return 0;
 }
 
 int32_t SetPreviewTextFunc3(InputMethod_TextEditorProxy *textEditorProxy, const char16_t text[], size_t length,
-                           int32_t start, int32_t end)
+                            int32_t start, int32_t end)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetPreviewTextFunc3 successful.");
     return 0;
@@ -251,7 +251,7 @@ void FinishTextPreviewFunc3(InputMethod_TextEditorProxy *textEditorProxy)
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>FinishTextPreviewFunc3 successful.");
 }
 
-void TextEditorProxy_Create3()
+void TextEditorProxyCreate3()
 {
     if (g_txtEditProxy2 == nullptr) {
         g_txtEditProxy2 = OH_TextEditorProxy_Create();
@@ -276,7 +276,7 @@ void TextEditorProxy_Create3()
 
 napi_value TestImeKeyBoardStatusNone(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -288,7 +288,7 @@ napi_value TestImeKeyBoardStatusNone(napi_env env, napi_callback_info info)
 
 napi_value TestImeKeyBoardStatusHide(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -300,7 +300,7 @@ napi_value TestImeKeyBoardStatusHide(napi_env env, napi_callback_info info)
 
 napi_value TestImeKeyBoardStatusShow(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -414,7 +414,7 @@ napi_value TestImeEnterKeyNewline(napi_env env, napi_callback_info info)
 
 napi_value TestImeErrDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -700,7 +700,7 @@ napi_value TestImeCommandValueTypeBool(napi_env env, napi_callback_info info)
 
 napi_value TestImeDirectionUp(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     int ret = OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -711,7 +711,7 @@ napi_value TestImeDirectionUp(napi_env env, napi_callback_info info)
 
 napi_value TestImeDirectionDown(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     int ret = OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -722,7 +722,7 @@ napi_value TestImeDirectionDown(napi_env env, napi_callback_info info)
 
 napi_value TestImeDirectionLeft(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     int ret = OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -733,7 +733,7 @@ napi_value TestImeDirectionLeft(napi_env env, napi_callback_info info)
 
 napi_value TestImeDirectionRight(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     int ret = OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);
@@ -744,7 +744,7 @@ napi_value TestImeDirectionRight(napi_env env, napi_callback_info info)
 
 napi_value TestImeExtendAction(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create3();
+    TextEditorProxyCreate3();
     InputMethod_AttachOptions *options = OH_AttachOptions_Create(true);
     InputMethod_InputMethodProxy *inputMethodProxy = nullptr;
     OH_InputMethodController_Attach(g_txtEditProxy2, options, &inputMethodProxy);

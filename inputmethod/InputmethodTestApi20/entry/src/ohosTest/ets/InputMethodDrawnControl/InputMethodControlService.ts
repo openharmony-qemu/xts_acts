@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,12 +19,12 @@ import Want from '@ohos.app.ability.Want';
 export default class InputMethodControlService extends InputMethodExtensionAbility {
   private keyboardDelegate: KeyboardDelegate;
 
-  onCreate(want: Want) {
+  onCreate(want: Want): void {
     this.keyboardDelegate = new KeyboardDelegate(this.context);
     this.keyboardDelegate.onCreate(); // 初始化窗口
   }
 
-  onDestroy() {
-    console.log("onDestroy inputStageService**");
+  onDestroy(): void {
+    console.log('onDestroy inputStageService**');
   }
 }
