@@ -717,7 +717,7 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
