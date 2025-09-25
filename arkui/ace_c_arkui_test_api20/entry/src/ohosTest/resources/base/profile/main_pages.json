@@ -15,6 +15,14 @@
     "MainAbility/pages/list/ListCNodePage",
     "MainAbility/pages/BindController/BindController",
     "MainAbility/pages/row/RowTypeNodePage",
-    "MainAbility/pages/row/RowCNodePage"
+    "MainAbility/pages/row/RowCNodePage",
+    "MainAbility/pages/Column/ColumnTypeNodePage",
+    "MainAbility/pages/Column/ColumnCNodePage",
+    "MainAbility/pages/Flex/FlexTypeNodePage",
+    "MainAbility/pages/Flex/FlexCNodePage",
+    "MainAbility/pages/Stack/StackTypeNodePage",
+    "MainAbility/pages/Stack/StackCNodePage",
+    "MainAbility/pages/RelativeContainer/RelativeContainerTypeNodePage",
+    "MainAbility/pages/RelativeContainer/RelativeContainerCNodePage"
   ]
 }
