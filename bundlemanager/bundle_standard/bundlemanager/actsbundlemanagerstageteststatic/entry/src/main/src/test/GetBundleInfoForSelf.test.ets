@@ -496,7 +496,7 @@ export default function getBundleInfoForSelf() {
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY).then((data: BundleInfo) => {
           hilog.info(domain, tag, 'getBundleInfoForSelfAbilitiesInfoPromise  ====> start');
           expect(data.appInfo).assertEqual(null);
-          expect(data.hapModulesInfo[0].abilitiesInfo[0].applicationInfo).not().assertNull();
+          expect(data.hapModulesInfo[0].abilitiesInfo[0].applicationInfo).assertNull();
           expect(data.hapModulesInfo[0].abilitiesInfo[0].bundleName).assertEqual(BUNDLE_NAME);
           expect(data.hapModulesInfo[0].abilitiesInfo[0].moduleName).assertEqual("entry");
           expect(data.hapModulesInfo[0].abilitiesInfo[0].name).assertEqual("EntryAbility");
@@ -546,7 +546,7 @@ export default function getBundleInfoForSelf() {
           bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY);
         hilog.info(domain, tag, 'getBundleInfoForSelfAbilitiesInfoSync  ====> start');
         expect(data.appInfo).assertEqual(null);
-        expect(data.hapModulesInfo[0].abilitiesInfo[0].applicationInfo).not().assertNull();
+        expect(data.hapModulesInfo[0].abilitiesInfo[0].applicationInfo).assertNull();
         expect(data.hapModulesInfo[0].abilitiesInfo[0].bundleName).assertEqual(BUNDLE_NAME);
         expect(data.hapModulesInfo[0].abilitiesInfo[0].moduleName).assertEqual("entry");
         expect(data.hapModulesInfo[0].abilitiesInfo[0].name).assertEqual("EntryAbility");
@@ -629,7 +629,7 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.FORM);
               expect(extensionList[i].extensionAbilityTypeName + '').assertEqual("form");
               expect(extensionList[i].permissions.length).assertEqual(0.0);
-              expect(extensionList[i].applicationInfo).not().assertEqual(null);
+              expect(extensionList[i].applicationInfo).assertEqual(null);
               expect(extensionList[i].metadata.length).assertEqual(0.0);
               expect(extensionList[i].enabled).assertTrue();
               expect(extensionList[i].readPermission + '').assertEqual("");
@@ -649,7 +649,7 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].exported).assertTrue();
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.FORM);
               expect(extensionList[i].permissions.length).assertEqual(0.0);
-              expect(extensionList[i].applicationInfo).not().assertEqual(null);
+              expect(extensionList[i].applicationInfo).assertEqual(null);
               expect(extensionList[i].metadata.length).assertEqual(0.0);
               expect(extensionList[i].enabled).assertTrue();
               expect(extensionList[i].readPermission + '').assertEqual("");
