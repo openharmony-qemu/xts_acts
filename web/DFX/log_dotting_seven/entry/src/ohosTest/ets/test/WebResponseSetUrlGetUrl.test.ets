@@ -17,9 +17,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = '';
+
+const EVENT_ID_SET_SUITE_KEY = 123001;
+const driver = Driver.create();
 
 export default function webviewNApi() {
   describe('OH_ArkWebRequestHeader', async () => {
@@ -29,7 +34,6 @@ export default function webviewNApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(500);
       done();
     });
 
@@ -42,15 +46,13 @@ export default function webviewNApi() {
      * @tc.level Level 0
      */
     it('SUB_ACE_WEB_WEBHOST_NSDK_4951', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('testWebResponse_SetError_Fail_ParamIsString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetError_Fail_ParamIsString', 17100101, 5109, done,
+      Utils.emitEvent("testWebResponse_SetError_Fail_ParamIsString", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent('testWebResponse_SetError_Fail_ParamIsString', 17100101, 123010, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetError', 10, '');
+      Utils.waitAndClickComponent(driver, "SetErrorButton");
     });
   });
 }

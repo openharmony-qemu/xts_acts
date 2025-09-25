@@ -23,6 +23,9 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
+const EVENT_ID_SET_SUITE_KEY = 128001;
+const driver = Driver.create();
+
 export default function SetWebDebugAccess() {
 
   describe('ActsWebSetWebDebugAccessTest', () => {
@@ -37,16 +40,13 @@ export default function SetWebDebugAccess() {
         console.info("get SetWebDebugAccess state success " + JSON.stringify(pages));
         if (!("SetWebDebugAccess" == pages.name)) {
           console.info("get SetWebDebugAccess state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push SetWebDebugAccess page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push SetWebDebugAccess page success ");
         }
       } catch (err) {
         console.error("push SetWebDebugAccess page error: " + err);
       }
       let driver = Driver.create();
-      await driver.waitForComponent(ON.id("setWebDebuggingAccess"),10000);
-      console.log("waitForComponent setWebDebuggingAccess==>");
       done()
     });
 
@@ -56,15 +56,7 @@ export default function SetWebDebugAccess() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("SetWebDebugAccess beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("SetWebDebugAccess afterEach start");
-      await Utils.sleep(2000);
-      console.info("SetWebDebugAccess afterEach end");
       done();
     })
 
@@ -77,11 +69,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 0
     */
     it('testSetWebDebugAccessEnableDebugPortAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowed", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowed", true, 2025060901, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowed", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowed", true, 128010, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -93,11 +85,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortAllowedTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedTwo", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedTwo", "17100023", 2025060902, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedTwo", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedTwo", "17100023", 128020, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -109,11 +101,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 1
     */
     it('testSetWebDebugAccessEnableDebugPortAllowedThree', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedThree", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedThree", true, 2025060903, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedThree", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedThree", true, 128030, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
 
@@ -126,11 +118,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedOne", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedOne", "17100023", 2025060904, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedOne", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedOne", "17100023", 128040, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
 
@@ -143,11 +135,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedTwo", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedTwo", "17100023", 2025060905, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedTwo", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedTwo", "17100023", 128050, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -159,11 +151,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 0
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedThree', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedThree", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedThree", "17100023", 2025060906, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedThree", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedThree", "17100023", 128060, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -175,11 +167,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortNegativeNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNegativeNumber", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNegativeNumber", "17100023", 2025060907, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNegativeNumber", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNegativeNumber", "17100023", 128070, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -191,11 +183,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortEmpty", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortEmpty", true, 2025060908, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortEmpty", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortEmpty", true, 128080, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -207,11 +199,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNull", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNull", true, 2025060909, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNull", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNull", true, 128090, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
 
@@ -224,11 +216,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortUndefined", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortUndefined", true, 2025060910, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortUndefined", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortUndefined", true, 128100, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -240,11 +232,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessEnableDebugPortNaN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNaN", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNaN", "17100023", 2025060911, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNaN", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNaN", "17100023", 128110, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
 
@@ -257,11 +249,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessNotEnableDebugPortAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortAllowed", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortAllowed", true, 2025060912, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortAllowed", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortAllowed", true, 128120, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -273,11 +265,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessNotEnableDebugPortNotAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortNotAllowed", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortNotAllowed", "17100023", 2025060913, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortNotAllowed", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortNotAllowed", "17100023", 128130, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
     /*
@@ -289,11 +281,11 @@ export default function SetWebDebugAccess() {
     * @tc.level      : Level 2
     */
     it('testSetWebDebugAccessErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitSetWebDebugAccessErrorCode401", 609)
-      Utils.registerBaseEvent("testSetWebDebugAccessErrorCode401", "401", 2025060914, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitSetWebDebugAccessErrorCode401", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testSetWebDebugAccessErrorCode401", "401", 128140, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('setWebDebuggingAccess', 10, '');
+      Utils.waitAndClickComponent(driver, "setWebDebuggingAccessButton");
     })
 
   })
