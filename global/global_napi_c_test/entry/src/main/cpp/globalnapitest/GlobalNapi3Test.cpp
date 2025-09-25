@@ -342,7 +342,7 @@ napi_value AddResource0100(napi_env env, napi_callback_info info)
     if (strcmp(resultValue, "entry_test") != 0) {
         res = -1;
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "AddResource0100", "AddResource0100: %{public}s",strBuf);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "AddResource0100", "AddResource0100: %{public}s", strBuf);
     OH_ResourceManager_AddResource(g_mNativeResMgr, strBuf);
     OH_ResourceManager_GetStringByName(g_mNativeResMgr, "test1", &resultValue);
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "AddResource0100", "AddResource0100: %{public}s", resultValue);
@@ -363,7 +363,7 @@ napi_value RemoveResource0100(napi_env env, napi_callback_info info)
     size_t strSize;
     char strBuf[256];
     napi_get_value_string_utf8(env, argv[0], strBuf, sizeof(strBuf), &strSize);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "RemoveResource0100", "RemoveResource0100: %{public}s",strBuf);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "RemoveResource0100", "RemoveResource0100: %{public}s", strBuf);
     char *resultValue;
     OH_ResourceManager_GetStringByName(g_mNativeResMgr, "test1", &resultValue);
     int res = 0;
@@ -387,6 +387,4 @@ napi_value RemoveResource0100(napi_env env, napi_callback_info info)
     napi_create_int32(env, res, &value);
     return value;
 }
-
-
 }
