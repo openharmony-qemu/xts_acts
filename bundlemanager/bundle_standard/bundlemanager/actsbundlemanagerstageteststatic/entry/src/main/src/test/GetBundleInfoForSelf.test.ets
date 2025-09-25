@@ -37,7 +37,7 @@ export default function getBundleInfoForSelf() {
               expect(data!.versionCode + '').assertEqual('1000000');
               expect(data!.versionName).assertEqual("1.0.0");
               expect(data!.minCompatibleVersionCode + '').assertEqual('1000000');
-              expect(data!.targetVersion + '').assertEqual('20');
+              expect(data!.targetVersion + '').assertEqual('21');
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -69,7 +69,7 @@ export default function getBundleInfoForSelf() {
           expect(data.versionCode + '').assertEqual('1000000');
           expect(data.versionName).assertEqual("1.0.0");
           expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-          expect(data.targetVersion + '').assertEqual('20');
+          expect(data.targetVersion + '').assertEqual('21');
           expect(data.installTime).assertLarger(0.0);
           expect(data.updateTime).assertLarger(0.0);
           expect(data.firstInstallTime).assertLarger(0.0);
@@ -103,7 +103,7 @@ export default function getBundleInfoForSelf() {
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion + '').assertEqual('20');
+        expect(data.targetVersion + '').assertEqual('21');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
@@ -593,7 +593,7 @@ export default function getBundleInfoForSelf() {
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion  + '').assertEqual('20');
+        expect(data.targetVersion  + '').assertEqual('21');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
@@ -801,7 +801,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.appInfo).assertEqual(null);
             expect(data.installTime).assertLarger(0.0);
             expect(data.updateTime).assertLarger(0.0);
@@ -843,7 +843,7 @@ export default function getBundleInfoForSelf() {
               expect(data.versionName).assertEqual("1.0.0");
               expect(data.versionCode).assertEqual(1000000);
               expect(data.vendor).assertEqual("example");
-              expect(data.targetVersion).assertEqual(20);
+              expect(data.targetVersion).assertEqual(21);
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -884,7 +884,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.appInfo).assertEqual(null);
             expect(data.installTime).assertLarger(0.0);
             expect(data.updateTime).assertLarger(0.0);
@@ -923,7 +923,7 @@ export default function getBundleInfoForSelf() {
             expect(data.name).assertEqual("ohos.acts.bundle.stage.test.static");
             expect(data.vendor).assertEqual("example");
             expect(data.versionCode).assertEqual(1000000);
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.appInfo).assertEqual(null);
             expect(data.hapModulesInfo.length).assertEqual(0);
@@ -959,7 +959,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.signatureInfo).assertEqual(null);
             expect(data.permissionGrantStates.length).assertEqual(0);
             expect(data.reqPermissionDetails.length).assertEqual(0);
@@ -1012,7 +1012,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data!.routerMap.length).assertEqual(0.0);
             expect(data.signatureInfo).assertEqual(null);
             expect(data!.hapModulesInfo.length).assertEqual(1.0);
@@ -1066,7 +1066,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.hapModulesInfo[0].abilitiesInfo[0].skills.length).assertEqual(1);
             expect(data!.hapModulesInfo[0].abilitiesInfo[0].bundleName)
               .assertEqual("ohos.acts.bundle.stage.test.static");
@@ -1123,7 +1123,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.permissionGrantStates[1]).assertEqual(bundle.PermissionGrantState.PERMISSION_DENIED);
             expect(data.permissionGrantStates[0]).assertEqual(bundle.PermissionGrantState.PERMISSION_GRANTED);
             hilog.info(domain, tag, 'getBundleInfoForSelfPermissionPro  ====> end');
@@ -1153,7 +1153,7 @@ export default function getBundleInfoForSelf() {
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.versionCode).assertEqual(1000000);
         expect(data.vendor).assertEqual("example");
-        expect(data.targetVersion).assertEqual(20);
+        expect(data.targetVersion).assertEqual(21);
 
         expect(data!.hapModulesInfo[0].abilitiesInfo[1].bundleName)
           .assertEqual("ohos.acts.bundle.stage.test.static");
