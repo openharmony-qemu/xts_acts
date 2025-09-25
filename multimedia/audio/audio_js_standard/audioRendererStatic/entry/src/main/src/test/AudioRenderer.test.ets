@@ -10526,7 +10526,7 @@ export default function audioRendererTest() {
       readPath = 'StarWars10s-1C-16000-2SW.wav'
       await getFdRead(readPath, done);
       await playWithVideoStream(AudioRendererOptions, filePath, done);
-      await Utils.msSleep(100);
+      await Utils.msSleep(2000);
       expect(true).assertTrue();
       await closeFileDescriptor();
       done();
