@@ -19,12 +19,13 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { BusinessError } from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  @State str: string = "emitStoreWebArchiveCallbackSaveFail";
+  @State str: string = "";
   @State webId: number = 0;
   @State webResult: string = ' ';
   @State proResult: string = ' ';
@@ -38,13 +39,19 @@ struct Index {
   @State imageAccess: boolean = true
   @State onlineImageAccess: boolean = true
   @State databaseAccess: boolean = true
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132230,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(132230)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +60,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -61,20 +69,25 @@ struct Index {
     Column() {
       Row() {
         Button("web test").key('webcomponent03').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           switch (this.str) {
             case "emitStoreWebArchiveCallbackSaveFail": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('index.html'))
-                this.controller.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                this.controller.storeWebArchive("/data/storage/el2/basessss/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
+                    Utils.emitEvent(error.code + error.message, 132240)
                     return;
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                     this.webFilename = filename
-                    Utils.emitEvent(this.webFilename, 138)
+                    Utils.emitEvent(this.webFilename, 132240)
                   }
                 });
               } catch (error) {
@@ -84,17 +97,19 @@ struct Index {
             }
             case "emitStoreWebArchivePromiseSaveFail": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('index.html'))
-                this.controller.storeWebArchive("/data/storage/el2/base/", true)
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                this.controller.storeWebArchive("/data/storage/el2/basessss/", true)
                   .then(filename => {
                     if (filename != null) {
                       this.webFilename = filename
-                      Utils.emitEvent(this.webFilename, 140)
                       console.info(`save web archive success: ${filename}`)
                     }
                   })
                   .catch((error:BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code + error.message, 132250)
                   })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -113,6 +128,10 @@ struct Index {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

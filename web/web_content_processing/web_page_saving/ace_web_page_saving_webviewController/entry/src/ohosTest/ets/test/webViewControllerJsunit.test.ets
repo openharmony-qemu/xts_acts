@@ -17,9 +17,11 @@ import { describe, beforeEach, afterEach, it, expect , TestType, Size, Level } f
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitGetFaviconAgain";
+
 export default function webViewControllerJsunit() {
   describe('ActsAceWebDevWebViewControllerTest',  () => {
     beforeEach(async  (done: Function) =>{
@@ -28,28 +30,11 @@ export default function webViewControllerJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
     afterEach(async  (done: Function) =>{
-      console.info("web afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("web afterEach start");
       done();
     })
 
@@ -59,9 +44,12 @@ export default function webViewControllerJsunit() {
      *tc.desc test for getFavicon again
      */
     it('testGetFaviconAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitGetFaviconAgain";
-      Utils.registerEvent("testGetFaviconAgain",true,116,done);
-      sendEventByKey('webcomponent',10,'');
+      Utils.emitEvent("emitGetFaviconAgain", 132140);
+      Utils.registerBaseEvent("testGetFaviconAgain", true, 132150, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent('webcomponent');
     })
   })
 }
