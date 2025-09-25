@@ -35,6 +35,8 @@ export default class EntryAbility extends UIAbility {
     let atManager: abilityAccessCtrl.AtManager  = abilityAccessCtrl.createAtManager();
     atManager.requestPermissionsFromUser(this.context, [
       'ohos.permission.CAPTURE_SCREEN']).then(() => {
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to permission CAPTURE_SCREEN.  Cause:  code: ${err.code}, message: ${err.message}`);
     });
 
     globalThis.windowStage = windowStage
