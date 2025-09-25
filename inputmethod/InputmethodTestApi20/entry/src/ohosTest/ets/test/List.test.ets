@@ -15,8 +15,12 @@
  
 import ActsInputmethodTest from './ActsInputmethodTest.test'
 import ActsInputmethodTwoTest from './ActsInputmethodTwoTest.test'
+import ActsInputmethodThreeTest from './ActsInputmethodThreeTest.test'
+import ActsInputmethodFourTest from './ActsInputmethodFourTest.test'
 
 export default function testsuite() {
   ActsInputmethodTest()
   ActsInputmethodTwoTest()
+  ActsInputmethodThreeTest()
+  ActsInputmethodFourTest()
 }
