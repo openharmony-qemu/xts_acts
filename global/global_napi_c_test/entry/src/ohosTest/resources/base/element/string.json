@@ -39,6 +39,10 @@
     {
       "name": "test_stringTwentyFive",
       "value": "%4s %d %f"
+    },
+    {
+      "name": "test1",
+      "value": "entry_test"
     }
   ]
 }

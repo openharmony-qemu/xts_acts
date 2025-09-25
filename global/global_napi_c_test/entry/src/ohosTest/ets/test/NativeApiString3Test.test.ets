@@ -699,7 +699,7 @@ export default function NativeApiString3Test() {
     it('TestAddResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestAddResource0100 start====");
-        let path = resManager.resourceDir + '/libraryfile.hsp';
+        let path = resManager.bundleCodeDir + "/entry.hap";
         console.info(`====>TestAddResource0100 result====${path}`);
         let result: number = nativeTest.AddResource0100(path);
         console.info(`====>TestAddResource0100 result====${result}`);
@@ -722,7 +722,7 @@ export default function NativeApiString3Test() {
     it('TestRemoveResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestRemoveResource0100 start====");
-        let path = resManager.resourceDir + '/libraryfile.hsp';
+        let path = resManager.bundleCodeDir + "/entry.hap";
         console.info(`====>TestRemoveResource0100 result====${path}`);
         let result: number = nativeTest.RemoveResource0100(path);
         console.info(`====>TestRemoveResource0100 result====${result}`);
