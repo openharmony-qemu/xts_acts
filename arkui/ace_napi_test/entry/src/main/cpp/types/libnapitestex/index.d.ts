@@ -320,6 +320,22 @@ export const NapiOthersAndModuleTest01: () => boolean;
 export const NapiOthersAndModuleTest02: () => boolean;
 export const NapiOthersAndModuleTest03: () => boolean;
 export const NapiOthersAndModuleTest04: () => boolean;
+
+// NAPI Promise Test Functions
+export const NapiPromiseTest001: () => boolean;
+export const NapiPromiseTest002: () => boolean;
+export const NapiPromiseTest003: () => boolean;
+export const NapiPromiseTest004: () => boolean;
+export const NapiPromiseTest005: () => boolean;
+export const NapiPromiseTest006: () => boolean;
+export const NapiPromiseTest007: () => boolean;
+export const NapiPromiseTest008: () => boolean;
+export const NapiPromiseTest009: () => boolean;
+export const NapiPromiseTest010: () => boolean;
+export const NapiPromiseTest011: () => boolean;
+export const NapiPromiseTest012: () => boolean;
+export const NapiPromiseTest013: () => boolean;
+export const NapiPromiseTest014: () => boolean;
 export const TestIsSendable: () => boolean;
 export const TestIsSendableTrue: () => boolean;
 export const TestIsSendableNull: () => boolean;
