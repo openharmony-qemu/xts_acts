@@ -79,6 +79,14 @@ struct WaterFlowTypeNodePage {
         }
       }).id('WaterFlowTypeNodePage_Btn')
 
+      Button('undefined').onClick(() => {
+        const attrs1 = typeNode.getAttribute(undefined, 'WaterFlow');
+        AppStorage.SetOrCreate('WaterFlowTypeNodeUn', attrs1);
+
+        const attrs2 = typeNode.getAttribute(undefined, 'FlowItem');
+        AppStorage.SetOrCreate('FlowItemTypeNodeUn', attrs2);
+      }).id('WaterFlowTypeNodePage_undefined')
+
       NodeContainer(this.myNodeController)
     }
     .width('100%')

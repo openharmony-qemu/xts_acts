@@ -648,7 +648,7 @@ export default function abilityTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4100
      * @tc.name testHiprofilerInterface41
-     * @tc.desc 验证getAppVMObjectUsed接口调用返回内存值正常
+     * @tc.desc 验证getAppVMObjectUsedSize接口调用返回内存值正常
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -656,7 +656,7 @@ export default function abilityTest() {
     it('testHiprofilerInterface41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 start");
       try {
-        let appVMObjectUsed = hidebug.getAppVMObjectUsed();
+        let appVMObjectUsed = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 appVMObjectUsed: " + appVMObjectUsed);
         expect(appVMObjectUsed >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 success");
@@ -672,7 +672,7 @@ export default function abilityTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4200
      * @tc.name testHiprofilerInterface42
-     * @tc.desc 验证getAppVMObjectUsed接口不连续调用测试
+     * @tc.desc 验证getAppVMObjectUsedSize接口不连续调用测试
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -680,10 +680,10 @@ export default function abilityTest() {
     it('testHiprofilerInterface42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 start");
       try {
-        let appVMObjectUsed1 = hidebug.getAppVMObjectUsed();
+        let appVMObjectUsed1 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 appVMObjectUsed1: " + appVMObjectUsed1);
         await asyncSleep(5);
-        let appVMObjectUsed2 = hidebug.getAppVMObjectUsed();
+        let appVMObjectUsed2 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 appVMObjectUsed2: " + appVMObjectUsed2);
         expect(appVMObjectUsed1 >= 0).assertTrue();
         expect(appVMObjectUsed2 >= 0).assertTrue();
@@ -700,7 +700,7 @@ export default function abilityTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4300
      * @tc.name testHiprofilerInterface43
-     * @tc.desc 验证getAppVMObjectUsed接口连续调用测试
+     * @tc.desc 验证getAppVMObjectUsedSize接口连续调用测试
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -708,9 +708,9 @@ export default function abilityTest() {
     it('testHiprofilerInterface43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 start");
       try {
-        let appVMObjectUsed1 = hidebug.getAppVMObjectUsed();
+        let appVMObjectUsed1 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 appVMObjectUsed1: " + appVMObjectUsed1);
-        let appVMObjectUsed2 = hidebug.getAppVMObjectUsed();
+        let appVMObjectUsed2 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 appVMObjectUsed2: " + appVMObjectUsed2);
         expect(appVMObjectUsed1 >= 0).assertTrue();
         expect(appVMObjectUsed2 >= 0).assertTrue();
@@ -727,7 +727,7 @@ export default function abilityTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4400
      * @tc.name testHiprofilerInterface44
-     * @tc.desc 验证getAppVMObjectUsed接口调用稳定性测试
+     * @tc.desc 验证getAppVMObjectUsedSize接口调用稳定性测试
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level3
@@ -736,7 +736,7 @@ export default function abilityTest() {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 start");
       try {
         for (let i = 0; i < 100; i++) {
-          let appVMObjectUsed = hidebug.getAppVMObjectUsed();
+          let appVMObjectUsed = hidebug.getAppVMObjectUsedSize();
           expect(appVMObjectUsed >= 0).assertTrue();
           console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 appVMObjectUsed: " + appVMObjectUsed);
         }

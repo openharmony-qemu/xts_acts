@@ -22,7 +22,7 @@ group("actsamstest") {
       "AbilityDelegatorTest:ActsAbilityDelegatorTest",
       "AbilityDelegatorTestStatic:ActsAbilityDelegatorStaticTest",
       "ApplicationContextTest:ActsApplicationContextTest",
-      "ApplicationContextTestStatic:ActsApplicationContextStaticTest",
+      "ApplicationContextTestStatic:ActsApplicationContextStaticTest"
     ]
   }
 }

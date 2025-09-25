@@ -19,28 +19,34 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct webviewTerminateRenderProcess {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  @State str: string = "emitTerminateRenderProcess0100";
+  @State str: string = "";
   @State userAgentPC:string = '';
+  @State isComplete: number = -1;
+  @State isRunJSEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 152130,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(152130)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnSslError page valueChangeCallBack");
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -50,23 +56,26 @@ struct webviewTerminateRenderProcess {
       Row() {
         Button("web click").key('TerminateRenderProcess').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitTerminateRenderProcess0100": {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 5300)
+                  Utils.emitEvent(true, 152140)
                   break;
                 }else if((this.userAgentPC).includes("Tablet")){
-                  Utils.emitEvent(true, 5300)
+                  Utils.emitEvent(true, 152140)
                   break;
                 }
+                this.isComplete = -1;
                 this.controller.loadUrl('www.baidu.com');
-                await Utils.sleep(4000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
-                await Utils.sleep(1000);
-                Utils.emitEvent(result, 5300)
+                Utils.emitEvent(result, 152140)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -76,21 +85,21 @@ struct webviewTerminateRenderProcess {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 5302)
+                  Utils.emitEvent(true, 152150)
                   break;
                 }else if((this.userAgentPC).includes("Tablet")){
-                  Utils.emitEvent(true, 5302)
+                  Utils.emitEvent(true, 152150)
                   break;
                 }
+                this.isComplete = -1;
                 this.controller.loadUrl('www.baidu.com');
-                await Utils.sleep(4000);
-                let result = this.controller.terminateRenderProcess();
-                console.log("terminateRenderProcess result: " + result);
-                await Utils.sleep(3000);
+                await waitForExist(() => this.isComplete, this.str, 0);
+                 let result = this.controller.terminateRenderProcess();
+                 console.log("terminateRenderProcess result: " + result);
                 let title = this.controller.getTitle();
                 console.log("title: " + title);
                 if ((this.controller.getTitle()).includes("百度")) {
-                  Utils.emitEvent(true, 5302)
+                  Utils.emitEvent(true, 152150)
                   console.log("title:" + this.controller.getTitle())
                 }
               } catch (error) {
@@ -102,18 +111,18 @@ struct webviewTerminateRenderProcess {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 5304)
+                  Utils.emitEvent(true, 152160)
                   break;
                 }else if((this.userAgentPC).includes("Tablet")){
-                  Utils.emitEvent(true, 5304)
+                  Utils.emitEvent(true, 152160)
                   break;
                 }
+                this.isComplete = -1;
                 this.controller.loadUrl($rawfile("indexdemo.html"))
-                await Utils.sleep(4000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
-                await Utils.sleep(1000);
-                Utils.emitEvent(result, 5304)
+                Utils.emitEvent(result, 152160)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -123,20 +132,19 @@ struct webviewTerminateRenderProcess {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 5306)
+                  Utils.emitEvent(true, 152170)
                   break;
                 }else if((this.userAgentPC).includes("Tablet")){
-                  Utils.emitEvent(true, 5306)
+                  Utils.emitEvent(true, 152170)
                   break;
                 }
+                this.isComplete = -1;
                 this.controller.loadUrl($rawfile("indexdemo.html"))
-                await Utils.sleep(4000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
-                await Utils.sleep(1000);
                 this.controller.slideScroll(500, 500);
-                await Utils.sleep(4000);
-                Utils.emitEvent(true, 5306)
+                Utils.emitEvent(true, 152170)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -147,11 +155,16 @@ struct webviewTerminateRenderProcess {
       }
 
       Web({ src: 'https://wrong.host.badssl.com', controller: this.controller })
+
       .onOverScroll((event) => {
           console.info('x = ' + event.xOffset)
           console.info('y = ' + event.yOffset)
-          Utils.emitEvent(false, 5306)
+          Utils.emitEvent(false, 152170)
       })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
     }
   }
 }

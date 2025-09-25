@@ -25,24 +25,25 @@ struct parentX {
     Row() {
 
       Column({ space: 2 }) {
-        Text('' + this.parentX)
-          .key('parentX')
-          .margin({ top: 30 })
-        Text('' + this.parentY)
-          .key('parentY')
-        Text(this.strategy_DEFAULT)
-          .key('strategy_DEFAULT')
-        Text(this.strategy_FORWARD_COMPETITION)
-          .key('strategy_FORWARD_COMPETITION')
-        Text(this.strategy_FORWARD)
-          .key('strategy_FORWARD')
+        Row({ space: 2 }){
+          Text('' + this.parentX)
+            .key('parentX')
+          Text('' + this.parentY)
+            .key('parentY')
+          Text(this.strategy_DEFAULT)
+            .key('strategy_DEFAULT')
+          Text(this.strategy_FORWARD_COMPETITION)
+            .key('strategy_FORWARD_COMPETITION')
+          Text(this.strategy_FORWARD)
+            .key('strategy_FORWARD')
+        }.width('50%').height('5%').align(Alignment.Center)
         Column() {
           Text("onChildTouchTest")
             .key('onChildTouchTest').height(10)
         }
         .key('Column_CustomEvent')
-        .width(400)
-        .height(400)
+        .width(50)
+        .height(50)
         .backgroundColor(0xF1F3F5)
         .onChildTouchTest((touchinfo) => {
           let strategy_DEFAULT = TouchTestStrategy.DEFAULT
@@ -55,7 +56,7 @@ struct parentX {
           this.strategy_FORWARD = JSON.stringify(strategy_FORWARD)
           return { strategy: TouchTestStrategy.DEFAULT }
         })
-      }.width('100%')
-    }.height('100%').width('100%').id('row')
+      }.width('100%').height('100%')
+    }.height('90%').width('100%').id('row')
   }
 }

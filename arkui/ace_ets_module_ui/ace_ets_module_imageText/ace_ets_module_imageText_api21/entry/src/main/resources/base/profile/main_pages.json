@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Text/textContentAlign",
+    "MainAbility/pages/ImageAttachment/ImageAttachment",
+    "MainAbility/pages/Text/textAreaInputTest",
+    "MainAbility/pages/RichEditor/ScrollBarColor"
+  ]
+}

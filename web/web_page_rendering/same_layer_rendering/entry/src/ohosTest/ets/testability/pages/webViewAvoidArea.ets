@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import window from '@ohos.window'
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct webViewAvoidArea {
@@ -35,7 +36,8 @@ struct webViewAvoidArea {
   @State screenHeight: number = 0;
   @State isCreateSuccess: boolean = false;
   @State ViewportFitArr:ViewportFit[] = [ViewportFit.AUTO,ViewportFit.CONTAINS,ViewportFit.COVER]
-
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   aboutToAppear() {
     window.getLastWindow(getContext(this)).then(currentWindow =>{
       let property = currentWindow.getWindowProperties();
@@ -54,17 +56,20 @@ struct webViewAvoidArea {
   }
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153550,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153550)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -75,14 +80,20 @@ struct webViewAvoidArea {
         Button('web click')
           .key('webViewAvoidAreaButton')
           .onClick(async () => {
+            console.info('key' + this.emitKey);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            this.isReceive = -1;
             console.info('key==>' + this.emitKey);
             this.controller.refresh();
-            await Utils.sleep(2000);
+            console.info('key==>' + this.emitKey)
+
             switch (this.emitKey) {
               case 'emitWebViewAvoidArea01': {
                 try {
                   this.isCreateSuccess = false;
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('contain.html'));
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -92,9 +103,11 @@ struct webViewAvoidArea {
               case 'emitWebViewAvoidArea02': {
                 try {
                   this.isCreateSuccess = false;
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('auto.html'));
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   if (this.isCreateSuccess === false) {
-                    Utils.emitEvent(this.ViewportFitArr[ViewportFit.AUTO], 6202);
+                    Utils.emitEvent(this.ViewportFitArr[ViewportFit.AUTO], 153570);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -105,7 +118,9 @@ struct webViewAvoidArea {
               case 'emitWebViewAvoidArea03': {
                 try {
                   this.isCreateSuccess = false;
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('cover.html'));
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -115,9 +130,11 @@ struct webViewAvoidArea {
               case 'emitWebViewAvoidArea04': {
                 try {
                   this.isCreateSuccess = false;
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('default.html'));
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   if (this.isCreateSuccess === false) {
-                    Utils.emitEvent(this.ViewportFitArr[ViewportFit.AUTO], 6204);
+                    Utils.emitEvent(this.ViewportFitArr[ViewportFit.AUTO], 153590);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -128,9 +145,11 @@ struct webViewAvoidArea {
               case 'emitWebViewAvoidAreaOther': {
                 try {
                   this.isCreateSuccess = false
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('viewportOther.html'));
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   if (this.isCreateSuccess === false) {
-                    Utils.emitEvent('success', 6206);
+                    Utils.emitEvent('success', 153600);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -142,6 +161,10 @@ struct webViewAvoidArea {
           })
       }
       Web({ src: '', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -157,12 +180,12 @@ struct webViewAvoidArea {
           }
           if (this.emitKey == 'emitWebViewAvoidArea01') {
             if (viewportFit === 1) {
-              Utils.emitEvent(this.ViewportFitArr[ViewportFit.CONTAINS], 6201);
+              Utils.emitEvent(this.ViewportFitArr[ViewportFit.CONTAINS], 153560);
             }
           }
           if (this.emitKey == 'emitWebViewAvoidArea03') {
             if (viewportFit === 2) {
-              Utils.emitEvent(this.ViewportFitArr[ViewportFit.COVER], 6203);
+              Utils.emitEvent(this.ViewportFitArr[ViewportFit.COVER], 153580);
             }
           }
         })

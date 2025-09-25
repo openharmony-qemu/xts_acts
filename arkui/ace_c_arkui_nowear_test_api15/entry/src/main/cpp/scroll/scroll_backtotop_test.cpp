@@ -80,7 +80,6 @@ std::shared_ptr<ColumnComponent> CreategridExample1()
     button1->SetHeight(SIZE_30);
     button1->SetId("GridTop");
     button1->SetLable("GridTop");
-    button1->SetMargin(SIZE_3);
     button1->RegisterOnClick([grid]() {
         if (g_backToTopValue1 == true) {
         g_backToTopValue1 = false;
@@ -90,8 +89,8 @@ std::shared_ptr<ColumnComponent> CreategridExample1()
         grid -> SetBackToTop(g_backToTopValue1);
     }
     });
-    grid->SetWidth(SIZE_300);
-    grid->SetHeight(SIZE_120);
+    grid->SetWidth(SIZE_200);
+    grid->SetHeight(SIZE_50);
     grid->SetId("Grid1");
     grid->SetGridColumnsTemplate("1fr 1fr 1fr 1fr 1fr");
     grid->SetGridColumnsGap(SIZE_10);
@@ -109,7 +108,6 @@ std::shared_ptr<ColumnComponent> CreategridExample1()
         g_message1 = "onGridNotBack";
         textMessage1->SetTextContent(g_message1);
     });
-    grid->SetMargin(SIZE_5);
     grid->setAttribute(NODE_GRID_NODE_ADAPTER, &adapterItem);
     grid1Column->AddChild(std::shared_ptr<GridComponent>(grid));
     grid1Column->AddChild(button1);
@@ -122,7 +120,7 @@ std::shared_ptr<ScrollComponent> CreateScroll(int32_t number)
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ScrollBackToTopTest", "CreateScroll");
     auto scroll = std::make_shared<ScrollComponent>();
     scroll->SetWidth(SIZE_180);
-    scroll->SetHeight(SIZE_70);
+    scroll->SetHeight(SIZE_50);
     scroll->SetMargin(DEFAULT_MARGIN);
     scroll->SetId("Scroll");
     scroll->SetScrollScrollBar(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
@@ -141,7 +139,7 @@ static void AddListItem(std::shared_ptr<ListComponent> list, uint32_t color, int
     for (int i = 0; i < num; i++) {
         auto listItem = std::make_shared<ListItemComponent>();
         listItem->SetWidth(SIZE_100);
-        listItem->SetHeight(SIZE_50);
+        listItem->SetHeight(SIZE_30);
         listItem->SetBackgroundColor(color);
         input.push_back(listItem);
     }
@@ -153,7 +151,7 @@ static std::shared_ptr<ListComponent> CreateListComponent(int listSpace, int ite
 {
     auto list = std::make_shared<ListComponent>();
     list->SetWidth(SIZE_100);
-    list->SetHeight(SIZE_100);
+    list->SetHeight(SIZE_50);
     list->SetListSpace(listSpace);
     list->SetBackgroundColor(COLOR_RED);
     list->SetListDirection(vertical);
@@ -234,7 +232,6 @@ napi_value ScrollBackToTopTest::CreateNativeNode(napi_env env, napi_callback_inf
     button1->SetHeight(SIZE_30);
     button1->SetId("ListTop");
     button1->SetLable("ListTop");
-    button1->SetMargin(SIZE_3);
     button1->RegisterOnClick([list, waterFlow, scroll1, scroll7]() {
         if (g_backToTopValue == true) {
             g_backToTopValue = false;

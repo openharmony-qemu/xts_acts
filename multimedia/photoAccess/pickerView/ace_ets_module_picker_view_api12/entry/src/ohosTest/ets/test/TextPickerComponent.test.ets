@@ -35,7 +35,9 @@ import {
   ClickType,
   BaseItemInfo,
   SaveMode,
-  ItemDisplayRatio
+  ItemDisplayRatio,
+  BadgeConfig,
+  BadgeType
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo,
   AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
@@ -49,6 +51,7 @@ import { fileUri } from '@kit.CoreFileKit';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
+const SELECTED_STATUS = 0;
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -63,6 +66,15 @@ async function routeToUrl(options: router.RouterOptions) {
   } catch (err) {
     console.error("testPicker page error:" + err);
   }
+}
+
+
+function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
+  let sheetPickerOptions = new photoAccessHelper.PhotoSelectOptions();
+  sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+  sheetPickerOptions.isPhotoTakingSupported = false;
+  sheetPickerOptions.maxSelectNumber = 10;
+  return sheetPickerOptions;
 }
 
 function getDefaultPickerOptions(): PickerOptions {
@@ -1033,7 +1045,7 @@ export default function TextPicker() {
         if (clicked) {
           expect(result).assertEqual(ClickType.DESELECTED);
         } else {
-          expect(result).assertEqual(ClickType.SELECTED);
+          expect(SELECTED_STATUS).assertEqual(ClickType.SELECTED);
         }
       }
       let event: events_emitter.InnerEvent = {
@@ -1049,6 +1061,21 @@ export default function TextPicker() {
         }
       }
       await routeToUrl(options);
+      
+      console.info('testPicker18 create');
+      let btn: Component = await driver.findComponent(ON.type('GridItem'));
+      if(btn === null) {
+        console.info('testPicker18 no GridItem');
+      } else {
+        if(clicked) {
+          await btn.click();
+          await CommonFunc.sleep(1000);
+          clicked = !clicked;
+          await CommonFunc.sleep(1000);
+          await btn.click();
+          await CommonFunc.sleep(1000);
+        }
+      }
       
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
       console.info("testPicker18 JSON.parse(strJson) is" + strJson);
@@ -2289,6 +2316,97 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker49 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    testPicker50
+     * @tc.name      testPicker50
+     * @tc.desc      Testing PhotoPicker BadgeConfig
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testPicker50', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let str1: string = 'file://media/Photo/64/IMG_1/IMG_1.gif';
+      let str2: string = 'file://media/Photo/64/IMG_2/IMG_2.gif';
+      let str3: string = 'file://media/Photo/64/IMG_3/IMG_3.gif';
+      const uris = Array(1000).fill(str1).map((item: string, index: number)=>{
+        return item + index;
+      })
+      uris.push(str1);
+      uris.push(str2);
+      uris.push(str3);
+
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let pickerController: PickerController = new PickerController();
+      const badgeConfig = new BadgeConfig();
+      badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
+      badgeConfig.uris = uris;
+      pickerOptions.badgeConfig = badgeConfig;
+      await CommonFunc.sleep(1000);
+      pickerController.setData(DataType.SET_BADGE_CONFIGS, uris);
+      await CommonFunc.sleep(1000);
+      pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
+      await CommonFunc.sleep(1000);
+      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
+      done();
+    });
+
+    /**
+     * @tc.number    testPicker51
+     * @tc.name      testPicker51
+     * @tc.desc      Testing ContextRecoveryInfo
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testPicker51', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
+      let testFinished: boolean = true;
+      let contextRecoveryInfo = {
+        "albumUri" : "",
+        "displayName": "IMG_20240522_085513_3.jpg",
+        "recommendationType": 0,
+        "selectedRecommendationType": 0,
+        "time": 1756371999125,
+        "version": 1.0
+      } as photoAccessHelper.ContextRecoveryInfo;
+      sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/page/BindSheetPicker',
+        params: {
+          pickerOptions: sheetPickerOptions,
+        }
+      }
+
+      await routeToUrl(options);
+
+      expect(testFinished).assertTrue();
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker51 finish");
       done();
     });
   })

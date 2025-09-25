@@ -23,6 +23,7 @@ group("multimedia") {
       "media/media_js_standard/screenCapture_ndk_test:ActsNativeAVScreenCaptureTest",
       "image/image_ets_standard/imageXts:imageXts_ets_hap",
       "media/media_ets_standard/mediaXts:media_xts_hap",
+      "camera/camera_ets_standard/cameraXtsSupplements:cameraXts_supp_ets_hap",
     ]
   }
   if (is_standard_system) {
@@ -66,6 +67,7 @@ group("multimedia") {
       "avsession/avsession_js_standard/avsessionManager:avsession_framework_js_hap",
       "avsession/avsession_js_standard/avsessionVoiceCall:avsession_voicecall_js_hap",
       "avsession/avsession_ndk_standard/avsession_ndk_stage:avsession_ndk_ohosTest",
+      "avsession/avsession_ndk_standard/avsessionkit:ActsAVSession20Test",
       "avsource:ActsAVCodecTest",
       "camera/camera_js_standard:camera_framework_ets_hap",
       "camera/camera_ndk_test:camera_framework_ndk_hap",
@@ -73,11 +75,11 @@ group("multimedia") {
       "camera/camera_ndk_supplement:ActsMediaCameraXtsTest",
       "camera/camera_picker_test:camera_picker_ets_hap",
       "camera/camera_ets_standard/cameraXts:cameraXts_ets_hap",
-      "camera/camera_ets_standard/cameraXtsSupplements:cameraXts_supp_ets_hap",
       "drm/AVCodecDrmNdk:AVcodecDrm_NDK_test",
       "drm/avPlayerDrmNdk:AVPlayerDrm_NDK_test",
       "drm/drm_js_standard/avPlayer:drm_avplayer_js_hap",
       "drm/drm_ndk_test:Drm_Framework_NDK_test",
+      "drm/DrmKitC20Test:ActsDrmKitErrorCodeTest",
       "image/image_ets_standard/image:image_hap",
       "image/image_ets_standard/image10bitPixelmap:image_10bit_pixelmap_hap",
       "image/image_ets_standard/imageDecodeOptionsYuvRaw:image_decode_options_yuv_raw_hap",

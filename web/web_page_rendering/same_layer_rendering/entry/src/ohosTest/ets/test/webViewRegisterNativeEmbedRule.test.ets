@@ -17,8 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitAndClickComponent,waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 // @ts-nocheck
-let emitKey = "emitWebViewRegisterNativeEmbedRule"
+let emitKey = '';
 
 export default function webViewRegisterNativeEmbedRule() {
   describe('ActsAceRegisterNativeEmbedRule', () => {
@@ -29,46 +32,20 @@ export default function webViewRegisterNativeEmbedRule() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewRegisterNativeEmbedRule state success " + JSON.stringify(pages));
             if (!("webViewRegisterNativeEmbedRule" == pages.name)) {
                 console.info("get webViewRegisterNativeEmbedRule state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewRegisterNativeEmbedRule page success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewRegisterNativeEmbedRule page error:" + err);
         }
+        await waitForComponent("webViewRegisterNativeEmbedRule");
         done()
-    });
-    
-    beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
-      done();
-    })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
+     });
 
     /*
     * @tc.number     : SUB_ACE_WEB_REGISTERNATIVEEMBEDRULE_API_0500
@@ -79,8 +56,9 @@ export default function webViewRegisterNativeEmbedRule() {
     * @tc.level      : Level 0
     */
     it('testWebViewRegisterNativeEmbedRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.registerEvent("emitWebViewRegisterNativeEmbedRule", true, 10003, done);
-        sendEventByKey('webViewRegisterNativeEmbedRule', 10, '');
+      Utils.emitEvent("emitWebViewRegisterNativeEmbedRule", 153840);
+      Utils.registerEvent("emitWebViewRegisterNativeEmbedRule", true, 153850, done);
+      waitAndClickComponent("webViewRegisterNativeEmbedRule",driver);
     })
   })
 }

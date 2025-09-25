@@ -30,6 +30,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/eventfd.h>
+#include <ffrt/fiber.h>
 #define FAIL (-1)
 #define SUCCESS 0
 #define PARAM_100 100
@@ -3948,154 +3949,261 @@ static napi_value ffrt_fiber_001(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value ffrt_reserveTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_cond_t cond;
+    int a = 0;
+    int b = 0;
+    ffrt_mutex_t lock_;
+    CvMutex t = {&cond, &a, &b, &lock_, nullptr, nullptr};
+    std::function<void()>&& ffrtFunc1 = [&t]() { FuncWait1(static_cast<void*>(&t)); };
+    ffrt_function_header_t* ffrtFunc1Wrapper = create_function_wrapper((ffrtFunc1));
+    ffrtFunc1Wrapper->reserve[0] = ffrtFunc1Wrapper->reserve[1];
+    int result = ffrtFunc1Wrapper->reserve[0] == ffrtFunc1Wrapper->reserve[1] ? 1 : 0;
+    napi_create_int32(env, result, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_task_attr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    int a = 0;
+    ffrt_task_attr_t task_attr;
+    task_attr.storage[0] = ffrt_task_attr_storage_size;
+    (void)ffrt_task_attr_init(&task_attr);
+    ffrt_task_attr_set_delay(&task_attr, 1);
+    int result = ffrt_task_attr_get_delay(&task_attr);
+    napi_create_int32(env, result, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_queue_attr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_queue_attr_t queue_attr;
+    queue_attr.storage[0] = ffrt_queue_attr_storage_size;
+    (void)ffrt_queue_attr_init(&queue_attr);
+    ffrt_queue_t queue_handle = ffrt_queue_create(ffrt_queue_max, "test_queue", &queue_attr);
+    int result = queue_handle == nullptr ? 0 :1;
+    napi_create_int32(env, result, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_condattr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_cond_t cond;
+    ffrt_condattr_t attr;
+    attr.storage = ffrt_cond_storage_size;
+    cond.storage[0] = ffrt_fiber_storage_size;
+    int result = ffrt_cond_init(&cond, &attr);
+    napi_create_int32(env, result, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_mutexattr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_mutexattr_t attr;
+    ffrt_mutex_t mtx;
+    attr.storage = ffrt_mutex_storage_size;
+    mtx.storage[0] = ffrt_mutex_storage_size;
+    int result = ffrt_mutexattr_init(&attr);
+    napi_create_int32(env, result, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_rwlockattr_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_rwlock_t rwlock;
+    ffrt_rwlockattr_t attr;
+    attr.storage = ffrt_auto_managed_function_storage_size;
+    rwlock.storage[0] = ffrt_rwlock_storage_size;
+    int result = ffrt_rwlock_init(&rwlock, &attr);
+    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_mutex_typeTest1(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    int result = ffrt_mutexattr_settype(NULL, ffrt_mutex_normal);
+    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
+    return resultEnd;
+}
+
+static napi_value ffrt_mutex_typeTest2(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    int result = ffrt_mutexattr_settype(NULL, ffrt_mutex_default);
+    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
+    return resultEnd;
+}
+
+void ForffrtFiberInitTest(void* arg)
+{
+    (*static_cast<int*>(arg)) += 1;
+}
+
+static napi_value ffrt_fiber_tTest(napi_env env, napi_callback_info info)
+{
+    napi_value resultEnd;
+    ffrt_fiber_t fiber;
+    fiber.storage[0] = ffrt_fiber_storage_size;
+    size_t size = 0;
+    int result = ffrt_fiber_init(&fiber, ForffrtFiberInitTest, nullptr, nullptr, size);
+    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
+    return resultEnd;
+}
+
+napi_property_descriptor desc[] = {
+    {"conditionVariableTest001", nullptr, ConditionVariableTest001, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableTest002", nullptr, ConditionVariableTest002, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableTest003", nullptr, ConditionVariableTest003, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableTest004", nullptr, ConditionVariableTest004, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableApiTest001", nullptr, ConditionVariableApiTest001, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableApiTest002", nullptr, ConditionVariableApiTest002, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableApiTest003", nullptr, ConditionVariableApiTest003, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"conditionVariableApiTest004", nullptr, ConditionVariableApiTest004, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"delayCTest001", nullptr, DelayCTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtYieldC0001", nullptr, FfrtYieldC0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"recursiveMutexAbnormalParamTest001", nullptr, RecursiveMutexAbnormalParamTest001, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+    {"recursiveMutexAbnormalInvalidParamTest001", nullptr, RecursiveMutexAbnormalInvalidParamTest001, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+    {"mutexAbnormalParamTest001", nullptr, MutexAbnormalParamTest001, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"mutexAbnormalParamTest002", nullptr, MutexAbnormalParamTest002, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"mutexTest006", nullptr, MutexTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"mutexTest007", nullptr, MutexTest007, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"mutexTest008", nullptr, MutexTest008, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest001", nullptr, QueueApiTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest002", nullptr, QueueApiTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest003", nullptr, QueueApiTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest004", nullptr, QueueApiTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest005", nullptr, QueueApiTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest006", nullptr, QueueApiTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest007", nullptr, QueueApiTest007, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest008", nullptr, QueueApiTest008, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest009", nullptr, QueueApiTest009, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest010", nullptr, QueueApiTest010, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest011", nullptr, QueueApiTest011, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest012", nullptr, QueueApiTest012, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest013", nullptr, QueueApiTest013, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest014", nullptr, QueueApiTest014, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest015", nullptr, QueueApiTest015, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest016", nullptr, QueueApiTest016, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueCancelTest001", nullptr, QueueCancelTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueCancelTest003", nullptr, QueueCancelTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueCancelTest004", nullptr, QueueCancelTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDelayTest001", nullptr, QueueDelayTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDelayTest002", nullptr, QueueDelayTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDelayTest005", nullptr, QueueDelayTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest001", nullptr, QueueDfxTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest002", nullptr, QueueDfxTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest003", nullptr, QueueDfxTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest004", nullptr, QueueDfxTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest005", nullptr, QueueDfxTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueDfxTest006", nullptr, QueueDfxTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueTest001", nullptr, QueueTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueTest002", nullptr, QueueTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueTest003", nullptr, QueueTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueWaitTest001", nullptr, QueueWaitTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitAbnormalTest", nullptr, SubmitAbnormalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitBasicTest001", nullptr, SubmitBasicTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitBasicTest002", nullptr, SubmitBasicTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitInDependEmptyTest", nullptr, SubmitInDependEmptyTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitInDependNullptrTest", nullptr, SubmitInDependNullptrTest, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"submitOuDependEmptyTest", nullptr, SubmitOuDependEmptyTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitOuDependNullptrTest", nullptr, SubmitOuDependNullptrTest, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"submitIODependTest001", nullptr, SubmitIODependTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitIODependTest002", nullptr, SubmitIODependTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitIn0Ou0WaitNullTask1Test", nullptr, SubmitIn0Ou0WaitNullTask1Test, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"submitHBasicTest001", nullptr, SubmitHBasicTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHBasicTest002", nullptr, SubmitHBasicTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHFTest001", nullptr, SubmitHFTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitFTest001", nullptr, SubmitFTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHInDependEmptyTest", nullptr, SubmitHInDependEmptyTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHInDependNullptrTest", nullptr, SubmitHInDependNullptrTest, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"submitHOuDependEmptyTest", nullptr, SubmitHOuDependEmptyTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHOuDependNullptrTest", nullptr, SubmitHOuDependNullptrTest, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"submitHIODependTest001", nullptr, SubmitHIODependTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"submitHIODependTest002", nullptr, SubmitHIODependTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"sleepForTest000", nullptr, SleepForTest000, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"sleepForTest001", nullptr, SleepForTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"taskAttrAbnormalTest", nullptr, TaskAttrAbnormalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"taskAttrQosIllegalTest", nullptr, TaskAttrQosIllegalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"taskAttrQosQueryTest", nullptr, TaskAttrQosQueryTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"taskAttrSetNameTest", nullptr, TaskAttrSetNameTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"taskAttrSetQosTest", nullptr, TaskAttrSetQosTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_timer_start_0001", nullptr, ffrt_timer_start_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_timer_start_0002", nullptr, ffrt_timer_start_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_timer_cancel_0001", nullptr, ffrt_timer_cancel_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_0001", nullptr, ffrt_loop_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_0002", nullptr, ffrt_loop_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_timer_start_abnormal_0001", nullptr, ffrt_timer_start_abnormal_0001, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_abnormal_0001", nullptr, ffrt_loop_abnormal_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_abnormal_0002", nullptr, ffrt_loop_abnormal_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_queue_parallel_api_0001", nullptr, ffrt_queue_parallel_api_0001, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"ffrt_queue_parallel_api_0002", nullptr, ffrt_queue_parallel_api_0002, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"ffrt_queue_parallel_api_0003", nullptr, ffrt_queue_parallel_api_0003, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"ffrt_queue_parallel_api_0004", nullptr, ffrt_queue_parallel_api_0004, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"queue_parallel_cancel_0001", nullptr, queue_parallel_cancel_0001, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"queue_parallel_cancel_0002", nullptr, queue_parallel_cancel_0002, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"queue_parallel_0001", nullptr, queue_parallel_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queue_parallel_0002", nullptr, queue_parallel_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_abnormal_0003", nullptr, ffrt_loop_abnormal_0003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_loop_normal_0003", nullptr, ffrt_loop_normal_0003, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_get_main_queue_0001", nullptr, ffrt_get_main_queue_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_get_current_queue_0001", nullptr, ffrt_get_current_queue_0001, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"ffrt_this_task_get_qos_0001", nullptr, ffrt_this_task_get_qos_0001, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+    {"ffrt_attr_stack_size_0001", nullptr, ffrt_attr_stack_size_0001, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"ffrt_task_handle_ref_0001", nullptr, ffrt_task_handle_ref_0001, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+    {"ffrtThisTaskGetId", nullptr, FfrtThisTaskGetId, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtThisTaskUpdateQos", nullptr, FfrtThisTaskUpdateQos, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"sharedMutexTest001", nullptr, SharedMutexTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_fiber_001", nullptr, ffrt_fiber_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_reserveTest", nullptr, ffrt_reserveTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_task_attr_tTest", nullptr, ffrt_task_attr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_queue_attr_tTest", nullptr, ffrt_queue_attr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_condattr_tTest", nullptr, ffrt_condattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_mutexattr_tTest", nullptr, ffrt_mutexattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_rwlockattr_tTest", nullptr, ffrt_rwlockattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_mutex_typeTest1", nullptr, ffrt_mutex_typeTest1, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_mutex_typeTest2", nullptr, ffrt_mutex_typeTest2, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_fiber_tTest", nullptr, ffrt_fiber_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+};
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        { "conditionVariableTest001", nullptr, ConditionVariableTest001, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableTest002", nullptr, ConditionVariableTest002, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableTest003", nullptr, ConditionVariableTest003, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableTest004", nullptr, ConditionVariableTest004, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableApiTest001", nullptr, ConditionVariableApiTest001, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableApiTest002", nullptr, ConditionVariableApiTest002, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableApiTest003", nullptr, ConditionVariableApiTest003, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "conditionVariableApiTest004", nullptr, ConditionVariableApiTest004, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "delayCTest001", nullptr, DelayCTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrtYieldC0001", nullptr, FfrtYieldC0001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "recursiveMutexAbnormalParamTest001", nullptr, RecursiveMutexAbnormalParamTest001, nullptr,
-            nullptr, nullptr, napi_default, nullptr },
-        { "recursiveMutexAbnormalInvalidParamTest001", nullptr, RecursiveMutexAbnormalInvalidParamTest001, nullptr,
-            nullptr, nullptr, napi_default, nullptr },
-        { "mutexAbnormalParamTest001", nullptr, MutexAbnormalParamTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "mutexAbnormalParamTest002", nullptr, MutexAbnormalParamTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "mutexTest006", nullptr, MutexTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "mutexTest007", nullptr, MutexTest007, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "mutexTest008", nullptr, MutexTest008, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest001", nullptr, QueueApiTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest002", nullptr, QueueApiTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest003", nullptr, QueueApiTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest004", nullptr, QueueApiTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest005", nullptr, QueueApiTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest006", nullptr, QueueApiTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest007", nullptr, QueueApiTest007, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest008", nullptr, QueueApiTest008, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest009", nullptr, QueueApiTest009, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest010", nullptr, QueueApiTest010, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest011", nullptr, QueueApiTest011, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest012", nullptr, QueueApiTest012, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest013", nullptr, QueueApiTest013, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest014", nullptr, QueueApiTest014, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest015", nullptr, QueueApiTest015, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueApiTest016", nullptr, QueueApiTest016, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueCancelTest001", nullptr, QueueCancelTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueCancelTest003", nullptr, QueueCancelTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueCancelTest004", nullptr, QueueCancelTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDelayTest001", nullptr, QueueDelayTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDelayTest002", nullptr, QueueDelayTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDelayTest005", nullptr, QueueDelayTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest001", nullptr, QueueDfxTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest002", nullptr, QueueDfxTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest003", nullptr, QueueDfxTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest004", nullptr, QueueDfxTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest005", nullptr, QueueDfxTest005, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueDfxTest006", nullptr, QueueDfxTest006, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueTest001", nullptr, QueueTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueTest002", nullptr, QueueTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueTest003", nullptr, QueueTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queueWaitTest001", nullptr, QueueWaitTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitAbnormalTest", nullptr, SubmitAbnormalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitBasicTest001", nullptr, SubmitBasicTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitBasicTest002", nullptr, SubmitBasicTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitInDependEmptyTest", nullptr, SubmitInDependEmptyTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitInDependNullptrTest", nullptr, SubmitInDependNullptrTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitOuDependEmptyTest", nullptr, SubmitOuDependEmptyTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitOuDependNullptrTest", nullptr, SubmitOuDependNullptrTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitIODependTest001", nullptr, SubmitIODependTest001, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitIODependTest002", nullptr, SubmitIODependTest002, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitIn0Ou0WaitNullTask1Test", nullptr, SubmitIn0Ou0WaitNullTask1Test, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHBasicTest001", nullptr, SubmitHBasicTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitHBasicTest002", nullptr, SubmitHBasicTest002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitHFTest001", nullptr, SubmitHFTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitFTest001", nullptr, SubmitFTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "submitHInDependEmptyTest", nullptr, SubmitHInDependEmptyTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHInDependNullptrTest", nullptr, SubmitHInDependNullptrTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHOuDependEmptyTest", nullptr, SubmitHOuDependEmptyTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHOuDependNullptrTest", nullptr, SubmitHOuDependNullptrTest, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHIODependTest001", nullptr, SubmitHIODependTest001, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "submitHIODependTest002", nullptr, SubmitHIODependTest002, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "sleepForTest000", nullptr, SleepForTest000, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "sleepForTest001", nullptr, SleepForTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "taskAttrAbnormalTest", nullptr, TaskAttrAbnormalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "taskAttrQosIllegalTest", nullptr, TaskAttrQosIllegalTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "taskAttrQosQueryTest", nullptr, TaskAttrQosQueryTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "taskAttrSetNameTest", nullptr, TaskAttrSetNameTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "taskAttrSetQosTest", nullptr, TaskAttrSetQosTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_timer_start_0001", nullptr, ffrt_timer_start_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_timer_start_0002", nullptr, ffrt_timer_start_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_timer_cancel_0001", nullptr, ffrt_timer_cancel_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_loop_0001", nullptr, ffrt_loop_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_loop_0002", nullptr, ffrt_loop_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_timer_start_abnormal_0001", nullptr, ffrt_timer_start_abnormal_0001, nullptr,
-            nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_loop_abnormal_0001", nullptr, ffrt_loop_abnormal_0001, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "ffrt_loop_abnormal_0002", nullptr, ffrt_loop_abnormal_0002, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "ffrt_queue_parallel_api_0001", nullptr, ffrt_queue_parallel_api_0001, nullptr, nullptr,
-            nullptr, napi_default,
-            nullptr },
-        { "ffrt_queue_parallel_api_0002", nullptr, ffrt_queue_parallel_api_0002, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_queue_parallel_api_0003", nullptr, ffrt_queue_parallel_api_0003, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_queue_parallel_api_0004", nullptr, ffrt_queue_parallel_api_0004, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "queue_parallel_cancel_0001", nullptr, queue_parallel_cancel_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "queue_parallel_cancel_0002", nullptr, queue_parallel_cancel_0002, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "queue_parallel_0001", nullptr, queue_parallel_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "queue_parallel_0002", nullptr, queue_parallel_0002, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_loop_abnormal_0003", nullptr, ffrt_loop_abnormal_0003, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_loop_normal_0003", nullptr, ffrt_loop_normal_0003, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_get_main_queue_0001", nullptr, ffrt_get_main_queue_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_get_current_queue_0001", nullptr, ffrt_get_current_queue_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_this_task_get_qos_0001", nullptr, ffrt_this_task_get_qos_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_attr_stack_size_0001", nullptr, ffrt_attr_stack_size_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrt_task_handle_ref_0001", nullptr, ffrt_task_handle_ref_0001, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "ffrtThisTaskGetId", nullptr, FfrtThisTaskGetId, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrtThisTaskUpdateQos", nullptr, FfrtThisTaskUpdateQos, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "sharedMutexTest001", nullptr, SharedMutexTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ffrt_fiber_001", nullptr, ffrt_fiber_001, nullptr, nullptr, nullptr, napi_default, nullptr }
-    };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

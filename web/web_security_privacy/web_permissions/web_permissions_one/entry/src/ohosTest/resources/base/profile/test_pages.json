@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/WebOnPermissionRequest",
-    "testability/pages/WebDoubleInnerNucleus"
+    "testability/pages/WebDoubleInnerNucleus",
+    "testability/pages/WebSiteIsolationMode"
   ]
 }

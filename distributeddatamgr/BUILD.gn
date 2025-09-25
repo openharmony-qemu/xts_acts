@@ -18,9 +18,12 @@ group("distributeddatamgr") {
     deps = [
       "DataObjectNoPermissionstest:DataObjectNoPermissionstest",
       "IntelligenceApiTest:ActsIntelligenceTest",
+      "KvStoreEtsTestStatic:ActsKvStoreEtsStaticTest",
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
+      "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
+      "PasteboardTestStatic:ActsPasteboardStaticTest",
       "Pasteboardjsapitest:ActsPasteBoardETSApiTest",
       "Pasteboardnapitest:ActsPasteboardNapiEtsTest",
       "UDMFtest:UDMFtest",
@@ -28,19 +31,21 @@ group("distributeddatamgr") {
       "crossplatform/relationalstoreetstest:ActsCrossplatformRelationalStoreTest",
       "dataAbilityEtsTest:ActsDataAbilityTest",
       "dataObjecttest:dataObjecttest",
+      "dataShareEts_static:ActsDataShareStaticTest",
+      "dataShareTest:dataShareTest",
       "dataSharejstest:dataShare_js_test",
       "distributedKVStoretest:distributedKVStoretest",
       "kvStoretest:kvStoretest",
+      "pasteboard_errorcode:ActsPasteboardErrorTest",
+      "preferenceEts_static:ActsPreferenceStaticTest",
       "preferencesEtstest:ActsPreferencesEtsTest",
       "preferencesNdktestHvigor:ActsPreferencesNdkTest",
       "preferencesSendabletest:preferencesSendable_ets_test",
+      "preferencesTestApi20:ActsPreferencesTest",
       "preferencesdatagroupidtest:ActsPreferencesDataGroupIdTest",
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
-      "dataShareTest:dataShareTest",
-      "pasteboard_errorcode:ActsPasteboardErrorTest",
-      "preferencesTestApi20:ActsPreferencesTest"
     ]
   } else {
     deps = [

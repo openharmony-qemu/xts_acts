@@ -40,7 +40,7 @@
         "skills": [
           {
             "entities": [
-              "ohos.want.action.home"
+              "entity.system.home"
             ],
             "actions": [
               "action.system.home"

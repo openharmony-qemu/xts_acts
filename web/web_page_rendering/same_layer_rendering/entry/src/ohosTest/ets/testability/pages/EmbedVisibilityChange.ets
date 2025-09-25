@@ -18,7 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from "@ohos.arkui.node";
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Observed
 declare class Params{
   elementId: string
@@ -108,7 +108,6 @@ class MyNodeController extends NodeController {
 struct TextInputComponent {
   @Prop params: Params
   @State bkColor: Color = Color.White
-
   build() {
     Column() {
       TextInput({text: '', placeholder: 'please input your word...'})
@@ -152,18 +151,20 @@ struct WebEmbedVisibilityChange  {
   @State userAgentPC:string = "";
   @Prop params: Params
   @State bkColor: Color = Color.White
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153510,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(153510)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -172,6 +173,7 @@ struct WebEmbedVisibilityChange  {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -181,17 +183,20 @@ struct WebEmbedVisibilityChange  {
       Row() {
         Button("WebViewEmbedVisibilityChangeButton").key('WebViewEmbedVisibilityChangeButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitEmbedVisibilityChange001": {
                 this.userAgentPC = this.browserTabController.getUserAgent();
                 if ((this.userAgentPC).includes("Phone")) {
+                  this.isComplete = -1;
                   this.browserTabController.loadUrl('https://www.baidu.com');
-                  await Utils.sleep(4000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.browserTabController.loadUrl($rawfile('Embed.html'))
-                  await Utils.sleep(4000);
                   break;
                 }
-                Utils.emitEvent(true, 16571657)
+                Utils.emitEvent(true, 153520)
                 break;
             }
         
@@ -208,10 +213,14 @@ struct WebEmbedVisibilityChange  {
           }, (embedId: string) => embedId)
           // Web组件加载本地text.html页面。
           Web({src: $rawfile("index.html"), controller: this.browserTabController})
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
           .onNativeEmbedVisibilityChange((embed) => {
           if (embed.visibility) {
             this.embedVisibility = 'Visible';
-            Utils.emitEvent(true, 16571657)
+            Utils.emitEvent(true, 153520)
           } else {
             this.embedVisibility = 'Hidden';
             console.log('Hidden')

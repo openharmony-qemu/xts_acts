@@ -72,6 +72,7 @@ struct PageOne1 {
       })
       Button('openModal')
         .onClick(() => {
+          AppStorage.delete('testValue')
           this.testModal = true;
           this.isShow = true;
         })

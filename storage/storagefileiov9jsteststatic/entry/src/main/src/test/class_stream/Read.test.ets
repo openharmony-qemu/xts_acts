@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from "../../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -6,7 +21,7 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base'
 import { ReadOptions } from '@ohos.file.fs';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export const FILE_CONTENT = 'hello world';
@@ -89,7 +104,7 @@ export default function fileIOStreamRead() {
         expect(sr !== null).assertTrue();
         let readLen = sr.readSync(new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length
+          length: FILE_CONTENT.length.toLong(),
         });
         expect(readLen == FILE_CONTENT.length - 1).assertTrue();
         sr.closeSync();
@@ -267,7 +282,7 @@ export default function fileIOStreamRead() {
       try {
         let sr = fs.createStreamSync(fpath, 'r+');
         expect(sr !== null).assertTrue();
-        sr.read(new ArrayBuffer(16), (err: BusinessError | null, readLen1: number | undefined) => {
+        sr.read(new ArrayBuffer(16), (err: BusinessError | null, readLen1: long | undefined) => {
           expect(readLen1 == FILE_CONTENT.length).assertTrue();
           sr.read(new ArrayBuffer(8), (err, readLen2) => {
             expect(readLen2 == 0).assertTrue();
@@ -331,7 +346,7 @@ export default function fileIOStreamRead() {
         expect(sr !== null).assertTrue();
         sr.read(new ArrayBuffer(4096), {
           length: 5
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           expect(readLen == 5).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -392,7 +407,7 @@ export default function fileIOStreamRead() {
         expect(sr !== null).assertTrue();
         sr.read(new ArrayBuffer(4096), {
           offset: 5
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           expect(readLen == FILE_CONTENT.length - 5).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -486,7 +501,7 @@ export default function fileIOStreamRead() {
         expect(sr !== null).assertTrue();
         let readLen = await sr.read(new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length
+          length: FILE_CONTENT.length.toLong(),
         });
         expect(readLen == FILE_CONTENT.length - 1).assertTrue();
         sr.closeSync();
@@ -517,8 +532,8 @@ export default function fileIOStreamRead() {
         expect(sr !== null).assertTrue();
         sr.read(new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+          length: FILE_CONTENT.length.toLong(),
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           expect(readLen == FILE_CONTENT.length - 1).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -576,7 +591,7 @@ export default function fileIOStreamRead() {
         let sr = fs.createStreamSync(fpath, 'r+');
         expect(sr !== null).assertTrue();
         sr.read(new ArrayBuffer(4096), {
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           expect(readLen == FILE_CONTENT.length).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -679,7 +694,7 @@ export default function fileIOStreamRead() {
           sr.read(new ArrayBuffer(8), {
             offset: undefined,
             length: undefined
-          }, (err: BusinessError | null, readLen2: number | undefined) => {
+          }, (err: BusinessError | null, readLen2: long | undefined) => {
             expect(readLen2 == 0).assertTrue();
             sr.closeSync();
             fs.unlinkSync(fpath);

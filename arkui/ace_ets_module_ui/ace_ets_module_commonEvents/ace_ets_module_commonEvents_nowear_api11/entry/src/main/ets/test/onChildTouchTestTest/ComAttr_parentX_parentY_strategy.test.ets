@@ -23,13 +23,13 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 export default function parentX_parentY_strategy_Test() {
   describe('parentX_parentY_strategy_Test', () => {
     beforeEach(async (done: Function) => {
-config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      console.info(`enable success`);
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-	done();
-});
+      done();
+    });
     beforeAll(async (done: Function) => {
       console.info("parentX_parentY_strategy_Test beforeEach start");
       let options: router.RouterOptions = {
@@ -61,13 +61,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('parentX_parentY_strategy_Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let row: Component = await driver.findComponent(ON.id('row'));
+      let row: Component = await driver.findComponent(ON.id('Column_CustomEvent'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(point.x), Math.round(point.y))
@@ -76,7 +76,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[parentX_parentY_strategy_Test_0100] component obj is: " + JSON.stringify(obj));
       console.info("[parentX_parentY_strategy_Test_0100] content obj is: " + JSON.stringify(obj.$attrs.content));
-      expect(Math.abs(Math.abs(Number(obj.$attrs.content)) - 200) <= 1).assertTrue();
+      expect(Math.abs(Math.abs(Number(obj.$attrs.content)) - 25) <= 1).assertTrue();
       console.info('[parentX_parentY_strategy_Test_0100] END');
       await CommonFunc.sleep(1000);
       done();
@@ -87,7 +87,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('parentX_parentY_strategy_Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0200] START');
@@ -102,7 +102,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[parentX_parentY_strategy_Test_0200] component obj is: " + JSON.stringify(obj));
       console.info("[parentX_parentY_strategy_Test_0200] contentY is: " + JSON.stringify(obj.$attrs.content));
-      expect(Math.abs(Math.abs(Number(obj.$attrs.content)) - 200) <= 1).assertTrue();
+      expect(Math.abs(Math.abs(Number(obj.$attrs.content)) - 25) <= 1).assertTrue();
       await CommonFunc.sleep(1000);
       done();
     });
@@ -112,7 +112,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('parentX_parentY_strategy_Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0300] START');
@@ -138,7 +138,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('parentX_parentY_strategy_Test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0400] START');
@@ -164,7 +164,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('parentX_parentY_strategy_Test_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0500] START');

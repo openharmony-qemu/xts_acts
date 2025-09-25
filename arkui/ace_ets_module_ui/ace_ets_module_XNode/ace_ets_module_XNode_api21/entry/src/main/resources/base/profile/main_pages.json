@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Invalidate/InvalidateAttributesTest",
-    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPTest"
+    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPTest",
+    "MainAbility/pages/ImageLoader/ImageLoader"
   ]
 }

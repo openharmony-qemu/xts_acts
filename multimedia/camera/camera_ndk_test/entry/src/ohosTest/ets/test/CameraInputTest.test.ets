@@ -270,5 +270,84 @@ export default function CameraInputTest() {
       }
       console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100 ends here");
     });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100
+     * @tc.name      : query whether physical camera orientation is variable under different fold status
+     * @tc.desc      : query whether physical camera orientation is variable under different fold status
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100--------------");
+      await createInput();
+
+      let obj = cameraObj.oHCameraInputIsPhysicalCameraOrientationVariable();
+      if (obj.errorCode) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100 FAILED");
+        console.info(TAG + "ERRORCODE: " + obj.errorCode);
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100 ends here");
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.name      : get physical camera orientation under current fold status
+     * @tc.desc      : get physical camera orientation under current fold status
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100--------------");
+      await createInput();
+
+      let obj = cameraObj.oHCameraInputGetPhysicalCameraOrientation();
+      if (obj.errorCode) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 FAILED");
+        console.info(TAG + "ERRORCODE: " + obj.errorCode);
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 ends here");
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.name      : choose whether to use the physical camera orientation
+     * @tc.desc      : choose whether to use the physical camera orientation
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100--------------");
+      await createInput();
+
+      let obj = cameraObj.oHCameraInputIsPhysicalCameraOrientationVariable();
+      if (obj.errorCode) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 FAILED");
+        console.info(TAG + "ERRORCODE: " + obj.errorCode);
+        expect().assertFail();
+      }
+
+      if (obj.isVariable) {
+        let ret = cameraObj.oHCameraInputUsePhysicalCameraOrientation(true);
+        if (ret) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 set true FAILED");
+          console.info(TAG + "ERRORCODE: " + obj.errorCode);
+          expect().assertFail();
+        }
+
+        ret = cameraObj.oHCameraInputUsePhysicalCameraOrientation(false);
+        if (ret) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 set false FAILED");
+          console.info(TAG + "ERRORCODE: " + obj.errorCode);
+          expect().assertFail();
+        }
+     }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 ends here");
+    });
   })
 }

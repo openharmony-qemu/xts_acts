@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from "../../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -6,7 +21,7 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base'
 import { WriteOptions } from '@ohos.file.fs';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export const FILE_CONTENT = 'hello world';
@@ -291,7 +306,7 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         let bytesWritten = sr.writeSync(FILE_CONTENT, {
           offset: 1,
-          length: FILE_CONTENT.length,
+          length: FILE_CONTENT.length.toLong(),
           encoding: 'utf-8'
         });
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
@@ -439,7 +454,7 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.write(FILE_CONTENT, (err, bytesWritten1) => {
           expect(bytesWritten1 == FILE_CONTENT.length).assertTrue();
-          sr.write(new ArrayBuffer(FILE_CONTENT.length), (err: BusinessError | null, bytesWritten2: number | undefined) => {
+          sr.write(new ArrayBuffer(FILE_CONTENT.length), (err: BusinessError | null, bytesWritten2: long | undefined) => {
             expect(bytesWritten2 == FILE_CONTENT.length).assertTrue();
             let readLen = sr.readSync(new ArrayBuffer(4096), { offset: 0 });
             expect(readLen == FILE_CONTENT.length * 2).assertTrue();
@@ -499,7 +514,7 @@ export default function fileIOStreamWrite() {
       try {
         let sr = fs.createStreamSync(fpath, 'r+');
         expect(sr !== null).assertTrue();
-        sr.write(FILE_CONTENT, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        sr.write(FILE_CONTENT, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == FILE_CONTENT.length).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -558,7 +573,7 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.write(FILE_CONTENT, {
           offset: 1
-        }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == FILE_CONTENT.length).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -710,7 +725,7 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.write(FILE_CONTENT, {
           length: 5
-        }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == 5).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -841,7 +856,7 @@ export default function fileIOStreamWrite() {
           offset: 1,
           length: 4096,
           encoding: 'utf-8'
-        }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == 4096).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -872,7 +887,7 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         let bytesWritten = await sr.write(FILE_CONTENT, {
           offset: 1,
-          length: FILE_CONTENT.length,
+          length: FILE_CONTENT.length.toLong(),
           encoding: 'utf-8'
         });
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
@@ -904,9 +919,9 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.write(FILE_CONTENT, {
           offset: 1,
-          length: FILE_CONTENT.length,
+          length: FILE_CONTENT.length.toLong(),
           encoding: 'utf-8'
-        }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == FILE_CONTENT.length).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -964,7 +979,7 @@ export default function fileIOStreamWrite() {
         let sr = fs.createStreamSync(fpath, 'r+');
         expect(sr !== null).assertTrue();
         sr.write(FILE_CONTENT, {
-        }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == FILE_CONTENT.length).assertTrue();
           sr.closeSync();
           fs.unlinkSync(fpath);
@@ -1076,7 +1091,7 @@ export default function fileIOStreamWrite() {
             offset: undefined,
             length: undefined,
             encoding: undefined
-          }, (err: BusinessError | null, bytesWritten2: number | undefined) => {
+          }, (err: BusinessError | null, bytesWritten2: long | undefined) => {
             expect(bytesWritten2 == FILE_CONTENT.length).assertTrue();
             let readLen = sr.readSync(new ArrayBuffer(4096), { offset: 0 });
             expect(readLen == FILE_CONTENT.length * 2).assertTrue();
