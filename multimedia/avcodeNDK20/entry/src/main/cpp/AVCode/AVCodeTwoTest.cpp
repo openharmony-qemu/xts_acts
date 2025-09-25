@@ -1222,7 +1222,7 @@ napi_value AVCodeOHAudioDecoderPushFreeOutputDataInvalidState(napi_env env, napi
     OH_AVCodec *codec = OH_AudioDecoder_CreateByMime(mime);
     uint32_t index = PARAM_0;
     OH_AVCodecBufferAttr attr;
-    int32_t outputResult = OH_AudioDecoder_PushInputData(codec, index, attr);
+    int32_t outputResult = OH_AudioDecoder_FreeOutputData(codec, index);
     napi_value retValue = nullptr;
     if (outputResult == AV_ERR_INVALID_STATE) {
         napi_create_int32(env, 0, &retValue);
