@@ -23,8 +23,7 @@ struct ImageContentTransitionEffectPage {
     Column({ space: 10 }) {
       Image(this.imageResource)
         .width('40%')
-        .height('40%')
-          // 启用淡入淡出过渡效果。
+        .height('40%')// 启用淡入淡出过渡效果。
         .contentTransition(this.imageContentTransitionEffect)
         .id('image')
 
@@ -33,13 +32,6 @@ struct ImageContentTransitionEffectPage {
           .onClick(() => {
             this.imageResource = $r('app.media.image1')
             this.imageContentTransitionEffect = ContentTransitionEffect.OPACITY
-
-            setTimeout(() => {
-              let strJson = getInspectorByKey('image');
-              let obj: ESObject = JSON.parse(strJson);
-              console.info('ContentTransitionEffect OPACITY is: ' + obj.$attrs.contentTransition);
-            },1000)
-
           })
           .id('OpacityID')
 
@@ -47,13 +39,6 @@ struct ImageContentTransitionEffectPage {
           .onClick(() => {
             this.imageResource = $r('app.media.image2')
             this.imageContentTransitionEffect = ContentTransitionEffect.IDENTITY
-
-            setTimeout(() => {
-              let strJson = getInspectorByKey('image');
-              let obj: ESObject = JSON.parse(strJson);
-              console.info('ContentTransitionEffect IDENTITY is: ' + obj.$attrs.contentTransition);
-            },1000)
-
           })
           .id('IdentityID')
 
@@ -61,13 +46,6 @@ struct ImageContentTransitionEffectPage {
           .onClick(() => {
             this.imageResource = $r('app.media.image3')
             this.imageContentTransitionEffect = undefined
-
-            setTimeout(() => {
-              let strJson = getInspectorByKey('image');
-              let obj: ESObject = JSON.parse(strJson);
-              console.info('ContentTransitionEffect undefined is: ' + obj.$attrs.contentTransition);
-            },1000)
-
           })
           .id('undefinedID')
 
@@ -75,13 +53,6 @@ struct ImageContentTransitionEffectPage {
           .onClick(() => {
             this.imageResource = $r('app.media.image4')
             this.imageContentTransitionEffect = null
-
-            setTimeout(() => {
-              let strJson = getInspectorByKey('image');
-              let obj: ESObject = JSON.parse(strJson);
-              console.info('ContentTransitionEffect null is: ' + obj.$attrs.contentTransition);
-            },1000)
-
           })
           .id('nullID')
       }

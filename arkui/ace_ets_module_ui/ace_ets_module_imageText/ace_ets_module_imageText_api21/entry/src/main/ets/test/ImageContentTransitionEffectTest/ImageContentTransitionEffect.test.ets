@@ -23,14 +23,13 @@ export default function ImageContentTransitionEffectTest() {
     beforeEach(async (done: Function) => {
       console.info('ImageContentTransitionEffectTest beforeEach start');
       const options: router.RouterOptions = {
-        url: 'MainAbility/pages/ImageAttachment/ImageAttachment',
+        url: 'MainAbility/pages/ImageContentTransitionEffect/ImageContentTransitionEffect',
       }
       try {
         router.clear();
         const pages = router.getState();
         console.info('get ImageContentTransitionEffectTest state success ' + JSON.stringify(pages));
-        if (!pages.name.includes('ImageContentTransitionEffectTest')) {
-
+        if (!pages.name.includes('ImageContentTransitionEffect')) {
           const result = await router.replaceUrl(options);
           console.info('push ImageContentTransitionEffectTest page success ' + JSON.stringify(result));
         }
@@ -44,7 +43,6 @@ export default function ImageContentTransitionEffectTest() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info('ImageContentTransitionEffectTest afterEach called');
-
     });
 
     /**
