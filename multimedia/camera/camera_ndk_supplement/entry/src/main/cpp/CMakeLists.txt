@@ -13,3 +13,6 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(entry SHARED MainTest.cpp CameraTest.cpp CameraFunctionTest.cpp)
 target_link_libraries(entry PUBLIC libohcamera.so libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(cameraout SHARED CameraOutTest.cpp CameraComTest.cpp CameraErrCodeTest.cpp)
+target_link_libraries(cameraout PUBLIC libohcamera.so libace_napi.z.so libhilog_ndk.z.so)
