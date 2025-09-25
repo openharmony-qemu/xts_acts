@@ -2672,7 +2672,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest048
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5900
      * @tc.desc goToPreviousRow test
      * @tc.size MediumTest
      * @tc.type Function
