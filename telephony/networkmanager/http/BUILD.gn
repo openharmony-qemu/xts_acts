@@ -23,7 +23,7 @@ group("http") {
       "httpPublic:ActsNetManagerHttpETSTest",
       "httpRequest:ActsNetworkManagerHttpRequestTest",
       "httpRequestOnAndOff:ActsNetworkManagerHttpRequestOnAndOffTest",
-      "httpResponse:ActsNetworkManagerHttpResponseTest"
+      "HttpResponse:ActsNetworkManagerHttpResponseTest"
     ]
   }
 }
