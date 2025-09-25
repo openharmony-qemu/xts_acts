@@ -22,8 +22,8 @@ function addTest(a: number, b: number) {
 
 export { addTest };
 
-export { add } from './testAdd';
+export { add } from './TestAdd';
 
-export { subtract } from './src/main/ets/test';
+export { subtract } from './src/main/ets/testFile';
 
-export { multiply } from './src/main/ets/test';
+export { multiply } from './src/main/ets/testFile';

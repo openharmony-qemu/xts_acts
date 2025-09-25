@@ -15,9 +15,9 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from '../../../hypium/index';
-import { add as testAdd } from './TestAdd';
+import { add as testAdd } from './fileTest/TestAdd';
 import { subtract as testSubtract } from '../TestSubtract';
-import { multiply as testMultiply } from './fileTest';
+import { multiply as testMultiply } from './fileTest/Index';
 import { ArrayList } from '@kit.ArkTS';
 import hilog from '@ohos.hilog';
 

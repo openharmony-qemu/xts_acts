@@ -16,7 +16,7 @@
 
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import { add as harAdd } from 'har/Index';
-import { add as testAdd } from './Test'
+import { add as testAdd } from './fileTest/Test'
 import hilog from '@ohos.hilog';
 import { Calc, loadLibraryEntry } from '../../ets/pages/Add';
 

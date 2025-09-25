@@ -17,13 +17,13 @@
 
 export { MainPage } from './src/main/ets/components/MainPage'
 
-export { add } from './src/main/ets/testAdd';
+export { add } from './src/main/ets/TestAdd';
 
 // export { add as add1 } from './testAdd';  // 规格不支持，非src/main模块
 
-export { subtract } from './src/main/ets/test';
+export { subtract } from './src/main/ets/testFile';
 
-export { multiply } from './src/main/ets/test';
+export { multiply } from './src/main/ets/testFile';
 
 export { addTest } from 'loadhar/Index';
 
@@ -31,4 +31,4 @@ export { addTest } from 'loadhar/Index';
 
 // export { addTest as addTest2 } from '@test/library';  // 问题已经提单，export +export  别名场景
 
-export { getHarName as getHarName2 } from '@test/library/src/main/ets/getHarNameTest';
+export { getHarName as getHarName2 } from '@test/library/src/main/ets/GetHarNameTest';

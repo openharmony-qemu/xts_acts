@@ -11,4 +11,4 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED AniInit.cpp)
+add_library(entry SHARED AniInitTest.cpp)

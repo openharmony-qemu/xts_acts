@@ -16,22 +16,11 @@
 
 import { describe, it, expect ,TestType, Size, Level } from '../../../hypium/index';
 import {
-  // add1,
   subtract,
   multiply,
   addTest,
-  // getHarName,
-  // addTest2,
-  getHarName2,
-  // npmRes,
-  // npmRes2,
-  // expect2,
-  // ConstantTAG,
-  // hspAdd,
-  // hspAdd2,
-  // hspSubtract,
-  // hspSubtract2
-} from 'har'
+  getHarName2
+} from 'har/Index'
 
 export default function staticLoadSourceHar() {
   describe('StaticLoadSourceHarTest', () => {
