@@ -20,7 +20,7 @@ import { funcAdd } from './LazyCurrentHapFunc'
 import { funcAdd as add } from './LazyCurrentHapFunc'
 import { User } from './LazyCurrentHapClass'
 // lazy import support har
-import { numAHar, funcAddHar, UserHar } from 'lazyhar'
+import { numAHar, funcAddHar, UserHar } from 'lazyhar/Index'
 
 // lazy import support sendable
 import { funcAdd as funcAddSendable, User as SendableFuncUser } from './LazySendable'

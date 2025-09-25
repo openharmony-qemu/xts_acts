@@ -23,8 +23,8 @@ export function funcAdd(numA: number, numB: number) {
 }
 
 export class User {
-  name: string;
-  num: number;
+  public name: string;
+  public num: number;
   public details:string[] = [];
 
   constructor(name: string, num: number) {
