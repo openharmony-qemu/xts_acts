@@ -1227,7 +1227,7 @@ napi_value AVCodeOHAudioDecoderPushFreeOutputDataInvalidState(napi_env env, napi
     if (outputResult == AV_ERR_INVALID_STATE) {
         napi_create_int32(env, 0, &retValue);
     } else {
-        napi_create_int32(env, outputResult, &retValue);
+        napi_create_int32(env, 1, &retValue);
     }
     return retValue;
 }
