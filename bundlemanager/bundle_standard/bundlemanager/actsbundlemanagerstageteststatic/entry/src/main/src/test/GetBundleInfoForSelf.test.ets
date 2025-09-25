@@ -1124,7 +1124,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
             expect(data.targetVersion).assertEqual(21);
-            expect(data.permissionGrantStates[1]).assertEqual(bundle.PermissionGrantState.PERMISSION_DENIED);
+            expect(data.permissionGrantStates[2]).assertEqual(bundle.PermissionGrantState.PERMISSION_DENIED);
             expect(data.permissionGrantStates[0]).assertEqual(bundle.PermissionGrantState.PERMISSION_GRANTED);
             hilog.info(domain, tag, 'getBundleInfoForSelfPermissionPro  ====> end');
             done();
