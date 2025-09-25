@@ -17,6 +17,7 @@ import relationalStore from '@ohos.data.relationalStore';
 import { BusinessError } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { sendableRelationalStore } from '@kit.ArkData';
+import deviceInfo from '@ohos.deviceInfo';
 
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
@@ -716,6 +717,10 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest021 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': '张三',
         'age': 18,
@@ -742,10 +747,16 @@ export default function relationalStoreInterfaceTest() {
         expect('张三').assertEqual(resultSet?.getString(resultSet.getColumnIndex("name")));
         resultSet?.close()
         done()
-      } catch (e) {
-        console.error(`message is ${e.message}  code  ${e.code}`);
-        expect().assertFail();
-        done()
+      } catch (err) {
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect().assertFail();
+          done();
+        }
       }
       console.info(TAG + "************* relationalStoreTest021 end *************");
     })
@@ -759,15 +770,26 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest021 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       try {
         await rdbStore?.setLocale("%zh%");
         console.log(TAG + "relationalStoreTest022")
         expect().assertFail()
         done()
       } catch (err) {
-        console.log(TAG + "err" + err.code +err.message)
-        expect("14800001").assertEqual(String(err.code));
-        done()
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect("14800001").assertEqual(String(err.code));
+          done();
+        }
+
       }
       console.info(TAG + "************* relationalStoreTest022 end *************");
     })
@@ -781,6 +803,10 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest023 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': '张三',
         'age': 18,
@@ -808,9 +834,15 @@ export default function relationalStoreInterfaceTest() {
         resultSet?.close()
         done()
       } catch (err) {
-        console.log(TAG + "err" + err.code +err.message);
-        expect().assertFail();
-        done()
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect().assertFail();
+          done();
+        }
       }
       console.info(TAG + "************* relationalStoreTest023 end *************");
     })
@@ -824,6 +856,10 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest024 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': '张三',
         'age': 18,
@@ -851,9 +887,15 @@ export default function relationalStoreInterfaceTest() {
         resultSet?.close()
         done()
       } catch (err) {
-        console.log(TAG + "err" + err.code +err.message);
-        expect().assertFail();
-        done()
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect().assertFail();
+          done();
+        }
       }
       console.info(TAG + "************* relationalStoreTest024 end *************");
     })
@@ -867,6 +909,10 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest025 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': '张三',
         'age': 18,
@@ -894,9 +940,15 @@ export default function relationalStoreInterfaceTest() {
         resultSet?.close()
         done()
       } catch (err) {
-        console.log(TAG + "err" + err.code +err.message);
-        expect().assertFail();
-        done()
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect().assertFail();
+          done();
+        }
       }
       console.info(TAG + "************* relationalStoreTest025 end *************");
     })
@@ -910,6 +962,10 @@ export default function relationalStoreInterfaceTest() {
      */
     it('relationalStoreTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* relationalStoreTest026 start *************");
+      let currentDeviceIsWatch = false;
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info(TAG + 'the value of the deviceType is :' + deviceInfo.deviceType);
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': 'Fulano',
         'age': 18,
@@ -937,9 +993,15 @@ export default function relationalStoreInterfaceTest() {
         resultSet?.close()
         done()
       } catch (err) {
-        console.log(TAG + "err" + err.code +err.message)
-        expect().assertFail()
-        done()
+        if(currentDeviceIsWatch == true && err.code == 801){
+          console.log(TAG + "err" + err.code +err.message);
+          expect(err.code == 801).assertTrue();
+          done();
+        } else {
+          console.log(TAG + "err" + err.code +err.message);
+          expect().assertFail();
+          done();
+        }
       }
       console.info(TAG + "************* relationalStoreTest026 end *************");
     })
