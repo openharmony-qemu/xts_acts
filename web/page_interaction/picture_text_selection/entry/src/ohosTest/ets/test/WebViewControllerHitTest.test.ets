@@ -226,7 +226,7 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue010'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'https://openharmony.cn/', 176400, () => { isReturn = true });
+      Utils.registerEvent(tcName, 'https://www.openharmony.cn', 176400, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
