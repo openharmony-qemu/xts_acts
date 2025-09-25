@@ -19,6 +19,7 @@ group("hiviewdfxtestacts") {
       "apprecoverytest:ActsAppRecoveryTest",
       "bytracetest:ActsBytraceJsTest",
       "errormangertest/errormangertest:ActsErrormangerTest",
+      "faultlogtest/faultloggerndktest:ActsFaultExTest",
       "hiappeventtest/hiappeventapmtest:ActsHiAppEventJsTest",
       "hiappeventtest/hiappeventcpptest:ActsHiAppEventCPPTest",
       "hiappeventtest/hiappeventjstest:ActsHiAppeventTest",
