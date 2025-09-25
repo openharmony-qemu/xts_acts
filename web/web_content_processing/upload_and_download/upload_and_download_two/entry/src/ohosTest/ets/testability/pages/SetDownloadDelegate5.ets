@@ -19,6 +19,9 @@ import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import { util } from '@kit.ArkTS';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -26,12 +29,41 @@ struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   url: string = ''
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 130660,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(130660);
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   build(){
     Column() {
       Button('getCurrentSpeed')
         .key('001')
-        .onClick(() => {
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey);
+          await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.');
@@ -42,7 +74,7 @@ struct WebComponent {
               console.log('download update Complete: ' + webDownloadItem.getPercentComplete());
               if (webDownloadItem.getCurrentSpeed() > 0) {
                 let state: webview.WebDownloadState = webDownloadItem.getState()
-                LocalContext.context.eventHub.emit('SetDownloadDelegate5', this.url + state.toString())
+                Utils.emitEvent(this.url + state.toString(), 130680);
                 webDownloadItem.cancel()
               }
             })
@@ -56,10 +88,6 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
-        })
-      Button('startDownload')
-        .key('002')
-        .onClick(() => {
           try {
             this.controller.startDownload('https:' +
               '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz');
@@ -68,6 +96,10 @@ struct WebComponent {
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

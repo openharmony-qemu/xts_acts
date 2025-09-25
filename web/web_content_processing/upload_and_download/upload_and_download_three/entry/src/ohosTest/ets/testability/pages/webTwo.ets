@@ -20,6 +20,7 @@ import cert from '@ohos.security.cert';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import print from '@ohos.print';
 import { BusinessError } from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 
 class TestObj {
@@ -177,13 +178,19 @@ struct Second {
   @State scripts: Array<ScriptItem> = [
     { script: this.localStorage, scriptRules: ["*"] }
   ];
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 130540,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(130540)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -192,6 +199,7 @@ struct Second {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -200,7 +208,10 @@ struct Second {
     Column() {
       Row() {
         Button("web click").key('webcomponenttwo').onClick(async () => {
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
+          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitGetCertificate": {
               this.webviewCtl.loadUrl('https://www.baidu.com')
@@ -208,7 +219,7 @@ struct Second {
                 this.webviewCtl.getCertificate().then(x509CertArray => {
                   this.outputStr = ParseX509CertInfo(x509CertArray);
                   console.info('11111111111111' + this.outputStr);
-                  Utils.emitEvent(this.outputStr, 4);
+                  Utils.emitEvent(this.outputStr, 130580);
                 })
               } catch (error) {
                 this.outputStr = 'getCertificate failed: ' + (error as BusinessError).code + ", errMsg: " + (error as BusinessError).message;
@@ -219,7 +230,7 @@ struct Second {
             case "emitonDownloadFailed": {
               try {
                 this.webviewCtl.setDownloadDelegate(this.delegate);
-                Utils.emitEvent(true, 6)
+                Utils.emitEvent(true, 130550)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -232,7 +243,7 @@ struct Second {
                 if (this.setDownloadDelegateKey) {
                   this.webviewCtl.setDownloadDelegate(this.delegate);
                 }
-                Utils.emitEvent(true, 8)
+                Utils.emitEvent(true, 130560)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -252,7 +263,7 @@ struct Second {
                   let result = this.webviewCtl.isSafeBrowsingEnabled();
                   this.webviewCtl.enableSafeBrowsing(true);
                 }
-                Utils.emitEvent(true, 12)
+                Utils.emitEvent(true, 130570)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -267,7 +278,7 @@ struct Second {
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.webviewCtl, incognitoMode: true })
+      Web({ src: $rawfile('index.html'), controller: this.webviewCtl, incognitoMode: true })
         .fileAccess(true)
         .javaScriptOnDocumentEnd(this.scripts)
         .enableNativeEmbedMode(false)
@@ -281,6 +292,8 @@ struct Second {
         })
         .onPageEnd((e: ESObject) => {
           this.outputStr = 'onPageEnd : url = ' + e.url
+          console.log('web pageEnd==>' + e.url);
+          this.isPageEnd = 0;
         })
         .onFirstContentfulPaint((event: ESObject) => {
           console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
