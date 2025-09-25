@@ -1,7 +1,7 @@
 {
     "devices": {
         "general": [
-            "phone",
+            "default",
             "wearable"
         ],
         "custom": [
