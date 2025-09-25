@@ -32,7 +32,7 @@ struct DirectiveMenuExample {
       this.left = this.getUIContext().px2vp(rect.left);
       this.top = this.getUIContext().px2vp(rect.top);
     }).catch((err:Error) => {
-      console.log('error: ' + err)
+        console.log('error: ' + err)
     });
   }
 
@@ -68,6 +68,7 @@ struct DirectiveMenuExample {
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
+        .margin({ top: 50, left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition1.x = newValue.globalPosition.x;
           this.textPosition1.y = newValue.globalPosition.y;
@@ -81,6 +82,7 @@ struct DirectiveMenuExample {
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
+        .margin({ top: 50, left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition2.x = newValue.globalPosition.x;
           this.textPosition2.y = newValue.globalPosition.y;
@@ -94,6 +96,7 @@ struct DirectiveMenuExample {
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
+        .margin({ top: 50, left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition3.x = newValue.globalPosition.x;
           this.textPosition3.y = newValue.globalPosition.y;
