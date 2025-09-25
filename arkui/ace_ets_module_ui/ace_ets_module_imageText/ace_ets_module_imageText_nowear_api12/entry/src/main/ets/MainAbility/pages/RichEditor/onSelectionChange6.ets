@@ -23,6 +23,24 @@ struct onSelectionChange6 {
 
   build() {
     Column() {
+      Text('' + this.text1).key('onSelectionChange6_text1').height('5%')
+      Row(){
+        Button('setCaretOffset:-1').onClick(() => {
+          this.controller.setCaretOffset(-1)
+        }).id('onSelectionChange6_btn1').width('20%')
+        Button('setCaretOffset:0').onClick(() => {
+          this.controller.setCaretOffset(0)
+        }).id('onSelectionChange6_btn2').width('20%')
+        Button('setCaretOffset:1').onClick(() => {
+          this.controller.setCaretOffset(1)
+        }).id('onSelectionChange6_btn3').width('20%')
+        Button('setCaretOffset:5').onClick(() => {
+          this.controller.setCaretOffset(5)
+        }).id('onSelectionChange6_btn4').width('20%')
+        Button('setCaretOffset:10000').onClick(() => {
+          this.controller.setCaretOffset(10000)
+        }).id('onSelectionChange6_btn5').width('20%')
+      }.height('5%')
       RichEditor(this.options)
         .onReady(() => {
           this.controller.addTextSpan("0123456789",
@@ -42,23 +60,6 @@ struct onSelectionChange6 {
         .id('onSelectionChange6_RichEditor')
         .width('100%')
         .height('20%')
-      Text('' + this.text1).key("onSelectionChange6_text1")
-
-      Button('setCaretOffset:-1').onClick(() => {
-        this.controller.setCaretOffset(-1)
-      }).id('onSelectionChange6_btn1')
-      Button('setCaretOffset:0').onClick(() => {
-        this.controller.setCaretOffset(0)
-      }).id('onSelectionChange6_btn2')
-      Button('setCaretOffset:1').onClick(() => {
-        this.controller.setCaretOffset(1)
-      }).id('onSelectionChange6_btn3')
-      Button('setCaretOffset:5').onClick(() => {
-        this.controller.setCaretOffset(5)
-      }).id('onSelectionChange6_btn4')
-      Button('setCaretOffset:10000').onClick(() => {
-        this.controller.setCaretOffset(10000)
-      }).id('onSelectionChange6_btn5')
     }
     .borderWidth(1)
     .borderColor(Color.Red)

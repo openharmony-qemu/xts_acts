@@ -23,7 +23,18 @@ struct RichEditorShortCutKeys015 {
   build() {
 
     Column() {
+      Button('get spans').onClick(() => {
+        this.style = '';
+        this.controller.getSpans({
+          start: 0,
+          end: 14
+        }).forEach(item => {
+          this.style = JSON.stringify((item as RichEditorTextSpanResult));
+          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+        })
+      }).id('getSpans').height('5%')
 
+      Text('style:' + this.style).id('style').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(200)
@@ -70,19 +81,6 @@ struct RichEditorShortCutKeys015 {
           });
         })
         .id('RichEditorShortCutKeys015')
-
-      Button('get spans').onClick(() => {
-        this.style = '';
-        this.controller.getSpans({
-          start: 0,
-          end: 14
-        }).forEach(item => {
-          this.style = JSON.stringify((item as RichEditorTextSpanResult));
-          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-        })
-      }).id('getSpans')
-
-      Text('style:' + this.style).id('style')
     }
   }
 }

@@ -58,28 +58,34 @@ struct editMenuOptionsExample {
 
   build() {
     Column() {
-      Text('回调content:'+this.content)
+      Text('回调content:'+this.content).height('5%').clip(true)
       Row(){
         Text(this.textLabelInfo)
-          .width('10%')
+          .width('20%')
+          .clip(true)
           .id('textLabelInfo')
         Text(this.textAreaLabelInfo)
-          .width('10%')
+          .width('20%')
+          .clip(true)
           .id('textAreaLabelInfo')
         Text(this.textInputLabelInfo)
-          .width('10%')
+          .width('20%')
+          .clip(true)
           .id('textInputLabelInfo')
         Text(this.richEditorLabelInfo)
-          .width('10%')
+          .width('20%')
+          .clip(true)
           .id('richEditorLabelInfo')
         Text(this.searchLabelInfo)
-          .width('10%')
+          .width('20%')
+          .clip(true)
           .id('searchLabelInfo')
-      }
-      
+      }.height('5%')
+
+
       Row(){
         Text(this.text)
-          .width('10%')
+          .width('25%')
           .copyOption(CopyOptions.LocalDevice)
           .editMenuOptions({
             onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
@@ -113,7 +119,7 @@ struct editMenuOptionsExample {
           .id('text')
 
         TextArea({ text: this.text })
-          .width('10%')
+          .width('25%')
           .height(56)
           .editMenuOptions({
             onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
@@ -147,7 +153,7 @@ struct editMenuOptionsExample {
           .id('textArea')
 
         TextInput({ text: this.text })
-          .width('10%')
+          .width('25%')
           .height(56)
           .editMenuOptions({
             onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
@@ -213,47 +219,46 @@ struct editMenuOptionsExample {
               return true;
             }
           })
-          .width('10%')
+          .width('25%')
           .copyOptions(CopyOptions.InApp)
           .id('richEditor')
-
-
-        Search({value: 'search'})
-          .width('10%')
-          .copyOption(CopyOptions.InApp)
-          .height(50)
-          .editMenuOptions({
-            onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-              if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-                console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
-                this.content = menuItem.content
-                this.searchLabelInfo = menuItem.labelInfo
-                return true;
-              }
-              if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-                console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
-                this.content = menuItem.content
-                this.searchLabelInfo = menuItem.labelInfo
-                return true;
-              }
-              if (menuItem.id.equals(TextMenuItemId.COPY)) {
-                console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-                this.content = menuItem.content
-                this.searchLabelInfo = menuItem.labelInfo
-                return true;
-              }
-              if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-                console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
-                this.content = menuItem.content
-                this.searchLabelInfo = menuItem.labelInfo
-                return false;
-              }
+      }.height('5%')
+      Search({value: 'search'})
+        .copyOption(CopyOptions.InApp)
+        .height(50)
+        .editMenuOptions({
+          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+              this.content = menuItem.content
+              this.searchLabelInfo = menuItem.labelInfo
               return true;
             }
-          })
-          .id('search')
-      }
+            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+              this.content = menuItem.content
+              this.searchLabelInfo = menuItem.labelInfo
+              return true;
+            }
+            if (menuItem.id.equals(TextMenuItemId.COPY)) {
+              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+              this.content = menuItem.content
+              this.searchLabelInfo = menuItem.labelInfo
+              return true;
+            }
+            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+              this.content = menuItem.content
+              this.searchLabelInfo = menuItem.labelInfo
+              return false;
+            }
+            return true;
+          }
+        })
+        .id('search')
+        .height('5%')
       Search()
+        .height('5%')
         .margin({top:50})
         .id('search2')
     }
