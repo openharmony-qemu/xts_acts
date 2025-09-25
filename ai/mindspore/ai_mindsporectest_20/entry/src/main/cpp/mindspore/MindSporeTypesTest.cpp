@@ -16,7 +16,6 @@
 #include "MindSporeTypesTest.h"
 #include <mindspore/model.h>
 #include <mindspore/types.h>
-#include <inttypes.h>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
@@ -37,37 +36,9 @@ napi_value DeviceTypeTest_001(napi_env env, napi_callback_info info)
     napi_create_int32(env, device_type == OH_AI_DEVICETYPE_GPU ? 0 : 1, &retValue);
     return retValue;
 }
-char *ReadFile(const char *file, size_t* size) {
-  printf("[common.cpp] Loading data from: %s\n", file);
 
-  std::ifstream ifs(file);
-  if (!ifs.good()) {
-    return nullptr;
-  }
-
-  if (!ifs.is_open()) {
-    ifs.close();
-    return nullptr;
-  }
-
-  ifs.seekg(0, std::ios::end);
-  *size = ifs.tellg();
-
-  char *buf = new char[*size];
-  if (buf == nullptr) {
-    ifs.close();
-    return nullptr;
-  }
-
-  ifs.seekg(0, std::ios::beg);
-  ifs.read(buf, *size);
-  ifs.close();
-  printf("[common.cpp]Read Binary Data Over, get tensorSize as: %" PRId64 ".\n", static_cast<int64_t>(*size));
-
-  return buf;
-}
-
-const void* LoadModelData(const char* filename, size_t* out_size) {
+const void* LoadModelData(const char* filename, size_t* out_size)
+{
     if (!filename || !out_size) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Invalid parameters");
@@ -82,37 +53,54 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     }
 
     fseek(file, 0, SEEK_END);
-    long file_size = ftell(file);
+    if (fseek(file, 0, SEEK_END) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
+        return nullptr;
+    }
+    long fileSize = ftell(file);
     rewind(file);
 
-    if (file_size <= 0) {
+    if (fileSize <= 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", file_size);
+                     "Invalid file size: %{public}ld", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    void* buffer = malloc(file_size);
+    void* buffer = malloc(fileSize);
     if (!buffer) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", file_size);
+                     "Memory allocation failed for %{public}ld bytes", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    size_t bytes_read = fread(buffer, 1, file_size, file);
+    size_t bytesRead = fread(buffer, 1, fileSize, file);
     fclose(file);
+    if (fclose(file) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                     "Failed to close file: %s", strerror(errno));
+    }
 
-    if (bytes_read != static_cast<size_t>(file_size)) {
+    if (bytesRead != static_cast<size_t>(fileSize)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
 
-    *out_size = file_size;
+    *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
-                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+                 "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
 }
 
@@ -127,8 +115,8 @@ napi_value ModelTypetest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
+    size_t *ptrSize = &size;
+    const void* model_data = LoadModelData(graphPath, ptrSize);
     if (model_data == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
@@ -156,11 +144,11 @@ napi_value NNRTDeviceTypetest_001(napi_env env, napi_callback_info info)
     int ret = -1;
     if (type == OH_AI_NNRTDEVICE_OTHERS) {
         ret = 0;
-    } else if(type == OH_AI_NNRTDEVICE_CPU) {
+    } else if (type == OH_AI_NNRTDEVICE_CPU) {
         ret = 0;
-    } else if(type == OH_AI_NNRTDEVICE_GPU) {
+    } else if (type == OH_AI_NNRTDEVICE_GPU) {
         ret = 0;
-    } else if(type == OH_AI_NNRTDEVICE_ACCELERATOR) {
+    } else if (type == OH_AI_NNRTDEVICE_ACCELERATOR) {
         ret = 0;
     };
     napi_create_int32(env, ret, &retValue);

@@ -19,7 +19,8 @@
 
 namespace MindSporeStatusTest {
 
-const void* LoadModelData(const char* filename, size_t* out_size) {
+const void* LoadModelData(const char* filename, size_t* out_size)
+{
     if (!filename || !out_size) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Invalid parameters");
@@ -34,51 +35,68 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     }
 
     fseek(file, 0, SEEK_END);
-    long file_size = ftell(file);
+    if (fseek(file, 0, SEEK_END) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
+        return nullptr;
+    }
+    long fileSize = ftell(file);
     rewind(file);
 
-    if (file_size <= 0) {
+    if (fileSize <= 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", file_size);
+                     "Invalid file size: %{public}ld", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    void* buffer = malloc(file_size);
+    void* buffer = malloc(fileSize);
     if (!buffer) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", file_size);
+                     "Memory allocation failed for %{public}ld bytes", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    size_t bytes_read = fread(buffer, 1, file_size, file);
+    size_t bytesRead = fread(buffer, 1, fileSize, file);
     fclose(file);
+    if (fclose(file) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                     "Failed to close file: %s", strerror(errno));
+    }
 
-    if (bytes_read != static_cast<size_t>(file_size)) {
+    if (bytesRead != static_cast<size_t>(fileSize)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
 
-    *out_size = file_size;
+    *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
-                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+                 "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
 }
 
 napi_value StatusTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    constexpr size_t create_shape_num = 1;
-    int64_t createShape[create_shape_num] = {6};
-    constexpr size_t data_len = 6;
-    float data[data_len] = {1, 2, 3, 4, 5, 6};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_6};
+    constexpr size_t dataLen = PARAM_6;
+    float data[dataLen] = {1, PARAM_2, PARAM_3, PARAM_4, PARAM_5, PARAM_6};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape,
-        create_shape_num, data, 6*4);
+        createShapeNum, data, PARAM_6*PARAM_4);
      
-    auto ret = OH_AI_TensorSetUserData(tensor, data, 6 * 4);
+    auto ret = OH_AI_TensorSetUserData(tensor, data, PARAM_6 * PARAM_4);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111kernel_Info", "ret: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_STATUS_LITE_ERROR ? 0 : 1, &retValue);
     return retValue;
@@ -95,8 +113,8 @@ napi_value StatusTest_002(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
+    size_t *ptrSize = &size;
+    const void* model_data = LoadModelData(graphPath, ptrSize);
     if (model_data == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
@@ -127,15 +145,15 @@ napi_value StatusTest_008(napi_env env, napi_callback_info info)
     auto GenRandomData = [](size_t size, void *data) {
       auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
       std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+      size_t elementsNum = size / sizeof(float);
+      (void)std::generate_n(static_cast<float *>(data), elementsNum,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t createShapeNum = 1;
+    int64_t create_shape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
+                                                   create_shape, createShapeNum, nullptr, 0);
     GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};

@@ -16,7 +16,6 @@
 #include "MindSporeModelTest.h"
 #include <mindspore/model.h>
 #include <string>
-#include <inttypes.h>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
@@ -27,13 +26,18 @@
 typedef int errno_t;
 
 namespace MindSporeModelTest {
-char **TransStrVectorToCharArrays(const std::vector<std::string> &s) {
-  char **char_arr = static_cast<char **>(malloc(s.size() * sizeof(char *)));
-  for (size_t i = 0; i < s.size(); i++) {
-    char_arr[i] = static_cast<char *>(malloc((s[i].size() + 1)));
-    strcpy(char_arr[i], s[i].c_str());
-  }
-  return char_arr;
+char **TransStrVectorToCharArrays(const std::vector<std::string> &s)
+{
+    char **charArr = static_cast<char **>(malloc(s.size() * sizeof(char *)));
+    if (charArr == nullptr) {
+        return nullptr;
+    }
+    for (size_t i = 0; i < s.size(); i++) {
+        charArr[i] = static_cast<char *>(malloc((s[i].size() + 1)));
+        strncpy(charArr[i], s[i].c_str(), s[i].size());
+        charArr[i][s[i].size()] = '\0';
+    }
+    return charArr;
 }
 
 napi_value TrainCfgCreateTest_001(napi_env env, napi_callback_info info)
@@ -90,11 +94,11 @@ napi_value TrainCfgGetLossNameTest_003(napi_env env, napi_callback_info info)
 napi_value TrainCfgSetLossNameTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    size_t num = 10;
+    size_t num = PARAM_10;
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     std::vector<std::string> set_train_cfg_loss_name = {"loss_fct", "_loss_fn"};
-    char **set_loss_name = TransStrVectorToCharArrays(set_train_cfg_loss_name);
-    OH_AI_TrainCfgSetLossName(train_cfg, const_cast<const char **>(set_loss_name), set_train_cfg_loss_name.size());
+    char **setLossName = TransStrVectorToCharArrays(set_train_cfg_loss_name);
+    OH_AI_TrainCfgSetLossName(train_cfg, const_cast<const char **>(setLossName), set_train_cfg_loss_name.size());
     char **lossName = OH_AI_TrainCfgGetLossName(train_cfg, &num);
     OH_AI_TrainCfgDestroy(&train_cfg);
     napi_create_int32(env, lossName != nullptr ? 0 : 1, &retValue);
@@ -143,7 +147,8 @@ napi_value TrainCfgSetOptimizationLevelTest_002(napi_env env, napi_callback_info
     return retValue;
 }
 
-const void* LoadModelData(const char* filename, size_t* out_size) {
+const void* LoadModelData(const char* filename, size_t* out_size)
+{
     if (!filename || !out_size) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Invalid parameters");
@@ -158,37 +163,54 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     }
 
     fseek(file, 0, SEEK_END);
-    long file_size = ftell(file);
+    if (fseek(file, 0, SEEK_END) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
+        return nullptr;
+    }
+    long fileSize = ftell(file);
     rewind(file);
 
-    if (file_size <= 0) {
+    if (fileSize <= 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", file_size);
+                     "Invalid file size: %{public}ld", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    void* buffer = malloc(file_size);
+    void* buffer = malloc(fileSize);
     if (!buffer) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", file_size);
+                     "Memory allocation failed for %{public}ld bytes", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    size_t bytes_read = fread(buffer, 1, file_size, file);
+    size_t bytesRead = fread(buffer, 1, fileSize, file);
     fclose(file);
+    if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
 
-    if (bytes_read != static_cast<size_t>(file_size)) {
+    if (bytesRead != static_cast<size_t>(fileSize)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
 
-    *out_size = file_size;
+    *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
-                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+                 "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
 }
 
@@ -203,13 +225,13 @@ napi_value TrainModelBuildTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
-    auto ret = OH_AI_TrainModelBuild(model, model_data, size, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
+    auto ret = OH_AI_TrainModelBuild(model, modelData, size, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
     OH_AI_ModelDestroy(&model);
     OH_AI_ContextDestroy(&context);
@@ -228,9 +250,9 @@ napi_value TrainModelBuildFromFileTest_001(napi_env env, napi_callback_info info
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -243,22 +265,24 @@ napi_value TrainModelBuildFromFileTest_001(napi_env env, napi_callback_info info
 }
 
 bool PrintBeforeCallback(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,
-                         const OH_AI_CallBackParam kernel_Info) {
-    const char* node_name = kernel_Info.node_name;
-    const char* node_type = kernel_Info.node_type;
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "node_name: %{public}d", node_name);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "node_type: %{public}d", node_type);
+                         const OH_AI_CallBackParam kernel_Info)
+{
+    const char* nodeName = kernel_Info.node_name;
+    const char* nodeType = kernel_Info.node_type;
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "nodeName: %{public}d", nodeName);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "nodeType: %{public}d", nodeType);
     return true;
 }
 
 bool PrintAfterCallback(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,
-                        const OH_AI_CallBackParam kernel_Info) {
+                        const OH_AI_CallBackParam kernel_Info)
+{
     bool ret = false;
-    const char* node_name = kernel_Info.node_name;
-    const char* node_type = kernel_Info.node_type;
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "node_name: %{public}d", node_name);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "node_type: %{public}d", node_type);
-    if (node_name != nullptr && node_type != nullptr) {
+    const char* nodeName = kernel_Info.node_name;
+    const char* nodeType = kernel_Info.node_type;
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "nodeName: %{public}d", nodeName);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "kernel_Info", "nodeType: %{public}d", nodeType);
+    if (nodeName != nullptr && nodeType != nullptr) {
         ret = true;
     }
     return true;
@@ -275,9 +299,9 @@ napi_value RunStepTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -304,9 +328,9 @@ napi_value ModelSetLearningRateTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -357,27 +381,27 @@ napi_value ModelUpdateWeightsTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -415,9 +439,9 @@ napi_value ModelSetTrainModeTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -442,9 +466,9 @@ napi_value ModelSetupVirtualBatchTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -458,7 +482,8 @@ napi_value ModelSetupVirtualBatchTest_001(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-char *ReadFile(const char *file, size_t* size) {
+char *ReadFile(const char *file, size_t* size)
+{
     printf("[common.cpp] Loading data from: %s\n", file);
 
     std::ifstream ifs(file);
@@ -483,28 +508,29 @@ char *ReadFile(const char *file, size_t* size) {
     ifs.seekg(0, std::ios::beg);
     ifs.read(buf, *size);
     ifs.close();
-    printf("[common.cpp]Read Binary Data Over, get tensorSize as: %" PRId64 ".\n", static_cast<int64_t>(*size));
 
     return buf;
 }
 
-void PackNCHWToNHWCFp32(const char *src, char *dst, int batch, int plane, int channel) {
+void PackNCHWToNHWCFp32(const char *src, char *dst, int batch, int plane, int channel)
+{
     for (int n = 0; n < batch; n++) {
         for (int c = 0; c < channel; c++) {
             for (int hw = 0; hw < plane; hw++) {
-                int nhwc_index = n * channel * plane + hw * channel + c;
-                int nchw_index = n * channel * plane + c * plane + hw;
-                dst[nhwc_index * 4] = src[nchw_index * 4];
-                dst[nhwc_index * 4 + 1] = src[nchw_index * 4 + 1];
-                dst[nhwc_index * 4 + 2] = src[nchw_index * 4 + 2];
-                dst[nhwc_index * 4 + 3] = src[nchw_index * 4 + 3];
+                int nhwcIndex = n * channel * plane + hw * channel + c;
+                int nchwIndex = n * channel * plane + c * plane + hw;
+                dst[nhwcIndex * PARAM_4] = src[nchwIndex * PARAM_4];
+                dst[nhwcIndex * PARAM_4 + 1] = src[nchwIndex * PARAM_4 + 1];
+                dst[nhwcIndex * PARAM_4 + PARAM_2] = src[nchwIndex * PARAM_4 + PARAM_2];
+                dst[nhwcIndex * PARAM_4 + PARAM_3] = src[nchwIndex * PARAM_4 + PARAM_3];
             }
         }
     }
     return;
 }
 
-bool SafeMemCopy(void* dest, size_t destSize, const void* src, size_t copySize) {
+bool SafeMemCopy(void* dest, size_t destSize, const void* src, size_t copySize)
+{
     if (!dest || !src) {
         printf("Error: Null pointer detected\n");
         return false;
@@ -513,16 +539,19 @@ bool SafeMemCopy(void* dest, size_t destSize, const void* src, size_t copySize) 
         printf("Error: Copy size (%zu) exceeds destination size (%zu)\n", copySize, destSize);
         return false;
     }
-    memcpy(dest, src, copySize);
+    const char* srcBytes = static_cast<const char*>(src);
+    char* destBytes = static_cast<char*>(dest);
+    std::copy(srcBytes, srcBytes + copySize, destBytes);
     return true;
 }
 
-void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool isTranspose) {
-    std::string g_testResourcesDir = "/data/test/resource/";
+void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool isTranspose)
+{
+    std::string testResourcesDir = "/data/test/resource/";
     for (size_t i = 0; i < inputs.handle_num; ++i) {
         printf("==========ReadFile==========\n");
         size_t size1;
-        std::string inputDataPath = g_testResourcesDir + modelName + "_" + std::to_string(i) + ".input";
+        std::string inputDataPath = testResourcesDir + modelName + "_" + std::to_string(i) + ".input";
         const char *imagePath = inputDataPath.c_str();
         char *imageBuf = ReadFile(imagePath, &size1);
         OH_AI_TensorHandle tensor = inputs.handle_list[i];
@@ -536,14 +565,15 @@ void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool 
             printf("==========Transpose==========\n");
             size_t shapeNum;
             const int64_t *shape = OH_AI_TensorGetShape(tensor, &shapeNum);
-            auto imageBufNhwc = new char[size1];
-            PackNCHWToNHWCFp32(imageBuf, imageBufNhwc, shape[0],
-                               shape[1] * shape[2], shape[3]);
-            // 使用自定义安全拷贝
-            if (!SafeMemCopy(inputData, tensorDataSize, imageBufNhwc, size1)) {
-                printf("Memory copy failed for tensor %zu\n", i);
+            if (size1 > 0 && size1 <= tensorDataSize) {
+                auto imageBufNhwc = new char[size1];
+                PackNCHWToNHWCFp32(imageBuf, imageBufNhwc, shape[0], shape[1] * shape[PARAM_2], shape[PARAM_3]);
+                // 使用自定义安全拷贝
+                if (!SafeMemCopy(inputData, tensorDataSize, imageBufNhwc, size1)) {
+                    printf("Memory copy failed for tensor %zu\n", i);
+                }
+                delete[] imageBufNhwc;
             }
-            delete[] imageBufNhwc;
         } else {
             // 使用自定义安全拷贝
             if (!SafeMemCopy(inputData, tensorDataSize, imageBuf, size1)) {
@@ -552,7 +582,7 @@ void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool 
         }
         
         printf("input data after filling is: ");
-        for (int j = 0; j < elementNum && j <= 20; ++j) {
+        for (int j = 0; j < elementNum && j <= PARAM_20; ++j) {
             printf("%f ", inputData[j]);
         }
         printf("\n");
@@ -561,9 +591,10 @@ void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool 
 }
 
 void ModelTrain(OH_AI_ModelHandle model, OH_AI_ContextHandle context, std::string modelName,
-                OH_AI_ShapeInfo shapeInfos, bool buildByGraph, bool isTranspose, bool isCallback) {
-    std::string g_testResourcesDir = "/data/test/resource/";
-    std::string modelPath = g_testResourcesDir + modelName + ".ms";
+                OH_AI_ShapeInfo shapeInfos, bool buildByGraph)
+{
+    std::string testResourcesDir = "/data/test/resource/";
+    std::string modelPath = testResourcesDir + modelName + ".ms";
     const char *graphPath = modelPath.c_str();
     OH_AI_TrainCfgHandle trainCfg = OH_AI_TrainCfgCreate();
     OH_AI_Status ret = OH_AI_STATUS_SUCCESS;
@@ -586,17 +617,9 @@ void ModelTrain(OH_AI_ModelHandle model, OH_AI_ContextHandle context, std::strin
         OH_AI_Status resize_ret = OH_AI_ModelResize(model, inputs, &shapeInfos, inputs.handle_num);
         printf("==========Resizes return code:%d\n", resize_ret);
     }
-    FillInputsData(inputs, modelName, isTranspose);
+    FillInputsData(inputs, modelName, false);
     ret = OH_AI_ModelSetTrainMode(model, true);
-    if (isCallback) {
-        printf("==========Model RunStep Callback==========\n");
-        OH_AI_KernelCallBack beforeCallBack = PrintBeforeCallback;
-        OH_AI_KernelCallBack afterCallBack = PrintAfterCallback;
-        ret = OH_AI_RunStep(model, beforeCallBack, afterCallBack);
-    } else {
-        printf("==========Model RunStep==========\n");
-        ret = OH_AI_RunStep(model, nullptr, nullptr);
-    }
+    ret = OH_AI_RunStep(model, nullptr, nullptr);
     printf("==========Model RunStep End==========\n");
 }
 
@@ -611,27 +634,27 @@ napi_value ExportModelTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -659,27 +682,27 @@ napi_value ExportModelBufferTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status1 = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -687,10 +710,10 @@ napi_value ExportModelBufferTest_001(napi_env env, napi_callback_info info)
     FillInputsData(inputs, "lenet_train", false);
     status1 = OH_AI_ModelSetTrainMode(model, true);
     status1 = OH_AI_RunStep(model, nullptr, nullptr);
-    char *modelData;
-    size_t data_size;
+    char *modelData1;
+    size_t dataSize;
     auto status = OH_AI_ExportModelBuffer(model, OH_AI_MODELTYPE_MINDIR,
-                                          &modelData, &data_size, OH_AI_NO_QUANT, true, nullptr, 0);
+                                          &modelData1, &dataSize, OH_AI_NO_QUANT, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
@@ -709,27 +732,27 @@ napi_value ExportWeightsCollaborateTest_001(napi_env env, napi_callback_info inf
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     OH_AI_ModelUpdateWeights(model, update_weights);
@@ -738,7 +761,8 @@ napi_value ExportWeightsCollaborateTest_001(napi_env env, napi_callback_info inf
     OH_AI_ModelSetTrainMode(model, true);
     OH_AI_RunStep(model, nullptr, nullptr);
     auto status = OH_AI_ExportWeightsCollaborateWithMicro(model, OH_AI_MODELTYPE_MINDIR,
-          "/data/storage/el2/base/files/xiaoyi_train_codegen_net1.bin", true, true, nullptr, 0);
+                                                          "/data/storage/el2/base/files/xiaoyi_train_codegen_net1.bin",
+                                                          true, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
@@ -754,8 +778,7 @@ napi_value ModelLoadConfigTest_001(napi_env env, napi_callback_info info)
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
-    ModelTrain(model, context, "lenet_train", {},
-               true, false, false);
+    ModelTrain(model, context, "lenet_train", {},true);
     const char* validConfigPath = "/data/storage/el2/base/files/ml_face_isface.config";
     OH_AI_Status status = OH_AI_ModelLoadConfig(model, validConfigPath);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
@@ -776,27 +799,27 @@ napi_value QuantizationTypeTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -825,27 +848,27 @@ napi_value QuantizationTypeTest_002(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -874,27 +897,27 @@ napi_value QuantizationTypeTest_003(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
@@ -923,27 +946,27 @@ napi_value QuantizationTypeTest_004(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elements_num = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elements_num,
+    auto generator = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elements_num = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elements_num,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t create_shape_num = 1;
-    int64_t create_shape[create_shape_num] = {10};
+    constexpr size_t CreateShapeNum = 1;
+    int64_t createShape[CreateShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   create_shape, create_shape_num, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+                                                   createShape, CreateShapeNum, nullptr, 0);
+    generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);

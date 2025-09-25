@@ -29,29 +29,32 @@ napi_value DeviceInfoGetPriorityTest_001(napi_env env, napi_callback_info info)
 
 // function before callback
 bool PrintBeforeCallback(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,
-                         const OH_AI_CallBackParam kernel_Info) {
-    const char* node_name = kernel_Info.node_name;
-    const char* node_type = kernel_Info.node_type;
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "node_name: %{public}d", node_name);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "node_type: %{public}d", node_type);
+                         const OH_AI_CallBackParam kernel_Info)
+{
+    const char* nodeName = kernel_Info.node_name;
+    const char* nodeType = kernel_Info.node_type;
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "node_name: %{public}d", nodeName);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "nodeType: %{public}d", nodeType);
     return true;
 }
 
 // function after callback
 bool PrintAfterCallback(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,
-                        const OH_AI_CallBackParam kernel_Info) {
+                        const OH_AI_CallBackParam kernel_Info)
+{
     bool ret = false;
-    const char* node_name = kernel_Info.node_name;
-    const char* node_type = kernel_Info.node_type;
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "node_name: %{public}d", node_name);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "node_type: %{public}d", node_type);
-    if (node_name != nullptr && node_type != nullptr) {
+    const char* nodeName = kernel_Info.node_name;
+    const char* nodeType = kernel_Info.node_type;
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "nodeName: %{public}d", nodeName);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "nodeType: %{public}d", nodeType);
+    if (nodeName != nullptr && nodeType != nullptr) {
         ret = true;
     }
     return ret;
 }
 
-const void* LoadModelData(const char* filename, size_t* out_size) {
+const void* LoadModelData(const char* filename, size_t* out_size)
+{
     if (!filename || !out_size) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", "Invalid parameters");
         return nullptr;
@@ -65,37 +68,54 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     }
 
     fseek(file, 0, SEEK_END);
-    long file_size = ftell(file);
+    if (fseek(file, 0, SEEK_END) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
+        return nullptr;
+    }
+    long fileSize = ftell(file);
     rewind(file);
 
-    if (file_size <= 0) {
+    if (fileSize <= 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", file_size);
+                     "Invalid file size: %{public}ld", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    void* buffer = malloc(file_size);
+    void* buffer = malloc(fileSize);
     if (!buffer) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", file_size);
+                     "Memory allocation failed for %{public}ld bytes", fileSize);
         fclose(file);
+        if (fclose(file) != 0) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                         "Failed to close file: %s", strerror(errno));
+        }
         return nullptr;
     }
 
-    size_t bytes_read = fread(buffer, 1, file_size, file);
+    size_t bytesRead = fread(buffer, 1, fileSize, file);
     fclose(file);
+    if (fclose(file) != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                     "Failed to close file: %s", strerror(errno));
+    }
 
-    if (bytes_read != static_cast<size_t>(file_size)) {
+    if (bytesRead != static_cast<size_t>(fileSize)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
 
-    *out_size = file_size;
+    *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
-                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+                 "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
 }
 
@@ -110,9 +130,9 @@ napi_value CallBackParamTest_001(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -143,9 +163,9 @@ napi_value CallBackParamTest_002(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -176,9 +196,9 @@ napi_value CallBackParamTest_003(napi_env env, napi_callback_info info)
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
-    size_t *ptr_size = &size;
-    const void* model_data = LoadModelData(graphPath, ptr_size);
-    if (model_data == nullptr || size == 0) {
+    size_t *ptrSize = &size;
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
@@ -198,7 +218,8 @@ napi_value CallBackParamTest_003(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-bool IsNPU() {
+bool IsNPU()
+{
     size_t num = 0;
     auto desc = OH_AI_GetAllNNRTDeviceDescs(&num);
     if (desc == nullptr) {
@@ -212,7 +233,8 @@ bool IsNPU() {
     return true;
 }
 
-void AddContextDeviceNNRT(OH_AI_ContextHandle context) {
+void AddContextDeviceNNRT(OH_AI_ContextHandle context)
+{
     size_t num = 0;
     auto descs = OH_AI_GetAllNNRTDeviceDescs(&num);
     if (descs == nullptr) {
@@ -238,7 +260,7 @@ void AddContextDeviceNNRT(OH_AI_ContextHandle context) {
 napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    int g_ret = 1;
+    int result = 1;
     if (IsNPU()) {
         OH_AI_ContextHandle context = OH_AI_ContextCreate();
         AddContextDeviceNNRT(context);
@@ -247,7 +269,7 @@ napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
                                                     OH_AI_MODELTYPE_MINDIR, context);
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", ret);
         OH_AI_TensorHandleArray inputs_handle = OH_AI_ModelGetInputs(model);
-        const size_t MAX_DIMS = 10;
+        const size_t MAX_DIMS = PARAM_10;
         int64_t shape[MAX_DIMS];
         size_t shape_num;
         OH_AI_TensorHandleArray in_tensor_array;
@@ -266,13 +288,13 @@ napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
                                                               OH_AI_TensorGetDataType(ori_tensor), shape, shape_num,
                                                               nullptr, 0);
             auto ret1 = OH_AI_TensorSetAllocator(in_tensor, in_allocator);
-            g_ret = ret1;
+            result = ret1;
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret1: %{public}d", ret1);
             in_tensor_array.handle_list[i] = in_tensor;
         }
         OH_AI_ModelDestroy(&model);
         OH_AI_ContextDestroy(&context);
-        napi_create_int32(env, g_ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
+        napi_create_int32(env, result == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     } else {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", false);
         napi_create_int32(env, 0, &retValue);
@@ -283,7 +305,7 @@ napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
 napi_value TensorSetAllocatorTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    int g_ret = 1;
+    int result = 1;
     if (IsNPU()) {
         OH_AI_ContextHandle context = OH_AI_ContextCreate();
         AddContextDeviceNNRT(context);
@@ -292,7 +314,7 @@ napi_value TensorSetAllocatorTest_001(napi_env env, napi_callback_info info)
                                                     OH_AI_MODELTYPE_MINDIR, context);
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", ret);
         OH_AI_TensorHandleArray inputs_handle = OH_AI_ModelGetInputs(model);
-        const size_t MAX_DIMS = 10;
+        const size_t MAX_DIMS = PARAM_10;
         int64_t shape[MAX_DIMS];
         size_t shape_num;
         OH_AI_TensorHandleArray in_tensor_array;
@@ -311,13 +333,13 @@ napi_value TensorSetAllocatorTest_001(napi_env env, napi_callback_info info)
                                                               OH_AI_TensorGetDataType(ori_tensor), shape, shape_num,
                                                               nullptr, 0);
             auto ret1 = OH_AI_TensorSetAllocator(in_tensor, in_allocator);
-            g_ret = ret1;
+            result = ret1;
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret1: %{public}d", ret1);
             in_tensor_array.handle_list[i] = in_tensor;
         }
         OH_AI_ModelDestroy(&model);
         OH_AI_ContextDestroy(&context);
-        napi_create_int32(env, g_ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
+        napi_create_int32(env, result == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     } else {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", false);
         napi_create_int32(env, 0, &retValue);
