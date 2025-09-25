@@ -33,8 +33,15 @@ char **TransStrVectorToCharArrays(const std::vector<std::string> &s)
         return nullptr;
     }
     for (size_t i = 0; i < s.size(); i++) {
-        charArr[i] = static_cast<char *>(malloc((s[i].size() + 1)));
-        strncpy(charArr[i], s[i].c_str(), s[i].size());
+        charArr[i] = static_cast<char *>(malloc(s[i].size() + 1));
+        if (charArr[i] == nullptr) {
+            for (size_t j = 0; j < i; j++) {
+                free(charArr[j]);
+            }
+            free(charArr);
+            return nullptr;
+        }
+        std::copy(s[i].begin(), s[i].end(), charArr[i]);
         charArr[i][s[i].size()] = '\0';
     }
     return charArr;
@@ -154,60 +161,41 @@ const void* LoadModelData(const char* filename, size_t* out_size)
                      "Invalid parameters");
         return nullptr;
     }
-    
     FILE* file = fopen(filename, "rb");
     if (!file) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
-
     fseek(file, 0, SEEK_END);
     if (fseek(file, 0, SEEK_END) != 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
-                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
         return nullptr;
     }
     long fileSize = ftell(file);
     rewind(file);
 
     if (fileSize <= 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                         "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     void* buffer = malloc(fileSize);
     if (!buffer) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
                          "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     size_t bytesRead = fread(buffer, 1, fileSize, file);
-    fclose(file);
     if (fclose(file) != 0) {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                         "Failed to close file: %s", strerror(errno));
-        }
-
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
+                     "Failed to close file: %s", strerror(errno));
+    }
     if (bytesRead != static_cast<size_t>(fileSize)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
-
     *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
@@ -392,15 +380,15 @@ napi_value ModelUpdateWeightsTest_001(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -645,15 +633,15 @@ napi_value ExportModelTest_001(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
                               [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -693,15 +681,15 @@ napi_value ExportModelBufferTest_001(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -743,15 +731,15 @@ napi_value ExportWeightsCollaborateTest_001(napi_env env, napi_callback_info inf
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -778,7 +766,7 @@ napi_value ModelLoadConfigTest_001(napi_env env, napi_callback_info info)
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
     OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
-    ModelTrain(model, context, "lenet_train", {},true);
+    ModelTrain(model, context, "lenet_train", {}, true);
     const char* validConfigPath = "/data/storage/el2/base/files/ml_face_isface.config";
     OH_AI_Status status = OH_AI_ModelLoadConfig(model, validConfigPath);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
@@ -810,15 +798,15 @@ napi_value QuantizationTypeTest_001(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -859,15 +847,15 @@ napi_value QuantizationTypeTest_002(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -908,15 +896,15 @@ napi_value QuantizationTypeTest_003(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
@@ -957,15 +945,15 @@ napi_value QuantizationTypeTest_004(napi_env env, napi_callback_info info)
     auto generator = [](size_t size, void *data) {
         auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
         std::mt19937 random_engine_;
-        size_t elements_num = size / sizeof(float);
-        (void)std::generate_n(static_cast<float *>(data), elements_num,
-                            [&]() { return static_cast<float>(generator(random_engine_)); });
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
+                              [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
-    constexpr size_t CreateShapeNum = 1;
-    int64_t createShape[CreateShapeNum] = {PARAM_10};
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
-                                                   createShape, CreateShapeNum, nullptr, 0);
+                                                   createShape, createShapeNum, nullptr, 0);
     generator(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};

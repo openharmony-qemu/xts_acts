@@ -44,60 +44,41 @@ const void* LoadModelData(const char* filename, size_t* out_size)
                      "Invalid parameters");
         return nullptr;
     }
-    
     FILE* file = fopen(filename, "rb");
     if (!file) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
-
     fseek(file, 0, SEEK_END);
     if (fseek(file, 0, SEEK_END) != 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
-                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
         return nullptr;
     }
     long fileSize = ftell(file);
     rewind(file);
 
     if (fileSize <= 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                         "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     void* buffer = malloc(fileSize);
     if (!buffer) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
                          "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     size_t bytesRead = fread(buffer, 1, fileSize, file);
-    fclose(file);
     if (fclose(file) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
                      "Failed to close file: %s", strerror(errno));
     }
-
     if (bytesRead != static_cast<size_t>(fileSize)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
-
     *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);

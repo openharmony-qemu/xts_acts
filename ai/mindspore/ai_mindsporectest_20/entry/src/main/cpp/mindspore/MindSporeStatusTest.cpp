@@ -26,60 +26,41 @@ const void* LoadModelData(const char* filename, size_t* out_size)
                      "Invalid parameters");
         return nullptr;
     }
-    
     FILE* file = fopen(filename, "rb");
     if (!file) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
-
     fseek(file, 0, SEEK_END);
     if (fseek(file, 0, SEEK_END) != 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
-                     "Failed to seek file: %{public}s, errno: %{public}d", filename);
         return nullptr;
     }
     long fileSize = ftell(file);
     rewind(file);
 
     if (fileSize <= 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Invalid file size: %{public}ld", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                         "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     void* buffer = malloc(fileSize);
     if (!buffer) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                     "Memory allocation failed for %{public}ld bytes", fileSize);
-        fclose(file);
         if (fclose(file) != 0) {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
                          "Failed to close file: %s", strerror(errno));
         }
         return nullptr;
     }
-
     size_t bytesRead = fread(buffer, 1, fileSize, file);
-    fclose(file);
     if (fclose(file) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
                      "Failed to close file: %s", strerror(errno));
     }
-
     if (bytesRead != static_cast<size_t>(fileSize)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
-                     "Read incomplete: %{public}zu of %{public}ld bytes", bytesRead, fileSize);
         free(buffer);
         return nullptr;
     }
-
     *out_size = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
@@ -142,11 +123,11 @@ napi_value StatusTest_008(napi_env env, napi_callback_info info)
     printf("==========OH_AI_TrainModelBuildFromFile==========\n");
     auto status1 = OH_AI_TrainModelBuildFromFile(model, "/data/test/lenet_train.ms",
                                                  OH_AI_MODELTYPE_MINDIR, context, train_cfg);
-    auto GenRandomData = [](size_t size, void *data) {
-      auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
-      std::mt19937 random_engine_;
-      size_t elementsNum = size / sizeof(float);
-      (void)std::generate_n(static_cast<float *>(data), elementsNum,
+    auto genRandomData = [](size_t size, void *data) {
+        auto generator = std::uniform_real_distribution<float>(0.0f, 1.0f);
+        std::mt19937 random_engine_;
+        size_t elementsNum = size / sizeof(float);
+        (void)std::generate_n(static_cast<float *>(data), elementsNum,
                             [&]() { return static_cast<float>(generator(random_engine_)); });
     };
     std::vector<OH_AI_TensorHandle> vec_inputs;
@@ -154,7 +135,7 @@ napi_value StatusTest_008(napi_env env, napi_callback_info info)
     int64_t create_shape[createShapeNum] = {PARAM_10};
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("fc3.bias", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32,
                                                    create_shape, createShapeNum, nullptr, 0);
-    GenRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
+    genRandomData(OH_AI_TensorGetDataSize(tensor), OH_AI_TensorGetMutableData(tensor));
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
