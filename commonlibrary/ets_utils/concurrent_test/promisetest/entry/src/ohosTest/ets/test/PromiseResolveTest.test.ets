@@ -1800,9 +1800,9 @@ export default function PromiseResolveTest() {
             successMessage = `Outer: ${outerResult}`;
             console.log(successMessage);
             const innerPromises = [
-              asyncOperation(outerResult / 2 * 4, 450),
+              asyncOperation(outerResult / 2 * 4, 400),
               asyncOperation(outerResult / 2 * 5, 600),
-              asyncOperation(outerResult / 2 * 6, 540)
+              asyncOperation(outerResult / 2 * 6, 500)
             ];
             return Promise.any(innerPromises);
           })
