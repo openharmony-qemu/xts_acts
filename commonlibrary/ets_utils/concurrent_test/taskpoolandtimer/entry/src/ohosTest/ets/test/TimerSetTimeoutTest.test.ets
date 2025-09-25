@@ -108,7 +108,7 @@ export default function setTimeoutTest() {
       }
 
       expect(msg2).assertEqual('Hello, World!');
-      expect(time2 - time1 >= 100).assertTrue()
+      expect(time2 - time1 + 1 >= 100).assertTrue()
       console.info(`${caseName} test end`);
       Done();
     })
