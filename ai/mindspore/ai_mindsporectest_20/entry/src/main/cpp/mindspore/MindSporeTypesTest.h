@@ -22,9 +22,6 @@ namespace MindSporeTypesTest {
     napi_value DeviceTypeTest_001(napi_env env, napi_callback_info info);
     napi_value ModelTypetest_001(napi_env env, napi_callback_info info);
     napi_value NNRTDeviceTypetest_001(napi_env env, napi_callback_info info);
-    napi_value PriorityTypeTest_001(napi_env env, napi_callback_info info);
-    napi_value PriorityTypeTest_002(napi_env env, napi_callback_info info);
-    napi_value PriorityTypeTest_003(napi_env env, napi_callback_info info);
     napi_value OptimizationLevelTest_001(napi_env env, napi_callback_info info);
     napi_value OptimizationLevelTest_002(napi_env env, napi_callback_info info);
     napi_value OptimizationLevelTest_003(napi_env env, napi_callback_info info);

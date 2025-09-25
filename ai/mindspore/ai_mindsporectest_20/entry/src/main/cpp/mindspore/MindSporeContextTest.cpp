@@ -22,7 +22,6 @@ napi_value DeviceInfoGetPriorityTest_001(napi_env env, napi_callback_info info)
     napi_value retValue = 0;
     OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
     OH_AI_DeviceInfoSetPriority(nnrt_device_info, OH_AI_PRIORITY_MEDIUM);
-//    OH_AI_DeviceInfoGetPriority(nnrt_device_info);
     napi_create_int32(env, 1, &retValue);
     OH_AI_DeviceInfoDestroy(&nnrt_device_info);
     return retValue;
@@ -54,15 +53,14 @@ bool PrintAfterCallback(const OH_AI_TensorHandleArray inputs, const OH_AI_Tensor
 
 const void* LoadModelData(const char* filename, size_t* out_size) {
     if (!filename || !out_size) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", 
-                    "Invalid parameters");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", "Invalid parameters");
         return nullptr;
     }
     
     FILE* file = fopen(filename, "rb");
     if (!file) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", 
-                    "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
 
@@ -71,16 +69,16 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     rewind(file);
 
     if (file_size <= 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData", 
-                    "Invalid file size: %{public}ld", file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                     "Invalid file size: %{public}ld", file_size);
         fclose(file);
         return nullptr;
     }
 
     void* buffer = malloc(file_size);
     if (!buffer) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData", 
-                    "Memory allocation failed for %{public}ld bytes", file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                     "Memory allocation failed for %{public}ld bytes", file_size);
         fclose(file);
         return nullptr;
     }
@@ -89,15 +87,15 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     fclose(file);
 
     if (bytes_read != static_cast<size_t>(file_size)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData", 
-                    "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
         free(buffer);
         return nullptr;
     }
 
     *out_size = file_size;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData", 
-                "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
+                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
     return buffer;
 }
 
@@ -115,11 +113,9 @@ napi_value CallBackParamTest_001(napi_env env, napi_callback_info info)
     size_t *ptr_size = &size;
     const void* model_data = LoadModelData(graphPath, ptr_size);
     if (model_data == nullptr || size == 0) {
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest", 
-                "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
+                 "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "model_data: %{public}p,"
-                 "size:%{public}d", &model_data, size);
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
     printf("==========FillModelInputs==========\n");
@@ -150,11 +146,9 @@ napi_value CallBackParamTest_002(napi_env env, napi_callback_info info)
     size_t *ptr_size = &size;
     const void* model_data = LoadModelData(graphPath, ptr_size);
     if (model_data == nullptr || size == 0) {
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest", 
-                "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
+                 "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "model_data: %{public}p,"
-                 "size:%{public}d", &model_data, size);
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
     printf("==========FillModelInputs==========\n");
@@ -185,11 +179,9 @@ napi_value CallBackParamTest_003(napi_env env, napi_callback_info info)
     size_t *ptr_size = &size;
     const void* model_data = LoadModelData(graphPath, ptr_size);
     if (model_data == nullptr || size == 0) {
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest", 
-                "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
+                 "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "model_data: %{public}p,"
-                 "size:%{public}d", &model_data, size);
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
     printf("==========FillModelInputs==========\n");
@@ -272,12 +264,14 @@ napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
             void *in_allocator = OH_AI_TensorGetAllocator(ori_tensor);
             OH_AI_TensorHandle in_tensor = OH_AI_TensorCreate(OH_AI_TensorGetName(ori_tensor),
                                                               OH_AI_TensorGetDataType(ori_tensor), shape, shape_num,
-                                                              nullptr, 0);  
+                                                              nullptr, 0);
             auto ret1 = OH_AI_TensorSetAllocator(in_tensor, in_allocator);
             g_ret = ret1;
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret1: %{public}d", ret1);
             in_tensor_array.handle_list[i] = in_tensor;
         }
+        OH_AI_ModelDestroy(&model);
+        OH_AI_ContextDestroy(&context);
         napi_create_int32(env, g_ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     } else {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", false);
@@ -315,12 +309,14 @@ napi_value TensorSetAllocatorTest_001(napi_env env, napi_callback_info info)
             void *in_allocator = OH_AI_TensorGetAllocator(ori_tensor);
             OH_AI_TensorHandle in_tensor = OH_AI_TensorCreate(OH_AI_TensorGetName(ori_tensor),
                                                               OH_AI_TensorGetDataType(ori_tensor), shape, shape_num,
-                                                              nullptr, 0);  
+                                                              nullptr, 0);
             auto ret1 = OH_AI_TensorSetAllocator(in_tensor, in_allocator);
             g_ret = ret1;
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret1: %{public}d", ret1);
             in_tensor_array.handle_list[i] = in_tensor;
         }
+        OH_AI_ModelDestroy(&model);
+        OH_AI_ContextDestroy(&context);
         napi_create_int32(env, g_ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     } else {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111k", "ret: %{public}d", false);

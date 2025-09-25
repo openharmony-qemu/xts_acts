@@ -188,12 +188,6 @@ static void RenderInitPush3(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NNRTDeviceTypetest_001", nullptr, MindSporeTypesTest::NNRTDeviceTypetest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PriorityTypeTest_001", nullptr, MindSporeTypesTest::PriorityTypeTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PriorityTypeTest_002", nullptr, MindSporeTypesTest::PriorityTypeTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PriorityTypeTest_003", nullptr, MindSporeTypesTest::PriorityTypeTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index + offset] = descTemp[index];
@@ -202,7 +196,7 @@ static void RenderInitPush3(napi_property_descriptor* desc)
 
 static void RenderInitPush4(napi_property_descriptor* desc)
 {
-    const uint32_t offset = 69;
+    const uint32_t offset = 66;
     napi_property_descriptor descTemp[] = {
         {"OptimizationLevelTest_001", nullptr, MindSporeTypesTest::OptimizationLevelTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},

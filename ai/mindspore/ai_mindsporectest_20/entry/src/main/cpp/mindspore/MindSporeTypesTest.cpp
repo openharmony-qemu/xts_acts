@@ -69,15 +69,15 @@ char *ReadFile(const char *file, size_t* size) {
 
 const void* LoadModelData(const char* filename, size_t* out_size) {
     if (!filename || !out_size) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", 
-                    "Invalid parameters");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Invalid parameters");
         return nullptr;
     }
     
     FILE* file = fopen(filename, "rb");
     if (!file) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData", 
-                    "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+                     "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
 
@@ -86,16 +86,16 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     rewind(file);
 
     if (file_size <= 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData", 
-                    "Invalid file size: %{public}ld", file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                     "Invalid file size: %{public}ld", file_size);
         fclose(file);
         return nullptr;
     }
 
     void* buffer = malloc(file_size);
     if (!buffer) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData", 
-                    "Memory allocation failed for %{public}ld bytes", file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                     "Memory allocation failed for %{public}ld bytes", file_size);
         fclose(file);
         return nullptr;
     }
@@ -104,15 +104,15 @@ const void* LoadModelData(const char* filename, size_t* out_size) {
     fclose(file);
 
     if (bytes_read != static_cast<size_t>(file_size)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData", 
-                    "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111LoadModelData",
+                     "Read incomplete: %{public}zu of %{public}ld bytes", bytes_read, file_size);
         free(buffer);
         return nullptr;
     }
 
     *out_size = file_size;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData", 
-                "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
+                 "Successfully loaded %{public}zu bytes from %{public}s", file_size, filename);
     return buffer;
 }
 
@@ -130,8 +130,8 @@ napi_value ModelTypetest_001(napi_env env, napi_callback_info info)
     size_t *ptr_size = &size;
     const void* model_data = LoadModelData(graphPath, ptr_size);
     if (model_data == nullptr || size == 0) {
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest", 
-                "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
+                 "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "model_data: %{public}p,"
                  "size:%{public}d", &model_data, size);
@@ -164,42 +164,6 @@ napi_value NNRTDeviceTypetest_001(napi_env env, napi_callback_info info)
         ret = 0;
     };
     napi_create_int32(env, ret, &retValue);
-    return retValue;
-}
-
-napi_value PriorityTypeTest_001(napi_env env, napi_callback_info info)
-{
-    napi_value retValue = 0;
-    OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
-    OH_AI_DeviceInfoSetPriority(nnrt_device_info, OH_AI_PRIORITY_NONE);
-//    auto type = OH_AI_DeviceInfoGetPriority(nnrt_device_info);
-//    napi_create_int32(env, type == OH_AI_PRIORITY_NONE ? 0 : 1, &retValue);
-    napi_create_int32(env, 1, &retValue);
-    OH_AI_DeviceInfoDestroy(&nnrt_device_info);
-    return retValue;
-}
-
-napi_value PriorityTypeTest_002(napi_env env, napi_callback_info info)
-{
-    napi_value retValue = 0;
-    OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
-    OH_AI_DeviceInfoSetPriority(nnrt_device_info, OH_AI_PRIORITY_LOW);
-//    auto type = OH_AI_DeviceInfoGetPriority(nnrt_device_info);
-//    napi_create_int32(env, type == OH_AI_PRIORITY_LOW ? 0 : 1, &retValue);
-    napi_create_int32(env, 1, &retValue);
-    OH_AI_DeviceInfoDestroy(&nnrt_device_info);
-    return retValue;
-}
-
-napi_value PriorityTypeTest_003(napi_env env, napi_callback_info info)
-{
-    napi_value retValue = 0;
-    OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
-    OH_AI_DeviceInfoSetPriority(nnrt_device_info, OH_AI_PRIORITY_HIGH);
-//    auto type = OH_AI_DeviceInfoGetPriority(nnrt_device_info);
-//    napi_create_int32(env, type == OH_AI_PRIORITY_HIGH ? 0 : 1, &retValue);
-    napi_create_int32(env, 1, &retValue);
-    OH_AI_DeviceInfoDestroy(&nnrt_device_info);
     return retValue;
 }
 
