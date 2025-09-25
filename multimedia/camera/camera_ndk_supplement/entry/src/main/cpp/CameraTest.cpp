@@ -68,13 +68,7 @@ NDKCamera::~NDKCamera()
 
 Camera_ErrorCode NDKCamera::ReleaseCameraManger(void)
 {
-    Camera_ErrorCode ret;
-    if (cameraInput_ != nullptr) {
-        ret = OH_CaptureSession_RemoveInput(captureSession_, cameraInput_);
-        ret = OH_CameraInput_Close(cameraInput_);
-        ret = OH_CameraInput_Release(cameraInput_);
-        cameraInput_ = nullptr;
-    }
+    Camera_ErrorCode ret = CloseCameraInput();
 
     if (captureSession_ != nullptr) {
         ret = OH_CaptureSession_Release(captureSession_);
@@ -154,6 +148,9 @@ Camera_ErrorCode NDKCamera::CreateCameras(void)
 
 Camera_ErrorCode NDKCamera::CreateCameraInput(void)
 {
+    if (cameraInput_ != nullptr) {
+        return CAMERA_OK;
+    }
     Camera_ErrorCode ret_ = OH_CameraManager_CreateCameraInput(cameraManager_, cameras_, &cameraInput_);
     if (cameraInput_ == nullptr || ret_ != CAMERA_OK) {
         LogE("CreateCameraInput failed.");
@@ -161,6 +158,18 @@ Camera_ErrorCode NDKCamera::CreateCameraInput(void)
     }
     CameraInputRegisterCallback();
     return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CloseCameraInput(void)
+{
+    if (captureSession_ != nullptr && cameraInput_ != nullptr) {
+        OH_CaptureSession_RemoveInput(captureSession_, cameraInput_);
+        OH_CameraInput_Close(cameraInput_);
+        OH_CameraInput_UnregisterCallback(cameraInput_, GetCameraInputListener());
+        OH_CameraInput_Release(cameraInput_);
+        cameraInput_ = nullptr;
+    }
+    return CAMERA_OK;
 }
 
 // CameraInput Callback
@@ -627,6 +636,10 @@ Camera_ErrorCode NDKCamera::PhotoOutputRegisterCallback(void)
     Camera_PhotoOutput* photoOutput_;
     Camera_ErrorCode ret =
         OH_CameraManager_CreatePhotoOutputUsedInPreconfig(cameraManager_, previewSurfaceId_.c_str(), &photoOutput_);
+    if (ret != CAMERA_OK) {
+        LogE("PhotoOutputRegisterCallback failed.");
+        return CAMERA_OK;
+    }
     ret = OH_PhotoOutput_RegisterCallback(photoOutput_, GetPhotoOutputListener());
     if (ret != CAMERA_OK) {
         LogE("OH_PhotoOutput_RegisterCallback failed.");
@@ -691,6 +704,10 @@ Camera_ErrorCode NDKCamera::MetadataOutputRegisterCallback(void)
     Camera_MetadataObjectType profile = FACE_DETECTION;
     Camera_MetadataOutput* metadataOutput_;
     Camera_ErrorCode ret = OH_CameraManager_CreateMetadataOutput(cameraManager_, &profile, &metadataOutput_);
+    if (ret != CAMERA_OK) {
+        LogE("MetadataOutputRegisterCallback failed.");
+        return CAMERA_OK;
+    }
     ret = OH_MetadataOutput_RegisterCallback(metadataOutput_, GetMetadataOutputListener());
     if (ret != CAMERA_OK) {
         LogE("OH_MetadataOutput_RegisterCallback failed.");
@@ -757,7 +774,6 @@ Camera_ErrorCode NDKCamera::PhotoOutputRegisterCaptureStartWithInfoCallback()
         LogE("Creat Camera_PhotoOutput failed...");
         return ret;
     }
-    Camera_FoldStatusInfo test;
     return OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(photoOutput_, PhotoOutputCaptureStartWithInfoCallback);
 }
 
@@ -812,7 +828,7 @@ Camera_ErrorCode NDKCamera::RegisterAutoDeviceSwitchStatusCallback()
                                                                     CameraAutoDeviceSwitchStatusInfoCallback);
 }
 
-Camera_ErrorCode NDKCamera::SessionSetQualityPrioritization(uint32_t quality)
+Camera_ErrorCode NDKCamera::SessionSetQualityPrioritization(int32_t quality)
 {
     Camera_ErrorCode ret = CreateSession();
     if (ret != CAMERA_OK) {
@@ -831,7 +847,7 @@ Camera_ErrorCode NDKCamera::SessionSetQualityPrioritization(uint32_t quality)
     return ret;
 }
 
-Camera_ErrorCode NDKCamera::CameraOpenConcurrentCameras(uint32_t type)
+Camera_ErrorCode NDKCamera::CameraOpenConcurrentCameras(int32_t type)
 {
     Camera_Input *cameraInput;
     Camera_ConcurrentType concurrentType = CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY;
@@ -850,7 +866,7 @@ Camera_ErrorCode NDKCamera::CameraOpenConcurrentCameras(uint32_t type)
     return retcode;
 }
 
-Camera_ErrorCode NDKCamera::IsWhiteBalanceSupported(uint32_t type)
+Camera_ErrorCode NDKCamera::IsWhiteBalanceSupported(int32_t type)
 {
     Camera_ErrorCode ret = CreateSession();
     if (ret != CAMERA_OK) {
@@ -931,7 +947,7 @@ Camera_ErrorCode NDKCamera::CameraManagerRegisterCallback()
     return ret;
 }
 
-Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(uint32_t type)
+Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(int32_t type)
 {
     Camera_ErrorCode ret = CreateSession();
     if (ret != CAMERA_OK) {
@@ -951,10 +967,29 @@ Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(uint32_t type)
     Camera_ErrorCode retGetTypes = OH_CaptureSession_GetSupportedEffectTypes(captureSession_, &effectType, &size);
     if (retGetTypes == CAMERA_OK) {
         if (size != 0 && effectType[0] == checkType) {
-            LogE("SessionGetSupportedEffectTypes is ok.");
+            LogD("SessionGetSupportedEffectTypes is ok.");
         }
         OH_CaptureSession_DeleteSupportedEffectTypes(captureSession_, effectType, size);
         return retGetTypes;
     }
     return ret;
+}
+
+void ControlCenterEffectStatusChange(Camera_CaptureSession* session, Camera_ControlCenterStatusInfo* controlInfo)
+{
+    Camera_ControlCenterStatusInfo checkInfo;
+    checkInfo.effectType = CONTROL_CENTER_EFFECT_TYPE_BEAUTY;
+    checkInfo.isActive = true;
+    if (controlInfo->isActive == checkInfo.isActive) {
+        LogD("SessionGetSupportedEffectTypes is ok.");
+    }
+}
+
+Camera_ErrorCode NDKCamera::RegisterControlCenterEffectStatusChange()
+{
+    if (CAMERA_OK != CreateSession()) {
+        return CAMERA_OK;
+    }
+    return OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallback(captureSession_,
+                                                                             ControlCenterEffectStatusChange);
 }

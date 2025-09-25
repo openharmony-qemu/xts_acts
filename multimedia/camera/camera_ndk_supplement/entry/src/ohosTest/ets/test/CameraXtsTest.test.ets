@@ -1560,6 +1560,34 @@ export default function CameraXtsTest() {
       expect(ret).assertEqual(TEST_OK)
       done()
     })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_ErrorCode11200
+     * @tc.name       testCameraControlCenterStatusInfoeffectType
+     * @tc.desc       Test OH_CameraManager_GetCameraConcurrentInfos return CAMERA_INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testCameraControlCenterStatusInfoeffectType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.registerControlCenterEffectStatusChange()
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_ErrorCode11300
+     * @tc.name       testCameraControlCenterStatusInfoisActive
+     * @tc.desc       Test OH_CameraManager_GetCameraConcurrentInfos return CAMERA_INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testCameraControlCenterStatusInfoisActive", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.registerControlCenterEffectStatusChange()
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
   })
 }
 
