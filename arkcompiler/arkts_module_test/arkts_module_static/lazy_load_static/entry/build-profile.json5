@@ -16,14 +16,6 @@
 {
   "apiType": "stageMode",
   "buildOption": {
-    "arkOptions": {
-      "runtimeOnly": {
-        "sources": [
-          "./src/main/src/utils/promise/PromiseLazyInDynamicModule.ets",
-          "./src/main/src/utils/promise/PromiseLazyInNapiLoad.ets",
-        ]
-      }
-    }
   },
   "buildOptionSet": [
     {

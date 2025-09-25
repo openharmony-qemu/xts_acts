@@ -18,6 +18,7 @@ group("arkts_module_static") {
   if (is_standard_system) {
     deps = [
       "lazy_load_static:ActsArkTsLazyLoadStaticTest",
+      "static_load_static:ActsArkTsStaticLoadStaticTest",
     ]
   }
 }
