@@ -2888,6 +2888,7 @@ export default function windowPCTest() {
      */
     it('testOnwindowStatusDidChange_SPLIT_SCREEN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOnwindowStatusDidChange_SPLIT_SCREEN';
+      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
