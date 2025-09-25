@@ -41,3 +41,8 @@ export const testBindController001: (a: string) => void;
 export const scrollScrollBarMarginTest: (a: string, b: string) => void;
 
 export const createCrossLanguageRowNode: (content: NodeContent, tag: string) => void;
+
+export const createCrossLanguageColumnNode: (content: NodeContent, tag: string) => void;
+export const createCrossLanguageFlexNode: (content: NodeContent, tag: string) => void;
+export const createCrossLanguageStackNode: (content: NodeContent, tag: string) => void;
+export const createCrossLanguageRelativeContainerNode: (content: NodeContent, tag: string) => void;
