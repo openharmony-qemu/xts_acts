@@ -750,7 +750,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
@@ -782,7 +782,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
@@ -836,7 +836,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
@@ -889,7 +889,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
@@ -942,7 +942,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
@@ -995,7 +995,7 @@ export default function relationalStoreInterfaceTest() {
       } catch (err) {
         if(currentDeviceIsWatch == true && err.code == 801){
           console.log(TAG + "err" + err.code +err.message);
-          expect(err.code == 801).assertTrue();
+          expect("801").assertEqual(String(err.code))
           done();
         } else {
           console.log(TAG + "err" + err.code +err.message);
