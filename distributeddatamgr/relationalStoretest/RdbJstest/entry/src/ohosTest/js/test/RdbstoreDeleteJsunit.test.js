@@ -800,7 +800,7 @@ describe('rdbStoreDeleteTest', function () {
         await rdbStore.insert("test", record);
         }
         try{
-            let resultSet = await querySql("SELECT * FROM TEST  WHERE name = ?",["Jim"]);
+            let resultSet = await rdbStore.querySql("SELECT * FROM TEST  WHERE name = ?",["Jim"]);
             console.log(TAG + "resultSet.rowCount:" + resultSet.rowCount);
             expect(resultSet.rowCount).assertEqual(1);
             done();
