@@ -2791,7 +2791,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest053
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4700
      * @tc.desc goToPreviousRow test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2827,7 +2827,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest054
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4800
      * @tc.desc getRows test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2857,7 +2857,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest055
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4900
      * @tc.desc getRows test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2889,7 +2889,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest056
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_4900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5000
      * @tc.desc isColumnNull test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2921,7 +2921,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest057
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5100
      * @tc.desc isColumnNull test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2953,7 +2953,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest058
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5200
      * @tc.desc insertSync test
      * @tc.size MediumTest
      * @tc.type Function
@@ -2981,7 +2981,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest059
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5300
      * @tc.desc isTokenizerSupported test
      * @tc.size MediumTest
      * @tc.type Function
@@ -3004,7 +3004,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest060
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5400
      * @tc.desc isTokenizerSupported test
      * @tc.size MediumTest
      * @tc.type Function
@@ -3035,7 +3035,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest061
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5500
      * @tc.desc getColumnName test
      * @tc.size MediumTest
      * @tc.type Function
@@ -3066,7 +3066,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest062
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5600
      * @tc.desc getDouble test
      * @tc.size MediumTest
      * @tc.type Function
@@ -3098,7 +3098,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest063
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5700
      * @tc.desc getBlob test
      * @tc.size MediumTest
      * @tc.type Function
@@ -3131,7 +3131,7 @@ export default function relationalStoreInterfaceTest() {
     })
     /**
      * @tc.name relationalStoreTest064
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_5800
      * @tc.desc getBlob test
      * @tc.size MediumTest
      * @tc.type Function
