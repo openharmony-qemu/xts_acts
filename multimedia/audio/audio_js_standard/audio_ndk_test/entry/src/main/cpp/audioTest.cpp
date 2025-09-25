@@ -241,22 +241,6 @@ static napi_value AudioCaptureGenerate(napi_env env, napi_callback_info info)
     return res;
 }
 
-static napi_value AudioWorkGroup(napi_env env, napi_callback_info info)
-{   
-    int32_t tid;
-    OH_AudioResourceManager *mgr;
-    OH_AudioWorkgroup *grp;
-    OH_AudioManager_GetAudioResourceManager(&mgr);
-    OH_AudioResourceManager_CreateWorkgroup(mgr, "new", &grp);
-    OH_AudioWorkgroup_AddCurrentThread(grp, &tid);
-    OH_AudioWorkgroup_Start(grp, STATE_TIME, END_TIME);              
-    OH_AudioWorkgroup_Stop(grp);
-    OH_AudioWorkgroup_RemoveThread(grp, tid);
-    OH_AudioCommon_Result result=OH_AudioResourceManager_ReleaseWorkgroup(mgr, grp);
-    napi_value res;
-    napi_create_int32(env, result, &res);
-    return res;
-}
 
 static napi_value AudioCaptureGenerateErr(napi_env env, napi_callback_info info)
 {
@@ -7779,7 +7763,6 @@ napi_property_descriptor desc1[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createAudioStreamBuilder", nullptr, CreateAudioStreamBuilder, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioCaptureGenerate", nullptr, AudioCaptureGenerate, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioWorkGroup", nullptr, AudioWorkGroup, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioCaptureGenerateErr", nullptr, AudioCaptureGenerateErr,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioCaptureStart", nullptr, AudioCaptureStart, nullptr, nullptr, nullptr, napi_default, nullptr},
