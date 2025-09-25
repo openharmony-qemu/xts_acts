@@ -14,6 +14,8 @@
  */
 
 import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test'
+import postInputEvent from './BuilderNode/postInputEvent.test'
 export default function testsuite() {
   getPinchAxisScaleValue();
+  postInputEvent()
 }
