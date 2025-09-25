@@ -1,19 +1,6 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/huyingtao/.ohos/config/openharmony/default_global_napi_c_test_aBzk7sJ_9F5IM-MAX2s06Z_lfdk7CADKK1pxATUcCAo=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B697E69BFB2DD6441B549F976CBC704CD5923E37D5851E6220D189F8F02E77F83D47DEABBCC78A8",
-          "profile": "C:/Users/huyingtao/.ohos/config/openharmony/default_global_napi_c_test_aBzk7sJ_9F5IM-MAX2s06Z_lfdk7CADKK1pxATUcCAo=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/huyingtao/.ohos/config/openharmony/default_global_napi_c_test_aBzk7sJ_9F5IM-MAX2s06Z_lfdk7CADKK1pxATUcCAo=.p12",
-          "storePassword": "0000001BE3CC8A6EFE4CB94EE894AB1DC454BEAB9A30FFBFC3CC7765CC14D81BF854DDF3D55BB384ED9EA7"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
