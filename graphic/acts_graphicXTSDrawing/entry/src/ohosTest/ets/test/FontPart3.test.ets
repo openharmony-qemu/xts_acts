@@ -75,6 +75,7 @@ export default function fontPart3Test() {
       try {
         let glyphs : number[] = font.textToGlyphs("", 0);
         console.info(msg + ' textToGlyphs5 successed,glyphs:' + glyphs);
+        expect(glyphs.length == 0).assertEqual(true);
       } catch( e ) {
         console.info(msg + ` textToGlyphs5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
