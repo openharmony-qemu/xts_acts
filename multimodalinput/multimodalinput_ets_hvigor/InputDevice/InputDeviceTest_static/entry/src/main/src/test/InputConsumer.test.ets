@@ -61,11 +61,11 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ifInputConsumerOnSuccess++;
             ExpectTrue(ifInputConsumerOnSuccess == 1);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -101,10 +101,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -139,10 +139,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -177,10 +177,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -215,10 +215,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -253,10 +253,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -291,10 +291,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -329,11 +329,11 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -368,10 +368,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -407,11 +407,11 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ifInputConsumerOnSuccess++;
             ExpectTrue(ifInputConsumerOnSuccess == 1);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -446,10 +446,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -485,8 +485,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -525,8 +525,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -565,8 +565,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -605,8 +605,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -645,8 +645,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -685,8 +685,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -725,8 +725,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -765,8 +765,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -805,8 +805,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -845,8 +845,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -885,8 +885,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -925,8 +925,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -965,7 +965,7 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1004,8 +1004,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1044,8 +1044,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1083,8 +1083,8 @@ export default function InputConsumerTest() {
             isRepeat: true
           };
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ExpectFalse(true);
             done();
@@ -1122,8 +1122,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1162,10 +1162,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1205,10 +1205,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1248,10 +1248,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1291,10 +1291,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1337,12 +1337,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options, callback2);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback2);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options, callback2);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback2);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1385,12 +1385,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options, callback2);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback2);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options, callback2);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback2);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1454,14 +1454,14 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback4);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback4);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOffSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1524,14 +1524,14 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed", callback3);
-            inputConsumer.off("keyPressed", callback3);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed(callback3);
+            inputConsumer.offKeyPressed(callback3);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1594,12 +1594,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1633,7 +1633,7 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed", callback);
+            inputConsumer.offKeyPressed(callback);
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1671,9 +1671,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1711,9 +1711,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1751,9 +1751,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1791,9 +1791,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1831,9 +1831,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1871,9 +1871,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
