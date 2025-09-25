@@ -38,6 +38,7 @@ export const setPositionEdges_top_left_bottom_right: () => void;
 export const getPositionEdges: ()=>string;
 export const reSetPositionEdges: () => void;
 export const copyPositionEdges: () => void;
+export const textContentAlignTest: (a: string) => void;
 export const createPixelRoundNativeRoot: (content: NodeContent, tag: string) => void;
 export const setPixelRound: () => void;
 export const getPixelRound: ()=>string;
