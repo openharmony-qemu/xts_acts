@@ -227,8 +227,17 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-          expect(true).assertTrue()
-          done()
+          notification.getActiveNotifications((err, data) => {
+            if (err) {
+              console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
+              expect(data.length > 0).assertTrue()
+              done()
+            }
+          })
         }
       })
 
@@ -265,9 +274,17 @@ export default function ActsNotificationPublishTest() {
         },
       }
 
-      notification.publish(notificationRequest).then(data => {
+      notification.publish(notificationRequest).then(async (data) => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        await notification.getActiveNotifications().then((data) => {
+          console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
+          expect(data.length > 0).assertTrue()
+          done()
+        }).catch((err) => {
+          console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -322,6 +339,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
+
           expect(true).assertTrue()
           done()
         }
@@ -992,7 +1010,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} getActiveNotifications AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(data.length == 0).assertTrue()
           done()
         }
       })
@@ -1008,7 +1026,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_0900 START`)
       await notification.getActiveNotifications().then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data.length == 0).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
@@ -1064,7 +1082,7 @@ export default function ActsNotificationPublishTest() {
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100 START`)
       let templateName = 'test_templateName'
-      await notification.isSupportTemplate(templateName, (err, data) => {
+      notification.isSupportTemplate(templateName, (err, data) => {
         if (err.code) {
           console.info(`${TAG} isSupportTemplate AsyncCallback err :${JSON.stringify(data)}`)
           expect(false).assertTrue()
@@ -1075,6 +1093,23 @@ export default function ActsNotificationPublishTest() {
           done()
         }
       })
+
+      await sleep(500);
+
+      let templateName1 = 'downloadTemplate'
+      notification.isSupportTemplate(templateName1, (err, data) => {
+        if (err.code) {
+          console.info(`${TAG} isSupportTemplate AsyncCallback err :${JSON.stringify(data)}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isSupportTemplate AsyncCallback success`)
+          expect(data).assertTrue()
+          done()
+        }
+      })
+
+      await sleep(500);
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100 END`)
     })
 
@@ -1089,6 +1124,17 @@ export default function ActsNotificationPublishTest() {
       await notification.isSupportTemplate(templateName).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
         expect(data).assertFalse()
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+
+      let templateName1 = 'downloadTemplate'
+      await notification.isSupportTemplate(templateName1).then((data) => {
+        console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
+        expect(data).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1137,6 +1183,8 @@ export default function ActsNotificationPublishTest() {
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0400 END`)
     })
+
+
 
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST END')
   })

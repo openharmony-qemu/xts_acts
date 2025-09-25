@@ -591,6 +591,9 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0400 END`)
     })
 
+
+
+
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300
      * @tc.name      : function isSupportTemplate(num: number): Promise<boolean>
@@ -599,9 +602,24 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300 START`)
       let num = 1
+
+      notificationManager.isSupportTemplate(num, (err, data) => {
+        if (err) {
+          console.info(`${TAG} isSupportTemplate AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
+          expect(data).assertFalse()
+          done()
+        }
+      })
+
+      await Utils.sleep(500);
+
       await notificationManager.isSupportTemplate(num).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
