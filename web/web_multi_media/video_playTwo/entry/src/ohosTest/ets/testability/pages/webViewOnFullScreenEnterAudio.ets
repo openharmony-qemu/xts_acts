@@ -69,7 +69,7 @@ struct webViewOnFullScreenEnterInfoAudio {
                   this.isReceive = -1;
                   switch (this.str) {
                     case 'emitOnfullscreenenterAudioInfo': {
-                        sendEventByKey('TestwebViewOnFullScreenEnterAudioInfo', 300420, '');
+                        sendEventByKey('TestwebViewOnFullScreenEnterAudioInfo', 10, '');
                         await Utils.sleep(2000);
                         try {
                             this.controller.runJavaScript('elementFullScreen()', (error, result) => {

@@ -43,8 +43,6 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         } catch (err) {
             console.error("push webViewSdkSchemeHandlerThree page error:" + err);
         }
-      // let driver = Driver.create();
-      // await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerThreeButton"),10000);
       console.log("waitForComponent webViewSdkSchemeHandlerThreeButton==>");
       done();
     });
@@ -204,9 +202,6 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
-      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
-      done();
     })
   })
 }
