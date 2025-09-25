@@ -554,7 +554,7 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         let result: number | undefined;
         try {
-          const promise1: Promise<Promise<number>> = Promise.resolve<Promise<number>>(
+          const promise1: Promise<number> = Promise.resolve<Promise<number>>(
             new Promise<number>((resolve) => {
               setTimeout(() => resolve(10), 100);
             })
@@ -726,7 +726,7 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         let result: number | undefined;
         try {
-          const promise1: Promise<Promise<number>> = Promise.reject<Promise<number>>(Error('10'));
+          const promise1: Promise<number> = Promise.reject<Promise<number>>(Error('10'));
           result = await promise1 as number;
         } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
