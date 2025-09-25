@@ -20,6 +20,10 @@ export default function ActsCommonEventManagerSubscribeTest() {
     let TAG = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST START`)
 
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+
     /*
      * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1900
      * @tc.name: isStickyCommonEvent isOrderedCommonEvent abortCommonEvent getAbortCommonEvent clearAbortCommonEvent
@@ -347,7 +351,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
         priority: 100
       };
 
-      function SubscribeCB(err, data) {
+      let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
+      commonEventManager.subscribe(subscriber, async (err, data) =>  {
         if (err) {
           expect(false).assertTrue()
           done()
@@ -425,6 +430,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               expect(abortEvent).assertTrue()
             }
           })
+          await sleep(1000)
 
           console.info(`getAbortCommonEventSync_11 isaborted ${isaborted}`)
           subscriber.clearAbortCommonEventSync()
@@ -440,10 +446,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           })
         }
-      }
-
-      let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
-      commonEventManager.subscribe(subscriber, SubscribeCB)
+      })
 
       function publishCB(err) {
         if (err) {
