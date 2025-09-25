@@ -82,7 +82,7 @@ export default function notificationRequestTest() {
       await notificationManager.isNotificationEnabled().then((data: boolean) => {
           console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertFalse();
-        }).catch((err: base.BusinessError) => {
+        }).catch((err: BusinessError) => {
           console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
           expect(true).assertFalse();
           done()
@@ -130,7 +130,7 @@ export default function notificationRequestTest() {
       await notificationManager.isNotificationEnabled().then((data: boolean) => {
           console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertTrue();
-        }).catch((err: base.BusinessError) => {
+        }).catch((err: BusinessError) => {
           console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
           expect(true).assertFalse();
         });
