@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { taskpool, collections} from '@kit.ArkTS'
+import { taskpool, collections, TreeSet} from '@kit.ArkTS'
 import { BusinessError } from '@ohos.base'
 import { StrCat, A, B, printStrArgs, printArgs, multiplyFunc, getLongString } from './exportFunclist'
 import HashMap from '@ohos.util.HashMap';
@@ -386,6 +386,12 @@ export function SetTestFunc(set: collections.Set<number>) {
   "use concurrent"
   set.add(4);
   return set;
+}
+
+export function TreeSetTestFunc(treeSet: TreeSet<number>): TreeSet<number> {
+  "use concurrent"
+  treeSet.add(4);
+  return treeSet;
 }
 
 export function MapTestFunc(map: collections.Map<number, number>) {
