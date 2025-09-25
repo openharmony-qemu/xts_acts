@@ -18,6 +18,7 @@ group("distributeddatamgr") {
     deps = [
       "DataObjectNoPermissionstest:DataObjectNoPermissionstest",
       "IntelligenceApiTest:ActsIntelligenceTest",
+      "KvStoreEtsTestStatic:ActsKvStoreEtsStaticTest",
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
