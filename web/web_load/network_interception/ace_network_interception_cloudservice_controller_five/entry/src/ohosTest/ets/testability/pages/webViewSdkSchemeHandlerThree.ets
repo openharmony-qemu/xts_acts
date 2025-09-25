@@ -249,7 +249,7 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
-                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse008': {
+                  case 'emitSchemeHandlerDidFailCompleteIfNoResponse008': {
                       try {
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
@@ -258,14 +258,13 @@ struct webViewSdkSchemeHandlerThree {
                             resourceHandler.didFail(null, false);
                             console.log(this.emitKey + 'didFail end');
                           } catch (error) {
-                            Utils.emitEvent(Number(error.code), 2025081902);
+                            Utils.emitEvent(Number(error.code), 142500);
                             console.log(this.emitKey + 'error code' + error.code);
                           }
                           return true
                         })
                         this.controller.setWebSchemeHandler('https', this.schemeHandler);
                         this.controller.loadUrl(URL);
-                        await waitForAssert(() => errorCode, check, '17100021', 142500, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
