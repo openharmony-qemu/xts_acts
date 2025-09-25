@@ -345,15 +345,17 @@ export default function VectorStoreTest() {
       try{
         if (res == false) {
           console.info(TAGTEST + "false res =" + res);
-          expect(res == false).assertTrue()
+          expect(res).assertEqual(false);
+          done();
         } else {
           console.info(TAGTEST + "true res111111=" + res);
-          expect(res == true).assertTrue()
-
+          expect(res).assertEqual(true);
+          done();
         }
       }catch(err){
         console.info(TAGTEST + "err.code" + err.code);
         expect().assertFail();
+        done();
       }
       console.info(TAGTEST + " ************* End*************");
     });
