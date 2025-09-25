@@ -611,7 +611,6 @@ export default function ActsNotificationManagerPublishTest() {
         } else {
           console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
           expect(data).assertFalse()
-          done()
         }
       })
 

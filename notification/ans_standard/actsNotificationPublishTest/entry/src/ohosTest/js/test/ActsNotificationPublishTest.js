@@ -228,7 +228,7 @@ export default function ActsNotificationPublishTest() {
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
           notification.getActiveNotifications((err, data) => {
-            if (err) {
+            if (err.code) {
               console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
               expect(false).assertTrue()
               done()

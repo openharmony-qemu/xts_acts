@@ -69,11 +69,11 @@ export default function notificationRequestTest() {
       notificationManager.isNotificationEnabled((err, data) => {
         if (err) {
           console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-          expect(data).assertFalse();
-        } else {
-          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
           expect(false).assertTrue()
           done()
+        } else {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
+          expect(data).assertFalse();
         }
       });
 
@@ -112,11 +112,11 @@ export default function notificationRequestTest() {
       notificationManager.isNotificationEnabled((err, data) => {
         if (err) {
           console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-          expect(data).assertTrue();
-        } else {
-          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
           expect(false).assertTrue()
           done()
+        } else {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
+          expect(data).assertTrue();
         }
       });
 
