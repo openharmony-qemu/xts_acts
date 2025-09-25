@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export * as ModuleA from './moduleA';
-export * as ModuleB from './moduleB';
+export * as ModuleA from './ModuleA';
+export * as ModuleB from './ModuleB';

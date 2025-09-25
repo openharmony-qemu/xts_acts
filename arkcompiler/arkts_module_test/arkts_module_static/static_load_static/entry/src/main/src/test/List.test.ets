@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import staticExport from './export.test';
-import staticLoadHap from './hap.test';
-import staticLoadSourceHar from './sourceHar.test';
-import staticLoadRemoteHar from './remoteHar.test';
-import staticImport from './staticImport.test';
+import staticExport from './Export.test';
+import staticLoadHap from './Hap.test';
+import staticLoadSourceHar from './SourceHar.test';
+import staticLoadRemoteHar from './RemoteHar.test';
+import staticImport from './StaticImport.test';
 
 export default function testsuite() {
   staticLoadHap();

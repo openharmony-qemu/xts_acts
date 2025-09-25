@@ -20,4 +20,4 @@ let variableName = 'name';
 
 export { variableName };
 
-export * from './moduleA';
+export * from './ModuleA';

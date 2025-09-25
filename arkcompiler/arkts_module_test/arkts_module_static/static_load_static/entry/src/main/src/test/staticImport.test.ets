@@ -16,7 +16,7 @@
 
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import { add as harAdd } from 'har/Index';
-import { add as testAdd } from './test'
+import { add as testAdd } from './Test'
 import hilog from '@ohos.hilog';
 import { Calc, loadLibraryEntry } from '../../ets/pages/Add';
 
@@ -94,7 +94,7 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
+     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0600
      * @tc.name      : testOhosRes
      * @tc.desc      : Import System Native Module
      * @tc.size      : MediumTest
@@ -113,7 +113,7 @@ export default function staticImport() {
       expect(flag).assertEqual('success');
     })
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
+     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0700
      * @tc.name      : testOhosRes
      * @tc.desc      : Import System Native Module
      * @tc.size      : MediumTest
@@ -131,7 +131,7 @@ export default function staticImport() {
       expect(flag).assertEqual('success');
     })
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
+     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0800
      * @tc.name      : testOhosRes
      * @tc.desc      : Import System Native Module
      * @tc.size      : MediumTest

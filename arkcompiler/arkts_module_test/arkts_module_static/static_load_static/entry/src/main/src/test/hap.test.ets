@@ -15,10 +15,11 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from '../../../hypium/index';
-import { add as testAdd } from './testAdd';
-import { subtract as testSubtract } from '../testSubtract';
+import { add as testAdd } from './TestAdd';
+import { subtract as testSubtract } from '../TestSubtract';
 import { multiply as testMultiply } from './fileTest';
 import { ArrayList } from '@kit.ArkTS';
+import hilog from '@ohos.hilog';
 
 export default function staticLoadHap() {
   describe('HapTest', () => {
@@ -110,7 +111,7 @@ export default function staticLoadHap() {
     it('testStaticLoadHap06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testStaticLoadHap06';
       try {
-        expect(true).assertTrue();
+        expect(hilog.LogLevel.DEBUG === 3).assertTrue();
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();

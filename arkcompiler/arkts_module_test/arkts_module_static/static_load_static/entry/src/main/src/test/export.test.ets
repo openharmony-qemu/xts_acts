@@ -15,12 +15,12 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from '../../../hypium/index';
-import { name } from './exportTest/exportTest'
-import { variableName } from './exportTest/exportTest'
-import { variableA } from './exportTest/exportTest'
-import { variableB } from './exportTest/aggregator'
-import { ModuleA } from './exportTest/aggregatorObj'
-import { ModuleB } from './exportTest/index'
+import { name } from './exportTest/ExportTest'
+import { variableName } from './exportTest/ExportTest'
+import { variableA } from './exportTest/ExportTest'
+import { variableB } from './exportTest/Aggregator'
+import { ModuleA } from './exportTest/AggregatorObj'
+import { ModuleB } from './exportTest/Index'
 
 export default function staticExport() {
   describe('StaticExportTest', () => {
