@@ -330,6 +330,33 @@ export default function VectorStoreTest() {
       }
       console.info(TAGTEST + " ************* End*************");
     });
+    /**
+     * @tc.name VectorStoreTest0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0600
+     * @tc.desc isVectorSupported test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('VectorStoreTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let TAGTEST = TAG + " VectorStoreTest0600 ";
+      const res = data_Rdb.isVectorSupported();
+      console.info(TAGTEST + "res=" + res);
+      try{
+        if (res == false) {
+          console.info(TAGTEST + "false res =" + res);
+          expect(res == false).assertTrue()
+        } else {
+          console.info(TAGTEST + "true res111111=" + res);
+          expect(res == true).assertTrue()
+
+        }
+      }catch(err){
+        console.info(TAGTEST + "err.code" + err.code);
+        expect().assertFail();
+      }
+      console.info(TAGTEST + " ************* End*************");
+    });
     console.info(TAG + " *************Unit Test End*************");
   })
 }
