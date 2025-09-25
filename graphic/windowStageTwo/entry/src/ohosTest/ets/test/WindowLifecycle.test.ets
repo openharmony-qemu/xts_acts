@@ -1836,11 +1836,13 @@ export default function WindowLifecycle() {
       let caseName = "testOnWindowStageLifecycleEventRegisterOne";
       console.log(caseName + " begin");
       let timer = 0;
+      let arr:Array<window.WindowStageLifecycleEventType> = [];
       let cb1 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
         console.log(caseName + " callback: " + JSON.stringify(WindowStageLifecycleEvent));
+        arr.push(WindowStageLifecycleEvent);
+        console.log('windowTest arr: ' + JSON.stringify(arr));
         timer++;
         console.log(caseName + " callback: timer :" + timer);
-
       }
       try {
         windowStage.on('windowStageLifecycleEvent', cb1);
@@ -1854,6 +1856,11 @@ export default function WindowLifecycle() {
           await sleep(1000);
           console.log(caseName + " callback: timer2 :" + timer);
           expect(timer).assertEqual(4);
+          expect(arr.length).assertEqual(4);
+          expect(arr[0]).assertEqual(window.WindowStageLifecycleEventType.SHOWN);
+          expect(arr[1]).assertEqual(window.WindowStageLifecycleEventType.RESUMED);
+          expect(arr[2]).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
+          expect(arr[3]).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
           windowStage.off('windowStageLifecycleEvent', cb1);
           done();
 
