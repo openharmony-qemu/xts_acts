@@ -37,18 +37,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "library",
-      "srcPath": "./library",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
     }
   ]
 }
