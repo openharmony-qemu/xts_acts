@@ -20,23 +20,26 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 
+const EVENT_ID_SET_SUITE_KEY = 125001;
 @Entry
 @Component
 struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State flag:boolean = false
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +48,7 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -62,11 +66,12 @@ struct WebAttributeTest {
         Button("web click")
           .key('WebAttributeTestButton')
           .onClick(async () => {
+            await Utils.waitForExist(()=>this.isReceive, 'WebAttributeTestButtonIsReceive', 1, 1000);
+            this.isReceive = -1;
             console.info("key==>" + this.str)
             switch (this.str) {
               case "emitOnRenderExited": {
                 try {
-                  await Utils.sleep(2000)
                   this.controller.loadUrl('chrome://crash/')
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -80,9 +85,7 @@ struct WebAttributeTest {
                 console.log("RenderExitReason3", RenderExitReason.ProcessOom)
                 console.log("RenderExitReason4", RenderExitReason.ProcessExitUnknown)
                 this.flag = true;
-                await Utils.sleep(2000)
                 this.controller.loadUrl("chrome://crash/")
-                await Utils.sleep(2000)
                 break;
               }
             }
@@ -95,13 +98,17 @@ struct WebAttributeTest {
                 if(!this.flag) {
                     console.info("onRenderExited==>" + event.renderExitReason);
                     this.controller.loadUrl("resource://rawfile/index.html");
-                    Utils.emitEvent(event.renderExitReason, 60106);
+                    Utils.emitEvent(event.renderExitReason, 125010);
                 }else {
                     console.info("onRenderExited==>" + event.renderExitReason);
                     this.controller.loadUrl("resource://rawfile/index.html");
-                    Utils.emitEvent(event.renderExitReason, 901);
+                    Utils.emitEvent(event.renderExitReason, 125020);
                 }
             }
+          })
+          .onPageEnd((event) => {
+            console.log('web pageEnd==>' + event.url);
+            this.isPageEnd = 1;
           })
       }
     }

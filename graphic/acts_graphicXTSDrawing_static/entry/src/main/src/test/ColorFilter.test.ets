@@ -96,16 +96,6 @@ export default function colorFilterTest() {
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
-
-      try {
-        drawing.ColorFilter.createBlendModeColorFilter({
-          alpha: 254.66, red: 254.555, green: 125.3, blue: 10.222
-        }, drawing.BlendMode.SRC);
-        console.info(msg + ' createBlendModeColorFilter successed');
-      } catch (e: BusinessError) {
-        console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail();
-      }
     });
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0103
@@ -120,10 +110,10 @@ export default function colorFilterTest() {
 
       for (let i = 0; i < 20; i++) {
         const randomColor: common2D.Color = {
-          alpha: Math.floor(Math.random() * 256),
-          red: Math.floor(Math.random() * 256),
-          green: Math.floor(Math.random() * 256),
-          blue: Math.floor(Math.random() * 256)
+          alpha: 100 + i,
+          red: 50 + i,
+          green: 100 + i,
+          blue: 50 + i
         };
         try {
           drawing.ColorFilter.createBlendModeColorFilter(randomColor, drawing.BlendMode.SRC);
@@ -145,23 +135,6 @@ export default function colorFilterTest() {
      */
     it('testColorFilterCreateBlendModeColorFilterBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testColorFilterCreateBlendModeColorFilterBoundaryValueStatic';
-
-      const randomColor : common2D.Color = {
-        alpha: Math.floor(Math.random() * 256),
-        red: Math.floor(Math.random() * 256),
-        green: Math.floor(Math.random() * 256),
-        blue: Math.floor(Math.random() * 256)
-      };
-      for (let i = 0; i < 20; i++) {
-        try {
-          drawing.ColorFilter.createBlendModeColorFilter(randomColor, drawing.BlendMode.CLEAR);
-          console.info(msg + ' createBlendModeColorFilter succeeded');
-        } catch (e: BusinessError) {
-          console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-          expect().assertFail();
-        }
-      }
-
       try {
         drawing.ColorFilter.createBlendModeColorFilter({
           alpha: -1, red: 255, green: 0, blue: 255

@@ -17,8 +17,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
 // @ts-nocheck
+const driver = Driver.create();
+
 let emitKey = ""
+const EVENT_ID_SET_EMIT_KEY = 362000;
 
 export default function webViewNativeMediaPlayerHandlerEnhanced() {
   describe('ActsAceWebViewMediaPlayerHandlerEnhanced', () => {
@@ -27,52 +31,28 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
         let options : router.RouterOptions = {
             url: 'testability/pages/webViewNativeMediaPlayerHandlerEnhanced',
         }
-        
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages));
             if (!("webViewNativeMediaPlayerHandlerEnhanced" == pages.name)) {
                 console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewNativeMediaPlayerHandlerEnhanced page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"), 10000);
+        console.log("waitForComponent webViewNativeMediaPlayerHandlerEnhanced");
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
-        done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
       done();
     })
 
-
-
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2150
      *@tc.name testWebViewNativeMediaPlayerVideoMultiSource
      *@tc.desc test NativeMediaPlayerVideoMultiSource
@@ -82,12 +62,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerVideoMultiSource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerVideoMultiSource"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewNativeMediaPlayerShouldOverlayFalse", true, 1540, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerShouldOverlayFalse", true, 362010, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_6600
      *@tc.name testWebViewNativeMediaPlayerEnterFullScreen
      *@tc.desc test NativeMediaPlayerEnterFullScreen
@@ -97,12 +77,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerEnterFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebViewNativeMediaPlayerEnterFullScreen"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebViewNativeMediaPlayerEnterFullScreen", true, 1541, done);
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebViewNativeMediaPlayerEnterFullScreen", true, 362020, done);
         sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_6800
      *@tc.name testWebViewNativeMediaPlayerExitFullScreen
      *@tc.desc test NativeMediaPlayerExitFullScreen
@@ -112,11 +92,11 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerExitFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerExitFullScreen"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewNativeMediaPlayerExitFullScreen", true, 1542, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerExitFullScreen", true, 362030, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_7000
      *@tc.name testWebViewNativeMediaPlayerHandleErrorRelease
      *@tc.desc test NativeMediaPlayerHandleErrorRelease
@@ -126,12 +106,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerHandleErrorRelease', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaHandleErrorRelease"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewNativeMediaPlayerHandleErrorRelease", true, 1543, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerHandleErrorRelease", true, 362040, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0300
      *@tc.name testWebViewNativeMediaPlayerShouldOverlayFalse
      *@tc.desc test NativeMediaPlayerShouldOverlay_false
@@ -141,12 +121,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerShouldOverlayFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerShouldOverlayFalse"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewNativeMediaPlayerShouldOverlayFalse", true, 1544, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerShouldOverlayFalse", true, 362050, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_7500
      *@tc.name testWebViewNativeMediaPlayerHandleNetworkStateChangedIDLE
      *@tc.desc test NativeMediaPlayerShouldOverlay_false
@@ -156,8 +136,8 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
      */
     it('testWebViewNativeMediaPlayerHandleNetworkStateChangedIDLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaHandleNetworkStateChangedIDLE"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewNativeMediaPlayerHandleNetworkStateChangedIDLE", true, 1545, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerHandleNetworkStateChangedIDLE", true, 362060, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
   })

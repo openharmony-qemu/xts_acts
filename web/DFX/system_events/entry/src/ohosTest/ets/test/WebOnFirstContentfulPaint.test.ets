@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 127101;
+const driver = Driver.create();
 
 export default function webOnFirstContentfulPaint() {
   describe('WebOnFirstContentfulPaintTest', () => {
@@ -32,9 +37,9 @@ export default function webOnFirstContentfulPaint() {
         console.info("get WebOnFirstContentfulPaint state success " + JSON.stringify(pages));
         if (!("WebOnFirstContentfulPaint" == pages.name)) {
           console.info("get WebOnFirstContentfulPaint state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebOnFirstContentfulPaint page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebOnFirstContentfulPaintButton"), 10000);
+          console.info("push WebOnFirstContentfulPaint page success ");
         }
       } catch (err) {
         console.error("push WebOnFirstContentfulPaint page error: " + err);
@@ -44,18 +49,10 @@ export default function webOnFirstContentfulPaint() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebOnFirstContentfulPaintTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOnFirstContentfulPaintTest afterEach end");
       done();
     })
 
@@ -68,10 +65,12 @@ export default function webOnFirstContentfulPaint() {
     * @tc.level       : Level 1
     */
     it('testOnFirstContentfulPaint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnFirstContentfulPaint001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnFirstContentfulPaint001", false, 520, done);
-      sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
+      Utils.emitEvent("emitOnFirstContentfulPaint001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testOnFirstContentfulPaint001", false, 127110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnFirstContentfulPaintButton", "testOnFirstContentfulPaint001");
+      await Utils.waitForExist(() => isReturn, "testOnFirstContentfulPaint001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -83,10 +82,12 @@ export default function webOnFirstContentfulPaint() {
     * @tc.level       : Level 1
     */
     it('testOnFirstContentfulPaint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnFirstContentfulPaint002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnFirstContentfulPaint002", true, 522, done);
-      sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
+      Utils.emitEvent("emitOnFirstContentfulPaint002", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testOnFirstContentfulPaint002", true, 127120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnFirstContentfulPaintButton", "testOnFirstContentfulPaint002");
+      await Utils.waitForExist(() => isReturn, "testOnFirstContentfulPaint002" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 123301;
+const driver = Driver.create();
 
 export default function webMessagePortErrorCode() {
 
@@ -34,9 +39,9 @@ export default function webMessagePortErrorCode() {
         console.info("get webMessagePortErrorCode state success " + JSON.stringify(pages));
         if (!("webMessagePortErrorCode" == pages.name)) {
           console.info("get webMessagePortErrorCode state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webMessagePortErrorCode page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebMessagePortErrorCodeButton"), 10000);
+          console.info("push webMessagePortErrorCode page success ");
         }
       } catch (err) {
         console.error("push webMessagePortErrorCode page error: " + err);
@@ -54,13 +59,6 @@ export default function webMessagePortErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebMessagePortErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebMessagePortErrorCodeTestSuite afterEach end");
-      done();
-    })
-
     /*
     * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGEEVENTEXT_0100
     * @tc.name       : testPostMessageEventExtError001
@@ -70,10 +68,9 @@ export default function webMessagePortErrorCode() {
     * @tc.level      : Level 0
     */
     it('testPostMessageEventExtError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('testPostMessageEventExtError001', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testPostMessageEventExtError001', '17100010', 2025042204, done);
-      sendEventByKey('WebMessagePortErrorCodeButton', 10, '');
+      Utils.emitEvent("testPostMessageEventExtError001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testPostMessageEventExtError001", '17100010', 123310, done);
+      Utils.waitAndClickComponent(driver, "WebMessagePortErrorCodeButton");
     })
 
     /*
@@ -85,10 +82,9 @@ export default function webMessagePortErrorCode() {
     * @tc.level      : Level 2
     */
     it('testCreateWebMessagePortsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent('testCreateWebMessagePortsError001', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testCreateWebMessagePortsError001', '17100001', 2025042205, done);
-      sendEventByKey('WebMessagePortErrorCodeButton', 10, '');
+      Utils.emitEvent("testCreateWebMessagePortsError001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testCreateWebMessagePortsError001", '17100001', 123320, done);
+      Utils.waitAndClickComponent(driver, "WebMessagePortErrorCodeButton");
     })
 
   })

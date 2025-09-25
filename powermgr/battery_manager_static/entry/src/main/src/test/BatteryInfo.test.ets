@@ -18,8 +18,8 @@ import hilog from '@ohos.hilog'
 import batteryInfo from '@ohos.batteryInfo'
 import { BusinessError } from '@ohos.base'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'BatteryInfoStaticTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'BatteryInfoTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function BatteryInfoTest() {
 
@@ -33,16 +33,16 @@ export default function BatteryInfoTest() {
      * @tc.type: Function
      * @tc.size: MediumTest
      */
-    it("testBatteryInfoTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testBatteryInfoTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBatteryInfoTest_static_0100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let soc = batteryInfo.batterySOC();
+          let soc: int = batteryInfo.batterySOC();
           hilog.info(domain, tag, `${TAG} soc: ${JSON.stringify(soc)}`);
           hilog.info(domain, tag, `${TAG} soc type: ${typeof soc}`);
-          expect(new Number(soc)).assertLargerOrEqual(0);
-          expect(new Number(soc)).assertLessOrEqual(100);
+          expect(soc).assertLargerOrEqual(0);
+          expect(soc).assertLessOrEqual(100);
           expect(typeof soc).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -60,15 +60,15 @@ export default function BatteryInfoTest() {
      * @tc.type: Function
      * @tc.size: MediumTest
      */
-    it("testBatteryInfoTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testBatteryInfoTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBatteryInfoTest_static_0200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let chargingStatus = batteryInfo.chargingStatus();
+          let chargingStatus: number = batteryInfo.chargingStatus();
           hilog.info(domain, tag, `${TAG} chargingStatus: ${JSON.stringify(chargingStatus)}`);
-          expect(new Number(chargingStatus)).assertLargerOrEqual(batteryInfo.BatteryChargeState.NONE);
-          expect(new Number(chargingStatus)).assertLessOrEqual(batteryInfo.BatteryChargeState.FULL);
+          expect(chargingStatus).assertLargerOrEqual(batteryInfo.BatteryChargeState.NONE);
+          expect(chargingStatus).assertLessOrEqual(batteryInfo.BatteryChargeState.FULL);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -90,10 +90,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let healthStatus = batteryInfo.healthStatus();
+          let healthStatus: number = batteryInfo.healthStatus();
           hilog.info(domain, tag, `${TAG} healthStatus: ${JSON.stringify(healthStatus)}`);
-          expect(new Number(healthStatus)).assertLargerOrEqual(batteryInfo.BatteryHealthState.UNKNOWN);
-          expect(new Number(healthStatus)).assertLessOrEqual(batteryInfo.BatteryHealthState.DEAD);
+          expect(healthStatus).assertLargerOrEqual(batteryInfo.BatteryHealthState.UNKNOWN);
+          expect(healthStatus).assertLessOrEqual(batteryInfo.BatteryHealthState.DEAD);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -110,15 +110,15 @@ export default function BatteryInfoTest() {
      * @tc.type: Function
      * @tc.size: MediumTest
      */
-    it("testBatteryInfoTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testBatteryInfoTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBatteryInfoTest_static_0400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let pluggedType = batteryInfo.pluggedType();
+          let pluggedType: number = batteryInfo.pluggedType();
           hilog.info(domain, tag, `${TAG} pluggedType: ${JSON.stringify(pluggedType)}`);
-          expect(new Number(pluggedType)).assertLargerOrEqual(batteryInfo.BatteryPluggedType.NONE);
-          expect(new Number(pluggedType)).assertLessOrEqual(batteryInfo.BatteryPluggedType.WIRELESS);
+          expect(pluggedType).assertLargerOrEqual(batteryInfo.BatteryPluggedType.NONE);
+          expect(pluggedType).assertLessOrEqual(batteryInfo.BatteryPluggedType.WIRELESS);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -140,10 +140,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let voltage = batteryInfo.voltage();
+          let voltage: int = batteryInfo.voltage();
           hilog.info(domain, tag, `${TAG} voltage: ${JSON.stringify(voltage)}`);
           hilog.info(domain, tag, `${TAG} voltage type: ${typeof voltage}`);
-          expect(new Number(voltage)).assertLargerOrEqual(-1);
+          expect(voltage).assertLargerOrEqual(-1);
           expect(typeof voltage).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -166,7 +166,7 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let technology = batteryInfo.technology();
+          let technology: string = batteryInfo.technology();
           hilog.info(domain, tag, `${TAG} technology: ${JSON.stringify(technology)}`);
           hilog.info(domain, tag, `${TAG} technology type: ${typeof technology}`);
           expect(typeof technology).assertEqual('string');
@@ -191,10 +191,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryTemperature = batteryInfo.batteryTemperature();
+          let batteryTemperature: int = batteryInfo.batteryTemperature();
           hilog.info(domain, tag, `${TAG} batteryTemperature: ${JSON.stringify(batteryTemperature)}`);
           hilog.info(domain, tag, `${TAG} batteryTemperature type: ${typeof batteryTemperature}`);
-          expect(new Number(batteryTemperature)).assertLessOrEqual(700);
+          expect(batteryTemperature).assertLessOrEqual(700);
           expect(typeof batteryTemperature).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -217,7 +217,7 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isBatteryPresent = batteryInfo.isBatteryPresent();
+          let isBatteryPresent: boolean = batteryInfo.isBatteryPresent();
           hilog.info(domain, tag, `${TAG} batteryTemperature: ${JSON.stringify(isBatteryPresent)}`);
           hilog.info(domain, tag, `${TAG} batteryTemperature type: ${typeof isBatteryPresent}`);
           expect(typeof isBatteryPresent).assertEqual('boolean');
@@ -242,10 +242,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_0900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryLevel = batteryInfo.batteryCapacityLevel();
+          let batteryLevel: number = batteryInfo.batteryCapacityLevel();
           hilog.info(domain, tag, `${TAG} batteryLevel: ${JSON.stringify(batteryLevel)}`);
-          expect(new Number(batteryLevel)).assertLargerOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_FULL);
-          expect(new Number(batteryLevel)).assertLessOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_SHUTDOWN);
+          expect(batteryLevel).assertLargerOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_FULL);
+          expect(batteryLevel).assertLessOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_SHUTDOWN);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -267,11 +267,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let nowCurrent = batteryInfo.nowCurrent();
+          let nowCurrent: int = batteryInfo.nowCurrent();
           hilog.info(domain, tag, `${TAG} nowCurrent: ${JSON.stringify(nowCurrent)}`);
           hilog.info(domain, tag, `${TAG} nowCurrent type: ${typeof nowCurrent}`);
-          expect(new Number(nowCurrent)).assertLargerOrEqual(-10000);
-          expect(new Number(nowCurrent)).assertLessOrEqual(10000);
+          expect(nowCurrent).assertLargerOrEqual(-10000);
+          expect(nowCurrent).assertLessOrEqual(10000);
           expect(typeof nowCurrent).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -294,10 +294,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let totalEnergyInfo = batteryInfo.totalEnergy();
+          let totalEnergyInfo: int = batteryInfo.totalEnergy();
           hilog.info(domain, tag, `${TAG} totalEnergyInfo: ${JSON.stringify(totalEnergyInfo)}`);
           hilog.info(domain, tag, `${TAG} totalEnergyInfo type: ${typeof totalEnergyInfo}`);
-          expect(new Number(totalEnergyInfo)).assertEqual(-1);
+          expect(totalEnergyInfo).assertEqual(-1);
           expect(typeof totalEnergyInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -320,12 +320,12 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let estimatedRemainingChargeTimeInfo = batteryInfo.estimatedRemainingChargeTime();
+          let estimatedRemainingChargeTimeInfo: long = batteryInfo.estimatedRemainingChargeTime();
           hilog.info(domain, tag,
             `${TAG} estimatedRemainingChargeTimeInfo: ${JSON.stringify(estimatedRemainingChargeTimeInfo)}`);
           hilog.info(domain, tag,
             `${TAG} estimatedRemainingChargeTimeInfo type: ${typeof estimatedRemainingChargeTimeInfo}`);
-          expect(new Number(estimatedRemainingChargeTimeInfo)).assertEqual(-1);
+          expect(estimatedRemainingChargeTimeInfo).assertEqual(-1);
           expect(typeof estimatedRemainingChargeTimeInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -348,10 +348,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let remainingEnergyInfo = batteryInfo.remainingEnergy();
+          let remainingEnergyInfo: int = batteryInfo.remainingEnergy();
           hilog.info(domain, tag, `${TAG} remainingEnergyInfo: ${JSON.stringify(remainingEnergyInfo)}`);
           hilog.info(domain, tag, `${TAG} remainingEnergyInfo type: ${typeof remainingEnergyInfo}`);
-          expect(new Number(remainingEnergyInfo)).assertEqual(-1);
+          expect(remainingEnergyInfo).assertEqual(-1);
           expect(typeof remainingEnergyInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
@@ -374,9 +374,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryPluggedTypeNone = batteryInfo.BatteryPluggedType.NONE;
+          let batteryPluggedTypeNone: number = batteryInfo.BatteryPluggedType.NONE;
           hilog.info(domain, tag, `${TAG} batteryPluggedTypeNone: ${JSON.stringify(batteryPluggedTypeNone)}`);
-          expect(new Number(batteryPluggedTypeNone)).assertEqual(0);
+          expect(batteryPluggedTypeNone).assertEqual(0);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -398,9 +398,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryPluggedTypeAc = batteryInfo.BatteryPluggedType.AC;
+          let batteryPluggedTypeAc: number = batteryInfo.BatteryPluggedType.AC;
           hilog.info(domain, tag, `${TAG} batteryPluggedTypeAc: ${JSON.stringify(batteryPluggedTypeAc)}`);
-          expect(new Number(batteryPluggedTypeAc)).assertEqual(1);
+          expect(batteryPluggedTypeAc).assertEqual(1);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -422,9 +422,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryPluggedTypeUsb = batteryInfo.BatteryPluggedType.USB;
+          let batteryPluggedTypeUsb: number = batteryInfo.BatteryPluggedType.USB;
           hilog.info(domain, tag, `${TAG} batteryPluggedTypeUsb: ${JSON.stringify(batteryPluggedTypeUsb)}`);
-          expect(new Number(batteryPluggedTypeUsb)).assertEqual(2);
+          expect(batteryPluggedTypeUsb).assertEqual(2);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -446,9 +446,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryPluggedTypeWireless = batteryInfo.BatteryPluggedType.WIRELESS;
+          let batteryPluggedTypeWireless: number = batteryInfo.BatteryPluggedType.WIRELESS;
           hilog.info(domain, tag, `${TAG} batteryPluggedTypeWireless: ${JSON.stringify(batteryPluggedTypeWireless)}`);
-          expect(new Number(batteryPluggedTypeWireless)).assertEqual(3);
+          expect(batteryPluggedTypeWireless).assertEqual(3);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -470,9 +470,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryChargeStateNone = batteryInfo.BatteryChargeState.NONE;
+          let batteryChargeStateNone: number = batteryInfo.BatteryChargeState.NONE;
           hilog.info(domain, tag, `${TAG} batteryChargeStateNone: ${JSON.stringify(batteryChargeStateNone)}`);
-          expect(new Number(batteryChargeStateNone)).assertEqual(0);
+          expect(batteryChargeStateNone).assertEqual(0);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -494,9 +494,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_1900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryChargeStateEnable = batteryInfo.BatteryChargeState.ENABLE;
+          let batteryChargeStateEnable: number = batteryInfo.BatteryChargeState.ENABLE;
           hilog.info(domain, tag, `${TAG} batteryChargeStateEnable: ${JSON.stringify(batteryChargeStateEnable)}`);
-          expect(new Number(batteryChargeStateEnable)).assertEqual(1);
+          expect(batteryChargeStateEnable).assertEqual(1);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -518,9 +518,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryChargeStateDisable = batteryInfo.BatteryChargeState.DISABLE;
+          let batteryChargeStateDisable: number = batteryInfo.BatteryChargeState.DISABLE;
           hilog.info(domain, tag, `${TAG} batteryChargeStateDisable: ${JSON.stringify(batteryChargeStateDisable)}`);
-          expect(new Number(batteryChargeStateDisable)).assertEqual(2);
+          expect(batteryChargeStateDisable).assertEqual(2);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -542,9 +542,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryChargeStateFull = batteryInfo.BatteryChargeState.FULL;
+          let batteryChargeStateFull: number = batteryInfo.BatteryChargeState.FULL;
           hilog.info(domain, tag, `${TAG} batteryChargeStateFull: ${JSON.stringify(batteryChargeStateFull)}`);
-          expect(new Number(batteryChargeStateFull)).assertEqual(3);
+          expect(batteryChargeStateFull).assertEqual(3);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -566,9 +566,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateUnknown = batteryInfo.BatteryHealthState.UNKNOWN;
+          let batteryHealthStateUnknown: number = batteryInfo.BatteryHealthState.UNKNOWN;
           hilog.info(domain, tag, `${TAG} batteryHealthStateUnknown: ${JSON.stringify(batteryHealthStateUnknown)}`);
-          expect(new Number(batteryHealthStateUnknown)).assertEqual(0);
+          expect(batteryHealthStateUnknown).assertEqual(0);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -590,9 +590,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateGood = batteryInfo.BatteryHealthState.GOOD;
+          let batteryHealthStateGood: number = batteryInfo.BatteryHealthState.GOOD;
           hilog.info(domain, tag, `${TAG} batteryHealthStateGood: ${JSON.stringify(batteryHealthStateGood)}`);
-          expect(new Number(batteryHealthStateGood)).assertEqual(1);
+          expect(batteryHealthStateGood).assertEqual(1);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -614,9 +614,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateOverheat = batteryInfo.BatteryHealthState.OVERHEAT;
+          let batteryHealthStateOverheat: number = batteryInfo.BatteryHealthState.OVERHEAT;
           hilog.info(domain, tag, `${TAG} batteryHealthStateOverheat: ${JSON.stringify(batteryHealthStateOverheat)}`);
-          expect(new Number(batteryHealthStateOverheat)).assertEqual(2);
+          expect(batteryHealthStateOverheat).assertEqual(2);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -638,10 +638,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateOvervoltage = batteryInfo.BatteryHealthState.OVERVOLTAGE;
+          let batteryHealthStateOvervoltage: number = batteryInfo.BatteryHealthState.OVERVOLTAGE;
           hilog.info(domain, tag,
             `${TAG} batteryHealthStateOvervoltage: ${JSON.stringify(batteryHealthStateOvervoltage)}`);
-          expect(new Number(batteryHealthStateOvervoltage)).assertEqual(3);
+          expect(batteryHealthStateOvervoltage).assertEqual(3);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -663,9 +663,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateCold = batteryInfo.BatteryHealthState.COLD;
+          let batteryHealthStateCold: number = batteryInfo.BatteryHealthState.COLD;
           hilog.info(domain, tag, `${TAG} batteryHealthStateCold: ${JSON.stringify(batteryHealthStateCold)}`);
-          expect(new Number(batteryHealthStateCold)).assertEqual(4);
+          expect(batteryHealthStateCold).assertEqual(4);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -687,9 +687,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryHealthStateDead = batteryInfo.BatteryHealthState.DEAD;
+          let batteryHealthStateDead: number = batteryInfo.BatteryHealthState.DEAD;
           hilog.info(domain, tag, `${TAG} batteryHealthStateDead: ${JSON.stringify(batteryHealthStateDead)}`);
-          expect(new Number(batteryHealthStateDead)).assertEqual(5);
+          expect(batteryHealthStateDead).assertEqual(5);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -711,9 +711,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelFull = batteryInfo.BatteryCapacityLevel.LEVEL_FULL;
+          let batteryCapacityLevelFull: number = batteryInfo.BatteryCapacityLevel.LEVEL_FULL;
           hilog.info(domain, tag, `${TAG} batteryCapacityLevelFull: ${JSON.stringify(batteryCapacityLevelFull)}`);
-          expect(new Number(batteryCapacityLevelFull)).assertEqual(0);
+          expect(batteryCapacityLevelFull).assertEqual(1);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -735,9 +735,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_2900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelHigh = batteryInfo.BatteryCapacityLevel.LEVEL_HIGH;
+          let batteryCapacityLevelHigh: number = batteryInfo.BatteryCapacityLevel.LEVEL_HIGH;
           hilog.info(domain, tag, `${TAG} batteryCapacityLevelHigh: ${JSON.stringify(batteryCapacityLevelHigh)}`);
-          expect(new Number(batteryCapacityLevelHigh)).assertEqual(1);
+          expect(batteryCapacityLevelHigh).assertEqual(2);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -759,9 +759,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelNormal = batteryInfo.BatteryCapacityLevel.LEVEL_NORMAL;
+          let batteryCapacityLevelNormal: number = batteryInfo.BatteryCapacityLevel.LEVEL_NORMAL;
           hilog.info(domain, tag, `${TAG} batteryCapacityLevelNormal: ${JSON.stringify(batteryCapacityLevelNormal)}`);
-          expect(new Number(batteryCapacityLevelNormal)).assertEqual(2);
+          expect(batteryCapacityLevelNormal).assertEqual(3);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -783,9 +783,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelLow = batteryInfo.BatteryCapacityLevel.LEVEL_LOW;
+          let batteryCapacityLevelLow: number = batteryInfo.BatteryCapacityLevel.LEVEL_LOW;
           hilog.info(domain, tag, `${TAG} batteryCapacityLevelLow: ${JSON.stringify(batteryCapacityLevelLow)}`);
-          expect(new Number(batteryCapacityLevelLow)).assertEqual(3);
+          expect(batteryCapacityLevelLow).assertEqual(4);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -807,9 +807,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelWarning = batteryInfo.BatteryCapacityLevel.LEVEL_WARNING;
+          let batteryCapacityLevelWarning: number = batteryInfo.BatteryCapacityLevel.LEVEL_WARNING;
           hilog.info(domain, tag, `${TAG} batteryCapacityLevelWarning: ${JSON.stringify(batteryCapacityLevelWarning)}`);
-          expect(new Number(batteryCapacityLevelWarning)).assertEqual(4);
+          expect(batteryCapacityLevelWarning).assertEqual(5);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -831,10 +831,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelCritical = batteryInfo.BatteryCapacityLevel.LEVEL_CRITICAL;
+          let batteryCapacityLevelCritical: number = batteryInfo.BatteryCapacityLevel.LEVEL_CRITICAL;
           hilog.info(domain, tag,
             `${TAG} batteryCapacityLevelCritical: ${JSON.stringify(batteryCapacityLevelCritical)}`);
-          expect(new Number(batteryCapacityLevelCritical)).assertEqual(5);
+          expect(batteryCapacityLevelCritical).assertEqual(6);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -856,10 +856,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let batteryCapacityLevelShutdown = batteryInfo.BatteryCapacityLevel.LEVEL_SHUTDOWN;
+          let batteryCapacityLevelShutdown: number = batteryInfo.BatteryCapacityLevel.LEVEL_SHUTDOWN;
           hilog.info(domain, tag,
             `${TAG} batteryCapacityLevelShutdown: ${JSON.stringify(batteryCapacityLevelShutdown)}`);
-          expect(new Number(batteryCapacityLevelShutdown)).assertEqual(6);
+          expect(batteryCapacityLevelShutdown).assertEqual(7);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -881,10 +881,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeySoc = batteryInfo.CommonEventBatteryChangedKey.EXTRA_SOC;
+          let commonEventBatteryChangedKeySoc: string = batteryInfo.CommonEventBatteryChangedKey.EXTRA_SOC;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeySoc: ${JSON.stringify(commonEventBatteryChangedKeySoc)}`);
-          expect(new String(commonEventBatteryChangedKeySoc)).assertEqual('soc');
+          expect(commonEventBatteryChangedKeySoc).assertEqual('soc');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -906,10 +906,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyChargeState = batteryInfo.CommonEventBatteryChangedKey.EXTRA_CHARGE_STATE;
+          let commonEventBatteryChangedKeyChargeState: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_CHARGE_STATE;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyChargeState: ${JSON.stringify(commonEventBatteryChangedKeyChargeState)}`);
-          expect(new String(commonEventBatteryChangedKeyChargeState)).assertEqual('chargeState');
+          expect(commonEventBatteryChangedKeyChargeState).assertEqual('chargeState');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -931,10 +932,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyHealthState = batteryInfo.CommonEventBatteryChangedKey.EXTRA_HEALTH_STATE;
+          let commonEventBatteryChangedKeyHealthState: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_HEALTH_STATE;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyHealthState: ${JSON.stringify(commonEventBatteryChangedKeyHealthState)}`);
-          expect(new String(commonEventBatteryChangedKeyHealthState)).assertEqual('healthState');
+          expect(commonEventBatteryChangedKeyHealthState).assertEqual('healthState');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -956,10 +958,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyPluggedType = batteryInfo.CommonEventBatteryChangedKey.EXTRA_PLUGGED_TYPE;
+          let commonEventBatteryChangedKeyPluggedType: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_PLUGGED_TYPE;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyPluggedType: ${JSON.stringify(commonEventBatteryChangedKeyPluggedType)}`);
-          expect(new String(commonEventBatteryChangedKeyPluggedType)).assertEqual('pluggedType');
+          expect(commonEventBatteryChangedKeyPluggedType).assertEqual('pluggedType');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -981,10 +984,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_3900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyVoltage = batteryInfo.CommonEventBatteryChangedKey.EXTRA_VOLTAGE;
+          let commonEventBatteryChangedKeyVoltage: string = batteryInfo.CommonEventBatteryChangedKey.EXTRA_VOLTAGE;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyVoltage: ${JSON.stringify(commonEventBatteryChangedKeyVoltage)}`);
-          expect(new String(commonEventBatteryChangedKeyVoltage)).assertEqual('voltage');
+          expect(commonEventBatteryChangedKeyVoltage).assertEqual('voltage');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -1006,10 +1009,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyTechnology = batteryInfo.CommonEventBatteryChangedKey.EXTRA_TECHNOLOGY;
+          let commonEventBatteryChangedKeyTechnology: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_TECHNOLOGY;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyTechnology: ${JSON.stringify(commonEventBatteryChangedKeyTechnology)}`);
-          expect(new String(commonEventBatteryChangedKeyTechnology)).assertEqual('technology');
+          expect(commonEventBatteryChangedKeyTechnology).assertEqual('technology');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -1031,10 +1035,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyTemperature = batteryInfo.CommonEventBatteryChangedKey.EXTRA_TEMPERATURE;
+          let commonEventBatteryChangedKeyTemperature: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_TEMPERATURE;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyTemperature: ${JSON.stringify(commonEventBatteryChangedKeyTemperature)}`);
-          expect(new String(commonEventBatteryChangedKeyTemperature)).assertEqual('temperature');
+          expect(commonEventBatteryChangedKeyTemperature).assertEqual('temperature');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -1056,10 +1061,10 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyPresent = batteryInfo.CommonEventBatteryChangedKey.EXTRA_PRESENT;
+          let commonEventBatteryChangedKeyPresent: string = batteryInfo.CommonEventBatteryChangedKey.EXTRA_PRESENT;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyPresent: ${JSON.stringify(commonEventBatteryChangedKeyPresent)}`);
-          expect(new String(commonEventBatteryChangedKeyPresent)).assertEqual('present');
+          expect(commonEventBatteryChangedKeyPresent).assertEqual('present');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -1081,10 +1086,11 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let commonEventBatteryChangedKeyCapacityLevel = batteryInfo.CommonEventBatteryChangedKey.EXTRA_CAPACITY_LEVEL;
+          let commonEventBatteryChangedKeyCapacityLevel: string =
+            batteryInfo.CommonEventBatteryChangedKey.EXTRA_CAPACITY_LEVEL;
           hilog.info(domain, tag,
             `${TAG} commonEventBatteryChangedKeyCapacityLevel: ${JSON.stringify(commonEventBatteryChangedKeyCapacityLevel)}`);
-          expect(new String(commonEventBatteryChangedKeyCapacityLevel)).assertEqual('capacityLevel');
+          expect(commonEventBatteryChangedKeyCapacityLevel).assertEqual('capacityLevel');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -1106,9 +1112,9 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let sceneName = 'batteryInfo';
-          let sceneValue = '1';
-          let result = batteryInfo.setBatteryConfig(sceneName, sceneValue);
+          let sceneName: string = 'batteryInfo';
+          let sceneValue: string = '1';
+          let result: int = batteryInfo.setBatteryConfig(sceneName, sceneValue);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
@@ -1129,8 +1135,8 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let sceneName = 'batteryInfo';
-          let result = batteryInfo.getBatteryConfig(sceneName);
+          let sceneName: string = 'batteryInfo';
+          let result: string = batteryInfo.getBatteryConfig(sceneName);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
@@ -1151,8 +1157,8 @@ export default function BatteryInfoTest() {
         let TAG: string = 'testBatteryInfoTest_static_4600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let sceneName = 'batteryInfo';
-          let result = batteryInfo.isBatteryConfigSupported(sceneName);
+          let sceneName: string = 'batteryInfo';
+          let result: boolean = batteryInfo.isBatteryConfigSupported(sceneName);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);

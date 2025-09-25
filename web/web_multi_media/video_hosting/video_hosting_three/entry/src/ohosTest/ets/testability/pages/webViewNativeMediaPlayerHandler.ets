@@ -24,6 +24,7 @@ import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 import connection from '@ohos.net.connection';
 import router from '@ohos.router';
+import { waitForExist } from '../../test/WaitTest.test';
 
 interface AVPlayerListener {
     onPlaying() : void
@@ -231,7 +232,7 @@ class AVPlayerDemo {
         return result;
     }
     play() {
-        let commandName = 'play';
+        let commandName = '"play"';
         let checkResult = this.checkCommand(commandName, 'pause');
         if (checkResult.ignore) {
             console.log('AVPlayer ${commandName} ignored.');
@@ -251,7 +252,7 @@ class AVPlayerDemo {
     }
     pause() {
         let commandName = 'pause';
-        let checkResult = this.checkCommand(commandName, 'play');
+        let checkResult = this.checkCommand(commandName, '"play"');
         console.log('checkResult: ${JSON.stringify(checkResult)}');
         if (checkResult.ignore) {
             console.log('AVPlayer ${commandName} ignored.');
@@ -324,66 +325,66 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
     }
     handleStatusChanged(status: webview.PlaybackStatus): void {
         console.log("handle PlaybackStatus:")
-        Utils.emitEvent(true, 1312)
+        Utils.emitEvent(true, 300310)
         this.rawHandler.handleStatusChanged(status)
     }
     
     handleVolumeChanged(volume: number): void {
         console.log("handle volume change :" + volume)
         if(volume == 0.5) {
-            Utils.emitEvent(true, 1307)
+            Utils.emitEvent(true, 300270)
         }
         this.rawHandler.handleVolumeChanged(volume)
     }
     
     handleMutedChanged(muted: boolean): void {
         console.log("handle muted:" + muted)
-        Utils.emitEvent(true, 1316)
+        Utils.emitEvent(true, 300300)
         this.rawHandler.handleMutedChanged(muted)
     }
     
     handlePlaybackRateChanged(playbackRate: number): void {
         console.log("handle playbackRate:" + playbackRate)
         if(playbackRate == media.PlaybackSpeed.SPEED_FORWARD_2_00_X) {
-            Utils.emitEvent(true, 1304)
+            Utils.emitEvent(true, 300250)
         }
         this.rawHandler.handlePlaybackRateChanged(playbackRate)
     }
     
     handleDurationChanged(duration: number): void {
         console.log("handle duration :" + duration)
-        Utils.emitEvent(true, 1302)
+        Utils.emitEvent(true, 300230)
         this.rawHandler.handleDurationChanged(duration)
     }
     
     handleTimeUpdate(currentPlayTime: number): void {
         console.log("handle currentPlayTime :" + currentPlayTime)
-        Utils.emitEvent(true, 1300)
+        Utils.emitEvent(true, 300210)
         this.rawHandler.handleTimeUpdate(currentPlayTime)
     }
     
     handleBufferedEndTimeChanged(bufferedEndTime: number): void {
         console.log("handle bufferedEndTime :" + bufferedEndTime)
-        Utils.emitEvent(true, 1301)
+        Utils.emitEvent(true, 300220)
         this.rawHandler.handleBufferedEndTimeChanged(bufferedEndTime)
     }
            
     handleEnded(): void {
         console.log("handle end:")
-        Utils.emitEvent(true, 1308)
+        Utils.emitEvent(true, 300280)
         this.rawHandler.handleEnded()
     }
     
     handleNetworkStateChanged(state: webview.NetworkState): void {
         console.log("handleNetworkStateChanged before:" + state)
-        Utils.emitEvent(true, 1315)
+        Utils.emitEvent(true, 300360)
         console.log("handleNetworkStateChanged dfdf:" + state)
         this.rawHandler.handleNetworkStateChanged(state)
     }
     
     handleReadyStateChanged(state: webview.ReadyState): void {
         console.log("handleReadyStateChanged :" + state)
-        Utils.emitEvent(true, 1310)
+        Utils.emitEvent(true, 300370)
         this.rawHandler.handleReadyStateChanged(state)
     }
     
@@ -394,25 +395,25 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
     
     handleSeeking(): void {
         console.log("handleSeeking:")
-        Utils.emitEvent(true, 1305)
+        Utils.emitEvent(true, 300320)
         this.rawHandler.handleSeeking()
     }
     
     handleSeekFinished(): void {
         console.log("handleSeekFinished:")
-        Utils.emitEvent(true, 1306)
+        Utils.emitEvent(true, 300260)
         this.rawHandler.handleSeekFinished()
     }
     
     handleError(error: webview.MediaError, errorMessage: string): void {
         console.log("handleError:" + "mediaError" + errorMessage + ":" + errorMessage)
-        Utils.emitEvent(true, 1309)
+        Utils.emitEvent(true, 300290)
         this.rawHandler.handleError(error,errorMessage)
     }
     
     handleVideoSizeChanged(width: number, height: number): void {
         console.log("handleVideoSizeChanged:")
-        Utils.emitEvent(true, 1303)
+        Utils.emitEvent(true, 300240)
         this.rawHandler.handleVideoSizeChanged(width,height)
     }
 }
@@ -849,10 +850,14 @@ struct WebComponent {
       componentOverlay: false
   }
   @State emitKey: string = "emitWebViewNativeMediaPlayerHandleTimeUpdate";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isEnd: number = -1;
+  @State checkResult: string = '';
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 300200,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -863,6 +868,7 @@ struct WebComponent {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -870,9 +876,13 @@ struct WebComponent {
       Column() {
           Row() {
               Button("web click").key('webViewNativeMediaPlayerHandler').onClick(async () => {
-                  console.info("key==>" + this.emitKey)
+	        console.info('key==>' + this.emitKey)
+                  await waitForExist(()=>this.isReceive,  this.emitKey + 'IsReceive', 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey + 'IsPageEnd', 0);
+                  this.isReceive = -1;
+                  this.isPageEnd =-1;
                   this.controller.refresh()
-                await Utils.sleep(1000)
+                await waitForExist(()=>this.isPageEnd, this.emitKey + 'IsPageEnd', 0,1000);
                 this.controller.runJavaScript("buttonPlay()", (error, result) => {
                     console.error('The play() return error is: ${error}');
                     console.log('The play() return value is: ${result}');
@@ -881,108 +891,114 @@ struct WebComponent {
                     case "emitWebViewNativeMediaPlayerHandleTimeUpdate": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleTimeUpdate==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setSeek()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The playerHandleTimeUpdate() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1300)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setSeek"');
+                            Utils.emitEvent(true,300210)
                         } catch (error) {
-                            Utils.emitEvent('error',1300)
+                            Utils.emitEvent('error',300210)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleBufferedEndTimeChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleBufferedEndTimeChanged==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setSeek()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The playerHandleTimeUpdate() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1301)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setSeek"');
+                            Utils.emitEvent(true,300220)
                         } catch (error) {
-                            Utils.emitEvent('error',1301)
+                            Utils.emitEvent('error',300220)
                         }
                         break;
                     }
                   case "emitWebViewNativeMediaPlayerHandleDurationChanged": {
                      try {
                         console.log('emitWebViewNativeMediaPlayerHandleDurationChanged==>')
-                        await Utils.sleep(1500)
-                        Utils.emitEvent(true,1302)
+                        Utils.emitEvent(true,300230)
                      } catch (error) {
-                        Utils.emitEvent('error',1302)
+                        Utils.emitEvent('error',300230)
                      }
                     break;
                   }
                     case "emitWebViewNativeMediaPlayerHandleVideoSizeChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleVideoSizeChanged==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("resize()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The resize() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1303)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"resizeDom"');
+                            Utils.emitEvent(true,300240)
                         } catch (error) {
-                            Utils.emitEvent('error',1303)
+                            Utils.emitEvent('error',300240)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandlePlaybackRateChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandlePlaybackRateChanged==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setPlayBackRate()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The setPlayBackRate() return value is: ${result}');
                             })
-                            await Utils.sleep(2000)
-                            Utils.emitEvent(true,1304)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setPlayBackRate"');
+                            Utils.emitEvent(true,300250)
                         } catch (error) {
-                            Utils.emitEvent('error',1304)
+                            Utils.emitEvent('error',300250)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleSeeking": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleSeeking==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setSeek()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The playerHandleTimeUpdate() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1305)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setSeek"');
+                            Utils.emitEvent(true,300320)
                         } catch (error) {
-                            Utils.emitEvent('error',1305)
+                            Utils.emitEvent('error',300320)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleSeekFinished": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleSeekFinished==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setSeek()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The playerHandleTimeUpdate() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
-                            Utils.emitEvent(true,1306)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setSeek"');
+                            Utils.emitEvent(true,300260)
                         } catch (error) {
-                            Utils.emitEvent('error',1306)
+                            Utils.emitEvent('error',300260)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleVolumeChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleVolumeChanged==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("setVolume()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The setVolume() return value is: ${result}');
                             })
-                            await Utils.sleep(2000)
-                            Utils.emitEvent(true,1307)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"volume h5"');
+                            Utils.emitEvent(true,300270)
                         } catch (error) {
-                            Utils.emitEvent('error',1307)
+                            Utils.emitEvent('error',300270)
                         }
                         break;
                     }
@@ -994,9 +1010,9 @@ struct WebComponent {
                                 console.log('The jumpToEnd() return value is: ${result}');
                             })
                             await Utils.sleep(2000)
-                            Utils.emitEvent(true,1308)
+                            Utils.emitEvent(true,300280)
                         } catch (error) {
-                            Utils.emitEvent('error',1308)
+                            Utils.emitEvent('error',300280)
                         }
                         break;
                     }
@@ -1004,104 +1020,122 @@ struct WebComponent {
                         try {
                             this.controller.loadUrl($rawfile("nativeMediaError2.html"))
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1309)
+                            Utils.emitEvent(true,300290)
                         } catch (error) {
-                            Utils.emitEvent('error',1309)
+                            Utils.emitEvent('error',300290)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleStatusChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleStatusChanged==>')
+                            this.checkResult = '';
                             this.controller.runJavaScript("buttonPause()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The pause() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"pause"');
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
-                                console.log('The pause() return value is: ${result}');
+                                this.checkResult = result;
+                                console.log('The buttonPlay() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1312)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"play"');
+                            Utils.emitEvent(true,300310)
                         } catch (error) {
-                            Utils.emitEvent('error',1312)
+                            Utils.emitEvent('error',300310)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerHandleMutedChanged": {
                         try {
                             console.log('emitWebViewNativeMediaPlayerHandleMutedChanged==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
-                                console.log('The pause() return value is: ${result}');
+                                this.checkResult = result;
+                                console.log('The buttonPlay() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"play"');
                             this.controller.runJavaScript("setMutedFalse()", (error, result) => {
+                                this.checkResult = result;
                                 console.log('The setMutedFalse() return value is: ${result}');
                             })
-                            await Utils.sleep(1500)
-                            Utils.emitEvent(true,1316)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setMuted"');
+                            Utils.emitEvent(true,300300)
                         } catch (error) {
-                            Utils.emitEvent('error',1316)
+                            Utils.emitEvent('error',300300)
                         }
                         break;
                     }
                     case "emitWebViewNativeVideoSetSeek": {
                         try {
                             console.log('emitWebViewNativeVideoSetSeek==>')
+                            this.checkResult = '';
+			    this.isPageEnd = -1;
                             this.controller.loadUrl($rawfile('nativeMediaSetSeek.html'))
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
-                                console.error('The play(0 return error is: ${error}');
-                                console.log('The play(0 return value is: ${result}');
+                                this.checkResult = result;
+                                console.error('The buttonPlay() return error is: ${error}');
+                                console.log('The buttonPlay() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"play"');
                             this.controller.runJavaScript("setSeek()", (error, result) => {
-                                console.log('The setSeek(0 return value is: ${result}');
+                                this.checkResult = result;
+                                console.log('The setSeek() return value is: ${result}');
                             })
-                            await Utils.sleep(2000)
-                            Utils.emitEvent(true, 1293)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"setSeek"');
+                            Utils.emitEvent(true, 300330)
                         } catch (error) {
-                            Utils.emitEvent('error',1293)
+                            Utils.emitEvent('error',300330)
                         }
                         break;
                     }
 
                     case "emitWebViewNativeMediaSetVolume": {
                         try {
-                            this.controller.loadUrl($rawfile('nativeMediaSetVolume.html'))
                             console.log('emitWebViewNativeMediaSetVolume==>')
-                            await Utils.sleep(1000)
+                            this.checkResult = '';
+                            this.isPageEnd = -1;
+                            this.controller.loadUrl($rawfile('nativeMediaSetVolume.html'))
+                            await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
-                                console.error('The play(0 return error is: ${error}');
-                                console.log('The play(0 return value is: ${result}');
+                                this.checkResult = result;
+                                console.error('The buttonPlay() return error is: ${error}');
+                                console.log('The buttonPlay() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"play"');
                             this.controller.runJavaScript("setVolume()", (error, result) => {
-                                console.log('The setVolume(0 return value is: ${result}');
+                                this.checkResult = result;
+                                console.log('The setVolume() return value is: ${result}');
                             })
-                            await Utils.sleep(2000)
-                            Utils.emitEvent(true, 1290)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"volume h5"');
+                            Utils.emitEvent(true, 300340)
                         } catch (error) {
-                            Utils.emitEvent('error',1290)
+                            Utils.emitEvent('error',300340)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaMediaInfo": {
                         try {
-                            this.controller.loadUrl($rawfile('nativeMediaInfo.html'))
                             console.log('emitWebViewNativeMediaMediaInfo==>')
+                            this.checkResult = '';
+                            this.isPageEnd = -1;
+                            this.controller.loadUrl($rawfile('nativeMediaInfo.html'))
+                            await waitForExist(()=>this.isPageEnd, this.emitKey + 'IsPageEnd',0,1000);
                             this.controller.runJavaScript("buttonLoad()", (error, result) => {
-                                console.log('The load() return value is: ${result}');
+                                this.checkResult = '' + result;
+                                console.log('The buttonLoad() return value is: ${result}');
                             })
-                            await Utils.sleep(1000)
+                            await waitForExist(()=>this.checkResult, this.emitKey, 'true');
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
+                                this.checkResult = result;
                                 console.error('The play() return error is: ${error}');
                                 console.log('The play() return value is: ${result}');
                             })
-                            await Utils.sleep(2000)
-                            Utils.emitEvent(true, 1289)
+                            await waitForExist(()=>this.checkResult, this.emitKey, '"play"');
+                            Utils.emitEvent(true, 300350)
                         } catch (error) {
-                            Utils.emitEvent('error',1289)
+                            Utils.emitEvent('error',300350)
                         }
                         break;
                     }
@@ -1172,6 +1206,9 @@ struct WebComponent {
                     let ret = this.node_controller.postTouchEvent(event.touchEvent);
                     console.log('[BrowserShell] postTouchEvent, ret[${ret}], touchEvent[${JSON.stringify(event.touchEvent)}]');
                     event.result?.setGestureEventResult(true);
+                })
+                .onPageEnd(()=>{
+                    this.isPageEnd = 0;
                 })
             if (this.pageParams.componentOverlay && this.show_native_media_player) {
                 NodeContainer(this.node_controller)

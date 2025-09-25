@@ -16,14 +16,10 @@ import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, befo
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import bundle from '@ohos.bundle.bundleManager';
 import Utils from './Util.test';
 import Want from '@ohos.app.ability.Want';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
+
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
-let targetVersion:number;
 let tag = "testTag"
 export default function abilityDelegatorStage() {
   describe('abilityDelegatorStage', () => {

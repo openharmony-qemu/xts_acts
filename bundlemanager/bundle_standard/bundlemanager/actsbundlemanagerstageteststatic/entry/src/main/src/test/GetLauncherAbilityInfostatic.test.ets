@@ -23,7 +23,7 @@ import { ShortcutInfo } from 'bundleManager.ShortcutInfo';
 import bundleManager from '@ohos.bundle.bundleManager';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
 let BUNDLE_NAME100 = 'ohos.acts.bundle.stage.test.static';
@@ -39,12 +39,12 @@ export default function abilityTest() {
   describe("abilityTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.desc: Test getLauncherAbilityInfoSync with valid value.
-     * @tc.size: MEDIUMTEST
-     * @tc.type: FUNCTION
+    /**
+     * @tc.number  Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.name    Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.desc    Test getLauncherAbilityInfoSync with valid value.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -77,6 +77,11 @@ export default function abilityTest() {
         expect(data![0].applicationInfo.appIndex).assertEqual(APP_Index);
         expect(data![0].applicationInfo.installSource).assertEqual("unknown");
         expect(data![0].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
+        expect(data![0].applicationInfo.descriptionId).assertLarger(0);
+        expect(data![0].applicationInfo.labelId).assertLarger(0);
+        expect(data![0].applicationInfo.iconId).assertLarger(0);
+        expect(data![0].applicationInfo.accessTokenId).assertLarger(0);
+        expect(data![0].applicationInfo.uid).assertLarger(0);
         expect(data![0].elementName.deviceId).assertEqual("");
         expect(data![0].elementName.bundleName).assertEqual(BUNDLE_NAME100);
         expect(data![0].elementName.moduleName).assertEqual("entry");

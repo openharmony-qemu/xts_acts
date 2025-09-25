@@ -1470,6 +1470,47 @@ static napi_value OHCameraInputOpenSecureCamera(napi_env env, napi_callback_info
 
     return secureCamera;
 }
+static napi_value OHCameraInputIsPhysicalCameraOrientationVariable(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    bool isVariable = false;
+    Camera_ErrorCode code = ndkCamera_->IsPhysicalCameraOrientationVariable(&isVariable);
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, obj, "errorCode", jsValue);
+    napi_get_boolean(env, isVariable, &jsValue);
+    napi_set_named_property(env, obj, "isVariable", jsValue);
+    return obj;
+}
+static napi_value OHCameraInputGetPhysicalCameraOrientation(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    uint32_t orientation = 1;
+    Camera_ErrorCode code = ndkCamera_->GetPhysicalCameraOrientation(&orientation);
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, obj, "errorCode", jsValue);
+    napi_create_int32(env, orientation, &jsValue);
+    napi_set_named_property(env, obj, "orientation", jsValue);
+    return obj;
+}
+static napi_value OHCameraInputUsePhysicalCameraOrientation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    bool isUsed;
+    napi_get_value_bool(env, args[0], &isUsed);
+
+    Camera_ErrorCode code = ndkCamera_->UsePhysicalCameraOrientation(isUsed);
+
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    return jsValue;
+}
 static napi_value OHCameraManagerSetSceneMode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3064,6 +3105,12 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHCameraInputOpenSecureCamera", nullptr, OHCameraInputOpenSecureCamera, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"oHCameraInputIsPhysicalCameraOrientationVariable", nullptr, OHCameraInputIsPhysicalCameraOrientationVariable,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraInputGetPhysicalCameraOrientation", nullptr, OHCameraInputGetPhysicalCameraOrientation, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraInputUsePhysicalCameraOrientation", nullptr, OHCameraInputUsePhysicalCameraOrientation, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"oHCaptureSessionRegisterCallbackOn", nullptr, OHCaptureSessionRegisterCallbackOn, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"oHCaptureSessionUnregisterCallbackOff", nullptr, OHCaptureSessionUnregisterCallbackOff, nullptr, nullptr,

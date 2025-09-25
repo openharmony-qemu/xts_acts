@@ -16,6 +16,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerZoom() {
@@ -32,12 +33,12 @@ export default function webViewControllerZoom() {
         if (!("WebViewControllerZoom" == pages.name)) {
           console.info("get WebViewControllerZoom state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewControllerZoom page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewControllerZoom page error: " + err);
       }
+      await waitForComponent("WebViewControllerZoom");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,7 +47,6 @@ export default function webViewControllerZoom() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,9 +60,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testWebZoom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebZoom001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoom001", true, 7701, done);
+      Utils.emitEvent("emitWebZoom001", 153150)
+      Utils.registerEvent("testWebZoom001", true, 153160, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -75,9 +74,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testWebZoomMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebZoomMax001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomMax001", true, 7702, done);
+      Utils.emitEvent("emitWebZoomMax001", 153150)
+      Utils.registerEvent("testWebZoomMax001", true, 153170, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -90,9 +88,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testWebZoomMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebZoomMin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomMin001", true, 7708, done);
+      Utils.emitEvent("emitWebZoomMin001", 153150)
+      Utils.registerEvent("testWebZoomMin001", true, 153180, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -105,9 +102,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testZoomInMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomInMax001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomInMax001", true, 7706, done);
+      Utils.emitEvent("emitZoomInMax001", 153150)
+      Utils.registerEvent("testZoomInMax001", true, 153190, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -120,9 +116,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testZoomOut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomOut001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomOut001", true, 7704, done);
+      Utils.emitEvent("emitZoomOut001", 153150)
+      Utils.registerEvent("testZoomOut001", true, 153200, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -135,9 +130,8 @@ export default function webViewControllerZoom() {
     * @tc.level      : Level 1
     */
     it('testZoomOutMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomOutMin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomOutMin001", true, 7707, done);
+      Utils.emitEvent("emitZoomOutMin001", 153150)
+      Utils.registerEvent("testZoomOutMin001", true, 153210, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
 
@@ -150,9 +144,8 @@ export default function webViewControllerZoom() {
      * @tc.level      : Level 1
      */
     it('testZoomIn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomIn001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomIn001", true, 7703, done);
+      Utils.emitEvent("emitZoomIn001", 153150)
+      Utils.registerEvent("testZoomIn001", true, 153220, done);
       sendEventByKey('WebViewControllerZoom', 10, '');
     })
   })

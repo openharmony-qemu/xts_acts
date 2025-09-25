@@ -210,6 +210,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Cmac_Func_0000 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();

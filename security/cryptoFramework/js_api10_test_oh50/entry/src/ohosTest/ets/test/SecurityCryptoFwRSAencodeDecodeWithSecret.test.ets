@@ -148,6 +148,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -182,6 +183,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -216,6 +218,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0300 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -250,6 +253,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -284,6 +288,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0500 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -318,6 +323,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -352,6 +358,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0700 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -588,6 +595,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -632,6 +640,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1700 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -676,6 +685,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -720,6 +730,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1900 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -764,6 +775,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2000 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -808,6 +820,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -852,6 +865,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();

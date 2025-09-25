@@ -39,3 +39,5 @@ export const createCrossLanguageWaterFlowNode: (content: NodeContent, tag: strin
 export const testBindController001: (a: string) => void;
 
 export const scrollScrollBarMarginTest: (a: string, b: string) => void;
+
+export const createCrossLanguageRowNode: (content: NodeContent, tag: string) => void;

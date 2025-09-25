@@ -1,5 +1,5 @@
-/*
-* Copyright (C) 2024 HiHope Open Source Organization.
+/**
+* Copyright (C) 2024-2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ export default class Utils {
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        resolve('ok')
       }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
@@ -41,7 +41,7 @@ export default class Utils {
   static copyRawFileToSandbox(rawFileName: string): string {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let context = abilityDelegator.getAppContext();
-    let dir = context.filesDir + "/";
+    let dir = context.filesDir + '/';
     let rawFilePath = dir + rawFileName;
     try {
       let arrayBuffer = context.resourceManager.getRawFileContentSync(rawFileName);
@@ -50,32 +50,32 @@ export default class Utils {
       fs.closeSync(file);
       console.log(`[copyRawFileToSandbox] ${rawFileName} is copy success`);
     } catch (error) {
-      console.info("[copyRawFileToSandbox] getRawFileDescriptor api run failed" + error);
+      console.info('[copyRawFileToSandbox] getRawFileDescriptor api run failed' + error);
     }
-    console.info("[copyRawFileToSandbox] sandbox path:" + dir);
+    console.info('[copyRawFileToSandbox] sandbox path:' + dir);
     return rawFilePath
   }
 
   static deleteFile(filePath: string) {
-    console.info("[deleteFile] filePath:" + filePath);
+    console.info('[deleteFile] filePath:' + filePath);
     try {
       fs.unlinkSync(filePath)
     } catch (error) {
-      console.info("[deleteFile] error:" + error);
+      console.info('[deleteFile] error:' + error);
     }
   }
 
   static isPC(controller: webview.WebviewController) {
     let userAgent: string = controller.getUserAgent();
-    console.info("userAgent" + userAgent);
+    console.info('userAgent' + userAgent);
 
     try {
       let isPc: boolean =
-        userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+        userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes('2in1')
       console.log('device is pc:' + isPc)
       return isPc
     } catch (error) {
-      console.info("userAgent error:" + error);
+      console.info('userAgent error:' + error);
       return true
     }
   }
@@ -93,16 +93,16 @@ export default class Utils {
   }
 
   static deleteDir(dirPath: string) {
-    console.info("[deleteFile] dirPath:" + dirPath);
+    console.info('[deleteFile] dirPath:' + dirPath);
     try {
       fs.rmdirSync(dirPath)
     } catch (error) {
-      console.info("[deleteFile] error:" + error);
+      console.info('[deleteFile] error:' + error);
     }
   }
 
   static listFile(dirPath: string): string[] {
-    console.info("[listFile] dirPath:" + dirPath);
+    console.info('[listFile] dirPath:' + dirPath);
     try {
       let files = fs.listFileSync(dirPath)
       for (let i = 0; i < files.length; i++) {
@@ -110,19 +110,19 @@ export default class Utils {
       }
       return files;
     } catch (error) {
-      console.info("[listFile] error:" + error);
+      console.info('[listFile] error:' + error);
       return [];
     }
   }
 
   static isFileExist(filePath: string): boolean {
-    console.info("[isFileExist] filePath:" + filePath);
+    console.info('[isFileExist] filePath:' + filePath);
     try {
       let fileExist = fs.accessSync(filePath)
-      console.info("[isFileExist] return:" + fileExist);
+      console.info('[isFileExist] return:' + fileExist);
       return fileExist
     } catch (error) {
-      console.info("[isFileExist] error:" + error);
+      console.info('[isFileExist] error:' + error);
       return false;
     }
   }
@@ -143,9 +143,9 @@ export default class Utils {
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -169,17 +169,17 @@ export default class Utils {
     try {
       let backData: events_emitter.EventData = {
         data: {
-          "ACTION": actualValue
-        }
+          'ACTION': actualValue,
+        },
       }
       let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      console.info("webFlag start to emit action state");
+      console.info('webFlag start to emit action state');
       events_emitter.emit(backEvent, backData);
     } catch (err) {
-      console.info("webFlag emit action state err: " + JSON.stringify(err));
+      console.info('webFlag emit action state err: ' + JSON.stringify(err));
     }
   }
 }

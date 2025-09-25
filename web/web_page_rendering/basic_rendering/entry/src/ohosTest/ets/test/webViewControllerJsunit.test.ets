@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { beforeAll, describe, beforeEach, afterEach, it, expect , TestType, Size, Level } from "@ohos/hypium";
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
 let emitKey = "emitGetWebId";
 export default function webViewControllerJsunit() {
   describe('ActsAceWebDevWebViewControllerTest',  () => {
@@ -31,32 +32,31 @@ export default function webViewControllerJsunit() {
         if (!("webViewController" == pages.name)) {
           console.info("get webViewController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webViewController page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewController page error: " + err);
       }
+      await waitForComponent("webcomponent");
       done()
     });
     afterEach(async  (done: Function) =>{
       console.info("web afterEach start:"+emitKey);
       try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
+        let backData: events_emitter.EventData = {
+          data: {
+            "ACTION": emitKey
+          }
+        }
+        let backEvent: events_emitter.InnerEvent = {
+          eventId:154060,
+          priority:events_emitter.EventPriority.LOW
+        }
+        console.info("start send emitKey");
+        events_emitter.emit(backEvent, backData);
       } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
+        console.info("emit emitKey  err: " + JSON.stringify(err));
       }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -65,8 +65,8 @@ export default function webViewControllerJsunit() {
      *tc.desc Get the WebId
      */
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitFetchCookieSync"; 
-      Utils.registerEvent("testGetWebId",39,100,done);
+      emitKey="emitGetWebId";
+      Utils.registerEvent("testGetWebId",true,154070,done);
       sendEventByKey('webcomponent',10,'');
     })
   })

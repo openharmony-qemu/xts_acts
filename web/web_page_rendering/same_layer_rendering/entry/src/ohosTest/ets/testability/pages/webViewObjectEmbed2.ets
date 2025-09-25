@@ -18,7 +18,7 @@ import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import uiTest from '@ohos.UiTest'
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
-
+import { waitForExist } from '../../test/WaitTest.test';
 declare class Params {
   public text : string
   public text1 : string
@@ -130,21 +130,24 @@ struct webViewObjectEmbed2 {
   @State eventType: string = ''
   @State number: number = 0
   @State isEmbed: boolean = false;
-
-
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153640,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153640)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -155,13 +158,18 @@ struct webViewObjectEmbed2 {
         Button('web click')
           .key('webViewObjectEmbedButton2')
           .onClick(async () => {
-            console.info('key==>' + this.emitKey)
+            await waitForExist(() => this.isComplete, this.emitKey, 0);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            this.isReceive = -1;
+            this.isComplete = -1;
             this.controller.refresh();
-            await Utils.sleep(2000);
+            await waitForExist(() => this.isComplete, this.emitKey, 0);
             switch (this.emitKey) {
               case 'emitWebViewObjectEmbed02': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed2.html'));
+                  await waitForExist(()=>this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -177,7 +185,11 @@ struct webViewObjectEmbed2 {
           .width(this.nodeContainerWidth)
           .height(this.nodeContainerHeight)
           .backgroundColor(Color.Yellow)
-        Web({ src: '', controller: this.controller })
+        Web({ src: 'www.example.com', controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('web pageEnd==>' + event.url);
+            this.isComplete = 0;
+          })
           .javaScriptAccess(this.javaScriptAccess)
           .fileAccess(this.fileAccess)
           .imageAccess(this.imageAccess)
@@ -194,7 +206,7 @@ struct webViewObjectEmbed2 {
               console.log('NativeEmbed create' + JSON.stringify(embed.info));
               if (this.emitKey == 'emitWebViewObjectEmbed02') {
                 if (embed.info) {
-                  Utils.emitEvent('success', 8015);
+                  Utils.emitEvent('success', 153650);
                 }
               }
               this.embedMap.set(embed.info?.id as string, {surfaceId : embed.surfaceId as string,

@@ -17,7 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON, MouseButton } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
+import { waitForComponent,waitAndClickComponent } from './WaitTest.test';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -31,28 +33,25 @@ export default function ActsAvoidVisibleViewportBottomTest() {
         url: 'testability/pages/WebViewAvoidVisibleViewportBottom',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get WebViewAvoidVisibleViewportBottom state success " + JSON.stringify(pages));
         if (!("WebViewAvoidVisibleViewportBottom" == pages.name)) {
           console.info("get WebViewAvoidVisibleViewportBottom state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewAvoidVisibleViewportBottom page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewAvoidVisibleViewportBottom page error: " + err);
       }
-      let driver: Driver = Driver.create();
-      await driver.waitForComponent(ON.id("voidVisibleViewportBottomWebClick"),10000);
+      await waitForComponent("voidVisibleViewportBottomWebClick");
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
@@ -67,7 +66,7 @@ export default function ActsAvoidVisibleViewportBottomTest() {
           }
         };
         let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 153910,
           priority: events_emitter.EventPriority.LOW
         };
         console.info("start send emitKey");
@@ -75,7 +74,6 @@ export default function ActsAvoidVisibleViewportBottomTest() {
       } catch (err) {
         console.info("emit emitKey  err: " + JSON.stringify(err));
       }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -88,10 +86,9 @@ export default function ActsAvoidVisibleViewportBottomTest() {
     * @tc.level       : Level 0
     */
     it('emitAvoidVisibleViewportBottom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitAvoidVisibleViewportBottom001";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("emitAvoidVisibleViewportBottom001", 50, 20250713, done);
-      sendEventByKey('voidVisibleViewportBottomWebClick', 10, '');
+      Utils.emitEvent("emitAvoidVisibleViewportBottom001", 153910);
+      Utils.registerEvent("emitAvoidVisibleViewportBottom001", 50, 153920, done);
+      waitAndClickComponent("voidVisibleViewportBottomWebClick",driver);
     })
 
     /*
@@ -103,11 +100,9 @@ export default function ActsAvoidVisibleViewportBottomTest() {
     * @tc.level       : Level 0
     */
     it('emitAvoidVisibleViewportBottom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitAvoidVisibleViewportBottom002";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("emitAvoidVisibleViewportBottom002", 100, 20250714, done);
-      sendEventByKey('voidVisibleViewportBottomWebClick', 10, '');
+    Utils.emitEvent("emitAvoidVisibleViewportBottom002", 153910);
+      Utils.registerEvent("emitAvoidVisibleViewportBottom002", 100, 153930, done);
+      waitAndClickComponent("voidVisibleViewportBottomWebClick",driver);
     })
-
   })
 }

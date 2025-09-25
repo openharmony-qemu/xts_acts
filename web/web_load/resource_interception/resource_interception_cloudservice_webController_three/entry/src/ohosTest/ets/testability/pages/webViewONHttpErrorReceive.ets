@@ -14,12 +14,10 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 202070;
 
 @Entry
 @Component
@@ -38,13 +36,18 @@ struct webViewONHttpErrorReceive {
   @State requestValue: string = "";
   @State responseKey: string = "";
   @State responseValue: string = "";
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +56,7 @@ struct webViewONHttpErrorReceive {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,19 +65,20 @@ struct webViewONHttpErrorReceive {
     Column() {
       Row() {
         Button("onHttpErrorTest").key('webViewONHttpErrorReceive').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'webViewONHttpErrorReceiveIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorReceiveFixedUserAgent": {
               try {
                 this.controller.loadUrl("http://1.1.1.123/index.html");
-                await Utils.sleep(2000);
                 this.title = this.controller.getTitle();
                 console.log("title of this page: " + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.title, 390)
+                Utils.emitEvent(this.title, 202220)
               })
               break;
             }
@@ -91,25 +96,25 @@ struct webViewONHttpErrorReceive {
         .userAgent(this.userAgent)
         .onHttpErrorReceive((event) => {
           console.log('url:' + event.request.getRequestUrl());
-          Utils.emitEvent(event.request.getRequestUrl(), 362);
+          Utils.emitEvent(event.request.getRequestUrl(), 202080);
           console.log('isMainFrame:' + event.request.isMainFrame());
-          Utils.emitEvent(event.request.isMainFrame(), 364);
+          Utils.emitEvent(event.request.isMainFrame(), 202090);
           console.log('isRedirect:' + event.request.isRedirect());
-          Utils.emitEvent(event.request.isRedirect(), 366);
+          Utils.emitEvent(event.request.isRedirect(), 202100);
           console.log('isRequestGesture:' + event.request.isRequestGesture());
-          Utils.emitEvent(event.request.isRequestGesture(), 368);
+          Utils.emitEvent(event.request.isRequestGesture(), 202110);
           console.log('getRequestMethod:' + event.request.getRequestMethod());
-          Utils.emitEvent(event.request.getRequestMethod(), 370);
+          Utils.emitEvent(event.request.getRequestMethod(), 202120);
           console.log('getResponseData:' + JSON.stringify(event.response.getResponseData()));
-          Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 372);
+          Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 202130);
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
-          Utils.emitEvent(event.response.getResponseEncoding(), 374);
+          Utils.emitEvent(event.response.getResponseEncoding(), 202140);
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
-          Utils.emitEvent(event.response.getResponseMimeType(), 376);
+          Utils.emitEvent(event.response.getResponseMimeType(), 202150);
           console.log('getResponseCode:' + event.response.getResponseCode());
-          Utils.emitEvent(event.response.getResponseCode(), 378);
+          Utils.emitEvent(event.response.getResponseCode(), 202160);
           console.log('getReasonMessage:' + event.response.getReasonMessage());
-          Utils.emitEvent(event.response.getReasonMessage(), 380);
+          Utils.emitEvent(event.response.getReasonMessage(), 202170);
           let result = event.request.getRequestHeader()
           console.log('The request header result size is ' + result.length)
           for (let i of result) {
@@ -118,8 +123,8 @@ struct webViewONHttpErrorReceive {
             this.requestValue = i.headerValue;
           }
           console.log('The request header last result is ' + this.requestKey + this.requestValue);
-          Utils.emitEvent(this.requestKey, 382);
-          Utils.emitEvent(this.requestValue, 384);
+          Utils.emitEvent(this.requestKey, 202180);
+          Utils.emitEvent(this.requestValue, 202190);
           let resph = event.response.getResponseHeader()
           console.log('The response header result size is ' + resph.length)
           for (let i of resph) {
@@ -128,8 +133,8 @@ struct webViewONHttpErrorReceive {
             this.responseValue = i.headerValue;
           }
           console.log('The response header last result is ' + this.responseKey + this.responseValue);
-          Utils.emitEvent(this.responseKey, 386);
-          Utils.emitEvent(this.responseValue, 388);
+          Utils.emitEvent(this.responseKey, 202200);
+          Utils.emitEvent(this.responseValue, 202210);
         })
     }
   }

@@ -37,6 +37,8 @@ typedef enum CameraCallbackCode {
     VIDEO_ON_FRAME_START = 9,
     VIDEO_ON_FRAME_END = 10,
     VIDEO_ON_ERROR = 11,
+    METADATA_OBJECT_AVAILABLE = 12,
+    METADATA_OUTPUT_ERROR = 13,
     SESSION_ON_FOCUS_STATE_CHANGE = 14,
     SESSION_ON_ERROR = 15,
     CAMERA_MANAGER_STATUS = 16,
@@ -47,9 +49,14 @@ class NDKCamera {
 public:
     explicit NDKCamera(char *str);
     ~NDKCamera(void);
-    
+
     Camera_ErrorCode CreateCameraInput(void);
-    Camera_ErrorCode GetSupportedCameras(void);
+    Camera_ErrorCode CloseCameraInput(void);
+    Camera_ErrorCode CreateCameras(void);
+    Camera_ErrorCode CreateSession(void);
+    Camera_ErrorCode ReleaseCameraManger(void);
+    Camera_ErrorCode CameraManagerRegisterCallback();
+    CameraManager_Callbacks *GetCameraManagerListener(void);
 
     Camera_ErrorCode CameraOperationNotAllowed();
     Camera_ErrorCode CameraSessionNotConfig();
@@ -59,7 +66,6 @@ public:
     Camera_ErrorCode CameraDeviceDisabled();
     Camera_ErrorCode CameraDevicePreempted();
     Camera_ErrorCode CameraUnresolvedConflictsWithCurrentConfigurations();
-    Camera_ErrorCode CreateSession(void);
     Camera_ErrorCode CaptureSessionRegisterCallback(void);
     CaptureSession_Callbacks* GetCaptureSessionRegister(void);
     Camera_ErrorCode SessionBegin(void);
@@ -67,9 +73,31 @@ public:
     Camera_ErrorCode SetCameraStatus(std::string info);
     CameraInput_Callbacks* GetCameraInputListener(void);
     Camera_ErrorCode CameraInputRegisterCallback(void);
-    Camera_ErrorCode GetCameraFormat(int index);
-    Camera_ErrorCode HasFlashMode(int index);
-    
+    Camera_ErrorCode GetCameraFormat(int32_t index);
+    Camera_ErrorCode HasFlashMode(int32_t index);
+    Camera_ErrorCode GetExposureMode(int32_t index);
+    Camera_ErrorCode GetCameraFocusMode(int32_t index);
+    Camera_ErrorCode SessionIsVideoStabilizationModeSupported(int32_t index);
+    Camera_ErrorCode TakePictureWithPhotoSettings(int32_t indexRotation, int32_t indexQualityLevel);
+    Camera_ErrorCode GetCameraConcurrentInfo(int32_t index);
+    Camera_ErrorCode SessionCanPreconfig(int32_t mode);
+    Camera_ErrorCode SessionCanPreconfigWithRatio(int32_t ratio);
+    PhotoOutput_Callbacks* GetPhotoOutputListener(void);
+    Camera_ErrorCode PhotoOutputRegisterCallback(void);
+    MetadataOutput_Callbacks* GetMetadataOutputListener(void);
+    Camera_ErrorCode MetadataOutputRegisterCallback(void);
+    Camera_ErrorCode CameraManagerRegisterTorchStatusCallback();
+    Camera_ErrorCode CaptureSessionRegisterSmoothZoomInfoCallback();
+    Camera_ErrorCode PhotoOutputRegisterCaptureStartWithInfoCallback();
+    Camera_ErrorCode CameraManagerRegisterFoldStatusCallback();
+    Camera_ErrorCode RegisterAutoDeviceSwitchStatusCallback();
+    Camera_ErrorCode SessionSetQualityPrioritization(int32_t quality);
+    Camera_ErrorCode CameraOpenConcurrentCameras(int32_t type);
+    Camera_ErrorCode IsWhiteBalanceSupported(int32_t type);
+    Camera_ErrorCode RegisterSystemPressureLevel();
+    Camera_ErrorCode SessionGetSupportedEffectTypes(int32_t type);
+    Camera_ErrorCode RegisterControlCenterEffectStatusChange();
+
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
     Camera_CaptureSession* captureSession_;
@@ -77,9 +105,9 @@ public:
     Camera_Input* cameraInput_;
     
     uint32_t size_;
-private:
+protected:
     Camera_Manager* cameraManager_;
-    char* previewSurfaceId_;
+    std::string previewSurfaceId_;
 };
 
 #endif // OHCAMERATEST_CAMERA_TEST_H

@@ -18,6 +18,8 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 
+const EVENT_ID_SET_EMIT_KEY = 202620;
+
 @Entry
 @Component
 struct webDataBase {
@@ -27,18 +29,20 @@ struct webDataBase {
   @State username_password: string[] = [];
   @State host: string = "www.SpinCast.org";
   @State realm: string = "protected example";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,19 +51,8 @@ struct webDataBase {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -67,41 +60,40 @@ struct webDataBase {
     Column() {
       Row() {
         Button("WebDataBase click").key('WebDataBaseButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'WebDataBaseButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebDataBaseButtonIsPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testSaveHttpAuthCredentials001": {
               webView.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "StrOmgGol", "LaRoChe");
-              await Utils.sleep(3000);
               let result = webView.WebDataBase.existHttpAuthCredentials();
-              Utils.emitEvent(result, 30040)
+              Utils.emitEvent(result, 202630)
               break;
             }
 
             case "testGetHttpAuthCredentials001": {
               webView.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "StrOmgGol", "LaRoChe");
               this.username_password = webView.WebDataBase.getHttpAuthCredentials(this.host, this.realm);
-              await Utils.sleep(3000);
               let result = this.username_password[0];
-              Utils.emitEvent(result, 30045)
-
+              Utils.emitEvent(result, 202640)
               break;
             }
 
 
             case "testExistHttpAuthCredentials001": {
               webView.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "StrOmgGol", "LaRoChe");
-              await Utils.sleep(3000);
               let result = webView.WebDataBase.existHttpAuthCredentials();
-              Utils.emitEvent(result, 30046)
-
+              Utils.emitEvent(result, 202650)
               break;
             }
 
             case "testDeleteHttpAuthCredentials001": {
+              webView.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "StrOmgGol", "LaRoChe");
               webView.WebDataBase.deleteHttpAuthCredentials();
               let result = webView.WebDataBase.existHttpAuthCredentials();
-              Utils.emitEvent(result, 30050)
+              Utils.emitEvent(result, 202660)
               break;
             }
           }
@@ -111,13 +103,12 @@ struct webDataBase {
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
+        .onPageEnd((event) => {
+          if (event) {
+            console.log("onPageEnd==> event.url:" + event.url)
+            this.isPageEnd = 1;
+          }
         })
-
     }
   }
 }

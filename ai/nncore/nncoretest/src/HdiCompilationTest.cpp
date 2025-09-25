@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include <fstream>
+#include <unistd.h>
 
 #include "nncore_utils.h"
 
@@ -23,24 +24,22 @@ class CompilationTest : public testing::Test {
 public:
     void SetUp()
     {
-        CreateFolder(CACHE_DIR);
     }
     void TearDown()
     {
-        DeleteFolder(CACHE_DIR);
     }
-    void GenCacheFile()
+    void GenCacheFile(const std::string& cachePath)
     {
         OH_NNCompilation *compilation = nullptr;
         OH_NNModel *model = nullptr;
         ConstructCompilation(&compilation, &model);
         OHNNCompileParam compileParam{
-            .cacheDir = CACHE_DIR,
+            .cacheDir = cachePath,
             .cacheVersion = CACHEVERSION,
         };
         ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
-        ASSERT_TRUE(CheckPath(CACHE_PATH) == PathType::FILE);
-        ASSERT_TRUE(CheckPath(CACHE_INFO_PATH) == PathType::FILE);
+        ASSERT_TRUE(CheckPath(cachePath + CACHE_FILE) == PathType::FILE);
+        ASSERT_TRUE(CheckPath(cachePath + CACHE_INFO_FILE) == PathType::FILE);
         OH_NNModel_Destroy(&model);
         OH_NNCompilation_Destroy(&compilation);
     }
@@ -70,14 +69,18 @@ protected:
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0100,
          Function | MediumTest | Level1)
 {
-    GenCacheFile();
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "core_build01_" + std::to_string(pid);
+    CreateFolder(cachePath);
+    GenCacheFile(cachePath);
     OH_NNCompilation *compilation = OH_NNCompilation_ConstructForCache();
     ASSERT_NE(nullptr, compilation);
 
-    ASSERT_EQ(OH_NN_SUCCESS, OH_NNCompilation_SetCache(compilation, CACHE_DIR.c_str(), CACHEVERSION));
+    ASSERT_EQ(OH_NN_SUCCESS, OH_NNCompilation_SetCache(compilation, cachePath.c_str(), CACHEVERSION));
     ASSERT_EQ(OH_NN_SUCCESS, SetDevice(compilation));
     ASSERT_EQ(OH_NN_SUCCESS, OH_NNCompilation_Build(compilation));
     OH_NNCompilation_Destroy(&compilation);
+    DeleteFolder(cachePath);
 }
 
 /**

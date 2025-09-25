@@ -56,8 +56,10 @@ struct MyStateSample {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && eventData.data?.['ACTION'] != null) {
-        this.str = '' + eventData.data?.['ACTION'];
+      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
       }
     }
   }

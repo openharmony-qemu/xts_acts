@@ -16,21 +16,55 @@ import vibrator from '@ohos.vibrator';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 
 export default function VibratorTest() {
+  let isAvailable;
+  const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
   describe('VibratorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
+    beforeAll(async function (done) {
+      /*
+        * @tc.setup: setup invoked before all testcases
+        */
+      console.info('beforeAll called')
+      console.info('VibratorTest isAvailable = ' + isAvailable);
+      try {
+          const vibratorsList = vibrator.getVibratorInfoSync();
+          if (ABILITYJUDGMENT === false || vibratorsList.length === 0 ||
+              (vibratorsList.length !== 0 && vibratorsList.every(vibrator => !vibrator.isLocalVibrator))) {
+              isAvailable = false;
+              console.info('VibratorTest isAvailable ' + isAvailable);
+              done()
+          }else {
+              isAvailable = true;
+              console.info('VibratorTest isAvailable ' + isAvailable);
+              done()
+          }
+      } catch(error) {
+          console.error('VibratorTest exception :' + JSON.stringify(error))
+          done()
+      }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+    afterEach(async function (done) {
+      console.info('afterEach called');
+      try{
+          vibrator.stopVibration().then(() => {
+              console.info("afterEach: Success in stopping vibration. ");
+              setTimeout(() => {
+                  done();
+              }, 500);
+          }, (error) => {
+              console.info("afterEach: error in stopping vibration. error: " + JSON.stringify(error));
+              done();
+          })
+      } catch(error){
+          console.info("afterEach error: " + JSON.stringify(error));
+          done();
+      }
+      console.info('afterEach end');
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -56,21 +90,27 @@ export default function VibratorTest() {
           usage: "alarm"
         },
         (error) => {
-          if (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+          if (error && !isAvailable) {
+              console.info(TAG + `isAvailable1 is false error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
+          } else if (error && isAvailable) {
+              console.info(TAG + `isAvailable1 is true startVibration error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(false).assertTrue();
+              done();
           } else {
-            console.info("startVibration success");
-          }
-          try {
-            vibrator.stopVibrationSync();
-            vibrator.stopVibrationSync();
-            console.info("stopVibrationSync success");
-            done();
-          } catch (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(14600101);
-            done();
-          }
+              console.info(TAG + " startVibration success");
+              try {
+                vibrator.stopVibrationSync();
+                vibrator.stopVibrationSync();
+                console.info(TAG + "stopVibrationSync success");
+                done();
+              } catch (error) {
+                console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+                done();
+              }
+          } 
         });
     })
 
@@ -93,20 +133,26 @@ export default function VibratorTest() {
           usage: "alarm"
         },
         (error) => {
-          if (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+          if (error && !isAvailable) {
+              console.info(TAG + `isAvailable1 is false error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
+          } else if (error && isAvailable) {
+              console.info(TAG + `isAvailable1 is true startVibration error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(false).assertTrue();
+              done();
           } else {
-            console.info("startVibration success");
-          }
-          try {
-            let ret = vibrator.isSupportEffectSync('haptic.clock.timer');
-            ret = vibrator.isSupportEffectSync('haptic.clock.timer');
-            console.info(`${TAG} The query result is ${ret}`);
-            done();
-          } catch (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(14600101);
-            done();
+            console.info(TAG + "startVibration success");
+            try {
+              let ret = vibrator.isSupportEffectSync('haptic.clock.timer');
+              ret = vibrator.isSupportEffectSync('haptic.clock.timer');
+              console.info(`${TAG} The query result is ${ret}`);
+              done();
+            } catch (error) {
+              console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
+            }
           }
         });
     })
@@ -130,22 +176,28 @@ export default function VibratorTest() {
           usage: "alarm"
         },
         (error) => {
-          if (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+          if (error && !isAvailable) {
+              console.info(TAG + `isAvailable1 is false error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
+          } else if (error && isAvailable) {
+              console.info(TAG + `isAvailable1 is true startVibration error.Code: ${error.code}, error.message: ${error.message}`);
+              expect(false).assertTrue();
+              done();
           } else {
-            console.info("startVibration success");
-          }
-          try {
-            let ret = false;
-            for (let index = 0; index < 5; index++) {
-              vibrator.isHdHapticSupported('haptic.clock.timer');
-              console.info(`${TAG} The query result is ${ret}`);
+            console.info(TAG + "startVibration success");
+            try {
+              let ret = false;
+              for (let index = 0; index < 5; index++) {
+                vibrator.isHdHapticSupported('haptic.clock.timer');
+                console.info(`${TAG} The query result is ${ret}`);
+              }
+              done();
+            } catch (error) {
+              console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
             }
-            done();
-          } catch (error) {
-            console.error(`${TAG} Code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(14600101);
-            done();
           }
         });
     })

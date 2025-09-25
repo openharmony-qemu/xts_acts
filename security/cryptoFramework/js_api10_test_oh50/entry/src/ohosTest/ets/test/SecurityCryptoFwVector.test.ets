@@ -338,5 +338,72 @@ export default function SecurityCryptoFwVectorTestUnit() {
       done();
     });
 
+    /**
+     * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0800
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0800
+     * @tc.desc algorithm is digest sha3
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_VectorTest_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let digestVectors: v.mdVectorData[] = v.sha3Vectors;
+        for (let vector of digestVectors) {
+          let algName: string = vector.algName;
+          for (let data of vector.mdVectorSpec) {
+            let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+            if (!data.disableUpdate) {
+              let plainUint8Array = commonUtils.convertToUint8Array(data.plainText);
+              let plainText: cryptoFramework.DataBlob = v.uint8ArrayToDataBlob(new Uint8Array(plainUint8Array));
+              await md.update(plainText);
+            }
+            let digest: cryptoFramework.DataBlob = await md.digest();
+            let expectDigest: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.expectDigest);
+            let ret: boolean = commonUtils.compareDataBlob(digest, expectDigest);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0900
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0900
+     * @tc.desc algorithm is hkdf
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_VectorTest_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let x963Vectors: v.x963VectorData[] = v.x963Vectors;
+        for (let vector of x963Vectors) {
+          let digestAlgName: string = vector.algName;
+          let kdfAlgName: string = vector.kdfAlgName;
+          for (let data of vector.kdfVectorSpec) {
+            let key: number[] = commonUtils.convertToUint8Array(data.z);
+            let info: number[] = commonUtils.convertToUint8Array(data.info);
+            let keySize: number = data.keySize;
+            let kdfSpec: cryptoFramework.X963KdfSpec = v.getX963Spec(key, info, keySize);
+            let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf(kdfAlgName + "|" + digestAlgName);
+            let secret: cryptoFramework.DataBlob = await kdf.generateSecret(kdfSpec);
+            let expectKdf: cryptoFramework.DataBlob =
+              v.numberArrayToDataBlob(commonUtils.convertToUint8Array(data.expectKdf));
+            let ret: boolean = commonUtils.compareDataBlob(secret, expectKdf);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   });
 }

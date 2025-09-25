@@ -90,6 +90,7 @@ export default function dataShareConfigDeleteTest() {
       ]
       try {
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
             expect(result.result).assertEqual(2);
@@ -120,6 +121,7 @@ export default function dataShareConfigDeleteTest() {
       ]
       try {
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
             expect(result.result).assertEqual(1);
@@ -150,6 +152,7 @@ export default function dataShareConfigDeleteTest() {
       ]
       try {
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
             expect().assertFail();

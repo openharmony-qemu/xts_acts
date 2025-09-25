@@ -2036,6 +2036,33 @@ Camera_ErrorCode NDKCamera::OpenSecureCamera(int useCaseCode)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::IsPhysicalCameraOrientationVariable(bool* isVariable)
+{
+    ret_ = OH_CameraInput_IsPhysicalCameraOrientationVariable(cameraInput_, isVariable);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_IsPhysicalCameraOrientationVariable failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetPhysicalCameraOrientation(uint32_t* orientation)
+{
+    ret_ = OH_CameraInput_GetPhysicalCameraOrientation(cameraInput_, orientation);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_GetPhysicalCameraOrientation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::UsePhysicalCameraOrientation(bool isUsed)
+{
+    ret_ = OH_CameraInput_UsePhysicalCameraOrientation(cameraInput_, isUsed);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_UsePhysicalCameraOrientation failed.");
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::CreatePreviewOutputUsedInPreconfig(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {

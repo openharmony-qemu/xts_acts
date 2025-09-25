@@ -15,8 +15,31 @@
 
 
 export const initCamera: (surfaceId: string) => number;
-// export const releaseCamera: () => number;
+export const cameraManagerGetSupportedCameras: () => number;
+export const releaseCameraManger: () => number;
 export const cameraErrorCode: (code: string) => number;
 export const cameraStatusInfo: (code: string) => number;
 export const cameraFormat: (format: number) => number;
 export const cameraFlashMode: (format: number) => number;
+export const getExposureMode: (format: number) => number;
+export const getCameraFocusMode: (format: number) => number;
+export const getCameraFocusState: (format: number) => number;
+export const sessionIsVideoStabilizationModeSupported: (format: number) => number;
+export const takePictureWithPhotoSettings: (ratation: number, qualitylevel: number) => number;
+export const getCameraConcurrentInfo: (type: number) => number;
+export const sessionCanPreconfig: (type: number) => number;
+export const sessionCanPreconfigWithRatio: (ratio: number) => number;
+export const photoOutputRegisterCallback: () => number;
+export const metadataOutputRegisterCallback: () => number;
+export const cameraManagerRegisterTorchStatusCallback: () => number;
+export const captureSessionRegisterSmoothZoomInfoCallback: () => number;
+export const photoOutputRegisterCaptureStartWithInfoCallback: () => number;
+export const cameraManagerRegisterFoldStatusCallback: () => number;
+export const registerAutoDeviceSwitchStatusCallback: () => number;
+export const sessionSetQualityPrioritization: (quality: number) => number;
+export const cameraOpenConcurrentCameras: (type: number) => number;
+export const isWhiteBalanceSupported: (type: number) => number;
+export const registerSystemPressureLevel: () => number;
+export const sessionGetSupportedEffectTypes: (type: number) => number;
+export const OHCameraFunctionHandle: (fun: string, caseCode: number) => number;
+export const registerControlCenterEffectStatusChange: () => number;

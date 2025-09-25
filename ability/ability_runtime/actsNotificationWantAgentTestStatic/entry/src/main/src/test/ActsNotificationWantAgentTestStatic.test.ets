@@ -20,7 +20,7 @@ import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 
 export default function ActsNotificationWantAgentStaticTest() {
@@ -62,6 +62,7 @@ export default function ActsNotificationWantAgentStaticTest() {
         }
       ],
       actionType: wantAgent.OperationType.START_ABILITY,
+      requestCode: 0,
       actionFlags: wantAgentFlags,
       extraInfo: Info,
       extraInfos: Infos
@@ -73,10 +74,10 @@ export default function ActsNotificationWantAgentStaticTest() {
       hilog.info(domain, tag, `${tag} beforeEachEach END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4600
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4600
-     * @tc.desc      : function cancel(agent: WantAgent, callback: AsyncCallback<void>): void
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4600
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4600
+     * @tc.desc       function cancel(agent: WantAgent, callback: AsyncCallback<void>): void
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -111,10 +112,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4600 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4650
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4650
-     * @tc.desc      : function cancel(agent: WantAgent): Promise<void>
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4650
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4650
+     * @tc.desc       function cancel(agent: WantAgent): Promise<void>
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -141,10 +142,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4650 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4700
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4700
-     * @tc.desc      : function getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4700
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4700
+     * @tc.desc       function getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -181,10 +182,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4700 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4750
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4750
-     * @tc.desc      : function getBundleName(agent: WantAgent): Promise<string>
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4750
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4750
+     * @tc.desc       function getBundleName(agent: WantAgent): Promise<string>
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -213,10 +214,78 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4750 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4900
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4900
-     * @tc.desc      : function equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void,Checks whether two WantAgent objects are equal
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4800
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4800
+     * @tc.desc       function getUid(agent: WantAgent, callback: AsyncCallback<number>): void
+     */
+    it('Sub_Notification_Ans_WantAgent_Create_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4800 START')
+        WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        wantAgent.getWantAgent(WantAgentInfo, (err: BusinessError<void> | null, data: _WantAgent | undefined) => {
+          if (err && err.code !== 0) {
+            hilog.info(domain, tag, 'getWantAgent AsyncCallback err:' + JSON.stringify(err))
+            expect().assertFail()
+            done()
+          } else {
+            hilog.info(domain, tag, 'getWantAgent AsyncCallback success:' + JSON.stringify(data))
+            if (data !== undefined) {
+              WantAgent = data
+              wantAgent.getUid(WantAgent, (err: BusinessError<void> | null, data: Int | undefined) => {
+                if (err && err.code !== 0) {
+                  hilog.info(domain, tag, 'getUid AsyncCallback err:' + JSON.stringify(err))
+                  expect().assertFail()
+                  done()
+                } else {
+                  hilog.info(domain, tag, 'getUid AsyncCallback success:' + JSON.stringify(data))
+                  expect(true).assertTrue()
+                  done()
+                }
+              })
+            } else {
+              done()
+            }
+          }
+        })
+        hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4800 END')
+      })
+
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4850
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4850
+     * @tc.desc       function getUid(agent: WantAgent): Promise<number>
+     */
+    it('Sub_Notification_Ans_WantAgent_Create_static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4850 START')
+        WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent) => {
+          WantAgent = data
+          hilog.info(domain, tag, 'getWantAgent Promise success:' + JSON.stringify(data))
+          wantAgent.getUid(WantAgent).then((data: Int) => {
+            hilog.info(domain, tag, 'getUid Promise success:' + JSON.stringify(data))
+            expect(true).assertTrue()
+            done()
+          }).catch((err: BusinessError): void => {
+            hilog.info(domain, tag, 'getUid Promise err: ' + JSON.stringify(err))
+            expect().assertFail();
+            done()
+          })
+        }).catch((err: BusinessError): void => {
+          hilog.info(domain, tag, 'getWantAgent Promise err: ' + JSON.stringify(err))
+          expect().assertFail();
+          done()
+        })
+        hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4850 END')
+      })
+
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4900
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4900
+     * @tc.desc       function equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void,Checks whether two WantAgent objects are equal
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -257,10 +326,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4900 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_4950
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_4950
-     * @tc.desc      : function equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>,Checks whether two WantAgent objects are equal
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4950
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4950
+     * @tc.desc       function equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>,Checks whether two WantAgent objects are equal
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -294,10 +363,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_4950 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_5000
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_5000
-     * @tc.desc      : function getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_5000
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_5000
+     * @tc.desc       function getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
      */
     it("Sub_Notification_Ans_WantAgent_Create_static_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -314,7 +383,7 @@ export default function ActsNotificationWantAgentStaticTest() {
             if (data !== undefined) {
                 WantAgent = data;
                 hilog.info(domain, tag, 'getWantAgent AsyncCallback success: ' + JSON.stringify(data))
-                wantAgent.getOperationType(WantAgent, (err: BusinessError<void> | null, data: Double | undefined) => {
+                wantAgent.getOperationType(WantAgent, (err: BusinessError<void> | null, data: Int | undefined) => {
                 if (err && err.code !== 0) {
                   hilog.info(domain, tag, 'getOperationType AsyncCallback err:' + JSON.stringify(err))
                   expect().assertFail();
@@ -332,10 +401,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5000 END')
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_static_5050
-     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_static_5050
-     * @tc.desc      : function getOperationType(agent: WantAgent): Promise<number>,Obtains the {@link OperationType} of a {@link WantAgent}
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_5050
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_5050
+     * @tc.desc       function getOperationType(agent: WantAgent): Promise<number>,Obtains the {@link OperationType} of a {@link WantAgent}
      */
     it("Sub_Notification_Ans_WantAgent_Create_static_5050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -345,7 +414,7 @@ export default function ActsNotificationWantAgentStaticTest() {
         wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Double): Promise<Double> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(true).assertTrue()
             done()
@@ -360,6 +429,108 @@ export default function ActsNotificationWantAgentStaticTest() {
           done()
         })
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5050 END')
+      })
+
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_Static_5100
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_Static_5100
+     * @tc.desc       function trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void,Triggers a WantAgent
+     */
+    it('Sub_Notification_Ans_WantAgent_Create_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, `Sub_Notification_Ans_WantAgent_Create_Static_5100 START`)
+      WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY;
+      WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
+      wantAgent.getWantAgent(WantAgentInfo, (err: BusinessError<void> | null, data: _WantAgent | undefined) => {
+        if (err?.code !== 0) {
+          hilog.info(domain, tag, `getWantAgent, code: ${JSON.stringify(err?.code)}, message: ${JSON.stringify(err?.message)}`);
+          expect().assertFail();
+          done()
+        } else {
+          let wantAgentData: _WantAgent = data as _WantAgent
+          let triggerInfo: wantAgent.TriggerInfo = {
+            code: 0,
+            want: {
+              deviceId: "deviceId",
+              bundleName: "com.example.actsnotificationwantagent.static",
+              abilityName: "EntryAbility",
+              action: "action1",
+              entities: ["entity1"],
+              type: "MIMETYPE",
+              uri: "key={true,true,false}",
+              parameters: parameters,
+            } as Want,
+            permission: '',
+            startOptions: undefined,
+            extraInfo: Info,
+            extraInfos: Infos
+          }
+          wantAgent.trigger(wantAgentData, triggerInfo, (err: BusinessError<void> | null, data: wantAgent.CompleteData | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `trigger, code: ${JSON.stringify(err?.code)}, message: ${JSON.stringify(err?.message)}`);
+              expect().assertFail();
+              done()
+            } else {
+              hilog.info(domain, tag, `trigger ok!`);
+              expect(typeof(data?.info)).assertEqual('object')
+              expect(data?.finalCode).assertEqual(0)
+              expect(data?.finalData).assertEqual('')
+              expect(typeof(data?.extraInfo)).assertEqual('object')
+              expect(data?.want.deviceId).assertEqual('deviceId')
+              expect(data?.want.bundleName).assertEqual('com.example.actsnotificationwantagent.static')
+              expect(data?.want.abilityName).assertEqual('EntryAbility2')
+              done()
+            }
+          })
+        }
+      })
+      hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_Static_5100 END')
+    })
+
+    /**
+     * @tc.number     Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.name       Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.desc       function trigger(agent: WantAgent, triggerInfo: TriggerInfo): void,Triggers a WantAgent
+     */
+    it('Sub_Notification_Ans_WantAgent_Create_Static_5150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, `Sub_Notification_Ans_WantAgent_Create_Static_5150 START`)
+      WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY;
+      WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
+      wantAgent.getWantAgent(WantAgentInfo, (err: BusinessError<void> | null, data: _WantAgent | undefined) => {
+        if (err?.code !== 0) {
+          hilog.info(domain, tag, `getWantAgent, code: ${JSON.stringify(err?.code)}, message: ${JSON.stringify(err?.message)}`);
+          expect().assertFail();
+          done()
+        } else {
+          let wantAgentData: _WantAgent = data as _WantAgent
+          let triggerInfo: wantAgent.TriggerInfo = {
+            code: 0,
+            want: {
+              deviceId: "deviceId",
+              bundleName: "com.example.actsnotificationwantagent.static",
+              abilityName: "EntryAbility",
+              action: "action1",
+              entities: ["entity1"],
+              type: "MIMETYPE",
+              uri: "key={true,true,false}",
+              parameters: parameters,
+            } as Want,
+            permission: '',
+            startOptions: undefined,
+            extraInfo: Info,
+            extraInfos: Infos
+          }
+          try {
+            wantAgent.trigger(wantAgentData, triggerInfo)
+            expect(true).assertTrue()
+            done();
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, `err: code ${err.code}, message ${err.message}`);
+            expect().assertFail()
+            done();
+          }
+        }
+      })
+      hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_Static_5150 END')
       })
   })
 }

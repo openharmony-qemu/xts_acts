@@ -13,15 +13,17 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200570;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let driver = Driver.create();
 
 export default function webAttributeEnhancedTest() {
 
@@ -51,15 +53,10 @@ export default function webAttributeEnhancedTest() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("WebAttributeEnhancedTest beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeEnhancedTest afterEach start");
       done();
     })
 
@@ -72,12 +69,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 0
      */
     it('testOnTitleReceiveIsRealTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle001', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle001', 1, 2025071603, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle001', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle001', 1, 200580, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle001' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -89,12 +90,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 0
      */
     it('testOnTitleReceiveIsRealTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle002', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle002', 0, 2025071604, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle002', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle002', 0, 200590, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle002' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
     /*
      * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0300
@@ -105,12 +110,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 0
      */
     it('testOnTitleReceiveIsRealTitle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle003', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle003', 1, 2025071605, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle003', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle003', 1, 200600, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle003' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
     /*
      * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0400
@@ -121,12 +130,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 0
      */
     it('testOnTitleReceiveIsRealTitle004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle004', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle004', 0, 2025071606, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle004', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle004', 0, 200610, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle004' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
     /*
      * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0500
@@ -137,12 +150,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 1
      */
     it('testOnTitleReceiveIsRealTitle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle005', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle005', 0, 2025082602, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle005', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle005', 0, 200611, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle005' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
     /*
      * @tc.number      : SUB_WEB_ONTITLERECEIVE_ISREALTITLE_0600
@@ -153,13 +170,16 @@ export default function webAttributeEnhancedTest() {
      * @tc.level       : Level 1
      */
     it('testOnTitleReceiveIsRealTitle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnTitleReceiveIsRealTitle006', 127);
-      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle006', 1, 2025082603, done,
+      Utils.emitEvent('emitOnTitleReceiveIsRealTitle006', EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnTitleReceiveIsRealTitle006', 1, 200612, () => { isReturn = true },
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('OnTitleReceiveIsRealTitleButton', 10, '');
+      await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
+     if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle005' + '_returnCheck', true, 1000)) {
+       done();
+     }
     })
-
   })
 }

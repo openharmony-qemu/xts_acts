@@ -125,7 +125,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0004';
       try {
-        let buf4 = buffer.alloc(0, 0);
+        let buf4 = buffer.alloc(0, 0 as double);
         const result = buf4.toString();
         console.log(`${TAG}result${result}`);
         expect(String(buf4.length)).assertEqual('0');
@@ -146,7 +146,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0005';
       try {
-        let buf5 = buffer.alloc(0, -1);
+        let buf5 = buffer.alloc(0, -1 as double);
         expect(String(buf5.length)).assertEqual('0');
         expect(buf5.toString()).assertEqual('');
       } catch (err: BusinessError) {
@@ -192,32 +192,32 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0800
-     * @tc.name       : testAlloc0008
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testBufferAlloc0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const TAG = 'testBufferAlloc0008';
-      try {
-        let buf8 = buffer.alloc(3, 1);
-        expect(String(buf8.length)).assertEqual('3');
-        let pair = buf8.entries();
-        let next = pair.next();
-        let isOk = true;
-        while (!Boolean(next.done)) {
-          isOk = Boolean(isOk&&(String(next?.value?.[1]).localeCompare('1')==0));
-          next = pair.next();
-        }
-        expect(isOk).assertTrue();
-      } catch (err:Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0800
+    //  * @tc.name       : testAlloc0008
+    //  * @tc.desc       : Test the function of the interface Alloc.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 0
+    //  */
+    // it('testBufferAlloc0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    //   const TAG = 'testBufferAlloc0008';
+    //   try {
+    //     let buf8 = buffer.alloc(3, 1 as double);
+    //     expect(String(buf8.length)).assertEqual('3');
+    //     let pair = buf8.entries();
+    //     let next = pair.next();
+    //     let isOk = true;
+    //     while (!Boolean(next.done)) {
+    //       isOk = Boolean(isOk&&(String(next?.value?.[1]).localeCompare('1')==0));
+    //       next = pair.next();
+    //     }
+    //     expect(isOk).assertTrue();
+    //   } catch (err:BusinessError) {
+    //     console.error(`${TAG} failed, error: ${err.message}`);
+    //     expect(false).assertFail();
+    //   }
+    // })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0900
      * @tc.name       : testAlloc0009
@@ -226,17 +226,43 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    // it('testBufferAlloc0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-    //   const TAG = 'testBufferAlloc0009';
+    it('testBufferAlloc0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const TAG = 'testBufferAlloc0009';
+      try {
+        let buf9 = buffer.alloc(3, '');
+        expect(String(buf9.length)).assertEqual('3');
+        let pair = buf9.entries();
+        let next = pair.next();
+        let isOk = true;
+        while (!next.done) {
+          String()
+          isOk = Boolean(isOk&&(String(next?.value?.[1]).localeCompare('')==0));
+          next = pair.next();
+        }
+        expect(isOk).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1000
+    //  * @tc.name       : testAlloc0010
+    //  * @tc.desc       : Test the function of the interface Alloc.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 0
+    //  */
+    // it('testBufferAlloc0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    //   const TAG = 'testBufferAlloc0010';
     //   try {
-    //     let buf9 = buffer.alloc(3, '');
-    //     expect(String(buf9.length)).assertEqual('3');
-    //     let pair = buf9.entries();
+    //     let buf10 = buffer.alloc(3, undefined);
+    //     expect(String(buf10.length)).assertEqual('3');
+    //     let pair = buf10.entries();
     //     let next = pair.next();
     //     let isOk = true;
     //     while (!next.done) {
-    //       String()
-    //       isOk = Boolean(isOk&&(String(next?.value?.[1]).localeCompare('')==0));
+    //       isOk = Boolean(isOk&&(Number(next?.value?.[1])==0));
     //       next = pair.next();
     //     }
     //     expect(isOk).assertTrue();
@@ -245,32 +271,6 @@ export default function bufferTest2() {
     //     expect(false).assertFail();
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1000
-     * @tc.name       : testAlloc0010
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testBufferAlloc0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const TAG = 'testBufferAlloc0010';
-      try {
-        let buf10 = buffer.alloc(3, undefined);
-        expect(String(buf10.length)).assertEqual('3');
-        let pair = buf10.entries();
-        let next = pair.next();
-        let isOk = true;
-        while (!next.done) {
-          isOk = Boolean(isOk&&(Number(next?.value?.[1])==0));
-          next = pair.next();
-        }
-        expect(isOk).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1100
      * @tc.name       : testAlloc0011
@@ -322,7 +322,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0013';
       try {
-        let buf = buffer.alloc(0, 0);
+        let buf = buffer.alloc(0, 0 as double);
         expect(String(buf.length)).assertEqual('0');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -340,7 +340,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0014';
       try {
-        let buf = buffer.alloc(0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 'base64');
+        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0) as double, 'base64');
         expect(String(buf.length)).assertEqual('0');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -358,7 +358,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0015';
       try {
-        let buf = buffer.alloc(0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 'utf-8');
+        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0) as double, 'utf-8');
         expect(String(buf.length)).assertEqual('0');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -376,7 +376,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0016';
       try {
-        let buf = buffer.alloc(0, -1, 'base64');
+        let buf = buffer.alloc(0, -1 as double, 'base64');
         expect(String(buf.length)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -394,7 +394,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0017';
       try {
-        let buf = buffer.alloc(0, -1, 'utf-8');
+        let buf = buffer.alloc(0, -1 as double, 'utf-8');
         expect(String(buf.length)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -412,7 +412,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0018';
       try {
-        let buf = buffer.alloc(0, -1, 'base64');
+        let buf = buffer.alloc(0, -1 as double, 'base64');
         expect(String(buf.length)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -465,17 +465,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    // it('testBufferByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-    //   const TAG = 'testBufferByteLength0003';
-    //   try {
-    //     let uint8Array = new Uint8Array([0x74, 0x79, 0x70, 0x65, 0x64]);
-    //     const res = buffer.byteLength(uint8Array);
-    //     expect(res).assertEqual(5);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+      const TAG = 'testBufferByteLength0003';
+      try {
+        let uint8Array = new Uint8Array([0x74, 0x79, 0x70, 0x65, 0x64]);
+        const res = buffer.byteLength(uint8Array);
+        expect(res).assertEqual(5);
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0400
      * @tc.name       : testByteLength0004
@@ -514,24 +514,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0600 --无效
-     * @tc.name       : testByteLength0006
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    // it('testBufferByteLength0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-    //   const TAG = 'testBufferByteLength0006';
-    //   try {
-    //     const sharedBuffer:SharedArrayBuffer = new SharedArrayBuffer(8);
-    //     expect(buffer.byteLength(sharedBuffer)).assertEqual(8);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0700
      * @tc.name       : testByteLength0007
@@ -656,7 +639,7 @@ export default function bufferTest2() {
         let buf1 = buffer.from("1234");
         let buf2 = buffer.from("abcd");
         let buf = buffer.concat([buf1, buf2]);
-        expect(String(buf.length)).assertEqual(8);
+        expect(String(buf.length)).assertEqual('8');
         expect(buf.toString('utf8')).assertEqual('1234abcd');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -729,7 +712,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0500
-     * @tc.name       : testConcat0005
+     * @tc.name       : testBufferConcat0005
      * @tc.desc       : Test the function of the interface Concat.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -742,10 +725,10 @@ export default function bufferTest2() {
         let buf2 = buffer.from("abcd");
         buffer.concat([buf1, buf2], -1);
         expect(false).assertFail();
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
@@ -762,12 +745,12 @@ export default function bufferTest2() {
       try {
         let buf1 = buffer.from("1234");
         let buf2 = buffer.from("abcd");
-        buffer.concat([buf1, buf2], Infinity);
+        buffer.concat([buf1, buf2], Infinity.toInt());
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: Infinity');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: 2147483647');
       }
     })
     /**
@@ -783,13 +766,13 @@ export default function bufferTest2() {
       try {
         let buf1 = buffer.from("1234");
         let buf2 = buffer.from("abcd");
-        buffer.concat([buf1, buf2], -Infinity);
+        buffer.concat([buf1, buf2], -Infinity.toInt());
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.code).assertEqual(10200001);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -Infinity');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     })
     /**
@@ -814,7 +797,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0900
-     * @tc.name       : testConcat0009
+     * @tc.name       : testBufferConcat0009
      * @tc.desc       : Test the function of the interface Concat.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -832,7 +815,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
@@ -876,25 +859,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0200 --无效
-     * @tc.name       : testFrom10002
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    // it('testBufferFrom10002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom10002';
-    //   try {
-    //     const ab2 = new SharedArrayBuffer(8);
-    //     const buf2 = buffer.from(ab2);
-    //     expect(String(buf2.length)).assertEqual('8');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0300
      * @tc.name       : testFrom10003
@@ -966,12 +931,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferFrom10006';
       try {
         const ab1 = new ArrayBuffer(8);
-        buffer.from(ab1, Infinity);
+        buffer.from(ab1, Infinity.toInt());
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 8. Received value is: Infinity')
+          .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 8. Received value is: 2147483647')
 
       }
     })
@@ -987,22 +952,22 @@ export default function bufferTest2() {
       const TAG = 'testBufferFrom10007';
       try {
         const ab1 = new ArrayBuffer(8);
-        buffer.from(ab1, -Infinity);
+        buffer.from(ab1, -Infinity.toInt());
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 8. Received value is: -Infinity');
+          .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 8. Received value is: -2147483647');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0800
-     * @tc.name       : testFrom10008
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0800
+    //  * @tc.name       : testFrom10008
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10008';
     //   try {
@@ -1014,14 +979,14 @@ export default function bufferTest2() {
     //     expect(false).assertFail();
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0900
-     * @tc.name       : testFrom10009
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0900
+    //  * @tc.name       : testFrom10009
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10009';
     //   try {
@@ -1034,55 +999,55 @@ export default function bufferTest2() {
     //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: -1');
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1000
-     * @tc.name       : testFrom10010
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1000
+    //  * @tc.name       : testFrom10010
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10010';
     //   try {
     //     const ab1 = new ArrayBuffer(8);
-    //     buffer.from(ab1, 0, Infinity);
+    //     buffer.from(ab1, 0, Infinity.toInt());
     //     expect(false).assertFail();
     //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: Infinity')
-    //
+    //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: 2147483647')
+    
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1100
-     * @tc.name       : testFrom10011
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1100
+    //  * @tc.name       : testFrom10011
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10011';
     //   try {
     //     const ab1 = new ArrayBuffer(8);
-    //     buffer.from(ab1, 0, -Infinity);
+    //     buffer.from(ab1, 0, -Infinity.toInt());
     //     expect(false).assertFail();
     //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: -Infinity');
+    //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: -2147483647');
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1200
-     * @tc.name       : testFrom10012
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1200
+    //  * @tc.name       : testFrom10012
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10012';
     //   try {
@@ -1095,48 +1060,48 @@ export default function bufferTest2() {
     //     expect(false).assertFail();
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1300
-     * @tc.name       : testFrom10013
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1300
+    //  * @tc.name       : testFrom10013
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10013';
     //   try {
     //     const arrayBuffer = new ArrayBuffer(5);
     //     const uint8Array = new Uint8Array(arrayBuffer);
     //     uint8Array.set([104, 101, 108, 108, 111]);
-    //     const buf = buffer.from(arrayBuffer, Infinity, 0);
+    //     const buf = buffer.from(arrayBuffer, Infinity.toInt(), 0);
     //     expect(false).assertFail();
     //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 5. Received value is: Infinity');
+    //       .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 5. Received value is: 2147483647');
     //   }
     // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1400
-     * @tc.name       : testFrom10014
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1400
+    //  * @tc.name       : testFrom10014
+    //  * @tc.desc       : Test the function of the interface From1.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferFrom10014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10014';
     //   try {
     //     const arrayBuffer = new ArrayBuffer(5);
     //     const uint8Array = new Uint8Array(arrayBuffer);
     //     uint8Array.set([104, 101, 108, 108, 111]);
-    //     const buf = buffer.from(arrayBuffer, Infinity, -1);
+    //     const buf = buffer.from(arrayBuffer, Infinity.toInt(), -1);
     //     expect(false).assertFail();
     //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 5. Received value is: Infinity');
+    //       .assertEqual('The value of "byteOffset" is out of range. It must be >= 0 and <= 5. Received value is: 2147483647');
     //   }
     // })
     /**
@@ -1147,19 +1112,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFrom20001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20001';
-    //   try {
-    //     const buf1 = buffer.from('test');
-    //     const buf2 = buffer.from(buf1);
-    //     expect(buf2.toString()).assertEqual('test');
-    //     buf1[0] = 'T'.charCodeAt(0);
-    //     expect(buf2.toString()).assertEqual('test');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferFrom20001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFrom20001';
+      try {
+        const buf1 = buffer.from('test');
+        const buf2 = buffer.from(buf1);
+        expect(buf2.toString()).assertEqual('test');
+        buf1[0] = 'T'.charCodeAt(0).toInt();
+        expect(buf2.toString()).assertEqual('test');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0200
      * @tc.name       : testFrom20002
@@ -1168,22 +1133,22 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFrom20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20002';
-    //   try {
-    //     const uint8Arr = new Uint8Array([1, 2, 3]);
-    //     const buf3 = buffer.from(uint8Arr);
-    //     const result: number[] = [];
-    //     for (let i = 0; i < buf3.length; i++) {
-    //       result.push(buf3[i]);
-    //     }
-    //     console.log(`${TAG} result: ${result}`);
-    //     expect(result.join(',')).assertEqual('1,2,3');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferFrom20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFrom20002';
+      try {
+        const uint8Arr = new Uint8Array([1, 2, 3]);
+        const buf3 = buffer.from(uint8Arr);
+        const result: number[] = [];
+        for (let i = 0; i < buf3.length; i++) {
+          result.push(buf3[i]);
+        }
+        console.log(`${TAG} result: ${result}`);
+        expect(result.join(',')).assertEqual('1,2,3');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0300
      * @tc.name       : testFrom20003
@@ -1203,23 +1168,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0400 --无效
-     * @tc.name       : testFrom20004
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    // it('testBufferFrom20004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20004';
-    //   try {
-    //     buffer.from(undefined);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0500
      * @tc.name       : testFrom20005
@@ -1238,69 +1187,7 @@ export default function bufferTest2() {
         expect(err.code).assertEqual(10200001);
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0600 --无效
-     * @tc.name       : testFrom20006
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    // it('testBufferFrom20006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20006';
-    //   try {
-    //     const sharedArrayBuffer = new SharedArrayBuffer(10);
-    //     const uint8Array = new Uint8Array(sharedArrayBuffer);
-    //     uint8Array.set([104, 101, 108, 108, 111, 119, 111, 114, 108, 100]);
-    //     const buf = buffer.from(sharedArrayBuffer, undefined);
-    //     expect(String(buf.length)).assertEqual('10');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0700  --无效
-     * @tc.name       : testFrom20007
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    // it('testBufferFrom20007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20007';
-    //   try {
-    //     const sharedArrayBuffer = new SharedArrayBuffer(10);
-    //     const uint8Array = new Uint8Array(sharedArrayBuffer);
-    //     uint8Array.set([104, 101, 108, 108, 111, 119, 111, 114, 108, 100]);
-    //     const buf = buffer.from(sharedArrayBuffer, 0);
-    //     expect(String(buf.length)).assertEqual('10');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0800  --无效
-     * @tc.name       : testFrom20008
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    // it('testBufferFrom20008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom20008';
-    //   try {
-    //     const sharedArrayBuffer = new SharedArrayBuffer(10);
-    //     const uint8Array = new Uint8Array(sharedArrayBuffer);
-    //     uint8Array.set([104, 101, 108, 108, 111, 119, 111, 114, 108, 100]);
-    //     const buf = buffer.from(sharedArrayBuffer, 0, 0);
-    //     expect(String(buf.length)).assertEqual('0');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0100
      * @tc.name       : testFrom30001
@@ -1350,7 +1237,7 @@ export default function bufferTest2() {
     it('testBufferFrom30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30003';
       try {
-        let buf = buffer.from(new String('this is a test'), 11, Infinity);
+        let buf = buffer.from(new String('this is a test'), 11, Infinity.toInt());
         expect(String(buf.length)).assertEqual('14');
         expect(buf.toString()).assertEqual('this is a test');
       } catch (err:BusinessError) {
@@ -1369,7 +1256,7 @@ export default function bufferTest2() {
     it('testBufferFrom30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30004';
       try {
-        let buf = buffer.from(new String('hello world'), 1, -Infinity);
+        let buf = buffer.from(new String('hello world'), 1, -Infinity.toInt());
         expect(String(buf.length)).assertEqual('11');
         expect(buf.toString()).assertEqual('hello world');
       } catch (err:BusinessError) {
@@ -1385,17 +1272,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFrom30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom30005';
-    //   try {
-    //     let buf = buffer.from(new String('hello world'), 'test', 1);
-    //     expect(buf).assertFail();
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('Parameter error. The type of "encoding" must be BufferEncoding. the encoding test is unknown');
-    //   }
-    // })
+    it('testBufferFrom30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFrom30005';
+      try {
+        let buf = buffer.from(new String('hello world'), 'test', 1);
+        expect(buf).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('Parameter error. The type of "encoding" must be BufferEncoding. the encoding test is unknown');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0600
      * @tc.name       : testFrom30006
@@ -1410,7 +1297,7 @@ export default function bufferTest2() {
         let buf = buffer.from(new String('this is a test'), 'utf8', -1);
         expect(buf.length as int).assertEqual(14);
         expect(buf.toString()).assertEqual('this is a test');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1426,10 +1313,10 @@ export default function bufferTest2() {
     it('testBufferFrom30007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30007';
       try {
-        let buf = buffer.from(new String('this is a test'), 'utf8', Infinity);
+        let buf = buffer.from(new String('this is a test'), 'utf8', Infinity.toInt());
         expect(buf.length).assertEqual(14 as double);
         expect(buf.toString()).assertEqual('this is a test');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1445,7 +1332,7 @@ export default function bufferTest2() {
     it('testBufferFrom30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30008';
       try {
-        let buf = buffer.from(new String('this is a test'), 'utf8', -Infinity);
+        let buf = buffer.from(new String('this is a test'), 'utf8', -Infinity.toInt());
         expect(buf.length).assertEqual(14 as double);
         expect(buf.toString()).assertEqual('this is a test');
       } catch (err:BusinessError) {
@@ -1455,7 +1342,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0900
-     * @tc.name       : testFrom30009
+     * @tc.name       : testBufferFrom30009
      * @tc.desc       : Test the function of the interface From3.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -1467,13 +1354,13 @@ export default function bufferTest2() {
         const person = new Person("Alice", 30);
         buffer.from(person, 11, 0);
         buffer.from(person, 11, -1);
-        buffer.from(person, 11, Infinity);
-        buffer.from(person, 11, -Infinity);
+        buffer.from(person, 11, Infinity.toInt());
+        buffer.from(person, 11, -Infinity.toInt());
         expect(false).assertFail();
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertContain('Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, Array-like.');
+          .assertContain('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     })
     /**
@@ -1513,7 +1400,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
          expect(err.message)
-          .assertContain('Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, Array-like.');
+          .assertContain('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     })
     /**
@@ -1550,7 +1437,7 @@ export default function bufferTest2() {
         expect(buf.toString()).assertEqual('i·');
         expect(buf.length as int).assertEqual(2);
         expect(buf.toString('base64')).assertEqual('abc=');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1609,7 +1496,7 @@ export default function bufferTest2() {
         let buf2 = new Uint8Array([1, 2, 3, 4]);
         let res = buf1.compare(buf2);
         expect(String(res)).assertEqual('1');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1704,18 +1591,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferTranscode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferTranscode0003';
-    //   try {
-    //     let buf = buffer.from('hello world');
-    //     let newBuf = buffer.transcode(buf, 'utf-8', 'base64');
-    //     console.log(`${TAG} newBuf:${newBuf}`);
-    //     expect(String(newBuf.length)).assertEqual('8');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferTranscode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferTranscode0003';
+      try {
+        let buf = buffer.from('hello world');
+        let newBuf = buffer.transcode(buf, 'utf-8', 'base64');
+        console.log(`${TAG} newBuf:${newBuf}`);
+        expect(String(newBuf.length)).assertEqual('8');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0400
      * @tc.name       : testTranscode0004
@@ -1763,18 +1650,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferTranscode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferTranscode0006';
-    //   try {
-    //     let buf = new Uint8Array([1, 2, 3, 4]);
-    //     let newBuf = buffer.transcode(buf, 'utf8', 'base64');
-    //     expect(newBuf.toString('utf8')).assertEqual('1,2,3,4');
-    //     expect(String(newBuf.length)).assertEqual('7');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferTranscode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferTranscode0006';
+      try {
+        let buf = new Uint8Array([1, 2, 3, 4]);
+        let newBuf = buffer.transcode(buf, 'utf8', 'base64');
+        expect(newBuf.toString('utf8')).assertEqual('1,2,3,4');
+        expect(String(newBuf.length)).assertEqual('7');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0700
      * @tc.name       : testTranscode0007
@@ -1783,17 +1670,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferTranscode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferTranscode0007';
-    //   try {
-    //     let buf = new Uint8Array([1, 2, 3, 4]);
-    //     let newBuf = buffer.transcode(buf, 'utf8', 'base64');
-    //     expect(String(newBuf.length)).assertEqual('5');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferTranscode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferTranscode0007';
+      try {
+        let buf = new Uint8Array([1, 2, 3, 4]);
+        let newBuf = buffer.transcode(buf, 'utf8', 'base64');
+        expect(String(newBuf.length)).assertEqual('5');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0800
      * @tc.name       : testTranscode0008
@@ -1809,7 +1696,7 @@ export default function bufferTest2() {
         let newBuf = buffer.transcode(buf, 'utf8', 'utf8');
         expect(newBuf.toString('utf8')).assertEqual('1,2,3,4');
         expect(String(newBuf.length)).assertEqual('7');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1826,7 +1713,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0001';
       try {
         const buf = buffer.allocUninitializedFromPool(5);
-        buf.fill(0x41);
+        buf.fill(0x41 as double);
         const result = buf.toString('utf-8');
         expect(result).assertEqual('AAAAA');
       } catch (err:BusinessError) {
@@ -1915,7 +1802,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0005';
       try {
         const buf = buffer.alloc(3)
-        buf.fill(3)
+        buf.fill(3 as double)
         const res = buffer.from([3, 3, 3]);
         expect(buf.equals(res)).assertTrue();
       } catch (err:BusinessError) {
@@ -1959,7 +1846,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
       }
     });
     /**
@@ -1974,12 +1861,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0008';
       try {
         const buf = buffer.alloc(6);
-        buf.fill('D', Infinity);
- 	expect(false).assertFail();
+        buf.fill('D', Infinity.toInt());
+        expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967296. Received value is: Infinity');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: 2147483647');
       }
     });
     /**
@@ -1994,12 +1881,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0009';
       try {
         const buf = buffer.alloc(6);
-        buf.fill('D', -Infinity);
+        buf.fill('D', -Infinity.toInt());
 	expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967296. Received value is: -Infinity');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2147483647');
       }
     });
     /**
@@ -2010,19 +1897,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFill0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFill0010';
-    //   try {
-    //     const buf = buffer.alloc(3);
-    //     buf.fill('A', 1);
-    //     expect(buf.toString()).assertEqual('\x00AA');
-    //     expect(buf[1]).assertEqual(String(0x41));
-    //     expect(buf[2]).assertEqual(String(0x41));
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferFill0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFill0010';
+      try {
+        const buf = buffer.alloc(3);
+        buf.fill('A', 1);
+        expect(buf.toString()).assertEqual('\x00AA');
+        expect(buf[1]).assertEqual(String(0x41));
+        expect(buf[2]).assertEqual(String(0x41));
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1100
      * @tc.name       : testFill0011
@@ -2054,9 +1941,9 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0012';
       try {
         const buf = buffer.alloc(5);
-        buf.fill(0x4B, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, -1);
+        buf.fill(0x4B as double, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, -1);
         expect(false).assertFail();
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "end" is out of range. It must be >= 0 and <= 5. Received value is: -1');
@@ -2074,12 +1961,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferFill0013';
       try {
         const buf = buffer.alloc(5);
-        buf.fill(0x4B, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, Infinity);
+        buf.fill(0x4B as double, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, Infinity.toInt());
         expect(false).assertFail();
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "end" is out of range. It must be >= 0 and <= 5. Received value is: Infinity');
+          .assertEqual('The value of "end" is out of range. It must be >= 0 and <= 5. Received value is: 2147483647');
       }
     });
     /**
@@ -2090,18 +1977,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFill0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFill0014';
-    //   try {
-    //     const buf = buffer.alloc(5);
-    //     buf.fill(0x4B, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, -Infinity);
-	  //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "end" is out of range. It must be >= 0 and <= 5. Received value is: -Infinity');
-    //   }
-    // });
+    it('testBufferFill0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFill0014';
+      try {
+        const buf = buffer.alloc(5);
+        buf.fill(0x4B as double, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, -Infinity.toInt());
+	      expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "end" is out of range. It must be >= 0 and <= 5. Received value is: -2147483647');
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1500
      * @tc.name       : testFill0015
@@ -2129,17 +2016,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferFill0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFill0016';
-    //   try {
-    //     const buf = buffer.alloc(5);
-    //     buf.fill('A', 0, 5, 'base64');
-    //     expect(buf.toString('base64')).assertEqual('AAAAAAA=');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferFill0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFill0016';
+      try {
+        const buf = buffer.alloc(5);
+        buf.fill('A', 0, 5, 'base64');
+        expect(buf.toString('base64')).assertEqual('AAAAAAA=');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1700
      * @tc.name       : testFill0017
@@ -2219,7 +2106,7 @@ export default function bufferTest2() {
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
-     * @tc.name       : testBufferCompare0004
+     * @tc.name       : testBufferBufferCompare0004
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2231,16 +2118,16 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
         const result = buf1.compare(buf2, -1);
-	expect(result).assertFail();
+	      expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0500
-     * @tc.name       : testBufferCompare0005
+     * @tc.name       : testBufferBufferCompare0005
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2251,17 +2138,16 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
-        const result = buf1.compare(buf2, Infinity);
-	expect(result).assertFail();
+        const result = buf1.compare(buf2, Infinity.toInt());
+        expect(result).assertEqual(1);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: Infinity');
+        expect(false).assertFail();
       }
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0600
-     * @tc.name       : testBufferCompare0006
+     * @tc.name       : testBufferBufferCompare0006
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2272,12 +2158,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
-        const result = buf1.compare(buf2, -Infinity);
-	expect(result).assertFail();
+        const result = buf1.compare(buf2, -Infinity.toInt());
+	      expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: -Infinity');
+          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     });
     /**
@@ -2376,12 +2262,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3, 4]);
-        const result = buf1.compare(buf2, undefined, Infinity);
+        const result = buf1.compare(buf2, undefined, Infinity.toInt());
 	expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetEnd" is out of range. It must be >= 0 and <= 4. Received value is: Infinity');
+          .assertEqual('The value of "targetEnd" is out of range. It must be >= 0 and <= 4. Received value is: 2147483647');
       }
     });
     /**
@@ -2397,12 +2283,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        const result = buf1.compare(buf2, undefined, -Infinity);
+        const result = buf1.compare(buf2, undefined, -Infinity.toInt());
         expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetEnd" is out of range. It must be >= 0 and <= 3. Received value is: -Infinity');
+          .assertEqual('The value of "targetEnd" is out of range. It must be >= 0 and <= 3. Received value is: -2147483647');
       }
     });
     /**
@@ -2467,7 +2353,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1600
-     * @tc.name       : testCompare0016
+     * @tc.name       : testBufferBufferCompare0016
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2479,16 +2365,16 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
         buf1.compare(buf2, undefined, undefined, -1);
-	expect(false).assertFail();
+	      expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1700
-     * @tc.name       : testCompare0017
+     * @tc.name       : testBufferBufferCompare0017
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2499,17 +2385,16 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        buf1.compare(buf2, undefined, undefined, Infinity);
-	expect(false).assertFail();
+        const result = buf1.compare(buf2, undefined, undefined, Infinity.toInt());
+	      expect(result).assertEqual(-1);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: Infinity');
+        expect(false).assertFail();
       }
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1800
-     * @tc.name       : testCompare0018
+     * @tc.name       : testBufferBufferCompare0018
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2520,12 +2405,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        buf1.compare(buf2, undefined, undefined, -Infinity);
-	expect(false).assertFail();
+        buf1.compare(buf2, undefined, undefined, -Infinity.toInt());
+	      expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967296. Received value is: -Infinity');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     })
     /**
@@ -2622,12 +2507,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        const result = buf1.compare(buf2, undefined, undefined, undefined, Infinity);
+        const result = buf1.compare(buf2, undefined, undefined, undefined, Infinity.toInt());
 	expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 3. Received value is: Infinity');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 3. Received value is: 2147483647');
       }
     })
     /**
@@ -2643,12 +2528,12 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        const result = buf1.compare(buf2, undefined, undefined, undefined, -Infinity);
+        const result = buf1.compare(buf2, undefined, undefined, undefined, -Infinity.toInt());
 	expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 3. Received value is: -Infinity');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 3. Received value is: -2147483647');
       }
     })
     /**
@@ -2702,23 +2587,23 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferCopy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferCopy0002';
-    //   try {
-    //     const buf1 = buffer.alloc(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf1[i] = i + 97;
-    //     }
-    //     const buf2 = new Uint8Array(26);
-    //     buf1.copy(buf2);
-    //     for (let i = 0; i < 26; i++) {
-    //       expect(buf2[i]).assertEqual(97 + i);
-    //     }
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testBufferCopy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferCopy0002';
+      try {
+        const buf1 = buffer.alloc(26);
+        for (let i = 0; i < 26; i++) {
+          buf1[i] = i + 97;
+        }
+        const buf2 = new Uint8Array(26);
+        buf1.copy(buf2);
+        for (let i = 0; i < 26; i++) {
+          expect(buf2[i]).assertEqual(97 + i);
+        }
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0300
      * @tc.name       : testCopy0003
@@ -2779,9 +2664,9 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, Infinity);
+        buf1.copy(buf2, Infinity.toInt());
         expect(buf2.toString()).assertEqual('!!!!!!!!!!!!!!!!!!!!!!!!!!');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2802,12 +2687,12 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, -Infinity);
+        buf1.copy(buf2, -Infinity.toInt());
 	expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0. Received value is: -Infinity');
+          .assertEqual('The value of "targetStart" is out of range. It must be >= 0. Received value is: -2147483647');
       }
     })
     /**
@@ -2919,7 +2804,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, undefined, Infinity);
+        buf1.copy(buf2, undefined, Infinity.toInt());
         expect(buf2.toString()).assertEqual('!!!!!!!!!!!!!!!!!!!!!!!!!!');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -2942,12 +2827,12 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, undefined, -Infinity);
+        buf1.copy(buf2, undefined, -Infinity.toInt());
 	expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0. Received value is: -Infinity');
+          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0. Received value is: -2147483647');
       }
     })
     /**
@@ -3059,7 +2944,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, undefined, undefined, Infinity);
+        buf1.copy(buf2, undefined, undefined, Infinity.toInt());
         expect(buf2.toString()).assertEqual('abcdefghijklmnopqrstuvwxyz');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3082,12 +2967,12 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        buf1.copy(buf2, undefined, undefined, -Infinity);
+        buf1.copy(buf2, undefined, undefined, -Infinity.toInt());
          expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0. Received value is: -Infinity');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0. Received value is: -2147483647');
       }
     })
     /**
@@ -3170,7 +3055,7 @@ export default function bufferTest2() {
         const buf1 = buffer.from('ABC');
         const buf2 = new Uint8Array([1, 2, 3]);
         const result = buf1.equals(buf2);
-        expect(result).assertFail();
+        expect(result).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3210,10 +3095,10 @@ export default function bufferTest2() {
       try {
         const target = buffer.from([1, 2, 3, 4]);
         const source = buffer.from([3, 4, 5]);
-        // expect(String(target.equals(source))).assertEqual(
-        //   String(target[3] === source[0])
-        // );
-      } catch (err:Error) {
+        expect(String(target.equals(source))).assertEqual(
+          String(target[3] === source[0])
+        );
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3231,7 +3116,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from('hello world');
         expect(buf.includes('hello')).assertTrue();
-        expect(buf.includes('be')).assertFail();
+        expect(buf.includes('be')).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3249,8 +3134,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferIncludes0002';
       try {
         let buf = buffer.from([1, 2, 3, 4]);
-        expect(buf.includes(1)).assertTrue();
-        expect(buf.includes(5)).assertFail();
+        expect(buf.includes(1 as double)).assertTrue();
+        expect(buf.includes(5 as double)).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3270,7 +3155,7 @@ export default function bufferTest2() {
         let buf = buffer.from('hello world');
         let searchBuf = buffer.from('world');
         expect(buf.includes(searchBuf)).assertTrue();
-        expect(buf.includes(buffer.from('test'))).assertFail();
+        expect(buf.includes(buffer.from('test'))).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3284,18 +3169,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferIncludes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferIncludes0004';
-    //   try {
-    //     let buf = buffer.from('hello world');
-    //     let arr = new Uint8Array([0x68, 0x65]);
-    //     expect(buf.includes(arr)).assertTrue();
-    //     expect(buf.includes(new Uint8Array([0x7a]))).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferIncludes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferIncludes0004';
+      try {
+        let buf = buffer.from('hello world');
+        let arr = new Uint8Array([0x68, 0x65]);
+        expect(buf.includes(arr)).assertTrue();
+        expect(buf.includes(new Uint8Array([0x7a]))).assertFalse();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0500
      * @tc.name       : testIncludes0005
@@ -3328,7 +3213,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from('abcdefg');
         buf.includes('def', -1);
-        expect(buf.includes('def', -1)).assertFail();
+        expect(buf.includes('def', -1)).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3346,7 +3231,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferIncludes0007';
       try {
         let buf = buffer.from('abc');
-        expect(buf.includes('a', Infinity)).assertFail();
+        expect(buf.includes('a', Infinity.toInt())).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3364,7 +3249,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferIncludes0008';
       try {
         let buf = buffer.from('abc');
-        expect(buf.includes('c', -Infinity)).assertTrue();
+        expect(buf.includes('c', -Infinity.toInt())).assertTrue();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3382,7 +3267,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferBufferIncludes0009';
       try {
         let buf = buffer.from('abc');
-        expect(buf.includes('a', 1)).assertFail();
+        expect(buf.includes('a', 1)).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3420,7 +3305,7 @@ export default function bufferTest2() {
 
         let buf = buffer.from('test');
         expect(buf.includes('dGVzdA==', undefined, 'base64')).assertTrue();
-        expect(buf.includes('abcd', undefined, 'base64')).assertFail();
+        expect(buf.includes('abcd', undefined, 'base64')).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3439,7 +3324,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from('你好');
         expect(buf.includes('你好', undefined, 'utf-8')).assertTrue();
-        expect(buf.includes('hello', undefined, 'utf-8')).assertFail();
+        expect(buf.includes('hello', undefined, 'utf-8')).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3458,8 +3343,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = buffer.from([102, 103]);
-        const includesTrue = buf.includes(subBuf, Infinity);
-        expect(includesTrue).assertTrue();
+        const value = buf.includes(subBuf, Infinity.toInt());
+        expect(value).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3478,9 +3363,9 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = buffer.from([102, 103]);
-        const includesTrue = buf.includes(subBuf, Infinity, 'utf-8');
-        expect(includesTrue).assertTrue();
-      } catch (err:Error) {
+        const value = buf.includes(subBuf, Infinity.toInt(), 'utf-8');
+        expect(value).assertFalse();
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3538,7 +3423,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf);
+        const includes = buf.includes(subBuf as double);
         expect(includes).assertTrue();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3558,7 +3443,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf, Infinity, 'utf-8');
+        const includes = buf.includes(subBuf as double, Infinity.toInt(), 'utf-8');
         expect(includes).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3578,7 +3463,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf, Infinity, 'base64');
+        const includes = buf.includes(subBuf as double, Infinity.toInt(), 'base64');
         expect(includes).assertFalse();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3598,7 +3483,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf, 1, 'utf-8');
+        const includes = buf.includes(subBuf as double, 1, 'utf-8');
         expect(includes).assertTrue();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3618,7 +3503,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf, 1);
+        const includes = buf.includes(subBuf as double, 1);
         expect(includes).assertTrue();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3659,11 +3544,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferIndexOf0002';
       try {
         let buf = buffer.from([1, 2, 3, 4]);
-        let result = buf.indexOf(3);
+        let result = buf.indexOf(3 as double);
         expect(String(result)).assertEqual('2');
-        expect(String(buf.indexOf(4))).assertEqual('3');
-        expect(String(buf.indexOf(1))).assertEqual('0');
-        expect(String(buf.indexOf(5))).assertEqual('-1');
+        expect(String(buf.indexOf(4 as double))).assertEqual('3');
+        expect(String(buf.indexOf(1 as double))).assertEqual('0');
+        expect(String(buf.indexOf(5 as double))).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3741,8 +3626,8 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         let buf1 = buffer.from([0, 1, 2, 3, 4, 5]);
-        expect(String(buf.indexOf(buf1, -1))).assertEqual('0');
-      } catch (err:Error) {
+        expect(String(buf.indexOf(buf1, -1))).assertEqual('-1');
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3759,11 +3644,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferIndexOf0007';
       try {
         let buf = buffer.from('this is a buffer');
-	buf.indexOf('this', Infinity);
+	      buf.indexOf('this', Infinity.toInt());
           
-        buf.indexOf('is', Infinity);
-        expect(String(buf.indexOf('this', Infinity))).assertEqual('-1');
-        expect(String(buf.indexOf('is', Infinity))).assertEqual('-1');
+        buf.indexOf('is', Infinity.toInt());
+        expect(String(buf.indexOf('this', Infinity.toInt()))).assertEqual('-1');
+        expect(String(buf.indexOf('is', Infinity.toInt()))).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3781,10 +3666,10 @@ export default function bufferTest2() {
       const TAG = 'testBufferIndexOf0008';
       try {
         let buf = buffer.from('this is a buffer');
-	buf.indexOf('this', -Infinity);
-        buf.indexOf('is', -Infinity);
-        expect(String(buf.indexOf('this', -Infinity))).assertEqual('0');
-        expect(String(buf.indexOf('is', -Infinity))).assertEqual('2');
+	buf.indexOf('this', -Infinity.toInt());
+        buf.indexOf('is', -Infinity.toInt());
+        expect(String(buf.indexOf('this', -Infinity.toInt()))).assertEqual('0');
+        expect(String(buf.indexOf('is', -Infinity.toInt()))).assertEqual('2');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -3923,7 +3808,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, 0);
+        const index = buf.indexOf(value as double, 0);
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3943,7 +3828,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, 0, 'base64');
+        const index = buf.indexOf(value as double, 0, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3963,7 +3848,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, 0, 'utf-8');
+        const index = buf.indexOf(value as double, 0, 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3983,7 +3868,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, -1);
+        const index = buf.indexOf(value as double, -1);
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4003,7 +3888,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, -1, 'base64');
+        const index = buf.indexOf(value as double, -1, 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4023,7 +3908,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, -1, 'utf-8');
+        const index = buf.indexOf(value as double, -1, 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4043,7 +3928,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, Infinity, 'base64');
+        const index = buf.indexOf(value as double, Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4063,7 +3948,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, Infinity, 'utf-8');
+        const index = buf.indexOf(value as double, Infinity.toInt(), 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4083,7 +3968,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, -Infinity, 'base64');
+        const index = buf.indexOf(value as double, -Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4103,7 +3988,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, -Infinity, 'utf-8');
+        const index = buf.indexOf(value as double, -Infinity.toInt(), 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4123,7 +4008,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, 1, 'base64');
+        const index = buf.indexOf(value as double, 1, 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4143,7 +4028,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value, 1, 'utf-8');
+        const index = buf.indexOf(value as double, 1, 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4203,7 +4088,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = buffer.from([101, 102])
-        const index = buf.indexOf(value, Infinity, 'base64');
+        const index = buf.indexOf(value, Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4223,8 +4108,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = buffer.from([101, 102])
-        const index = buf.indexOf(value, Infinity);
-        expect(String(index)).assertEqual('0');
+        const index = buf.indexOf(value, Infinity.toInt());
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4243,8 +4128,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = buffer.from([101, 102])
-        const index = buf.indexOf(value, Infinity, 'utf-8');
-        expect(String(index)).assertEqual('0');
+        const index = buf.indexOf(value, Infinity.toInt(), 'utf-8');
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4263,7 +4148,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = buffer.from([101, 102]);
-        const index = buf.indexOf(value, -Infinity);
+        const index = buf.indexOf(value, -Infinity.toInt());
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4324,7 +4209,7 @@ export default function bufferTest2() {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
         const index = buf.indexOf(value, -1);
-        expect(String(index)).assertEqual('0');
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4343,8 +4228,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, Infinity);
-        expect(String(index)).assertEqual('0');
+        const index = buf.indexOf(value, Infinity.toInt());
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4363,8 +4248,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, Infinity, 'base64');
-        expect(String(index)).assertEqual('0');
+        const index = buf.indexOf(value, Infinity.toInt(), 'base64');
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4383,8 +4268,8 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, Infinity, 'utf-8');
-        expect(String(index)).assertEqual('0');
+        const index = buf.indexOf(value, Infinity.toInt(), 'utf-8');
+        expect(String(index)).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4403,7 +4288,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, -Infinity);
+        const index = buf.indexOf(value, -Infinity.toInt());
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4423,7 +4308,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, -Infinity, 'base64');
+        const index = buf.indexOf(value, -Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4443,7 +4328,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = new Uint8Array([101, 102]);
-        const index = buf.indexOf(value, -Infinity, 'utf-8');
+        const index = buf.indexOf(value, -Infinity.toInt(), 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4540,7 +4425,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferLastIndexOf0002';
       try {
         let buf = buffer.from([1, 23, 4, 6, 3, 45, 4, 5, 55, 16, 66, 2]);
-        expect(String(buf.lastIndexOf(6))).assertEqual('3');
+        expect(String(buf.lastIndexOf(6 as double))).assertEqual('3');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4561,7 +4446,7 @@ export default function bufferTest2() {
         let mainBuf = buffer.from('this buffer is a buffer');
         const result = mainBuf.lastIndexOf(valueBuf);
         console.log(`${TAG} result: ${result}`);
-        expect(String(result)).assertEqual('19');
+        expect(String(result)).assertEqual('17');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4582,7 +4467,7 @@ export default function bufferTest2() {
         let mainBuf = buffer.from('this buffer is a buffer');
         const result = mainBuf.lastIndexOf(uintArr);
         console.log(`${TAG} result: ${result}`);
-        expect(String(result)).assertEqual('19');
+        expect(String(result)).assertEqual('17');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4636,7 +4521,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferLastIndexOf0007';
       try {
         let buf = buffer.from('abc');
-        expect(String(buf.lastIndexOf('a', Infinity))).assertEqual('0');
+        expect(String(buf.lastIndexOf('a', Infinity.toInt()))).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4654,7 +4539,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferLastIndexOf0008';
       try {
         let buf = buffer.from('abc');
-        expect(String(buf.lastIndexOf('a', -Infinity))).assertEqual('0');
+        expect(String(buf.lastIndexOf('a', -Infinity.toInt()))).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4786,7 +4671,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, 0, 'base64');
+        const index = buf.lastIndexOf(value as double, 0, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4806,7 +4691,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, 0, 'utf8');
+        const index = buf.lastIndexOf(value as double, 0, 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4826,7 +4711,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, 0, 'utf-8');
+        const index = buf.lastIndexOf(value as double, 0, 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4847,7 +4732,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, -1, 'base64');
+        const index = buf.lastIndexOf(value as double, -1, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4867,7 +4752,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, -1, 'utf8');
+        const index = buf.lastIndexOf(value as double, -1, 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4887,7 +4772,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, Infinity, 'base64');
+        const index = buf.lastIndexOf(value as double, Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4907,7 +4792,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value, Infinity, 'utf8');
+        const index = buf.lastIndexOf(value as double, Infinity.toInt(), 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4986,7 +4871,7 @@ export default function bufferTest2() {
         let buf = buffer.alloc(8)
         buf.readBigInt64BE(-1);
         expect(false).assertFail();
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 0. Received value is: -1');
@@ -5564,7 +5449,7 @@ export default function bufferTest2() {
         const value = buf.readInt8();
         const result = value;
         console.log(`${TAG} result is ${result}`);
-        expect(String(result)).assertEqual('0');
+        expect(String(result)).assertEqual('-42');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -5578,16 +5463,16 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferReadInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferReadInt80002';
-    //   try {
-    //     let buf = buffer.from([-1, 5]);
-    //     expect(String(buf.readInt8(0))).assertEqual('0');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferReadInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferReadInt80002';
+      try {
+        let buf = buffer.from([-1, 5]);
+        expect(String(buf.readInt8(0))).assertEqual('-1');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3500
      * @tc.name       : testReadInt80003
@@ -5787,8 +5672,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferReadInt32BE001';
       try {
         let buf = buffer.from([0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 0, 5]);
-        console.info(buf.readInt32BE());
-        expect(String(buf.readInt32BE())).assertEqual('5');
+        expect(String(buf.readInt32BE())).assertEqual('65541');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -5866,8 +5750,7 @@ export default function bufferTest2() {
       try {
 
         let buf = buffer.from([0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 0, 5]);
-        console.info(buf.readInt32LE());
-        expect(String(buf.readInt32LE())).assertEqual('83886080');
+        expect(String(buf.readInt32LE())).assertEqual('83886336');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -5881,17 +5764,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferReadInt32LE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferReadInt32LE002';
-    //   try {
-    //     let buf = buffer.from([0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 0, 5]);
-    //     console.info(buf.readInt32LE(0));
-    //     expect(String(buf.readInt32LE(0))).assertEqual('83886080');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferReadInt32LE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferReadInt32LE002';
+      try {
+        let buf = buffer.from([0, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 0, 5]);
+        console.info(buf.readInt32LE(0));
+        expect(String(buf.readInt32LE(0))).assertEqual('83886336');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5100
      * @tc.name       : testReadInt32LE003
@@ -5982,8 +5865,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferReadUInt8003';
       try {
         let buf = buffer.from([1, -2]);
-        console.info(buf.readUInt8(1));
-        expect(String(buf.readUInt8(1))).assertEqual('0');
+        expect(String(buf.readUInt8(1))).assertEqual('254');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -6023,7 +5905,7 @@ export default function bufferTest2() {
         let buf = buffer.from([0x12, 0x34, 0x56]);
         console.info(Double(buf.readUInt16BE()).toString(16));
         expect(Double(buf.readUInt16BE()).toString(16)).assertEqual('1234');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6408,7 +6290,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        const buf2 = buf1.subarray(Infinity);
+        const buf2 = buf1.subarray(Infinity.toInt());
         const res = buf2.toString('ascii', 0, buf2.length)
         console.log(`${TAG}res：${res}`);
         expect(res).assertEqual('');
@@ -6432,7 +6314,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        const buf2 = buf1.subarray(-Infinity);
+        const buf2 = buf1.subarray(-Infinity.toInt());
         const res = buf2.toString('ascii', 0, buf2.length)
         console.log(`${TAG}res：${res}`);
         expect(res).assertEqual('');
@@ -6554,7 +6436,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        const buf2 = buf1.subarray(1, Infinity);
+        const buf2 = buf1.subarray(1, Infinity.toInt());
         const res = buf2.toString('ascii', 0, buf2.length)
         console.log(`${TAG}res：${res}`);
         expect(res).assertEqual('bcdefghijklmnopqrstuvwxyz');
@@ -6579,7 +6461,7 @@ export default function bufferTest2() {
         for (let i = 0; i < 26; i++) {
           buf1.writeInt8(i + 97, i);
         }
-        const buf2 = buf1.subarray(1, -Infinity);
+        const buf2 = buf1.subarray(1, -Infinity.toInt());
         const res = buf2.toString('ascii', 0, buf2.length)
         console.log(`${TAG}res：${res}`);
         expect(res).assertEqual('');
@@ -6621,7 +6503,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0013';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(Infinity, 0);
+        const buf2 = buf1.subarray(Infinity.toInt(), 0);
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6641,7 +6523,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0014';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(Infinity, -1);
+        const buf2 = buf1.subarray(Infinity.toInt(), -1);
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6661,7 +6543,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0015';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(Infinity, Infinity);
+        const buf2 = buf1.subarray(Infinity.toInt(), Infinity.toInt());
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6681,7 +6563,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0016';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(Infinity, 1);
+        const buf2 = buf1.subarray(Infinity.toInt(), 1);
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6701,7 +6583,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0017';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(-Infinity, 0);
+        const buf2 = buf1.subarray(-Infinity.toInt(), 0);
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6717,18 +6599,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSubarray0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferSubarray0018';
-    //   try {
-    //     const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-    //     const buf2 = buf1.subarray(-Infinity, -1);
-    //     expect(String(buf2.length)).assertEqual('0');
-    //     expect(buf2.toString()).assertEqual('');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferSubarray0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferSubarray0018';
+      try {
+        const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
+        const buf2 = buf1.subarray(-Infinity.toInt(), -1);
+        expect(String(buf2.length)).assertEqual('0');
+        expect(buf2.toString()).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1900
      * @tc.name       : testSubarray0019
@@ -6737,18 +6619,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSubarray0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferSubarray0019';
-    //   try {
-    //     const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-    //     const buf2 = buf1.subarray(-Infinity, Infinity);
-    //     expect(String(buf2.length)).assertEqual('0');
-    //     expect(buf2.toString()).assertEqual('');
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferSubarray0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferSubarray0019';
+      try {
+        const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
+        const buf2 = buf1.subarray(-Infinity.toInt(), Infinity.toInt());
+        expect(String(buf2.length)).assertEqual('0');
+        expect(buf2.toString()).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2000
      * @tc.name       : testSubarray0020
@@ -6761,7 +6643,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0020';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(-Infinity, 1);
+        const buf2 = buf1.subarray(-Infinity.toInt(), 1);
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6781,7 +6663,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0021';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(-Infinity, -Infinity);
+        const buf2 = buf1.subarray(-Infinity.toInt(), -Infinity.toInt());
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6841,7 +6723,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0024';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(1, Infinity);
+        const buf2 = buf1.subarray(1, Infinity.toInt());
         expect(String(buf2.length)).assertEqual('7');
         expect(buf2.toString()).assertEqual('fghijkl');
       } catch (err:BusinessError) {
@@ -6861,7 +6743,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferSubarray0025';
       try {
         const buf1 = buffer.from([101, 102, 103, 104, 105, 106, 107, 108]);
-        const buf2 = buf1.subarray(1, -Infinity);
+        const buf2 = buf1.subarray(1, -Infinity.toInt());
         expect(String(buf2.length)).assertEqual('0');
         expect(buf2.toString()).assertEqual('');
       } catch (err:BusinessError) {
@@ -6919,20 +6801,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0003';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', 30);
-    //     expect(str).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0003';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', 30);
+        expect(str).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0400
      * @tc.name       : testToString0004
@@ -6941,20 +6823,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0004';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', 5, 3);
-    //     expect(str).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0004';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', 5, 3);
+        expect(str).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0500
      * @tc.name       : testToString0005
@@ -6985,21 +6867,21 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', -1);
-    //     console.log(`${TAG} str: ${str}`);
-    //     expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', -1);
+        console.log(`${TAG} str: ${str}`);
+        expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0700
      * @tc.name       : testToString0007
@@ -7008,20 +6890,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0007';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', Infinity);
-    //     expect(str).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0007';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', Infinity.toInt());
+        expect(str).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0800
      * @tc.name       : testToString0008
@@ -7030,20 +6912,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0008';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', -Infinity);
-    //     expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0008';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', -Infinity.toInt());
+        expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0900
      * @tc.name       : testToString0009
@@ -7162,21 +7044,21 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
        */
-    // it('testBufferToString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0014';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', undefined, Infinity)
-    //     console.log(`${TAG} str: ${str}`);
-    //     expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0014';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', undefined, Infinity.toInt())
+        console.log(`${TAG} str: ${str}`);
+        expect(str).assertEqual('abcdefghijklmnopqrstuvwxyz');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1500
@@ -7186,20 +7068,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0015';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', 0, -Infinity);
-    //     expect(str).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0015';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', 0, -Infinity.toInt());
+        expect(str).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1600
@@ -7209,21 +7091,21 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0016';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(26);
-    //     for (let i = 0; i < 26; i++) {
-    //       buf.writeInt8(i + 97, i);
-    //     }
-    //     const str = buf.toString('utf8', undefined, -1);
-    //     console.log(`${TAG} str: ${str}`);
-    //     expect(str).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0016';
+      try {
+        let buf = buffer.allocUninitializedFromPool(26);
+        for (let i = 0; i < 26; i++) {
+          buf.writeInt8(i + 97, i);
+        }
+        const str = buf.toString('utf8', undefined, -1);
+        console.log(`${TAG} str: ${str}`);
+        expect(str).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1700
@@ -7254,18 +7136,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0018';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 0, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0018';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 0, -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1900
@@ -7275,18 +7157,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0019';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 0, Infinity);
-    //     expect(res.length).assertEqual(8);
-    //     expect(res).assertEqual('aGVsbG8=');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0019';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 0, Infinity.toInt());
+        expect(res.length).assertEqual(8);
+        expect(res).assertEqual('aGVsbG8=');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2000
@@ -7296,18 +7178,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0020';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 0, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0020';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 0, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2100
@@ -7338,18 +7220,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0022';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -1, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0022';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -1, 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2300
@@ -7359,18 +7241,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0023';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -1, 1);
-    //     expect(res.length).assertEqual(4);
-    //     expect(res).assertEqual('aA==');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0023';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -1, 1);
+        expect(res.length).assertEqual(4);
+        expect(res).assertEqual('aA==');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2400
@@ -7380,18 +7262,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0024';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -1, Infinity);
-    //     expect(res.length).assertEqual(8);
-    //     expect(res).assertEqual('aGVsbG8=');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0024';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -1, Infinity.toInt());
+        expect(res.length).assertEqual(8);
+        expect(res).assertEqual('aGVsbG8=');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2500
@@ -7401,18 +7283,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0025';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -1, -Infinity);
-    //      expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0025';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -1, -Infinity.toInt());
+         expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2600
@@ -7422,18 +7304,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0026';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -1, 1);
-    //     expect(res.length).assertEqual(4);
-    //     expect(res).assertEqual('aA==');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0026';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -1, 1);
+        expect(res.length).assertEqual(4);
+        expect(res).assertEqual('aA==');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2700
@@ -7443,18 +7325,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0027';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', Infinity, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0027';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', Infinity.toInt(), 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2800
@@ -7464,18 +7346,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0028';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', Infinity, 1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0028';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', Infinity.toInt(), 1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2900
@@ -7485,18 +7367,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0029';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', Infinity, Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0029';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', Infinity.toInt(), Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3000
@@ -7506,18 +7388,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0030';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', Infinity, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0030';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', Infinity.toInt(), -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3100
@@ -7527,18 +7409,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0031';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', Infinity, 1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0031';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', Infinity.toInt(), 1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3200
@@ -7548,18 +7430,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0032';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -Infinity, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0032';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -Infinity.toInt(), 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3300
@@ -7569,18 +7451,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0033';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -Infinity, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0033';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -Infinity.toInt(), -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3400
@@ -7590,18 +7472,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0034';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -Infinity, Infinity);
-    //     expect(res.length).assertEqual(8);
-    //     expect(res).assertEqual('aGVsbG8=');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0034';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -Infinity.toInt(), Infinity.toInt());
+        expect(res.length).assertEqual(8);
+        expect(res).assertEqual('aGVsbG8=');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3500
@@ -7611,18 +7493,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0035';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -Infinity, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0035';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -Infinity.toInt(), -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3600
@@ -7632,18 +7514,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0036';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', -Infinity, 1);
-    //     expect(res.length).assertEqual(4);
-    //     expect(res).assertEqual('aA==');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0036';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', -Infinity.toInt(), 1);
+        expect(res.length).assertEqual(4);
+        expect(res).assertEqual('aA==');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3700
@@ -7653,18 +7535,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0037';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 1, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0037';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 1, 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3800
@@ -7674,18 +7556,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0038';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 1, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0038';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 1, -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3900
@@ -7695,18 +7577,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0039';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 1, Infinity);
-    //     expect(res.length).assertEqual(8);
-    //     expect(res).assertEqual('ZWxsbw==');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0039';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 1, Infinity.toInt());
+        expect(res.length).assertEqual(8);
+        expect(res).assertEqual('ZWxsbw==');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4000
@@ -7716,18 +7598,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0040';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('base64', 1, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0040';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('base64', 1, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4100
@@ -7800,18 +7682,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0044';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, 0, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0044';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, 0, -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4500
@@ -7821,18 +7703,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0045';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, 0, Infinity);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0045';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, 0, Infinity.toInt());
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4600
@@ -7842,18 +7724,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0046';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, 0, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0046';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, 0, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4700
@@ -7884,18 +7766,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0048';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, undefined);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0048';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, undefined);
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4900
@@ -7905,18 +7787,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0049';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0049';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5000
@@ -7926,18 +7808,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0050';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0050';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5100
@@ -7947,18 +7829,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0051';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, Infinity);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0051';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, Infinity.toInt());
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5200
@@ -7968,18 +7850,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0052';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0052';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5300
@@ -7989,18 +7871,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0053';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, -1, 1);
-    //     expect(res.length).assertEqual(1);
-    //     expect(res).assertEqual('h');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0053';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, -1, 1);
+        expect(res.length).assertEqual(1);
+        expect(res).assertEqual('h');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /*
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5400
@@ -8010,18 +7892,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0054';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, undefined);
-    //     expect(String(res.length)).assertEqual('0');
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0054';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), undefined);
+        expect(String(res.length)).assertEqual('0');
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5500
@@ -8031,18 +7913,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0055';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0055';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5600
@@ -8052,18 +7934,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0056';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, -1);
-    //     expect(String(res.length)).assertEqual('0');
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0056';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), -1);
+        expect(String(res.length)).assertEqual('0');
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5700
@@ -8073,18 +7955,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0057';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, -Infinity);
-    //     expect(String(res.length)).assertEqual('0');
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0057';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), -Infinity.toInt());
+        expect(String(res.length)).assertEqual('0');
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5800
@@ -8094,18 +7976,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0058';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, Infinity);
-    //     expect(String(res.length)).assertEqual('0');
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0058';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), Infinity.toInt());
+        expect(String(res.length)).assertEqual('0');
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5900
@@ -8115,18 +7997,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0059';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString(undefined, Infinity, 1);
-    //     expect(String(res.length)).assertEqual('0');
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0059';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString(undefined, Infinity.toInt(), 1);
+        expect(String(res.length)).assertEqual('0');
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6000
@@ -8199,18 +8081,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0063';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', 0, Infinity);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0063';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', 0, Infinity.toInt());
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6400
@@ -8220,18 +8102,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0064';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', 0, 1);
-    //     expect(res.length).assertEqual(1);
-    //     expect(res).assertEqual('h');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0064';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', 0, 1);
+        expect(res.length).assertEqual(1);
+        expect(res).assertEqual('h');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6500
@@ -8241,18 +8123,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0065';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', 0, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0065';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', 0, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6600
@@ -8262,18 +8144,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0066';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', 0, Infinity);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0066';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', 0, Infinity.toInt());
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6700
@@ -8283,18 +8165,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0067';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, undefined);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0067';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, undefined);
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6800
@@ -8304,18 +8186,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0068';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, 0);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0068';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, 0);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6900
@@ -8325,18 +8207,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0069';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0069';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7000
@@ -8346,18 +8228,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0070';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, Infinity);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0070';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, Infinity.toInt());
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7100
@@ -8367,18 +8249,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0071';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0071';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7200
@@ -8388,18 +8270,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0072';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -1, 1);
-    //     expect(res.length).assertEqual(1);
-    //     expect(res).assertEqual('h');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0072';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -1, 1);
+        expect(res.length).assertEqual(1);
+        expect(res).assertEqual('h');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7300
@@ -8409,18 +8291,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0073';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', Infinity, undefined);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0073';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', Infinity.toInt(), undefined);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7400
@@ -8430,18 +8312,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-  /*  it('testBufferToString0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('testBufferToString0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0074';
       try {
         const buf = buffer.from('hello');
-        const res = buf.toString('utf-8', Infinity, 0);
+        const res = buf.toString('utf-8', Infinity.toInt(), 0);
         expect(res.length).assertEqual(0);
         expect(res).assertEqual('');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
-    })*/
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7500
@@ -8451,18 +8333,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0075';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', Infinity, -1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0075';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', Infinity.toInt(), -1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7600
@@ -8472,18 +8354,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0076';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', Infinity, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0076';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', Infinity.toInt(), -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7700
@@ -8493,18 +8375,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0077';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', Infinity, 1);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0077';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', Infinity.toInt(), 1);
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7800
@@ -8514,18 +8396,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0078';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -Infinity, undefined);
-    //     expect(res.length).assertEqual(5);
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0078';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -Infinity.toInt(), undefined);
+        expect(res.length).assertEqual(5);
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7900
@@ -8535,18 +8417,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0079';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', 1, -Infinity);
-    //     expect(res.length).assertEqual(0);
-    //     expect(res).assertEqual('');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0079';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', 1, -Infinity.toInt());
+        expect(res.length).assertEqual(0);
+        expect(res).assertEqual('');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_8000
@@ -8556,18 +8438,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferToString0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferToString0080';
-    //   try {
-    //     const buf = buffer.from('hello');
-    //     const res = buf.toString('utf-8', -Infinity, Infinity);
-    //     expect(String(res.length)).assertEqual('5');
-    //     expect(res).assertEqual('hello');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferToString0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferToString0080';
+      try {
+        const buf = buffer.from('hello');
+        const res = buf.toString('utf-8', -Infinity.toInt(), Infinity.toInt());
+        expect(String(res.length)).assertEqual('5');
+        expect(res).assertEqual('hello');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0100
@@ -8657,13 +8539,13 @@ export default function bufferTest2() {
       const TAG = 'testBufferWrite0005';
       try {
         let buf = buffer.alloc(10);
-        const result = buf.write("test", Infinity);
+        const result = buf.write("test", Infinity.toInt());
         console.log(`${TAG} result: ${result}`);
          expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: Infinity');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: 2147483647');
       }
     })
     /**
@@ -8678,13 +8560,13 @@ export default function bufferTest2() {
       const TAG = 'testBufferWrite0006';
       try {
         let buf = buffer.alloc(10);
-        const result = buf.write("test", -Infinity);
+        const result = buf.write("test", -Infinity.toInt());
         console.log(`${TAG} result: ${result}`);
          expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: -Infinity');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: -2147483647');
       }
     })
     /**
@@ -8756,20 +8638,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWrite0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWrite0010';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.write("abcdefg", 3, -1);
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(res).assertFail();
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     hilog.info(1, TAG, '%{public}s', 'describe start huifei'+err.message);
-    //     expect(err.message)
-    //       .assertEqual('fail');
-    //   }
-    // })
+    it('testBufferWrite0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWrite0010';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.write("abcdefg", 3, -1);
+        console.log(`${TAG} res: ${res}`);
+        expect(res).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual('The value of "length" is out of range. It must be >= 0 and <= 10. Received value is: -1');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1100
      * @tc.name       : testWrite0011
@@ -8778,19 +8658,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWrite0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWrite0011';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.write("abcdefg", 3, Infinity);
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(res).assertFail();
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(string(err.message))
-    //       .assertEqual('fail');
-    //   }
-    // })
+    it('testBufferWrite0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWrite0011';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.write("abcdefg", 3, Infinity.toInt());
+        console.log(`${TAG} res: ${res}`);
+        expect(res).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(string(err.message)).assertEqual('The value of "length" is out of range. It must be >= 0 and <= 10. Received value is: 2147483647');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1200
      * @tc.name       : testWrite0012
@@ -8799,19 +8678,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWrite0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWrite0012';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.write("abcdefg", 3, -Infinity);
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(res).assertFail();
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('fail');
-    //   }
-    // })
+    it('testBufferWrite0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWrite0012';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.write("abcdefg", 3, -Infinity.toInt());
+        console.log(`${TAG} res: ${res}`);
+        expect(res).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual('The value of "length" is out of range. It must be >= 0 and <= 10. Received value is: -2147483647');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1300
      * @tc.name       : testWrite0013
@@ -8860,18 +8738,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWrite0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWrite0015';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.write("abcdefg", 3, 1, 'base64');
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(String(res)).assertEqual('1');
-    //   } catch (err:Exception) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferWrite0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWrite0015';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.write("abcdefg", 3, 1, 'base64');
+        console.log(`${TAG} res: ${res}`);
+        expect(String(res)).assertEqual('1');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1600
      * @tc.name       : testWrite0016
@@ -8992,14 +8870,14 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2200
-     * @tc.name       : testWrite0022
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    // /**
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2200
+    //  * @tc.name       : testWrite0022
+    //  * @tc.desc       : Test the function of the interface write.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
     // it('testBufferWrite0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferWrite0022';
     //   try {
@@ -9044,12 +8922,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferWrite0024';
       try {
         let buf = buffer.alloc(10);
-        const res = buf.write("abc", Infinity, Infinity, 'utf8');
+        const res = buf.write("abc", Infinity.toInt(), Infinity.toInt(), 'utf8');
          expect(res).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: Infinity');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: 2147483647');
       }
     })
     /**
@@ -9080,18 +8958,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWrite0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWrite0026';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.write("abc", -Infinity, -Infinity, 'utf8');
-    //      expect(string(res)).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: -Infinity');
-    //   }
-    // })
+    it('testBufferWrite0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWrite0026';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.write("abc", -Infinity.toInt(), -Infinity.toInt(), 'utf8');
+         expect(string(res)).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 9. Received value is: -2147483647');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2700
      * @tc.name       : testWriteBigInt64BE0001
@@ -9200,21 +9078,21 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteBigInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteBigInt64BE0006';
-    //   try {
-    //     let buf = buffer.alloc(10);
-    //     const res = buf.writeBigInt64BE(BigInt(0xfeedface));
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(String(res)).assertEqual('8');
-    //     const result = buf.toString('hex')
-    //     console.log(`${TAG} result: ${result}`);
-    //     expect(result).assertEqual('00000000feedface0000');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testBufferWriteBigInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteBigInt64BE0006';
+      try {
+        let buf = buffer.alloc(10);
+        const res = buf.writeBigInt64BE(BigInt(0xfeedface));
+        console.log(`${TAG} res: ${res}`);
+        expect(String(res)).assertEqual('8');
+        const result = buf.toString('hex')
+        console.log(`${TAG} result: ${result}`);
+        expect(result).assertEqual('00000000feedface0000');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3300
      * @tc.name       : testWriteBigInt64BE0007
@@ -9302,19 +9180,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteBigInt64BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testBufferWriteBigInt64BE0011';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     const res = buf.writeBigInt64BE(BigInt(0xdecafafecacefade))
-    //     console.log(`${TAG} res: ${res}`);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
-    //   }
-    // })
+    it('testBufferWriteBigInt64BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testBufferWriteBigInt64BE0011';
+      try {
+        let buf = buffer.allocUninitializedFromPool(8);
+        const res = buf.writeBigInt64BE(BigInt(0xdecafafecacefade))
+        console.log(`${TAG} res: ${res}`);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3800
      * @tc.name       : testWriteBigInt64BE0012
@@ -9542,18 +9420,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteBigInt64LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteBigInt64LE0011';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigInt64LE(BigInt(0xdecafafecacefade), 0);
-    //      expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
-    //   }
-    // })
+    it('testBufferWriteBigInt64LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteBigInt64LE0011';
+      try {
+        let buf = buffer.allocUninitializedFromPool(8);
+        buf.writeBigInt64LE(BigInt(0xdecafafecacefade), 0);
+         expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5000
      * @tc.name       : testWriteBigInt64LE0012
@@ -9681,18 +9559,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteBigUInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteBigUInt64BE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigUInt64BE(BigInt(-2), 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 2n ** 64n - 1n. Received value is: -2');
-    //   }
-    // })
+    it('testBufferWriteBigUInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteBigUInt64BE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(8);
+        buf.writeBigUInt64BE(BigInt(-2), 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 2n ** 64n - 1n. Received value is: -2');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5700
      * @tc.name       : testWriteBigUInt64BE0007
@@ -9784,7 +9662,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64BE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(BigInt(0x0102030405060708)), 1);
+        buf.writeBigUInt64BE(BigInt(0x0102030405060708), 1);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -9901,18 +9779,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteBigUInt64L0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteBigUInt64LE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigUInt64LE(BigInt(-2), 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 2n ** 64n - 1n. Received value is: -2');
-    //   }
-    // })
+    it('testBufferWriteBigUInt64L0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteBigUInt64LE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(8);
+        buf.writeBigUInt64LE(BigInt(-2), 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 2n ** 64n - 1n. Received value is: -2');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6800
      * @tc.name       : testWriteBigUInt64LE0007
@@ -10004,7 +9882,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64LE(BigInt(BigInt(0x0102030405060708)), 0);
+        let result = buf.writeBigUInt64LE(BigInt(0x0102030405060708), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err: BusinessError) {
@@ -10024,7 +9902,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0012';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(BigInt(0x0102030405060708)), 10);
+        buf.writeBigUInt64LE(BigInt(0x0102030405060708), 10);
       expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -10813,17 +10691,17 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-  //   it('testBufferWriteFloatLE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteFloatLE0008';
-  //     try {
-  //       let buf = buffer.alloc(5);
-	// buf.writeFloatLE(Number(0x0102030405060708n), 0);
-  //       expect(String(buf.writeFloatLE(Number(BigInt(0x0102030405060708)), 0))).assertEqual('4');
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(false).assertFail();
-  //     }
-  //   })
+    it('testBufferWriteFloatLE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testBufferWriteFloatLE0008';
+      try {
+        let buf = buffer.alloc(5);
+	      buf.writeFloatLE(Number(0x0102030405060708), 0);
+        expect(String(buf.writeFloatLE(Number(BigInt(0x0102030405060708)), 0))).assertEqual('4');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11500
      * @tc.name       : testWriteFloatLE0009
@@ -10888,18 +10766,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80001';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0x0304, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 772');
-    //   }
-    // })
+    it('testBufferWriteInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80001';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0x0304, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 772');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11900
      * @tc.name       : testWriteInt80002
@@ -10938,27 +10816,27 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12100
-     * @tc.name       : testWriteInt80004
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteInt80004';
-  //     try {
-  //       let buf = buffer.alloc(5);
-  //       const res = buf.writeInt8(Number(BigInt(0x0102030405060708)), 0);
-  //       console.log(`${TAG}res:$${res}`);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 72623859790382850');
-  //     }
-  //   })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12100
+    //  * @tc.name       : testWriteInt80004
+    //  * @tc.desc       : Test the function of the interface WriteInt8.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteInt80004';
+    //   try {
+    //     let buf = buffer.alloc(5);
+    //     const res = buf.writeInt8(Number(BigInt(0x0102030405060708)), 0);
+    //     console.log(`${TAG}res:$${res}`);
+	  //     expect(false).assertFail();
+    //   } catch (err: BusinessError) {
+    //     console.error(`${TAG} failed, error: ${err.message}`);
+    //     expect(err.message)
+    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 72623859790382850');
+    //   }
+    // })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12200
      * @tc.name       : testWriteInt80005
@@ -10967,18 +10845,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80005';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80005';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12300
      * @tc.name       : testWriteInt80006
@@ -10991,7 +10869,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt80006';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt8(123.456, 0))).assertEqual('1');
+        expect(String(buf.writeInt8(123.456 as long, 0))).assertEqual('1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -11005,18 +10883,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80007';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0xdecafafecacefade, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 16053919793946753000');
-    //   }
-    // })
+    it('testBufferWriteInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80007';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 16053919793946753000');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12500
      * @tc.name       : testWriteInt80008
@@ -11025,18 +10903,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80008';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0x05060708, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 84281096');
-    //   }
-    // })
+    it('testBufferWriteInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80008';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0x05060708, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 84281096');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12600
      * @tc.name       : testWriteInt80009
@@ -11045,18 +10923,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80009';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0xbeef, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 48879');
-    //   }
-    // })
+    it('testBufferWriteInt80009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80009';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0xbeef, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 48879');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12700
      * @tc.name       : testWriteInt80010
@@ -11071,7 +10949,7 @@ export default function bufferTest2() {
         let buf = buffer.alloc(5);
         buf.writeInt8(0x4, 0);
         expect(String(buf.writeInt8(0x4, 0))).assertEqual('1');
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -11084,18 +10962,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt80011';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt8(0xfeedface, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt80011';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt8(0xfeedface, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 4277009102');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12900
      * @tc.name       : testWriteInt16BE0001
@@ -11140,18 +11018,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16BE0003';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16BE(0xbeef, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 48879');
-    //   }
-    // })
+    it('testBufferWriteInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16BE0003';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16BE(0xbeef, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 48879');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13200
      * @tc.name       : testWriteInt16BE0004
@@ -11178,18 +11056,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16BE0005';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16BE(0xfeedface, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteInt16BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16BE0005';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16BE(0xfeedface, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13400
      * @tc.name       : testWriteInt16BE0006
@@ -11234,18 +11112,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16BE0008';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16BE(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteInt16BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16BE0008';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16BE(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13700
      * @tc.name       : testWriteInt16BE0009
@@ -11258,7 +11136,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16BE0009';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt16BE(123.456, 0))).assertEqual('2');
+        expect(String(buf.writeInt16BE(123.456 as long, 0))).assertEqual('2');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -11272,38 +11150,38 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16BE0010';
+    it('testBufferWriteInt16BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16BE0010';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16BE(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 16053919793946753000');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13900
+    //  * @tc.name       : testWriteInt16BE0011
+    //  * @tc.desc       : Test the function of the interface WriteInt16BE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteInt16BE0011';
     //   try {
     //     let buf = buffer.alloc(5);
-    //     buf.writeInt16BE(0xdecafafecacefade, 0);
+    //     buf.writeInt16BE(Number(BigInt(0x0102030405060708) as long), 0);
     //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 16053919793946753000');
+    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13900
-     * @tc.name       : testWriteInt16BE0011
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteInt16BE0011';
-  //     try {
-  //       let buf = buffer.alloc(5);
-  //       buf.writeInt16BE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14000
      * @tc.name       : testWriteInt16LE0001
@@ -11330,18 +11208,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16LE0002';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16LE(0x05060708, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 84281096');
-    //   }
-    // })
+    it('testBufferWriteInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16LE0002';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16LE(0x05060708, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 84281096');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14200
      * @tc.name       : testWriteInt16LE0003
@@ -11350,18 +11228,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16LE0003';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16LE(0xbeef, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 48879');
-    //   }
-    // })
+    it('testBufferWriteInt16LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16LE0003';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16LE(0xbeef, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 48879');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14300
      * @tc.name       : testWriteInt16LE0004
@@ -11388,18 +11266,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16LE0005';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16LE(0xfeedface, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16LE0005';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16LE(0xfeedface, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14500
      * @tc.name       : testWriteInt16LE0006
@@ -11445,18 +11323,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16LE0008';
-    //   try {
-    //     let buf = buffer.alloc(5);
-    //     buf.writeInt16LE(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16LE0008';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16LE(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14800
      * @tc.name       : testWriteInt16LE0009
@@ -11469,7 +11347,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16LE0009';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt16LE(123.456, 0))).assertEqual('2');
+        expect(String(buf.writeInt16LE(123.456 as long, 0))).assertEqual('2');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -11483,38 +11361,38 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt16LE0010';
+    it('testBufferWriteInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt16LE0010';
+      try {
+        let buf = buffer.alloc(5);
+        buf.writeInt16LE(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(String(err.code))
+          .assertEqual(String(10200001));
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15000
+    //  * @tc.name       : testWriteInt16LE0011
+    //  * @tc.desc       : Test the function of the interface WriteInt16LE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteInt16LE0011';
     //   try {
     //     let buf = buffer.alloc(5);
-    //     buf.writeInt16LE(0xdecafafecacefade, 0);
+    //     buf.writeInt16LE(Number(BigInt(0x0102030405060708) as long), 0);
     //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(String(err.code))
-    //       .assertEqual(String(10200001));
+    //     expect(err.message)
+    //       .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15000
-     * @tc.name       : testWriteInt16LE0011
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteInt16LE0011';
-  //     try {
-  //       let buf = buffer.alloc(5);
-  //       buf.writeInt16LE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15100
      * @tc.name       : testWriteInt32BE0001
@@ -11623,19 +11501,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32BE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeInt32BE(0xfeedface, 0);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(String(err.code))
-    //       .assertEqual(String(10200001));
-    //   }
-    // })
+    it('testBufferWriteInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32BE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeInt32BE(0xfeedface, 0);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(String(err.code))
+          .assertEqual(String(10200001));
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15700
      * @tc.name       : testWriteInt32BE0007
@@ -11684,19 +11562,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32BE0009';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeInt32BE(0xcafebabe, 0);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteInt32BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32BE0009';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeInt32BE(0xcafebabe, 0);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16000
      * @tc.name       : testWriteInt32BE0010
@@ -11709,7 +11587,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(123.456, 0);
+        let result = buf.writeInt32BE(123.456 as long, 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('4');
       } catch (err:BusinessError) {
@@ -11725,39 +11603,39 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32BE0011';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeInt32BE(0xdecafafecacefade, 0);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000');
-    //   }
-    // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16200
-     * @tc.name       : testWriteInt32BE0012
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteInt32BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteInt32BE0012';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       let result = buf.writeInt32BE(Number(BigInt(0x0102030405060708)), 0);
-  //       console.info("result = " + result);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(false).assertFail();
-  //     }
-  //   })
+    it('testBufferWriteInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32BE0011';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeInt32BE(0xdecafafecacefade, 0);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16200
+    //  * @tc.name       : testWriteInt32BE0012
+    //  * @tc.desc       : Test the function of the interface writeInt32BE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    //   it('testBufferWriteInt32BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //     const TAG = 'testBufferWriteInt32BE0012';
+    //     try {
+    //       let buf = buffer.allocUninitializedFromPool(4);
+    //       let result = buf.writeInt32BE(Number(BigInt(0x0102030405060708) as long), 0);
+    //       console.info("result = " + result);
+    //       expect(false).assertFail();
+    //     } catch (err: BusinessError) {
+    //       console.error(`${TAG} failed, error: ${err.message}`);
+    //       expect(false).assertFail();
+    //     }
+    //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16300
      * @tc.name       : testWriteInt32LE0001
@@ -11846,20 +11724,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32LE0005';
-    //   try {
-    //
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeInt32LE(0xfeedface, 0);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32LE0005';
+      try {
+    
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeInt32LE(0xfeedface, 0);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 4277009102');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16800
      * @tc.name       : testWriteInt32LE0006
@@ -11908,19 +11786,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32LE0008';
-    //   try {
-    //
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeInt32LE(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32LE0008';
+      try {
+    
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeInt32LE(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17100
      * @tc.name       : testWriteInt32LE0009
@@ -11933,7 +11811,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32LE(123.456, 0);
+        let result = buf.writeInt32LE(123.456 as long, 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('4');
       } catch (err:BusinessError) {
@@ -11949,39 +11827,39 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteInt32LE0010';
+    it('testBufferWriteInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteInt32LE0010';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeInt32LE(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000')
+    
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17300
+    //  * @tc.name       : testWriteInt32LE0011
+    //  * @tc.desc       : Test the function of the interface writeInt32LE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteInt32LE0011';
     //   try {
     //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeInt32LE(0xdecafafecacefade, 0);
+    //     buf.writeInt32LE(Number(BigInt(0x0102030405060708) as long), 0);
     //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000')
-    //
+    //       .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17300
-     * @tc.name       : testWriteInt32LE0011
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteInt32LE0011';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       buf.writeInt32LE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17400
      * @tc.name       : testWriteUInt80001
@@ -12019,19 +11897,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80002';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeUInt8(0x0304, 1);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 772');
-    //   }
-    // })
+    it('testBufferWriteUInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80002';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeUInt8(0x0304, 1);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 772');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17600
      * @tc.name       : testWriteUInt80003
@@ -12040,19 +11918,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80003';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeUInt8(0x05060708, 0);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 84281096');
-    //   }
-    // })
+    it('testBufferWriteUInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80003';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeUInt8(0x05060708, 0);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 84281096');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17700
      * @tc.name       : testWriteUInt80004
@@ -12061,19 +11939,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80004';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let result = buf.writeUInt8(0xbeef, 1);
-    //     console.info("result = " + result);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 48879');
-    //   }
-    // })
+    it('testBufferWriteUInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80004';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        let result = buf.writeUInt8(0xbeef, 1);
+        console.info("result = " + result);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 48879');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17800
      * @tc.name       : testWriteUInt80005
@@ -12103,18 +11981,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt8(0xfeedface, 3);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteUInt80006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt8(0xfeedface, 3);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 4277009102');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18000
      * @tc.name       : testWriteUInt80007
@@ -12123,19 +12001,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80007';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt8(-2);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -2')
-    //
-    //   }
-    // })
+    it('testBufferWriteUInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80007';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt8(-2);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -2')
+    
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18100
      * @tc.name       : testWriteUInt80008
@@ -12144,19 +12022,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80008';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt8(0xcafebabe, 1);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 3405691582')
-    //
-    //   }
-    // })
+    it('testBufferWriteUInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80008';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt8(0xcafebabe, 1);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 3405691582')
+    
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18200
      * @tc.name       : testWriteUInt80009
@@ -12169,8 +12047,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt80009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeUInt8(123.456, 0);
-        let result1 = buf.writeUInt8(123.456, 1);
+        let result = buf.writeUInt8(123.456 as long, 0);
+        let result1 = buf.writeUInt8(123.456 as long, 1);
         console.log(`${TAG}reslut:${result}`)
         console.log(`${TAG}reslut1:${result1}`);
         expect(String(result)).assertEqual('1');
@@ -12188,39 +12066,39 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt80010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt80010';
+    it('testBufferWriteUInt80010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt80010';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt8(0xdecafafecacefade, 1);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 16053919793946753000');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18400
+    //  * @tc.name       : testWriteUInt80011
+    //  * @tc.desc       : Test the function of the interface writeUInt8.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteUInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteUInt80011';
     //   try {
+  
     //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt8(0xdecafafecacefade, 1);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //     let result = buf.writeUInt8(Number(BigInt(0x0102030405060708) as long), 2);
+    //     expect(result).assertFail();
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 16053919793946753000');
+    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18400
-     * @tc.name       : testWriteUInt80011
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteUInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteUInt80011';
-  //     try {
-  //
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       let result = buf.writeUInt8(Number(BigInt(0x0102030405060708)), 2);
-	// expect(result).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18500
      * @tc.name       : testWriteUInt80012
@@ -12295,18 +12173,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16BE0003';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(0x05060708, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 84281096');
-    //   }
-    // })
+    it('testBufferWriteUInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16BE0003';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16BE(0x05060708, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 84281096');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18900
      * @tc.name       : testWriteUInt16BE0004
@@ -12355,18 +12233,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16BE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(0xfeedface, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102');
-    //   }
-    // })
+    it('testBufferWriteUInt16BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16BE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16BE(0xfeedface, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102');
+      }
+    })
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19200
      * @tc.name       : testWriteUInt16BE0007
@@ -12375,18 +12253,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16BE0007';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(-2, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2');
-    //   }
-    // })
+    it('testBufferWriteUInt16BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16BE0007';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16BE(-2, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19300
      * @tc.name       : testWriteUInt16BE0008
@@ -12415,18 +12293,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16BE0009';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteUInt16BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16BE0009';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16BE(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19500
      * @tc.name       : testWriteUInt16BE0010
@@ -12439,12 +12317,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        const result = buf.writeUInt16BE(123.456, 0);
+        const result = buf.writeUInt16BE(123.456 as long, 0);
         const result1 = buf.readUInt16BE(0)
         console.log(`${TAG} result: ${result}`)
         console.log(`${TAG} result1: ${result1}`);
         expect(String(buf.readUInt16BE(0))).assertEqual('123');
-        expect(buf.writeUInt16BE(123.456, 0)).assertEqual(2);
+        expect(buf.writeUInt16BE(123.456 as long, 0)).assertEqual(2);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -12459,39 +12337,39 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16BE0011';
+    it('testBufferWriteUInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16BE0011';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16BE(0xdeadbeef, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3735928559');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19700
+    //  * @tc.name       : testWriteUInt16BE0012
+    //  * @tc.desc       : Test the function of the interface writeUInt16BE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteUInt16BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteUInt16BE0012';
     //   try {
     //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(0xdeadbeef, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //     buf.writeUInt16BE(Number(BigInt(0x0102030405060708) as long), 0);
+	  //     expect(false).assertFail();
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3735928559');
+    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850')
+  
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19700
-     * @tc.name       : testWriteUInt16BE0012
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteUInt16BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteUInt16BE0012';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       buf.writeUInt16BE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850')
-  //
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19800
      * @tc.name       : testWriteUInt16LE0001
@@ -12520,19 +12398,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16LE0002';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0x05060708, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 84281096')
-    //
-    //   }
-    // })
+    it('testBufferWriteUInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16LE0002';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16LE(0x05060708, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 84281096')
+    
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20000
      * @tc.name       : testWriteUInt16LE0003
@@ -12579,19 +12457,19 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16LE0005';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0xfeedface, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102')
-    //
-    //   }
-    // })
+    it('testBufferWriteUInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16LE0005';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16LE(0xfeedface, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102')
+    
+      }
+    })
 
     /** 
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20300
@@ -12601,18 +12479,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16LE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(-2, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2');
-    //   }
-    // })
+    it('testBufferWriteUInt16LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16LE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16LE(-2, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20400
      * @tc.name       : testWriteUInt16LE0007
@@ -12640,18 +12518,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16LE0008';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0xcafebabe, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
-    //   }
-    // })
+    it('testBufferWriteUInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16LE0008';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16LE(0xcafebabe, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20600
@@ -12665,8 +12543,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(123.456, 0);
-        expect(buf.writeUInt16LE(123.456, 0)).assertEqual(2);
+        buf.writeUInt16LE(123.456 as long, 0);
+        expect(buf.writeUInt16LE(123.456 as long, 0)).assertEqual(2);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -12680,38 +12558,38 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt16LE0010';
+    it('testBufferWriteUInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt16LE0010';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt16LE(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 16053919793946753000');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20800
+    //  * @tc.name       : testWriteUInt16LE0011
+    //  * @tc.desc       : Test the function of the interface writeUInt16LE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteUInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteUInt16LE0011';
     //   try {
     //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0xdecafafecacefade, 0);
+    //     buf.writeUInt16LE(Number(BigInt(0x0102030405060708) as long), 0);
     //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 16053919793946753000');
+    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20800
-     * @tc.name       : testWriteUInt16LE0011
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteUInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteUInt16LE0011';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       buf.writeUInt16LE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20900
      * @tc.name       : testWriteUInt32BE0001
@@ -12817,18 +12695,18 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt32BE0006';
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt32BE(-2, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2');
-    //   }
-    // })
+    it('testBufferWriteUInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt32BE0006';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt32BE(-2, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2');
+      }
+    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21500
@@ -12882,8 +12760,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(123.456, 0);
-        expect(buf.writeUInt32BE(123.456, 0)).assertEqual(4);
+        buf.writeUInt32BE(123.456 as long, 0);
+        expect(buf.writeUInt32BE(123.456 as long, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -12908,26 +12786,26 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21900
-     * @tc.name       : testWriteUInt32BE0011
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteUInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteUInt32BE0011';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       buf.writeUInt32BE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
-  //     }
-  //   })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21900
+    //  * @tc.name       : testWriteUInt32BE0011
+    //  * @tc.desc       : Test the function of the interface writeUInt32BE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteUInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteUInt32BE0011';
+    //   try {
+    //     let buf = buffer.allocUninitializedFromPool(4);
+    //     buf.writeUInt32BE(Number(BigInt(0x0102030405060708) as long), 0);
+    //     expect(false).assertFail();
+    //   } catch (err: BusinessError) {
+    //     console.error(`${TAG} failed, error: ${err.message}`);
+    //     expect(err.message)
+    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
+    //   }
+    // })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22000
      * @tc.name       : testWriteUInt32LE0001
@@ -13033,20 +12911,20 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt32LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt32LE0006';
-    //   try {
-    //
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt32LE(-2, 0);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2')
-    //
-    //   }
-    // })
+    it('testBufferWriteUInt32LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt32LE0006';
+      try {
+    
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt32LE(-2, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2')
+    
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22600
      * @tc.name       : testWriteUInt32LE0007
@@ -13097,8 +12975,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(123.456, 0);
-        expect(buf.writeUInt32LE(123.456, 0)).assertEqual(4);
+        buf.writeUInt32LE(123.456 as long, 0);
+        expect(buf.writeUInt32LE(123.456 as long, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -13112,38 +12990,38 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferWriteUInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferWriteUInt32LE0010';
+    it('testBufferWriteUInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferWriteUInt32LE0010';
+      try {
+        let buf = buffer.allocUninitializedFromPool(4);
+        buf.writeUInt32LE(0xdecafafecacefade, 0);
+        expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 16053919793946753000');
+      }
+    })
+    // /** 
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_23000
+    //  * @tc.name       : testWriteUInt32LE0011
+    //  * @tc.desc       : Test the function of the interface writeUInt32LE.
+    //  * @tc.size       : MediumTest
+    //  * @tc.type       : Function
+    //  * @tc.level      : Level 1
+    //  */
+    // it('testBufferWriteUInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   const TAG = 'testBufferWriteUInt32LE0011';
     //   try {
     //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt32LE(0xdecafafecacefade, 0);
+    //     buf.writeUInt32LE(Number(BigInt(0x0102030405060708) as long), 0);
     //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
+    //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
-    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 16053919793946753000');
+    //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_23000
-     * @tc.name       : testWriteUInt32LE0011
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-  //   it('testBufferWriteUInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //     const TAG = 'testBufferWriteUInt32LE0011';
-  //     try {
-  //       let buf = buffer.allocUninitializedFromPool(4);
-  //       buf.writeUInt32LE(Number(BigInt(0x0102030405060708)), 0);
-	// expect(false).assertFail();
-  //     } catch (err: BusinessError) {
-  //       console.error(`${TAG} failed, error: ${err.message}`);
-  //       expect(err.message)
-  //         .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
-  //     }
-  //   })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0100
      * @tc.name       : testSlice0001
@@ -13152,25 +13030,25 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0001';
-    //   try {
-    //     hilog.info(1, TAG, '%{public}s', 'describe start huifei'+'1111');
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
-    //     hilog.info(1, TAG, '%{public}s', 'describe start huifei'+'222');
-    //     let newBlob = blob.slice();
-    //     expect(newBlob instanceof buffer.Blob).assertTrue();
-    //     expect(newBlob.size).assertEqual(3);
-    //     expect(newBlob.type).assertEqual('');
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('abc');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0001';
+      try {
+        hilog.info(1, TAG, '%{public}s', 'describe start huifei'+'1111');
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+        hilog.info(1, TAG, '%{public}s', 'describe start huifei'+'222');
+        let newBlob = blob.slice();
+        expect(newBlob instanceof buffer.Blob).assertTrue();
+        expect(newBlob.size).assertEqual(3);
+        expect(newBlob.type).assertEqual('');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('abc');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0200
      * @tc.name       : testSlice0002
@@ -13179,23 +13057,23 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0002';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
-    //     let newBlob = blob.slice(undefined);
-    //     expect(newBlob instanceof buffer.Blob).assertTrue();
-    //     expect(newBlob.size).assertEqual(3);
-    //     expect(newBlob.type).assertEqual('');
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('abc');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0002';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+        let newBlob = blob.slice(undefined);
+        expect(newBlob instanceof buffer.Blob).assertTrue();
+        expect(newBlob.size).assertEqual(3);
+        expect(newBlob.type).assertEqual('');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('abc');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0300
      * @tc.name       : testSlice0003
@@ -13204,22 +13082,22 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0003';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd']);
-    //     const newBlob = blob.slice(undefined, undefined);
-    //     expect(newBlob.size).assertEqual(4);
-    //     expect(newBlob.type).assertEqual('');
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('abcd');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0003';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd']);
+        const newBlob = blob.slice(undefined, undefined);
+        expect(newBlob.size).assertEqual(4);
+        expect(newBlob.type).assertEqual('');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('abcd');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0400
      * @tc.name       : testSlice0004
@@ -13228,26 +13106,26 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0004';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
-    //     const newBlob = blob.slice(0, 2, 'MIME');
-    //     const res1 = newBlob.size
-    //     console.log(`${TAG} res1: ${res1}`)
-    //     const res2 = newBlob.type
-    //     console.log(`${TAG} res2: ${res2}`);
-    //     expect(newBlob.size).assertEqual(5);
-    //     expect(newBlob.type).assertEqual('MIME');
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('ab');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0004';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
+        const newBlob = blob.slice(0, 2, 'MIME');
+        const res1 = newBlob.size
+        console.log(`${TAG} res1: ${res1}`)
+        const res2 = newBlob.type
+        console.log(`${TAG} res2: ${res2}`);
+        expect(res1).assertEqual(2);
+        expect(res2).assertEqual('MIME');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('ab');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0500
      * @tc.name       : testSlice0005
@@ -13256,26 +13134,27 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0005';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
-    //     const newBlob = blob.slice(1, 4);
-    //     console.log(`${TAG} newBlob: ${newBlob}`)
-    //     const res1 = newBlob.size
-    //     console.log(`${TAG} res1: ${res1}`)
-    //     const res2 = newBlob.type
-    //     console.log(`${TAG} res2: ${res2}`);
-    //     expect(newBlob.size).assertEqual(5);
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('bcd');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0005';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
+        const newBlob = blob.slice(1, 4);
+        console.log(`${TAG} newBlob: ${newBlob}`)
+        const res1 = newBlob.size
+        console.log(`${TAG} res1: ${res1}`)
+        const res2 = newBlob.type
+        console.log(`${TAG} res2: ${res2}`);
+        expect(res1).assertEqual(3);
+        expect(res2).assertEqual('');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('bcd');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0600
      * @tc.name       : testSlice0006
@@ -13284,18 +13163,22 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0006';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
-    //     const newBlob = blob.slice(1, 4, 'MIME');
-    //     expect(newBlob.size).assertEqual(5);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0006';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
+        const newBlob = blob.slice(1, 4, 'MIME');
+        expect(newBlob.size).assertEqual(3);
+        expect(newBlob.type).assertEqual('MIME');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('bcd');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0700
      * @tc.name       : testSlice0007
@@ -13304,21 +13187,21 @@ export default function bufferTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testBufferSlice0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-    //   const TAG = 'testBufferSlice0007';
-    //   try {
-    //     let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
-    //     const newBlob = blob.slice(undefined, undefined, 'MIME');
-    //     expect(newBlob.size).assertEqual(5);
-    //     expect(newBlob.type).assertEqual('MIME');
-    //     const content = await newBlob.text();
-    //     console.log(`${TAG} content: ${content}`);
-    //     expect(content).assertEqual('abcde');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // })
+    it('testBufferSlice0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const TAG = 'testBufferSlice0007';
+      try {
+        let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
+        const newBlob = blob.slice(undefined, undefined, 'MIME');
+        expect(newBlob.size).assertEqual(5);
+        expect(newBlob.type).assertEqual('MIME');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('abcde');
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
   });
 }

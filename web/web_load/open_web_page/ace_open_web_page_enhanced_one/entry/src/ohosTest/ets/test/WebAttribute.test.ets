@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200550;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function webAttribute() {
         if (!("webAttribute" == pages.name)) {
           console.info("get webAttribute state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webAttribute page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webAttribute page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
+      console.log("waitForComponent WebAttributeButton");
       done()
     });
 
@@ -50,7 +55,6 @@ export default function webAttribute() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webAttribute beforeEach start");
       done();
     })
@@ -64,11 +68,9 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testOnResourceLoad001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnResourceLoad001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnResourceLoad001", "resource://rawfile/geolocation.html", 31021, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testOnResourceLoad001", EVENT_ID_SET_EMIT_KEY)
+      Utils.registerEvent("testOnResourceLoad001", "resource://rawfile/geolocation.html", 200560, done);
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
     })
   })
-
 }

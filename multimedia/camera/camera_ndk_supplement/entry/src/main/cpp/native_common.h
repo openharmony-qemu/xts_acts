@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
-#define FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
+#ifndef FOUNDATION_CAMERA_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
+#define FOUNDATION_CAMERA_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
 
 #include <memory>
 #include <utility>
@@ -37,30 +37,57 @@ inline bool CheckArgs(napi_env env, napi_callback_info info, napi_value *args, s
            args[0] != nullptr && (required == 1 || args[1] != nullptr);
 }
 
-inline std::unique_ptr<char[]> GetArgsOneParameter(napi_env env, napi_callback_info info)
+inline char* GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
 {
-    napi_value args[1] = {nullptr};
+    size_t argc = 2;
+    napi_value args[PARAMETER_TWO] = {nullptr};
     if (!CheckArgs(env, info, args, 1)) {
         return nullptr;
     }
-
-    auto param = std::make_unique<char[]>(NAME_SIZE);
-    return napi_get_value_string_utf8(env, args[0], param.get(), NAME_SIZE, nullptr) == napi_ok ? std::move(param)
-                                                                                                : nullptr;
+    size_t typeLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    char* param = new char[typeLen + 1];
+    return napi_get_value_string_utf8(env, args[0], param, typeLen + 1, &typeLen) == napi_ok ? param : nullptr;
 }
 
-inline std::pair<std::unique_ptr<char[]>, std::unique_ptr<char[]>> GetArgsTwoParameters(napi_env env,
-                                                                                        napi_callback_info info)
+inline int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)
+{
+    napi_value args[1] = {nullptr};
+    if (!CheckArgs(env, info, args, 1)) {
+        return 0;
+    }
+
+    int32_t index = 0;
+    return napi_get_value_int32(env, args[0], &index) == napi_ok ? index : 0;
+}
+
+inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callback_info info)
 {
     napi_value args[PARAMETER_TWO] = {nullptr};
-    if (!CheckArgs(env, info, args, PARAMETER_TWO))
-        return {nullptr, nullptr};
+    if (!CheckArgs(env, info, args, PARAMETER_TWO)) { return {nullptr, 0};}
 
-    auto param1 = std::make_unique<char[]>(NAME_SIZE);
-    auto param2 = std::make_unique<char[]>(NAME_SIZE);
-    bool success = napi_get_value_string_utf8(env, args[0], param1.get(), NAME_SIZE, nullptr) == napi_ok &&
-                   napi_get_value_string_utf8(env, args[1], param2.get(), NAME_SIZE, nullptr) == napi_ok;
-    return success ? std::make_pair(std::move(param1), std::move(param2)) : std::make_pair(nullptr, nullptr);
+    size_t typeLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    char* param1 = new char[typeLen + 1];
+    int32_t index = 0;
+    bool success = napi_get_value_string_utf8(env, args[0], param1, typeLen + 1, &typeLen) == napi_ok &&
+                   napi_get_value_int32(env, args[1], &index) == napi_ok;
+    return success ? std::make_pair(param1, index) : std::make_pair(nullptr, 0);
 }
+
+inline std::pair<int, int> GetArgsTwoParametersByInit(napi_env env, napi_callback_info info)
+{
+    int32_t index0 = 0;
+    int32_t index1 = 0;
+    napi_value args[PARAMETER_TWO] = {nullptr};
+    if (!CheckArgs(env, info, args, PARAMETER_TWO)) {
+        return {index0, index1};
+    }
+
+    bool success = napi_get_value_int32(env, args[0], &index0) == napi_ok &&
+                   napi_get_value_int32(env, args[1], &index1) == napi_ok;
+    return success ? std::make_pair(index0, index1) : std::make_pair(index0, index1);
 }
-#endif /* FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H */
+
+}
+#endif /* FOUNDATION_CAMERA_INTERFACES_KITS_NAPI_NATIVE_COMMON_H */

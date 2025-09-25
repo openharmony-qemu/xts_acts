@@ -18,13 +18,13 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct webOnFirstContThree {
   controller: WebController = new WebController();
   @State str: string = "emitLoadUrlOnfirstcontentfulpaintWebc";
-  @State firstId: number = 426;
+  @State firstId: number = 151800;
   @State firstcontentfulpaint: boolean = false;
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -34,15 +34,18 @@ struct webOnFirstContThree {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
-
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151790,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(151790)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContThree page valueChangeCallBack");
     if (eventData != null) {
@@ -58,12 +61,14 @@ struct webOnFirstContThree {
       Row() {
         Button("web click").key('webOnFirstContThree').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
           switch (this.str) {
             case "emitLoadUrlOnfirstcontentfulpaintWebc": {
               try {
+                this.isComplete = -1;
                 this.controller.clearHistory();
                 this.controller.loadUrl({ url: "https://m.weibo.cn" });
-                await Utils.sleep(5000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -90,6 +95,10 @@ struct webOnFirstContThree {
             this.firstcontentfulpaint = true;
             console.error("result of onFirstContentfulPaint is: " + this.firstcontentfulpaint + this.firstId);
           }
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
         })
     }
   }

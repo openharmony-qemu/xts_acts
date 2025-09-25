@@ -165,6 +165,16 @@ interface videoProfile {
   max: number;
 }
 
+interface orientationVariable {
+  errorCode: number;
+  isVariable: boolean;
+}
+
+interface physicalCameraOrientation {
+  errorCode: number;
+  orientation: number;
+}
+
 export const initCamera: (surfaceId: string) => number;
 
 export const getSupportedCameras: () => cameraInfo;
@@ -510,6 +520,12 @@ export const oHCameraManagerGetCameraDevice: (index:number) => number;
 export const oHCameraManagerGetCameraConcurrentInfos: (index:number) => number;
  
 export const oHCameraInputOpenConcurrentCameras: (index:number) => number;
+
+export const oHCameraInputIsPhysicalCameraOrientationVariable: () => orientationVariable;
+
+export const oHCameraInputGetPhysicalCameraOrientation: () => physicalCameraOrientation;
+
+export const oHCameraInputUsePhysicalCameraOrientation: (isUsed:boolean) => number;
 
 export const sessionIsMacroSupported: (a: number) => MacroSupportedinfo;
 

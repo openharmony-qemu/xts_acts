@@ -294,11 +294,11 @@ export default function UiTest() {
       expect (button).assertNull()
       await driver.fling(UiDirection.LEFT, 39000)
       await driver.delayMs(waitUiReadyMs)
-      let text = await driver.findComponents(ON.text('1'))
+      let text = await driver.findComponents(ON.text('next page'))
       expect (text).assertNull()
       await driver.fling(UiDirection.RIGHT, 39000)
       await driver.delayMs(waitUiReadyMs)
-      let text2 = await driver.findComponents(ON.text('1'))
+      let text2 = await driver.findComponents(ON.text('next page'))
       expect (text2).assertNull()
       await driver.fling(UiDirection.UP, 39000)
       await driver.delayMs(2000)
@@ -374,17 +374,17 @@ export default function UiTest() {
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
         await driver.delayMs(waitUiReadyMs)
         let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_0)
+        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
         await driver.delayMs(waitUiReadyMs)
         let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_270)
+        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
         await driver.delayMs(waitUiReadyMs)
         let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_180)
+        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
       } else if (rotation == DisplayRotation.ROTATION_0) {
@@ -392,22 +392,78 @@ export default function UiTest() {
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
         await driver.delayMs(waitUiReadyMs)
         let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_90)
+        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
         await driver.delayMs(waitUiReadyMs)
         let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_180)
+        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
         await driver.delayMs(waitUiReadyMs)
         let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_270)
+        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
         await driver.delayMs(waitUiReadyMs)
       }
       await stopApplication('com.uitestScene.acts')
+    })
+
+    /**
+     * @tc.number uiTest_9060
+     * @tc.name testGetDisplayRotationWithId
+     * @tc.desc getDisplayRotation test
+     */
+    it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(TestTag, 'testGetDisplayRotationWithId start');
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let disPlay = display.getDefaultDisplaySync();
+      console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
+      await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+      await driver.delayMs(waitUiReadyMs)
+      let rotation = await driver.getDisplayRotation(disPlay.id)
+      if (rotation == DisplayRotation.ROTATION_90) {
+        console.info('The device is displayed in horizontal on default')
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation1 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation2 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation3 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      } else if (rotation == DisplayRotation.ROTATION_0) {
+        console.info('The device is displayed in vertical on default')
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation1 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation2 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+        await driver.delayMs(waitUiReadyMs)
+        let rotation3 = await driver.getDisplayRotation(disPlay.id)
+        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+        await driver.delayMs(waitUiReadyMs)
+      }
+      await stopApplication('com.uitestScene.acts')
+      console.log(TestTag, 'testGetDisplayRotationWithId over');
     })
 
     /*

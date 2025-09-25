@@ -12,19 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeEach, afterEach, it, expect, beforeAll, TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, beforeAll, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200500;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = "emitOnInterceptRequestSecond";
+
 export default function webViewOnInterceptReqTwo() {
-  describe('ActsAceWebDevWebViewOnInterceptReqTwoTest', () =>{
-    beforeAll(async  (done: Function) =>{
+  describe('ActsAceWebDevWebViewOnInterceptReqTwoTest', () => {
+    beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewOnInterceptReqTwo',
       }
@@ -34,54 +35,37 @@ export default function webViewOnInterceptReqTwo() {
         console.info("get webViewOnInterceptReqTwo state success " + JSON.stringify(pages));
         if (!("webViewOnInterceptReqTwo" == pages.name)) {
           console.info("get webViewOnInterceptReqTwo state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webViewOnInterceptReqTwo page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push webViewOnInterceptReqTwo page success");
         }
       } catch (err) {
         console.error("push webViewOnInterceptReqTwo page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewOnInterceptReqTwo"), 10000);
+      console.log("waitForComponent webViewOnInterceptReqTwo");
       done()
     });
-    beforeEach(async  (done: Function) =>{
+
+    beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewOnInterceptReqTwo beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewOnInterceptReqTwo afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR2_API_0200
-     *tc.name testOnInterceptRequestAgain
-     *tc.desc onInterceptRequest with setting webresourceresponse
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR2_API_0200
+     * @tc.name testOnInterceptRequestAgain
+     * @tc.desc onInterceptRequest with setting webresourceresponse
      */
-    it('testOnInterceptRequestAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitOnInterceptRequestSecond";
-      Utils.registerEvent("testOnInterceptRequestAgain","intercept test",308,done);
-      sendEventByKey('webViewOnInterceptReqTwo',10,'');
+    it('testOnInterceptRequestAgain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const emitKey = "emitOnInterceptRequestSecond";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testOnInterceptRequestAgain", "intercept test", 200510, done);
+      sendEventByKey('webViewOnInterceptReqTwo', 10, '');
     })
   })
 }

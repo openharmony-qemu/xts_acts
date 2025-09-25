@@ -19,20 +19,22 @@ import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
-import { waitForExist } from '../../test/WaitTest.test';
 import business_error from '@ohos.base';
+
+const EVENT_ID_SET_EMIT_KEY = 200730;
 
 @Entry
 @Component
 struct WebInitTest {
   controller: webView.WebviewController = new webView.WebviewController();
-  @State isComplete: number = -1;
   @State str: string = ''
   @State webInit: boolean = false
   @State webCreated: boolean = false
-  @State interceptUrl: string = ''
+  @State interceptUrl: string | null = null
   @State consoleMsg: string = ''
   @State consoleCorsError: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   schemeList: webView.WebCustomScheme[] = [
     { schemeName: 'jump1', isSupportCORS: true, isSupportFetch: true },
     { schemeName: 'jump2', isSupportCORS: true, isSupportFetch: false },
@@ -87,14 +89,14 @@ struct WebInitTest {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -105,12 +107,10 @@ struct WebInitTest {
         this.str = eventData.data.ACTION;
         try {
           this.controller.loadUrl('resource://rawfile/index.html');
+          this.isReceive = 1;
         } catch (error) {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
-        this.interceptUrl = ''
-        this.consoleMsg = ''
-        this.consoleCorsError = false
       }
     }
   }
@@ -148,100 +148,90 @@ struct WebInitTest {
         Button('WebInitTestButton')
           .key('WebInitTestButton')
           .onClick(async () => {
-            console.info('key==>' + this.str)
+            await Utils.waitForExist(()=>this.isReceive, 'WebInitTestButtonIsReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, 'WebInitTestButtonIsPageEnd', 1, 1000);
+            console.info('key==>' + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case 'testCustomizeSchemesFetch001': {
-                await waitForExist(()=>this.isComplete, 'testCustomizeSchemesFetch001',0)
-                this.controller.runJavaScript('fetchUrl("jump789")')
-                await Utils.sleep(2000);
-                if (this.interceptUrl.indexOf('jump789') < 0 && this.consoleMsg.indexOf('Failed to fetch') >= 0) {
-                  Utils.emitEvent(true, 202);
+                this.interceptUrl = null;
+                this.controller.runJavaScript('fetchUrl("jump789")');
+                await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
+                if (this.interceptUrl === null && this.consoleMsg.indexOf('Failed to fetch') >= 0) {
+                  Utils.emitEvent(true, 200740);
                 } else {
-                  Utils.emitEvent(false, 202);
+                  Utils.emitEvent(false, 200740);
                 }
                 break;
               }
               case 'testCustomizeSchemesFetch002': {
-                this.controller.runJavaScript('fetchUrl("jump1")')
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.interceptUrl.indexOf('jump1') >= 0, 204);
+                this.interceptUrl = null;
+                this.controller.runJavaScript('fetchUrl("jump1")');
+                await Utils.waitForExist(()=>this.interceptUrl, 'waitInterceptUrl', null, 1000);
+                if (this.interceptUrl!.indexOf('jump1') >= 0) {
+                  Utils.emitEvent(true, 200750);
+                } else {
+                  Utils.emitEvent(false, 200750);
+                }
                 break;
               }
               case 'testCustomizeSchemesFetch003': {
-                this.controller.runJavaScript('fetchUrl("jump3")')
-                await Utils.sleep(2000);
-                Utils.emitEvent(
-                  this.interceptUrl.indexOf('jump3') < 0 &&
+                this.interceptUrl = null;
+                this.consoleMsg = '';
+                this.consoleCorsError = false;
+                this.controller.runJavaScript('fetchUrl("jump3")');
+                await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
+                console.log('====interceptUrl=' + this.interceptUrl)
+                console.log('====consoleMsg=' + this.consoleMsg)
+                console.log('====consoleCorsError=' + this.consoleCorsError)
+
+                if (this.interceptUrl === null &&
                   this.consoleCorsError &&
-                    this.consoleMsg.indexOf('Failed to fetch') >= 0,
-                  206
-                );
+                  this.consoleMsg.indexOf('Failed to fetch') >= 0) {
+                  Utils.emitEvent(true, 200760);
+                } else {
+                  Utils.emitEvent(false, 200760);
+                }
                 break;
               }
               case 'testCustomizeSchemesFetch004': {
-                this.controller.runJavaScript('fetchUrlAllowCors("jump3")')
-                await Utils.sleep(2000);
-                Utils.emitEvent(
-                  this.interceptUrl.indexOf('jump3') < 0 &&
+                this.interceptUrl = null;
+                this.consoleMsg = '';
+                this.consoleCorsError = false;
+                this.controller.runJavaScript('fetchUrlAllowCors("jump3")');
+                await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
+                if (this.interceptUrl === null &&
                   this.consoleCorsError &&
-                    this.consoleMsg.indexOf('Failed to fetch') >= 0,
-                  208
-                );
+                  this.consoleMsg.indexOf('Failed to fetch') >= 0) {
+                  Utils.emitEvent(true, 200770);
+                } else {
+                  Utils.emitEvent(false, 200770);
+                }
                 break;
               }
               case 'testCustomizeSchemesFetch005': {
-                this.controller.runJavaScript('fetchUrlAllowCors("jump2")')
-                await Utils.sleep(2000);
-                Utils.emitEvent(
-                  this.interceptUrl.indexOf('jump2') < 0 &&
-                    this.consoleMsg.indexOf('Failed to fetch') >= 0,
-                  210
-                );
+                this.interceptUrl = null;
+                this.consoleMsg = '';
+                this.controller.runJavaScript('fetchUrlAllowCors("jump2")');
+                await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
+                if (this.interceptUrl === null &&
+                  this.consoleMsg.indexOf('Failed to fetch') >= 0) {
+                  Utils.emitEvent(true, 200780);
+                } else {
+                  Utils.emitEvent(false, 200780);
+                }
                 break;
               }
               case 'testCustomizeSchemesFetch006': {
-                this.controller.runJavaScript('fetchUrlAllowCors("jump4")')
-                await Utils.sleep(2000);
-                Utils.emitEvent(
-                  this.interceptUrl.indexOf('jump4') < 0 &&
-                    this.consoleMsg.indexOf('Failed to fetch') >= 0,
-                  212
-                );
-                break;
-              }
-              case 'testSchemeName001': {
-                try {
-                  webView.WebviewController.customizeSchemes(this.invalidSchemeList)
-                } catch (error) {
-                  let e: business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(e.code, 300);
-                }
-                break;
-              }
-              case 'testCustomizeSchemes001': {
-                try {
-                  webView.WebviewController.customizeSchemes(this.outOfRangeSchemeList)
-                } catch (error) {
-                  let e: business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(e.code, 302);
-                }
-                break;
-              }
-              case 'emitOnce001': {
-                try {
-                  Utils.emitEvent(this.webInit, 409);
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                }
-                break;
-              }
-              case 'emitOnce002': {
-                try {
-                  Utils.emitEvent(this.webCreated, 410);
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.interceptUrl = null;
+                this.consoleMsg = '';
+                this.controller.runJavaScript('fetchUrlAllowCors("jump4")');
+                await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
+                if (this.interceptUrl === null &&
+                  this.consoleMsg.indexOf('Failed to fetch') >= 0) {
+                  Utils.emitEvent(true, 200790);
+                } else {
+                  Utils.emitEvent(false, 200790);
                 }
                 break;
               }
@@ -257,8 +247,8 @@ struct WebInitTest {
           .onInterceptRequest((event) => {
             console.log('onInterceptRequest ==============> ')
             if (event) {
-              this.interceptUrl = event.request.getRequestUrl()
-              console.log('url:' + event.request.getRequestUrl())
+              this.interceptUrl = event.request.getRequestUrl();
+              console.log('url:' + this.interceptUrl)
             }
 
             let head1: Header = {
@@ -282,7 +272,7 @@ struct WebInitTest {
           })
           .onConsole((event) => {
             if (event) {
-              this.consoleMsg = event.message?.getMessage()
+              this.consoleMsg = event.message?.getMessage();
               if (!this.consoleCorsError && event.message?.getMessage().indexOf('blocked by CORS policy') >= 0) {
                 this.consoleCorsError = true
               }
@@ -311,11 +301,11 @@ struct WebInitTest {
             }
           })
           .onPageBegin((event) => {
-              console.log('onPageBegin ==>' + event.url);
+            console.log('onPageBegin ==>' + event.url);
           })
           .onPageEnd((event) => {
-              console.log('onPageEnd ==>' + event.url);
-              this.isComplete = 0
+            console.log('onPageEnd ==>' + event.url);
+            this.isPageEnd = 1
           })
       }
       .width('100%')

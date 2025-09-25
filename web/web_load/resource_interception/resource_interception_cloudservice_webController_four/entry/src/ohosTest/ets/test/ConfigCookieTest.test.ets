@@ -13,11 +13,11 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import Utils from './Utils';
-import { hilog } from '@kit.PerformanceAnalysisKit';
+import { describe, beforeAll, beforeEach, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import Utils from './Utils';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 class ResultData{
@@ -30,6 +30,8 @@ class ResultData{
   }
 }
 
+
+
 export default function ActsAceCookieTest() {
   describe('CookieTest', async () => {
     beforeAll(async (done: Function) => {
@@ -37,15 +39,13 @@ export default function ActsAceCookieTest() {
         url: 'testability/pages/CookieTest',
       }
       try {
-        await Utils.sleep(1000);
         router.clear();
         let pages = router.getState();
         console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
         if (!("CookieTest" == pages.name)) {
           console.info("get index state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
-          console.info("push index state success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push index state success");
         }
       } catch (err) {
         console.error("push index page error:" + err);
@@ -59,17 +59,7 @@ export default function ActsAceCookieTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       done();
-    });
-
-    afterEach(() => {
-
-    })
-
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -80,15 +70,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0100 START');
-      let result:ResultData | undefined = AppStorage.get('getCookie10114')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0100 END');
-        done();
+    it('testOnCreatWebCookieManager0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'getCookie10114';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -99,15 +97,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0200 START');
-      let result:ResultData | undefined = AppStorage.get('fetchCookieSync10115')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0200 END');
-        done();
+    it('testOnCreatWebCookieManager0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'fetchCookieSync10115';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -118,15 +124,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0300 START');
-      let result:ResultData | undefined = AppStorage.get('fetchCookieCallback10116')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0300 END');
-        done();
+    it('testOnCreatWebCookieManager0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'fetchCookieCallback10116';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 10) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -137,15 +151,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0400 START');
-      let result:ResultData | undefined = AppStorage.get('fetchCookiePromise10117')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0400 END');
-        done();
+    it('testOnCreatWebCookieManager0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'fetchCookiePromise10117';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -156,15 +178,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0500 START');
-      let result:ResultData | undefined = AppStorage.get('configCookieSync10118')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0500 END');
-        done();
+    it('testOnCreatWebCookieManager0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'configCookieSync10118';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -175,15 +205,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0600 START');
-      let result:ResultData | undefined = AppStorage.get('configCookieCallback10119')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0600 END');
-        done();
+    it('testOnCreatWebCookieManager0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'configCookieCallback10119';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -194,15 +232,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0700 START');
-      let result:ResultData | undefined = AppStorage.get('configCookiePromise10120')
-      if(result != undefined){
-        expect(result.type).assertEqual('string');
-        expect(result.value).assertEqual('a=b');
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager0700 END');
-        done();
+    it('testOnCreatWebCookieManager0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'configCookiePromise10120';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('string');
+      expect(result.value).assertEqual('a=b');
+      done();
     });
 
     /**
@@ -213,15 +259,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1000 START');
-      let result:ResultData | undefined = AppStorage.get('putAcceptCookieEnabled10123')
-      if(result != undefined){
-        expect(result.type).assertEqual('boolean');
-        expect(result.value).assertEqual(false);
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1000 END');
-        done();
+    it('testOnCreatWebCookieManager1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'putAcceptCookieEnabled10123';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('boolean');
+      expect(result.value).assertEqual(false);
+      done();
     });
 
     /**
@@ -232,15 +286,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1100 START');
-      let result:ResultData | undefined = AppStorage.get('putAcceptThirdPartyCookieEnabled10124')
-      if(result != undefined){
-        expect(result.type).assertEqual('boolean');
-        expect(result.value).assertEqual(false);
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1100 END');
-        done();
+    it('testOnCreatWebCookieManager1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'putAcceptThirdPartyCookieEnabled10124';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('boolean');
+      expect(result.value).assertEqual(false);
+      done();
     });
 
     /**
@@ -251,17 +313,23 @@ export default function ActsAceCookieTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testOnCreatWebCookieManager1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1200 START');
-      let result:ResultData | undefined = AppStorage.get('existCookie10125')
-      if(result != undefined){
-        expect(result.type).assertEqual('boolean');
-        expect(result.value).assertEqual(true);
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testOnCreatWebCookieManager1200 END');
-        done();
+    it('testOnCreatWebCookieManager1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const key = 'existCookie10125';
+      let result:ResultData | undefined = AppStorage.get(key);
+      let retryTimes = 0;
+      while (!result && retryTimes < 3) {
+        result = AppStorage.get(key);
+        await Utils.sleep(1000);
+        retryTimes++;
+        console.info('AppStorage.get retryTimes: ' + retryTimes);
       }
+      if (!result) {
+        console.error('result is undefined!');
+        return;
+      }
+      expect(result.type).assertEqual('boolean');
+      expect(result.value).assertEqual(true);
+      done();
     });
-
-
   });
 }

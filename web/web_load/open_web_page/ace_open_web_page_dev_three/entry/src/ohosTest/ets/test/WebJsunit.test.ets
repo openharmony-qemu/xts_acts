@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200260;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitLoadUrl";
+let emitKey = "";
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
@@ -29,39 +32,20 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 100,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_001                                                                                                                                                                     
      *tc.name LoadUrl                                                                                                                                                                                                                
      *tc.desic load contents from url
      */
     it('LoadUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitRefresh";
-      Utils.registerContainEvent("LoadUrl", "index", 1, done);
-      sendEventByKey('webcomponent', 10, '');
+      emitKey = "emitLoadUrl";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerContainEvent("LoadUrl", "index", 200270, done);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_009
@@ -69,9 +53,10 @@ export default function webJsunit() {
      *tc.desic refresh current page
      */
     it('Refresh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitLoadData";
-      Utils.registerEvent("Refresh", "index", 9, done);
-      sendEventByKey('webcomponent', 10, '');
+      emitKey = "emitRefresh";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("Refresh", "index", 200280, done);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_002                                                                                                                                                                  
@@ -80,8 +65,9 @@ export default function webJsunit() {
      */
     it('LoadData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoadData";
-      Utils.registerEvent("LoadData", "baidu", 2, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("LoadData", "baidu", 200290, done);
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
   })
 }

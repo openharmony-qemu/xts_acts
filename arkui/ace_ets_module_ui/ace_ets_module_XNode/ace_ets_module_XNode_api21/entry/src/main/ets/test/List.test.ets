@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 import InvalidateAttributesTest from './InvalidateTest/InvalidateAttributesTest.test';
+import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
+import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
 
 export default function testsuite() {
   InvalidateAttributesTest();
+  CacheMaxCountForHSPTest();
+  ImageLoaderTest();
 }

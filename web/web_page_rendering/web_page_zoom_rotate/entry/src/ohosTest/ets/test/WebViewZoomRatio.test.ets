@@ -16,6 +16,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,12 +34,12 @@ export default function webViewZoomRatio() {
         if (!("WebViewZoomRatio" == pages.name)) {
           console.info("get WebViewZoomRatio state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewZoomRatio page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewZoomRatio page error: " + err);
       }
+      await waitForComponent("WebViewZoomRatioTestButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,9 +48,9 @@ export default function webViewZoomRatio() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
+
     })
 
     /*
@@ -61,9 +62,8 @@ export default function webViewZoomRatio() {
     * @tc.level      : Level 1
     */
     it('textZoomRatio001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomRatio", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("textZoomRatio001", true, 3701, done);
+      Utils.emitEvent("emitZoomRatio", 153270)
+      Utils.registerEvent("textZoomRatio001", true, 153280, done);
       sendEventByKey('WebViewZoomRatioTestButton', 10, '');
     })
 
@@ -76,9 +76,8 @@ export default function webViewZoomRatio() {
     * @tc.level      : Level 1
     */
     it('testZoomAtio001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomAtio", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomAtio001", true, 3702, done);
+      Utils.emitEvent("emitZoomAtio", 153270)
+      Utils.registerEvent("testZoomAtio001", true, 153290, done);
       sendEventByKey('WebViewZoomRatioTestButton', 10, '');
     })
   })
