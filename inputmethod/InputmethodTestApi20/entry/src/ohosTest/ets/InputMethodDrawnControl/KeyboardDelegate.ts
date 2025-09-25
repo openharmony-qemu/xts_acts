@@ -46,8 +46,8 @@ export class KeyboardDelegate {
 
   public onCreate(): void {
     this.initWindow();
-    inputMethodAbility.on("inputStop", () => {
-      inputMethodAbility.off("inputStop", () => {
+    inputMethodAbility.on('inputStop', () => {
+      inputMethodAbility.off('inputStop', () => {
         console.log('====>inputMethodEngine delete inputStop notification.');
       });
       try {
