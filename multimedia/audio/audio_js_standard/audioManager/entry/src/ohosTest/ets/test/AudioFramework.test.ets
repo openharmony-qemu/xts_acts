@@ -6357,7 +6357,6 @@ export default function audioFramework() {
       }
       done();
     })
-
     /**
     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
@@ -6377,7 +6376,6 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }
     })
-
     /**
     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
