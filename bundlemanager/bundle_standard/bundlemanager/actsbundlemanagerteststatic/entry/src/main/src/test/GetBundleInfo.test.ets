@@ -4,7 +4,7 @@ import hilog from '@ohos.hilog'
 import { BundleInfo } from 'bundleManager.BundleInfo';
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 const BUNDLE_NAME = "ohos.acts.bundle.stage.test.static";
 const VENDOR = "example";
