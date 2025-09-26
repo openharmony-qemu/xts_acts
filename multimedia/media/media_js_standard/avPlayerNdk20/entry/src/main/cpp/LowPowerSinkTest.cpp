@@ -341,21 +341,21 @@ static napi_value OH_LowPowerAudioSink_RegisterCallback0100(napi_env env, napi_c
     return retValue;
 }
 
- static napi_value OH_LowPowerAudioSinkCallback_Destroy0100(napi_env env, napi_callback_info info)
+static napi_value OH_LowPowerAudioSinkCallback_Destroy0100(napi_env env, napi_callback_info info)
 {
-     OH_AVErrCode errcode = OH_LowPowerAudioSinkCallback_Destroy(nullptr);
-     int32_t res = 1;
-     if (errcode == AV_ERR_INVALID_VAL) {
-         res = 0;
-     }
-     napi_value retValue;
-     napi_create_int32(env, res, &retValue);
-     return retValue;
- }
+    OH_AVErrCode errcode = OH_LowPowerAudioSinkCallback_Destroy(nullptr);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 
 static napi_value OH_LowPowerAudioSinkCallback_Destroy0101(napi_env env, napi_callback_info info)
 {
-    OH_LowPowerAudioSinkCallback*Callback= OH_LowPowerAudioSinkCallback_Create();
+    OH_LowPowerAudioSinkCallback *Callback = OH_LowPowerAudioSinkCallback_Create();
     OH_AVErrCode errcode = OH_LowPowerAudioSinkCallback_Destroy(Callback);
     int32_t res = 1;
     if (errcode == AV_ERR_OK) {
@@ -1028,8 +1028,8 @@ napi_property_descriptor desc[] = {
      OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_LowPowerVideoSinkCallback_SetEosListener0100", nullptr, OH_LowPowerVideoSinkCallback_SetEosListener0100,
      nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_AVSamplesBuffer_AppendOneBuffer0100", nullptr, OH_AVSamplesBuffer_AppendOneBuffer0100,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVSamplesBuffer_AppendOneBuffer0100", nullptr, OH_AVSamplesBuffer_AppendOneBuffer0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
 
 };
 

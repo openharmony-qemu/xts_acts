@@ -1023,7 +1023,7 @@ static napi_value OH_AVScreenCapture_StrategyForFillMode0100(napi_env env, napi_
 
 static napi_value OH_CaptureMode0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.captureMode = OH_CAPTURE_SPECIFIED_SCREEN;
@@ -1040,7 +1040,7 @@ static napi_value OH_CaptureMode0100(napi_env env, napi_callback_info info)
 
 static napi_value OH_CaptureMode0101(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.captureMode = OH_CAPTURE_SPECIFIED_WINDOW;
@@ -1057,7 +1057,7 @@ static napi_value OH_CaptureMode0101(napi_env env, napi_callback_info info)
 
 static napi_value OH_CaptureMode0102(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.captureMode = OH_CAPTURE_SPECIFIED_WINDOW;
@@ -1075,7 +1075,7 @@ static napi_value OH_CaptureMode0102(napi_env env, napi_callback_info info)
 
 static napi_value OH_AudioCodecFormat0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.audioInfo.audioEncInfo.audioCodecformat = OH_AUDIO_DEFAULT;
@@ -1092,7 +1092,7 @@ static napi_value OH_AudioCodecFormat0100(napi_env env, napi_callback_info info)
 
 static napi_value OH_AudioCodecFormat0101(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.audioInfo.audioEncInfo.audioCodecformat = OH_AUDIO_DEFAULT;
@@ -1110,7 +1110,7 @@ static napi_value OH_AudioCodecFormat0101(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_VIDEO_DEFAULT;
@@ -1127,7 +1127,7 @@ static napi_value OH_VideoCodecFormat0100(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0101(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_H265;
@@ -1144,7 +1144,7 @@ static napi_value OH_VideoCodecFormat0101(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0102(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_MPEG4;
@@ -1161,7 +1161,7 @@ static napi_value OH_VideoCodecFormat0102(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0103(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_VP8;
@@ -1178,7 +1178,7 @@ static napi_value OH_VideoCodecFormat0103(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0104(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_VP9;
@@ -1195,7 +1195,7 @@ static napi_value OH_VideoCodecFormat0104(napi_env env, napi_callback_info info)
 
 static napi_value OH_VideoCodecFormat0105(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.videoInfo.videoEncInfo.videoCodec = OH_VIDEO_CODEC_FORMAT_BUTT;
@@ -1212,7 +1212,7 @@ static napi_value OH_VideoCodecFormat0105(napi_env env, napi_callback_info info)
 
 static napi_value OH_DataType0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.dataType = OH_ENCODED_STREAM;
@@ -1229,7 +1229,7 @@ static napi_value OH_DataType0100(napi_env env, napi_callback_info info)
 
 static napi_value OH_DataType0101(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.dataType = OH_INVAILD;
@@ -1246,7 +1246,7 @@ static napi_value OH_DataType0101(napi_env env, napi_callback_info info)
 
 static napi_value OH_ContainerFormatType0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.recorderInfo.fileFormat = CFT_MPEG_4A;
@@ -1263,7 +1263,7 @@ static napi_value OH_ContainerFormatType0100(napi_env env, napi_callback_info in
 
 static napi_value OH_RecorderInfo0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.recorderInfo.urlLen = 0;
@@ -1280,7 +1280,7 @@ static napi_value OH_RecorderInfo0100(napi_env env, napi_callback_info info)
 
 static napi_value OH_AudioCaptureSourceType0100(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.audioInfo.innerCapInfo.audioSource = OH_SOURCE_INVALID;
@@ -1297,7 +1297,7 @@ static napi_value OH_AudioCaptureSourceType0100(napi_env env, napi_callback_info
 
 static napi_value OH_AudioCaptureSourceType0101(napi_env env, napi_callback_info info)
 {
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVScreenCaptureConfig config;
     SetConfig(config);
     config.audioInfo.innerCapInfo.audioSource = OH_APP_PLAYBACK;
@@ -1315,7 +1315,7 @@ static napi_value OH_AudioCaptureSourceType0101(napi_env env, napi_callback_info
 static napi_value OH_AVScreenCaptureStateCode0100(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1330,7 +1330,7 @@ static napi_value OH_AVScreenCaptureStateCode0100(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0101(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1345,7 +1345,7 @@ static napi_value OH_AVScreenCaptureStateCode0101(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0102(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1360,7 +1360,7 @@ static napi_value OH_AVScreenCaptureStateCode0102(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0103(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1375,7 +1375,7 @@ static napi_value OH_AVScreenCaptureStateCode0103(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0104(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1390,7 +1390,7 @@ static napi_value OH_AVScreenCaptureStateCode0104(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0105(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1405,7 +1405,7 @@ static napi_value OH_AVScreenCaptureStateCode0105(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0106(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1420,7 +1420,7 @@ static napi_value OH_AVScreenCaptureStateCode0106(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0107(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1435,7 +1435,7 @@ static napi_value OH_AVScreenCaptureStateCode0107(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0108(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1450,7 +1450,7 @@ static napi_value OH_AVScreenCaptureStateCode0108(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0109(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1465,7 +1465,7 @@ static napi_value OH_AVScreenCaptureStateCode0109(napi_env env, napi_callback_in
 static napi_value OH_AVScreenCaptureStateCode0110(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetStateCallback(ScreenCapture, OnStateChange, userData);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -1495,7 +1495,7 @@ void OnBufferAvailable(OH_AVScreenCapture *capture, OH_AVBuffer *buffer, OH_AVSc
 static napi_value OH_AVScreenCaptureBufferType0100(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode =
         OH_AVScreenCapture_SetDataCallback(ScreenCapture, OnBufferAvailable, userData);
     int32_t res = 1;
@@ -1511,7 +1511,7 @@ static napi_value OH_AVScreenCaptureBufferType0100(napi_env env, napi_callback_i
 static napi_value OH_AVScreenCaptureBufferType0101(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode =
         OH_AVScreenCapture_SetDataCallback(ScreenCapture, OnBufferAvailable, userData);
     int32_t res = 1;
@@ -1541,7 +1541,7 @@ static napi_value OH_AVScreenCaptureFilterableAudioContent0100(napi_env env, nap
 static napi_value OH_AVScreenCaptureContentChangedEvent0100(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode =
         OH_AVScreenCapture_SetCaptureContentChangedCallback(ScreenCapture, OnCaptureContentChanged, userData);
     int32_t res = 1;
@@ -1557,7 +1557,7 @@ static napi_value OH_AVScreenCaptureContentChangedEvent0100(napi_env env, napi_c
 static napi_value OH_AVSCREEN_CAPTURE_ErrCode0100(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCapture *ScreenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
     OH_AVSCREEN_CAPTURE_ErrCode errcode =
         OH_AVScreenCapture_SetCaptureContentChangedCallback(ScreenCapture, OnCaptureContentChanged, userData);
     int32_t res = 1;
