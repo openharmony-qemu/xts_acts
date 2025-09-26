@@ -32,7 +32,7 @@ struct GetDarkModeTest {
       '预期结果：\n' +
       '1、控制台打印日志信息: getDarkMode value: 0\n' +
       '2、控制台打印日志信息: getDarkMode value: 1';
-  @State Vue: boolean = false;
+  @State isVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State isDarkMode: boolean = false;
@@ -40,8 +40,8 @@ struct GetDarkModeTest {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.isVue == false) {
+      Button({ stateEffect: this.isVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -53,7 +53,7 @@ struct GetDarkModeTest {
       .onClick(() => {
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.isVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -104,7 +104,7 @@ struct GetDarkModeTest {
   onPageShow() {
     this.intervalNum = setInterval(() => {
       if(this.isDarkMode && this.isLightMode) {
-        this.Vue = true;
+        this.isVue = true;
       }
     }, 1000)
   }
