@@ -76,6 +76,7 @@ export default function dataShareConfigPublishTest() {
         }
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           console.log(TAG + "[DataShareProvider] publishProxyDataTest001 success,proxyData allowList length is:" + JSON.stringify(proxyData[0].allowList?.length));
           console.log(TAG + "[DataShareProvider] publishProxyDataTest001 success,results:" + JSON.stringify(results));
           let uri = results[0].uri;
@@ -113,6 +114,7 @@ export default function dataShareConfigPublishTest() {
         }
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           console.log(TAG + "[DataShareProvider] dataShareConfigPublishTest002 success,results:" + JSON.stringify(results));
           console.log(TAG + "[DataShareProvider] dataShareConfigPublishTest002 success,results uri.length:" + results[0].uri.toString().length);
           let uri = results[0].uri;
@@ -149,6 +151,7 @@ export default function dataShareConfigPublishTest() {
         }
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
           console.log(TAG + "[DataShareProvider] dataShareConfigPublishTest003 success,proxyData allowList length is:" + JSON.stringify(proxyData[0].allowList?.length));
           console.log(TAG + "[DataShareProvider] dataShareConfigPublishTest003 success,results:" + JSON.stringify(results));
           let uri = results[0].uri;
