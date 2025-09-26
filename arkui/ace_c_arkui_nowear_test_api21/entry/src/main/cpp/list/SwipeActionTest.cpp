@@ -33,6 +33,8 @@ constexpr int32_t LIST_ITEM_GROUP_COUNT = 6;
 int32_t SwipeActionTest::direction = 0;
 int32_t SwipeActionTest::listIndex = 0;
 int32_t SwipeActionTest::listGroupIndex = -1;
+int32_t SwipeActionTest::directionRight = 1;
+int32_t SwipeActionTest::listIndexOne = 1;
 
 static void SetAction(std::shared_ptr<ListItemComponent> listItem,
                       ArkUI_ListItemSwipeEdgeEffect setEdgeEffect =
@@ -135,6 +137,19 @@ ArkUI_NodeHandle findListItem(std::shared_ptr<ListComponent> list)
     return node;
 }
 
+ArkUI_NodeHandle findListItem_one(std::shared_ptr<ListComponent> list)
+{
+    ArkUI_NativeNodeAPI_1* nativeNodeApi = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nativeNodeApi);
+    bool hasGroup = SwipeActionTest::listGroupIndex >= 0;
+    int32_t targetIndex = SwipeActionTest::listIndexOne + (hasGroup ? LIST_ITEM_COUNT : 0);
+    auto node = nativeNodeApi->getChildAt(list->GetComponent(), targetIndex);
+    if (hasGroup) {
+        node = nativeNodeApi->getChildAt(node, SwipeActionTest::listGroupIndex);
+    }
+    return node;
+}
+
 void Expand(ArkUI_NodeHandle node, int32_t direction)
 {
     int32_t ret = OH_ArkUI_ListItemSwipeAction_Expand(node, static_cast<ArkUI_ListItemSwipeActionDirection>(direction));
@@ -154,14 +169,31 @@ static std::shared_ptr<ColumnComponent> CreateSwipeActionController(std::shared_
     auto column = std::make_shared<ColumnComponent>();
     auto expandListBtn = std::make_shared<ButtonComponent>();
     auto collapseListBtn = std::make_shared<ButtonComponent>();
+    auto expandListBtn_right = std::make_shared<ButtonComponent>();
+    auto collapseListBtn_right = std::make_shared<ButtonComponent>();
+    auto invalidBtn = std::make_shared<ButtonComponent>();
+    expandListBtn_right->SetLabel("expandListBtn_right");
+    expandListBtn_right->SetId("expandListBtn_right");
+    collapseListBtn_right->SetLabel("collapseListBtn_right");
+    collapseListBtn_right->SetId("collapseListBtn_right");
+    invalidBtn->SetLabel("invalidBtn");
+    invalidBtn->SetId("invalidBtn");
     expandListBtn->SetLabel("expandList");
     expandListBtn->SetId("expandList");
     collapseListBtn->SetLabel("collapseList");
     collapseListBtn->SetId("collapseList");
     column->AddChild(expandListBtn);
     column->AddChild(collapseListBtn);
+    column->AddChild(expandListBtn_right);
+    column->AddChild(collapseListBtn_right);
+    column->AddChild(invalidBtn);
     expandListBtn->RegisterOnClick([list]() { Expand(findListItem(list), SwipeActionTest::direction); });
     collapseListBtn->RegisterOnClick([list]() { Collapse(findListItem(list)); });
+    expandListBtn_right->RegisterOnClick([list]() {
+        Expand(findListItem_one(list), SwipeActionTest::directionRight);
+    });
+    collapseListBtn_right->RegisterOnClick([list]() { Collapse(findListItem_one(list)); });
+    invalidBtn->RegisterOnClick([list]() { Expand(nullptr, SwipeActionTest::direction); });
     return column;
 }
 
