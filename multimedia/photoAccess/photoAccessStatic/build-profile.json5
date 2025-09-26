@@ -23,6 +23,7 @@
         "compatibleSdkVersion": 20,
         "compileSdkVersion": 21,
         "runtimeOS": "OpenHarmony",
+        "arkTSVersion": "1.2",
         "buildOption": {
           "strictMode": {
             "caseSensitiveCheck": true,
