@@ -67,5 +67,30 @@ export default function frameNodeGetAttributeTest() {
       done();
     });
 
+    /**
+     * @tc.number    frameNodeGetAttributeTest_0200
+     * @tc.name      frameNodeGetAttributeTest_0200
+     * @tc.desc      frameNode: frameNode getAttribute Test
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
+     */
+    it('frameNodeGetAttributeTest_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('frameNodeGetAttributeTest_0200 START');
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('getAttributeButton')).assertEqual(undefined);
+      expect(AppStorage.get('getAttributeCheckbox')).assertEqual(undefined);
+      expect(AppStorage.get('getAttributeRadio')).assertEqual(undefined);
+      expect(AppStorage.get('getAttributeSlider')).assertEqual(undefined);
+      expect(AppStorage.get('getAttributeToggle')).assertEqual(undefined);
+      AppStorage.delete('getAttributeButton')
+      AppStorage.delete('getAttributeCheckbox')
+      AppStorage.delete('getAttributeRadio')
+      AppStorage.delete('getAttributeSlider')
+      AppStorage.delete('getAttributeToggle')
+      console.info('[frameNodeGetAttributeTest_0200] END');
+      done();
+    });
+
   })
 }
