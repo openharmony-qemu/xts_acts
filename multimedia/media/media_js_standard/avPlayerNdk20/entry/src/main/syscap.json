@@ -18,6 +18,13 @@
                     "SystemCapability.Multimedia.Media.VideoRecorder",
                     "SystemCapability.Multimedia.Media.AVPlayer",
                     "SystemCapability.Multimedia.Media.AVRecorder",
+                    "SystemCapability.Multimedia.Media.LowPowerAVSink",
+                    "SystemCapability.Multimedia.Media.AVMetadataExtractor",
+                    "SystemCapability.Multimedia.VideoProcessingEngine",
+                    "SystemCapability.Multimedia.Media.VideoEncoder",
+                    "SystemCapability.Multimedia.Media.CodecBase",
+                    "SystemCapability.Multimedia.Media.Core",
+                    "SystemCapability.Multimedia.Image.Core",
                     "SystemCapability.ArkUI.ArkUI.Full"
                 ]
             }

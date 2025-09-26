@@ -17,7 +17,11 @@
                     "SystemCapability.Multimedia.Media.AudioRecorder",
                     "SystemCapability.Multimedia.Media.VideoRecorder",
                     "SystemCapability.Multimedia.Media.AVPlayer",
-                    "SystemCapability.Multimedia.Media.AVRecorder"
+                    "SystemCapability.Multimedia.Media.AVRecorder",
+                    "SystemCapability.Multimedia.Media.LowPowerAVSink",
+                    "SystemCapability.Multimedia.Media.CodecBase",
+                    "SystemCapability.Multimedia.Media.Core",
+                    "SystemCapability.ArkUI.ArkUI.Full"
                 ]
             }
         ]

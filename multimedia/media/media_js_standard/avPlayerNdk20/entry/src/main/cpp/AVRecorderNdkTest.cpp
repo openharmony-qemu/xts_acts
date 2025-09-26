@@ -21,6 +21,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <fcntl.h>
+#include <hilog/log.h>
 #include <iostream>
 #include <js_native_api.h>
 #include <multimedia/player_framework/avplayer.h>
@@ -33,6 +34,7 @@
 #include <typeinfo>
 #include <unistd.h>
 #include <vector>
+#define LOG_TAG "MY_NDKDEMO_"
 
 void OnStateChange(OH_AVRecorder *recorder, OH_AVRecorder_State state, OH_AVRecorder_StateChangeReason reason,
                    void *userData){};
@@ -274,6 +276,200 @@ static napi_value OH_AVRecorder_SetWillMuteWhenInterrupted0100(napi_env env, nap
     return retValue;
 }
 
+static napi_value OH_AVRecorder_ContainerFormatType0100(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    size_t argc = 1;
+    char url[20];
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    status = napi_get_value_int32(env, args[0], &fd);
+    OH_AVRecorder_Profile profile = {
+        audioBitrate : 112000,             // 音频比特率。
+        audioChannels : 2,                 // 音频声道数。
+        audioCodec : AVRECORDER_AUDIO_MP3, // 音频编码格式，当前支持AAC，MP3，G711MU。
+        audioSampleRate : 48000,           // 音频采样率。
+        fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
+    };
+    snprintf(url, sizeof(url), "fd://%lu", fd);
+    char *url_ptr = url;
+    OH_AVRecorder_Config config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = url_ptr, // 使用文件描述符或沙箱路径
+    };
+    void *userData;
+    OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
+    auto aa = OH_AVRecorder_SetStateCallback(AVRecorder, OnStateChange, userData);
+    auto aw = OH_AVRecorder_SetErrorCallback(AVRecorder, OnError, userData);
+    auto ew = OH_AVRecorder_SetUriCallback(AVRecorder, OnUri, userData);
+    OH_AVErrCode errcode = OH_AVRecorder_Prepare(AVRecorder, &config);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_MetadataTemplate0100(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    size_t argc = 1;
+    char url[20];
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    status = napi_get_value_int32(env, args[0], &fd);
+    OH_AVRecorder_Profile profile = {
+        audioBitrate : 112000,             // 音频比特率。
+        audioChannels : 2,                 // 音频声道数。
+        audioCodec : AVRECORDER_AUDIO_MP3, // 音频编码格式，当前支持AAC，MP3，G711MU。
+        audioSampleRate : 48000,           // 音频采样率。
+        fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
+    };
+    snprintf(url, sizeof(url), "fd://%lu", fd);
+    char *url_ptr = url;
+    OH_AVRecorder_Config config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = url_ptr, // 使用文件描述符或沙箱路径
+    };
+    OH_AVRecorder_MetadataTemplate MetadataTemplate = {.value = "1", .key = "1"};
+    config.metadata.customInfo = MetadataTemplate;
+    void *userData;
+    OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
+    auto aa = OH_AVRecorder_SetStateCallback(AVRecorder, OnStateChange, userData);
+    auto aw = OH_AVRecorder_SetErrorCallback(AVRecorder, OnError, userData);
+    auto ew = OH_AVRecorder_SetUriCallback(AVRecorder, OnUri, userData);
+    OH_AVErrCode errcode = OH_AVRecorder_Prepare(AVRecorder, &config);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_MetadataTemplate0101(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    size_t argc = 1;
+    char url[20];
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    status = napi_get_value_int32(env, args[0], &fd);
+    OH_AVRecorder_Profile profile = {
+        audioBitrate : 112000,             // 音频比特率。
+        audioChannels : 2,                 // 音频声道数。
+        audioCodec : AVRECORDER_AUDIO_MP3, // 音频编码格式，当前支持AAC，MP3，G711MU。
+        audioSampleRate : 48000,           // 音频采样率。
+        fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
+    };
+    snprintf(url, sizeof(url), "fd://%lu", fd);
+    char *url_ptr = url;
+    OH_AVRecorder_Config config = {
+        .audioSourceType = AVRECORDER_DEFAULT,
+        .profile = profile,
+        .url = url_ptr, // 使用文件描述符或沙箱路径
+    };
+    config.metadata.customInfo.key = "1";
+    config.metadata.customInfo.value = "1";
+    void *userData;
+    OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
+    auto aa = OH_AVRecorder_SetStateCallback(AVRecorder, OnStateChange, userData);
+    auto aw = OH_AVRecorder_SetErrorCallback(AVRecorder, OnError, userData);
+    auto ew = OH_AVRecorder_SetUriCallback(AVRecorder, OnUri, userData);
+    OH_AVErrCode errcode = OH_AVRecorder_Prepare(AVRecorder, &config);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_Metadata0100(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    size_t argc = 1;
+    char url[20];
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    status = napi_get_value_int32(env, args[0], &fd);
+    OH_AVRecorder_Profile profile = {
+        audioBitrate : 112000,             // 音频比特率。
+        audioChannels : 2,                 // 音频声道数。
+        audioCodec : AVRECORDER_AUDIO_MP3, // 音频编码格式，当前支持AAC，MP3，G711MU。
+        audioSampleRate : 48000,           // 音频采样率。
+        fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
+    };
+    snprintf(url, sizeof(url), "fd://%lu", fd);
+    char *url_ptr = url;
+    OH_AVRecorder_Config config = {
+        .audioSourceType = AVRECORDER_DEFAULT,
+        .profile = profile,
+        .url = url_ptr, // 使用文件描述符或沙箱路径
+    };
+    OH_AVRecorder_MetadataTemplate MetadataTemplate = {.value = "1", .key = "1"};
+    config.metadata.genre = "audio";
+    config.metadata.videoOrientation = "0";
+    config.metadata.customInfo = MetadataTemplate;
+    void *userData;
+    OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
+    auto aa = OH_AVRecorder_SetStateCallback(AVRecorder, OnStateChange, userData);
+    auto aw = OH_AVRecorder_SetErrorCallback(AVRecorder, OnError, userData);
+    auto ew = OH_AVRecorder_SetUriCallback(AVRecorder, OnUri, userData);
+    OH_AVErrCode errcode = OH_AVRecorder_Prepare(AVRecorder, &config);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    size_t argc = 1;
+    char url[20];
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    status = napi_get_value_int32(env, args[0], &fd);
+    OH_AVRecorder_Profile profile = {
+        audioBitrate : 112000,             // 音频比特率。
+        audioChannels : 2,                 // 音频声道数。
+        audioCodec : AVRECORDER_AUDIO_MP3, // 音频编码格式，当前支持AAC，MP3，G711MU。
+        audioSampleRate : 48000,           // 音频采样率。
+        fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
+    };
+    snprintf(url, sizeof(url), "fd://%lu", fd);
+    char *url_ptr = url;
+    OH_AVRecorder_Config config = {
+        .audioSourceType = AVRECORDER_DEFAULT,
+        .profile = profile,
+        .url = url_ptr, // 使用文件描述符或沙箱路径
+    };
+    config.maxDuration = 1;
+    void *userData;
+    OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
+    auto aa = OH_AVRecorder_SetStateCallback(AVRecorder, OnStateChange, userData);
+    auto aw = OH_AVRecorder_SetErrorCallback(AVRecorder, OnError, userData);
+    auto ew = OH_AVRecorder_SetUriCallback(AVRecorder, OnUri, userData);
+    OH_AVErrCode errcode = OH_AVRecorder_Prepare(AVRecorder, &config);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 napi_property_descriptor desc[] = {
     {"OH_AVRecorder_Prepare0100", nullptr, OH_AVRecorder_Prepare0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVRecorder_GetAVRecorderConfig0100", nullptr, OH_AVRecorder_GetAVRecorderConfig0100, nullptr, nullptr, nullptr,
@@ -304,6 +500,15 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"OH_AVRecorder_SetWillMuteWhenInterrupted0100", nullptr, OH_AVRecorder_SetWillMuteWhenInterrupted0100, nullptr,
      nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorder_ContainerFormatType0100", nullptr, OH_AVRecorder_ContainerFormatType0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_MetadataTemplate0100", nullptr, OH_AVRecorder_MetadataTemplate0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_MetadataTemplate0101", nullptr, OH_AVRecorder_MetadataTemplate0101, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_Metadata0100", nullptr, OH_AVRecorder_Metadata0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"OH_AVRecorder_Config0100", nullptr, OH_AVRecorder_Config0100, nullptr, nullptr, nullptr, napi_default, nullptr},
 
 };
 

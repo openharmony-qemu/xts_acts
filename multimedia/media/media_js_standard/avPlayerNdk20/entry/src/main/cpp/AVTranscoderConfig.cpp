@@ -94,6 +94,7 @@ static napi_value OH_AVTranscoderConfig_SetSrcFD0100(napi_env env, napi_callback
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(Config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -108,6 +109,7 @@ static napi_value OH_AVTranscoderConfig_SetDstFD0100(napi_env env, napi_callback
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(Config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -122,6 +124,7 @@ static napi_value OH_AVTranscoderConfig_SetDstAudioType0100(napi_env env, napi_c
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(Config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -136,6 +139,7 @@ static napi_value OH_AVTranscoderConfig_SetDstAudioType0101(napi_env env, napi_c
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(Config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -167,6 +171,8 @@ static napi_value OH_AVTranscoder_Pause0100(napi_env env, napi_callback_info inf
     if (errcode == AV_ERR_OPERATE_NOT_PERMIT) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -183,6 +189,8 @@ static napi_value OH_AVTranscoder_Pause0101(napi_env env, napi_callback_info inf
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -201,6 +209,8 @@ static napi_value OH_AVTranscoder_Resume0100(napi_env env, napi_callback_info in
     if (errcode == AV_ERR_OPERATE_NOT_PERMIT) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -218,6 +228,8 @@ static napi_value OH_AVTranscoder_Resume0101(napi_env env, napi_callback_info in
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -237,6 +249,8 @@ static napi_value OH_AVTranscoder_Cancel0101(napi_env env, napi_callback_info in
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -257,6 +271,7 @@ static napi_value OH_AVTranscoder_Release0100(napi_env env, napi_callback_info i
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -277,6 +292,7 @@ static napi_value OH_AVTranscoder_Release0101(napi_env env, napi_callback_info i
     if (errcode == AV_ERR_OPERATE_NOT_PERMIT) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -292,6 +308,7 @@ static napi_value OH_AVTranscoder_SetStateCallback0100(napi_env env, napi_callba
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -306,6 +323,7 @@ static napi_value OH_AVTranscoder_SetStateCallback0101(napi_env env, napi_callba
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -321,6 +339,7 @@ static napi_value OH_AVTranscoder_SetErrorCallback0100(napi_env env, napi_callba
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -335,6 +354,7 @@ static napi_value OH_AVTranscoder_SetErrorCallback0101(napi_env env, napi_callba
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -350,6 +370,7 @@ static napi_value OH_AVTranscoder_SetProgressUpdateCallback0100(napi_env env, na
     if (errcode == AV_ERR_OK) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -364,6 +385,7 @@ static napi_value OH_AVTranscoder_SetProgressUpdateCallback0101(napi_env env, na
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoder_Release(transcoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -378,6 +400,7 @@ static napi_value OH_AVTranscoderConfig_EnableBFrame0100(napi_env env, napi_call
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
+    OH_AVTranscoderConfig_Release(Config);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -426,8 +449,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_AVTranscoder_SetProgressUpdateCallback0101", nullptr, OH_AVTranscoder_SetProgressUpdateCallback0101,
          nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVTranscoderConfig_EnableBFrame0100", nullptr, OH_AVTranscoderConfig_EnableBFrame0100,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_AVTranscoderConfig_EnableBFrame0100", nullptr, OH_AVTranscoderConfig_EnableBFrame0100, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
