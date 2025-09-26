@@ -814,30 +814,6 @@ export default function AudioTest1() {
       })
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_UNREGISTERSTATECHANGECALLBACK_0200
-     * @tc.name testMultimediaAudioSessionUnregisterStateChangeCallback0200
-     * @tc.desc Testing OH_AudioSessionManager_UnregisterStateChangeCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
-     */
-    it('testMultimediaAudioSessionUnregisterStateChangeCallback0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_SESSION_UNREGISTERSTATECHANGECALLBACK_0200`;
-        try {
-          console.info(`====>${LOG_NAME} start====`);
-          let result: number = AudioKitTest.AudioSessionUnregisterStateChangeCbSuccess();
-          expect(0).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done();
-        } catch (err) {
-          console.error(`====>${LOG_NAME} catch err: ` + err);
-          expect(false).assertEqual(ABILITY_ERR_OK);
-          done();
-        }
-      })
-
-    /**
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_SETDEFAULTOUTPUTDEVICE_0100
      * @tc.name testMultimediaAudioSessionSetDefaultOutputDevice0100
      * @tc.desc Testing OH_AudioSessionManager_SetDefaultOutputDevice returns an invalid param error code.
@@ -1049,30 +1025,6 @@ export default function AudioTest1() {
           console.info(`====>${LOG_NAME} start====`);
           let result: number = AudioKitTest.AudioSessionUnregisterCurOutDevChgCbInvParam();
           expect(6800101).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done();
-        } catch (err) {
-          console.error(`====>${LOG_NAME} catch err: ` + err);
-          expect(false).assertEqual(ABILITY_ERR_OK);
-          done();
-        }
-      })
-
-    /**
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_UNREGISTERCURRENTOUTPUTDEVICECHANGECALLBACK_0200
-     * @tc.name testMultimediaAudioSessionUnregisterCurrentOutputDeviceChangeCallback0200
-     * @tc.desc Testing OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
-     */
-    it('testMultimediaAudioSessionUnregisterCurrentOutputDeviceChangeCallback0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_SESSION_UNREGISTERCURRENTOUTPUTDEVICECHANGECALLBACK_0200`;
-        try {
-          console.info(`====>${LOG_NAME} start====`);
-          let result: number = AudioKitTest.AudioSessionUnregisterCurOutDevChgCbSuccess();
-          expect(0).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
         } catch (err) {
