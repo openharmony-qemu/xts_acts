@@ -168,10 +168,12 @@ const void* LoadModelData(const char* filename, size_t* out_size)
         return nullptr;
     }
     fseek(file, 0, SEEK_END);
-    if (fseek(file, 0, SEEK_END) != 0) {
+    long fileSize = ftell(file);
+    if (fileSize == PARAM_NEGATIVE_1) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                 "Failed to get file size errno: %{public}d", errno);
         return nullptr;
     }
-    long fileSize = ftell(file);
     rewind(file);
 
     if (fileSize <= 0) {
@@ -553,15 +555,17 @@ void FillInputsData(OH_AI_TensorHandleArray inputs, std::string modelName, bool 
             printf("==========Transpose==========\n");
             size_t shapeNum;
             const int64_t *shape = OH_AI_TensorGetShape(tensor, &shapeNum);
-            if (size1 > 0 && size1 <= tensorDataSize) {
-                auto imageBufNhwc = new char[size1];
-                PackNCHWToNHWCFp32(imageBuf, imageBufNhwc, shape[0], shape[1] * shape[PARAM_2], shape[PARAM_3]);
-                // 使用自定义安全拷贝
-                if (!SafeMemCopy(inputData, tensorDataSize, imageBufNhwc, size1)) {
-                    printf("Memory copy failed for tensor %zu\n", i);
-                }
-                delete[] imageBufNhwc;
+            if (size1 <= 0 && size1 > tensorDataSize) {
+                printf("Memory copy failed for tensor %zu\n");
             }
+            auto imageBufNhwc = new char[size1];
+            PackNCHWToNHWCFp32(imageBuf, imageBufNhwc, shape[0], shape[1] * shape[PARAM_2], shape[PARAM_3]);
+            // 使用自定义安全拷贝
+            bool copySuccess = SafeMemCopy(inputData, tensorDataSize, imageBufNhwc, size1);
+            if (!copySuccess) {
+                printf("Memory copy failed for tensor %zu\n", i);
+            }
+            delete[] imageBufNhwc;
         } else {
             // 使用自定义安全拷贝
             if (!SafeMemCopy(inputData, tensorDataSize, imageBuf, size1)) {

@@ -51,10 +51,12 @@ const void* LoadModelData(const char* filename, size_t* out_size)
         return nullptr;
     }
     fseek(file, 0, SEEK_END);
-    if (fseek(file, 0, SEEK_END) != 0) {
+    long fileSize = ftell(file);
+    if (fileSize == PARAM_NEGATIVE_1) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
+                 "Failed to get file size errno: %{public}d", errno);
         return nullptr;
     }
-    long fileSize = ftell(file);
     rewind(file);
 
     if (fileSize <= 0) {
