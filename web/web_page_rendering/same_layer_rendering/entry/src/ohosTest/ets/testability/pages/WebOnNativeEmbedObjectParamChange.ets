@@ -166,7 +166,6 @@ struct WebIndex {
           await waitForExist(()=>this.isPageEnd, this.str, 0);
           console.info("key==>" + this.str)
           this.isReceive = -1;
-          this.isPageEnd = -1;
           switch (this.str) {
             case "emitOnNativeEmbedObjectParamChange001": {
               try {
