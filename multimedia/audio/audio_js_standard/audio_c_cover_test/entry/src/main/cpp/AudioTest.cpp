@@ -1415,7 +1415,7 @@ napi_value AudioDeviceGetDeviceNameSuccess(napi_env env, napi_callback_info info
     int size = array->size;
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
-        char *name = 0;
+        char *name = nullptr;
         result = OH_AudioDeviceDescriptor_GetDeviceName(descriptor, &name);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
@@ -1448,7 +1448,7 @@ napi_value AudioDeviceGetDeviceAddressSuccess(napi_env env, napi_callback_info i
     int size = array->size;
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
-        char *address = 0;
+        char *address = nullptr;
         result = OH_AudioDeviceDescriptor_GetDeviceAddress(descriptor, &address);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
@@ -1481,9 +1481,9 @@ napi_value AudioDeviceGetDeviceSampleRatesSuccess(napi_env env, napi_callback_in
     int size = array->size;
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
-        uint32_t *sampleRates = 0;
-        uint32_t size = 0;
-        result = OH_AudioDeviceDescriptor_GetDeviceSampleRates(descriptor, &sampleRates, &size);
+        uint32_t *sampleRates = nullptr;
+        uint32_t uSize = 0;
+        result = OH_AudioDeviceDescriptor_GetDeviceSampleRates(descriptor, &sampleRates, &uSize);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
@@ -1515,9 +1515,9 @@ napi_value AudioDeviceGetDeviceChannelCountsSuccess(napi_env env, napi_callback_
     int size = array->size;
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
-        uint32_t *channelCounts = 0;
-        uint32_t size = 0;
-        result = OH_AudioDeviceDescriptor_GetDeviceChannelCounts(descriptor, &channelCounts, &size);
+        uint32_t *channelCounts = nullptr;
+        uint32_t uSize = 0;
+        result = OH_AudioDeviceDescriptor_GetDeviceChannelCounts(descriptor, &channelCounts, &uSize);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
@@ -1549,7 +1549,7 @@ napi_value AudioDeviceGetDeviceDisplayNameSuccess(napi_env env, napi_callback_in
     int size = array->size;
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
-        char *channelCounts = 0;
+        char *channelCounts = nullptr;
         result = OH_AudioDeviceDescriptor_GetDeviceDisplayName(descriptor, &channelCounts);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
@@ -1583,8 +1583,8 @@ napi_value AudioDeviceGetDeviceEncodingTypesSuccess(napi_env env, napi_callback_
     for (int i = 0; i < size; i++) {
         OH_AudioDeviceDescriptor *descriptor = array->descriptors[i];
         OH_AudioStream_EncodingType *encodingTypes;
-        uint32_t size = 0;
-        result = OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(descriptor, &encodingTypes, &size);
+        uint32_t uSize = 0;
+        result = OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(descriptor, &encodingTypes, &uSize);
     }
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
