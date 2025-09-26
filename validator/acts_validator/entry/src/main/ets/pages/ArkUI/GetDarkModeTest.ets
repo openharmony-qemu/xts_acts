@@ -26,9 +26,8 @@ struct GetDarkModeTest {
   @State name: string = 'GetDarkModeTest';
   @State stepTips: string = '测试目的：验证getDarkMode获取系统设置的深浅色模式。\n' +
       '操作步骤：\n' +
-      '1、将hap包进行系统签名\n' +
-      '2、点击按钮ALWAYS_DARK\n' +
-      '3、点击按钮ALWAYS_LIGHT\n' +
+      '1、点击按钮ALWAYS_DARK\n' +
+      '2、点击按钮ALWAYS_LIGHT\n' +
       '预期结果：\n' +
       '1、控制台打印日志信息: getDarkMode value: 0\n' +
       '2、控制台打印日志信息: getDarkMode value: 1';
