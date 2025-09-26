@@ -37,9 +37,9 @@ napi_value DeviceTypeTest_001(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-const void* LoadModelData(const char* filename, size_t* out_size)
+const void* LoadModelData(const char* filename, size_t* outSize)
 {
-    if (!filename || !out_size) {
+    if (!filename || !outSize) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Invalid parameters");
         return nullptr;
@@ -81,7 +81,7 @@ const void* LoadModelData(const char* filename, size_t* out_size)
         free(buffer);
         return nullptr;
     }
-    *out_size = fileSize;
+    *outSize = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
@@ -99,13 +99,13 @@ napi_value ModelTypetest_001(napi_env env, napi_callback_info info)
     const char *graphPath = "/data/storage/el2/base/files/lenet_train.ms";
     size_t size;
     size_t *ptrSize = &size;
-    const void* model_data = LoadModelData(graphPath, ptrSize);
-    if (model_data == nullptr || size == 0) {
+    const void* modelData = LoadModelData(graphPath, ptrSize);
+    if (modelData == nullptr || size == 0) {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111TrainModelBuildTest",
                  "Failed to load model from: %{public}s, size: %{public}d", graphPath, size);
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "model_data: %{public}p,"
-                 "size:%{public}d", &model_data, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "modelData: %{public}p,"
+                 "size:%{public}d", &modelData, size);
     OH_AI_ModelType model_type = OH_AI_MODELTYPE_INVALID;
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, model_type, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);

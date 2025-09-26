@@ -154,9 +154,9 @@ napi_value TrainCfgSetOptimizationLevelTest_002(napi_env env, napi_callback_info
     return retValue;
 }
 
-const void* LoadModelData(const char* filename, size_t* out_size)
+const void* LoadModelData(const char* filename, size_t* outSize)
 {
-    if (!filename || !out_size) {
+    if (!filename || !outSize) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
                      "Invalid parameters");
         return nullptr;
@@ -198,7 +198,7 @@ const void* LoadModelData(const char* filename, size_t* out_size)
         free(buffer);
         return nullptr;
     }
-    *out_size = fileSize;
+    *outSize = fileSize;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
