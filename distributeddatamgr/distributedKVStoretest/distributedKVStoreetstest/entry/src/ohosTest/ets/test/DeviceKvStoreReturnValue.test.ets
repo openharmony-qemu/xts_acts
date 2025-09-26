@@ -23,12 +23,6 @@ const context = delegator.getAppContext().getApplicationContext();
 
 const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-const KEY_TEST_STRING_1 = 'key_test_string_1';
-const VALUE_TEST_STRING_1 = 'value_string_1';
-const KEY_TEST_STRING_11 = 'key_test_string_11';
-const VALUE_TEST_STRING_11 = 'value_string_11';
-const KEY_TEST_STRING_2 = 'key_test_string_2';
-const VALUE_TEST_STRING_2 = 'value_string_2';
 
 const TEST_BUNDLE_NAME = 'ohos.acts.kv2';
 const TEST_STORE_ID = 'DeviceKvStoreReturnValueId';
@@ -46,7 +40,6 @@ const config : factory.KVManagerConfig = {
   bundleName: TEST_BUNDLE_NAME,
   context: context
 };
-
 
 export default function DeviceKvStoreReturnValue(){
   describe('DeviceKvStoreReturnValue', () => {
@@ -103,7 +96,6 @@ export default function DeviceKvStoreReturnValue(){
 
     });
 
-
     beforeEach(async (done:Function) =>  {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
       await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
@@ -140,7 +132,6 @@ export default function DeviceKvStoreReturnValue(){
       done();
     });
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0100
      * @tc.name SUB_DDM_DKV_ReturnValue_0100
@@ -167,7 +158,6 @@ export default function DeviceKvStoreReturnValue(){
         done();
       }
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0101
@@ -199,8 +189,6 @@ export default function DeviceKvStoreReturnValue(){
       }
     })
 
-
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0200
      * @tc.name SUB_DDM_DKV_ReturnValue_0200
@@ -231,7 +219,6 @@ export default function DeviceKvStoreReturnValue(){
         done();
       }
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0201
@@ -341,7 +328,6 @@ export default function DeviceKvStoreReturnValue(){
 
     })
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0400
      * @tc.name SUB_DDM_DKV_ReturnValue_0400
@@ -420,7 +406,6 @@ export default function DeviceKvStoreReturnValue(){
       }
     })
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0500
      * @tc.name SUB_DDM_DKV_ReturnValue_0500
@@ -493,7 +478,6 @@ export default function DeviceKvStoreReturnValue(){
       }
 
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0600
@@ -650,7 +634,6 @@ export default function DeviceKvStoreReturnValue(){
 
     })
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0800
      * @tc.name SUB_DDM_DKV_ReturnValue_0800
@@ -731,7 +714,6 @@ export default function DeviceKvStoreReturnValue(){
       }
     })
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_0900
      * @tc.name SUB_DDM_DKV_ReturnValue_0900
@@ -808,7 +790,6 @@ export default function DeviceKvStoreReturnValue(){
       }
 
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_1000
@@ -890,7 +871,6 @@ export default function DeviceKvStoreReturnValue(){
       }
     })
 
-
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_1100
      * @tc.name SUB_DDM_DKV_ReturnValue_1100
@@ -946,7 +926,6 @@ export default function DeviceKvStoreReturnValue(){
         done();
       }
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_1200
@@ -1009,7 +988,6 @@ export default function DeviceKvStoreReturnValue(){
         done();
       }
     })
-
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_1300
