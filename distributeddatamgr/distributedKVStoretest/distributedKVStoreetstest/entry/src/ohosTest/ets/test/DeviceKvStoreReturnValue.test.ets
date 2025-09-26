@@ -116,6 +116,7 @@ export default function DeviceKvStoreReturnValue(){
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
+      kvStore = null;
       await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
         console.info(TAG + ' afterEach Succeeded closeKVStore');
       }).catch((err: BusinessError) => {
