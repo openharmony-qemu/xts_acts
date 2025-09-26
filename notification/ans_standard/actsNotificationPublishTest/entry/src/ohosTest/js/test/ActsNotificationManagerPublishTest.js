@@ -41,11 +41,6 @@ export default function ActsNotificationManagerPublishTest() {
       }
     }
 
-    afterEach(async function (done) {
-      console.info(`${TAG} afterEach START`)
-      await Utils.sleep(500);
-      console.info(`${TAG} afterEach END`)
-    })
 
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3200
