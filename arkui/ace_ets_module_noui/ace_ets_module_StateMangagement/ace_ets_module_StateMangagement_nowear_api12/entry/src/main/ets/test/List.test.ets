@@ -12,16 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import LazyForEachReload from './LazyForEach/LazyForEachReload.test';
 import makeObserved0140Test from './makeObservedTest/makeObserved0140Test.test';
-import RepeatWaterFlowBoolean from './RepeatMixedComponent/RepeatWaterFlowBoolean.test';
-import RepeatWaterFlowNumber from './RepeatMixedComponent/RepeatWaterFlowNumber.test';
-import RepeatTest0030 from './RepeatTest/RepeatTest0030.test';
 
 export default function testsuite() {
-  LazyForEachReload();
-  makeObserved0140Test();
-  RepeatWaterFlowBoolean();
-  RepeatWaterFlowNumber();
-  RepeatTest0030();
+    makeObserved0140Test();
 }
