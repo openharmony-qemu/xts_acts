@@ -17,8 +17,8 @@ group("arkts_module_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "exporttest_static:ActsExportStaticTest",
       "lazy_load_static:ActsArkTsLazyLoadStaticTest",
-      "static_load_static:ActsArkTsStaticLoadStaticTest",
     ]
   }
 }
