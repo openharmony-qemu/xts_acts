@@ -33,7 +33,11 @@ class MyProgressNodeController extends NodeController {
     AppStorage.SetOrCreate('getAttributeProgress', typeNode.getAttribute(null, 'Progress'));
     AppStorage.SetOrCreate('getAttributeLoadingProgress', typeNode.getAttribute(null, 'LoadingProgress'));
     AppStorage.SetOrCreate('getAttributeImage', typeNode.getAttribute(null, 'Image'));
-
+    AppStorage.SetOrCreate('getAttributeButton', typeNode.getAttribute(null, 'Button'));
+    AppStorage.SetOrCreate('getAttributeCheckbox', typeNode.getAttribute(null, 'Checkbox'));
+    AppStorage.SetOrCreate('getAttributeRadio', typeNode.getAttribute(null, 'Radio'));
+    AppStorage.SetOrCreate('getAttributeSlider', typeNode.getAttribute(null, 'Slider'));
+    AppStorage.SetOrCreate('getAttributeToggle', typeNode.getAttribute(null, 'Toggle'));
     this!.rootNode!.appendChild(node);
     return this.rootNode;
   }
