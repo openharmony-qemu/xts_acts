@@ -135,7 +135,7 @@ export default function exportStringTest() {
     })
 
     /**
-     * @tc.number SUB_EXPORT_ARRAY_TEST_0800
+     * @tc.number SUB_EXPORT_STRING_TEST_0800
      * @tc.name exportArrayTestTest1008
      * @tc.desc Test default string
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function exportStringTest() {
     })
 
     /**
-     * @tc.number SUB_EXPORT_ARRAY_TEST_0900
+     * @tc.number SUB_EXPORT_STRING_TEST_0900
      * @tc.name exportArrayTestTest1009
      * @tc.desc Test default type array
      * @tc.size MediumTest

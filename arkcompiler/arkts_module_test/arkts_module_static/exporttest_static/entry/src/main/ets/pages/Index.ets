@@ -16,7 +16,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
-initModule(../../src/testrunner/OpenHarmonyTestRunner.ets)
+initModule('../../src/testrunner/OpenHarmonyTestRunner.ets')
 
 @Entry
 @Component
