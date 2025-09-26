@@ -729,6 +729,7 @@ export default function certFrameworkCertCmsTestUnit() {
      */
     it("SUB_Security_Cert_Framework_CertCms_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
+        let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07]);
         let x509CertEc: cert.X509Cert = await createX509Cert(ECC_256_PUBKEY);
         let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.ENVELOPED_DATA);
         let recipientInfo: cert.CmsRecipientInfo = {
@@ -737,8 +738,18 @@ export default function certFrameworkCertCmsTestUnit() {
             cert: x509CertEc
           }
         };
+        let option: cert.CmsGeneratorOptions = {
+          outFormat: cert.CmsFormat.PEM
+        }
         cms.setRecipientEncryptionAlgorithm(cert.CmsRecipientEncryptionAlgorithm.AES_128_GCM);
         await cms.addRecipientInfo(recipientInfo);
+        let envelopeData = await cms.doFinal(plainText, option);
+        console.info("[XTS] doFinal success:" + envelopeData);
+        if (envelopeData instanceof Uint8Array) {
+          expect(null).assertFalse();
+        }
+        let cipherText = await cms.getEncryptedContentData();
+        expect(cipherText.length).not().assertEqual(0);
       } catch (error) {
         console.error(`[XTS] Cms_Func_1700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
