@@ -22,8 +22,8 @@
         "signingConfig": "default",
         "compatibleSdkVersion": 20,
         "compileSdkVersion": 21,
-        "runtimeOS": "OpenHarmony",
         "arkTSVersion": "1.2",
+        "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
             "caseSensitiveCheck": true,
