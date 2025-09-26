@@ -172,7 +172,7 @@ struct CustomContainerUser {
                     let report : string = globalThis.resultNum;
                     console.info("report: globalThis.resultNum =" + JSON.stringify(report));
                     let head: number = report.indexOf(":");
-                    console.info("head: report.indexOf(":") =" + JSON.stringify(head));
+                    console.info("head: report.indexOf =" + JSON.stringify(head));
                     this.time1 = report.substring(head + 1);
                     this.time = parseFloat(this.time1);
                     let time = this.time;
