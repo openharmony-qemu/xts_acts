@@ -56,7 +56,7 @@ export default function DeviceKvStoreReturnValue(){
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
 
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeAll getKVStore for getKVStore success');
       }).catch((err: BusinessError) => {
@@ -98,7 +98,7 @@ export default function DeviceKvStoreReturnValue(){
 
     beforeEach(async (done:Function) =>  {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
       }).catch((err: BusinessError) => {
