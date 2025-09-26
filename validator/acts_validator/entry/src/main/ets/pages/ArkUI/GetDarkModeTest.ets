@@ -22,7 +22,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Entry
 @Component
 struct GetDarkModeTest {
-  @State FillColor: string = '#FF000000';
   @State name: string = 'GetDarkModeTest';
   @State stepTips: string = '测试目的：验证getDarkMode获取系统设置的深浅色模式。\n' +
       '操作步骤：\n' +
