@@ -123,4 +123,14 @@ ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
     }
     return env->Object_CallMethod_Double(obj, unboxed, result);
 }
+
+ani_boolean GetStdString(ani_env *env, ani_string str, std::string &result)
+{
+    ani_size sz{};
+    ASSERT_EQ(env->String_GetUTF8Size(str, &sz), ANI_OK);
+    result.resize(sz + 1);
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0, sz, result.data(), result.size(), &sz), ANI_OK);
+    result.resize(sz);
+    return ANI_TRUE;
+}
 #endif //ARKTS_ANI_TEST_COMMON_H

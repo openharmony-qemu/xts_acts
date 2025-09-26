@@ -136,6 +136,28 @@ ani_int test_Any_GetProperty_01([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     ASSERT_EQ(env->Any_GetByIndex(arrayRef, 0U, &nameRefByIdx), ANI_OK);
     return ANI_TRUE;
 }
+
+ani_int test_Any_GetProperty_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+   ani_ref dummyResult {};
+
+    ASSERT_EQ(env->Any_GetByIndex(nullptr, 0U, &dummyResult), ANI_INVALID_ARGS);
+
+    ani_module md {};
+    ani_function fn {};
+    GetMethod(env, "getArray", &md, &fn);
+    ani_ref arrayRef {};
+    ASSERT_EQ(env->Function_Call_Ref(fn, &arrayRef), ANI_OK);
+
+    ASSERT_EQ(env->Any_GetByIndex(arrayRef, 0U, nullptr), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->c_api->Any_GetByIndex(nullptr, arrayRef, 0U, &dummyResult), ANI_INVALID_ARGS);
+    ani_ref outOfBounds {};
+    ASSERT_EQ(env->Any_GetByIndex(arrayRef, 1000U, &outOfBounds), ANI_PENDING_ERROR);
+    ASSERT_EQ(env->ResetError(), ANI_OK);
+    return ANI_TRUE;
+}
+
 ani_int test_Any_GetProperty_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     const char *clsName = "any_get_property_test.Worker";

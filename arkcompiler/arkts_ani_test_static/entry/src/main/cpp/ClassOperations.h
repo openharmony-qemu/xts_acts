@@ -405,10 +405,8 @@ ani_boolean test_Class_FindStaticMethodBoolean_21([[maybe_unused]] ani_env *env_
     ani_static_method method {};
     GetMethodData(env_,&cls, &method);
 
-//    ASSERT_FALSE(IsRuntimeClassInitialized("call_static_method_bool_test.Operations"));
     ani_boolean value {};
     ASSERT_EQ(env_->Class_CallStaticMethod_Boolean(cls, method, &value, ANI_TRUE, ANI_FALSE), ANI_OK);
-//    ASSERT_TRUE(IsRuntimeClassInitialized("call_static_method_bool_test.Operations"));
     return ANI_TRUE;
 }
 
@@ -418,13 +416,11 @@ ani_boolean test_Class_FindStaticMethodBoolean_22([[maybe_unused]] ani_env *env_
     ani_static_method method {};
     GetMethodData(env_,&cls, &method);
 
-//    ASSERT_FALSE(IsRuntimeClassInitialized("call_static_method_bool_test.Operations"));
     ani_boolean value {};
     ani_value args[2U];
     args[0U].z = ANI_TRUE;
     args[1U].z = ANI_FALSE;
     ASSERT_EQ(env_->Class_CallStaticMethod_Boolean_A(cls, method, &value, args), ANI_OK);
-//    ASSERT_TRUE(IsRuntimeClassInitialized("call_static_method_bool_test.Operations"));
     return ANI_TRUE;
 }
 
@@ -762,10 +758,8 @@ ani_boolean test_Class_FindStaticMethodInt_23([[maybe_unused]] ani_env *env_, [[
     ani_static_method method {};
     GetMethodData(env_,&cls, &method);
 
-//    ASSERT_FALSE(IsRuntimeClassInitialized("call_static_method_int_test.Operations"));
     ani_int value {};
     ASSERT_EQ(env_->Class_CallStaticMethod_Int(cls, method, &value, VAL1, VAL2), ANI_OK);
-//    ASSERT_TRUE(IsRuntimeClassInitialized("call_static_method_int_test.Operations"));
     return ANI_TRUE;
 }
 
@@ -775,13 +769,322 @@ ani_boolean test_Class_FindStaticMethodInt_24([[maybe_unused]] ani_env *env_, [[
     ani_static_method method {};
     GetMethodData(env_,&cls, &method);
 
-//    ASSERT_FALSE(IsRuntimeClassInitialized("call_static_method_int_test.Operations"));
     ani_int value {};
     ani_value args[2U];
     args[0U].i = VAL1;
     args[1U].i = VAL2;
     ASSERT_EQ(env_->Class_CallStaticMethod_Int_A(cls, method, &value, args), ANI_OK);
-//    ASSERT_TRUE(IsRuntimeClassInitialized("call_static_method_int_test.Operations"));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->c_api->Class_CallStaticMethod_Short(env_, cls, method, &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method, &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method, &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(nullptr, method, &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, nullptr, &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_05([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method, nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_06([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(nullptr, method, &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_07([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, nullptr, &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_08([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method, nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_09([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method;
+    GetMethodData(env_, &cls, &method);
+
+    ani_short sum = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method, &sum, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_10([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class clsA {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.A", &clsA), ANI_OK);
+    ani_static_method methodA;
+    ASSERT_EQ(env_->Class_FindStaticMethod(clsA, "funcA", "ss:s", &methodA), ANI_OK);
+
+    ani_class clsB {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.B", &clsB), ANI_OK);
+    ani_static_method methodB;
+    ASSERT_EQ(env_->Class_FindStaticMethod(clsB, "funcB", "ss:s", &methodB), ANI_OK);
+
+    ani_short valueA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(clsA, methodA, &valueA, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+
+    ani_short valueB = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(clsB, methodB, &valueB, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueB, 6U - 5U);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueAA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(clsA, methodA, &valueAA, args), ANI_OK);
+    ASSERT_EQ(valueAA, VAL1 + VAL2);
+
+    ani_short valueBA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(clsB, methodB, &valueBA, args), ANI_OK);
+    ASSERT_EQ(valueBA, 6U - 5U);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_11([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.A", &cls), ANI_OK);
+    ani_static_method methodA;
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "funcA", "ss:s", &methodA), ANI_OK);
+    ani_static_method methodB;
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "funcA", "ii:i", &methodB), ANI_OK);
+
+    ani_short value = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, methodA, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, methodA, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+
+    ani_int value2;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Int(cls, methodB, &value2, VAL2, VAL2), ANI_OK);
+    ASSERT_EQ(value2, VAL2 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_12([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.A", &cls), ANI_OK);
+    ani_static_method method;
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "funcB", "ss:s", &method), ANI_OK);
+
+    ani_short value = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[ARG_COUNT];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_13([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method {};
+    GetMethodData(env_, &cls, &method);
+
+    ani_short value = 0;
+    ASSERT_EQ(env_->c_api->Class_CallStaticMethod_Short(nullptr, cls, method, &value, VAL1, VAL2), ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ASSERT_EQ(env_->c_api->Class_CallStaticMethod_Short_A(nullptr, cls, method, &value, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneInt(env, "call_static_method_short_test.C", VAL1, VAL2, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneInt(env, "call_static_method_short_test.D", VAL1, VAL2, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneInt(env, "call_static_method_short_test.E", VAL1, VAL2, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_17([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.F", &cls), ANI_OK);
+    ani_static_method method1 {};
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "increment", nullptr, &method1), ANI_OK);
+    ani_static_method method2 {};
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "getCount", nullptr, &method2), ANI_OK);
+    ASSERT_EQ(env_->Class_CallStaticMethod_Void(cls, method1, VAL1, VAL2), ANI_OK);
+    ani_short value = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method2, &value), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method2, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_18([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env_->FindClass("call_static_method_short_test.G", &cls), ANI_OK);
+    ani_static_method method1 {};
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "publicMethod", "ss:s", &method1), ANI_OK);
+    ani_static_method method2 {};
+    ASSERT_EQ(env_->Class_FindStaticMethod(cls, "callPrivateMethod", "ss:s", &method2), ANI_OK);
+    ani_short value = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method1, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method2, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method1, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method2, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_19([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method {};
+    GetMethodData(env_, &cls, &method);
+
+    ani_short value {};
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short(cls, method, &value, VAL1, VAL2), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindStaticMethodShort_20([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_method method {};
+    GetMethodData(env_, &cls, &method);
+
+    ani_short value {};
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ASSERT_EQ(env_->Class_CallStaticMethod_Short_A(cls, method, &value, args), ANI_OK);
     return ANI_TRUE;
 }
 
