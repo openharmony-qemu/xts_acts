@@ -28,6 +28,7 @@
 #include <multimedia/player_framework/avplayer_base.h>
 #include <multimedia/player_framework/avrecorder.h>
 #include <multimedia/player_framework/native_averrors.h>
+#include <sstream>
 #include <string>
 #include <sys/stat.h>
 #include <thread>
@@ -280,7 +281,7 @@ static napi_value OH_AVRecorder_ContainerFormatType0100(napi_env env, napi_callb
 {
     int32_t fd = -1;
     size_t argc = 1;
-    char url[20];
+    char url[20] = {0};
     napi_value args[1] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
@@ -292,14 +293,17 @@ static napi_value OH_AVRecorder_ContainerFormatType0100(napi_env env, napi_callb
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
     OH_AVRecorder_Config config;
-    snprintf(url, sizeof(url), "fd://%lu", fd);
-    if (url != nullptr) {
-        char *urlPtr = url;
-        config = {
-            .audioSourceType = AVRECORDER_MIC,
-            .profile = profile,
-            .url = urlPtr, // 使用文件描述符或沙箱路径
-        };
+    std::ostringstream oss;
+    oss << "fd://" << fd;
+    const std::string &urlStr = oss.str();
+    for (size_t i = 0; i < urlStr.size(); ++i) {
+        url[i] = urlStr[i];
+    }
+    char *urlPtr = url;
+    config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = urlPtr, // 使用文件描述符或沙箱路径
     };
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
@@ -320,7 +324,7 @@ static napi_value OH_AVRecorder_MetadataTemplate0100(napi_env env, napi_callback
 {
     int32_t fd = -1;
     size_t argc = 1;
-    char url[20];
+    char url[20] = {0};
     napi_value args[1] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
@@ -332,14 +336,17 @@ static napi_value OH_AVRecorder_MetadataTemplate0100(napi_env env, napi_callback
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
     OH_AVRecorder_Config config;
-    snprintf(url, sizeof(url), "fd://%lu", fd);
-    if (url != nullptr) {
-        char *urlPtr = url;
-        config = {
-            .audioSourceType = AVRECORDER_MIC,
-            .profile = profile,
-            .url = urlPtr, // 使用文件描述符或沙箱路径
-        };
+    std::ostringstream oss;
+    oss << "fd://" << fd;
+    const std::string &urlStr = oss.str();
+    for (size_t i = 0; i < urlStr.size(); ++i) {
+        url[i] = urlStr[i];
+    }
+    char *urlPtr = url;
+    config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = urlPtr, // 使用文件描述符或沙箱路径
     };
     OH_AVRecorder_MetadataTemplate MetadataTemplate = {.value = "1", .key = "1"};
     config.metadata.customInfo = MetadataTemplate;
@@ -362,7 +369,7 @@ static napi_value OH_AVRecorder_MetadataTemplate0101(napi_env env, napi_callback
 {
     int32_t fd = -1;
     size_t argc = 1;
-    char url[20];
+    char url[20] = {0};
     napi_value args[1] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
@@ -374,14 +381,17 @@ static napi_value OH_AVRecorder_MetadataTemplate0101(napi_env env, napi_callback
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
     OH_AVRecorder_Config config;
-    snprintf(url, sizeof(url), "fd://%lu", fd);
-    if (url != nullptr) {
-        char *urlPtr = url;
-        config = {
-            .audioSourceType = AVRECORDER_MIC,
-            .profile = profile,
-            .url = urlPtr, // 使用文件描述符或沙箱路径
-        };
+    std::ostringstream oss;
+    oss << "fd://" << fd;
+    const std::string &urlStr = oss.str();
+    for (size_t i = 0; i < urlStr.size(); ++i) {
+        url[i] = urlStr[i];
+    }
+    char *urlPtr = url;
+    config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = urlPtr, // 使用文件描述符或沙箱路径
     };
     config.metadata.customInfo.key = "1";
     config.metadata.customInfo.value = "1";
@@ -404,7 +414,7 @@ static napi_value OH_AVRecorder_Metadata0100(napi_env env, napi_callback_info in
 {
     int32_t fd = -1;
     size_t argc = 1;
-    char url[20];
+    char url[20] = {0};
     napi_value args[1] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
@@ -416,7 +426,12 @@ static napi_value OH_AVRecorder_Metadata0100(napi_env env, napi_callback_info in
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
     OH_AVRecorder_Config config;
-    snprintf(url, sizeof(url), "fd://%lu", fd);
+    std::ostringstream oss;
+    oss << "fd://" << fd;
+    const std::string &urlStr = oss.str();
+    for (size_t i = 0; i < urlStr.size(); ++i) {
+        url[i] = urlStr[i];
+    }
     if (url != nullptr) {
         char *urlPtr = url;
         config = {
@@ -448,7 +463,7 @@ static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info
 {
     int32_t fd = -1;
     size_t argc = 1;
-    char url[20];
+    char url[20] = {0};
     napi_value args[1] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
@@ -460,14 +475,17 @@ static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
     OH_AVRecorder_Config config;
-    snprintf(url, sizeof(url), "fd://%lu", fd);
-    if (url != nullptr) {
-        char *urlPtr = url;
-        config = {
-            .audioSourceType = AVRECORDER_MIC,
-            .profile = profile,
-            .url = urlPtr, // 使用文件描述符或沙箱路径
-        };
+    std::ostringstream oss;
+    oss << "fd://" << fd;
+    const std::string &urlStr = oss.str();
+    for (size_t i = 0; i < urlStr.size(); ++i) {
+        url[i] = urlStr[i];
+    }
+    char *urlPtr = url;
+    config = {
+        .audioSourceType = AVRECORDER_MIC,
+        .profile = profile,
+        .url = urlPtr, // 使用文件描述符或沙箱路径
     };
     config.maxDuration = 1;
     void *userData;
