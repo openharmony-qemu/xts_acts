@@ -430,8 +430,7 @@ static napi_value OHIPCParcelWriteRemoteStubSuccess(napi_env env, napi_callback_
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : -1, &result);
@@ -442,8 +441,7 @@ static napi_value OHIPCParcelWriteRemoteStubWriteError(napi_env env, napi_callba
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub, nullptr, nullptr);
     OH_IPCRemoteStub_Destroy(stub);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
@@ -454,8 +452,7 @@ static napi_value OHIPCParcelWriteRemoteStubParamError(napi_env env, napi_callba
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(nullptr, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : -1, &result);
@@ -549,7 +546,7 @@ static napi_value OHIPCQuestModeAsync(napi_env env, napi_callback_info info)
     uint32_t code = 0;
     const OHIPCParcel *data = nullptr;
     OHIPCParcel *reply = nullptr;
-    OH_IPC_MessageOption option = {OH_IPC_REQUEST_MODE_ASYNC , 0};
+    OH_IPC_MessageOption option = {OH_IPC_REQUEST_MODE_ASYNC, 0};
     int ret = OH_IPCRemoteProxy_SendRequest(proxyCallBack, code, data, reply, &option);
     napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : -1, &result);
     return result;
@@ -628,7 +625,7 @@ static napi_value OHIPCRemoteProxySendRequestParamError(napi_env env, napi_callb
     uint32_t code = 0;
     const OHIPCParcel *data = nullptr;
     OHIPCParcel *reply = nullptr;
-    OH_IPC_MessageOption option = {OH_IPC_REQUEST_MODE_SYNC , 0};
+    OH_IPC_MessageOption option = {OH_IPC_REQUEST_MODE_SYNC, 0};
     int ret = OH_IPCRemoteProxy_SendRequest(proxy, code, data, reply, &option);
     napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : -1, &result);
     return result;
@@ -726,8 +723,7 @@ static napi_value OHIPCInvalidUserErrorCode(napi_env env, napi_callback_info inf
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub1,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub1, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : -1, &result);
@@ -738,8 +734,7 @@ static napi_value OHIPCErrorCodeMAX(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub2,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub2, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : -1, &result);
@@ -750,8 +745,7 @@ static napi_value OHIPCUserErrorCodeMIN(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub3,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub3, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : -1, &result);
@@ -762,8 +756,7 @@ static napi_value OHIPCUserErrorCodeMAX(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub4,
-            nullptr, nullptr);
+    OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub4, nullptr, nullptr);
     int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     OH_IPCRemoteStub_Destroy(stub);
     napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : -1, &result);
