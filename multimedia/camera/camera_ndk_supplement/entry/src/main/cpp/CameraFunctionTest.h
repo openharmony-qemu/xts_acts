@@ -20,7 +20,12 @@
 
 class CameraFunctionTest : public NDKCamera {
 public:
-    explicit CameraFunctionTest(char* str) : NDKCamera(str) {}
+    explicit CameraFunctionTest(char *surfaceId, char *videoId) : NDKCamera(surfaceId) {
+        videoOutput_ = nullptr;
+        videoId_ = std::string(videoId);
+    }
+    Camera_ErrorCode CreateVideoOutput(void);
+    Camera_ErrorCode ReleaseVideoOutput(void);
 
     int32_t OHGetCameraManagerInvalidTest(int32_t caseCode);
     int32_t OHCameraDeleteCameraManagerTest(int32_t caseCode);
@@ -58,6 +63,26 @@ public:
     int32_t OHCameraManagerSetTorchModeTest(int32_t caseCode);
     int32_t OHCameraManagerGetCameraDeviceTest(int32_t caseCode);
     int32_t OHCameraManagerGetCameraConcurrentInfosTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetSessionModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddSecureOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionBeginConfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionCommitConfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddInputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveInputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddPreviewOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemovePreviewOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddPhotoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemovePhotoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddVideoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveVideoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddMetadataOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveMetadataOutputTest(int32_t caseCode);
+
+
+
+private:
+    Camera_VideoOutput* videoOutput_;
+    std::string videoId_;
 };
 
 

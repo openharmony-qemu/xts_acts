@@ -15,14 +15,43 @@
 
 #include "CameraFunctionTest.h"
 #include <hilog/log.h>
+#include "native_common.h"
 
 const int32_t INVALID_ARGUMENT = CAMERA_INVALID_ARGUMENT;
 const int32_t TEST_OK = 0;
 const int32_t DEVICES_NUM = 2;
 const int32_t DEVICES_MIN_NUM = 2;
 
-int32_t CameraFunctionTest::OHGetCameraManagerInvalidTest(int32_t caseCode)
+Camera_ErrorCode CameraFunctionTest::CreateVideoOutput(void)
 {
+    Camera_OutputCapability* outputCap = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &outputCap);
+    if (ret != CAMERA_OK) {
+        LogE("=======chenbo CreateVideoOutputCapability failed... %{public}d", ret);
+        return ret;
+    }
+    if (outputCap->videoProfilesSize <= 0) {
+        return ret;
+    }
+    auto profile_ = outputCap->videoProfiles[0];
+    ret = OH_CameraManager_CreateVideoOutput(cameraManager_, profile_, videoId_.c_str(), &videoOutput_);
+    return ret;
+}
+
+Camera_ErrorCode CameraFunctionTest::ReleaseVideoOutput(void)
+{
+    if (videoOutput_ == nullptr) {
+        return CAMERA_OK;
+    }
+    Camera_ErrorCode ret = OH_VideoOutput_Release(videoOutput_);
+    if (ret != CAMERA_OK) {
+        LogE("ndkXTS OH_VideoOutput_Release failed.");
+    }
+    videoOutput_ = nullptr;
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHGetCameraManagerInvalidTest(int32_t caseCode) {
     int32_t ret = CAMERA_OK;
     if (caseCode == INVALID_ARGUMENT) {
         Camera_ErrorCode result = OH_Camera_GetCameraManager(nullptr);
@@ -724,5 +753,312 @@ int32_t CameraFunctionTest::OHCameraManagerGetCameraConcurrentInfosTest(int32_t 
             }
         }
     }
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionSetSessionModeTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionSetSessionModeTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
+        // todo  没有这个错误码 OH_CaptureSession_SetSessionMode
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        result = OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_SetSessionMode(captureSession_, SECURE_PHOTO);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionSetSessionModeTest result:%{public}d", result);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            return TEST_OK;
+        }
+        ReleaseCaptureSession();
+    }
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddSecureOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddSecureOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
+        // todo  没有这个错误码 OH_CaptureSession_AddSecureOutput
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddSecureOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionBeginConfigTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionBeginConfigTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    if (caseCode == INVALID_ARGUMENT) {
+        Camera_ErrorCode result = OH_CaptureSession_BeginConfig(nullptr);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionBeginConfigTest result:%{public}d", result);
+        if (result == INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    }
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionCommitConfigTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionCommitConfigTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_CommitConfig(nullptr);
+        if (result == INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    } else if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
+        CreateCaptureSession();
+        result = OH_CaptureSession_CommitConfig(captureSession_);
+        if (result == CAMERA_SERVICE_FATAL_ERROR) {
+            ret = TEST_OK;
+        }
+        ReleaseCaptureSession();
+    }
+
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionCommitConfigTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddInputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddInputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_AddInput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreateCameraInput();
+        result = OH_CaptureSession_AddInput(captureSession_, cameraInput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleaseCaptureSession();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddInputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionRemoveInputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddInputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_RemoveInput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreateCameraInput();
+        OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_RemoveInput(captureSession_, cameraInput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleaseCaptureSession();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddInputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddPreviewOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddPreviewOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    if (caseCode == INVALID_ARGUMENT) {
+        Camera_ErrorCode result = OH_CaptureSession_AddPreviewOutput(nullptr, nullptr);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddPreviewOutputTest result:%{public}d", result);
+        if (result == INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    }
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionRemovePreviewOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemovePreviewOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    if (caseCode == INVALID_ARGUMENT) {
+        Camera_ErrorCode result = OH_CaptureSession_RemovePreviewOutput(nullptr, nullptr);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemovePreviewOutputTest result:%{public}d", result);
+        if (result == INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    }
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddPhotoOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddPhotoOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_AddPhotoOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreatePhotoOutput();
+        OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_AddPhotoOutput(captureSession_, photoOutput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleasePhotoOutput();
+        ReleaseCaptureSession();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddPhotoOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionRemovePhotoOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemovePhotoOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_RemovePhotoOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreatePhotoOutput();
+        OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_RemovePhotoOutput(captureSession_, photoOutput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleasePhotoOutput();
+        ReleaseCaptureSession();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemovePhotoOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddVideoOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddVideoOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_AddVideoOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreateVideoOutput();
+        OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_AddVideoOutput(captureSession_, videoOutput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleaseCaptureSession();
+        ReleaseVideoOutput();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddVideoOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionRemoveVideoOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemoveVideoOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_RemoveVideoOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        CreateVideoOutput();
+        OH_CaptureSession_Start(captureSession_);
+        result = OH_CaptureSession_RemoveVideoOutput(captureSession_, videoOutput_);
+        if (result == CAMERA_OPERATION_NOT_ALLOWED) {
+            ret = TEST_OK;
+        }
+        ReleaseCaptureSession();
+        ReleaseVideoOutput();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemoveVideoOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionAddMetadataOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddMetadataOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_AddMetadataOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  0000");
+        result = CreatePhotoOutput();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  11111 result:%{public}d", result);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  11111 outputCap_->metadataProfilesSize:%{public}d", outputCap_->metadataProfilesSize);
+        if (outputCap_->metadataProfilesSize > 0) {
+            Camera_MetadataOutput* metaOutput = nullptr;
+            OH_CameraManager_CreateMetadataOutput(cameraManager_, outputCap_->supportedMetadataObjectTypes[0],
+                                                  &metaOutput);
+            result = OH_CaptureSession_AddMetadataOutput(captureSession_, metaOutput);
+            if(result == CAMERA_OPERATION_NOT_ALLOWED) {
+                ret = TEST_OK;
+            }
+        }
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  22222");
+        ReleaseCaptureSession();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  33333");
+        ReleasePhotoOutput();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddMetadataOutputTest result:%{public}d", result);
+    return ret;
+}
+
+int32_t CameraFunctionTest::OHCaptureSessionRemoveMetadataOutputTest(int32_t caseCode)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemoveMetadataOutputTest caseCode:%{public}d", caseCode);
+    int32_t ret = CAMERA_OK;
+    Camera_ErrorCode result;
+    if (caseCode == INVALID_ARGUMENT) {
+        result = OH_CaptureSession_RemoveMetadataOutput(nullptr, nullptr);
+        if (result == INVALID_ARGUMENT) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
+        CreateCaptureSession();
+        result = CreatePhotoOutput();
+        if (outputCap_->metadataProfilesSize > 0) {
+            Camera_MetadataOutput* metaOutput = nullptr;
+            OH_CameraManager_CreateMetadataOutput(cameraManager_, outputCap_->supportedMetadataObjectTypes[0],
+                                                  &metaOutput);
+            result = OH_CaptureSession_RemoveMetadataOutput(captureSession_, metaOutput);
+            if(result == CAMERA_OPERATION_NOT_ALLOWED) {
+                ret = TEST_OK;
+            }
+        }
+        ReleaseCaptureSession();
+        ReleasePhotoOutput();
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionRemoveMetadataOutputTest result:%{public}d", result);
     return ret;
 }
