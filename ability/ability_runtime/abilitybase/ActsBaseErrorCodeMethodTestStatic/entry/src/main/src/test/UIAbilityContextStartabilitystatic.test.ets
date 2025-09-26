@@ -30,7 +30,7 @@ let context: common.UIAbilityContext;
 let g_code: number = 0;
 
 class AbilityStartCallbackExt implements common.AbilityStartCallback {
-  onError(code: number, name: string, message: string): void {
+  onError(code: int, name: string, message: string): void {
     console.log(`startAbilityByType Error:` + "code:" + code + "name:" + name + "message:" + message);
     g_code = code;
   }
