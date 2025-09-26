@@ -21,20 +21,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
+const TAG = "[DeviceKvReturnValue >>>>>> ]"
+
 const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 
-const TEST_BUNDLE_NAME = 'ohos.acts.kv2';
+const TEST_BUNDLE_NAME = 'ohos.acts.distributedKvStore';
 const TEST_STORE_ID = 'DeviceKvStoreReturnValueId';
-let kvManager: factory.KVManager|null ;
-let kvStore : factory.DeviceKVStore|null;
+let kvManager: factory.KVManager|null = null;
+let kvStore : factory.DeviceKVStore|null = null;
 let localDeviceId = '';
 
 function sleep(ms:number) {
   return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
 }
-
-const TAG = "[Kv_Promise_Ets_TEST >>>>>> ]"
 
 const config : factory.KVManagerConfig = {
   bundleName: TEST_BUNDLE_NAME,
@@ -1107,17 +1107,18 @@ export default function DeviceKvStoreReturnValue(){
       }
     })
 
+
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_3000
-     * @tc.name SUB_DDM_DKV_ReturnValue_3000
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1500
+     * @tc.name SUB_DDM_DKV_ReturnValue_1500
      * @tc.type FUNC
      * @tc.size MediumTest
      * @tc.level Level 2
      * @tc.desc FieldNode.appendChild(child: FieldNode): boolean---true
      */
-    it('SUB_DDM_DKV_ReturnValue_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('SUB_DDM_DKV_ReturnValue_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
-        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_3000 begin---------  ');
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1500 begin---------  ');
         let node:factory.FieldNode|null = new factory.FieldNode("root");
         let child:factory.FieldNode|null = new factory.FieldNode("child");
         let res1 = node.appendChild(child);
@@ -1125,7 +1126,7 @@ export default function DeviceKvStoreReturnValue(){
         expect(res1).assertEqual(true);
         child = null;
         node = null;
-        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_3000 end---------  ');
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1500 end---------  ');
         done();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1135,22 +1136,22 @@ export default function DeviceKvStoreReturnValue(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_3001
-     * @tc.name SUB_DDM_DKV_ReturnValue_3001
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1501
+     * @tc.name SUB_DDM_DKV_ReturnValue_1501
      * @tc.type FUNC
      * @tc.size MediumTest
      * @tc.level Level 2
      * @tc.desc FieldNode.appendChild(child: FieldNode): boolean---false
      */
-    it('SUB_DDM_DKV_ReturnValue_3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('SUB_DDM_DKV_ReturnValue_1501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
-        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_3001 begin---------  ');
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1501 begin---------  ');
         let node:factory.FieldNode|null = new factory.FieldNode("root");
         let res1 = node.appendChild(null);
         console.info(TAG + ' try appendChild res1=' + res1);
         expect(res1).assertEqual(false);
         node = null;
-        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_3001 end---------  ');
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1501 end---------  ');
         done();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
