@@ -760,15 +760,15 @@ export default function classOperationsTest() {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("call_StaticMethodInt_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("call_StaticMethodInt_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('call_StaticMethodInt_0015 start');
+        console.log('call_StaticMethodInt_0016 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_15();
         expect(result).assertFalse();
-        console.log('call_StaticMethodInt_0015 done');
+        console.log('call_StaticMethodInt_0016 done');
         done();
-        console.log('call_StaticMethodInt_0015 end');
+        console.log('call_StaticMethodInt_0016 end');
       })
 
     /**

@@ -955,7 +955,6 @@ ani_int test_Module_Find_Variable_18([[maybe_unused]] ani_env *env, [[maybe_unus
 
     ani_int result = 0U;
     ASSERT_EQ(env->Variable_GetValue_Int(variable, &result), ANI_OK);
-    // OH_LOG_ERROR(LOG_APP, "yj Variable_GetValue_Float %{public}u.", result);
     ASSERT_EQ(result, 0U);
     ani_int value = 6U;
     ASSERT_EQ(env->Variable_SetValue_Int(variable, value), ANI_OK);

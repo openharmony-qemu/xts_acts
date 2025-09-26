@@ -90,21 +90,21 @@ export default function fixedArrayTest() {
 
     /**
      * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0100
-     * @tc.name      test_FixedArray_Boolean_0002
+     * @tc.name      test_FixedArray_Boolean_0001
      * @tc.desc      get length error tests
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 3
      */
-    it("test_FixedArray_Boolean_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Boolean_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('test_FixedArray_Boolean_0002 start');
+        console.log('test_FixedArray_Boolean_0001 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Boolean();
         expect(result).assertTrue();
-        console.log('test_FixedArray_Boolean_0002 done');
+        console.log('test_FixedArray_Boolean_0001 done');
         done();
-        console.log('test_FixedArray_Boolean_0002 end');
+        console.log('test_FixedArray_Boolean_0001 end');
       })
 
     /**
@@ -659,60 +659,60 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0600
-     * @tc.name      test_FixedArray_Short_0006
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0600
+     * @tc.name      test_FixedArray_Int_0006
      * @tc.desc      set special value to array test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 3
      */
-    it("test_FixedArray_Short_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Int_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('test_FixedArray_Short_0006 start');
+        console.log('test_FixedArray_Int_0006 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Int_05();
         expect(result).assertTrue();
-        console.log('test_FixedArray_Short_0006 done');
+        console.log('test_FixedArray_Int_0006 done');
         done();
-        console.log('test_FixedArray_Short_0006 end');
+        console.log('test_FixedArray_Int_0006 end');
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0700
-     * @tc.name      test_FixedArray_Short_0007
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0700
+     * @tc.name      test_FixedArray_Int_0007
      * @tc.desc      set get union to array test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 3
      */
-    it("test_FixedArray_Short_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('test_FixedArray_Short_0007 start');
+        console.log('test_FixedArray_Int_0007 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Int_06();
         expect(result).assertTrue();
-        console.log('test_FixedArray_Short_0007 done');
+        console.log('test_FixedArray_Int_0007 done');
         done();
-        console.log('test_FixedArray_Short_0007 end');
+        console.log('test_FixedArray_Int_0007 end');
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0800
-     * @tc.name      test_FixedArray_Short_0008
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0800
+     * @tc.name      test_FixedArray_Int_0008
      * @tc.desc      set get stability to array test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 3
      */
-    it("test_FixedArray_Short_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Int_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('test_FixedArray_Short_0008 start');
+        console.log('test_FixedArray_Int_0008 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Int_07();
         expect(result).assertTrue();
-        console.log('test_FixedArray_Short_0008 done');
+        console.log('test_FixedArray_Int_0008 done');
         done();
-        console.log('test_FixedArray_Short_0008 end');
+        console.log('test_FixedArray_Int_0008 end');
       })
 
     /**
@@ -849,8 +849,8 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0700
-     * @tc.name      test_FixedArray_Long_0007
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0800
+     * @tc.name      test_FixedArray_Long_0008
      * @tc.desc      set get stability to array test
      * @tc.size      MediumTest
      * @tc.type      Function

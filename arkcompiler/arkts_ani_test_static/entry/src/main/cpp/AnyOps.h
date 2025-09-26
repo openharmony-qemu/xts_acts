@@ -139,7 +139,7 @@ ani_int test_Any_GetProperty_01([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_Any_GetProperty_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-   ani_ref dummyResult {};
+    ani_ref dummyResult {};
 
     ASSERT_EQ(env->Any_GetByIndex(nullptr, 0U, &dummyResult), ANI_INVALID_ARGS);
 

@@ -462,48 +462,37 @@ ani_int test_Namespace_Combinatorial_08([[maybe_unused]] ani_env *env_, [[maybe_
 ani_int test_Namespace_Combinatorial_09([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float0 .");
 
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialD", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float1 %{public}s.",ns );
 
     ani_namespace tmp {};
     ASSERT_EQ(env_->Namespace_FindNamespace(ns, "subA", &tmp), ANI_OK);
     ASSERT_NE(tmp, nullptr);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float2 %{public}s.",tmp );
 
     ani_class result {};
     ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsA", &result), ANI_OK);
     ASSERT_NE(result, nullptr);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float3 %{public}s.",result );
-
-
+    
     ani_enum result1 {};
     ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result1), ANI_OK);
     ASSERT_NE(result1, nullptr);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float4 %{public}s.",result1 );
 
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result2), ANI_OK);
     ASSERT_NE(result2, nullptr);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float5 %{public}s.",result2 );
 
     ani_namespace tmp1 {};
     ASSERT_EQ(env_->Namespace_FindNamespace(nullptr, "subA", &tmp1), ANI_INVALID_ARGS);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float6 %{public}s.",tmp1 );
 
     ani_class result3 {};
     ASSERT_EQ(env_->Namespace_FindClass(nullptr, "ClsA", &result3), ANI_INVALID_ARGS);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float7 %{public}s.",result3 );
 
     ani_enum result4 {};
     ASSERT_EQ(env_->Namespace_FindEnum(nullptr, "ColorA", &result4), ANI_INVALID_ARGS);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float8 %{public}s.",result4 );
 
     ani_function result5 {};
     ASSERT_EQ(env_->Namespace_FindFunction(nullptr, "fun", ":i", &result5), ANI_INVALID_ARGS);
-    OH_LOG_ERROR(LOG_APP, "1111 Variable_GetValue_Float9 %{public}s.",result5 );
 
     return ANI_TRUE;
 }

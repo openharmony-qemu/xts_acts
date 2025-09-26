@@ -469,7 +469,7 @@ ani_boolean test_Create_Escape_Local_Scope_26([[maybe_unused]] ani_env *env, [[m
     char utfBuffer[bufferSize] = {};
     ani_size actualSize = 0U;
     ani_status status = env->String_GetUTF8SubString(reinterpret_cast<ani_string>(result), 0U, testString.size(),
-                                                      utfBuffer, bufferSize, &actualSize);
+        utfBuffer, bufferSize, &actualSize);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_EQ(actualSize, testString.size());
 
@@ -587,7 +587,8 @@ ani_boolean test_Create_Escape_Local_Scope_33([[maybe_unused]] ani_env *env, [[m
 }
 
 ani_boolean test_Create_Escape_Local_Scope_34([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{   const std::string_view testString = "test";
+{   
+    const std::string_view testString = "test";
     const ani_size refNum = 10;
     ASSERT_EQ(env->CreateEscapeLocalScope(refNum), ANI_OK);
     ani_string objectRef {};
