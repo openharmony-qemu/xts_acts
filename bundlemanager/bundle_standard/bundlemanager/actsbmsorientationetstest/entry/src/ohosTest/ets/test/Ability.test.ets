@@ -30,9 +30,9 @@ export default function abilityTest() {
      * @tc.desc       : Query if the orientation value is FOLLOW_RECENT.
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.level      : Level 3
      */
-    it('Acts_OrientationTest_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+    it('Acts_OrientationTest_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       hilog.info(DOMAIN, TAG, BUNDLE + '001 begin');
       await bundleManager.getBundleInfoForSelf(
         bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION
