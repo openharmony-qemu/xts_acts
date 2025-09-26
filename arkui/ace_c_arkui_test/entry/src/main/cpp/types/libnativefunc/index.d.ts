@@ -1725,12 +1725,6 @@ export const testImagePosition001: () => number;
 
 export const testImagePosition002: () => number;
 
-export const testListScrollBarColor001: () => number;
-
-export const testListScrollBarColor002: () => number;
-
-export const testListScrollBarColor003: () => number;
-
 export const testListScrollBarWidth001: () => number;
 
 export const testListScrollBarWidth002: () => number;

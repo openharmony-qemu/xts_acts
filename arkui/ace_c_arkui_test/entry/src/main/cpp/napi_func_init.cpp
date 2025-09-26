@@ -253,7 +253,6 @@
 #include "imageAnimator/imageAnimator_fixedSize_test.cpp"
 #include "imageAnimator/imageAnimator_fillMode_test.cpp"
 #include "imageAnimator/imageAnimator_iterations_test.cpp"
-#include "list/list_scroll_bar_color_test.cpp"
 #include "list/list_scroll_bar_width_test.cpp"
 #include "list/list_space_test.cpp"
 #include "list/list_align_list_item_test.cpp"
@@ -2119,12 +2118,6 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"testCommonAttrsShadow006", nullptr, TestCommonAttrsShadow006, nullptr, nullptr, nullptr, napi_default,
          nullptr},
-        { "testListScrollBarColor001", nullptr, TestListScrollBarColor001, nullptr, nullptr, nullptr, napi_default,
-            nullptr },
-        { "testListScrollBarColor002", nullptr, TestListScrollBarColor002, nullptr, nullptr, nullptr, napi_default,
-            nullptr },
-        { "testListScrollBarColor003", nullptr, TestListScrollBarColor003, nullptr, nullptr, nullptr, napi_default,
-            nullptr },
         { "testListScrollBarWidth001", nullptr, TestListScrollBarWidth001, nullptr, nullptr, nullptr, napi_default,
             nullptr },
         { "testListScrollBarWidth002", nullptr, TestListScrollBarWidth002, nullptr, nullptr, nullptr, napi_default,
