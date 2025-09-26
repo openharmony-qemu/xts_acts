@@ -14,7 +14,7 @@
  */
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-let stressTimeout: number = 1000 * 2;
+let stressTimeout: number = 1000 * 1;
 let intervalTime: number = 1000;
 let random: cryptoFramework.Random = cryptoFramework.createRandom();
 
