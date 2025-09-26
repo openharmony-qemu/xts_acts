@@ -49,8 +49,13 @@ export default function EsimNoPermissionPublic() {
   describe('EsimNoPermissionPublic', () => {
     beforeAll(async (done: Function) => {
       try {
-        isEsimSupport = eSIM.isSupported(SLOT_0);
-        if (isEsimSupport) {
+        let slotId=-1
+        if (eSIM.isSupported(SLOT_0)) {
+          slotId=0
+        } else if(eSIM.isSupported(SLOT_1)) {
+          slotId=1
+        }
+        if (slotId != -1) {
           console.info(`eSIM is supported`);
         }
         done();
@@ -83,7 +88,7 @@ export default function EsimNoPermissionPublic() {
       try {
         let data = await eSIM.addProfile(profile);
         console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
