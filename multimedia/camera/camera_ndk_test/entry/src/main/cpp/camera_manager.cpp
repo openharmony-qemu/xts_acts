@@ -49,7 +49,8 @@ static OH_NativeBuffer_ColorSpace oHNativeBufferColorSpace[15]
 NDKCamera::NDKCamera(char* str)
     : cameras_(nullptr), cameraOutputCapability_(nullptr),
       isAddInput_(false), camera_(nullptr), sceneModes_(nullptr), sceneMode_(NORMAL_PHOTO),
-      secureSeqId_(0), canPreconfig_(false), sceneModesSize_(0), isMovingPhotoSupported_(false), photoNative_(nullptr),
+      secureSeqId_(0), canPreconfig_(false), sceneModesSize_(0), isMovingPhotoSupported_(false),
+      isPhotoQualityPrioritizationSupported_(false), photoNative_(nullptr),
       mainImage_(nullptr), isTorchSupportedByTorchMode_(false), torchMode_(ON), frameRatesSize_(0),
       videoFrameRatesSize_(0), colorSpacesSize_(0), colorSpace_(nullptr), activeColorSpace_(OH_COLORSPACE_P3_PQ_LIMIT),
       setcolorSpace_(OH_COLORSPACE_NONE),
@@ -2334,6 +2335,50 @@ Camera_ErrorCode NDKCamera::EnableMovingPhoto(int useCaseCode, bool enable)
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_PhotoOutput_EnableMovingPhoto failed. %d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality)
+{
+    Camera_PhotoQualityPrioritization qualityPrioritization = static_cast<Camera_PhotoQualityPrioritization>(quality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(nullptr, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization, nullptr);
+    }
+
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_IsPhotoQualityPrioritizationSupported failed. %d", ret_);
+    } else {
+        if (isMovingPhotoSupported_ != true) {
+            LOG("PhotoQualityPrioritization is not supported.");
+        } else {
+            LOG("PhotoQualityPrioritization is supported.");
+        }
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetPhotoQualityPrioritization(int useCaseCode, int quality)
+{
+    Camera_PhotoQualityPrioritization qualityPrioritization = static_cast<Camera_PhotoQualityPrioritization>(quality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput_, qualityPrioritization);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(nullptr, qualityPrioritization);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput_, qualityPrioritization);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_SetPhotoQualityPrioritization failed. %d", ret_);
     }
     return ret_;
 }
