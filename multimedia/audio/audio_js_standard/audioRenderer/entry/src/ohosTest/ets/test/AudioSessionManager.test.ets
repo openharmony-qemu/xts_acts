@@ -738,7 +738,6 @@ export default function audioSessionManagerTest() {
         await audioSessionManager.on('currentInputDeviceChanged', (event: audio.CurrentInputDeviceChangedEvent) => {
           console.info(`devices of currentInputDeviceChanged: ${event.devices} `);
           console.info(`changeReason of currentInputDeviceChanged: ${event.changeReason} `);
-          console.info(`recommendedAction of currentInputDeviceChanged: ${event.recommendedAction} `);
         });
         expect(true).assertTrue();
         done();
