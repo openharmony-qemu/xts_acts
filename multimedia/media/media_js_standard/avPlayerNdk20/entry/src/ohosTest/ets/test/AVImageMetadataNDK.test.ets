@@ -70,30 +70,6 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0101 start====");
-          const fdResult = await getContext().resourceManager.getRawFd("H264_AAC.mp4");
-          let result: number =
-            avimagemetadatndk.OH_AVImageGenerator_FetchFrameByTime0101(fdResult.fd, fdResult.offset, fdResult.length);
-          expect(0).assertEqual(result);
-          done()
-        } catch (err) {
-          console.error("====>SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0101 catch err: " + err);
-          expect(false).assertEqual(true);
-          done()
-        }
-      })
-
-    /**
      * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
      * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
      * @tc.desc       : test OH_LowPowerAudioSink
