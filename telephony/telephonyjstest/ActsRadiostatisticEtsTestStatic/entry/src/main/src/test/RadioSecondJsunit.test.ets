@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
 import radio from '@ohos.telephony.radio';
 import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog';
 
 const NETWORK_TYPES = [
   radio.NetworkType.NETWORK_TYPE_UNKNOWN,
@@ -27,6 +28,8 @@ const NETWORK_TYPES = [
   radio.NetworkType.NETWORK_TYPE_NR,
 ];
 const NETWORK_SIGNAL = [0, 1, 2, 3, 4, 5];
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 function assertCellInformation(data:Array<radio.CellInformation>) {
   expect(data != undefined && data != null).assertTrue();
@@ -63,7 +66,7 @@ export default function radioSecondJsunit() {
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       radio.getSignalInformation(0, (err, data) => {
-        if (err) {
+        if (err?.code !== 0) {
           console.log("Telephony_NetworkSearch_getSignalInformation_Async_0500 fail err:" + JSON.stringify(err));
           expect(false).assertTrue();
           done();
@@ -83,24 +86,21 @@ export default function radioSecondJsunit() {
      */
     it('Telephony_NetworkSearch_NetworkState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         radio.getNetworkState((err, data) => {
-        if (err) {
+        if (err?.code !== 0) {
           console.error("Network unavailable");
           expect(false).assertTrue();
           done();
-          return;
-        }
-        if (data) {
+        } else {
           console.log("Telephony_NetworkSearch_NetworkState_Async_0100 end data:" + JSON.stringify(data));
-          expect(data.longOperatorName === "longOperatorName").assertFalse();
-          expect(data.shortOperatorName === "shortOperatorName").assertFalse();
-          expect(data.plmnNumeric === "plmnNumeric").assertFalse();
-          expect(data.isRoaming === true || data.isRoaming === false).assertTrue();
-          expect(data.isEmergency === true || data.isEmergency === false).assertTrue();
-          expect(data.cfgTech.toString() == "-1").assertFalse();
-          expect(data.nsaState.toString() == "-1").assertFalse();
-          expect(data.regState.toString() == "-1").assertFalse();
+          expect(data?.longOperatorName === "longOperatorName").assertFalse();
+          expect(data?.shortOperatorName === "shortOperatorName").assertFalse();
+          expect(data?.plmnNumeric === "plmnNumeric").assertFalse();
+          expect(data?.isRoaming === true || data?.isRoaming === false).assertTrue();
+          expect(data?.isEmergency === true || data?.isEmergency === false).assertTrue();
+          expect(data?.cfgTech.toString() == "-1").assertFalse();
+          expect(data?.nsaState.toString() == "-1").assertFalse();
+          expect(data?.regState.toString() == "-1").assertFalse();
           done();
-          return;
         }
       });
     })
@@ -137,22 +137,21 @@ export default function radioSecondJsunit() {
      */
     it('Telephony_NetworkSearch_NetworkState_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         radio.getNetworkState(0, (err, data) => {
-        if (err) {
+        if (err?.code !== 0) {
           console.error("Network unavailable");
           expect(false).assertTrue();
           done();
           return;
-        }
-        if (data) {
+        } else {
           console.log("Telephony_NetworkSearch_NetworkState_Async_0200 end data:" + JSON.stringify(data));
-          expect(data.longOperatorName === "longOperatorName").assertFalse();
-          expect(data.shortOperatorName === "shortOperatorName").assertFalse();
-          expect(data.plmnNumeric === "plmnNumeric").assertFalse();
-          expect(data.isRoaming === true || data.isRoaming === false).assertTrue();
-          expect(data.isEmergency === true || data.isEmergency === false).assertTrue();
-          expect(data.cfgTech.toString() == "-1").assertFalse();
-          expect(data.nsaState.toString() == "-1").assertFalse();
-          expect(data.regState.toString() == "-1").assertFalse();
+          expect(data?.longOperatorName === "longOperatorName").assertFalse();
+          expect(data?.shortOperatorName === "shortOperatorName").assertFalse();
+          expect(data?.plmnNumeric === "plmnNumeric").assertFalse();
+          expect(data?.isRoaming === true || data?.isRoaming === false).assertTrue();
+          expect(data?.isEmergency === true || data?.isEmergency === false).assertTrue();
+          expect(data?.cfgTech.toString() == "-1").assertFalse();
+          expect(data?.nsaState.toString() == "-1").assertFalse();
+          expect(data?.regState.toString() == "-1").assertFalse();
           done();
         }
       });
@@ -182,7 +181,121 @@ export default function radioSecondJsunit() {
         done();
       }
     })
+    
+    /*
+     * @tc.number:Telephony_NetworkSearch_getRadioTech_Async_0500
+     * @tc.name: Telephony_NetworkSearch_getRadioTech_Async_static_0500
+     * @tc.desc:Test getRadioTech() api by callback .SlotId parameter input is 0
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("Telephony_NetworkSearch_getRadioTech_Async_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let slotId: int = 0;
+          radio.getRadioTech(slotId, (err: BusinessError<void> | null, data: radio.NetworkRadioTech | undefined) => {
+            if (err?.code !== 0) {
+              hilog.error(domain, tag,
+                "Telephony_NetworkSearch_getRadioTech_Async_static_0500 err:" + JSON.stringify(err));
+              expect().assertFail();
+              done();
+            }
+            hilog.info(domain, tag,
+              "Telephony_NetworkSearch_getRadioTech_Async_static_0500 data:" + JSON.stringify(data));
+            expect(data?.psRadioTech?.toString() === "-1").assertFalse();
+            expect(data?.csRadioTech?.toString() === "-1").assertFalse();
+            done();
+          });
+        } catch (error: Error) {
+          let err = error as BusinessError;
+          hilog.info(domain, tag,
+            "Telephony_NetworkSearch_getRadioTech_try_catch_async_0500 err = " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
 
+    /*
+     * @tc.number:Telephony_NetworkSearch_getRadioTech_Promise_0500
+     * @tc.name: Telephony_NetworkSearch_getRadioTech_Promise_static_0500
+     * @tc.desc:SlotId parameter input is 0 ,Test getRadioTech() api by promise
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("Telephony_NetworkSearch_getRadioTech_Promise_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let slotId: int = 0;
+          let promise = radio.getRadioTech(slotId);
+          promise.then((data: radio.NetworkRadioTech) => {
+            hilog.info(domain, tag,
+              "Telephony_NetworkSearch_getRadioTech_Promise_static_0500 data:" + JSON.stringify(data));
+            expect(data?.psRadioTech?.toString() == "-1").assertFalse();
+            expect(data?.csRadioTech?.toString() == "-1").assertFalse();
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.error(domain, tag,
+              "Telephony_NetworkSearch_getRadioTech_Promise_static_0500 err:" + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          });
+        } catch (error: Error) {
+          let err = error as BusinessError;
+          hilog.info(domain, tag,
+            "Telephony_NetworkSearch_getRadioTech_try_catch_promise_0500 err = " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
     console.log("************* radio Test end*************");
-  })
+  });
+
+  /*
+   * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0500
+   * @tc.name Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500
+   * @tc.desc SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by callback.
+   */
+  it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    try {
+      radio.getISOCountryCodeForNetwork(0, (err: BusinessError<void> | null, data: string | undefined) => {
+        if (err?.code !== 0) {
+          hilog.info(domain, tag,
+            "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500 fail err:" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag,
+            "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500 finish data:" + data);
+          expect(data === undefined).assertFalse();
+          done();
+        }
+      });
+    } catch(error: Error) {
+          let err = error as BusinessError;
+          hilog.error(domain, tag, "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500 err = " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+    }
+  });
+
+  /*
+   * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0600
+   * @tc.name Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_static_0500
+   * @tc.desc SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by promise.
+   */
+  it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    try {
+      let data = await radio.getISOCountryCodeForNetwork(0);
+      hilog.info(domain, tag, "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_static_0500 finish data:" + JSON.stringify(data));
+      expect(data === undefined).assertFalse();
+      done();
+    } catch (err) {
+      hilog.info(domain, tag, "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_static_0500 fail err:" + JSON.stringify(err));
+      expect(false).assertTrue();
+      done();
+    }
+  });
 }
