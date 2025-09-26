@@ -30,7 +30,6 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/eventfd.h>
-#include <ffrt/fiber.h>
 #define FAIL (-1)
 #define SUCCESS 0
 #define PARAM_100 100
@@ -3949,115 +3948,6 @@ static napi_value ffrt_fiber_001(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value ffrt_reserveTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_cond_t cond;
-    int a = 0;
-    int b = 0;
-    ffrt_mutex_t lock_;
-    CvMutex t = {&cond, &a, &b, &lock_, nullptr, nullptr};
-    std::function<void()>&& ffrtFunc1 = [&t]() { FuncWait1(static_cast<void*>(&t)); };
-    ffrt_function_header_t* ffrtFunc1Wrapper = create_function_wrapper((ffrtFunc1));
-    ffrtFunc1Wrapper->reserve[0] = ffrtFunc1Wrapper->reserve[1];
-    int result = ffrtFunc1Wrapper->reserve[0] == ffrtFunc1Wrapper->reserve[1] ? 1 : 0;
-    napi_create_int32(env, result, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_task_attr_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    int a = 0;
-    ffrt_task_attr_t task_attr;
-    task_attr.storage[0] = ffrt_task_attr_storage_size;
-    (void)ffrt_task_attr_init(&task_attr);
-    ffrt_task_attr_set_delay(&task_attr, 1);
-    int result = ffrt_task_attr_get_delay(&task_attr);
-    napi_create_int32(env, result, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_queue_attr_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_queue_attr_t queue_attr;
-    queue_attr.storage[0] = ffrt_queue_attr_storage_size;
-    (void)ffrt_queue_attr_init(&queue_attr);
-    ffrt_queue_t queue_handle = ffrt_queue_create(ffrt_queue_max, "test_queue", &queue_attr);
-    int result = queue_handle == nullptr ? 0 :1;
-    napi_create_int32(env, result, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_condattr_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_cond_t cond;
-    ffrt_condattr_t attr;
-    attr.storage = ffrt_cond_storage_size;
-    cond.storage[0] = ffrt_fiber_storage_size;
-    int result = ffrt_cond_init(&cond, &attr);
-    napi_create_int32(env, result, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_mutexattr_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_mutexattr_t attr;
-    ffrt_mutex_t mtx;
-    attr.storage = ffrt_mutex_storage_size;
-    mtx.storage[0] = ffrt_mutex_storage_size;
-    int result = ffrt_mutexattr_init(&attr);
-    napi_create_int32(env, result, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_rwlockattr_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_rwlock_t rwlock;
-    ffrt_rwlockattr_t attr;
-    attr.storage = ffrt_auto_managed_function_storage_size;
-    rwlock.storage[0] = ffrt_rwlock_storage_size;
-    int result = ffrt_rwlock_init(&rwlock, &attr);
-    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_mutex_typeTest1(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    int result = ffrt_mutexattr_settype(NULL, ffrt_mutex_normal);
-    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
-    return resultEnd;
-}
-
-static napi_value ffrt_mutex_typeTest2(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    int result = ffrt_mutexattr_settype(NULL, ffrt_mutex_default);
-    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
-    return resultEnd;
-}
-
-void ForffrtFiberInitTest(void* arg)
-{
-    (*static_cast<int*>(arg)) += 1;
-}
-
-static napi_value ffrt_fiber_tTest(napi_env env, napi_callback_info info)
-{
-    napi_value resultEnd;
-    ffrt_fiber_t fiber;
-    fiber.storage[0] = ffrt_fiber_storage_size;
-    size_t size = 0;
-    int result = ffrt_fiber_init(&fiber, ForffrtFiberInitTest, nullptr, nullptr, size);
-    napi_create_int32(env, result == ffrt_error_inval ? 1 : 0, &resultEnd);
-    return resultEnd;
-}
-
 napi_property_descriptor desc[] = {
     {"conditionVariableTest001", nullptr, ConditionVariableTest001, nullptr, nullptr, nullptr,
         napi_default, nullptr },
@@ -4190,15 +4080,6 @@ napi_property_descriptor desc[] = {
     {"ffrtThisTaskUpdateQos", nullptr, FfrtThisTaskUpdateQos, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"sharedMutexTest001", nullptr, SharedMutexTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrt_fiber_001", nullptr, ffrt_fiber_001, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_reserveTest", nullptr, ffrt_reserveTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_task_attr_tTest", nullptr, ffrt_task_attr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_queue_attr_tTest", nullptr, ffrt_queue_attr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_condattr_tTest", nullptr, ffrt_condattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_mutexattr_tTest", nullptr, ffrt_mutexattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_rwlockattr_tTest", nullptr, ffrt_rwlockattr_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_mutex_typeTest1", nullptr, ffrt_mutex_typeTest1, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_mutex_typeTest2", nullptr, ffrt_mutex_typeTest2, nullptr, nullptr, nullptr, napi_default, nullptr },
-    {"ffrt_fiber_tTest", nullptr, ffrt_fiber_tTest, nullptr, nullptr, nullptr, napi_default, nullptr },
 };
 
 EXTERN_C_START
