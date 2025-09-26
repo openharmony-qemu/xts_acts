@@ -51,7 +51,7 @@ target_link_libraries(avrecorderndk PUBLIC
     librawfile.z.so
 )
 
-add_library(avtranscoderconfigndk SHARED AVTranscoderConfig.cpp)
+add_library(avtranscoderconfigndk SHARED AVTranscoderConfigTest.cpp)
 target_link_libraries(avtranscoderconfigndk PUBLIC
     libace_napi.z.so
     libavrecorder.so
@@ -133,7 +133,7 @@ target_link_libraries(lowpoweraudiosinktwondk PUBLIC
     libnative_media_venc.so
 )
 
-add_library(avimagemetadatndk SHARED AVImageMetadat.cpp)
+add_library(avimagemetadatndk SHARED AVImageMetadatTest.cpp)
 target_link_libraries(avimagemetadatndk PUBLIC
     libace_napi.z.so
     libavrecorder.so
