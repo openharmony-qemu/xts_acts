@@ -982,7 +982,6 @@ export default function LightWeightMapTest1() {
      * @tc.level      : Level 1
      */
     // it("testLightWeightMap0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   hilog.info(domain, tag,'testSet044')
     //   let lightWeightMap = new LightWeightMap<number, number>();
     //   for (let i = 0; i < 10000; i++) {
     //     lightWeightMap.set(i, i);
