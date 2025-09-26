@@ -417,7 +417,7 @@ static napi_value OH_AVPlayer_SetVolumeMode0100(napi_env env, napi_callback_info
 
 static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
 {
-    sleep(1);
+    sleep(PARAM_3);
     int32_t *videoHeight;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
     OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
@@ -435,7 +435,7 @@ static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
 
 static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
 {
-    sleep(1);
+    sleep(PARAM_3);
     int32_t *videoHeight;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
     OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
@@ -453,7 +453,7 @@ static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
 
 static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
 {
-    sleep(1);
+    sleep(PARAM_3);
     int32_t *videoHeight;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
     OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
@@ -471,7 +471,7 @@ static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
 
 static napi_value AVPlaybackSpeed0103(napi_env env, napi_callback_info info)
 {
-    sleep(1);
+    sleep(PARAM_3);
     int32_t *videoHeight;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
     OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
