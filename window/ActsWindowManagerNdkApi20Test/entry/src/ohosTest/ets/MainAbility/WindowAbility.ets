@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import { AbilityConstant, UIAbility } from '@kit.AbilityKit';
 import widnowndkapi20 from 'libwindowndkapi20.so';
 
-const TAG: string = '[createWindow]'
+const TAG: string = '[createWindow]';
 
 export default class WindowAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {

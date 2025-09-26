@@ -43,7 +43,7 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
       try {
         let properties : window.WindowProperties = windowClass.getWindowProperties();
-        let wRect : window.Rect =  properties.windowRect;
+        let wRect : window.Rect = properties.windowRect;
         globalThis.winLeft = wRect.left;
         globalThis.winTop = wRect.top;
         windowndkapi20.GetMainWindowId(properties.id);
@@ -51,7 +51,7 @@ export default class EntryAbility extends UIAbility {
       } catch (exception) {
         hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
       }
-    })
+    });
     windowStage.loadContent('pages/Index', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

@@ -33,7 +33,7 @@ napi_value CaptureScreenPixelmapInvalidParamOrDeviceNotSupported(napi_env env, n
 napi_value CaptureScreenPixelmapNoPermission(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    OH_PixelmapNative* pixelMap = (OH_PixelmapNative*)malloc(sizeof(OH_PixelmapNative*));
+    OH_PixelmapNative* pixelMap = (OH_PixelmapNative*)malloc(PARAM_100);
     int32_t result = OH_NativeDisplayManager_CaptureScreenPixelmap(Window::g_displayId, &pixelMap);
     result = result != DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? result == DISPLAY_MANAGER_ERROR_NO_PERMISSION ?
              DISPLAY_MANAGER_ERROR_NO_PERMISSION : DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED : result ==
