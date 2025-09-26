@@ -41,6 +41,12 @@ export default function ActsNotificationManagerPublishTest() {
       }
     }
 
+    afterEach(async function (done) {
+      console.info(`${TAG} afterEach START`)
+      await Utils.sleep(500);
+      console.info(`${TAG} afterEach END`)
+    })
+
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3200
      * @tc.name      : function cancel(id: number, label: string, callback: AsyncCallback<void>): void
@@ -911,7 +917,7 @@ export default function ActsNotificationManagerPublishTest() {
         })
       } catch (err) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-        expect(err.code).assertEqual(401);
+        expect().assertFail();
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
         done();
       }
@@ -1053,7 +1059,7 @@ export default function ActsNotificationManagerPublishTest() {
       try {
         notificationManager.publish(notificationRequest, (err) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-          expect().assertEqual(null);
+          expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
           done();
         })
@@ -1452,7 +1458,7 @@ export default function ActsNotificationManagerPublishTest() {
             })
           } catch (err) {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect().assertFail();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
             done();
           }
