@@ -309,7 +309,7 @@ export default function AVImageMetadataNDKTest() {
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const fdResult = await getContext().resourceManager.getRawFd("xgplayer-demo.m3u8");
+          const fdResult = await getContext().resourceManager.getRawFd("AAC_48000_32_1.aac");
           console.info("====>SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101 start====");
           let result: number =
             avimagemetadatndk.OH_AVMetadataExtractor_FetchAlbumCover0101(fdResult.fd, fdResult.offset, fdResult.length);
