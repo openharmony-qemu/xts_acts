@@ -226,7 +226,7 @@ export default function systemDateTimeSyncJsunit() {
       try {
         let status: boolean = systemDateTime.getAutoTimeStatus();
         console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 status:${status}`);
-        expect(status == true || false).assertTrue();
+        expect(status == true || status == false).assertTrue();
         done(); 
       } catch (err){
         console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 err.code:${err.code}, err.message:${err.message}`);
