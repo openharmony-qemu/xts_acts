@@ -165,6 +165,7 @@
     "pages/ArkUI/BindContentCoverOption",
     "pages/ArkUI/EnableShowHideWithContentCover",
     "pages/ArkUI/ImageAnimationControllerPage",
-    "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations"
+    "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
+    "pages/ArkUI/GetDarkModeTest"
   ]
 }
