@@ -171,6 +171,7 @@ struct CustomContainerUser {
                   .onClick(() => {
                     this.StartEnable = !this.StartEnable;
                     let report : string = globalThis.resultNum;
+                    console.info("report: globalThis.resultNum =" + JSON.stringify(report));
                     // let reg = /fps:(\d+)/g;
                     let regexp: RegExp = new RegExp('fps:(\\d+)', 'g')
                     if (regexp == null){

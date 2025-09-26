@@ -180,9 +180,11 @@ struct CustomContainerUser {
                               photos
                      */
                     let photosReport : string = globalThis.resultNum;
+                    console.info("photosReport: globalThis.resultNum =" + JSON.stringify(photosReport));
                     let photosHead : number = photosReport.indexOf('ResponseTime:');
                     let photosTime : string = photosReport.substring(photosHead + 13);
                     this.photosNum = parseFloat(photosTime);
+                    console.info("this.photosNum: parseFloat(photosTime) =" + JSON.stringify(this.photosNum));
                     if (0 < this.photosNum && this.photosNum < 2300) {
                       this.num++
                     } else if (isNaN(this.photosNum)) {

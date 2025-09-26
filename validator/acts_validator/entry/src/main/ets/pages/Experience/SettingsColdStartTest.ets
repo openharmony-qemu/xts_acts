@@ -180,6 +180,7 @@ struct CustomContainerUser {
                               settings
                      */
                     let setReport: string = globalThis.resultNum;
+                    console.info("setReport: globalThis.resultNum =" + JSON.stringify(setReport));
                     let setHead: number = setReport.indexOf('ResponseTime:');
                     let setTime: string = setReport.substring(setHead + 13);
                     this.setNum = parseFloat(setTime);
