@@ -31,7 +31,7 @@ const void* LoadModelData(const char* filename, size_t* outSize)
                      "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
-    if (fseek(file, 0, SEEK_END) != 0 ) {
+    if (fseek(file, 0, SEEK_END) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Failed get file size: %{public}d", errno);
         return nullptr;
     }
