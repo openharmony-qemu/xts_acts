@@ -24,7 +24,7 @@ import type drawing from '@ohos.graphics.drawing';
 import type common2D from '@ohos.graphics.common2D';
 import Utils from './Util.test';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function TextParagraphTest() {
@@ -212,9 +212,9 @@ export default function TextParagraphTest() {
           console.info('www data lxt ' + JSON.stringify(lineMetrics.length))
           expect(true).assertTrue();
 
-          let preBaseLine: number = 0;
-          let preHeight: number = 0;
-          let tempHeight: number = 0;
+          let preBaseLine: double = 0;
+          let preHeight: double = 0;
+          let tempHeight: double = 0;
           for (let i = 0; i < lineMetrics.length; i++) {
             const item = lineMetrics[i];
             hilog.error(0x0000, 'Text', 'MM_LOG line metrics info [%{public}d] data: %{public}s', i,
@@ -238,7 +238,7 @@ export default function TextParagraphTest() {
             tempHeight += item.height;
             preHeight = item.height;
             preBaseLine = item.baseline;
-            let runMetrics: Map<number, text.RunMetrics> = item.runMetrics;
+            let runMetrics: Map<int, text.RunMetrics> = item.runMetrics;
             runMetrics.forEach((value, key) => {
               let textStyle: text.TextStyle = value.textStyle;
               let fontMetrics: drawing.FontMetrics = value.fontMetrics;
@@ -331,7 +331,7 @@ export default function TextParagraphTest() {
             expect(lineMetrics?.lineNumber).assertEqual(2)
             expect(lineMetrics?.topHeight).assertEqual(832)
 
-            let runMetrics: Map<number, text.RunMetrics> | undefined = lineMetrics?.runMetrics;
+            let runMetrics: Map<int, text.RunMetrics> | undefined = lineMetrics?.runMetrics;
             if (runMetrics != undefined) {
               runMetrics.forEach((value, key) => {
                 let textStyle: text.TextStyle = value.textStyle;

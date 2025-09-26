@@ -42,6 +42,9 @@ struct BindController {
               console.log('errorCodeText---'+(e as BusinessError).code)
               AppStorage.SetOrCreate('TextErrorStr100021',(e as BusinessError).code)
             }
+            const getAttributeText = typeNode.getAttribute(node, 'Text');
+            console.log('getAttributeText---'+getAttributeText)
+            AppStorage.SetOrCreate('getAttributeText',getAttributeText)
           }
         }).height('5%').id('TestErrorCodeText')
         Button('TextInput-TS2C').onClick(()=> {
@@ -54,6 +57,9 @@ struct BindController {
               console.log('errorCodeTextInput---'+(e as BusinessError).code)
               AppStorage.SetOrCreate('TextInputErrorStr100021',(e as BusinessError).code)
             }
+            const getAttributeTextInput = typeNode.getAttribute(node, 'TextInput');
+            console.log('getAttributeTextInput---'+getAttributeTextInput)
+            AppStorage.SetOrCreate('getAttributeTextInput',getAttributeTextInput)
           }
         }).height('5%').id('TestErrorCodeTextInput')
         Button('TextArea-TS2C').onClick(()=> {
@@ -66,6 +72,9 @@ struct BindController {
               console.log('errorCodeTextArea---'+(e as BusinessError).code)
               AppStorage.SetOrCreate('TextAreaErrorStr100021',(e as BusinessError).code)
             }
+            const getAttributeTextArea = typeNode.getAttribute(node, 'TextArea');
+            console.log('getAttributeTextArea---'+getAttributeTextArea)
+            AppStorage.SetOrCreate('getAttributeTextArea',getAttributeTextArea)
           }
         }).height('5%').id('TestErrorCodeTextArea')
     }

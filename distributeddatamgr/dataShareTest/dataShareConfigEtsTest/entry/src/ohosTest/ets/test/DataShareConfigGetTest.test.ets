@@ -90,6 +90,7 @@ export default function dataShareConfigGetTest() {
       ]
       try {
         await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
             expect(result.result).assertEqual(dataShare.DataProxyErrorCode.URI_NOT_EXIST);
@@ -122,6 +123,7 @@ export default function dataShareConfigGetTest() {
       ]
       try {
         await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
             expect(result.result).assertEqual(1);
@@ -154,6 +156,7 @@ export default function dataShareConfigGetTest() {
       ]
       try {
         await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
+          expect(results.length > 0).assertTrue();
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
             expect().assertFail();

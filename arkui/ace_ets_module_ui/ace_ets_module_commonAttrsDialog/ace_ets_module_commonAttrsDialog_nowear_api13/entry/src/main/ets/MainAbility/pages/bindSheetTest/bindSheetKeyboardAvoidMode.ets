@@ -19,7 +19,7 @@ struct bindSheetKeyboardAvoidMode {
   @State isShow1:boolean = false
   @State keyboardAvoidMode: SheetKeyboardAvoidMode = SheetKeyboardAvoidMode.NONE
   @Builder myBuilder(){
-    Flex({direction:FlexDirection.Column,wrap:FlexWrap.Wrap,justifyContent:FlexAlign.SpaceAround}) {
+    Flex({direction:FlexDirection.Column,wrap:FlexWrap.Wrap}) {
       Row(){
         Text(String(this.keyboardAvoidMode))
           .id('text')
@@ -28,28 +28,21 @@ struct bindSheetKeyboardAvoidMode {
           .onClick(()=>{
             this.isShow = false
           })
-          .margin(10)
           .fontSize(20)
       }
-
       Button('content1')
-        .margin(10)
         .fontSize(20)
-
       Button('content2')
-        .margin(10)
         .fontSize(20)
-
       TextInput({placeholder:'input your word'})
         .id('ipt')
     }
     .width('100%')
     .height('100%')
   }
-   @Builder myBuilder1(){
-    Flex({direction:FlexDirection.Column,wrap:FlexWrap.Wrap,justifyContent:FlexAlign.SpaceAround}) {
+  @Builder myBuilder1(){
+    Flex({direction:FlexDirection.Column,wrap:FlexWrap.Wrap}) {
       Button('content1')
-        .margin(10)
         .fontSize(20)
       Row(){
         Text(String(this.keyboardAvoidMode))
@@ -59,12 +52,9 @@ struct bindSheetKeyboardAvoidMode {
           .onClick(()=>{
             this.isShow = false
           })
-          .margin(10)
           .fontSize(20)
       }
-
       Button('content2')
-        .margin(10)
         .fontSize(20)
 
       TextInput({placeholder:'input your word'})
@@ -102,7 +92,7 @@ struct bindSheetKeyboardAvoidMode {
       Button('SheetKeyboardAvoidMode.RESIZE_ONLY')
         .onClick(() => {
           this.isShow = !this.isShow
-          this.keyboardAvoidMode = SheetKeyboardAvoidMode.RESIZE_ONLY 
+          this.keyboardAvoidMode = SheetKeyboardAvoidMode.RESIZE_ONLY
         })
         .id('resizeOnlyButton')
         .fontSize(20)
@@ -110,7 +100,7 @@ struct bindSheetKeyboardAvoidMode {
       Button('SheetKeyboardAvoidMode.TRANSLATE_AND_SCROLL')
         .onClick(() => {
           this.isShow1 = !this.isShow1
-          this.keyboardAvoidMode = SheetKeyboardAvoidMode.TRANSLATE_AND_SCROLL 
+          this.keyboardAvoidMode = SheetKeyboardAvoidMode.TRANSLATE_AND_SCROLL
 
         })
         .id('translateScrollButton')

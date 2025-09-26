@@ -91,7 +91,7 @@ struct WebOnFirstContentfulPaint {
         })
       }
 
-      Web({ src: 'https://openharmony.cn', controller: this.controller })
+      Web({ src: 'https://www.openharmony.cn', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .visibility(this.vis)
         .fileAccess(this.fileAccess)

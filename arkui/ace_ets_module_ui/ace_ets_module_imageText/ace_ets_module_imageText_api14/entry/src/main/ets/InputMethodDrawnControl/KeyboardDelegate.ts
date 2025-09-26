@@ -45,8 +45,10 @@ export class KeyboardDelegate {
         return;
       }
       this.softKeyboardPanel = panel;
-      this.softKeyboardPanel.setUiContent('testability/pages/Second', async (err, data) => {        
-        console.info(TAG + '====>Succeed in creating panel.' + JSON.stringify(panel));
+      this.softKeyboardPanel.setUiContent('testability/pages/Second').then(async (err) => {
+        console.info(TAG + '====>softKeyboardPanel setUiContent err:' + JSON.stringify(err));
+      }).catch((error)=>{
+        console.error(TAG + '====>Failed to softKeyboardPanel.setUiContent:', error);
       });
       try{
         let commonEventSubscribeInfo = {

@@ -34,31 +34,31 @@ struct RichEditorAttributeStrings008 {
 
   build() {
     Column() {
+      Row(){
+        Button('get spans').onClick(() => {
+          this.spans = this.controller.getStyledString().getString();
+        }).id('getSpans').width('20%')
 
-      Button('get spans').onClick(() => {
-        this.spans = this.controller.getStyledString().getString();
-      }).id('getSpans')
+        Button('get final Spans').onClick(() => {
+          this.finalSpans = this.controller.getStyledString().getString();
+        }).id('getFinalSpans').width('20%')
 
-      Button('get final Spans').onClick(() => {
-        this.finalSpans = this.controller.getStyledString().getString();
-      }).id('getFinalSpans')
+        Button('set end').onClick(() => {
+          this.controller.setCaretOffset(12);
+        }).id('setEnd').width('20%')
 
-      Button('set end').onClick(() => {
-        this.controller.setCaretOffset(12);
-      }).id('setEnd')
+        Button('set center').onClick(() => {
+          this.controller.setCaretOffset(2);
+        }).id('setCenter').width('20%')
 
-      Button('set center').onClick(() => {
-        this.controller.setCaretOffset(2);
-      }).id('setCenter')
-
-      Button('set start').onClick(() => {
-        this.controller.setCaretOffset(0);
-      }).id('setStart')
-
-
-      Text('Spans:' + this.spans).id('Spans')
-      Text('finalSpans:' + this.finalSpans).id('finalSpans')
-
+        Button('set start').onClick(() => {
+          this.controller.setCaretOffset(0);
+        }).id('setStart').width('20%')
+      }.height('5%')
+      Row(){
+        Text('Spans:' + this.spans).id('Spans').width('50%').clip(true)
+        Text('finalSpans:' + this.finalSpans).id('finalSpans').width('50%').clip(true)
+      }.height('5%')
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.mutableStyledString);

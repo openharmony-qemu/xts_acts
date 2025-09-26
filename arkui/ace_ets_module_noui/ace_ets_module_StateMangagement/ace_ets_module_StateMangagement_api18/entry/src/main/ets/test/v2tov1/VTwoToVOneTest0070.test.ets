@@ -16,7 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager,Callback } from '../../MainAbility/common/MessageManager';
 export default function VTwoToVOneTest0070() {
   describe('VTwoToVOneTest0070', () => {
     beforeEach(async (done: Function) => {

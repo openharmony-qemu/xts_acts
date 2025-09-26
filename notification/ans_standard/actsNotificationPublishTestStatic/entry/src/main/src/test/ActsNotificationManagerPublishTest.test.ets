@@ -14,7 +14,7 @@
 */
 import { BusinessError } from '@ohos.base';
 import notificationManager from '@ohos.notificationManager'
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, afterEach } from "../../../hypium/index"
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
@@ -35,8 +35,13 @@ export default function ActsNotificationManagerPublishTest() {
     hilog.info(DOMAIN_NUMBER, TAG, 'SUB_NOTIFICATION_ANS_MANAGER_Publish_TEST START')
     let testAbilityContext:common.UIAbilityContext;
 
+    afterEach(() =>{
+      await Utils.msSleep(500)
+    })
+
     /**
    * @tc.number   Sub_Notification_Ans_Publish_Cancel_Static_3200
+     *
    * @tc.name     Sub_Notification_Ans_Publish_Cancel_Static_3200
    * @tc.desc     Cancels a notification with the specified label and ID
    */

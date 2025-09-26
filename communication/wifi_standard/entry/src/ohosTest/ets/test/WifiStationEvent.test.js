@@ -16,8 +16,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
-import wifi from '@ohos.wifi'
-import wifiext from '@ohos.wifiext'
+import wifi from '@ohos.wifi';
+import wifiext from '@ohos.wifiext';
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -137,6 +137,7 @@ export default function actsWifiEventTest() {
             wifi.on(wifiScanState, wifiScanStateChangeCallback);
             try {
                 let scanResult = wifi.scan();
+                expect(scanResult).assertTrue();
             } catch (error) {
                 console.error(`scan failed, code is ${error.code}, message is ${error.message}`);
                 expect(true).assertEqual(error !=null);

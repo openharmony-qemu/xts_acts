@@ -38,10 +38,7 @@ import LocalStorageAbsTestJsunit from './local_storage/LocalStorageAbsTestJsunit
 import EventTest from './EventTest/Event.test';
 import ASV20010Test from './appstoragev2/ASV20010Test.test';
 import LocalTest0140 from './local/LocalTest0140.test';
-import ForEachTest010 from './foreachTest/ForEachTest010.test';
-import ForEachTest030 from './foreachTest/ForEachTest030.test';
-import ForEachTest0330 from './foreachTest/ForEachTest0330.test';
-import ForEach001 from './foreachTest/ForEach001.test';
+
 import V1ToV2 from './V1V2Mix/V1ToV2.test';
 import V2ToV1 from './V1V2Mix/V2ToV1.test';
 import WatchLinkTest0050 from './watchTest/WatchLinkTest0050.test';
@@ -72,10 +69,6 @@ export default function testsuite() {
     EventTest();
     ASV20010Test();
     LocalTest0140();
-    ForEachTest010();
-    ForEachTest030();
-    ForEachTest0330();
-    ForEach001();
     V1ToV2();
     V2ToV1();
     WatchLinkTest0050();

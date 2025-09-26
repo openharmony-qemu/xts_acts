@@ -73,7 +73,7 @@ struct ResourceFloat {
       .loop(true)
       .duration(1000)
       .itemSpace(0)
-      .height('90%')
+      .height('60%')
       .width('100%')
 
       Row({ space: 12 }) {
@@ -86,7 +86,7 @@ struct ResourceFloat {
           .onClick(() => {
             this.swiperController.showPrevious()
           })
-      }.margin(5)
+      }.margin(5).height('10%')
     }
     .height('100%')
     .width('100%')

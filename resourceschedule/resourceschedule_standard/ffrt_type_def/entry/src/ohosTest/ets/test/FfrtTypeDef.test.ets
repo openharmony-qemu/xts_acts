@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, it, expect, Level, TestType, Size} from '@ohos/hypium';
 import ffrt from 'libentry.so';
 export default function ffrtTypeDefTest() {
@@ -36,11 +35,33 @@ export default function ffrtTypeDefTest() {
         let ret : number = ffrt.ffrt_fiber_initTest();
         console.info(TAG + "Test ret Result ===> " + ret);
         expect(ret).assertEqual(EINVAL);
-
+        done();
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
+        done();
       }
-      done();
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_0020
+     * @tc.name   ActsFfrtTypeDefTest0020
+     * @tc.desc   Test ffrt_rwlockattr_t api
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ActsFfrtTypeDefTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "ActsFfrtTypeDefTest0020"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = ffrt.ffrt_rwlockattr_tTest();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        expect(ret).assertEqual(0);
+        done();
+      } catch (err)  {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
     })
   })
 }

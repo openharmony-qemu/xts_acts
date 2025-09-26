@@ -62,8 +62,8 @@ struct ScrollToIndexForWaterFlow02 {
   @Styles buttonStyles() {
     .borderRadius(8)
     .backgroundColor(0x317aff)
-    .width(200)
-    .height(80)
+    .width('30%')
+    .height('5%')
   }
   build() {
     Column(){
@@ -141,21 +141,20 @@ struct ScrollToIndexForWaterFlow02 {
           .rowsGap(5)
           .backgroundColor(0xFAEEE0)
           .width('100%')
-          .height('100%')
+          .height('90%')
 
         }
 
         //按钮位置
         Button("Grid-66-true", { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
             console.log('跳转到66，有动画')
             this.scrollerForWaterFlow.scrollToIndex(66, true)
-          }).margin({ top: 100, left: 10 })
+          })
+          .margin({ top: '10%', left: '20%' })
         Button('Item-99-true', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
@@ -168,15 +167,16 @@ struct ScrollToIndexForWaterFlow02 {
               this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
               console.info(this.isSmooth + 'isSmooth')
             },1000)
-          }).margin({ top: 200, left: 10 })
+          })
+          .margin({ top: '20%', left: '20%' })
         Button('Item-10-false', { type: ButtonType.Normal, stateEffect: true })
-          .fontSize(25)
           .buttonStyles()
           .onClick(() => {
             this.isSmooth = false
             console.log('跳转到10，有动画')
             this.itemScrollerForWaterFlow.scrollToIndex(10, false)
-          }).margin({ top: 300, left: 10 })
+          })
+          .margin({ top: '30%', left: '20%' })
       }
     }
   }

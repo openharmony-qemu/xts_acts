@@ -20,7 +20,7 @@ import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.ar
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import display from '@ohos.display';
-
+import { waitForExist } from '../../test/WaitTest.test';
 declare class Params {
   text : string
   text1 : string
@@ -129,7 +129,9 @@ struct webViewObjectPositionReport {
   @State newPosition: string = '';
   @State oldWindowOrientation: number = 0;
   @State edges: Edges = {};
-
+  @State isComplete: number = -1;
+  @State str: string = ''
+  @State isReceive: number = -1;
   aboutToAppear () {
     this.oldWindowOrientation = display.getDefaultDisplaySync().orientation;
     console.log('oldWindowOrientation===>' + this.oldWindowOrientation);
@@ -141,7 +143,7 @@ struct webViewObjectPositionReport {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153820,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -165,6 +167,7 @@ struct webViewObjectPositionReport {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -176,7 +179,9 @@ struct webViewObjectPositionReport {
           .key('webViewObjectPositionReportButton')
           .onClick(async () => {
             console.info("key==>" + this.emitKey)
-            await Utils.sleep(2000);
+            await waitForExist(() => this.isComplete, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebViewObjectPositionReport': {
                 try {
@@ -197,6 +202,10 @@ struct webViewObjectPositionReport {
           .backgroundColor(Color.Yellow)
           .position(this.edges)
           Web({ src: $rawfile('objectMove.html'), controller: this.controller })
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)
@@ -229,9 +238,9 @@ struct webViewObjectPositionReport {
                 this.newPosition = JSON.stringify(embed.info?.position);
                 this.edges = {left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px`}
                 if (this.oldPosition != this.newPosition) {
-                  Utils.emitEvent('success', 8018);
+                  Utils.emitEvent('success', 153830);
                 } else {
-                  Utils.emitEvent('error', 8018);
+                  Utils.emitEvent('error', 153830);
                 }
               } else {
                 console.log('NativeEmbed destroy' + JSON.stringify(embed.info));

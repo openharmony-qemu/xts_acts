@@ -58,48 +58,47 @@ struct RichEditorCustomSpan016 {
 
   build() {
     Column() {
-      Button('image Top').onClick(() => {
-        if (this.imagePixelMap !== undefined) {
-          let imageStyledString = new MutableStyledString(new ImageAttachment({
-            value: this.imagePixelMap,
-            size: { width: 20, height: 20 },
-            layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-            verticalAlign: ImageSpanAlignment.TOP,
-            objectFit: ImageFit.Contain
-          }))
+      Row(){
+        Button('image Top').onClick(() => {
+          if (this.imagePixelMap !== undefined) {
+            let imageStyledString = new MutableStyledString(new ImageAttachment({
+              value: this.imagePixelMap,
+              size: { width: 20, height: 20 },
+              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+              verticalAlign: ImageSpanAlignment.TOP,
+              objectFit: ImageFit.Contain
+            }))
+            this.richEditorStyledString = this.controller.getStyledString();
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
+        }).id('imageTop').width('25%')
+        Button('getStyles')
+          .onClick(() => {
+            this.richEditorStyledString = this.controller.getStyledString();
+            let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length);
+            this.info = JSON.stringify(styles);
+          })
+          .id('getStyles').width('25%')
+
+        Button('getOtherStyles')
+          .onClick(() => {
+            let richEditorStyled = this.controller1.getStyledString();
+            let styles = richEditorStyled.getStyles(0, richEditorStyled.length);
+            this.info = JSON.stringify(styles);
+          })
+          .id('getOtherStyles').width('25%')
+
+        Button('set select').onClick(() => {
           this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.richEditorStyledString.appendStyledString(this.style1);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
-      }).id('imageTop')
-      Button('getStyles')
-        .onClick(() => {
-          this.richEditorStyledString = this.controller.getStyledString();
-          let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length);
-          this.info = JSON.stringify(styles);
-        })
-        .id('getStyles')
-
-      Button('getOtherStyles')
-        .onClick(() => {
-          let richEditorStyled = this.controller1.getStyledString();
-          let styles = richEditorStyled.getStyles(0, richEditorStyled.length);
-          this.info = JSON.stringify(styles);
-        })
-        .id('getOtherStyles')
-
-      Button('set select').onClick(() => {
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.controller.setSelection(5, 6);
-        let select = this.controller.getSelection();
-        this.info = JSON.stringify(select);
-      }).id('setSelect')
-
-
-      Text('info:' + this.info).id('info')
-
+          this.controller.setSelection(5, 6);
+          let select = this.controller.getSelection();
+          this.info = JSON.stringify(select);
+        }).id('setSelect').width('25%')
+      }.height('5%')
+      Text('info:' + this.info).id('info').height('5%').clip(true)
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.mutableStyledString);

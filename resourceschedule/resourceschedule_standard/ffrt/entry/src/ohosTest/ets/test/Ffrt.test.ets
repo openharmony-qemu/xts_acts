@@ -1475,5 +1475,131 @@ export default function ffrtTest() {
       let flag = entry.queueApiTest016();
       expect(flag).assertEqual(0);
     })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10400
+     * @tc.name   ffrt_reserveTest001
+     * @tc.desc   Test ffrt ffrt_function_header_t reserve
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_reserveTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_reserveTest();
+      expect(flag).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10500
+     * @tc.name   ffrt_task_attr_tTest001
+     * @tc.desc   Test ffrt ffrt_task_attr_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_task_attr_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_task_attr_tTest();
+      expect(flag).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10600
+     * @tc.name   ffrt_queue_attr_tTest001
+     * @tc.desc   Test ffrt ffrt_queue_attr_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_queue_attr_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_queue_attr_tTest();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10700
+     * @tc.name   ffrt_condattr_tTest001
+     * @tc.desc   Test ffrt ffrt_condattr_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_condattr_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_condattr_tTest();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10800
+     * @tc.name   ffrt_mutexattr_tTest001
+     * @tc.desc   Test ffrt ffrt_mutexattr_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_mutexattr_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_mutexattr_tTest();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10900
+     * @tc.name   ffrt_rwlockattr_tTest001
+     * @tc.desc   Test ffrt ffrt_rwlockattr_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_rwlockattr_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_rwlockattr_tTest();
+      expect(flag).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_11000
+     * @tc.name   ffrt_mutex_typeTest1001
+     * @tc.desc   Test ffrt ffrt_mutex_type ffrt_mutex_normal
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_mutex_typeTest1001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_mutex_typeTest1();
+      expect(flag).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_11100
+     * @tc.name   ffrt_mutex_typeTest002
+     * @tc.desc   Test ffrt ffrt_mutex_type ffrt_mutex_default
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_mutex_typeTest002', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_mutex_typeTest2();
+      expect(flag).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_KERNEL_DISPATCH_entry_11200
+     * @tc.name   ffrt_fiber_tTest001
+     * @tc.desc   Test ffrt ffrt_fiber_t storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('ffrt_fiber_tTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag :number = entry.ffrt_fiber_tTest();
+      expect(flag).assertEqual(1);
+    })
   })
 }

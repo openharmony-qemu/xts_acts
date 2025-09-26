@@ -48,7 +48,7 @@ struct Index {
 
 
   private heightArray: Array<Length | undefined> = new Array<Length | undefined>(
-    "50%",
+    "10%",
     "80%",
     "100%",
     "1000%"
@@ -102,11 +102,11 @@ struct Index {
             } else {
               this.placementIndex = this.placementIndex + 1;
             }
-          })
-          .margin({top: '2%'})
+          }).height('3%')
+          .margin({top: '5%'})
 
         Button("002、width=" + this.widthArray[this.widthIndex] + ", index=" + this.widthIndex)
-          .id("width")
+          .id("width").height('3%')
           .onClick((event: ClickEvent) => {
             if (this.widthIndex >= this.widthArray.length - 1) {
               this.widthIndex = 0;
@@ -116,7 +116,7 @@ struct Index {
           })
 
         Button("003、height=" + this.heightArray[this.heightIndex] + ", index=" + this.heightIndex)
-          .id("height")
+          .id("height").height('3%')
           .onClick((event: ClickEvent) => {
             if (this.heightIndex >= this.heightArray.length - 1) {
               this.heightIndex = 0;
@@ -127,7 +127,7 @@ struct Index {
 
         Button("004、previewScaleMode=" + this.previewScaleModeArray[this.previewScaleModeIndex] + ", index=" +
         this.previewScaleModeIndex)
-          .id("previewScaleMode")
+          .id("previewScaleMode").height('3%')
           .onClick((event: ClickEvent) => {
             if (this.previewScaleModeIndex >= this.previewScaleModeArray.length - 1) {
               this.previewScaleModeIndex = 0;
@@ -136,7 +136,7 @@ struct Index {
             }
           })
         Button("005、availableLayoutArea=" + this.AvailableLayoutAreaArray[this.AvailableLayoutAreaIndex] + ", index=" +
-        this.AvailableLayoutAreaIndex)
+        this.AvailableLayoutAreaIndex).height('3%')
           .onClick((event: ClickEvent) => {
             if (this.AvailableLayoutAreaIndex >= this.AvailableLayoutAreaArray.length - 1) {
               this.AvailableLayoutAreaIndex = 0;
@@ -146,7 +146,7 @@ struct Index {
           })
 
         Button("888、builder")
-          .id("scale")
+          .id("scale").height('3%')
           .bindContextMenu(this.MyMenu1(), ResponseType.LongPress, {
             placement: this.placementArray[this.placementIndex],
             preview: this.MyPreview(),

@@ -18,6 +18,7 @@ group("distributeddatamgr") {
     deps = [
       "DataObjectNoPermissionstest:DataObjectNoPermissionstest",
       "IntelligenceApiTest:ActsIntelligenceTest",
+      "KvStoreEtsTestStatic:ActsKvStoreEtsStaticTest",
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
@@ -36,6 +37,7 @@ group("distributeddatamgr") {
       "distributedKVStoretest:distributedKVStoretest",
       "kvStoretest:kvStoretest",
       "pasteboard_errorcode:ActsPasteboardErrorTest",
+      "preferenceEts_static:ActsPreferenceStaticTest",
       "preferencesEtstest:ActsPreferencesEtsTest",
       "preferencesNdktestHvigor:ActsPreferencesNdkTest",
       "preferencesSendabletest:preferencesSendable_ets_test",

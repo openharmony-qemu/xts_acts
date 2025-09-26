@@ -18,7 +18,7 @@ import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import uiTest from '@ohos.UiTest'
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
-
+import { waitForExist } from '../../test/WaitTest.test';
 declare class Params {
   public text : string
   public text1 : string
@@ -130,21 +130,26 @@ struct webViewObjectEmbed {
   @State number: number = 0
   @State isEmbed: boolean = false;
   @State edges: Edges = {};
-
-
+  @State isReceive: number = -1;
+  @State isComplete: number = -1;
+  @State isChangePage: number = -1;
+  @State isChangePage1: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153970,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153970)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -155,14 +160,15 @@ struct webViewObjectEmbed {
         Button('web click')
           .key('webViewObjectEmbedButton')
           .onClick(async () => {
-            console.info('key==>' + this.emitKey)
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            this.isReceive = -1;
             this.controller.refresh();
-            await Utils.sleep(2000);
             switch (this.emitKey) {
               case 'emitWebViewObjectEmbed01': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object1.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -171,8 +177,9 @@ struct webViewObjectEmbed {
               }
               case 'emitWebViewObjectEmbed04': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -181,17 +188,18 @@ struct webViewObjectEmbed {
               }
               case 'emitWebViewObjectEmbedGesture01': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   let prevNum = this.number
                   let driver: uiTest.Driver = uiTest.Driver.create()
+                  this.isChangePage =-1;
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
-                  console.log(component.toString())
                   component.longClick()
-                  await Utils.sleep(3000)
+                  await waitForExist(() => this.isChangePage, this.emitKey, 0);
                   let isEventDown = ( this.eventTypes.indexOf('Down') > -1 )
                   if(this.isChange && isEventDown) {
-                    Utils.emitEvent('success', 8000);
+                    Utils.emitEvent('success', 154000);
                   }
 
                 } catch (error) {
@@ -203,20 +211,21 @@ struct webViewObjectEmbed {
 
               case 'emitWebViewObjectEmbedGesture02': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   let prevNum = this.number
                   let driver: uiTest.Driver = uiTest.Driver.create()
+                  this.isChangePage = -1;
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
                   console.log(component.toString())
                   component.click()
-                  await Utils.sleep(3000)
+                  await waitForExist(() => this.isChangePage, this.emitKey, 0);
                   let isEventUp = ( this.eventTypes.indexOf('Up') > -1 )
                   let isEventDown = ( this.eventTypes.indexOf('Down') > -1 )
                   let isAdd = ( this.number - prevNum) >= 2
-
                   if(this.isChange && isEventUp && isEventDown && isAdd) {
-                    Utils.emitEvent('success', 8001);
+                    Utils.emitEvent('success', 154010);
                   }
 
                 } catch (error) {
@@ -225,34 +234,32 @@ struct webViewObjectEmbed {
                 }
                 break;
               }
-
               case 'emitWebViewObjectEmbedGesture03': {
                 try {
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   let prevNum = this.number
                   let driver: uiTest.Driver = uiTest.Driver.create()
+                  this.isChangePage = -1;
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
+                  await waitForExist(() => this.isChangePage, this.emitKey, 0);
                   console.log(component.toString())
                   component.click()
-                  await Utils.sleep(3000)
                   let isEventUp = ( this.eventTypes.indexOf('Up') > -1 )
                   let isEventDown = ( this.eventTypes.indexOf('Down') > -1 )
                   let isAdd = ( this.number - prevNum) >= 2
                   let rect = await component.getBounds()
                   driver.swipe(rect.left, rect.top, rect.right, rect.bottom)
-                  await Utils.sleep(2000);
                   let isEventMove = ( this.eventTypes.indexOf('Move') > -1 )
                   let isAddMove = ( this.number - prevNum) >= 2
 
                   if(this.isChange && isAddMove && isEventMove) {
-                    Utils.emitEvent('success', 8002);
+                    Utils.emitEvent('success', 154020);
                   }
-
                   if(this.isChange && isEventUp && isEventDown && isAdd) {
-                    Utils.emitEvent('success', 8002);
+                    Utils.emitEvent('success', 154020);
                   }
-
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -269,6 +276,10 @@ struct webViewObjectEmbed {
           .backgroundColor(Color.Yellow)
           .position(this.edges)
         Web({ src: '', controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('pageEnd==>' + event.url);
+            this.isComplete = 0;
+          })
           .javaScriptAccess(this.javaScriptAccess)
           .fileAccess(this.fileAccess)
           .imageAccess(this.imageAccess)
@@ -281,17 +292,20 @@ struct webViewObjectEmbed {
             console.log('NativeEmbed surfaceId' + embed.surfaceId);
             console.log('NativeEmbed embed.info.tag' + embed.info?.tag);
             if (embed.status == NativeEmbedStatus.CREATE) {
+              Utils.emitEvent('success', 154020);
               this.isChange = true;
               console.log('NativeEmbed create' + JSON.stringify(embed.info));
               if (this.emitKey == 'emitWebViewObjectEmbed01') {
                 if (embed.info) {
-                  Utils.emitEvent('success', 8014);
+                  console.log(JSON.stringify(embed.info));
+                  Utils.emitEvent('success', 153980);
                 }
               }
+
               if (this.emitKey == 'emitWebViewObjectEmbed04') {
                 if (embed.info) {
                   if (Object.keys(JSON.parse(JSON.stringify(embed.info?.params))).length>0) {
-                    Utils.emitEvent('success', 8017);
+                    Utils.emitEvent('success', 153990);
                   }
                 }
               }
@@ -320,6 +334,7 @@ struct webViewObjectEmbed {
             }
           })
           .onNativeEmbedGestureEvent((event) => {
+            this.isChangePage = 1;
             if(this.nodeController?.getEmbedId() == event.embedId) {
               let ret = this.nodeController?.postEvent(event.touchEvent)
               if(ret) {
@@ -334,20 +349,20 @@ struct webViewObjectEmbed {
             }
             this.number += 1
             if (event && event.touchEvent) {
-              if (event.touchEvent.type == TouchType.Down) {
+               if (event.touchEvent.type == TouchType.Down) {
                 this.eventType = 'Down'
-                Utils.emitEvent('success', 8000);
+                Utils.emitEvent('success', 154000);
               }
               if (event.touchEvent.type == TouchType.Up) {
                 this.eventType = 'Up'
                 if( this.number >= 2) {
-                  Utils.emitEvent('success', 8001);
+                  Utils.emitEvent('success', 154010);
                 }
               }
               if (event.touchEvent.type == TouchType.Move) {
                 this.eventType = 'Move'
                 if( this.number >= 20) {
-                  Utils.emitEvent('success', 8002);
+                  Utils.emitEvent('success', 154020);
                 }
               }
               if (event.touchEvent.type == TouchType.Cancel) {

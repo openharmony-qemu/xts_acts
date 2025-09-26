@@ -74,5 +74,22 @@ export default function TextGetParagraphsTest() {
       console.info('[TextGetParagraphsTest_0020] END');
       done();
     });
+
+    /**
+     * @tc.number    SUB_ACE_TextGetParagraphsTest_0030
+     * @tc.name      TextGetParagraphsTest_0030
+     * @tc.desc      test getUIContext().getMeasureUtils().getParagraphs(): Length
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('TextGetParagraphsTest_0030', Level.LEVEL3, async (done: Function) => {
+      console.info('[TextGetParagraphsTest_0030] START');
+      console.info('[TextGetParagraphsTest_0030] value: ' + AppStorage.get('paragraphArrLength'));
+      expect((AppStorage.get('paragraphArrLength') as number) >0).assertTrue();
+      AppStorage.delete('paragraphArrLength');
+      console.info('[TextGetParagraphsTest_0030] END');
+      done();
+    });
   })
 }

@@ -14,7 +14,21 @@
  */
 
 import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test.ets';
+import ImageCreateImageSourceBufTest from './image/ImageCreateImageSourceBuf.test';
+import ImageCreateImageSourcePathTest from './image/ImageCreateImageSourcePath.test';
+import ImageCreateIncrementalSourceTest from './image/ImageCreateIncrementalSource.test';
+import ImageCreatePixelMapTest from './image/ImageCreatePixelMap.test';
+import ImageCreatePixelMapSyncTest from './image/ImageCreatePixelMapSync.test';
+import ImagePropertyKeyTest2 from './image/ImagePropertyKeyEnum2.test';
+import ImagePropertyKeyTest3 from './image/ImagePropertyKeyEnum3.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
+  ImageCreateImageSourceBufTest();
+  ImageCreateIncrementalSourceTest();
+  ImageCreateImageSourcePathTest();
+  ImageCreatePixelMapTest();
+  ImageCreatePixelMapSyncTest();
+  ImagePropertyKeyTest2();
+  ImagePropertyKeyTest3();
 }

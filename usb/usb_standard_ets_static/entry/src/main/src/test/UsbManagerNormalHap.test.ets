@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import usbMgr from '@ohos.usbManager';
 import { BusinessError } from '@ohos.base';
 
-const domain: number = 0x0000;
+const domain: int = 0x0000;
 const tag: string = 'testTag';
 const CAPACITY_NOT_SUPPORT_CODE: number = 801;
 const USB_REQUEST_DIR_TO_DEVICE_STR: string = '0';
@@ -40,6 +40,7 @@ export default function UsbManagerNormalHapTest() {
       hilog.info(domain, tag, '%{public}s', '----------------------getDevicesTest001---------------------------');
       try {
         const devices: usbMgr.USBDevice[] = usbMgr.getDevices();
+        hilog.info(domain, tag, JSON.stringify(devices));
         for (let i = 0; i < devices.length; i++) {
           const device: usbMgr.USBDevice = devices[i];
           hilog.info(domain, tag, "Device Information:");

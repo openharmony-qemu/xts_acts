@@ -6,6 +6,9 @@ import PhotoAccessHelperLoadMovingPhoto from './photoAccess/PhotoAccessHelperLoa
 import PhotoCreateAssetSuppTest from './photoAccess/PhotoCreateAssetSupp.test.ets';
 import GetObjectByPositionTest from './photoAccess/GetObjectByPositionSupp.test.ets';
 import AddResourceChangeRequestSuppTest from './photoAccess/AddResourceSupp.test.ets';
+import GetAlbumsSuppTest from './photoAccess/GetAlbumsSuppTest.test.ets';
+import AddResourceChangeRequestUrlSuppTest from './photoAccess/AddResourceUrl.test.ets';
+import ShowAssetsCreationDialogSuppTest from './photoAccess/ShowAssetsCreationDialogSupp.test.ets';
 import ApplyChangesSuppTest from './photoAccess/ApplyChangesSupp.test.ets';
 
 export default function testsuite() {
@@ -17,5 +20,8 @@ export default function testsuite() {
   PhotoCreateAssetSuppTest();
   GetObjectByPositionTest();
   AddResourceChangeRequestSuppTest();
+  AddResourceChangeRequestUrlSuppTest();
   ApplyChangesSuppTest();
+  GetAlbumsSuppTest();
+  ShowAssetsCreationDialogSuppTest();
 }

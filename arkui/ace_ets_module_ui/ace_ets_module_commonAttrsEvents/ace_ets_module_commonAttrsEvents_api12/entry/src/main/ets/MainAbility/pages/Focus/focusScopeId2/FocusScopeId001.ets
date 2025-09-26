@@ -16,47 +16,50 @@ import { ColorMetrics, LengthMetrics } from '@ohos.arkui.node'
 @Entry
 @Component
 struct FocusScopeId001 {
-  @State text1:string = 'text1'
+  @State text1: string = 'text1'
   @State modeValue: NavigationMode = NavigationMode.Stack
   @State pageInfos: NavPathStack = new NavPathStack()
   @State flag: boolean = true
   @State visibilityValue: Visibility = Visibility.Visible
-  @State focusId: (string | undefined |null) []= ['FocusScopeId001_focusGroup1', undefined, null, 'FocusScopeId001_focusGroup2']
+  @State focusId: (string | undefined | null) [] =
+    ['FocusScopeId001_focusGroup1', undefined, null, 'FocusScopeId001_focusGroup2']
   @State focusIdIndex: number = 0
   @State isGroupValue: boolean = true
 
-  @Builder PageMap(name:string){
-    if (name === 'pageOne'){
+  @Builder
+  PageMap(name: string) {
+    if (name === 'pageOne') {
       this.pageOne()
     }
   }
 
-  @Builder pageOne(){
-    NavDestination(){
-      Column({space:5}){
+  @Builder
+  pageOne() {
+    NavDestination() {
+      Column({ space: 5 }) {
         Text('焦点组内组件设置focuxBox')
-        Column({space:5}){
+        Column({ space: 5 }) {
           Button('btn1')
             .focusOnTouch(true)
             .focusBox({
-              margin:new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255,0,0)
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
             })
 
           Button('btn2')
             .focusOnTouch(true)
             .focusBox({
-              margin:new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255,0,0)
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
             })
-        }.focusScopeId('FocusScopeId001_focusGroup7',true)
+        }.focusScopeId('FocusScopeId001_focusGroup7', true)
         .borderWidth(1)
 
         Button('btn3')
           .focusOnTouch(true)
           .focusBox({
-            margin:new LengthMetrics(0),
-            strokeColor: ColorMetrics.rgba(255,0,0)
+            margin: new LengthMetrics(0),
+            strokeColor: ColorMetrics.rgba(255, 0, 0)
           })
 
       }
@@ -65,13 +68,12 @@ struct FocusScopeId001 {
 
   build() {
     Column() {
-      Navigation(this.pageInfos){
-        Scroll(){
-          Column({space:5}){
-
+      Navigation(this.pageInfos) {
+        Row({ space: 5 }) {
+          Column() {
             Text('焦点组1，可删除')
-            if(this.flag) {
-              Column({space:5}){
+            if (this.flag) {
+              Column({ space: 5 }) {
                 Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_1')
                 Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_1')
                 Button('btn3').focusOnTouch(true).id('FocusScopeId001_btn3_1')
@@ -81,40 +83,41 @@ struct FocusScopeId001 {
 
             Button('del').focusOnTouch(true)
               .id('FocusScopeId001_btn_del')
-              .onClick(()=>{
+              .onClick(() => {
                 this.flag = !this.flag
               })
+          }
 
-
+          Column() {
             Text('焦点组2')
-            Column({space:5}){
+            Column({ space: 5 }) {
               Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_2')
               Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_2')
               Button('btn3').focusOnTouch(true)
             }
-            .focusScopeId('FocusScopeId001_focusGroup2',true)
+            .focusScopeId('FocusScopeId001_focusGroup2', true)
             .borderWidth(1)
 
             Button('button').focusOnTouch(true).id('FocusScopeId001_btn_btn')
+          }
 
-            Column({space:2}){
-              Button('clearFocus')
-                .id('FocusScopeId001_clearFocus')
-                .onClick(()=>{
-                  this.getUIContext().getFocusController().clearFocus()
-                })
+          Column({ space: 2 }) {
+            Button('clearFocus')
+              .id('FocusScopeId001_clearFocus')
+              .onClick(() => {
+                this.getUIContext().getFocusController().clearFocus()
+              })
 
-              Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
-                .id('FocusScopeId001_changIsGroup')
-                .focusOnTouch(true)
-                .onClick(()=>{
-                  this.isGroupValue = !this.isGroupValue
-                })
+            Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
+              .id('FocusScopeId001_changIsGroup')
+              .focusOnTouch(true)
+              .onClick(() => {
+                this.isGroupValue = !this.isGroupValue
+              })
 
-            }
           }
         }
-        .id('FocusScopeId001_scroll')
+
       }
       .id('FocusScopeId001_nav')
       .mode(this.modeValue)
@@ -122,7 +125,7 @@ struct FocusScopeId001 {
       .navDestination(this.PageMap)
       .height('100%')
 
-    }.width('100%')
+    }.width('100%').height('90%').align(Alignment.Top)
     .id('FocusScopeId001_col')
   }
 }

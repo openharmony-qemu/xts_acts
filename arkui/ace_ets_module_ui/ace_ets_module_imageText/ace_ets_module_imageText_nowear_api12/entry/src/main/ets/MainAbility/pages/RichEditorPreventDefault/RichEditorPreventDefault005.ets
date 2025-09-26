@@ -21,6 +21,7 @@ struct RichEditorPreventDefault005 {
   build() {
 
     Column() {
+      Text('callOnClick:' + this.callOnClick).fontColor(Color.Black).id('callOnClick').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -107,10 +108,6 @@ struct RichEditorPreventDefault005 {
             })
         })
         .id('RichEditorPreventDefault005')
-
-      Column(){
-        Text('callOnClick:' + this.callOnClick).fontSize(20).fontColor(Color.Black).id('callOnClick')
-      }.margin({bottom: 10})
     }
   }
 }

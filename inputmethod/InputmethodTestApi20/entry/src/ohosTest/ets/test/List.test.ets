@@ -14,8 +14,9 @@
  */
  
 import ActsInputmethodTest from './ActsInputmethodTest.test'
+import ActsInputmethodTwoTest from './ActsInputmethodTwoTest.test'
 
 export default function testsuite() {
   ActsInputmethodTest()
-
+  ActsInputmethodTwoTest()
 }

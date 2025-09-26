@@ -50,7 +50,10 @@
                 "./resource/image/test_DMA_2999_3742.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
                 "./resource/image/test_DMA_1801_4041.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
                 "./resource/image/test_DMA_3071_4095.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
-                "./resource/image/test_DMA_3072_4096.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files"
+                "./resource/image/test_DMA_3072_4096.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/big-30118x30118.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/big-30000x30000.heic->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/30009x30009_without_alpha.png ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files"
             ]
         },
         {

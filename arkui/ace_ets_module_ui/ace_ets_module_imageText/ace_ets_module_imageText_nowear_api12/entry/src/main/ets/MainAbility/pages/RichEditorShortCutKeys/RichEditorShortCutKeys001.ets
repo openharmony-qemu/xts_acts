@@ -22,7 +22,16 @@ struct RichEditorShortCutKeys001 {
   build() {
 
     Column() {
-      Text('finalText:' + this.finalText).id('finalText')
+      Text('finalText:' + this.finalText).id('finalText').height('5%').clip(true)
+      Button('select')
+        .id('select')
+        .backgroundColor(Color.Transparent)
+        .onClick(() => {
+          let options: SelectionOptions = {
+            menuPolicy: MenuPolicy.SHOW
+          };
+          this.controller1.setSelection(1, 3, options);
+        }).height('5%')
 
       RichEditor({ controller: this.controller1 })
         .height(100)
@@ -40,17 +49,6 @@ struct RichEditorShortCutKeys001 {
             })
         })
         .id('RichEditor')
-
-      Button('select')
-        .id('select')
-        .margin(15)
-        .backgroundColor(Color.Transparent)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller1.setSelection(1, 3, options);
-        })
 
       RichEditor({ controller: this.controller })
         .height(100)

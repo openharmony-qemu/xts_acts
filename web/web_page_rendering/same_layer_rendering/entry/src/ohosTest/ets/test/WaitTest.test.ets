@@ -14,6 +14,8 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -54,7 +56,6 @@ export async function waitForAssert<T,U>(
   let nums = 0;
   let isSuccess = false;
   while(nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     });
@@ -68,6 +69,7 @@ export async function waitForAssert<T,U>(
       return currentValue;
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed');
@@ -90,7 +92,6 @@ export async function waitForExist<T> (
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     })
@@ -111,6 +112,7 @@ export async function waitForExist<T> (
       }
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed')
@@ -120,4 +122,37 @@ export async function waitForExist<T> (
   });
   console.log(testsuite + ' debug wait for failed exist ' + currentValue);
   return currentValue;
+}
+
+export async function waitForComponent(componentName:string, interval=10000) {
+  let driver: Driver = Driver.create();
+  let component = await driver.waitForComponent(ON.id(componentName), interval);
+  console.info('waitForComponent', componentName, '==>');
+  return component;
+}
+
+export async function waitAndClickComponent(componentId: string, driver: Driver) {
+
+  let retryTimes: number = 0;
+  let retry: boolean = true;
+  while (retry && retryTimes <= 3) {
+    retry = false;
+    try {
+      const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+      if (!buttonComponent) {
+        console.error(`error: buttonConmponent is null.`);
+        return;
+      }
+      await buttonComponent.click();
+    } catch (e) {
+      const error = e as BusinessError;
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+      if (error.code === 17000002) {
+        retry = true;
+        await sleep(500);
+        retryTimes++;
+        console.log('retryTimes = ' + retryTimes);
+      }
+    }
+  }
 }

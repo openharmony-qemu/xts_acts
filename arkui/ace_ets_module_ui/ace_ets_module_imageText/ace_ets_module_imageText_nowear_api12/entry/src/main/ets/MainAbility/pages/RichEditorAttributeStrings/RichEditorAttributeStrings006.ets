@@ -44,39 +44,38 @@ struct RichEditorAttributeStrings006 {
 
   build() {
     Column() {
+      Row(){
+        Button('toStyledString 0,2').onClick(() => {
+          let str = this.controller.toStyledString({start: 0,
+            end: 2});
+          this.spans = str.getString();
+        }).id('toStyledString').width('20%')
 
-      Button('toStyledString 0,2').onClick(() => {
-        let str = this.controller.toStyledString({start: 0,
-          end: 2});
-        this.spans = str.getString();
-      }).id('toStyledString')
+        Button('toStyledString 100,200').onClick(() => {
+          let str = this.controller.toStyledString({start: 100,
+            end: 200});
+          this.spans = str.getString();
+        }).id('toStyledString100').width('20%')
 
-      Button('toStyledString 100,200').onClick(() => {
-        let str = this.controller.toStyledString({start: 100,
-          end: 200});
-        this.spans = str.getString();
-      }).id('toStyledString100')
+        Button('toStyledString -1,-1').onClick(() => {
+          let str = this.controller.toStyledString({start: -1,
+            end: -1});
+          this.spans = str.getString();
+        }).id('toStyledString1').width('20%')
 
-      Button('toStyledString -1,-1').onClick(() => {
-        let str = this.controller.toStyledString({start: -1,
-          end: -1});
-        this.spans = str.getString();
-      }).id('toStyledString1')
+        Button('toStyledString -1,0').onClick(() => {
+          let str = this.controller.toStyledString({start: -1,
+            end: 0});
+          this.spans = str.getString();
+        }).id('toStyledString2').width('20%')
 
-      Button('toStyledString -1,0').onClick(() => {
-        let str = this.controller.toStyledString({start: -1,
-          end: 0});
-        this.spans = str.getString();
-      }).id('toStyledString2')
-
-      Button('toStyledString -100,100').onClick(() => {
-        let str = this.controller.toStyledString({start: -100,
-          end: 100});
-        this.spans = str.getString();
-      }).id('toStyledString3')
-
-      Text('spans:' + this.spans).id('spans')
-
+        Button('toStyledString -100,100').onClick(() => {
+          let str = this.controller.toStyledString({start: -100,
+            end: 100});
+          this.spans = str.getString();
+        }).id('toStyledString3').width('20%')
+      }.height('5%')
+      Text('spans:' + this.spans).id('spans').height('5%').clip(true)
       RichEditor(this.options)
         .onReady(() => {
           this.controller.addTextSpan('0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789',

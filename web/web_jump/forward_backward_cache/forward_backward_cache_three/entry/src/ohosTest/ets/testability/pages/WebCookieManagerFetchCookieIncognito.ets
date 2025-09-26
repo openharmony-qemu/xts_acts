@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,8 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base'
-import { waitForAssert } from '../../test/WaitTest'
-
+import { waitForExist, waitForAssert } from '../../test/WaitTest'
 import { URL } from '../../test/Config'
 
 
@@ -28,18 +27,19 @@ struct WebCookieManagerFetchCookieIncognito {
   controller: webView.WebviewController = new webView.WebviewController();
   @State console: string = ''
   @State str: string = ''
-
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      eventId: 136700,
+      priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(136700)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +48,7 @@ struct WebCookieManagerFetchCookieIncognito {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,6 +58,10 @@ struct WebCookieManagerFetchCookieIncognito {
       Row() {
         Button('WebCookieManagerFetchCookie click').key('WebCookieManagerFetchCookieTestButton')
           .onClick(async () => {
+            await waitForExist(() => this.isComplete, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+
             console.info('key==>' + this.str)
             switch (this.str) {
               case 'testFetchCookieIncognito001': {
@@ -79,10 +84,9 @@ struct WebCookieManagerFetchCookieIncognito {
                 }
 
                 let check = (v1: string, v2: string): boolean => {
-                  return v1 === v2 ? true:false;
+                  return v1 === v2 ? true : false;
                 }
-                await waitForAssert(() =>resultValue, check, 'a=b', 2025032101, this.str);
-
+                await waitForAssert(() => resultValue, check, 'a=b', 136710, this.str);
                 break;
               }
 
@@ -106,10 +110,9 @@ struct WebCookieManagerFetchCookieIncognito {
                 }
 
                 let check = (v1: string, v2: string): boolean => {
-                  return v1 === v2 ? true:false;
+                  return v1 === v2 ? true : false;
                 }
-                await waitForAssert(() =>resultValue, check, 'aa=cc', 2025032102, this.str);
-
+                await waitForAssert(() => resultValue, check, 'aa=cc', 136720, this.str);
                 break;
               }
 
@@ -132,16 +135,14 @@ struct WebCookieManagerFetchCookieIncognito {
                 }
 
                 let check = (v1: number, v2: number): boolean => {
-                  return v1 === v2 ? true:false;
+                  return v1 === v2 ? true : false;
                 }
-                await waitForAssert(() =>resultValue, check, 17100002, 2025032103, this.str);
-
+                await waitForAssert(() => resultValue, check, 17100002, 136730, this.str);
                 break;
               }
-
             }
-          }
-        )
+          },
+          )
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
@@ -151,7 +152,10 @@ struct WebCookieManagerFetchCookieIncognito {
           }
           return false
         })
-
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
     }
   }
 }

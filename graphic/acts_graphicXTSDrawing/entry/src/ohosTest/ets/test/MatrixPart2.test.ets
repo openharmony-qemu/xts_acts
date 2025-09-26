@@ -748,7 +748,11 @@ export default function drawingTsMatrixPart2Test() {
       try {
         let src: Array<common2D.Point> = [{x:10,y:10},{x:20.1,y:20.1},{x:30,y:30}];
         let dst: Array<common2D.Point> =matrix.mapPoints(src);
-        matrix.mapPoints(src);
+        console.info(msg + ' mapPoints successed dst.length is: ' + dst.length);
+        expect(dst.length == 3).assertEqual(true);
+        let dst2: Array<common2D.Point> = matrix.mapPoints(src);
+        console.info(msg + ' mapPoints successed dst2.length is: ' + dst2.length);
+        expect(dst2.length == 3).assertEqual(true);
         console.info(msg + ' mapPoints successed');
       } catch (e) {
         console.info(msg + ` mapPoints1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -764,7 +768,9 @@ export default function drawingTsMatrixPart2Test() {
       }
 
       try {
-        let dst = matrix.mapPoints( [{x:-10,y:-10},{x:20.1,y:20.1},{x:30,y:30.1}]);
+        let dst3 = matrix.mapPoints( [{x:-10,y:-10},{x:20.1,y:20.1},{x:30,y:30.1}]);
+        console.info(msg + ' mapPoints successed dst3.length is: ' + dst3.length);
+        expect(dst3.length == 3).assertEqual(true);
         console.info(msg + ' mapPoints successed');
       } catch (e) {
         console.info(msg + ` mapPoints3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -772,7 +778,9 @@ export default function drawingTsMatrixPart2Test() {
       }
 
       try {
-        matrix.mapPoints([{x:10,y:10}]);
+        let dst4: Array<common2D.Point> = matrix.mapPoints([{x:10,y:10}]);
+        console.info(msg + ' mapPoints successed dst4.length is: ' + dst4.length);
+        expect(dst4.length == 1).assertEqual(true);
         console.info(msg + ' mapPoints successed');
       } catch (e) {
         console.info(msg + ` mapPoints4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -847,16 +855,30 @@ export default function drawingTsMatrixPart2Test() {
         let matrix = new drawing.Matrix();
         let dst: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
         let src: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
-        matrix.mapRect(dst, src);
-        matrix.mapRect(dst,  { left: 0, top: 0, right: 0, bottom: 0})
-        matrix.mapRect(dst,  { left: 100, top: 100, right: 100, bottom: 200})
-        matrix.mapRect(dst,  { left: 100, top: 100, right: 100, bottom: 100})
-        matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        let result: boolean = matrix.mapRect(dst, src);
+        console.info(msg + " mapRect -----result:  "+ result);
+        expect(result).assertEqual(true);
+        let result2: boolean = matrix.mapRect(dst,  { left: 0, top: 0, right: 0, bottom: 0})
+        console.info(msg + " mapRect -----result2:  "+ result2);
+        expect(result2).assertEqual(true);
+        let result3: boolean =  matrix.mapRect(dst,  { left: 100, top: 100, right: 100, bottom: 200})
+        console.info(msg + " mapRect -----result3:  "+ result3);
+        expect(result3).assertEqual(true);
+        let result4: boolean =  matrix.mapRect(dst,  { left: 100, top: 100, right: 100, bottom: 100})
+        console.info(msg + " mapRect -----result4:  "+ result4);
+        expect(result4).assertEqual(true);
+        let result5: boolean =  matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: 100.1, top: 100.1, right: 200.1, bottom: 200.1})
-        matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        console.info(msg + " mapRect -----result5:  "+ result5);
+        expect(result5).assertEqual(true);
+        let result6: boolean =  matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: -100.1, top: -100.1, right: 200.1, bottom: 200.1})
-        matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        console.info(msg + " mapRect -----result6:  "+ result6);
+        expect(result6).assertEqual(true);
+        let result7: boolean =  matrix.mapRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: 100.1, top: 100.1, right: -200.1, bottom: -200.1})
+        console.info(msg + " mapRect -----result7:  "+ result7);
+        expect(result7).assertEqual(true);
         console.info(msg + ' mapRect successed');
       } catch (e) {
         console.info(msg + ` mapRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -952,22 +974,55 @@ export default function drawingTsMatrixPart2Test() {
         let dst: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
         let src: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT;
-        matrix.setRectToRect(dst, src,stf);
-        matrix.setRectToRect(dst,  { left: 0, top: 0, right: 0, bottom: 0},stf);
-        matrix.setRectToRect(dst,  { left: 100, top: 100, right: 100, bottom: 200},stf)
-        matrix.setRectToRect(dst,  { left: 100, top: 100, right: 100, bottom: 100},stf)
-        matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        let result: boolean = matrix.setRectToRect(dst, src,stf);
+        console.info(msg + " setRectToRect -----result:  "+ result);
+        expect(result).assertEqual(true);
+        let result2: boolean = matrix.setRectToRect(dst,  { left: 0, top: 0, right: 0, bottom: 0},stf);
+        console.info(msg + " setRectToRect -----result2:  "+ result2);
+        expect(result2).assertEqual(true);
+        let result3: boolean = matrix.setRectToRect(dst,  { left: 100, top: 100, right: 100, bottom: 200},stf)
+        console.info(msg + " setRectToRect -----result3:  "+ result3);
+        expect(result3).assertEqual(true);
+        let result4: boolean = matrix.setRectToRect(dst,  { left: 100, top: 100, right: 100, bottom: 100},stf)
+        console.info(msg + " setRectToRect -----result4:  "+ result4);
+        expect(result4).assertEqual(true);
+        let result5: boolean = matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: 100.1, top: 100.1, right: 200.1, bottom: 200.1},stf)
-        matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        console.info(msg + " setRectToRect -----result5:  "+ result5);
+        expect(result5).assertEqual(true);
+        let result6: boolean = matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: -100.1, top: -100.1, right: 200.1, bottom: 200.1},stf)
-        matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
+        console.info(msg + " setRectToRect -----result6:  "+ result6);
+        expect(result6).assertEqual(true);
+        let result7: boolean = matrix.setRectToRect( { left: 200.1, top: 200.1, right: 300.1, bottom: 400.1},
           { left: 100.1, top: 100.1, right: -200.1, bottom: -200.1},stf)
-        matrix.setRectToRect(dst, src,drawing.ScaleToFit.START_SCALE_TO_FIT );
-        matrix.setRectToRect(dst, src,drawing.ScaleToFit.CENTER_SCALE_TO_FIT );
-        matrix.setRectToRect(dst, src,drawing.ScaleToFit.END_SCALE_TO_FIT );
+        console.info(msg + " setRectToRect -----result7:  "+ result7);
+        expect(result7).assertEqual(true);
+        let result8: boolean = matrix.setRectToRect(dst, src,drawing.ScaleToFit.START_SCALE_TO_FIT );
+        console.info(msg + " setRectToRect -----result8:  "+ result8);
+        expect(result8).assertEqual(true);
+        let result9: boolean = matrix.setRectToRect(dst, src,drawing.ScaleToFit.CENTER_SCALE_TO_FIT );
+        console.info(msg + " setRectToRect -----result9:  "+ result9);
+        expect(result9).assertEqual(true);
+        let result10: boolean = matrix.setRectToRect(dst, src,drawing.ScaleToFit.END_SCALE_TO_FIT );
+        console.info(msg + " setRectToRect -----result10:  "+ result10);
+        expect(result10).assertEqual(true);
         console.info(msg + ' setRectToRect successed');
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        let matrix = new drawing.Matrix();
+        let dst2: common2D.Rect = { left: 0, top: 0, right: 0, bottom: 0 };
+        let src: common2D.Rect = { left: 100, top: 100, right: 100, bottom: 200 };
+        let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT;
+        let result: boolean = matrix.setRectToRect(dst2, src,stf);
+        console.info(msg + " setRectToRect 2-----result:  "+ result);
+        expect(result).assertEqual(false);
+        console.info(msg + ' setRectToRect 2 successed');
+      } catch (e) {
+        console.info(msg + ` setRectToRect 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
     })
@@ -1107,7 +1162,9 @@ export default function drawingTsMatrixPart2Test() {
       try {
         let srcPoints: Array<common2D.Point> = [{x: 200, y: 20}, {x: 200, y: 60}];
         let dstPoints: Array<common2D.Point> = [{x: 200, y: 90}, {x: 100, y: 60}];
-        matrix.setPolyToPoly(srcPoints, dstPoints, 2)
+        let result1: boolean = matrix.setPolyToPoly(srcPoints, dstPoints, 2)
+        console.info(msg + " setPolyToPoly -----result1:  "+ result1);
+        expect(result1).assertEqual(true);
         console.info(msg + ' setPolyToPoly successed');
       } catch (e) {
         console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1117,7 +1174,9 @@ export default function drawingTsMatrixPart2Test() {
       try {
         let srcPoints: Array<common2D.Point> = []
         let dstPoints: Array<common2D.Point> = []
-        matrix.setPolyToPoly(srcPoints, dstPoints, 0)
+        let result2: boolean = matrix.setPolyToPoly(srcPoints, dstPoints, 0)
+        console.info(msg + " setPolyToPoly -----result2:  "+ result2);
+        expect(result2).assertEqual(true);
         console.info(msg + ' setPolyToPoly successed');
       } catch (e) {
         console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1127,7 +1186,9 @@ export default function drawingTsMatrixPart2Test() {
       try {
         let srcPoints: Array<common2D.Point> = [{x: 200, y: 20}, {x: 200, y: 60},{x: 200.1, y: 40.1}, {x: -300, y: -60}]
         let dstPoints: Array<common2D.Point> = [{x: -200, y: -20}, {x: 200, y: 60},{x: 200.1, y: 40.1}, {x: -300, y: -60}]
-        matrix.setPolyToPoly(srcPoints, dstPoints, 4)
+        let result3: boolean = matrix.setPolyToPoly(srcPoints, dstPoints, 4)
+        console.info(msg + " setPolyToPoly -----result3:  "+ result3);
+        expect(result3).assertEqual(true);
         console.info(msg + ' setPolyToPoly successed');
       } catch (e) {
         console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1137,7 +1198,9 @@ export default function drawingTsMatrixPart2Test() {
       try {
         let srcPoints: Array<common2D.Point> = [{x: 200, y: 20}]
         let dstPoints: Array<common2D.Point> = [{x: 200, y: 20}]
-        matrix.setPolyToPoly(srcPoints, dstPoints, 1)
+        let result4: boolean = matrix.setPolyToPoly(srcPoints, dstPoints, 1)
+        console.info(msg + " setPolyToPoly -----result4:  "+ result4);
+        expect(result4).assertEqual(true);
         console.info(msg + ' setPolyToPoly successed');
       } catch (e) {
         console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);

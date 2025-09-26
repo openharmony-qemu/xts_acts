@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
-import { taskpool, collections } from '@kit.ArkTS'
+import { taskpool, collections, TreeSet } from '@kit.ArkTS'
 import worker from '@ohos.worker'
 import { BusinessError } from '@ohos.base'
 import { currentFun, transferArrayBuffer, transferAtomics, setCloneListTest, setTransferListTest,
@@ -24,7 +24,7 @@ import { currentFun, transferArrayBuffer, transferAtomics, setCloneListTest, set
   errorManageTest, dealHashMapTest, noUseConcurrentTest, sendDataTest, sendableClassTestFunc, Int8ArrayTestFunc,
   SetTestFunc, MapTestFunc, simpleSendableClassTestFunc, Uint8ClampedArrayTestFunc, testWithThreeParams, testWithArray,
   sendableFuncTest, sendableClassTest, promiseTest, measureTest, loop, returnError, longString, sendableClassArrFunc,
-  promiseNumber } from './testFunclist'
+  promiseNumber, TreeSetTestFunc } from './testFunclist'
 import { A, B, StrCat, printArgs, printStrArgs, fun, cancelById, getLongString } from './exportFunclist'
 import { SendableClass, SimpleSendable, sendableFunc, SendableClassTest } from './sendable';
 import HashMap from '@ohos.util.HashMap';
@@ -6262,5 +6262,26 @@ export default function TaskPoolTest() {
       expect(result).assertEqual(value);
       done();
     })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0260
+     * @tc.name       TaskPoolTestClass260
+     * @tc.desc       taskpool support TreeSet
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let treeSet = new TreeSet<number>();
+      treeSet.add(5);
+      treeSet.add(1);
+      treeSet.add(2);
+      let task: taskpool.Task = new taskpool.Task(TreeSetTestFunc, treeSet);
+      let res: TreeSet<number> = await taskpool.execute(task) as TreeSet<number>;
+      expect(res.length).assertEqual(4);
+      expect(res.has(4)).assertTrue();
+      done();
+    })
+
   })
 }

@@ -14,8 +14,10 @@
  */
 
 import bundleManager from '@ohos.bundle.bundleManager';
+import { bundleResourceManager } from '@kit.AbilityKit';
 
 export type BmsBundleInfo = bundleManager.BundleInfo;
+export type BmsBundleResourceInfo = bundleResourceManager.BundleResourceInfo;
 
 export class BundleManagerHelper {
   async getBmsBundleInfo(): Promise<BmsBundleInfo | undefined> {
@@ -26,6 +28,17 @@ export class BundleManagerHelper {
       return bmsBundleInfo;
     } catch (e) {
       console.info('get bms bundle info failed');
+    }
+    return undefined;
+  }
+
+  getBmsBundleResourceInfo(bundleName: string): BmsBundleResourceInfo | undefined {
+    try {
+      let bundleResourceInfo = bundleResourceManager.getBundleResourceInfo(bundleName,
+        bundleResourceManager.ResourceFlag.GET_RESOURCE_INFO_WITH_LABEL);
+      return bundleResourceInfo;
+    } catch (e) {
+      console.info('get bms bundle resource info failed');
     }
     return undefined;
   }
