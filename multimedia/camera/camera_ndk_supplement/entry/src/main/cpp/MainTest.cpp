@@ -53,7 +53,7 @@ static napi_value ExecuteCameraIntArgOp(napi_env env, napi_callback_info info,
 {
     int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
     int ret = TEST_FAILED;
-    if (cameraOp(index) == CAMERA_OK) {
+    if (cameraOp(index) == TEST_OK) {
         ret = TEST_OK;
     }
     napi_value result = nullptr;
@@ -64,7 +64,7 @@ static napi_value ExecuteCameraIntArgOp(napi_env env, napi_callback_info info,
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
     char *surfaceId = CameraTestUtils::GetArgsOneParameterByStr(env, info);
-    g_ndkCamera = new CameraFunctionTest(surfaceId);
+    g_ndkCamera = new CameraFunctionTest(surfaceId, surfaceId);
     napi_value result;
     if (g_ndkCamera->valid_) {
         napi_create_int32(env, CAMERA_OK, &result);
@@ -474,6 +474,104 @@ static napi_value OHCameraManagerGetCameraConcurrentInfosTest(napi_env env, napi
     });
 }
 
+static napi_value OHCaptureSessionSetSessionModeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetSessionModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddSecureOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddSecureOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionBeginConfigTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionBeginConfigTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionCommitConfigTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionCommitConfigTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddInputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddInputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionRemoveInputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionRemoveInputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddPreviewOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddPreviewOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionRemovePreviewOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionRemovePreviewOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddPhotoOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddPhotoOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionRemovePhotoOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionRemovePhotoOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddVideoOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddVideoOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionRemoveVideoOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionRemoveVideoOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionAddMetadataOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionAddMetadataOutputTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionRemoveMetadataOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionRemoveMetadataOutputTest(code);
+    });
+}
+
 const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
     {"OH_Camera_GetCameraManager", OHCameraGetCameraManagerTest},
     {"OH_Camera_DeleteCameraManager", OHCameraDeleteCameraManagerTest},
@@ -513,12 +611,32 @@ const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
     {"OH_CameraManager_GetCameraConcurrentInfos", OHCameraManagerGetCameraConcurrentInfosTest},
 };
 
+const std::map<std::string, ArkCameraTestFuncEx> CaptureSessionFunctionMap = {
+    {"OH_CaptureSession_SetSessionMode", OHCaptureSessionSetSessionModeTest},
+    {"OH_CaptureSession_AddSecureOutput", OHCaptureSessionAddSecureOutputTest},
+    {"OH_CaptureSession_BeginConfig", OHCaptureSessionBeginConfigTest},
+    {"OH_CaptureSession_CommitConfig", OHCaptureSessionCommitConfigTest},
+    {"OH_CaptureSession_AddInput", OHCaptureSessionAddInputTest},
+    {"OH_CaptureSession_RemoveInput", OHCaptureSessionRemoveInputTest},
+    {"OH_CaptureSession_AddPreviewOutput", OHCaptureSessionAddPreviewOutputTest},
+    {"OH_CaptureSession_RemovePreviewOutput", OHCaptureSessionRemovePreviewOutputTest},
+    {"OH_CaptureSession_AddPhotoOutput", OHCaptureSessionAddPhotoOutputTest},
+    {"OH_CaptureSession_RemovePhotoOutput", OHCaptureSessionRemovePhotoOutputTest},
+    {"OH_CaptureSession_AddVideoOutput", OHCaptureSessionAddVideoOutputTest},
+    {"OH_CaptureSession_RemoveVideoOutput", OHCaptureSessionRemoveVideoOutputTest},
+    {"OH_CaptureSession_AddMetadataOutput", OHCaptureSessionAddMetadataOutputTest},
+    {"OH_CaptureSession_RemoveMetadataOutput", OHCaptureSessionRemoveMetadataOutputTest},
+};
+
 static napi_value OHCameraFunctionHandle(napi_env env, napi_callback_info info)
 {
     auto parameters = CameraTestUtils::GetArgsTwoParameters(env, info);
     std::string key(parameters.first);
-    auto it = CameraFunctionMap.find(key);
-    if (it != CameraFunctionMap.end()) {
+    std::map<std::string, ArkCameraTestFuncEx> mergedMap;
+    mergedMap.insert(CameraFunctionMap.begin(), CameraFunctionMap.end());
+    mergedMap.insert(CaptureSessionFunctionMap.begin(), CaptureSessionFunctionMap.end());
+    auto it = mergedMap.find(key);
+    if (it != mergedMap.end()) {
         return it->second(env, info, parameters.second);
     } else {
         OH_LOG_ERROR(LOG_APP, "OHCameraFunctionHandle find %{public}s failed....", key.c_str());
@@ -572,7 +690,7 @@ static napi_value GetCameraFocusState(napi_env env, napi_callback_info info)
 {
     int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
     int ret = TEST_FAILED;
-    if (g_ndkCamera->CreateSession() == CAMERA_OK) {
+    if (g_ndkCamera->CreateCaptureSession() == CAMERA_OK) {
         ret = TEST_OK;
     }
     napi_value result;

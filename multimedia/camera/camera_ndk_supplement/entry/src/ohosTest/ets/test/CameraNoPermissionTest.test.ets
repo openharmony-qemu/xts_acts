@@ -419,6 +419,22 @@ export default function CameraNoPermissionTest() {
       done()
     })
 
+    /**
+     * @tc.number SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION0600
+     * @tc.name testOH_Capture_Session_FUNCTION0600
+     * @tc.desc Test OH_CaptureSession_CommitConfig return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let ret =
+          cameraObj.OHCameraFunctionHandle("OH_CaptureSession_CommitConfig", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+        expect(ret).assertEqual(TEST_OK)
+        done()
+      })
+
 
   })
 }
