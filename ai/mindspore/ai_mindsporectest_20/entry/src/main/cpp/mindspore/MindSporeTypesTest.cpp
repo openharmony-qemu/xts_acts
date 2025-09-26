@@ -40,21 +40,22 @@ napi_value DeviceTypeTest_001(napi_env env, napi_callback_info info)
 const void* LoadModelData(const char* filename, size_t* outSize)
 {
     if (!filename || !outSize) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
-                     "Invalid parameters");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Invalid parameters");
         return nullptr;
     }
     FILE* file = fopen(filename, "rb");
     if (!file) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111LoadModelData",
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData",
                      "Failed to open file: %{public}s, errno: %{public}d", filename, errno);
         return nullptr;
     }
-    fseek(file, 0, SEEK_END);
+    if (fseek(file, 0, SEEK_END) != 0 ) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Failed get file size: %{public}d", errno);
+        return nullptr;
+    }
     long fileSize = ftell(file);
     if (fileSize == PARAM_NEGATIVE_1) {
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111LoadModelData",
-                 "Failed to get file size errno: %{public}d", errno);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Failed get file size: %{public}d", errno);
         return nullptr;
     }
     rewind(file);
@@ -67,22 +68,20 @@ const void* LoadModelData(const char* filename, size_t* outSize)
     void* buffer = malloc(fileSize);
     if (!buffer) {
         if (fclose(file) != 0) {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                         "Failed to close file: %s", strerror(errno));
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Failed to file: %s", strerror(errno));
         }
         return nullptr;
     }
     size_t bytesRead = fread(buffer, 1, fileSize, file);
     if (fclose(file) != 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111LoadModelData",
-                     "Failed to close file: %s", strerror(errno));
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "LoadModelData", "Failed close file: %s", strerror(errno));
     }
     if (bytesRead != static_cast<size_t>(fileSize)) {
         free(buffer);
         return nullptr;
     }
     *outSize = fileSize;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "111111LoadModelData",
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "LoadModelData",
                  "Successfully loaded %{public}zu bytes from %{public}s", fileSize, filename);
     return buffer;
 }
