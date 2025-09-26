@@ -36,7 +36,7 @@ struct Index {
   build() {
     Column() {
       ContentSlot(this.nodeContent);
-      Button("sendKeyEvent")
+      Button('sendKeyEvent')
         .onClick(() => {
           let keyEvent: KeyEvent = {
             type: KeyType.Down,
