@@ -18,7 +18,7 @@ import { ColorMetrics } from '@ohos.arkui.node';
 @Component
 struct RichEditorApi6 {
   controller: RichEditorController = new RichEditorController()
-  @State height1:string|number = '90%'
+  @State height1:string|number = '80%'
   @State height2:number = 100
   @State supportAvoidance:boolean = true;
 
@@ -54,7 +54,7 @@ struct RichEditorApi6 {
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-    }.backgroundColor(Color.Gray)
+    }.backgroundColor(Color.Gray).height('50%')
   }
 
   build() {

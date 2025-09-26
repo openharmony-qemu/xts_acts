@@ -22,28 +22,22 @@ struct RichEditor016 {
 
   build() {
     Column() {
-
-      Column() {
+      Row() {
         Button('光标定位 emoji前').onClick(() => {
           this.controller.setCaretOffset(this.controller.getCaretOffset() - 2);
-        }).id('back')
-
+        }).id('back').width('30%')
         Button('光标定位emoji后').onClick(() => {
           this.controller.setCaretOffset(this.controller.getCaretOffset() + 2);
-        }).id('after')
-
-        Text('' + this.pointPosition).id('position_text');
-
+        }).id('after').width('30%')
         Button('get Point Position').onClick(() => {
           this.pointPosition = this.controller.getCaretOffset();
           console.log('this.point_position:' + this.pointPosition);
-        }).id('get_position')
-      }
+        }).id('get_position').width('30%')
+      }.height('5%')
+      Text('' + this.pointPosition).id('position_text').height('5%').clip(true)
       .borderWidth(1)
       .borderColor(Color.Red)
       .width('100%')
-      .height('20%')
-
       Column() {
         RichEditor(this.options)
           .onReady(() => {

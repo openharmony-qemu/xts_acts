@@ -43,23 +43,22 @@ struct RichEditorAttributeStrings002 {
 
   build() {
     Column() {
+      Row(){
+        Button('getStyles')
+          .onClick(() => {
+            let richEditorStyledString = this.controller.getStyledString();
+            this.styledString = richEditorStyledString.getString();
+          })
+          .id('getStyles')
 
-      Button('getStyles')
-        .onClick(() => {
-          let richEditorStyledString = this.controller.getStyledString();
-          this.styledString = richEditorStyledString.getString();
-        })
-        .id('getStyles')
-
-      Button('getOtherStyles')
-        .onClick(() => {
-          let richEditorStyledString = this.controller1.getStyledString();
-          this.styledString = richEditorStyledString.getString();
-        })
-        .id('getOtherStyles')
-
-      Text('StyledString:' + this.styledString).id('StyledString')
-
+        Button('getOtherStyles')
+          .onClick(() => {
+            let richEditorStyledString = this.controller1.getStyledString();
+            this.styledString = richEditorStyledString.getString();
+          })
+          .id('getOtherStyles')
+      }.height('5%')
+      Text('StyledString:' + this.styledString).id('StyledString').height('5%').clip(true)
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.mutableStyledString);

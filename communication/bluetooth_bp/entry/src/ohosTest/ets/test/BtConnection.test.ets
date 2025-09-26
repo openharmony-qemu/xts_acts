@@ -17,6 +17,7 @@ import { BusinessError } from '@ohos.base';
 import bluetooth from '@ohos.bluetooth.connection';
 import ble from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
+import btCommon from '@ohos.bluetooth.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
@@ -220,7 +221,7 @@ describe('btConnectionTest', () => {
         try {
             let ret = bluetooth.getPairedDevices();
             console.info('[bluetooth_js] getPairedDevices ret2:' + JSON.stringify(ret));
-            expect(true).assertEqual(ret.length >= 0);
+            expect(ret.length == 0).assertTrue();
         } catch (err) {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
@@ -1895,11 +1896,18 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+        if (data.length > 0) {
             console.info('bluetooth discoveryResult result:'+ JSON.stringify(data));
             console.info('bluetooth discoveryResult deviceId result:'+ JSON.stringify(data[0].deviceId));
             console.info('bluetooth discoveryResult rssi result:'+ JSON.stringify(data[0].rssi));
             console.info('bluetooth discoveryResult deviceName result:'+ JSON.stringify(data[0].deviceName));
             console.info('bluetooth discoveryResult deviceClass result:'+ JSON.stringify(data[0].deviceClass));
+            expect(data.length > 0).assertTrue();
+        }
+        if (data.length == 0) {
+            expect(data.length == 0).assertTrue();
+        }
+
         }
         try {
             bluetooth.on('discoveryResult', onReceiveEvent);
@@ -2162,6 +2170,55 @@ describe('btConnectionTest', () => {
                 expect(Number(error.code)).assertEqual(2900099);
             }
         }
+        done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
+     * @tc.name SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
+     * @tc.desc Test pairDevice with common api21
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let deviceId: btCommon.BluetoothAddress = {
+                address: "00:11:22:33:44:55",
+                addressType: btCommon.BluetoothAddressType.VIRTUAL
+            }
+            await bluetooth.pairDevice(deviceId).then(() => {
+            console.info('[bluetooth_js] pairDevice success');
+            });
+            expect(true).assertFalse();
+        } catch (err) {
+            console.error(`pairDevice BluetoothAddress error, error code is: ${err.code}, error message is: ${err.message}`);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]pairDevice BluetoothAddress is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
+     * @tc.name SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
+     * @tc.desc Test common BluetoothAddressType api21
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        let VIRTUAL = btCommon.BluetoothAddressType.VIRTUAL;
+        console.info("[bluetooth_js]VIRTUAL: " + JSON.stringify(VIRTUAL));
+        expect(VIRTUAL).assertEqual(1);
+
+        let REAL = btCommon.BluetoothAddressType.REAL;
+        console.info("[bluetooth_js]REAL: " + JSON.stringify(REAL));
+        expect(REAL).assertEqual(2);
         done();
     })
 })

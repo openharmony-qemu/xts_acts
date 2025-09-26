@@ -23,7 +23,22 @@ struct RichEditorShortCutKeys013 {
   build() {
 
     Column() {
-
+      Row(){
+        Button('set select').onClick(() => {
+          this.controller.setSelection(2,5);
+        }).id('setSelect').width('50%')
+        Button('get spans').onClick(() => {
+          this.style = '';
+          this.controller.getSpans({
+            start: 0,
+            end: 6
+          }).forEach(item => {
+            this.style = JSON.stringify((item as RichEditorTextSpanResult));
+            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+          })
+        }).id('getSpans').width('50%')
+      }.height('5%')
+      Text('style:' + this.style).id('style').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(200)
@@ -49,22 +64,6 @@ struct RichEditorShortCutKeys013 {
           });
         })
         .id('RichEditorShortCutKeys013')
-      Button('set select').onClick(() => {
-        this.controller.setSelection(2,5);
-      }).id('setSelect')
-
-      Button('get spans').onClick(() => {
-        this.style = '';
-        this.controller.getSpans({
-          start: 0,
-          end: 6
-        }).forEach(item => {
-          this.style = JSON.stringify((item as RichEditorTextSpanResult));
-          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-        })
-      }).id('getSpans')
-
-      Text('style:' + this.style).id('style')
     }
   }
 }

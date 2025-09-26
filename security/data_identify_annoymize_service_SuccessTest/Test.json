@@ -11,7 +11,7 @@
   "kits": [
     {
       "test-file-name": [
-        "ActsDiaTest.hap"
+        "ActsDataIdentifyTest.hap"
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true

@@ -27,30 +27,30 @@ struct RichEditorAttributeStrings004 {
 
   build() {
     Column() {
-
-      Button('getSpans')
-        .onClick(() => {
-          this.controller.getSpans({
-            start: 0,
-            end: 7
-          }).forEach(item => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+      Row(){
+        Button('getSpans')
+          .onClick(() => {
+            this.controller.getSpans({
+              start: 0,
+              end: 7
+            }).forEach(item => {
+              this.spans += (item as RichEditorTextSpanResult).value + '\n';
+            })
           })
-        })
-        .id('getSpans')
+          .id('getSpans').width('50%')
 
-      Button('getOtherSpans')
-        .onClick(() => {
-          this.controller1.getSpans({
-            start: 0,
-            end: 7
-          }).forEach(item => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+        Button('getOtherSpans')
+          .onClick(() => {
+            this.controller1.getSpans({
+              start: 0,
+              end: 7
+            }).forEach(item => {
+              this.spans += (item as RichEditorTextSpanResult).value + '\n';
+            })
           })
-        })
-        .id('getOtherSpans')
-
-      Text('spans:' + this.spans).id('spans')
+          .id('getOtherSpans').width('50%')
+      }.height('5%')
+      Text('spans:' + this.spans).id('spans').height('5%').clip(true)
 
       RichEditor(this.options)
         .onReady(() => {

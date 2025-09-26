@@ -12,11 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import textContentAlignTest from './TextTest/textContentAlign.test';
 import ImageAttachmentTest from './ImageAttachmentTest/ImageAttachment.test';
+import RichEditorScrollBarColorTest from './RichEditorTest/ScrollBarColor.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   textContentAlignTest();
   ImageAttachmentTest();
+  RichEditorScrollBarColorTest();
 }

@@ -14,7 +14,7 @@
 */
 
 import notificationManager from '@ohos.notificationManager'
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll, afterEach } from "../../../hypium/index";
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import wantAgent from '@ohos.app.ability.wantAgent';
@@ -96,6 +96,10 @@ export default function ActsNotificationPublishTest() {
       })
       await Utils.msSleep(500)
       console.info(`${TAG} beforeEach END`)
+    })
+
+    afterEach(() =>{
+      await Utils.msSleep(500)
     })
 
     /**

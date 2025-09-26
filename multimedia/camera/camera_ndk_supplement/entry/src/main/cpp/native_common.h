@@ -61,19 +61,18 @@ inline int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)
     return napi_get_value_int32(env, args[0], &index) == napi_ok ? index : 0;
 }
 
-inline std::pair<std::unique_ptr<char[]>, std::unique_ptr<char[]>> GetArgsTwoParameters(napi_env env,
-                                                                                        napi_callback_info info)
+inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callback_info info)
 {
     napi_value args[PARAMETER_TWO] = {nullptr};
-    if (!CheckArgs(env, info, args, PARAMETER_TWO)) {
-        return {nullptr, nullptr};
-    }
+    if (!CheckArgs(env, info, args, PARAMETER_TWO)) { return {nullptr, 0};}
 
-    auto param1 = std::make_unique<char[]>(NAME_SIZE);
-    auto param2 = std::make_unique<char[]>(NAME_SIZE);
-    bool success = napi_get_value_string_utf8(env, args[0], param1.get(), NAME_SIZE, nullptr) == napi_ok &&
-                   napi_get_value_string_utf8(env, args[1], param2.get(), NAME_SIZE, nullptr) == napi_ok;
-    return success ? std::make_pair(std::move(param1), std::move(param2)) : std::make_pair(nullptr, nullptr);
+    size_t typeLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    char* param1 = new char[typeLen + 1];
+    int32_t index = 0;
+    bool success = napi_get_value_string_utf8(env, args[0], param1, typeLen + 1, &typeLen) == napi_ok &&
+                   napi_get_value_int32(env, args[1], &index) == napi_ok;
+    return success ? std::make_pair(param1, index) : std::make_pair(nullptr, 0);
 }
 
 inline std::pair<int, int> GetArgsTwoParametersByInit(napi_env env, napi_callback_info info)

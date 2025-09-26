@@ -1226,7 +1226,7 @@ static napi_value OHHuksListAliases(napi_env env, napi_callback_info info)
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     struct OH_Huks_ParamSet *listAliasedParamSet = nullptr;
-    GenerateParamSet(&paramSet, g_listAliasedParams, sizeof(g_listAliasedParams) / sizeof(OH_Huks_Param));
+    GenerateParamSet(&paramSet, tmpParams, sizeof(tmpParams) / sizeof(OH_Huks_Param));
     GenerateParamSet(&listAliasedParamSet, g_listAliasedParams, sizeof(g_listAliasedParams) / sizeof(OH_Huks_Param));
     OH_Huks_GenerateKeyItem(&gkeyAlias, paramSet, nullptr);
     gkeyAlias = {sizeof("testAlias1"), reinterpret_cast<uint8_t *>(static_cast<char *>(alias2))};
@@ -1234,11 +1234,11 @@ static napi_value OHHuksListAliases(napi_env env, napi_callback_info info)
     struct OH_Huks_KeyAliasSet *query_aliases = nullptr;
     struct OH_Huks_Result resultSt = OH_Huks_ListAliases(listAliasedParamSet, &query_aliases);
     int returnValue = SUCCESS;
-    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        returnValue = FAIL;
-    } else if (query_aliases->aliasesCnt == 0) {
+    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS || query_aliases == NULL || query_aliases->aliasesCnt == 0) {
         returnValue = FAIL;
     }
+    OH_Huks_FreeParamSet(&paramSet);
+    OH_Huks_FreeParamSet(&listAliasedParamSet);
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -1257,7 +1257,7 @@ static napi_value OHHuksFreeKeyAliasSet(napi_env env, napi_callback_info info)
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     struct OH_Huks_ParamSet *listAliasedParamSet = nullptr;
-    GenerateParamSet(&paramSet, g_listAliasedParams, sizeof(g_listAliasedParams) / sizeof(OH_Huks_Param));
+    GenerateParamSet(&paramSet, tmpParams, sizeof(tmpParams) / sizeof(OH_Huks_Param));
     GenerateParamSet(&listAliasedParamSet, g_listAliasedParams, sizeof(g_listAliasedParams) / sizeof(OH_Huks_Param));
     OH_Huks_GenerateKeyItem(&gkeyAlias, paramSet, nullptr);
     gkeyAlias = {sizeof("testAlias1"), reinterpret_cast<uint8_t *>(static_cast<char *>(alias2))};
@@ -1265,9 +1265,11 @@ static napi_value OHHuksFreeKeyAliasSet(napi_env env, napi_callback_info info)
     struct OH_Huks_KeyAliasSet *query_aliases = nullptr;
     struct OH_Huks_Result resultSt = OH_Huks_ListAliases(listAliasedParamSet, &query_aliases);
     int returnValue = SUCCESS;
-    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS || query_aliases->aliasesCnt == 0) {
+    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS || query_aliases == NULL || query_aliases->aliasesCnt == 0) {
         returnValue = FAIL;
     }
+    OH_Huks_FreeParamSet(&paramSet);
+    OH_Huks_FreeParamSet(&listAliasedParamSet);
     OH_Huks_FreeKeyAliasSet(query_aliases);
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);

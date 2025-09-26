@@ -617,6 +617,15 @@ export default function drawingTsPath3Test() {
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        let svgStr2: string = "11111111";
+        let flag2 = path.buildFromSvgString(svgStr2);
+        expect(flag2).assertEqual(false);
+        console.info(msg + 'test 11111111 successes');
+      } catch (e) {
+        console.info(msg + `test 11111111 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
 
 
@@ -705,6 +714,15 @@ export default function drawingTsPath3Test() {
         expect(result).assertEqual(true);
       } catch (e) {
         console.info(msg + `test getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        let result2: boolean;
+        result2 = path.getSegment(true, 20.0, 10.0, true, dstPath)
+        console.info(msg + " getSegment 2 -----result2:  "+ result2);
+        expect(result2).assertEqual(false);
+      } catch (e) {
+        console.info(msg + `test getSegment 2. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
     })

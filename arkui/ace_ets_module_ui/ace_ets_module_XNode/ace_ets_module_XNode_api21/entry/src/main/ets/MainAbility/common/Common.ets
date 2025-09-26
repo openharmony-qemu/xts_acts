@@ -33,12 +33,16 @@ export default class CommonFunc {
 
   static getComponentRect(key: string) {
     let strJson: string = getInspectorByKey(key);
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
-    console.info("[getInspectorByKey] rectInfo is: " + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
-    CommonFunc.rect_left = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[0]
-    CommonFunc.rect_top = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[1]
-    CommonFunc.rect_right = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[0]
-    CommonFunc.rect_bottom = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[1]
+    try {
+      console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[getInspectorByKey] rectInfo is: " + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
+      CommonFunc.rect_left = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[0]
+      CommonFunc.rect_top = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[1]
+      CommonFunc.rect_right = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[0]
+      CommonFunc.rect_bottom = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[1]
+    } catch(err) {
+      console.error('Failed to parse JSON.  Cause: ' + err.toString());
+    }
     return CommonFunc.rect_value = {
       left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
     }
@@ -46,15 +50,19 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string) {
     let strJson: string = getInspectorByKey(key);
-    let obj: Record<string, ESObject> = JSON.parse(strJson);
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<string> = JSON.parse('[' + obj.$rect + ']');
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop );
-    CommonFunc.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0] + globalThis.winLeft;
-    CommonFunc.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1] + globalThis.winTop;
-    CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0] + globalThis.winLeft;
-    CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1] + globalThis.winTop;
+    try {
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+      let rectInfo: Array<string> = JSON.parse('[' + obj.$rect + ']');
+      console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop );
+      CommonFunc.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0] + globalThis.winLeft;
+      CommonFunc.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1] + globalThis.winTop;
+      CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0] + globalThis.winLeft;
+      CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1] + globalThis.winTop;
+    } catch(err) {
+      console.error('Failed to parse JSON.  Cause: ' + err.toString());
+    }
     return CommonFunc.rect_value = {
       "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }

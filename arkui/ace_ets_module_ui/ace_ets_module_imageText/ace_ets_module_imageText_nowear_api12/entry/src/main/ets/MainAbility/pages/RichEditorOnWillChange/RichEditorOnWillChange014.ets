@@ -29,16 +29,23 @@ struct RichEditorOnWillChange014 {
   build() {
 
     Column() {
-
-      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback')
-      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-      Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
-      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
-      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback')
-      Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
-
-
+      Row(){
+        Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback').width('25%').clip(true)
+        Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback').width('25%').clip(true)
+        Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').width('25%').clip(true)
+        Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore').width('25%').clip(true)
+      }.height('5%')
+      Row(){
+        Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore').width('30%').clip(true)
+        Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback').width('30%').clip(true)
+        Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter').width('30%').clip(true)
+      }.height('5%')
+      Button('int callback status')
+        .onClick(() => {
+          this.onWillChangeCallback = false;
+          this.replacedSpansCallback = false;
+          this.onDidChangeCallback = false;
+        }).id('int_callback_status').height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -105,14 +112,6 @@ struct RichEditorOnWillChange014 {
           console.log('RichEditorController：onPaste');
         })
         .id('rich_struct')
-
-      Button('int callback status')
-        .onClick(() => {
-          this.onWillChangeCallback = false;
-          this.replacedSpansCallback = false;
-          this.onDidChangeCallback = false;
-        }).id('int_callback_status')
-
     }
   }
 }

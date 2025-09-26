@@ -15,7 +15,6 @@ add_library(nativerender SHARED
     napi_render_init.cpp
     position/EdgesPositionTest.cpp
     PixelRound/PixelRoundTest.cpp
-    textContentAlign/TextContentAlignTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -570,5 +570,134 @@ export default function CameraInputTest() {
       done();
     });
 
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100
+     * @tc.name      : query whether physical camera orientation is variable under different fold status
+     * @tc.desc      : query whether physical camera orientation is variable under different fold status
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100', Level.LEVEL0, async (done: Function) => {
+      let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100";
+      console.info(functionTag);
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100 createCameraInput with camera: " +
+          camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+
+          expect(isEmpty(cameraInput)).assertFalse();
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100 cameraInput open with camera: " +
+          camerasArray[i].cameraId);
+
+          try {
+            let isVariable: boolean = cameraInput.isPhysicalCameraOrientationVariable();
+          } catch (error) {
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100 FAILED");
+            console.info(TAG + "ERRORCODE: " + error.code);
+            expect().assertFail()
+            done();
+          }
+        }
+      }
+      console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100 ends here");
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.name      : get physical camera orientation under current fold status
+     * @tc.desc      : get physical camera orientation under current fold status
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async (done: Function) => {
+      let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100";
+      console.info(functionTag);
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 createCameraInput with camera: " +
+          camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+
+          expect(isEmpty(cameraInput)).assertFalse();
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 cameraInput open with camera: " +
+          camerasArray[i].cameraId);
+
+          try {
+            let orientation: number = cameraInput.getPhysicalCameraOrientation();
+          } catch (error) {
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 FAILED");
+            console.info(TAG + "ERRORCODE: " + error.code);
+            expect().assertFail()
+            done();
+          }
+        }
+      }
+      console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100 ends here");
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.name      : get physical camera orientation under current fold status
+     * @tc.desc      : get physical camera orientation under current fold status
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async (done: Function) => {
+      let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100";
+      console.info(functionTag);
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 createCameraInput with camera: " +
+          camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+
+          expect(isEmpty(cameraInput)).assertFalse();
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 cameraInput open with camera: " +
+          camerasArray[i].cameraId);
+
+          try {
+            if (cameraInput.isPhysicalCameraOrientationVariable()) {
+              cameraInput.usePhysicalCameraOrientation(true);
+              await sleep(100);
+              cameraInput.usePhysicalCameraOrientation(false);
+            }
+          } catch (error) {
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 FAILED");
+            console.info(TAG + "ERRORCODE: " + error.code);
+            expect().assertFail()
+            done();
+          }
+        }
+      }
+      console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 ends here");
+      done();
+    });
   })
 }

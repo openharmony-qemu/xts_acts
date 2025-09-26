@@ -83,6 +83,8 @@ export default function RichEditorShortCutKeys011() {
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I);
       await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(200);
       await getSpans.click();
       await CommonFunc.sleep(500);
       styleText = await style.getText();

@@ -395,7 +395,12 @@ export default function btBleNopUiJsunit() {
         console.info('getConnectedBLEDevices result:' + JSON.stringify(bleDevices));
       } catch (error) {
         hilog.error(Domain, TAG, `getConnectedBLEDevices error, error code is: ${error.code}, error message is: ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) == 801) {
+          console.info("getConnectedBLEDevices is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
@@ -434,6 +439,31 @@ export default function btBleNopUiJsunit() {
       } catch (error) {
         hilog.error(Domain, TAG, `stopAdvertising no param error, error code is: ${error.code}, error message is: ${error.message}`);
         expect(Number(error.code)).assertEqual(INVALID_ADVERTISING_ID);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number testGetConnectedBLEDevicesBleProfileNop
+     * @tc.name testGetConnectedBLEDevicesBleProfileNop
+     * @tc.desc test getConnectedBLEDevices BleProfile without permission
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it("testGetConnectedBLEDevicesBleProfileNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let bleDevices = ble.getConnectedBLEDevices(ble.BleProfile.GATT);
+        console.info('getConnectedBLEDevices BleProfile result:' + JSON.stringify(bleDevices));
+        expect(true).assertFalse();
+      } catch (error) {
+        hilog.error(Domain, TAG, `getConnectedBLEDevices BleProfile error, error code is: ${error.code}, error message is: ${error.message}`);
+        if (Number(error.code) == 801) {
+          console.info("getConnectedBLEDevices is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })

@@ -53,6 +53,22 @@ import { BusinessError } from '@ohos.base';
     }
     function onReceiveEvent(data : bluetooth.BluetoothState) {
             console.info('bluetooth state001 =' + JSON.stringify(data));
+            if (data == bluetooth.BluetoothState.STATE_OFF) {
+                console.info('bluetooth is off');}
+            if (data == bluetooth.BluetoothState.STATE_TURNING_ON) {
+                console.info('bluetooth is truning on');}
+            if (data == bluetooth.BluetoothState.STATE_ON) {
+                console.info('bluetooth is on');}
+            if (data == bluetooth.BluetoothState.STATE_TURNING_OFF) {
+                console.info('bluetooth is turning off');}
+            if (data == bluetooth.BluetoothState.STATE_BLE_TURNING_ON) {
+                console.info('bluetooth is ble turning on');}
+            if (data == bluetooth.BluetoothState.STATE_BLE_ON) {
+                console.info('bluetooth is ble on');}
+            if (data == bluetooth.BluetoothState.STATE_BLE_TURNING_OFF) {
+                console.info('bluetooth is ble turning off');}
+            else {
+                console.info('bluetooth state get error');}
         }
     
 export default function btAccessTest() {

@@ -181,6 +181,102 @@ export default function actsWifiCandidateNetWorkTest() {
             await removeCandidate();
             done();
         })
+
+        /**
+        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0003
+        * @tc.name Communication_WiFi_XTS_UntrustedConfig_0003
+        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
+        * @tc.type Function
+        * @tc.size MEDIUMTEST
+        * @tc.level Level 0
+        */
+        it('Communication_WiFi_XTS_UntrustedConfig_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let wifiDeviceConfig = {
+                "ssid": "TESTTESTTESTTESTTESTTESTTESTTESTTEST",
+                "bssid": "22:9b:e6:48:1f:5c",
+                "preSharedKey": "12345678",
+                "isHiddenSsid": false,
+                "securityType": wifi.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+                "netId": -1,
+                "ipType": 1,
+                "creatorUid": 7,
+                "disableReason": 0,
+                "randomMacType": 0,
+                "randomMacAddr": "11:22:33:44:55:66",
+                "staticIp": {"ipAddress": 1284752956,"gateway": 1284752936}
+            };
+            await wifi.addUntrustedConfig(wifiDeviceConfig)
+                .then(ret => {
+                    console.info("[wifi_test]addUntrustedConfig promise : " + JSON.stringify(ret));
+                    expect(ret).assertFalse();
+                    done();
+                }).catch((error) => {
+                    console.error('[wifi_test]addUntrustedConfig promise failed -> ' + JSON.stringify(error));
+                });
+            await wifi.removeUntrustedConfig(wifiDeviceConfig)
+            .then(ret => {
+                console.info("[wifi_test]removeUntrustedConfig promise:" + JSON.stringify(ret));
+                expect(ret).assertFalse();
+                done();
+            }).catch((error) => {
+                console.error('[wifi_test]removeUntrustedConfig promise failed -> ' + JSON.stringify(error));
+            });
+            done();
+        })
+
+        /**
+        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0004
+        * @tc.name Communication_WiFi_XTS_UntrustedConfig_0004
+        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
+        * @tc.type Function
+        * @tc.size MEDIUMTEST
+        * @tc.level Level 4
+        */
+        it('Communication_WiFi_XTS_UntrustedConfig_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let wifiDeviceConfig = {
+                "ssid": "TESTTESTTESTTESTTESTTESTTESTTESTTEST",
+                "bssid": "22:9b:e6:48:1f:5c",
+                "preSharedKey": "12345678",
+                "isHiddenSsid": false,
+                "securityType": wifi.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+                "netId": -1,
+                "ipType": 1,
+                "creatorUid": 7,
+                "disableReason": 0,
+                "randomMacType": 0,
+                "randomMacAddr": "11:22:33:44:55:66",
+                "staticIp": {"ipAddress": 1284752956,"gateway": 1284752936}
+            };
+            function addCandidate() {
+                return new Promise((resolve, reject) => {
+                    wifi.addUntrustedConfig(wifiDeviceConfig,
+                        (err, ret) => {
+                            if (err) {
+                                console.info("[wifi_test]addUntrustedConfig callback failed : " + JSON.stringify(err));
+                            }
+                            console.info("[wifi_test]addUntrustedConfig callback result: " + JSON.stringify(ret));
+                            expect(ret).assertFalse();
+                            resolve();
+                        });
+                });
+            }
+            await addCandidate();
+            function removeCandidate() {
+                return new Promise((resolve, reject) => {
+                    wifi.removeUntrustedConfig(wifiDeviceConfig,
+                        (err, ret) => {
+                            if (err) {
+                                console.info("[wifi_test]removeUntrustedConfig callback failed" + JSON.stringify(err));
+                            }
+                            console.info("[wifi_test]removeUntrustedConfig callback result:" + JSON.stringify(ret));
+                            expect(ret).assertFalse();
+                            resolve();
+                        });
+                });
+            }
+            await removeCandidate();
+            done();
+        })
     })
 }
 

@@ -38,10 +38,10 @@ struct RouterPushOne {
   build() {
     Scroll() {
       Column() {
-        Text(this.message)
+        Text(this.message).height('5%')
         Text("RouterPushThree " + JSON.stringify(router.getParams()))
           .fontSize(20)
-          .id("Text_RouterPushThree_Params")
+          .id("Text_RouterPushThree_Params").height('5%')
         Button("turn_RouterPushUrlTwo_noParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -52,7 +52,7 @@ struct RouterPushOne {
             router.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
-          })
+          }).height('5%')
         Button("turn_RouterPushUrlTwo_hasParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -66,7 +66,7 @@ struct RouterPushOne {
                 view: "params"
               }
             })
-          })
+          }).height('5%')
 
         Button("turn_RouterPushReplace_noParms")
           .type(ButtonType.Capsule)
@@ -78,7 +78,7 @@ struct RouterPushOne {
             router.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
-          })
+          }).height('5%')
         Button("turn_RouterPushReplace_hasParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -92,9 +92,9 @@ struct RouterPushOne {
                 view: "params"
               }
             })
-          })
+          }).height('5%')
 
-        Text(this.messageUI)
+        Text(this.messageUI).height('5%')
         Button("turn_UIRouterPushUrlTwo_noParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -105,7 +105,7 @@ struct RouterPushOne {
             this.routerUI?.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
-          })
+          }).height('5%')
         Button("turn_UIRouterPushUrlTwo_hasParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -119,7 +119,7 @@ struct RouterPushOne {
                 view: "params"
               }
             })
-          })
+          }).height('5%')
 
         Button("turn_UIRouterPushReplace_noParms")
           .type(ButtonType.Capsule)
@@ -131,7 +131,7 @@ struct RouterPushOne {
             this.routerUI?.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
-          })
+          }).height('5%')
         Button("turn_UIRouterPushReplace_hasParms")
           .type(ButtonType.Capsule)
           .margin({
@@ -145,7 +145,7 @@ struct RouterPushOne {
                 view: "params"
               }
             })
-          })
+          }).height('5%')
       }
     }
   }
