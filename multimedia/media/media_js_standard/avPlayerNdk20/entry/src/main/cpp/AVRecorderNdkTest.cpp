@@ -291,12 +291,15 @@ static napi_value OH_AVRecorder_ContainerFormatType0100(napi_env env, napi_callb
         audioSampleRate : 48000,           // 音频采样率。
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
+    OH_AVRecorder_Config config;
     snprintf(url, sizeof(url), "fd://%lu", fd);
-    char *urlPtr  = url;
-    OH_AVRecorder_Config config = {
-        .audioSourceType = AVRECORDER_MIC,
-        .profile = profile,
-        .url = urlPtr , // 使用文件描述符或沙箱路径
+    if (url != nullptr) {
+        char *urlPtr = url;
+        config = {
+            .audioSourceType = AVRECORDER_MIC,
+            .profile = profile,
+            .url = urlPtr, // 使用文件描述符或沙箱路径
+        };
     };
     void *userData;
     OH_AVRecorder *AVRecorder = OH_AVRecorder_Create();
@@ -328,12 +331,15 @@ static napi_value OH_AVRecorder_MetadataTemplate0100(napi_env env, napi_callback
         audioSampleRate : 48000,           // 音频采样率。
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
+    OH_AVRecorder_Config config;
     snprintf(url, sizeof(url), "fd://%lu", fd);
-    char *urlPtr  = url;
-    OH_AVRecorder_Config config = {
-        .audioSourceType = AVRECORDER_MIC,
-        .profile = profile,
-        .url = urlPtr , // 使用文件描述符或沙箱路径
+    if (url != nullptr) {
+        char *urlPtr = url;
+        config = {
+            .audioSourceType = AVRECORDER_MIC,
+            .profile = profile,
+            .url = urlPtr, // 使用文件描述符或沙箱路径
+        };
     };
     OH_AVRecorder_MetadataTemplate MetadataTemplate = {.value = "1", .key = "1"};
     config.metadata.customInfo = MetadataTemplate;
@@ -367,12 +373,15 @@ static napi_value OH_AVRecorder_MetadataTemplate0101(napi_env env, napi_callback
         audioSampleRate : 48000,           // 音频采样率。
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
+    OH_AVRecorder_Config config;
     snprintf(url, sizeof(url), "fd://%lu", fd);
-    char *urlPtr  = url;
-    OH_AVRecorder_Config config = {
-        .audioSourceType = AVRECORDER_DEFAULT,
-        .profile = profile,
-        .url = urlPtr , // 使用文件描述符或沙箱路径
+    if (url != nullptr) {
+        char *urlPtr = url;
+        config = {
+            .audioSourceType = AVRECORDER_MIC,
+            .profile = profile,
+            .url = urlPtr, // 使用文件描述符或沙箱路径
+        };
     };
     config.metadata.customInfo.key = "1";
     config.metadata.customInfo.value = "1";
@@ -406,12 +415,15 @@ static napi_value OH_AVRecorder_Metadata0100(napi_env env, napi_callback_info in
         audioSampleRate : 48000,           // 音频采样率。
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
+    OH_AVRecorder_Config config;
     snprintf(url, sizeof(url), "fd://%lu", fd);
-    char *urlPtr  = url;
-    OH_AVRecorder_Config config = {
-        .audioSourceType = AVRECORDER_DEFAULT,
-        .profile = profile,
-        .url = urlPtr , // 使用文件描述符或沙箱路径
+    if (url != nullptr) {
+        char *urlPtr = url;
+        config = {
+            .audioSourceType = AVRECORDER_MIC,
+            .profile = profile,
+            .url = urlPtr, // 使用文件描述符或沙箱路径
+        };
     };
     OH_AVRecorder_MetadataTemplate MetadataTemplate = {.value = "1", .key = "1"};
     config.metadata.genre = "audio";
@@ -447,12 +459,15 @@ static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info
         audioSampleRate : 48000,           // 音频采样率。
         fileFormat : AVRECORDER_CFT_AMR,   // 封装格式，当前支持MP4，M4A，MP3，WAV，AMR，AAC。
     };
+    OH_AVRecorder_Config config;
     snprintf(url, sizeof(url), "fd://%lu", fd);
-    char *urlPtr  = url;
-    OH_AVRecorder_Config config = {
-        .audioSourceType = AVRECORDER_DEFAULT,
-        .profile = profile,
-        .url = urlPtr , // 使用文件描述符或沙箱路径
+    if (url != nullptr) {
+        char *urlPtr = url;
+        config = {
+            .audioSourceType = AVRECORDER_MIC,
+            .profile = profile,
+            .url = urlPtr, // 使用文件描述符或沙箱路径
+        };
     };
     config.maxDuration = 1;
     void *userData;

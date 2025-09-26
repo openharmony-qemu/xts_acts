@@ -104,8 +104,8 @@ target_link_libraries(lowpoweraudiosinkndk PUBLIC
     libnative_media_venc.so
 )
 
-add_library(lowpoweraudiosink2ndk SHARED LowPowerSink2Test.cpp)
-target_link_libraries(lowpoweraudiosink2ndk PUBLIC
+add_library(lowpoweraudiosinktwondk SHARED LowPowerSinkTwoTest.cpp)
+target_link_libraries(lowpoweraudiosinktwondk PUBLIC
     libace_napi.z.so
     libavrecorder.so
     libnative_media_core.so

@@ -47,6 +47,7 @@
 
 #define AVCODEC_SAMPLE_ERR_OK = 0,
 #define AVCODEC_SAMPLE_ERR_ERROR = -1,
+auto g_two = 2;
 constexpr int CREATE_TYPE = 0x4;
 
 static napi_value OH_AVImageGenerator_SetFDSource0100(napi_env env, napi_callback_info info)
@@ -90,7 +91,7 @@ static napi_value OH_AVImageGenerator_FetchFrameByTime0101(napi_env env, napi_ca
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int64_t timeUs = 0;
     OH_AVImageGenerator *AVImageGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode aaa = OH_AVImageGenerator_SetFDSource(AVImageGenerator, fd, offset, size);
@@ -138,7 +139,7 @@ static napi_value OH_AVImageGenerator_QueryOptions0100(napi_env env, napi_callba
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int64_t timeUs = 0;
     OH_AVImageGenerator *AVImageGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode aaa = OH_AVImageGenerator_SetFDSource(AVImageGenerator, fd, offset, size);
@@ -174,7 +175,7 @@ static napi_value OH_AVImageGenerator_QueryOptions0101(napi_env env, napi_callba
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int64_t timeUs = 0;
     OH_AVImageGenerator *AVImageGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode aaa = OH_AVImageGenerator_SetFDSource(AVImageGenerator, fd, offset, size);
@@ -210,7 +211,7 @@ static napi_value OH_AVImageGenerator_QueryOptions0102(napi_env env, napi_callba
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int64_t timeUs = 0;
     OH_AVImageGenerator *AVImageGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode aaa = OH_AVImageGenerator_SetFDSource(AVImageGenerator, fd, offset, size);
@@ -246,7 +247,7 @@ static napi_value OH_AVImageGenerator_QueryOptions0103(napi_env env, napi_callba
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int64_t timeUs = 0;
     OH_AVImageGenerator *AVImageGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode aaa = OH_AVImageGenerator_SetFDSource(AVImageGenerator, fd, offset, size);
@@ -337,7 +338,7 @@ static napi_value OH_AVMetadataExtractor_FetchAlbumCover0101(napi_env env, napi_
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     status = napi_get_value_int32(env, args[0], &fd);
     status = napi_get_value_int64(env, args[1], &offset);
-    status = napi_get_value_int64(env, args[2], &size);
+    status = napi_get_value_int64(env, args[g_two], &size);
     int32_t sampleRate = 16000;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;

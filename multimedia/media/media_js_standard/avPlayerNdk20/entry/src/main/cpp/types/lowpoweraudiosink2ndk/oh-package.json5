@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 {
-  "name": "liblowpoweraudiosink2ndk.so",
+  "name": "liblowpoweraudiosinktwondk.so",
   "types": "./index.d.ts",
   "version": "",
   "description": "Function list of avscreencapture"

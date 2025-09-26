@@ -14,7 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium'
-import lowpoweraudiosinkndk from 'liblowpoweraudiosink2ndk.so'
+import lowpoweraudiosinkndk from 'liblowpoweraudiosinktwondk.so'
 import { fileIo as fs } from '@kit.CoreFileKit';
 
 export default function LowPowerSinkNdk2Test() {
