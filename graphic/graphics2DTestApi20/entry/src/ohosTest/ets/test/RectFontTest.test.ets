@@ -271,7 +271,7 @@ export default function RectFontTest() {
       async (done: Function) => {
         try {
           console.info("====> SUB_OH_Drawing_FontMeasureText_0200 start====");
-          let result: number = libGraphics2DApi20.OH_Drawing_FontMeasureTextFail();
+          let result: number = libGraphics2DApi20.fontMeasureTextFail();
           console.info("====> SUB_OH_Drawing_FontMeasureText_0200 result====", result);
           expect(result).assertEqual(1);
           done();
@@ -299,28 +299,6 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureTextWithBrushOrPen_0200 catch err: " + err);
-          done();
-        }
-      })
-
-    /**
-     * @tc.number  : SUB_OH_Drawing_FontGetWidthsBounds_0100
-     * @tc.name    : SUB_OH_Drawing_FontGetWidthsBounds_0100
-     * @tc.desc    : test SUB_OH_Drawing_FontGetWidthsBounds success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_OH_Drawing_FontGetWidthsBounds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        try {
-          console.info("====> SUB_OH_Drawing_FontGetWidthsBounds_0100 start====");
-          let result: number = libGraphics2DApi20.fontGetWidthsBoundsSuccess();
-          console.info("====> SUB_OH_Drawing_FontGetWidthsBounds_0100 result====", result);
-          expect(result).assertEqual(1);
-          done();
-        } catch (err) {
-          console.error("====> SUB_OH_Drawing_FontGetWidthsBounds_0100 catch err: " + err);
           done();
         }
       })

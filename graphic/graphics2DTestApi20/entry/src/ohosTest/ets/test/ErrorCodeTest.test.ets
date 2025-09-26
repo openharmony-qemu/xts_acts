@@ -195,6 +195,50 @@ export default function ErrorCodeTest() {
       })
 
     /**
+     * @tc.number  : SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
+     * @tc.name    : SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
+     * @tc.desc    : test SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID start====");
+          let result: number = libGraphics2DApi20.OHNativeImageErrCodeBUFFER_STATE_INVALID();
+          console.info("====>SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
+     * @tc.name    : SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
+     * @tc.desc    : test SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE start====");
+          let result: number = libGraphics2DApi20.OHNativeImage_ErrCodeBUFFER_NOT_IN_CACHE();
+          console.info("====>SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE catch err: " + err);
+          done();
+        }
+      })
+
+    /**
      * @tc.number  : SUB_OH_OHNativeErrorCodeVSync_0100
      * @tc.name    : SUB_OH_OHNativeErrorCodeVSync_0100
      * @tc.desc    : test SUB_OH_OHNativeErrorCodeVSync ok Scene
@@ -283,6 +327,28 @@ export default function ErrorCodeTest() {
       })
 
     /**
+     * @tc.number  : SUB_OH_NativeErrorCodeWindowUNKNOW_0100
+     * @tc.name    : SUB_OH_NativeErrorCodeWindowUNKNOW_0100
+     * @tc.desc    : test SUB_OH_NativeErrorCodeWindowUNKNOW Invalid Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_NativeErrorCodeWindowUNKNOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_NativeErrorCodeWindowUNKNOW_0100 start====");
+          let result: number = libGraphics2DApi20.OHNativeErrorCodeWindowUNKNOW();
+          console.info("====>SUB_OH_NativeErrorCodeWindowUNKNOW_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_NativeErrorCodeWindowUNKNOW_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
      * @tc.number  : SUB_OH_Drawing_DrawingErrorCode_0100
      * @tc.name    : SUB_OH_Drawing_DrawingErrorCode_0100
      * @tc.desc    : test SUB_OH_Drawing_DrawingErrorCode Alloc Scene
@@ -305,23 +371,154 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BufferPlane_0100
-     * @tc.name    : SUB_OH_Drawing_BufferPlane_0100
-     * @tc.desc    : test SUB_OH_Drawing_BufferPlane Scene
+     * @tc.number  : SUB_OH_Drawing_LineTypographyGetLineBreak_0100
+     * @tc.name    : SUB_OH_Drawing_LineTypographyGetLineBreak_0100
+     * @tc.desc    : test SUB_OH_Drawing_LineTypographyGetLineBreak invalue Scene
      * @tc.level   : Level3
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('SUB_OH_Drawing_BufferPlane_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_OH_Drawing_LineTypographyGetLineBreak_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         try {
-          console.info("====>SUB_OH_Drawing_BufferPlane_0100 start====");
-          let result: number = libGraphics2DApi20.OHDrawingBufferPlane();
-          console.info("====>SUB_OH_Drawing_BufferPlane_0100 result====", result);
+          console.info("====>SUB_OH_Drawing_LineTypographyGetLineBreak_0100 start====");
+          let result: number = libGraphics2DApi20.OHDrawingLineTypographyGetLineBreakInvalue();
+          console.info("====>SUB_OH_Drawing_LineTypographyGetLineBreak_0100 result====", result);
           expect(result).assertEqual(1);
           done();
         } catch (err) {
-          console.error("====>SUB_OH_Drawing_BufferPlane_0100 catch err: " + err);
+          console.error("====>SUB_OH_Drawing_LineTypographyGetLineBreak_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
+     * @tc.name    : SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
+     * @tc.desc    : test SUB_OH_Drawing_LineTypographyCreateLineInvalue invalue Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100 start====");
+          let result: number = libGraphics2DApi20.OHDrawingLineTypographyCreateLineInvalue();
+          console.info("====>SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_EffectTileModeREPEATSuccess_0100
+     * @tc.name    : SUB_OH_EffectTileModeREPEATSuccess_0100
+     * @tc.desc    : test SUB_OH_EffectTileModeREPEAT Success Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_EffectTileModeREPEATSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_EffectTileModeREPEATSuccess_0100 start====");
+          let result: number = libGraphics2DApi20.EffectTileModeREPEATSuccess();
+          console.info("====>SUB_OH_EffectTileModeREPEATSuccess_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_EffectTileModeREPEATSuccess_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_EffectTileModeMIRROR_0100
+     * @tc.name    : SUB_OH_EffectTileModeMIRROR_0100
+     * @tc.desc    : test SUB_OH_EffectTileModeMIRROR Success Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_EffectTileModeMIRROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_EffectTileModeMIRROR_0100 start====");
+          let result: number = libGraphics2DApi20.EffectTileModeMIRRORSuccess();
+          console.info("====>SUB_OH_EffectTileModeMIRROR_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_EffectTileModeMIRROR_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_EffectTileModeDECAL_0100
+     * @tc.name    : SUB_OH_EffectTileModeDECAL_0100
+     * @tc.desc    : test SUB_OH_EffectTileModeDECAL Success Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_EffectTileModeDECAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_EffectTileModeDECAL_0100 start====");
+          let result: number = libGraphics2DApi20.EffectTileModeDECALSuccess();
+          console.info("====>SUB_OH_EffectTileModeDECAL_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_EffectTileModeDECAL_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_Drawing_SamplingOptionsCopy_0100
+     * @tc.name    : SUB_OH_Drawing_SamplingOptionsCopy_0100
+     * @tc.desc    : test SUB_OH_Drawing_SamplingOptionsCopy Success Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_Drawing_SamplingOptionsCopy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_Drawing_SamplingOptionsCopy_0100 start====");
+          let result: number = libGraphics2DApi20.samplingOptionsCopySuccess();
+          console.info("====>SUB_OH_Drawing_SamplingOptionsCopy_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_Drawing_SamplingOptionsCopy_0100 catch err: " + err);
+          done();
+        }
+      })
+    /**
+     * @tc.number  : SUB_OH_Drawing_SamplingOptionsCopy_0200
+     * @tc.name    : SUB_OH_Drawing_SamplingOptionsCopy_0200
+     * @tc.desc    : test SUB_OH_Drawing_SamplingOptionsCopy Fail Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_Drawing_SamplingOptionsCopy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_Drawing_SamplingOptionsCopy_0200 start====");
+          let result: number = libGraphics2DApi20.samplingOptionsCopyInvalue();
+          console.info("====>SUB_OH_Drawing_SamplingOptionsCopy_0200 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_Drawing_SamplingOptionsCopy_0200 catch err: " + err);
           done();
         }
       })
