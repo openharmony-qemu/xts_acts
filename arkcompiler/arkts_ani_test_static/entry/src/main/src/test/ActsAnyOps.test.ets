@@ -30,6 +30,25 @@ export default function anyOpsTest() {
       console.log('loadFailed', e.message);
     }
 
+    /**
+    * @tc.number    Any_Call_0100
+    * @tc.name      Any_Call_0100
+    * @tc.desc      MediumTest
+    * @tc.size      Function
+    * @tc.type      Function test
+    * @tc.level     Level 3
+    */
+    it("Any_Call_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_Call_0100 start');
+        let cls = new Foo();
+        let result = cls.test_Any_Call();
+        expect(result).assertTrue();
+        console.log('Any_Call_0100 done');
+        done();
+        console.log('Any_Call_0100 end');
+      })
+
     /*
      * @tc.number    : Any_CallMethod_0100
      * @tc.name      : Any_CallMethod_0100
@@ -47,6 +66,25 @@ export default function anyOpsTest() {
         console.log('Any_CallMethod_0100 done');
         done();
         console.log('Any_CallMethod_0100 end');
+      })
+
+    /*
+     * @tc.number    : Any_CallMethod_0100
+     * @tc.name      : Any_CallMethod_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_CallMethod_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_CallMethod_0200 start');
+        let cls = new Foo();
+        let result = cls.test_Any_CallMethod_01();
+        expect(result).assertFalse();
+        console.log('Any_CallMethod_0200 done');
+        done();
+        console.log('Any_CallMethod_0200 end');
       })
 
     /*
@@ -107,6 +145,101 @@ export default function anyOpsTest() {
       })
 
     /*
+     * @tc.number    : Any_GetProperty_0200
+     * @tc.name      : Any_GetProperty_0200
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_GetProperty_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_GetProperty_0200 start');
+        let cls = new Foo();
+        let result = cls.test_Any_GetProperty_01();
+        expect(result).assertTrue();
+        console.log('Any_GetProperty_0200 done');
+        done();
+        console.log('Any_GetProperty_0200 end');
+      })
+
+    /*
+     * @tc.number    : Any_GetProperty_0400
+     * @tc.name      : Any_GetProperty_0400
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_GetProperty_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_GetProperty_0400 start');
+        let cls = new Foo();
+        let result = cls.test_Any_GetProperty_03();
+        expect(result).assertFalse();
+        console.log('Any_GetProperty_0400 done');
+        done();
+        console.log('Any_GetProperty_0400 end');
+      })
+
+    /*
+     * @tc.number    : Any_GetProperty_0500
+     * @tc.name      : Any_GetProperty_0500
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_GetProperty_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_GetProperty_0500 start');
+        let cls = new Foo();
+        let result = cls.test_Any_GetProperty_04();
+        expect(result).assertFalse();
+        console.log('Any_GetProperty_0500 done');
+        done();
+        console.log('Any_GetProperty_0500 end');
+      })
+
+    /*
+     * @tc.number    : Any_GetProperty_0600
+     * @tc.name      : Any_GetProperty_0600
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_GetProperty_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_GetProperty_0600 start');
+        let cls = new Foo();
+        let result = cls.test_Any_GetProperty_05();
+        expect(result).assertFalse();
+        console.log('Any_GetProperty_0600 done');
+        done();
+        console.log('Any_GetProperty_0600 end');
+      })
+
+    /*
+     * @tc.number    : Any_GetProperty_0700
+     * @tc.name      : Any_GetProperty_0700
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_GetProperty_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_GetProperty_0700 start');
+        let cls = new Foo();
+        let result = cls.test_Any_GetProperty_06();
+        expect(result).assertFalse();
+        console.log('Any_GetProperty_0700 done');
+        done();
+        console.log('Any_GetProperty_0700 end');
+      })
+
+    /*
      * @tc.number    : Any_InstanceOf_0100
      * @tc.name      : Any_InstanceOf_0100
      * @tc.desc      : MediumTest
@@ -126,6 +259,25 @@ export default function anyOpsTest() {
       })
 
     /*
+    * @tc.number    : Any_InstanceOf_0200
+    * @tc.name      : Any_InstanceOf_0200
+    * @tc.desc      : MediumTest
+    * @tc.size      : Function
+    * @tc.type      : Function test
+    * @tc.level     : Level 3
+    */
+    it("Any_InstanceOf_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_InstanceOf_0200 start');
+        let cls = new Foo();
+        let result = cls.test_Any_InstanceOf_01();
+        expect(result).assertTrue();
+        console.log('Any_InstanceOf_0200 done');
+        done();
+        console.log('Any_InstanceOf_0200 end');
+      })
+
+    /*
      * @tc.number    : Any_New_0100
      * @tc.name      : Any_New_0100
      * @tc.desc      : MediumTest
@@ -142,6 +294,25 @@ export default function anyOpsTest() {
         console.log('Any_New_0100 done');
         done();
         console.log('Any_New_0100 end');
+      })
+
+    /*
+     * @tc.number    : Any_New_0200
+     * @tc.name      : Any_New_0200
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_New_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_New_0200 start');
+        let cls = new Foo();
+        let result = cls.test_Any_New_01();
+        expect(result).assertTrue();
+        console.log('Any_New_0200 done');
+        done();
+        console.log('Any_New_0200 end');
       })
 
     /*
@@ -199,6 +370,101 @@ export default function anyOpsTest() {
         console.log('Any_SetProperty_0100 done');
         done();
         console.log('Any_SetProperty_0100 end');
+      })
+
+    /*
+     * @tc.number    : Any_SetProperty_0200
+     * @tc.name      : Any_SetProperty_0200
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_SetProperty_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_SetProperty_0200 start');
+        let cls = new Foo();
+        let result = cls.test_Any_SetProperty_01();
+        expect(result).assertFalse();
+        console.log('Any_SetProperty_0200 done');
+        done();
+        console.log('Any_SetProperty_0200 end');
+      })
+
+    /*
+     * @tc.number    : Any_SetProperty_0300
+     * @tc.name      : Any_SetProperty_0300
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_SetProperty_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_SetProperty_0300 start');
+        let cls = new Foo();
+        let result = cls.test_Any_SetProperty_02();
+        expect(result).assertFalse();
+        console.log('Any_SetProperty_0300 done');
+        done();
+        console.log('Any_SetProperty_0300 end');
+      })
+
+    /*
+     * @tc.number    : Any_SetProperty_0400
+     * @tc.name      : Any_SetProperty_0400
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_SetProperty_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_SetProperty_0400 start');
+        let cls = new Foo();
+        let result = cls.test_Any_SetProperty_03();
+        expect(result).assertTrue();
+        console.log('Any_SetProperty_0400 done');
+        done();
+        console.log('Any_SetProperty_0400 end');
+      })
+
+    /*
+     * @tc.number    : Any_SetProperty_0500
+     * @tc.name      : Any_SetProperty_0500
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_SetProperty_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_SetProperty_0500 start');
+        let cls = new Foo();
+        let result = cls.test_Any_SetProperty_04();
+        expect(result).assertFalse();
+        console.log('Any_SetProperty_0500 done');
+        done();
+        console.log('Any_SetProperty_0500 end');
+      })
+
+    /*
+     * @tc.number    : Any_SetProperty_0600
+     * @tc.name      : Any_SetProperty_0600
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
+     */
+    it("Any_SetProperty_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('Any_SetProperty_0600 start');
+        let cls = new Foo();
+        let result = cls.test_Any_SetProperty_05();
+        expect(result).assertFalse();
+        console.log('Any_SetProperty_0600 done');
+        done();
+        console.log('Any_SetProperty_0300 end');
       })
   })
 }
