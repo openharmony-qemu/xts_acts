@@ -40,6 +40,11 @@ function onReceiveEvent2(data: Array<string>) {
     expect(data.length > 0).assertTrue();
 }
 
+function BondStateParam(data: connection.BondStateParam) {
+    hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data)
+        +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state);
+}
+
 export default function bluetoothConnectionTest() {
 
     describe("bluetoothConnectionTest", (): void => {
@@ -349,13 +354,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest
-        * @tc.name    getBluetoothScanModeTest
-        * @tc.desc    Test getBluetoothScanMode API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest
+         * @tc.name    getBluetoothScanModeTest
+         * @tc.desc    Test getBluetoothScanMode API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -382,13 +387,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_001
-        * @tc.name    getBluetoothScanModeTest_001
-        * @tc.desc    Test getBluetoothScanModeTest_001 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_001
+         * @tc.name    getBluetoothScanModeTest_001
+         * @tc.desc    Test getBluetoothScanModeTest_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -415,13 +420,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_002
-        * @tc.name    getBluetoothScanModeTest_002
-        * @tc.desc    Test getBluetoothScanModeTest_002 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_002
+         * @tc.name    getBluetoothScanModeTest_002
+         * @tc.desc    Test getBluetoothScanModeTest_002 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -448,13 +453,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_003
-        * @tc.name    getBluetoothScanModeTest_003
-        * @tc.desc    Test getBluetoothScanModeTest_003 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_003
+         * @tc.name    getBluetoothScanModeTest_003
+         * @tc.desc    Test getBluetoothScanModeTest_003 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -481,13 +486,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_004
-        * @tc.name    getBluetoothScanModeTest_004
-        * @tc.desc    Test getBluetoothScanModeTest_004 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_004
+         * @tc.name    getBluetoothScanModeTest_004
+         * @tc.desc    Test getBluetoothScanModeTest_004 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -514,13 +519,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_005
-        * @tc.name    getBluetoothScanModeTest_005
-        * @tc.desc    Test getBluetoothScanModeTest_005 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_005
+         * @tc.name    getBluetoothScanModeTest_005
+         * @tc.desc    Test getBluetoothScanModeTest_005 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -547,13 +552,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_006
-        * @tc.name    getBluetoothScanModeTest_006
-        * @tc.desc    Test getBluetoothScanModeTest_006 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_006
+         * @tc.name    getBluetoothScanModeTest_006
+         * @tc.desc    Test getBluetoothScanModeTest_006 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -580,13 +585,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_007
-        * @tc.name    getBluetoothScanModeTest_007
-        * @tc.desc    Test getBluetoothScanModeTest_007 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_007
+         * @tc.name    getBluetoothScanModeTest_007
+         * @tc.desc    Test getBluetoothScanModeTest_007 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -613,13 +618,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getBluetoothScanModeTest_008
-        * @tc.name    getBluetoothScanModeTest_008
-        * @tc.desc    Test getBluetoothScanModeTest_008 API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getBluetoothScanModeTest_008
+         * @tc.name    getBluetoothScanModeTest_008
+         * @tc.desc    Test getBluetoothScanModeTest_008 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getBluetoothScanModeTest_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let oldScanMode = connection.getBluetoothScanMode();
@@ -646,13 +651,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getProfileConnectionStateTest
-        * @tc.name    getProfileConnectionStateTest
-        * @tc.desc    Test getProfileConnectionState API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getProfileConnectionStateTest
+         * @tc.name    getProfileConnectionStateTest
+         * @tc.desc    Test getProfileConnectionState API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getProfileConnectionStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let connectionState = connection.getProfileConnectionState();
@@ -673,13 +678,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  getLocalNameTest
-        * @tc.name    getLocalNameTest
-        * @tc.desc    Test getLocalName API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getLocalNameTest
+         * @tc.name    getLocalNameTest
+         * @tc.desc    Test getLocalName API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getLocalNameTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let getNewName = connection.getLocalName();
@@ -699,13 +704,13 @@ export default function bluetoothConnectionTest() {
 
 
         /**
-        * @tc.number  getPairStateTest
-        * @tc.name    getPairStateTest
-        * @tc.desc    Test getPairState API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  getPairStateTest
+         * @tc.name    getPairStateTest
+         * @tc.desc    Test getPairState API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("getPairStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let state: connection.BondState = connection.getPairState("00:11:22:33:44:55");
@@ -725,13 +730,13 @@ export default function bluetoothConnectionTest() {
 
 
         /**
-        * @tc.number  startOrStopBluetoothDiscoveryTest
-        * @tc.name    startOrStopBluetoothDiscoveryTest
-        * @tc.desc    Test startOrStopBluetoothDiscoveryTest API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  startOrStopBluetoothDiscoveryTest
+         * @tc.name    startOrStopBluetoothDiscoveryTest
+         * @tc.desc    Test startOrStopBluetoothDiscoveryTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("startOrStopBluetoothDiscoveryTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.on("bluetoothDeviceFind", onReceiveEvent2);
@@ -740,7 +745,7 @@ export default function bluetoothConnectionTest() {
                 connection.off('bluetoothDeviceFind', onReceiveEvent2);
                 connection.stopBluetoothDiscovery();
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, `[bluetooth_js]bluetoothDeviceFin error, code is ${err.code},message is ${err.message}`);
+                hilog.info(domain, tag, "startOrStopBluetoothDiscoveryTest errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
@@ -753,13 +758,13 @@ export default function bluetoothConnectionTest() {
         })
 
         /**
-        * @tc.number  isBluetoothDiscoveringTest
-        * @tc.name    isBluetoothDiscoveringTest
-        * @tc.desc    Test isBluetoothDiscovering API functionality
-        * @tc.level   Level 0
-        * @tc.type    Function
-        * @tc.size    MEDIUMTEST
-        */
+         * @tc.number  isBluetoothDiscoveringTest
+         * @tc.name    isBluetoothDiscoveringTest
+         * @tc.desc    Test isBluetoothDiscovering API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
         it("isBluetoothDiscoveringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let result: boolean = connection.isBluetoothDiscovering();
@@ -772,6 +777,242 @@ export default function bluetoothConnectionTest() {
                     expect(true).assertEqual(err.code == 801);
                 } else {
                     expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  connectAllowedProfiles_callback
+         * @tc.name    connectAllowedProfiles_callback
+         * @tc.desc    Test connectAllowedProfiles_callback API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("connectAllowedProfiles_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.connectAllowedProfiles(deviceId, (err) => {
+                    if (err) {
+                        hilog.info(domain, tag, 'errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+                        return;
+                    }
+                    hilog.info(domain, tag, 'connectAllowedProfiles_callback, err: ' + JSON.stringify(err));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "connectAllowedProfiles_callback get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  connectAllowedProfiles_promise
+         * @tc.name    connectAllowedProfiles_promise
+         * @tc.desc    Test connectAllowedProfiles_promise API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("connectAllowedProfiles_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await connection.connectAllowedProfiles(deviceId).then(() => {
+                    hilog.info(domain, tag, 'connectAllowedProfiles success');
+                });
+                expect().assertFail();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "connectAllowedProfiles_promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getRemoteProfileUuids_callback
+         * @tc.name    getRemoteProfileUuids_callback
+         * @tc.desc    Test getRemoteProfileUuids_callback API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getRemoteProfileUuids_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.getRemoteProfileUuids(deviceId, (err, data: connection.ProfileUuids[] | undefined)=> {
+                    if (err) {
+                        hilog.info(domain, tag, "getRemoteProfileUuids_callback, err:" + JSON.stringify(err));
+                    } else {
+                        hilog.info(domain, tag, "getRemoteProfileUuids_callback success");
+                    }
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getRemoteProfileUuids_callback get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getRemoteProfileUuids_promise
+         * @tc.name    getRemoteProfileUuids_promise
+         * @tc.desc    Test getRemoteProfileUuids_promise API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getRemoteProfileUuids_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await connection.getRemoteProfileUuids(deviceId).then((data: connection.ProfileUuids[])=> {
+                    hilog.info(domain, tag, "getRemoteProfileUuids_promise resule:" + JSON.stringify(data));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getRemoteProfileUuids_promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  pairDeviceTest_callback
+        * @tc.name    pairDeviceTest_callback
+        * @tc.desc    Test pairDeviceTest_callback API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("pairDeviceTest_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.on('bondStateChange', BondStateParam);
+                connection.pairDevice('11:22:33:44:55:66', (error) => {
+                    if (error) {
+                        hilog.info(domain, tag, "pairDevice,device name err:" + JSON.stringify(error));
+                    } else {
+                        hilog.info(domain, tag, "pairDevice success");
+                    }
+                });
+                expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pairDeviceTest_callback, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.off('bondStateChange', BondStateParam);
+            done();
+        })
+
+        /**
+        * @tc.number  pairDeviceTest_promise
+        * @tc.name    pairDeviceTest_promise
+        * @tc.desc    Test pairDeviceTest_promise API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("pairDeviceTest_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.on('bondStateChange', BondStateParam);
+                await connection.pairDevice("11:22:55:66:33:44").then(() => {
+                    hilog.info(domain, tag, "pairDevice success");
+                });
+                await Utils.msSleep(900);
+                expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.off('bondStateChange', BondStateParam);
+            done();
+        })
+
+        /**
+         * @tc.number  setDevicePinCode_callback
+         * @tc.name    setDevicePinCode_callback
+         * @tc.desc    Test setDevicePinCode_callback API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("setDevicePinCode_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.setDevicePinCode(deviceId, "12345", (error, data) => {
+                    if (error) {
+                        hilog.info(domain, tag, "setDevicePinCode_callback,device name err:" + JSON.stringify(error));
+                    } else {
+                        hilog.info(domain, tag, "setDevicePinCode_callback success");
+                    }
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "setDevicePinCode_callback get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "setDevicePinCode is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  setDevicePinCode_promise
+         * @tc.name    setDevicePinCode_promise
+         * @tc.desc    Test setDevicePinCode_promise API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("setDevicePinCode_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await connection.setDevicePinCode(deviceId, "12345").then(() => {
+                    hilog.info(domain, tag, "setDevicePinCode_promise");
+                }).catch((err: Error) => {
+                    hilog.info(domain, tag, "setDevicePinCode_promise error:" + Number(err.code));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "setDevicePinCode_promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "setDevicePinCode is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
