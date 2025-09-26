@@ -166,7 +166,6 @@ struct WebIndex {
           await waitForExist(()=>this.isPageEnd, this.str, 0);
           console.info("key==>" + this.str)
           this.isReceive = -1;
-          this.isPageEnd = -1;
           switch (this.str) {
             case "emitOnNativeEmbedObjectParamChange001": {
               try {
@@ -180,7 +179,7 @@ struct WebIndex {
             case "emitOnNativeEmbedObjectParamChange002": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange002')
-                this.browserTabController.runJavaScript('modifyLastParamValue()')
+                this.browserTabController.runJavaScript('modifyLastParamName()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
