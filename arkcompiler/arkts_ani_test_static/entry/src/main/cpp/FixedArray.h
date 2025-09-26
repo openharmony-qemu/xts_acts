@@ -1387,26 +1387,20 @@ ani_int test_FixedArray_Get_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_FixedArray_Get_Ref_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-//    auto array = static_cast<ani_fixedarray_ref>(CallEtsFunction<ani_ref>(env_, "fixedarray_get_ref_test", "getArray"));
     ani_ref ref = nullptr;
     const ani_size index = 0;
     const ani_size invalidIndex = 5;
     ASSERT_EQ(env_->FixedArray_Get_Ref(nullptr, index, &ref), ANI_INVALID_ARGS);
-//    ASSERT_EQ(env_->FixedArray_Get_Ref(array, index, nullptr), ANI_INVALID_ARGS);
-//    ASSERT_EQ(env_->FixedArray_Get_Ref(array, invalidIndex, &ref), ANI_OUT_OF_RANGE);
     return ANI_TRUE;
 }
 
 ani_int test_FixedArray_Get_Ref_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-//    auto array = static_cast<ani_fixedarray_ref>(CallEtsFunction<ani_ref>(env_, "fixedarray_get_ref_test", "getArray"));
     const ani_size index1 = 1;
     const ani_size index2 = 2;
     ani_ref ref1 = nullptr;
     ani_ref ref2 = nullptr;
     ani_boolean isNull;
-//    ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-//    ASSERT_EQ(env_->FixedArray_Get_Ref(array, index2, &ref2), ANI_OK);
     ASSERT_EQ(env_->Reference_IsNull(ref1, &isNull), ANI_OK);
     ASSERT_EQ(isNull, ANI_TRUE);
     ASSERT_EQ(env_->Reference_IsNull(ref2, &isNull), ANI_OK);
