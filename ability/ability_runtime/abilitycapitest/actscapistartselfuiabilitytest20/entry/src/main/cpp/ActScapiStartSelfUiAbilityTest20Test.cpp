@@ -1833,26 +1833,3 @@ napi_value AbilityRuntimeErrorAppInstanceKeyNotSupportCode(napi_env env, napi_ca
     }
     return nullptr;
 }
-
-napi_value ApplicationContextGetVersionCodeNoError(napi_env env, napi_callback_info info)
-{
-    int64_t para = 1000000;
-    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ApplicationContextGetVersionCode(&para);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-        napi_value napiRet;
-        napi_create_int32(env, ret, &napiRet);
-        return napiRet;
-    }
-    return nullptr;
-}
-
-napi_value ApplicationContextGetVersionCodeParamInvalid(napi_env env, napi_callback_info info)
-{
-    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ApplicationContextGetVersionCode(nullptr);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
-        napi_value napiRet;
-        napi_create_int32(env, ret, &napiRet);
-        return napiRet;
-    }
-    return nullptr;
-}

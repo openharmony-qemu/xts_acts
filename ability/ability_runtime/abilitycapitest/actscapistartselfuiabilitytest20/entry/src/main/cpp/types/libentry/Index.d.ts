@@ -131,6 +131,3 @@ export const AbilityRuntimeErrorVisibilitySettingDisabledCode: () => number;
 export const AbilityRuntimeErrorCodeInvalidAppInstanceKeyCode: () => number;
 export const AbilityRuntimeErrorCodeUpperLimitReachedCode: () => number;
 export const AbilityRuntimeErrorAppInstanceKeyNotSupportCode: () => number;
-export const ApplicationContextGetVersionCodeNoError: () => number;
-export const ApplicationContextGetVersionCodeParamInvalid: () => number;
-

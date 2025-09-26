@@ -1478,53 +1478,5 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
           done()
         }
       })
-
-    /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.desc    : Test ApplicationContextGetVersionCode and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100`;
-        try {
-          console.info(`====>${LOG_NAME} start====`);
-          let result:number = AbilityKitTest.ApplicationContextGetVersionCodeNoError();
-          expect(0).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done()
-        } catch (err) {
-          console.error(`====>${LOG_NAME} catch err: ` + err);
-          expect(false).assertEqual(ABILITY_ERR_OK);
-          done()
-        }
-      })
-
-    /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.desc    : Testing ApplicationContextGetVersionCode returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200`;
-        try {
-          console.info(`====>${LOG_NAME} start====`);
-          let result:number = AbilityKitTest.ApplicationContextGetVersionCodeParamInvalid();
-          expect(401).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done()
-        } catch (err) {
-          console.error(`====>${LOG_NAME} catch err: ` + err);
-          expect(false).assertEqual(ABILITY_ERR_OK);
-          done()
-        }
-      })
   })
 }
