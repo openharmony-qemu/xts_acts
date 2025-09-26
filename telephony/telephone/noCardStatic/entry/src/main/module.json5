@@ -47,6 +47,11 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.SET_TELEPHONY_STATE"
+      }
     ]
   }
 }

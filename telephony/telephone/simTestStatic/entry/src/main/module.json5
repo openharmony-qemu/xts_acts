@@ -68,12 +68,6 @@
         "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
       },
       {
-        "name": "ohos.permission.GET_SENSITIVE_PREMISSIONS"
-      },
-      {
-        "name": "ohos.permission.GRANT_SENSITIVE_PREMISSIONS"
-      },
-      {
         "name": "ohos.permission.GET_NETWORK_INFO"
       }
     ]
