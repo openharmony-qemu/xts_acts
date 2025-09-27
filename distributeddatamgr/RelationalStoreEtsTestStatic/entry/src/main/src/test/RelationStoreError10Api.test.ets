@@ -118,13 +118,19 @@ export default function RelationStoreError10Test() {
         await data_relationalStore.getRdbStore(context,STORE_CONFIG1);
         hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 1111 *************");
         expect().assertFail();
-        done()
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 333 *************");
         hilog.info(domain, tag, '%{public}s', "RelationStoreError10Test0001, error code: "+err.code, "err message:"+ err.message);
         expect(err.code).assertEqual(14800010);
-        done();
       }
+      try {
+        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        expect().assertFail();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', "deleteRdbStore, error code: "+err.code, "err message:"+ err.message);
+        expect(err.code).assertEqual(14800010);
+      }
+      done();
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 end *************");
     })
   })
