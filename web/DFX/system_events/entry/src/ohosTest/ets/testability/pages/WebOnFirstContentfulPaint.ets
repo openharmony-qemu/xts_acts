@@ -81,7 +81,18 @@ struct WebOnFirstContentfulPaint {
                 this.isPageEnd = -1
                 this.controller.refresh()
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                Utils.emitEvent(this.onFirstContentfulPaintCalled, 127120)
+                let nums=1;
+                let tryTime=200
+                while(nums < tryTime) {
+                  await Utils.sleep(1000);
+                  if (this.onFirstContentfulPaintCalled == true) {
+                    Utils.emitEvent(this.onFirstContentfulPaintCalled, 127120)
+                    console.log('emitOnFirstContentfulPaint002onFirstContentfulPaintCalled---' + tryTime)
+                    break;
+                  }
+                  console.log('emitOnFirstContentfulPaint002---' + nums)
+                  nums++;
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
