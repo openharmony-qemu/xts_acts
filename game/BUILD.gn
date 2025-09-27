@@ -11,13 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import("//build/ohos_var.gni")
-
+import("//test/xts/tools/build/suite.gni")
 group("game") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "gamecontroller:ActsGameControllerStaticTest",
+      "game_controller_framework:game_controller_framework"
     ]
   }
 }
+
+
