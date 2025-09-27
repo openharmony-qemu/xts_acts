@@ -35,7 +35,6 @@ export default function WebViewBypassVsyncCondition() {
         if (!("WebViewBypassVsyncCondition" == pages.name)) {
           console.info("get WebViewBypassVsyncCondition state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewBypassVsyncCondition page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -52,14 +51,12 @@ export default function WebViewBypassVsyncCondition() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebViewBypassVsyncCondition afterEach start");
-      await Utils.sleep(2000);
       console.info("WebViewBypassVsyncCondition afterEach end");
       done();
     })
