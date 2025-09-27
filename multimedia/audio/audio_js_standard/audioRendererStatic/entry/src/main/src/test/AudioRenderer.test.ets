@@ -257,7 +257,9 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
-      await Utils.msSleep(100);
+      audioRen.off('writeData', writeDataCallback);
+      await Utils.msSleep(2000);
+
       await audioRen.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
