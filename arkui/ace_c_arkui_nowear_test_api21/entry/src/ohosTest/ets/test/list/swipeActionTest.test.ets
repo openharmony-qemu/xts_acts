@@ -15,7 +15,9 @@
 import { expect, describe, it, afterEach, Level  } from '@ohos/hypium';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
+import hilog from '@ohos.hilog';
 const SLEEP_TIME = 1000;
+const PARAMETER_ERROR_CODE = 401;
 
 export default function SwipeActionTest(){
 
@@ -86,6 +88,98 @@ export default function SwipeActionTest(){
       let left1 = rect1.left;
       let distance = left-left1;
       expect(distance>0).assertEqual(true);
+      done();
+    });
+
+    /**
+     * @tc.number    swipeActionTest003
+     * @tc.name      swipeActionTest003
+     * @tc.desc      test ListItemSwipeActionManager is EXPANDED and direction is right,
+     *               listItem slide out on the right side
+     * @tc.level     Level 1
+     * @tc.type
+     * @tc.size
+     */
+    it('swiperActionTest003', Level.LEVEL1, async (done: Function) => {
+      let PAGE_TAG = 'swipeActionTest';
+      await Utils.pushPage(`list/${PAGE_TAG}`);
+      await Utils.sleep(SLEEP_TIME);
+      let driver = await Driver.create();
+      await Utils.sleep(SLEEP_TIME);
+      let list = await driver.findComponent(ON.text('listItem 1'));
+      let rect = await list.getBounds();
+      let right = rect.right;
+      let button3 = await driver.findComponent(ON.id('expandListBtn_right'));
+      await button3.click();
+      await Utils.sleep(SLEEP_TIME);
+      let list1 = await driver.findComponent(ON.text('listItem 1'));
+      let rect1 = await list1.getBounds();
+      let right1 = rect1.right;
+      let distance = right-right1;
+      expect(distance>0).assertEqual(true);
+      let button4 = await driver.findComponent(ON.id('collapseListBtn_right'));
+      await button4.click();
+      await Utils.sleep(SLEEP_TIME);
+      done();
+    });
+
+    /**
+     * @tc.number    swipeActionTest004
+     * @tc.name      swipeActionTest004
+     * @tc.desc      test ListItemSwipeActionManager is collapse,
+     *               listItem slide to close
+     * @tc.level     Level 1
+     * @tc.type
+     * @tc.size
+     */
+    it('swiperActionTest004', Level.LEVEL1, async (done: Function) => {
+      let PAGE_TAG = 'swipeActionTest';
+      await Utils.pushPage(`list/${PAGE_TAG}`);
+      await Utils.sleep(SLEEP_TIME);
+      let driver = await Driver.create();
+      await Utils.sleep(SLEEP_TIME);
+      let button3 = await driver.findComponent(ON.id('expandListBtn_right'));
+      await button3.click();
+      await Utils.sleep(1000);
+      let list = await driver.findComponent(ON.text('listItem 1'));
+      let rect = await list.getBounds();
+      let right = rect.right;
+      let button4 = await driver.findComponent(ON.id('collapseListBtn_right'));
+      await button4.click();
+      await Utils.sleep(SLEEP_TIME);
+      let list1 = await driver.findComponent(ON.text('listItem 1'));
+      let rect1 = await list1.getBounds();
+      let right1 = rect1.right;
+      let distance = right1-right;
+      expect(distance>0).assertEqual(true);
+      done();
+    });
+
+    /**
+     * @tc.number    swipeActionTest005
+     * @tc.name      swipeActionTest005
+     * @tc.desc      test ListItemSwipeActionManager node is nullptr,
+     *               return error code is 401
+     * @tc.level     Level 1
+     * @tc.type
+     * @tc.size
+     */
+    it('swiperActionTest005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('swiperActionTest005 START');
+      let PAGE_TAG = 'swipeActionTest';
+      await Utils.pushPage(`list/${PAGE_TAG}`);
+      await Utils.sleep(SLEEP_TIME);
+      let driver: Driver = Driver.create();
+      let btn5 = await driver.findComponent(ON.id('invalidBtn'));
+      await btn5.click();
+      await Utils.sleep(SLEEP_TIME);
+      try {
+        console.info('swiperActionTest005 Parameters are correct');
+      } catch (err) {
+        hilog.error(0x0000, "Error expand item:",
+          `listSwipeAction, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(PARAMETER_ERROR_CODE);
+      };
       done();
     });
 
