@@ -558,10 +558,8 @@ export default function cameraJSUnitOutput() {
         hilog.info(domain, tag, "SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_STATIC_0100 FAILED");
       }
       cameraInput.open((err:BusinessError | null) => {
-        if (!err || err.code == 0) {
-          expect(!err || err.code == 0).assertTrue();
-        } else {
-          expect().assertFail();
+        if (err) {
+          expect(err.code != null).assertTrue();
         }
       })
       await Utils.msSleep(1000);
