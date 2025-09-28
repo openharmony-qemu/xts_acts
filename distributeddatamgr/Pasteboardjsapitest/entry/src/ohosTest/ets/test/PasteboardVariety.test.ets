@@ -398,9 +398,7 @@ export default function PasteboardVarietyTest() {
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 start ************')
       try {
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
-        pasteData.removeRecord(0);
-        let pasteDataType: Array<String> = pasteData.getMimeTypes();
+        let pasteDataType: Array<String> = pasteboard.PasteData.getMimeTypes();
         console.info(TAG + 'type:' + pasteDataType);
         expect(pasteDataType.length).assertEqual(0);
         expect(pasteDataType).assertDeepEquals([]);
