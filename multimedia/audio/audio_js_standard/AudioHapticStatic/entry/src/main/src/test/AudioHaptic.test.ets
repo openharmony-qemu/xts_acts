@@ -58,7 +58,7 @@ export default function AudioHapticTest() {
       if (fs.accessSync(filePath)) {
         fs.unlinkSync(filePath);
       }
-      let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       // 3.resource下文件写入沙箱文件
       fs.writeSync(file.fd, uint8Array.buffer);
       // 4.关闭文件
