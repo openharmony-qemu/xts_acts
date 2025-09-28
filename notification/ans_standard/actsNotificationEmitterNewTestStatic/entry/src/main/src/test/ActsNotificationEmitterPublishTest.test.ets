@@ -5,6 +5,7 @@ import Utils from './Util.test';
 import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import { Callback } from '@kit.BasicServicesKit';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'Notification'; //日志标识字符串,作为tag标识当前runner类下的测试行为
