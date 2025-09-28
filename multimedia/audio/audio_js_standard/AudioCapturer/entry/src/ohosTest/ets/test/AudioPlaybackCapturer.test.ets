@@ -1209,7 +1209,6 @@ export default function audioCapturer() {
       await closeFileDescriptor(PLAY_FILE);
       done();
     })
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0900
      * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_SHARED
