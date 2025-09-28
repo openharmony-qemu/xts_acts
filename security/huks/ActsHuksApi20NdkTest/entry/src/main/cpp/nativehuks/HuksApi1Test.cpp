@@ -315,7 +315,7 @@ napi_value KeyPaddingTest_004(napi_env env, napi_callback_info info)
         InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
         auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
         OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
         OH_Huks_FreeParamSet(&paramSet);
         if (ohResult1.errorCode != OH_HUKS_SUCCESS) {
@@ -958,7 +958,7 @@ napi_value KeyAlgTest_002(napi_env env, napi_callback_info info)
     napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
-//TODO 与官方文档一样返回401，https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agreement-ndk
+
 napi_value KeyAlgTest_003(napi_env env, napi_callback_info info)
 {
     // OH_HUKS_ALG_ECDH
@@ -1621,8 +1621,7 @@ napi_value ErrCodeTest_002(napi_env env, napi_callback_info info)
         }
     };
     struct OH_Huks_ParamSet *verifyParamSet = nullptr;
-    ret1 = InitParamSet1(&verifyParamSet, invalidParams,
-                        sizeof(invalidParams) / sizeof(OH_Huks_Param));
+    InitParamSet1(&verifyParamSet, invalidParams, sizeof(invalidParams) / sizeof(OH_Huks_Param));
     char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
     struct OH_Huks_Blob newKeyAlias = {.size = (uint32_t)strlen(tmpKey), .data = (uint8_t *)tmpKey};
     auto ret = OH_Huks_ImportKeyItem(&newKeyAlias, verifyParamSet, &publicKey);
@@ -1750,7 +1749,7 @@ napi_value UserAuthTypeTest_001(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
         {.tag = OH_HUKS_TAG_NO_AUTH_REQUIRED, .boolParam = true},
-        {.tag = OH_HUKS_TAG_AUTH_TIMEOUT , .uint32Param = 0},
+        {.tag = OH_HUKS_TAG_AUTH_TIMEOUT, .uint32Param = 0},
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_FINGERPRINT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
