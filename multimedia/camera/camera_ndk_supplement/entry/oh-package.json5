@@ -21,5 +21,6 @@
   "license": "",
   "dependencies": {
     "@types/libentry.so": "file:./src/main/cpp/types/libentry",
+    "@types/libcameraout.so": "file:./src/main/cpp/types/libcameraout"
   }
 }
