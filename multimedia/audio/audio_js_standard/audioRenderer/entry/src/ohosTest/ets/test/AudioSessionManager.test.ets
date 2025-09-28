@@ -691,11 +691,12 @@ export default function audioSessionManagerTest() {
       try {
         let selectDevice:ESObject = 100;
         audioSessionManager.selectMediaInputDevice(selectDevice);
+        console.info(`SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100 success`);
         expect(false).assertTrue();
         done();
       } catch (err) {
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100 err.code: ${err.code}, err.message: ${err.message}`);
         expect(Number(err.code)).assertEqual(6800101);
-        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
       }
     })
