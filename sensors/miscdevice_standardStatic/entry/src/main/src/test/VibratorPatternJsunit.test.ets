@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import vibrator from '@ohos.vibrator'
@@ -22,7 +22,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function VibratorJsTest_misc_9() {
-  describe("VibratorJsTest_misc_9", ():void => {
+  describe("VibratorJsTest_misc_9", (): void => {
     hilog.info(domain, tag, '%{public}s', 'discribe start');
     const OPERATION_FAIL_CODE = 14600101;
     const PERMISSION_ERROR_CODE = 201;
@@ -39,7 +39,7 @@ export default function VibratorJsTest_misc_9() {
     let INVALID_EFFECT_ID = "haptic.xxx.yyy";
     let effectit = vibrator.EffectId.EFFECT_CLOCK_TIMER
 
-    beforeAll((done: () => void): Promise<void> =>{
+    beforeAll((done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll called');
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 Device type ' + deviceInfo.deviceType);
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 isAvailable ' + isAvailable);
@@ -54,8 +54,8 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error: BusinessError) {
-          hilog.info(domain, tag, 'VibratorJsTest_misc_9 exception: ' + JSON.stringify(error));
-          done();
+        hilog.info(domain, tag, 'VibratorJsTest_misc_9 exception: ' + JSON.stringify(error));
+        done();
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
@@ -137,19 +137,19 @@ export default function VibratorJsTest_misc_9() {
         TAG = 'VibratorProgramticHapticTestStatic003';
         if (isAvailable) {
           try {
-            let data1: vibrator.VibratorCurvePoint = { time: 0, intensity: 0, frequency: -7};
-            let data2: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6};
-            let data3: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6};
-            let data4: vibrator.VibratorCurvePoint = { time: 128, intensity: 0.94, frequency: -4};
-            let data5: vibrator.VibratorCurvePoint = { time: 217, intensity: 0.63, frequency: -14};
-            let data6: vibrator.VibratorCurvePoint = { time: 763, intensity: 0.48, frequency: -14};
-            let data7: vibrator.VibratorCurvePoint = { time: 1125, intensity: 0.53, frequency: -10};
-            let data8: vibrator.VibratorCurvePoint = { time: 1503, intensity: 0.42, frequency: -14};
-            let data9: vibrator.VibratorCurvePoint = { time: 1858, intensity: 0.39, frequency: -14};
-            let data10: vibrator.VibratorCurvePoint = { time: 2295, intensity: 0.34, frequency: -17};
-            let data11: vibrator.VibratorCurvePoint = { time: 2448, intensity: 0.21, frequency: -14};
-            let data12: vibrator.VibratorCurvePoint = { time: 2468, intensity: 0, frequency: -21};
-            let pointsMe:  Array<vibrator.VibratorCurvePoint> = [data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12];
+            let data1: vibrator.VibratorCurvePoint = { time: 0, intensity: 0, frequency: -7 };
+            let data2: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6 };
+            let data3: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6 };
+            let data4: vibrator.VibratorCurvePoint = { time: 128, intensity: 0.94, frequency: -4 };
+            let data5: vibrator.VibratorCurvePoint = { time: 217, intensity: 0.63, frequency: -14 };
+            let data6: vibrator.VibratorCurvePoint = { time: 763, intensity: 0.48, frequency: -14 };
+            let data7: vibrator.VibratorCurvePoint = { time: 1125, intensity: 0.53, frequency: -10 };
+            let data8: vibrator.VibratorCurvePoint = { time: 1503, intensity: 0.42, frequency: -14 };
+            let data9: vibrator.VibratorCurvePoint = { time: 1858, intensity: 0.39, frequency: -14 };
+            let data10: vibrator.VibratorCurvePoint = { time: 2295, intensity: 0.34, frequency: -17 };
+            let data11: vibrator.VibratorCurvePoint = { time: 2448, intensity: 0.21, frequency: -14 };
+            let data12: vibrator.VibratorCurvePoint = { time: 2468, intensity: 0, frequency: -21 };
+            let pointsMe: Array<vibrator.VibratorCurvePoint> = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12];
             hilog.info(domain, tag, TAG + ' pointsMe: ' + pointsMe);
             done();
           } catch (error: BusinessError) {
@@ -163,7 +163,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       })
-    
+
     /*
      * @tc.name:VibratorProgramticHapticTestStatic004
      * @tc.desc:VibratorEvent Test.
@@ -177,11 +177,11 @@ export default function VibratorJsTest_misc_9() {
         TAG = 'VibratorProgramticHapticTestStatic004';
         if (isAvailable) {
           try {
-            let data1: vibrator.VibratorCurvePoint = { time: 0, intensity: 0, frequency: -7};
-            let data2: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6};
-            let data3: vibrator.VibratorCurvePoint = { time: 128, intensity: 0.94, frequency: -4};
-            let data4: vibrator.VibratorCurvePoint = { time: 217, intensity: 0, frequency: -21};
-            let pointsMe:  Array<vibrator.VibratorCurvePoint> = [data1,data2,data3,data4];
+            let data1: vibrator.VibratorCurvePoint = { time: 0, intensity: 0, frequency: -7 };
+            let data2: vibrator.VibratorCurvePoint = { time: 42, intensity: 1, frequency: -6 };
+            let data3: vibrator.VibratorCurvePoint = { time: 128, intensity: 0.94, frequency: -4 };
+            let data4: vibrator.VibratorCurvePoint = { time: 217, intensity: 0, frequency: -21 };
+            let pointsMe: Array<vibrator.VibratorCurvePoint> = [data1, data2, data3, data4];
             let vibratorEvent: vibrator.VibratorEvent = {
               eventType: vibrator.VibratorEventType.CONTINUOUS,
               time: 20,
@@ -217,28 +217,28 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic048';
         try {
-            let effect: vibrator.HapticFileDescriptor = {
-              fd: 1,
-              offset: 0,
-              length: 1000
-            }
-            let startVibrationData1: vibrator.VibrateFromFile = {
-              type: "file",
-              hapticFd: effect,
-            }
-            let startVibrationData2: vibrator.VibrateAttribute = {
-              usage: "unknown"
-            }
-            vibrator.startVibration(startVibrationData1, startVibrationData2, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic048 should not in this method ');
-              expect(true).assertTrue();
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(false).assertTrue();
-            done();
+          let effect: vibrator.HapticFileDescriptor = {
+            fd: 1,
+            offset: 0,
+            length: 1000
           }
+          let startVibrationData1: vibrator.VibrateFromFile = {
+            type: "file",
+            hapticFd: effect,
+          }
+          let startVibrationData2: vibrator.VibrateAttribute = {
+            usage: "unknown"
+          }
+          vibrator.startVibration(startVibrationData1, startVibrationData2, (error: BusinessError<void> | null): void => {
+            hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic048 should not in this method ');
+            expect(true).assertTrue();
+            done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       })
 
     /*
@@ -255,8 +255,8 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
         if (isAvailable) {
           try {
-            vibrator.isSupportEffect(INVALID_EFFECT_ID, (error: BusinessError<void> | null, state: boolean | undefined) : void=>{
-              if (error != null){
+            vibrator.isSupportEffect(INVALID_EFFECT_ID, (error: BusinessError<void> | null, state: boolean | undefined): void => {
+              if (error != null) {
                 hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
                 expect(false).assertTrue();
                 done();
@@ -318,31 +318,31 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic023';
         try {
-            let effect: vibrator.VibratePreset = {
-              type: "preset",
-              effectId: "haptic.clock.timer",
-              count: 1,
-              intensity: 5,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-              if (error) {
-                expect(false).assertTrue();
-              } else {
-                expect(true).assertTrue();
-              }
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(error.code == 401).assertTrue();
-            expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-            done();
+          let effect: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: "haptic.clock.timer",
+            count: 1,
+            intensity: 5,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            if (error) {
+              expect(false).assertTrue();
+            } else {
+              expect(true).assertTrue();
+            }
+            done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.code == 401).assertTrue();
+          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          done();
+        }
       })
 
     /*
@@ -357,149 +357,149 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic032';
         try {
-            let effect: vibrator.VibratePreset = {
-              type: "preset",
-              effectId: "haptic.clock.timer",
-              count: 1,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute);
-            expect(true).assertTrue();
-            done();
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(error.code == 401).assertTrue();
-            expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-            done();
+          let effect: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: "haptic.clock.timer",
+            count: 1,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute);
+          expect(true).assertTrue();
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.code == 401).assertTrue();
+          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          done();
+        }
       })
 
-      /*
-     * @tc.name:VibratorProgramticHapticTestStatic024
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_Vibrator_JSTeststatic_0500
-     * @tc.level:Level 3
-     * @tc.type:FUNCTION
-     * @tc.size:MEDIUMTEST
-     */
+    /*
+   * @tc.name:VibratorProgramticHapticTestStatic024
+   * @tc.desc:Verification results of the incorrect parameters of the test interface.
+   * @tc.number:SUB_SensorsSystem_Vibrator_JSTeststatic_0500
+   * @tc.level:Level 3
+   * @tc.type:FUNCTION
+   * @tc.size:MEDIUMTEST
+   */
     it("VibratorProgramticHapticTestStatic024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic024';
         try {
-            let effect: vibrator.VibrateTime = {
-              type: "time",
-              duration: 1000,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute);
-            expect(true).assertTrue();
-            done();
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
-            } else {
-              expect(false).assertTrue();
-            }
-            done();
+          let effect: vibrator.VibrateTime = {
+            type: "time",
+            duration: 1000,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute);
+          expect(true).assertTrue();
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
       })
 
-      /*
-     * @tc.name:VibratorProgramticHapticTestStatic025
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_Vibrator_JSTeststatic_0600
-     * @tc.level:Level 3
-     * @tc.type:FUNCTION
-     * @tc.size:MEDIUMTEST
-     */
+    /*
+   * @tc.name:VibratorProgramticHapticTestStatic025
+   * @tc.desc:Verification results of the incorrect parameters of the test interface.
+   * @tc.number:SUB_SensorsSystem_Vibrator_JSTeststatic_0600
+   * @tc.level:Level 3
+   * @tc.type:FUNCTION
+   * @tc.size:MEDIUMTEST
+   */
     it("VibratorProgramticHapticTestStatic025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic025';
         try {
-           let points: Array<vibrator.VibratorCurvePoint> = [
-              {
-                time: 0,
-                intensity: 0.95,
-                frequency: 50,
-              }
-            ];
-            let vibratorEvent1: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 20,
-              duration: 50,
-              intensity: 60,
-              frequency: 75,
-              index: 1,
-              points: points,
+          let points: Array<vibrator.VibratorCurvePoint> = [
+            {
+              time: 0,
+              intensity: 0.95,
+              frequency: 50,
             }
-            let vibratorEvent2: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 30,
-              duration: 60,
-              intensity: 75,
-              frequency: 95,
-              index: 2,
-              points: points,
-            }
-            let vibratorEvent3: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 10,
-              duration: 70,
-              intensity: 65,
-              frequency: 55,
-              index: 3,
-              points: points,
-            }
-            let myevents:  Array<vibrator.VibratorEvent> = [vibratorEvent1,vibratorEvent2,vibratorEvent3];
-            let vibratorPattern: vibrator.VibratorPattern = {
-              time: 5,
-              events: myevents,
-            }
-            let effect: vibrator.VibrateFromPattern = {
-              type: "pattern",
-              pattern: vibratorPattern,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-              if (error) {
-                expect(true).assertTrue();
-              } else {
-                expect(false).assertTrue();
-              }
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
+          ];
+          let vibratorEvent1: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 20,
+            duration: 50,
+            intensity: 60,
+            frequency: 75,
+            index: 1,
+            points: points,
+          }
+          let vibratorEvent2: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 30,
+            duration: 60,
+            intensity: 75,
+            frequency: 95,
+            index: 2,
+            points: points,
+          }
+          let vibratorEvent3: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 10,
+            duration: 70,
+            intensity: 65,
+            frequency: 55,
+            index: 3,
+            points: points,
+          }
+          let myevents: Array<vibrator.VibratorEvent> = [vibratorEvent1, vibratorEvent2, vibratorEvent3];
+          let vibratorPattern: vibrator.VibratorPattern = {
+            time: 5,
+            events: myevents,
+          }
+          let effect: vibrator.VibrateFromPattern = {
+            type: "pattern",
+            pattern: vibratorPattern,
+          }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            if (error) {
+              expect(true).assertTrue();
             } else {
               expect(false).assertTrue();
             }
             done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+          } else {
+            expect(false).assertTrue();
           }
+          done();
+        }
       })
 
-      /**
-     *
-     * @tc.number    : UniversalVibratorJsTest01
-     * @tc.name      : UniversalVibratorJsTest01
-     * @tc.desc      : test EFFECT_IDSUCCESS vibrate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("UniversalVibratorJsTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    /**
+   *
+   * @tc.number    : UniversalVibratorJsTest01
+   * @tc.name      : UniversalVibratorJsTest01
+   * @tc.desc      : test EFFECT_IDSUCCESS vibrate
+   * @tc.size      : MediumTest
+   * @tc.type      : Function
+   * @tc.level     : Level 0
+   */
+    it("UniversalVibratorJsTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest01"
       let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
       hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret));
@@ -542,7 +542,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest02"
       let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
       hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1));
@@ -574,7 +574,7 @@ export default function VibratorJsTest_misc_9() {
         console.log(TAG + ' is not supported.');
         done();
       }
-      
+
     })
 
     /**
@@ -586,7 +586,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest03"
       let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
       hilog.info(0x0000, 'testTag', TAG + "ret2:" + JSON.stringify(ret2));
@@ -615,7 +615,7 @@ export default function VibratorJsTest_misc_9() {
       } else {
         console.log(TAG + ' is not supported.');
         done();
-      }   
+      }
     })
 
     /**
@@ -627,7 +627,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest04"
       let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
       let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
@@ -686,7 +686,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest05"
       let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
       let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
@@ -744,7 +744,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest06"
       let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
       let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
@@ -803,18 +803,18 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest07"
       try {
         let ret = vibrator.isHdHapticSupported();
         hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret));
-        expect(typeof(ret) == 'boolean').assertEqual(true);
+        expect(typeof (ret) == 'boolean').assertEqual(true);
         done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      }  
+      }
     })
 
     /**
@@ -826,7 +826,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest08"
       let effect1: vibrator.VibrateTime = {
         type: 'time',
@@ -865,7 +865,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest09"
       try {
         let vibratePreset: vibrator.VibratePreset = {
@@ -898,7 +898,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest10"
       try {
         let vibrateTime: vibrator.VibrateTime = {
@@ -918,7 +918,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
 
     /**
@@ -930,7 +930,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest12"
       try {
         let eventType = vibrator.VibratorEventType.CONTINUOUS;
@@ -967,7 +967,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
 
     /**
@@ -979,7 +979,7 @@ export default function VibratorJsTest_misc_9() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("UniversalVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it("UniversalVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest13"
       try {
         let hapticFileDescriptor: vibrator.HapticFileDescriptor = {
@@ -1002,8 +1002,286 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
+
+    /**
+     *
+     * @tc.number    UniversalVibratorJsTest14
+     * @tc.name      UniversalVibratorJsTest14
+     * @tc.desc      test isSupportEffectSync
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("UniversalVibratorJsTest14", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest14";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let ret = vibrator.isSupportEffectSync('haptic.clock.timer');
+        ret = vibrator.isSupportEffectSync('haptic.clock.timer');
+        hilog.info(domain, tag, TAG + ` isSupportEffectSync function return value is ${ret} `);
+        expect(ret == true).assertTrue();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        expect(error.code).assertEqual(14600101);
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     UniversalVibratorJsTest15
+     * @tc.name       UniversalVibratorJsTest15
+     * @tc.desc       test addContinuousEvent
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest15", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest15";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let builder = new vibrator.VibratorPatternBuilder();
+      let pointsMe: vibrator.VibratorCurvePoint[] = [
+        {
+          time: 0,
+          intensity: 0,
+          frequency: -7
+        },
+        {
+          time: 42,
+          intensity: 1,
+          frequency: -6
+        },
+        {
+          time: 128,
+          intensity: 1,
+          frequency: -4
+        },
+        {
+          time: 217,
+          intensity: 0,
+          frequency: -4
+        }
+      ];
+      let param: vibrator.ContinuousParam = {
+        intensity: 97,
+        frequency: 34,
+        points: pointsMe,
+        index: 0
+      };
+      try {
+        builder.addContinuousEvent(0, 217, param);
+        hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+      done();
+    })
+
+    /**
+     *
+     * @tc.number     UniversalVibratorJsTest16
+     * @tc.name       UniversalVibratorJsTest16
+     * @tc.desc       test addContinuousEvent error.code: 401 , error.message: Invalid parameter
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest16", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest16";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let builder = new vibrator.VibratorPatternBuilder();
+      let param: vibrator.ContinuousParam = {
+        intensity: 100,
+        frequency: 101
+      };
+      try {
+        builder.addContinuousEvent(0, 5000, param);
+        hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Invalid parameter");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+      done();
+    })
+
+    /**
+     *
+     * @tc.number     UniversalVibratorJsTest17
+     * @tc.name       UniversalVibratorJsTest17
+     * @tc.desc       test addTransientEvent error.code: 401 , error.message: Invalid parameter
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest17", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest17";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let builder = new vibrator.VibratorPatternBuilder();
+      let param: vibrator.TransientParam = {
+        intensity: 100,
+        frequency: 101,
+        index: 0
+      };
+      try {
+        builder.addTransientEvent(0, param);
+        hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        expect(false).assertTrue();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Invalid parameter");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+      done();
+    })
+
+    /**
+     *
+     * @tc.number     UniversalVibratorJsTest18
+     * @tc.name       UniversalVibratorJsTest18
+     * @tc.desc       test addTransientEvent
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest18", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest18";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let builder = new vibrator.VibratorPatternBuilder();
+      let param: vibrator.TransientParam = {
+        intensity: 97,
+        frequency: 34,
+        index: 0
+      };
+      try {
+        builder.addTransientEvent(0, param);
+        hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+      done();
+    })
+
+    /**
+     *
+     * @tc.number     UniversalVibratorJsTest19
+     * @tc.name       UniversalVibratorJsTest19
+     * @tc.desc       test build: builder.build() success; pattern type: object
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest19", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest19";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      const PARAMETER_ERROR_CODE = 401;
+      let builder = new vibrator.VibratorPatternBuilder();
+      let pointsMe: vibrator.VibratorCurvePoint[] = [
+        {
+          time: 0,
+          intensity: 0,
+          frequency: -7
+        },
+        {
+          time: 42,
+          intensity: 1,
+          frequency: -6
+        },
+        {
+          time: 128,
+          intensity: 1,
+          frequency: -4
+        },
+        {
+          time: 217,
+          intensity: 0,
+          frequency: -4
+        }
+      ];
+
+      let continuousParam: vibrator.ContinuousParam = {
+        intensity: 97,
+        frequency: 34,
+        points: pointsMe,
+        index: 0
+      };
+
+      let transientParam: vibrator.TransientParam = {
+        intensity: 100,
+        frequency: 50
+      };
+
+      try {
+        builder.addContinuousEvent(0, 217, continuousParam);
+        builder.addTransientEvent(218, transientParam);
+        let pattern: vibrator.VibratorPattern = builder.build();
+        expect(pattern !== null).assertTrue();
+        expect(pattern !== undefined).assertTrue();
+        hilog.info(domain, tag, TAG + " builder.build() success");
+        hilog.info(domain, tag, TAG + " pattern type: " + typeof pattern);
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        if (error.code === PARAMETER_ERROR_CODE) {
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        } else {
+          expect(false).assertTrue();
+        }
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     * @tc.number     UniversalVibratorJsTest20
+     * @tc.name       UniversalVibratorJsTest20
+     * @tc.desc       test build method with no events (should fail with error code 401)
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest20", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest20";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let builder = new vibrator.VibratorPatternBuilder();
+      try {
+        let pattern: vibrator.VibratorPattern = builder.build();
+        // 空的事件，如果构建成功测试失败
+        hilog.info(domain, tag, TAG + " builder.build() unexpectedly succeeded");
+        expect(false).assertTrue();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("The number of events exceeds the range");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
 
   })
 }
