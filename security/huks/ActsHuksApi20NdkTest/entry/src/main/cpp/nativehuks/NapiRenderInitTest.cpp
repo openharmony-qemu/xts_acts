@@ -33,8 +33,6 @@ static void RenderInitPush0(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GenerateKeyItemTest_005", nullptr, HuksApiTest::GenerateKeyItemTest_005,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GenerateKeyItemTest_006", nullptr, HuksApiTest::GenerateKeyItemTest_006,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImportKeyItemTest_001", nullptr, HuksApiTest::ImportKeyItemTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImportKeyItemTest_002", nullptr, HuksApiTest::ImportKeyItemTest_002,
@@ -47,19 +45,21 @@ static void RenderInitPush0(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImportWrappedKeyItemTest_002", nullptr, HuksApiTest::ImportWrappedKeyItemTest_002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"ImportWrappedKeyItemTest_003", nullptr, HuksApiTest::ImportWrappedKeyItemTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"ImportWrappedKeyItemTest_004", nullptr, HuksApiTest::ImportWrappedKeyItemTest_004,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ExportPublicKeyItemTest_001", nullptr, HuksApiTest::ExportPublicKeyItemTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ExportPublicKeyItemTest_002", nullptr, HuksApiTest::ExportPublicKeyItemTest_002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"ExportPublicKeyItemTest_003", nullptr, HuksApiTest::ExportPublicKeyItemTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"ExportPublicKeyItemTest_004", nullptr, HuksApiTest::ExportPublicKeyItemTest_004,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"DeleteKeyItemTest_001", nullptr, HuksApiTest::DeleteKeyItemTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DeleteKeyItemTest_002", nullptr, HuksApiTest::DeleteKeyItemTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyItemParamSetTest_001", nullptr, HuksApiTest::GetKeyItemParamSetTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyItemParamSetTest_002", nullptr, HuksApiTest::GetKeyItemParamSetTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"IsKeyItemExistTest_001", nullptr, HuksApiTest::IsKeyItemExistTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"IsKeyItemExistTest_002", nullptr, HuksApiTest::IsKeyItemExistTest_002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
@@ -71,31 +71,13 @@ static void RenderInitPush1(napi_property_descriptor* desc)
 {
     const uint32_t offset = 20;
     napi_property_descriptor descTemp[] = {
-        {"DeleteKeyItemTest_002", nullptr, HuksApiTest::DeleteKeyItemTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyItemParamSetTest_001", nullptr, HuksApiTest::GetKeyItemParamSetTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyItemParamSetTest_002", nullptr, HuksApiTest::GetKeyItemParamSetTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyItemParamSetTest_003", nullptr, HuksApiTest::GetKeyItemParamSetTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"IsKeyItemExistTest_001", nullptr, HuksApiTest::IsKeyItemExistTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"IsKeyItemExistTest_002", nullptr, HuksApiTest::IsKeyItemExistTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"IsKeyItemExistTest_003", nullptr, HuksApiTest::IsKeyItemExistTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AttestKeyItemTest_001", nullptr, HuksApiTest::AttestKeyItemTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AttestKeyItemTest_002", nullptr, HuksApiTest::AttestKeyItemTest_002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AttestKeyItemTest_003", nullptr, HuksApiTest::AttestKeyItemTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AnonAttestKeyItemTest_001", nullptr, HuksApiTest::AnonAttestKeyItemTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AnonAttestKeyItemTest_002", nullptr, HuksApiTest::AnonAttestKeyItemTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AnonAttestKeyItemTest_003", nullptr, HuksApiTest::AnonAttestKeyItemTest_003,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"InitSessionTest_001", nullptr, HuksApiTest::InitSessionTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -107,9 +89,21 @@ static void RenderInitPush1(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UpdateSessionTest_002", nullptr, HuksApiTest::UpdateSessionTest_002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"UpdateSessionTest_003", nullptr, HuksApiTest::UpdateSessionTest_003,
+        {"FinishSessionTest_001", nullptr, HuksApiTest::FinishSessionTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"UpdateSessionTest_004", nullptr, HuksApiTest::UpdateSessionTest_004,
+        {"FinishSessionTest_002", nullptr, HuksApiTest::FinishSessionTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"FinishSessionTest_003", nullptr, HuksApiTest::FinishSessionTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AbortSessionTest_001", nullptr, HuksApiTest::AbortSessionTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ListAliasesTest_001", nullptr, HuksApiTest::ListAliasesTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"WrapKeyTest_003", nullptr, HuksApiTest::WrapKeyTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"WrapKeyTest_002", nullptr, HuksApiTest::WrapKeyTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnwrapKeyTest_001", nullptr, HuksApiTest::UnwrapKeyTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
@@ -119,32 +113,8 @@ static void RenderInitPush1(napi_property_descriptor* desc)
 
 static void RenderInitPush2(napi_property_descriptor* desc)
 {
-    const uint32_t offset = 40;
+    const uint32_t offset = 37;
     napi_property_descriptor descTemp[] = {
-        {"FinishSessionTest_001", nullptr, HuksApiTest::FinishSessionTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"FinishSessionTest_002", nullptr, HuksApiTest::FinishSessionTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"FinishSessionTest_003", nullptr, HuksApiTest::FinishSessionTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AbortSessionTest_001", nullptr, HuksApiTest::AbortSessionTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AbortSessionTest_002", nullptr, HuksApiTest::AbortSessionTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"ListAliasesTest_001", nullptr, HuksApiTest::ListAliasesTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"WrapKeyTest_001", nullptr, HuksApiTest::WrapKeyTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"WrapKeyTest_002", nullptr, HuksApiTest::WrapKeyTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"WrapKeyTest_003", nullptr, HuksApiTest::WrapKeyTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"UnwrapKeyTest_001", nullptr, HuksApiTest::UnwrapKeyTest_001,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"UnwrapKeyTest_002", nullptr, HuksApiTest::UnwrapKeyTest_002,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"UnwrapKeyTest_003", nullptr, HuksApiTest::UnwrapKeyTest_003,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"InitParamSetTest_001", nullptr, HuksApiTest::InitParamSetTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AddParamsTest_001", nullptr, HuksApiTest::AddParamsTest_001,
@@ -161,6 +131,28 @@ static void RenderInitPush2(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"IsParamSetValidTest_001", nullptr, HuksApiTest::IsParamSetValidTest_001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CheckParamMatchTest_001", nullptr, HuksApiTest::CheckParamMatchTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPurposeTest_001", nullptr, HuksApiTest::KeyPurposeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPurposeTest_002", nullptr, HuksApiTest::KeyPurposeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyDigestTest_001", nullptr, HuksApiTest::KeyDigestTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyDigestTest_002", nullptr, HuksApiTest::KeyDigestTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyDigestTest_003", nullptr, HuksApiTest::KeyDigestTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyDigestTest_004", nullptr, HuksApiTest::KeyDigestTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPaddingTest_001", nullptr, HuksApiTest::KeyPaddingTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPaddingTest_002", nullptr, HuksApiTest::KeyPaddingTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPaddingTest_003", nullptr, HuksApiTest::KeyPaddingTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyPaddingTest_004", nullptr, HuksApiTest::KeyPaddingTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index + offset] = descTemp[index];
@@ -169,10 +161,188 @@ static void RenderInitPush2(napi_property_descriptor* desc)
 
 static void RenderInitPush3(napi_property_descriptor* desc)
 {
-    const uint32_t offset = 60;
+    const uint32_t offset = 56;
     napi_property_descriptor descTemp[] = {
-        {"CheckParamMatchTest_001", nullptr, HuksApiTest::CheckParamMatchTest_001,
+        {"KeyPaddingTest_005", nullptr, HuksApiTest::KeyPaddingTest_005,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CipherModeTest_001", nullptr, HuksApiTest::CipherModeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CipherModeTest_002", nullptr, HuksApiTest::CipherModeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CipherModeTest_003", nullptr, HuksApiTest::CipherModeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CipherModeTest_004", nullptr, HuksApiTest::CipherModeTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CipherModeTest_005", nullptr, HuksApiTest::CipherModeTest_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_001", nullptr, HuksApiTest::KeySizeTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_002", nullptr, HuksApiTest::KeySizeTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_003", nullptr, HuksApiTest::KeySizeTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_004", nullptr, HuksApiTest::KeySizeTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_005", nullptr, HuksApiTest::KeySizeTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_006", nullptr, HuksApiTest::KeySizeTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_007", nullptr, HuksApiTest::KeySizeTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_008", nullptr, HuksApiTest::KeySizeTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_009", nullptr, HuksApiTest::KeySizeTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_010", nullptr, HuksApiTest::KeySizeTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_011", nullptr, HuksApiTest::KeySizeTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_012", nullptr, HuksApiTest::KeySizeTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_013", nullptr, HuksApiTest::KeySizeTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_014", nullptr, HuksApiTest::KeySizeTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_015", nullptr, HuksApiTest::KeySizeTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_016", nullptr, HuksApiTest::KeySizeTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_017", nullptr, HuksApiTest::KeySizeTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeySizeTest_018", nullptr, HuksApiTest::KeySizeTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_001", nullptr, HuksApiTest::KeyAlgTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_002", nullptr, HuksApiTest::KeyAlgTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_003", nullptr, HuksApiTest::KeyAlgTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_004", nullptr, HuksApiTest::KeyAlgTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_005", nullptr, HuksApiTest::KeyAlgTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_006", nullptr, HuksApiTest::KeyAlgTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_007", nullptr, HuksApiTest::KeyAlgTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_008", nullptr, HuksApiTest::KeyAlgTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_009", nullptr, HuksApiTest::KeyAlgTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_010", nullptr, HuksApiTest::KeyAlgTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyAlgTest_011", nullptr, HuksApiTest::KeyAlgTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
+static void RenderInitPush4(napi_property_descriptor* desc)
+{
+    const uint32_t offset = 91;
+    napi_property_descriptor descTemp[] = {
+        {"AlgSuiteTest_001", nullptr, HuksApiTest::AlgSuiteTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyGenerateTypeTest_001", nullptr, HuksApiTest::KeyGenerateTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyGenerateTypeTest_002", nullptr, HuksApiTest::KeyGenerateTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyFlagTypeTest_001", nullptr, HuksApiTest::KeyFlagTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyFlagTypeTest_002", nullptr, HuksApiTest::KeyFlagTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyFlagTypeTest_003", nullptr, HuksApiTest::KeyFlagTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyFlagTypeTest_004", nullptr, HuksApiTest::KeyFlagTypeTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyStorageTypeTest_001", nullptr, HuksApiTest::KeyStorageTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyStorageTypeTest_002", nullptr, HuksApiTest::KeyStorageTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyStorageTypeTest_003", nullptr, HuksApiTest::KeyStorageTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImportKeyTypeTest_001", nullptr, HuksApiTest::ImportKeyTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImportKeyTypeTest_002", nullptr, HuksApiTest::ImportKeyTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImportKeyTypeTest_003", nullptr, HuksApiTest::ImportKeyTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RsaPssSaltLenTypeTest_001", nullptr, HuksApiTest::RsaPssSaltLenTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RsaPssSaltLenTypeTest_002", nullptr, HuksApiTest::RsaPssSaltLenTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_001", nullptr, HuksApiTest::ErrCodeTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_002", nullptr, HuksApiTest::ErrCodeTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_003", nullptr, HuksApiTest::ErrCodeTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_004", nullptr, HuksApiTest::ErrCodeTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_005", nullptr, HuksApiTest::ErrCodeTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_006", nullptr, HuksApiTest::ErrCodeTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UserAuthTypeTest_001", nullptr, HuksApiTest::UserAuthTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UserAuthTypeTest_002", nullptr, HuksApiTest::UserAuthTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UserAuthTypeTest_003", nullptr, HuksApiTest::UserAuthTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
+static void RenderInitPush5(napi_property_descriptor* desc)
+{
+    const uint32_t offset = 115;
+    napi_property_descriptor descTemp[] = {
+        {"UserAuthTypeTest_004", nullptr, HuksApiTest::UserAuthTypeTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuthAccessTypeTest_001", nullptr, HuksApiTest::AuthAccessTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuthAccessTypeTest_002", nullptr, HuksApiTest::AuthAccessTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuthAccessTypeTest_003", nullptr, HuksApiTest::AuthAccessTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuthStorageLevelTest_001", nullptr, HuksApiTest::AuthStorageLevelTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuthStorageLevelTest_002", nullptr, HuksApiTest::AuthStorageLevelTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UserAuthModeTest_001", nullptr, HuksApiTest::UserAuthModeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UserAuthModeTest_002", nullptr, HuksApiTest::UserAuthModeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengeTypeTest_001", nullptr, HuksApiTest::ChallengeTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengeTypeTest_002", nullptr, HuksApiTest::ChallengeTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengeTypeTest_003", nullptr, HuksApiTest::ChallengeTypeTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengePositionTest_001", nullptr, HuksApiTest::ChallengePositionTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengePositionTest_002", nullptr, HuksApiTest::ChallengePositionTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengePositionTest_003", nullptr, HuksApiTest::ChallengePositionTest_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChallengePositionTest_004", nullptr, HuksApiTest::ChallengePositionTest_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SecureSignTypeTest_001", nullptr, HuksApiTest::SecureSignTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ErrCodeTest_007", nullptr, HuksApiTest::ErrCodeTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
+static void RenderInitPush6(napi_property_descriptor* desc)
+{
+    const uint32_t offset = 132;
+    napi_property_descriptor descTemp[] = {
+        {"TagTest_001", nullptr, HuksApiTest::TagTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_002", nullptr, HuksApiTest::TagTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_003", nullptr, HuksApiTest::TagTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_004", nullptr, HuksApiTest::TagTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_005", nullptr, HuksApiTest::TagTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_006", nullptr, HuksApiTest::TagTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_007", nullptr, HuksApiTest::TagTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_008", nullptr, HuksApiTest::TagTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_009", nullptr, HuksApiTest::TagTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_010", nullptr, HuksApiTest::TagTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_011", nullptr, HuksApiTest::TagTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_012", nullptr, HuksApiTest::TagTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_013", nullptr, HuksApiTest::TagTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_014", nullptr, HuksApiTest::TagTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_015", nullptr, HuksApiTest::TagTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_016", nullptr, HuksApiTest::TagTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_017", nullptr, HuksApiTest::TagTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_018", nullptr, HuksApiTest::TagTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_019", nullptr, HuksApiTest::TagTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_020", nullptr, HuksApiTest::TagTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_021", nullptr, HuksApiTest::TagTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_022", nullptr, HuksApiTest::TagTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_023", nullptr, HuksApiTest::TagTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_024", nullptr, HuksApiTest::TagTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_025", nullptr, HuksApiTest::TagTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_026", nullptr, HuksApiTest::TagTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_027", nullptr, HuksApiTest::TagTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_028", nullptr, HuksApiTest::TagTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_029", nullptr, HuksApiTest::TagTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_030", nullptr, HuksApiTest::TagTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_031", nullptr, HuksApiTest::TagTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_032", nullptr, HuksApiTest::TagTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_033", nullptr, HuksApiTest::TagTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_034", nullptr, HuksApiTest::TagTest_034, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TagTest_035", nullptr, HuksApiTest::TagTest_035, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index + offset] = descTemp[index];
@@ -181,11 +351,14 @@ static void RenderInitPush3(napi_property_descriptor* desc)
 
 static napi_value RenderInit(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[100] = {};
+    napi_property_descriptor desc[190] = {};
     RenderInitPush0(desc);
     RenderInitPush1(desc);
     RenderInitPush2(desc);
     RenderInitPush3(desc);
+    RenderInitPush4(desc);
+    RenderInitPush5(desc);
+    RenderInitPush6(desc);
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
