@@ -207,11 +207,11 @@ export default function ConnectionHandleTest() {
       * @tc.number:SUB_NetManager_GetConnectionPropertiesSync_0100
       * @tc.name: testNetManagerGetConnectionPropertiesSync0100
       * @tc.desc: Whether the getConnectionPropertiesSync_ method is called successfully with WIFI
-      * @tc.level:Level 0
+      * @tc.level:Level 1
       * @tc.type:Function
       * @tc.size:MediumTest
       */
-    it('testNetManagerGetConnectionPropertiesSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
+    it('testNetManagerGetConnectionPropertiesSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
       const caseName: string = 'testNetManagerGetConnectionPropertiesSync0100';
       console.info(`${caseName}---Start`);
       try {

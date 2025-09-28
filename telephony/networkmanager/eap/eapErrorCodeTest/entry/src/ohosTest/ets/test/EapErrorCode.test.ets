@@ -71,11 +71,11 @@ export default function EapErrorCodeTest() {
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_ErrorCode_0100
      * @tc.name  testCommunicationEapRegCustomEapHandlerErrorCode0100
      * @tc.desc verification parameter error
-     * @tc.level Level 1
+     * @tc.level Level 0
      * @tc.type Function
      * @tc.size MediumTest
      */
-    it("testCommunicationEapRegCustomEapHandlerErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it("testCommunicationEapRegCustomEapHandlerErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = "testCommunicationEapRegCustomEapHandlerErrorCode0100";
       console.info(`${caseName}---start`);
       try {
