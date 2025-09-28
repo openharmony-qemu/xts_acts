@@ -124,7 +124,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       await systemPasteBoard.setData(pasteData)
       await systemPasteBoard.clearData(async (err, data) => {
         console.info("Clear the data in the system pasteBoard finished")
-        await systemPasteBoard.hasData().then((data) => {
+        await systemPasteBoard.hasData().then((data: boolean) => {
           console.info(`Succeeded in checking the PasteData. Data: ${data}`);
           expect(data).assertEqual(false);
           done();
@@ -170,11 +170,11 @@ export default function pasteBoardSystemPasteBoardTest() {
       let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.setData(pasteData).then(async () => {
-        await systemPasteBoard.hasData().then(async (data) => {
+        await systemPasteBoard.hasData().then(async (data: boolean) => {
           expect(data).assertTrue();
           await systemPasteBoard.clearData().then(async () => {
             console.info("Clear the data in the system pasteBoard success")
-            await systemPasteBoard.hasData().then((data) => {
+            await systemPasteBoard.hasData().then((data: boolean) => {
               expect(data).assertEqual(false);
             })
           }).catch((err: Error) => {
@@ -290,7 +290,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.setData(pasteData).then(async () => {
-        await systemPasteBoard.hasData((err, data) => {
+        await systemPasteBoard.hasData((err, data: boolean) => {
           if (err != undefined) {
             console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
             expect(false).assertTrue();
@@ -318,7 +318,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0200 start")
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.clearData().then(async () => {
-        await systemPasteBoard.hasData((err, data) => {
+        await systemPasteBoard.hasData((err, data: boolean) => {
           if (err != undefined) {
             console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
             expect(false).assertTrue();
@@ -368,7 +368,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.setData(pasteData).then(async () => {
-        await systemPasteBoard.hasData().then((data) => {
+        await systemPasteBoard.hasData().then((data: boolean) => {
           expect(data).assertTrue();
         }).catch((err: Error) => {
           console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
@@ -394,7 +394,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0200 start")
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.clearData().then(async () => {
-        await systemPasteBoard.hasData().then((data) => {
+        await systemPasteBoard.hasData().then((data: boolean) => {
           expect(data == false).assertTrue();
         }).catch((err: Error) => {
           console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
@@ -422,7 +422,7 @@ export default function pasteBoardSystemPasteBoardTest() {
           console.info("System pasteBoard set pastedata error,error: " + err)
           expect(false).assertTrue();
         } else {
-          await systemPasteBoard.hasData().then((data) => {
+          await systemPasteBoard.hasData().then((data: boolean) => {
             expect(data).assertTrue();
           }).catch((err: Error) => {
             console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
@@ -502,7 +502,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       await systemPasteBoard.setData(pasteData).then(async () => {
-        await systemPasteBoard.hasData().then((data) => {
+        await systemPasteBoard.hasData().then((data: boolean) => {
           expect(data).assertTrue();
         }).catch((err: Error) => {
           console.info("Judge whether there is data in the system pasteBoard error,error is: " + err)
@@ -573,7 +573,7 @@ export default function pasteBoardSystemPasteBoardTest() {
       let systemPasteboard = pasteboard.getSystemPasteboard()
       await systemPasteboard.clearData().then(async () => {
         try {
-          let boolean = systemPasteboard.isRemoteData()
+          let boolean: boolean = systemPasteboard.isRemoteData()
           expect(boolean == false).assertTrue()
           done()
         } catch (err) {
@@ -600,7 +600,7 @@ export default function pasteBoardSystemPasteBoardTest() {
         let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, dataText);
         await systemPasteboard.setData(PasteData).then(async () => {
           try {
-            let boolean = systemPasteboard.isRemoteData()
+            let boolean: boolean = systemPasteboard.isRemoteData()
             expect(boolean == false).assertTrue()
             done();
           } catch (err) {
@@ -629,7 +629,7 @@ export default function pasteBoardSystemPasteBoardTest() {
         let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, dataText);
         await systemPasteboard.setData(PasteData).then(async () => {
           try {
-            let boolean = systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN)
+            let boolean: boolean = systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN)
             expect(boolean).assertTrue()
             done();
           } catch (err) {
@@ -657,7 +657,7 @@ export default function pasteBoardSystemPasteBoardTest() {
         let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, dataText);
         await systemPasteboard.setData(PasteData).then(async () => {
           try {
-            let boolean = systemPasteboard.hasDataType(pasteboard.MIMETYPE_PIXELMAP)
+            let boolean: boolean = systemPasteboard.hasDataType(pasteboard.MIMETYPE_PIXELMAP)
             expect(boolean == false).assertTrue()
             done();
           } catch (err) {
@@ -735,6 +735,5 @@ export default function pasteBoardSystemPasteBoardTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800 end")
       done();
     })
-
   });
 }

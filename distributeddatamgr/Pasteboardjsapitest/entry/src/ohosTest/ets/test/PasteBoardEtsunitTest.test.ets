@@ -85,22 +85,19 @@ export default function pasteBoardJEtsunitTest() {
     })
     
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1500
-     * @tc.name Adds PlainTextData
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1500
+     * @tc.name       Adds PlainTextData
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0100 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test1: stemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test1: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test1: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -109,11 +106,11 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test1: systemPasteboard.setPasteData promise');
 
           console.info('f_test1: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test1: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
-            let types = pasteData.getMimeTypes();
+            let types: Array<String> = pasteData.getMimeTypes();
             console.info('f_test1: getMimeTypes = ' + types);
             console.info('f_test1: getMimeTypes = ' + typeof (types));
             expect("text/plain").assertEqual(types[0]);
@@ -149,22 +146,18 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1400
-     * @tc.name Adds PlainTextData = ''
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1400
+     * @tc.name       Adds PlainTextData = ''
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test2: SUB_pasteBoard_function_JS_API_0200 start');
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test2: systemPasteboard.clear promise');
-
         let textData = '';
-        console.info('f_test2: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test2: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -173,9 +166,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test2: systemPasteboard.setPasteData promise');
 
           console.info('f_test2: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test2: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -196,22 +189,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1300
-     * @tc.name Adds PlainTextData = 'Hello 中国!@#$%^&*()_+{}\?.'
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1300
+     * @tc.name       Adds PlainTextData = 'Hello 中国!@#$%^&*()_+{}\?.'
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test3: SUB_pasteBoard_function_JS_API_0300 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test3: systemPasteboard.clear promise');
-
         let textData = 'Hello 中国!@#$%^&*()_+{}\?.';
-        console.info('f_test3: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test3: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -220,9 +210,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test3: systemPasteboard.setPasteData promise');
 
           console.info('f_test3: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test3: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test3: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -236,7 +226,8 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test3: primaryText = ' + primaryText);
 
               console.info('Checks there is a MIMETYPE_TEXT_PLAIN MIME type of data' + pasteboard.MIMETYPE_TEXT_PLAIN);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN);
+              expect(hastypes).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_0300 end');
               done();
@@ -247,26 +238,22 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1600
-     * @tc.name Adds 300K PlainTextData
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1600
+     * @tc.name       Adds 300K PlainTextData
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0400 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test4: systemPasteboard.clear promise');
-
         let textData = '';
         for (let i = 0; i < 300; i++) {
           textData = textData + "A";
-        }
-        ;
-        console.info('f_test4: createPlainTextData textData = ' + textData);
+        };
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test4: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -275,9 +262,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test4: systemPasteboard.setPasteData promise');
 
           console.info('f_test4: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test4: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test4: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -288,10 +275,10 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test4: Checks the pasteboard content');
               let primaryText = pasteData1.getPrimaryText();
               expect(primaryText == textData).assertTrue;
-              console.info('f_test4: primaryText = ' + primaryText);
 
               console.info('Checks there is a MIMETYPE_TEXT_PLAIN MIME type of data' + pasteboard.MIMETYPE_TEXT_PLAIN);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN);
+              expect(hastypes).assertTrue();
               expect(pasteData1.getPrimaryMimeType() == pasteboard.MIMETYPE_TEXT_PLAIN).assertTrue();
 
               console.info('f_test4: SUB_pasteBoard_function_JS_API_0400 end');
@@ -303,26 +290,21 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1700
-     * @tc.name Adds 301K PlainTextData
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1700
+     * @tc.name       Adds 301K PlainTextData
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0500 start');
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test5: systemPasteboard.clear promise');
-
         let textData = '';
         for (let i = 0; i < 301; i++) {
           textData = textData + "A";
-        }
-        ;
-        console.info('f_test5: createPlainTextData textData = ' + textData);
+        };
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test5: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -331,9 +313,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test5: systemPasteboard.setPasteData promise');
 
           console.info('f_test5: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test5: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test5: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -347,8 +329,8 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test5: primaryText = ' + primaryText);
 
               console.info('Checks there is a MIMETYPE_TEXT_PLAIN MIME type of data' + pasteboard.MIMETYPE_TEXT_PLAIN);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN) === true).assertTrue();
-
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN);
+              expect(hastypes).assertTrue();
               console.info('SUB_pasteBoard_function_JS_API_0500 end');
               done();
             });
@@ -358,22 +340,18 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0700
-     * @tc.name Adds htmlText
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0700
+     * @tc.name       Adds htmlText
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0600 start');
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test6: systemPasteboard.clear promise');
-
         let htmlText = '<html><head></head><body>Hello World!</body></html>';
-        console.info('f_test6: createHtmlData htmlText = ' + htmlText);
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test6: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -382,9 +360,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test6: systemPasteboard.setPasteData promise');
 
           console.info('f_test6: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test6: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test6: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -398,7 +376,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(primaryHtml == htmlText).assertTrue();
 
               console.info('Checks there is a MIMETYPE_TEXT_HTML MIME type of data' + pasteboard.MIMETYPE_TEXT_HTML);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_HTML) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_HTML);
+              expect(hastypes).assertTrue();
               console.info('f_test6: getPrimaryMimeType = ' + pasteData1.getPrimaryMimeType());
 
               console.info('SUB_pasteBoard_function_JS_API_0600 end');
@@ -410,22 +389,18 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0600
-     * @tc.name Adds htmlText = ''
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0600
+     * @tc.name       Adds htmlText = ''
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test7: SUB_pasteBoard_function_JS_API_0700 start');
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test7: systemPasteboard.clear promise');
-
         let htmlText = '';
-        console.info('f_test7: createHtmlData htmlText = ' + htmlText);
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test7: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -434,9 +409,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test7: systemPasteboard.setPasteData promise');
 
           console.info('f_test7: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test7: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -456,22 +431,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1100
-     * @tc.name Adds htmlText = 'Hello 中国!@#$%^&*()_+{}\?.'
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1100
+     * @tc.name       Adds htmlText = 'Hello 中国!@#$%^&*()_+{}\?.'
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0800 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test8: systemPasteboard.clear promise');
-
         let htmlText = 'Hello 中国!@#$%^&*()_+{}\?.';
-        console.info('f_test8: createHtmlData htmlText = ' + htmlText);
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test8: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -480,9 +452,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test8: systemPasteboard.setPasteData promise');
 
           console.info('f_test8: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test8: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test8: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -492,7 +464,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('Checks there is a MIMETYPE_TEXT_HTML MIME type of data' + pasteboard.MIMETYPE_TEXT_HTML);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_HTML) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_HTML);
+              expect(hastypes).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_0800 end');
               done();
@@ -503,22 +476,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0900
-     * @tc.name Adds uriText
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0900
+     * @tc.name       Adds uriText
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0900 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test9: systemPasteboard.clear promise');
-
         let uriText = 'https://www.baidu.com/';
-        console.info('f_test9: createUriData uriText = ' + uriText);
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test9: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -527,9 +497,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test9: systemPasteboard.setPasteData promise');
 
           console.info('f_test9: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test9: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test9: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -543,7 +513,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(primaryUri == uriText).assertTrue();
 
               console.info('Checks there is a MIMETYPE_TEXT_URI MIME type of data' + pasteboard.MIMETYPE_TEXT_URI);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_URI) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_URI);
+              expect(hastypes).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_0900 end');
               done();
@@ -554,22 +525,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0800
-     * @tc.name Adds uriText = ''
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0800
+     * @tc.name       Adds uriText = ''
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1000 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test10: systemPasteboard.clear promise');
-
         let uriText = '';
-        console.info('f_test10: createUriData uriText = ' + uriText);
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test10: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -578,9 +546,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test10: systemPasteboard.setPasteData promise');
 
           console.info('f_test10: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test10: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test10: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -598,22 +566,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1200
-     * @tc.name Set uriText = 'Hello //'
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1200
+     * @tc.name       Set uriText = 'Hello //'
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1100 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test11: systemPasteboard.clear promise');
-
         let uriText = 'Hello//';
-        console.info('f_test11: createUriData uriText = ' + uriText);
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test11: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -622,9 +587,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test11: systemPasteboard.setPasteData promise');
 
           console.info('f_test11: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test11: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test11: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -634,7 +599,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('Checks there is a MIMETYPE_TEXT_URI MIME type of data' + pasteboard.MIMETYPE_TEXT_URI);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_URI) === true).assertTrue();
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_URI);
+              expect(hastypes).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_1100 end');
               done();
@@ -645,42 +611,32 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1000
-     * @tc.name Adds want
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1000
+     * @tc.name       Adds want
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1200 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test12: systemPasteboard.clear promise');
-
         let want: Want = {
           bundleName: "com.example.myapplication8",
           abilityName: "com.example.myapplication8.MainAbility"
         };
-        console.info('f_test12: createWantData want.bundleName = ' + want.bundleName);
-        console.info('f_test12: createWantData want.bundleName = ' + want.abilityName);
-
-
         let pasteData = pasteboard.createWantData(want);
-
         console.info('f_test12: createWantData pasteData = ' + pasteData);
-
-        console.info('f_test12: createWantData pasteData = ' + JSON.stringify(pasteData));
-
         console.info('f_test12: Writes PasteData to the pasteboard');
         systemPasteboard.setPasteData(pasteData).then(() => {
           console.info('f_test12: systemPasteboard.setPasteData promise');
 
           console.info('f_test12: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test12: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test12: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -696,9 +652,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(want.abilityName).assertEqual(primaryWant.abilityName);
 
               console.info('Checks there is a MIMETYPE_TEXT_WANT MIME type of data' + pasteboard.MIMETYPE_TEXT_WANT);
-              expect(pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_WANT) === true ||
-                pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_WANT) === false).assertTrue();
-
+              let hastypes: boolean = pasteData1.hasMimeType(pasteboard.MIMETYPE_TEXT_WANT);
+              expect(hastypes).assertTrue();
               console.info('SUB_pasteBoard_function_JS_API_1200 end');
               done();
             })
@@ -708,37 +663,32 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0200
-     * @tc.name Adds one record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0200
+     * @tc.name       Adds one record(s)
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test13: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test13: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
-        console.info('f_test13: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
         console.info('Writes PasteData to the pasteboard');
         systemPasteboard.setPasteData(pasteData).then(() => {
           console.info('f_test13: systemPasteboard.setPasteData promise');
 
           console.info('f_test13: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test13: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test13: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
-              console.info('f_test13: systemPasteboard.getPasteData data = ' + JSON.stringify(data));
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
@@ -755,22 +705,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0300
-     * @tc.name Adds 2 record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0300
+     * @tc.name       Adds 2 record(s)
+     * @tc.desc             Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test14: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test14: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test14: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -783,9 +730,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test14: systemPasteboard.setPasteData promise');
 
           console.info('f_test14: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test14: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test14: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -802,22 +749,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0100
-     * @tc.name Adds 15 record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0100
+     * @tc.name       Adds 15 record(s)
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test15: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test15: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test15: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -834,9 +778,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test15: systemPasteboard.setPasteData promise');
 
           console.info('f_test15: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test15: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test15: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -853,22 +797,18 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0400
-     * @tc.name Adds 30 record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0400
+     * @tc.name       Adds 30 record(s)
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1600 start')
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test16: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test16: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test16: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -885,9 +825,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test16: systemPasteboard.setPasteData promise');
 
           console.info('f_test16: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test16: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test16: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -904,22 +844,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0500
-     * @tc.name Adds 31 record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0500
+     * @tc.name       Adds 31 record(s)
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test17: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test17: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test17: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -936,9 +873,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test17: systemPasteboard.setPasteData promise');
 
           console.info('f_test17: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test17: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test17: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -957,39 +894,33 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1800
-     * @tc.name Adds PlainText,HtmlText,UriText
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1800
+     * @tc.name       Adds PlainText,HtmlText,UriText
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test18: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test18: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test18: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test18: addHtmlRecord = ' + htmlText)
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         pasteData.addHtmlRecord(htmlText)
 
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test18: addUriRecord = ' + uriText)
+        let uriText = 'https://www.baidu.com/';
         pasteData.addUriRecord(uriText)
 
         let want: Want = {
           bundleName: "com.example.myapplication8",
           abilityName: "com.example.myapplication8.MainAbility"
-        }
-        console.info('f_test18: addWantRecord = ' + want)
-        pasteData.addWantRecord(want)
+        };
+        pasteData.addWantRecord(want);
 
 
         console.info('f_test18: Writes PasteData to the pasteboard');
@@ -997,9 +928,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test18: systemPasteboard.setPasteData promise');
 
           console.info('f_test18: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test18: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test18: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1016,22 +947,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1200
-     * @tc.name Delete one PlainTextData
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1200
+     * @tc.name       Delete one PlainTextData
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test19: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test19: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test19: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1040,9 +968,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test19: systemPasteboard.setPasteData promise');
 
           console.info('f_test19: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test19: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test19: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1051,7 +979,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test19: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test19: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1076,22 +1005,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0800
-     * @tc.name Delete one htmlText
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0800
+     * @tc.name       Delete one htmlText
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2000 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test20: systemPasteboard.clear promise');
-
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test20: createHtmlData htmlText = ' + htmlText);
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test20: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1100,9 +1026,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test20: systemPasteboard.setPasteData promise');
 
           console.info('f_test20: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test20: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test20: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1111,7 +1037,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test20: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test20: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1136,20 +1063,18 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0900
-     * @tc.name Delete one uriText
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0900
+     * @tc.name       Delete one uriText
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2100 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test21: systemPasteboard.clear promise');
-
         let uriText = 'https://www.baidu.com/'
         console.info('f_test21: createUriData uriText = ' + uriText);
         let pasteData = pasteboard.createUriData(uriText);
@@ -1160,9 +1085,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test21: systemPasteboard.setPasteData promise');
 
           console.info('f_test21: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test21: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test21: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1171,7 +1096,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test21: f_test21: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test21: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1196,25 +1122,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1000
-     * @tc.name Delete one want
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1000
+     * @tc.name       Delete one want
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2200 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test22: systemPasteboard.clear promise');
-
         let want: Want = {
           bundleName: "com.example.myapplication8",
           abilityName: "com.example.myapplication8.MainAbility"
         }
-        console.info('f_test22: createWantData = ' + want)
         let pasteData = pasteboard.createWantData(want);
         console.info('f_test22: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1223,9 +1146,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test22: systemPasteboard.setPasteData promise');
 
           console.info('f_test22: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test22: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test22: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1234,7 +1157,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test22: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test22: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1259,25 +1183,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0700
-     * @tc.name Deletes 300K PlainTextData
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0700
+     * @tc.name       Deletes 300K PlainTextData
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test23: systemPasteboard.clear promise');
-
         let textData = ''
         for (let i = 0; i < 300; i++) {
           textData = textData + "A";
         }
-        console.info('f_test23: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test23: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1286,9 +1207,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test23: systemPasteboard.setPasteData promise');
 
           console.info('f_test23: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test23: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test23: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1297,7 +1218,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test23: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test23: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1322,22 +1244,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2100
-     * @tc.name Deletes 30 record(s)
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2100
+     * @tc.name       Deletes 30 record(s)
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test24: systemPasteboard.clear promise');
-
-        let textData0 = 'Hello World'
-        console.info('f_test24: createPlainTextData textData = ' + textData0);
+        let textData0 = 'Hello World';
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test24: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1351,9 +1270,9 @@ export default function pasteBoardJEtsunitTest() {
         systemPasteboard.setPasteData(pasteData).then(() => {
 
           console.info('f_test24: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test24: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             systemPasteboard.getPasteData().then((data) => {
               console.info('f_test24: systemPasteboard.getPasteData data = ' + JSON.stringify(data));
@@ -1362,7 +1281,8 @@ export default function pasteBoardJEtsunitTest() {
 
               console.info('f_test24: Removes the Record')
               for (let i = 0; i < 30; i++) {
-                expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+                let removeat: boolean = pasteData1.removeRecordAt(29-i);
+                expect(removeat).assertTrue();
               }
 
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1386,22 +1306,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1100
-     * @tc.name Deletes replaced record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1100
+     * @tc.name       Deletes replaced record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test25: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test25: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test25: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1410,9 +1327,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test25: systemPasteboard.setPasteData promise');
 
           console.info('f_test25: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test25: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test25: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1420,14 +1337,15 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let textData1 = 'Hello World1'
-              console.info('f_test25: Replaces the Record = ' + textData1)
+              let textData1 = 'Hello World1';
               let pasteDataRecord = pasteboard.createPlainTextRecord(textData1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test25: replace = ' + replace)
 
               console.info('f_test25: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('f_test25: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1452,22 +1370,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2200
-     * @tc.name Deletes 文本、uri、html
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2200
+     * @tc.name       Deletes 文本、uri、html
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2600 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test26: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test26: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test26: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1484,9 +1399,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test26: systemPasteboard.setPasteData promise');
 
           console.info('f_test26: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test26: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test26: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1495,9 +1410,12 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 3).assertTrue();
 
               console.info('f_test26: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(2);
+              expect(removeat).assertTrue();
+              let removeat1: boolean = pasteData1.removeRecordAt(1);
+              expect(removeat1).assertTrue();
+              let removeat2: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat2).assertTrue();
 
               console.info('f_test26: Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
@@ -1522,22 +1440,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1800
-     * @tc.name Replaces 文本 record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1800
+     * @tc.name       Replaces 文本 record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test27: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test27: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test27: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1546,9 +1461,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test27: systemPasteboard.setPasteData promise');
 
           console.info('f_test27: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test27: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test27: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1556,10 +1471,10 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let textData1 = 'Hello World1'
-              console.info('f_test27: Replaces the Record = ' + textData1)
+              let textData1 = 'Hello World1';
               let pasteDataRecord = pasteboard.createPlainTextRecord(textData1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test27: replace = ' + replace)
 
               console.info('f_test27: Checks the pasteboard content');
@@ -1575,22 +1490,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1500
-     * @tc.name Replaces htmlText record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1500
+     * @tc.name       Replaces htmlText record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test28: systemPasteboard.clear promise');
-
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test28: createHtmlData htmlText = ' + htmlText);
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test28: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1599,9 +1511,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test28: systemPasteboard.setPasteData promise');
 
           console.info('f_test28: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test28: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test28: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1609,10 +1521,10 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let htmlText1 = '<html><head></head><body>Hello World 1</body></html>'
-              console.info('f_test28: Replaces the htmlText = ' + htmlText1)
+              let htmlText1 = '<html><head></head><body>Hello World 1</body></html>';
               let pasteDataRecord = pasteboard.createHtmlTextRecord(htmlText1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test28: replace = ' + replace)
 
               console.info('SUB_pasteBoard_function_JS_API_2800 end');
@@ -1624,22 +1536,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1600
-     * @tc.name Replaces uri record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1600
+     * @tc.name       Replaces uri record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test29: systemPasteboard.clear promise');
-
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test29: createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test29: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1648,9 +1557,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test29: systemPasteboard.setPasteData promise');
 
           console.info('f_test29: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test29: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test29: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1658,10 +1567,10 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let uriText1 = 'https://www.baidu.com/1'
-              console.info('f_test29: Replaces the uriText = ' + uriText1)
-              let pasteDataRecord = pasteboard.createUriRecord(uriText1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              let uriText1 = 'https://www.baidu.com/1';
+              let pasteDataRecord = pasteboard.createUriRecord(uriText1);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test29: replace = ' + replace)
 
               console.info('SUB_pasteBoard_function_JS_API_2900 end');
@@ -1673,25 +1582,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1700
-     * @tc.name Replaces want record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1700
+     * @tc.name       Replaces want record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3000 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test30: systemPasteboard.clear promise');
-
         let wantText0: Want = {
           bundleName: "com.example.myapplication3",
           abilityName: "com.example.myapplication3.MainAbility"
-        }
-        console.info('f_test30: createWantData want = ' + wantText0);
+        };
         let pasteData = pasteboard.createWantData(wantText0);
         console.info('f_test30: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1700,9 +1606,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test30: systemPasteboard.setPasteData promise');
 
           console.info('f_test30: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test30: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test30: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1713,10 +1619,10 @@ export default function pasteBoardJEtsunitTest() {
               let wantText1: Want = {
                 bundleName: "com.example.myapplication30",
                 abilityName: "com.example.myapplication30.MainAbility"
-              }
-              console.info('f_test30: Replaces the wantText = ' + wantText1)
-              let pasteDataRecord = pasteboard.createWantRecord(wantText1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              };
+              let pasteDataRecord = pasteboard.createWantRecord(wantText1);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test30: replace = ' + replace)
 
               console.info('SUB_pasteBoard_function_JS_API_3000 end');
@@ -1728,25 +1634,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1400
-     * @tc.name Replaces 300k文本 record
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1400
+     * @tc.name       Replaces 300k文本 record
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3100 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test31: systemPasteboard.clear promise');
-
         let textData = ''
         for (let i = 0; i < 300; i++) {
           textData = textData + "A";
         }
-        console.info('f_test31: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test31: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1755,9 +1658,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test31: systemPasteboard.setPasteData promise');
 
           console.info('f_test31: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test31: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test31: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1765,10 +1668,10 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let textData1 = 'Hello World1'
-              console.info('f_test31: Replaces the Record = ' + textData1)
-              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              let textData1 = 'Hello World1';
+              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
               console.info('f_test31: replace = ' + replace)
 
               console.info('f_test31: Checks the pasteboard content');
@@ -1784,22 +1687,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0200
-     * @tc.name Adds one record(s), gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0200
+     * @tc.name       Adds one record(s), gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3200 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test32: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test32: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test32: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1808,9 +1708,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test32: systemPasteboard.setPasteData promise');
 
           console.info('Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test32: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test32: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1827,22 +1727,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0300
-     * @tc.name Adds 2 record(s), gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0300
+     * @tc.name       Adds 2 record(s), gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test33: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test33: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test33: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1853,15 +1750,14 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test33: addTextRecord = ' + textData)
           pasteData.addTextRecord(textData)
         }
-
         console.info('f_test33: Writes PasteData to the pasteboard');
         systemPasteboard.setPasteData(pasteData).then(() => {
           console.info('f_test33: systemPasteboard.setPasteData promise');
 
           console.info('f_test33: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test33: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test33: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1878,22 +1774,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0100
-     * @tc.name Adds 15 record(s), gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0100
+     * @tc.name       Adds 15 record(s), gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test34: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test34: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test34: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1910,9 +1803,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test34: systemPasteboard.setPasteData promise');
 
           console.info('f_test34: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test34: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test34: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1929,22 +1822,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0400
-     * @tc.name Adds 30 record(s), gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0400
+     * @tc.name       Adds 30 record(s), gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test35: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test35: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test35: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -1961,9 +1851,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test35: systemPasteboard.setPasteData promise');
 
           console.info('f_test35: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test35: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test35: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -1980,22 +1870,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0700
-     * @tc.name Adds 31 record(s), gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0700
+     * @tc.name       Adds 31 record(s), gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3600 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test36: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test36: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test36: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2012,9 +1899,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test36: systemPasteboard.setPasteData promise');
 
           console.info('f_test36: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test36: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test36: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2031,22 +1918,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0500
-     * @tc.name Replaces one record, gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0500
+     * @tc.name       Replaces one record, gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test37: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test37: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test37: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2055,9 +1939,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test37: systemPasteboard.setPasteData promise');
 
           console.info('f_test37: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test37: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test37: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2065,11 +1949,10 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let textData1 = 'Hello World1'
-              console.info('f_test37: Replaces the Record = ' + textData1)
-              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1)
-              let replace = pasteData1.replaceRecordAt(0, pasteDataRecord);
-              console.info('f_test37: replace = ' + replace)
+              let textData1 = 'Hello World1';
+              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
 
               console.info('f_test37: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2087,22 +1970,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0600
-     * @tc.name Clears pasteBoard, gets record count
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0600
+     * @tc.name       Clears pasteBoard, gets record count
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test38: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test38: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test38: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2111,9 +1991,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test38: systemPasteboard.setPasteData promise');
 
           console.info('f_test38: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test38: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test38: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2141,22 +2021,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0200
-     * @tc.name Adds Property
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0200
+     * @tc.name       Adds Property
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test39: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test39: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test39: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2165,9 +2042,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test39: systemPasteboard.setPasteData promise');
 
           console.info('f_test39: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test39: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test39: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2187,7 +2064,7 @@ export default function pasteBoardJEtsunitTest() {
 
               console.info('f_test39: Checks the Property')
               systemPasteboard.setPasteData(pasteData1).then(() => {
-                systemPasteboard.hasPasteData().then((data) => {
+                systemPasteboard.hasPasteData().then((data: boolean) => {
                   expect(data == true).assertTrue();
                   systemPasteboard.getPasteData().then((data) => {
                     let pasteData2 = data;
@@ -2211,22 +2088,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0300
-     * @tc.name Set Property's tags
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0300
+     * @tc.name       Set Property's tags
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4000 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test40: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test40: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test40: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2235,9 +2109,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test40: systemPasteboard.setPasteData promise');
 
           console.info('f_test40: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test40: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test40: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2253,9 +2127,8 @@ export default function pasteBoardJEtsunitTest() {
 
               systemPasteboard.setPasteData(pasteData1).then(() => {
                 console.info('Succeeded in setting PasteData.');
-                systemPasteboard.hasPasteData().then((data) => {
+                systemPasteboard.hasPasteData().then((data: boolean) => {
                   console.info(`Succeeded in checking the PasteData. Data: ${data}`);
-
                   expect(data == true).assertTrue();
                   systemPasteboard.getPasteData().then((data) => {
                     let pasteData2 = data;
@@ -2278,22 +2151,19 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0500
-     * @tc.name Clears pasteBoard and check property
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0500
+     * @tc.name       Clears pasteBoard and check property
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4100 start');
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test41: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test41: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test41: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2302,9 +2172,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test41: systemPasteboard.setPasteData promise');
 
           console.info('f_test41: Checks there is content in the pasteboard');
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test41: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test41: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2330,25 +2200,22 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0900
-     * @tc.name 打开内容变化通知功能：向剪贴板数据增加、删除等文本数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0900
+     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等文本数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4200 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test42: systemPasteboard.clear promise');
-
         console.info('f_test42: Open the infor for pasteboard content changes')
         systemPasteboard.on('update', contentChanges)
 
         let textData = 'Hello World!';
-        console.info('f_test42: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test42: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2357,9 +2224,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test42: systemPasteboard.setPasteData promise');
 
           console.info('f_test42: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test42: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test42: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2368,7 +2235,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test42: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4200 end');
               done();
@@ -2379,25 +2247,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0600
-     * @tc.name 打开内容变化通知功能：向剪贴板数据增加、删除等html数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0600
+     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等html数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test43: systemPasteboard.clear promise');
-
         console.info('f_test43: Open the infor for pasteboard content changes')
         systemPasteboard.on('update', contentChanges)
 
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test43: createHtmlData htmlText = ' + htmlText);
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test43: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2406,9 +2271,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test43: systemPasteboard.setPasteData promise');
 
           console.info('f_test43: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test43: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test43: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2417,7 +2282,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test43: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4300 end');
               done();
@@ -2428,25 +2294,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0700
-     * @tc.name 打开内容变化通知功能：向剪贴板数据增加、删除等uri数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0700
+     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等uri数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test44: systemPasteboard.clear promise');
-
         console.info('f_test44: Open the infor for pasteboard content changes')
         systemPasteboard.on('update', contentChanges)
 
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test44: createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test44: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2455,9 +2318,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test44: systemPasteboard.setPasteData promise');
 
           console.info('f_test44: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test44: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test44: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2466,7 +2329,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test44: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4400 end');
               done();
@@ -2477,20 +2341,18 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0800
-     * @tc.name 打开内容变化通知功能：向剪贴板数据增加、删除等want数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0800
+     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等want数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test45: systemPasteboard.clear promise');
-
         console.info('f_test45: Open the infor for pasteboard content changes')
         systemPasteboard.on('update', contentChanges)
 
@@ -2498,7 +2360,6 @@ export default function pasteBoardJEtsunitTest() {
           bundleName: "com.example.myapplication45",
           abilityName: "com.example.myapplication45.MainAbility"
         }
-        console.info('f_test45: createWantData = ' + want)
         let pasteData = pasteboard.createWantData(want);
         console.info('f_test45: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2507,9 +2368,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test45: systemPasteboard.setPasteData promise');
 
           console.info('f_test45: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test45: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test45: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2518,7 +2379,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test45: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4500 end');
               done();
@@ -2529,25 +2391,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_1000
-     * @tc.name 打开内容变化通知功能：清除剪切板内容
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_1000
+     * @tc.name       打开内容变化通知功能：清除剪切板内容
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4600 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test46: systemPasteboard.clear promise');
-
         console.info('f_test46: Open the infor for pasteboard content changes')
         systemPasteboard.on('update', contentChanges)
 
         let textData = 'Hello World!';
-        console.info('f_test46: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test46: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2556,9 +2415,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test46: systemPasteboard.setPasteData promise');
 
           console.info('f_test46: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test46: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2578,25 +2437,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0400
-     * @tc.name 关闭内容变化通知功能：向剪贴板数据增加、删除等文本数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0400
+     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等文本数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test47: systemPasteboard.clear promise');
-
         console.info('f_test47: Close the infor for pasteboard content changes')
         systemPasteboard.off('update', contentChanges)
 
         let textData = 'Hello World!';
-        console.info('f_test47: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test47: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2605,9 +2461,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test47: systemPasteboard.setPasteData promise');
 
           console.info('f_test47: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test47: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test47: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2616,7 +2472,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test47: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4700 end');
               done();
@@ -2627,25 +2484,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0100
-     * @tc.name 关闭内容变化通知功能：向剪贴板数据增加、删除等html数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0100
+     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等html数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test48: systemPasteboard.clear promise');
-
         console.info('f_test48: Close the infor for pasteboard content changes')
         systemPasteboard.off('update', contentChanges)
 
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test48: createHtmlData htmlText = ' + htmlText);
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test48: createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2654,9 +2508,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test48: systemPasteboard.setPasteData promise');
 
           console.info('f_test48: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test48: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test48: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2665,7 +2519,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test48: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4800 end');
               done();
@@ -2676,25 +2531,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0200
-     * @tc.name 关闭内容变化通知功能：向剪贴板数据增加、删除等uri数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0200
+     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等uri数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test49: systemPasteboard.clear promise');
-
         console.info('f_test49: Close the infor for pasteboard content changes')
         systemPasteboard.off('update', contentChanges)
 
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test49: createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test49: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2703,9 +2555,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test49: systemPasteboard.setPasteData promise');
 
           console.info('f_test49: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test49: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test49: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2714,7 +2566,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test49: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_4900 end');
               done();
@@ -2725,20 +2578,18 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0300
-     * @tc.name 关闭内容变化通知功能：向剪贴板数据增加、删除等want数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0300
+     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等want数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5000 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test50: systemPasteboard.clear promise');
-
         console.info('f_test50: Open the infor for pasteboard content changes')
         systemPasteboard.off('update', contentChanges)
 
@@ -2746,7 +2597,6 @@ export default function pasteBoardJEtsunitTest() {
           bundleName: "com.example.myapplication45",
           abilityName: "com.example.myapplication45.MainAbility"
         }
-        console.info('f_test50: createWantData = ' + want)
         let pasteData = pasteboard.createWantData(want);
         console.info('f_test50: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2755,9 +2605,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test50: systemPasteboard.setPasteData promise');
 
           console.info('f_test50: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test50: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test50: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2766,7 +2616,8 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test50: Removes the Record')
-              expect(pasteData1.removeRecordAt(0) === true || pasteData1.removeRecordAt(0) === false).assertTrue();
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
 
               console.info('SUB_pasteBoard_function_JS_API_5000 end');
               done();
@@ -2777,25 +2628,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0500
-     * @tc.name 关闭内容变化通知功能：清除剪切板内容
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0500
+     * @tc.name       关闭内容变化通知功能：清除剪切板内容
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5100 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test51: systemPasteboard.clear promise');
-
         console.info('f_test51: Close the infor for pasteboard content changes')
         systemPasteboard.off('update', contentChanges)
 
         let textData = 'Hello World!';
-        console.info('f_test51: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test51: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2804,9 +2652,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test51: systemPasteboard.setPasteData promise');
 
           console.info('f_test51: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test51: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test51: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2826,22 +2674,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2400
-     * @tc.name 清除剪切板内的文本数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2400
+     * @tc.name       清除剪切板内的文本数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5200 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test52: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test52: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test52: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2850,9 +2695,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test52: systemPasteboard.setPasteData promise');
 
           console.info('f_test52: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test52: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test52: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2880,22 +2725,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2200
-     * @tc.name 清除剪切板内的uri数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2200
+     * @tc.name       清除剪切板内的uri数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test53: systemPasteboard.clear promise');
-
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test53: createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test53: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -2904,9 +2746,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test53: systemPasteboard.setPasteData promise');
 
           console.info('f_test53: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test53: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2934,21 +2776,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2100
-     * @tc.name 清除剪切板内的html数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2100
+     * @tc.name       清除剪切板内的html数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test54: systemPasteboard.clear promise');
-
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         console.info('f_test54: createHtmlData htmlText = ' + htmlText);
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test54: createHtmlData pasteData = ' + JSON.stringify(pasteData));
@@ -2958,9 +2798,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test54: systemPasteboard.setPasteData promise');
 
           console.info('f_test54: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test54: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test54: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -2988,25 +2828,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2300
-     * @tc.name 清除剪切板内的want数据项
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2300
+     * @tc.name       清除剪切板内的want数据项
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test55: systemPasteboard.clear promise');
-
         let myWant: Want = {
           bundleName: "com.example.myapplication55",
           abilityName: "com.example.myapplication55.MainAbility"
         }
-        console.info('f_test01: createWantData want = ' + myWant);
         let pasteData = pasteboard.createWantData(myWant);
         console.info('f_test01: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3015,9 +2852,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test55: systemPasteboard.setPasteData promise');
 
           console.info('f_test55: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test55: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test55: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3045,22 +2882,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0200
-     * @tc.name 向剪切板内增加30条数据项，然后清除
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0200
+     * @tc.name       向剪切板内增加30条数据项，然后清除
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5600 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test56: systemPasteboard.clear promise');
-
         let textData0 = 'Hello World!';
-        console.info('f_test56: createPlainTextData textData = ' + textData0);
         let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test56: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3077,9 +2911,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test56: systemPasteboard.setPasteData promise');
 
           console.info('f_test56: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test56: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test56: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3107,21 +2941,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0300
-     * @tc.name 向剪贴板数据各增加5条文本、uri、html数据，然后清除
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0300
+     * @tc.name       向剪贴板数据各增加5条文本、uri、html数据，然后清除
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-
-        let textData0 = 'Hello World0'
-        console.info('f_test57: createPlainTextData = ' + textData0)
+        let textData0 = 'Hello World0';
         let pasteData = pasteboard.createPlainTextData(textData0)
 
         let textData = ''
@@ -3146,9 +2978,9 @@ export default function pasteBoardJEtsunitTest() {
         }
 
         systemPasteboard.setPasteData(pasteData).then(() => {
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test57: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             systemPasteboard.getPasteData().then((data) => {
               console.info('f_test57: systemPasteboard.getPasteData data = ' + JSON.stringify(data));
@@ -3171,22 +3003,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0900
-     * @tc.name 向剪贴板数据增加文本数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0900
+     * @tc.name       向剪贴板数据增加文本数据项，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test58: systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test58: createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test58: createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3195,9 +3024,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test58: systemPasteboard.setPasteData promise');
 
           console.info('f_test58: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test58: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('SUB_pasteBoard_function_JS_API_5800 end')
             done();
@@ -3207,22 +3036,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0600
-     * @tc.name 向剪贴板数据增加uri数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0600
+     * @tc.name       向剪贴板数据增加uri数据项，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('systemPasteboard.clear promise');
-
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test59: createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test59: createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3231,9 +3057,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test59: systemPasteboard.setPasteData promise');
 
           console.info('f_test59: Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test59: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('SUB_pasteBoard_function_JS_API_5900 end')
             done();
@@ -3243,22 +3069,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0500
-     * @tc.name 向剪贴板数据增加html数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0500
+     * @tc.name       向剪贴板数据增加html数据项，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6000 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test60 systemPasteboard.clear promise');
-
-        let htmlText = '<html><head></head><body>Hello World!</body></html>'
-        console.info('f_test60createHtmlData htmlText = ' + htmlText);
+        let htmlText = '<html><head></head><body>Hello World!</body></html>';
         let pasteData = pasteboard.createHtmlData(htmlText);
         console.info('f_test60createHtmlData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3267,9 +3090,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test60systemPasteboard.setPasteData promise');
 
           console.info('f_test60Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test60systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('SUB_pasteBoard_function_JS_API_6000 end')
             done();
@@ -3279,25 +3102,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0700
-     * @tc.name 向剪贴板数据增加want数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0700
+     * @tc.name       向剪贴板数据增加want数据项，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6100 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test61 systemPasteboard.clear promise');
-
         let myWant: Want = {
           bundleName: "com.example.myapplication8",
           abilityName: "com.example.myapplication8.MainAbility"
-        }
-        console.info('f_test01: createWantData want = ' + myWant);
+        };
         let pasteData = pasteboard.createWantData(myWant);
         console.info('f_test01: createWantData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3306,9 +3126,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('systemPasteboard.setPasteData promise');
 
           console.info('Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('SUB_pasteBoard_function_JS_API_6100 end')
             done();
@@ -3318,22 +3138,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0400
-     * @tc.name 向剪贴板数据各增加5条文本、uri、html，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0400
+     * @tc.name       向剪贴板数据各增加5条文本、uri、html，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6200 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test62 systemPasteboard.clear promise');
-
-        let textData0 = 'Hello World0'
-        console.info('f_test62 createPlainTextData = ' + textData0)
+        let textData0 = 'Hello World0';
         let pasteData = pasteboard.createPlainTextData(textData0)
 
         let textData = ''
@@ -3365,9 +3182,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test62 systemPasteboard.setPasteData promise');
 
           console.info('f_test62 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test62 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('SUB_pasteBoard_function_JS_API_6200 end')
             done();
@@ -3377,22 +3194,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1200
-     * @tc.name 更新剪贴板数据，查询剪贴板存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1200
+     * @tc.name       更新剪贴板数据，查询剪贴板存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6300 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test63 systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test63 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test63 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3401,9 +3215,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test63 systemPasteboard.setPasteData promise');
 
           console.info('f_test63 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test63 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test63 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3411,15 +3225,15 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
-              let textData1 = 'Hello World1'
-              console.info('f_test63 Replaces the Record = ' + textData1)
-              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1)
-              pasteData1.replaceRecordAt(0, pasteDataRecord)
+              let textData1 = 'Hello World1';
+              let pasteDataRecord = pasteboard.createPlainTextRecord(textData1);
+              let replace: boolean = pasteData1.replaceRecordAt(0, pasteDataRecord);
+              expect(replace).assertTrue();
 
               console.info('f_test63 Checks there is content in the pasteboard')
-              systemPasteboard.hasPasteData().then((data) => {
+              systemPasteboard.hasPasteData().then((data: boolean) => {
                 console.info('f_test63 systemPasteboard.hasPasteData promise data = ' + data);
-                expect(data === true || data === false).assertTrue();
+                expect(data).assertTrue();
               })
 
               console.info('SUB_pasteBoard_function_JS_API_6300 end');
@@ -3431,22 +3245,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0100
-     * @tc.name 删除所有的剪贴板数据，查询剪贴板不存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0100
+     * @tc.name       删除所有的剪贴板数据，查询剪贴板不存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6400 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test64 systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test64 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test64 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3455,7 +3266,7 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test64 systemPasteboard.setPasteData promise');
 
           console.info('f_test64 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test64 systemPasteboard.hasPasteData promise data = ' + data);
             expect(data).assertTrue();
 
@@ -3484,22 +3295,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2500
-     * @tc.name 清除剪贴板数据，查询剪贴板不存在剪贴板数据
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2500
+     * @tc.name       清除剪贴板数据，查询剪贴板不存在剪贴板数据
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6500 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test65 systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test65 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test65 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3508,9 +3316,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test65 systemPasteboard.setPasteData promise');
 
           console.info('f_test65 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test65 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test65 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3526,7 +3334,7 @@ export default function pasteBoardJEtsunitTest() {
                 console.info('f_test65 systemPasteboard.setPasteData promise');
 
                 console.info('f_test65 Checks there is no content in the pasteboard')
-                systemPasteboard.hasPasteData().then((data) => {
+                systemPasteboard.hasPasteData().then((data: boolean) => {
                   console.info('f_test65 systemPasteboard.hasPasteData promise data = ' + data);
 
                   console.info('SUB_pasteBoard_function_JS_API_6500 end');
@@ -3540,22 +3348,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0800
-     * @tc.name 将文本数据强制转换为文本
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0800
+     * @tc.name       将文本数据强制转换为文本
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6600 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test66 systemPasteboard.clear promise');
-
         let textData = 'Hello World!';
-        console.info('f_test66 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test66 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3564,9 +3369,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test66 systemPasteboard.setPasteData promise');
 
           console.info('f_test66 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test66 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test66 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3589,22 +3394,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0600
-     * @tc.name 将一条含有特殊字符、中英混杂的文本数据强制转换为文本
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0600
+     * @tc.name       将一条含有特殊字符、中英混杂的文本数据强制转换为文本
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6700 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test67 systemPasteboard.clear promise');
-
         let textData = 'Hello 中国!@#$%^&*()_+{}\?.';
-        console.info('f_test67 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test67 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3613,9 +3415,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test67 systemPasteboard.setPasteData promise');
 
           console.info('f_test67 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test67 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test67 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3636,25 +3438,22 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0700
-     * @tc.name 将一条超长文本数据 (大小为301K)强制转换为文本
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0700
+     * @tc.name       将一条超长文本数据 (大小为301K)强制转换为文本
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test68', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6800 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test68 systemPasteboard.clear promise');
-
         let textData = ''
         for (let i = 0; i < 301; i++) {
           textData = textData + "A";
         }
-        console.info('f_test68 createPlainTextData textData = ' + textData);
         let pasteData = pasteboard.createPlainTextData(textData);
         console.info('f_test68 createPlainTextData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3663,9 +3462,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test68 systemPasteboard.setPasteData promise');
 
           console.info('f_test68 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test68 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test68 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3686,22 +3485,19 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0400
-     * @tc.name 将uri数据强制转换为文本
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0400
+     * @tc.name       将uri数据强制转换为文本
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test69', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6900 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-        console.info('f_test69 systemPasteboard.clear promise');
-
-        let uriText = 'https://www.baidu.com/'
-        console.info('f_test69 createUriData uriText = ' + uriText);
+        let uriText = 'https://www.baidu.com/';
         let pasteData = pasteboard.createUriData(uriText);
         console.info('f_test69 createUriData pasteData = ' + JSON.stringify(pasteData));
 
@@ -3710,9 +3506,9 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test69 systemPasteboard.setPasteData promise');
 
           console.info('f_test69 Checks there is content in the pasteboard')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test69 systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             console.info('f_test69 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
@@ -3724,7 +3520,7 @@ export default function pasteBoardJEtsunitTest() {
               let pasteDataRecord = pasteData1.getRecordAt(0)
 
               pasteDataRecord.convertToText().then((data) => {
-                console.info('convertToText success data : ' + JSON.stringify(data));
+                console.info('convertToText success data  ' + JSON.stringify(data));
               }).catch((error: ESObject) => {
                 console.error('convertToText failed because ' + JSON.stringify(error));
               });
@@ -3739,23 +3535,20 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0800
-     * @tc.name 复制文本、uri格式
-     * @tc.desc Test pasteBoard API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0800
+     * @tc.name       复制文本、uri格式
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('pasteboard_function_test70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_7000 start')
 
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
-
-        let textData0 = 'Hello World0'
-        console.info('f_test70: createPlainTextData = ' + textData0)
-
-        let pasteData = pasteboard.createPlainTextData(textData0)
+        let textData0 = 'Hello World0';
+        let pasteData = pasteboard.createPlainTextData(textData0);
         console.info('f_test70: createPlainTextData = ' + JSON.stringify(pasteData))
 
         let uriText = pasteboard.createUriRecord("https://www.baidu.com/");
@@ -3766,9 +3559,9 @@ export default function pasteBoardJEtsunitTest() {
 
         systemPasteboard.setPasteData(pasteData).then(() => {
           console.info('---------------------------->1')
-          systemPasteboard.hasPasteData().then((data) => {
+          systemPasteboard.hasPasteData().then((data: boolean) => {
             console.info('f_test70: systemPasteboard.hasPasteData promise data = ' + data);
-            expect(data === true || data === false).assertTrue();
+            expect(data).assertTrue();
 
             systemPasteboard.getPasteData().then((data) => {
               console.info('f_test70: systemPasteboard.getPasteData data = ' + JSON.stringify(data));

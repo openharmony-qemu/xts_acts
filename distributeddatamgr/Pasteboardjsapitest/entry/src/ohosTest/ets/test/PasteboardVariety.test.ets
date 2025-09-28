@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,12 +91,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
-     * @tc.name CreateData_Plaintext
-     * @tc.desc Test pasteBoard variety createData plaintext
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
+     * @tc.name        CreateData_Plaintext
+     * @tc.desc        Test pasteBoard variety createData plaintext
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0100 start ************')
@@ -115,12 +115,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
-     * @tc.name CreateData_Html
-     * @tc.desc Test pasteBoard variety createData Html
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
+     * @tc.name        CreateData_Html
+     * @tc.desc        Test pasteBoard variety createData Html
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0200 start ************')
@@ -139,12 +139,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
-     * @tc.name CreateData_Uri
-     * @tc.desc Test pasteBoard variety createData Uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
+     * @tc.name        CreateData_Uri
+     * @tc.desc        Test pasteBoard variety createData Uri
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0300 start ************')
@@ -163,12 +163,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
-     * @tc.name CreateData_Want
-     * @tc.desc Test pasteBoard variety createData Want
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
+     * @tc.name        CreateData_Want
+     * @tc.desc        Test pasteBoard variety createData Want
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0400 start ************')
@@ -187,12 +187,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
-     * @tc.name CreateData_PixelMap
-     * @tc.desc Test pasteBoard variety createData PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
+     * @tc.name        CreateData_PixelMap
+     * @tc.desc        Test pasteBoard variety createData PixelMap
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0500 start ************')
@@ -227,12 +227,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
-     * @tc.name CreateData_Arraybuffer
-     * @tc.desc Test pasteBoard variety createData Arraybuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
+     * @tc.name        CreateData_Arraybuffer
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0600 start ************')
@@ -240,9 +240,10 @@ export default function PasteboardVarietyTest() {
       record['app/xml'] = new ArrayBuffer(256);
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
-        let pasteDataType = pasteData.getMimeTypes();
+        let pasteDataType: Array<String> = pasteData.getMimeTypes();
         console.info(TAG + 'type:' + pasteDataType);
-        expect(String(pasteDataType)).assertEqual('app/xml');
+        expect(pasteDataType.length).assertEqual(1);
+        expect(pasteDataType[0]).assertEqual('app/xml');
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message);
         expect().assertFail();
@@ -251,12 +252,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
-     * @tc.name CreateData_Variety
-     * @tc.desc Test pasteBoard variety createData Variety and getData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
+     * @tc.name        CreateData_Variety
+     * @tc.desc        Test pasteBoard variety createData Variety and getData
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0700 start ************')
@@ -316,12 +317,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
-     * @tc.name CreateData_Variety
-     * @tc.desc Test pasteBoard variety createData Variety and getValidTypes
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
+     * @tc.name        CreateData_Variety
+     * @tc.desc        Test pasteBoard variety createData Variety and getValidTypes
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0800 start ************')
@@ -351,12 +352,280 @@ export default function PasteboardVarietyTest() {
           'app/xml'
         ]);
         console.info(TAG + 'addEntry success,getValidTypes success.types:' + types);
-        expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
+        expect(types.length).assertEqual(6);
+        expect(types).assertDeepEquals(['text/plain','text/html','text/uri','text/want','pixelMap','app/xml']);
       } catch (error) {
         console.info(TAG + ',code:' + error.code + ',message:' + error.message);
         expect().assertFail()
       }
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0800 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0100
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_0900
+     * @tc.desc        Test pasteBoard variety createData Variety and getValidTypes
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0900 start ************')
+      let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+      try {
+        let types: string[] = record.getValidTypes([
+          pasteboard.MIMETYPE_TEXT_PLAIN,
+          pasteboard.MIMETYPE_TEXT_HTML
+        ]);
+        console.info(TAG + 'addEntry success,getValidTypes success.types:' + types);
+        expect(types.length).assertEqual(0);
+        expect(types).assertDeepEquals([]);
+      } catch (error) {
+        console.info(TAG + ',code:' + error.code + ',message:' + error.message);
+        expect().assertFail()
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0900 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0200
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1000
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 start ************')
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+        pasteData.removeRecord(0);
+        let pasteDataType: Array<String> = pasteData.getMimeTypes();
+        console.info(TAG + 'type:' + pasteDataType);
+        expect(pasteDataType.length).assertEqual(0);
+        expect(pasteDataType).assertDeepEquals([]);
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0300
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1100
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1100 start ************')
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('hello');
+        let hasData: boolean = pasteData.hasMimeType(pasteboard.MIMETYPE_TEXT_HTML);
+        expect(hasData).assertFalse();
+        let hasData1: boolean = pasteData.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN);
+        expect(hasData1).assertTrue();
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1100 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0400
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1200
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1200 start ************')
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+        let hasData: boolean = pasteData.hasType(pasteboard.MIMETYPE_TEXT_HTML);
+        expect(hasData).assertFalse();
+        let hasData1: boolean = pasteData.hasType(pasteboard.MIMETYPE_TEXT_PLAIN);
+        expect(hasData1).assertTrue();
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1200 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0500
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1300
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1300 start ************')
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('hello');
+        let isRemove: boolean = pasteData.removeRecordAt(0);
+        expect(isRemove).assertTrue();
+        let isRemove1: boolean = pasteData.removeRecordAt(0);
+        expect(isRemove1).assertFalse();
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1300 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0600
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1400
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1400 start ************')
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('hello');
+        let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability:///com.example.myapplication1/user.txt');
+        let isReplace: boolean = pasteData.replaceRecordAt(1, record);
+        expect(isReplace).assertFalse();
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1400 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0700
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1500
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1500 start ************')
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        systemPasteboard.hasPasteData((err: BusinessError, data: boolean) => {
+          if (err) {
+            console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+            return;
+          }
+          expect(data).assertFalse();
+          console.info(`Succeeded in checking the PasteData. Data: ${data}`);
+        });
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1500 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0800
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1600
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1600 start ************')
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();        
+        systemPasteboard.hasPasteData().then((data: boolean) => {
+          expect(data).assertFalse();
+          console.info(`Succeeded in checking the PasteData. Data: ${data}`);
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+        });
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1600 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_0900
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1700
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1700 start ************')
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        systemPasteboard.hasData((err: BusinessError, data: boolean) => {
+          if (err) {
+            console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+            return;
+          }
+          expect(data).assertFalse();
+          console.info(`Succeeded in checking the PasteData. Data: ${data}`);
+        });
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1700 end ************')
+    })
+
+    /**
+     * @tc.number      PasteboardVariety_1000
+     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1800
+     * @tc.desc        Test pasteBoard variety createData Arraybuffer
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1800 start ************')
+      try {
+        let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();        
+        systemPasteboard.hasData().then((data: boolean) => {
+          expect(data).assertFalse();
+          console.info(`Succeeded in checking the PasteData. Data: ${data}`);
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to check the PasteData. Cause: ${err.message}`);
+        });
+      } catch (error) {
+        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
+        expect().assertFail();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1800 end ************')
+    })
+
+    /**
+     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
+     * @tc.number     PasteboardVariety_1100
+     * @tc.desc       setUnifiedData Verify the properties of the appRecordData type
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_1900 start-----")
+      let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.getMimeTypes().then((data: Array<String>) => {
+        expect(data.length).assertEqual(0);
+        expect(data).assertDeepEquals([]);
+        console.info(TAG + 'Succeeded in getting mimeTypes. mimeTypes: ' + JSON.stringify(data));
+      }).catch((err:BusinessError) => {
+        console.error(TAG + 'Failed to get mimeTypes. Cause:' + err.message);
+        expect().assertFail();
+      })
+      console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_1900 end-----")
     })
   })
 }
