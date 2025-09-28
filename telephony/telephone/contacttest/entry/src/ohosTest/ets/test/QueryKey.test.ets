@@ -21,6 +21,13 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Driver } from '@ohos.UiTest';
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -204,6 +211,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -246,6 +254,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, -1, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -277,6 +286,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, 1.5, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -308,6 +318,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, 999999999999999999999999999999999999999, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -339,6 +350,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -380,6 +392,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
@@ -425,7 +438,9 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -470,6 +485,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, 56987151545665656565656565, holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -501,6 +517,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, -1, holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -532,6 +549,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, 1.5, holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -563,6 +581,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, -10000, {
           holderId: -1.5,
           bundleName: "bundle",
@@ -598,6 +617,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, Number.MAX_VALUE, holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -629,6 +649,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -674,7 +695,9 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -714,7 +737,9 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -758,7 +783,9 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -802,6 +829,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.queryKey(context, 564654156215646541561, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -832,6 +860,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.queryKey(context, -1, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -862,6 +891,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.queryKey(context, 1.5, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -892,6 +922,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryKey(context, -1, {
           holderId: -1,
           bundleName: "ddd",
@@ -927,6 +958,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.queryKey(context, Number.MAX_VALUE, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -957,7 +989,9 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1002,6 +1036,7 @@ export default function QueryKeyTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);

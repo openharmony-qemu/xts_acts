@@ -21,6 +21,13 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Driver } from '@ohos.UiTest';
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -205,7 +212,9 @@ export default function UpdateContactTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         console.info(JSON.stringify(contactData))
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          sleep(500);
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
             ExpectFail();
@@ -286,7 +295,9 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          sleep(500);
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
             ExpectFail();
@@ -360,7 +371,9 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          sleep(500);
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
             ExpectFail();
@@ -375,6 +388,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 contact.queryContact(context, keyData, (queryErrOne: BusinessError, queryDataOne: contact.Contact) => {
                   if (queryErrOne) {
                     console.info(`${caseName} queryContactOne: err->${JSON.stringify(queryErrOne)}`);
@@ -382,6 +396,7 @@ export default function UpdateContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContactOne: success data->${JSON.stringify(queryDataOne)}`);
+                    sleep(500);
                     contact.updateContact(context, {
                       id: addData,
                       key: keyData,
@@ -443,6 +458,7 @@ export default function UpdateContactTest() {
       const caseName: string = "testTelephonyContactUpdateContact0800";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -458,6 +474,7 @@ export default function UpdateContactTest() {
               done();
             } else {
               console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              sleep(500);
               contact.updateContact(context, {
                 id: addData,
                 key: keyData,
@@ -505,6 +522,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, dataID: number) => {
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
@@ -521,6 +539,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(data)}`);
                 ExpectTrue(data.length > 0);
+                sleep(500);
                 contact.updateContact(context, {
                   id: dataID,
                   key: data,
@@ -573,6 +592,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -589,6 +609,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(keyData.length > 0);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -629,6 +650,7 @@ export default function UpdateContactTest() {
       const caseName: string = "testTelephonyContactUpdateContact1200";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -644,6 +666,7 @@ export default function UpdateContactTest() {
               done();
             } else {
               console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              sleep(500);
               contact.updateContact(context, {
                 id: addData,
                 key: keyData,
@@ -701,6 +724,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -716,6 +740,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -783,6 +808,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -798,6 +824,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -859,6 +886,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -882,6 +910,7 @@ export default function UpdateContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContactOne: success data->${JSON.stringify(queryDataOne)}`);
+                    sleep(500);
                     contact.updateContact(context, {
                       id: addData,
                       key: keyData,
@@ -945,6 +974,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -960,6 +990,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1015,6 +1046,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1030,6 +1062,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1102,6 +1135,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1118,6 +1152,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(true);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1180,6 +1215,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1196,6 +1232,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(true);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1258,6 +1295,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1274,6 +1312,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(true);
+                sleep(500);
                 contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1336,6 +1375,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1352,6 +1392,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(true);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1415,6 +1456,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1430,6 +1472,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1490,6 +1533,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1512,6 +1556,7 @@ export default function UpdateContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContactOne: success data->${JSON.stringify(queryDataOne)}`);
+                    sleep(500);
                     let promise = contact.updateContact(context, {
                       id: addData,
                       key: keyData,
@@ -1575,6 +1620,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1590,6 +1636,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1642,6 +1689,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1657,6 +1705,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1728,6 +1777,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1743,6 +1793,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1804,6 +1855,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1819,6 +1871,7 @@ export default function UpdateContactTest() {
                 done();
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
@@ -1881,6 +1934,7 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
           if (addErr) {
             console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
@@ -1897,6 +1951,7 @@ export default function UpdateContactTest() {
               } else {
                 console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
                 ExpectTrue(keyData.length > 0);
+                sleep(500);
                 let promise = contact.updateContact(context, {
                   id: addData,
                   key: keyData,
