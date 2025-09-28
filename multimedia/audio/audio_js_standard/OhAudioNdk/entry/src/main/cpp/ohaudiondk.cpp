@@ -505,7 +505,15 @@ void SetRendererNormalParam(OH_AudioStreamBuilder *builder)
 {
     OH_AudioStream_Result oH_AudioStream_Result = 
         OH_AudioStreamBuilder_SetChannelCount(builder, KCHANNELCOUNT); // 设置通道数
+    if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, BUILD_FAIL, &result);
+    }
+    napi_create_int32(env, CODE_SUCCESS, &result);
     oH_AudioStream_Result = OH_AudioStreamBuilder_SetSamplingRate(builder, KRATE); // 设置采样率
+    if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, BUILD_FAIL, &result);
+    }
+    napi_create_int32(env, CODE_SUCCESS, &result);
 }
 // 输出流音频初始化
 static napi_value CreatRendererAudioPlayer(napi_env env, napi_callback_info info)
