@@ -150,7 +150,7 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutput(void)
 
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &outputCap_);
     if (ret != CAMERA_OK) {
-        LogE("=======chenbo CreateCameraOutputCapability failed... %{public}d", ret);
+        LogE("CreateCameraOutputCapability failed... %{public}d", ret);
         return ret;
     }
     if (outputCap_->photoProfilesSize <= 0) {
@@ -159,10 +159,10 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutput(void)
     auto profile_ = outputCap_->photoProfiles[0];
     ret = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, previewSurfaceId_.c_str(), &photoOutput_);
     if (ret != CAMERA_OK) {
-        LogE("=======chenbo CreatePhotoOutput failed... %{public}d", ret);
+        LogE("CreatePhotoOutput failed... %{public}d", ret);
         return ret;
     }
-    LogE("=======chenbo CreatePhotoOutput success... %{public}d", ret);
+    LogD("CreatePhotoOutput success... %{public}d", ret);
     return ret; 
 }
 
@@ -177,7 +177,7 @@ Camera_ErrorCode NDKCamera::ReleasePhotoOutput(void)
     }
     Camera_ErrorCode ret = OH_PhotoOutput_Release(photoOutput_);
     if (ret != CAMERA_OK) {
-        LogE("=======chenbo Release PhotoOutput failed... %{public}d", ret);
+        LogE("Release PhotoOutput failed... %{public}d", ret);
         return ret;
     }
     photoOutput_ = nullptr;
@@ -188,14 +188,14 @@ Camera_ErrorCode NDKCamera::CreateCameraInput(void)
 {
     Camera_ErrorCode ret_ = CreateCameras();
     if (ret_ != CAMERA_OK) {
-        LogE("=======chenbo create camera device failed... %{public}d", ret_);
+        LogE("create camera device failed... %{public}d", ret_);
     }
     if (cameraInput_ != nullptr) {
         return CAMERA_OK;
     }
     ret_ = OH_CameraManager_CreateCameraInput(cameraManager_, &cameras_[0], &cameraInput_);
     if (cameraInput_ == nullptr || ret_ != CAMERA_OK) {
-        LogE("=======chenbo CreateCameraInput failed.  errorCode:%{public}d", ret_);
+        LogE("CreateCameraInput failed.  errorCode:%{public}d", ret_);
         return ret_;
     }
     CameraInputRegisterCallback();

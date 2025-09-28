@@ -670,6 +670,146 @@ static napi_value OHCaptureSessionSetExposureBiasTest(napi_env env, napi_callbac
     });
 }
 
+static napi_value OHCaptureSessionGetExposureBias(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetExposureBiasTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionIsFocusModeSupported(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionIsFocusModeSupportedTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetFocusMode(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetFocusModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetFocusMode(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetFocusModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetFocusPoint(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetFocusPointTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetFocusPoint(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetFocusPointTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetZoomRatioRange(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetZoomRatioRangeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetZoomRatio(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetZoomRatioTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetZoomRatio(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetZoomRatioTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionIsVideoStabilizationModeSupportedTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetVideoStabilizationMode(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetVideoStabilizationModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetVideoStabilizationMode(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetVideoStabilizationModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionPreconfig(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionPreconfigTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionPreconfigWithRatio(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionPreconfigWithRatioTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetExposureValue(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetExposureValueTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetFocalLength(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetFocalLengthTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetSmoothZoom(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetSmoothZoomTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetSupportedColorSpaces(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetSupportedColorSpacesTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetActiveColorSpace(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetActiveColorSpaceTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetActiveColorSpace(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetActiveColorSpaceTest(code);
+    });
+}
+
 const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
     {"OH_Camera_GetCameraManager", OHCameraGetCameraManagerTest},
     {"OH_Camera_DeleteCameraManager", OHCameraDeleteCameraManagerTest},
@@ -738,6 +878,26 @@ const std::map<std::string, ArkCameraTestFuncEx> CaptureSessionFunctionMap = {
     {"OH_CaptureSession_SetMeteringPoint", OHCaptureSessionSetMeteringPointTest},
     {"OH_CaptureSession_GetExposureBiasRange", OHCaptureSessionGetExposureBiasRangeTest},
     {"OH_CaptureSession_SetExposureBias", OHCaptureSessionSetExposureBiasTest},
+    {"OH_CaptureSession_GetExposureBias", OHCaptureSessionGetExposureBias},
+    {"OH_CaptureSession_IsFocusModeSupported", OHCaptureSessionIsFocusModeSupported},
+    {"OH_CaptureSession_GetFocusMode", OHCaptureSessionGetFocusMode},
+    {"OH_CaptureSession_SetFocusMode", OHCaptureSessionSetFocusMode},
+    {"OH_CaptureSession_GetFocusPoint", OHCaptureSessionGetFocusPoint},
+    {"OH_CaptureSession_SetFocusPoint", OHCaptureSessionSetFocusPoint},
+    {"OH_CaptureSession_GetZoomRatioRange", OHCaptureSessionGetZoomRatioRange},
+    {"OH_CaptureSession_GetZoomRatio", OHCaptureSessionGetZoomRatio},
+    {"OH_CaptureSession_SetZoomRatio", OHCaptureSessionSetZoomRatio},
+    {"OH_CaptureSession_IsVideoStabilizationModeSupported", OHCaptureSessionIsVideoStabilizationModeSupported},
+    {"OH_CaptureSession_GetVideoStabilizationMode", OHCaptureSessionGetVideoStabilizationMode},
+    {"OH_CaptureSession_SetVideoStabilizationMode", OHCaptureSessionSetVideoStabilizationMode},
+    {"OH_CaptureSession_Preconfig", OHCaptureSessionPreconfig},
+    {"OH_CaptureSession_PreconfigWithRatio", OHCaptureSessionPreconfigWithRatio},
+    {"OH_CaptureSession_GetExposureValue", OHCaptureSessionGetExposureValue},
+    {"OH_CaptureSession_GetFocalLength", OHCaptureSessionGetFocalLength},
+    {"OH_CaptureSession_SetSmoothZoom", OHCaptureSessionSetSmoothZoom},
+    {"OH_CaptureSession_GetSupportedColorSpaces", OHCaptureSessionGetSupportedColorSpaces},
+    {"OH_CaptureSession_GetActiveColorSpace", OHCaptureSessionGetActiveColorSpace},
+    {"OH_CaptureSession_SetActiveColorSpace", OHCaptureSessionSetActiveColorSpace},
 };
 
 static napi_value OHCameraFunctionHandle(napi_env env, napi_callback_info info)
