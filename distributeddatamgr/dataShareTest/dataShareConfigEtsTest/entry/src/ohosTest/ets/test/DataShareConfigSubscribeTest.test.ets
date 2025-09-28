@@ -95,6 +95,7 @@ export default function dataShareConfigSubscribeTest() {
           console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
           expect().assertFail();
         });
+        expect(results.length > 0).assertTrue();
         console.log(TAG + '[DataShareProvider] dataShareConfigSubscribeTest001 success:' + JSON.stringify(results));
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
@@ -125,6 +126,7 @@ export default function dataShareConfigSubscribeTest() {
           console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
           expect().assertFail();
         });
+        expect(results.length > 0).assertTrue();
         console.log(TAG + '[DataShareProvider] dataShareConfigSubscribeTest002 success:' + JSON.stringify(results));
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
@@ -155,6 +157,7 @@ export default function dataShareConfigSubscribeTest() {
           console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
           expect().assertFail();
         });
+        expect(results.length > 0).assertTrue();
         console.log(TAG + '[DataShareProvider] dataShareConfigSubscribeTest003 success:' + JSON.stringify(results));
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
