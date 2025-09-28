@@ -249,3 +249,40 @@ napi_value SetEventConfig(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
+napi_value HiAppEventSetConfigItem(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
+    int returnValue = OH_HiAppEvent_SetConfigItem(configDemo, nullptr, "testValue");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value SetEventConfigSuccess1(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(configDemo, "log_type", "0");
+    int returnValue = OH_HiAppEvent_SetEventConfig("MAIN_THREAD_JANK", configDemo);
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info)
+{
+ HiAppEvent_Processor* processor = OH_HiAppEvent_CreateProcessor("namesssssssssssssrr553r43");
+    int returnValue = OH_HiAppEvent_AddProcessor(processor);
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_OPERATE_FAILED) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}

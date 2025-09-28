@@ -298,5 +298,33 @@ export default function PerformanceAnalysisKit() {
       expect(ret).assertEqual(0)
       done()
     })
+    /*
+* @tc.number     : SUB_HIAPPEVENT_EVENTSETCONFIGITEM_0100
+* @tc.name       : HiAppEventSetConfigItem001
+* @tc.desc       : test HIAPPEVENTEVENTSETCONFIGITEM
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('HiAppEventSetConfigItem001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.HiAppEventSetConfigItem()
+      console.error("====>HiAppEventSetConfigItem001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
+    /*
+* @tc.number     : SUB_HIAPPEVENT_SETEVENTCONFIGSUCCESS_0100
+* @tc.name       : SetConfigItem002
+* @tc.desc       : test HIAPPEVENTSETSETEVENTCONFIGSUCCESS
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('SetEventConfigSuccess001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.SetEventConfigSuccess()
+      console.error("====>SetEventConfigSuccess001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
   })
 }

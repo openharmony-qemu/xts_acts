@@ -47,6 +47,7 @@ napi_value RemoveProcessor(napi_env env, napi_callback_info info);
 napi_value SetConfigItem(napi_env env, napi_callback_info info);
 napi_value SetConfigItem1(napi_env env, napi_callback_info info);
 napi_value SetEventConfig(napi_env env, napi_callback_info info);
-
+napi_value HiAppEventSetConfigItem(napi_env env, napi_callback_info info);
+napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info);
 
 #endif // HIAPPEVENT_HIAPPEVENTTEST_H
