@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsAceEtsModuleCheckboxgroupContentModifierApi12TestMain") {
+ohos_app_assist_suite("ActsAceEtsModuleCheckboxgroupContentModifierApi21TestMain") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleCheckboxgroupContentModifierApi12TestMain"
+  hap_name = "ActsAceEtsModuleCheckboxgroupContentModifierApi21TestMain"
   part_name = "ace_engine"
   subsystem_name = "arkui"
 }
 
-ohos_js_app_suite("ActsAceEtsModuleCheckboxgroupContentModifierApi12Test") {
+ohos_js_app_suite("ActsAceEtsModuleCheckboxgroupContentModifierApi21Test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleCheckboxgroupContentModifierApi12Test"
+  hap_name = "ActsAceEtsModuleCheckboxgroupContentModifierApi21Test"
   subsystem_name = "arkui"
   part_name = "ace_engine"
-  deps = [ ":ActsAceEtsModuleCheckboxgroupContentModifierApi12TestMain" ]
+  deps = [ ":ActsAceEtsModuleCheckboxgroupContentModifierApi21TestMain" ]
 }
