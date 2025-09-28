@@ -91,6 +91,26 @@ public:
     int32_t OHCaptureSessionSetMeteringPointTest(int32_t caseCode);
     int32_t OHCaptureSessionGetExposureBiasRangeTest(int32_t caseCode);
     int32_t OHCaptureSessionSetExposureBiasTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureBiasTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsFocusModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocusModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFocusModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocusPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFocusPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetZoomRatioRangeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetZoomRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetZoomRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsVideoStabilizationModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetVideoStabilizationModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetVideoStabilizationModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionPreconfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionPreconfigWithRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureValueTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocalLengthTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetSmoothZoomTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetSupportedColorSpacesTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetActiveColorSpaceTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetActiveColorSpaceTest(int32_t caseCode);
 
 private:
     Camera_VideoOutput* videoOutput_;
