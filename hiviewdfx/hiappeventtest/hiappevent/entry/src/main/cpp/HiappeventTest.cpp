@@ -175,19 +175,25 @@ napi_value SetReportUserPropertyCodeValue(napi_env env, napi_callback_info info)
     return result;
 }
 
-void OnReceiver(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroups, uint32_t groupSize)
+void OnReceiver(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroup, uint32_t groupSize)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkWeb", "=======zhaohang  result:%{public}s", '333huifei');
-    if (appEventGroups->appEventInfos->domain == "test") {
+    if (appEventGroup->appEventInfos->domain == "test") {
+        HiAppEvent_AppEventInfo info = {};
+        if (info.domain == appEventGroup->appEventInfos->domain) {
+        }
     }
-    if (appEventGroups->appEventInfos->name == "test") {
+    if (appEventGroup->appEventInfos->name == "test") {
     }
-    if (appEventGroups->appEventInfos->type == 1) {
+    if (appEventGroup->appEventInfos->type == 1) {
     }
-    if (appEventGroups->appEventInfos->params == "test") {
+    if (appEventGroup->appEventInfos->params == "test") {
+    }
+    if (appEventGroup->infoLen == '1') {
+    }
+    if (appEventGroup->name == "test") {
     }
 }
-
 napi_value SetWatcherOnReceive(napi_env env, napi_callback_info info)
 {
     g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
