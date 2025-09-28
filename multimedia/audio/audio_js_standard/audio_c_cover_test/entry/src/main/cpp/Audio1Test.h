@@ -51,6 +51,7 @@ napi_value AudioSessionSetSceneSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionRegisterStateChangeCbInvalidParam(napi_env env, napi_callback_info info);
 napi_value AudioSessionRegisterStateChangeCbSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionUnregisterStateChangeCbInvalidParam(napi_env env, napi_callback_info info);
+napi_value AudioSessionUnregisterStateChangeCbSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionSetDefaultOutputDeviceInvalidParam(napi_env env, napi_callback_info info);
 napi_value AudioSessionSetDefaultOutputDeviceSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionGetDefaultOutputDeviceInvalidParam(napi_env env, napi_callback_info info);
@@ -60,6 +61,7 @@ napi_value AudioSessionReleaseDevicesSuccess(napi_env env, napi_callback_info in
 napi_value AudioSessionRegisterCurOutDevChgCbInvParam(napi_env env, napi_callback_info info);
 napi_value AudioSessionRegisterCurOutDevChgCbSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionUnregisterCurOutDevChgCbInvParam(napi_env env, napi_callback_info info);
+napi_value AudioSessionUnregisterCurOutDevChgCbSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionGetDirectPlaybackSupportSuccess(napi_env env, napi_callback_info info);
 napi_value AudioSessionIsAcousticEchoCancelerSupportedInvPar(napi_env env, napi_callback_info info);
 napi_value AudioSessionIsAcousticEchoCancelerSupportedSuc(napi_env env, napi_callback_info info);

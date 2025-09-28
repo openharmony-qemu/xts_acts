@@ -299,6 +299,8 @@ export const AudioSessionRegisterStateChangeCbSuccess: () => number;
 
 export const AudioSessionUnregisterStateChangeCbInvalidParam: () => number;
 
+export const AudioSessionUnregisterStateChangeCbSuccess: () => number;
+
 export const AudioSessionSetDefaultOutputDeviceInvalidParam: () => number;
 
 export const AudioSessionSetDefaultOutputDeviceSuccess: () => number;
@@ -316,6 +318,8 @@ export const AudioSessionRegisterCurOutDevChgCbInvParam: () => number;
 export const AudioSessionRegisterCurOutDevChgCbSuccess: () => number;
 
 export const AudioSessionUnregisterCurOutDevChgCbInvParam: () => number;
+
+export const AudioSessionUnregisterCurOutDevChgCbSuccess: () => number;
 
 export const AudioSessionGetDirectPlaybackSupportSuccess: () => number;
 

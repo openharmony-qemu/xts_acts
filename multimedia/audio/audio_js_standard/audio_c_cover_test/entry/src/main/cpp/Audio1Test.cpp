@@ -476,6 +476,22 @@ napi_value AudioSessionUnregisterStateChangeCbInvalidParam(napi_env env, napi_ca
     return nullptr;
 }
 
+napi_value AudioSessionUnregisterStateChangeCbSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AudioCommon_Result result;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioSession_StateChangedCallback callback;
+    OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, callback);
+    result = OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager, callback);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
 napi_value AudioSessionSetDefaultOutputDeviceInvalidParam(napi_env env, napi_callback_info info)
 {
     OH_AudioCommon_Result result = OH_AudioSessionManager_SetDefaultOutputDevice(nullptr, AUDIO_DEVICE_TYPE_DEFAULT);
@@ -588,6 +604,22 @@ napi_value AudioSessionUnregisterCurOutDevChgCbInvParam(napi_env env, napi_callb
 {
     OH_AudioCommon_Result result = OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(nullptr, nullptr);
     if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioSessionUnregisterCurOutDevChgCbSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AudioCommon_Result result;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioSession_CurrentOutputDeviceChangedCallback callback;
+    OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(audioSessionManager, callback);
+    result = OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(audioSessionManager, callback);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
         return res;
