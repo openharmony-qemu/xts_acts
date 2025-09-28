@@ -326,5 +326,19 @@ export default function PerformanceAnalysisKit() {
       expect(ret).assertEqual(0)
       done()
     })
+    /*
+* @tc.number     : SUB_HIAPPEVENT_CREATEPROCESSOR_0100
+* @tc.name       : SetConfigItem002
+* @tc.desc       : test HIAPPEVENT_CREATEPROCESSOR
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('HiAppEventCreateProcessor001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.HiAppEventCreateProcessor()
+      console.error("====>SetEventConfigSuccess001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
   })
 }

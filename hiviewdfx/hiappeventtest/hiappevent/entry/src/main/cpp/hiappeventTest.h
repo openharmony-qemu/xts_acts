@@ -49,5 +49,7 @@ napi_value SetConfigItem1(napi_env env, napi_callback_info info);
 napi_value SetEventConfig(napi_env env, napi_callback_info info);
 napi_value HiAppEventSetConfigItem(napi_env env, napi_callback_info info);
 napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info);
+napi_value HiAppEventCreateProcessor(napi_env env, napi_callback_info info);
+
 
 #endif // HIAPPEVENT_HIAPPEVENTTEST_H

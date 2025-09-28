@@ -68,6 +68,8 @@ export const HiAppEventSetConfigItem: () => number;
 
 export const SetEventConfigSuccess: () => number;
 
+export const HiAppEventCreateProcessor: () => number;
+
 
 
 

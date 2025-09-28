@@ -261,7 +261,7 @@ napi_value HiAppEventSetConfigItem(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
-napi_value SetEventConfigSuccess1(napi_env env, napi_callback_info info)
+napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info)
 {
     HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
     OH_HiAppEvent_SetConfigItem(configDemo, "log_type", "0");
@@ -274,7 +274,7 @@ napi_value SetEventConfigSuccess1(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
-napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info)
+napi_value HiAppEventCreateProcessor(napi_env env, napi_callback_info info)
 {
     HiAppEvent_Processor *processor = OH_HiAppEvent_CreateProcessor("namesssssssssssssrr553r43");
     int returnValue = OH_HiAppEvent_AddProcessor(processor);
