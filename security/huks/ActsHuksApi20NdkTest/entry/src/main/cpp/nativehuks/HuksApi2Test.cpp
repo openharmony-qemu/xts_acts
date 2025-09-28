@@ -55,7 +55,7 @@ napi_value ChallengeTypeTest_001(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -80,7 +80,7 @@ napi_value ChallengeTypeTest_002(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -105,7 +105,7 @@ napi_value ChallengeTypeTest_003(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -131,7 +131,7 @@ napi_value ChallengePositionTest_001(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -157,7 +157,7 @@ napi_value ChallengePositionTest_002(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -183,7 +183,7 @@ napi_value ChallengePositionTest_003(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -209,7 +209,7 @@ napi_value ChallengePositionTest_004(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -234,7 +234,7 @@ napi_value SecureSignTypeTest_001(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -259,7 +259,7 @@ napi_value TagTest_001(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -290,7 +290,7 @@ napi_value TagTest_002(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -314,7 +314,7 @@ napi_value TagTest_003(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -338,7 +338,7 @@ napi_value TagTest_004(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -364,7 +364,7 @@ napi_value TagTest_005(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -390,7 +390,7 @@ napi_value TagTest_006(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -415,7 +415,7 @@ napi_value TagTest_007(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -440,7 +440,7 @@ napi_value TagTest_008(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -467,7 +467,7 @@ napi_value TagTest_009(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -492,7 +492,7 @@ napi_value TagTest_010(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -517,7 +517,7 @@ napi_value TagTest_011(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -543,7 +543,7 @@ napi_value TagTest_012(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -569,7 +569,7 @@ napi_value TagTest_013(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -596,7 +596,7 @@ napi_value TagTest_014(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -625,7 +625,7 @@ napi_value TagTest_015(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -651,7 +651,7 @@ napi_value TagTest_016(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -676,7 +676,7 @@ napi_value TagTest_017(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -702,7 +702,7 @@ napi_value TagTest_018(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -728,7 +728,7 @@ napi_value TagTest_019(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -753,7 +753,7 @@ napi_value TagTest_020(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -780,7 +780,7 @@ napi_value TagTest_021(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -816,7 +816,7 @@ napi_value TagTest_022(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -840,7 +840,7 @@ napi_value TagTest_023(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -865,7 +865,7 @@ napi_value TagTest_024(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -890,7 +890,7 @@ napi_value TagTest_025(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -923,7 +923,7 @@ napi_value TagTest_026(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -947,7 +947,7 @@ napi_value TagTest_027(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -971,7 +971,7 @@ napi_value TagTest_028(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -995,7 +995,7 @@ napi_value TagTest_029(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1015,7 +1015,7 @@ napi_value TagTest_030(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1039,7 +1039,7 @@ napi_value TagTest_031(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1066,7 +1066,7 @@ napi_value TagTest_032(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1098,7 +1098,7 @@ napi_value TagTest_033(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1125,7 +1125,7 @@ napi_value TagTest_034(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1151,7 +1151,7 @@ napi_value TagTest_035(napi_env env, napi_callback_info info)
     InitParamSet2(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                     "InitParamSet failed: %{public}d", ohResult1.errorCode);
+                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;

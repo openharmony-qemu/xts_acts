@@ -389,7 +389,8 @@ OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t 
 }
 
 napi_value ImportWrappedKeyItemTest_002(napi_env env, napi_callback_info info)
-{const char *alias = "test_duplicate_key";
+{
+    const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
@@ -796,12 +797,12 @@ napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
 {
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
-    const char *g_dataToSign = "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
+    const char *dataToSign = "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
                                "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
                                "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
     struct OH_Huks_Blob inData = {
-        (uint32_t)strlen(g_dataToSign),
-        (uint8_t *)g_dataToSign
+        (uint32_t)strlen(dataToSign),
+        (uint8_t *)dataToSign
     };
     struct OH_Huks_ParamSet *genParamSet = nullptr;
     struct OH_Huks_ParamSet *signParamSet  = nullptr;
@@ -814,11 +815,9 @@ napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
     uint8_t handleS[sizeof(uint64_t)] = {0};
     struct OH_Huks_Blob handleSign = { (uint32_t)sizeof(uint64_t), handleS };
     ohResult = OH_Huks_InitSession(&keyAlias, signParamSet, &handleSign, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_InitSession: %{public}d", ohResult.errorCode);
     uint8_t outDataS[COMMON_SIZE] = {0};
     struct OH_Huks_Blob outDataSign = { COMMON_SIZE, outDataS };
     ohResult = OH_Huks_UpdateSession(&handleSign, signParamSet,  &inData, &outDataSign);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_UpdateSession: %{public}d", ohResult.errorCode);
     struct OH_Huks_Blob finishInData = { 0, NULL };
     struct OH_Huks_Result ret = OH_Huks_FinishSession(&handleSign, signParamSet, &finishInData, &outDataSign);
     struct OH_Huks_Result ret2 = OH_Huks_FinishSession(&handleSign, signParamSet, &finishInData, &outDataSign);
@@ -827,18 +826,14 @@ napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
     uint8_t handleV[sizeof(uint64_t)] = {0};
         struct OH_Huks_Blob handleVerify = { (uint32_t)sizeof(uint64_t), handleV };
         ohResult = OH_Huks_InitSession(&keyAlias, verifyParamSet, &handleVerify, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_UpdateSession: %{public}d", ohResult.errorCode);
 
     // Update loop
     uint8_t temp[] = "out";
     struct OH_Huks_Blob verifyOut = { (uint32_t)sizeof(temp), temp };
     ohResult = OH_Huks_UpdateSession(&handleVerify, verifyParamSet, &inData, &verifyOut);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_UpdateSession: %{public}d", ohResult.errorCode);
     // Finish
     ohResult = OH_Huks_FinishSession(&handleVerify, verifyParamSet, &outDataSign, &verifyOut);
     auto ohResult1 = OH_Huks_FinishSession(&handleVerify, verifyParamSet, &outDataSign, &verifyOut);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_UpdateSession: %{public}d", ohResult.errorCode);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "OH_Huks_UpdateSession: %{public}d", ohResult1.errorCode);
     napi_value retValue;
     OH_Huks_DeleteKeyItem(&keyAlias, nullptr);
     OH_Huks_FreeParamSet(&genParamSet);
