@@ -292,7 +292,7 @@ export default function builtinsByteSecondPrototypebTest() {
         const caseName = 'builtinsByteSecondPrototypebTest1310'
         console.info(`${caseName}, test start`);
         const testValue = 42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toDouble();
         expect(result).assertEqual(42.0);
         console.info(`${caseName}, test end`);
@@ -312,7 +312,7 @@ export default function builtinsByteSecondPrototypebTest() {
         const caseName = 'builtinsByteSecondPrototypebTest1400'
         console.info(`${caseName}, test start`);
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toDouble();
         expect(result).assertEqual(-42.0);
         console.info(`${caseName}, test end`);
@@ -440,7 +440,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2100'
         const testValue = 42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toFloat();
         expect(result).assertEqual(42.0);
         console.info(`${caseName}, test end`);
@@ -459,7 +459,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2200'
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toFloat();
         expect(result).assertEqual(-42.0);
         console.info(`${caseName}, test end`);
@@ -606,7 +606,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3000'
         const testValue = 42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toInt();
         expect(result).assertEqual(42);
         console.info(`${caseName}, test end`);
@@ -625,7 +625,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3100'
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toInt();
         expect(result).assertEqual(-42);
         console.info(`${caseName}, test end`);
@@ -644,7 +644,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3200'
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         const result = byte1.toInt();
         expect(result).assertEqual(-42);
         console.info(`${caseName}, test end`);
@@ -953,8 +953,8 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4900'
         const value: int = 65;
-        const byte1 = new Byte(value);
-        expect(byte1.toShort()).assertEqual(Byte.toShort(value));
+        const byte1 = new Byte(value.toByte());
+        expect(byte1.toShort()).assertEqual(Byte.toShort(value.toByte()));
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1097,7 +1097,7 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5700'
         const value: int = 42;
-        const byte1 = new Byte(value);
+        const byte1 = new Byte(value.toByte());
         const result = byte1.toString();
         expect(result).assertEqual(value.toString());
         console.info(`${caseName}, test end`);
@@ -1273,8 +1273,8 @@ export default function builtinsByteSecondPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest6501';
         const value = 65;
-        const fromConstructor = new Byte(value);
-        const fromValueOf = Byte.valueOf(value);
+        const fromConstructor = new Byte(value.toByte());
+        const fromValueOf = Byte.valueOf(value.toByte());
         expect(fromValueOf).assertEqual(fromConstructor);
         console.info(`${caseName}, test end`);
         Done();
