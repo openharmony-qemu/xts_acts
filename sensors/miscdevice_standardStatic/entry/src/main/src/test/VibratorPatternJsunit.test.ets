@@ -1111,7 +1111,7 @@ export default function VibratorJsTest_misc_9() {
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("Invalid parameter");
         done();
       }
@@ -1145,7 +1145,7 @@ export default function VibratorJsTest_misc_9() {
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("Invalid parameter");
         done();
       }
@@ -1276,7 +1276,7 @@ export default function VibratorJsTest_misc_9() {
         done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("The number of events exceeds the range");
         done();
       }

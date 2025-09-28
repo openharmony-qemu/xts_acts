@@ -3021,8 +3021,8 @@ export default function SensorJsStaticTest() {
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-        expect(error.message).assertEqual("CreateQuaternion fail");
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Get geomagnetic dip fail");
         done()
       }
       hilog.info(domain, tag, TAG + "----------end----------");
@@ -3052,8 +3052,8 @@ export default function SensorJsStaticTest() {
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-        expect(error.message).assertEqual("CreateQuaternion fail");
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Get geomagnetic dip fail");
         done()
       }
       hilog.info(domain, tag, TAG + "----------end----------");
@@ -3630,7 +3630,7 @@ export default function SensorJsStaticTest() {
         }
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("CreateQuaternion fail");
         done();
       }
@@ -3665,7 +3665,7 @@ export default function SensorJsStaticTest() {
         }
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
-        // expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
         expect(error.message).assertEqual("CreateQuaternion fail");
         done();
       }
@@ -3793,7 +3793,7 @@ export default function SensorJsStaticTest() {
       sensor.getQuaternion(rotation, (error, data) => {
         if (error) {
           hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
-          // expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
           expect(error.message).assertEqual("CreateQuaternion fail");
           done();
         } else {
@@ -3823,7 +3823,7 @@ export default function SensorJsStaticTest() {
       sensor.getQuaternion(rotation, (error, data) => {
         if (error) {
           hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
-          // expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
           expect(error.message).assertEqual("CreateQuaternion fail");
           done();
         } else {
@@ -3987,7 +3987,7 @@ export default function SensorJsStaticTest() {
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
-        // expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
         expect(error.message).assertEqual("The sensor is not supported by the device");
         done();
       }
