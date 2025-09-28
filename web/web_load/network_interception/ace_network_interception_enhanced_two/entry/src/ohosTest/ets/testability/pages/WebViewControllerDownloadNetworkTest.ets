@@ -97,7 +97,7 @@ struct WebViewControllerDownloadNetworkTest {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .blockNetwork(false)
+        .blockNetwork(true)
         .onPageEnd(() => {
           if (!this.hasSetDownloadDelegate) {
             try {
