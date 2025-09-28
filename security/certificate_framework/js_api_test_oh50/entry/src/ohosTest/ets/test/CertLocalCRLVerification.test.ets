@@ -347,11 +347,11 @@ export default function certFrameworkCertCheckCrlTestUnit() {
               ],
             }
           };
-          let result: cert.CertChainValidationResult = await x509CertChain.validate(param);
-          expect(result.entityCert).not().assertNull();
+          await x509CertChain.validate(param);
+          expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Crl_Func_0900 “${error}“, error code: ${error.code}`);
-          expect(null).assertFail();
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
@@ -382,11 +382,11 @@ export default function certFrameworkCertCheckCrlTestUnit() {
               ],
             }
           };
-          let result: cert.CertChainValidationResult = await x509CertChain.validate(param);
-          expect(result.entityCert).not().assertNull();
+          await x509CertChain.validate(param);
+          expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Crl_Func_1000 “${error}“, error code: ${error.code}`);
-          expect(null).assertFail();
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
