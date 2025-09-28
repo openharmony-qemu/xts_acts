@@ -77,8 +77,20 @@ public:
     int32_t OHCaptureSessionRemoveVideoOutputTest(int32_t caseCode);
     int32_t OHCaptureSessionAddMetadataOutputTest(int32_t caseCode);
     int32_t OHCaptureSessionRemoveMetadataOutputTest(int32_t caseCode);
-
-
+    int32_t OHCaptureSessionStartTestTest(int32_t caseCode);
+    int32_t OHCaptureSessionStopTest(int32_t caseCode);
+    int32_t OHCaptureSessionReleaseTest(int32_t caseCode);
+    int32_t OHCaptureSessionHasFlashTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsFlashModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFlashModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFlashModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsExposureModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetExposureModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetMeteringPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetMeteringPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureBiasRangeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetExposureBiasTest(int32_t caseCode);
 
 private:
     Camera_VideoOutput* videoOutput_;

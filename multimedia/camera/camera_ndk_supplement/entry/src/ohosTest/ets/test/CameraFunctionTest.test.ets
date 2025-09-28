@@ -1097,6 +1097,345 @@ export default function CameraFunctionTest() {
         done()
       })
 
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION2500
+     * @tc.name       testOH_Capture_Session_FUNCTION2500
+     * @tc.desc       Test OH_CaptureSession_Start return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_Start", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION2700
+     * @tc.name       testOH_Capture_Session_FUNCTION2700
+     * @tc.desc       Test OH_CaptureSession_Stop return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_Stop", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION2900
+     * @tc.name       testOH_Capture_Session_FUNCTION2900
+     * @tc.desc       Test OH_CaptureSession_Release return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_Release", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3100
+     * @tc.name       testOH_Capture_Session_FUNCTION3100
+     * @tc.desc       Test OH_CaptureSession_HasFlash return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_HasFlash", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    // /**
+    //  * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3200
+    //  * @tc.name       testOH_Capture_Session_FUNCTION3200
+    //  * @tc.desc       Test OH_CaptureSession_HasFlash return CAMERA_SESSION_NOT_CONFIG
+    //  * @tc.size       MediumTest
+    //  * @tc.type       Function
+    //  * @tc.level      Level 1
+    //  */
+    // it("testOH_Capture_Session_FUNCTION3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_HasFlash", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+    //   expect(ret).assertEqual(TEST_OK)
+    //   done()
+    // })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3300
+     * @tc.name       testOH_Capture_Session_FUNCTION3300
+     * @tc.desc       Test OH_CaptureSession_IsFlashModeSupported return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_IsFlashModeSupported", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    // /**
+    //  * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3400
+    //  * @tc.name       testOH_Capture_Session_FUNCTION3400
+    //  * @tc.desc       Test OH_CaptureSession_IsFlashModeSupported return CAMERA_SESSION_NOT_CONFIG
+    //  * @tc.size       MediumTest
+    //  * @tc.type       Function
+    //  * @tc.level      Level 1
+    //  */
+    // it("testOH_Capture_Session_FUNCTION3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_IsFlashModeSupported", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+    //   expect(ret).assertEqual(TEST_OK)
+    //   done()
+    // })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3500
+     * @tc.name       testOH_Capture_Session_FUNCTION3500
+     * @tc.desc       Test OH_CaptureSession_GetFlashMode return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetFlashMode", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    // /**
+    //  * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3600
+    //  * @tc.name       testOH_Capture_Session_FUNCTION3600
+    //  * @tc.desc       Test OH_CaptureSession_GetFlashMode return CAMERA_SESSION_NOT_CONFIG
+    //  * @tc.size       MediumTest
+    //  * @tc.type       Function
+    //  * @tc.level      Level 1
+    //  */
+    // it("testOH_Capture_Session_FUNCTION3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetFlashMode", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+    //   expect(ret).assertEqual(TEST_OK)
+    //   done()
+    // })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3700
+     * @tc.name       testOH_Capture_Session_FUNCTION3700
+     * @tc.desc       Test OH_CaptureSession_SetFlashMode return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetFlashMode", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3800
+     * @tc.name       testOH_Capture_Session_FUNCTION3800
+     * @tc.desc       Test OH_CaptureSession_SetFlashMode return CAMERA_SESSION_NOT_CONFIG
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetFlashMode", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION3900
+     * @tc.name       testOH_Capture_Session_FUNCTION3900
+     * @tc.desc       Test OH_CaptureSession_IsExposureModeSupported return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_IsExposureModeSupported", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    // /**
+    //  * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4000
+    //  * @tc.name       testOH_Capture_Session_FUNCTION4000
+    //  * @tc.desc       Test OH_CaptureSession_IsExposureModeSupported return CAMERA_SESSION_NOT_CONFIG
+    //  * @tc.size       MediumTest
+    //  * @tc.type       Function
+    //  * @tc.level      Level 1
+    //  */
+    // it("testOH_Capture_Session_FUNCTION4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_IsExposureModeSupported", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+    //   expect(ret).assertEqual(TEST_OK)
+    //   done()
+    // })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4100
+     * @tc.name       testOH_Capture_Session_FUNCTION4100
+     * @tc.desc       Test OH_CaptureSession_GetExposureMode return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetExposureMode", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    // /**
+    //  * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4200
+    //  * @tc.name       testOH_Capture_Session_FUNCTION4200
+    //  * @tc.desc       Test OH_CaptureSession_GetExposureMode return CAMERA_SESSION_NOT_CONFIG
+    //  * @tc.size       MediumTest
+    //  * @tc.type       Function
+    //  * @tc.level      Level 1
+    //  */
+    // it("testOH_Capture_Session_FUNCTION4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetExposureMode", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+    //   expect(ret).assertEqual(TEST_OK)
+    //   done()
+    // })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4300
+     * @tc.name       testOH_Capture_Session_FUNCTION4300
+     * @tc.desc       Test OH_CaptureSession_SetExposureMode return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetExposureMode", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4400
+     * @tc.name       testOH_Capture_Session_FUNCTION4400
+     * @tc.desc       Test OH_CaptureSession_SetExposureMode return CAMERA_SESSION_NOT_CONFIG
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetExposureMode", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4500
+     * @tc.name       testOH_Capture_Session_FUNCTION4500
+     * @tc.desc       Test OH_CaptureSession_GetMeteringPoint return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetMeteringPoint", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4600
+     * @tc.name       testOH_Capture_Session_FUNCTION4600
+     * @tc.desc       Test OH_CaptureSession_GetMeteringPoint return CAMERA_SESSION_NOT_CONFIG
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetMeteringPoint", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4700
+     * @tc.name       testOH_Capture_Session_FUNCTION4700
+     * @tc.desc       Test OH_CaptureSession_SetMeteringPoint return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetMeteringPoint", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4800
+     * @tc.name       testOH_Capture_Session_FUNCTION4800
+     * @tc.desc       Test OH_CaptureSession_SetMeteringPoint return CAMERA_SESSION_NOT_CONFIG
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetMeteringPoint", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION4900
+     * @tc.name       testOH_Capture_Session_FUNCTION4900
+     * @tc.desc       Test OH_CaptureSession_GetExposureBiasRange return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetExposureBiasRange", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION5000
+     * @tc.name       testOH_Capture_Session_FUNCTION5000
+     * @tc.desc       Test OH_CaptureSession_GetExposureBiasRange return CAMERA_SESSION_NOT_CONFIG
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_GetExposureBiasRange", camera.CameraErrorCode.SESSION_NOT_CONFIG)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Capture_Session_FUNCTION5100
+     * @tc.name       testOH_Capture_Session_FUNCTION5100
+     * @tc.desc       Test OH_CaptureSession_SetExposureBias return INVALID_ARGUMENT
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Capture_Session_FUNCTION5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CaptureSession_SetExposureBias", camera.CameraErrorCode.INVALID_ARGUMENT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+
 
   })
 }

@@ -572,6 +572,104 @@ static napi_value OHCaptureSessionRemoveMetadataOutputTest(napi_env env, napi_ca
     });
 }
 
+static napi_value OHCaptureSessionStartTestTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionStartTestTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionStopTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionStopTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionReleaseTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionReleaseTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionHasFlashTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionHasFlashTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionIsFlashModeSupportedTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionIsFlashModeSupportedTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetFlashModeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetFlashModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetFlashModeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetFlashModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionIsExposureModeSupportedTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionIsExposureModeSupportedTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetExposureModeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetExposureModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetExposureModeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetExposureModeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetMeteringPointTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetMeteringPointTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetMeteringPointTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetMeteringPointTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionGetExposureBiasRangeTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionGetExposureBiasRangeTest(code);
+    });
+}
+
+static napi_value OHCaptureSessionSetExposureBiasTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCaptureSessionSetExposureBiasTest(code);
+    });
+}
+
 const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
     {"OH_Camera_GetCameraManager", OHCameraGetCameraManagerTest},
     {"OH_Camera_DeleteCameraManager", OHCameraDeleteCameraManagerTest},
@@ -626,6 +724,20 @@ const std::map<std::string, ArkCameraTestFuncEx> CaptureSessionFunctionMap = {
     {"OH_CaptureSession_RemoveVideoOutput", OHCaptureSessionRemoveVideoOutputTest},
     {"OH_CaptureSession_AddMetadataOutput", OHCaptureSessionAddMetadataOutputTest},
     {"OH_CaptureSession_RemoveMetadataOutput", OHCaptureSessionRemoveMetadataOutputTest},
+    {"OH_CaptureSession_Start", OHCaptureSessionStartTestTest},
+    {"OH_CaptureSession_Stop", OHCaptureSessionStopTest},
+    {"OH_CaptureSession_Release", OHCaptureSessionReleaseTest},
+    {"OH_CaptureSession_HasFlash", OHCaptureSessionHasFlashTest},
+    {"OH_CaptureSession_IsFlashModeSupported", OHCaptureSessionIsFlashModeSupportedTest},
+    {"OH_CaptureSession_GetFlashMode", OHCaptureSessionGetFlashModeTest},
+    {"OH_CaptureSession_SetFlashMode", OHCaptureSessionSetFlashModeTest},
+    {"OH_CaptureSession_IsExposureModeSupported", OHCaptureSessionIsExposureModeSupportedTest},
+    {"OH_CaptureSession_GetExposureMode", OHCaptureSessionGetExposureModeTest},
+    {"OH_CaptureSession_SetExposureMode", OHCaptureSessionSetExposureModeTest},
+    {"OH_CaptureSession_GetMeteringPoint", OHCaptureSessionGetMeteringPointTest},
+    {"OH_CaptureSession_SetMeteringPoint", OHCaptureSessionSetMeteringPointTest},
+    {"OH_CaptureSession_GetExposureBiasRange", OHCaptureSessionGetExposureBiasRangeTest},
+    {"OH_CaptureSession_SetExposureBias", OHCaptureSessionSetExposureBiasTest},
 };
 
 static napi_value OHCameraFunctionHandle(napi_env env, napi_callback_info info)
