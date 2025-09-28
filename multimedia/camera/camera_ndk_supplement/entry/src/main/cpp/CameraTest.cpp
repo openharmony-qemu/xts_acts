@@ -163,11 +163,11 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutput(void)
         return ret;
     }
     LogD("CreatePhotoOutput success... %{public}d", ret);
-    return ret; 
+    return ret;
 }
 
 Camera_ErrorCode NDKCamera::ReleasePhotoOutput(void)
-{ 
+{
     if (photoOutput_ == nullptr) {
         return CAMERA_OK;
     }
@@ -284,16 +284,28 @@ Camera_ErrorCode NDKCamera::CameraUnresolvedConflictsWithCurrentConfigurations()
 Camera_ErrorCode NDKCamera::CreateCaptureSession(void)
 {
     if (!cameraManager_) {
-        return Camera_ErrorCode::CAMERA_INVALID_ARGUMENT;
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                     "=======testOH_Capture_Session_FUNCTION0200 CreateCaptureSession start...");
+        Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager_);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                 "=======testOH_Capture_Session_FUNCTION0200 OH_Camera_GetCameraManager0:%{public}d", ret);
+        if (ret != CAMERA_OK) {
+            LogE("ndkXTS Create captureSession and cameraManager failed.");
+            return ret;
+        }
     }
     if (captureSession_ != nullptr) {
-        return CAMERA_OK;
+        Camera_ErrorCode ret = ReleaseCaptureSession();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                 "=======testOH_Capture_Session_FUNCTION0200 captureSession_ ret:%{public}d", ret);
     }
     Camera_ErrorCode ret =  OH_CameraManager_CreateCaptureSession(cameraManager_, &captureSession_);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                 "=======testOH_Capture_Session_FUNCTION0200 CreateCaptureSession:%{public}d", ret);
     if (captureSession_ == nullptr || ret != CAMERA_OK) {
         LogE("ndkXTS Create captureSession failed.");
     }
-    CaptureSessionRegisterCallback();
+    ret = CaptureSessionRegisterCallback();
     return ret;
 }
 
@@ -365,13 +377,12 @@ Camera_ErrorCode NDKCamera::FrameworkToNdkCameraError(int ret)
 {
     Camera_ErrorCode err = CAMERA_OK;
     switch (ret) {
-    case Camera_ErrorCode::CAMERA_DEVICE_SETTING_LOCKED:
+        case Camera_ErrorCode::CAMERA_DEVICE_SETTING_LOCKED:
             err = CAMERA_DEVICE_SETTING_LOCKED;
             break;
         default:
             LogE("FrameworkToNdkCameraError matched failed. ret:%{public}d", ret);
     }
-    
     return err;
 }
 

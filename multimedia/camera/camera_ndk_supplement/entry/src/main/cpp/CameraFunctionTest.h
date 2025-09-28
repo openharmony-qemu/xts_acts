@@ -20,7 +20,8 @@
 
 class CameraFunctionTest : public NDKCamera {
 public:
-    explicit CameraFunctionTest(char *surfaceId, char *videoId) : NDKCamera(surfaceId) {
+    explicit CameraFunctionTest(char *surfaceId, char *videoId) : NDKCamera(surfaceId)
+    {
         videoOutput_ = nullptr;
         videoId_ = std::string(videoId);
     }

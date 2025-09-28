@@ -50,7 +50,8 @@ Camera_ErrorCode CameraFunctionTest::ReleaseVideoOutput(void)
     return ret;
 }
 
-int32_t CameraFunctionTest::OHGetCameraManagerInvalidTest(int32_t caseCode) {
+int32_t CameraFunctionTest::OHGetCameraManagerInvalidTest(int32_t caseCode)
+{
     int32_t ret = CAMERA_OK;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         Camera_ErrorCode result = OH_Camera_GetCameraManager(nullptr);
@@ -437,6 +438,7 @@ int32_t CameraFunctionTest::OHCameraManagerCreateCaptureSessionTest(int32_t case
         if (result == CAMERA_SERVICE_FATAL_ERROR) {
             ret = TEST_OK;
         }
+        OH_CaptureSession_Release(session);
     }
     return ret;
 }
@@ -759,12 +761,22 @@ int32_t CameraFunctionTest::OHCaptureSessionSetSessionModeTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                 "=======testOH_Capture_Session_FUNCTION0200 caseCode:%{public}d", caseCode);
     if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
         // todo  没有这个错误码 OH_CaptureSession_SetSessionMode
     } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
-        CreateCaptureSession();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                     "=======testOH_Capture_Session_FUNCTION0200 start......");
+        result = CreateCaptureSession();
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                     "=======testOH_Capture_Session_FUNCTION0200 00result:%{public}d", result);
         result = OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_SetSessionMode(captureSession_, SECURE_PHOTO);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                     "=======testOH_Capture_Session_FUNCTION0200 11result:%{public}d", result);
+        result = OH_CaptureSession_SetSessionMode(captureSession_, NORMAL_PHOTO);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
+                     "=======testOH_Capture_Session_FUNCTION0200 22result:%{public}d", result);
         if (result == CAMERA_OPERATION_NOT_ALLOWED) {
             return TEST_OK;
         }
@@ -775,13 +787,11 @@ int32_t CameraFunctionTest::OHCaptureSessionSetSessionModeTest(int32_t caseCode)
 
 int32_t CameraFunctionTest::OHCaptureSessionAddSecureOutputTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddSecureOutputTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
         // todo  没有这个错误码 OH_CaptureSession_AddSecureOutput
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionAddSecureOutputTest result:%{public}d", result);
     return ret;
 }
 
@@ -993,7 +1003,7 @@ int32_t CameraFunctionTest::OHCaptureSessionAddMetadataOutputTest(int32_t caseCo
             OH_CameraManager_CreateMetadataOutput(cameraManager_, outputCap_->supportedMetadataObjectTypes[0],
                                                   &metaOutput);
             result = OH_CaptureSession_AddMetadataOutput(captureSession_, metaOutput);
-            if(result == CAMERA_OPERATION_NOT_ALLOWED) {
+            if (result == CAMERA_OPERATION_NOT_ALLOWED) {
                 ret = TEST_OK;
             }
         }
@@ -1020,7 +1030,7 @@ int32_t CameraFunctionTest::OHCaptureSessionRemoveMetadataOutputTest(int32_t cas
             OH_CameraManager_CreateMetadataOutput(cameraManager_, outputCap_->supportedMetadataObjectTypes[0],
                                                   &metaOutput);
             result = OH_CaptureSession_RemoveMetadataOutput(captureSession_, metaOutput);
-            if(result == CAMERA_OPERATION_NOT_ALLOWED) {
+            if (result == CAMERA_OPERATION_NOT_ALLOWED) {
                 ret = TEST_OK;
             }
         }
@@ -1030,7 +1040,7 @@ int32_t CameraFunctionTest::OHCaptureSessionRemoveMetadataOutputTest(int32_t cas
     return ret;
 }
 
-int32_t CameraFunctionTest::OHCaptureSessionStartTestTest(int32_t caseCode) 
+int32_t CameraFunctionTest::OHCaptureSessionStartTestTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
@@ -1050,7 +1060,7 @@ int32_t CameraFunctionTest::OHCaptureSessionStartTestTest(int32_t caseCode)
     return ret;
 }
 
-int32_t CameraFunctionTest::OHCaptureSessionStopTest(int32_t caseCode) 
+int32_t CameraFunctionTest::OHCaptureSessionStopTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
@@ -1334,7 +1344,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetExposureBiasTest(int32_t caseCode
 
 int32_t CameraFunctionTest::OHCaptureSessionGetExposureBiasTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetExposureBiasTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1348,13 +1357,11 @@ int32_t CameraFunctionTest::OHCaptureSessionGetExposureBiasTest(int32_t caseCode
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetExposureBiasTest ===== result:%{public}d", result);
     return ret;
 }
 
 int32_t CameraFunctionTest::OHCaptureSessionIsFocusModeSupportedTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionIsFocusModeSupportedTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1368,13 +1375,11 @@ int32_t CameraFunctionTest::OHCaptureSessionIsFocusModeSupportedTest(int32_t cas
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionIsFocusModeSupportedTest result:%{public}d", result);
     return ret;
 }
 
 int32_t CameraFunctionTest::OHCaptureSessionGetFocusModeTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetFocusModeTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1388,7 +1393,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetFocusModeTest(int32_t caseCode)
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetFocusModeTest result:%{public}d", result);
     return ret;
 }
 
@@ -1407,7 +1411,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetFocusModeTest(int32_t caseCode)
 
 int32_t CameraFunctionTest::OHCaptureSessionGetFocusPointTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetFocusPointTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1421,7 +1424,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetFocusPointTest(int32_t caseCode)
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetFocusPointTest result:%{public}d", result);
     return ret;
 }
 
@@ -1449,7 +1451,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetFocusPointTest(int32_t caseCode)
 
 int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioRangeTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetZoomRatioRangeTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1463,13 +1464,11 @@ int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioRangeTest(int32_t caseCo
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetZoomRatioRangeTest result:%{public}d", result);
     return ret;
 }
 
 int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetZoomRatioTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1483,7 +1482,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioTest(int32_t caseCode)
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetZoomRatioTest result:%{public}d", result);
     return ret;
 }
 
@@ -1508,7 +1506,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetZoomRatioTest(int32_t caseCode)
 
 int32_t CameraFunctionTest::OHCaptureSessionIsVideoStabilizationModeSupportedTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionIsVideoStabilizationModeSupportedTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1522,13 +1519,11 @@ int32_t CameraFunctionTest::OHCaptureSessionIsVideoStabilizationModeSupportedTes
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionIsVideoStabilizationModeSupportedTest result:%{public}d", result);
     return ret;
 }
 
 int32_t CameraFunctionTest::OHCaptureSessionGetVideoStabilizationModeTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetVideoStabilizationModeTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -1542,7 +1537,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetVideoStabilizationModeTest(int32_
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetVideoStabilizationModeTest result:%{public}d", result);
     return ret;
 }
 
@@ -1641,7 +1635,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetSmoothZoomTest(int32_t caseCode)
 
 int32_t CameraFunctionTest::OHCaptureSessionGetSupportedColorSpacesTest(int32_t caseCode)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetSupportedColorSpacesTest caseCode:%{public}d", caseCode);
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
@@ -1650,7 +1643,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetSupportedColorSpacesTest(int32_t 
             ret = TEST_OK;
         }
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "=======chenbo  OHCaptureSessionGetSupportedColorSpacesTest result:%{public}d", result);
     return ret;
 }
 

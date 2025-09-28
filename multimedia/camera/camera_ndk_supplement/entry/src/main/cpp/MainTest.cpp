@@ -733,7 +733,9 @@ static napi_value OHCaptureSessionSetZoomRatio(napi_env env, napi_callback_info 
     });
 }
 
-static napi_value OHCaptureSessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info, int32_t caseCode)
+static napi_value OHCaptureSessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info,
+                                                                    
+                                                                    int32_t caseCode)
 {
     return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
         return g_ndkCamera->OHCaptureSessionIsVideoStabilizationModeSupportedTest(code);

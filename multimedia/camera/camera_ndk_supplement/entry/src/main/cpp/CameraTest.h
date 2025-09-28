@@ -103,16 +103,15 @@ public:
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
+protected:
+    Camera_Manager* cameraManager_;
     Camera_CaptureSession* captureSession_;
     Camera_Device* cameras_;
     Camera_Input* cameraInput_;
     Camera_PhotoOutput* photoOutput_;
     Camera_OutputCapability* outputCap_;
-
-    uint32_t size_;
-protected:
-    Camera_Manager* cameraManager_;
     std::string previewSurfaceId_;
+    uint32_t size_;
 };
 
 #endif // OHCAMERATEST_CAMERA_TEST_H

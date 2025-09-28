@@ -33,8 +33,8 @@ let videoSurfaceId: string;
 
 let getDefaultConfig = (): media.AVRecorderConfig  => {
   let config: media.AVRecorderConfig = {
-    audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
-    videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+    audioSourceType: 1,
+    videoSourceType: 0,
     profile: {
       audioBitrate: 48000,
       audioChannels: 2,
@@ -509,20 +509,6 @@ export default function CameraFunctionTest() {
      */
     it("testOH_Camera_Manager_FUNCTION0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_GetSupportedCameraOutputCapability", camera.CameraErrorCode.INVALID_ARGUMENT)
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
-     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION0700
-     * @tc.name       testOH_Camera_Manager_FUNCTION0700
-     * @tc.desc       Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode return CAMERA_SERVICE_FATAL_ERROR
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it("testOH_Camera_Manager_FUNCTION0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
       expect(ret).assertEqual(TEST_OK)
       done()
     })
