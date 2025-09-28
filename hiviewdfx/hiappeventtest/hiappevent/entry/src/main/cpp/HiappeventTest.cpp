@@ -276,7 +276,7 @@ napi_value SetEventConfigSuccess1(napi_env env, napi_callback_info info)
 }
 napi_value SetEventConfigSuccess(napi_env env, napi_callback_info info)
 {
- HiAppEvent_Processor* processor = OH_HiAppEvent_CreateProcessor("namesssssssssssssrr553r43");
+    HiAppEvent_Processor *processor = OH_HiAppEvent_CreateProcessor("namesssssssssssssrr553r43");
     int returnValue = OH_HiAppEvent_AddProcessor(processor);
     int ret = -1;
     if (returnValue == HIAPPEVENT_OPERATE_FAILED) {
