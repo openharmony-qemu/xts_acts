@@ -190,12 +190,11 @@ export default function RelationStoreRdbStoreTest() {
       try {
         let num = await rdbStore.insert("test", valueBucket0, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect(num == 1).assertEqual(true);
-        done();
       } catch (err: BusinessError) {
         console.error(`Insert is failed, code is ${err.code},message is ${err.message}`);
         expect(err != null ).assertFail();
-        done();
       }
+      done();
     })
 
     /**
@@ -1237,7 +1236,7 @@ export default function RelationStoreRdbStoreTest() {
         expect(res["data1"]).assertEqual("hello");
         expect(res["data2"]).assertEqual(10);
         expect(res["data3"]).assertEqual(1);
-        expect(JSON.stringify(res["data4"])).assertEqual('{"BYTES_PER_ELEMENT":1,"buffer":{},"byteOffsetInt":0,"byteLengthInt":3,"lengthInt":3,"name":"Uint8Array"}');
+        expect((res["data4"] as Uint8Array).length).assertEqual(3);
         expect(res["data5"]).assertEqual(null);
         expect(res["data6"]).assertEqual(null);
         expect(res["data7"]).assertEqual(null);

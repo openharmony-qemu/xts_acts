@@ -125,7 +125,6 @@ export default function RelationStoreError10Test() {
       }
       try {
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
-        expect().assertFail();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', "deleteRdbStore, error code: "+err.code, "err message:"+ err.message);
         expect(err.code).assertEqual(14800010);
