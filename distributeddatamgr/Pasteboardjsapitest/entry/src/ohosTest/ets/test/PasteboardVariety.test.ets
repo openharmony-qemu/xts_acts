@@ -399,7 +399,7 @@ export default function PasteboardVarietyTest() {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 start ************')
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, '');
-        let pasteDataType: Array<String> = PasteData.getMimeTypes();
+        let pasteDataType: Array<String> = pasteData.getMimeTypes();
         console.info(TAG + 'type:' + pasteDataType);
         expect(pasteDataType.length).assertEqual(0);
         expect(pasteDataType).assertDeepEquals([]);
