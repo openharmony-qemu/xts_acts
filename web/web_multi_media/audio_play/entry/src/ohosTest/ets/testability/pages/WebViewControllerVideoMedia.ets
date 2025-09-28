@@ -30,7 +30,6 @@ struct WebViewControllerVideoMedia {
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isFullScreen: number = 0;
-  res: webView.MediaPlaybackState = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -65,26 +64,23 @@ struct WebViewControllerVideoMedia {
           this.isReceive = -1;
           switch (this.str) {
             case "StopAllMedia0100": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0100 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132270)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132270)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0100 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132270)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -92,30 +88,27 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0200": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 0);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0200 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[0], 132280)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132280)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  let driver = Driver.create();
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0200 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132280)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -123,34 +116,31 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0300": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0300 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132290)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132290)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  let driver = Driver.create();
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0300 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132290)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -158,27 +148,24 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0400": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0400 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132300)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132300)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0400 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132300)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -186,28 +173,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0500": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0500 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132310)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132310)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0500 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132310)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -215,27 +199,24 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0600": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0600 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132320)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132320)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0600 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132320)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -243,29 +224,26 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0700": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()")
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0700 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132330)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132330)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()")
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0700 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132330)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -273,28 +251,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "StopAllMedia0800": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video3.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                this.controller.runJavaScript("playAudio()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("StopAllMedia0800 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132340)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132340)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video3.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0800 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132340)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -302,28 +277,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0100": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0100 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132350)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132350)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0100 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132350)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -331,24 +303,21 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0200": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 0);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0200 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[0], 132360)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132360)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0200 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132360)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -356,26 +325,23 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0300": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0300 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132370)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132370)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0300 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132370)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -383,28 +349,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0400": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0400 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132380)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132380)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0400 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132380)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -412,28 +375,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0500": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0500 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132390)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132390)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0500 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132390)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -441,29 +401,26 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0600": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0600 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132400)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132400)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0600 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132400)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -471,30 +428,27 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "ResumeAllMedia0700": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video3.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                this.controller.runJavaScript("playAudio()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.resumeAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("ResumeAllMedia0700 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132410)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132410)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video3.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0700 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132410)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -502,26 +456,23 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0100": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0100 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132420)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132420)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0100 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132420)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -529,24 +480,21 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0200": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0200 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132430)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132430)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0200 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132430)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -554,28 +502,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0300": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0300 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132440)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132440)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0300 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132440)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -583,28 +528,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0400": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0400 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132450)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132450)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0400 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132450)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -612,28 +554,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0500": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0500 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132460)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132460)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0500 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132460)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -641,27 +580,24 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0600": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0600 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132470)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132470)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0600 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132470)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -669,29 +605,26 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0700": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0700 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132480)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132480)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0700 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132480)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -699,28 +632,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "PauseAllMedia0800": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video3.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                this.controller.runJavaScript("playAudio()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("PauseAllMedia0800 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132490)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132490)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video3.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0800 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132490)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -728,22 +658,19 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0100": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0100 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[0], 132500)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132500)
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                res = this.controller.getMediaPlaybackState();
+                console.log("GetMediaPlaybackState0100 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132500)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -751,24 +678,21 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0200": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0200 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132510)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132510)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0200 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132510)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -776,26 +700,23 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0300": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia()
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0300 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132520)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132520)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia()
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0300 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132520)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -803,26 +724,23 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0400": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0400 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132530)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132530)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0400 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132530)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -830,26 +748,23 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0500": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.stopAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0500 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[3], 132540)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132540)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video1.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0500 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132540)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -858,7 +773,7 @@ struct WebViewControllerVideoMedia {
             }
             case "GetMediaPlaybackState0600": {
               let back_res: boolean = false;
-              let num1: number = -1;
+              let num1: number = 0;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
@@ -878,25 +793,22 @@ struct WebViewControllerVideoMedia {
                     await driver.delayMs(1000);
 
                     this.controller.runJavaScript("enterFullScreen()");
-                    await waitForExist(() => this.isFullScreen, 'isFullScreen'+ this.str, 1);
-                    
+                    await Utils.sleep(2000);
                     this.controller.runJavaScript("playVideo()");
-                    await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
+                    await Utils.sleep(2000);
                     this.controller.closeAllMediaPresentations();
-                    await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                    this.res = this.controller.getMediaPlaybackState();
-                    console.log("GetMediaPlaybackState0600 res: " + this.res);
-                    const intervalId = setInterval(() => {
-                      this.controller.runJavaScript("isVideoFullScreen()", (err, isFull) => {
-                        num1 = Number.parseInt(isFull);
-                        console.info("key==>isFull_132550):" + isFull)
-                        if ((num1 == 0) && (this.res == 3)) {
-                          back_res = true;
-                          clearInterval(intervalId)
-                        }
-                      })
-                    }, 100);
-                    await waitForExist(()=> back_res ? 1 : 0, this.str, 1);
+                    await Utils.sleep(2000);
+                    res = this.controller.getMediaPlaybackState();
+                    console.log("GetMediaPlaybackState0600 res: " + res);
+                    await Utils.sleep(2000);
+                    this.controller.runJavaScript("isVideoFullScreen()", (err, isFull) => {
+                      num1 = Number.parseInt(isFull);
+                      console.info("key==>isFull_132550):" + isFull)
+                      if ((num1 == 0) && (res == 3)) {
+                        back_res = true;
+                      }
+                    })
+                    await Utils.sleep(3000);
                     Utils.emitEvent(back_res, 132550)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -908,22 +820,19 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0700": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0700 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[0], 132560)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132560)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0700 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132560)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -931,24 +840,21 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0800": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0800 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132570)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132570)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0800 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132570)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -956,25 +862,22 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState0900": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0900 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132580)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132580)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState0900 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132580)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -982,27 +885,24 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState1000": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo1()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState1000 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[1], 132590)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132590)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo1()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState1000 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132590)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1010,28 +910,25 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState1100": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.runJavaScript("pauseVideo1()");
-                this.controller.runJavaScript("pauseVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState1100 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132600)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132600)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo1()");
+                  this.controller.runJavaScript("pauseVideo2()");
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState1100 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132600)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1039,27 +936,24 @@ struct WebViewControllerVideoMedia {
               break;
             }
             case "GetMediaPlaybackState1200": {
-              try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video2.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.pauseAllMedia();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState1200 res: " + this.res);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
+              let res: webView.MediaPlaybackState;
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(this.backStateArr[2], 132610)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 132610)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("video2.html"))
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("GetMediaPlaybackState1200 res: " + res);
+                  Utils.emitEvent(this.backStateArr[res], 132610)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
