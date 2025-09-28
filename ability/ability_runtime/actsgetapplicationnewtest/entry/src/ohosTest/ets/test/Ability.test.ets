@@ -245,7 +245,7 @@ export default function abilityTest() {
 
         try {
           await driver.delayMs(500);
-          let name = await driver.findComponent(ON.id('getapplicationl1'));
+          let name = await driver.waitForComponent(ON.id('getapplicationl1'), 2000);
           console.log(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContext_0300 name = ', name);
           await driver.delayMs(500);
           await name.click();
