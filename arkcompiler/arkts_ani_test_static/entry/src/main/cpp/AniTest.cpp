@@ -1398,7 +1398,7 @@ namespace {
                             reinterpret_cast<void *>(test_Namespace_FindVariable_05)},
         ani_native_function{"test_Namespace_FindVariable_06", ":z",
                             reinterpret_cast<void *>(test_Namespace_FindVariable_06)},
-        ani_native_function{"test_Namespace_FindVariable_07", ":z", 
+        ani_native_function{"test_Namespace_FindVariable_07", ":z",
                             reinterpret_cast<void *>(test_Namespace_FindVariable_07)},
         ani_native_function{"test_Namespace_FindVariable_08", ":z",
                             reinterpret_cast<void *>(test_Namespace_FindVariable_08)},

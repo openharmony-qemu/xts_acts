@@ -16,6 +16,8 @@
 #ifndef ARKTS_ANI_TEST_MODULESUPPORT_H
 #define ARKTS_ANI_TEST_MODULESUPPORT_H
 #include "Common.h"
+#include <random>
+
 
 ani_int test_Module_FindFunction([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
@@ -169,8 +171,13 @@ ani_int test_Module_Many_Descriptor([[maybe_unused]] ani_env *env, [[maybe_unuse
     ani_class kclass {};
     char end = 'J';
     const int32_t loopCount = 3;
+    // create rand engine and distribution
+    std::random_device rd; // rand seed
+    std::mt19937 gen(rd()); // Mersenne twister algorithm
+    std::uniform_int_distribution<int> dist(1, 100); // uniform distribution
     for (int32_t i = 0; i < loopCount; i++) {
-        const std::string str = std::string(1, (random() % (end - 'A') + 'A'));
+        int random_value = dist(gen);
+        const std::string str = std::string(1, (random_value % (end - 'A') + 'A'));
         ASSERT_EQ(env->Module_FindClass(module, str.c_str(), &kclass), ANI_OK);
     }
     return ANI_TRUE;
@@ -291,12 +298,17 @@ ani_int test_Module_Find_Combination_01([[maybe_unused]] ani_env *env, [[maybe_u
     ani_enum aniEnum {};
     char end = 'J';
     const int32_t loopCount = 3;
+    // create rand engine and distribution
+    std::random_device rd; // rand seed
+    std::mt19937 gen(rd()); // Mersenne twister algorithm
+    std::uniform_int_distribution<int> dist(1, 100); // uniform distribution
     for (int32_t i = 0; i < loopCount; i++) {
         std::string functionName = "setIntValue";
         std::string variableName = "module";
         std::string enumName = "Color";
 
-        char ch = (random() % (end - 'A') + 'A');
+        int random_value = dist(gen);
+        char ch = (random_value % (end - 'A') + 'A');
         const std::string className = std::string(1, ch);
         std::string namespaceName = className;
         namespaceName += "ops";
@@ -394,9 +406,14 @@ ani_int test_Module_Find_Enum_Many_Descriptor([[maybe_unused]] ani_env *env, [[m
     ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
     char end = 'C';
     const int32_t loopCount = 3;
+    // create rand engine and distribution
+    std::random_device rd; // rand seed
+    std::mt19937 gen(rd()); // Mersenne twister algorithm
+    std::uniform_int_distribution<int> dist(1, 100); // uniform distribution
     for (int32_t i = 0; i < loopCount; i++) {
         std::string str = "Color";
-        str += static_cast<char>(random() % (end - 'A') + 'A');
+        int random_value = dist(gen);
+        str += static_cast<char>(random_value % (end - 'A') + 'A');
         ASSERT_EQ(env->Module_FindEnum(module, str.c_str(), &aniEnum), ANI_OK);
         ASSERT_NE(aniEnum, nullptr);
     }
@@ -624,9 +641,14 @@ ani_int test_Module_Find_Function_05([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_function fn {};
     char end = 'J';
     const int32_t loopCount = 3;
+    // create rand engine and distribution
+    std::random_device rd; // rand seed
+    std::mt19937 gen(rd()); // Mersenne twister algorithm
+    std::uniform_int_distribution<int> dist(1, 100); // uniform distribution
     for (int i = 0; i < loopCount; i++) {
         std::string str = "getIntValue";
-        str += static_cast<char>(random() % (end - 'A') + 'A');
+        int random_value = dist(gen);
+        str += static_cast<char>(random_value % (end - 'A') + 'A');
         ASSERT_EQ(env->Module_FindFunction(module, str.c_str(), "i:", &fn), ANI_OK);
         ASSERT_NE(fn, nullptr);
     }
@@ -767,9 +789,15 @@ ani_int test_Module_Find_Variable_08([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_variable variable {};
     char end = 'J';
     const int32_t loopCount = 3;
+    // create rand engine and distribution
+    std::random_device rd; // rand seed
+    std::mt19937 gen(rd()); // Mersenne twister algorithm
+    std::uniform_int_distribution<int> dist(1, 100); // uniform distribution
     for (int32_t i = 0; i < loopCount; i++) {
         std::string str = "module";
-        str += static_cast<char>(random() % (end - 'A') + 'A');
+        // 使用
+        int random_value = dist(gen);   
+        str += static_cast<char>(random_value % (end - 'A') + 'A');
         ASSERT_EQ(env->Module_FindVariable(module, str.c_str(), &variable), ANI_OK);
     }
     return ANI_TRUE;
