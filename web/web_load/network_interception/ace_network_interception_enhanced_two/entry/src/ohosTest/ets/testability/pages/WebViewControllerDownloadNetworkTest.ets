@@ -26,9 +26,8 @@ struct WebViewControllerDownloadNetworkTest {
   delegate: webView.WebDownloadDelegate = new webView.WebDownloadDelegate();
   @State str: string = '';
   @State
-  downloadUrl: string = 'https://www.openharmony.cn/content/dam/' +
-    'example-cbg-site/cn/mkt/mobileservices/2022/download/' +
-    'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
+  downloadUrl: string = 'https:' +
+              '//mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz'
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
