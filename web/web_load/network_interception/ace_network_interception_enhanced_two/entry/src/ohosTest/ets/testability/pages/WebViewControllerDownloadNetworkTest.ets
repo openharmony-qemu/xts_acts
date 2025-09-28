@@ -59,7 +59,6 @@ struct WebViewControllerDownloadNetworkTest {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.lastErrorCode = -1
-        this.blockNetwork = false
         this.isReceive = 1;
       }
     }
