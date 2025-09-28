@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium'
 import avimagemetadatndk from 'libavimagemetadatndk.so'
 import { common } from '@kit.AbilityKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
 
 // 常量定义
 const TEST_TAG = 'AVImageMetadataNDKTest';
@@ -103,9 +104,16 @@ export default function AVImageMetadataNDKTest() {
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100 start====");
-          const fdResult = await getContext().resourceManager.getRawFd(TEST_VIDEO_FILE);
+          const context = getContext() as common.Context;
+          const filesDir = context.filesDir;
+          const filePath = `${filesDir}/H264_AAC.mkv`;
+          const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+          const fileStat = fs.statSync(file.fd);
+          const length = fileStat.size;
+          const offset = 0;
           let result: number =
-            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0100(fdResult.fd, fdResult.offset, fdResult.length);
+            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0100(file.fd, offset, length);
+          fs.closeSync(file.fd);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
@@ -126,9 +134,16 @@ export default function AVImageMetadataNDKTest() {
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101 start====");
-          const fdResult = await getContext().resourceManager.getRawFd(TEST_VIDEO_FILE);
+          const context = getContext() as common.Context;
+          const filesDir = context.filesDir;
+          const filePath = `${filesDir}/H264_AAC.mkv`;
+          const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+          const fileStat = fs.statSync(file.fd);
+          const length = fileStat.size;
+          const offset = 0;
           let result: number =
-            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0101(fdResult.fd, fdResult.offset, fdResult.length);
+            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0101(file.fd, offset, length);
+          fs.closeSync(file.fd);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
@@ -150,9 +165,16 @@ export default function AVImageMetadataNDKTest() {
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102 start====");
-          const fdResult = await getContext().resourceManager.getRawFd(TEST_VIDEO_FILE);
+          const context = getContext() as common.Context;
+          const filesDir = context.filesDir;
+          const filePath = `${filesDir}/H264_AAC.mkv`;
+          const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+          const fileStat = fs.statSync(file.fd);
+          const length = fileStat.size;
+          const offset = 0;
           let result: number =
-            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0102(fdResult.fd, fdResult.offset, fdResult.length);
+            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0102(file.fd, offset, length);
+          fs.closeSync(file.fd);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
@@ -174,9 +196,16 @@ export default function AVImageMetadataNDKTest() {
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103 start====");
-          const fdResult = await getContext().resourceManager.getRawFd(TEST_VIDEO_FILE);
+          const context = getContext() as common.Context;
+          const filesDir = context.filesDir;
+          const filePath = `${filesDir}/H264_AAC.mkv`;
+          const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+          const fileStat = fs.statSync(file.fd);
+          const length = fileStat.size;
+          const offset = 0;
           let result: number =
-            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0103(fdResult.fd, fdResult.offset, fdResult.length);
+            avimagemetadatndk.OH_AVImageGenerator_QueryOptions0103(file.fd, offset, length);
+          fs.closeSync(file.fd);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
@@ -285,10 +314,17 @@ export default function AVImageMetadataNDKTest() {
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const fdResult = await getContext().resourceManager.getRawFd("AAC_48000_32_1.aac");
+          const context = getContext() as common.Context;
+          const filesDir = context.filesDir;
+          const filePath = `${filesDir}/AAC_48000_32_1.aac`;
+          const file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+          const fileStat = fs.statSync(file.fd);
+          const length = fileStat.size;
+          const offset = 0;
           console.info("====>SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101 start====");
           let result: number =
-            avimagemetadatndk.OH_AVMetadataExtractor_FetchAlbumCover0101(fdResult.fd, fdResult.offset, fdResult.length);
+            avimagemetadatndk.OH_AVMetadataExtractor_FetchAlbumCover0101(file.fd, offset, length);
+          fs.closeSync(file.fd);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
