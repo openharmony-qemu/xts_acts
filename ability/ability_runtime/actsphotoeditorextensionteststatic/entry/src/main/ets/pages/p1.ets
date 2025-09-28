@@ -49,7 +49,7 @@ struct MyStateSample {
           let options: commonEventManager.CommonEventPublishData = {
             parameters: {
               'result': data
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
 
           try {
