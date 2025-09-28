@@ -41,11 +41,8 @@ static const uint32_t CASE_INDEX_6 = 6;
 static const uint32_t CASE_INDEX_7 = 7;
 static const uint32_t CASE_INDEX_8 = 8;
 static const uint32_t CLOSE_STATUS_NORMAL = 1000;
-static int32_t g_httpErrorCode = -1;
-static int32_t g_respErrorCode = 0;
 static int32_t g_sleepSecs = 1;
 static int32_t g_maxHeaderLen = 8192;
-static int32_t g_maxLoopNum = 256;
 static int32_t g_maxDataLength = (4 * 1024 * 1024);
 
 static std::string GetString(napi_env env, napi_callback_info info, uint32_t index)
@@ -297,11 +294,9 @@ static void ResponseCallback(struct Http_Response *response, uint32_t errCode)
         return;
     }
     if (ReadHttpReqCode(errCode) != 0) {
-        g_httpErrorCode = errCode;
         return;
     }
     if (ReadResponseCode(response->responseCode) != 0) {
-        g_respErrorCode = response->responseCode;
         return;
     }
 }
@@ -318,18 +313,15 @@ napi_value Http_RequestRequest(napi_env env, napi_callback_info info)
     } else if (index == CASE_INDEX_3) {
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else if (index == CASE_INDEX_4) {
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else if (index == CASE_INDEX_5) {
         Http_RequestOptions reqOptions;
         request->options = &reqOptions;
         reqOptions.method = NET_HTTP_METHOD_POST;
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else {
         returnValue = ReadResponseCode(index);
     }
