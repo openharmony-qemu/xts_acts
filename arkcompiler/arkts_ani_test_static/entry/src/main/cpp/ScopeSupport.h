@@ -587,7 +587,7 @@ ani_boolean test_Create_Escape_Local_Scope_33([[maybe_unused]] ani_env *env, [[m
 }
 
 ani_boolean test_Create_Escape_Local_Scope_34([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{   
+{
     const std::string_view testString = "test";
     const ani_size refNum = 10;
     ASSERT_EQ(env->CreateEscapeLocalScope(refNum), ANI_OK);

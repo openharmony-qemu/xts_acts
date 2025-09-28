@@ -129,7 +129,7 @@ ani_int test_Any_GetProperty_01([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 {
     ani_module md {};
     ani_function fn {};
-    GetMethod(env,"getArray", &md, &fn);
+    GetMethod(env, "getArray", &md, &fn);
     ani_ref arrayRef {};
     ASSERT_EQ(env->Function_Call_Ref(fn, &arrayRef), ANI_OK);
     ani_ref nameRefByIdx {};
@@ -408,7 +408,7 @@ ani_int test_Any_SetProperty_01([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 {
     ani_module md {};
     ani_function fn {};
-    GetMethod(env_,"GetNumericArray", &md, &fn);
+    GetMethod(env_, "GetNumericArray", &md, &fn);
     ani_ref arrayRef {};
     ASSERT_EQ(env_->Function_Call_Ref(fn, &arrayRef), ANI_OK);
 
@@ -479,7 +479,7 @@ ani_int test_Any_SetProperty_04([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 {
     ani_module md {};
     ani_function fn {};
-    GetMethod(env_,"GetNumericArray", &md, &fn);
+    GetMethod(env_, "GetNumericArray", &md, &fn);
     ani_ref arrayRef {};
     ASSERT_EQ(env_->Function_Call_Ref(fn, &arrayRef), ANI_OK);
 

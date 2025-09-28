@@ -58,7 +58,7 @@ ani_int TestCombineScene([[maybe_unused]] ani_env *env_, const char *className, 
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneInt([[maybe_unused]] ani_env *env_, const char *className, ani_int val1, ani_int val2, 
+ani_int TestCombineSceneInt([[maybe_unused]] ani_env *env_, const char *className, ani_int val1, ani_int val2,
     ani_int expectedValue)
 {
     ani_class cls {};
@@ -105,7 +105,7 @@ ani_boolean test_Class_FindStaticMethodBoolean_01([[maybe_unused]] ani_env *env_
 {
     ani_class cls {};
     ani_static_method method;
-    GetMethodData(env_,&cls, &method);
+    GetMethodData(env_, &cls, &method);
 
     ani_boolean result = ANI_FALSE;
     ASSERT_EQ(env_->c_api->Class_CallStaticMethod_Boolean(env_, cls, method, &result, ANI_TRUE, ANI_FALSE), ANI_OK);
@@ -117,7 +117,7 @@ ani_boolean test_Class_FindStaticMethodBoolean_02([[maybe_unused]] ani_env *env_
 {
     ani_class cls {};
     ani_static_method method;
-    GetMethodData(env_,&cls, &method);
+    GetMethodData(env_, &cls, &method);
 
     ani_boolean result = ANI_FALSE;
     ASSERT_EQ(env_->Class_CallStaticMethod_Boolean(cls, method, &result, ANI_TRUE, ANI_FALSE), ANI_OK);
@@ -129,7 +129,7 @@ ani_boolean test_Class_FindStaticMethodBoolean_03([[maybe_unused]] ani_env *env_
 {
     ani_class cls {};
     ani_static_method method;
-    GetMethodData(env_,&cls, &method);
+    GetMethodData(env_, &cls, &method);
 
     ani_value args[ARG_COUNT];
     args[0U].z = ANI_TRUE;
