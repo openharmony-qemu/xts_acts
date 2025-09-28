@@ -905,7 +905,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.on('noInteractionDetected', 60, () => {
+                windowClass.onNoInteractionDetected(60, () => {
                     hilog.info(0x0000, '[ANI]', msgStr +  'no interaction in 60s');
                 });
                 expect(true).assertTrue();
@@ -938,7 +938,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.off('noInteractionDetected');
+                windowClass.offNoInteractionDetected();
                 expect(true).assertTrue();
                 done();
             } catch (error:BusinessError) {

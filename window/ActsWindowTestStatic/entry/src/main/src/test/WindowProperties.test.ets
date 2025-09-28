@@ -904,9 +904,9 @@ export default function WindowPropertiesTest() {
             let mainWin:window.Window = windowStage.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             try {
-                mainWin.on('noInteractionDetected', 1, () => {
+                mainWin.onNoInteractionDetected(1, () => {
                     hilog.info(0x0000, '[ANI]', msgStr + 'no interaction in 10s');
-                    mainWin.off('noInteractionDetected');
+                    mainWin.offNoInteractionDetected();
                     done();
                 });
                 hilog.info(0x0000, '[ANI]', msgStr +  ' register noInteractionDetected successed');
