@@ -51,7 +51,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"HiAppEventSetConfigItem", nullptr, HiAppEventSetConfigItem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetEventConfigSuccess", nullptr, SetEventConfigSuccess, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"HiAppEventCreateProcessor", nullptr, HiAppEventCreateProcessor, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"HiAppEventCreateProcessor", nullptr, HiAppEventCreateProcessor, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
