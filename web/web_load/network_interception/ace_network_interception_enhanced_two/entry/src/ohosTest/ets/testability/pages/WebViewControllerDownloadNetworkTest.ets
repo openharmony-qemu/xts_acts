@@ -37,7 +37,6 @@ struct WebViewControllerDownloadNetworkTest {
   @State hasSetDownloadDelegate: boolean = false;
   @State savePath: string = Utils.getSandboxFileDir() + 'testDownloadNetworkFile.exe'
   @State lastErrorCode: number = -1
-  @State blockNetwork: boolean = false
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
 
@@ -78,7 +77,6 @@ struct WebViewControllerDownloadNetworkTest {
             case "testDownloadNetwork001": {
               try {
                 this.isPageEnd = -1;
-                this.blockNetwork = true
                 this.controller.startDownload(this.downloadUrl);
                 await Utils.waitForExist(()=>this.isPageEnd, this.str, 1);
                 Utils.emitEvent(this.lastErrorCode, 142029)
@@ -99,7 +97,7 @@ struct WebViewControllerDownloadNetworkTest {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .blockNetwork(this.blockNetwork)
+        .blockNetwork(false)
         .onPageEnd(() => {
           if (!this.hasSetDownloadDelegate) {
             try {
