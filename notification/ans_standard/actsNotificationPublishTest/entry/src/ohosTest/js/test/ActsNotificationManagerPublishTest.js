@@ -905,7 +905,7 @@ export default function ActsNotificationManagerPublishTest() {
       try {
         await Utils.sleep(2500);
         notificationManager.publish(notificationRequest, (data) => {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', data);
           expect(data).assertEqual(null);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
           done();
@@ -1446,7 +1446,7 @@ export default function ActsNotificationManagerPublishTest() {
           try {
             await Utils.sleep(2500);
             notificationManager.publish(notificationRequest, (data) => {
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
+              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', data);
               expect(data).assertEqual(null);
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
               done();
