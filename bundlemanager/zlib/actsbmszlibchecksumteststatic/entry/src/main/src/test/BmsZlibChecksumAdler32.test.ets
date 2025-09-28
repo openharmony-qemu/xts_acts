@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 
 const TAG: string = 'BmsZlibChecksumTestTag';
-const Domain: Int = 0x0000;
+const Domain: int = 0x0000;
 
 export default function bmsZlibChecksumAdler32Test() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();

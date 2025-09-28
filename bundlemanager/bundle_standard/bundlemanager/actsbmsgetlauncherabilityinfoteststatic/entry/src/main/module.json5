@@ -26,6 +26,9 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED"
+      },
+      {
+        "name": "ohos.permission.GET_ABILITY_INFO"
       }
     ],
     "abilities": [
@@ -45,6 +48,16 @@
             ],
             "actions": [
               "ohos.want.action.home"
+            ],
+            "uris": [
+              {
+                "scheme":"http",
+                "host":"example.com",
+                "port":"80",
+                "path":"path",
+                "type": "text/*",
+                "linkFeature": "Login"
+              }
             ]
           }
         ]

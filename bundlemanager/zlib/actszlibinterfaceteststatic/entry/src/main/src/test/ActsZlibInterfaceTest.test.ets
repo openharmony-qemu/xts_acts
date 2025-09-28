@@ -54,7 +54,6 @@ export default function ActsZlibInterfaceTest() {
      * @tc.level      : Level 1
     */
     it('ActsZlibInterfaceTest_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      tag = 'ActsZlibInterfaceTest01';
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_01 start==================");
       let inFile33: string = dir;
       let outFile35: string = dir + '/test35.zip';
@@ -67,15 +66,15 @@ export default function ActsZlibInterfaceTest() {
         zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
-            zlib.getOriginalSize(outFile35).then((data: long): void => {
+            zlib.getOriginalSize(outFile35).then((data: Long): void => {
               hilog.info(domain, tag, `ActsZlibInterfaceTest_static_01 getOriginalSize success. getOriginalSize: ${data}`);
               expect(data >= 0).assertEqual(true);
               done();
-            }, (errData: BusinessError<void>): void => {
-              hilog.error(domain, tag, `010 errData is errCode:${errData.code}  message:${errData.message}`);
-              expect(errData).assertFail();
+            }).catch((err: Error) => {
+              hilog.info(domain, tag, "getOriginalSize failed with error:" + err);
+              expect(err).assertFail();
               done();
-            })
+            });
           } catch(errData: BusinessError) {
             hilog.error(domain, tag, `011 errData is errCode:${errData.code}  message:${errData.message}`);
             expect(errData).assertFail();
