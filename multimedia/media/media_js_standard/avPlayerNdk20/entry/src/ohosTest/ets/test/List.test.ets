@@ -13,14 +13,20 @@
  * limitations under the License.
  */
 
+import AVImageMetadataNDKTest from './AVImageMetadataNDK.test';
 import AVPlayerNdkTest from './AVPlayerNdk.test';
 import AVRecorderNdkTest from './AVRecorderNdk.test';
 import AVScreenCaptureNdkTest from './AVScreenCaptureNdk.test';
 import AVTranscoderConfigNdkTest from './AVTranscoderConfigNdk.test';
+import LowPowerSinkNdk2Test from './LowPowerSinkTwoNDK.test';
+import LowPowerSinkNdkTest from './LowPowerSinkNDK.test';
 
 export default function testsuite() {
   AVPlayerNdkTest();
   AVRecorderNdkTest();
   AVScreenCaptureNdkTest();
   AVTranscoderConfigNdkTest();
+  LowPowerSinkNdkTest();
+  AVImageMetadataNDKTest();
+  LowPowerSinkNdk2Test();
 }
