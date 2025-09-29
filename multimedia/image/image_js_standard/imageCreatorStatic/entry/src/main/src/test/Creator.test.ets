@@ -42,8 +42,8 @@ export default function ImageCreator() {
     const FORMAT: image.ImageFormat = image.ImageFormat.JPEG;
     const CAPACITY: int = 8;
 
-    let globalCreator: image.ImageCreator;
-    let globalImg: image.Image;
+    let globalCreator: image.ImageCreator | undefined = undefined;
+    let globalImg: image.Image | undefined = undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -53,7 +53,7 @@ export default function ImageCreator() {
       if (globalImg != undefined) {
         console.info("globalImg release start");
         try {
-          await globalImg.release();
+          await globalImg!.release();
         } catch (error) {
           console.info("globalImg release fail");
         }
@@ -61,7 +61,7 @@ export default function ImageCreator() {
       if (globalCreator != undefined) {
         console.info('globalCreator release start');
         try {
-          await globalCreator.release();
+          await globalCreator!.release();
         } catch (error) {
           console.info('globalCreator release fail');
         }
@@ -383,6 +383,7 @@ export default function ImageCreator() {
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 start');
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
+      let registered = false;
       expect(creator != undefined).assertTrue();
       if (creator == undefined) {
         expect(false).assertTrue();
@@ -393,12 +394,12 @@ export default function ImageCreator() {
       try {
         creator.off('imageRelease');
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off success');
-        done();
+        registered = true;
       } catch (error: BusinessError) {
-        expect(false).assertTrue();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off failed');
-        done();
       }
+      expect(registered).assertTrue();
+      done();
     })
 
   })

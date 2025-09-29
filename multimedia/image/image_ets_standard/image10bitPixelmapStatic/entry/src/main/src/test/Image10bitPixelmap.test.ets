@@ -52,8 +52,8 @@ class Logger {
 
 export default function image10bitPixelMap() {
   describe('image10bitPixelMap', () => {
-    let globalPacker: image.ImagePacker;
-    let globalPixelMap: image.PixelMap;
+    let globalPacker: image.ImagePacker | undefined = undefined;
+    let globalPixelMap: image.PixelMap | undefined = undefined;
     const RGBA_1010102: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
     const YCBCR_P010: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
     const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
@@ -79,11 +79,11 @@ export default function image10bitPixelMap() {
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");
     })
-    afterEach(() => {
+    afterEach(async () => {
       if (globalPixelMap != undefined) {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'afterEach case');
         try {
-          await globalPixelMap.release();
+          await globalPixelMap!.release();
         } catch (error) {
           hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'pixelMap release fail');
         }
@@ -91,7 +91,7 @@ export default function image10bitPixelMap() {
       if (globalPacker != undefined) {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'globalPacker release start');
         try {
-          globalPacker.release();
+          globalPacker!.release();
         } catch (error) {
           hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'globalPacker release fail');
         }
@@ -214,11 +214,11 @@ export default function image10bitPixelMap() {
         expect(false).assertTrue()
         done();
       } else {
-        globalPixelMap = pixelmap;
-        let imageInfo: image.ImageInfo = pixelmap.getImageInfoSync();
+        globalPixelMap = pixelmap!;
+        let imageInfo: image.ImageInfo = pixelmap!.getImageInfoSync();
         expect(imageInfo.pixelFormat == desiredFormat).assertTrue();
         let region: image.Region = { x: 0, y: 0, size: { height: 4, width: 6 } };
-        await pixelmap.crop(region)
+        await pixelmap!.crop(region)
         let bufferSize = 96;
         if (desiredFormat == YCBCR_P010 || desiredFormat == YCRCB_P010) {
           bufferSize = 72;
@@ -230,23 +230,23 @@ export default function image10bitPixelMap() {
         }
         const readBuffer = new ArrayBuffer(96);
         if (type == 'promise') {
-          pixelmap.writeBufferToPixels(writeColor).then(() => {
-            pixelmap.readPixelsToBuffer(readBuffer).then(() => {
+          pixelmap!.writeBufferToPixels(writeColor).then(() => {
+            pixelmap!.readPixelsToBuffer(readBuffer).then(() => {
               checkBuffer(bufferArr, readBuffer, logger, done);
             })
           })
         } else if (type == 'callback') {
-          pixelmap.writeBufferToPixels(writeColor, () => {
-            pixelmap.readPixelsToBuffer(readBuffer, () => {
+          pixelmap!.writeBufferToPixels(writeColor, () => {
+            pixelmap!.readPixelsToBuffer(readBuffer, () => {
               checkBuffer(bufferArr, readBuffer, logger, done);
             })
           })
         } else {
           try {
-            pixelmap.writeBufferToPixelsSync(writeColor);
+            pixelmap!.writeBufferToPixelsSync(writeColor);
             logger.log("writeBufferToPixelsSync called.")
 
-            pixelmap.readPixelsToBufferSync(readBuffer);
+            pixelmap!.readPixelsToBufferSync(readBuffer);
             logger.log("readPixelsToBufferSync called.")
             checkBuffer(bufferArr, readBuffer, logger, done);
           } catch (error) {
@@ -263,18 +263,18 @@ export default function image10bitPixelMap() {
       try {
         let pixelMap = await testCreatePixelMap(fileName, RGBA_1010102);
         if (pixelMap != undefined) {
-          globalPixelMap = pixelMap;
-          let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          globalPixelMap = pixelMap!;
+          let imageInfo: image.ImageInfo = pixelMap!.getImageInfoSync();
           expect(imageInfo.pixelFormat == RGBA_1010102).assertTrue();
           let csmModify = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
           logger.log("csmModify " + csmModify.getColorSpaceName());
           if (type == 'promise') {
             try {
-              await pixelMap.applyColorSpace(csmModify);
-              let csmn = pixelMap.getColorSpace().getColorSpaceName();
+              await pixelMap!.applyColorSpace(csmModify);
+              let csmn = pixelMap!.getColorSpace().getColorSpaceName();
               logger.log("getColorSpaceName " + csmn);
               expect(csmn == colorSpaceManager.ColorSpace.ADOBE_RGB_1998).assertTrue();
-              let pixelSize = pixelMap.getPixelBytesNumber();
+              let pixelSize = pixelMap!.getPixelBytesNumber();
               logger.log(`new pixel size ${pixelSize}`);
               done();
             } catch(error) {
@@ -283,16 +283,16 @@ export default function image10bitPixelMap() {
               done();
             }
           } else {
-            pixelMap.applyColorSpace(csmModify, (err) => {
+            pixelMap!.applyColorSpace(csmModify, (err) => {
               if (err && err.code) {
                 expect(false).assertTrue();
                 logger.log("applyColorSpace err " + err);
                 done();
               }
-              let csmn = pixelMap.getColorSpace().getColorSpaceName();
+              let csmn = pixelMap!.getColorSpace().getColorSpaceName();
               logger.log("getColorSpaceName " + csmn);
               expect(csmn == colorSpaceManager.ColorSpace.ADOBE_RGB_1998).assertTrue();
-              let pixelSize = pixelMap.getPixelBytesNumber();
+              let pixelSize = pixelMap!.getPixelBytesNumber();
               logger.log(`new pixel size ${pixelSize}`);
               done();
             })
@@ -327,6 +327,10 @@ export default function image10bitPixelMap() {
 
     const checkPackResult = async (orgInfo: image.ImageInfo, file: int | ArrayBuffer, format: image.PixelMapFormat, mimeType: string, logger: Logger): Promise<boolean> => {
       let newPixelMap = await testImageSourceCreatePixelMap(file, format);
+      if (newPixelMap == undefined) {
+        logger.log("testImageSourceCreatePixelMap failed, newPixelMap is undefined");
+        return false;
+      }
       let newInfo = newPixelMap.getImageInfoSync();
       logger.log(`org width: ${orgInfo.size.width}, new width: ${newInfo.size.width}`)
       logger.log(`org height: ${orgInfo.size.height}, new height: ${newInfo.size.height}`)
@@ -341,18 +345,24 @@ export default function image10bitPixelMap() {
     const testPack10bitPixelMapToFile = async (done: () => void, logger: Logger, writeFile: WriteFile, packOpt: image.PackingOption, type: string,
                                                fileName: string, format: image.PixelMapFormat) => {
       let pixelMap = await testCreatePixelMap(fileName, format);
-      let orgInfo = pixelMap.getImageInfoSync();
-      expect(orgInfo.pixelFormat == format).assertTrue();
-      globalPixelMap = pixelMap;
-      try {
-        globalPacker = image.createImagePacker();
-        expect(globalPacker != undefined).assertTrue();
-        if (globalPacker == undefined) {
+      if (pixelMap == undefined) {
+        logger.log("testCreatePixelMap failed, pixelMap is undefined");
+        expect(false).assertTrue();
+        done();
+      } else {
+        let orgInfo = pixelMap!.getImageInfoSync();
+        expect(orgInfo.pixelFormat == format).assertTrue();
+        globalPixelMap = pixelMap!;
+       try {
+        let imagePacker = image.createImagePacker();
+        expect(imagePacker != undefined).assertTrue();
+        if (imagePacker == undefined) {
           done();
         }
+        globalPacker = imagePacker
         if (type == "promise") {
           try {
-            await globalPacker.packToFile(pixelMap, writeFile.fd, packOpt);
+            await imagePacker.packToFile(pixelMap, writeFile.fd, packOpt);
             let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
             fs.closeSync(writeFile.fd);
             expect(ret).assertTrue();
@@ -370,7 +380,7 @@ export default function image10bitPixelMap() {
             }
           }
         } else {
-          globalPacker.packToFile(pixelMap, writeFile.fd, packOpt, (err: BusinessError|null) => {
+          imagePacker.packToFile(pixelMap!, writeFile.fd, packOpt, (err: BusinessError|null) => {
             if (!isSupportHdr) {
               logger.log(`device not support hdr`);
               expect(!isSupportHdr).assertTrue();
@@ -392,6 +402,7 @@ export default function image10bitPixelMap() {
         logger.log("test packToFile error: " + error.message);
         expect().assertFail();
         done();
+        }
       }
     }
 

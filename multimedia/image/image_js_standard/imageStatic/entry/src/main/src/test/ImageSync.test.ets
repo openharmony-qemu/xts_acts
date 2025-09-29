@@ -39,28 +39,28 @@ export default function imageSync() {
     let filePath: string;
     let fdNumber: double;
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
 
     afterEach(async () => {
-      if (globalpixelmap != undefined) {
-        console.info('globalpixelmap release start');
-        try {
-          await globalpixelmap.release();
-        } catch (error) {
-          console.info('globalpixelmap release fail');
-        }
-      }
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
+        }
+      }
+      if (globalpixelmap != undefined) {
+        console.info('globalpixelmap release start');
+        try {
+          await globalpixelmap!.release();
+        } catch (error) {
+          console.info('globalpixelmap release fail');
         }
       }
       console.info('afterEach case');
@@ -104,31 +104,37 @@ export default function imageSync() {
         } else {
           globalimageSource = imageSourceApi;
           logger.log('create image source success');
-          let imageInfo: image.ImageInfo;
+          let imageInfo: image.ImageInfo | undefined;
           if (index != null) {
             imageInfo = imageSourceApi.getImageInfoSync(index);
           } else {
             imageInfo = imageSourceApi.getImageInfoSync();
           }
-          logger.log(imageInfo + 'imageInfo 000 ');
-          expect(imageInfo != undefined).assertTrue();
-          expect(imageInfo.size.width).assertEqual(imageWidth);
-          expect(imageInfo.size.height).assertEqual(imageHeight);
-          expect(imageInfo.density == 0).assertTrue();
-          expect(imageInfo.stride == 0).assertTrue();
-          expect(imageInfo.pixelFormat == 0).assertTrue();
-          expect(imageInfo.alphaType == 0).assertTrue();
-          expect(imageInfo.mimeType).assertEqual(mimeType);
-          logger.log('imageInfo: ');
-          logger.log('imageInfo.size.width: ' + imageInfo.size.width);
-          logger.log('imageInfo.size.height: ' + imageInfo.size.height);
-          logger.log('imageInfo.density: ' + imageInfo.density);
-          logger.log('imageInfo.stride: ' + imageInfo.stride);
-          logger.log('imageInfo.pixelFormat: ' + imageInfo.pixelFormat);
-          logger.log('imageInfo.alphaType: ' + imageInfo.alphaType);
-          logger.log('imageInfo.mimeType: ' + imageInfo.mimeType);
-          logger.log('success');
-          done();
+          if (imageInfo == undefined) {
+            logger.log('getImageInfoSync return undefined');
+            expect(false).assertTrue();
+            done();
+          } else {
+            logger.log(imageInfo + 'imageInfo 000 ');
+            expect(imageInfo != undefined).assertTrue();
+            expect(imageInfo!.size.width).assertEqual(imageWidth);
+            expect(imageInfo!.size.height).assertEqual(imageHeight);
+            expect(imageInfo!.density == 0).assertTrue();
+            expect(imageInfo!.stride == 0).assertTrue();
+            expect(imageInfo!.pixelFormat == 0).assertTrue();
+            expect(imageInfo!.alphaType == 0).assertTrue();
+            expect(imageInfo!.mimeType).assertEqual(mimeType);
+            logger.log('imageInfo: ');
+            logger.log('imageInfo.size.width: ' + imageInfo.size.width);
+            logger.log('imageInfo.size.height: ' + imageInfo.size.height);
+            logger.log('imageInfo.density: ' + imageInfo.density);
+            logger.log('imageInfo.stride: ' + imageInfo.stride);
+            logger.log('imageInfo.pixelFormat: ' + imageInfo.pixelFormat);
+            logger.log('imageInfo.alphaType: ' + imageInfo.alphaType);
+            logger.log('imageInfo.mimeType: ' + imageInfo.mimeType);
+            logger.log('success');
+            done();
+          }
         }
       } catch (error) {
         logger.log("getImageInfoSync error: " + error);
@@ -151,15 +157,10 @@ export default function imageSync() {
           expect(false).assertTrue();
           done();
         } else {
-          try {
-            let imageInfo = imageSourceApi.getImageInfoSync(index);
-            expect(false).assertTrue();
-            console.info(`${testNum} success`);
-            done();
-          } catch (error) {
-            console.info(`${testNum} error: ` + error);
-            done();
-          }
+          let imageInfo = imageSourceApi.getImageInfoSync(index);
+          expect(imageInfo == undefined).assertTrue();
+          console.info(`${testNum} success`);
+          done();
         }
       } catch (error) {
         console.info(`${testNum} error: ` + error);
@@ -188,7 +189,7 @@ export default function imageSync() {
             isFinished = true;
           }
           try {
-            await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+            await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
             offset = offset + oneStep.byteLength as int;
             console.info(`${testNum} offset: ` + offset);
             ret = true;
@@ -203,9 +204,10 @@ export default function imageSync() {
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
           };
-          let pixelmap = incSouce.createPixelMapSync(decodingOptions);
+          let pixelmap = incSouce!.createPixelMapSync(decodingOptions);
           console.info(`${testNum} pixelmap: ` + pixelmap);
           expect(pixelmap != undefined).assertTrue();
+          globalpixelmap = pixelmap;
           done();
         } else {
           done();
@@ -235,29 +237,36 @@ export default function imageSync() {
             let size: image.Size ={ width: 1446, height: 1476 };
             opts.desiredSize = size;
           }
-          globalpixelmap = imageSourceApi.createPixelMapSync(opts);
-          let pixelMapInfo = await globalpixelmap.getImageInfo();
-          let pixelColorSpace = globalpixelmap.getColorSpace().getColorSpaceName();
-          let pixelGamma = globalpixelmap.getColorSpace().getGamma();
-          logger.log('pixelmap info:');
-          expect(globalpixelmap != undefined).assertTrue();
-          expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
-          expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
-          expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
-          // expect(globalpixelmap.isEditable == opts.editable).assertTrue();
-          // expect(globalpixelmap.getDensity() == opts.fitDensity).assertTrue();
-          expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
-            || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
-          expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
-          logger.log('pixelmap width: ' + pixelMapInfo.size.width);
-          logger.log('pixelmap height: ' + pixelMapInfo.size.height);
-          // logger.log('pixelmap editable: ' + globalpixelmap.isEditable);
-          logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
-          // logger.log('pixelmap density: ' + globalpixelmap.getDensity());
-          logger.log('pixelmap color space name: ' + pixelColorSpace);
-          logger.log('pixelmap color space gamma: ' + pixelGamma);
-          logger.log('createPixelMapSync success');
-          done();
+          let pixelMap = imageSourceApi.createPixelMapSync(opts);
+          if (pixelMap == undefined) {
+            expect(false).assertTrue();
+            logger.log('create pixelmap failed');
+            done();
+          } else {
+            globalpixelmap = pixelMap;
+            let pixelMapInfo = await pixelMap.getImageInfo();
+            let pixelColorSpace = pixelMap.getColorSpace().getColorSpaceName();
+            let pixelGamma = pixelMap.getColorSpace().getGamma();
+            logger.log('pixelmap info:');
+            expect(pixelMap != undefined).assertTrue();
+            expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
+            expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
+            expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
+            expect(pixelMap.isEditable == opts.editable).assertTrue();
+            expect(pixelMap.getDensity() == opts.fitDensity).assertTrue();
+            expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
+              || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
+            expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
+            logger.log('pixelmap width: ' + pixelMapInfo.size.width);
+            logger.log('pixelmap height: ' + pixelMapInfo.size.height);
+            logger.log('pixelmap editable: ' + pixelMap.isEditable);
+            logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
+            logger.log('pixelmap density: ' + pixelMap.getDensity());
+            logger.log('pixelmap color space name: ' + pixelColorSpace);
+            logger.log('pixelmap color space gamma: ' + pixelGamma);
+            logger.log('createPixelMapSync success');
+            done();
+          }
         }
       } catch (error: BusinessError) {
         logger.log('createPixelMapSync error' + error);
@@ -822,28 +831,34 @@ export default function imageSync() {
             desiredColorSpace: csm
           };
           globalpixelmap = imageSourceApi.createPixelMapSync();
-          let pixelMapInfo = await globalpixelmap.getImageInfo();
-          let pixelColorSpace = globalpixelmap.getColorSpace().getColorSpaceName();
-          let pixelGamma = globalpixelmap.getColorSpace().getGamma();
-          logger.log('pixelmap info:');
-          expect(globalpixelmap != undefined).assertTrue();
-          expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
-          expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
-          expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
-          // expect(globalpixelmap.isEditable == opts.editable).assertTrue();
-          // expect(globalpixelmap.getDensity() == opts.fitDensity).assertTrue();
-          expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
-            || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
-          expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
-          logger.log('pixelmap width: ' + pixelMapInfo.size.width);
-          logger.log('pixelmap height: ' + pixelMapInfo.size.height);
-          logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
-          // logger.log('pixelmap editable: ' + globalpixelmap.isEditable);
-          // logger.log('pixelmap density: ' + globalpixelmap.getDensity());
-          logger.log('pixelmap color space name: ' + pixelColorSpace);
-          logger.log('pixelmap color space gamma: ' + pixelGamma);
-          logger.log('createPixelMapSync success');
-          done();
+          if (globalpixelmap == undefined) {
+            expect(false).assertTrue();
+            logger.log('create pixelmap failed');
+            done();
+          } else {
+            let pixelMapInfo = await globalpixelmap!.getImageInfo();
+            let pixelColorSpace = globalpixelmap!.getColorSpace().getColorSpaceName();
+            let pixelGamma = globalpixelmap!.getColorSpace().getGamma();
+            logger.log('pixelmap info:');
+            expect(globalpixelmap != undefined).assertTrue();
+            expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
+            expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
+            expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
+            expect(globalpixelmap!.isEditable == opts.editable).assertTrue();
+            expect(globalpixelmap!.getDensity() == opts.fitDensity).assertTrue();
+            expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
+              || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
+            expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
+            logger.log('pixelmap width: ' + pixelMapInfo.size.width);
+            logger.log('pixelmap height: ' + pixelMapInfo.size.height);
+            logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
+            logger.log('pixelmap editable: ' + globalpixelmap!.isEditable);
+            logger.log('pixelmap density: ' + globalpixelmap!.getDensity());
+            logger.log('pixelmap color space name: ' + pixelColorSpace);
+            logger.log('pixelmap color space gamma: ' + pixelGamma);
+            logger.log('createPixelMapSync success');
+            done();
+          }
         }
       } catch (error: BusinessError) {
         logger.log('createPixelMapSync error' + error);

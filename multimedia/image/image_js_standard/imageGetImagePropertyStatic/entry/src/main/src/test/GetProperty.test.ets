@@ -59,14 +59,15 @@ export default function imageGetImageProperty() {
     const SCENE_NIGHT_CONF = image.PropertyKey.SCENE_NIGHT_CONF
     const GIF_LOOP_COUNT = image.PropertyKey.GIF_LOOP_COUNT
 
-    let LOOPCASE: LOOP = {}
-    LOOPCASE.LOOP_FIVE = "5";
-    LOOPCASE.LOOP_ONE = "1";
-    LOOPCASE.LOOP_ZERO = "0";
-    LOOPCASE.LOOP_NO = null;
+    let LOOPCASE: LOOP = {
+      LOOP_FIVE: "5",
+      LOOP_ONE: "1",
+      LOOP_ZERO: "0",
+      LOOP_NO: null
+    };
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -76,7 +77,7 @@ export default function imageGetImageProperty() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -84,7 +85,7 @@ export default function imageGetImageProperty() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -137,6 +138,7 @@ export default function imageGetImageProperty() {
           for (let i = 0; i < args.length; i++) {
             logger.log("getImageProperties data: " + data[args[i]]);
           }
+          expect(true).assertTrue();
           done();
         } catch (error: BusinessError) {
           logger.log("getImageProperties failed error: " + error);

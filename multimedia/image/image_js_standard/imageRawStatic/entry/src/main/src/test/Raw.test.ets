@@ -20,30 +20,30 @@ import { BusinessError } from '@ohos.base';
 import { initialize } from './AbilityContextHelper.test';
 
 export default function imageRaw() {
-  let globalpixelmap: image.PixelMap;
-  let globalImagesource: image.ImageSource;
-  let globalPacker: image.ImagePacker;
+  let globalpixelmap: image.PixelMap | undefined = undefined;
+  let globalImagesource: image.ImageSource | undefined = undefined;
+  let globalPacker: image.ImagePacker | undefined = undefined;
   const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
   let filePath: string;
   let fdNumber: int;
-  let filesDir: string;
+  let filesDir: string | undefined | null;
 
   describe("imageRaw", () => {
     beforeAll(async () => {
       console.info("beforeAll case");
+      await initialize();
+      filesDir = Hypium.get('filesDir') as string | undefined | null;
     });
 
     beforeEach(() => {
       console.info("beforeEach case");
-      await initialize();
-      filesDir = Hypium.get('filesDir') as string;
     });
 
     afterEach(async () => {
       if (globalpixelmap != undefined) {
         console.info("globalpixelmap release start");
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info("globalpixelmap release fail");
         }
@@ -51,7 +51,7 @@ export default function imageRaw() {
       if (globalImagesource != undefined) {
         console.info("globalpixelmap release start");
         try {
-          await globalImagesource.release();
+          await globalImagesource!.release();
         } catch (error) {
           console.info("globalImagesource release fail");
         }
@@ -59,7 +59,7 @@ export default function imageRaw() {
       if (globalPacker != undefined) {
         console.info("globalPacker release start");
         try {
-          await globalPacker.release();
+          await globalPacker!.release();
         } catch (error) {
           console.info("globalPacker release fail");
         }
@@ -101,6 +101,7 @@ export default function imageRaw() {
               console.info(`${testNum} packing success`);
               let dataArr = new Uint8Array(data);
               console.info(`${testNum} packing show begin(length:` + dataArr.length + `)`);
+              expect(true).assertTrue();
               done();
             } else {
               console.info(`${testNum} packing failed`);
@@ -130,7 +131,7 @@ export default function imageRaw() {
           } else {
             globalImagesource = imageSourceApi;
             console.info(`${testNum} createPixelMapPromise create imagesource success`);
-            let pixelmap: image.PixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+            let pixelmap = await imageSourceApi.createPixelMap(decodeOpts);
             if (pixelmap != undefined) {
               globalpixelmap = pixelmap;
               console.info(`${testNum} createPixelMap create pixelmap success`);
@@ -199,6 +200,7 @@ export default function imageRaw() {
             console.info(`${testNum} createPixelMapPromise create imagesource success`);
             imageSourceApi.createPixelMap(decodeOpts, (err: BusinessError|null, pixelmap: image.PixelMap|undefined) => {
               if (pixelmap == undefined) {
+                expect(true).assertTrue();
                 console.info(`${testNum} success: ` + err);
                 done();
               } else {
@@ -235,6 +237,7 @@ export default function imageRaw() {
               done();
             } catch (error) {
               console.log(`${testNum} createPixelMap err: ` + error);
+              expect(true).assertTrue();
               done();
             }
           }

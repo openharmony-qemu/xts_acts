@@ -31,9 +31,9 @@ class Logger {
 
 export default function imageYuv() {
     describe("imageYuv", () => {
-        let globalpixelmap: image.PixelMap;
-        let globalImagesource: image.ImageSource;
-        let globalPacker: image.ImagePacker;
+        let globalpixelmap: image.PixelMap | undefined = undefined;
+        let globalImagesource: image.ImageSource | undefined = undefined;
+        let globalPacker: image.ImagePacker | undefined = undefined;
         const NV12 = image.PixelMapFormat.NV21;
         const NV21 = image.PixelMapFormat.NV21;
         const WRONG_FORMAT = image.PixelMapFormat.RGBA_1010102;
@@ -50,7 +50,7 @@ export default function imageYuv() {
             if (globalpixelmap != undefined) {
                 console.info("globalpixelmap release start");
                 try {
-                    await globalpixelmap.release();
+                    await globalpixelmap!.release();
                 } catch (error) {
                     console.info("globalpixelmap release fail");
                 }
@@ -58,7 +58,7 @@ export default function imageYuv() {
             if (globalImagesource != undefined) {
                 console.info("globalpixelmap release start");
                 try {
-                    await globalImagesource.release();
+                    await globalImagesource!.release();
                 } catch (error) {
                     console.info("globalImagesource release fail");
                 }
@@ -66,7 +66,7 @@ export default function imageYuv() {
             if (globalPacker != undefined) {
                 console.info("globalPacker release start");
                 try {
-                    await globalPacker.release();
+                    await globalPacker!.release();
                 } catch (error) {
                     console.info("globalPacker release fail");
                 }
@@ -158,6 +158,7 @@ export default function imageYuv() {
                         done();
                     } catch (error) {
                         console.info(`${testNum} error:` + error);
+                        expect(true).assertTrue();
                         done();
                     }
                 }
@@ -220,6 +221,7 @@ export default function imageYuv() {
                     imageSource.createPixelMap((err, pixelmap) => {
                         if (err!.code || pixelmap == undefined) {
                             console.info(`${testNum} err: ` + err);
+                            expect(true).assertTrue();
                             done();
                         }
                         expect(false).assertTrue();
@@ -293,6 +295,7 @@ export default function imageYuv() {
                         done();
                     } catch (error) {
                         console.log(`${testNum} error: ` + error);
+                        expect(true).assertTrue();
                         done();
                     }
                 }

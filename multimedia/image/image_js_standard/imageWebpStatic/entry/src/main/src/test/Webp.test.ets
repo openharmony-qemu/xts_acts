@@ -38,9 +38,9 @@ export default function imageWebp() {
     let filePath: string;
     const ERR_CODE = 62980149;
 
-    let globalpixelmap: image.PixelMap;
-    let globalImageSource: image.ImageSource;
-    let globalPacker: image.ImagePacker;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalImageSource: image.ImageSource | undefined = undefined;
+    let globalPacker: image.ImagePacker | undefined = undefined;
     let isSupportGifEncode: boolean | undefined;
 
     beforeAll(() => {
@@ -53,7 +53,7 @@ export default function imageWebp() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -61,7 +61,7 @@ export default function imageWebp() {
       if (globalImageSource != undefined) {
         console.info('globalImageSource release start');
         try {
-          await globalImageSource.release();
+          await globalImageSource!.release();
         } catch (error) {
           console.info('globalImageSource release fail');
         }
@@ -69,7 +69,7 @@ export default function imageWebp() {
       if (globalPacker != undefined) {
         console.info("globalPacker release start");
         try {
-          await globalPacker.release();
+          await globalPacker!.release();
         } catch (error) {
           console.info("globalPacker release fail");
         }
@@ -100,6 +100,7 @@ export default function imageWebp() {
           globalImageSource = imageSourceApi;
           imageSourceApi.createPixelMap(arg, (err, pixelmap) => {
             if (pixelmap == undefined) {
+              expect(pixelmap == undefined).assertTrue();
               console.info(`${testNum} success `);
               done();
             } else {
@@ -180,6 +181,12 @@ export default function imageWebp() {
           try {
             let pixelmap = await imageSourceApi.createPixelMap(arg)
             try {
+              if (pixelmap == undefined) {
+                console.info(`${testNum} createPixelMap failed, pixelmap is undefined!`);
+                expect(false).assertTrue();
+                done();
+                return undefined;
+              }
               let imageInfo = await pixelmap.getImageInfo()
               expect(imageInfo.size.height == 2).assertTrue();
               expect(imageInfo.size.width == 1).assertTrue();
@@ -493,6 +500,7 @@ export default function imageWebp() {
             console.log(`pixelmap ${pixelmap}`)
             if (pixelmap != undefined) {
               globalpixelmap = pixelmap;
+              expect(pixelmap != undefined).assertTrue();
               console.info("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100 success ");
               done();
             } else {
@@ -591,8 +599,8 @@ export default function imageWebp() {
 
           try {
             let pixelmap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelmap;
             expect(pixelmap != undefined).assertTrue();
+            globalpixelmap = pixelmap!;
             console.info("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200 success ");
             done();
           } catch (error) {

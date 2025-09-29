@@ -32,9 +32,9 @@ class Logger {
 }
 
 export default function imageColorSpace() {
-    let globalpixelmap: image.PixelMap;
-    let globalImagesource: image.ImageSource;
-    let globalPacker: image.ImagePacker;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalImagesource: image.ImageSource | undefined = undefined;
+    let globalPacker: image.ImagePacker | undefined = undefined;
     let isSupportGifEncode: boolean;
     let filesDir: string | undefined | null;
     let cacheDir: string | undefined | null;
@@ -56,7 +56,7 @@ export default function imageColorSpace() {
             if (globalpixelmap != undefined) {
                 console.info("globalpixelmap release start");
                 try {
-                    await globalpixelmap.release();
+                    await globalpixelmap!.release();
                 } catch (error) {
                     console.info("globalpixelmap release fail");
                 }
@@ -64,7 +64,7 @@ export default function imageColorSpace() {
             if (globalImagesource != undefined) {
                 console.info("globalImagesource release start");
                 try {
-                    await globalImagesource.release();
+                    await globalImagesource!.release();
                 } catch (error) {
                     console.info("globalImagesource release fail");
                 }
@@ -72,7 +72,7 @@ export default function imageColorSpace() {
             if (globalPacker != undefined) {
                 console.info("globalPacker release start");
                 try {
-                    await globalPacker.release();
+                    await globalPacker!.release();
                 } catch (error) {
                     console.info("globalPacker release fail");
                 }
@@ -123,6 +123,7 @@ export default function imageColorSpace() {
                         done();
                     } catch (error) {
                         console.log(` ${testNum} error: ` + error);
+                        expect(true).assertTrue();
                         done();
                     }
                 }
@@ -158,6 +159,7 @@ export default function imageColorSpace() {
                         done();
                     } catch (error) {
                         console.log(` ${testNum} error: ` + error);
+                        expect(true).assertTrue();
                         done();
                     }
                 }
@@ -187,7 +189,7 @@ export default function imageColorSpace() {
                 if (imageSource != undefined) {
                     globalImagesource = imageSource;
                     let pixelMap = await imageSource.createPixelMap();
-                    globalpixelmap = pixelMap;
+                    globalpixelmap = pixelMap!;
                     logger.log("PixelMap " + pixelMap);
                     logger.log("PixelMap " + (pixelMap != undefined));
                     expect(pixelMap != undefined).assertTrue();

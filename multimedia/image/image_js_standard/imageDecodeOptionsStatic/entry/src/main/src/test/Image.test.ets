@@ -92,8 +92,13 @@ export default function imageDecodeOptions() {
           if (flag == 'Promise') {
             try {
               let imageInfo = await imageSourceApi.getImageInfo();
-              expect(imageInfo.mimeType == expectedMimetype).assertTrue();
-              logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              if (imageInfo == undefined) {
+                expect().assertFail();
+                logger.log("getImageInfo failed");
+              } else {
+                expect(imageInfo.mimeType == expectedMimetype).assertTrue();
+                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              }
               done();
             } catch (error) {
               logger.log("getImageInfo error: " + error);
@@ -103,8 +108,13 @@ export default function imageDecodeOptions() {
           } else if (flag == 'PromiseNumber') {
             try {
               let imageInfo = await imageSourceApi.getImageInfo(0);
-              expect(imageInfo.mimeType == expectedMimetype).assertTrue();
-              logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              if (imageInfo == undefined) {
+                expect().assertFail();
+                logger.log("getImageInfo failed");
+              } else {
+                expect(imageInfo.mimeType == expectedMimetype).assertTrue();
+                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              }
               done();
             } catch (error) {
               logger.log("getImageInfo error: " + error);
@@ -208,6 +218,7 @@ export default function imageDecodeOptions() {
             if (err && err.code) {
               logger.log("createPixelMap success");
               logger.log("createPixelMap err" + JSON.stringify(err));
+              expect(true).assertTrue();
               done();
             } else {
               logger.log("createPixelMap fail： " + pixelMap);

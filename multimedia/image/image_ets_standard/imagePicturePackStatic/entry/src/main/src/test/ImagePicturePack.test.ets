@@ -66,8 +66,12 @@ export default function imagePicturePack() {
       testContext = Hypium.get('context') as common.UIAbilityContext;
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       cacheDir = Hypium.get('cacheDir') as string | undefined | null;
-      isSupportHEIFDecode =
-        image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      let tempImageSrc = image.createImageSource(filesDir + '/' + "test.jpg")
+      if (tempImageSrc == undefined) {
+        isSupportHEIFDecode = false
+      } else {
+        isSupportHEIFDecode = tempImageSrc.supportedFormats.includes("image/heic");
+      }
       isSupportHEICEncode = 
         image.createImagePacker().supportedFormats.includes("image/heic");
       try {
@@ -100,7 +104,7 @@ export default function imagePicturePack() {
     }
 
     const getImageSource = (fileName: string, type?: string) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -119,7 +123,9 @@ export default function imagePicturePack() {
         const file = fs.openSync(filePath);
         imageSourceApi = image.createImageSource(file.fd as int);
       }
-      return imageSourceApi;
+      expect(imageSourceApi != undefined).assertTrue();
+      let result: image.ImageSource = imageSourceApi as image.ImageSource;
+      return result;
     }
 
     const createAuxPic = (
@@ -134,7 +140,7 @@ export default function imagePicturePack() {
 
     const createPictureImageSourcePic = (fileName: string, type: string, auxType?: image.AuxiliaryPictureType) => {
       let imageSourceApi: image.ImageSource = getImageSource(fileName, type);
-      let picture: image.Picture;
+      let picture: image.Picture | undefined;
       if (auxType) {
         let decodingOptForPicture: image.DecodingOptionsForPicture;
         decodingOptForPicture = {desiredAuxiliaryPictures: [auxType]};
@@ -143,12 +149,14 @@ export default function imagePicturePack() {
         picture = await imageSourceApi.createPicture();
       }
       await imageSourceApi.release();
-      return picture;
+      expect(picture != undefined).assertTrue();
+      let result: image.Picture = picture as image.Picture;
+      return result;
     }
 
     const createPictureOnlyMainPic = (fileName: string, type: string, pixelFormat?: image.PixelMapFormat) => {
       let imageSourceApi: image.ImageSource = getImageSource(fileName, type);
-      let pixelMap: image.PixelMap;
+      let pixelMap: image.PixelMap | undefined;
       if (pixelFormat != undefined) {
         let DecodingOptions: image.DecodingOptions = {
           desiredPixelFormat: pixelFormat
@@ -157,10 +165,15 @@ export default function imagePicturePack() {
       } else {
         pixelMap = await imageSourceApi.createPixelMap();
       }
-      let picture: image.Picture = image.createPicture(pixelMap);
+      expect(pixelMap != undefined).assertTrue();
+      let picture: image.Picture | undefined = image.createPicture(pixelMap as image.PixelMap);
+      expect(picture != undefined).assertTrue();
+      let result: image.Picture = picture as image.Picture;
       await imageSourceApi.release();
-      await pixelMap.release();
-      return picture;
+      if (pixelMap != undefined) {
+        await pixelMap.release();
+      }
+      return result;
     }
 
     const createPictureWithGainMapAuxPic = (fileName: string, type: string) => {
@@ -192,6 +205,9 @@ export default function imagePicturePack() {
     const createPictureWithLinearMapAuxPic = (fileName: string, type: string) => {
       let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
       let pictureAux = createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", LINEAR_MAP);
+      if (pictureAux == undefined) {
+        return undefined;
+      }
       let linearMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(LINEAR_MAP);
       expect(linearMapAuxiliaryPicture != null).assertTrue();
       picture.setAuxiliaryPicture(LINEAR_MAP, linearMapAuxiliaryPicture as image.AuxiliaryPicture);
@@ -224,19 +240,28 @@ export default function imagePicturePack() {
 
     const checkPackResult = (
       logger: Logger,
-      imageSource: image.ImageSource,
+      imageSource: image.ImageSource | undefined,
       flag: string,
       packOpts: image.PackingOption,
       properties: Record<string, string | null> | undefined,
       type: image.AuxiliaryPictureType
     ) => {
+      if (imageSource == undefined) {
+        return false;
+      }
       let decodeProperties: Record<string, string | null> | undefined;
       let picture = await imageSource.createPicture();
+      if (picture == undefined) {
+        return false;
+      }
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        return false;
+      }
 
       if (flag == "picture") {
         let metadata = await picture.getMetadata(EXIF_METADATA);
-        if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true) {
+        if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true && metadata != undefined) {
           decodeProperties = await metadata.getAllProperties();
           picture.release();
           await imageSource.release();
@@ -249,7 +274,11 @@ export default function imagePicturePack() {
       } else {
         let ret: Boolean = false;
         if (type == GAINMAP && packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO){
-          let isHdr = imageSource.getImageInfoSync().isHdr;
+          let imageInfo = imageSource.getImageInfoSync();
+          let isHdr = false;
+          if (imageInfo != undefined) {
+            isHdr = imageInfo.isHdr;
+          }
           let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
@@ -268,8 +297,11 @@ export default function imagePicturePack() {
           logger.log(`packResult: ${type} ${auxPic != undefined}`);
           ret = (auxPic != undefined) && (auxType == type);
           if (type == FRAGMENT_MAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true)) {
+            let decodeProperties: Record<string, string | null> | undefined;
             let metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
-            decodeProperties = await metadata.getAllProperties();
+            if (metadata != undefined) {
+              decodeProperties = await metadata.getAllProperties();
+            }
             ret = ret && (JSON.stringify(properties) == JSON.stringify(decodeProperties));
           }
         }
@@ -284,7 +316,7 @@ export default function imagePicturePack() {
       logger: Logger,
       packOpts: image.PackingOption,
       packType: string,
-      picture: image.Picture,
+      picture: image.Picture | undefined,
       flag: string,
       fdNum: int,
       type: image.AuxiliaryPictureType
@@ -302,8 +334,10 @@ export default function imagePicturePack() {
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
-          logger.log(`getMetadata success: ` + metadata);
-          properties = await metadata.getAllProperties();
+          if (metadata != undefined) {
+            logger.log(`getMetadata success: ` + metadata);
+            properties = await metadata.getAllProperties();
+          }
         } else {
           metadata = await picture.getMetadata(EXIF_METADATA);
           if (metadata != undefined) {

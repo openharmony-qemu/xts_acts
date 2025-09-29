@@ -5,7 +5,8 @@
         "test-timeout": "300000",
         "shell-timeout": "120000",
         "bundle-name": "ohos.acts.multimedia.image.Raw.Static",
-        "module-name": "entry"
+        "module-name": "entry",
+        "testcase-timeout": "180000"
     },
     "kits": [
         {
@@ -41,7 +42,7 @@
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Raw.Static/haps/entry/files/*"
+                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Raw.Static/haps/entry/*"
             ],
             "teardown-command": [
                 "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image.Raw.Static/*"
