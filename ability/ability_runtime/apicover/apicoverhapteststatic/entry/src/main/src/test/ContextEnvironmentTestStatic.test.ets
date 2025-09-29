@@ -317,7 +317,7 @@ export default function ContextEnvironmentStaticTest() {
       hilog.info(domain, tag, `${itName} end`);
     })
 
-    /*
+    /**
      * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1300
      * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1300
      * @tc.desc    unregisterEnvironmentCallback execution is normal.(callback)
@@ -336,20 +336,21 @@ export default function ContextEnvironmentStaticTest() {
         applicationContext.offEnvironment(callbackId, (err: BusinessError<void> | null): void => {
           hilog.info(domain, tag, `${itName} off environment err: code ${err?.code}, message: ${err?.message}`);
           expect(`${err?.code}`).assertEqual('0');
-
-          hilog.info(domain, tag, `${itName} set color mode`);
-          applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-          await Utils.msSleep(2000);
-
-          hilog.info(domain, tag, `${itName} EnvironmentCallback configurationUpdated: ${cb.configurationUpdated}`);
-          expect(cb.configurationUpdated).assertFalse();
-
-          hilog.info(domain, tag, `${itName} reset color mode`);
-          applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-
-          done();
-          hilog.info(domain, tag, `${itName} end`);
         })
+        await Utils.msSleep(2000);
+
+        hilog.info(domain, tag, `${itName} set color mode`);
+        applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        await Utils.msSleep(2000);
+
+        hilog.info(domain, tag, `${itName} EnvironmentCallback configurationUpdated: ${cb.configurationUpdated}`);
+        expect(cb.configurationUpdated).assertFalse();
+
+        hilog.info(domain, tag, `${itName} reset color mode`);
+        applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+
+        done();
+        hilog.info(domain, tag, `${itName} end`);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
