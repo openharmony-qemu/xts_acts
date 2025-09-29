@@ -23,6 +23,7 @@
 #include <cinttypes>
 #include <cstring>
 #include <cstdlib>
+#include <float.h>
 #include "AbilityKit/native_child_process.h"
 #include <hilog/log.h>
 
@@ -122,9 +123,13 @@ static napi_value OHIPCParcelWriteInt8WriteError(napi_env env, napi_callback_inf
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    uint32_t val = 0;
+    int8_t val = INT8_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteInt8(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteInt8(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -133,7 +138,7 @@ static napi_value OHIPCParcelWriteInt8ParamError(napi_env env, napi_callback_inf
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    uint32_t val = 0;
+    int8_t val = 0;
     int ret = OH_IPCParcel_WriteInt8(nullptr, val);
     OH_IPCParcel_Destroy(parcel);
     napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
@@ -144,9 +149,13 @@ static napi_value OHIPCParcelReadInt8ReadError(napi_env env, napi_callback_info 
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int8_t val = 0;
+    int8_t val = INT8_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+         ret = OH_IPCParcel_ReadInt8(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadInt8(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -166,9 +175,13 @@ static napi_value OHIPCParcelWriteInt16WriteError(napi_env env, napi_callback_in
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int16_t val = 0;
+    int16_t val = INT16_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteInt16(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteInt16(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -188,9 +201,13 @@ static napi_value OHIPCParcelReadInt16ReadError(napi_env env, napi_callback_info
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int16_t val = 0;
+    int16_t val = INT16_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_ReadInt16(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadInt16(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -210,9 +227,13 @@ static napi_value OHIPCParcelWriteInt32WriteError(napi_env env, napi_callback_in
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int32_t val = 0;
+    int32_t val = INT32_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteInt32(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteInt32(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -232,9 +253,13 @@ static napi_value OHIPCParcelReadInt32ReadError(napi_env env, napi_callback_info
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int32_t val = 0;
+    int32_t val = INT32_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_ReadInt32(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadInt32(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -254,9 +279,13 @@ static napi_value OHIPCParcelWriteInt64WriteError(napi_env env, napi_callback_in
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int64_t val = 0;
+    int64_t val = INT64_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteInt64(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteInt64(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -276,9 +305,13 @@ static napi_value OHIPCParcelReadInt64ReadError(napi_env env, napi_callback_info
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int64_t val = 0;
+    int64_t val = INT64_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_ReadInt64(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadInt64(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -298,9 +331,13 @@ static napi_value OHIPCParcelWriteFloatWriteError(napi_env env, napi_callback_in
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    float val = 0.0f;
+    float val = FLT_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteFloat(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteFloat(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
     return result;
 }
@@ -320,9 +357,13 @@ static napi_value OHIPCParcelReadFloatReadError(napi_env env, napi_callback_info
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    float val = 0.0f;
+    float val = FLT_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_ReadFloat(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadFloat(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -342,9 +383,13 @@ static napi_value OHIPCParcelWriteDoubleWriteError(napi_env env, napi_callback_i
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    double val = 0.0;
+    double val = DBL_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteDouble(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteDouble(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -364,9 +409,13 @@ static napi_value OHIPCParcelReadDoubleReadError(napi_env env, napi_callback_inf
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    double val = 0.0;
+    double val = DBL_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_ReadDouble(parcel, &val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_ReadDouble(parcel, &val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -386,9 +435,13 @@ static napi_value OHIPCParcelWriteStringWriteError(napi_env env, napi_callback_i
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    const char* val = "";
+    const char* val = "a";
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteString(parcel, val);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteString(parcel, val);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -408,9 +461,13 @@ static napi_value OHIPCParcelWriteBufferWriteError(napi_env env, napi_callback_i
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    uint8_t buff[10] = {0};
+    uint8_t buff[10] = {255};
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteBuffer(parcel, buff, sizeof(buff));
+    };
     OH_IPCParcel_Destroy(parcel);
-        int ret = OH_IPCParcel_WriteBuffer(parcel, buff, sizeof(buff));
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -442,8 +499,12 @@ static napi_value OHIPCParcelWriteRemoteStubWriteError(napi_env env, napi_callba
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
     OHIPCRemoteStub *stub = OH_IPCRemoteStub_Create(TEST_STR, OnRemoteRequestStub, nullptr, nullptr);
+    int ret = 0;
+    int maxNum = 10000;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
+    };
     OH_IPCRemoteStub_Destroy(stub);
-    int ret = OH_IPCParcel_WriteRemoteStub(parcel, stub);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -485,9 +546,13 @@ static napi_value OHIPCParcelWriteFileDescriptorWriteError(napi_env env, napi_ca
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int32_t fd = -1;
+    int32_t fd = INT32_MAX;
+    int ret = 0;
+    int maxNum = 10;
+    for (int i = 0; i < maxNum; i++) {
+        ret = OH_IPCParcel_WriteFileDescriptor(parcel, fd);
+    };
     OH_IPCParcel_Destroy(parcel);
-    int ret = OH_IPCParcel_WriteFileDescriptor(parcel, fd);
     napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : -1, &result);
     return result;
 }
@@ -519,10 +584,14 @@ static napi_value OHIPCParcelReadFileDescriptorReadError(napi_env env, napi_call
 {
     napi_value result;
     OHIPCParcel *parcel = OH_IPCParcel_Create();
-    int32_t fd = 12;
+    int32_t fd = INT32_MAX;
+    int ret = 0;
+    int maxNum = 100000;
+    for (int i = 0; i < maxNum; i++) {
+        OH_IPCParcel_WriteFileDescriptor(parcel, fd);
+    };
+    ret = OH_IPCParcel_ReadFileDescriptor(parcel, &fd);
     OH_IPCParcel_Destroy(parcel);
-    OH_IPCParcel_WriteFileDescriptor(parcel, fd);
-        int ret = OH_IPCParcel_ReadFileDescriptor(parcel, &fd);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : -1, &result);
     return result;
 }
