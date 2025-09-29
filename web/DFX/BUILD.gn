@@ -29,6 +29,7 @@ group("DFXTest") {
       "performance_maintenance:ActsWebPerformanceMaintenanceTest",
       "performance_maintenance_static:ActsWebPerformanceMaintenanceStaticTest",
       "system_events:ActsWebSystemEventsTest",
+      "system_events_static:ActsWebSystemEventsStaticTest",
       "web_page_debug:ActsWebPageDebugTest",
     ]
   }
