@@ -837,7 +837,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("noInteractionDetected", 1, () => {
+                        subWin!.onNoInteractionDetected(1, () => {
                         });
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
@@ -874,7 +874,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("noInteractionDetected");
+                        subWin!.offNoInteractionDetected();
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
                         done()
@@ -905,7 +905,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.on('noInteractionDetected', 60, () => {
+                windowClass.onNoInteractionDetected(60, () => {
                     hilog.info(0x0000, '[ANI]', msgStr +  'no interaction in 60s');
                 });
                 expect(true).assertTrue();
@@ -938,7 +938,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.off('noInteractionDetected');
+                windowClass.offNoInteractionDetected();
                 expect(true).assertTrue();
                 done();
             } catch (error:BusinessError) {

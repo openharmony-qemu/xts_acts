@@ -1085,7 +1085,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOffDialogTargetTouchTest callback success`);
         };
         try {
-          win.on('dialogTargetTouch', callback);
+          win.onDialogTargetTouch(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_dialogTargetTouch success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1094,7 +1094,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('dialogTargetTouch', callback);
+          win.offDialogTargetTouch(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_dialogTargetTouch success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1119,7 +1119,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOfftouchOutsideTest callback success`);
         };
         try {
-          win.on('touchOutside', callback);
+          win.onTouchOutside(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_touchOutside success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1128,7 +1128,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('touchOutside', callback);
+          win.offTouchOutside(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_touchOutside success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1154,7 +1154,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOffNoInteractionDetectedTest callback success`);
         };
         try {
-          win.on('noInteractionDetected', 10, callback);
+          win.onNoInteractionDetected(10, callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success');
           expect(true).assertTrue();
         } catch (e: BusinessError) {
@@ -1168,7 +1168,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('noInteractionDetected', callback);
+          win.offNoInteractionDetected(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_noInteractionDetected success');
           expect(true).assertTrue();
         } catch (e: Error) {
