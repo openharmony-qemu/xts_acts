@@ -75,6 +75,7 @@
 #define PARAM_101 101
 #define PARAM_200 200
 #define PARAM_255 255
+#define PARAM_256 256
 #define PARAM_500 500
 #define PARAM_501 501
 #define PARAM_1000 1000

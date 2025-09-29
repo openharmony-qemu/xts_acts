@@ -790,7 +790,8 @@ static struct OH_Huks_Param g_verifyParamsTest[] = {
     {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
     {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048},
     {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384}
+    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384},
+    {.tag = OH_HUKS_TAG_KEY_OVERRIDE, .boolParam = false}
 };
 
 napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
