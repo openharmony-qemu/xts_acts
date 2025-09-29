@@ -20,6 +20,12 @@
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
+#include <hilog/log.h>
+
+#define CAMERA_LOG_TAG "LOG_CAMERA_TEST_TAG"
+#define CAMERA_LOG_DOMAIN 0x3200
+#define LogD(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, CAMERA_LOG_DOMAIN, CAMERA_LOG_TAG, fmt, ##__VA_ARGS__)
+#define LogE(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_ERROR, CAMERA_LOG_DOMAIN, CAMERA_LOG_TAG, fmt, ##__VA_ARGS__)
 
 inline napi_property_descriptor DECLARE_NAPI_FUNCTION(const char* name, napi_callback func)
 {
