@@ -744,7 +744,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
-                    subWindowClas.offWindowSizeChange();
+                    subWindowClass.offWindowSizeChange();
                     subWindowClass.destroyWindow();
                     done();
                 });
