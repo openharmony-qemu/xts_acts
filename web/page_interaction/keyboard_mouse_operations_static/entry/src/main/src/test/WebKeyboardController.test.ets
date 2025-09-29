@@ -99,9 +99,47 @@ export default function webHitTestTypeEnumTest() {
           console.info(`After deleteBackward, textRst = ${JSON.stringify(rst)}`);
           expect(rst).assertEqual('deleteBackward succeed');
         }
+
+        let sendBtn = await driver.findComponent(ON.text('sendFunctionKey'))
+        expect(sendBtn != null).assertTrue();
+        if (sendBtn != null) {
+          await sendBtn.click();
+          await Utils.msSleep(2000);
+        }
+        if (textRst != null) {
+          let rst = await textRst.getText();
+          console.info(`After sendFunctionKey, textRst = ${JSON.stringify(rst)}`);
+          expect(rst).assertEqual('sendFunctionKey succeed');
+        }
+
+        let finishBtn = await driver.findComponent(ON.text('完成'))
+        expect(finishBtn != null).assertTrue();
+        if (finishBtn != null) {
+          await finishBtn.click();
+          await Utils.msSleep(2000);
+        }
+        if (textRst != null) {
+          let rst = await textRst.getText();
+          console.info(`After finish, textRst = ${JSON.stringify(rst)}`);
+          expect(rst).assertEqual('close succeed');
+        }
       }
 
       done();
     })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(3000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebwebKeyboardControllerButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        console.info('click test');
+        await Utils.msSleep(6000);
+        done()
+      })
   })
 }

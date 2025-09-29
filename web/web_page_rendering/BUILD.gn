@@ -26,6 +26,7 @@ group("webPageRenderingTest") {
       "same_layer_rendering:ActsWebSameLayerRenderingTest",
       "viewport_processing:ActsWebViewportProcessingTest",
       "web_page_font:ActsWebPageFontTest",
+      "web_page_font_static:ActsWebPageFontStaticTest",
       "web_page_zoom_rotate:ActsWebPageZoomRotateTest",
       "web_page_zoom_rotate_static:ActsWebPageZoomRotateStaticTest",
       "web_page_size_static:ActsWebPageSizeStaticTest",
