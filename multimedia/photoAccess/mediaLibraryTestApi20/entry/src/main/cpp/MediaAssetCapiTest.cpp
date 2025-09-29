@@ -15,6 +15,7 @@
 
 #include "MediaAssetCapiTest.h"
 #include "napi/native_api.h"
+#include <cstddef>
 #include <cstdint>
 #include <js_native_api_types.h>
 #include <multimedia/media_library/media_access_helper_capi.h>
@@ -28,14 +29,13 @@
 #include <ohcamera/camera_manager.h>
 #include <hilog/log.h>
 #include <string>
+#include <cstring>
 #include <thread>
 
 #define NO_PRECONFIG_MODE 1
 #define TYPE_PRECONFIG_MODE 2
 #define TYPE_RATIO_PRECONFIG_MODE 3
 
-int DEFAULT_WIDTH = 1920;
-int DEFAULT_HEIGHT = 1080;
 int g_uriRet = -1;
 int g_mediaTypeRet = -1;
 int g_mediaSubTypeRet = -1;
@@ -61,12 +61,12 @@ int g_releaseOk = -1;
 int g_requestMovingPhotoOk = -1;
 int g_requestImageOk = -1;
 int g_movingPhotoUriOk = -1;
-int g_RequestContentWithUrisOk = -1;
-int g_RequestContentWithUriOk = -1;
-int g_RequestContentWithBufferOk = -1;
+int g_requestContentWithUrisOk = -1;
+int g_requestContentWithUriOk = -1;
+int g_requestContentWithBufferOk = -1;
 int g_movingPhotoReleaseOk = -1;
-int g_AddResourceWithBufferNotSupported = -1;
-int g_AddResourceWithUriNotSupported = -1;
+int g_addResourceWithBufferNotSupported = -1;
+int g_addResourceWithUriNotSupported = -1;
 int g_imageCheck = -1;
 int g_mediaSubTypeCheck = -1;
 std::string g_globalMediaAssetUri;
@@ -175,14 +175,14 @@ static void HandleRequestContentWithUris(OH_MovingPhoto *movingPhoto)
 {
     char imageUri[1024];
     char videoUri[1024];
-    g_RequestContentWithUrisOk = OH_MovingPhoto_RequestContentWithUris(movingPhoto, imageUri, videoUri);
+    g_requestContentWithUrisOk = OH_MovingPhoto_RequestContentWithUris(movingPhoto, imageUri, videoUri);
 }
 
 static void HandleRequestContentWithUri(OH_MovingPhoto *movingPhoto)
 {
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
     char uri[1024];
-    g_RequestContentWithUriOk = OH_MovingPhoto_RequestContentWithUri(movingPhoto, resourceType, uri);
+    g_requestContentWithUriOk = OH_MovingPhoto_RequestContentWithUri(movingPhoto, resourceType, uri);
 }
 
 static void HandleRequestContentWithBuffer(OH_MovingPhoto *movingPhoto)
@@ -192,7 +192,7 @@ static void HandleRequestContentWithBuffer(OH_MovingPhoto *movingPhoto)
     uint8_t* contentBuffer = nullptr;
     contentBuffer = new uint8_t[size];
     const uint8_t** buffer = const_cast<const uint8_t**>(&contentBuffer);
-    g_RequestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
+    g_requestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
 }
 
 static void HandleMovingRelease(OH_MovingPhoto *movingPhoto)
@@ -204,7 +204,6 @@ void OnMovingPhotoDataPreparedCallBack(MediaLibrary_ErrorCode result, MediaLibra
                                        MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,
                                        OH_MovingPhoto *movingPhoto)
 {
-
     HandleMovingPhotoUri(movingPhoto);
     HandleRequestContentWithUris(movingPhoto);
     HandleRequestContentWithUri(movingPhoto);
@@ -305,7 +304,7 @@ static void HandleAddResourceWithBuffer(OH_MediaAsset* photoAsset)
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
     uint32_t length1 = 1024;
     uint8_t *buffer1 = new uint8_t[length1];
-    g_AddResourceWithBufferNotSupported =
+    g_addResourceWithBufferNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithBuffer(changeRequest, resourceType1, buffer1, length1);
     OH_MediaAssetChangeRequest_Release(changeRequest);
 }
@@ -314,17 +313,19 @@ static void HandleAddResourceWithUri(OH_MediaAsset* photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri;
-    fileUri = new char[g_globalMediaAssetUri.length() + 1];
-    strncpy(fileUri, g_globalMediaAssetUri.c_str(), g_globalMediaAssetUri.length());
+    char *fileUri = nullptr;
+    size_t bufferSize = g_globalMediaAssetUri.length() + 1;
+    fileUri = new char[bufferSize];
+    std::memcpy(fileUri, g_globalMediaAssetUri.c_str(), bufferSize);
     fileUri[g_globalMediaAssetUri.length()] = '\0';
     OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri1;
-    fileUri1 = new char[g_globalMediaAssetUri.length() + 1];
-    strncpy(fileUri1, g_globalMediaAssetUri.c_str(), g_globalMediaAssetUri.length());
+    char *fileUri1 = nullptr;
+    size_t bufferSize1 = g_globalMediaAssetUri.length() + 1;
+    fileUri1 = new char[bufferSize1];
+    std::memcpy(fileUri1, g_globalMediaAssetUri.c_str(), bufferSize1);
     fileUri1[g_globalMediaAssetUri.length()] = '\0';
-    g_AddResourceWithUriNotSupported =
+    g_addResourceWithUriNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType1, fileUri1);
     OH_MediaAssetChangeRequest_Release(changeRequest);
 }
@@ -425,64 +426,49 @@ static void CheckAndLogResults()
         OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetUri MEDIA_LIBRARY_OK");
     }
     if (g_mediaTypeRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetMediaType MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetMediaType MEDIA_LIBRARY_OK");
     }
     if (g_mediaSubTypeRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetMediaSubType MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetMediaSubType MEDIA_LIBRARY_OK");
     }
     if (g_displayNameRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDisplayName MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDisplayName MEDIA_LIBRARY_OK");
     }
     if (g_sizeRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetSize MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetSize MEDIA_LIBRARY_OK");
     }
     if (g_dateAddedRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDateAdded MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDateAdded MEDIA_LIBRARY_OK");
     }
     if (g_dateModifiedRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDateModified MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDateModified MEDIA_LIBRARY_OK");
     }
     if (g_dateTakenRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDateTaken MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDateTaken MEDIA_LIBRARY_OK");
     }
     if (g_dateAddedMsRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDateAddedMs MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDateAddedMs MEDIA_LIBRARY_OK");
     }
     if (g_dateModifiedMsRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDateModifiedMs MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDateModifiedMs MEDIA_LIBRARY_OK");
     }
     if (g_durationRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetDuration MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetDuration MEDIA_LIBRARY_OK");
     }
     if (g_widthRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetWidth MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetWidth MEDIA_LIBRARY_OK");
     }
     if (g_heightRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetHeight MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetHeight MEDIA_LIBRARY_OK");
     }
     if (g_orientationRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetOrientation MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetOrientation MEDIA_LIBRARY_OK");
     }
     if (g_isFavoriteRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_IsFavorite MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_IsFavorite MEDIA_LIBRARY_OK");
     }
     if (g_titleRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_GetTitle MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetTitle MEDIA_LIBRARY_OK");
     }
 }
 
@@ -497,28 +483,26 @@ static void ReleaseAsset(OH_MediaAsset* photoAsset)
 
 static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_MediaSubType mediaSubType)
 {
-    if (mediaType == MediaLibrary_MediaType::MEDIA_LIBRARY_IMAGE) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "MediaLibrary_MediaType MEDIA_LIBRARY_IMAGE");
+    if (mediaType == MediaLibrary_MediaType::MEDIA_LIBRARY_IMAGE)
+        {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "MediaLibrary_MediaType MEDIA_LIBRARY_IMAGE");
         g_mediaType = 0;
     }
-    if(mediaSubType == MediaLibrary_MediaSubType::MEDIA_LIBRARY_DEFAULT){
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "MediaLibrary_MediaSubType MEDIA_LIBRARY_DEFAULT");
+    if (mediaSubType == MediaLibrary_MediaSubType::MEDIA_LIBRARY_DEFAULT)
+        {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_DEFAULT");
         g_mediaSubType = 0;
     }
-    
     MediaLibrary_MediaSubType mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_MOVING_PHOTO;
-    if(mediaSubType == mediaSubType1){
-        OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia",
-                     "MediaLibrary_MediaSubType MEDIA_LIBRARY_MOVING_PHOTO");
+    if (mediaSubType == mediaSubType1)
+        {
+        OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_MOVING_PHOTO");
     }
     mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_BURST;
-    if(mediaSubType == mediaSubType1){
-        OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia",
-                     "MediaLibrary_MediaSubType MEDIA_LIBRARY_BURST");
+    if (mediaSubType == mediaSubType1)
+        {
+        OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_BURST");
     }
-    
     g_mediaSubTypeCheck = 0;
 }
 
@@ -597,41 +581,40 @@ CameraInput_Callbacks *GetCameraInputListener(void)
     return &cameraInputCallbacks;
 }
 
-static const char* GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info info) {
+static const char* GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_status status;
-    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc < 1) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", 
-                    "Get callback info failed or lack of args");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Get callback info failed or lack of args");
         return nullptr;
     }
     napi_valuetype arg_type;
     status = napi_typeof(env, args[0], &arg_type);
     if (status != napi_ok || arg_type != napi_string) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", 
-                    "Arg is not a string");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Arg is not a string");
         return nullptr;
     }
-    size_t str_len = 0;
-    status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_len);
+    size_t strLen = 0;
+    status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &strLen);
     if (status != napi_ok) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", 
-                    "Get string length failed");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Get string length failed");
         return nullptr;
     }
-    const char* previewSurfaceId = (const char*)malloc(str_len + 1);
+    if (strLen == 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "String length is zero");
+        return nullptr;
+    }
+    const char *previewSurfaceId = static_cast<const char *>(malloc(strLen + 1));
     if (previewSurfaceId == nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", 
-                    "Malloc for surfaceId failed");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Malloc for surfaceId failed");
         return nullptr;
     }
-    status = napi_get_value_string_utf8(env, args[0], (char*)previewSurfaceId, str_len + 1, nullptr);
+    status = napi_get_value_string_utf8(env, args[0], (char *)previewSurfaceId, strLen + 1, nullptr);
     if (status != napi_ok) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", 
-                    "Convert string failed");
-        free((void*)previewSurfaceId); 
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Convert string failed");
+        free(static_cast<void *>(const_cast<char *>(previewSurfaceId)));
         return nullptr;
     }
     return previewSurfaceId;
@@ -869,7 +852,7 @@ napi_value TestOhMovingPhotoGetUriOk(napi_env env, napi_callback_info info)
 napi_value TestOhMovingPhotoRequestContentWithUrisOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_RequestContentWithUrisOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
+    napi_create_int32(env, g_requestContentWithUrisOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
                       &retValue);
     return retValue;
 }
@@ -877,7 +860,7 @@ napi_value TestOhMovingPhotoRequestContentWithUrisOk(napi_env env, napi_callback
 napi_value TestOhMovingPhotoRequestContentWithUriOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_RequestContentWithUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
+    napi_create_int32(env, g_requestContentWithUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
                       &retValue);
     return retValue;
 }
@@ -885,7 +868,7 @@ napi_value TestOhMovingPhotoRequestContentWithUriOk(napi_env env, napi_callback_
 napi_value TestOhMovingPhotoRequestContentWithBufferOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_RequestContentWithBufferOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
+    napi_create_int32(env, g_requestContentWithBufferOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
                       &retValue);
     return retValue;
 }
@@ -903,7 +886,7 @@ napi_value TestOhMediaAssetChangeRequestAddResourceWithBufferNotSupported(napi_e
     napi_value retValue = 0;
     napi_create_int32(
         env,
-        g_AddResourceWithBufferNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
+        g_addResourceWithBufferNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
         &retValue);
     return retValue;
 }
@@ -913,7 +896,7 @@ napi_value TestOhMediaAssetChangeRequestAddResourceWithUriNotSupported(napi_env 
     napi_value retValue = 0;
     napi_create_int32(
         env,
-        g_AddResourceWithUriNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
+        g_addResourceWithUriNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
         &retValue);
     return retValue;
 }
