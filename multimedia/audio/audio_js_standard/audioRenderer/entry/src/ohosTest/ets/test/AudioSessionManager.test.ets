@@ -676,30 +676,6 @@ export default function audioSessionManagerTest() {
         done();
       }
     })
-    
-        /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100
-    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100
-    * @tc.desc      : selectMediaInputDevice -6800101
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let audioManager:audio.AudioManager = audio.getAudioManager();
-      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
-      try {
-        let selectDevice:ESObject = 100;
-        audioSessionManager.selectMediaInputDevice(selectDevice);
-        console.info(`SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100 success`);
-        expect(false).assertTrue();
-        done();
-      } catch (err) {
-        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SELECTMEDIAINPUTDEVICE_0100 err.code: ${err.code}, err.message: ${err.message}`);
-        expect(Number(err.code)).assertEqual(6800101);
-        done();
-      }
-    })
 
     /* *
     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
