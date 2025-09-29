@@ -279,9 +279,11 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, DELEGATED_POLICIES);
         let policies: Array<string> = adminManager.getDelegatedPolicies(SELFWANT, BUNDLENAME1);
-        expect(policies.length == 1 && policies[0] == DELEGATED_POLICIES[0]).assertTrue();
+        expect(policies.length == 1).assertTrue();
+        expect(policies[0] == DELEGATED_POLICIES[0]).assertTrue();
         let bundles: Array<string> = adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
-        expect(bundles.length == 1 && bundles[0] == BUNDLENAME1).assertTrue();
+        expect(bundles.length == 1).assertTrue();
+        expect(bundles[0] == BUNDLENAME1).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {

@@ -2035,8 +2035,12 @@ function testAddApn() {
     if (HAS_ACTIVE_SIM()) {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
+        let res = networkManager.queryApn(SELFWANT, ADD_APN_INFO);
+        expect(res.length == 0).assertTrue();
         networkManager.addApn(SELFWANT, ADD_APN_INFO);
-        let testApnId: string = networkManager.queryApn(SELFWANT, ADD_APN_INFO)[0];
+        let res1 = networkManager.queryApn(SELFWANT, ADD_APN_INFO);
+        expect(res1.length > 0).assertTrue();
+        let testApnId: string = res1[0];
         expect(networkManager.queryApn(SELFWANT, testApnId)["apn"] == "TEST_ADD_APN").assertTrue();
         expect(networkManager.queryApn(SELFWANT, testApnId)["proxy"] == "TEST_ADD_PROXY").assertTrue();
         networkManager.updateApn(SELFWANT, UPDATE_APN_INFO, testApnId);

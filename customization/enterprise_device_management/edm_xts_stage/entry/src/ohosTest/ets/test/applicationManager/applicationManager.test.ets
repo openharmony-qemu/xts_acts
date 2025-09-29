@@ -115,7 +115,11 @@ export default function applicationManagerTest() {
     it("test_addDisallowedRunningBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let emptyRes = applicationManager.getDisallowedRunningBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes.length == 0).assertTrue();
         applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let res = applicationManager.getDisallowedRunningBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 3).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {

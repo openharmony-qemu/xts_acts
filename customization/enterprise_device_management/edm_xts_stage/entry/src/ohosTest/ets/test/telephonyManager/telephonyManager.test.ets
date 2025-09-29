@@ -133,6 +133,8 @@ function testSetSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       telephonyManager.setSimDisabled(SELFWANT, 0);
+      let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 0);
+      expect(result == true).assertTrue();
       let info: string = systemParameterEnhance.getSync(PARAM_DISABLE_SLOT0, "");
       expect(info == "true").assertTrue();
       telephonyManager.setSimEnabled(SELFWANT, 0);
@@ -389,7 +391,7 @@ function testIsSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 0);
-      expect(result !== undefined).assertTrue();
+      expect(result == false).assertTrue();
     } catch (error) {
       expect(error.code == 9200007 || error.code == 801).assertTrue();
     } finally {
@@ -410,7 +412,7 @@ function testIsSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 1);
-      expect(result !== undefined).assertTrue();
+      expect(result == false).assertTrue();
     } catch (error) {
       expect(error.code == 9200007 || error.code == 801).assertTrue();
     } finally {
@@ -700,7 +702,7 @@ function testGetOutgoingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = 
         telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
-      expect(numbers.length >= 0).assertTrue();
+      expect(numbers.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -854,6 +856,9 @@ function testRemoveOutgoingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      let result: Array<string> = 
+        telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(result.length > 0).assertTrue();
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
     } catch (error) {
       expect(error.code == 801).assertTrue();
@@ -1166,7 +1171,7 @@ function testGetIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = 
         telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
-      expect(numbers.length >= 0).assertTrue();
+      expect(numbers.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -1320,6 +1325,9 @@ function testRemoveIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      let result: Array<string> = 
+        telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(result.length > 0).assertTrue();
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
     } catch (error) {
       expect(error.code == 801).assertTrue();

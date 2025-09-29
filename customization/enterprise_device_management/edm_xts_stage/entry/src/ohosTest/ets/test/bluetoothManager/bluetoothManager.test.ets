@@ -264,7 +264,13 @@ export default function bluetoothManagerTest() {
     it('test_get_allowed_bluetooth_devices_0200', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        bluetoothManager.getAllowedBluetoothDevices(SELFWANT);
+        let deviceIds: Array<string> = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
+        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, deviceIds);
+        let res1: Array<string> = bluetoothManager.getAllowedBluetoothDevices(SELFWANT);
+        expect(res1.length > 0).assertTrue();
+        bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, deviceIds);
+        let res2: Array<string> = bluetoothManager.getAllowedBluetoothDevices(SELFWANT);
+        expect(res2.length == 0).assertTrue();
       } catch(error) {
         expect(false).assertTrue();
       } finally {
@@ -646,7 +652,13 @@ export default function bluetoothManagerTest() {
     it('test_get_disallowed_bluetooth_devices_0200', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
+        let deviceIds: Array<string> = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
+        bluetoothManager.addDisallowedBluetoothDevices(SELFWANT, deviceIds);
+        let res1: Array<string> = bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
+        expect(res1.length > 0).assertTrue();
+        bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT, deviceIds);
+        let res2: Array<string> = bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
+        expect(res2.length == 0).assertTrue();
       } catch(error) {
         expect(false).assertTrue();
       } finally {
