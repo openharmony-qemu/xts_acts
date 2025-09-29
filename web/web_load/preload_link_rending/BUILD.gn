@@ -18,6 +18,7 @@ group("ActsWebPreloadLinkRendingTest") {
       "preload_link_rending_cloudservice_webController_four:ActsWebPreloadLinkRendingCloudServiceWebControllerFourTest",
       "preload_link_rending_cloudservice_webController_one:ActsWebPreloadLinkRendingCloudServiceWebControllerOneTest",
       "preload_link_rending_cloudservice_webController_three:ActsWebPreloadLinkRendingCloudServiceWebControllerThreeTest",
+      "preload_link_rending_cloudservice_webController_three_static:ActsWebPreloadLinkRendingCloudServiceWebControllerThreeStaticTest",
       "preload_link_rending_cloudservice_webController_two:ActsWebPreloadLinkRendingCloudServiceWebControllerTwoTest",
     ]
   }

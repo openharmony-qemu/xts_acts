@@ -19,6 +19,7 @@ group("ActsWebHistoryTest") {
       "ace_web_history_enhanced_one:ActsWebHistoryEnhancedTest",
       "ace_web_history_enhanced_three:ActsWebHistoryEnhancedThreeTest",
       "ace_web_history_enhanced_two:ActsWebHistoryEnhancedTwoTest",
+      "ace_web_history_enhanced_two_static:ActsWebHistoryEnhancedTwoStaicTest",
     ]
   }
 }
