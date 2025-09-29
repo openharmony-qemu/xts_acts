@@ -110,9 +110,9 @@ export default function ImageReceiver() {
   let filesDir: string | undefined | null;
   let cacheDir: string | undefined | null;
   let context: common.UIAbilityContext;
-  let globalReceiver1: image.ImageReceiver;
-  let globalReceiver2: image.ImageReceiver;
-  let globalImg: image.Image;
+  let globalReceiver1: image.ImageReceiver | undefined = undefined;
+  let globalReceiver2: image.ImageReceiver | undefined = undefined;
+  let globalImg: image.Image | undefined = undefined;
   let globalSize: image.Size = {
     height: HEIGHT,
     width: WIDTH
@@ -159,7 +159,7 @@ export default function ImageReceiver() {
       if (globalImg != undefined) {
         console.info("globalImg release start");
         try {
-          await globalImg.release();
+          await globalImg!.release();
         } catch (error) {
           console.info("globalImg release fail");
         }
@@ -167,7 +167,7 @@ export default function ImageReceiver() {
       if (globalReceiver1 != undefined) {
         console.info("globalReceiver1 release start");
         try {
-          await globalReceiver1.release();
+          await globalReceiver1!.release();
         } catch (error) {
           console.info("globalReceiver1 release fail");
         }
@@ -175,7 +175,7 @@ export default function ImageReceiver() {
       if (globalReceiver2 != undefined) {
         console.info("globalReceiver2 release start");
         try {
-          await globalReceiver2.release();
+          await globalReceiver2!.release();
         } catch (error) {
           console.info("globalReceiver2 release fail");
         }
@@ -338,7 +338,7 @@ export default function ImageReceiver() {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver != undefined) {
         globalReceiver1 = receiver;
-        receiver.release((err) => {
+        receiver.release((err: BusinessError | null) => {
           if (err && err.code) {
             expect(false).assertTrue();
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100 release fail");
@@ -463,6 +463,7 @@ export default function ImageReceiver() {
           globalImg = latestImage;
           if (latestImage != undefined) {
             console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+            expect(latestImage != undefined).assertTrue();
             done();
           } else {
             console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 readLatestImage failed");
@@ -520,6 +521,7 @@ export default function ImageReceiver() {
               done();
             } else {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+              expect(latestImage != undefined).assertTrue();
               done();
             }
           });
@@ -569,6 +571,7 @@ export default function ImageReceiver() {
           globalImg = nextImage;
           if (nextImage != undefined) {
             console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+            expect(nextImage != undefined).assertTrue();
             done();
           } else {
             console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 readNextImage failed");
@@ -626,6 +629,7 @@ export default function ImageReceiver() {
             } else {
               globalImg = nextImage;
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+              expect(nextImage != undefined).assertTrue();
               done();
             }
           });

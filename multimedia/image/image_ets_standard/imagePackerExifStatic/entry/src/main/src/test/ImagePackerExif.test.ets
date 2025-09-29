@@ -36,8 +36,8 @@ class picType {
 }
 
 interface Result {
-  pixelMap: image.PixelMap
-  imageSource: image.ImageSource
+  pixelMap: image.PixelMap | undefined
+  imageSource: image.ImageSource | undefined
 }
 
 let sleep = async (count:int) : Promise<int> => {
@@ -220,7 +220,7 @@ export default function imagePackerExifTest() {
         const file = fs.openSync(filePath)
         imageSourceApi = image.createImageSource(file.fd as int);
       }
-      return imageSourceApi
+      return imageSourceApi!
     }
 
     const getPixelMap = (fileName: string, type?: string) => {
@@ -259,8 +259,8 @@ export default function imagePackerExifTest() {
       let newImageSource: image.ImageSource
       if (caseType === "pixelMap") {
         const result = getPixelMap(fileName, type)
-        const pixelMap = result.pixelMap
-        oldImageSource = result.imageSource
+        const pixelMap = result.pixelMap as image.PixelMap
+        oldImageSource = result.imageSource as image.ImageSource
         const fdNum = getFdCacheDir(tag, fileNameEnd)
         await imagePackerApi.packToFile(pixelMap, fdNum, packOpts)
         newImageSource = image.createImageSource(fdNum);
@@ -340,8 +340,8 @@ export default function imagePackerExifTest() {
       try {
         if (caseType === "pixelMap") {
           const result = getPixelMap(fileName, type)
-          const pixelMap = result.pixelMap
-          oldImageSource = result.imageSource
+          const pixelMap = result.pixelMap as image.PixelMap
+          oldImageSource = result.imageSource as image.ImageSource
           await packToFileCallback(imagePackerApi, pixelMap, fdNum, packOpts);
         } else {
           const imageSourceApi = getImageSource(fileName, type)

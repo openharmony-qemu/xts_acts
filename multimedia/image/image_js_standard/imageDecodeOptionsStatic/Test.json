@@ -37,7 +37,9 @@
         },
         {
             "type": "ShellKit",
-            "run-command": []
+            "run-command": [
+                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.image.DecodeOptions.Static/haps/entry/*"
+            ]
         }
     ]
 }

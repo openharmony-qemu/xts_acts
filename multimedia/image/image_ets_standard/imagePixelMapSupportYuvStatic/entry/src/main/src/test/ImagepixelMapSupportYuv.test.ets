@@ -47,7 +47,7 @@ export default function imagepixelMapSupportYuv() {
 
     const getFd = async (fileName: string):Promise<void> => {
       filePath = Hypium.get('filesDir') + "/" + fileName;
-      hilog.info(0x0000, '${testNum}', '%{public}s', `WZC123: fileName: ${fileName}, filePath: ${filePath}`)
+      hilog.info(0x0000, '${testNum}', '%{public}s', `fileName: ${fileName}, filePath: ${filePath}`)
       const file = fs.openSync(filePath)
       fdInt = file.fd as int
     }

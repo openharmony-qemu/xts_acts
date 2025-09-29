@@ -60,6 +60,13 @@ class Values {
   test_a: string | null = null
 }
 
+function sleep(count:int) : Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 export default function imageExifGetModifyTest() {
 
   describe('ImageExifGetModify', () => {
@@ -73,6 +80,10 @@ export default function imageExifGetModifyTest() {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
+    })
+
+    afterEach(() => {
+      await sleep(300)
     })
 
     const getFd = (fileName: string): int => {
@@ -109,7 +120,7 @@ export default function imageExifGetModifyTest() {
     //type:创建imageSource的方式，取值: uri、fd、buffer,rawfile,incremental 默认fd
     //fileName: 文件名,例: test_exif_v2.jpg
     const getImageSource = async (fileName:string, type:string): Promise<image.ImageSource> => {
-      let imageSourceApi:image.ImageSource;
+      let imageSourceApi:image.ImageSource | undefined;
       if(type === "buffer"){
         const buffer = getBuffer(fileName)
         imageSourceApi = image.createImageSource(buffer)
@@ -129,7 +140,8 @@ export default function imageExifGetModifyTest() {
         imageSourceApi = image.createImageSource(fd);
         fs.closeSync(fd); // getFd open fd，创建ImageSource后，close fd。
       }
-      return imageSourceApi;
+      expect(imageSourceApi != undefined).assertTrue();
+      return imageSourceApi!;
     }
 
     //创建imageSource，修改exif信息，然后读取exif信息，读取到的值与预期值对比,返回结果 True/false
@@ -153,10 +165,11 @@ export default function imageExifGetModifyTest() {
         console.info(testTag + " create image source failed");
       } else {
         await imageSourceApi.modifyImageProperty(key, modifyData)
+        await imageSourceApi.release();
         let imageSourceApiGet = await getImageSource(fileName, type)
         const data = await imageSourceApiGet.getImageProperty(key)
         checkResult = data === compareData
-        await imageSourceApi.release();
+        console.info(testTag + "checkResult + " + checkResult);
         if (imageSourceApiGet != undefined) {
           await imageSourceApiGet.release();
         }
@@ -292,8 +305,10 @@ export default function imageExifGetModifyTest() {
             await imageSourceApi.modifyImageProperty(key, errorData);
             hilog.info(0x0000, testTag,
               `modifyImageProperty errorData promise success %{public}s `, key);
+            await imageSourceApi!.release();
           }
         } catch (error: BusinessError) {
+          await imageSourceApi!.release();
           hilog.info(0x0000, testTag,
             `modifyImageProperty errorData promise failed %{public}s %{public}s `, key, error.code);
           if (expectedModifyErrorCode == error.code) {
@@ -301,6 +316,9 @@ export default function imageExifGetModifyTest() {
             try {
               const data = await imageSourceApiGet.getImageProperty(key)
               checkResult = data == compareData
+              if (imageSourceApiGet != undefined) {
+                await imageSourceApiGet.release();
+              }
               if(!checkResult){
                 hilog.info(0x0000, testTag,
                   `testModifyPromiseError testGetPromise success %{public}s %{public}s
@@ -312,12 +330,8 @@ export default function imageExifGetModifyTest() {
                 `testModifyPromiseError testGetPromise error %{public}s %{public}s fileName: %{public}s `,
                 testTag, key, fileName);
             }
-            if (imageSourceApiGet != undefined) {
-              await imageSourceApiGet.release();
-            }
           }
         }
-        await imageSourceApi.release();
       }
       return checkResult;
     }
@@ -395,6 +409,7 @@ export default function imageExifGetModifyTest() {
         }
         await imageSourceApi.release();
       }
+      await sleep(1000)
       return checkResult
     }
 
@@ -11921,7 +11936,7 @@ export default function imageExifGetModifyTest() {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_01300';
       const key = image.PropertyKey.F_NUMBER
       const modifyData: string = `1/30`;
-      const compareData: string = `f/0.0`;
+      const compareData: string = `f/0.03`;
       try {
         let result: boolean = true
         for(let i=0; i<modfiyFileSuffixs.length; i++){
@@ -16542,10 +16557,10 @@ export default function imageExifGetModifyTest() {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_STATIC_01300';
       const key = image.PropertyKey.F_NUMBER
       const values:Array<picTypeValue> = [
-        {name: "jpeg", fileName: "test_exif_v2.jpg", errorData: "1/0", value: "f/0.0"},
-        {name: "webp", fileName: "test_exif_v2.webp", errorData: "1/0", value: "f/0.0"},
-        {name: "png", fileName: "test_exif_v2.png", errorData: "1/0", value: "f/0.0"},
-        {name: "heif", fileName: "test_exif_v2.heic", errorData: "1/0", value: "f/0.0"}]
+        {name: "jpeg", fileName: "test_exif_v2.jpg", errorData: "1/0", value: "f/0.03"},
+        {name: "webp", fileName: "test_exif_v2.webp", errorData: "1/0", value: "f/0.03"},
+        {name: "png", fileName: "test_exif_v2.png", errorData: "1/0", value: "f/0.03"},
+        {name: "heif", fileName: "test_exif_v2.heic", errorData: "1/0", value: "f/0.03"}]
       const expectedModifyErrorCode = 62980135
       try {
         let result: boolean = true
