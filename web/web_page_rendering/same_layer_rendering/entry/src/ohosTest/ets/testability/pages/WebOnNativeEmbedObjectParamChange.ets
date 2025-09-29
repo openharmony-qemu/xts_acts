@@ -134,7 +134,7 @@ struct WebIndex {
   params: Array<NativeEmbedParamItem> = [];
   @State isReceive: number = -1;
   @State str:string = 'emitOnNativeEmbedObjectParamChange001';
-  @State isComplete: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -163,16 +163,13 @@ struct WebIndex {
       Row() {
         Button("web click").id('WebOnNativeEmbedObjectParamChangeButton').onClick(async () => {
           await waitForExist(()=>this.isReceive, this.str, 0);
-          await waitForExist(()=>this.isComplete, this.str, 0);
+          await waitForExist(()=>this.isPageEnd, this.str, 0);
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
             case "emitOnNativeEmbedObjectParamChange001": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange001')
-                this.isComplete = -1;
-                this.browserTabController.loadUrl($rawfile('BasicOperation.html'));
-                await waitForExist(() => this.isComplete, this.str, 0);
                 this.browserTabController.runJavaScript('addParam()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -182,9 +179,6 @@ struct WebIndex {
             case "emitOnNativeEmbedObjectParamChange002": {
               try {
                 console.log('start__emitOnNativeEmbedObjectParamChange002')
-                this.isComplete = -1;
-                this.browserTabController.loadUrl($rawfile('BasicOperation.html'));
-                await waitForExist(() => this.isComplete, this.str, 0);
                 this.browserTabController.runJavaScript('modifyLastParamName()')
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -194,9 +188,6 @@ struct WebIndex {
 
             case "emitOnNativeEmbedObjectParamChange003": {
               try {
-                this.isComplete = -1;
-                this.browserTabController.loadUrl($rawfile('BasicOperation.html'));
-                await waitForExist(() => this.isComplete, this.str, 0);
                 console.log('start__emitOnNativeEmbedObjectParamChange003')
                 this.browserTabController.runJavaScript('removeParam()')
               } catch (error) {
@@ -224,7 +215,7 @@ struct WebIndex {
           .nativeEmbedOptions(this.options)
           .onPageEnd((event) => {
             console.log('web pageEnd==>' + event.url);
-            this.isComplete = 0
+            this.isPageEnd = 0;
           })
           .onNativeEmbedLifecycleChange((embed) => {
             console.log("NativeEmbed surfaceId" + embed.surfaceId);
@@ -285,29 +276,29 @@ struct WebIndex {
             })
           })
           .onNativeEmbedObjectParamChange((paramsData) => {
-            console.log("dxlog onNativeEmbedObjectParamChange embedId: " + paramsData.embedId);
-            console.log("dxlog onNativeEmbedObjectParamChange objectAttributeId: " + paramsData.objectAttributeId);
-            if (paramsData.paramItems) {
-              this.params = paramsData.paramItems
-              for (let i = 0; i < this.params.length; i++) {
-                console.log("dxlog onNativeEmbedObjectParamChange: " +
-                  "id: " + this.params[i].id +
-                  ", status: " + this.params[i].status +
-                  ", name: " + this.params[i].name +
-                  ", value: " + this.params[i].value);
-                if(this.params[i].status == NativeEmbedParamStatus.ADD) {
-                  Utils.emitEvent(NativeEmbedParamStatus.ADD, 20250923)
-                } else if(this.params[i].status == NativeEmbedParamStatus.UPDATE) {
-                  Utils.emitEvent(NativeEmbedParamStatus.UPDATE, 20250924)
-                } else if(this.params[i].status == NativeEmbedParamStatus.DELETE) {
-                  Utils.emitEvent(NativeEmbedParamStatus.DELETE, 20250925)
+              console.log("dxlog onNativeEmbedObjectParamChange embedId: " + paramsData.embedId);
+              console.log("dxlog onNativeEmbedObjectParamChange objectAttributeId: " + paramsData.objectAttributeId);
+              if (paramsData.paramItems) {
+                this.params = paramsData.paramItems
+                for (let i = 0; i < this.params.length; i++) {
+                  console.log("dxlog onNativeEmbedObjectParamChange: " +
+                    "id: " + this.params[i].id +
+                    ", status: " + this.params[i].status +
+                    ", name: " + this.params[i].name +
+                    ", value: " + this.params[i].value);
+                  if(this.params[i].status == NativeEmbedParamStatus.ADD) {
+                    Utils.emitEvent(NativeEmbedParamStatus.ADD, 20250923)
+                  } else if(this.params[i].status == NativeEmbedParamStatus.UPDATE) {
+                    Utils.emitEvent(NativeEmbedParamStatus.UPDATE, 20250924)
+                  } else if(this.params[i].status == NativeEmbedParamStatus.DELETE) {
+                    Utils.emitEvent(NativeEmbedParamStatus.DELETE, 20250925)
+                  }
                 }
               }
+            })
+            .height("100%")
+            .border({ width: 2, color: Color.Red })
+            }.height("100%")
             }
-          })
-          .height("100%")
-          .border({ width: 2, color: Color.Red })
-      }.height("100%")
-    }
-  }
-}
+          }
+      }
