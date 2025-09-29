@@ -280,6 +280,138 @@ static void InitPush6(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("EnumMPEGProfile21", EnumMPEGProfile21));
 }
 
+static void InitPushAVCLevel(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_AVCLevelTest1", OH_AVCLevelTest1));
+    desc.push_back(XL("OH_AVCLevelTest2", OH_AVCLevelTest2));
+    desc.push_back(XL("OH_AVCLevelTest3", OH_AVCLevelTest3));
+    desc.push_back(XL("OH_AVCLevelTest4", OH_AVCLevelTest4));
+    desc.push_back(XL("OH_AVCLevelTest5", OH_AVCLevelTest5));
+    desc.push_back(XL("OH_AVCLevelTest6", OH_AVCLevelTest6));
+    desc.push_back(XL("OH_AVCLevelTest7", OH_AVCLevelTest7));
+    desc.push_back(XL("OH_AVCLevelTest8", OH_AVCLevelTest8));
+    desc.push_back(XL("OH_AVCLevelTest9", OH_AVCLevelTest9));
+    desc.push_back(XL("OH_AVCLevelTest10", OH_AVCLevelTest10));
+    desc.push_back(XL("OH_AVCLevelTest11", OH_AVCLevelTest11));
+    desc.push_back(XL("OH_AVCLevelTest12", OH_AVCLevelTest12));
+    desc.push_back(XL("OH_AVCLevelTest13", OH_AVCLevelTest13));
+    desc.push_back(XL("OH_AVCLevelTest14", OH_AVCLevelTest14));
+    desc.push_back(XL("OH_AVCLevelTest15", OH_AVCLevelTest15));
+    desc.push_back(XL("OH_AVCLevelTest16", OH_AVCLevelTest16));
+    desc.push_back(XL("OH_AVCLevelTest17", OH_AVCLevelTest17));
+    desc.push_back(XL("OH_AVCLevelTest18", OH_AVCLevelTest18));
+    desc.push_back(XL("OH_AVCLevelTest19", OH_AVCLevelTest19));
+    desc.push_back(XL("OH_AVCLevelTest20", OH_AVCLevelTest20));
+    desc.push_back(XL("OH_HEVCLevelTest1", OH_HEVCLevelTest1));
+    desc.push_back(XL("OH_HEVCLevelTest2", OH_HEVCLevelTest2));
+    desc.push_back(XL("OH_HEVCLevelTest3", OH_HEVCLevelTest3));
+    desc.push_back(XL("OH_HEVCLevelTest4", OH_HEVCLevelTest4));
+    desc.push_back(XL("OH_HEVCLevelTest5", OH_HEVCLevelTest5));
+    desc.push_back(XL("OH_HEVCLevelTest6", OH_HEVCLevelTest6));
+    desc.push_back(XL("OH_HEVCLevelTest7", OH_HEVCLevelTest7));
+    desc.push_back(XL("OH_HEVCLevelTest8", OH_HEVCLevelTest8));
+    desc.push_back(XL("OH_HEVCLevelTest9", OH_HEVCLevelTest9));
+    desc.push_back(XL("OH_HEVCLevelTest10", OH_HEVCLevelTest10));
+    desc.push_back(XL("OH_HEVCLevelTest11", OH_HEVCLevelTest11));
+    desc.push_back(XL("OH_HEVCLevelTest12", OH_HEVCLevelTest12));
+    desc.push_back(XL("OH_HEVCLevelTest13", OH_HEVCLevelTest13));
+}
+
+static void InitPushOH_VVCLevelTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_VVCLevelTest1", OH_VVCLevelTest1));
+    desc.push_back(XL("OH_VVCLevelTest2", OH_VVCLevelTest2));
+    desc.push_back(XL("OH_VVCLevelTest3", OH_VVCLevelTest3));
+    desc.push_back(XL("OH_VVCLevelTest4", OH_VVCLevelTest4));
+    desc.push_back(XL("OH_VVCLevelTest5", OH_VVCLevelTest5));
+    desc.push_back(XL("OH_VVCLevelTest6", OH_VVCLevelTest6));
+    desc.push_back(XL("OH_VVCLevelTest7", OH_VVCLevelTest7));
+    desc.push_back(XL("OH_VVCLevelTest8", OH_VVCLevelTest8));
+    desc.push_back(XL("OH_VVCLevelTest9", OH_VVCLevelTest9));
+    desc.push_back(XL("OH_VVCLevelTest10", OH_VVCLevelTest10));
+    desc.push_back(XL("OH_VVCLevelTest11", OH_VVCLevelTest11));
+    desc.push_back(XL("OH_VVCLevelTest12", OH_VVCLevelTest12));
+    desc.push_back(XL("OH_VVCLevelTest13", OH_VVCLevelTest13));
+    desc.push_back(XL("OH_VVCLevelTest14", OH_VVCLevelTest14));
+    desc.push_back(XL("OH_VVCLevelTest15", OH_VVCLevelTest15));
+}
+
+static void InitPushOH_MPEG4LevelTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_MPEG4Level1", OH_MPEG4Level1));
+    desc.push_back(XL("OH_MPEG4Level2", OH_MPEG4Level2));
+    desc.push_back(XL("OH_MPEG4Level3", OH_MPEG4Level3));
+    desc.push_back(XL("OH_MPEG4Level4", OH_MPEG4Level4));
+    desc.push_back(XL("OH_MPEG4Level5", OH_MPEG4Level5));
+    desc.push_back(XL("OH_MPEG4Level6", OH_MPEG4Level6));
+    desc.push_back(XL("OH_MPEG4Level7", OH_MPEG4Level7));
+    desc.push_back(XL("OH_MPEG4Level8", OH_MPEG4Level8));
+    desc.push_back(XL("OH_MPEG4Level9", OH_MPEG4Level9));
+    desc.push_back(XL("OH_MPEG4Level10", OH_MPEG4Level10));
+}
+
+static void InitPushOH_VideoDecoderFunctionTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_VideoDecoder_DestroyTest", OH_VideoDecoder_DestroyTest));
+    desc.push_back(XL("OH_VideoDecoder_SetCallbackTest", OH_VideoDecoder_SetCallbackTest));
+    desc.push_back(XL("OH_VideoDecoder_RegisterCallbackTest", OH_VideoDecoder_RegisterCallbackTest));
+    desc.push_back(XL("OH_VideoDecoder_SetSurfaceTest", OH_VideoDecoder_SetSurfaceTest));
+    desc.push_back(XL("OH_VideoDecoder_StartTest", OH_VideoDecoder_StartTest));
+    desc.push_back(XL("OH_VideoDecoder_StopTest", OH_VideoDecoder_StopTest));
+    desc.push_back(XL("OH_VideoDecoder_FlushTest", OH_VideoDecoder_FlushTest));
+    desc.push_back(XL("OH_VideoDecoder_ResetTest", OH_VideoDecoder_ResetTest));
+    desc.push_back(XL("OH_VideoDecoder_SetParameterTest", OH_VideoDecoder_SetParameterTest));
+    desc.push_back(XL("OH_VideoDecoder_PushInputDataTest", OH_VideoDecoder_PushInputDataTest));
+    desc.push_back(XL("OH_VideoDecoder_RenderOutputDataTest", OH_VideoDecoder_RenderOutputDataTest));
+    desc.push_back(XL("OH_VideoDecoder_FreeOutputDataTest", OH_VideoDecoder_FreeOutputDataTest));
+    desc.push_back(XL("OH_VideoDecoder_PushInputBufferTest", OH_VideoDecoder_PushInputBufferTest));
+    desc.push_back(XL("OH_VideoDecoder_RenderOutputBufferTest", OH_VideoDecoder_RenderOutputBufferTest));
+    desc.push_back(XL("OH_VideoDecoder_RenderOutputBufferAtTimeTest", OH_VideoDecoder_RenderOutputBufferAtTimeTest));
+    desc.push_back(XL("OH_VideoDecoder_FreeOutputBufferTest", OH_VideoDecoder_FreeOutputBufferTest));
+    desc.push_back(XL("OH_VideoDecoder_QueryInputBufferTest", OH_VideoDecoder_QueryInputBufferTest));
+    desc.push_back(XL("OH_VideoDecoder_QueryOutputBufferTest", OH_VideoDecoder_QueryOutputBufferTest));
+    desc.push_back(XL("OH_VideoDecoder_SetDecryptionConfigTest", OH_VideoDecoder_SetDecryptionConfigTest));
+}
+
+static void InitPushOH_VideoEncoderFunctionTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_VideoEncoder_SetCallbackTest", OH_VideoEncoder_SetCallbackTest));
+    desc.push_back(XL("OH_VideoEncoder_RegisterCallbackTest", OH_VideoEncoder_RegisterCallbackTest));
+    desc.push_back(XL("OH_VideoEncoder_RegisterParameterCallbackTest", OH_VideoEncoder_RegisterParameterCallbackTest));
+    desc.push_back(XL("OH_VideoEncoder_PrepareTest", OH_VideoEncoder_PrepareTest));
+    desc.push_back(XL("OH_VideoEncoder_SetParameterTest", OH_VideoEncoder_SetParameterTest));
+    desc.push_back(XL("OH_VideoEncoder_PushInputDataTest", OH_VideoEncoder_PushInputDataTest));
+    desc.push_back(XL("OH_VideoEncoder_PushInputBufferTest", OH_VideoEncoder_PushInputBufferTest));
+    desc.push_back(XL("OH_VideoEncoder_PushInputParameterTest", OH_VideoEncoder_PushInputParameterTest));
+    desc.push_back(XL("OH_VideoEncoder_FreeOutputBufferTest", OH_VideoEncoder_FreeOutputBufferTest));
+    desc.push_back(XL("OH_VideoEncoder_QueryInputBufferTest", OH_VideoEncoder_QueryInputBufferTest));
+    desc.push_back(XL("OH_VideoEncoder_QueryOutputBufferTest", OH_VideoEncoder_QueryOutputBufferTest));
+    desc.push_back(XL("OH_VideoEncoder_IsValidTest", OH_VideoEncoder_IsValidTest));
+}
+
+static void InitPushOH_AVDemuxeFunctionTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_AVDemuxer_DestroyTest", OH_AVDemuxer_DestroyTest));
+    desc.push_back(XL("OH_AVDemuxer_SelectTrackByIDTest", OH_AVDemuxer_SelectTrackByIDTest));
+    desc.push_back(XL("OH_AVDemuxer_UnselectTrackByIDTest", OH_AVDemuxer_UnselectTrackByIDTest));
+    desc.push_back(XL("OH_AVDemuxer_ReadSampleTest", OH_AVDemuxer_ReadSampleTest));
+    desc.push_back(XL("OH_AVDemuxer_ReadSampleBufferTest", OH_AVDemuxer_ReadSampleBufferTest));
+    desc.push_back(XL("OH_AVDemuxer_SeekToTimeTest", OH_AVDemuxer_SeekToTimeTest));
+    desc.push_back(XL("OH_AVDemuxer_SetMediaKeySystemInfoCallbackTest",
+                      OH_AVDemuxer_SetMediaKeySystemInfoCallbackTest));
+    desc.push_back(XL("OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallbackTest",
+                      OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallbackTest));
+    desc.push_back(XL("OH_AVDemuxer_GetMediaKeySystemInfoTest", OH_AVDemuxer_GetMediaKeySystemInfoTest));
+    desc.push_back(XL("OH_AVMuxer_WriteSampleBufferTest", OH_AVMuxer_WriteSampleBufferTest));
+    desc.push_back(XL("OH_AVSource_DestroyTest", OH_AVSource_DestroyTest));
+    desc.push_back(XL("OH_AVCencInfo_DestroyTest", OH_AVCencInfo_DestroyTest));
+    desc.push_back(XL("OH_AVCencInfo_SetAlgorithmTest", OH_AVCencInfo_SetAlgorithmTest));
+    desc.push_back(XL("OH_AVCencInfo_SetKeyIdAndIvTest", OH_AVCencInfo_SetKeyIdAndIvTest));
+    desc.push_back(XL("OH_AVCencInfo_SetSubsampleInfoTest", OH_AVCencInfo_SetSubsampleInfoTest));
+    desc.push_back(XL("OH_AVCencInfo_SetModeTest", OH_AVCencInfo_SetModeTest));
+    desc.push_back(XL("OH_AVCencInfo_SetAVBufferTest", OH_AVCencInfo_SetAVBufferTest));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
@@ -289,6 +421,12 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPush4(desc);
     InitPush5(desc);
     InitPush6(desc);
+    InitPushAVCLevel(desc);
+    InitPushOH_VVCLevelTest(desc);
+    InitPushOH_MPEG4LevelTest(desc);
+    InitPushOH_VideoDecoderFunctionTest(desc);
+    InitPushOH_VideoEncoderFunctionTest(desc);
+    InitPushOH_AVDemuxeFunctionTest(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

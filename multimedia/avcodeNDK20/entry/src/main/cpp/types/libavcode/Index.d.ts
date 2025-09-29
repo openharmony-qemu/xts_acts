@@ -459,9 +459,214 @@ export const EnumMPEGProfile20: () => number;
 
 export const EnumMPEGProfile21: () => number;
 
+export const OH_AVCLevelTest1: () => number;
 
+export const OH_AVCLevelTest2: () => number;
 
+export const OH_AVCLevelTest3: () => number;
 
+export const OH_AVCLevelTest4: () => number;
 
+export const OH_AVCLevelTest5: () => number;
 
+export const OH_AVCLevelTest6: () => number;
 
+export const OH_AVCLevelTest7: () => number;
+
+export const OH_AVCLevelTest8: () => number;
+
+export const OH_AVCLevelTest9: () => number;
+
+export const OH_AVCLevelTest10: () => number;
+
+export const OH_AVCLevelTest11: () => number;
+
+export const OH_AVCLevelTest12: () => number;
+
+export const OH_AVCLevelTest13: () => number;
+
+export const OH_AVCLevelTest14: () => number;
+
+export const OH_AVCLevelTest15: () => number;
+
+export const OH_AVCLevelTest16: () => number;
+
+export const OH_AVCLevelTest17: () => number;
+
+export const OH_AVCLevelTest18: () => number;
+
+export const OH_AVCLevelTest19: () => number;
+
+export const OH_AVCLevelTest20: () => number;
+
+export const OH_HEVCLevelTest1: () => number;
+
+export const OH_HEVCLevelTest2: () => number;
+
+export const OH_HEVCLevelTest3: () => number;
+
+export const OH_HEVCLevelTest4: () => number;
+
+export const OH_HEVCLevelTest5: () => number;
+
+export const OH_HEVCLevelTest6: () => number;
+
+export const OH_HEVCLevelTest7: () => number;
+
+export const OH_HEVCLevelTest8: () => number;
+
+export const OH_HEVCLevelTest9: () => number;
+
+export const OH_HEVCLevelTest10: () => number;
+
+export const OH_HEVCLevelTest11: () => number;
+
+export const OH_HEVCLevelTest12: () => number;
+
+export const OH_HEVCLevelTest13: () => number;
+
+export const OH_VVCLevelTest1: () => number;
+
+export const OH_VVCLevelTest2: () => number;
+
+export const OH_VVCLevelTest3: () => number;
+
+export const OH_VVCLevelTest4: () => number;
+
+export const OH_VVCLevelTest5: () => number;
+
+export const OH_VVCLevelTest6: () => number;
+
+export const OH_VVCLevelTest7: () => number;
+
+export const OH_VVCLevelTest8: () => number;
+
+export const OH_VVCLevelTest9: () => number;
+
+export const OH_VVCLevelTest10: () => number;
+
+export const OH_VVCLevelTest11: () => number;
+
+export const OH_VVCLevelTest12: () => number;
+
+export const OH_VVCLevelTest13: () => number;
+
+export const OH_VVCLevelTest14: () => number;
+
+export const OH_VVCLevelTest15: () => number;
+
+export const OH_MPEG4Level1: () => number;
+
+export const OH_MPEG4Level2: () => number;
+
+export const OH_MPEG4Level3: () => number;
+
+export const OH_MPEG4Level4: () => number;
+
+export const OH_MPEG4Level5: () => number;
+
+export const OH_MPEG4Level6: () => number;
+
+export const OH_MPEG4Level7: () => number;
+
+export const OH_MPEG4Level8: () => number;
+
+export const OH_MPEG4Level9: () => number;
+
+export const OH_MPEG4Level10: () => number;
+
+export const OH_VideoDecoder_DestroyTest: () => number;
+
+export const OH_VideoDecoder_SetCallbackTest: () => number;
+
+export const OH_VideoDecoder_RegisterCallbackTest: () => number;
+
+export const OH_VideoDecoder_SetSurfaceTest: () => number;
+
+export const OH_VideoDecoder_StartTest: () => number;
+
+export const OH_VideoDecoder_StopTest: () => number;
+
+export const OH_VideoDecoder_FlushTest: () => number;
+
+export const OH_VideoDecoder_ResetTest: () => number;
+
+export const OH_VideoDecoder_SetParameterTest: () => number;
+
+export const OH_VideoDecoder_PushInputDataTest: () => number;
+
+export const OH_VideoDecoder_RenderOutputDataTest: () => number;
+
+export const OH_VideoDecoder_FreeOutputDataTest: () => number;
+
+export const OH_VideoDecoder_PushInputBufferTest: () => number;
+
+export const OH_VideoDecoder_RenderOutputBufferTest: () => number;
+
+export const OH_VideoDecoder_RenderOutputBufferAtTimeTest: () => number;
+
+export const OH_VideoDecoder_FreeOutputBufferTest: () => number;
+
+export const OH_VideoDecoder_QueryInputBufferTest: () => number;
+
+export const OH_VideoDecoder_QueryOutputBufferTest: () => number;
+
+export const OH_VideoDecoder_SetDecryptionConfigTest: () => number;
+
+export const OH_VideoEncoder_SetCallbackTest: () => number;
+
+export const OH_VideoEncoder_RegisterCallbackTest: () => number;
+
+export const OH_VideoEncoder_RegisterParameterCallbackTest: () => number;
+
+export const OH_VideoEncoder_PrepareTest: () => number;
+
+export const OH_VideoEncoder_SetParameterTest: () => number;
+
+export const OH_VideoEncoder_PushInputDataTest: () => number;
+
+export const OH_VideoEncoder_PushInputBufferTest: () => number;
+
+export const OH_VideoEncoder_PushInputParameterTest: () => number;
+
+export const OH_VideoEncoder_FreeOutputBufferTest: () => number;
+
+export const OH_VideoEncoder_QueryInputBufferTest: () => number;
+
+export const OH_VideoEncoder_QueryOutputBufferTest: () => number;
+
+export const OH_VideoEncoder_IsValidTest: () => number;
+
+export const OH_AVDemuxer_DestroyTest: () => number;
+
+export const OH_AVDemuxer_SelectTrackByIDTest: () => number;
+
+export const OH_AVDemuxer_UnselectTrackByIDTest: () => number;
+
+export const OH_AVDemuxer_ReadSampleTest: () => number;
+
+export const OH_AVDemuxer_ReadSampleBufferTest: () => number;
+
+export const OH_AVDemuxer_SeekToTimeTest: () => number;
+
+export const OH_AVDemuxer_SetMediaKeySystemInfoCallbackTest: () => number;
+
+export const OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallbackTest: () => number;
+
+export const OH_AVDemuxer_GetMediaKeySystemInfoTest: () => number;
+
+export const OH_AVMuxer_WriteSampleBufferTest: () => number;
+
+export const OH_AVSource_DestroyTest: () => number;
+
+export const OH_AVCencInfo_DestroyTest: () => number;
+
+export const OH_AVCencInfo_SetAlgorithmTest: () => number;
+
+export const OH_AVCencInfo_SetKeyIdAndIvTest: () => number;
+
+export const OH_AVCencInfo_SetSubsampleInfoTest: () => number;
+
+export const OH_AVCencInfo_SetModeTest: () => number;
+
+export const OH_AVCencInfo_SetAVBufferTest: () => number;
