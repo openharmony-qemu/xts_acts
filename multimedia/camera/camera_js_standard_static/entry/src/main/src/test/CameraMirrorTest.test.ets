@@ -34,7 +34,7 @@ let mPhotoSurface: string;
 let mVideoRecorder: media.AVRecorder | undefined;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;

@@ -38,7 +38,7 @@ let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let mIsVideoStabilizationModeSupportedArray: Array<boolean>;
 let mPicWidthMax = 8192;
 let mPicHeightMax = 8192;
