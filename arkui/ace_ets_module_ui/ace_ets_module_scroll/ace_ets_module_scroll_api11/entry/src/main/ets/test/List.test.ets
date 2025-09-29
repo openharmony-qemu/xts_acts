@@ -111,6 +111,7 @@ import offsetEdgeBtm from './ListTest/contentOffset/offsetEdgeBtm.test';
 import offsetEdgeTop from './ListTest/contentOffset/offsetEdgeTop.test';
 import offsetAlignEnd from './ListTest/contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './ListTest/contentOffset/offsetAlignStart.test';
+import IsAtEndScroll from './ScrollTest/IsAtEndScroll.test';
 
 export default function testsuite() {
   listUxTest()
@@ -210,4 +211,5 @@ export default function testsuite() {
   offsetEdgeTop();
   offsetAlignEnd();
   offsetAlignStart();
+  IsAtEndScroll();
 }
