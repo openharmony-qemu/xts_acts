@@ -14,7 +14,9 @@
  */
  
 import ActsMediaLibraryTest from './ActsMediaLibraryTest.test'
+import ActsMediaLibraryTwoTest from './ActsMediaLibraryTwoTest.test'
 
 export default function testsuite() {
+  ActsMediaLibraryTwoTest()
   ActsMediaLibraryTest()
 }

@@ -15,7 +15,90 @@
 
 //multimedia/media_library/media_asset_change_request_capi.h
 export const testOhMediaAssetChangeRequestAddResourceWithUriParameterError: () => number;
+
 export const testOhMediaAssetChangeRequestAddResourceWithBufferParameterError: () => number;
+
 export const testOhMediaAssetChangeRequestGetWriteCacheHandlerParameterError: () => number;
+
 export const testOhMediaAssetChangeRequestSaveCameraPhotoParameterError: () => number;
+
 export const testOhMediaAssetChangeRequestDiscardCameraPhotoParameterError: () => number;
+
+//multimedia/media_library/media_asset_capi.h
+export const testOhMediaAsset: (id: string) => void;
+
+export const testOhMediaVideoAsset: (id: string) => void;
+
+export const testOhMediaAssetGetUriOk: () => number;
+
+export const testOhMediaAssetGetMediaTypeOk: () => number;
+
+export const testOhMediaAssetGetMediaSubTypeOk: () => number;
+
+export const testOhMediaAssetGetDisplayNameOk: () => number;
+
+export const testOhMediaAssetGetSizeOk: () => number;
+
+export const testOhMediaAssetGetDateAddedOk: () => number;
+
+export const testOhMediaAssetGetDateModifiedOk: () => number;
+
+export const testOhMediaAssetGetDateTakenOk: () => number;
+
+export const testOhMediaAssetGetDateAddedMsOk: () => number;
+
+export const testOhMediaAssetGetDateModifiedMsOk: () => number;
+
+export const testOhMediaAssetGetDurationOk: () => number;
+
+export const testOhMediaAssetGetWidthOk: () => number;
+
+export const testOhMediaAssetGetHeightOk: () => number;
+
+export const testOhMediaAssetGetOrientationOk: () => number;
+
+export const testOhMediaAssetIsFavoriteOk: () => number;
+
+export const testOhMediaAssetGetTitleOk: () => number;
+
+export const testOhMediaAssetReleaseOk: () => number;
+
+export const testOhMediaLibraryImageOk: () => number;
+
+export const testOhMediaLibraryDefaultOk: () => number;
+
+export const testOhMediaAssetChangeRequestAddResourceWithUriNotSuchFile: () => number;
+
+export const testOhMediaAssetChangeRequestGetWriteCacheHandlerNoAuthority: () => number;
+
+export const testOhMediaAssetChangeRequestReleaseOk: () => number;
+
+export const testOhMediaAssetManagerRequestMovingPhotoOk: () => number;
+
+export const testOhMediaAssetManagerRequestImageOk: () => number;
+
+export const testOhMovingPhotoGetUriOk: () => number;
+
+export const testOhMovingPhotoRequestContentWithUrisOk: () => number;
+
+export const testOhMovingPhotoRequestContentWithUriOk: () => number;
+
+export const testOhMovingPhotoRequestContentWithBufferOk: () => number;
+
+export const testOhMovingPhotoReleaseOk: () => number;
+
+export const testOhMediaAssetChangeRequestAddResourceWithBufferNotSupported: () => number;
+
+export const testOhMediaAssetChangeRequestAddResourceWithUriNotSupported: () => number;
+
+export const testMediaLibraryQualityFast: () => number;
+
+export const testMediaLibraryQualityFull: () => number;
+
+export const testMediaLibraryCompressed: () => number;
+
+export const testMediaLibraryPictureObject: () => number;
+
+export const testMediaLibraryMovingPhoto: () => number;
+
+export const testMediaLibraryRust: () => number;
