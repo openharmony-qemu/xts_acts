@@ -84,35 +84,36 @@ describe('ActsFeatureAbilityTest', function () {
          */
          console.info('beforeEach called')
     })
+    afterEach(async function (done) {
+    /*
+     * @tc.teardown: teardown invoked after each testcases
+     */
+    console.info('afterEach called');
 
-    afterEach(async function(done) {
+    try {
+        await particleAbility.cancelBackgroundRunning();
+        await backgroundTaskManager.stopBackgroundRunning(featureAbility.getContext());
+    } catch (err) {
+    }
 
-        /*
-         * @tc.teardown: teardown invoked after each testcases
-         */
-         console.info('afterEach called')
-         particleAbility.cancelBackgroundRunning();
-         setTimeout(() => {}, 500);
-         backgroundTaskManager.stopBackgroundRunning(featureAbility.getContext());
-         setTimeout(() => {}, 500);
-
-        let wantInfo = {
-            want: {
-                bundleName: "com.example.actsfeatureabilitytest",
-                abilityName: "com.example.actsfeatureabilitytest.TestAbility"
-            }
+    let wantInfo = {
+        want: {
+            bundleName: "com.example.actsfeatureabilitytest",
+            abilityName: "com.example.actsfeatureabilitytest.TestAbility"
         }
-        await featureAbility.startAbility(wantInfo).then((data) => {
-          console.log("ACTS_wantConstant startAbility data : " + JSON.stringify(data));
-        }).catch((err) => {
-          console.log("ACTS_wantConstant startAbility err : " + JSON.stringify(err));
-        })
-        setTimeout(function () {
-            console.log("ACTS_wantConstant afterEach end");
-            done();
-        }, 2000);
-    })
+    };
 
+    await featureAbility.startAbility(wantInfo).then((data) => {
+        console.log("ACTS_wantConstant startAbility data : " + JSON.stringify(data));
+    }).catch((err) => {
+        console.log("ACTS_wantConstant startAbility err : " + JSON.stringify(err));
+    });
+
+    setTimeout(function () {
+        console.log("ACTS_wantConstant afterEach end");
+        done();
+    }, 500);
+});
     /**
      * @tc.number: ACTS_wantConstant_0100
      * @tc.name: wantConstant : Check specific enum
@@ -945,7 +946,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     // checkProcessInfo
@@ -996,7 +996,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     // checkElementName
@@ -1056,7 +1055,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     function checkAppType(info) {
@@ -1100,7 +1098,6 @@ describe('ActsFeatureAbilityTest', function () {
                 done()
                 }
         });
-        await sleep(1000)
     })
 
     // checkAbilityInfo
@@ -1206,7 +1203,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     // checkHapModuleInfo
@@ -1284,7 +1280,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     // checkProcessName
@@ -1333,7 +1328,6 @@ describe('ActsFeatureAbilityTest', function () {
                 }
             }
         );
-        await sleep(1000)
     })
 
     /**
@@ -1434,7 +1428,6 @@ describe('ActsFeatureAbilityTest', function () {
                     done()
                 }
          });
-         await sleep(1000)
     })
 
     /*
