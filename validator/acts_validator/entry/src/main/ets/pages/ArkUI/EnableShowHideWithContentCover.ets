@@ -156,7 +156,7 @@ struct EnableShowHideWithContentCover {
         }
         .titleMode(NavigationTitleMode.Mini)
         .title('Navigation')
-        .enableShowHideWithContentCover(this.enableValue)
+        .enableVisibilityLifecycleWithContentCover(this.enableValue)
         .navDestination(this.pageMap)
         .mode(NavigationMode.Stack)
       }
