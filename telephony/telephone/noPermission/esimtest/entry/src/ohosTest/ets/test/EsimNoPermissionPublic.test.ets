@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import eSIM from '@ohos.telephony.esim';
 
 const SLOT_0: number = 0;
+const SLOT_1: number = 1;
 const PORT_INDEX: number = 0;
 let isEsimSupport: boolean = false;
 let forceDisableProfile: boolean = false;
