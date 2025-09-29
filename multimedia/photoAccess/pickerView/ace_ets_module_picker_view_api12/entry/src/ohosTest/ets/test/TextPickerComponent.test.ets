@@ -829,6 +829,9 @@ export default function TextPicker() {
         expect(result.height).not().assertUndefined();
         expect(result.size).not().assertUndefined();
         expect(result.duration).not().assertUndefined();
+        expect(result.photoSubType).not().assertUndefined();
+        expect(result.dynamicRangeType).not().assertUndefined();
+        expect(result.orientation).not().assertUndefined();
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1116,6 +1119,9 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
+        expect(baseItemInfo.photoSubType).not().assertUndefined();
+        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
+        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -1172,6 +1178,9 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
+        expect(baseItemInfo.photoSubType).not().assertUndefined();
+        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
+        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -1228,6 +1237,9 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
+        expect(baseItemInfo.photoSubType).not().assertUndefined();
+        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
+        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -2102,6 +2114,9 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
+        expect(baseItemInfo.photoSubType).not().assertUndefined();
+        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
+        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
