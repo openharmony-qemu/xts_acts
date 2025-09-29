@@ -31,7 +31,7 @@ struct OH_Huks_Param g_testParam[] = {
     {.tag = OH_HUKS_TAG_PADDING, .int32Param = OH_HUKS_PADDING_PKCS7},
     {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE},
     {.tag = OH_HUKS_TAG_DERIVE_KEY_SIZE, .uint64Param = OH_HUKS_TAG_TYPE_UINT},
-    {.tag = OH_HUKS_TAG_ASSOCIATED_DATA,.blob = keyDataBlob},
+    {.tag = OH_HUKS_TAG_ASSOCIATED_DATA, .blob = keyDataBlob},
 };
 
 OH_Huks_Result InitParamSet(
