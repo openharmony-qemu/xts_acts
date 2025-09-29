@@ -72,14 +72,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'screenshot triggered.');
         };
         try {
-          win.on('screenshot', callback);
+          win.onScreenshot(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on screenshot fail.');
           expect(false).assertTrue();
         }
         try {
-          win.off('screenshot', callback);
+          win.offScreenshot(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off screenshot fail.');
@@ -132,14 +132,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'avoidAreaChange triggered.');
         };
         try {
-          win.on('avoidAreaChange', callback);
+          win.onAvoidAreaChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on avoidAreaChange fail.');
           expect(false).assertTrue();
         }
         try {
-          win.off('avoidAreaChange', callback);
+          win.offAvoidAreaChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off avoidAreaChange fail.');
@@ -162,14 +162,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'windowVisibilityChange triggered.');
         };
         try {
-          win.on('windowVisibilityChange', callback);
+          win.onWindowVisibilityChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on windowVisibilityChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
-          win.off('windowVisibilityChange', callback);
+          win.offWindowVisibilityChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off windowVisibilityChange fail.');
