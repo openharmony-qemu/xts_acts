@@ -28,7 +28,6 @@ struct MetaViewport {
   @State initInnerWidth: string = "";
   @State isComplete: number = -1;
   @State isReceive: number = -1;
-  @State isRunJSEnd: number = -1;
 
   controller: webView.WebviewController = new webView.WebviewController();
 
@@ -67,57 +66,66 @@ struct MetaViewport {
             case "metaViewport0100": {
               let value: boolean = false;
               try {
-                this.controller.loadUrl($rawfile("viewport.html"))
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.isMetaViewport = true;
-                this.isComplete = -1;
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isRunJSEnd = -1;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res != this.initInnerWidth) {
-                    value = true;
-                    this.isRunJSEnd = 1
-                  }
-                })
-                await waitForExist(() => this.isRunJSEnd, this.str, 1);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150300)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = true;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res != this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150300)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150300)
-              } else {
-                Utils.emitEvent(value, 150300)
               }
               break;
             }
             case "metaViewport0200": {
               let value: boolean = false;
               try {
-                this.controller.loadUrl($rawfile("viewport.html"))
-                this.isMetaViewport = false;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent(true, 150310)
-                  } else {
-                    Utils.emitEvent(value, 150310)
-                  }
-                })
-                await Utils.sleep(3000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150310)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150310)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -126,249 +134,288 @@ struct MetaViewport {
             case "metaViewport0300": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = true;
-                this.isMetaViewport = false;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await waitForExist(() => "" + value, this.str, "true");
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150320)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150320)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true,150320)
-              } else {
-                Utils.emitEvent(value, 150320)
               }
               break;
             }
             case "metaViewport0400": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = false;
-                this.isMetaViewport = true;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.isComplete = -1;
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isRunJSEnd = -1;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res != this.initInnerWidth) {
-                    value = true;
-                    this.isRunJSEnd = 1
-                  }
-                })
-                await waitForExist(() => this.isRunJSEnd, this.str, 1);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150330)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = true;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res != this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150330)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150330)
-              } else {
-                Utils.emitEvent(value, 150330)
               }
               break;
             }
             case "metaViewport0500": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = undefined;
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res != this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await waitForExist(() => "" + value, this.str, "true");
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150340)
-              } else {
-                Utils.emitEvent(value, 150340)
-              }
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150340)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = true;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res != this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150340)
+                }
+                } catch (error) {
+                  console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                }
               break;
             }
             case "metaViewport0600": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = null;
-                this.isComplete = -1;
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res != this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              setTimeout(() => {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 150350)
                 } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = true;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res != this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150350)
                 }
-              }, 3000)
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
               break;
             }
             case "metaViewport0700": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = undefined;
-                this.isMetaViewport = false;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await waitForExist(() => "" + value, this.str, "true");
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150360)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150360)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150360)
-              } else {
-                Utils.emitEvent(value, 150360)
               }
               break;
             }
             case "metaViewport0800": {
               let value: boolean = false;
               try {
-                this.isMetaViewport = null;
-                this.isMetaViewport = false;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.controller.refresh();
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await Utils.sleep(3000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150370)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150370)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150370)
-              } else {
-                Utils.emitEvent(value, 150370)
               }
               break;
             }
             case "metaViewport0900": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = false;
-                this.isMetaViewport = undefined;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.isComplete = -1;
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await waitForExist(() => "" + value, this.str, "true");
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150380)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150380)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150380)
-              } else {
-                Utils.emitEvent(value, 150380)
               }
               break;
             }
             case "metaViewport1000": {
               let value: boolean = false;
               try {
-                this.isComplete = -1;
-                this.controller.loadUrl($rawfile("viewport.html"))
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.isMetaViewport = false;
-                this.isMetaViewport = null;
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
-                this.controller.refresh();
-                await waitForExist(() => this.isComplete, this.str, 0);
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
-                    value = true;
-                  }
-                })
-                await waitForExist(() => "" + value, this.str, "true");
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150390)
+                } else {
+                  this.isComplete = -1;
+                  this.controller.loadUrl($rawfile("viewport.html"))
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Initial viewport width ==> getWidth():" + res)
+                    this.initInnerWidth = res;
+                  })
+                  this.isMetaViewport = false;
+                  this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, this.str, 0);
+                  this.controller.runJavaScript("getWidth()", (err, res) => {
+                    console.info("Modified viewport width ==> getWidth():" + res)
+                    if (res == this.initInnerWidth) {
+                      value = true;
+                    }
+                  })
+                  await waitForExist(() => '' + value, this.str, 'true');
+                  Utils.emitEvent(value, 150390)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150390)
-              } else {
-                Utils.emitEvent(value, 150390)
               }
               break;
             }
