@@ -385,7 +385,7 @@ export default function SimManagerTest() {
         sim.getOpName(0, (err: BusinessError<void>|null, data: string|undefined) => {
           hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err) + " data = " + JSON.stringify(data));
           if(err?.code === 0){
-            expect(err?.code).assertEqual(0);;
+            expect(true).assertTrue();
             done();
           } else {
             expect(err?.code).assertEqual(-1);
@@ -445,7 +445,7 @@ export default function SimManagerTest() {
         sim.getOpKey(0, (err: BusinessError<void>|null, data: string|undefined) => {
           hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err) + " data = " + JSON.stringify(data));
           if(err?.code === 0){
-            expect(err?.code).assertEqual(0);
+            expect(true).assertTrue();
             done();
           } else {
             expect(err?.code).assertEqual(-1);
