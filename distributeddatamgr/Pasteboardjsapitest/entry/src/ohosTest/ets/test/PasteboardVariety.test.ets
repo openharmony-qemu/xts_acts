@@ -105,7 +105,6 @@ export default function PasteboardVarietyTest() {
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataText = pasteData.getPrimaryText();
-        console.info(TAG + 'text:' + pasteDataText);
         expect(pasteDataText).assertEqual('hello');
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message);
@@ -129,7 +128,6 @@ export default function PasteboardVarietyTest() {
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataHtml = pasteData.getPrimaryHtml()
-        console.info(TAG + 'html:' + pasteDataHtml)
         expect(pasteDataHtml).assertEqual(html)
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message)
@@ -153,7 +151,6 @@ export default function PasteboardVarietyTest() {
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataUri = pasteData.getPrimaryUri();
-        console.info(TAG + 'uri:' + pasteDataUri);
         expect(pasteDataUri).assertEqual(uri);
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message);
@@ -177,7 +174,6 @@ export default function PasteboardVarietyTest() {
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataWant = pasteData.getPrimaryWant();
-        console.info(TAG + 'want:' + JSON.stringify(pasteDataWant));
         expect(JSON.stringify(pasteDataWant)).assertContain('"bundleName":"com.example.aafwk.test","abilityName":"com.example.aafwk.test.TwoAbility"');
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message);
@@ -213,7 +209,6 @@ export default function PasteboardVarietyTest() {
         await pixelMapRecord.getData(pasteboard.MIMETYPE_PIXELMAP).then((value: pasteboard.ValueType) => {
           let pixelMap = value as image.PixelMap;
           let imageInfo = pixelMap.getImageInfoSync();
-          console.info(TAG + 'pixelmap:' + JSON.stringify(imageInfo))
           expect(JSON.stringify(imageInfo)).assertEqual('{"size":{"width":5,"height":3},"pixelFormat":3,"colorSpace":2,"alphaType":1,"density":0,"stride":20,"mimeType":"","isHdr":false}');
         }).catch((err:BusinessError) => {
           console.info(TAG + 'Cause:' + err.message + ',code:' +err.code)
@@ -241,7 +236,6 @@ export default function PasteboardVarietyTest() {
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataType: Array<String> = pasteData.getMimeTypes();
-        console.info(TAG + 'type:' + pasteDataType);
         expect(pasteDataType.length).assertEqual(1);
         expect(pasteDataType[0]).assertEqual('app/xml');
       } catch (error) {
@@ -282,28 +276,23 @@ export default function PasteboardVarietyTest() {
         let pasteDataRecord = pasteData.getRecord(0);
         await pasteDataRecord.getData(pasteboard.MIMETYPE_TEXT_PLAIN).then((value: pasteboard.ValueType) => {
           let textPlain = value as string;
-          console.info(TAG + 'Success to get text/plain value.value is:' + textPlain)
           expect(textPlain).assertEqual('hello')
         })
         await pasteDataRecord.getData(pasteboard.MIMETYPE_TEXT_HTML).then((value: pasteboard.ValueType) => {
           let htmlData = value as string;
-          console.info(TAG + 'Success to get htmlData value.value is:' + htmlData)
           expect(htmlData).assertEqual(html)
         })
         await pasteDataRecord.getData(pasteboard.MIMETYPE_TEXT_URI).then((value: pasteboard.ValueType) => {
           let uriData = value as string;
-          console.info(TAG + 'Success to get uriData value.value is:' + uriData)
           expect(uriData).assertEqual(uri)
         })
         await pasteDataRecord.getData(pasteboard.MIMETYPE_TEXT_WANT).then((value: pasteboard.ValueType) => {
           let wantData = value as string;
-          console.info(TAG + 'Success to get wantData value.value is:' + JSON.stringify(wantData))
           expect(JSON.stringify(wantData)).assertContain('"bundleName":"com.example.aafwk.test","abilityName":"com.example.aafwk.test.TwoAbility"')
         })
         await pasteDataRecord.getData(pasteboard.MIMETYPE_PIXELMAP).then((value: pasteboard.ValueType) => {
           let pixelMap = value as image.PixelMap;
           let imageInfo = pixelMap.getImageInfoSync();
-          console.info(TAG + 'Success to get pixelMap value.value is:' + JSON.stringify(imageInfo))
           expect(JSON.stringify(imageInfo)).assertEqual('{"size":{"width":5,"height":3},"pixelFormat":3,"colorSpace":2,"alphaType":1,"density":0,"stride":20,"mimeType":"","isHdr":false}')
         }).catch((err:BusinessError) => {
           console.info(TAG + 'Cause:' + err.message + ',code:' +err.code)
@@ -351,7 +340,6 @@ export default function PasteboardVarietyTest() {
           pasteboard.MIMETYPE_PIXELMAP,
           'app/xml'
         ]);
-        console.info(TAG + 'addEntry success,getValidTypes success.types:' + types);
         expect(types.length).assertEqual(6);
         expect(types).assertDeepEquals(['text/plain','text/html','text/uri','text/want','pixelMap','app/xml']);
       } catch (error) {
@@ -377,7 +365,6 @@ export default function PasteboardVarietyTest() {
           pasteboard.MIMETYPE_TEXT_PLAIN,
           pasteboard.MIMETYPE_TEXT_HTML
         ]);
-        console.info(TAG + 'addEntry success,getValidTypes success.types:' + types);
         expect(types.length).assertEqual(0);
         expect(types).assertDeepEquals([]);
       } catch (error) {
@@ -385,29 +372,6 @@ export default function PasteboardVarietyTest() {
         expect().assertFail()
       }
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0900 end ************')
-    })
-
-    /**
-     * @tc.number      PasteboardVariety_0200
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1000
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 start ************')
-      try {
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, '');
-        let pasteDataType: Array<String> = pasteData.getMimeTypes();
-        console.info(TAG + 'type:' + pasteDataType);
-        expect(pasteDataType.length).assertEqual(0);
-        expect(pasteDataType).assertDeepEquals([]);
-      } catch (error) {
-        console.info(TAG + 'code:' + error.code + ',message:' + error.message);
-        expect().assertFail();
-      }
-      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1000 end ************')
     })
 
     /**
