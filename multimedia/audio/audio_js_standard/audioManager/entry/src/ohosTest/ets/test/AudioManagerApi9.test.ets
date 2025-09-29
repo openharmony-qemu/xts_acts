@@ -2275,6 +2275,36 @@ export default function audioManagerApi9() {
     })
 
     /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_0200
+     * @tc.name      : OnAudioSceneChange - audioManager
+     * @tc.desc      : OnAudioSceneChange - audioManager
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        audioManager.on('audioSceneChange', (audioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+          if (audioScene == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
+            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_DEFAULT);
+          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_RINGING) {
+            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_RINGING);
+          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
+            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_PHONE_CALL);
+          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+            expect(audioScene).assertEqual(audio.AudioScene,AUDIO_SCENE_VOICE_CHAT);
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_0100
      * @tc.name      : OffAudioSceneChange - audioManager
      * @tc.desc      : OffAudioSceneChange - audioManager
