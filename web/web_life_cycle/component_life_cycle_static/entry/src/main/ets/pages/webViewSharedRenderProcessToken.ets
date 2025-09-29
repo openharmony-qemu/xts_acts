@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class TestClass {
   constructor() {
@@ -101,6 +102,22 @@ struct WebComponent {
                 }
                 break;
               }
+
+              case 'emitWebViewWebViewJsBridge': {
+                try {
+                  this.controller.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'showString'],
+                    // 可选参数, asyncMethodList
+                    []
+                  );
+                  Utils.emitEvent(true,1601)
+                } catch (error: BusinessError) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false,1601)
+                }
+                break;
+              }
+
+
             }
           })
       }
