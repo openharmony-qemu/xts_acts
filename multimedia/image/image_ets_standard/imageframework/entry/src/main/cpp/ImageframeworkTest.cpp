@@ -595,9 +595,9 @@ napi_value ImageProcessingCreateSuccess(napi_env env, napi_callback_info info)
 }
 napi_value ImageProcessingDestroySuccess(napi_env env, napi_callback_info info)
 {
-     OH_ImageProcessing* instance = nullptr;
+    OH_ImageProcessing *instance = nullptr;
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_Destroy(instance);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_Destroy(instance);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_SUCCESS) {
         ret = 0;
@@ -608,7 +608,7 @@ napi_value ImageProcessingDestroySuccess(napi_env env, napi_callback_info info)
 }
 napi_value ImageProcessingDestroy(napi_env env, napi_callback_info info)
 {
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_Destroy(nullptr);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_Destroy(nullptr);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
         ret = 0;
@@ -622,7 +622,7 @@ napi_value ImageProcessingSetParameterSuccess(napi_env env, napi_callback_info i
     OH_ImageProcessing* instance = nullptr;
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
     OH_AVFormat* parameter = nullptr;
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_SetParameter(instance, parameter);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_SetParameter(instance, parameter);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
         ret = 0;
@@ -633,7 +633,7 @@ napi_value ImageProcessingSetParameterSuccess(napi_env env, napi_callback_info i
 }
 napi_value ImageProcessingSetParameter(napi_env env, napi_callback_info info)
 {
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_SetParameter(nullptr, nullptr);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_SetParameter(nullptr, nullptr);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
         ret = 0;
@@ -647,7 +647,7 @@ napi_value ImageProcessingGetParameterSuccess(napi_env env, napi_callback_info i
     OH_ImageProcessing* instance = nullptr;
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
     OH_AVFormat* parameter = nullptr;
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_GetParameter(instance, parameter);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_GetParameter(instance, parameter);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
         ret = 0;
@@ -658,7 +658,7 @@ napi_value ImageProcessingGetParameterSuccess(napi_env env, napi_callback_info i
 }
 napi_value ImageProcessingGetParameter(napi_env env, napi_callback_info info)
 {
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_GetParameter(nullptr, nullptr);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_GetParameter(nullptr, nullptr);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
         ret = 0;
@@ -683,7 +683,7 @@ napi_value ImageProcessingConvertColorSpaceValue(napi_env env, napi_callback_inf
     OH_PixelmapNative* srcImg = nullptr;
     OH_PixelmapNative* dstImg = nullptr;
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
         ret = 0;
@@ -694,7 +694,7 @@ napi_value ImageProcessingConvertColorSpaceValue(napi_env env, napi_callback_inf
 }
 napi_value ImageProcessingConvertColorSpace(napi_env env, napi_callback_info info)
 {
-    ImageProcessing_ErrorCode returnValue =OH_ImageProcessing_ConvertColorSpace(nullptr, nullptr, nullptr);
+    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_ConvertColorSpace(nullptr, nullptr, nullptr);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
         ret = 0;
@@ -750,10 +750,11 @@ napi_value ImageProcessingDecomposeValue(napi_env env, napi_callback_info info)
 }
 napi_value ImageProcessingDecompose(napi_env env, napi_callback_info info)
 {
-     OH_ImageProcessing_InitializeEnvironment();
+    OH_ImageProcessing_InitializeEnvironment();
     OH_PixelmapNative *dst_gain_pixelMap_RGBA = nullptr;
     OH_PixelmapNative_CreatePixelmap(g_pixData, PIX_SIZE, g_createOpts_RGBA, &dst_gain_pixelMap_RGBA);
-    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_Decompose(nullptr, nullptr, nullptr, dst_gain_pixelMap_RGBA);
+    ImageProcessing_ErrorCode returnValue =
+        OH_ImageProcessing_Decompose(nullptr, nullptr, nullptr, dst_gain_pixelMap_RGBA);
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
         ret = 0;
@@ -790,7 +791,7 @@ napi_value ImageProcessingGenerateMetadata(napi_env env, napi_callback_info info
 }
 napi_value ImageProcessingEnhanceDetailValue(napi_env env, napi_callback_info info)
 {
-     OH_ImageProcessing_InitializeEnvironment();
+    OH_ImageProcessing_InitializeEnvironment();
     OH_ImageProcessing* instance = nullptr;
     OH_PixelmapNative* srcImg = nullptr;
     OH_PixelmapNative* dstImg = nullptr;
@@ -818,7 +819,7 @@ napi_value ImageProcessingEnhanceDetail(napi_env env, napi_callback_info info)
 
 napi_value ImageProcessingCreateInstance(napi_env env, napi_callback_info info)
 {
-   OH_ImageProcessing_InitializeEnvironment();
+    OH_ImageProcessing_InitializeEnvironment();
     ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_Create(nullptr,
         IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
     int ret = -1;
@@ -827,22 +828,6 @@ napi_value ImageProcessingCreateInstance(napi_env env, napi_callback_info info)
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
-    return result;
-}
-napi_value ImageProcessingInitializeEnvironment(napi_env env, napi_callback_info info)
-{
-     OH_ImageProcessing_InitializeEnvironment();
-    OH_ImageProcessing* instance = nullptr;
-  OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
-    OH_PixelmapNative* srcImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 3840, 2160, 10);
-    ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_InitializeEnvironment();
-    int ret = -1;
-    if (returnValue == IMAGE_PROCESSING_SUCCESS) {
-        ret = 0;
-    }
-    napi_value result = nullptr;
-    napi_create_int32(env, returnValue, &result);
     return result;
 }
 napi_value ImageProcessingDeinitializeEnvironment(napi_env env, napi_callback_info info)
