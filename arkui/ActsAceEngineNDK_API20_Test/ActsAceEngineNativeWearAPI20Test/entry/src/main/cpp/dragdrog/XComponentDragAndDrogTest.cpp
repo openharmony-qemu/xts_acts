@@ -119,7 +119,6 @@ void SetOnDrog(XC* Component)
                           ARKUI_ERROR_CODE_NO_ERROR;
         int32_t CountOk = PARAM_NEGATIVE_2;
         int32_t maxStrLenOk = PARAM_128;
-        char* eventTypeArrayOk[] = {};
         g_setDropOperation = OH_ArkUI_DragEvent_SetSuggestedDropOperation(DragEvent, ARKUI_DROP_OPERATION_MOVE) ==
                              ARKUI_ERROR_CODE_NO_ERROR;
         ArkUI_DropOperation DragResult = ArkUI_DropOperation(PARAM_NEGATIVE_2);

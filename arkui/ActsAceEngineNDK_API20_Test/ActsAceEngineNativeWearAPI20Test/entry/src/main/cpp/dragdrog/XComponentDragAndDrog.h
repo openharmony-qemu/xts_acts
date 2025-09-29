@@ -50,6 +50,8 @@ static int32_t g_isRemote = PARAM_NEGATIVE_2;
 static float DragTouchPointDisplayX = PARAM_NEGATIVE_0_POINT_1;
 static float DragTouchPointDisplayY = PARAM_NEGATIVE_0_POINT_1;
 static ArkUI_DragAction* DragAction = nullptr;
+static char eventTypeArrayBuffer[PARAM_128][PARAM_128];
+static char** eventTypeArrayOk = (char**)eventTypeArrayBuffer;
 void InitNode();
 void SetOnDrog(XC* Component);
 void SetOnDragEnd(XC* Component);
