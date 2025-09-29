@@ -40,9 +40,9 @@ class Main4Ability extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag Main4Ability', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageDestroy() {
