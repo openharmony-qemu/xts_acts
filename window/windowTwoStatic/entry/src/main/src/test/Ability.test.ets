@@ -709,7 +709,7 @@ export default function abilityTest() {
             return undefined;
           };
         try {
-          win.on('rotationChange', callback);
+          win.onRotationChange(callback);
           win.setPreferredOrientation(window.Orientation.LANDSCAPE);
           win.setPreferredOrientation(window.Orientation.PORTRAIT);
           expect(true).assertTrue();
@@ -720,7 +720,7 @@ export default function abilityTest() {
           }
         }
         try {
-          win.off('rotationChange', callback);
+          win.offRotationChange(callback);
           expect(true).assertTrue();
         } catch (err: BusinessError) {
           const errCode: number = err.code;

@@ -1614,8 +1614,8 @@ export default function abilityTest() {
       };
 
       try {
-        win.on("keyboardHeightChange", callback);
-        win.off("keyboardHeightChange", callback);
+        win.onKeyboardHeightChange(callback);
+        win.offKeyboardHeightChange(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardHeightChange callback success');
         expect(true).assertTrue();
       } catch (err: BusinessError) {
@@ -1639,8 +1639,8 @@ export default function abilityTest() {
       };
 
       try {
-        win.on("keyboardDidShow", callback);
-        win.off("keyboardDidShow", callback);
+        win.onKeyboardDidShow(callback);
+        win.offKeyboardDidShow(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
         expect(true).assertTrue();
       } catch (err: BusinessError) {
@@ -1670,8 +1670,8 @@ export default function abilityTest() {
         hilog.info(0x0000, '[ANI]', 'Listening change enabled. Data: ' + JSON.stringify(data));
       };
       try {
-        win.on("keyboardDidHide", callback);
-        win.off("keyboardDidHide", callback);
+        win.onKeyboardDidHide(callback);
+        win.offKeyboardDidHide(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
         expect(true).assertTrue();
       } catch (err: BusinessError) {
