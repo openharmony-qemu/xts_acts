@@ -18,3 +18,54 @@ export enum Color {
   GREEN,
   BLUE
 }
+
+enum ColorInt {
+    REDINT = 5,
+    GREENINT = 77,
+    BLUEINT = 9999
+}
+
+enum ColorString {
+    REDSTR = 'str_red',
+    GREENSTR = 'str_green',
+    BLUESTR = 'str_blue',
+    ONEMORERED = 'str_red'
+}
+
+enum OneItem {
+    ONE
+}
+
+class A {
+}
+
+enum ToFind {
+    RED,
+    GREEN,
+    BLUE
+}
+
+enum ToFindInt {
+    REDINT = 5,
+    GREENINT = 77,
+    BLUEINT = 999
+}
+
+enum ToFindString {
+    REDSTR = "str_red",
+    GREENSTR = "str_green",
+    BLUESTR = "str_blue"
+}
+
+enum ToFindBig {
+    ZERO,
+    ONE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE
+}
