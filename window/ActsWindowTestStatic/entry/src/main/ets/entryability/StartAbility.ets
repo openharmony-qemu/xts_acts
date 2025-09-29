@@ -36,8 +36,9 @@ export default class StartAbility extends UIAbility {
     }
   }
 
-  public onDestroy(): void {
+  public onDestroy(): Promise<void> | undefined {
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onDestroy');
+    return undefined;
   }
 
   public onWindowStageCreate(windowStage: window.WindowStage): void {

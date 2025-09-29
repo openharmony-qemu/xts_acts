@@ -22,9 +22,10 @@ export default class MainAbility extends Ability {
         globalThis.abilityWant = want;
     }
 
-    onDestroy() {
+    onDestroy(): Promise<void> | undefined {
         // Ability is destroying, release resources for this ability
         console.log("[Demo] MainAbility onDestroy")
+        return undefined;
     }
 
     onWindowStageCreate(windowStage) {
