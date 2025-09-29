@@ -44,6 +44,15 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": "$string:TestAbility_desc"
+      },
+      {
+        "name": "ohos.permission.MANAGE_PERMISSIONS"
+      }
     ]
   }
 }
