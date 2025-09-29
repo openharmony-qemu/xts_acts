@@ -20,7 +20,7 @@
       "updateDuration": 1
     },
     {
-      "isDefault": true,
+      "isDefault": false,
       "src": "./js/ServiceAbility/pages/index/index",
       "scheduledUpdateTime": "10:30",
       "defaultDimension": "2*2",
