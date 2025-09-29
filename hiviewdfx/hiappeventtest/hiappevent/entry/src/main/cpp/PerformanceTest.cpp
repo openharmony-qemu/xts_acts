@@ -373,8 +373,14 @@ napi_value HiDebugGetGraphicsMemoryInvalid(napi_env env, napi_callback_info info
 // 1. 自定义 malloc：包装标准 malloc，添加日志
 void *MyMalloc(size_t size)
 {
+    const int MAX_MEMORY_SIZE = 1024;
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "[%{public}s MyMalloc: 申请 0 字节内存，非法请求", LOG_TAG);
+        return nullptr;
+    }
+    if (size > MAX_MEMORY_SIZE) { // 假设_MEMORY_SIZE 是一个预定义的最大允许内存大小
+        OH_LOG_ERROR(LOG_APP, "[%{public}s] MyMalloc: 申请 %zu 字节内存，超出最大允许大小zu", LOG_TAG, size,
+                     MAX_MEMORY_SIZE);
         return nullptr;
     }
     void *ptr = malloc(size); // 调用标准 malloc
