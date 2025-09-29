@@ -111,7 +111,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50,
+                fontSize: 50.0,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: true
@@ -125,7 +125,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50,
+                fontSize: 50.0,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: false
@@ -139,7 +139,7 @@ struct RichEditorTextStyleDemo {
                 fontWeight: 'medium',
                 fontFamily: 'MiSans-Bold',
                 fontColor: Color.Blue,
-                fontSize: 50,
+                fontSize: 50.0,
                 fontStyle: FontStyle.Italic,
                 decoration: { type: TextDecorationType.Underline, color: Color.Green },
                 halfLeading: undefined
