@@ -18,11 +18,11 @@
 #include <hicollie/hicollie.h>
 #include <hidebug/hidebug.h>
 #include <hilog/log.h>
+#include <hitrace/trace.h>
 #include <js_native_api.h>
 #include <sys/mman.h> // 包含标准 mmap/munmap 及相关宏（如 MAP_FAILED）
 #include <thread>
 #include <unistd.h>
-#include <hitrace/trace.h>
 #define MAX_FRAME_SIZE 256 // 最大栈回溯深度，应根据业务场景调整该值。
 #define HIDEBUG_TRACE_TAG_FFRT (1ULL << 13)
 static OH_HiCollie_BeginFunc beginFunc_1;
@@ -139,9 +139,9 @@ napi_value HiCollieInitJankDetectionSuccess(napi_env env, napi_callback_info inf
 
     // 等待线程执行完毕并获取返回值
     int result = future.get(); // result即为子线程的返回值
-    
+
     OH_LOG_INFO(LogType::LOG_APP, "子线程返回值: %{public}d", result);
-    
+
     napi_value napiResult;
     napi_create_int32(env, result, &napiResult);
     return napiResult;
@@ -187,8 +187,8 @@ const int64_t CHECK_INTERNAL_TIME = 3000;
 
 int64_t GetCurrentTime2()
 {
-    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::
-    system_clock::now().time_since_epoch()).count();
+    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch())
+        .count();
 }
 
 bool ReportEvent2()
@@ -235,7 +235,7 @@ napi_value HiCollieFlagDefaultCode(napi_env env, napi_callback_info info)
     int id;
     HiCollie_SetTimerParam param = {"testSetTimer", 1, nullptr, nullptr, HiCollie_Flag::HICOLLIE_FLAG_DEFAULT};
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);
-    if(errorCode == HICOLLIE_SUCCESS){
+    if (errorCode == HICOLLIE_SUCCESS) {
         napi_create_int32(env, errorCode, &sum);
         return sum;
     }
@@ -248,7 +248,7 @@ napi_value HiCollieFlagLogCode(napi_env env, napi_callback_info info)
     int id;
     HiCollie_SetTimerParam param = {"testSetTimer", 1, nullptr, nullptr, HiCollie_Flag::HICOLLIE_FLAG_LOG};
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);
-    if(errorCode == HICOLLIE_SUCCESS){
+    if (errorCode == HICOLLIE_SUCCESS) {
         napi_create_int32(env, errorCode, &sum);
         return sum;
     }
@@ -261,7 +261,7 @@ napi_value HiCollieFlagRecoveryCode(napi_env env, napi_callback_info info)
     int id;
     HiCollie_SetTimerParam param = {"testSetTimer", 1, nullptr, nullptr, HiCollie_Flag::HICOLLIE_FLAG_RECOVERY};
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);
-    if(errorCode == HICOLLIE_SUCCESS){
+    if (errorCode == HICOLLIE_SUCCESS) {
         napi_create_int32(env, errorCode, &sum);
         return sum;
     }
@@ -278,7 +278,7 @@ napi_value HiDebugStartAppTraceCaptureSuccess(napi_env env, napi_callback_info i
 
     char fileName[length];
     HiDebug_ErrorCode errorCode = OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
-    if(errorCode == HIDEBUG_SUCCESS){
+    if (errorCode == HIDEBUG_SUCCESS) {
         napi_create_int32(env, errorCode, &ret);
         return ret;
     }
@@ -293,9 +293,9 @@ napi_value HiDebugStartAppTraceCaptureInvalid(napi_env env, napi_callback_info i
     uint32_t limitSize = 1024 * 1024;
     uint32_t length = 256;
     HiDebug_ErrorCode errorCode = OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, nullptr, length);
-    if(errorCode == HIDEBUG_INVALID_ARGUMENT){
+    if (errorCode == HIDEBUG_INVALID_ARGUMENT) {
         napi_create_int32(env, errorCode, &ret);
-        return ret; 
+        return ret;
     }
     return nullptr;
 }
@@ -311,7 +311,7 @@ napi_value HiDebugStartAppTraceCaptureCapturedAlReady(napi_env env, napi_callbac
     char fileName[length];
     OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
     HiDebug_ErrorCode errorCode = OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
-    if(errorCode == HIDEBUG_TRACE_CAPTURED_ALREADY){
+    if (errorCode == HIDEBUG_TRACE_CAPTURED_ALREADY) {
         napi_create_int32(env, errorCode, &ret);
         return ret;
     }
@@ -457,13 +457,13 @@ int MyMunmap(void *addr, size_t length)
 
 napi_value HiDebugSetMallocDispatchTableSuccess(napi_env env, napi_callback_info info)
 {
-    HiDebug_MallocDispatch* original = (HiDebug_MallocDispatch*)OH_HiDebug_GetDefaultMallocDispatchTable();
-    HiDebug_MallocDispatch* current = (HiDebug_MallocDispatch*)original->malloc(sizeof(HiDebug_MallocDispatch));
+    HiDebug_MallocDispatch *original = (HiDebug_MallocDispatch *)OH_HiDebug_GetDefaultMallocDispatchTable();
+    HiDebug_MallocDispatch *current = (HiDebug_MallocDispatch *)original->malloc(sizeof(HiDebug_MallocDispatch));
     current->malloc = MyMalloc;
     napi_value sum;
     HiDebug_ErrorCode initResult = OH_HiDebug_SetMallocDispatchTable(current);
     OH_HiDebug_RestoreMallocDispatchTable();
-    if(initResult == HIDEBUG_SUCCESS){
+    if (initResult == HIDEBUG_SUCCESS) {
         napi_create_int32(env, initResult, &sum);
         return sum;
     }
@@ -552,7 +552,7 @@ napi_value HiDebugTraceCapturedAlreadyCode(napi_env env, napi_callback_info info
     OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
     HiDebug_ErrorCode errorCode = OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
     OH_HiDebug_StopAppTraceCapture();
-    if(errorCode == HIDEBUG_TRACE_CAPTURED_ALREADY){
+    if (errorCode == HIDEBUG_TRACE_CAPTURED_ALREADY) {
         napi_create_int32(env, errorCode, &ret);
         return ret;
     }
@@ -580,15 +580,16 @@ napi_value HiDebugTraceFlagAllThreadsCode(napi_env env, napi_callback_info info)
 
     char fileName[length];
     HiDebug_ErrorCode errorCode = OH_HiDebug_StartAppTraceCapture(flag, tags, limitSize, fileName, length);
-    if(errorCode == HIDEBUG_SUCCESS){
+    if (errorCode == HIDEBUG_SUCCESS) {
         napi_create_int32(env, errorCode, &ret);
         return ret;
     }
     return nullptr;
 }
 
-void HiDebugSymbolicAddressCallback(void* pc, void* arg, const HiDebug_StackFrame* frame){
-    if(frame->type == HIDEBUG_STACK_FRAME_TYPE_NATIVE){
+void HiDebugSymbolicAddressCallback(void *pc, void *arg, const HiDebug_StackFrame *frame)
+{
+    if (frame->type == HIDEBUG_STACK_FRAME_TYPE_NATIVE) {
         OH_LOG_ERROR(LOG_APP, "[%{public}s] MyMunmap: 解映射地址 %p（大小: %zu 字节）失败", LOG_TAG, pc, arg);
     }
 };
@@ -602,7 +603,7 @@ napi_value HiLogLogFatalCode(napi_env env, napi_callback_info info)
     OH_LOG_SetLogLevel(LOG_INFO, prefer);
     int retLen = OH_LOG_Print(type, level, 0x3200, "testTag", "string for hilog test");
     bool ret = (retLen > 0) ? true : false;
-    if(ret == true){
+    if (ret == true) {
         napi_value ret;
         napi_create_int32(env, 0, &ret);
         return ret;
@@ -616,7 +617,7 @@ napi_value HiTraceIdInvalidCode(napi_env env, napi_callback_info info)
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     hiTraceId.valid = HITRACE_ID_INVALID;
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_DONOT_CREATE_SPAN);
-    if(result == false){
+    if (result == false) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -630,7 +631,7 @@ napi_value HiTraceIdTraceIdValidCode(napi_env env, napi_callback_info info)
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     hiTraceId.valid = HITRACE_ID_VALID;
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_DONOT_CREATE_SPAN);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -644,7 +645,7 @@ napi_value HiTraceVer1Code(napi_env env, napi_callback_info info)
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     hiTraceId.ver = HITRACE_VER_1;
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_DONOT_CREATE_SPAN);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -657,7 +658,7 @@ napi_value HiTraceFlagDonotCreateSpanCode(napi_env env, napi_callback_info info)
     HiTrace_Flag hitraceflag = HITRACE_FLAG_DONOT_CREATE_SPAN;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_DONOT_CREATE_SPAN);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -670,7 +671,7 @@ napi_value HiTraceFlagTpInfoCode(napi_env env, napi_callback_info info)
     HiTrace_Flag hitraceflag = HITRACE_FLAG_TP_INFO;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_TP_INFO);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -683,7 +684,7 @@ napi_value HiTraceFlagNoBeInfoCode(napi_env env, napi_callback_info info)
     HiTrace_Flag hitraceflag = HITRACE_FLAG_NO_BE_INFO;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_NO_BE_INFO);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -696,7 +697,7 @@ napi_value HiTraceFlagDonotEnableLogCode(napi_env env, napi_callback_info info)
     HiTrace_Flag hitraceflag = HITRACE_FLAG_DONOT_ENABLE_LOG;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_DONOT_ENABLE_LOG);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;
@@ -709,7 +710,7 @@ napi_value HiTraceFlagD2dTpInfoCode(napi_env env, napi_callback_info info)
     HiTrace_Flag hitraceflag = HITRACE_FLAG_D2D_TP_INFO;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", hitraceflag);
     auto result = OH_HiTrace_IsFlagEnabled(&hiTraceId, HITRACE_FLAG_D2D_TP_INFO);
-    if(result){
+    if (result) {
         napi_value res;
         napi_create_int32(env, 0, &res);
         return res;

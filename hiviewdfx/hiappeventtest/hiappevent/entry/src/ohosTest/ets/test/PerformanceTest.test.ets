@@ -26,7 +26,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiCollie_Init_StuckDetection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieInitStuckDetection0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieInitStuckDetectionSuccess()
@@ -41,7 +41,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiCollie_Init_JankDetection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieInitJankDetection0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieInitJankDetectionSuccess()
@@ -56,7 +56,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiCollie_Init_JankDetection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieInitJankDetection0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieInitJankDetectionInvalid()
@@ -71,7 +71,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiCollie_Report
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieReport0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieReportInvalid()
@@ -86,7 +86,7 @@ export default function PerformanceTest() {
      * @tc.desc test HICOLLIE_FLAG_DEFAULT
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieFlagDefault0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieFlagDefaultCode()
@@ -101,7 +101,7 @@ export default function PerformanceTest() {
      * @tc.desc test HICOLLIE_FLAG_LOG
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieFlagLog0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieFlagLogCode()
@@ -116,7 +116,7 @@ export default function PerformanceTest() {
      * @tc.desc test HICOLLIE_FLAG_RECOVERY
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiCollieFlagRecovery0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiCollieFlagRecoveryCode()
@@ -131,7 +131,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_StartAppTraceCapture
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugStartAppTraceCapture0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugStartAppTraceCaptureSuccess()
@@ -146,7 +146,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_StartAppTraceCapture
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugStartAppTraceCapture0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugStartAppTraceCaptureInvalid()
@@ -161,7 +161,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_StartAppTraceCapture
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugStartAppTraceCapture0300', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugStartAppTraceCaptureCapturedAlReady()
@@ -176,7 +176,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_StopAppTraceCapture
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugStopAppTraceCapture0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugStopAppTraceCaptureSuccess()
@@ -191,7 +191,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_StopAppTraceCapture
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugStopAppTraceCapture0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugStopAppTraceCaptureNoTraceRunning()
@@ -206,7 +206,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_GetGraphicsMemory
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugGetGraphicsMemory0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemorySuccess()
@@ -221,7 +221,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_GetGraphicsMemory
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugGetGraphicsMemory0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemoryInvalid()
@@ -236,7 +236,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_SetMallocDispatchTable
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugSetMallocDispatchTable0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugSetMallocDispatchTableSuccess()
@@ -251,7 +251,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_SetMallocDispatchTable
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugSetMallocDispatchTable0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugSetMallocDispatchTableInvalid()
@@ -266,7 +266,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_SymbolicAddress
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugSymbolicAddress0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugSymbolicAddressInvalid()
@@ -281,7 +281,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_GetGraphicsMemorySummary
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugGetGraphicsMemorySummary0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemorySummarySuccess()
@@ -296,7 +296,7 @@ export default function PerformanceTest() {
      * @tc.desc test OH_HiDebug_GetGraphicsMemorySummary
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugGetGraphicsMemorySummary0200', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemorySummaryInvalid()
@@ -311,7 +311,7 @@ export default function PerformanceTest() {
      * @tc.desc test HIDEBUG_SUCCESS
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugHidebugSuccess0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugSuccessCode()
@@ -326,7 +326,7 @@ export default function PerformanceTest() {
      * @tc.desc test HIDEBUG_INVALID_ARGUMENT
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugInvalidArgument0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugInvalidArgumentCode()
@@ -341,7 +341,7 @@ export default function PerformanceTest() {
      * @tc.desc test HIDEBUG_TRACE_CAPTURED_ALREADY
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugTraceCapturedAlready0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugTraceCapturedAlreadyCode()
@@ -356,7 +356,7 @@ export default function PerformanceTest() {
      * @tc.desc test HIDEBUG_NO_TRACE_RUNNING
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugNoTraceRunning0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugNoTraceRunningCode()
@@ -371,7 +371,7 @@ export default function PerformanceTest() {
      * @tc.desc test HIDEBUG_NO_TRACE_RUNNING
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiDebugTraceFlagAllThreads0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiDebugTraceFlagAllThreadsCode()
@@ -386,7 +386,7 @@ export default function PerformanceTest() {
      * @tc.desc test LOG_FATAL
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHilogLogFatal0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiLogLogFatalCode()
@@ -401,7 +401,7 @@ export default function PerformanceTest() {
      * @tc.desc test invalid of HiTrace
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdInvalid0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdInvalidCode()
@@ -416,7 +416,7 @@ export default function PerformanceTest() {
      * @tc.desc test valid of HiTrace
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdTraceIdValid0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdTraceIdValidCode()
@@ -431,7 +431,7 @@ export default function PerformanceTest() {
      * @tc.desc test ver of HiTrace
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceVer10100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceVer1Code()
@@ -446,7 +446,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_FLAG_DONOT_CREATE_SPAN
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceFlagDonotCreateSpan0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceFlagDonotCreateSpanCode()
@@ -461,7 +461,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_FLAG_TP_INFO
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceFlagTpInfo0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceFlagTpInfoCode()
@@ -476,7 +476,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_FLAG_NO_BE_INFO
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceFlagNoBeInfo0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceFlagNoBeInfoCode()
@@ -491,7 +491,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_FLAG_DONOT_ENABLE_LOG
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceFlagDonotEnableLog0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceFlagDonotEnableLogCode()
@@ -506,7 +506,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_FLAG_D2D_TP_INFO
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceFlagD2dTpInfo0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceFlagD2dTpInfoCode()
@@ -521,7 +521,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_TP_CR
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceTpCr0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceTpCrCode()
@@ -536,7 +536,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_TP_SS
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceTpSs0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceTpSsCode()
@@ -551,7 +551,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_TP_SR
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceTpSr0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceTpSrCode()
@@ -566,7 +566,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_TP_GENERAL
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceTpGeneral0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceTpGeneralCode()
@@ -581,7 +581,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_CM_THREAD
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceCmThread0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceCmThreadCode()
@@ -596,7 +596,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_CM_PROCESS
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceCmProcess0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceCmProcessCode()
@@ -611,7 +611,7 @@ export default function PerformanceTest() {
      * @tc.desc test HITRACE_CM_DEVICE
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceCmDevice0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceCmDeviceCode()
@@ -626,7 +626,7 @@ export default function PerformanceTest() {
      * @tc.desc test valid of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdValid0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdValidCode()
@@ -641,7 +641,7 @@ export default function PerformanceTest() {
      * @tc.desc test ver of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdVer0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdVerCode()
@@ -656,7 +656,7 @@ export default function PerformanceTest() {
      * @tc.desc test chainId of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdChainId0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdChainIdCode()
@@ -671,7 +671,7 @@ export default function PerformanceTest() {
      * @tc.desc test flags of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdFlags0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdFlagsCode()
@@ -686,7 +686,7 @@ export default function PerformanceTest() {
      * @tc.desc test spanId of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdSpanId0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdSpanIdCode()
@@ -701,7 +701,7 @@ export default function PerformanceTest() {
      * @tc.desc test parentSpanId of HiTraceId
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level  Level 1
+     * @tc.level Level 1
      */
     it('testHiTraceIdParentSpanId0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.HiTraceIdParentSpanIdCode()

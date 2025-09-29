@@ -65,4 +65,4 @@ napi_value HiTraceIdFlagsCode(napi_env env, napi_callback_info info);
 napi_value HiTraceIdSpanIdCode(napi_env env, napi_callback_info info);
 napi_value HiTraceIdParentSpanIdCode(napi_env env, napi_callback_info info);
 
-#endif //HIAPPEVENT_PERFORMANCETEST_H
+#endif // HIAPPEVENT_PERFORMANCETEST_H
