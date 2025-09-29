@@ -15,7 +15,10 @@
 
 import PerformanceAnalysisKit from './PerformanceAnalysisKit.test'
 import PerformanceAnalyhicollie from './PerformanceAnalyhicollie.test'
+import PerformanceTest from './PerformanceTest.test';
+
 export default function testsuite() {
-  PerformanceAnalysisKit()
-  PerformanceAnalyhicollie()
+  PerformanceAnalysisKit();
+  PerformanceAnalyhicollie();
+  PerformanceTest();
 }
