@@ -22,6 +22,7 @@ group("WebMultimedia") {
       "video_playTwo:ActsWebVideoPlayTwoTest",
       "video_playTwo_static:ActsWebVideoPlayTwoStaticTest",
       "webcam:ActsWebcamTest",
+      "webcam_static:ActsWebcamStaticTest",
     ]
   }
 }
