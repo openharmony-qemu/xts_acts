@@ -805,8 +805,7 @@ ani_int test_Module_Find_Variable_08([[maybe_unused]] ani_env *env, [[maybe_unus
     std::uniform_int_distribution<int> dist(uHead, uTail); // uniform distribution
     for (int32_t i = 0; i < loopCount; i++) {
         std::string str = "module";
-        // 使用
-        int randomValue = dist(gen);  
+        int randomValue = dist(gen); 
         str += static_cast<char>(randomValue % (end - 'A') + 'A');
         ASSERT_EQ(env->Module_FindVariable(module, str.c_str(), &variable), ANI_OK);
     }
