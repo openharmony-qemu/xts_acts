@@ -47,6 +47,52 @@ export default function NavigationLevelTest2() {
     });
 
     /**
+     * @tc.number    NavigationLevelTest2_0200
+     * @tc.name      NavigationLevelTest2_0200
+     * @tc.desc      Test NavPathStack pop return undefined
+     * @tc.level     Level 0
+     */
+    it('NavigationLevelTest2_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('[NavigationLevelTest2_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let btn = await driver.findComponent(ON.id('popTrueBtn2'));
+      await btn.click()
+      console.info('[NavigationLevelTest2_0200] btn click');
+      await CommonFunc.sleep(1000);
+      let result: NavPathInfo | undefined = AppStorage.get('popResult');
+      expect(result).assertUndefined();
+      AppStorage.delete('popResult');
+      await CommonFunc.sleep(1000);
+      console.info('[NavigationLevelTest2_0200] END');
+      done();
+    });
+
+    /**
+     * @tc.number    NavigationLevelTest2_0300
+     * @tc.name      NavigationLevelTest2_0300
+     * @tc.desc      Test NavPathStack pop with param return undefined
+     * @tc.level     Level 0
+     */
+    it('NavigationLevelTest2_0300',  Level.LEVEL0, async (done: Function) => {
+      console.info('[NavigationLevelTest2_0300] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let btn = await driver.findComponent(ON.id('pop2TrueBtn2'));
+      await btn.click()
+      console.info('[NavigationLevelTest2_0300] btn click');
+      await CommonFunc.sleep(1000);
+      let result: NavPathInfo | undefined = AppStorage.get('pop2Result');
+      expect(result).assertUndefined();
+      AppStorage.delete('pop2Result');
+      await CommonFunc.sleep(1000);
+      console.info('[NavigationLevelTest2_0300] END');
+      done();
+    });
+
+    /**
      * @tc.number    NavigationLevelTest2_0100
      * @tc.name      NavigationLevelTest2_0100
      * @tc.desc      Test Navigation
@@ -69,12 +115,47 @@ export default function NavigationLevelTest2() {
       console.info('[NavigationLevelTest2_0100] btn2 click');
       await CommonFunc.sleep(1000);
 
+      let result: NavPathInfo | undefined = AppStorage.get('popFalseResult');
+      expect(result?.name).assertEqual('pageOne');
+      AppStorage.delete('popFalseResult');
+      await CommonFunc.sleep(1000);
+
       let strJson1 = getInspectorByKey('NavigationLevelTest2_text1');
       await CommonFunc.sleep(1000);
       console.info("[NavigationLevelTest2_0100] obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('NavBar');
 
       console.info('[NavigationLevelTest2_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.number    NavigationLevelTest2_0400
+     * @tc.name      NavigationLevelTest2_0400
+     * @tc.desc      Test NavPathStack pop with param return NavPathInfo
+     * @tc.level     Level 0
+     */
+    it('NavigationLevelTest2_0400',  Level.LEVEL0, async (done: Function) => {
+      console.info('[NavigationLevelTest2_0400] START');
+      await CommonFunc.sleep(1000);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let btn = await driver.findComponent(ON.id('NavigationLevelTest2_btn1'));
+      await btn.click()
+      console.info('[NavigationLevelTest2_0400] btn click');
+      await CommonFunc.sleep(1000);
+   
+      let btn2 = await driver.findComponent(ON.id('pop2FalseBtn'));
+      await btn2.click()
+      console.info('[NavigationLevelTest2_0400] btn2 click');
+      await CommonFunc.sleep(1000);
+
+      let result: NavPathInfo | undefined = AppStorage.get('popFalseResult2');
+      expect(result?.name).assertEqual('pageOne');
+      AppStorage.delete('popFalseResult2');
+      console.info('[NavigationLevelTest2_0400] END');
       done();
     });
   })

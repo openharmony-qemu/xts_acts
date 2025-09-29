@@ -45,6 +45,29 @@ struct NavigationLevelTest16 {
               + ';size:' + this.pageInfos.size()
           })
           .id('NavigationLevelTest16_btn3')
+          .height('10%')
+        Button('getParamByName')
+          .onClick(() => {
+            let paramByName: Array<ESObject> = this.pageInfos.getParamByName('pageTwo')
+            let indexByName: Array<number> = this.pageInfos.getIndexByName('pageTwo')
+            console.log('NavigationLevelTest16 paramByName: ', paramByName instanceof  Array)
+            console.log('NavigationLevelTest16 indexByName: ', indexByName instanceof Array)
+            console.log('NavigationLevelTest16 paramByName length: ',  paramByName?.length)
+            console.log('NavigationLevelTest16 indexByName length: ',  indexByName?.length)
+            AppStorage.setOrCreate('paramByName', paramByName)
+            AppStorage.setOrCreate('indexByName', indexByName)
+          })
+          .id('getParamByNameBtn')
+          .height('10%')
+        Button('getPathStack')
+          .onClick(() => {
+            let stackValue: Array<NavPathInfo> = this.pageInfos.getPathStack()
+            console.log('NavigationLevelTest16 stackValue: ', stackValue instanceof Array)
+            console.log('NavigationLevelTest16 stackValue: ', stackValue?.length)
+            AppStorage.setOrCreate('stackValue', stackValue)
+          })
+          .id('getPathStackBtn')
+          .height('10%')
       }
     }.title('pageTwo')
   }
@@ -62,12 +85,49 @@ struct NavigationLevelTest16 {
     Column({space:5}){
       Text(this.message).id('NavigationLevelTest16_text1')
       Navigation(this.pageInfos) {
-        Column({space:10}) {
+        Column({space:3}) {
           Button('pushPath pageOne')
             .onClick(() => {
               this.pageInfos.pushPath({ name: 'pageOne' , param:'mes'})
             })
             .id('NavigationLevelTest16_btn1')
+            .height('10%')
+          Button('getParamByNameUndefined')
+            .onClick(() => {
+              let paramByNameUndefined: Array<ESObject> = this.pageInfos.getParamByName('pageTwo')
+              console.log('NavigationLevelTest16 paramByNameUndefined: ', paramByNameUndefined instanceof Array)
+              console.log('NavigationLevelTest16 indexByNameUndefined: ', paramByNameUndefined?.length)
+              AppStorage.setOrCreate('paramByNameUndefined', paramByNameUndefined)
+            })
+            .id('getParamByNameUndefinedBtn')
+            .height('10%')
+          Button('getIndexByNameUndefined')
+            .onClick(() => {
+              let indexByNameUndefined: Array<number> = this.pageInfos.getIndexByName('pageTwo')
+              console.log('NavigationLevelTest16 indexByNameUndefined: ', indexByNameUndefined instanceof Array)
+              console.log('NavigationLevelTest16 indexByNameUndefined: ', indexByNameUndefined?.length)
+              AppStorage.setOrCreate('indexByNameUndefined', indexByNameUndefined)
+            })
+            .id('getIndexByNameUndefinedBtn')
+            .height('10%')
+
+          Button('getParentNull')
+            .onClick(() => {
+              let parentValue = this.pageInfos.getParent()
+              console.log('NavigationLevelTest16 getParentNull: ', parentValue)
+              AppStorage.setOrCreate('parentValue', parentValue)
+            })
+            .id('getParentNullBtn')
+            .height('10%')
+          Button('getPathStackNull')
+            .onClick(() => {
+              let stackEmptyValue: Array<NavPathInfo> = this.pageInfos.getPathStack()
+              console.log('NavigationLevelTest16 stackEmptyValue: ', stackEmptyValue instanceof Array)
+              console.log('NavigationLevelTest16 stackEmptyValue: ', stackEmptyValue?.length)
+              AppStorage.setOrCreate('stackEmptyValue', stackEmptyValue)
+            })
+            .id('getPathStackNullBtn')
+            .height('10%')
         }
       }
       .mode(NavigationMode.Stack)
@@ -77,4 +137,3 @@ struct NavigationLevelTest16 {
 
   }
 }
-

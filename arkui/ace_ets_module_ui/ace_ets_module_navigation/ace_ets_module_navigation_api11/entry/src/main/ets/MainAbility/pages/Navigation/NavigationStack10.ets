@@ -115,7 +115,7 @@ struct NavigationStack10 {
         .minContentWidth(300)
         .navBarWidthRange([200,400])
         .border({width: 1})
-        .height('70%')
+        .height('50%')
         .width('100%')
         .backgroundColor(Color.Pink)
         .bindContentCover(this.isShow, this.myBuilder(), {modalTransition: ModalTransition.NONE, backgroundColor: Color.Pink, onAppear: () => {console.log("BindContentCover onAppear.")}, onDisappear: () => {console.log("BindContentCover onDisappear.")}})
@@ -141,6 +141,12 @@ struct NavigationStack10 {
         Button('get').id('NavigationStack10get')
           .onClick(() => {
             this.getText = JSON.stringify(this.pageInfos.getAllPathName()?.length)
+          }).height('5%')
+        Button('getEmptyAllPathName').id('getEmptyAllPathName')
+          .onClick(() => {
+            let emptyAllPathNameValue: Array<string> = this.pageInfos.getAllPathName()
+            console.log('emptyAllPathNameValue ', emptyAllPathNameValue?.length )
+            AppStorage.setOrCreate('emptyAllPathName', emptyAllPathNameValue)
           }).height('5%')
       }
       .border({width:1})

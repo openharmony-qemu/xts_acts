@@ -53,6 +53,29 @@ export default function NavigationStack10Jsunit() {
       }
       done();
     });
+
+    /**
+    * @tc.number: NavigationStack10Jsunit_0200
+    * @tc.name  : NavigationStack10Jsunit_0200
+    * @tc.desc  : Use NavPathStack getAllPathName return empty array
+    * @tc.level : Level 3
+    */
+    it('NavigationStack10Jsunit_0200',  Level.LEVEL0, async (done: Function) => {
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await CommonFunc.sleep(2000);
+      let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
+      let buttonClear = await scrollBar.scrollSearch(ON.id('getEmptyAllPathName'));
+      await buttonClear.click();
+      await CommonFunc.sleep(2000);
+      let result: Array<String> | undefined = AppStorage.get('emptyAllPathName');
+      expect(result?.length == 0).assertTrue();
+      AppStorage.delete('emptyAllPathName');
+      await CommonFunc.sleep(1000);
+      console.info('NavigationStack10Jsunit_0200 END')
+      done();
+    });
+
     /* *
     * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0130
     * @tc.name  : NavigationStack10Jsunit_0100
