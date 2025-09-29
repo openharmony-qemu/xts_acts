@@ -439,6 +439,8 @@ napi_value AudioSessionSetSceneSuccess(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
+void AudioSessionStateChangedCallback(OH_AudioSession_StateChangedEvent event){};
+
 napi_value AudioSessionRegisterStateChangeCbInvalidParam(napi_env env, napi_callback_info info)
 {
     OH_AudioCommon_Result result = OH_AudioSessionManager_RegisterStateChangeCallback(nullptr, nullptr);
@@ -455,8 +457,7 @@ napi_value AudioSessionRegisterStateChangeCbSuccess(napi_env env, napi_callback_
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    OH_AudioSession_StateChangedCallback callback;
-    result = OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, callback);
+    result = OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
@@ -481,9 +482,8 @@ napi_value AudioSessionUnregisterStateChangeCbSuccess(napi_env env, napi_callbac
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    OH_AudioSession_StateChangedCallback callback;
-    OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, callback);
-    result = OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager, callback);
+    OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
+    result = OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
