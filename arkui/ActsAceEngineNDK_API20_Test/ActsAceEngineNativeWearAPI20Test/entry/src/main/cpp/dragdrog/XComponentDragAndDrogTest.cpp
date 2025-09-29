@@ -125,9 +125,17 @@ void SetOnDrog(XC* Component)
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "[GetOnDragMove]", "GetDragResult Failed");
             return;
         }
+        int32_t CountOk = PARAM_NEGATIVE_2;
+        int32_t maxStrLenOk = PARAM_128;
+        g_getDataTypeCount = OH_ArkUI_DragEvent_GetDataTypeCount(DragEvent, &CountOk) == ARKUI_ERROR_CODE_NO_ERROR;
+        g_getDataTypesOk = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArrayOk, CountOk, maxStrLenOk);
+        g_getDataTypesOk = g_getDataTypesOk == ARKUI_ERROR_CODE_NO_ERROR || CountOk >= PARAM_0;
         OH_UdmfData* UdmfData = OH_UdmfData_Create();
         g_getSetData = OH_ArkUI_DragEvent_SetData(DragEvent, UdmfData) == ARKUI_ERROR_CODE_NO_ERROR;
         OH_UdmfData_Destroy(UdmfData);
+        int32_t Count = PARAM_NEGATIVE_2;
+        int32_t maxStrLen = PARAM_NEGATIVE_2;
+        g_getDataTypes = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArrayOk, Count, maxStrLen);
         char key[] = "key_string1";
         OH_UdmfGetDataParams* options = OH_UdmfGetDataParams_Create();
         unsigned int keyLen = 513;
@@ -167,16 +175,6 @@ void SetOnDragEnd(XC* Component)
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "[SetOnDragEnd]", "GetDragResult Failed");
             return;
         }
-        int32_t CountOk = PARAM_NEGATIVE_2;
-        int32_t maxStrLenOk = PARAM_128;
-        char* eventTypeArrayOk[] = {};
-        g_getDataTypeCount = OH_ArkUI_DragEvent_GetDataTypeCount(DragEvent, &CountOk) == ARKUI_ERROR_CODE_NO_ERROR;
-        g_getDataTypesOk = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArrayOk, CountOk, maxStrLenOk);
-        g_getDataTypesOk = g_getDataTypesOk == ARKUI_ERROR_CODE_NO_ERROR || CountOk >= PARAM_0;
-        int32_t Count = PARAM_NEGATIVE_2;
-        int32_t maxStrLen = PARAM_NEGATIVE_2;
-        char* eventTypeArray[] = {};
-        g_getDataTypes = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArray, Count, maxStrLen);
     };
     NodeApi->addNodeEventReceiver(NodeComponent, onDrag);
     return;
