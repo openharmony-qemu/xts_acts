@@ -15,6 +15,7 @@
 
 import { describe, afterEach, it, expect, Level, TestType, Size } from '../../../hypium/index';
 import observer from '@ohos.telephony.observer';
+import radio from '@ohos.telephony.radio';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from "@ohos.base";
 
