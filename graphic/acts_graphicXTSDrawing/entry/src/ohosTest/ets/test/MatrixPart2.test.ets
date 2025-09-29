@@ -1206,6 +1206,17 @@ export default function drawingTsMatrixPart2Test() {
         console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        let srcPoints: Array<common2D.Point> = [{x: 200, y: 20}, {x: 200, y: 20}];
+        let dstPoints: Array<common2D.Point> = [{x: 200, y: 90}, {x: 100, y: 60}];
+        let result5: boolean = matrix.setPolyToPoly(srcPoints, dstPoints, 2)
+        console.info(msg + " setPolyToPoly -----result5:  "+ result5);
+        expect(result5).assertEqual(false);
+        console.info(msg + ' setPolyToPoly successed');
+      } catch (e) {
+        console.info(msg + ` setPolyToPoly errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
 
     /**
