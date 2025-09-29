@@ -481,13 +481,6 @@ static napi_value OHCaptureSessionSetSessionModeTest(napi_env env, napi_callback
     });
 }
 
-static napi_value OHCaptureSessionAddSecureOutputTest(napi_env env, napi_callback_info info, int32_t caseCode)
-{
-    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
-        return g_ndkCamera->OHCaptureSessionAddSecureOutputTest(code);
-    });
-}
-
 static napi_value OHCaptureSessionBeginConfigTest(napi_env env, napi_callback_info info, int32_t caseCode)
 {
     return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
@@ -791,13 +784,6 @@ static napi_value OHCaptureSessionSetSmoothZoom(napi_env env, napi_callback_info
     });
 }
 
-static napi_value OHCaptureSessionGetSupportedColorSpaces(napi_env env, napi_callback_info info, int32_t caseCode)
-{
-    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
-        return g_ndkCamera->OHCaptureSessionGetSupportedColorSpacesTest(code);
-    });
-}
-
 static napi_value OHCaptureSessionGetActiveColorSpace(napi_env env, napi_callback_info info, int32_t caseCode)
 {
     return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
@@ -853,7 +839,6 @@ const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
 
 const std::map<std::string, ArkCameraTestFuncEx> CaptureSessionFunctionMap = {
     {"OH_CaptureSession_SetSessionMode", OHCaptureSessionSetSessionModeTest},
-    {"OH_CaptureSession_AddSecureOutput", OHCaptureSessionAddSecureOutputTest},
     {"OH_CaptureSession_BeginConfig", OHCaptureSessionBeginConfigTest},
     {"OH_CaptureSession_CommitConfig", OHCaptureSessionCommitConfigTest},
     {"OH_CaptureSession_AddInput", OHCaptureSessionAddInputTest},
@@ -897,7 +882,6 @@ const std::map<std::string, ArkCameraTestFuncEx> CaptureSessionFunctionMap = {
     {"OH_CaptureSession_GetExposureValue", OHCaptureSessionGetExposureValue},
     {"OH_CaptureSession_GetFocalLength", OHCaptureSessionGetFocalLength},
     {"OH_CaptureSession_SetSmoothZoom", OHCaptureSessionSetSmoothZoom},
-    {"OH_CaptureSession_GetSupportedColorSpaces", OHCaptureSessionGetSupportedColorSpaces},
     {"OH_CaptureSession_GetActiveColorSpace", OHCaptureSessionGetActiveColorSpace},
     {"OH_CaptureSession_SetActiveColorSpace", OHCaptureSessionSetActiveColorSpace},
 };

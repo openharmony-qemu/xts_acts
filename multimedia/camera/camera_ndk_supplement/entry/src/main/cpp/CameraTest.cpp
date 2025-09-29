@@ -284,11 +284,7 @@ Camera_ErrorCode NDKCamera::CameraUnresolvedConflictsWithCurrentConfigurations()
 Camera_ErrorCode NDKCamera::CreateCaptureSession(void)
 {
     if (!cameraManager_) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                     "=======testOH_Capture_Session_FUNCTION0200 CreateCaptureSession start...");
         Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager_);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                 "=======testOH_Capture_Session_FUNCTION0200 OH_Camera_GetCameraManager0:%{public}d", ret);
         if (ret != CAMERA_OK) {
             LogE("ndkXTS Create captureSession and cameraManager failed.");
             return ret;
@@ -296,12 +292,8 @@ Camera_ErrorCode NDKCamera::CreateCaptureSession(void)
     }
     if (captureSession_ != nullptr) {
         Camera_ErrorCode ret = ReleaseCaptureSession();
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                 "=======testOH_Capture_Session_FUNCTION0200 captureSession_ ret:%{public}d", ret);
     }
     Camera_ErrorCode ret =  OH_CameraManager_CreateCaptureSession(cameraManager_, &captureSession_);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                 "=======testOH_Capture_Session_FUNCTION0200 CreateCaptureSession:%{public}d", ret);
     if (captureSession_ == nullptr || ret != CAMERA_OK) {
         LogE("ndkXTS Create captureSession failed.");
     }

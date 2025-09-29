@@ -761,36 +761,14 @@ int32_t CameraFunctionTest::OHCaptureSessionSetSessionModeTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                 "=======testOH_Capture_Session_FUNCTION0200 caseCode:%{public}d", caseCode);
-    if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
-        // todo  没有这个错误码 OH_CaptureSession_SetSessionMode
-    } else if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                     "=======testOH_Capture_Session_FUNCTION0200 start......");
+    if (caseCode == CAMERA_OPERATION_NOT_ALLOWED) {
         result = CreateCaptureSession();
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                     "=======testOH_Capture_Session_FUNCTION0200 00result:%{public}d", result);
         result = OH_CaptureSession_Start(captureSession_);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                     "=======testOH_Capture_Session_FUNCTION0200 11result:%{public}d", result);
         result = OH_CaptureSession_SetSessionMode(captureSession_, NORMAL_PHOTO);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit",
-                     "=======testOH_Capture_Session_FUNCTION0200 22result:%{public}d", result);
         if (result == CAMERA_OPERATION_NOT_ALLOWED) {
             return TEST_OK;
         }
         ReleaseCaptureSession();
-    }
-    return ret;
-}
-
-int32_t CameraFunctionTest::OHCaptureSessionAddSecureOutputTest(int32_t caseCode)
-{
-    int32_t ret = CAMERA_OK;
-    Camera_ErrorCode result;
-    if (caseCode == CAMERA_SESSION_CONFIG_LOCKED) {
-        // todo  没有这个错误码 OH_CaptureSession_AddSecureOutput
     }
     return ret;
 }
@@ -1109,15 +1087,6 @@ int32_t CameraFunctionTest::OHCaptureSessionHasFlashTest(int32_t caseCode)
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        bool hasFlash = false;
-        result = CreateCaptureSession();
-        result = OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_HasFlash(captureSession_, &hasFlash);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1131,15 +1100,6 @@ int32_t CameraFunctionTest::OHCaptureSessionIsFlashModeSupportedTest(int32_t cas
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        CreateCaptureSession();
-        bool isSupported = false;
-        OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_IsFlashModeSupported(captureSession_, FLASH_MODE_CLOSE, &isSupported);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1153,15 +1113,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetFlashModeTest(int32_t caseCode)
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        Camera_FlashMode *flashMode = nullptr;
-        CreateCaptureSession();
-        OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_GetFlashMode(captureSession_, flashMode);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1196,15 +1147,6 @@ int32_t CameraFunctionTest::OHCaptureSessionIsExposureModeSupportedTest(int32_t 
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        bool isSupported = false;
-        CreateCaptureSession();
-        OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_IsExposureModeSupported(captureSession_, EXPOSURE_MODE_LOCKED, &isSupported);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1218,15 +1160,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetExposureModeTest(int32_t caseCode
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        Camera_ExposureMode exposureMode;
-        CreateCaptureSession();
-        OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_GetExposureMode(captureSession_, &exposureMode);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1330,14 +1263,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetExposureBiasTest(int32_t caseCode
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        CreateCaptureSession();
-        OH_CaptureSession_Start(captureSession_);
-        result = OH_CaptureSession_SetExposureBias(captureSession_, 0.0);
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
-        ReleaseCaptureSession();
     }
     return ret;
 }
@@ -1349,11 +1274,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetExposureBiasTest(int32_t caseCode
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CaptureSession_GetExposureBias(nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
-            ret = TEST_OK;
-        }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
             ret = TEST_OK;
         }
     }
@@ -1369,11 +1289,6 @@ int32_t CameraFunctionTest::OHCaptureSessionIsFocusModeSupportedTest(int32_t cas
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
     }
     return ret;
 }
@@ -1385,11 +1300,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetFocusModeTest(int32_t caseCode)
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CaptureSession_GetFocusMode(nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
-            ret = TEST_OK;
-        }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
             ret = TEST_OK;
         }
     }
@@ -1416,11 +1326,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetFocusPointTest(int32_t caseCode)
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CaptureSession_GetFocusPoint(nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
-            ret = TEST_OK;
-        }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
             ret = TEST_OK;
         }
     }
@@ -1458,11 +1363,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioRangeTest(int32_t caseCo
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
     }
     return ret;
 }
@@ -1474,11 +1374,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetZoomRatioTest(int32_t caseCode)
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CaptureSession_GetZoomRatio(nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
-            ret = TEST_OK;
-        }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
             ret = TEST_OK;
         }
     }
@@ -1513,11 +1408,6 @@ int32_t CameraFunctionTest::OHCaptureSessionIsVideoStabilizationModeSupportedTes
         if (result == CAMERA_INVALID_ARGUMENT) {
             ret = TEST_OK;
         }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
     }
     return ret;
 }
@@ -1529,11 +1419,6 @@ int32_t CameraFunctionTest::OHCaptureSessionGetVideoStabilizationModeTest(int32_
     if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CaptureSession_GetVideoStabilizationMode(nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
-            ret = TEST_OK;
-        }
-    } else if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
             ret = TEST_OK;
         }
     }
@@ -1629,19 +1514,6 @@ int32_t CameraFunctionTest::OHCaptureSessionSetSmoothZoomTest(int32_t caseCode)
             ret = TEST_OK;
         }
         ReleaseCaptureSession();
-    }
-    return ret;
-}
-
-int32_t CameraFunctionTest::OHCaptureSessionGetSupportedColorSpacesTest(int32_t caseCode)
-{
-    int32_t ret = CAMERA_OK;
-    Camera_ErrorCode result;
-    if (caseCode == CAMERA_SESSION_NOT_CONFIG) {
-        // todo 没有这个错误码 OH_CaptureSession_GetSupportedColorSpaces
-        if (result == CAMERA_SESSION_NOT_CONFIG) {
-            ret = TEST_OK;
-        }
     }
     return ret;
 }

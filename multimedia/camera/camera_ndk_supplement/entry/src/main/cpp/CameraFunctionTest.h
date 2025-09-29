@@ -65,7 +65,6 @@ public:
     int32_t OHCameraManagerGetCameraDeviceTest(int32_t caseCode);
     int32_t OHCameraManagerGetCameraConcurrentInfosTest(int32_t caseCode);
     int32_t OHCaptureSessionSetSessionModeTest(int32_t caseCode);
-    int32_t OHCaptureSessionAddSecureOutputTest(int32_t caseCode);
     int32_t OHCaptureSessionBeginConfigTest(int32_t caseCode);
     int32_t OHCaptureSessionCommitConfigTest(int32_t caseCode);
     int32_t OHCaptureSessionAddInputTest(int32_t caseCode);
@@ -109,7 +108,6 @@ public:
     int32_t OHCaptureSessionGetExposureValueTest(int32_t caseCode);
     int32_t OHCaptureSessionGetFocalLengthTest(int32_t caseCode);
     int32_t OHCaptureSessionSetSmoothZoomTest(int32_t caseCode);
-    int32_t OHCaptureSessionGetSupportedColorSpacesTest(int32_t caseCode);
     int32_t OHCaptureSessionGetActiveColorSpaceTest(int32_t caseCode);
     int32_t OHCaptureSessionSetActiveColorSpaceTest(int32_t caseCode);
 
