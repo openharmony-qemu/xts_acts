@@ -771,7 +771,7 @@ export default function WindowLayoutTest() {
             try {
                 let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
                 await windowClass.destroyWindow();
-                windowClass.offWindowRectChange());
+                windowClass.offWindowRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
