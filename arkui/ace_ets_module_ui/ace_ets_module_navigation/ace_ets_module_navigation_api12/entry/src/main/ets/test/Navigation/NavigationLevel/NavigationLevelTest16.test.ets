@@ -71,7 +71,7 @@ export default function NavigationLevelTest16() {
       console.info('[NavigationLevelTest16_0200] btn2 click');
       await CommonFunc.sleep(1000);
       let indexByNameUndefined: number[] | undefined = AppStorage.get('indexByNameUndefined')
-      expect(indexByNameUndefined?.length == 0).assertTrue();
+      expect(indexByNameUndefined && indexByNameUndefined?.length == 0).assertTrue();
       AppStorage.delete('indexByNameUndefined')
       await CommonFunc.sleep(1000);
       
@@ -80,7 +80,7 @@ export default function NavigationLevelTest16() {
       console.info('[NavigationLevelTest16_0200] btn3 click');
       await CommonFunc.sleep(1000);
       let stackEmptyValue: number[] | undefined = AppStorage.get('stackEmptyValue')
-      expect(stackEmptyValue?.length == 0).assertTrue();
+      expect(stackEmptyValue && stackEmptyValue?.length == 0).assertTrue();
       AppStorage.delete('stackEmptyValue')
 
       console.info('[NavigationLevelTest16_0200] END');
@@ -117,12 +117,12 @@ export default function NavigationLevelTest16() {
 
       let paramByName: ESObject[] | undefined = AppStorage.get('paramByName')
       console.info('[NavigationLevelTest16_0100] paramByName ', JSON.stringify(paramByName));
-      expect(paramByName?.length > 0).assertTrue();
+      expect(paramByName && paramByName?.length > 0).assertTrue();
       AppStorage.delete('paramByName')
 
       let indexByName: number[] | undefined = AppStorage.get('indexByName')
       console.info('[NavigationLevelTest16_0100] indexByName ', JSON.stringify(indexByName));
-      expect(indexByName?.length > 0).assertTrue();
+      expect(indexByName && indexByName?.length > 0).assertTrue();
       AppStorage.delete('indexByName')
       await CommonFunc.sleep(1000);
 
@@ -131,7 +131,7 @@ export default function NavigationLevelTest16() {
       console.info('[NavigationLevelTest16_0200] btn5 click');
       await CommonFunc.sleep(1000);
       let stackValue: number[] | undefined = AppStorage.get('stackValue')
-      expect(stackValue?.length > 0).assertTrue();
+      expect(stackValue && stackValue?.length > 0).assertTrue();
       AppStorage.delete('stackValue')
 
       let btn3 = await driver.findComponent(ON.id('NavigationLevelTest16_btn3'));
