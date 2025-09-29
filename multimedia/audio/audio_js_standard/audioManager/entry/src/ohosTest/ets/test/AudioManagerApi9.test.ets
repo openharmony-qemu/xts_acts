@@ -2286,14 +2286,10 @@ export default function audioManagerApi9() {
       try {
         audioManager.on('audioSceneChange', (audioScene) => {
           console.info(`AudioSceneChange event: ${audioScene} `);
-          if (audioScene == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
-            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_DEFAULT);
-          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_RINGING) {
-            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_RINGING);
-          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
-            expect(audioScene).assertEqual(audio.AudioScene.AUDIO_SCENE_PHONE_CALL);
-          } else if (audioScene == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
-            expect(audioScene).assertEqual(audio.AudioScene,AUDIO_SCENE_VOICE_CHAT);
+          if (audioScene == audio.AudioScene.AUDIO_SCENE_DEFAULT || audioScene == audio.AudioScene.AUDIO_SCENE_RINGING || audioScene == audio.AudioScene.AUDIO_SCENE_PHONE_CALL || audioScene == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+           done();
+           return;
+          }
         });
         expect(true).assertTrue();
         done();
