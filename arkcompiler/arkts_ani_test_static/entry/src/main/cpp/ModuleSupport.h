@@ -806,7 +806,7 @@ ani_int test_Module_Find_Variable_08([[maybe_unused]] ani_env *env, [[maybe_unus
     for (int32_t i = 0; i < loopCount; i++) {
         std::string str = "module";
         // 使用
-        int randomValue = dist(gen);   
+        int randomValue = dist(gen);  
         str += static_cast<char>(randomValue % (end - 'A') + 'A');
         ASSERT_EQ(env->Module_FindVariable(module, str.c_str(), &variable), ANI_OK);
     }
@@ -1015,7 +1015,7 @@ ani_int test_Module_Find_Variable_19([[maybe_unused]] ani_env *env, [[maybe_unus
 
     std::string str {};
     GetStdString(env, static_cast<ani_string>(result), str);
-    ASSERT_STREQ(str.c_str(), "abc");
+    ASSERT_STREQ(str, "abc");
 
     ani_string string = {};
     auto status = env->String_NewUTF8("hello", 5U, &string);
@@ -1023,7 +1023,7 @@ ani_int test_Module_Find_Variable_19([[maybe_unused]] ani_env *env, [[maybe_unus
     ASSERT_EQ(env->Variable_SetValue_Ref(variable, string), ANI_OK);
     ASSERT_EQ(env->Variable_GetValue_Ref(variable, &result), ANI_OK);
     GetStdString(env, static_cast<ani_string>(result), str);
-    ASSERT_STREQ(str.c_str(), "hello");
+    ASSERT_STREQ(str, "hello");
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_MODULESUPPORT_H

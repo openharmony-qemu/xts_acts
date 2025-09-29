@@ -51,9 +51,9 @@ const ani_int TEST_INT_VAL2 = 6;
 
 #define ASSERT_STREQ(lhs, rhs)                                    \
     do {                                                          \
-        auto res1 = (lhs);                                        \
-        decltype(res1) res2 = (rhs);                              \
-        if (::strcmp(res1, res2) != 0) {                          \
+        std::string_view _sv1(lhs);                               \
+        std::string_view _sv2(rhs);                               \
+        if (_sv1 != _sv2) {                                       \
             return ANI_FALSE;                                     \
         }                                                         \
     } while (0)
