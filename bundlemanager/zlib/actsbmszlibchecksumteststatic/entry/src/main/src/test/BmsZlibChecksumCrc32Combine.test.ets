@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 
 const TAG: string = 'BmsZlibChecksumTestTag';
-const Domain: Int = 0x0000;
+const Domain: int = 0x0000;
 
 export default function bmsZlibChecksumCrc32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
@@ -60,7 +60,7 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         try {
           let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 start`);
-          let num: number = await checksum.crc32Combine(crc1, crc2, len2);
+          let num: long = await checksum.crc32Combine(crc1, crc2, len2);
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 Crc32Combine:(${crc1},${crc2},${len2})=>${num}`);
           expect(num).assertEqual(446674705);
           done();

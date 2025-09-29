@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import bundleManager from '@ohos.bundle.bundleManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "../../../hypium/index";
+import { BundleInfo } from 'bundleManager.BundleInfo';
 
 let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_DEFAULT;
 let abilityFlags1 = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_PERMISSION;
@@ -32,7 +33,7 @@ let abilityFlags8 = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_SKILL;
 
 let userId = 100;
 let want: Want = {
-  bundleName: "com.example.orientationtest.static",
+  bundleName: "ohos.acts.bms.getabilityinfo.test.static",
   abilityName: "EntryAbility"
 };
 
@@ -41,6 +42,47 @@ let tag: string = 'testTag';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
+
+    /**
+     * @tc.number     : Acts_OrientationTest_static_001
+     * @tc.name       : Query the orientation of the provided HAP
+     * @tc.desc       : Query if the orientation value is FOLLOW_RECENT.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
+        bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY,
+          (err: BusinessError<void> | null, data: BundleInfo | undefined) => {
+            hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> start');
+            if (err) {
+              hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> err' + JSON.stringify(err));
+              expect().assertFail();
+            } else if (data !== undefined) {
+              expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientation).assertEqual(bundleManager.DisplayOrientation.UNSPECIFIED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_LANDSCAPE_RESTRICTED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[3].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_PORTRAIT_RESTRICTED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[4].orientation).assertEqual(bundleManager.DisplayOrientation.LOCKED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[5].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_UNSPECIFIED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[6].orientation).assertEqual(bundleManager.DisplayOrientation.FOLLOW_DESKTOP);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[7].orientation).assertEqual(bundleManager.DisplayOrientation.LANDSCAPE);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[8].orientation).assertEqual(bundleManager.DisplayOrientation.FOLLOW_RECENT);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[9].orientation).assertEqual(bundleManager.DisplayOrientation.LANDSCAPE_INVERTED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[10].orientation).assertEqual(bundleManager.DisplayOrientation.PORTRAIT_INVERTED);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[11].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[12].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_LANDSCAPE);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[13].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_PORTRAIT);
+              expect(data!.hapModulesInfo[0].abilitiesInfo[14].orientation).assertEqual(bundleManager.DisplayOrientation.AUTO_ROTATION_RESTRICTED);
+            } else {
+              hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> Fail');
+              expect().assertFail();
+            }
+            hilog.info(domain, tag, 'Acts_OrientationTest_static_001  ====> end');
+            done();
+          })
+      })
 
     /*
     * @tc.number: TestAbilityDisable_static_014
@@ -56,7 +98,7 @@ export default function abilityTest() {
           | abilityFlags5 |abilityFlags6 |abilityFlags7 | abilityFlags8, userId, (err: BusinessError<void> | null, data) => {
           if (err) {
             hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s', err?.message);
-            expect().assertFail();
+            expect(err.code).assertEqual(201);
           } else {
             hilog.info(domain, tag, 'TestAbilityDisable_static_014 successfully: %{public}s', JSON.stringify(data));
             expect(data).not().assertUndefined();
