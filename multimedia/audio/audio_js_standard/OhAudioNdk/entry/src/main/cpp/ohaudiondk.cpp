@@ -503,6 +503,7 @@ int32_t onRendererError(OH_AudioRenderer *renderer, void *userData, OH_AudioStre
 #pragma mark - 音频播放器初始化方法
 void SetRendererNormalParam(OH_AudioStreamBuilder *builder)
 {
+    napi_value result = nullptr;
     OH_AudioStream_Result oH_AudioStream_Result = 
         OH_AudioStreamBuilder_SetChannelCount(builder, KCHANNELCOUNT); // 设置通道数
     if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
