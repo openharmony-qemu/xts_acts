@@ -926,7 +926,7 @@ export default function abilityTest() {
         };
 
         try {
-          win.on('windowStatusChange', callback);
+          win.onWindowStatusChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStatusChange success');
           expect(true).assertTrue();
         } catch (e: BusinessError) {
@@ -940,7 +940,7 @@ export default function abilityTest() {
         }
 
         try {
-          win.off('windowStatusChange', callback);
+          win.offWindowStatusChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStatusChange success');
           expect(true).assertTrue();
         } catch (e: BusinessError) {
@@ -970,7 +970,7 @@ export default function abilityTest() {
             `finaltest [ANI] onOffWindowSizeChangeTest callback success:${JSON.stringify(data)}`);
         };
         try {
-          win.on('windowSizeChange', callback);
+          win.onWindowSizeChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowSizeChange success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -979,7 +979,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('windowSizeChange', callback);
+          win.offWindowSizeChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowSizeChange success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1005,7 +1005,7 @@ export default function abilityTest() {
             `finaltest [ANI] onOffWindowRectChangeTest callback success:${JSON.stringify(data)}`);
         };
         try {
-          win.on('windowRectChange', callback);
+          win.onWindowRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success');
           expect(true).assertTrue();
         } catch (e: BusinessError) {
@@ -1019,7 +1019,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('windowRectChange', callback);
+          win.offWindowRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success');
           expect(true).assertTrue();
         } catch (e: BusinessError) {

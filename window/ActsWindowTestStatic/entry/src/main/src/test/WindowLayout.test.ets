@@ -80,7 +80,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
             }
             try {
-                (subWin as window.Window).on('windowStatusChange', callback);
+                (subWin as window.Window).onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -93,7 +93,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                (subWin as window.Window).off('windowStatusChange', callback);
+                (subWin as window.Window).offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -106,7 +106,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                (subWin as window.Window).off('windowStatusChange');
+                (subWin as window.Window).offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -139,7 +139,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
             }
             try {
-                mainWin.on('windowStatusChange', callback);
+                mainWin.onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -152,7 +152,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                mainWin.off('windowStatusChange', callback);
+                mainWin.offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -165,7 +165,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                mainWin.off('windowStatusChange');
+                mainWin.offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');;
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -699,12 +699,12 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
-                subWindowClass.on('windowRectChange', (data : window.RectChangeOptions) => {
+                subWindowClass.onWindowRectChange((data : window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window reason changes. reason: ${JSON.stringify(data.reason)}`);
                     expect(data!.rect.left).assertEqual(300);
                     expect(data!.rect.top).assertEqual(300);
-                    subWindowClass.off('windowRectChange');
+                    subWindowClass.offWindowRectChange();
                     subWindowClass.destroyWindow();
                     done();
                 });
@@ -740,11 +740,11 @@ export default function WindowLayoutTest() {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
-                subWindowClass.on('windowSizeChange', (data:window.Size) => {
+                subWindowClass.onWindowSizeChange((data:window.Size) => {
                     hilog.info(0x0000, '[ANI]',`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
-                    subWindowClass.off('windowSizeChange');
+                    subWindowClass.offWindowSizeChange();
                     subWindowClass.destroyWindow();
                     done();
                 });
@@ -771,7 +771,7 @@ export default function WindowLayoutTest() {
             try {
                 let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
                 await windowClass.destroyWindow();
-                windowClass.off('windowRectChange');
+                windowClass.offWindowRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
@@ -801,7 +801,7 @@ export default function WindowLayoutTest() {
             try {
                 let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_on_static_0200");
                 await windowClass.destroyWindow();
-                windowClass.on('windowRectChange', (data: window.RectChangeOptions) => {
+                windowClass.onWindowRectChange((data: window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`Succeeded window rect changes. Data: ` + JSON.stringify(data));
                 });
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
