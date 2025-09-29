@@ -41,6 +41,8 @@ export default function WebOnNativeEmbedObjectParamChange() {
       } catch (err) {
         console.error('push WebOnNativeEmbedObjectParamChange page error:' + err);
       }
+      await driver.waitForComponent(ON.id('WebOnNativeEmbedObjectParamChangeButton'), 10000);
+      done()
     });
 
     beforeEach(async (done: Function) => {
@@ -55,6 +57,7 @@ export default function WebOnNativeEmbedObjectParamChange() {
 
     afterEach(async (done: Function) => {
       console.info('WebOnNativeEmbedObjectParamChange afterEach start');
+      await Utils.sleep(2000);
       done();
     })
 
