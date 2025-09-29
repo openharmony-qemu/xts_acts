@@ -214,9 +214,10 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let vec2: Vec2 = { x: 1.1, y: 1.1 };
-        let rect: Rect  = { x: 1.1, y: 1.1 };
+        let rect: Rect  = { x: 1.1, y: 1.1, width: 1.1, height: 1.1 };
         expect(vec2.x).assertEqual(1.1);
         expect(rect.x).assertEqual(1.1);
+        expect(rect.width).assertEqual(1.1);
         expect(SceneResourceType.UNKNOWN).assertEqual(0);
         expect(SceneResourceType.NODE).assertEqual(1);
         expect(SceneResourceType.ENVIRONMENT).assertEqual(2);
