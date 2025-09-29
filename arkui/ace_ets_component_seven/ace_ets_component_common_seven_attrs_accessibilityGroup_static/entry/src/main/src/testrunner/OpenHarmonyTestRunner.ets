@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,12 +30,12 @@ let tag: string = 'testTag';
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  public onPrepare: () => void = () => {
+  public onPrepare: ()=>void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  public onRun: () => void = () => {
+  public onRun: ()=>void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();

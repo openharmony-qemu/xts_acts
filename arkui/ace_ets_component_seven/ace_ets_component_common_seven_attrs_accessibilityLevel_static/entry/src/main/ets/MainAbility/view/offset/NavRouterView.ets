@@ -41,33 +41,6 @@ export struct NavRouterView {
   private componentKey: string = '';
 
   build() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
   }
 }
