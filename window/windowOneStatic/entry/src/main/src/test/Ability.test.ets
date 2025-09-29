@@ -1050,7 +1050,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOffWindowEventTest callback success:${data as int}`);
         };
         try {
-          win.on('windowEvent', callback);
+          win.onWindowEvent(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowEvent success');
           expect(true).assertTrue();
         } catch (e: Error) {
@@ -1059,7 +1059,7 @@ export default function abilityTest() {
           done();
         }
         try {
-          win.off('windowEvent', callback);
+          win.offWindowEvent(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowEvent success');
           expect(true).assertTrue();
         } catch (e: Error) {

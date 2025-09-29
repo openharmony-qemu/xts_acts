@@ -412,9 +412,9 @@ export default function abilityTest() {
         try {
           let callback = (data: window.WindowStageEventType): void => {
           };
-          windowStage.on('windowStageEvent', callback);
+          windowStage.onWindowStageEvent(callback);
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onWindowStageEventTest success.`);
-          windowStage.off('windowStageEvent', callback);
+          windowStage.offWindowStageEvent(callback);
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] offWindowStageEventTest success.`);
           expect(true).assertTrue();
           done();
