@@ -46,6 +46,12 @@ public:
     static void TearDownTestCase() {}
 };
 
+class SYMCIPHER_CHACHA20_POLY1305_TEST : public testing::TestWithParam<SymCipherSpec> {
+public:
+    static void SetUpTestCase() {}
+    static void TearDownTestCase() {}
+};
+
 class OHCryptoFrameworkSymCipherIvErrorNapiTest : public testing::Test {
 public:
     static void SetUpTestCase() {};
@@ -163,6 +169,8 @@ SymCipherSpec g_symCipherData[] = {
     {(uint8_t *)"SM4_128", (uint8_t *)"SM4_128|OFB|PKCS7", 16, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"SM4_128", (uint8_t *)"SM4_128|CFB|PKCS7", 16, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"SM4_128", (uint8_t *)"SM4_128|CFB128|PKCS7", 16, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
+
+    {(uint8_t *)"ChaCha20", (uint8_t *)"ChaCha20", 16, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
 };
 
 SymCipherSpec g_symAesWrapCipherData[] = {
@@ -174,6 +182,10 @@ SymCipherSpec g_symAesWrapCipherData[] = {
     {(uint8_t *)"AES128", (uint8_t *)"AES128-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
     {(uint8_t *)"AES192", (uint8_t *)"AES192-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
     {(uint8_t *)"AES256", (uint8_t *)"AES256-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+};
+
+SymCipherSpec g_symChaCha20Poly1305CipherData[] = {
+    {(uint8_t *)"ChaCha20", (uint8_t *)"ChaCha20|Poly1305", 12, 16, 16, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
 };
 
 SymCipherSpec g_symCipherGCMData[] = {
@@ -216,6 +228,7 @@ SymCipherSpec g_symCipherIvError[] = {
     {(uint8_t *)"AES192", (uint8_t *)"AES128|CFB|NoPadding", 17, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"AES128", (uint8_t *)"AES128|OFB|NoPadding", 15, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"AES192", (uint8_t *)"AES128|OFB|NoPadding", 17, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
+    {(uint8_t *)"ChaCha20", (uint8_t *)"ChaCha20", 15, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
 };
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_TEST, ::testing::ValuesIn(g_symCipherData));
@@ -223,6 +236,7 @@ INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherGcmNapiTest, SYMCIPHER_GCM_TES
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherCcmNapiTest, SYMCIPHER_CCM_TEST, ::testing::ValuesIn(g_symCipherCCMData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherIvErrorNapiTest, SYMCIPHER_IV_ERROR_TEST, ::testing::ValuesIn(g_symCipherIvError));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_AES_WRAP_TEST, ::testing::ValuesIn(g_symAesWrapCipherData));
+INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_CHACHA20_POLY1305_TEST, ::testing::ValuesIn(g_symChaCha20Poly1305CipherData));
 
 /**
 * @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_0100
@@ -1441,6 +1455,170 @@ HWTEST_P(SYMCIPHER_AES_WRAP_TEST, SUB_Security_CryptoFramework_NAPI_SymCipher_Te
     HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
     HcfBlobDataClearAndFree(&msgBlob);
     HcfBlobDataClearAndFree(&ivBlob);
+    HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2700
+* @tc.name OHCryptoFrameworkSymCipherGcmNapiTest/SYMCIPHER_CHACHA20_POLY1305_TEST.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2700/x
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_P(SYMCIPHER_CHACHA20_POLY1305_TEST, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2700, TestSize.Level0)
+{
+    SymCipherSpec symCipherAEADData = GetParam();
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = symCipherAEADData.msgLen;
+    int32_t ivLen = symCipherAEADData.ivLen;
+    int32_t aadLen = symCipherAEADData.aadLen;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    HcfBlob aadBlob = {0};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob tag = {.data = nullptr, .len = 0};
+    uint8_t tagArr[OH_CRYPTO_CHACHA20_POLY1305_TAG_LEN] = {0};
+    Crypto_DataBlob tagInit = {.data = reinterpret_cast<uint8_t *>(tagArr), .len = OH_CRYPTO_CHACHA20_POLY1305_TAG_LEN};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, aadLen, &aadBlob), HCF_SUCCESS);
+    // generater SymKey
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)symCipherAEADData.algName, &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    // params
+    EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_AAD_DATABLOB, (Crypto_DataBlob *)&aadBlob), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_TAG_DATABLOB, &tagInit), CRYPTO_SUCCESS);
+    // encrypto
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherAEADData.cipherAlgName, &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(encCtx, nullptr, &tag), CRYPTO_SUCCESS);
+    // decrypto
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherAEADData.cipherAlgName, &decCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_TAG_DATABLOB, &tag), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_SUCCESS);
+    EXPECT_TRUE(memcmp(msgBlob.data, decUpdate.data, msgBlob.len) == 0);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfBlobDataClearAndFree(&aadBlob);
+    HcfBlobDataClearAndFree((HcfBlob *)&tag);
+    HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2800
+* @tc.name OHCryptoFrameworkSymCipherGcmNapiTest/SYMCIPHER_CHACHA20_POLY1305_TEST.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2800/x
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_P(SYMCIPHER_CHACHA20_POLY1305_TEST, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2800, TestSize.Level0)
+{
+    SymCipherSpec symCipherAEADData = GetParam();
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE;
+    int32_t ivLen = symCipherAEADData.ivLen;
+    int32_t aadLen = symCipherAEADData.aadLen;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    HcfBlob aadBlob = {0};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob tag = {.data = nullptr, .len = 0};
+    uint8_t tagArr[OH_CRYPTO_CHACHA20_POLY1305_TAG_LEN] = {0};
+    Crypto_DataBlob tagInit = {.data = reinterpret_cast<uint8_t *>(tagArr), .len = OH_CRYPTO_CHACHA20_POLY1305_TAG_LEN};
+    int32_t cipherLen = 0;
+    int blockSize = 20;
+    int cnt = randomLen / blockSize;
+    int rem = randomLen % blockSize;
+    uint8_t cipherText[OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE + 16] = {0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, aadLen, &aadBlob), HCF_SUCCESS);
+    // generater SymKey
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)symCipherAEADData.algName, &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    // params
+    EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_AAD_DATABLOB, (Crypto_DataBlob *)&aadBlob), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_TAG_DATABLOB, &tagInit), CRYPTO_SUCCESS);
+    // encrypto
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherAEADData.cipherAlgName, &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    for (int i = 0; i < cnt; i++) {
+        msgBlob.len = blockSize;
+        OH_Crypto_FreeDataBlob(&outUpdate);
+        EXPECT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
+        msgBlob.data += blockSize;
+        memcpy(&cipherText[cipherLen], outUpdate.data, outUpdate.len);
+        cipherLen += outUpdate.len;
+    }
+    if (rem > 0) {
+        OH_Crypto_FreeDataBlob(&outUpdate);
+        msgBlob.len = rem;
+        EXPECT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
+        memcpy(&cipherText[cipherLen], outUpdate.data, outUpdate.len);
+        cipherLen += outUpdate.len;
+    }
+    if (symCipherAEADData.ispadding) {
+        EXPECT_EQ(OH_CryptoSymCipher_Final(encCtx, nullptr, &tag), CRYPTO_SUCCESS);
+    }
+    Crypto_DataBlob cipherBlob = {
+        .data = reinterpret_cast<uint8_t *>(cipherText),
+        .len = cipherLen
+    };
+
+    // decrypto
+    msgBlob.data -=  OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE - rem;
+    msgBlob.len = OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE;
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherAEADData.cipherAlgName, &decCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_TAG_DATABLOB, &tag), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(decCtx, &cipherBlob, &decUpdate), CRYPTO_SUCCESS);
+    EXPECT_TRUE(memcmp(msgBlob.data, decUpdate.data, msgBlob.len) == 0);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfBlobDataClearAndFree(&aadBlob);
+    HcfBlobDataClearAndFree((HcfBlob *)&tag);
     HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
     HcfObjDestroy(randomObj);
 }

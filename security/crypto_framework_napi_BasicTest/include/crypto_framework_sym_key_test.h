@@ -40,4 +40,6 @@ typedef struct SymKeySpec {
 #define OH_CRYPTO_HMAC_SHA512_KEY_SIZE    512
 #define OH_CRYPTO_HMAC_SM3_KEY_SIZE       256
 
+#define OH_CRYPTO_CHACHA20_KEY_SIZE       256
+
 #endif

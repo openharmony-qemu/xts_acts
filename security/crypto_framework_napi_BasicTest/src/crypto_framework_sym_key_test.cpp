@@ -75,6 +75,7 @@ SymKeySpec g_symKeyData[] = {
     {(uint8_t *)"AES128", OH_CRYPTO_AES_128_KEY_SIZE, (uint8_t *)"AES128"},
     {(uint8_t *)"AES192", OH_CRYPTO_AES_192_KEY_SIZE, (uint8_t *)"AES192"},
     {(uint8_t *)"AES256", OH_CRYPTO_AES_256_KEY_SIZE, (uint8_t *)"AES256"},
+    {(uint8_t *)"ChaCha20", OH_CRYPTO_CHACHA20_KEY_SIZE, (uint8_t *)"ChaCha20"},
     {(uint8_t *)"3DES192", OH_CRYPTO_3DES_192_KEY_SIZE, (uint8_t *)"3DES192"},
     {(uint8_t *)"SM4_128", OH_CRYPTO_SM4_128_KEY_SIZE, (uint8_t *)"SM4128"},
     {(uint8_t *)"HMAC|SHA1", OH_CRYPTO_HMAC_SHA1_KEY_SIZE, (uint8_t *)"HMAC160"},
