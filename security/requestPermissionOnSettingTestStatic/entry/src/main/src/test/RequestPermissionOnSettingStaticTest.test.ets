@@ -68,9 +68,9 @@ export default function requestPermissionOnSettingStaticTest() {
       try {
         hilog.info(domain, 'testTag', "Start getBundleInfoForSelf");
         let bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags)
-        let accessTokenId: long = bundleInfo.appInfo?.accessTokenId as long;
-        tokenID = accessTokenId as int;
-        hilog.info(domain, 'testTag', 'tokenID:' + tokenID);
+        //let accessTokenId: long = bundleInfo.appInfo?.accessTokenId as long;
+        //tokenID = accessTokenId as int;
+        //hilog.info(domain, 'testTag', 'tokenID:' + tokenID);
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', 'AccessTokenTest getBundleInfoForSelf error is: ' + error.code);
       }

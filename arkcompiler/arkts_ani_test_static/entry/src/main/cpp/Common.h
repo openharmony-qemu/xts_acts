@@ -21,6 +21,9 @@
 #include <string>
 #include "ani/ani.h"
 #include "hilog/log.h"
+#include <iconv.h>
+#include <cstring>
+#include <string>
 
 const uint32_t ANI_RES_INVALID_ARGS = 2;
 const uint32_t ANI_RES_INVALID_TYPE = 3;
@@ -45,10 +48,19 @@ const ani_int TEST_INT_VAL2 = 6;
         } \
     } while (0)
 
+#define ASSERT_STREQ(lhs, rhs)                                    \
+    do {                                                          \
+        auto res1 = (lhs);                                        \
+        decltype(res1) res2 = (rhs);                              \
+        if (::strcmp(res1, res2) != 0) {                          \
+            return ANI_FALSE;                                     \
+        }                                                         \
+    } while (0)
+
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
 {
     ani_class cls {};
-    if (env->FindClass("Lentry/src/main/src/ets/Index/Foo;", &cls) != ANI_OK) {
+    if (env->FindClass("entry.src.main.src.ets.Index.Foo", &cls) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, " FindClass Failed");
         return ANI_FALSE;
     }
@@ -58,7 +70,7 @@ ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls
     }
 
     ani_static_method newMethod;
-    if (env->Class_FindStaticMethod(cls, "new_Foo", ":Lentry/src/main/src/ets/Index/Foo;", &newMethod) != ANI_OK) {
+    if (env->Class_FindStaticMethod(cls, "new_Foo", ":C{entry.src.main.src.ets.Index.Foo}", &newMethod) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, " Class_FindStaticMethod Failed");
         return ANI_FALSE;
     }
@@ -76,7 +88,7 @@ ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls
 
 ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor, ani_class *cls)
 {
-    std::string classDescriptor = "Lentry/src/main/src/ets/ClassCallingStaticMethods/";
+    std::string classDescriptor = "entry.src.main.src.ets.ClassCallingStaticMethods.";
     std::string classDesc = classDescriptor.append(class_descriptor);
     OH_LOG_INFO(LOG_APP, "GetClsByClassCallingName classDesc %{public}s", classDesc.c_str());
     auto status = env->FindClass(classDesc.c_str(), cls);
@@ -87,4 +99,27 @@ ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor,
     return ANI_TRUE;
 }
 
+ani_ref g_doubleCls {};
+ani_method unboxed {};
+
+ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
+{
+    if (g_doubleCls == nullptr) {
+        ani_class cls {};
+        ani_method method {};
+        auto status = env->FindClass("std.core.Double", &cls);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+        status = env->GlobalReference_Create(cls, &g_doubleCls);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+        status = env->Class_FindMethod(cls, "unboxed", ":d", &unboxed);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+    }
+    return env->Object_CallMethod_Double(obj, unboxed, result);
+}
 #endif //ARKTS_ANI_TEST_COMMON_H

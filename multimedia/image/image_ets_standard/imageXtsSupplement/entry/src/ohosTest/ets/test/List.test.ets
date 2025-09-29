@@ -14,7 +14,45 @@
  */
 
 import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test.ets';
+import ImageCreateImageSourceBufTest from './image/ImageCreateImageSourceBuf.test';
+import ImageCreateImageSourcePathTest from './image/ImageCreateImageSourcePath.test';
+import ImageCreateIncrementalSourceTest from './image/ImageCreateIncrementalSource.test';
+import ImageCreatePixelMapTest from './image/ImageCreatePixelMap.test';
+import ImageCreatePixelMapSyncTest from './image/ImageCreatePixelMapSync.test';
+import ImagePropertyKeyTest2 from './image/ImagePropertyKeyEnum2.test';
+import ImagePropertyKeyTest3 from './image/ImagePropertyKeyEnum3.test';
+import pixelMapReadPixelsTest from './pixelMap/PixelMapReadPixels.test';
+import pixelMapWritePixelsTest from './pixelMap/PixelMapWritePixels.test';
+import pixelMapOpacityTest from './pixelMap/PixelMapOpacity.test';
+import ImageCreateIncrementalSourceBufTest from './image/ImageCreateIncrementalSourceBuf.test';
+import ImageCreateImageSourceOptionsTest from './image/ImageCreateImageSourceOptions.test';
+import ImageCreateImageReceiverPackerTest from './image/ImageCreateImageReceiver.test';
+import ImageCreateAuxiliaryPictureTest from './image/ImageCreateAuxiliaryPicture.test';
+import ImageAuxiliaryGetTypeTest from './image/ImageGetType.test';
+import GetImageSourceSupportedFormats from "./image/ImageGetImageSourceSupportedFormats.test"
+import ImagePropertyKeyTest4 from "./image/ImagePropertyKeyEnum4.test"
+import imageCreatePixelMapUsingAllocatorSyncSuppTest from "./image/imageCreatePixelMapUsingAllocatorSyncSuppTest.test"
+import PictureGetGainmapPixelmapTest from './Picture/PictureGetGainmapPixelmap.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
+  ImageCreateImageSourceBufTest();
+  ImageCreateIncrementalSourceTest();
+  ImageCreateImageSourcePathTest();
+  ImageCreatePixelMapTest();
+  ImageCreatePixelMapSyncTest();
+  ImagePropertyKeyTest2();
+  ImagePropertyKeyTest3();
+  pixelMapReadPixelsTest();
+  pixelMapOpacityTest();
+  pixelMapWritePixelsTest();
+  ImageCreateIncrementalSourceBufTest();
+  ImageCreateImageSourceOptionsTest();
+  ImageCreateImageReceiverPackerTest();
+  ImageCreateAuxiliaryPictureTest();
+  ImageAuxiliaryGetTypeTest();
+  ImagePropertyKeyTest4();
+  GetImageSourceSupportedFormats();
+  imageCreatePixelMapUsingAllocatorSyncSuppTest();
+  PictureGetGainmapPixelmapTest();
 }

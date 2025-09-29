@@ -32,22 +32,24 @@ struct RichEditorShortCutKeys005 {
   build() {
 
     Column() {
-      Text('positionNum:' + this.positionNum).id('positionNum')
-      Text('selection:' + this.selection).id('selection')
-      Button('get position')
-        .id('get_position')
-        .margin(15)
-        .backgroundColor(Color.Blue)
-        .onClick(() => {
-          this.positionNum = this.controller.getCaretOffset();
-        })
-      Button('set position')
-        .id('set_position')
-        .margin(15)
-        .backgroundColor(Color.Blue)
-        .onClick(() => {
-          this.controller.setCaretOffset(3);
-        })
+      Row(){
+        Text('positionNum:' + this.positionNum).id('positionNum').width('50%').clip(true)
+        Text('selection:' + this.selection).id('selection').width('50%').clip(true)
+      }.height('5%')
+      Row(){
+        Button('get position')
+          .id('get_position')
+          .backgroundColor(Color.Blue)
+          .onClick(() => {
+            this.positionNum = this.controller.getCaretOffset();
+          }).width('50%')
+        Button('set position')
+          .id('set_position')
+          .backgroundColor(Color.Blue)
+          .onClick(() => {
+            this.controller.setCaretOffset(3);
+          }).width('50%')
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(300)

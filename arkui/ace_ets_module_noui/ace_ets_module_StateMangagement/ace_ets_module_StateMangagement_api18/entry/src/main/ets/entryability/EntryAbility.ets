@@ -39,8 +39,7 @@ export default class EntryAbility extends UIAbility {
 
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {
-      let errCode: number = err.code;
-      if (errCode) {
+      if (err?.code) {
         console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }

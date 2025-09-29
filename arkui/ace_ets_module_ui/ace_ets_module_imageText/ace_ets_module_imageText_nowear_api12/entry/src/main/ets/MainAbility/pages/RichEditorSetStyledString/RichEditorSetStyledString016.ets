@@ -58,33 +58,38 @@ struct RichEditorSetStyledString016 {
 
   build() {
     Column() {
-      Button('image Center').onClick(() => {
-        if (this.imagePixelMap !== undefined) {
-          let imageStyledString = new MutableStyledString(new ImageAttachment({
-            value: this.imagePixelMap,
-            size: { width: 30, height: 30 },
-            layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-            verticalAlign: ImageSpanAlignment.CENTER,
-            objectFit: ImageFit.Contain
-          }))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
-      }).id('image_center')
-      Button('setSelection').onClick(() => {
-        this.controller.setSelection(-1, -1);
-      }).id('setSelection')
-      Button('getSelection').onClick(() => {
-        let select = this.controller.getSelection();
-        this.content = 'start:' + select.start + ';end:' + select.end;
-      }).id('getSelection')
-      Button('stopEditing').onClick(() => {
-        this.controller.stopEditing();
-      }).id('stopEditing')
-      Text('content:' + this.content).id('content')
-      Text('isEditing:' + this.isEditing).id('isEditing')
+      Row(){
+        Button('image Center').onClick(() => {
+          if (this.imagePixelMap !== undefined) {
+            let imageStyledString = new MutableStyledString(new ImageAttachment({
+              value: this.imagePixelMap,
+              size: { width: 30, height: 30 },
+              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+              verticalAlign: ImageSpanAlignment.CENTER,
+              objectFit: ImageFit.Contain
+            }))
+            this.richEditorStyledString = this.controller.getStyledString();
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
+        }).id('image_center').width('20%')
+        Button('setSelection').onClick(() => {
+          this.controller.setSelection(-1, -1);
+        }).id('setSelection').width('20%')
+        Button('getSelection').onClick(() => {
+          let select = this.controller.getSelection();
+          this.content = 'start:' + select.start + ';end:' + select.end;
+        }).id('getSelection').width('20%')
+        Button('stopEditing').onClick(() => {
+          this.controller.stopEditing();
+        }).id('stopEditing').width('20%')
+      }.height('5%')
+      Row(){
+        Text('content:' + this.content).id('content').width('50%')
+        Text('isEditing:' + this.isEditing).id('isEditing').width('50%')
+      }.height('5%')
+
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.styledString)

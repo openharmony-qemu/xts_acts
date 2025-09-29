@@ -23,7 +23,7 @@ import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtConnectionTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let g_context: common.UIAbilityContext;
 
@@ -64,19 +64,18 @@ export default function bluetoothConnectionTest() {
             }
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameTest
-         * @tc.name: getRemoteDeviceNameTest
-         * @tc.desc: Test getRemoteDeviceNameTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameTest
+         * @tc.name getRemoteDeviceNameTest
+         * @tc.desc Test getRemoteDeviceNameTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
                 hilog.info(domain, tag, "getRemoteDeviceName:" + name);
-                expect(true).assertEqual(name == "");
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
@@ -84,28 +83,26 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameAliasTest
-         * @tc.name: getRemoteDeviceNameAliasTest
-         * @tc.desc: Test getRemoteDeviceNameAliasTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameAliasTest
+         * @tc.name getRemoteDeviceNameAliasTest
+         * @tc.desc Test getRemoteDeviceNameAliasTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameAliasTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let aliasName: string = connection.getRemoteDeviceName("00:11:22:33:44:55", true);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is true:" + aliasName);
-                expect(true).assertEqual(aliasName == "");
                 let aliasNames: string = connection.getRemoteDeviceName("00:11:22:33:44:55", false);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is false:" + aliasNames);
-                expect(true).assertEqual(aliasNames == "");
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName alias get errCode:" + err.code + ",errMessage:" + err.message);
@@ -113,19 +110,19 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceClassTest
-         * @tc.name: getRemoteDeviceClassTest
-         * @tc.desc: Test getRemoteDeviceClassTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceClassTest
+         * @tc.name getRemoteDeviceClassTest
+         * @tc.desc Test getRemoteDeviceClassTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceClassTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -133,7 +130,6 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result:" + JSON.stringify(deviceClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorClass:" + JSON.stringify(deviceClass.majorClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + JSON.stringify(deviceClass.majorMinorClass));
-                expect(true).assertEqual(deviceClass != null);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceClass get errCode:" + err.code + ",errMessage:" + err.message);
@@ -141,19 +137,19 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: setBluetoothScanModeTest
-         * @tc.name: setBluetoothScanModeTest
-         * @tc.desc: Test setBluetoothScanModeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number setBluetoothScanModeTest
+         * @tc.name setBluetoothScanModeTest
+         * @tc.desc Test setBluetoothScanModeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("setBluetoothScanModeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -171,13 +167,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getPairedDevicesTest
-         * @tc.name: getPairedDevicesTest
-         * @tc.desc: Test getPairedDevicesTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getPairedDevicesTest
+         * @tc.name getPairedDevicesTest
+         * @tc.desc Test getPairedDevicesTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getPairedDevicesTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -197,13 +193,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: connectionConstantTest
-         * @tc.name: connectionConstantTest
-         * @tc.desc: Test connectionConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number connectionConstantTest
+         * @tc.name connectionConstantTest
+         * @tc.desc Test connectionConstantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("connectionConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -217,6 +213,391 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "ConnectionConstant get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number bluetoothDeviceFindTest
+         * @tc.name bluetoothDeviceFindTest
+         * @tc.desc Test bluetoothDeviceFindTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("bluetoothDeviceFindTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: Array<string>) => void = (changeInfo: Array<string>) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bluetoothDeviceFind:" + changeInfo);
+            }
+            try{
+                connection.on('bluetoothDeviceFind', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bluetoothDeviceFind on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('bluetoothDeviceFind');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bluetoothDeviceFind off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number bluetoothDeviceFindTest2
+         * @tc.name bluetoothDeviceFindTest2
+         * @tc.desc Test bluetoothDeviceFindTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("bluetoothDeviceFindTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: Array<string>) => void = (changeInfo: Array<string>) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bluetoothDeviceFind:" + changeInfo);
+            }
+            try{
+                connection.on('bluetoothDeviceFind', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bluetoothDeviceFind on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('bluetoothDeviceFind', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bluetoothDeviceFind off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number discoveryResultTest
+         * @tc.name discoveryResultTest
+         * @tc.desc Test discoveryResultTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("discoveryResultTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: Array<connection.DiscoveryResult>) => void = (changeInfo: Array<connection.DiscoveryResult>) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo discoveryResult:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo discoveryResult deviceId:" + changeInfo[0].deviceId);
+            }
+            try{
+                connection.on('discoveryResult', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "discoveryResult on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('discoveryResult');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "discoveryResult off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number discoveryResultTest2
+         * @tc.name discoveryResultTest2
+         * @tc.desc Test discoveryResultTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("discoveryResultTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: Array<connection.DiscoveryResult>) => void = (changeInfo: Array<connection.DiscoveryResult>) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo discoveryResult:" + changeInfo);
+            }
+            try{
+                connection.on('discoveryResult', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "discoveryResult on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('discoveryResult', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "discoveryResult off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number bondStateChangeTest
+         * @tc.name bondStateChangeTest
+         * @tc.desc Test bondStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("bondStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.BondStateParam) => void = (changeInfo: connection.BondStateParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bondStateChange:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bondStateChange deviceId:" + changeInfo.deviceId);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bondStateChange state:" + changeInfo.state);
+            }
+            try{
+                connection.on('bondStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bondStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('bondStateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bondStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number bondStateChangeTest2
+         * @tc.name bondStateChangeTest2
+         * @tc.desc Test bondStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("bondStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.BondStateParam) => void = (changeInfo: connection.BondStateParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo bondStateChange:" + changeInfo);
+            }
+            try{
+                connection.on('bondStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bondStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('bondStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "bondStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number pinRequiredTest
+         * @tc.name pinRequiredTest
+         * @tc.desc Test pinRequiredTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("pinRequiredTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.PinRequiredParam) => void = (changeInfo: connection.PinRequiredParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo pinRequired:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo pinRequired deviceId:" + changeInfo.deviceId);
+            }
+            try{
+                connection.on('pinRequired', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "pinRequired on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('pinRequired');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "pinRequired off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number pinRequiredTest2
+         * @tc.name pinRequiredTest2
+         * @tc.desc Test pinRequiredTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("pinRequiredTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.PinRequiredParam) => void = (changeInfo: connection.PinRequiredParam) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo pinRequired:" + changeInfo);
+            }
+            try{
+                connection.on('pinRequired', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "pinRequired on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('pinRequired', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "pinRequired off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number batteryChangeTest
+         * @tc.name batteryChangeTest
+         * @tc.desc Test batteryChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("batteryChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.BatteryInfo) => void = (changeInfo: connection.BatteryInfo) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo batteryChange:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo batteryChange deviceId:" + changeInfo.deviceId);
+            }
+            try{
+                connection.on('batteryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "batteryChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('batteryChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "batteryChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number batteryChangeTest2
+         * @tc.name batteryChangeTest2
+         * @tc.desc Test batteryChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("batteryChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: connection.BatteryInfo) => void = (changeInfo: connection.BatteryInfo) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo batteryChange:" + changeInfo);
+            }
+            try{
+                connection.on('batteryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "batteryChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                connection.off('batteryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "batteryChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })

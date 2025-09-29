@@ -42,7 +42,7 @@ struct CalendarPickerDialogExample {
         Text('endDate:' + JSON.stringify(this.endDate))
 
         Button('CalendarPickerDialog')
-          .key('calendarPickerDialog')
+          .id('calendarPickerDialog')
           .margin(20)
           .onClick(() => {
             console.info('CalendarDialog.show')

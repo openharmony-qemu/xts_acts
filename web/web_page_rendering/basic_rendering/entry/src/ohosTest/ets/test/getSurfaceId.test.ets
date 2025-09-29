@@ -16,8 +16,7 @@ import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level }
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-
-let emitKey = "emitGetSurfaceId0100";
+import { waitForComponent } from './WaitTest.test';
 
 export default function getSurfaceId() {
   describe('getSurfaceId', () => {
@@ -32,42 +31,17 @@ export default function getSurfaceId() {
         if (!("getSurfaceId" == pages.name)) {
           console.info("get getSurfaceId state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push getSurfaceId page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getSurfaceId page error: " + err);
       }
+      await waitForComponent("getSurfaceIdButton");
       done();
     });
-    afterEach(async (done: Function) => {
-      console.info("getSurfaceId afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_GETSURFACEID_API_0100
-     *tc.name testGetSurfaceId
-     *tc.desc getSurfaceId
-     */
     it('emitGetSurfaceId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetSurfaceId0200";
-      Utils.registerEvent("emitGetSurfaceId0100", true, 28930, done);
+      Utils.emitEvent('emitGetSurfaceId0100', 150000);
+      Utils.registerEvent("emitGetSurfaceId0100", true, 150010, done);
       sendEventByKey('getSurfaceIdButton', 10, '');
     })
     /*
@@ -76,8 +50,8 @@ export default function getSurfaceId() {
      *tc.desc getSurfaceId
      */
     it('emitGetSurfaceId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetSurfaceId0300";
-      Utils.registerEvent("emitGetSurfaceId0200", "17100001", 28938, done);
+      Utils.emitEvent('emitGetSurfaceId0200', 150000);
+      Utils.registerEvent("emitGetSurfaceId0200", "17100001", 150020, done);
       sendEventByKey('getSurfaceIdButton', 10, '');
     })
     /*
@@ -86,9 +60,10 @@ export default function getSurfaceId() {
      *tc.desc getSurfaceId
      */
     it('emitGetSurfaceId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetWebIdTwo";
-      Utils.registerEvent("emitGetSurfaceId0300", "Init error. The WebviewController must be associated with a Web component", 28939, done);
+      Utils.emitEvent('emitGetSurfaceId0300', 150000);
+      Utils.registerEvent("emitGetSurfaceId0300", "Init error. The WebviewController must be associated with a Web component", 150030, done);
       sendEventByKey('getSurfaceIdButton', 10, '');
     })
   })
 }
+

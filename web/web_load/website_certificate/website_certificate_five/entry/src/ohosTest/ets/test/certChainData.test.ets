@@ -13,15 +13,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, beforeAll , TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, beforeAll , TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202380;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "certChainData01";
+
 export default function certChainDataTest() {
   describe('certChainDataTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -34,43 +36,24 @@ export default function certChainDataTest() {
         console.info("get certChainData state success " + JSON.stringify(pages));
         if (!("certChainData" == pages.name)) {
           console.info("get certChainData state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push certChainData page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push certChainData page success");
         }
       } catch (err) {
         console.error("push certChainData page error: " + err);
       }
+      await driver.waitForComponent(ON.id("certChainDataWeb"), 10000);
+      console.log("waitForComponent certChainDataWeb");
       done()
     });
+
     beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("certChainData beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("certChainData afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -80,12 +63,13 @@ export default function certChainDataTest() {
      *tc.desic test certChainData01 interface when choose callback mode.
      */
     it('certChainData01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="certChainData01";
-      Utils.registerEvent("certChainData01",true,202412099,done);
-      sendEventByKey('certChainDataWeb',10,'');
+      Utils.emitEvent("certChainData01", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("certChainData01", true, 202390, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "certChainDataWeb");
+      if (await Utils.waitForExist(() => isReturn, 'certChainData01' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
-
-
   })
 }

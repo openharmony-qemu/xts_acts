@@ -18,22 +18,22 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 
-const TAG: string = '[createWindow]'
+const TAG: string = '[createWindow]';
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want, launchParam): void {
     // Ability is creating, initialize resources for this ability
     console.log(`${TAG} MainAbility onCreate`);
     globalThis.abilityWant = want;
     globalThis.abilityLaunchParam = launchParam;
   }
 
-  onDestroy() {
+  onDestroy(): void {
     // Ability is destroying, release resources for this ability
     console.log(`${TAG} MainAbility onDestroy`);
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage): void {
     // Main window is created, set main page for this ability
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
@@ -50,27 +50,27 @@ export default class MainAbility extends Ability {
       hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
       try {
         let properties : window.WindowProperties = windowClass.getWindowProperties();
-        let wRect : window.Rect =  properties.windowRect;
+        let wRect : window.Rect = properties.windowRect;
         globalThis.winLeft = wRect.left;
         globalThis.winTop = wRect.top;
         hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop );
       } catch (exception) {
         hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
       }
-    })
+    });
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     //Main window is destroyed, release UI related resources
     console.log(`${TAG} MainAbility onWindowStageDestroy`);
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     console.log(`${TAG} MainAbility onForeground`);
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     console.log(`${TAG} MainAbility onBackground`);
   }

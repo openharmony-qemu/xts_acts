@@ -44,7 +44,11 @@ struct IndexPage {
   @State result: string = '';
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
-    { title: 'StartTaskManager', uri: 'pages/Experience/StartTaskManager' }
+    { title: 'PhotoFps', uri: 'pages/Experience/PhotoFps' },
+    { title: 'SettingsColdStart', uri: 'pages/Experience/SettingsColdStartTest' },
+    { title: 'PhotosColdStart', uri: 'pages/Experience/PhotosColdStartTest' },
+    { title: 'StartTaskManager', uri: 'pages/Experience/StartTaskManager' },
+    { title: 'StartNotification', uri: 'pages/Experience/StartNotification' },
   ]
   @State ColorObject: Object[] = VarColor;
   @State ColorTrue: number[] = [];
@@ -58,6 +62,7 @@ struct IndexPage {
     let Test : data_preferences.Preferences | number = 0;
     let context: Context | null;
     context = globalThis.getContext();
+    console.info("context: globalThis.getContext() =" + JSON.stringify(context));
     let preferences: ESObject;
 
     let promise = data_preferences.getPreferences(context, 'mystore');
@@ -65,6 +70,7 @@ struct IndexPage {
       preferences = object;
     });
     promise = preferences.get('Experience', 0);
+    console.info("promise: preferences.get('Experience', 0) =" + JSON.stringify(promise));
     await promise.then((data) => {
       Test = data;
       console.info("Succeeded in getting value of 'Experience'. Data: " + data);
@@ -86,6 +92,7 @@ struct IndexPage {
     promise.then(() => {
       console.info("Succeeded in flushing.");
     });
+    console.info("Test------: " + Test);
     this.TEST = Test;
 
     let opt = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);

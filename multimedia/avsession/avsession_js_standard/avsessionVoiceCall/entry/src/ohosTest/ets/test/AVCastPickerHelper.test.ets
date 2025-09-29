@@ -279,6 +279,24 @@ export default function abilityTest() {
       done();
     })
 
+    /* *
+     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
+     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
+     * @tc.desc      : restoreDefaultCommunicationDevice()
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let avCastPicker = new avSession.AVCastPickerHelper(context);
+      await avCastPicker.restoreDefaultCommunicationDevice().then(() => {
+        console.info('${TAG}: avCastPicker restoreDefaultCommunicationDevice successfully');
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}: avCastPicker restoreDefaultCommunicationDevice failed with err: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      })
+      done();
+    })
 
   })
 }

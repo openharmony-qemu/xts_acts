@@ -89,6 +89,11 @@ struct ScrollAttribute1 {
           }
         })
 
+      Button('undefined').onClick(() => {
+        const attrs = typeNode.getAttribute(undefined, 'Scroll');
+        AppStorage.SetOrCreate('ScrollTypeNodeUn', attrs);
+      }).id('ScrollTypeNodePage_undefined')
+
       Text('ScrollFling: ' + this.num1)
         .id('scroll_fling_text')
         .onClick(()=>{

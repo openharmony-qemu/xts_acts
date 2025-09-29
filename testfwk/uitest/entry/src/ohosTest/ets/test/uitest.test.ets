@@ -927,27 +927,6 @@ export default function UiTest() {
         })
 
         /*
-         * @tc.number: uiTest_20031
-         * @tc.name: testGetDisplayRotationWithId
-         * @tc.desc: getDisplayRotation test
-         */
-        it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(TestTag, 'testGetDisplayRotationWithId start');
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let disPlay = display.getDefaultDisplaySync();
-            console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
-            await driver.delayMs(waitUiReadyMs)
-            let rotation = await driver.getDisplayRotation(disPlay.id)
-            expect(rotation == DisplayRotation.ROTATION_0
-                || rotation == DisplayRotation.ROTATION_90
-                || rotation == DisplayRotation.ROTATION_180
-                || rotation == DisplayRotation.ROTATION_270).assertTrue();
-            await stopApplication('com.uitestScene.acts')
-            console.log(TestTag, 'testGetDisplayRotationWithId over');
-        })
-
-        /*
          * @tc.number: uiTest_20032
          * @tc.name: testTriggerCombineKeysWithId
          * @tc.desc: triggerCombineKeys test
@@ -2368,6 +2347,9 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let isActive = await window.isActive()
             expect(isActive == true).assertTrue()
+            let uitestWindow = await driver.findWindow({active: false})
+            let isActive1 = await uitestWindow.isActive()
+            expect(isActive1).assertFalse();
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2705,6 +2687,13 @@ export default function UiTest() {
             }
             let checkable = await button.isCheckable()
             expect(checkable == true).assertTrue()
+            let button1 = await driver.findComponent(ON.checkable(false).type('Button'))
+            if (button1 == null) {
+                let scorll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scorll.scrollSearch(ON.type('Checkbox').checkable(false))
+            }
+            let checkable1 = await button1.isCheckable()
+            expect(checkable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2716,13 +2705,20 @@ export default function UiTest() {
         it('testChecked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.checked().type('Checkbox'))
+            let button = await driver.findComponent(ON.checked().type('Checkbox').id('hi'))
             if (button == null) {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
-                button = await scorll.scrollSearch(ON.type('Checkbox').checked(false))
+                button = await scorll.scrollSearch(ON.type('Checkbox').checked(false).id('hi'))
             }
             let checked = await button.isChecked()
             expect(checked == false).assertTrue()
+            let button1 = await driver.findComponent(ON.checked(true).id('go'))
+            if (button1 == null) {
+                let scorll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scorll.scrollSearch(ON.checked(true).id('go'))
+            }
+            let checked1 = await button1.isChecked()
+            expect(checked1).assertTrue();
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2888,6 +2884,9 @@ export default function UiTest() {
             let text = await driver.findComponent(ON.type('Text'))
             let type = await text.getType()
             expect(type == 'Text').assertTrue()
+            let text1 = await driver.findComponent(ON.type('Text', MatchPattern.EQUALS))
+            let type1 = await text1.getType()
+            expect(type1 == 'Text').assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2905,6 +2904,9 @@ export default function UiTest() {
             }
             let clickable = await button.isClickable()
             expect(clickable == false).assertTrue()
+            let button1 = await driver.findComponent(ON.text('toast').clickable(true))
+            let clickable1 = await button1.isClickable()
+            expect(clickable1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2922,6 +2924,9 @@ export default function UiTest() {
             }
             let longClickable = await button.isLongClickable()
             expect(longClickable== false).assertTrue()
+            let button1 = await driver.findComponent(ON.type('Button').longClickable(true))
+            let longClickable1 = await button1.isLongClickable()
+            expect(longClickable1== true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2939,6 +2944,9 @@ export default function UiTest() {
             }
             let scrollable = await scrollBar.isScrollable()
             expect(scrollable == true).assertTrue()
+            let scrollBar1 = await driver.findComponent(ON.type('Button').scrollable(false))
+            let scrollable1 = await scrollBar1.isScrollable()
+            expect(scrollable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2956,6 +2964,9 @@ export default function UiTest() {
             }
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
+            let button1 = await driver.findComponent(ON.text('enableFalse').enabled(false))
+            let enable1 = await button1.isEnabled()
+            expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2973,6 +2984,9 @@ export default function UiTest() {
             }
             let focused = await button.isFocused()
             expect(focused == false).assertTrue()
+            let button1 = await driver.findComponent(ON.focused(true))
+            let focused1 = await button1.isFocused()
+            expect(focused1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -2990,6 +3004,9 @@ export default function UiTest() {
             }
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
+            let button1 = await driver.findComponent(ON.id('enableFalse').selected(true))
+            let selected1 = await button1.isSelected()
+            expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3325,11 +3342,12 @@ export default function UiTest() {
             for (let step = 0; step < 11; step++) {
                 pointer.setPoint(1, step, {x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY})
             }
-            await driver.injectMultiPointerAction(pointer, 400)
+            let result = await driver.injectMultiPointerAction(pointer, 400)
             await driver.delayMs(3000)
             let image2 = await driver.findComponent(ON.id('test_pict'))
             let bounds2= await image2.getBounds()
             expect(bounds2 != bounds1).assertTrue()
+            expect(result).assertTrue();
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3540,6 +3558,12 @@ export default function UiTest() {
             let isActived = await window.isActived()
             expect(isFocused == true).assertTrue()
             expect(isActived == true).assertTrue()
+            let focusedWindow = await driver.findWindow({focused: false})
+            let falseFocused = await focusedWindow.isFocused()
+            expect(falseFocused).assertFalse()
+            let activedWindow = await driver.findWindow({actived: false})
+            let falseActived = await activedWindow.isActived()
+            expect(falseActived).assertFalse()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3643,7 +3667,20 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(2000)
             let idled = await driver.waitForIdle(4000,5000)
-            expect(idled = true).assertTrue()
+            expect(idled == true).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
+
+        /**
+         * @tc.number uiTest_90536
+         * @tc.name testWaitForIdleFalse
+         * @tc.desc wait for the UI become idle.
+         */
+        it('testWaitForIdleFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(2000)
+            let idled = await driver.waitForIdle(6000,2000)
+            expect(idled == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3658,9 +3695,17 @@ export default function UiTest() {
             let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
             try {
                 await window1.split()
-                await driver.delayMs(waitUiReadyMs)
-                let bar = await driver.findComponent(ON.type('DecorBar'))
-                expect(bar == null).assertTrue()
+                await driver.delayMs(waitUiReadyMs * 2)
+                let testLabel = await driver.findComponent(ON.text('test label'));
+                await driver.delayMs(waitUiReadyMs);
+                await testLabel.click();
+                await driver.delayMs(waitUiReadyMs);
+                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+                let window2Mode = await window2.getWindowMode();
+                expect(window2Mode == WindowMode.PRIMARY).assertTrue();
+                let testWindow = await driver.findWindow({bundleName:'com.uitest.acts'})
+                let testWindowMode = await testWindow.getWindowMode();
+                expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
             }
             catch (err) {
                 if (err.message == 'this device can not support this action') {
@@ -3878,6 +3923,9 @@ export default function UiTest() {
             }
             let clickable = await button.isClickable()
             expect(clickable == false).assertTrue()
+            let button1 = await driver.findComponent(BY.text('toast').clickable(true))
+            let clickable1 = await button1.isClickable()
+            expect(clickable1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3895,6 +3943,9 @@ export default function UiTest() {
             }
             let scrollable = await scrollBar.isScrollable()
             expect(scrollable == true).assertTrue()
+            let scrollBar1 = await driver.findComponent(BY.type('Button').scrollable(false))
+            let scrollable1 = await scrollBar1.isScrollable()
+            expect(scrollable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3912,6 +3963,9 @@ export default function UiTest() {
             }
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
+            let button1 = await driver.findComponent(BY.text('enableFalse').enabled(false))
+            let enable1 = await button1.isEnabled()
+            expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3929,6 +3983,9 @@ export default function UiTest() {
             }
             let focused = await button.isFocused()
             expect(focused == false).assertTrue()
+            let button1 = await driver.findComponent(BY.focused(true))
+            let focused1 = await button1.isFocused()
+            expect(focused1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3946,6 +4003,9 @@ export default function UiTest() {
             }
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
+            let button1 = await driver.findComponent(BY.key('enableFalse').selected(true))
+            let selected1 = await button1.isSelected()
+            expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 

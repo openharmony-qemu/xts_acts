@@ -15,6 +15,9 @@
 
 #include "common/common.h"
 #include "manager/plugin_manager.h"
+#include "position/EdgesPositionTest.h"
+#include "textContentAlign/TextContentAlignTest.h"
+#include "PixelRound/PixelRoundTest.h"
 
 namespace ArkUICapiTest
 {
@@ -30,6 +33,37 @@ namespace ArkUICapiTest
 
         napi_property_descriptor desc[] = {
             {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createPositionEdgesNativeRoot", nullptr, EdgesPositionTest::CreatePositionEdgesNativeRoot,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdgesIllegal_1", nullptr, EdgesPositionTest::setPositionEdgesIllegal_1, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdgesIllegal_2", nullptr, EdgesPositionTest::setPositionEdgesIllegal_2, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdgesIllegal_3", nullptr, EdgesPositionTest::setPositionEdgesIllegal_3, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top", nullptr, EdgesPositionTest::setPositionEdges_top, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_left", nullptr, EdgesPositionTest::setPositionEdges_left, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_bottom", nullptr, EdgesPositionTest::setPositionEdges_bottom, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_right", nullptr, EdgesPositionTest::setPositionEdges_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_negative", nullptr, EdgesPositionTest::setPositionEdges_top_negative, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_left_negative", nullptr, EdgesPositionTest::setPositionEdges_left_negative, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_bottom_negative", nullptr, EdgesPositionTest::setPositionEdges_bottom_negative, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_right_negative", nullptr, EdgesPositionTest::setPositionEdges_right_negative, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_left", nullptr, EdgesPositionTest::setPositionEdges_top_left, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_right", nullptr, EdgesPositionTest::setPositionEdges_top_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_bottom", nullptr, EdgesPositionTest::setPositionEdges_top_bottom, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_left_bottom", nullptr, EdgesPositionTest::setPositionEdges_left_bottom, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_left_right", nullptr, EdgesPositionTest::setPositionEdges_left_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_bottom_right", nullptr, EdgesPositionTest::setPositionEdges_bottom_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_left_bottom", nullptr, EdgesPositionTest::setPositionEdges_top_left_bottom, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_left_right", nullptr, EdgesPositionTest::setPositionEdges_top_left_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_bottom_right", nullptr, EdgesPositionTest::setPositionEdges_top_bottom_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_left_bottom_right", nullptr, EdgesPositionTest::setPositionEdges_left_bottom_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPositionEdges_top_left_bottom_right", nullptr, EdgesPositionTest::setPositionEdges_top_left_bottom_right, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"getPositionEdges", nullptr, EdgesPositionTest::getPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"reSetPositionEdges", nullptr, EdgesPositionTest::reSetPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"copyPositionEdges", nullptr, EdgesPositionTest::copyPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"textContentAlignTest", nullptr, TextContentAlignTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createPixelRoundNativeRoot", nullptr, PixelRoundTest::CreatePixelRoundNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"setPixelRound", nullptr, PixelRoundTest::SetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"getPixelRound", nullptr, PixelRoundTest::GetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

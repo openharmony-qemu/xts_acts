@@ -21,17 +21,29 @@ struct RichEditorShortCutKeys006 {
   build() {
 
     Column() {
+      Row(){
+        Button('select')
+          .id('select')
+          .backgroundColor(Color.Blue)
+          .onClick(() => {
+            let options: SelectionOptions = {
+              menuPolicy: MenuPolicy.SHOW
+            };
+            this.controller.setSelection(1, 2, options);
+          }).width('50%')
 
-      Button('select')
-        .id('select')
-        .margin(15)
-        .backgroundColor(Color.Blue)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller.setSelection(1, 2, options);
-        })
+        Button('get spans').onClick(() => {
+          this.style = '';
+          this.controller.getSpans({
+            start: 0,
+            end: 6
+          }).forEach(item => {
+            this.style += JSON.stringify(item);
+            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+          })
+        }).id('get_content').width('50%')
+      }.height('5%')
+      Text('style:' + this.style).id('style').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(300)
@@ -54,19 +66,6 @@ struct RichEditorShortCutKeys006 {
               });
         })
         .id('RichEditorShortCutKeys006')
-
-      Button('get spans').onClick(() => {
-        this.style = '';
-        this.controller.getSpans({
-          start: 0,
-          end: 6
-        }).forEach(item => {
-          this.style += JSON.stringify(item);
-          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-        })
-      }).id('get_content')
-
-      Text('style:' + this.style).id('style')
     }
   }
 }

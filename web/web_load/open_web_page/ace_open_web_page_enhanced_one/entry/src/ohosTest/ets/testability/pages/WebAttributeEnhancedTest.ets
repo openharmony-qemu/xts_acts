@@ -16,9 +16,9 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import { URL, URL_INVALID } from '../../test/Config.test';
 
+const EVENT_ID_SET_EMIT_KEY = 200570;
 
 @Entry
 @Component
@@ -27,18 +27,19 @@ struct WebAttributeEnhancedTest {
   @State str: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State title: string = '';
   @State isRealTitle: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 127,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(127)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,7 +48,7 @@ struct WebAttributeEnhancedTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -58,18 +59,15 @@ struct WebAttributeEnhancedTest {
         Button('web click')
           .key('OnTitleReceiveIsRealTitleButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.str, 0);
-            await waitForExist(()=>this.isPageEnd, this.str, 0);
+            await Utils.waitForExist(()=>this.isReceive, 'OnTitleReceiveIsRealTitleButtonIsReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, 'OnTitleReceiveIsRealTitleButtonIsPageEnd', 1, 1000);
             console.info('key==>' + this.str);
             this.isReceive = -1;
             switch (this.str) {
               case 'emitOnTitleReceiveIsRealTitle001': {
                 try {
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 1, 2025071603, this.str);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200580);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -80,12 +78,9 @@ struct WebAttributeEnhancedTest {
                   this.isRealTitle = -1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexWithNoTitle.html'));
-                  await waitForExist(()=>this.isPageEnd, this.str, 0);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 0, 2025071604, this.str);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200590);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -96,12 +91,9 @@ struct WebAttributeEnhancedTest {
                   this.isRealTitle = -1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl(URL);
-                  await waitForExist(()=>this.isPageEnd, this.str, 0);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 1, 2025071605, this.str);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200600);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -112,12 +104,9 @@ struct WebAttributeEnhancedTest {
                   this.isRealTitle = -1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl(URL_INVALID);
-                  await waitForExist(()=>this.isPageEnd, this.str, 0);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 0, 2025071606, this.str);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200610);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -128,12 +117,9 @@ struct WebAttributeEnhancedTest {
                   this.isRealTitle = -1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('titleEmptyTag.html'));
-                  await waitForExist(()=>this.isPageEnd, this.str, 0);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 0, 2025082602, this.str);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200611);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -144,12 +130,9 @@ struct WebAttributeEnhancedTest {
                   this.isRealTitle = -1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('titleEmptyString.html'));
-                  await waitForExist(()=>this.isPageEnd, this.str, 0);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.isRealTitle, check, 1, 2025082603, this.str);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   console.log(this.str + ' isRealTitle==>' + this.isRealTitle);
+                  Utils.emitEvent(this.isRealTitle, 200612);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -162,7 +145,7 @@ struct WebAttributeEnhancedTest {
           .key('webView')
           .onPageEnd((event) => {
             if (event) {
-              this.isPageEnd = 0;
+              this.isPageEnd = 1;
               console.log('onPageEnd==> event.url:' + event.url);
             }
           })
@@ -180,7 +163,6 @@ struct WebAttributeEnhancedTest {
       }
       .width('100%')
     }
-
     .height('100%')
   }
 }

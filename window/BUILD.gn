@@ -22,5 +22,8 @@ group("window") {
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
     "FloatingBallTest:ActsFloatingBallTest",
     "ActsWindowEnterpriseTest:ActsWindowEnterpriseTest",
+    "ActsDisplayTestStatic:ActsDisplayStaticTest",
+    "ActsWindowTestStatic:ActsWindowStaticTest",
+    "ActsWindowErrorCodeTestStatic:ActsWindowErrorCodeStaticTest",
   ]
 }

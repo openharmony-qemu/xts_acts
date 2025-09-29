@@ -17,8 +17,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 // @ts-nocheck
 let emitKey = "emitOnfullscreenenterinfo"
+const driver = Driver.create();
 
 export default function webViewOnFullScreenEnterInfo() {
   describe('ActsAceDevWebViewOnFullScreenEnterInfoTest', () => {
@@ -29,44 +33,28 @@ export default function webViewOnFullScreenEnterInfo() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewOnFullScreenEnterInfo state success " + JSON.stringify(pages));
             if (!("webViewOnFullScreenEnterInfo" == pages.name)) {
                 console.info("get webViewOnFullScreenEnterInfo state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewOnFullScreenEnterInfo state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewOnFullScreenEnterInfo page error:" + err);
         }
+        await waitForComponents('webViewOnFullScreenEnterInfo');
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
+      console.log("webViewOnFullScreenEnterInfo beforeEach start")
       done();
     })
     
     afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
+      console.info("webViewOnFullScreenEnterInfo afterEach start");
       done();
     })
 
@@ -82,9 +70,12 @@ export default function webViewOnFullScreenEnterInfo() {
     it('testOnFullScreenEnterVideoInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         sendEventByKey('TestwebViewOnFullScreenEnterInfo', 10, '');
         let emitKey="emitOnfullscreenenterInfo";
-        Utils.emitEvent(emitKey,10)
-        Utils.registerEvent("testOnFullScreenEnterVideoInfo", true, 1285, done);
-        sendEventByKey('webViewOnFullScreenEnterInfo', 10, '');
+        Utils.emitEvent(emitKey,300410)
+        Utils.registerBaseEvent("testOnFullScreenEnterVideoInfo", true, 300400, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+       await Utils.waitAndClickComponent(driver,'webViewOnFullScreenEnterInfo');
     })
   })
 }

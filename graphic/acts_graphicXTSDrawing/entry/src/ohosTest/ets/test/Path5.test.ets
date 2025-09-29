@@ -56,6 +56,7 @@ export default function drawingTsPath5Test() {
         let points: number[] = path.approximate(0.5);
         console.info(msg + 'approximate successes');
         expect(points != null || points != undefined).assertTrue()
+        expect(points.length > 0).assertEqual(true);
       } catch (e) {
         console.info(msg + `approximate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -63,7 +64,8 @@ export default function drawingTsPath5Test() {
       try {
         let points2: number[] = path.approximate(0);
         console.info(msg + 'approximate points2 successes');
-        expect(points2 != null || points2 != undefined).assertTrue()
+        expect(points2 != null || points2 != undefined).assertTrue();
+        expect(points2.length > 0).assertEqual(true);
       } catch (e) {
         console.info(msg + `approximate points2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -72,6 +74,7 @@ export default function drawingTsPath5Test() {
         let points3: number[] = path.approximate(1);
         console.info(msg + 'approximate points3 successes');
         expect(points3 != null || points3 != undefined).assertTrue()
+        expect(points3.length > 0).assertEqual(true);
       } catch (e) {
         console.info(msg + `approximate points3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -82,6 +85,7 @@ export default function drawingTsPath5Test() {
         let points4: number[] = path.approximate(0.5);
         console.info(msg + 'approximate points4 successes');
         expect(points4 != null || points4 != undefined).assertTrue()
+        expect(points4.length > 0).assertEqual(true);
       } catch (e) {
         console.info(msg + `approximate points4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -93,6 +97,7 @@ export default function drawingTsPath5Test() {
         let points5: number[] = path.approximate(0.88);
         console.info(msg + 'approximate points5 successes');
         expect(points5 != null || points5 != undefined).assertTrue()
+        expect(points5.length > 0).assertEqual(true);
       } catch (e) {
         console.info(msg + `approximate points5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()

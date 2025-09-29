@@ -17,8 +17,13 @@ import Utils from './Util';
 import events_emitter from '@ohos.events.emitter';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let driver: Driver = Driver.create();
 
 export default function Download() {
   describe('Download', () => {
@@ -27,30 +32,27 @@ export default function Download() {
         url: 'testability/pages/Download',
       }
       try {
-        await Utils.sleep(500)
         router.clear();
         let pages = router.getState();
-        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
+        console.info('get Download state success ' + JSON.stringify(pages));
         if (!('Download' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(800);
           console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push index page error: ' + err);
       }
-      await Utils.sleep(1000)
-      done()
+      await waitForComponents('downloadButton');
+      done();
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(300);
       done();
     });
 
@@ -69,13 +71,14 @@ export default function Download() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it("testWebView_setDownloadDelegate1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it("testWebView_setDownloadDelegate1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("pause", 130860);
       Utils.registerBaseEvent('testWebView_setDownloadDelegate1000', '17100019The download task is not started yet.',
-        400, done,
+        130870, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('pause', 10, '');
+      await Utils.waitAndClickComponent(driver, "downloadButton");
     })
 
     /**
@@ -87,18 +90,12 @@ export default function Download() {
      * @tc.level Level 2
      */
     it("testWebView_setDownloadDelegate1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_setDownloadDelegate1001', '4', 401, done,
+      Utils.emitEvent("state", 130860);
+      Utils.registerBaseEvent('testWebView_setDownloadDelegate1001', '4', 130880, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('setDownloadDelegate', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('startDownload', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('cancel', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('state', 10, '');
-      await Utils.sleep(2000);
+      await Utils.waitAndClickComponent(driver, "downloadButton");
     })
 
     /**
@@ -110,21 +107,12 @@ export default function Download() {
      * @tc.level Level 2
      */
     it("testWebView_setDownloadDelegate1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_setDownloadDelegate1002', '4', 401, done,
+      Utils.emitEvent("state1", 130860);
+      Utils.registerBaseEvent('testWebView_setDownloadDelegate1002', '4', 130890, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('setDownloadDelegate', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('startDownload', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('pause', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('resume', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('cancel', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state', 10, '');
+      await Utils.waitAndClickComponent(driver, "downloadButton");
     })
 
     /**
@@ -136,11 +124,12 @@ export default function Download() {
      * @tc.level Level 2
      */
     it("testWebView_setDownloadDelegate1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_setDownloadDelegate1003', '17100001Init error. The WebviewController must be associated with a Web component', 402, done,
+      Utils.emitEvent("setDownloadDelegateNotController", 130860);
+      Utils.registerBaseEvent('testWebView_setDownloadDelegate1003', '17100001Init error. The WebviewController must be associated with a Web component', 130900, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('setDownloadDelegateNotController', 10, '');
+      await Utils.waitAndClickComponent(driver, "downloadButton");
     })
 
     /**
@@ -152,14 +141,12 @@ export default function Download() {
      * @tc.level Level 2
      */
     it("testWebView_setDownloadDelegate1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_setDownloadDelegate1004', '17100002URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2048.', 403, done,
+      Utils.emitEvent("startDownload1", 130860);
+      Utils.registerBaseEvent('testWebView_setDownloadDelegate1004', '17100002URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 130910, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('setDownloadDelegate', 10, '');
-      await Utils.sleep(400);
-      sendEventByKey('startDownload1', 10, '');
+      await Utils.waitAndClickComponent(driver, "downloadButton");
     })
-
   })
 }

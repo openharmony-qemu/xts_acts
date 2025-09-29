@@ -36,7 +36,7 @@ ani_int test_AttachCurrentThreadAndDetachCurrentThread([[maybe_unused]] ani_env 
         ASSERT_EQ(vm_->AttachCurrentThread(&aniArgs, ANI_VERSION_1, &etsEnv), ANI_ERROR);
         ASSERT_NE(etsEnv, nullptr);
         ani_class kclass {};
-        ASSERT_EQ(etsEnv->FindClass("Lattach_thread_test/A;", &kclass), ANI_OK);
+        ASSERT_EQ(etsEnv->FindClass("attach_thread_test.A", &kclass), ANI_OK);
         ASSERT_NE(kclass, nullptr);
         ASSERT_EQ(vm_->DetachCurrentThread(), ANI_OK);
         return ANI_TRUE;

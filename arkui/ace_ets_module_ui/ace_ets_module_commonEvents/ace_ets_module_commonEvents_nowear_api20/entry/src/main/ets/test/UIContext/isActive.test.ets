@@ -50,7 +50,7 @@ export default function isActiveTest() {
     /**
      * @tc.number    isActiveTest_0010
      * @tc.name      isActiveTest_0010
-     * @tc.desc      api
+     * @tc.desc      api for test isActive true and false
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
@@ -62,18 +62,14 @@ export default function isActiveTest() {
       let setFocus = await driver.findComponent(ON.id('setFocus'));
       await setFocus.click();
       await CommonFunc.sleep(500);
-      let strJson = getInspectorByKey('setFocus');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[isActive_0010] Obj: ' + JSON.stringify(obj.$attrs.label));
-      expect(obj.$attrs.label).assertEqual('true');
+      console.info('[isActive_0010] isActiveTestTrueResult: ' + AppStorage.get('isActiveTestTrueResult'));
+      expect(AppStorage.get('isActiveTestTrueResult')).assertEqual(true);
 
       let notSetFocus = await driver.findComponent(ON.id('notSetFocus'));
       await notSetFocus.click();
       await CommonFunc.sleep(500);
-      let strJson1 = getInspectorByKey('notSetFocus');
-      let obj1: ESObject = JSON.parse(strJson1);
-      console.info('[isActive_0010] Obj1: ' + JSON.stringify(obj1.$attrs.label));
-      expect(obj1.$attrs.label).assertEqual('false');
+      console.info('[isActive_0010] isActiveTestFalseResult: ' + AppStorage.get('isActiveTestFalseResult'));
+      expect(AppStorage.get('isActiveTestFalseResult')).assertEqual(false);
       console.info('[isActive_0010] END');
       done();
     });

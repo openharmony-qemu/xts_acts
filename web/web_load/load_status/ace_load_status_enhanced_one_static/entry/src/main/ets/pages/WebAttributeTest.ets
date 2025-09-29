@@ -15,10 +15,10 @@
 
 import webView from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { State } from "@ohos.arkui.stateManagement"
-import { Callback, RecordData } from '@ohos.base'
+import { Callback } from '@ohos.base'
 import { OnPageBeginEvent,OnPageEndEvent,OnProgressChangeEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
 
 class StringFields {
@@ -36,46 +36,27 @@ struct WebAttributeTest{
   @State pageBegin: string = ""
   @State pageEnd: string = ""
 
-  // aboutToAppear() {
-  //   console.info('Entry aboutToAppear');
-  //   let valueChangeEvent: emitter.InnerEvent = {
-  //     eventId: 10,
-  //     priority: emitter.EventPriority.LOW
-  //   }
-  //   emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  //   console.info('Finish aboutToAppear' + this.valueChangeCallBack);
-  // }
-  //
-  // private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-  //   console.info('web page valueChangeCallBack');
-  //   if (eventData != null) {
-  //     console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-  //     const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-  //     if (data && data['ACTION'] != null) {
-  //       console.info('Received ACTION vaclue: ' + data['ACTION']);
-  //       let strValue: string = String(data['ACTION']);
-  //       console.info('strValue has been updated to: ' + strValue);
-  //       this.stringObj.str = strValue;
-  //       console.info('this.str has been updated to: ' + this.stringObj.str);
-  //     }
-  //   }
-  // }
-
   aboutToAppear() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
+    console.info('Entry aboutToAppear');
+    let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    console.info('Finish aboutToAppear' + this.valueChangeCallBack);
   }
 
-  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      if (data && data['ACTION'] != null) {
+        console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
+        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
+        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -97,9 +78,7 @@ struct WebAttributeTest{
             switch (this.stringObj.str) {
               case "emitOnProgressChange001": {
                 try {
-                  console.info('1111')
                   this.controller.loadUrl('resource://rawfile/second.html')
-                  console.info('2222')
                   Utils.emitEvent(this.progress, 700012)
                 } catch (error:BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

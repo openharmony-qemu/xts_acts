@@ -100,6 +100,14 @@ struct GridTypeNodePage {
         }
       }).id('GridTypeNodePage_Btn')
 
+      Button('undefined').onClick(() => {
+        const attrs1 = typeNode.getAttribute(undefined, 'Grid');
+        AppStorage.SetOrCreate('GridTypeNodeUn', attrs1);
+
+        const attrs2 = typeNode.getAttribute(undefined, 'GridItem');
+        AppStorage.SetOrCreate('GridItemTypeNodeUn', attrs2);
+      }).id('GridTypeNodePage_undefined')
+
       NodeContainer(this.myNodeController)
     }
     .width('100%')

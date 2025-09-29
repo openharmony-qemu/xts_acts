@@ -45,8 +45,10 @@ export class KeyboardDelegate {
         return;
       }
       this.softKeyboardPanel = panel;
-      this.softKeyboardPanel.setUiContent('testability/pages/Second', async (err, data) => {        
-        console.info(TAG + '====>Succeed in creating panel.' + JSON.stringify(panel));
+      this.softKeyboardPanel.setUiContent('testability/pages/Second').then(async (err) => {
+        console.info(TAG + '====>softKeyboardPanel setUiContent err:' + JSON.stringify(err));
+      }).catch((error)=>{
+        console.error(TAG + '====>Failed to softKeyboardPanel.setUiContent:', error);
       });
       try{
         let commonEventSubscribeInfo = {
@@ -55,7 +57,11 @@ export class KeyboardDelegate {
         
         commoneventmanager.createSubscriber(commonEventSubscribeInfo).then(function (data) {
           subscriber = data;
-          commoneventmanager.subscribe(subscriber, subscriberCallback)
+          try{
+            commoneventmanager.subscribe(subscriber, subscriberCallback)
+          }catch(error){
+            console.error(TAG + '====>Failed to subscribe in KeyboardDelegate:', error);
+          }
           console.info(TAG + '====>scene subscribe finish====');
         }).catch((error)=>{
             console.error(TAG + '====>Failed to createSubscriber in KeyboardDelegate:', error);

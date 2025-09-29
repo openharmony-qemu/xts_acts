@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1379,6 +1379,30 @@ export const testImageFillColor003: () => number;
 
 export const testImageFillColor004: () => number;
 
+export const testImageDynamicRangeMode001: () => number;
+
+export const testImageDynamicRangeMode002: () => number;
+
+export const testImageDynamicRangeMode003: () => number;
+
+export const testImageDynamicRangeMode004: () => number;
+
+export const testImageHdrBrightness001: () => number;
+
+export const testImageHdrBrightness002: () => number;
+
+export const testImageHdrBrightness003: () => number;
+
+export const testImageHdrBrightness004: () => number;
+
+export const testImageOrientation001: () => number;
+
+export const testImageOrientation002: () => number;
+
+export const testImageOrientation003: () => number;
+
+export const testImageOrientation004: () => number;
+
 export const testImageResizable001: () => number;
 
 export const testImageResizable002: () => number;
@@ -1388,6 +1412,58 @@ export const testImageResizable003: () => number;
 export const testImageResizable004: () => number;
 
 export const testImageResizable005: () => number;
+
+export const testImageSourceSize001: () => number;
+
+export const testImageSourceSize002: () => number;
+
+export const testImageSourceSize003: () => number;
+
+export const testImageSourceSize004: () => number;
+
+export const testImageSourceSize005: () => number;
+
+export const testImageSourceSize006: () => number;
+
+export const testImageMatrix001: () => number;
+
+export const testImageMatrix002: () => number;
+
+export const testImageMatrix003: () => number;
+
+export const testImageMatrix004: () => number;
+
+export const testImageMatrix005: () => number;
+
+export const testImageMatchTextDirection001: () => number;
+
+export const testImageMatchTextDirection002: () => number;
+
+export const testImageMatchTextDirection003: () => number;
+
+export const testImageMatchTextDirection004: () => number;
+
+export const testImageMatchTextDirection005: () => number;
+
+export const testImageCopyOption001: () => number;
+
+export const testImageCopyOption002: () => number;
+
+export const testImageCopyOption003: () => number;
+
+export const testImageCopyOption004: () => number;
+
+export const testImageCopyOption005: () => number;
+
+export const testImageEnableAnalyzer001: () => number;
+
+export const testImageEnableAnalyzer002: () => number;
+
+export const testImageEnableAnalyzer003: () => number;
+
+export const testImageEnableAnalyzer004: () => number;
+
+export const testImageEnableAnalyzer005: () => number;
 
 export const testImageAlt001: () => number;
 
@@ -1724,12 +1800,6 @@ export const testScrollPosition002: () => number;
 export const testImagePosition001: () => number;
 
 export const testImagePosition002: () => number;
-
-export const testListScrollBarColor001: () => number;
-
-export const testListScrollBarColor002: () => number;
-
-export const testListScrollBarColor003: () => number;
 
 export const testListScrollBarWidth001: () => number;
 
@@ -5221,6 +5291,8 @@ export const testSliderBlockColor006: () => number;
 
 export const testSliderBlockColor007: () => number;
 
+export const testSliderBlockColor008: () => number;
+
 export const testSliderBlockStyle001: () => number;
 
 export const testSliderBlockStyle002: () => number;
@@ -5297,6 +5369,8 @@ export const testSliderSelectedColor006: () => number;
 
 export const testSliderSelectedColor007: () => number;
 
+export const testSliderSelectedColor008: () => number;
+
 export const testSliderShowSteps001: () => number;
 
 export const testSliderShowSteps002: () => number;
@@ -5338,6 +5412,8 @@ export const testSliderTrackColor004: () => number;
 export const testSliderTrackColor005: () => number;
 
 export const testSliderTrackColor006: () => number;
+
+export const testSliderTrackColor007: () => number;
 
 export const testSliderTrackThickness001: () => number;
 

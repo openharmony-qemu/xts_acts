@@ -21,7 +21,7 @@ function add() {
   count++;
 }
 
-function waitForSeconds(time: number): Promise<void> {
+function waitForSeconds(time: int): Promise<void> {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
       resolve(undefined);

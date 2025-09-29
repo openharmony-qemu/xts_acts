@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202520;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
 export default function onSslErrorEvent() {
   describe('WebonSslErrorEventTest', () => {
     beforeAll(async (done: Function) => {
@@ -31,30 +36,24 @@ export default function onSslErrorEvent() {
         console.info("get onSslErrorEvent state success " + JSON.stringify(pages));
         if (!("onSslErrorEvent" == pages.name)) {
           console.info("get onSslErrorEvent state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push onSslErrorEvent page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push onSslErrorEvent page success");
         }
       } catch (err) {
         console.error("push onSslErrorEvent page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebonSslErrorEventButton"), 10000);
+      console.log("waitForComponent WebonSslErrorEventButton");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("onSslErrorEvent afterEach start");
-      await Utils.sleep(1000);
-      console.info("onSslErrorEvent afterEach end");
       done();
     })
 
@@ -67,12 +66,13 @@ export default function onSslErrorEvent() {
     * @tc.level       : Level 2
     */
     it('testonSslErrorEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitonSslErrorEvent", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testonSslErrorEvent001", 1, 2025321, done);
-      sendEventByKey('WebonSslErrorEventButton', 10, '');
+      Utils.emitEvent("emitonSslErrorEvent", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testonSslErrorEvent001", 1, 202530, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebonSslErrorEventButton");
+      if (await Utils.waitForExist(() => isReturn, 'testonSslErrorEvent001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
-
   })
 }

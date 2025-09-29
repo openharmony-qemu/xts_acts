@@ -157,7 +157,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
      */
     it("SUB_Security_CryptoFramework_DigestSync_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
-        let algName: string = "SHA3-256";
+        let algName: string = "SHA3-224";
         cryptoFramework.createMd(algName);
         expect(null).assertTrue();
       } catch (error) {

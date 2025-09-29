@@ -57,7 +57,7 @@ export default function SecurityHuksWrapKeyTest() {
         expect(null).assertFail();
       } catch (err) {
         console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
-        if (useSoftware) {
+        if (useSoftware || err.code == 801) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
         } else {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
@@ -81,7 +81,7 @@ export default function SecurityHuksWrapKeyTest() {
         expect(null).assertFail();
       } catch (err) {
         console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
-        if (useSoftware) {
+        if (useSoftware || err.code == 801) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
         } else {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);

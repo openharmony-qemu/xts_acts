@@ -247,7 +247,7 @@ export default class Utils {
       right: JSON.parse('[' + rectInfo[1] + ']')[0],
       bottom: JSON.parse('[' + rectInfo[1] + ']')[1]
     };
-    console.info(JSON.stringify(rect_value));
+    console.info('[getInspectorByKey] rectInfo is: ' + JSON.stringify(rect_value));
     return rect_value;
   }
 

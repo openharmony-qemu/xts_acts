@@ -43,7 +43,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 @Component
 struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  @State str: string = 'emitGetWebId';
+  @State str: string = 'wholeWebPageDrawing0100';
   @State webId: number = 0;
   @State webId2: number = 0;
   @State webId3: number = 0;
@@ -56,40 +56,24 @@ struct Index {
   @State databaseAccess: boolean = true;
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    try {
-      web_webview.WebviewController.enableWholeWebPageDrawing();
-      console.info('enableWholeWebPageDrawing success');
-    } catch (error) {
-      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-    }
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  onPageHide() {
-    emitter.off(10)
-  }
-
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.str = strValue;
         console.info('this.str has been updated to: ' + this.str);
       }
     }
   }
-
 
   build() {
     Column() {

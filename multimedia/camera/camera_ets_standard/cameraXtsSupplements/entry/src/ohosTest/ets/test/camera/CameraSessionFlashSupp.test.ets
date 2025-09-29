@@ -447,12 +447,12 @@ export default function CameraSessionFlashSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
-     * @tc.desc      : test camera session isExposureModeSupported PhotoSession maxLegal+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
+     * @tc.desc       test camera session isExposureModeSupported PhotoSession maxLegal+1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100--------------");
@@ -478,12 +478,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
-     * @tc.desc      : test camera session isExposureModeSupported VideoSession maxLegal+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
+     * @tc.desc       test camera session isExposureModeSupported VideoSession maxLegal+1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200--------------");
@@ -509,12 +509,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
-     * @tc.desc      : test camera session isExposureModeSupported PhotoOutput negative code -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
+     * @tc.desc       test camera session isExposureModeSupported PhotoOutput negative code -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300--------------");
@@ -538,12 +538,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
-     * @tc.desc      : test camera session isExposureModeSupported VideoSession maxLegal -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
+     * @tc.desc       test camera session isExposureModeSupported VideoSession maxLegal -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400--------------");
@@ -568,12 +568,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
-     * @tc.desc      : test camera session isExposureModeSupported PhotoSession negative code -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
+     * @tc.desc       test camera session isExposureModeSupported PhotoSession negative code -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500--------------");
@@ -598,12 +598,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
-     * @tc.desc      : test camera session isExposureModeSupported VideoSession -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
+     * @tc.desc       test camera session isExposureModeSupported VideoSession -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600--------------");
@@ -628,12 +628,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100
-     * @tc.desc      : capturesession setFlashModePhoto api errorcode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100
+     * @tc.desc       capturesession setFlashModePhoto api errorcode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0100';
@@ -648,12 +648,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100
-     * @tc.desc      : capturesession setFlashModeVideo api errorcode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100
+     * @tc.desc       capturesession setFlashModeVideo api errorcode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0100';
@@ -668,12 +668,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200
-     * @tc.desc      : capturesession setFlashModePhoto api errorcode 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200
+     * @tc.desc       capturesession setFlashModePhoto api errorcode 4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_PHOTO_ERRORCODE_0200';
@@ -688,12 +688,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200
-     * @tc.desc      : capturesession setFlashModeVideo api errorcode 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200
+     * @tc.desc       capturesession setFlashModeVideo api errorcode 4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0200';
@@ -708,12 +708,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300
-     * @tc.desc      : capturesession setFlashModePhoto api errorcode -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300
+     * @tc.desc       capturesession setFlashModePhoto api errorcode -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_ERRORCODE_PHOTO_0300';
@@ -728,12 +728,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300
-     * @tc.desc      : capturesession setFlashModeVideo api errorcode -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300
+     * @tc.desc       capturesession setFlashModeVideo api errorcode -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_SETFLASHMODE_VIDEO_ERRORCODE_0300';
@@ -749,12 +749,12 @@ export default function CameraSessionFlashSuppTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
-     * @tc.desc      : test PhotoSession setExposureMode maxLegal+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
+     * @tc.desc       test PhotoSession setExposureMode maxLegal+1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.ExposureMode);
@@ -770,12 +770,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
-     * @tc.desc      : test VideoSession setExposureMode maxLegal+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100
+     * @tc.desc       test VideoSession setExposureMode maxLegal+1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.ExposureMode);
@@ -791,12 +791,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
-     * @tc.desc      : test  PhotoSession setExposureMode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
+     * @tc.desc       test  PhotoSession setExposureMode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200', -1, (res?: number, errCode?: number) => {
@@ -811,12 +811,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
-     * @tc.desc      : test VideoSession setExposureMode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200
+     * @tc.desc       test VideoSession setExposureMode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200', -1, (res?: number, errCode?: number) => {
@@ -830,12 +830,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
-     * @tc.desc      : test PhotoSession setExposureMode -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
+     * @tc.desc       test PhotoSession setExposureMode -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300', Level.LEVEL2, async (done: Function) => {
       photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300', -100, (res?: number, errCode?: number) => {
@@ -849,12 +849,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
-     * @tc.desc      : test VideoSession setExposureMode -100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300
+     * @tc.desc       test VideoSession setExposureMode -100
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0300', Level.LEVEL2, async (done: Function) => {
       videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0200', -100, (res?: number, errCode?: number) => {
@@ -869,12 +869,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
-     * @tc.desc      : test PhotoSession setExposureMode null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
+     * @tc.desc       test PhotoSession setExposureMode null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400', Level.LEVEL2, async (done: Function) => {
       photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400', null, (res?: number, errCode?: number) => {
@@ -888,12 +888,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
-     * @tc.desc      : test VideoSession setExposureMode null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400
+     * @tc.desc       test VideoSession setExposureMode null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400', Level.LEVEL2, async (done: Function) => {
       videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0400', null, (res?: number, errCode?: number) => {
@@ -907,12 +907,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
-     * @tc.desc      : test PhotoSession setExposureMode undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
+     * @tc.desc       test PhotoSession setExposureMode undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
       photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500', undefined, (res?: number, errCode?: number) => {
@@ -926,12 +926,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
-     * @tc.desc      : test VideoSession setExposureMode undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500
+     * @tc.desc       test VideoSession setExposureMode undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
       videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0500', undefined, (res?: number, errCode?: number) => {
@@ -946,12 +946,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
-     * @tc.desc      : test camera  photoSession setMeteringPoint null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
+     * @tc.desc       test camera  photoSession setMeteringPoint null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100', Level.LEVEL2, async (done: Function) => {
       const point = null;
@@ -968,12 +968,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
-     * @tc.desc      : test camera  photoSession setMeteringPoint undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
+     * @tc.desc       test camera  photoSession setMeteringPoint undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100', Level.LEVEL2, async (done: Function) => {
       const point = undefined;
@@ -990,12 +990,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
-     * @tc.desc      : test camera VideoSession setMeteringPoint undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100
+     * @tc.desc       test camera VideoSession setMeteringPoint undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_UNDEFINED_0100', Level.LEVEL2, async (done: Function) => {
       const point = undefined;
@@ -1012,12 +1012,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
-     * @tc.desc      : test camera VideoSession setMeteringPoint null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100
+     * @tc.desc       test camera VideoSession setMeteringPoint null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_ERRORCODE_NULL_0100', Level.LEVEL2, async (done: Function) => {
       const point = null;
@@ -1035,12 +1035,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
-     * @tc.desc      : test camera PhotoSession setMeteringPoint negative -1 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
+     * @tc.desc       test camera PhotoSession setMeteringPoint negative -1 0
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: -1, y: 0 };
@@ -1058,12 +1058,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
-     * @tc.desc      : test camera VideoSession setMeteringPoint negative -1 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100
+     * @tc.desc       test camera VideoSession setMeteringPoint negative -1 0
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: -1, y: 0 };
@@ -1081,12 +1081,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
-     * @tc.desc      : test camera PhotoSession setMeteringPoint negative 0 -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
+     * @tc.desc       test camera PhotoSession setMeteringPoint negative 0 -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 0, y: -1 };
@@ -1103,12 +1103,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
-     * @tc.desc      : test camera VideoSession setMeteringPoint negative 0 -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200
+     * @tc.desc       test camera VideoSession setMeteringPoint negative 0 -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 0, y: -1 };
@@ -1126,12 +1126,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
-     * @tc.desc      : test camera PhotoSession setMeteringPoint 1 2
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
+     * @tc.desc       test camera PhotoSession setMeteringPoint 1 2
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = {x:1, y:2};
@@ -1147,12 +1147,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
-     * @tc.desc      : test camera VideoSession setMeteringPoint 1 2
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100
+     * @tc.desc       test camera VideoSession setMeteringPoint 1 2
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 1, y: 2};
@@ -1169,12 +1169,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
-     * @tc.desc      : test camera PhotoSession setMeteringPoint 2 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
+     * @tc.desc       test camera PhotoSession setMeteringPoint 2 0
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = {x:2, y:0};
@@ -1190,12 +1190,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
-     * @tc.desc      : test camera VideoSession setMeteringPoint 2 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200
+     * @tc.desc       test camera VideoSession setMeteringPoint 2 0
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_MAXLEGAL_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 2, y: 0};
@@ -1213,12 +1213,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100
-     * @tc.desc      : PhotoSession isFlashModeSupported api errorcode undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100
+     * @tc.desc       PhotoSession isFlashModeSupported api errorcode undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0100',undefined,(res?: boolean, errCode?: number) => {
@@ -1233,12 +1233,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200
-     * @tc.desc      : VideoSession isFlashModeSupported api errorcode undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200
+     * @tc.desc       VideoSession isFlashModeSupported api errorcode undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
       videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0200',undefined,(res?: boolean, errCode?: number) => {
@@ -1253,12 +1253,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300
-     * @tc.desc      : PhotoSession isFlashModeSupported api errorcode null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300
+     * @tc.desc       PhotoSession isFlashModeSupported api errorcode null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300', Level.LEVEL2, async (done: Function) => {
       photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0300',null,(res?: boolean, errCode?: number) => {
@@ -1272,12 +1272,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400
-     * @tc.desc      : VideoSession isFlashModeSupported api errorcode null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400
+     * @tc.desc       VideoSession isFlashModeSupported api errorcode null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400', Level.LEVEL2, async (done: Function) => {
       videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0400',null,(res?: boolean, errCode?: number) => {
@@ -1291,12 +1291,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500
-     * @tc.desc      : PhotoSession isFlashModeSupported api errorcode 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500
+     * @tc.desc       PhotoSession isFlashModeSupported api errorcode 4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.FlashMode);
@@ -1311,12 +1311,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600
-     * @tc.desc      : VideoSession isFlashModeSupported api errorcode 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600
+     * @tc.desc       VideoSession isFlashModeSupported api errorcode 4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.FlashMode);
@@ -1332,12 +1332,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700
-     * @tc.desc      : PhotoSession isFlashModeSupported api errorcode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700
+     * @tc.desc       PhotoSession isFlashModeSupported api errorcode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700', Level.LEVEL2, async (done: Function) => {
       photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700',-1,(res?: boolean, errCode?: number) => {
@@ -1352,12 +1352,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0800
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0800
-     * @tc.desc      : PhotoSession isFlashModeSupported api errorcode -10000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0800
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0800
+     * @tc.desc       PhotoSession isFlashModeSupported api errorcode -10000
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0800', Level.LEVEL2, async (done: Function) => {
       photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0700',-10000,(res?: boolean, errCode?: number) => {
@@ -1372,12 +1372,12 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0900
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0900
-     * @tc.desc      : VideoSession isFlashModeSupported api errorcode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0900
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0900
+     * @tc.desc       VideoSession isFlashModeSupported api errorcode -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0900', Level.LEVEL2, async (done: Function) => {
       videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600',-1,(res?: boolean, errCode?: number) => {
@@ -1391,12 +1391,12 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_01000
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_01000
-     * @tc.desc      : VideoSession isFlashModeSupported api errorcode -10000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_01000
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_01000
+     * @tc.desc       VideoSession isFlashModeSupported api errorcode -10000
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_01000', Level.LEVEL2, async (done: Function) => {
       videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600',-10000,(res?: boolean, errCode?: number) => {

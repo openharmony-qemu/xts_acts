@@ -37,10 +37,10 @@ struct editMenuIdAIWriter {
   }
   build() {
     Column() {
-      Text(''+this.flag).key('flag')
+      Text(''+this.flag).key('flag').height('5%')
       TextArea({ text:this.textArea })
         .id('TextAreaEditMenuOptions')
-        .height(50)
+        .height('10%')
         .textAlign(TextAlign.Center)
         .fontSize(25)
         .copyOption(CopyOptions.InApp)
@@ -60,10 +60,9 @@ struct editMenuIdAIWriter {
             this.flag = false
           }
         })
-        .margin({ top: 50 })
       TextInput({ text:this.textInput })
         .id('TextInputEditMenuOptions')
-        .height(50)
+        .height('10%')
         .textAlign(TextAlign.Center)
         .fontSize(25)
         .copyOption(CopyOptions.InApp)
@@ -83,7 +82,6 @@ struct editMenuIdAIWriter {
             this.flag = false
           }
         })
-        .margin({ top: 50 })
     }
     .width('90%')
     .margin('5%')

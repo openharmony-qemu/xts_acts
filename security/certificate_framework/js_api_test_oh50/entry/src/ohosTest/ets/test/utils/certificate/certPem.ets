@@ -939,7 +939,7 @@ function setMacParams(saltLen: number, iterations: number = 2048,
   }
 }
 
-let stressTimeout: number = 2000 * 2;
+let stressTimeout: number = 1000 * 1;
 let intervalTime: number = 1000;
 
 

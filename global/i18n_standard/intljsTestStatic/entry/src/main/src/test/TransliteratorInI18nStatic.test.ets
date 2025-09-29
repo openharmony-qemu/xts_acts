@@ -33,7 +33,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 import Utils from './Util.test'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 
@@ -54,7 +54,7 @@ export default function TransliteratorIni18nTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0100
      * @tc.name    transliterator_test_static_0100
      * @tc.desc    test getAvailableIDs,get the ID value
@@ -72,19 +72,19 @@ export default function TransliteratorIni18nTest() {
         len--;
       }
     })
-    /* *
-   * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
-   * @tc.name    transliterator_test_static_0200
-   * @tc.desc    test getInstance with a param,get the instance value
-   */
+
+    /**
+     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
+     * @tc.name    transliterator_test_static_0200
+     * @tc.desc    test getInstance with a param,get the instance value
+     */
     it('transliterator_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0200 ' + 'start');
       let value = i18n.Transliterator.getInstance('a');
-      console.log('transliterator_test_static_0200 ' + value);
       expect(value !== null).assertTrue();
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0300
      * @tc.name    transliterator_test_static_0300
      * @tc.desc    test transform with 中国 param get the transform value
@@ -97,7 +97,7 @@ export default function TransliteratorIni18nTest() {
       expect(value).assertEqual('中国');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0400
     * @tc.name    transliterator_test_static_0400
     * @tc.desc    test transform with Any-Latn param,get the transform value
@@ -110,7 +110,7 @@ export default function TransliteratorIni18nTest() {
       expect(value).assertEqual('zhōng guó');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0500
     * @tc.name    transliterator_test_static_0500
     * @tc.desc    get the transform value,test transform with Any-Thai param
@@ -123,7 +123,7 @@ export default function TransliteratorIni18nTest() {
       expect(value).assertEqual('中国');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0600
     * @tc.name    transliterator_test_static_0600
     * @tc.desc    test transform with Any-zh param,get the transform value
@@ -136,7 +136,7 @@ export default function TransliteratorIni18nTest() {
       expect(value).assertEqual('nihao');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0700
     * @tc.name    transliterator_test_static_0700
     * @tc.desc    test transform with Any-Hant param,get the transform value
@@ -149,7 +149,7 @@ export default function TransliteratorIni18nTest() {
       expect(value).assertEqual('hello');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0800
     * @tc.name    transliterator_test_static_0800
     * @tc.desc    test transform with Any-Kannada param,get the transform value

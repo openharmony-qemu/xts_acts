@@ -26,8 +26,10 @@ struct SearchGesture {
 
   build() {
     Column() {
-      Text(this.caretXText).key('SearchCaretXText').height('5%').textAlign(TextAlign.Center)
-      Text(this.caretIndexText).key('SearchCaretIndexText').height('5%').textAlign(TextAlign.Center)
+      Row(){
+        Text(this.caretXText).key('SearchCaretXText').textAlign(TextAlign.Center).width('50%')
+        Text(this.caretIndexText).key('SearchCaretIndexText').textAlign(TextAlign.Center).width('50%')
+      }.height('5%')
       Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.controller })
         .searchButton('SEARCH1', {fontSize: 5})
         .width('95%')
@@ -66,7 +68,7 @@ struct SearchGesture {
             this.positionInfo2 = this.controller2.getCaretOffset()
             this.caretIndexText = this.positionInfo2.index +  ''
           })
-      }.height('10%')
+      }.height('5%')
       Row(){
         Button('Caret2:11')
           .key('Search2Caret11')
@@ -78,7 +80,7 @@ struct SearchGesture {
           .onClick(() => {
             this.controller2.caretPosition(2)
           })
-      }.height('10%')
+      }.height('5%')
 
     }.width('100%')
   }

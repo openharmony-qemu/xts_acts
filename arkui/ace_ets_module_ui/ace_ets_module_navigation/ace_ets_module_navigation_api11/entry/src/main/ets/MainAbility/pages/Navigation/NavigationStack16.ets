@@ -80,7 +80,7 @@ struct NavigationStack16 {
           .key('NavigationStack16True')
           .onClick(() => {
             this.bool = true
-          })
+          }).height('5%')
         Button('CZ').key('NavigationStack16CZ')
           .onClick(() => {
             this.bool = false
@@ -88,14 +88,16 @@ struct NavigationStack16 {
             this.flagBlur = 'BlurStart'
             this.flagFocus = 'FocusStart'
             this.pageInfos.clear()
-          })
+          }).height('5%')
         Button('changeModel').key('NavigationStack16clear')
           .onClick(() => {
             this.mode = NavigationMode.Auto
           })
+          .height('5%')
       }
       .border({width:1})
       .width('100%')
+      .height('85%')
     }
   }
 }

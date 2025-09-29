@@ -1470,6 +1470,47 @@ static napi_value OHCameraInputOpenSecureCamera(napi_env env, napi_callback_info
 
     return secureCamera;
 }
+static napi_value OHCameraInputIsPhysicalCameraOrientationVariable(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    bool isVariable = false;
+    Camera_ErrorCode code = ndkCamera_->IsPhysicalCameraOrientationVariable(&isVariable);
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, obj, "errorCode", jsValue);
+    napi_get_boolean(env, isVariable, &jsValue);
+    napi_set_named_property(env, obj, "isVariable", jsValue);
+    return obj;
+}
+static napi_value OHCameraInputGetPhysicalCameraOrientation(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    uint32_t orientation = 1;
+    Camera_ErrorCode code = ndkCamera_->GetPhysicalCameraOrientation(&orientation);
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, obj, "errorCode", jsValue);
+    napi_create_int32(env, orientation, &jsValue);
+    napi_set_named_property(env, obj, "orientation", jsValue);
+    return obj;
+}
+static napi_value OHCameraInputUsePhysicalCameraOrientation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    bool isUsed;
+    napi_get_value_bool(env, args[0], &isUsed);
+
+    Camera_ErrorCode code = ndkCamera_->UsePhysicalCameraOrientation(isUsed);
+
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, code, &jsValue);
+    return jsValue;
+}
 static napi_value OHCameraManagerSetSceneMode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1870,6 +1911,56 @@ static napi_value OHPhotoOutputEnableMovingPhoto(napi_env env, napi_callback_inf
     napi_create_int32(env, code, &result);
     return result;
 }
+
+static napi_value OHPhotoOutputIsPhotoQualityPrioritizationSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    int32_t quality;
+    napi_get_value_int32(env, args[1], &quality);
+
+    Camera_ErrorCode code = ndkCamera_->IsPhotoQualityPrioritizationSupported(index, quality);
+
+    napi_value photoQualityPrioritizationInstance = nullptr;
+    napi_create_object(env, &photoQualityPrioritizationInstance);
+    napi_value jsValue = nullptr;
+
+    bool isPhotoQualityPrioritizationSupported = ndkCamera_->isPhotoQualityPrioritizationSupported_;
+    napi_get_boolean(env, isPhotoQualityPrioritizationSupported, &jsValue);
+    napi_set_named_property(env, photoQualityPrioritizationInstance, "isPhotoQualityPrioritizationSupported", jsValue);
+
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, photoQualityPrioritizationInstance, "errorCode", jsValue);
+
+    return photoQualityPrioritizationInstance;
+}
+
+static napi_value OHPhotoOutputSetPhotoQualityPrioritization(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[NUMBER_2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    int32_t quality;
+    napi_get_value_int32(env, args[1], &quality);
+
+    Camera_ErrorCode code = ndkCamera_->SetPhotoQualityPrioritization(index, quality);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value OHPhotoNativeGetMainImage(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3064,6 +3155,12 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHCameraInputOpenSecureCamera", nullptr, OHCameraInputOpenSecureCamera, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"oHCameraInputIsPhysicalCameraOrientationVariable", nullptr, OHCameraInputIsPhysicalCameraOrientationVariable,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraInputGetPhysicalCameraOrientation", nullptr, OHCameraInputGetPhysicalCameraOrientation, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraInputUsePhysicalCameraOrientation", nullptr, OHCameraInputUsePhysicalCameraOrientation, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"oHCaptureSessionRegisterCallbackOn", nullptr, OHCaptureSessionRegisterCallbackOn, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"oHCaptureSessionUnregisterCallbackOff", nullptr, OHCaptureSessionUnregisterCallbackOff, nullptr, nullptr,
@@ -3184,6 +3281,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHPhotoOutputEnableMovingPhoto", nullptr, OHPhotoOutputEnableMovingPhoto, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"oHPhotoOutputIsPhotoQualityPrioritizationSupported", nullptr,
+            OHPhotoOutputIsPhotoQualityPrioritizationSupported, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHPhotoOutputSetPhotoQualityPrioritization", nullptr, OHPhotoOutputSetPhotoQualityPrioritization, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"oHPhotoNativeGetMainImage", nullptr, OHPhotoNativeGetMainImage, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"oHPhotoNativeRelease", nullptr, OHPhotoNativeRelease, nullptr, nullptr, nullptr, napi_default,

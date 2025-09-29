@@ -96,51 +96,52 @@ struct RichEditorInterFace001 {
   build() {
 
     Column() {
-      Text('onAppearCall:' + this.onAppearCall).id('onAppearCall')
-      Text('disAppearCall:' + this.disAppearCall).id('disAppearCall')
-
-
-      Button('select 1')
-        .id('select1')
-        .margin(10)
-        .backgroundColor(Color.Orange)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller.setSelection(1, 3, options);
-        })
-      Button('select 2')
-        .id('select2')
-        .margin(10)
-        .backgroundColor(Color.Orange)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller.setSelection(4, 5, options);
-        })
-      Button('select 3')
-        .id('select3')
-        .margin(10)
-        .backgroundColor(Color.Orange)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller.setSelection(5, 6, options);
-        })
-
-      Button('add span')
-        .id('addSpan')
-        .margin(10)
-        .backgroundColor(Color.Orange)
-        .onClick(() => {
-          this.myBuilder = () => {
-            this.placeholderBuilder();
-          }
-          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset});
-        })
+      Row(){
+        Text('onAppearCall:' + this.onAppearCall).id('onAppearCall').width('50%')
+        Text('disAppearCall:' + this.disAppearCall).id('disAppearCall').width('50%')
+      }.height('5%')
+      Row(){
+        Button('select 1')
+          .id('select1')
+          .width('20%')
+          .backgroundColor(Color.Orange)
+          .onClick(() => {
+            let options: SelectionOptions = {
+              menuPolicy: MenuPolicy.SHOW
+            };
+            this.controller.setSelection(1, 3, options);
+          })
+        Button('select 2')
+          .id('select2')
+          .width('20%')
+          .backgroundColor(Color.Orange)
+          .onClick(() => {
+            let options: SelectionOptions = {
+              menuPolicy: MenuPolicy.SHOW
+            };
+            this.controller.setSelection(4, 5, options);
+          })
+        Button('select 3')
+          .id('select3')
+          .width('20%')
+          .backgroundColor(Color.Orange)
+          .onClick(() => {
+            let options: SelectionOptions = {
+              menuPolicy: MenuPolicy.SHOW
+            };
+            this.controller.setSelection(5, 6, options);
+          })
+        Button('add span')
+          .id('addSpan')
+          .width('20%')
+          .backgroundColor(Color.Orange)
+          .onClick(() => {
+            this.myBuilder = () => {
+              this.placeholderBuilder();
+            }
+            this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset});
+          })
+      }.height('5%')
 
       RichEditor(this.options)
         .height(100)

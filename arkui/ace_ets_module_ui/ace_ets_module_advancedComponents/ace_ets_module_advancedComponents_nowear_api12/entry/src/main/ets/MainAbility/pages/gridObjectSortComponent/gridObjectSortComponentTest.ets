@@ -109,5 +109,7 @@ struct gridObjectSortComponentTest {
         }
       })
     }
+    .height('90%')
+    .margin({top: '2%', left: '2%', right: '2%'})
   }
 }

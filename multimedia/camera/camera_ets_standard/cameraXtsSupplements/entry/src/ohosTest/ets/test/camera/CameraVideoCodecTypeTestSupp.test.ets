@@ -17,7 +17,6 @@ import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {
   closeFd,
-  COMMON_WAIT_DURATION,
   driveFn,
   getFd,
   getPermission,
@@ -28,30 +27,22 @@ import {
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
-import { tag } from '@kit.ConnectivityKit';
 
 const TAG = "CameraXts.CameraVideoCodecTypeTest";
-const abnormalValue = -1;
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
-let mCameraOutputCapModePhoto: camera.CameraOutputCapability;
-let mCameraOutputCapModeVideo: camera.CameraOutputCapability;
-let mPreviewProfilesArray: Array<camera.Profile>;
-let mPreviewProfile: camera.Profile | undefined;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
 let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
-let mVideoProfile: camera.VideoProfile;
 let mPhotoSession: camera.PhotoSession;
 let mVideoSession: camera.VideoSession;
 let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-let mCameraNum: number;
 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -73,8 +64,6 @@ let videoConfig: media.AVRecorderConfig = {
   location: { latitude: 30, longitude: 130 } as camera.Location,
   rotation: 0
 };
-
-
 
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
@@ -98,45 +87,17 @@ function getSupportedCameraDeviceArray() {
 
 function getCameraInput() {
   console.info(TAG, 'getCameraInput.');
-  mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
-  if (isEmpty(mCameraInput)) {
-    return false;
-  }
-  console.info(TAG, 'cameraInput created successfully.');
-  return true;
-}
-
-function getSupportedModes() {
-  console.info(TAG, 'getSupportedModes.');
-  for (let i = 0; i < mCameraDeviceArray.length; i++) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[i]);
-    if (isEmpty(mSupportedModes)) {
+  if (mCameraDeviceArray.length) {
+    mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
+    if (isEmpty(mCameraInput)) {
       return false;
     }
-    console.info(TAG, 'mSupportedModes: ' + JSON.stringify(mSupportedModes));
+    return true;
   }
-  return true;
+  console.info(TAG, 'cameraInput created successfully.');
+  return false;
 }
 
-function getOutputCapability() {
-  console.info(TAG, 'getOutputCapability.');
-  mCameraOutputCapModePhoto = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[0]);
-  console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModePhoto));
-  mCameraOutputCapModeVideo = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[1]);
-  console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModeVideo));
-  mPreviewProfilesArray = mCameraOutputCapModeVideo.previewProfiles;
-  mVideoProfile = mCameraOutputCapModeVideo.videoProfiles[0];
-  expect(isEmpty(mVideoProfile)).assertFalse();
-  CameraVideoProfile.videoFrameWidth = mVideoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = mVideoProfile.size.height;
-}
-
-function getPreviewProfile() {
-  mPreviewProfile = mPreviewProfilesArray.find((previewProfile: camera.Profile) => {
-    return Math.abs((previewProfile.size.width / previewProfile.size.height) -
-      (mVideoProfile.size.width / mVideoProfile.size.height)) < Number.EPSILON;
-  });
-}
 
 async function getVideoSurfaceId() {
   console.info(TAG, 'getVideoSurfaceId begin.');
@@ -159,10 +120,100 @@ async function getVideoSurfaceId() {
   console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
 }
 
+function createPhotoOutput() {
+  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+  let haveValidDevice = false;
+  for (const device of mCameraDeviceArray) {
+    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    if (mSupportedModes.includes(camera.SceneMode.NORMAL_PHOTO)) {
+      useDevice = device;
+      haveValidDevice = true;
+      break;
+    }
+  }
+  if (!haveValidDevice) {
+    return;
+  }
+  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
+  let previewProfile = cameraOutputCap.previewProfiles[0];
+  let photoProfile = cameraOutputCap.photoProfiles[0];
+  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
+    let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
+      console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
+      console.log(TAG,
+        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
+      return Math.abs((indexPhotoProfile.size.width * indexPreviewProfiles.size.height) -
+        (indexPreviewProfiles.size.width * indexPhotoProfile.size.height)) < Number.EPSILON;
+    })
+    if (foundProfile) {
+      photoProfile = foundProfile;
+      previewProfile = indexPreviewProfiles;
+      break;
+    }
+  }
+  console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
+  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
+  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+  mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
+}
+
+async function createVideoOutput() {
+  await getVideoSurfaceId();
+  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+  let haveValidDevice = false;
+  for (const device of mCameraDeviceArray) {
+    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
+      useDevice = device;
+      haveValidDevice = true;
+      break;
+    }
+  }
+  if (!haveValidDevice) {
+    return;
+  }
+  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
+  let previewProfile = cameraOutputCap.previewProfiles[0];
+  let videoProfile = cameraOutputCap.videoProfiles[0];
+  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
+    let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
+      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
+      console.log(TAG,
+        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
+      return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
+        (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
+    })
+    if (foundProfile) {
+      videoProfile = foundProfile;
+      previewProfile = indexPreviewProfiles;
+      break;
+    }
+  }
+  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
+  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
+  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
+  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
+  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
+  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
+  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
+}
+
+async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
+  console.info(TAG, 'getCreatePhotoSession.');
+  mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
+  mPhotoSession.beginConfig();
+  mPhotoSession.addInput(mCameraInput);
+  await mCameraInput.open();
+  mPhotoSession.addOutput(previewOutput);
+  mPhotoSession.addOutput(photoOutput);
+  await mPhotoSession.commitConfig();
+}
+
 async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
   videoOutput: camera.VideoOutput) {
   console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(mSupportedModes[1]);
+  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
   mVideoSession.beginConfig();
   console.info(TAG, testName + ' beginConfig passed.');
   mVideoSession.addInput(mCameraInput);
@@ -176,20 +227,6 @@ async function getCreateVideoSession(testName: string, previewOutput: camera.Pre
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
 }
-
-
-
-async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
-  console.info(TAG, 'getCreatePhotoSession.');
-  mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
-  mPhotoSession.beginConfig();
-  mPhotoSession.addInput(mCameraInput);
-  await mCameraInput.open();
-  mPhotoSession.addOutput(previewOutput);
-  mPhotoSession.addOutput(photoOutput);
-  await mPhotoSession.commitConfig();
-}
-
 
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
@@ -206,19 +243,42 @@ async function releaseVideoSession() {
   await mVideoSession?.release();
 }
 
-
+function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info(TAG,'getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
+async function setMovingPhotoVideoCodecType(done: Function, testName: string, videoCodecType: camera.VideoCodecType | null | undefined, errCallback: (errcode: number) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+    } else {
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      mPhotoOutput.setMovingPhotoVideoCodecType(videoCodecType);
+      console.info(TAG, testName, ' photo set flash mode success, status: ', videoCodecType);
+      await releasePhotoSession();
+    }
+    done();
+  } catch (err) {
+    console.error(TAG ,testName, err.message, err.code);
+    errCallback(err.code);
+    await releasePhotoSession();
+    done();
+  }
+}
 export default function CameraVideoCodecTypeTest() {
   describe('CameraVideoCodecTypeTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
-      getCameraManager();
-      getSupportedCameraDeviceArray();
-      getSupportedModes();
       await getPermission();
       await driveFn();
+      getCameraManager();
+      getSupportedCameraDeviceArray();
       getCameraInput();
-      getOutputCapability();
-      getPreviewProfile();
+      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -227,7 +287,7 @@ export default function CameraVideoCodecTypeTest() {
 
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(COMMON_WAIT_DURATION);
+      await sleep(2000);
     });
 
     afterAll(async () => {
@@ -235,167 +295,74 @@ export default function CameraVideoCodecTypeTest() {
       await closeFd(fdNumber);
     });
 
-
-
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
-     * @tc.desc      : Check capture session set moving photo video error with Illegal value -10000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
+     * @tc.desc       Check capture session set moving photo video error with Illegal value -10000
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100--------------");
-      if (mCameraNum == 0) {
-        console.info(TAG +  "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100 FAILED with NoCamera");
-        done();
-        return;
-      }
-      mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-      mPreviewOutput =
-        mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      try {
-        mPhotoOutput.setMovingPhotoVideoCodecType(-10000);
+      setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100',  -1000, (errcode: number) => {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100 finish");
-      } catch (err) {
-        console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100 FAILED with VideoCodecType is: " +
-        err.code);
         expect().assertFail();
-      }
-      await sleep(1000);
-      await releasePhotoSession();
-      done();
+      })
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
-     * @tc.desc      : Check capture session set moving photo video error with Illegal value -2
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
+     * @tc.desc       Check capture session set moving photo video error with Illegal value -2
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200--------------");
-      if (mCameraNum == 0) {
-        console.info(TAG +  "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200 FAILED with NoCamera");
-        done();
-        return;
-      }
-      mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-      mPreviewOutput =
-        mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      try {
-        mPhotoOutput.setMovingPhotoVideoCodecType(-2);
+      setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200',  -2, (errcode: number) => {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200 finish");
-      } catch (err) {
-        console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200 FAILED with VideoCodecType is: " +
-        err.code);
         expect().assertFail();
-      }
-      await sleep(1000);
-      await releasePhotoSession();
-      done();
+      })
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
-     * @tc.desc      : Check capture session set moving photo video error with Illegal value 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
+     * @tc.desc       Check capture session set moving photo video error with Illegal value 3
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300--------------");
-      if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300 FAILED with NoCamera");
-        done();
-        return;
-      }
-      try {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoOutput.setMovingPhotoVideoCodecType(3);
+      let maxEnum = getEnumMaxValue(camera.VideoCodecType);
+      setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300',  maxEnum + 1, (errcode: number) => {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300 finish");
-      } catch (err) {
-        console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300 FAILED with VideoCodecType is: " +
-        err.code);
-        expect().assertFail()
-      }
-      await sleep(1000);
-      await releasePhotoSession();
-      done();
+        expect().assertFail();
+      })
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
-     * @tc.desc      : Check capture session set moving photo video error with null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
+     * @tc.desc       Check capture session set moving photo video error with null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400--------------");
-      if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400 FAILED with NoCamera");
-        done();
-        return;
-      }
-      try {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoOutput.setMovingPhotoVideoCodecType(null);
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400 finish");
-      } catch (err) {
-        console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400 FAILED with VideoCodecType is: " +
-        err.code);
-        expect(err.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
-      }
-      await sleep(1000);
-      await releasePhotoSession();
-      done();
+      setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400',  null, (errcode: number) => {
+        expect(errcode == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+      })
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
-     * @tc.desc      : Check capture session set moving photo video error with undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
+     * @tc.desc       Check capture session set moving photo video error with undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500--------------");
-      if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500 FAILED with NoCamera");
-        done();
-        return;
-      }
-      try {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoOutput.setMovingPhotoVideoCodecType(undefined);
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500 finish");
-      } catch (err) {
-        console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500 FAILED with VideoCodecType is: " +
-        err.code);
-        expect(err.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
-      }
-      await sleep(1000);
-      await releasePhotoSession();
-      done();
+      setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500',  undefined, (errcode: number) => {
+        expect(errcode == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+      })
     })
 
   })

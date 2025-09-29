@@ -12,29 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { NodeContent } from '@kit.ArkUI';
-import nativexcomponent from 'libnativexcomponent.so';
-import Utils from '../../../ohosTest/ets/test/common/Utils';
 
 @Entry
 @Component
 struct Index {
   @State currentStatus: string = 'init';
-  @State currentWindowX: number = 0;
-  private nodeContent: NodeContent = new NodeContent();
-  aboutToAppear():void{
-    // 通过C-API创建节点，并添加到管理器nodeContent上
-    nativexcomponent.CreateAttributeNativeNode(this.nodeContent);
-  }
 
   build() {
     Column() {
-      ContentSlot(this.nodeContent);
     }
     .width('100%')
     .height('100%')
-    .onClick(() => {
-      Utils.simulateByShell('uinput -K -d 16 -i 1000 -u 16');
-    })
   }
 }

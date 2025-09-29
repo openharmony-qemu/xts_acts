@@ -17,58 +17,36 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+import { waitForComponent,waitAndClickComponent } from './WaitTest.test';
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = "emitWebViewMetaViewportTrue"
 
 export default function webViewMetaViewportTrue() {
   describe('ActsAceWebViewMetaViewportTrue', () => {
-      
+
     beforeAll(async (done: Function) => {
-        let options : router.RouterOptions = {
-            url: 'testability/pages/webViewMetaViewportTrue',
+      let options : router.RouterOptions = {
+        url: 'testability/pages/webViewMetaViewportTrue',
+      }
+
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get webViewMetaViewportTrue state success " + JSON.stringify(pages));
+        if (!("webViewMetaViewportTrue" == pages.name)) {
+          console.info("get webViewMetaViewportTrue state success " + JSON.stringify(pages.name));
+
+          let result = await router.pushUrl(options);
+          console.info("push webViewMetaViewportTrue state success " + JSON.stringify(result));
         }
-        
-        try {
-            await Utils.sleep(1000)
-            router.clear();
-            let pages = router.getState();
-            console.info("get webViewMetaViewportTrue state success " + JSON.stringify(pages));
-            if (!("webViewMetaViewportTrue" == pages.name)) {
-                console.info("get webViewMetaViewportTrue state success " + JSON.stringify(pages.name));
-                let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
-                console.info("push webViewMetaViewportTrue state success " + JSON.stringify(result));
-            }
-        } catch (err) {
-            console.error("push webViewMetaViewportTrue page error:" + err);
-        }
-        done()
+      } catch (err) {
+        console.error("push webViewMetaViewportTrue page error:" + err);
+      }
+      await waitForComponent("webViewMetaViewportTrue");
+      done()
     });
-    
-    beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
-      done();
-    })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
 
 
     /*
@@ -80,8 +58,9 @@ export default function webViewMetaViewportTrue() {
     * @tc.level      : Level 0
     */
     it('testWebViewMetaViewportTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.registerEvent("emitWebViewMetaViewportTrue", "true", 10001, done);
-        sendEventByKey('webViewMetaViewportTrue', 10, '');
+      Utils.emitEvent("emitWebViewMetaViewportTrue",153040);
+      Utils.registerEvent("emitWebViewMetaViewportTrue", "true", 153050, done);
+      waitAndClickComponent("webViewMetaViewportTrue",driver);
     })
   })
 }

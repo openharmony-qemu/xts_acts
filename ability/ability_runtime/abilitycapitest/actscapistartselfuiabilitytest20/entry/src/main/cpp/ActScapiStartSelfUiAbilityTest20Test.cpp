@@ -1006,6 +1006,11 @@ napi_value CreateNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_ca
 {
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     int32_t ret = OH_Ability_CreateNativeChildProcessWithConfigs(nullptr, configs, OnNativeChildProcessStarted);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
@@ -1040,6 +1045,11 @@ napi_value StartNativeChildProcessInvalidParam(napi_env env, napi_callback_info 
         .isolationMode = NCP_ISOLATION_MODE_ISOLATED
     };
     int32_t ret = OH_Ability_StartNativeChildProcess(nullptr, args, options, &pid);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
@@ -1073,6 +1083,11 @@ napi_value StartNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_cal
     };
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     int32_t ret = OH_Ability_StartNativeChildProcessWithConfigs(nullptr, args, configs, &pid);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;

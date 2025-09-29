@@ -58,6 +58,7 @@ struct webviewTerminateRenderProcess {
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
+        console.info('this.str has been updated to: ' + this.str);
       }
     }
   }

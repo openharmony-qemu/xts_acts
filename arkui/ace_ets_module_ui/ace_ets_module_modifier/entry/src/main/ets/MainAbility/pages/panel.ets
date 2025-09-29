@@ -44,16 +44,16 @@ struct TestPanelPage {
     Column() {
       Panel(true)
         .key('PanelKey2')
-        .attributeModifier(this.customModifier as CustomModifier).height('30%')
+        .attributeModifier(this.customModifier as CustomModifier).height('25%')
       Panel(true)
         .key('PanelKey3')
-        .backgroundMask('#ff000000').height('30%')
+        .backgroundMask('#ff000000').height('25%')
       Panel(true)
         .key('PanelKey1')
-        .attributeModifier(this.customModifier1 as CustomModifier).height('30%')
+        .attributeModifier(this.customModifier1 as CustomModifier).height('25%')
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("changeButton").height('5%')
     }
 		.width('100%')
     .height('100%')

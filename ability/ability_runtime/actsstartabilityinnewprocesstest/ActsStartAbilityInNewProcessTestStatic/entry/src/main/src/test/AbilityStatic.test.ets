@@ -39,7 +39,7 @@ interface ParametersObj  {
   acts_startupVisibility: number | undefined
   targetPid: string
 }
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let testTag: string = 'testTag';
 
 function getCount(str: string, substring: string): number {
@@ -121,8 +121,8 @@ let subscribeCallBack = async (err:BusinessError<void> | null, data: commonEvent
 
 let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
   let obj: Flag = { flag: false };
-  subscriber = await commonEvent.createSubscriber(subscribeInfo);
-  commonEvent.subscribe(subscriber, (err, data) => {
+  subscriber = await commonEvent.createSubscriber(subscribeInfo) as commonEvent.CommonEventSubscriber;
+  commonEvent.subscribe(subscriber, (err: BusinessError<void> | null, data: commonEvent.CommonEventData | undefined) => {
     subscribeCallBack(err, data, done, tag, obj);
   });
   let want: Want = {
@@ -167,11 +167,11 @@ export default function abilitystaticTest() {
           hilog.info(domain, testTag, '%{public}s', 'onAbilityCreate end');
 
         },
-      }, (err: BusinessError) : void => {
-        if (err != null ) {
+      }, (err: BusinessError | null) : void => {
+        if (err != null) {
           hilog.info(domain, testTag, '%{public}s', '-----'+ err.code);
         }
-        hilog.info(domain, testTag, '%{public}s', 'BusinessError  end');
+        hilog.info(domain, testTag, '%{public}s', 'BusinessError end');
       });
       hilog.info(domain, testTag, '%{public}s', 'abilityDelegator start');
       await Utils.msSleep(2000)

@@ -73,6 +73,11 @@ napi_value SwiperOnAnimationStartTest::CreateNativeNode(napi_env env, napi_callb
     swiper->RegisterOnAnimationStart([swiper](ArkUI_NodeEvent *event) {
         ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
         ArkUI_NativeNodeAPI_1 *nodeAPI1 = nullptr;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "swiper1", "index0=%{public}i", (result->data[PARAM_0].i32));
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "swiper1", "index1=%{public}i", (result->data[PARAM_1].i32));
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "swiper1", "index2=%{public}f", (result->data[PARAM_2].f32));
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "swiper1", "index3=%{public}f", (result->data[PARAM_3].f32));
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "swiper1", "index4=%{public}f", (result->data[PARAM_4].f32));
         if (result->data[PARAM_0].i32 == PARAM_2 && result->data[PARAM_1].i32 == PARAM_3 &&
             result->data[PARAM_2].f32 == PARAM_0 && result->data[PARAM_3].f32 == SIZE_200 &&
             result->data[PARAM_4].f32 == PARAM_0) {

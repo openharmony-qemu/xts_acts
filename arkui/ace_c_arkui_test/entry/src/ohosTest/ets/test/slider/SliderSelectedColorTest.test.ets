@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,6 +104,17 @@ export default function sliderSelectedColorTest() {
       done()
     })
 
-
+    /**
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_SELECTEDCOLOR_0800
+     * @tc.name testSliderSelectedColor008
+     * @tc.desc testing selectedColor for slider with zero value
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('testSliderSelectedColor008', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testSliderSelectedColor008()).assertEqual(0)
+      done()
+    })
   })
 }

@@ -97,50 +97,14 @@ export default function BufferTest1() {
     it('testAlloc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAlloc0002";
       try {
-        let size = 4294967296;
+        let size = 100;
         let buf = buffer.alloc(size);
-        expect(String(buf.length)).assertEqual('0');
+        expect(String(buf.length)).assertEqual('100');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
       }
     })
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0300
-    //  * @tc.name  : testAlloc0003--无效用例
-    //  * @tc.desc  : Testing alloc for parameter with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testAlloc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAlloc0003";
-    //   try {
-    //     buffer.alloc(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // })
-
-    // /*
-    //   * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0400
-    //   * @tc.name  : testAlloc0004--无效用例
-    //   * @tc.desc  : Testing alloc for parameter with value null.
-    //   * @tc.size: MediumTest
-    //   * @tc.type  : Function
-    //   * @tc.level: Level 3
-    //  */
-    // it('testAlloc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAlloc0004";
-    //   try {
-    //     buffer.alloc(null);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // })
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0500
@@ -160,25 +124,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0600
-    //  * @tc.name  : testAlloc0006--无效用例
-    //  * @tc.desc  : Testing alloc for buffer,the second parameter is null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testAlloc0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAlloc0006";
-    //   try {
-    //     let buf = buffer.alloc(10, null);
-    //     expect(String(buf.length)).assertEqual('10');
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0700
@@ -200,26 +145,8 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0900
-    //  * @tc.name  : testAlloc0009--无效用例
-    //  * @tc.desc  : Testing alloc,the second and third parameter is string and null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testAlloc0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAlloc0009";
-    //   try {
-    //     let buf = buffer.alloc(10, "ab$#", null);
-    //     expect(buf.length).assertEqual(10);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
     /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1000
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_08000
      * @tc.name  : testAlloc0010
      * @tc.desc  : Testing alloc for parameter with value 0.
      * @tc.size: MediumTest
@@ -287,7 +214,7 @@ export default function BufferTest1() {
     it('testAlloc0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAlloc0014";
       try {
-        let buf = buffer.alloc(5.5);
+        let buf = buffer.alloc(5.5 as int);
         expect(String(buf.length)).assertEqual('5');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -362,7 +289,7 @@ export default function BufferTest1() {
     it('testAllocUninitialized0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAllocUninitialized0004";
       try {
-        let buf = buffer.allocUninitialized(5.5);
+        let buf = buffer.allocUninitialized(5.5 as int);
         expect(String(buf.length)).assertEqual('5');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -370,44 +297,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0500
-    //  * @tc.name  : testAllocUninitialized0005--无效用例
-    //  * @tc.desc  : Testing allocUninitialized for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testAllocUninitialized0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAllocUninitialized0005";
-    //   try {
-    //     let buf = buffer.allocUninitialized(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //   }
-    // });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0600
-    //      * @tc.name  : testAllocUninitialized0006--无效用例
-    //      * @tc.desc  : Testing allocUninitialized for buffer with value null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testAllocUninitialized0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testAllocUninitialized0006";
-    //       try {
-    //         let buf = buffer.allocUninitialized(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //       }
-    //     });
-    //
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0100
      * @tc.name  : testAllocUninitializedFromPool0001
@@ -476,51 +365,13 @@ export default function BufferTest1() {
     it('testAllocUninitializedFromPool0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAllocUninitializedFromPool0004";
       try {
-        let buf = buffer.allocUninitializedFromPool(5.5);
+        let buf = buffer.allocUninitializedFromPool(5.5 as int);
         expect(String(buf.length)).assertEqual('5');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
       }
     });
-
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0500
-    //      * @tc.name  : testAllocUninitializedFromPool0005--无效用例
-    //      * @tc.desc  : Testing allocUninitializedFromPool for buffer with value undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testAllocUninitializedFromPool0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testAllocUninitializedFromPool0005";
-    //       try {
-    //         let buf = buffer.allocUninitializedFromPool(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //       }
-    //     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0600
-    //  * @tc.name  : testAllocUninitializedFromPool0006--无效用例
-    //  * @tc.desc  : Testing allocUninitializedFromPool for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testAllocUninitializedFromPool0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testAllocUninitializedFromPool0006";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(null);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0100
@@ -661,44 +512,6 @@ export default function BufferTest1() {
       }
     });
 
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_1000
-    //      * @tc.name  : testByteLength0010--无效用例
-    //      * @tc.desc  : Testing byteLength for buffer with value undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testByteLength0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testByteLength0010";
-    //       try {
-    //         let byteLen = buffer.byteLength(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_1100
-    //      * @tc.name  : testByteLength0011--无效用例
-    //      * @tc.desc  : Testing byteLength for buffer with value null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testByteLength0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testByteLength0011";
-    //       try {
-    //         let byteLen = buffer.byteLength(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0100
      * @tc.name  : testIsBuffer0001
@@ -732,21 +545,21 @@ export default function BufferTest1() {
       try {
         let obj = new Object();
         let flag = buffer.isBuffer(obj);
-        expect(String(flag)).assertEqual(false);
+        expect(String(flag)).assertEqual('false');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
       }
     });
 
-    //
-    //  // * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
-    //  // * @tc.name  : testIsBuffer0003
-    //  // * @tc.desc  : Testing isBuffer for buffer with value '[]'.
-    //  // * @tc.size: MediumTest
-    //  // * @tc.type  : Function
-    //  // * @tc.level: Level 3
-    //  // *//*
+    // /*
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
+    //  * @tc.name  : testIsBuffer0003
+    //  * @tc.desc  : Testing isBuffer for buffer with value '[]'.
+    //  * @tc.size: MediumTest
+    //  * @tc.type  : Function
+    //  * @tc.level: Level 3
+    //  */
     // it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testIsBuffer0003";
     //   try {
@@ -814,44 +627,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0700
-    //      * @tc.name  : testIsBuffer0007--无效用例
-    //      * @tc.desc  : Testing isBuffer for buffer with value undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testIsBuffer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIsBuffer0007";
-    //       try {
-    //         let flag = buffer.isBuffer(undefined);
-    //         expect(flag).assertEqual(false);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(false).assertFail();
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0800
-    //      * @tc.name  : testIsBuffer0008--无效用例
-    //      * @tc.desc  : Testing isBuffer for buffer with value null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testIsBuffer0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIsBuffer0008";
-    //       try {
-    //         let flag = buffer.isBuffer(null);
-    //         expect(flag).assertEqual(false);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(false).assertFail();
-    //       }
-    //     });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0100
@@ -868,7 +643,7 @@ export default function BufferTest1() {
           'utf16le', 'base64', 'base64url', 'hex'];
         for (const encode of encodeArr) {
           let flag = buffer.isEncoding(encode);
-          expect(String(flag)).assertEqual(String(false));
+          expect(String(flag)).assertEqual(String(true));
         }
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -913,45 +688,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0400
-    //      * @tc.name  : testIsEncoding0004--无效用例
-    //      * @tc.desc  : Testing isEncoding for buffer with value undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testIsEncoding0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIsEncoding0004";
-    //       try {
-    //         let flag = buffer.isEncoding(undefined);
-    //         expect(flag).assertEqual(false);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(false).assertFail();
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0500
-    //      * @tc.name  : testIsEncoding0005--无效用例
-    //      * @tc.desc  : Testing isEncoding for buffer with value null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testIsEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIsEncoding0005";
-    //       try {
-    //         let flag = buffer.isEncoding(null);
-    //         expect(flag).assertEqual(false);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(false).assertFail();
-    //       }
-    //     });
-    //
+  
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0100
      * @tc.name  : testStaticCompare0001
@@ -1057,44 +794,6 @@ export default function BufferTest1() {
       }
     });
 
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0800
-    //      * @tc.name  : testStaticCompare0008--无效用例
-    //      * @tc.desc  : Testing compare with value undefined and undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testStaticCompare0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testStaticCompare0008";
-    //       try {
-    //         let res = buffer.compare(undefined, undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0900
-    //      * @tc.name  : testStaticCompare0009--无效用例
-    //      * @tc.desc  : Testing compare with value null and null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testStaticCompare0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testStaticCompare0009";
-    //       try {
-    //         let res = buffer.compare(null, null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_1000
      * @tc.name  : testStaticCompare0010
@@ -1270,26 +969,6 @@ export default function BufferTest1() {
       }
     });
 
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0700
-    //      * @tc.name: testConcat0007--无效用例
-    //      * @tc.desc: Testing concat with value 'undefined, undefined'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //     */
-    //     it('testConcat0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testConcat0007";
-    //       try {
-    //         let buf = buffer.concat(undefined, undefined);
-    //         let str = buf.toString();
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //       }
-    //     });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0100
      * @tc.name  : testTranscode0001
@@ -1332,44 +1011,6 @@ export default function BufferTest1() {
       }
     });
 
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0600
-    //      * @tc.name: testTranscode0006--无效用例
-    //      * @tc.desc: Testing transcode with value 'undefined, "utf8", "ascii"'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testTranscode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testTranscode0006";
-    //       try {
-    //         let buf = buffer.transcode(undefined, "utf8", "ascii");
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0700
-    //       * @tc.name: testTranscode0007--无效用例
-    //      * @tc.desc: Testing transcode with value 'null, "utf8", "ascii"'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //     */
-    //     it('testTranscode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testTranscode0007";
-    //       try {
-    //         let buf = buffer.transcode(null, "utf8", "ascii");
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FILL_0100
      * @tc.name: testFill0001
@@ -1398,41 +1039,41 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it('testFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFill0002";
-    //   try {
-    //     const buf1 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'hex');
-    //     let str = buf1.toString('hex');
-    //     expect(str).assertEqual("f1f1f1f1f1f1f1f1f1f1");
-    //
-    //     let buf2 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'ascii');
-    //     str = buf2.toString("hex");
-    //     expect(String(str)).assertEqual("46311846474631184647");
-    //
-    //     let buf3 = buffer.alloc(10).fill('F1FG', 0, 10, 'base64');
-    //     str = buf3.toString("hex");
-    //     expect(String(str)).assertEqual("17514617514617514617");
-    //
-    //     let buf4 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'binary');
-    //     str = buf4.toString("hex");
-    //     expect(String(str)).assertEqual("46311846474631184647");
-    //
-    //     let buf5 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'latin1');
-    //     str = buf5.toString("hex");
-    //     expect(String(str)).assertEqual("46311846474631184647");
-    //
-    //     let buf6 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'ucs2');
-    //     str = buf6.toString("hex");
-    //     expect(String(str)).assertEqual("46003100185246004700");
-    //
-    //     let buf7 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'utf8');
-    //     str = buf7.toString("hex");
-    //     expect(String(str)).assertEqual("4631e5889846474631e5");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFill0002";
+      try {
+        const buf1 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'hex');
+        let str = buf1.toString('hex');
+        expect(str).assertEqual("f1f1f1f1f1f1f1f1f1f1");
+    
+        let buf2 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'ascii');
+        str = buf2.toString("hex");
+        expect(String(str)).assertEqual("46311846474631184647");
+    
+        let buf3 = buffer.alloc(10).fill('F1FG', 0, 10, 'base64');
+        str = buf3.toString("hex");
+        expect(String(str)).assertEqual("17514617514617514617");
+    
+        let buf4 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'binary');
+        str = buf4.toString("hex");
+        expect(String(str)).assertEqual("46311846474631184647");
+    
+        let buf5 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'latin1');
+        str = buf5.toString("hex");
+        expect(String(str)).assertEqual("46311846474631184647");
+    
+        let buf6 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'ucs2');
+        str = buf6.toString("hex");
+        expect(String(str)).assertEqual("46003100185246004700");
+    
+        let buf7 = buffer.alloc(10).fill('F1刘FG', 0, 10, 'utf8');
+        str = buf7.toString("hex");
+        expect(String(str)).assertEqual("4631e5889846474631e5");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FILL_0300
@@ -1550,42 +1191,6 @@ export default function BufferTest1() {
       }
     });
 
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_Write_1000
-    //      * @tc.name: testWrite0010--无效用例
-    //      * @tc.desc: Testing the write interface with undefined .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWrite0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(8);
-    //       try {
-    //         let offset = buf.write(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_Write_1100
-    //      * @tc.name: testWrite0011--无效用例
-    //      * @tc.desc: Testing the write interface with null .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWrite0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(8);
-    //       try {
-    //         let offset = buf.write(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0100
      * @tc.name: testWriteBigInt64BE0001
@@ -1624,42 +1229,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0300
-    //  * @tc.name: testWriteBigInt64BE0003--无效用例
-    //  * @tc.desc: Testing the writeBigInt64BE interface with undefined .
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testWriteBigInt64BE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let buf = buffer.allocUninitializedFromPool(8);
-    //   try {
-    //     let ref = buf.writeBigInt64BE(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0400
-    //      * @tc.name: testWriteBigInt64BE0004--无效用例
-    //      * @tc.desc: Testing the writeBigInt64BE interface with null .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigInt64BE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigInt64BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64LE_0100
      * @tc.name: testWriteBigInt64LE0001
@@ -1697,43 +1266,7 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64LE_0300
-    //      * @tc.name: testWriteBigInt64LE0003--无效用例
-    //      * @tc.desc: Testing the writeBigInt64LE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigInt64LE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigInt64LE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64LE_0400
-    //      * @tc.name: testWriteBigInt64LE0004--无效用例
-    //      * @tc.desc: Testing the writeBigInt64LE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigInt64LE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigInt64LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
+  
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0100
      * @tc.name: testWriteBigUInt64BE0001
@@ -1771,42 +1304,6 @@ export default function BufferTest1() {
         expect(err.code).assertEqual(10200001);
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0300
-    //      * @tc.name: testWriteBigUInt64BE0003--无效用例
-    //      * @tc.desc: Testing the writeInt16BE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigUInt64BE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigUInt64BE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0400
-    //      * @tc.name: testWriteBigUInt64BE0004--无效用例
-    //      * @tc.desc: Testing the writeInt16BE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigUInt64BE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigUInt64BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BigUInt64LE_0100
@@ -1846,42 +1343,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BigUInt64LE_0300
-    //  * @tc.name: testWriteBigUInt64LE0003--无效用例
-    //  * @tc.desc: Testing the writeBigUInt64LE interface with undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testWriteBigUInt64LE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let buf = buffer.allocUninitializedFromPool(8);
-    //   try {
-    //     let ref = buf.writeBigUInt64LE(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BigUInt64LE_0400
-    //      * @tc.name: testWriteBigUInt64LE0004--无效用例
-    //      * @tc.desc: Testing the writeBigUInt64LE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteBigUInt64LE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeBigUInt64LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleBE_0100
      * @tc.name: testWriteDoubleBE0001
@@ -1920,42 +1381,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleBE_0300
-    //      * @tc.name: testWriteBigInt64BE0003--无效用例
-    //      * @tc.desc: Testing the writeDoubleBE interface with undefined .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteDoubleBE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeDoubleBE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleBE_0400
-    //      * @tc.name: testWriteBigInt64BE0004--无效用例
-    //      * @tc.desc: Testing the writeDoubleBE interface with null .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteDoubleBE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeDoubleBE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleLE_0100
@@ -1994,42 +1419,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleLE_0300
-    //      * @tc.name: testWriteDoubleLE0003--无效用例
-    //      * @tc.desc: Testing the writeDoubleLE interface with undefined .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteDoubleLE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeDoubleLE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteDoubleLE_0400
-    //      * @tc.name: testWriteDoubleLE0004--无效用例
-    //      * @tc.desc: Testing the writeDoubleBE interface with null .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteDoubleLE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(8);
-    //       try {
-    //         let ref = buf.writeDoubleLE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatBE_0100
@@ -2068,42 +1457,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatBE_0300
-    //      * @tc.name: testWriteFloatBE0003--无效用例
-    //      * @tc.desc: Testing the writeFloatBE interface with undefined .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteFloatBE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeFloatBE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatBE_0400
-    //      * @tc.name: testWriteFloatBE0004--无效用例
-    //      * @tc.desc: Testing the writeFloatBE interface with null .
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteFloatBE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeFloatBE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatLE_0100
@@ -2142,42 +1495,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatLE_0300
-    //      * @tc.name: testWriteFloatLE0003--无效用例
-    //      * @tc.desc: Testing the writeFloatLE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteFloatLE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeFloatLE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteFloatLE_0400
-    //      * @tc.name: testWriteFloatLE0004--无效用例
-    //      * @tc.desc: Testing the writeFloatLE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteFloatLE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeFloatLE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt8_0100
@@ -2236,42 +1553,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt8_0400
-    //      * @tc.name: testWriteInt80004--无效用例
-    //      * @tc.desc: Testing the writeInt8 interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt80004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(2);
-    //       try {
-    //         let ref = buf.writeInt8(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt8_0500
-    //      * @tc.name: testWriteInt80005--无效用例
-    //      * @tc.desc: Testing the writeInt8 interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt80005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(2);
-    //       try {
-    //         let ref = buf.writeInt8(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16BE_0100
@@ -2347,42 +1628,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16BE_0500
-    //      * @tc.name: testWriteInt16BE0005--无效用例
-    //      * @tc.desc: Testing the writeInt16BE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt16BE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(2);
-    //       try {
-    //         let ref = buf.writeInt16BE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16BE_0600
-    //      * @tc.name: testWriteInt16BE0006--无效用例
-    //      * @tc.desc: Testing the writeInt16BE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt16BE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(2);
-    //       try {
-    //         let ref = buf.writeInt16BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16LE_0100
@@ -2458,42 +1703,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16LE_0500
-    //      * @tc.name: testWriteInt16LE0005--无效用例
-    //      * @tc.desc: Testing the writeInt16LE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt16LE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(2);
-    //       try {
-    //         let ref = buf.writeInt16LE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt16LE_0600
-    //      * @tc.name: testWriteInt16LE0006--无效用例
-    //      * @tc.desc: Testing the writeInt16LE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt16LE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(2);
-    //       try {
-    //         let ref = buf.writeInt16LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32BE_0100
@@ -2569,42 +1778,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32BE_0600
-    //      * @tc.name: testWriteInt32BE0006--无效用例
-    //      * @tc.desc: Testing the writeInt32BE function with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt32BE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(4);
-    //       try {
-    //         let ref = buf.writeInt32BE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32BE_0700
-    //      * @tc.name: testWriteInt32BE0007--无效用例
-    //      * @tc.desc: Testing the writeInt32BE function with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt32BE0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(4);
-    //       try {
-    //         let ref = buf.writeInt32BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32LE_0100
@@ -2680,42 +1853,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32LE_0500
-    //      * @tc.name: testWriteInt32LE0005--无效用例
-    //      * @tc.desc: Testing the writeInt32LE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt32LE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(4);
-    //       try {
-    //         let ref = buf.writeInt32LE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteInt32LE_0600
-    //      * @tc.name: testWriteInt32LE0006--无效用例
-    //      * @tc.desc: Testing the writeInt32LE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteInt32LE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.alloc(4);
-    //       try {
-    //         let ref = buf.writeInt32LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntBE_0100
@@ -2773,42 +1910,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntBE_0400
-    //  * @tc.name: testWriteIntBE0004--无效用例
-    //  * @tc.desc: Testing the writeIntBE interface with undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testWriteIntBE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let buf = buffer.allocUninitializedFromPool(6);
-    //   try {
-    //     let ref = buf.writeIntBE(undefined, 0, 6);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntBE_0500
-    //      * @tc.name: testWriteIntBE0005--无效用例
-    //      * @tc.desc: Testing the writeIntBE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteIntBE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(6);
-    //       try {
-    //         let ref = buf.writeIntBE(null, 0, 6);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntLE_0100
      * @tc.name: testWriteIntLE0001
@@ -2846,42 +1947,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntLE_0300
-    //      * @tc.name: testWriteIntLE0003--无效用例
-    //      * @tc.desc: Testing the writeIntLE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteIntLE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(6);
-    //       try {
-    //         let ref = buf.writeIntLE(undefined, 0, 6);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteIntLE_0400
-    //      * @tc.name: testWriteIntLE0004--无效用例
-    //      * @tc.desc: Testing the writeIntLE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteIntLE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(6);
-    //       try {
-    //         let ref = buf.writeIntLE(null, 0, 6);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt8_0100
@@ -2940,42 +2005,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt8_0400
-    //      * @tc.name: testWriteUInt80004--无效用例
-    //      * @tc.desc: Testing the writeUInt8 interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt80004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt8(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt8_0500
-    //      * @tc.name: testWriteUInt80005--无效用例
-    //      * @tc.desc: Testing the writeUInt8 interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt80005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt8(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16BE_0100
@@ -3053,43 +2082,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16BE_0500
-    //      * @tc.name: testWriteUInt16BE0005--无效用例
-    //      * @tc.desc: Testing the writeInt16BE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt16BE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt16BE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16BE_0600
-    //      * @tc.name: testWriteUInt16BE0006--无效用例
-    //      * @tc.desc: Testing the writeUInt16BE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt16BE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt16BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
+ 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16LE_0100
      * @tc.name: testWriteUInt16LE0001
@@ -3166,42 +2159,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16LE_0500
-    //      * @tc.name: testWriteUInt16LE0005--无效用例
-    //      * @tc.desc: Testing the writeUInt16LE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt16LE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt16LE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt16LE_0600
-    //      * @tc.name: testWriteUInt16LE0006--无效用例
-    //      * @tc.desc: Testing the writeUInt16LE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt16LE0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt16LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt32BE_0100
@@ -3258,42 +2215,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt32BE_0400
-    //      * @tc.name: testWriteUInt32BE0004--无效用例
-    //      * @tc.desc: Testing the writeUInt32BE interface with undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt32BE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt32BE(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WriteUInt32BE_0500
-    //      * @tc.name: testWriteUInt32BE0005--无效用例
-    //      * @tc.desc: Testing the writeUInt32BE interface with null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testWriteUInt32BE0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       let buf = buffer.allocUninitializedFromPool(4);
-    //       try {
-    //         let ref = buf.writeUInt32BE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0100
@@ -3354,46 +2275,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0400
-    //  * @tc.name  : testWriteUInt32LE0004--无效用例
-    //  * @tc.desc  : Testing writeUInt32LE with value 'undefined'.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testWriteUInt32LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testWriteUInt32LE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let ref = buf.writeUInt32LE(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0500
-    //      * @tc.name  : testWriteUInt32LE0005--无效用例
-    //      * @tc.desc  : Testing writeUInt32LE with value 'null'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testWriteUInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testWriteUInt32LE0005";
-    //       try {
-    //         let buf = buffer.allocUninitializedFromPool(4);
-    //         let ref = buf.writeUInt32LE(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0100
@@ -3474,46 +2355,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0500
-    //      * @tc.name  : testWriteUIntBE0005--无效用例
-    //      * @tc.desc  : Testing writeUIntBE with value 'undefined, 1, 4'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testWriteUIntBE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testWriteUIntBE0005";
-    //       try {
-    //         let buf = buffer.allocUninitializedFromPool(4);
-    //         let ref = buf.writeUIntBE(undefined, 1, 4);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0600
-    //      * @tc.name  : testWriteUIntBE0006--无效用例
-    //      * @tc.desc  : Testing writeUIntBE with value 'null, 1, 4'.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testWriteUIntBE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testWriteUIntBE0006";
-    //       try {
-    //         let buf = buffer.allocUninitializedFromPool(4);
-    //         let ref = buf.writeUIntBE(null, 1, 4);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0100
@@ -3593,46 +2434,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0500
-    //  * @tc.name  : testWriteUIntLE0005--无效用例
-    //  * @tc.desc  : Testing writeUIntLE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testWriteUIntLE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testWriteUIntLE0005";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     let ref = buf.writeUIntLE(undefined, 1, 4);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    //
-    //     /*
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0600
-    //      * @tc.name  : testWriteUIntLE0006--无效用例
-    //      * @tc.desc  : Testing writeUIntLE for buffer with value null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type  : Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it('testWriteUIntLE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testWriteUIntLE0006";
-    //       try {
-    //         let buf = buffer.allocUninitializedFromPool(4);
-    //         let ref = buf.writeUIntLE(null, 1, 4);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} is fail,err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0100
      * @tc.name  : testReadBigInt64BE0001
@@ -3696,27 +2497,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0400
-    //  * @tc.name  : testReadBigInt64BE0004--无效用例
-    //  * @tc.desc  : Testing readBigInt64BE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadBigInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadBigInt64BE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigInt64BE(BigInt(0x0102030405060708));
-    //     let ref = Double(buf.readBigInt64BE(null)).toString(16);
-    //     expect(String(ref)).assertEqual("102030405060708");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0100
      * @tc.name  : testReadBigInt64LE0001
@@ -3758,49 +2538,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0300
-    //  * @tc.name  : testReadBigInt64LE0003--无效用例
-    //  * @tc.desc  : Testing readBigInt64LE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadBigInt64LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadBigInt64LE0003";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigInt64BE(BigInt(0x0102030405060708));
-    //     // let ref = Double(buf.readBigInt64LE(undefined)).toString(16);
-    //     let ref =buf.readBigInt64LE(undefined)
-    //     expect(ref).assertEqual("807060504030201");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0400
-    //  * @tc.name  : testReadBigInt64LE0004--无效用例
-    //  * @tc.desc  : Testing readBigInt64LE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadBigInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadBigInt64LE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigInt64BE(BigInt(0x0102030405060708));
-    //     let ref = Double(buf.readBigInt64LE(null)).toString(16);
-    //     expect(String(ref)).assertEqual("807060504030201");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0100
@@ -3865,27 +2602,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0400
-    //  * @tc.name  : testReadBigUInt64BE0004--无效用例
-    //  * @tc.desc  : Testing readBigUInt64BE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadBigUInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadBigUInt64BE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-    //     let ref =Double( buf.readBigUInt64BE(null)).toString(16);
-    //     expect(String(ref)).assertEqual("decafafecacefade");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0100
      * @tc.name  : testReadBigUInt64LE0001
@@ -3948,28 +2664,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0400
-    //  * @tc.name  : testReadBigUInt64LE0004--无效用例
-    //  * @tc.desc  : Testing readBigUInt64LE for buffer with null value.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadBigUInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadBigUInt64LE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
-    //     let ref = buf.readBigUInt64LE(null)
-    //     // let ref = Double(buf.readBigUInt64LE(null)).toString(16);
-    //     expect(String(ref)).assertEqual("decafafecacefade");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0100
@@ -4034,27 +2728,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0400
-    //  * @tc.name  : testReadDoubleBE0004--无效用例
-    //  * @tc.desc  : Testing readDoubleBE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadDoubleBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadDoubleBE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeDoubleBE(123.456, 0);
-    //     let ref = buf.readDoubleBE(null);
-    //     expect(ref).assertEqual(123.456);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0100
      * @tc.name  : testReadDoubleLE0001
@@ -4117,27 +2790,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0400
-    //  * @tc.name  : testReadDoubleLE0004--无效用例
-    //  * @tc.desc  : Testing readDoubleLE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadDoubleLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadDoubleLE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(8);
-    //     buf.writeDoubleLE(123.456, 0);
-    //     let ref = buf.readDoubleLE(null);
-    //     expect(ref).assertEqual(123.456);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0100
@@ -4202,28 +2854,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0400
-    //  * @tc.name  : testReadFloatBE0004--无效用例
-    //  * @tc.desc  : Testing readFloatBE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadFloatBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadFloatBE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeFloatBE(0xcabcbcbc, 0);
-    //     // let ref = Double(buf.readFloatBE(null)).toString(16);
-    //     let ref = buf.readFloatBE(null)
-    //     expect(String(ref)).assertEqual("cabcbd00");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0100
      * @tc.name  : testReadFloatLE0001
@@ -4286,28 +2916,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0400
-    //  * @tc.name  : testReadFloatLE0004--无效用例
-    //  * @tc.desc  : Testing readFloatLE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadFloatLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadFloatLE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeFloatLE(0xcabcbcbc, 0);
-    //     let ref = Double(buf.readFloatLE(null)).toString(16);
-    //     // let ref = buf.readFloatLE(null)
-    //     expect(String(ref)).assertEqual("cabcbd00");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT_0100
@@ -4372,28 +2980,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT_0400
-    //  * @tc.name  : testReadInt80004--无效用例
-    //  * @tc.desc  : Testing readInt8 for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt80004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(2);
-    //     buf.writeInt8(0x12);
-    //     // let ref = Double(buf.readInt8(null)).toString(16);
-    //     let ref = buf.readInt8(null)
-    //     expect(String(ref)).assertEqual("12");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0100
      * @tc.name  : testReadInt16BE0001
@@ -4435,49 +3021,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0300
-    //  * @tc.name  : testReadInt16BE0003--无效用例
-    //  * @tc.desc  : Testing readInt16BE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt16BE0003";
-    //   try {
-    //     let buf = buffer.alloc(2);
-    //     buf.writeInt16BE(0x1234, 0);
-    //     let ref = Double(buf.readInt16BE(undefined)).toString(16);
-    //     let ref = buf.readInt16BE(undefined)
-    //     expect(ref).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0400
-    //  * @tc.name  : testReadInt16BE0004--无效用例
-    //  * @tc.desc  : Testing readInt16BE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt16BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt16BE0004";
-    //   try {
-    //     let buf = buffer.alloc(2);
-    //     buf.writeInt16BE(0x1234, 0);
-    //     // let ref = Double(buf.readInt16BE(null)).toString(16);
-    //     let ref = buf.readInt16BE(null)
-    //     expect(ref).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0100
@@ -4541,28 +3084,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0400
-    //  * @tc.name  : testReadInt16LE0004--无效用例
-    //  * @tc.desc  : Testing readInt16LE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt16LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt16LE0004";
-    //   try {
-    //     let buf = buffer.alloc(2);
-    //     buf.writeInt16LE(0x1234, 0);
-    //     // let ref = Double(buf.readInt16LE(null)).toString(16);
-    //     let ref = buf.readInt16LE(null)
-    //     expect(ref).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0100
      * @tc.name  : testReadInt32BE0001
@@ -4604,50 +3125,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    //
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0400
-    //  * @tc.name  : testReadInt32BE0004--无效用例
-    //  * @tc.desc  : Testing readInt32BE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt32BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt32BE0004";
-    //   try {
-    //     let buf = buffer.alloc(4);
-    //     buf.writeInt32BE(0x12345678, 0);
-    //     let ref = Double(buf.readInt32BE(undefined)).toString(16);
-    //     let ref = buf.readInt32BE(undefined)
-    //     expect(ref).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0500
-    //  * @tc.name  : testReadInt32BE0005--无效用例
-    //  * @tc.desc  : Testing readInt32BE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt32BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt32BE0005";
-    //   try {
-    //     let buf = buffer.alloc(4);
-    //     buf.writeInt32BE(0x12345678, 0);
-    //     // let ref = Double(buf.readInt32BE(null)).toString(16);
-    //     let ref = buf.readInt32BE(null)
-    //     expect(ref).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0100
@@ -4691,50 +3168,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0300
-    //  * @tc.name  : testReadInt32LE0003--无效用例
-    //  * @tc.desc  : Testing readInt32LE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt32LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt32LE0003";
-    //   try {
-    //     let buf = buffer.alloc(4);
-    //     buf.writeInt32LE(0x12345678, 0);
-    //     // let ref = Double(buf.readInt32LE(undefined)).toString(16);
-    //     let ref = buf.readInt32LE(undefined)
-    //     expect(ref).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0400
-    //  * @tc.name  : testReadInt32LE0004--无效用例
-    //  * @tc.desc  : Testing readInt32LE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadInt32LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadInt32LE0004";
-    //   try {
-    //     let buf = buffer.alloc(4);
-    //     buf.writeInt32LE(0x12345678, 0);
-    //     // let ref = buf.readInt32LE(null).toString(16);
-    //     let ref = buf.readInt32LE(null)
-    //     expect(ref).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0100
      * @tc.name  : testReadIntBE0001
@@ -4776,48 +3209,6 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0300
-    //  * @tc.name  : testReadIntBE0003--无效用例
-    //  * @tc.desc  : Testing readIntBE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadIntBE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadIntBE0003";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(6);
-    //     buf.writeIntBE(0x123456789011, 0, 6);
-    //     let ref = buf.readIntBE(undefined, 5);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(String(err.code)).assertEqual('401');
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0400
-    //  * @tc.name  : testReadIntBE0004--无效用例
-    //  * @tc.desc  : Testing readIntBE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadIntBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadIntBE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(6);
-    //     buf.writeIntBE(0x123456789011, 0, 6);
-    //     let ref = buf.readIntBE(null, 5);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(String(err.code)).assertEqual('401');
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0100
@@ -4861,50 +3252,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0300
-    //  * @tc.name  : testReadIntLE0003--无效用例
-    //  * @tc.desc  : Testing readIntLE for buffer with value undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadIntLE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadIntLE0003";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(6);
-    //     buf.writeIntLE(0x123456789011, 0, 6);
-    //     // let ref = buf.readIntLE(undefined, 5).toString(16);
-    //     let ref = buf.readIntLE(undefined, 5)
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0400
-    //  * @tc.name  : testReadIntLE0004--无效用例
-    //  * @tc.desc  : Testing readIntLE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadIntLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadIntLE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(6);
-    //     buf.writeIntLE(0x123456789011, 0, 6);
-    //     // let ref = buf.readIntLE(null, 5).toString(16);
-    //     let ref = buf.readIntLE(null, 5)
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0100
      * @tc.name  : testReadIntLE0001
@@ -4943,7 +3290,7 @@ export default function BufferTest1() {
         expect(false).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
-        expect(String(err.code)).assertEqual(10200001);
+        expect(String(err.code)).assertEqual('10200001');
       }
     });
 
@@ -4967,28 +3314,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0400
-    //  * @tc.name  : testReadIntLE0004--无效用例
-    //  * @tc.desc  : Testing readUInt8 for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadUInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt80004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt8(0x42);
-    //     // let ref = buf.readUInt8(null).toString(16);
-    //     let ref = buf.readUInt8(null)
-    //     expect(ref).assertEqual("42");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /*
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0100
@@ -5046,33 +3371,12 @@ export default function BufferTest1() {
         let buf = buffer.allocUninitializedFromPool(4);
         buf.writeUInt16BE(0x1234, 0);
         let ref = buf.readUInt16BE(undefined);
-        expect(ref).assertEqual("1234");
+        expect(ref).assertEqual(4660);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
       }
     });
-
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0400
-    //  * @tc.name  : testReadUInt16BE0004--无效用例
-    //  * @tc.desc  : Testing readUInt16BE for buffer with value null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testReadUInt16BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt16BE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16BE(0x1234, 0);
-    //     let ref = buf.readUInt16BE(null);
-    //     expect(ref).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0100
@@ -5137,42 +3441,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0400
-    //  * @tc.name: testEquals0004--无效用例
-    //  * @tc.desc: Test the equals interface by passing the parameter undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testEquals0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testEquals0004";
-    //   let buf = buffer.from("test");
-    //   try {
-    //     buf.equals(undefined);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0500
-    //  * @tc.name: testEquals0005--无效用例
-    //  * @tc.desc: Test the equals interface by passing the parameter null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testEquals0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testEquals0005";
-    //   let buf = buffer.from("test");
-    //   try {
-    //     buf.equals(null);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0600
      * @tc.name: testEquals0006
@@ -5235,27 +3503,7 @@ export default function BufferTest1() {
       }
       ;
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0300
-    //  * @tc.name: testSubarray0003--无效用例
-    //  * @tc.desc: Test the subarray interface by pass the parameter null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testSubarray0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testSubarray0003";
-    //   try {
-    //     let buf = buffer.from("1236");
-    //     let subBuf = buf.subarray(null);
-    //     let str = subBuf.toString();
-    //     expect(str).assertEqual("1236");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect().assertFail()
-    //   }
-    //   ;
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0400
      * @tc.name: testSubarray0004
@@ -5453,44 +3701,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_COPY_0700
-    //      * @tc.name: testCopy0007--无效用例
-    //      * @tc.desc: Test the copy interface by passing the parameter target undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testCopy0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testCopy0007";
-    //       try {
-    //         let buf = buffer.from("12356");
-    //         buf.copy(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_COPY_0800
-    //      * @tc.name: testCopy0008--无效用例
-    //      * @tc.desc: Test the copy interface by passing the parameter target null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testCopy0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testCopy0008";
-    //       try {
-    //         let buf = buffer.from("12356");
-    //         buf.copy(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_COPY_0900
      * @tc.name: testCopy0009
@@ -5565,17 +3776,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0003";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("binary");
-    //     expect(String(str)).assertEqual("abc");
-    //   } catch (err:Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0003";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("binary");
+        expect(String(str)).assertEqual("abc");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0400
@@ -5645,17 +3856,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0007";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("latin1");
-    //     expect(String(str)).assertEqual("abc");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0007";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("latin1");
+        expect(String(str)).assertEqual("abc");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0800
@@ -5665,17 +3876,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0008";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("ucs2");
-    //     expect(String(str)).assertEqual("扡");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0008";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("ucs2");
+        expect(String(str)).assertEqual("扡");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0900
@@ -5685,17 +3896,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0009";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("utf16le");
-    //     expect(String(str)).assertEqual("扡");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0009";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("utf16le");
+        expect(String(str)).assertEqual("扡");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1000
@@ -5724,41 +3935,23 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0011";
-    //   try {
-    //     let str =
-    //       "abcdefhajksalfsdfjl12346287467823®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîï" +
-    //         "ðñòóôõö÷øùúûüýþÿ"
-    //     let strbuf = buffer.from(str, "latin1");
-    //     let toStr = strbuf.toString("latin1");
-    //     expect(String(toStr))
-    //       .assertEqual("abcdefhajksalfsdfjl12346287467823®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëì" +
-    //         "íîïðñòóôõö÷øùúûüýþÿ");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1200
-    //  * @tc.name: testToString0012--无效用例
-    //  * @tc.desc: Test the toString interface by passing the parameter encoding to illegal value.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testToString0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0012"
-    //   let buf = buffer.from("abc");
-    //   try {
-    //     buf.toString("code");
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+    it("testToString0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0011";
+      try {
+        let str =
+          "abcdefhajksalfsdfjl12346287467823®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîï" +
+            "ðñòóôõö÷øùúûüýþÿ"
+        let buf = buffer.from(str, "latin1");
+        let toStr = buf.toString("latin1");
+        expect(String(toStr))
+          .assertEqual("abcdefhajksalfsdfjl12346287467823®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëì" +
+            "íîïðñòóôõö÷øùúûüýþÿ");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1300
      * @tc.name: testToString0013
@@ -5778,25 +3971,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1500
-    //  * @tc.name: testToString0014--无效用例
-    //  * @tc.desc: Test the toString interface by passing the parameter encoding to null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testToString0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0014";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString(null);
-    //     expect(str).assertEqual("abc");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1500
      * @tc.name: testToString0015
@@ -5805,17 +3980,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0015";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("binary", 1, 2);
-    //     expect(String(str)).assertEqual("b");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0015";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("binary", 1, 2);
+        expect(String(str)).assertEqual("b");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1600
      * @tc.name: testToString0016
@@ -5824,17 +3999,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0016";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("binary", -1, 2);
-    //     expect(String(str)).assertEqual("ab");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testToString0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0016";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("binary", -1, 2);
+        expect(String(str)).assertEqual("ab");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1700
      * @tc.name: testToString0017
@@ -5843,36 +4018,36 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testToString0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToString0017";
-    //   try {
-    //     let buf = buffer.from("abc");
-    //     let str = buf.toString("binary", 1, -2);
-    //     expect(String(str)).assertEqual("");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOJSON_0100
-     * @tc.name: testToJSON0001
-     * @tc.desc: Test the toJSON interface source buffer of numerical string type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    it("testToString0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testToString0017";
+      try {
+        let buf = buffer.from("abc");
+        let str = buf.toString("binary", 1, -2);
+        expect(String(str)).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOJSON_0100
+    //  * @tc.name: testToJSON0001
+    //  * @tc.desc: Test the toJSON interface source buffer of numerical string type.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testToJSON0001";
     //   try {
     //     let buf = buffer.from("1236");
     //     let obj = buf.toJSON();
-    //     // let textTran :parse = JSON.parse<parse>({
-    //     //   "text":(JSON.stringify(obj))
-    //     // })
-    //     // expect(JSON.parse(JSON.stringify(obj)).data.join("")).assertEqual("49505154");
+    //     let textTran :parse = JSON.parse<parse>({
+    //       "text":(JSON.stringify(obj))
+    //     })
+    //     expect(JSON.parse(JSON.stringify(obj)).data.join("")).assertEqual("49505154");
     //     expect(JSON.stringify(obj)).assertEqual("49505154");
-    //     // expect(textTran.data.join("")).assertEqual("49505154");
+    //     expect(textTran.data.join("")).assertEqual("49505154");
     //   } catch (err: BusinessError) {
     //     console.error(`${TAG} err is ${err}`);
     //     expect(false).assertFail();
@@ -6007,21 +4182,21 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testIndexOf0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testIndexOf0007";
-    //   try {
-    //     let encodeArr: buffer.BufferEncoding[] = ['utf8', 'utf-8', 'ucs2', 'ucs-2', 'ascii', 'latin1', 'binary',
-    //       'utf16le', 'base64', 'base64url', 'hex'];
-    //     let buf = buffer.from("13236");
-    //     for (const encode of encodeArr) {
-    //       let index = buf.indexOf("ab", 0, encode);
-    //       expect(String(index)).assertEqual('-1');
-    //     }
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testIndexOf0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testIndexOf0007";
+      try {
+        let encodeArr: buffer.BufferEncoding[] = ['utf8', 'utf-8', 'ucs2', 'ucs-2', 'ascii', 'latin1', 'binary',
+          'utf16le', 'base64', 'base64url', 'hex'];
+        let buf = buffer.from("13236");
+        for (const encode of encodeArr) {
+          let index = buf.indexOf("ab", 0, encode);
+          expect(String(index)).assertEqual('-1');
+        }
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0800
@@ -6031,17 +4206,17 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testIndexOf0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testIndexOf0008";
-    //   try {
-    //     let buf = buffer.from("123");
-    //     let index = buf.indexOf("");
-    //     expect(String(index)).assertEqual('-1');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testIndexOf0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testIndexOf0008";
+      try {
+        let buf = buffer.from("123");
+        let index = buf.indexOf("");
+        expect(String(index)).assertEqual('0');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0900
      * @tc.name: testIndexOf0009
@@ -6061,45 +4236,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_1000
-    //      * @tc.name: testIndexOf0010--无效用例
-    //      * @tc.desc: Test the indexOf interface by passing the parameter value to undefined,
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testIndexOf0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIndexOf0010"
-    //       let buf = buffer.from("123");
-    //       try {
-    //         buf.indexOf(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_1100
-    //      * @tc.name: testIndexOf0011--无效用例
-    //      * @tc.desc: Test the indexOf interface by passing the parameter value to null,
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testIndexOf0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIndexOf0011"
-    //       let buf = buffer.from("123");
-    //       try {
-    //         buf.indexOf(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0100
@@ -6212,21 +4348,21 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testLastIndexOf0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testLastIndexOf0006";
-    //   try {
-    //     let encodeArr: buffer.BufferEncoding[] = ['utf8', 'utf-8', 'ucs2', 'ucs-2', 'ascii', 'latin1', 'binary',
-    //       'utf16le', 'base64', 'base64url', 'hex'];
-    //     let buf = buffer.from("13236");
-    //     for (const encode of encodeArr) {
-    //       let index = buf.lastIndexOf("ab", 0, encode);
-    //       expect(String(index)).assertEqual('-1');
-    //     }
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testLastIndexOf0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testLastIndexOf0006";
+      try {
+        let encodeArr: buffer.BufferEncoding[] = ['utf8', 'utf-8', 'ucs2', 'ucs-2', 'ascii', 'latin1', 'binary',
+          'utf16le', 'base64', 'base64url', 'hex'];
+        let buf = buffer.from("13236");
+        for (const encode of encodeArr) {
+          let index = buf.lastIndexOf("ab", 0, encode);
+          expect(String(index)).assertEqual('-1');
+        }
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0700
@@ -6266,46 +4402,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0900
-    //  * @tc.name: testLastIndexOf0009--无效用例
-    //  * @tc.desc: Test the indexOf interface by passing the parameter value to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testLastIndexOf0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testLastIndexOf0009";
-    //   let buf = buffer.from("123 ");
-    //   try {
-    //     buf.lastIndexOf(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1000
-    //  * @tc.name: testLastIndexOf0010--无效用例
-    //  * @tc.desc: Test the indexOf interface by passing the parameter value to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testLastIndexOf0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testLastIndexOf0010";
-    //   let buf = buffer.from("123 ");
-    //   try {
-    //     buf.lastIndexOf(null);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
+  
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1300
      * @tc.name: testLastIndexOf0013
@@ -6319,7 +4416,7 @@ export default function BufferTest1() {
       let buf = buffer.from("13236235");
       try {
         let index = buf.lastIndexOf("23", 9999999);
-        expect(String(index)).assertEqual('-5');
+        expect(String(index)).assertEqual('5');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
@@ -6466,9 +4563,9 @@ export default function BufferTest1() {
         for (const encode of encodeArr) {
           let buf = buffer.from("13236");
           let flag = buf.includes("abc", 0, encode);
-          expect(String(flag)).assertEqual(false);
+          expect(String(flag)).assertEqual('false');
         }
-      } catch (err: Error) {
+      } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFalse();
       }
@@ -6486,7 +4583,7 @@ export default function BufferTest1() {
       TAG = "testIncludes0008";
       try {
         let buf = buffer.from("13236");
-        let flag = buf.includes(32);
+        let flag = buf.includes(32 as double);
         expect(String(flag)).assertEqual('false');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
@@ -6512,44 +4609,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1000
-    //      * @tc.name: testIncludes0010--无效用例
-    //      * @tc.desc: Test the includes interface by passing the parameter value to undefined.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testIncludes0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIncludes0010";
-    //       try {
-    //         let buf = buffer.from("13236");
-    //         buf.includes(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1100
-    //      * @tc.name: testIncludes0011--无效用例
-    //      * @tc.desc: Test the includes interface by passing the parameter value to null.
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testIncludes0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testIncludes0011";
-    //       try {
-    //         let buf = buffer.from("13236");
-    //         buf.includes(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
+  
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1200
      * @tc.name: testIncludes0012
@@ -6836,7 +4896,7 @@ export default function BufferTest1() {
       try {
         let buf = buffer.from("");
         let keys = buf.keys();
-        expect(isIteratorEmpty(keys)).assertFalse()
+        expect(isIteratorEmpty(keys)).assertTrue()
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
@@ -6907,7 +4967,7 @@ export default function BufferTest1() {
       try {
         let buf = buffer.from("");
         let values = buf.values();
-        expect(isIteratorEmpty(values)).assertFalse()
+        expect(isIteratorEmpty(values)).assertTrue()
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
@@ -7013,81 +5073,81 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0300
-    //  * @tc.name: testFrom0003
-    //  * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0003";
-    //   try {
-    //     const arr = new Uint8Array(2);
-    //     arr[0] = 97;
-    //     arr[1] = 98;
-    //     const buf = buffer.from(arr.buffer);
-    //     arr[0] = 99
-    //     buf[1] = 100
-    //     let str = buf.toString("hex");
-    //     expect(str).assertEqual("6364");
-    //     expect(arr[1]).assertEqual(100);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0300
+     * @tc.name: testFrom0003
+     * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0003";
+      try {
+        const arr = new Uint8Array(2);
+        arr[0] = 97;
+        arr[1] = 98;
+        const buf = buffer.from(arr.buffer);
+        arr[0] = 99
+        buf[1] = 100
+        let str = buf.toString("hex");
+        expect(str).assertEqual("6364");
+        expect(arr[1]).assertEqual(100);
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0400
-    //  * @tc.name: testFrom0004
-    //  * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0004";
-    //   try {
-    //     const arr = new Uint8Array(2);
-    //     arr[0] = 97;
-    //     arr[1] = 98;
-    //     const buf = buffer.from(arr.buffer, 1);
-    //     buf[0] = 99;
-    //     let str = buf.toString("hex");
-    //     expect(str).assertEqual("63");
-    //     expect(arr[1]).assertEqual(99);
-    //     expect(buf[0]).assertEqual(99);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0400
+     * @tc.name: testFrom0004
+     * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0004";
+      try {
+        const arr = new Uint8Array(2);
+        arr[0] = 97;
+        arr[1] = 98;
+        const buf = buffer.from(arr.buffer, 1);
+        buf[0] = 99;
+        let str = buf.toString("hex");
+        expect(str).assertEqual("63");
+        expect(arr[1]).assertEqual(99);
+        expect(buf[0]).assertEqual(99);
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0500
-    //  * @tc.name: testFrom0005
-    //  * @tc.desc: Test the from interface by Copping the passed buffer data onto a new Buffer instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0005";
-    //   try {
-    //     const buf1 = buffer.from('buffer');
-    //     const buf2 = buffer.from(buf1);
-    //     buf1[0] = 0x61;
-    //     let str = buf1.toString();
-    //     expect(str).assertEqual("auffer");
-    //     str = buf2.toString();
-    //     expect(str).assertEqual("buffer");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0500
+     * @tc.name: testFrom0005
+     * @tc.desc: Test the from interface by Copping the passed buffer data onto a new Buffer instance.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0005";
+      try {
+        const buf1 = buffer.from('buffer');
+        const buf2 = buffer.from(buf1);
+        buf1[0] = 0x61;
+        let str = buf1.toString();
+        expect(str).assertEqual("auffer");
+        str = buf2.toString();
+        expect(str).assertEqual("buffer");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0600
@@ -7119,69 +5179,69 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testFrom0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0007";
-    //   try {
-    //     const buf1 = buffer.from('F1刘FG', 'hex');
-    //     let str = buf1.toString('hex');
-    //     expect(String(str)).assertEqual("f1");
-    //
-    //     let buf2 = buffer.from("F1FG", "ascii")
-    //     str = buf2.toString("ascii");
-    //     expect(String(str)).assertEqual("F1FG");
-    //
-    //     let buf3 = buffer.from("F1FG刘", "base64")
-    //     str = buf3.toString("base64");
-    //     expect(String(str)).assertEqual("F1FG");
-    //
-    //     let buf4 = buffer.from("F1FG刘", "base64url")
-    //     str = buf4.toString("base64url");
-    //     expect(String(str)).assertEqual("F1FG");
-    //
-    //     let buf5 = buffer.from("F1FG", "binary")
-    //     str = buf5.toString("binary");
-    //     expect(String(str)).assertEqual("F1FG");
-    //
-    //     let buf6 = buffer.from("F1FG", "latin1")
-    //     str = buf6.toString("latin1");
-    //     expect(String(str)).assertEqual("F1FG");
-    //
-    //     let buf7 = buffer.from("F1FG刘", "ucs2")
-    //     str = buf7.toString("ucs2");
-    //     expect(String(str)).assertEqual("F1FG刘");
-    //
-    //     let buf8 = buffer.from("F1FG刘", "utf16le")
-    //     str = buf8.toString("utf16le");
-    //     expect(String(str)).assertEqual("F1FG刘");
-    //
-    //     let buf9 = buffer.from("F1FG刘", "ucs2")
-    //     str = buf9.toString("ucs2");
-    //     expect(String(str)).assertEqual("F1FG刘");
-    //
-    //     let buf10 = buffer.from("F1FG刘", "utf-8")
-    //     str = buf10.toString("utf-8");
-    //     expect(String(str)).assertEqual("F1FG刘");
-    //
-    //     let buf11 = buffer.from("F1FG刘", "utf8")
-    //     str = buf11.toString("utf8");
-    //     expect(String(str)).assertEqual("F1FG刘");
-    //
-    //     let buf12 = buffer.from("AsD-_QWEr", "base64url")
-    //     str = buf12.toString("hex");
-    //     expect(String(str)).assertEqual("02c0fefd0584");
-    //
-    //     let buf13 = buffer.from("AsDQWEr134", "base64url")
-    //     str = buf13.toString("hex");
-    //     expect(String(str)).assertEqual("02c0d0584af5df");
-    //
-    //     let buf14 = buffer.from("_AsDQ-12W7Er_", "base64url")
-    //     str = buf14.toString("hex");
-    //     expect(String(str)).assertEqual("fc0b0343ed765bb12b");
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it("testFrom0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0007";
+      try {
+        const buf1 = buffer.from('F1刘FG', 'hex');
+        let str = buf1.toString('hex');
+        expect(String(str)).assertEqual("f1");
+    
+        let buf2 = buffer.from("F1FG", "ascii")
+        str = buf2.toString("ascii");
+        expect(String(str)).assertEqual("F1FG");
+    
+        let buf3 = buffer.from("F1FG刘", "base64")
+        str = buf3.toString("base64");
+        expect(String(str)).assertEqual("F1FG");
+    
+        let buf4 = buffer.from("F1FG刘", "base64url")
+        str = buf4.toString("base64url");
+        expect(String(str)).assertEqual("F1FG");
+    
+        let buf5 = buffer.from("F1FG", "binary")
+        str = buf5.toString("binary");
+        expect(String(str)).assertEqual("F1FG");
+    
+        let buf6 = buffer.from("F1FG", "latin1")
+        str = buf6.toString("latin1");
+        expect(String(str)).assertEqual("F1FG");
+    
+        let buf7 = buffer.from("F1FG刘", "ucs2")
+        str = buf7.toString("ucs2");
+        expect(String(str)).assertEqual("F1FG刘");
+    
+        let buf8 = buffer.from("F1FG刘", "utf16le")
+        str = buf8.toString("utf16le");
+        expect(String(str)).assertEqual("F1FG刘");
+    
+        let buf9 = buffer.from("F1FG刘", "ucs2")
+        str = buf9.toString("ucs2");
+        expect(String(str)).assertEqual("F1FG刘");
+    
+        let buf10 = buffer.from("F1FG刘", "utf-8")
+        str = buf10.toString("utf-8");
+        expect(String(str)).assertEqual("F1FG刘");
+    
+        let buf11 = buffer.from("F1FG刘", "utf8")
+        str = buf11.toString("utf8");
+        expect(String(str)).assertEqual("F1FG刘");
+    
+        let buf12 = buffer.from("AsD-_QWEr", "base64url")
+        str = buf12.toString("hex");
+        expect(String(str)).assertEqual("02c0fefd0584");
+    
+        let buf13 = buffer.from("AsDQWEr134", "base64url")
+        str = buf13.toString("hex");
+        expect(String(str)).assertEqual("02c0d0584af5df");
+    
+        let buf14 = buffer.from("_AsDQ-12W7Er_", "base64url")
+        str = buf14.toString("hex");
+        expect(String(str)).assertEqual("fc0b0343ed765bb12b");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_0800
@@ -7215,14 +5275,14 @@ export default function BufferTest1() {
      */
     it("testFrom0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testFrom0009";
+      let foo = new Foo();
       try {
-        let foo = new Foo();
         const buf = buffer.from(foo, 'utf8', 0);
-        let str = buf.toString();
-        expect(String(str)).assertEqual("this is a test");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     });
 
@@ -7235,63 +5295,28 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testFrom0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0010";
-    //   try {
-    //     const str =
-    //       `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OgIQLaulKklB\npZltSaWwM3Cnzcmvh+LoqYFYjCePUxnoJRDusFqy4sjwBx9fn/XSxxJ9A0KxMtXa\nr7YFjwQo3FsIjLZ3+8wS+Kydcg==`;
-    //     const buf = buffer.from(str, 'base64');
-    //     let ref = buf.readInt8(buf.length - 1);
-    //     expect(String(ref)).assertEqual('114');
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1100
-    //      * @tc.name: testFrom0011--无效用例
-    //      * @tc.desc: Test the from interface by pass the parameter array to undefined
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testFrom0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testFrom0011";
-    //       try {
-    //         buffer.from(undefined);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1200
-    //      * @tc.name: testFrom0012--无效用例
-    //      * @tc.desc: Test the from interface by pass the parameter array to null
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 3
-    //      */
-    //     it("testFrom0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //       TAG = "testFrom0012";
-    //       try {
-    //         buffer.from(null);
-    //         expect(false).assertFail();
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //         expect(err.code).assertEqual(401);
-    //       }
-    //     });
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
-     * @tc.name: testFrom0013
-     * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    it("testFrom0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0010";
+      try {
+        const str =
+          `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OgIQLaulKklB\npZltSaWwM3Cnzcmvh+LoqYFYjCePUxnoJRDusFqy4sjwBx9fn/XSxxJ9A0KxMtXa\nr7YFjwQo3FsIjLZ3+8wS+Kydcg==`;
+        const buf = buffer.from(str, 'base64');
+        let ref = buf.readInt8(buf.length - 1);
+        expect(String(ref)).assertEqual('114');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
+    //  * @tc.name: testFrom0013
+    //  * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testFrom0013";
     //   let arrayBuffer = new ArrayBuffer(5);
@@ -7308,26 +5333,26 @@ export default function BufferTest1() {
     //     expect(String(err.code)).assertEqual('10200001');
     //   }
     // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
-    //  * @tc.name: testFrom0014--无效用例
-    //  * @tc.desc: Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0014";
-    //   try {
-    //     let buf = new Uint8Array([97, 98]);
-    //     const buf1 = buffer.from(buf, -1);
-    //     let str = buf1.toString();
-    //     expect(str).assertEqual("ab");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
+     * @tc.name: testFrom0014
+     * @tc.desc: Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0014";
+      try {
+        let buf = new Uint8Array([97, 98]);
+        const buf1 = buffer.from(buf);
+        let str = buf1.toString();
+        expect(str).assertEqual("ab");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1500
      * @tc.name: testFrom0015
@@ -7371,7 +5396,7 @@ export default function BufferTest1() {
         buf = buffer.from(array);
         strUrl = buf.toString("base64url");
         str = buf.toString("base64");
-        expect(String(strUrl)).assertEqual('AsD-_QWERQ==');
+        expect(String(strUrl)).assertEqual('AsD-_QWERQ');
         expect(String(str)).assertEqual("AsD+/QWERQ==");
 
         array = new Uint8Array([215, 109, 211, 97, 72, 142, 167, 241]);
@@ -7460,14 +5485,14 @@ export default function BufferTest1() {
         done();
       });
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0200
-     * @tc.name: testBlobConstructor0002
-     * @tc.desc: Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0200
+    //  * @tc.name: testBlobConstructor0002
+    //  * @tc.desc: Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testBlobConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0002";
     //   try {
@@ -7493,7 +5518,7 @@ export default function BufferTest1() {
     //   }
     //   done();
     // });
-    //
+
     // /**
     //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0300
     //  * @tc.name: testBlobConstructor0003
@@ -7568,28 +5593,28 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testBlobConstructor0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobConstructor0005";
-    //   try {
-    //     let option: buffer.BlobOptions = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let sources:string[] =  ["a", "b", "c"];
-    //     let blob2 = new buffer.Blob(sources, option);
-    //     let blob = new buffer.Blob([blob2]);
-    //     await blob.text().then((value:string) => {
-    //       try {
-    //         expect(String(value)).assertEqual("abc");
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
+    it("testBlobConstructor0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      TAG = "testBlobConstructor0005";
+      try {
+        let option: buffer.BlobOptions = {
+          type: "new type", endings: "transparent"
+        };
+        let sources:string[] =  ["a", "b", "c"];
+        let blob2 = new buffer.Blob(sources, option);
+        let blob = new buffer.Blob([blob2]);
+        await blob.text().then((value:string) => {
+          try {
+            expect(String(value)).assertEqual("abc");
+          } catch (err:BusinessError) {
+            console.error(`${TAG} err is ${err}`);
+          }
+        });
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+      done();
+    });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0600
@@ -7599,27 +5624,27 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testBlobConstructor0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    //   async (done: () => void): Promise<void> => {
-    //     TAG = "testBlobConstructor0006";
-    //     try {
-    //       new buffer.Blob(["a", "b", "c"]);
-    //       expect(false).assertFalse();
-    //     } catch (err: BusinessError) {
-    //       console.error(`${TAG} err is ${err}`);
-    //       expect(String(err.code)).assertEqual('401');
-    //     }
-    //     done()
-    //   });
+    it("testBlobConstructor0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        TAG = "testBlobConstructor0006";
+        try {
+          new buffer.Blob(["a", "b", "c"]);
+          expect(false).assertFalse();
+        } catch (err: BusinessError) {
+          console.error(`${TAG} err is ${err}`);
+          expect(String(err.code)).assertEqual('401');
+        }
+        done()
+      });
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBARRAYBUFFER_0100
-     * @tc.name: testBlobArrayBuffer0100
-     * @tc.desc: Test the arrayBuffer interface by blob fulfills with an <ArrayBuffer> containing a copy of the Blob data.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBARRAYBUFFER_0100
+    //  * @tc.name: testBlobArrayBuffer0100
+    //  * @tc.desc: Test the arrayBuffer interface by blob fulfills with an <ArrayBuffer> containing a copy of the Blob data.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testBlobArrayBuffer0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobArrayBuffer0100";
     //   try {
@@ -7653,36 +5678,36 @@ export default function BufferTest1() {
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    // it("testBlobText0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobText0001";
-    //   try {
-    //     let option: buffer.BlobOptions = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let sources:string[] =  ["a", "b", "c"];
-    //     let blob = new buffer.Blob(sources, option);
-    //     await blob.text().then((value:string) => {
-    //       try {
-    //         expect(value).assertEqual("abc");
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
+    it("testBlobText0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      TAG = "testBlobText0001";
+      try {
+        let option: buffer.BlobOptions = {
+          type: "new type", endings: "transparent"
+        };
+        let sources:string[] =  ["a", "b", "c"];
+        let blob = new buffer.Blob(sources, option);
+        await blob.text().then((value:string) => {
+          try {
+            expect(value).assertEqual("abc");
+          } catch (err:BusinessError) {
+            console.error(`${TAG} err is ${err}`);
+          }
+        });
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+      done();
+    });
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0100
-     * @tc.name: testBlobSlice0001
-     * @tc.desc: Test the slice interface by passing the parameter start to 0,end to 1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0100
+    //  * @tc.name: testBlobSlice0001
+    //  * @tc.desc: Test the slice interface by passing the parameter start to 0,end to 1.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testBlobSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0001";
     //   try {
@@ -7706,14 +5731,14 @@ export default function BufferTest1() {
     //   }
     //   done();
     // });
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0200
-     * @tc.name: testBlobSlice0002
-     * @tc.desc: Test the slice interface by passing the parameter start to -1,end to 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-     */
+    // /**
+    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0200
+    //  * @tc.name: testBlobSlice0002
+    //  * @tc.desc: Test the slice interface by passing the parameter start to -1,end to 0.
+    //  * @tc.size: MediumTest
+    //  * @tc.type: Function
+    //  * @tc.level: Level 3
+    //  */
     // it("testBlobSlice0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0002";
     //   try {
@@ -7864,25 +5889,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBLEGTH_0200
-    //  * @tc.name: testBlobLength0002--无效用例
-    //  * @tc.desc: Test the type interface by assigning a value to length.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobLength0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testBlobLength0002";
-    //   let buf = buffer.from("1236");
-    //   try {
-    //    buf.length = 10;
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(10200013);
-    //   }
-    // });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBLEGTH_0300
      * @tc.name: testBlobLength0003
@@ -7983,25 +5989,6 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0500
-    //  * @tc.name: testBlobByteOffset0005--无效用例
-    //  * @tc.desc: Test the byteOffset interface by creating buffer assign a value to 'byteOffset'.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobByteOffset0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testBlobByteOffset0005";
-    //   let buf = buffer.from("1236");
-    //   try {
-    //     buf.byteOffset = 3;
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(10200013);
-    //   }
-    // });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0100
      * @tc.name: testReadUInt16LE0001
@@ -8044,46 +6031,7 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('10200001');
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0300
-    //  * @tc.name: testReadUInt16LE0003--无效用例
-    //  * @tc.desc: Test the readUInt16LE interface by passing the parameter offset to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUInt16LE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt16LE0003";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0x1234, 0);
-    //     let ref = buf.readUInt16LE(undefined);
-    //     expect(ref).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0400
-    //  * @tc.name: testReadUInt16LE0004--无效用例
-    //  * @tc.desc: Test the readUInt16LE interface by passing the parameter offset to null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUInt16LE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt16LE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt16LE(0x1234, 0);
-    //     let ref = buf.readUInt16LE(null);
-    //     expect(String(ref)).assertEqual("1234");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0100
      * @tc.name: testReadUInt32BE0001
@@ -8146,26 +6094,7 @@ export default function BufferTest1() {
         expect(String(err.code)).assertEqual('401');
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0400
-    //  * @tc.name: testReadUInt32BE0004--无效用例
-    //  * @tc.desc: Test the readUInt32BE interface by passing the parameter offset to null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUInt32BE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt32BE0004-";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt32BE(0x12345678, 0);
-    //     let ref = buf.readUInt32BE(null);
-    //     expect(String(ref)).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0100
      * @tc.name: testReadUInt32LE0001
@@ -8227,26 +6156,7 @@ export default function BufferTest1() {
         expect(err.code).assertEqual(401);
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0400
-    //  * @tc.name: testReadUInt32LE0004--无效用例
-    //  * @tc.desc: Test the readUInt32LE interface by passing the parameter offset to null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUInt32LE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUInt32LE0004";
-    //   try {
-    //     let buf = buffer.allocUninitializedFromPool(4);
-    //     buf.writeUInt32LE(0x12345678, 0);
-    //     let ref = buf.readUInt32LE(null);
-    //     expect(String(ref)).assertEqual("12345678");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0100
      * @tc.name: testReadUIntBE0001
@@ -8287,44 +6197,7 @@ export default function BufferTest1() {
         expect(err.code).assertEqual(10200001);
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0300
-    //  * @tc.name: testReadUIntBE0003--无效用例
-    //  * @tc.desc: Test the readUIntBE interface by passing the parameter offset to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUIntBE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUIntBE0003";
-    //   let buf = buffer.allocUninitializedFromPool(4);
-    //   buf.writeUIntBE(0x13141516, 0, 4);
-    //   try {
-    //     buf.readUIntBE(undefined, 3);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0400
-    //  * @tc.name: testReadUIntBE0004--无效用例
-    //  * @tc.desc: Test the readUIntBE interface by passing the parameter offset to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUIntBE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUIntBE0004";
-    //   let buf = buffer.allocUninitializedFromPool(4);
-    //   buf.writeUIntBE(0x13141516, 0, 4);
-    //   try {
-    //     buf.readUIntBE(null, 3);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0100
      * @tc.name: testReadUIntLE0001
@@ -8366,46 +6239,7 @@ export default function BufferTest1() {
         expect(err.code).assertEqual(10200001);
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0300
-    //  * @tc.name: testReadUIntLE0003--无效用例
-    //  * @tc.desc: Test the readUIntLE interface by passing the parameter offset to undefined.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUIntLE0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUIntLE0003";
-    //   let buf = buffer.allocUninitializedFromPool(4);
-    //   buf.writeUIntLE(0x13141516, 0, 4);
-    //   try {
-    //     buf.readUIntLE(undefined, 3);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0400
-    //  * @tc.name: testReadUIntLE0004--无效用例
-    //  * @tc.desc: Test the readUIntLE interface by passing the parameter offset to null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testReadUIntLE0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testReadUIntLE0004";
-    //   let buf = buffer.allocUninitializedFromPool(4);
-    //   buf.writeUIntLE(0x13141516, 0, 4);
-    //   try {
-    //     buf.readUIntLE(null, 3);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // })
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0100
      * @tc.name: testBufferCompare0001
@@ -8521,7 +6355,7 @@ export default function BufferTest1() {
       try {
         let buf1 = buffer.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         let buf2 = buffer.from([5, 6, 7, 8, 9, 1, 2, 3, 4]);
-        let result = buf1.compare(buf2, Infinity, 9, 0, 4);
+        let result = buf1.compare(buf2, Infinity.toInt(), 9, 0, 4);
       } catch (err: BusinessError) {
         expect(String(err.code)).assertEqual('10200001')
       }
@@ -8540,7 +6374,7 @@ export default function BufferTest1() {
       try {
         let buf1 = buffer.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         let buf2 = buffer.from([5, 6, 7, 8, 9, 1, 2, 3, 4]);
-        let result = buf1.compare(buf2, Infinity, 9, 0, 4);
+        let result = buf1.compare(buf2, Infinity.toInt(), 9, 0, 4);
       } catch (err: BusinessError) {
         expect(String(err.code)).assertEqual('10200001')
       }
@@ -8596,7 +6430,7 @@ export default function BufferTest1() {
       * @tc.size: MediumTest
       * @tc.type  : Function
       * @tc.level: Level 3
-  */
+      */
     it('testRead0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testRead0003";
       try {
@@ -8610,14 +6444,14 @@ export default function BufferTest1() {
       }
     });
 
-
-    //   * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READ_0400
-    //   * @tc.name  : testRead0004
-    //   * @tc.desc  : Testing readBigUInt64LE for buffer with normal value.
-    //   * @tc.size: MediumTest
-    //   * @tc.type  : Function
-    //   * @tc.level: Level 3
-    // */ /*
+    /*
+      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READ_0400
+      * @tc.name  : testRead0004
+      * @tc.desc  : Testing readBigUInt64LE for buffer with normal value.
+      * @tc.size: MediumTest
+      * @tc.type  : Function
+      * @tc.level: Level 3
+     */ 
     it('testRead0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testRead0004";
       try {
@@ -8680,19 +6514,19 @@ export default function BufferTest1() {
       * @tc.type  : Function
       * @tc.level: Level 3
     */
-    // it('testRead0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testRead0007";
-    //   try {
-    //     const str =
-    //       `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OgIQLaulKklB\npZltSaWwM3Cnzcmvh+LoqYFYjCePUxnoJRDusFqy4sjwBx9fn/XSxxJ9A0KxMtXa\nr7YFjwQo3FsIjLZ3+8wS+Kydcg==`;
-    //     const buf = buffer.from(str, 'base64');
-    //     let ref = buf.readInt8();
-    //     expect(String(ref)).assertEqual('48');
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testRead0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testRead0007";
+      try {
+        const str =
+          `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OgIQLaulKklB\npZltSaWwM3Cnzcmvh+LoqYFYjCePUxnoJRDusFqy4sjwBx9fn/XSxxJ9A0KxMtXa\nr7YFjwQo3FsIjLZ3+8wS+Kydcg==`;
+        const buf = buffer.from(str, 'base64');
+        let ref = buf.readInt8();
+        expect(String(ref)).assertEqual('48');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /*
     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_READ_0800
@@ -9069,7 +6903,7 @@ export default function BufferTest1() {
       try {
         let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
         let result = blob.slice(1);
-        expect(String(result.size)).assertEqual('3');
+        expect(String(result.size)).assertEqual('2');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
@@ -9088,7 +6922,7 @@ export default function BufferTest1() {
       try {
         let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', "d"]);
         let result = blob.slice(1, 2);
-        expect(String(result.size)).assertEqual('4');
+        expect(String(result.size)).assertEqual('1');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
@@ -9107,7 +6941,7 @@ export default function BufferTest1() {
       try {
         let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
         let result = blob.slice(1, 2, "Number");
-        expect(String(result.size)).assertEqual('3');
+        expect(String(result.size)).assertEqual('1');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();

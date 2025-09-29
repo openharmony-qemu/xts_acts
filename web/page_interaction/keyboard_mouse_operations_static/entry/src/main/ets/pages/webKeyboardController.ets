@@ -100,7 +100,7 @@ struct WebHitTestTypeEnumTest {
             let option: WebKeyboardOptions = {
               useSystemKeyboard: true,
             };
-            if (!KeyboardCallbackInfo) {
+            if (!KeyboardCallbackInfo || !KeyboardCallbackInfo.controller) {
               return option;
             }
 

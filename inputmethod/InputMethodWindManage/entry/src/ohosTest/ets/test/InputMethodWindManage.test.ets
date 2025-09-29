@@ -7719,5 +7719,289 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
+    /**
+     * @tc.number  Sub_InputMethod_IME_OffsetArea_0100
+     * @tc.name    Sub_InputMethod_IME_OffsetArea_0100
+     * @tc.desc    getSystemPanelCurrentInsets()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level2
+     */
+    it('Sub_InputMethod_IME_OffsetArea_0100', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_OffsetArea_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_OffsetArea_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_0100 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_OffsetArea_0100"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_OffsetArea_0100 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_OffsetArea_0100 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 541
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.number  Sub_InputMethod_IME_OffsetArea_1200
+     * @tc.name    Sub_InputMethod_IME_OffsetArea_1200
+     * @tc.desc    getSystemPanelCurrentInsets()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level2
+     */
+    it('Sub_InputMethod_IME_OffsetArea_1200', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1200 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_OffsetArea_1200"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1200 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1200 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 542
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.number  Sub_InputMethod_IME_OffsetArea_1000
+     * @tc.name    Sub_InputMethod_IME_OffsetArea_1000
+     * @tc.desc    getSystemPanelCurrentInsets()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level2
+     */
+    it('Sub_InputMethod_IME_OffsetArea_1000', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1000 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1000 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1000 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1000 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1000 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1000 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1000 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1000 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_OffsetArea_1000"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1000 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1000 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 543
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.number  Sub_InputMethod_IME_OffsetArea_1100
+     * @tc.name    Sub_InputMethod_IME_OffsetArea_1100
+     * @tc.desc    getSystemPanelCurrentInsets()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level2
+     */
+    it('Sub_InputMethod_IME_OffsetArea_1100', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_OffsetArea_1100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_OffsetArea_1100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1100 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_OffsetArea_1100"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1100 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_OffsetArea_1100 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 544
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
   });
 };

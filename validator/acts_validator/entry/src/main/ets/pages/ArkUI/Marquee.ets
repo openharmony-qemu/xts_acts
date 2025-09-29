@@ -37,7 +37,7 @@ struct marquee {
   @State fromStart: boolean = false;
   @State step: number = 10;
   @State loop: number = 0;
-  @State marqueeSrc: string = '欢迎来到validator,我是validator跑马灯,欢迎来到validator,我是validator跑马灯';
+  @State marqueeSrc: string = '欢迎来到validator,我是validator跑马灯,欢迎来到validator,我是validator跑马灯,欢迎来到validator,我是validator跑马灯';
   @State mColor: Color = Color.Gray;
 
   @Builder

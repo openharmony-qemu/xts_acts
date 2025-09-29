@@ -12,14 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201680;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitOnsslerroreventreceiveWebC";
 
 export default function webOnSslError() {
   describe('ActsAceWebDevWebOnSslErrorTest', () => {
@@ -33,45 +36,27 @@ export default function webOnSslError() {
         console.info("get webOnSslError state success " + JSON.stringify(pages));
         if (!("webOnSslError" == pages.name)) {
           console.info("get webOnSslError state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webOnSslError page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push webOnSslError page success");
         }
       } catch (err) {
         console.error("push webOnSslError page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webOnSslError"), 10000);
+      console.log("waitForComponent webOnSslError");
       done();
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webOnSslError beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("webOnSslError afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      * @tc.number     : SUB_ACE_BASIC_ETS_WEBPATR4_API_0100
      * @tc.name       : testOnsslerroreventreceiveWebC
@@ -81,9 +66,13 @@ export default function webOnSslError() {
      * @tc.level      : Level 0
      */
     it('testOnsslerroreventreceiveWebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnsslerroreventreceiveWebC";
-      Utils.registerEvent("testOnsslerroreventreceiveWebC", "1", 420, done);
-      sendEventByKey('webOnSslError', 10, '');
+      Utils.emitEvent("emitOnsslerroreventreceiveWebC", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnsslerroreventreceiveWebC",  "1", 201690, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webOnSslError");
+      if (await Utils.waitForExist(() => isReturn, 'testOnsslerroreventreceiveWebC' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }

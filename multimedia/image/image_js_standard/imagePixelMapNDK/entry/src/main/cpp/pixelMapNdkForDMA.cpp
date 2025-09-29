@@ -15,6 +15,7 @@
 
 #include "napi/native_api.h"
 #include "pixelMapNdkForDMA.h"
+#include "PixelMapNdkTest.h"
 #include "common/log_common.h"
 #include <node_api.h>
 #include <bits/alltypes.h>
@@ -62,6 +63,15 @@ static void SetUint32NamedProperty(napi_env env, napi_value object, const char* 
     napi_create_uint32(env, value, &temp);
     napi_set_named_property(env, object, key, temp);
     return;
+}
+
+Image_ErrorCode ReleaseDecodingOptions(OH_DecodingOptions *&options)
+{
+    if (options != nullptr) {
+        OH_DecodingOptions_Release(options);
+        options = nullptr;
+    }
+    return IMAGE_SUCCESS;
 }
 
 Image_ErrorCode ReleaseImageSource(OH_ImageSourceNative *&source)
@@ -217,6 +227,7 @@ static napi_value CreatePixelMapUsingAllocator(napi_env env, napi_callback_info 
     g_thisImageSource->errorCode =
         OH_ImageSourceNative_CreatePixelmapUsingAllocator(g_thisImageSource->source, g_thisImageSource->options,
             allocatorType, &g_thisImageSource->pixelmap);
+    ReleaseDecodingOptions(g_thisImageSource->options);
     if (g_thisImageSource->errorCode != IMAGE_SUCCESS) {
         H_LOGE("%{public}s OH_ImageSourceNative_CreatePixelmapUsingAllocator failed, errCode: %{public}d.",
             TAG, g_thisImageSource->errorCode);
@@ -283,6 +294,15 @@ static napi_value CreatePixelMapUsingAllocatorError(napi_env env, napi_callback_
     return result;
 }
 
+void ReleaseGlobalImageSource()
+{
+    if (g_thisImageSource != nullptr) {
+        delete g_thisImageSource;
+        g_thisImageSource = nullptr;
+        H_LOGI("%{public}s Global ImageSource released successfully.", TAG);
+    }
+}
+
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -294,6 +314,7 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    InitPixelMapNdk(env, exports);
     return exports;
 }
 EXTERN_C_END
@@ -309,3 +330,8 @@ static napi_module demoModule = {
 };
 
 extern "C" __attribute__((constructor)) void RegisterPixelMapNdkModule(void) { napi_module_register(&demoModule); }
+extern "C" __attribute__((destructor)) void UnregisterPixelMapNdkModule(void)
+{
+    H_LOGI("%{public}s UnregisterPixelMapNdkModule called.", TAG);
+    ReleaseGlobalImageSource();
+}

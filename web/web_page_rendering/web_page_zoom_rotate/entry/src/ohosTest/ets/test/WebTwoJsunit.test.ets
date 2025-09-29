@@ -18,6 +18,9 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent,waitAndClickComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitOverviewModeAccessTrue";
@@ -35,21 +38,20 @@ export default function webTwoJsunit() {
         if (!("webTwo" == pages.name)) {
           console.info("get webTwo state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push webTwo page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
+      await waitForComponent("webcomponenttwo");
       done();
     });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -62,7 +64,7 @@ export default function webTwoJsunit() {
           }
         }
         let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 153120,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("start send emitKey");
@@ -70,29 +72,28 @@ export default function webTwoJsunit() {
       } catch (err) {
         console.info("emit emitKey  err: " + JSON.stringify(err));
       }
-      await Utils.sleep(2000);
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_001                                                                                                                                                                     
-     *tc.name overviewModeAccessTrue                                                                                                                                                                                                                 
+    /*
+     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_001
+     *tc.name overviewModeAccessTrue
      *tc.desic Sets allow the Web access overview mode
      */
     it('overviewModeAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOverviewModeAccessFalse";
-      Utils.registerLargerEvent("overviewModeAccessTrue", 168, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.emitEvent("emitOverviewModeAccessTrue",153120);
+      Utils.registerLargerEvent("overviewModeAccessTrue", 153130, done);
+      waitAndClickComponent("webcomponenttwo",driver);
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_002                      
-     *tc.name overviewModeAccessFalse                                                                                                                                                                                                                 
+    /*
+     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_002
+     *tc.name overviewModeAccessFalse
      *tc.desic Sets not allow the Web access overview mode
      */
     it('overviewModeAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOverviewModeAccessFalse";
-      Utils.registerLargerEvent("overviewModeAccessFalse", 170, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.emitEvent("emitOverviewModeAccessFalse",153120);
+      Utils.registerLargerEvent("overviewModeAccessFalse", 153140, done);
+      waitAndClickComponent("webcomponenttwo",driver);
     })
   })
 }

@@ -18,11 +18,16 @@ group("arkts_static") {
   if (is_standard_system) {
     deps = [
       "buffer_standard_test_static:ActsBufferStaticTest",
+      "xml_standard_static:ActsXmlStaticTest",
       "com_container_standard_static:ActsContainerStaticTest",
       "com_uri_standard_static:ActsUriStaticTest",
       "com_url_standard_static:ActsUrlStaticTest",
+      "stream_standard_test_static:ActsStreamStaticTest",
+      "bitVector_standard_test_static:ActsBitVectorStaticTest",
+      "stringDecoder_standard_test_static:ActsStringDecoderStaticTest",
+      "util_standard_test_static:ActsUtilStaticTest",
+      "util_types_standard_static:ActsUtilTypesStaticTest",
       "global_standard_static:ActsGlobalStaticTest",
-      "xml_standard_static:ActsXmlStaticTest",
     ]
   }
 }

@@ -34,6 +34,23 @@ struct RichEditorShortCutKeys024 {
   build() {
 
     Column() {
+      Row(){
+        Button('get position').onClick(() => {
+          this.carePosition = this.controller.getCaretOffset() + '';
+        }).id('getPosition').width('30%')
+        Button('set position').onClick(() => {
+          this.controller.setCaretOffset(3);
+        }).id('setPosition').width('30%')
+        Button('builder').onClick(() => {
+          this.myBuilder = () => {
+            this.placeholderBuilder();
+          }
+          let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+          console.info('addBuilderSpan return ' + num);
+        }).id('builder').width('30%')
+      }.height('5%')
+
+      Text('carePosition:' + this.carePosition).id('carePosition').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(200)
@@ -76,21 +93,6 @@ struct RichEditorShortCutKeys024 {
           });
         })
         .id('RichEditorShortCutKeys024')
-
-      Button('get position').onClick(() => {
-        this.carePosition = this.controller.getCaretOffset() + '';
-      }).id('getPosition')
-      Button('set position').onClick(() => {
-        this.controller.setCaretOffset(3);
-      }).id('setPosition')
-      Button('builder').onClick(() => {
-        this.myBuilder = () => {
-          this.placeholderBuilder();
-        }
-        let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
-        console.info('addBuilderSpan return ' + num);
-      }).id('builder')
-      Text('carePosition:' + this.carePosition).id('carePosition')
     }
   }
 }

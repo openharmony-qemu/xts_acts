@@ -193,6 +193,15 @@ export default function penPart2Test() {
         console.info(msg + ` getFillPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
+      try {
+        pen.setStrokeWidth(5);
+        let fillPath = pen.getFillPath(pathSrc, pathDst);
+        expect(fillPath == true).assertTrue();
+        console.info(msg + ' getFillPath successed, 3 fillPath:'+ fillPath);
+      } catch( e ) {
+        console.info(msg + ` getFillPath errorCode 3 is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
     });
 
     /**

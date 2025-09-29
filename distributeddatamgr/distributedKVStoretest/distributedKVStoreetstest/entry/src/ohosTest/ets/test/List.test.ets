@@ -26,6 +26,9 @@ import schemaTest from './SchemaEts.test';
 import SingleKvStoreErrCodeTest from "./SingleKvStoreErrCodeEtsTest.test";
 import deviceKvStoreCallbackErrcodeTest from './DeviceKvStoreCallbackErrcode.test';
 import deviceKvStorePromiseErrcodeTest from './DeviceKvStorePromiseErrcode.test';
+import SingleKvStoreDataChange from './SingleKvStoreDataChange.test';
+import DeviceKvStoreReturnValue from './DeviceKvStoreReturnValue.test';
+import KVStoreResultSetReturnValue from './KVStoreResultSetReturnValue.test';
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -41,4 +44,7 @@ export default function testsuite() {
   SingleKvStoreErrCodeTest();
   deviceKvStoreCallbackErrcodeTest();
   deviceKvStorePromiseErrcodeTest();
+  SingleKvStoreDataChange();
+  DeviceKvStoreReturnValue();
+  KVStoreResultSetReturnValue();
 }

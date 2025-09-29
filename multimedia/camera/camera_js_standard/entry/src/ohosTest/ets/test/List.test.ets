@@ -42,6 +42,7 @@ import CameraPhotoSessionTest from './CameraPhotoSessionTest.test.ets'
 import {CameraConcurrentTest,isSupportCameras} from './CameraConcurrentTest.test.ets'
 import cameraCaptureSceneTest from './CameraCaptureSceneTest.test.ets'
 import CameraMacroTest from './CameraMacroTest.test.ets'
+import CameraPhotoQualityPrioritizationTest from './CameraPhotoQualityPrioritization.test.ets'
 
 let TAG = 'CameraModuleTest: '
 
@@ -77,4 +78,5 @@ export default function cameraKit() {
   CameraConcurrentTest()
     CameraMacroTest()
   cameraCaptureSceneTest()
+  CameraPhotoQualityPrioritizationTest()
 }

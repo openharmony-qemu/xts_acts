@@ -23,6 +23,30 @@ struct RichEditorShortCutKeys022 {
   build() {
 
     Column() {
+      Row(){
+        Button('get spans').onClick(() => {
+          this.style = '';
+          let selection = this.controller.getSelection();
+          let spans = selection.spans;
+          spans.forEach(item => {
+            if (typeof (item as RichEditorTextSpanResult)['textStyle'] != 'undefined') {
+              let span = item as RichEditorTextSpanResult
+              let spanPosition = JSON.stringify(span.spanPosition);
+              let value = JSON.stringify(span.value);
+              let textStyle = JSON.stringify(span.textStyle);
+              this.style += 'spanPosition:' + spanPosition + ',';
+              this.style += 'value:' + value + ',';
+              this.style += 'textStyle:' + textStyle + ',';
+              console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+            }
+          })
+        }).id('getSpans').width('50%')
+
+        Button('set select').onClick(() => {
+          this.controller.setSelection(2, 5);
+        }).id('setSelect').width('50%')
+      }.height('5%')
+      Text('style:' + this.style).id('style').height('5%').clip(true)
 
       RichEditor({ controller: this.controller })
         .padding('10px')
@@ -51,30 +75,6 @@ struct RichEditorShortCutKeys022 {
           });
         })
         .id('RichEditorShortCutKeys022')
-
-      Button('get spans').onClick(() => {
-        this.style = '';
-        let selection = this.controller.getSelection();
-        let spans = selection.spans;
-        spans.forEach(item => {
-          if (typeof (item as RichEditorTextSpanResult)['textStyle'] != 'undefined') {
-            let span = item as RichEditorTextSpanResult
-            let spanPosition = JSON.stringify(span.spanPosition);
-            let value = JSON.stringify(span.value);
-            let textStyle = JSON.stringify(span.textStyle);
-            this.style += 'spanPosition:' + spanPosition + ',';
-            this.style += 'value:' + value + ',';
-            this.style += 'textStyle:' + textStyle + ',';
-            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-          }
-        })
-      }).id('getSpans')
-
-      Button('set select').onClick(() => {
-        this.controller.setSelection(2, 5);
-      }).id('setSelect')
-
-      Text('style:' + this.style).id('style')
     }
   }
 }

@@ -14,7 +14,11 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
-import { Driver, ON,  Component } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
+import systemDateTime from '@ohos.systemDateTime';
+import fs from '@ohos.file.fs';
+import webview from '@ohos.web.webview';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
   static sleep(time: number) {
@@ -27,9 +31,14 @@ export default class Utils {
     })
   }
 
+  static async clickComponent(driver: Driver, id: string) {
+    let component = await driver.findComponent(ON.id(id));
+    await component.click();
+  }
+
+
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
                            done: Function, expectFunction: Function) {
-    console.info(`[${testCaseName}] START`);
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -46,7 +55,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -62,12 +71,6 @@ export default class Utils {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       expect(backData?.data?.ACTION).assertContain(expected);
     });
-  }
-
-  static async clickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
-    await component.click();
   }
 
   static emitEvent(actualValue: boolean | string | number | object, eventId: number) {
@@ -87,4 +90,75 @@ export default class Utils {
       console.info("webFlag emit action state err: " + JSON.stringify(err));
     }
   }
+
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`${logFlag} error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+      }
+    }
+  }
+
 }

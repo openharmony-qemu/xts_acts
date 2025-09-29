@@ -49,6 +49,7 @@ let highVol: number = 14;
 let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
+const MaxVloume: number[] = [15,20,100];
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();
@@ -396,10 +397,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
         } else {
@@ -1533,10 +1531,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const PROMISE = audioManager.getMaxVolume(audioMedia);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1562,10 +1557,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1587,10 +1579,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const PROMISE = audioManager.getMaxVolume(audioRingtone);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1619,11 +1608,7 @@ export default function audioFramework() {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
           done();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-          done();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
           done();
@@ -1649,10 +1634,7 @@ export default function audioFramework() {
       audioManager.setVolume(audioRingtone, lowVol);
       const PROMISE = audioManager.getMaxVolume(audioMedia);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1680,10 +1662,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioMedia, lowVol);
         let data = await audioManager.getMaxVolume(audioRingtone);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1711,10 +1690,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1739,10 +1715,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1765,10 +1738,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioMedia, lowVol);
         let data = await audioManager.getMaxVolume(audioMedia);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1794,10 +1764,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioRingtone, lowVol);
         let data = await audioManager.getMaxVolume(audioRingtone);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1825,10 +1792,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1853,10 +1817,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -6395,6 +6356,54 @@ export default function audioFramework() {
         expect(Number(err.code)).assertEqual(6800101);
       }
       done();
+    })
+
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
+    * @tc.desc      : isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
+    * @tc.desc      : isIntelligentNoiseReductionEnabledForCurrentDevice - 6800101
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+            let param: ESObject = -100;
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(param);
+            console.info(`[Support] Status: ${isSupport}`);
+            expect(false).assertTrue();
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+            expect(Number(err.code)).assertEqual(6800101);
+        }
+        done();
     })
   })
 }

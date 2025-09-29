@@ -86,12 +86,12 @@ export default function pasteBoardTest() {
       error = undefined;
     })
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0900
-     * @tc.name Adds one record(s)
-     * @tc.desc Test pasteBoard SetProperty API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0900
+     * @tc.name       Adds one record(s)
+     * @tc.desc       Test pasteBoard SetProperty API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TEST_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let pasteData = pasteboard.createHtmlData('application/xml');
@@ -108,12 +108,12 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_1000
-     * @tc.name Adds one record(s)
-     * @tc.desc Test pasteBoard SetProperty API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_1000
+     * @tc.name       Adds one record(s)
+     * @tc.desc       Test pasteBoard SetProperty API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TEST_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let pasteData = pasteboard.createPlainTextData("hello");
@@ -130,12 +130,12 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0700
-     * @tc.name Adds one record(s)
-     * @tc.desc Test pasteBoard SetProperty API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0700
+     * @tc.name       Adds one record(s)
+     * @tc.desc       Test pasteBoard SetProperty API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TEST_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let pasteData = pasteboard.createPlainTextData("hello");
@@ -152,12 +152,12 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0800
-     * @tc.name Adds one record(s)
-     * @tc.desc Test pasteBoard SetProperty API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0800
+     * @tc.name       Adds one record(s)
+     * @tc.desc       Test pasteBoard SetProperty API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TEST_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let pasteData = pasteboard.createPlainTextData("hello");
@@ -174,12 +174,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0100
-     * @tc.name setProperty
-     * @tc.desc Test pasteBoard setProperty error,type of parameter "property" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0100
+     * @tc.name       setProperty
+     * @tc.desc       Test pasteBoard setProperty error,type of parameter "property" is string
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0100 start")
@@ -198,12 +198,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0400
-     * @tc.name setProperty
-     * @tc.desc Test pasteBoard setProperty error,parameter "property" is null;
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0400
+     * @tc.name       setProperty
+     * @tc.desc       Test pasteBoard setProperty error,parameter "property" is null;
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0200 start")
@@ -221,12 +221,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0600
-     * @tc.name setProperty
-     * @tc.desc Test pasteBoard setProperty error without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0600
+     * @tc.name       setProperty
+     * @tc.desc       Test pasteBoard setProperty error without parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0300 start")
@@ -245,12 +245,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0300
-     * @tc.name toPlainText
-     * @tc.desc Successfully cast string record to text
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0300
+     * @tc.name       toPlainText
+     * @tc.desc       Successfully cast string record to text
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0100 start")
@@ -262,12 +262,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0200
-     * @tc.name toPlainText
-     * @tc.desc Successfully cast pixelMap record to text
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0200
+     * @tc.name       toPlainText
+     * @tc.desc       Successfully cast pixelMap record to text
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0200 start")
@@ -282,12 +282,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0500
-     * @tc.name toPlainText
-     * @tc.desc Successfully cast want record to text
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0500
+     * @tc.name       toPlainText
+     * @tc.desc       Successfully cast want record to text
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0300 start")
@@ -299,12 +299,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0100
-     * @tc.name toPlainText
-     * @tc.desc Successfully cast arrayBuffer record to text
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0100
+     * @tc.name       toPlainText
+     * @tc.desc       Successfully cast arrayBuffer record to text
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0400 start")
@@ -316,12 +316,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0700
-     * @tc.name getRecord
-     * @tc.desc Get specified record success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0700
+     * @tc.name       getRecord
+     * @tc.desc       Get specified record success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0100 start")
@@ -332,12 +332,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0100
-     * @tc.name getRecord
-     * @tc.desc Get specified record failed,type of parameter "index" is string.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0100
+     * @tc.name       getRecord
+     * @tc.desc       Get specified record failed,type of parameter "index" is string.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0200 start")
@@ -356,12 +356,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0200
-     * @tc.name getRecord
-     * @tc.desc Get specified record failed,index out of range
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0200
+     * @tc.name       getRecord
+     * @tc.desc       Get specified record failed,index out of range
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0300 start")
@@ -379,12 +379,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0400
-     * @tc.name hasType
-     * @tc.desc Check whether the pasteData contains the specified data type success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0400
+     * @tc.name       hasType
+     * @tc.desc       Check whether the pasteData contains the specified data type success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0100 start")
@@ -396,12 +396,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0300
-     * @tc.name hasType
-     * @tc.desc Check whether the pasteData contains the specified data type success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0300
+     * @tc.name       hasType
+     * @tc.desc       Check whether the pasteData contains the specified data type success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0200 start")
@@ -413,12 +413,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0600
-     * @tc.name hasType
-     * @tc.desc Check whether the pasteData contains the specified data type failed,type of parameter "mimeType" is number
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0600
+     * @tc.name       hasType
+     * @tc.desc       Check whether the pasteData contains the specified data type failed,type of parameter "mimeType" is number
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0300 start")
@@ -437,12 +437,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0500
-     * @tc.name hasType
-     * @tc.desc Check whether the pasteData contains the specified data type failed without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0500
+     * @tc.name       hasType
+     * @tc.desc       Check whether the pasteData contains the specified data type failed without parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0400 start")
@@ -461,30 +461,30 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1300
-     * @tc.name removeRecord
-     * @tc.desc Remove specified record from pasteData successful
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1300
+     * @tc.name       removeRecord
+     * @tc.desc       Remove specified record from pasteData successful
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0100 start")
       let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
       pasteData.removeRecord(0)
-      let result = pasteData.hasType("string")
+      let result: boolean = pasteData.hasType("string")
       expect(result == false).assertTrue();
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0100 end")
       done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0300
-     * @tc.name removeRecord
-     * @tc.desc Remove specified record from pasteData failed,index out of range
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0300
+     * @tc.name       removeRecord
+     * @tc.desc       Remove specified record from pasteData failed,index out of range
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0200 start")
@@ -502,12 +502,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0500
-     * @tc.name removeRecord
-     * @tc.desc Remove specified record from pasteData failed,type of parameter "index" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0500
+     * @tc.name       removeRecord
+     * @tc.desc       Remove specified record from pasteData failed,type of parameter "index" is string
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0300 start")
@@ -525,12 +525,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0100
-     * @tc.name removeRecord
-     * @tc.desc Remove specified record from pasteData failed without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0100
+     * @tc.name       removeRecord
+     * @tc.desc       Remove specified record from pasteData failed without parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0400 start")
@@ -548,31 +548,31 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2000
-     * @tc.name replaceRecord
-     * @tc.desc Remove specified record from pasteData failed without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2000
+     * @tc.name       replaceRecord
+     * @tc.desc       Remove specified record from pasteData failed without parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0100 start")
       let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
       let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
       pasteData.replaceRecord(0, pasteDataRecord)
-      let result = pasteData.hasType("arrayBuffer")
+      let result: boolean = pasteData.hasType("arrayBuffer")
       expect(result).assertTrue();
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0100 end")
       done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0400
-     * @tc.name replaceRecord
-     * @tc.desc Remove specified record from pasteData failed,index out of range;
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0400
+     * @tc.name       replaceRecord
+     * @tc.desc       Remove specified record from pasteData failed,index out of range;
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0200 start")
@@ -591,12 +591,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0600
-     * @tc.name replaceRecord
-     * @tc.desc Remove specified record from pasteData failed,type of parameter "index" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0600
+     * @tc.name       replaceRecord
+     * @tc.desc       Remove specified record from pasteData failed,type of parameter "index" is string
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0300 start")
@@ -615,12 +615,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1900
-     * @tc.name replaceRecord
-     * @tc.desc Remove specified record from pasteData failed,type of parameter "record" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1900
+     * @tc.name       replaceRecord
+     * @tc.desc       Remove specified record from pasteData failed,type of parameter "record" is string
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0400 start")
@@ -639,12 +639,12 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0200
-     * @tc.name replaceRecord
-     * @tc.desc Remove specified record from pasteData failed without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0200
+     * @tc.name       replaceRecord
+     * @tc.desc       Remove specified record from pasteData failed without parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0500 start")
@@ -662,6 +662,5 @@ export default function pasteBoardTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0500 end")
       done();
     })
-
   });
 }

@@ -31,6 +31,12 @@ import DarkModeTest from './UIAppearance/DarkModeTest.test';
 import EnableProvideConsumeCrossingTest from './BuilderNodeTest/EnableProvideConsumeCrossingTest.test';
 import DarkColorsTest from './ThemeTest/DarkColorsTest.test';
 import NodeAdapterDispose from './FrameNodeTest/NodeAdapterDispose.test';
+import BuilderNodeIsDisposedTest from './ContextTest/BuilderNodeIsDisposedTest.test';
+import ComponentContentIsDisposedTest from './ContextTest/ComponentContentIsDisposedTest.test';
+import FrameNodeIsDisposedTest from './ContextTest/FrameNodeIsDisposedTest.test';
+import RenderNodeIsDisposedTest from './ContextTest/RenderNodeIsDisposedTest.test';
+import NodeAdapterIsDisposedTest from './ContextTest/NodeAdapterIsDisposedTest.test';
+import frameNodeGetAttributeTest from './FrameNodeTest/frameNodeGetAttributeTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
@@ -52,4 +58,10 @@ export default function testsuite() {
   EnableProvideConsumeCrossingTest();
   DarkColorsTest();
   NodeAdapterDispose();
+  BuilderNodeIsDisposedTest();
+  ComponentContentIsDisposedTest();
+  FrameNodeIsDisposedTest();
+  RenderNodeIsDisposedTest();
+  NodeAdapterIsDisposedTest();
+  frameNodeGetAttributeTest();
 }

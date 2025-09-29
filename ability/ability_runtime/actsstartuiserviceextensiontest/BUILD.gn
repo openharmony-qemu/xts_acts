@@ -21,6 +21,7 @@ group("ActsStartuiServiceExtension") {
       "actsstartuiserviceextensiontest:ActsStartUiServiceExtensionTest",
       "actsstartuiserviceextensionenterprisetest:ActsStartUiServiceExtensionEnterpriseTest",
       "actsstartuiserviceextensionteststatic:ActsStartUiServiceExtensionStaticTest",
+      "actsstartuiserviceextensionrelystatic:ActsStartUiServiceExtensionStaticRely",
     ]
   }
 }

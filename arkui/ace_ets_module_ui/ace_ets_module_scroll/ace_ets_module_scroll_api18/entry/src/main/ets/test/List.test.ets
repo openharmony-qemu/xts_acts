@@ -22,6 +22,7 @@ import barBackground from './TabsTest/barBackground.test';
 import setGridEvent from './GridTest/setGridEvent.test'; 
 import setListEvent from './ListTest/setListEvent.test'; 
 import setScrollEvent from './ScrollTest/setScrollEvent.test';
+import GetEventUn from './GetEventUn.test';
 import listDividerOptions from './ListTest/listDividerOptions.test'; 
 import stackFromEndList from './ListTest/stackFromEndList.test'; 
 import LazyVGridLayout from './LazyVGridLayout/LazyVGridLayout.test';
@@ -36,6 +37,7 @@ export default function testsuite() {
   setGridEvent()
   setListEvent()
   setScrollEvent()
+  GetEventUn()
   listDividerOptions()
   stackFromEndList()
   LazyVGridLayout()

@@ -15,8 +15,10 @@
 
 import OhCapturerTesNewt from './OHCapturerNew.test';
 import OhRendererTest from './OhRenderer.test';
+import OpenSLESTest from './OpenSLES.test';
 
 export default function testsuite() {
+  OpenSLESTest();
   OhRendererTest();
   OhCapturerTesNewt();
 }

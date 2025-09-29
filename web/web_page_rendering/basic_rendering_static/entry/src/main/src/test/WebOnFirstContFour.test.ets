@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -32,12 +33,13 @@ export default function webOnFirstContFour() {
   describe('ActsAceWebDevWebOnFirstContFourTest', () => {
 
     beforeAll(async (): Promise<void> => {
+      await Utils.msSleep(3000);
       console.log('App start')
     });
 
 
     beforeEach(async () => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(3000);
       console.info('webOnFirstContFour beforeEach start');
     })
 
@@ -52,24 +54,33 @@ export default function webOnFirstContFour() {
     it('testOnfirstcontentfulpaintrefreshWebcStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent('emitRefreshOnfirstcontentfulpaintWebc', 10)
-      await Utils.msSleep(1000);
+      await Utils.msSleep(3000);
       Utils.registerEvent('testOnfirstcontentfulpaintrefreshWebc', true, 428, done);
-      await Utils.msSleep(1000);
+      await Utils.msSleep(3000);
       inspector.sendEventByKey('webOnFirstContFour', 10, '');
-      await Utils.msSleep(12000);
+      await Utils.msSleep(3000);
       done();
     })
 
+    /*
+     * @tc.number :  SUB_ACE_BASIC_ETS_WEBPATR5_API_0500
+     * @tc.name: emitonSwitchNextPage
+     * @tc.desc: PAGE_REDIRECT
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
-        await Utils.msSleep(2000)
-        inspector.sendEventByKey('webOnFirstContFour', 10, '');
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webOnFirstContFour'));
+        await Utils.msSleep(2000);
+        button?.click();
         await Utils.msSleep(10000);
         done();
       })
   })
 }
-
-

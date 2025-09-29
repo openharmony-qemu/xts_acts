@@ -85,15 +85,22 @@ export default function webviewTerminateRenderProcess() {
         done();
       })
 
+    /*
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
+     * @tc.name: emitonSwitchNextPage
+     * @tc.desc: PAGE_REDIRECT
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
-        await Utils.msSleep(2000)
-        inspector.sendEventByKey('TerminateRenderProcess', 10, '');
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('TerminateRenderProcess'));
+        await Utils.msSleep(2000);
+        button?.click();     
         await Utils.msSleep(10000);
         done();
       })
-
   })
 }

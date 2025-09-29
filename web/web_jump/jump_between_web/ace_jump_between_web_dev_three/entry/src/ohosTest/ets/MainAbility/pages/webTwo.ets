@@ -37,7 +37,6 @@ export struct NewWebViewComp {
   dialogController: CustomDialogController;
   url?: string;
   @State text: string = '日志在这里显示'
-  @State javaScriptAccess: boolean = true;
   @State multitAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
@@ -80,7 +79,6 @@ struct indexTwo {
   @State removeDesc: string = "console.info('webgame removeDesc'); y=document.getElementsBytagName('div')[0]; y.parentNode.removeChild(y)";
   @State setJavaScriptOpenWindowFlagInZoom: boolean = true;
   @State setMultiWindowFlag: boolean = true;
-  @State javaScriptAccess: boolean = true;
   @State multitAccess: boolean = true;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   dialogController: CustomDialogController | null = null;

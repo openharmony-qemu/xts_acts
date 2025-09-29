@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200620;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,13 +38,14 @@ export default function webAttributeTest() {
         console.info("get WebAttributeTest state success " + JSON.stringify(pages));
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebAttributeTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebAttributeTest page success");
         }
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id('WebAttributeTestButton'),10000);
+      console.log('waitForComponent WebAttributeTestButton==>');
       done()
     });
 
@@ -54,13 +59,6 @@ export default function webAttributeTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebAttributeTest afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_ONTITLERECEIVE_0100
     * @tc.name        : testOnTitleReceive001
@@ -70,10 +68,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnTitleReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnTitleReceive001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnTitleReceive001", "ChangeTitle", 70014, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnTitleReceive001", EVENT_ID_SET_EMIT_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testOnTitleReceive001", "ChangeTitle", 200630, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
+      await Utils.waitForExist(() => isReturn, 'emitOnTitleReceive001' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -85,10 +85,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnTitleReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnTitleReceive002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnTitleReceive002", "123", 70016, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnTitleReceive002", EVENT_ID_SET_EMIT_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testOnTitleReceive002", "123", 200640, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
+      await Utils.waitForExist(() => isReturn, 'emitOnTitleReceive002' + '_returnCheck', true, 1000);
+      done();
     })
     /*
     * @tc.number      : SUB_WEB_USERAGENT_0100
@@ -99,11 +101,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitUserAgent001", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testUserAgent001", "Mozilla/5.0 (Windows NT 10.0; WOW64)", 60063, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitUserAgent001", EVENT_ID_SET_EMIT_KEY)
+      let isReturn = false;
+      Utils.registerContainEvent("testUserAgent001", "Mozilla/5.0 (Windows NT 10.0; WOW64)", 200650, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
+      await Utils.waitForExist(() => isReturn, 'emitOnTitleReceive002' + '_returnCheck', true, 1000);
+      done();
     })
-
   })
 }
