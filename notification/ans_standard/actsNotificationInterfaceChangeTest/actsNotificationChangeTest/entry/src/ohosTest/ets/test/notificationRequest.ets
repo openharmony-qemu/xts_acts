@@ -66,6 +66,28 @@ export default function notificationRequestTest() {
     it('Acts_NotificationRequest_0100', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0100';
 
+      notificationManager.isNotificationEnabled((err, data) => {
+        if (err) {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
+          expect(data).assertFalse();
+        }
+      });
+
+      await sleep(200);
+
+      await notificationManager.isNotificationEnabled().then((data: boolean) => {
+          console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
+          expect(data).assertFalse();
+        }).catch((err: BusinessError) => {
+          console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
+          expect(true).assertFalse();
+          done()
+        });
+
       notificationManager.requestEnableNotification((err) => {
         if (err) {
           console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -86,6 +108,32 @@ export default function notificationRequestTest() {
       } else {
         log(`button is null`)
       }
+
+      notificationManager.isNotificationEnabled((err, data) => {
+        if (err) {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
+          expect(data).assertTrue();
+        }
+      });
+
+      await sleep(200);
+
+      let notificationenable = notificationManager.isNotificationEnabledSync();
+      expect(notificationenable).assertTrue()
+
+      await sleep(200);
+
+      await notificationManager.isNotificationEnabled().then((data: boolean) => {
+          console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
+          expect(data).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
+          expect(true).assertFalse();
+        });
 
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1,

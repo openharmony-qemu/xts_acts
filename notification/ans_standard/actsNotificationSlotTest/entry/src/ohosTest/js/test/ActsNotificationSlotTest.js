@@ -1178,7 +1178,7 @@ export default function ActsNotificationSlotTest() {
           done()
         } else {
           console.info(`${TAG} getSlots AsyncCallback success: ${NotificationSlot}`)
-          expect(true).assertTrue()
+          expect(NotificationSlot.length == 0).assertTrue()
           done()
         }
       })
@@ -1194,7 +1194,7 @@ export default function ActsNotificationSlotTest() {
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_2500 START')
       await notification.getSlots().then((NotificationSlot) => {
         console.info(`${TAG} getSlots Promise success: ${NotificationSlot}`)
-        expect(true).assertTrue()
+        expect(NotificationSlot.length == 0).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getSlots Promise err: ${err.code}`)
@@ -1272,16 +1272,17 @@ export default function ActsNotificationSlotTest() {
           done()
         } else {
           console.info(`${TAG} getSlots AsyncCallback success:` + JSON.stringify(NotificationSlot))
+          expect(NotificationSlot.length > 0).assertTrue()
           for (let i = 0; i < NotificationSlot.length; i++) {
             console.info(`${TAG} NotificationSlot[${i}].type:` + JSON.stringify(NotificationSlot[i].type))
             if (NotificationSlot[i].type == 1) {
-               expect(NotificationSlot[i].type).assertEqual(1)
+              expect(NotificationSlot[i].type).assertEqual(1)
             } else if (NotificationSlot[i].type == 2) {
-               expect(NotificationSlot[i].type).assertEqual(2)
+              expect(NotificationSlot[i].type).assertEqual(2)
             } else if (NotificationSlot[i].type == 3) {
-               expect(NotificationSlot[i].type).assertEqual(3)
+              expect(NotificationSlot[i].type).assertEqual(3)
             } else {
-               expect(NotificationSlot[i].type).assertEqual(65535)
+              expect(NotificationSlot[i].type).assertEqual(65535)
             }
           }
           done()
@@ -1353,16 +1354,17 @@ export default function ActsNotificationSlotTest() {
 
       await notification.getSlots().then((NotificationSlot) => {
         console.info(`${TAG} getSlots Promise success:` + JSON.stringify(NotificationSlot))
+        expect(NotificationSlot.length > 0).assertTrue()
         for (let i = 0; i < NotificationSlot.length; i++) {
           console.info(`${TAG} NotificationSlot[${i}].type:` + JSON.stringify(NotificationSlot[i].type))
           if (NotificationSlot[i].type == 1) {
-             expect(NotificationSlot[i].type).assertEqual(1)
+            expect(NotificationSlot[i].type).assertEqual(1)
           } else if (NotificationSlot[i].type == 2) {
-             expect(NotificationSlot[i].type).assertEqual(2)
+            expect(NotificationSlot[i].type).assertEqual(2)
           } else if (NotificationSlot[i].type == 3) {
-             expect(NotificationSlot[i].type).assertEqual(3)
+            expect(NotificationSlot[i].type).assertEqual(3)
           } else {
-             expect(NotificationSlot[i].type).assertEqual(65535)
+            expect(NotificationSlot[i].type).assertEqual(65535)
           }
         }
         done()

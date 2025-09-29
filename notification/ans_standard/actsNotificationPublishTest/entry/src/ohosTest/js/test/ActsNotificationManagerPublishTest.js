@@ -41,6 +41,7 @@ export default function ActsNotificationManagerPublishTest() {
       }
     }
 
+
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3200
      * @tc.name      : function cancel(id: number, label: string, callback: AsyncCallback<void>): void
@@ -591,6 +592,9 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0400 END`)
     })
 
+
+
+
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300
      * @tc.name      : function isSupportTemplate(num: number): Promise<boolean>
@@ -599,9 +603,23 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300 START`)
       let num = 1
+
+      notificationManager.isSupportTemplate(num, (err, data) => {
+        if (err) {
+          console.info(`${TAG} isSupportTemplate AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
+          expect(data).assertFalse()
+        }
+      })
+
+      await Utils.sleep(500);
+
       await notificationManager.isSupportTemplate(num).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -887,14 +905,14 @@ export default function ActsNotificationManagerPublishTest() {
       try {
         await Utils.sleep(2500);
         notificationManager.publish(notificationRequest, (data) => {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', data);
           expect(data).assertEqual(null);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
           done();
         })
       } catch (err) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-        expect(err.code).assertEqual(401);
+        expect().assertFail();
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
         done();
       }
@@ -1036,7 +1054,7 @@ export default function ActsNotificationManagerPublishTest() {
       try {
         notificationManager.publish(notificationRequest, (err) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-          expect().assertEqual(null);
+          expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
           done();
         })
@@ -1428,14 +1446,14 @@ export default function ActsNotificationManagerPublishTest() {
           try {
             await Utils.sleep(2500);
             notificationManager.publish(notificationRequest, (data) => {
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
+              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', data);
               expect(data).assertEqual(null);
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
               done();
             })
           } catch (err) {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect().assertFail();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
             done();
           }
