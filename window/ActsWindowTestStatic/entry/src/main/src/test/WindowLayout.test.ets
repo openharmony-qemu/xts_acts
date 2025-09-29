@@ -740,7 +740,7 @@ export default function WindowLayoutTest() {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
-                subWindowClass.onWindowSizeChange(data:window.Size) => {
+                subWindowClass.onWindowSizeChange((data:window.Size) => {
                     hilog.info(0x0000, '[ANI]',`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
