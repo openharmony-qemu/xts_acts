@@ -153,7 +153,7 @@ static napi_value OHIPCParcelReadInt8ReadError(napi_env env, napi_callback_info 
     int ret = 0;
     int maxNum = 100000;
     for (int i = 0; i < maxNum; i++) {
-         ret = OH_IPCParcel_ReadInt8(parcel, &val);
+        ret = OH_IPCParcel_ReadInt8(parcel, &val);
     };
     OH_IPCParcel_Destroy(parcel);
     napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
