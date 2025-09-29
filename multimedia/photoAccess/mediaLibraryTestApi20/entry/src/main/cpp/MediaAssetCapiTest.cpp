@@ -476,13 +476,11 @@ static void ReleaseAsset(OH_MediaAsset* photoAsset)
 
 static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_MediaSubType mediaSubType)
 {
-    if (mediaType == MediaLibrary_MediaType::MEDIA_LIBRARY_IMAGE)
-        {
+    if (mediaType == MediaLibrary_MediaType::MEDIA_LIBRARY_IMAGE) {
         OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "MediaLibrary_MediaType MEDIA_LIBRARY_IMAGE");
         g_mediaType = 0;
     }
-    if (mediaSubType == MediaLibrary_MediaSubType::MEDIA_LIBRARY_DEFAULT)
-        {
+    if (mediaSubType == MediaLibrary_MediaSubType::MEDIA_LIBRARY_DEFAULT) {
         OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_DEFAULT");
         g_mediaSubType = 0;
     }
