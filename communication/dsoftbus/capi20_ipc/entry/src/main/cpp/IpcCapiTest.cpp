@@ -23,7 +23,7 @@
 #include <cinttypes>
 #include <cstring>
 #include <cstdlib>
-#include <float.h>
+#include <cfloat>
 #include "AbilityKit/native_child_process.h"
 #include <hilog/log.h>
 
