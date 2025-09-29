@@ -144,7 +144,7 @@ struct NavigationStack10 {
           }).height('5%')
         Button('getEmptyAllPathName').id('getEmptyAllPathName')
           .onClick(() => {
-            let emptyAllPathNameValue: Array<string> = this.pageInfos.getAllPathName()
+            let emptyAllPathNameValue: String[] = this.pageInfos.getAllPathName()
             console.log('emptyAllPathNameValue ', emptyAllPathNameValue?.length )
             AppStorage.setOrCreate('emptyAllPathName', emptyAllPathNameValue)
           }).height('5%')

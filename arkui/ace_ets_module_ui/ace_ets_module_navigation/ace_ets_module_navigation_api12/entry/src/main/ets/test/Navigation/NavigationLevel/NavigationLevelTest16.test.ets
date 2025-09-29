@@ -61,8 +61,8 @@ export default function NavigationLevelTest16() {
       await btn.click()
       console.info('[NavigationLevelTest16_0200] btn click');
       await CommonFunc.sleep(1000);
-      let paramByNameUndefined: Array<ESObject> | undefined= AppStorage.get('paramByNameUndefined')
-      expect(paramByNameUndefined instanceof Array && paramByNameUndefined?.length == 0).assertTrue();
+      let paramByNameUndefined: ESObject[] | undefined= AppStorage.get('paramByNameUndefined')
+      expect(paramByNameUndefined?.length == 0).assertTrue();
       AppStorage.delete('paramByNameUndefined')
 
       await CommonFunc.sleep(1000);
@@ -70,8 +70,8 @@ export default function NavigationLevelTest16() {
       await btn2.click()
       console.info('[NavigationLevelTest16_0200] btn2 click');
       await CommonFunc.sleep(1000);
-      let indexByNameUndefined: Array<number> | undefined = AppStorage.get('indexByNameUndefined')
-      expect(indexByNameUndefined instanceof Array && indexByNameUndefined?.length == 0).assertTrue();
+      let indexByNameUndefined: number[] | undefined = AppStorage.get('indexByNameUndefined')
+      expect(indexByNameUndefined?.length == 0).assertTrue();
       AppStorage.delete('indexByNameUndefined')
       await CommonFunc.sleep(1000);
       
@@ -79,8 +79,8 @@ export default function NavigationLevelTest16() {
       await btn3.click()
       console.info('[NavigationLevelTest16_0200] btn3 click');
       await CommonFunc.sleep(1000);
-      let stackEmptyValue: Array<number> | undefined = AppStorage.get('stackEmptyValue')
-      expect(stackEmptyValue instanceof Array && stackEmptyValue?.length == 0).assertTrue();
+      let stackEmptyValue: number[] | undefined = AppStorage.get('stackEmptyValue')
+      expect(stackEmptyValue?.length == 0).assertTrue();
       AppStorage.delete('stackEmptyValue')
 
       console.info('[NavigationLevelTest16_0200] END');
@@ -115,14 +115,14 @@ export default function NavigationLevelTest16() {
       console.info('[NavigationLevelTest16_0300] btn4 click');
       await CommonFunc.sleep(1000);
 
-      let paramByName: Array<ESObject> | undefined = AppStorage.get('paramByName')
+      let paramByName: ESObject[] | undefined = AppStorage.get('paramByName')
       console.info('[NavigationLevelTest16_0100] paramByName ', JSON.stringify(paramByName));
-      expect(paramByName instanceof Array && paramByName?.length > 0).assertTrue();
+      expect(paramByName?.length > 0).assertTrue();
       AppStorage.delete('paramByName')
 
-      let indexByName: Array<number> | undefined = AppStorage.get('indexByName')
+      let indexByName: number[] | undefined = AppStorage.get('indexByName')
       console.info('[NavigationLevelTest16_0100] indexByName ', JSON.stringify(indexByName));
-      expect(indexByName instanceof Array && indexByName?.length > 0).assertTrue();
+      expect(indexByName?.length > 0).assertTrue();
       AppStorage.delete('indexByName')
       await CommonFunc.sleep(1000);
 
@@ -130,8 +130,8 @@ export default function NavigationLevelTest16() {
       await btn5.click()
       console.info('[NavigationLevelTest16_0200] btn5 click');
       await CommonFunc.sleep(1000);
-      let stackValue: Array<number> | undefined = AppStorage.get('stackValue')
-      expect(stackValue instanceof Array && stackValue?.length > 0).assertTrue();
+      let stackValue: number[] | undefined = AppStorage.get('stackValue')
+      expect(stackValue?.length > 0).assertTrue();
       AppStorage.delete('stackValue')
 
       let btn3 = await driver.findComponent(ON.id('NavigationLevelTest16_btn3'));

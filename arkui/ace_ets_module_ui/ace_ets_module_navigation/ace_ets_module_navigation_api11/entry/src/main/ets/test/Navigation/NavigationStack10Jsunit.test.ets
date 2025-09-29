@@ -68,7 +68,7 @@ export default function NavigationStack10Jsunit() {
       let buttonClear = await scrollBar.scrollSearch(ON.id('getEmptyAllPathName'));
       await buttonClear.click();
       await CommonFunc.sleep(2000);
-      let result: Array<String> | undefined = AppStorage.get('emptyAllPathName');
+      let result: String[] | undefined = AppStorage.get('emptyAllPathName');
       expect(result?.length == 0).assertTrue();
       AppStorage.delete('emptyAllPathName');
       await CommonFunc.sleep(1000);
