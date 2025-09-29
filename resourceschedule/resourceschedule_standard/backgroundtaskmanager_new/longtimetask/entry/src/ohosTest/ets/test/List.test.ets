@@ -13,9 +13,11 @@
  * limitations under the License.
  */
 import ActsLongTimeTaskManagerTest from './ActsLongTimeTaskManagerTest.test';
+import ActsApi21LongTimeTaskManagerTest from './ActsApi21LongTimeTaskManagerTest.test';
 import ActsLongTimeTaskManagerErrorCodeTest from './ActsLongTimeTaskManagerErrorCodeTest.test';
 
 export default function testsuite() {
   ActsLongTimeTaskManagerTest();
+  ActsApi21LongTimeTaskManagerTest();
   ActsLongTimeTaskManagerErrorCodeTest();
 }

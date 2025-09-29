@@ -129,6 +129,7 @@ export default function ActsBackgroundProcessManagerNapTest() {
           backgroundProcessManager.isPowerSaveMode(pid).then((res) => {
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004 isPowerSaveMode promise res: %{public}s', JSON.stringify(res));
           expect(res).assertInstanceOf('Boolean');
+          expect(res == false).assertTrue();
           done();
           }).catch((error: BusinessError) => {
             hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004 isPowerSaveMode promise error: %{public}s', JSON.stringify(error));
