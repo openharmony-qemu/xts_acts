@@ -84,6 +84,13 @@
 #define KRATE 48000
 #define KFRAMESIZE 240
 
+const char *LOG_APP = "ohaudiondk";
+
+#define OH_LOG_INFO(module, format, ...)                                                                               \
+    do {                                                                                                               \
+        OHLog(module, format, ##__VA_ARGS__);                                                                          \
+    } while (false)
+
 FILE *g_file = nullptr;
 std::string g_filePath = "/data/storage/el2/base/files/S16LE.pcm";
 std::string g_filePath1 = "/resources/rawfile/Believer.wav";
@@ -506,12 +513,12 @@ void SetRendererNormalParam(OH_AudioStreamBuilder *builder)
     OH_AudioStream_Result oH_AudioStream_Result = 
         OH_AudioStreamBuilder_SetChannelCount(builder, KCHANNELCOUNT); // 设置通道数
     if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, BUILD_FAIL, &result);
+        OH_LOG_INFO(LOG_APP, "oH_AudioStream_Result != AUDIOSTREAM_SUCCESS");
     }
     napi_create_int32(env, CODE_SUCCESS, &result);
     oH_AudioStream_Result = OH_AudioStreamBuilder_SetSamplingRate(builder, KRATE); // 设置采样率
     if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, BUILD_FAIL, &result);
+        OH_LOG_INFO(LOG_APP, "oH_AudioStream_Result != AUDIOSTREAM_SUCCESS");
     }
 }
 // 输出流音频初始化
