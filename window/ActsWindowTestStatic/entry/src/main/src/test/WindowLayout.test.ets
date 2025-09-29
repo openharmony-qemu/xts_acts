@@ -628,7 +628,7 @@ export default function WindowLayoutTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.OnWindowHighlightChange((data) => {
+                tempWnd.onWindowHighlightChange((data) => {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
