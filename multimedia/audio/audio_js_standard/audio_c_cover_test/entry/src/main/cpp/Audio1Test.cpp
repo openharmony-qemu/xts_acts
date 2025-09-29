@@ -586,20 +586,19 @@ napi_value AudioSessionRegisterCurOutDevChgCbInvParam(napi_env env, napi_callbac
     return nullptr;
 }
 
-void AudioSessionCurrentOutputDeviceChangedCallback (
-    OH_AudioDeviceDescriptorArray *devices,
-    OH_AudioStream_DeviceChangeReason changeReason,
-    OH_AudioSession_OutputDeviceChangeRecommendedAction recommendedAction){
-    
-    };
+void AudioSessionCurrentOutputDeviceChangedCallback(
+    OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason,
+    OH_AudioSession_OutputDeviceChangeRecommendedAction recommendedAction){};
 
 napi_value AudioSessionRegisterCurOutDevChgCbSuccess(napi_env env, napi_callback_info info)
 {
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    result = OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
-    OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
+    result = OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(
+        audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
+    OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(audioSessionManager,
+                                                                       AudioSessionCurrentOutputDeviceChangedCallback);
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
@@ -624,8 +623,10 @@ napi_value AudioSessionUnregisterCurOutDevChgCbSuccess(napi_env env, napi_callba
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
-    result = OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
+    OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(audioSessionManager,
+                                                                     AudioSessionCurrentOutputDeviceChangedCallback);
+    result = OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(
+        audioSessionManager, AudioSessionCurrentOutputDeviceChangedCallback);
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
