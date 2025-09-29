@@ -515,7 +515,6 @@ void SetRendererNormalParam(OH_AudioStreamBuilder *builder)
     if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "oH_AudioStream_Result != AUDIOSTREAM_SUCCESS");
     }
-    napi_create_int32(env, CODE_SUCCESS, &result);
     oH_AudioStream_Result = OH_AudioStreamBuilder_SetSamplingRate(builder, KRATE); // 设置采样率
     if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "oH_AudioStream_Result != AUDIOSTREAM_SUCCESS");
