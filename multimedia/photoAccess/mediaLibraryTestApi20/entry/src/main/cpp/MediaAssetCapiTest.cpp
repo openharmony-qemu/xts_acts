@@ -69,7 +69,7 @@ int g_addResourceWithBufferNotSupported = -1;
 int g_addResourceWithUriNotSupported = -1;
 int g_imageCheck = -1;
 int g_mediaSubTypeCheck = -1;
-std::string g_globalMediaAssetUri;
+const char *g_globalMediaAssetUri = nullptr;
 
 void AddMediaAssetCapiTest1(std::vector<napi_property_descriptor> &descData)
 {
@@ -313,18 +313,11 @@ static void HandleAddResourceWithUri(OH_MediaAsset* photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri = nullptr;
-    size_t bufferSize = g_globalMediaAssetUri.length() + 1;
-    fileUri = new char[bufferSize];
-    std::memcpy(fileUri, g_globalMediaAssetUri.c_str(), bufferSize);
-    fileUri[g_globalMediaAssetUri.length()] = '\0';
+    char *fileUri = const_cast<char *>(g_globalMediaAssetUri);
+
     OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri1 = nullptr;
-    size_t bufferSize1 = g_globalMediaAssetUri.length() + 1;
-    fileUri1 = new char[bufferSize1];
-    std::memcpy(fileUri1, g_globalMediaAssetUri.c_str(), bufferSize1);
-    fileUri1[g_globalMediaAssetUri.length()] = '\0';
+    char *fileUri1 = const_cast<char *>(g_globalMediaAssetUri);
     g_addResourceWithUriNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType1, fileUri1);
     OH_MediaAssetChangeRequest_Release(changeRequest);
@@ -499,8 +492,7 @@ static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_Media
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_MOVING_PHOTO");
     }
     mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_BURST;
-    if (mediaSubType == mediaSubType1)
-        {
+    if (mediaSubType == mediaSubType1) {
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_BURST");
     }
     g_mediaSubTypeCheck = 0;
@@ -602,8 +594,8 @@ static const char* GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info 
         OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Get string length failed");
         return nullptr;
     }
-    if (strLen == 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "String length is zero");
+    if (strLen == 0 || strLen > SIZE_MAX - 1) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "mult", "String length is invalid");
         return nullptr;
     }
     const char *previewSurfaceId = static_cast<const char *>(malloc(strLen + 1));
