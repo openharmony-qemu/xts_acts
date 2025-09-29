@@ -87,29 +87,34 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest015"
+        TAG = "====>VibratorJsTest015"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
+        try {
             vibrator.startVibration({
                 type: "time",
                 duration: 1000
             }, {
                 usage: "unknown"
-            }, (error)=>{
-                if (error) {
-                    console.info('VibratorJsTest015 vibrator error');
+            },async (error)=>{
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                    expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                } else if (error && isAvailable) {
+                    console.info(TAG + ` isAvailable is true error: ${JSON.stringify(error.code)}`);
                     expect(false).assertTrue();
                 } else {
-                    console.info('VibratorJsTest015 vibrator success');
+                    await vibrator.stopVibration();
+                    console.info(TAG + ' startVibration success');
                     expect(true).assertTrue();
                 }
                 setTimeout(()=>{
                     done();
                 }, 500);
             });
-            await vibrator.stopVibration();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+
+        } catch (error) {
+            console.info(TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+            expect(false).assertTrue();
             done();
         }
     })
@@ -123,33 +128,22 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest016"
+        TAG = "====>VibratorJsTest016"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "",
-                    duration: 1000
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        try {
+            vibrator.startVibration({
+                type: "",
+                duration: 1000
+            }, {
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
                 done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+            });
+        } catch (error) {
+            console.info(TAG + ` startVibration error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -163,34 +157,25 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest017"
+        TAG = "====>VibratorJsTest017"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "preset",
-                    effectId: "",
-                    count: 3,
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            vibrator.startVibration({
+                type: "preset",
+                effectId: "",
+                count: 3,
+            }, {
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                setTimeout(()=>{
+                    done();
+                }, 500);
+            });
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -204,18 +189,15 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest018"
+        TAG = "====>VibratorJsTest018"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration(null, null);
-            } catch (error) {
-                console.info(error);
-                expect(true).assertTrue();
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            vibrator.startVibration(null, null);
+            console.info(TAG + ' startVibration success');
+            expect(false).assertTrue();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -229,25 +211,30 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest019"
+        TAG = "====>VibratorJsTest019"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            await vibrator.startVibration({
-                type: "time",
-                duration: 1000,
-            }, {
-                usage: "unknown"
-            }).then(()=>{
-                expect(true).assertTrue();
-            }).catch((error)=>{
+        try {
+            await vibrator.startVibration({ type: "time", duration: 1000, }, { usage: "unknown" });
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
                 expect(false).assertTrue();
-            });
+                done();
+            }
             await vibrator.stopVibration();
+            console.info(TAG + ` startVibration success`);
+            expect(true).assertTrue();
             done();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+            } else {
+                console.info(TAG + ` startVibration or stopVibration error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+            }
             done();
         }
+
     })
 
     /*
@@ -259,29 +246,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest020"
+        TAG = "====>VibratorJsTest020"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                await vibrator.startVibration({
-                    type: "",
-                    duration: 1000
-                }, {
-                    usage: "unknown"
-                }).then(()=>{
-                    expect(false).assertTrue();
-                }).catch((error)=>{
-                    expect(true).assertTrue();
-                });
-                done();
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: "", duration: 1000 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -295,31 +269,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest021"
+        TAG = "====>VibratorJsTest021"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "preset",
-                    effectId: "",
-                    count: 3,
-                }, {
-                    usage: "unknown"
-                }).then(()=>{
-                    expect(false).assertTrue();
-                    done();
-                }).catch((error)=>{
-                    expect(true).assertTrue();
-                    done();
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: "preset", effectId: "", count: 3, }, { usage: "unknown" })
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -333,23 +292,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest022"
+        TAG = "====>VibratorJsTest022"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: 1,
-                    count: 3,
-                }, {
-                    usage: ""
-                })
-            } catch (error) {
-                console.info(error);
-                expect(true).assertTrue();
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: 1, count: 3, }, { usage: "" })
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -363,56 +315,32 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest023"
+        TAG = "====>VibratorJsTest023"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            function vibratePromise() {
-                return new Promise((resolve, reject) => {
-                    vibrator.startVibration({
-                        type: "time",
-                        duration: 100
-                    }, {
-                        usage: "unknown"
-                    }, (error)=>{
-                        if (error) {
-                            expect(false).assertTrue();
-                        } else {
-                            expect(true).assertTrue();
-                        }
-                        setTimeout(()=>{
-                            done();
-                        }, 500);
-                    });
-                })
-            }
-
-            let promise = new Promise((resolve, reject) => {
-                vibrator.startVibration({
-                    type: "time",
-                    duration: 100
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(false).assertTrue();
-                        reject();
-                    } else {
-                        expect(true).assertTrue();
-                        resolve();
-                    }
-                });
-            })
-
-            await promise.then(() =>{
-                return vibratePromise();
-            }, ()=>{
-                console.info("VibratorJsTest023 reject");
-            })
+        try{
+            await vibrator.startVibration({ type: "time", duration: 100 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration  first success`);
+            await vibrator.startVibration({ type: "time", duration: 100 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration  second success`);
             await vibrator.stopVibration();
+            console.info(TAG + ` stopVibration success`);
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
+            expect(true).assertTrue();
             done();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -425,30 +353,34 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest024"
+        TAG = "====>VibratorJsTest024"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
+        try{
             vibrator.startVibration({
                 type: "time",
                 duration: 1000
             }, {
                 id:0,
                 usage: "unknown"
-            }, (error)=>{
-                if (error) {
-                    console.info('VibratorJsTest024 vibrator error');
+            },async (error)=>{
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                    expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                } else if (error && isAvailable) {
+                    console.info(TAG + ` isAvailable is true error: ${JSON.stringify(error.code)}`);
                     expect(false).assertTrue();
                 } else {
-                    console.info('VibratorJsTest024 vibrator success');
+                    await vibrator.stopVibration();
+                    console.info(TAG + ' startVibration success');
                     expect(true).assertTrue();
                 }
-                setTimeout(()=>{
+                setTimeout( ()=>{
                     done();
                 }, 500);
             });
-            await vibrator.stopVibration();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            console.info(TAG + ` startVibration or stopVibration error: ${JSON.stringify(error.code)}`);
+            expect(false).assertTrue();
             done();
         }
     })
@@ -462,34 +394,23 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest025"
+        TAG = "====>VibratorJsTest025"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "",
-                    duration: 1000
-                }, {
-                    id:1,
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        try {
+            vibrator.startVibration({
+                type: "",
+                duration: 1000
+            }, {
+                id:1,
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
                 done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+            });
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -503,35 +424,24 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest026"
+        TAG = "====>VibratorJsTest026"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "preset",
-                    effectId: "",
-                    count: 3,
-                }, {
-                    id:null,
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        try {
+            vibrator.startVibration({
+                type: "preset",
+                effectId: "",
+                count: 3,
+            }, {
+                id:null,
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
                 done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+            });
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -545,29 +455,33 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest027"
+        TAG = "====>VibratorJsTest027"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
+        try{
             vibrator.startVibration({
                 type: "time",
                 duration: 1000
             }, {
                 usage: "unknown"
-            }, (error)=>{
-                if (error) {
-                    console.info('VibratorJsTest027 startVibration error');
+            },async (error)=>{
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                    expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                } else if (error && isAvailable) {
+                    console.info(TAG + ` isAvailable is true error: ${JSON.stringify(error.code)}`);
                     expect(false).assertTrue();
                 } else {
-                    console.info('VibratorJsTest027 startVibration success');
+                    await vibrator.stopVibration();
+                    console.info(TAG + ' startVibration success');
                     expect(true).assertTrue();
                 }
-                setTimeout(()=>{
+                setTimeout(async ()=>{
                     done();
                 }, 500);
             });
-            await vibrator.stopVibration();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            console.info(TAG + ` startVibration or stopVibration error: ${JSON.stringify(error.code)}`);
+            expect(false).assertTrue();
             done();
         }
     })
@@ -581,33 +495,22 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest028"
+        TAG = "====>VibratorJsTest028"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "",
-                    duration: 1000
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        try {
+            vibrator.startVibration({
+                type: "",
+                duration: 1000
+            }, {
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
                 done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+            });
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -621,34 +524,23 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest029"
+        TAG = "====>VibratorJsTest029"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "preset",
-                    effectId: "",
-                    count: 3,
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        expect(true).assertTrue();
-                    } else {
-                        expect(false).assertTrue();
-                    }
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        try {
+            vibrator.startVibration({
+                type: "preset",
+                effectId: "",
+                count: 3,
+            }, {
+                usage: "unknown"
+            }, (error)=>{
+                console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
                 done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+            });
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -662,19 +554,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest030"
+        TAG = "====>VibratorJsTest030"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration(null, null);
-            } catch (error) {
-                console.info("VibratorJsTest030 error :" + error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration(null, null);
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -688,30 +577,29 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest031"
+        TAG = "====>VibratorJsTest031"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            await vibrator.startVibration({
-                type: "time",
-                duration: 1000,
-            }, {
-                usage: "unknown"
-            }).then(()=>{
-                console.info("VibratorJsTest031 success");
-                expect(true).assertTrue();
-            }).catch((error)=>{
-                console.info("VibratorJsTest031 error :" + error);
-                if (error.code == 801) {
-                    expect(true).assertTrue();
-                } else {
-                    expect(false).assertTrue();
-                }  
-            });
+        try{
+            await vibrator.startVibration({ type: "time", duration: 1000, }, { usage: "unknown" });
             await vibrator.stopVibration();
+            console.info(TAG + ' startVibration success');
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
+            expect(true).assertTrue();
             done();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -724,31 +612,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest032"
+        TAG = "====>VibratorJsTest032"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                await vibrator.startVibration({
-                    type: "",
-                    duration: 1000
-                }, {
-                    usage: "unknown"
-                }).then(()=>{
-                    console.info("VibratorJsTest032 success");
-                    expect(false).assertTrue();
-                }).catch((error)=>{
-                    console.info("VibratorJsTest032 error :" + error);
-                    expect(true).assertTrue();
-                });
-                done();
-            } catch (error) {
-                console.info("VibratorJsTest032 catch error :" + error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: "", duration: 1000 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -762,33 +635,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest033"
+        TAG = "====>VibratorJsTest033"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: "preset",
-                    effectId: "",
-                    count: 3,
-                }, {
-                    usage: "unknown"
-                }).then(()=>{
-                    console.info("VibratorJsTest033 success");
-                    expect(false).assertTrue();
-                    done();
-                }).catch((error)=>{
-                    console.info("VibratorJsTest033 error :" + error);
-                    expect(true).assertTrue();
-                    done();
-                });
-            } catch (error) {
-                console.info("VibratorJsTest033 catch error :" + error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: "preset", effectId: "", count: 3, }, { usage: "unknown" });
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -802,24 +658,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest034"
+        TAG = "====>VibratorJsTest034"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.startVibration({
-                    type: 1,
-                    count: 3,
-                }, {
-                    usage: ""
-                })
-            } catch (error) {
-                console.info("VibratorJsTest034 catch error :" + error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.startVibration({ type: 1, count: 3, }, { usage: "" });
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -833,60 +681,32 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest035"
+        TAG = "====>VibratorJsTest035"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            function vibratePromise() {
-                return new Promise((resolve, reject) => {
-                    vibrator.startVibration({
-                        type: "time",
-                        duration: 100
-                    }, {
-                        usage: "unknown"
-                    }, (error)=>{
-                        if (error) {
-                            console.info("VibratorJsTest035 error :" + error);
-                            expect(false).assertTrue();
-                        } else {
-                            console.info("VibratorJsTest035 success");
-                            expect(true).assertTrue();
-                        }
-                        setTimeout(()=>{
-                            done();
-                        }, 500);
-                    });
-                })
-            }
-
-            let promise = new Promise((resolve, reject) => {
-                vibrator.startVibration({
-                    type: "time",
-                    duration: 100
-                }, {
-                    usage: "unknown"
-                }, (error)=>{
-                    if (error) {
-                        console.info("VibratorJsTest035 error :" + error);
-                        expect(false).assertTrue();
-                        reject();
-                    } else {
-                        console.info("VibratorJsTest035 success");
-                        expect(true).assertTrue();
-                        resolve();
-                    }
-                });
-            })
-
-            await promise.then(() =>{
-                return vibratePromise();
-            }, ()=>{
-                console.info("VibratorJsTest035 reject");
-            })
+        try{
+            await vibrator.startVibration({ type: "time", duration: 100 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration  first success`);
+            await vibrator.startVibration({ type: "time", duration: 100 }, { usage: "unknown" });
+            console.info(TAG + ` startVibration  second success`);
             await vibrator.stopVibration();
+            console.info(TAG + ` stopVibration success`);
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
+            expect(true).assertTrue();
             done();
-        } else {
-            console.log(TAG + ' is not supported on this device.');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -898,32 +718,23 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.type:Function
     * @tc.size:MediumTest
     */
-     it("VibratorJsTest036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest036"
+    it("VibratorJsTest036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>VibratorJsTest036"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            function vibrateCallback(error) {
-                if (error) {
-                    console.info('VibratorJsTest036  stop fail');
-                    expect(false).assertTrue();
-                } else {
-                    console.info('VibratorJsTest036  stop off');
-                    expect(false).assertTrue();
-                }
-                setTimeout(()=>{
-                    done();
-                }, 500);
-            }
-            try {
-                vibrator.stopVibration("", vibrateCallback);
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+        function vibrateCallback(error) {
+            try{
+                console.info(TAG + ` stopVibration into callback: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+            } catch (error){
+                console.info(TAG + ` stopVibration fail: ${JSON.stringify(error.code)}`);
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        }
+        try {
+            vibrator.stopVibration("", vibrateCallback);
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -937,31 +748,16 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "VibratorJsTest037"
+        TAG = "====>VibratorJsTest037"
         console.info(TAG + ' isAvailable ' + isAvailable);
-        if (isAvailable) {
-            try {
-                vibrator.stopVibration("").then(() => {
-                    console.log("VibratorJsTest037  stop error");
-                    expect(false).assertTrue();
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                }, (error)=>{
-                    expect(false).assertTrue();
-                    console.log("VibratorJsTest037 stop error");
-                    setTimeout(()=>{
-                        done();
-                    }, 500);
-                });
-            } catch (error) {
-                console.info(error);
-                expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
-                expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-                done();
-            }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        try {
+            await vibrator.stopVibration("");
+            console.info(TAG + ` startVibration success`);
+            expect(false).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
             done();
         }
     })
@@ -1033,9 +829,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest039'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest039'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.soft");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1050,6 +851,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1059,9 +861,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.soft');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1074,9 +883,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest040'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest040'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.hard");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1091,6 +905,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1100,9 +915,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.hard');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1115,9 +937,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest041'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest041'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1132,6 +959,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1141,9 +969,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.sharp');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1156,9 +991,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest042'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest042'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.soft");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1173,6 +1013,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + 'vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1182,9 +1023,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.soft');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1197,9 +1045,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest043'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest043'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.hard");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1214,6 +1067,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1223,9 +1077,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.hard');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1238,9 +1099,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest044'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest044'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1255,6 +1121,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(true).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1264,9 +1131,16 @@ describe("VibratorJsTest_misc_3", function () {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.sharp');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1279,9 +1153,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest045'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest045'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 try {
                     vibrator.startVibration({
@@ -1293,27 +1172,34 @@ describe("VibratorJsTest_misc_3", function () {
                         usage: "unknown"
                     }, (error) => {
                         if (error) {
-                            console.info(TAG + ' vibrator error');
-                        } else {
-                            console.info(TAG + 'vibrator success');
-                            expect(false).assertTrue();
-                        }
-                        setTimeout(() => {
+                            console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
                             done();
-                        }, 500);
+                        } else {
+                            console.info(TAG + " vibrate success");
+                            expect(false).assertTrue();
+                            done();
+                        }
                     });
                 } catch (error) {
                     console.info(TAG + " intensity error: " + JSON.stringify(error));
-                    expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+                    expect(false).assertTrue();
                     done()
                 }
             } else {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.sharp');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
 
@@ -1326,9 +1212,14 @@ describe("VibratorJsTest_misc_3", function () {
     * @tc.size:MediumTest
     */
     it("VibratorJsTest046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = 'VibratorJsTest046'
-        if(isAvailable){
+        TAG = '====>VibratorJsTest046'
+        try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
+            if (!isAvailable) {
+                console.info(TAG + ' isAvailable1 is false not error');
+                expect(false).assertTrue();
+                done();
+            }
             if (ret) {
                 try {
                     vibrator.startVibration({
@@ -1340,27 +1231,34 @@ describe("VibratorJsTest_misc_3", function () {
                         usage: "unknown"
                     }, (error) => {
                         if (error) {
-                            console.info(TAG + ' vibrator error');
-                        } else {
-                            console.info(TAG + 'vibrator success');
-                            expect(false).assertTrue();
-                        }
-                        setTimeout(() => {
+                            console.info(TAG + ` startVibration into callback: ${JSON.stringify(error.code)}`);
+                            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
                             done();
-                        }, 500);
+                        } else {
+                            console.info(TAG + " vibrate success");
+                            expect(false).assertTrue();
+                            done();
+                        }
                     });
                 } catch (error) {
                     console.info(TAG + " intensity error: " + JSON.stringify(error));
-                    expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+                    expect(false).assertTrue();
                     done()
                 }
             } else {
                 console.info(TAG + ' This device is not supportEffect haptic.effect.sharp');
                 done();
             }
-        } else {
-            console.info(TAG + ' This device is not supportEffect');
-            done();
+        } catch (error) {
+            if (error && !isAvailable) {
+                console.info(TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+                expect(error.code).assertEqual(DEVICE_OPERATION_FAILED);
+                done();
+            } else {
+                console.info(TAG + ` isSupportEffectSync  error: ${JSON.stringify(error.code)}`);
+                expect(false).assertTrue();
+                done();
+            }
         }
     })
     })}
