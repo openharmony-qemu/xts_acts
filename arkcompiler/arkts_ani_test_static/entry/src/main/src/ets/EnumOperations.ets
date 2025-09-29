@@ -52,9 +52,9 @@ enum ToFindInt {
 }
 
 enum ToFindString {
-    REDSTR = "str_red",
-    GREENSTR = "str_green",
-    BLUESTR = "str_blue"
+    REDSTR = 'str_red',
+    GREENSTR = 'str_green',
+    BLUESTR = 'str_blue'
 }
 
 enum ToFindBig {

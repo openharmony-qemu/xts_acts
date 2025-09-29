@@ -62,14 +62,14 @@ final class Child extends Person {
     }
 };
 
-interface AA {
+interface Foo {
     foo(x: double): double;
 };
 
-interface AAB {
+interface Eat {
     eat(x: int): int;
 };
-export class BB implements AA, AAB {
+export class BB implements Foo, Eat {
     foo(x: double): double { return x; }
     eat(x: int): int { return x; }
 };
