@@ -28,7 +28,7 @@
 static OH_HiCollie_BeginFunc beginFunc_1;
 static OH_HiCollie_EndFunc endFunc_1;
 HiCollie_DetectionParam param1{.sampleStackTriggerTime = 150, .reserved = 0};
-int64_t lastWatchTime1 = 0;
+int64_t g_lastWatchTime1 = 0;
 const int64_t CHECK_INTERNAL_TIME1 = 3000;
 // 自定义休眠时间，模拟卡死场景
 const int64_t BLOCK_TIME1 = 5;
@@ -61,7 +61,7 @@ int64_t GetCurrentTime1()
 
 bool ReportEvent1()
 {
-    if ((GetCurrentTime1() - lastWatchTime1) > CHECK_INTERNAL_TIME1) {
+    if ((GetCurrentTime1() - g_lastWatchTime1) > CHECK_INTERNAL_TIME1) {
         return true;
     }
     return true;
@@ -182,7 +182,7 @@ napi_value HiCollieInitJankDetectionInvalid(napi_env env, napi_callback_info inf
 std::shared_ptr<std::atomic<bool>> isReport2 = std::make_shared<std::atomic<bool>>(true);
 
 bool g_needReport2 = true;
-int64_t lastWatchTime2 = 0;
+int64_t g_lastWatchTime2 = 0;
 const int64_t CHECK_INTERNAL_TIME = 3000;
 
 int64_t GetCurrentTime2()
@@ -193,7 +193,7 @@ int64_t GetCurrentTime2()
 
 bool ReportEvent2()
 {
-    if ((GetCurrentTime2() - lastWatchTime2) > CHECK_INTERNAL_TIME) {
+    if ((GetCurrentTime2() - g_lastWatchTime2) > CHECK_INTERNAL_TIME) {
         return true;
     }
     return true;
@@ -373,86 +373,17 @@ napi_value HiDebugGetGraphicsMemoryInvalid(napi_env env, napi_callback_info info
 // 1. 自定义 malloc：包装标准 malloc，添加日志
 void *MyMalloc(size_t size)
 {
+    if (size == 0) {
+        OH_LOG_ERROR(LOG_APP, "[%{public}s MyMalloc: 申请 0 字节内存，非法请求", LOG_TAG);
+        return nullptr;
+    }
     void *ptr = malloc(size); // 调用标准 malloc
-    if (ptr != NULL) {
+    if (ptr != nullptr) {
         OH_LOG_INFO(LOG_APP, "[%{public}s] MyMalloc: 分配 %zu 字节，地址: %p", LOG_TAG, size, ptr);
     } else {
         OH_LOG_ERROR(LOG_APP, "[%{public}s] MyMalloc: 分配 %zu 字节失败（NULL）", LOG_TAG, size);
     }
     return ptr;
-}
-
-// 2. 自定义 calloc：包装标准 calloc，添加日志
-void *MyCalloc(size_t nmemb, size_t size)
-{
-    void *ptr = calloc(nmemb, size); // 调用标准 calloc（自动初始化 0）
-    if (ptr != NULL) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] MyCalloc: 分配 %zu 个元素（每个 %zu 字节），地址: %p", LOG_TAG, nmemb, size,
-                    ptr);
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[%{public}s] MyCalloc: 分配 %zu 个元素（每个 %zu 字节）失败", LOG_TAG, nmemb, size);
-    }
-    return ptr;
-}
-
-// 3. 自定义 realloc：包装标准 realloc，添加日志
-void *MyRealloc(void *ptr, size_t size)
-{
-    void *newPtr = realloc(ptr, size); // 调用标准 realloc
-    if (newPtr != NULL) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] MyRealloc: 重分配地址 %p 至 %zu 字节，新地址: %p", LOG_TAG, ptr, size,
-                    newPtr);
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[%{public}s] MyRealloc: 重分配地址 %p 至 %zu 字节失败", LOG_TAG, ptr, size);
-    }
-    return newPtr;
-}
-
-// 4. 自定义 free：包装标准 free，添加日志
-void MyFree(void *ptr)
-{
-    if (ptr != NULL) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] MyFree: 释放地址: %p", LOG_TAG, ptr);
-        free(ptr); // 调用标准 free
-    } else {
-        OH_LOG_WARN(LOG_APP, "[%{public}s] MyFree: 尝试释放 NULL 地址（无效操作）", LOG_TAG);
-    }
-}
-
-// 5. 自定义 mmap：包装标准 mmap，添加日志（mmap 参数含义需注意）
-// 参数说明：
-// - addr：期望的映射地址（NULL 表示由系统分配）
-// - length：映射区域大小（字节）
-// - prot：内存保护标志（如 PROT_READ | PROT_WRITE，可读可写）
-// - flags：映射类型标志（如 MAP_SHARED | MAP_ANONYMOUS，共享/匿名映射）
-// - fd：文件描述符（匿名映射时设为 -1）
-// - offset：文件偏移量（匿名映射时设为 0）
-void *MyMmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)
-{
-    void *mapAddr = mmap(addr, length, prot, flags, fd, offset); // 调用标准 mmap
-    if (mapAddr != MAP_FAILED) {                                 // 注意：mmap 失败返回 MAP_FAILED（非 NULL）
-        OH_LOG_INFO(LOG_APP, "[%{public}s] MyMmap: 映射成功，地址: %p，大小: %zu 字节，fd: %d", LOG_TAG, mapAddr,
-                    length, fd);
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[%{public}s] MyMmap: 映射失败（fd: %d，大小: %zu 字节）", LOG_TAG, fd, length);
-    }
-    return mapAddr;
-}
-
-// 6. 自定义 munmap：包装标准 munmap，添加日志
-int MyMunmap(void *addr, size_t length)
-{
-    if (addr == NULL || addr == MAP_FAILED) {
-        OH_LOG_WARN(LOG_APP, "[%{public}s] MyMunmap: 无效地址 %p，无法解映射", LOG_TAG, addr);
-        return -1; // 失败返回 -1
-    }
-    int ret = munmap(addr, length); // 调用标准 munmap
-    if (ret == 0) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] MyMunmap: 解映射地址 %p（大小: %zu 字节）成功", LOG_TAG, addr, length);
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[%{public}s] MyMunmap: 解映射地址 %p（大小: %zu 字节）失败", LOG_TAG, addr, length);
-    }
-    return ret;
 }
 
 napi_value HiDebugSetMallocDispatchTableSuccess(napi_env env, napi_callback_info info)
