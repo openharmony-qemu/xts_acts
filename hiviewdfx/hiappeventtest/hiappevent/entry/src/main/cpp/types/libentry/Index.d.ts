@@ -64,6 +64,12 @@ export const TestHiCollieStuckWithTimeoutNdk1: () => number;
 
 export const TestHiCollieJankC: () => number;
 
+export const HiAppEventSetConfigItem: () => number;
+
+export const SetEventConfigSuccess: () => number;
+
+export const HiAppEventCreateProcessor: () => number;
+
 
 
 

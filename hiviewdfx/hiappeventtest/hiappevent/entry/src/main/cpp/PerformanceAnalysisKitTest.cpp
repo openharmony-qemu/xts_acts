@@ -49,6 +49,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SetTimer4", nullptr, SetTimer4, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestHiCollieStuckWithTimeoutNdk1", nullptr, TestHiCollieStuckWithTimeoutNdk1, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"HiAppEventSetConfigItem", nullptr, HiAppEventSetConfigItem, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetEventConfigSuccess", nullptr, SetEventConfigSuccess, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"HiAppEventCreateProcessor", nullptr, HiAppEventCreateProcessor, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
