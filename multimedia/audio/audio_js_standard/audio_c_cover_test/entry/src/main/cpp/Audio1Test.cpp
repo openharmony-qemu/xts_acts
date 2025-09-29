@@ -483,7 +483,8 @@ napi_value AudioSessionUnregisterStateChangeCbSuccess(napi_env env, napi_callbac
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
     OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
-    result = OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
+    result =
+        OH_AudioSessionManager_UnregisterStateChangeCallback(audioSessionManager, AudioSessionStateChangedCallback);
     if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_value res;
         napi_create_int32(env, result, &res);
