@@ -69,7 +69,7 @@ int g_addResourceWithBufferNotSupported = -1;
 int g_addResourceWithUriNotSupported = -1;
 int g_imageCheck = -1;
 int g_mediaSubTypeCheck = -1;
-const char *g_globalMediaAssetUri = nullptr;
+const char *GLOBAL_MEDIA_ASSET_URI = nullptr;
 
 void AddMediaAssetCapiTest1(std::vector<napi_property_descriptor> &descData)
 {
@@ -245,7 +245,7 @@ static void HandleUri(OH_MediaAsset* photoAsset)
 {
     const char *uri = nullptr;
     g_uriRet = OH_MediaAsset_GetUri(photoAsset, &uri);
-    g_globalMediaAssetUri = uri;
+    GLOBAL_MEDIA_ASSET_URI = uri;
 }
 
 static void HandleNoSuchFile(OH_MediaAsset* photoAsset)
@@ -313,11 +313,11 @@ static void HandleAddResourceWithUri(OH_MediaAsset* photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri = const_cast<char *>(g_globalMediaAssetUri);
+    char *fileUri = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
 
     OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri1 = const_cast<char *>(g_globalMediaAssetUri);
+    char *fileUri1 = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
     g_addResourceWithUriNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType1, fileUri1);
     OH_MediaAssetChangeRequest_Release(changeRequest);
@@ -487,8 +487,7 @@ static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_Media
         g_mediaSubType = 0;
     }
     MediaLibrary_MediaSubType mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_MOVING_PHOTO;
-    if (mediaSubType == mediaSubType1)
-        {
+    if (mediaSubType == mediaSubType1) {
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_MOVING_PHOTO");
     }
     mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_BURST;
