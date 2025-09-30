@@ -21,7 +21,7 @@ napi_value SetReportRouteValue(napi_env env, napi_callback_info info)
 {
     napi_valuetype routeInfoType;
     HiAppEvent_Processor *processor;
-    size_t routeInfoSize;
+    size_t routeInfoSize = 0;
     char *routeInfo = new char[routeInfoSize + 1];
     auto returnValue = OH_HiAppEvent_SetReportRoute(processor, nullptr, routeInfo);
     int ret = -1;
@@ -207,7 +207,7 @@ napi_value SetWatcherOnReceive(napi_env env, napi_callback_info info)
 
 napi_value RemoveProcessor(napi_env env, napi_callback_info info)
 {
-    int64_t processorId;
+    int64_t processorId = 0;
     int returnValue = OH_HiAppEvent_RemoveProcessor(processorId);
     int ret = -1;
     if (returnValue == HIAPPEVENT_PROCESSOR_NOT_FOUND) {
