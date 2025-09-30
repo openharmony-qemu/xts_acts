@@ -99,8 +99,8 @@ export default function ActsMediaLibraryTwoTest() {
     beforeAll(async () => {
       await getPermissions()
       await driveFn()
-      await getPermissions1()
-      await driveFn()
+      // await getPermissions1()
+      // await driveFn()
       await getPermissions2()
       await driveFn()
       await getPhotoReceiverSurface();
@@ -127,6 +127,34 @@ export default function ActsMediaLibraryTwoTest() {
           done();
         } catch (err) {
           console.error("====>SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600 catch err: " +
+            err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
+     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600
+     * @tc.desc    : test MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600 start====");
+          let func = photoSleep(100, 6000, testNapi.testOhMediaAssetChangeRequestGetWriteCacheHandlerNoAuthority);
+          let result: number = await func;
+          clearInterval(timeId);
+          console.info("====>SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600 result====",
+            result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>SUB_Multimedia_MediaLibrary_SDK_Media_Library_Operation_Not_Supported_4600 catch err: " +
             err);
           expect(err).assertFail();
           done();

@@ -15,27 +15,26 @@
 
 #include "MediaAssetCapiTest.h"
 #include "napi/native_api.h"
-#include <cstddef>
 #include <cstdint>
+#include <hilog/log.h>
 #include <js_native_api_types.h>
 #include <multimedia/media_library/media_access_helper_capi.h>
+#include <multimedia/media_library/media_asset_capi.h>
 #include <multimedia/media_library/media_asset_change_request_capi.h>
 #include <multimedia/media_library/media_asset_manager_capi.h>
-#include <multimedia/media_library/media_asset_capi.h>
 #include <multimedia/media_library/moving_photo_capi.h>
-#include  <ohcamera/camera_manager.h>
 #include <napi/native_api.h>
-#include <ohcamera/photo_output.h>
 #include <ohcamera/camera_manager.h>
-#include <hilog/log.h>
+#include <ohcamera/photo_output.h>
 #include <string>
-#include <cstring>
 #include <thread>
 
 #define NO_PRECONFIG_MODE 1
 #define TYPE_PRECONFIG_MODE 2
 #define TYPE_RATIO_PRECONFIG_MODE 3
 
+int DEFAULT_WIDTH = 1920;
+int DEFAULT_HEIGHT = 1080;
 int g_uriRet = -1;
 int g_mediaTypeRet = -1;
 int g_mediaSubTypeRet = -1;
@@ -60,15 +59,18 @@ int g_noAuthority = -1;
 int g_releaseOk = -1;
 int g_requestMovingPhotoOk = -1;
 int g_requestImageOk = -1;
+int g_requestImageOneOk = -1;
+int g_requestImageTwoOk = -1;
 int g_movingPhotoUriOk = -1;
-int g_requestContentWithUrisOk = -1;
-int g_requestContentWithUriOk = -1;
-int g_requestContentWithBufferOk = -1;
+int g_RequestContentWithUrisOk = -1;
+int g_RequestContentWithUriOk = -1;
+int g_RequestContentWithBufferOk = -1;
 int g_movingPhotoReleaseOk = -1;
-int g_addResourceWithBufferNotSupported = -1;
-int g_addResourceWithUriNotSupported = -1;
+int g_AddResourceWithBufferNotSupported = -1;
+int g_AddResourceWithUriNotSupported = -1;
 int g_imageCheck = -1;
 int g_mediaSubTypeCheck = -1;
+int g_applyChanges = -1;
 const char *GLOBAL_MEDIA_ASSET_URI = nullptr;
 
 void AddMediaAssetCapiTest1(std::vector<napi_property_descriptor> &descData)
@@ -139,6 +141,10 @@ void AddMediaAssetCapiTest2(std::vector<napi_property_descriptor> &descData)
                         TestOhMovingPhotoRequestContentWithBufferOk, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testOhMovingPhotoReleaseOk", nullptr, TestOhMovingPhotoReleaseOk, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
+}
+
+void AddMediaAssetCapiTest3(std::vector<napi_property_descriptor> &descData)
+{
     descData.push_back({"testOhMediaAssetChangeRequestAddResourceWithBufferNotSupported", nullptr,
                         TestOhMediaAssetChangeRequestAddResourceWithBufferNotSupported, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
@@ -157,53 +163,75 @@ void AddMediaAssetCapiTest2(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back(
         {"testMediaLibraryRust", nullptr, TestMediaLibraryRust, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhMediaAccessHelperApplyChangesOk", nullptr, TestOhMediaAccessHelperApplyChangesOk,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testMediaLibraryHighQualityMode", nullptr, TestMediaLibraryHighQualityMode, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testMediaLibraryBalancedMode", nullptr, TestMediaLibraryBalancedMode, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
 }
 
 void AddMediaAssetCapiTest(std::vector<napi_property_descriptor> &descData)
 {
     AddMediaAssetCapiTest1(descData);
     AddMediaAssetCapiTest2(descData);
+    AddMediaAssetCapiTest3(descData);
 }
 
 static void HandleMovingPhotoUri(OH_MovingPhoto *movingPhoto)
 {
     const char *uri = nullptr;
     g_movingPhotoUriOk = OH_MovingPhoto_GetUri(movingPhoto, &uri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MovingPhoto_GetUri uri :%{public}s", uri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MovingPhoto_GetUri g_movingPhotoUriOk :%{public}d",
+                 g_movingPhotoUriOk);
 }
 
 static void HandleRequestContentWithUris(OH_MovingPhoto *movingPhoto)
 {
-    char imageUri[1024];
-    char videoUri[1024];
-    g_requestContentWithUrisOk = OH_MovingPhoto_RequestContentWithUris(movingPhoto, imageUri, videoUri);
+    char imageUri[1024] = {0};
+    char videoUri[1024] = {0};
+    g_RequestContentWithUrisOk = OH_MovingPhoto_RequestContentWithUris(movingPhoto, imageUri, videoUri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MovingPhoto_RequestContentWithUris g_RequestContentWithUrisOk :%{public}d",
+                 g_RequestContentWithUrisOk);
 }
 
 static void HandleRequestContentWithUri(OH_MovingPhoto *movingPhoto)
 {
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char uri[1024];
-    g_requestContentWithUriOk = OH_MovingPhoto_RequestContentWithUri(movingPhoto, resourceType, uri);
+    char uri[1024] = {0};
+    g_RequestContentWithUriOk = OH_MovingPhoto_RequestContentWithUri(movingPhoto, resourceType, uri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MovingPhoto_RequestContentWithUri g_RequestContentWithUriOk :%{public}d",
+                 g_RequestContentWithUriOk);
 }
 
 static void HandleRequestContentWithBuffer(OH_MovingPhoto *movingPhoto)
 {
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
     uint32_t size = 10;
-    uint8_t* contentBuffer = nullptr;
+    uint8_t *contentBuffer = nullptr;
     contentBuffer = new uint8_t[size];
-    const uint8_t** buffer = const_cast<const uint8_t**>(&contentBuffer);
-    g_requestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
+    const uint8_t **buffer = const_cast<const uint8_t **>(&contentBuffer);
+    g_RequestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MovingPhoto_RequestContentWithBuffer g_RequestContentWithBufferOk :%{public}d",
+                 g_RequestContentWithBufferOk);
 }
 
 static void HandleMovingRelease(OH_MovingPhoto *movingPhoto)
 {
     g_movingPhotoReleaseOk = OH_MovingPhoto_Release(movingPhoto);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MovingPhoto_Release g_movingPhotoReleaseOk :%{public}d",
+                 g_movingPhotoReleaseOk);
 }
 
 void OnMovingPhotoDataPreparedCallBack(MediaLibrary_ErrorCode result, MediaLibrary_RequestId requestId,
                                        MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,
-                                       OH_MovingPhoto *movingPhoto)
-{
+                                       OH_MovingPhoto *movingPhoto) {
+
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OnMovingPhotoDataPreparedCallBack ===========");
     HandleMovingPhotoUri(movingPhoto);
     HandleRequestContentWithUris(movingPhoto);
     HandleRequestContentWithUri(movingPhoto);
@@ -213,8 +241,8 @@ void OnMovingPhotoDataPreparedCallBack(MediaLibrary_ErrorCode result, MediaLibra
 
 void OnImageDataPreparedCallBack(MediaLibrary_ErrorCode result, MediaLibrary_RequestId requestId,
                                  MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,
-                                 OH_ImageSourceNative *imageSourceNative)
-{
+                                 OH_ImageSourceNative *imageSourceNative) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OnImageDataPreparedCallBack ===========");
     MediaLibrary_MediaQuality checkQuality = MEDIA_LIBRARY_QUALITY_FULL;
     if (mediaQuality == checkQuality) {
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia",
@@ -241,14 +269,16 @@ void OnImageDataPreparedCallBack(MediaLibrary_ErrorCode result, MediaLibrary_Req
     g_imageCheck = 0;
 }
 
-static void HandleUri(OH_MediaAsset* photoAsset)
+static void HandleUri(OH_MediaAsset *photoAsset)
 {
     const char *uri = nullptr;
     g_uriRet = OH_MediaAsset_GetUri(photoAsset, &uri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetUri uri :%{public}s", uri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetUri g_uriRet :%{public}d", g_uriRet);
     GLOBAL_MEDIA_ASSET_URI = uri;
 }
 
-static void HandleNoSuchFile(OH_MediaAsset* photoAsset)
+static void HandleNoSuchFile(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
@@ -256,23 +286,41 @@ static void HandleNoSuchFile(OH_MediaAsset* photoAsset)
         "file://com.example.myapplication.MainAbility/data/storage/el2/base/haps/entry/files/non_exist_uri.mp4";
     g_noSuchFile = OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
     OH_MediaAssetChangeRequest_Release(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetChangeRequest_AddResourceWithUri  :%{public}d",
+                 g_noSuchFile);
 }
 
-static void HandleNoAuthority(OH_MediaAsset* photoAsset)
+static void HandleNoAuthority(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     int32_t fd = 0;
     g_noAuthority = OH_MediaAssetChangeRequest_GetWriteCacheHandler(changeRequest, &fd);
     OH_MediaAssetChangeRequest_Release(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MediaAssetChangeRequest_GetWriteCacheHandler  :%{public}d", g_noAuthority);
 }
 
-static void HandleReleaseOk(OH_MediaAsset* photoAsset)
+static void HandleApplyChanges(OH_MediaAsset *photoAsset)
+{
+    OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
+    MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
+    char *fileUri = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
+    OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
+    g_applyChanges = OH_MediaAccessHelper_ApplyChanges(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAccessHelper_ApplyChanges:%{public}d",
+                 g_applyChanges);
+    OH_MediaAssetChangeRequest_Release(changeRequest);
+}
+
+static void HandleReleaseOk(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     g_releaseOk = OH_MediaAssetChangeRequest_Release(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetChangeRequest_Release  :%{public}d",
+                 g_releaseOk);
 }
 
-static void HandleRequestMovingPhoto(OH_MediaAsset* photoAsset)
+static void HandleRequestMovingPhoto(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetManager *manager = OH_MediaAssetManager_Create();
     MediaLibrary_RequestOptions requestOptions;
@@ -280,10 +328,11 @@ static void HandleRequestMovingPhoto(OH_MediaAsset* photoAsset)
     MediaLibrary_RequestId requestId;
     g_requestMovingPhotoOk = OH_MediaAssetManager_RequestMovingPhoto(manager, photoAsset, requestOptions, &requestId,
                                                                      OnMovingPhotoDataPreparedCallBack);
-    OH_MediaAssetManager_Release(manager);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetManager_RequestMovingPhoto  :%{public}d",
+                 g_requestMovingPhotoOk);
 }
 
-static void HandleRequestImage(OH_MediaAsset* photoAsset)
+static void HandleRequestImage(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetManager *manager = OH_MediaAssetManager_Create();
     MediaLibrary_RequestOptions requestOptions;
@@ -291,125 +340,160 @@ static void HandleRequestImage(OH_MediaAsset* photoAsset)
     MediaLibrary_RequestId requestId;
     g_requestImageOk =
         OH_MediaAssetManager_RequestImage(manager, photoAsset, requestOptions, &requestId, OnImageDataPreparedCallBack);
-    OH_MediaAssetManager_Release(manager);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetManager_RequestImage  :%{public}d",
+                 g_requestImageOk);
 }
 
-static void HandleAddResourceWithBuffer(OH_MediaAsset* photoAsset)
+static void HandleRequestImageOne(OH_MediaAsset *photoAsset)
+{
+    OH_MediaAssetManager *manager = OH_MediaAssetManager_Create();
+    MediaLibrary_RequestOptions requestOptions;
+    requestOptions.deliveryMode = MediaLibrary_DeliveryMode::MEDIA_LIBRARY_HIGH_QUALITY_MODE;
+    MediaLibrary_RequestId requestId;
+    g_requestImageOneOk =
+        OH_MediaAssetManager_RequestImage(manager, photoAsset, requestOptions, &requestId, OnImageDataPreparedCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetManager_RequestImage One :%{public}d",
+                 g_requestImageOneOk);
+}
+
+static void HandleRequestImageTwo(OH_MediaAsset *photoAsset)
+{
+    OH_MediaAssetManager *manager = OH_MediaAssetManager_Create();
+    MediaLibrary_RequestOptions requestOptions;
+    requestOptions.deliveryMode = MediaLibrary_DeliveryMode::MEDIA_LIBRARY_BALANCED_MODE;
+    MediaLibrary_RequestId requestId;
+    g_requestImageTwoOk =
+        OH_MediaAssetManager_RequestImage(manager, photoAsset, requestOptions, &requestId, OnImageDataPreparedCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetManager_RequestImage Two :%{public}d",
+                 g_requestImageTwoOk);
+}
+
+static void HandleAddResourceWithBuffer(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
     uint32_t length = 1024;
     uint8_t *buffer = new uint8_t[length];
-    OH_MediaAssetChangeRequest_AddResourceWithBuffer(changeRequest, resourceType, buffer, length);
+    int ret = OH_MediaAssetChangeRequest_AddResourceWithBuffer(changeRequest, resourceType, buffer, length);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MediaAssetChangeRequest_AddResourceWithBuffer  :%{public}d", ret);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
     uint32_t length1 = 1024;
     uint8_t *buffer1 = new uint8_t[length1];
-    g_addResourceWithBufferNotSupported =
+    g_AddResourceWithBufferNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithBuffer(changeRequest, resourceType1, buffer1, length1);
-    OH_MediaAssetChangeRequest_Release(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MediaAssetChangeRequest_AddResourceWithBuffer111  :%{public}d",
+                 g_AddResourceWithBufferNotSupported);
 }
 
-static void HandleAddResourceWithUri(OH_MediaAsset* photoAsset)
+static void HandleAddResourceWithUri(OH_MediaAsset *photoAsset)
 {
     OH_MediaAssetChangeRequest *changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
     char *fileUri = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
-
-    OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
+    int ret = OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType, fileUri);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetChangeRequest_AddResourceWithUri  :%{public}d",
+                 ret);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
     char *fileUri1 = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
-    g_addResourceWithUriNotSupported =
+    g_AddResourceWithUriNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType1, fileUri1);
-    OH_MediaAssetChangeRequest_Release(changeRequest);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
+                 "OH_MediaAssetChangeRequest_AddResourceWithUri111  :%{public}d", g_AddResourceWithUriNotSupported);
 }
 
-static void HandleMediaType(OH_MediaAsset* photoAsset)
+static void HandleMediaType(OH_MediaAsset *photoAsset)
 {
     MediaLibrary_MediaType mediaType;
     g_mediaTypeRet = OH_MediaAsset_GetMediaType(photoAsset, &mediaType);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetMediaType mediaType :%{public}d",
+                 mediaType);
 }
 
-static void HandleMediaSubType(OH_MediaAsset* photoAsset)
+static void HandleMediaSubType(OH_MediaAsset *photoAsset)
 {
     MediaLibrary_MediaSubType mediaSubType;
     g_mediaSubTypeRet = OH_MediaAsset_GetMediaSubType(photoAsset, &mediaSubType);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetMediaSubType mediaSubType :%{public}d",
+                 mediaSubType);
 }
 
-static void HandleDisplayName(OH_MediaAsset* photoAsset)
+static void HandleDisplayName(OH_MediaAsset *photoAsset)
 {
     const char *displayName = nullptr;
     g_displayNameRet = OH_MediaAsset_GetDisplayName(photoAsset, &displayName);
 }
 
-static void HandleSize(OH_MediaAsset* photoAsset)
+static void HandleSize(OH_MediaAsset *photoAsset)
 {
     uint32_t size = 0;
     g_sizeRet = OH_MediaAsset_GetSize(photoAsset, &size);
 }
 
-static void HandleDateAdded(OH_MediaAsset* photoAsset)
+static void HandleDateAdded(OH_MediaAsset *photoAsset)
 {
     uint32_t dateAdded = 0;
     g_dateAddedRet = OH_MediaAsset_GetDateAdded(photoAsset, &dateAdded);
 }
 
-static void HandleDateModified(OH_MediaAsset* photoAsset)
+static void HandleDateModified(OH_MediaAsset *photoAsset)
 {
     uint32_t dateModified = 0;
     g_dateModifiedRet = OH_MediaAsset_GetDateModified(photoAsset, &dateModified);
 }
 
-static void HandleDateTaken(OH_MediaAsset* photoAsset)
+static void HandleDateTaken(OH_MediaAsset *photoAsset)
 {
     uint32_t dateTaken = 0;
     g_dateTakenRet = OH_MediaAsset_GetDateTaken(photoAsset, &dateTaken);
 }
 
-static void HandleDateAddedMs(OH_MediaAsset* photoAsset)
+static void HandleDateAddedMs(OH_MediaAsset *photoAsset)
 {
     uint32_t dateAddedMs = 0;
     g_dateAddedMsRet = OH_MediaAsset_GetDateAddedMs(photoAsset, &dateAddedMs);
 }
 
-static void HandleDateModifiedMs(OH_MediaAsset* photoAsset)
+static void HandleDateModifiedMs(OH_MediaAsset *photoAsset)
 {
     uint32_t dateModifiedMs = 0;
     g_dateModifiedMsRet = OH_MediaAsset_GetDateModifiedMs(photoAsset, &dateModifiedMs);
 }
 
-static void HandleDuration(OH_MediaAsset* photoAsset)
+static void HandleDuration(OH_MediaAsset *photoAsset)
 {
     uint32_t duration = 0;
     g_durationRet = OH_MediaAsset_GetDuration(photoAsset, &duration);
 }
 
-static void HandleWidth(OH_MediaAsset* photoAsset)
+static void HandleWidth(OH_MediaAsset *photoAsset)
 {
     uint32_t width = 0;
     g_widthRet = OH_MediaAsset_GetWidth(photoAsset, &width);
 }
 
-static void HandleHeight(OH_MediaAsset* photoAsset)
+static void HandleHeight(OH_MediaAsset *photoAsset)
 {
     uint32_t height = 0;
     g_heightRet = OH_MediaAsset_GetHeight(photoAsset, &height);
 }
 
-static void HandleOrientation(OH_MediaAsset* photoAsset)
+static void HandleOrientation(OH_MediaAsset *photoAsset)
 {
     uint32_t orientation = 0;
     g_orientationRet = OH_MediaAsset_GetOrientation(photoAsset, &orientation);
 }
 
-static void HandleFavorite(OH_MediaAsset* photoAsset)
+static void HandleFavorite(OH_MediaAsset *photoAsset)
 {
     uint32_t favorite = 0;
     g_isFavoriteRet = OH_MediaAsset_IsFavorite(photoAsset, &favorite);
 }
 
-static void HandleTitle(OH_MediaAsset* photoAsset)
+static void HandleTitle(OH_MediaAsset *photoAsset)
 {
-    const char* title = nullptr;
+    const char *title = nullptr;
     g_titleRet = OH_MediaAsset_GetTitle(photoAsset, &title);
 }
 
@@ -465,12 +549,11 @@ static void CheckAndLogResults()
     }
 }
 
-static void ReleaseAsset(OH_MediaAsset* photoAsset)
+static void ReleaseAsset(OH_MediaAsset *photoAsset)
 {
     g_releaseRet = OH_MediaAsset_Release(photoAsset);
     if (g_releaseRet == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
-                     "OH_MediaAsset_Release MEDIA_LIBRARY_OK");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_Release MEDIA_LIBRARY_OK");
     }
 }
 
@@ -484,6 +567,7 @@ static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_Media
         OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_DEFAULT");
         g_mediaSubType = 0;
     }
+
     MediaLibrary_MediaSubType mediaSubType1 = MediaLibrary_MediaSubType::MEDIA_LIBRARY_MOVING_PHOTO;
     if (mediaSubType == mediaSubType1) {
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_MOVING_PHOTO");
@@ -492,19 +576,22 @@ static void CheckMediaTypes(MediaLibrary_MediaType mediaType, MediaLibrary_Media
     if (mediaSubType == mediaSubType1) {
         OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, "multimedia", "MediaLibrary_MediaSubType MEDIA_LIBRARY_BURST");
     }
+
     g_mediaSubTypeCheck = 0;
 }
 
-void PhotoAssetAvailable(Camera_PhotoOutput* photoOutput, OH_MediaAsset* photoAsset)
+void PhotoAssetAvailable(Camera_PhotoOutput *photoOutput, OH_MediaAsset *photoAsset)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "PhotoAssetAvailable ===========");
-    
+
     HandleUri(photoAsset);
     HandleNoSuchFile(photoAsset);
     HandleNoAuthority(photoAsset);
     HandleReleaseOk(photoAsset);
     HandleRequestMovingPhoto(photoAsset);
     HandleRequestImage(photoAsset);
+    HandleRequestImageOne(photoAsset);
+    HandleRequestImageTwo(photoAsset);
     HandleAddResourceWithBuffer(photoAsset);
     HandleAddResourceWithUri(photoAsset);
     HandleMediaType(photoAsset);
@@ -522,15 +609,16 @@ void PhotoAssetAvailable(Camera_PhotoOutput* photoOutput, OH_MediaAsset* photoAs
     HandleOrientation(photoAsset);
     HandleFavorite(photoAsset);
     HandleTitle(photoAsset);
-     
+    HandleApplyChanges(photoAsset);
+
     CheckAndLogResults();
-    
+
     MediaLibrary_MediaType mediaType;
     MediaLibrary_MediaSubType mediaSubType;
     OH_MediaAsset_GetMediaType(photoAsset, &mediaType);
     OH_MediaAsset_GetMediaSubType(photoAsset, &mediaSubType);
     CheckMediaTypes(mediaType, mediaSubType);
-    
+
     ReleaseAsset(photoAsset);
 }
 
@@ -550,8 +638,7 @@ void PreviewOutputOnError(Camera_PreviewOutput *previewOutput, Camera_ErrorCode 
     OH_LOG_INFO(LOG_APP, "PreviewOutput errorCode = %{public}d", errorCode);
 }
 
-PreviewOutput_Callbacks *GetPreviewOutputListener(void)
-{
+PreviewOutput_Callbacks *GetPreviewOutputListener(void) {
     static PreviewOutput_Callbacks previewOutputListener = {.onFrameStart = PreviewOutputOnFrameStart,
                                                             .onFrameEnd = PreviewOutputOnFrameEnd,
                                                             .onError = PreviewOutputOnError};
@@ -564,17 +651,17 @@ void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorC
     OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
 }
 
-CameraInput_Callbacks *GetCameraInputListener(void)
-{
+CameraInput_Callbacks *GetCameraInputListener(void) {
     static CameraInput_Callbacks cameraInputCallbacks = {.onError = OnCameraInputError};
     return &cameraInputCallbacks;
 }
 
-static const char* GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info info)
+static const char *GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_status status;
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc < 1) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Get callback info failed or lack of args");
         return nullptr;
@@ -592,10 +679,10 @@ static const char* GetPreviewSurfaceIdFromNapi(napi_env env, napi_callback_info 
         return nullptr;
     }
     if (strLen == 0 || strLen > SIZE_MAX - 1) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "mult", "String length is invalid");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "String length is invalid");
         return nullptr;
     }
-    const char *previewSurfaceId = static_cast<const char *>(malloc(strLen + 1));
+    const char *previewSurfaceId = (const char *)malloc(strLen + 1);
     if (previewSurfaceId == nullptr) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "multimedia", "Malloc for surfaceId failed");
         return nullptr;
@@ -809,55 +896,49 @@ napi_value TestOhMediaAssetChangeRequestGetWriteCacheHandlerNoAuthority(napi_env
 napi_value TestOhMediaAssetChangeRequestReleaseOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_releaseOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_releaseOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMediaAssetManagerRequestMovingPhotoOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_requestMovingPhotoOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_requestMovingPhotoOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMediaAssetManagerRequestImageOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_requestImageOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_requestImageOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMovingPhotoGetUriOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_movingPhotoUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_movingPhotoUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMovingPhotoRequestContentWithUrisOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_requestContentWithUrisOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_RequestContentWithUrisOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMovingPhotoRequestContentWithUriOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_requestContentWithUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_RequestContentWithUriOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
 napi_value TestOhMovingPhotoRequestContentWithBufferOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_requestContentWithBufferOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
+    napi_create_int32(env, g_RequestContentWithBufferOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
                       &retValue);
     return retValue;
 }
@@ -865,8 +946,7 @@ napi_value TestOhMovingPhotoRequestContentWithBufferOk(napi_env env, napi_callba
 napi_value TestOhMovingPhotoReleaseOk(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    napi_create_int32(env, g_movingPhotoReleaseOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1,
-                      &retValue);
+    napi_create_int32(env, g_movingPhotoReleaseOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }
 
@@ -875,7 +955,7 @@ napi_value TestOhMediaAssetChangeRequestAddResourceWithBufferNotSupported(napi_e
     napi_value retValue = 0;
     napi_create_int32(
         env,
-        g_addResourceWithBufferNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
+        g_AddResourceWithBufferNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
         &retValue);
     return retValue;
 }
@@ -884,8 +964,7 @@ napi_value TestOhMediaAssetChangeRequestAddResourceWithUriNotSupported(napi_env 
 {
     napi_value retValue = 0;
     napi_create_int32(
-        env,
-        g_addResourceWithUriNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
+        env, g_AddResourceWithUriNotSupported == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED ? 0 : -1,
         &retValue);
     return retValue;
 }
@@ -929,5 +1008,26 @@ napi_value TestMediaLibraryRust(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     napi_create_int32(env, g_mediaSubTypeCheck, &retValue);
+    return retValue;
+}
+
+napi_value TestOhMediaAccessHelperApplyChangesOk(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    napi_create_int32(env, g_applyChanges == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
+    return retValue;
+}
+
+napi_value TestMediaLibraryHighQualityMode(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    napi_create_int32(env, g_requestImageOneOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
+    return retValue;
+}
+
+napi_value TestMediaLibraryBalancedMode(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    napi_create_int32(env, g_requestImageTwoOk == MediaLibrary_ErrorCode::MEDIA_LIBRARY_OK ? 0 : -1, &retValue);
     return retValue;
 }

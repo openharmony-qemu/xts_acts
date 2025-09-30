@@ -65,4 +65,7 @@ napi_value TestMediaLibraryCompressed(napi_env env, napi_callback_info info);
 napi_value TestMediaLibraryPictureObject(napi_env env, napi_callback_info info);
 napi_value TestMediaLibraryMovingPhoto(napi_env env, napi_callback_info info);
 napi_value TestMediaLibraryRust(napi_env env, napi_callback_info info);
+napi_value TestOhMediaAccessHelperApplyChangesOk(napi_env env, napi_callback_info info);
+napi_value TestMediaLibraryHighQualityMode(napi_env env, napi_callback_info info);
+napi_value TestMediaLibraryBalancedMode(napi_env env, napi_callback_info info);
 #endif //MEDIALIBRARYTESTAPI20_MEDIAASSETCAPITEST_H
