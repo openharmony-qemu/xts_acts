@@ -52,9 +52,9 @@ class MainAbility5 extends UIAbility {
     }, 2000)
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag MainAbility5', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageDestroy() {
