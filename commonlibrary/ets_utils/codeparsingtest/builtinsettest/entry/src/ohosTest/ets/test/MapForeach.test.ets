@@ -214,7 +214,7 @@ export default function MapForeachTest() {
 
       const map = new Map<string, string>([['key', 'val']]);
       const context: test0010 = { prop: 'test' };
-      // 完全移除this的使用，直接根据测试意图初始化变�?
+      // 完全移除this的使用，直接根据测试意图初始化变量
       let arrowThis = undefined;
       map.forEach(() => {
       }, context);
@@ -1592,12 +1592,12 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
+      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '€'], ['letter', 'ñ']]);
       const results: string[] = [];
       map.forEach((value) => {
         results.push(value);
       });
-      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
+      expect(results).assertDeepEquals(['😊', '€', 'ñ']);
     });
 
     /**
@@ -1847,4 +1847,198 @@ export default function MapForeachTest() {
       expect(keys).assertDeepEquals([key1, key2]);
     });
 
-=
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0100
+     * @tc.name testMapForEach0100
+     * @tc.desc Verify forEach with Map containing large number of entries (1000)
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+      const map = new Map<number, number>();
+      for (let i = 1; i <= 1000; i++) {
+        map.set(i, i);
+      }
+      let count = 0;
+      map.forEach(() => {
+        count++;
+      });
+      expect(count).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0101
+     * @tc.name testMapForEach0101
+     * @tc.desc Verify forEach with Map containing non-primitive keys and values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      let Foreach0101 = MapforeachTest101();
+      expect(Foreach0101.map1).assertDeepEquals(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0102
+     * @tc.name testMapForEach0102
+     * @tc.desc Verify forEach with Map where callback uses rest parameters
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testMapForEach0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+      const map = new Map<string, number>([['a', 1], ['b', 2]]);
+      const results: [string, number][] = [];
+      map.forEach((...args: [number, string, Map<string, number>]) => {
+        results.push([args[1], args[0]]);
+      });
+      expect(results).assertDeepEquals([['a', 1], ['b', 2]]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0103
+     * @tc.name testMapForEach0103
+     * @tc.desc Verify forEach with Map where callback uses spread operator
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testMapForEach0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+      const map = new Map<number, number>([[1, 10], [2, 20]]);
+      const arr: number[] = [];
+      map.forEach((value) => {
+        arr.push(...[value, value * 2]);
+      });
+      expect(arr).assertDeepEquals([10, 20, 20, 40]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0104
+     * @tc.name testMapForEach0104
+     * @tc.desc Verify forEach with Map where callback uses template literals
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, number>([['width', 100], ['height', 200]]);
+      const results: string[] = [];
+      map.forEach((value, key) => {
+        results.push(`${key}: ${value}px`);
+      });
+      expect(results).assertDeepEquals(['width: 100px', 'height: 200px']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0105
+     * @tc.name testMapForEach0105
+     * @tc.desc Verify forEach with Map where callback uses optional parameters
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
+      const results: string[] = [];
+      const callback = (value: string, key?: number) => {
+        if (key) {
+          results.push(`${key}:${value}`);
+        }
+      };
+      map.forEach(callback);
+      expect(results).assertDeepEquals(['1:one', '2:two']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0106
+     * @tc.name testMapForEach0106
+     * @tc.desc Verify forEach with Map where callback is a bound function
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testMapForEach0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+      let Foreach0106 = MapforeachTest106();
+      expect(Foreach0106.map1).assertDeepEquals([30, 60]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0107
+     * @tc.name testMapForEach0107
+     * @tc.desc Verify forEach with Map and callback that uses generator functions internally
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testMapForEach0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+      let Foreach0107 = MapforeachTest107();
+      expect(Foreach0107.results).assertDeepEquals([5, 10, 10, 20]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0108
+     * @tc.name testMapForEach0108
+     * @tc.desc Verify forEach with Map containing Infinity and -Infinity values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, number>([['inf', Infinity], ['ninf', -Infinity]]);
+      const results: number[] = [];
+      map.forEach((value) => {
+        results.push(value);
+      });
+      expect(results).assertDeepEquals([Infinity, -Infinity]);
+      expect(isFinite(results[0])).assertEqual(false);
+      expect(isFinite(results[1])).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0109
+     * @tc.name testMapForEach0109
+     * @tc.desc Verify forEach with Map containing sparse array values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMapForEach0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const arr1: number[] = [];
+      arr1[0] = 1;
+      arr1[2] = 3;
+
+      const arr2: number[] = [];
+      arr2[5] = 5;
+
+      const map = new Map<number, number[]>([[1, arr1], [2, arr2]]);
+      const results: number[][] = [];
+      map.forEach((value) => {
+        results.push(value);
+      });
+
+      expect(results).assertDeepEquals([arr1, arr2]);
+      expect(results[0][0]).assertEqual(1);
+      expect(results[0][1]).assertEqual(undefined);
+      expect(results[0][2]).assertEqual(3);
+      expect(results[1][5]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0110
+     * @tc.name testMapForEach0110
+     * @tc.desc Verify forEach with Map containing frozen objects as values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testMapForEach0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+      let Foreach0110 = MapforeachTest110();
+      expect(Foreach0110.results).assertDeepEquals([Foreach0110.obj1, Foreach0110.obj2]);
+      expect(Foreach0110.map1).assertEqual('frozen1');
+      expect(Foreach0110.map2).assertEqual('frozen2');
+
+    });
+  })
+}
