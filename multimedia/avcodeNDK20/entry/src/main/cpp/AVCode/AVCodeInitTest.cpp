@@ -412,6 +412,28 @@ static void InitPushOH_AVDemuxeFunctionTest(std::vector<napi_property_descriptor
     desc.push_back(XL("OH_AVCencInfo_SetAVBufferTest", OH_AVCencInfo_SetAVBufferTest));
 }
 
+static void InitPushOH_AVErrCodeTest(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("OH_AVErrCodeTest1", OH_AVErrCodeTest1));
+    desc.push_back(XL("OH_AVErrCodeTest2", OH_AVErrCodeTest2));
+    desc.push_back(XL("OH_AVErrCodeTest3", OH_AVErrCodeTest3));
+    desc.push_back(XL("OH_AVErrCodeTest4", OH_AVErrCodeTest4));
+    desc.push_back(XL("OH_AVErrCodeTest5", OH_AVErrCodeTest5));
+    desc.push_back(XL("OH_AVErrCodeTest6", OH_AVErrCodeTest6));
+    desc.push_back(XL("OH_AVErrCodeTest7", OH_AVErrCodeTest7));
+    desc.push_back(XL("OH_AVErrCodeTest8", OH_AVErrCodeTest8));
+    desc.push_back(XL("OH_AVErrCodeTest9", OH_AVErrCodeTest9));
+    desc.push_back(XL("OH_AVErrCodeTest10", OH_AVErrCodeTest10));
+    desc.push_back(XL("OH_AVErrCodeTest12", OH_AVErrCodeTest12));
+    desc.push_back(XL("OH_AVErrCodeTest13", OH_AVErrCodeTest13));
+    desc.push_back(XL("OH_AVErrCodeTest14", OH_AVErrCodeTest14));
+    desc.push_back(XL("OH_AVErrCodeTest15", OH_AVErrCodeTest15));
+    desc.push_back(XL("OH_AVErrCodeTest16", OH_AVErrCodeTest16));
+    desc.push_back(XL("OH_AVErrCodeTest17", OH_AVErrCodeTest17));
+    desc.push_back(XL("OH_AVErrCodeTest18", OH_AVErrCodeTest18));
+    desc.push_back(XL("OH_AVFormat_SetIntValueTest", OH_AVFormat_SetIntValueTest));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
@@ -427,6 +449,7 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPushOH_VideoDecoderFunctionTest(desc);
     InitPushOH_VideoEncoderFunctionTest(desc);
     InitPushOH_AVDemuxeFunctionTest(desc);
+    InitPushOH_AVErrCodeTest(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

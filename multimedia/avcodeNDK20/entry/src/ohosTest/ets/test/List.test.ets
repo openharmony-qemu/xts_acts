@@ -17,10 +17,12 @@ import AVCodeTest from "./AVCode/AVCodeTest.test";
 import AVCodeTest2 from "./AVCode/AVCodeTest2.test";
 import AVCodeTest3 from "./AVCode/AVCodeTest3.test";
 import AVCodeBaseTest from "./AVCode/AVCodeBase.test";
+import AVCodeBaseTwoTest from "./AVCode/AVCodeBaseTwo.test";
 
 export default function testsuite() {
   AVCodeTest()
   AVCodeTest2()
   AVCodeTest3()
   AVCodeBaseTest()
+  AVCodeBaseTwoTest()
 }

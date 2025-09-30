@@ -348,4 +348,22 @@ napi_value OH_AVCencInfo_SetKeyIdAndIvTest(napi_env env, napi_callback_info info
 napi_value OH_AVCencInfo_SetSubsampleInfoTest(napi_env env, napi_callback_info info);
 napi_value OH_AVCencInfo_SetModeTest(napi_env env, napi_callback_info info);
 napi_value OH_AVCencInfo_SetAVBufferTest(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest1(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest2(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest3(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest4(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest5(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest6(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest7(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest8(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest9(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest10(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest12(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest13(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest14(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest15(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest16(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest17(napi_env env, napi_callback_info info);
+napi_value OH_AVErrCodeTest18(napi_env env, napi_callback_info info);
+napi_value OH_AVFormat_SetIntValueTest(napi_env env, napi_callback_info info);
 #endif

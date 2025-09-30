@@ -670,3 +670,42 @@ export const OH_AVCencInfo_SetSubsampleInfoTest: () => number;
 export const OH_AVCencInfo_SetModeTest: () => number;
 
 export const OH_AVCencInfo_SetAVBufferTest: () => number;
+
+export const OH_AVErrCodeTest1: () => number;
+
+export const OH_AVErrCodeTest2: () => number;
+
+export const OH_AVErrCodeTest3: () => number;
+
+export const OH_AVErrCodeTest4: () => number;
+
+export const OH_AVErrCodeTest5: () => number;
+
+export const OH_AVErrCodeTest6: () => number;
+
+export const OH_AVErrCodeTest7: () => number;
+
+export const OH_AVErrCodeTest8: () => number;
+
+export const OH_AVErrCodeTest9: () => number;
+
+export const OH_AVErrCodeTest10: () => number;
+
+export const OH_AVErrCodeTest11: () => number;
+
+export const OH_AVErrCodeTest12: () => number;
+
+export const OH_AVErrCodeTest13: () => number;
+
+export const OH_AVErrCodeTest14: () => number;
+
+export const OH_AVErrCodeTest15: () => number;
+
+export const OH_AVErrCodeTest16: () => number;
+
+export const OH_AVErrCodeTest17: () => number;
+
+export const OH_AVErrCodeTest18: () => number;
+
+export const OH_AVFormat_SetIntValueTest: () => number;
+
