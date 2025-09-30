@@ -39,11 +39,11 @@ class MyDataSource1 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -72,14 +72,14 @@ struct SwiperApiTest {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('90%')
             .height(160)
             .backgroundColor(0xAFEEEE)
             .textAlign(TextAlign.Center)
             .fontSize(30)
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .cachedCount(2)
       .index(1)

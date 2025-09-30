@@ -46,11 +46,11 @@ class WaterFlowDataSource implements IDataSource<number> {
     }
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.dataArray.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.dataArray[index.toInt()]
   }
 

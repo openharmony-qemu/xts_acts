@@ -469,13 +469,13 @@ struct StateStylesPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:number) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
                 Text('Scroll' + item+'')
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: Int,index:number) => item+'')
+              }, (item: Int,index:int) => item+'')
             }.width('100%')
           }.scrollBar(BarState.On)
         } else if (this.targetView == 'SideBarContainer') {

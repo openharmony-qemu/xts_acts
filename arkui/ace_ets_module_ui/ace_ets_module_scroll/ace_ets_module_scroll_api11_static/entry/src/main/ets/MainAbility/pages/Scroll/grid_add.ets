@@ -73,8 +73,8 @@ struct GridExampleAdd {
           return [index, index] as [number, number]
         }
       }) {
-        ForEach(this.Number, (day: string, index: number) => {
-          ForEach(this.Number, (day: string, index: number) => {
+        ForEach(this.Number, (day: string, index: int) => {
+          ForEach(this.Number, (day: string, index: int) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

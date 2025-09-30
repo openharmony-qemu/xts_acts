@@ -59,7 +59,7 @@ struct stackFromEndListExample {
           this.stackFromEnd1 = true
         })
       List({ initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
               .id('stackFromEnd_' + item)

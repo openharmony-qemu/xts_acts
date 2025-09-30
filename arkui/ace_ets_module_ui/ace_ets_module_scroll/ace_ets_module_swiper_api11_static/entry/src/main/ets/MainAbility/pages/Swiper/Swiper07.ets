@@ -63,11 +63,11 @@ class MyDataSourceSwiper07 implements IDataSource<string> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): string {
+  getData(index: int): string {
     return this.list[index.toInt()]
   }
 

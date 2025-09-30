@@ -65,7 +65,7 @@ struct WaterFlowScroll {
           .width('100%')
           .height(this.itemHeightArray[item.toInt() % 100])
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .columnsTemplate('repeat(auto-fill,80)')
       .columnsGap(10)

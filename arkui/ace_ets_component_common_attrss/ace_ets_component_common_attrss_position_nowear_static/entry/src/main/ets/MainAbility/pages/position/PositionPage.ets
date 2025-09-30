@@ -552,8 +552,8 @@ struct PositionPage {
               
             } else if (this.targetView == 'Grid') {
               Grid() {
-                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:number):void => {
-                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:number):void => {
+                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:int):void => {
+                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:int):void => {
                     GridItem() {
                       Text(day)
                         .backgroundColor(Color.White)
@@ -569,14 +569,14 @@ struct PositionPage {
               
             } else if (this.targetView == 'List') {
               List({ space: 20, initialIndex: 0 }) {
-                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:number):void => {
+                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:int):void => {
                   ListItem() {
                     Text('' + item)
                       .width('100%')
                       .textAlign(TextAlign.Center)
                       .backgroundColor(Color.White)
                   }
-                }, (item: number, index:number):string => String(item))
+                }, (item: number, index:int):string => String(item))
               }
               .width('100%')
               .height('100%')
@@ -625,13 +625,13 @@ struct PositionPage {
             } else if (this.targetView == 'Scroll') {
               Scroll() {
                 Column() {
-                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:number):void => {
+                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
                     Text('Scroll' + item.toString())
                       .width('90%')
                       .height(150)
                       .backgroundColor(Color.White)
                       .textAlign(TextAlign.Center)
-                  }, (item: number, index:number):string => String(item))
+                  }, (item: number, index:int):string => String(item))
                 }.width('100%')
               }
               .scrollBar(BarState.On)
@@ -639,7 +639,7 @@ struct PositionPage {
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon'))
                         .width(64)
@@ -667,11 +667,11 @@ struct PositionPage {
               
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
                   Text('Swiper' + item)
                     .width('90%')
                     .height(160)
-                }, (item: number, index:number):string => String(item))
+                }, (item: number, index:int):string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)

@@ -61,11 +61,11 @@ export class MyDataSource_1 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -105,7 +105,7 @@ struct SwiperTest_1 {
         List({ space: 5, initialIndex: 0 }) {
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -130,7 +130,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -155,7 +155,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -180,7 +180,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -205,7 +205,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -230,7 +230,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -256,7 +256,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -281,7 +281,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -306,7 +306,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -333,7 +333,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -361,7 +361,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -388,7 +388,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -413,7 +413,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -438,7 +438,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -463,7 +463,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -488,7 +488,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -513,7 +513,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -539,7 +539,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -564,7 +564,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -589,7 +589,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -616,7 +616,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -644,7 +644,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -671,7 +671,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -686,7 +686,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -701,7 +701,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -716,7 +716,7 @@ struct SwiperTest_1 {
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)

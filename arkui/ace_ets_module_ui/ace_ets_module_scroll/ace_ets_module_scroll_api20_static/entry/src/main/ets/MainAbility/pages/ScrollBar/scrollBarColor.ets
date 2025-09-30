@@ -58,7 +58,7 @@ struct ScrollBarColorExample {
       Stack({ alignContent: Alignment.End }) {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: number, i: number) => {
+            ForEach(this.arr, (item: number, i: int) => {
               Row() {
                 Text(item.toString())
                   .width('80%')

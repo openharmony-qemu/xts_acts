@@ -387,7 +387,7 @@ struct FocusOnTouchPage {
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: number, index:number):void => {
+            ForEach(this.arr, (item: number, index:int):void => {
               Row() {
                 Text(String(item))
                   .width(80)
@@ -399,13 +399,13 @@ struct FocusOnTouchPage {
                   .margin({ top: 5 } as Margin)
                   .focusable(true)
               }
-            }, (item: number, index:number):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }.margin({ right: 15 } as Margin)
         }.width(200).height(300)//.commonStyle()
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: Int, index:number):void => {
+            ForEach([1, 2, 3], (item: Int, index:int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64).focusable(true)
                 Text('Index0' + item).fontSize(25).focusable(true)
@@ -426,9 +426,9 @@ struct FocusOnTouchPage {
         .backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: Int, index:number):void => {
+          ForEach([1, 2, 3], (item: Int, index:int):void => {
             Text('Swiper' + item).width('90%').height(160).focusable(true)
-          }, (item: Int, index:number):String => String(item))
+          }, (item: Int, index:int):String => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)

@@ -173,7 +173,7 @@ struct ListPage {
               .width('90%').height(20).fontSize(10)
               .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
           }
-        }, (item: string,index:number) => item)
+        }, (item: string,index:int) => item)
       }.key('list_default')
       .height('5%')
 
@@ -190,7 +190,7 @@ struct ListPage {
               .key('' + item)
           }
           .border({ width: 2, color: Color.Green })
-        }, (item: string,index:number) => item)
+        }, (item: string,index:int) => item)
       }
       .height('60%')
       .width("90%")

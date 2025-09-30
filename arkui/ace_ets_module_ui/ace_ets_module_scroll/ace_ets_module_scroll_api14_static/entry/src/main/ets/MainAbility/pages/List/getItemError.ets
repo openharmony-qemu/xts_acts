@@ -109,7 +109,7 @@ struct getItemError {
       }
 
       List({ initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('80%')

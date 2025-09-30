@@ -86,7 +86,7 @@ struct WaterFlow3 {
           .width('100%')
           .height(this.itemHeightArray[item.toInt() % 100])
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .layoutDirection(this.layoutdir1)
       .direction(Direction.Rtl)

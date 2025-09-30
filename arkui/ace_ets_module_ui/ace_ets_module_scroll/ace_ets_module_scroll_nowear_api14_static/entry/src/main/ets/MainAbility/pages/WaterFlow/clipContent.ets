@@ -45,7 +45,7 @@ struct clipContentWaterFlowDemo {
   
   scroller: Scroller = new Scroller()
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
-  dataCount: number = this.dataSource.totalCount()
+  dataCount: int = this.dataSource.totalCount()
   private itemHeightArray: number[] = new Array<number>()
   
   @State clipContent1: ContentClipMode = ContentClipMode.CONTENT_ONLY

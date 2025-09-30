@@ -91,7 +91,7 @@ struct ShortcutKey {
           })
           .key('ShortcutKey_Button_0')
 
-        ForEach(this.functionKey, (item: FunctionKey, index: Number): void => {
+        ForEach(this.functionKey, (item: FunctionKey, index: int): void => {
           Button("CTRL + " + item)
             .keyboardShortcut(item, [ModifierKey.CTRL])
             .onClick((e: ClickEvent) => {

@@ -116,7 +116,7 @@ struct WaterFlowSectionDemo33 {
           .height(100)
           .width(100)
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .columnsTemplate('1fr')
       .columnsGap(10)

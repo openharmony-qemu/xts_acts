@@ -361,11 +361,11 @@ struct sizePage {
         }
       } else if (this.targetView == 'Grid') {
         Grid() {
-          ForEach(this.valueArr, (day: number, index:number):void => {
+          ForEach(this.valueArr, (day: number, index:int):void => {
             GridItem() {
               Text(String(day))
             }
-          }, (day: number, index:number):string => String(day))
+          }, (day: number, index:int):string => String(day))
         }
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         
@@ -411,11 +411,11 @@ struct sizePage {
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           List() {
-            ForEach(this.valueArr, (item: number, index:number):void => {
+            ForEach(this.valueArr, (item: number, index:int):void => {
               ListItem() {
                 Text('ListItem' + item)
               }.width('100%').height(100)
-            }, (item: number, index:number):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }.width(200)
           .height(200)
         }
@@ -423,7 +423,7 @@ struct sizePage {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: Int, index:number):void => {
+            ForEach([1, 2, 3], (item: Int, index:int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(50)
@@ -445,11 +445,11 @@ struct sizePage {
         Stack()
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: Int, index:number) => {
+          ForEach([1, 2, 3], (item: Int, index:int) => {
             Text('Swiper' + item)
               .width('90%')
               .height(50)
-          }, (item: Int, index:number):string => String(item))
+          }, (item: Int, index:int):string => String(item))
         }
         .indicator(true)
         

@@ -56,7 +56,7 @@ struct finishTransitionSwiperAnimated {
       Text('selectedIndex: ' + this.selectedIndex).id('selectedIndexSwiper_text')
         .margin(5)
       Swiper() {
-        ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+        ForEach(this.backgroundColors, (backgroundColor: Color, index: int) => {
           Text(index.toString())
             .width('100%')
             .height('100%')

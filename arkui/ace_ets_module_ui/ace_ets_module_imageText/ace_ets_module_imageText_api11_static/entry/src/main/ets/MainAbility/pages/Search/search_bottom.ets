@@ -64,7 +64,7 @@ struct search_bottom {
     Column() {
       Scroll(this.scroll) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(`${item}`)
               .width('90%')
               .height(150)
