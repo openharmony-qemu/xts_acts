@@ -377,6 +377,12 @@ napi_property_descriptor desc[] = {
      nullptr},
     {"ImageProcessingDeinitializeEnvironment", nullptr, ImageProcessingDeinitializeEnvironment, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"PixelMapScaleWithAntiAliasingNone", nullptr, PixelMapScaleWithAntiAliasingNone, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"PixelMapScaleWithAntiAliasingLow", nullptr, PixelMapScaleWithAntiAliasingLow, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"PixelMapScaleWithAntiAliasingMedium", nullptr, PixelMapScaleWithAntiAliasingMedium, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
     };
 
 static napi_value Init(napi_env env, napi_value exports)

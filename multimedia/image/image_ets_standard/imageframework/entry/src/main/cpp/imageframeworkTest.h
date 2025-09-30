@@ -69,4 +69,7 @@ napi_value ImageProcessingEnhanceDetailValue(napi_env env, napi_callback_info in
 napi_value ImageProcessingEnhanceDetail(napi_env env, napi_callback_info info);
 napi_value ImageProcessingCreateInstance(napi_env env, napi_callback_info info);
 napi_value ImageProcessingDeinitializeEnvironment(napi_env env, napi_callback_info info);
+napi_value PixelMapScaleWithAntiAliasingNone(napi_env env, napi_callback_info info);
+napi_value PixelMapScaleWithAntiAliasingLow(napi_env env, napi_callback_info info);
+napi_value PixelMapScaleWithAntiAliasingMedium(napi_env env, napi_callback_info info);
 #endif // MULTIMEDIAIMAGEFRAMEWORKTEST_IMAGEFRAMEWORKTEST_H

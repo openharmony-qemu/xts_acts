@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <multimedia/image_framework/image/picture_native.h>
 #include <multimedia/video_processing_engine/image_processing.h>
+#include <multimedia/image_framework/image_pixel_map_mdk.h>
 #define DRAW_COLORBLUE 0xFF0000FF
 #define DOUBLE_NUM_05 0.5
 constexpr int8_t ARGB_8888_BYTES = 4;
@@ -835,6 +836,42 @@ napi_value ImageProcessingDeinitializeEnvironment(napi_env env, napi_callback_in
     ImageProcessing_ErrorCode returnValue = OH_ImageProcessing_DeinitializeEnvironment();
     int ret = -1;
     if (returnValue == IMAGE_PROCESSING_SUCCESS) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value PixelMapScaleWithAntiAliasingNone(napi_env env, napi_callback_info info)
+{
+    const NativePixelMap *p = nullptr;
+    int32_t returnValue = OH_PixelMap_ScaleWithAntiAliasing(p, 1, 2, OH_PixelMap_AntiAliasing_NONE);
+    int ret = -1;
+    if (returnValue == IMAGE_RESULT_BAD_PARAMETER) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value PixelMapScaleWithAntiAliasingLow(napi_env env, napi_callback_info info)
+{
+    const NativePixelMap *p = nullptr;
+    int32_t returnValue = OH_PixelMap_ScaleWithAntiAliasing(p, 1, 2, OH_PixelMap_AntiAliasing_LOW);
+    int ret = -1;
+    if (returnValue == IMAGE_RESULT_BAD_PARAMETER) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value PixelMapScaleWithAntiAliasingMedium(napi_env env, napi_callback_info info)
+{
+    const NativePixelMap *p = nullptr;
+    int32_t returnValue = OH_PixelMap_ScaleWithAntiAliasing(p, 1, 2, OH_PixelMap_AntiAliasing_MEDIUM);
+    int ret = -1;
+    if (returnValue == IMAGE_RESULT_BAD_PARAMETER) {
         ret = 0;
     }
     napi_value result = nullptr;

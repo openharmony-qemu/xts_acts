@@ -478,6 +478,12 @@ export const ImageProcessingCreateInstance: () => number;
 
 export const ImageProcessingDeinitializeEnvironment: () => number;
 
+export const PixelMapScaleWithAntiAliasingNone: () => number;
+
+export const PixelMapScaleWithAntiAliasingLow: () => number;
+
+export const PixelMapScaleWithAntiAliasingMedium: () => number;
+
 
 
 

@@ -778,5 +778,47 @@ export default function PerformanceAnalysisKit() {
       expect(ret).assertEqual(0)
       done()
     })
+    /*
+* @tc.number     : SUB_PIXELMAPSCALEWITHANTIALIASINGNONE_0100
+* @tc.name       : PixelMapScaleWithAntiAliasingNone001
+* @tc.desc       : test PIXELMAPSCALEWITHANTIALIASINGNONE
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('PixelMapScaleWithAntiAliasingNone001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.PixelMapScaleWithAntiAliasingNone()
+      console.error("====>PixelMapScaleWithAntiAliasingNone001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
+    /*
+* @tc.number     : SUB_PIXELMAPSCALEWITHANTIALIASINGLow_0100
+* @tc.name       : PixelMapScaleWithAntiAliasingLow001
+* @tc.desc       : test PIXELMAPSCALEWITHANTIALIASINGLow
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('PixelMapScaleWithAntiAliasingLow001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.PixelMapScaleWithAntiAliasingLow()
+      console.error("====>PixelMapScaleWithAntiAliasingLow001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
+    /*
+* @tc.number     : SUB_PIXELMAPSCALEWITHANTIALIASINGMedium_0100
+* @tc.name       : PixelMapScaleWithAntiAliasingMedium001
+* @tc.desc       : test PIXELMAPSCALEWITHANTIALIASINGMedium
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 1
+*/
+    it('PixelMapScaleWithAntiAliasingMedium001', Level.LEVEL1, async (done: Function) => {
+      let ret = PerformanceAnalysisKitNdk.PixelMapScaleWithAntiAliasingMedium()
+      console.error("====>PixelMapScaleWithAntiAliasingMedium001 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
   })
 }
