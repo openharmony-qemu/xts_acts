@@ -1029,70 +1029,431 @@ export default function fixedArrayTest() {
      */
     it("test_FixedArray_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('FixedArray_Double_0100 start');
+        console.log('test_FixedArray_Double_0001 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Double();
         expect(result).assertTrue();
-        console.log('FixedArray_Double_0100 done');
+        console.log('test_FixedArray_Double_0001 done');
         done();
-        console.log('FixedArray_Double_0100 end');
+        console.log('test_FixedArray_Double_0001 end');
       })
 
-    /*
-     * @tc.number    : FixedArray_Get_Ref_0100
-     * @tc.name      : FixedArray_Get_Ref_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 3
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0200
+     * @tc.name      test_FixedArray_Double_0002
+     * @tc.desc      set double array region error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
-    it("FixedArray_Get_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('FixedArray_Get_Ref_0100 start');
+        console.log('test_FixedArray_Double_0002 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_01();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Double_0002 done');
+        done();
+        console.log('test_FixedArray_Double_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0300
+     * @tc.name      test_FixedArray_Double_0003
+     * @tc.desc      check change from managed region double test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0003 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_02();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Double_0003 done');
+        done();
+        console.log('test_FixedArray_Double_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0400
+     * @tc.name      test_FixedArray_Double_0004
+     * @tc.desc      check change from api region double test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0004 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_03();
+        expect(result).assertFalse();
+        console.log('test_FixedArray_Double_0004 done');
+        done();
+        console.log('test_FixedArray_Double_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0500
+     * @tc.name      test_FixedArray_Double_0005
+     * @tc.desc      set special value to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0005 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_04();
+        expect(result).assertFalse();
+        console.log('test_FixedArray_Double_0005 done');
+        done();
+        console.log('test_FixedArray_Double_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0600
+     * @tc.name      test_FixedArray_Double_0006
+     * @tc.desc      set special value to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0006 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_05();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Double_0006 done');
+        done();
+        console.log('test_FixedArray_Double_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0700
+     * @tc.name      test_FixedArray_Double_0007
+     * @tc.desc      set get union to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0007 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_06();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Double_0007 done');
+        done();
+        console.log('test_FixedArray_Double_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0800
+     * @tc.name      test_FixedArray_Double_0008
+     * @tc.desc      set get stability to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Double_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Double_0008 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Double_07();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Double_0008 done');
+        done();
+        console.log('test_FixedArray_Double_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0100
+     * @tc.name      test_FixedArray_Get_Ref_0001
+     * @tc.desc      get ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Get_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Get_Ref_0001 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Get_Ref();
         expect(result).assertTrue();
-        console.log('FixedArray_Get_Ref_0100 done');
+        console.log('test_FixedArray_Get_Ref_0001 done');
         done();
-        console.log('FixedArray_Get_Ref_0100 end');
+        console.log('test_FixedArray_Get_Ref_0001 end');
       })
 
-    /*
-     * @tc.number    : FixedArray_New_Ref_0100
-     * @tc.name      : FixedArray_New_Ref_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 3
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0200
+     * @tc.name      test_FixedArray_Get_Ref_0002
+     * @tc.desc      get ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
-    it("FixedArray_New_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_Get_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('FixedArray_New_Ref_0100 start');
+        console.log('test_FixedArray_Get_Ref_0002 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Get_Ref_01();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Get_Ref_0002 done');
+        done();
+        console.log('test_FixedArray_Get_Ref_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0300
+     * @tc.name      test_FixedArray_Get_Ref_0003
+     * @tc.desc      get ref ok tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Get_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Get_Ref_0003 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Get_Ref_02();
+        expect(result).assertFalse();
+        console.log('test_FixedArray_Get_Ref_0003 done');
+        done();
+        console.log('test_FixedArray_Get_Ref_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0100
+     * @tc.name      test_FixedArray_New_Ref_0001
+     * @tc.desc      new ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_New_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_New_Ref_0001 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_New_Ref();
         expect(result).assertTrue();
-        console.log('FixedArray_New_Ref_0100 done');
+        console.log('test_FixedArray_New_Ref_0001 done');
         done();
-        console.log('FixedArray_New_Ref_0100 end');
+        console.log('test_FixedArray_New_Ref_0001 end');
       })
 
-    /*
-     * @tc.number    : FixedArray_Set_Ref_0100
-     * @tc.name      : FixedArray_Set_Ref_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 3
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0200
+     * @tc.name      test_FixedArray_New_Ref_0002
+     * @tc.desc      new ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
-    it("FixedArray_Set_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_FixedArray_New_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        console.log('FixedArray_Set_Ref_0100 start');
+        console.log('test_FixedArray_New_Ref_0002 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_New_Ref_01();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_New_Ref_0002 done');
+        done();
+        console.log('test_FixedArray_New_Ref_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0300
+     * @tc.name      test_FixedArray_New_Ref_0003
+     * @tc.desc      new object array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_New_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_New_Ref_0003 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_New_Ref_02();
+        expect(result).assertFalse();
+        console.log('test_FixedArray_New_Ref_0003 done');
+        done();
+        console.log('test_FixedArray_New_Ref_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0400
+     * @tc.name      test_FixedArray_New_Ref_0004
+     * @tc.desc      new object array test 2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_New_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_New_Ref_0004 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_New_Ref_03();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_New_Ref_0004 done');
+        done();
+        console.log('test_FixedArray_New_Ref_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0500
+     * @tc.name      test_FixedArray_New_Ref_0005
+     * @tc.desc      new object array test 3
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_New_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_New_Ref_0005 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_New_Ref_04();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_New_Ref_0005 done');
+        done();
+        console.log('test_FixedArray_New_Ref_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0700
+     * @tc.name      test_FixedArray_New_Ref_0007
+     * @tc.desc      new large array types test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_New_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_New_Ref_0007 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_New_Ref_06();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_New_Ref_0007 done');
+        done();
+        console.log('test_FixedArray_New_Ref_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0100
+     * @tc.name      test_FixedArray_Set_Ref_0001
+     * @tc.desc      set ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Set_Ref_0001 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Set_Ref();
         expect(result).assertTrue();
-        console.log('FixedArray_Set_Ref_0100 done');
+        console.log('test_FixedArray_Set_Ref_0001 done');
         done();
-        console.log('FixedArray_Set_Ref_0100 end');
+        console.log('test_FixedArray_Set_Ref_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0200
+     * @tc.name      test_FixedArray_Set_Ref_0002
+     * @tc.desc      set ref error tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Set_Ref_0002 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Set_Ref_01();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Set_Ref_0002 done');
+        done();
+        console.log('test_FixedArray_Set_Ref_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0300
+     * @tc.name      test_FixedArray_Set_Ref_0003
+     * @tc.desc      set ref ok tests
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Set_Ref_0003 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Set_Ref_02();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Set_Ref_0003 done');
+        done();
+        console.log('test_FixedArray_Set_Ref_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0400
+     * @tc.name      test_FixedArray_Set_Ref_0004
+     * @tc.desc      set ref error value to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('FixedArray_Set_Ref_0400 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Set_Ref_03();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Set_Ref_0004 done');
+        done();
+        console.log('test_FixedArray_Set_Ref_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0500
+     * @tc.name      test_FixedArray_Set_Ref_0005
+     * @tc.desc      set get union to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Set_Ref_0005 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Set_Ref_04();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Set_Ref_0005 done');
+        done();
+        console.log('test_FixedArray_Set_Ref_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0600
+     * @tc.name      test_FixedArray_Set_Ref_0006
+     * @tc.desc      set get stability to array test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it("test_FixedArray_Set_Ref_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.log('test_FixedArray_Set_Ref_0006 start');
+        let cls = new Foo();
+        let result = cls.test_FixedArray_Set_Ref_05();
+        expect(result).assertTrue();
+        console.log('test_FixedArray_Set_Ref_0006 done');
+        done();
+        console.log('test_FixedArray_Set_Ref_0006 end');
       })
   })
 }
