@@ -12,36 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { CheckSoftware, MergeOptions } from './utils/huks/HuksOptionsUtils';
 import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHuksAccessControlUserAuthTest() {
   let useSoftware: boolean = true;
 
   describe('SecurityHuksAccessControlUserAuthTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+
     beforeAll(async () => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
       useSoftware = await CheckSoftware();
-    })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -60,7 +45,7 @@ export default function SecurityHuksAccessControlUserAuthTest() {
         await huks.generateKeyItem(testNumber, genKeyOptions);
         expect(useSoftware).assertEqual(false);
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED);
       }
     })
@@ -82,7 +67,7 @@ export default function SecurityHuksAccessControlUserAuthTest() {
         await huks.importKeyItem(testNumber, importKeyOptions);
         expect(useSoftware).assertEqual(false);
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED);
       }
     })
