@@ -14,7 +14,9 @@
  */
 
 import telephonyRadioPublicTest from './TelephonyRadioPublic.test';
+import telephonyRadioPublic1Test from './TelephonyRadioPublic1.test';
 
 export default function testsuite() {
       telephonyRadioPublicTest();
+      telephonyRadioPublic1Test();
 }

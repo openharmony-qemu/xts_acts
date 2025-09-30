@@ -298,4 +298,67 @@ export default function radioSecondJsunit() {
       done();
     }
   });
+  
+  
+  /*
+   * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600
+   * @tc.name Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600
+   * @tc.desc SlotId parameter input is 0, test getNetworkSelectionMode() api by callback.
+   * @tc.level:Level 2
+   * @tc.type:Function
+   * @tc.size:MediumTest
+   */
+  it('Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    try {
+      let slotId: int = 0;
+      radio.getNetworkSelectionMode(slotId,
+        (err: BusinessError<void> | null, data: radio.NetworkSelectionMode | undefined) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600 err:" + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600 data: " + data);
+            expect(data == radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC ||
+              data == radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL ||
+              data == radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN).assertTrue();
+            done();
+          }
+        });
+    } catch(error: Error) {
+      let err = error as BusinessError;
+      hilog.error(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600 err = " + JSON.stringify(err));
+      expect().assertFail();
+      done();
+    }
+  });  
+  
+  /*
+   * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0700
+   * @tc.name Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0700
+   * @tc.desc SlotId parameter input is 0, test getNetworkSelectionMode() api by promise.
+   */
+  it('Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    let slotId: int = 0;
+    try {
+      let promise = radio.getNetworkSelectionMode(slotId);
+      promise.then((data: radio.NetworkSelectionMode) => {
+        hilog.info(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0700 success, promise: data:" + data);
+        expect(data == radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC ||
+          data == radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL ||
+          data == radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN).assertTrue();
+        done();
+      }).catch((error: Error) => {
+        let err = error as BusinessError;
+        hilog.info(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0700 failed, promise: err:" +
+        JSON.stringify(err));
+        done();
+      });
+    } catch(error: Error) {
+      let err = error as BusinessError;
+      hilog.error(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0700 err = " + JSON.stringify(err));
+      expect().assertFail();
+      done();
+    }
+  });
 }
