@@ -117,7 +117,7 @@ struct webViewSetHttpDns {
               try {
                 web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, "https://example1.test")
                 await Utils.sleep(1000);
-                this.controller.loadUrl("https://www.openharmony.cn/mainPlay");
+                this.controller.loadUrl("https://www.openharmony.cn");
                 await Utils.sleep(5000);
                 this.title = this.controller.getTitle();
                 console.log("title of this page: " + this.title);
