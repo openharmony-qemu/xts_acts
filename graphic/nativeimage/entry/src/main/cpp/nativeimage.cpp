@@ -182,8 +182,14 @@ static void InitEGLEnv()
 {
     eglDisplay_ = GetPlatformEglDisplay(EGL_PLATFORM_OHOS_KHR, EGL_DEFAULT_DISPLAY, nullptr);
     EGLint major, minor;
-    eglInitialize(eglDisplay_, &major, &minor);
-    eglBindAPI(EGL_OPENGL_ES_API);
+    EGLBoolean initResult = eglInitialize(eglDisplay_, &major, &minor);
+    if (initResult == EGL_FALSE) {
+        return;
+    }
+    EGLBoolean bindResult = eglBindAPI(EGL_OPENGL_ES_API);
+    if (bindResult == EGL_FALSE) {
+        return;
+    }
     unsigned int ret;
     EGLint count;
     EGLint config_attribs[] = {EGL_SURFACE_TYPE, EGL_WINDOW_BIT, EGL_RED_SIZE,        PARAM_8,
@@ -192,8 +198,14 @@ static void InitEGLEnv()
                                EGL_NONE};
 
     ret = eglChooseConfig(eglDisplay_, config_attribs, &config_, PARAM_1, &count);
+    if (ret == 0) {
+        return;
+    }
     static const EGLint context_attribs[] = {EGL_CONTEXT_CLIENT_VERSION, EGL_CONTEXT_CLIENT_VERSION_NUM, EGL_NONE};
     eglContext_ = eglCreateContext(eglDisplay_, config_, EGL_NO_CONTEXT, context_attribs);
+    if (eglContext_ == EGL_NO_CONTEXT) {
+        return;
+    }
     eglMakeCurrent(eglDisplay_, EGL_NO_SURFACE, EGL_NO_SURFACE, eglContext_);
 }
 
@@ -626,10 +638,16 @@ static napi_value OHNativeImageAcquireNativeWindowNullptr(napi_env env, napi_cal
 
 static napi_value OHNativeImageAcquireNativeWindowNormal(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     int backInfo = FAIL;
     OHNativeWindow *nativeWindow1 = nullptr;
     OHNativeWindow *nativeWindow2 = nullptr;
     OH_NativeImage *nativeImage = getNativeImage();
+    if (nativeImage == nullptr) {
+        OH_NativeImage_Destroy(&nativeImage);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     nativeWindow1 = OH_NativeImage_AcquireNativeWindow(nativeImage);
     if (nativeWindow1 != nullptr) {
         nativeWindow2 = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -637,8 +655,6 @@ static napi_value OHNativeImageAcquireNativeWindowNormal(napi_env env, napi_call
             backInfo = SUCCESS;
         }
     }
-    
-    napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
