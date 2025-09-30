@@ -80,7 +80,7 @@ export default function AppStorageReturnValue() {
       console.info("[AppStorageReturnValue_002] component res2 is: " + JSON.stringify(res2));
       console.info("[AppStorageReturnValue_002] component res3 is: " + JSON.stringify(res3));
       expect(res2).assertTrue();
-      expect(res2).assertFalse();
+      expect(res3).assertFalse();
       AppStorage.delete('demoHas');
       console.info('[AppStorageReturnValue_002] END');
       done();
