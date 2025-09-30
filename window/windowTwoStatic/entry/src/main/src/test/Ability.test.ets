@@ -102,14 +102,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'windowHighlightChange triggered.');
         };
         try {
-          win.on('windowHighlightChange', callback);
+          win.onWindowHighlightChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on windowHighlightChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
-          win.off('windowHighlightChange', callback);
+          win.offWindowHighlightChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off windowHighlightChange fail.');
