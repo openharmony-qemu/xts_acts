@@ -56,7 +56,7 @@ export default function AppStorageReturnValue() {
     it('AppStorageReturnValue_001', Level.LEVEL0, async (done: Function) => {
       console.info('[AppStorageReturnValue_001] START');
       await CommonFunc.sleep(1000);
-      let res1 = AppStorage.ref('noHas');
+      let res1:AbstractProperty<string>  | undefined = AppStorage.ref('noHas');
       console.info("[AppStorageReturnValue_001] component res1 is: " + JSON.stringify(res1));
       expect(res1).assertEqual(undefined);
       console.info('[AppStorageReturnValue_001] END');

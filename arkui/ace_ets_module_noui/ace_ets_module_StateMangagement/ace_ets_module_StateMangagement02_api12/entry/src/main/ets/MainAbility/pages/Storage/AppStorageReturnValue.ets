@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct appStorageRef {
+struct AppStorageReturnValue {
 
   build() {
     Column() {
