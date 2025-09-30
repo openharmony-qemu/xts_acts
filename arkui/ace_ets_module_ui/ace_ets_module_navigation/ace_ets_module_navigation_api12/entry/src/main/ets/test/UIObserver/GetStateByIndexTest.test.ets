@@ -17,6 +17,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Router, router as newRouter } from '@kit.ArkUI'
 
 export default function GetStateByIndexTest() {
   describe('GetStateByIndexTest', () => {
@@ -45,6 +46,28 @@ export default function GetStateByIndexTest() {
     });
 
     /**
+     * @tc.number GetStateByIndexTest_0200
+     * @tc.name GetStateByIndexTest_0200
+     * @tc.desc router.getStateByIndex return undefined
+     */
+    it('GetStateByIndexTest_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('GetStateByIndexTest_0200 START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id("getUndefinedBtn"));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+
+      let stateByIndexUndefined: newRouter.RouterState | undefined = AppStorage.get('stateByIndexUndefined')
+      expect(stateByIndexUndefined).assertEqual(undefined);
+      AppStorage.delete('stateByIndexUndefined');
+
+      console.info('GetStateByIndexTest_0200 END');
+      done();
+    });
+
+    /**
      * @tc.number GetStateByIndexTest_0100
      * @tc.name testNavigation
      * @tc.desc
@@ -68,6 +91,31 @@ export default function GetStateByIndexTest() {
       expect(obj.$attrs.content).assertEqual('OK');
 
       console.info('GetStateByIndexTest_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.number GetStateByIndexTest_0300
+     * @tc.name GetStateByIndexTest_0300
+     * @tc.desc router.getStateByUrl return length > 0
+     */
+    it('GetStateByIndexTest_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('GetStateByIndexTest_0300 START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id('push2Btn'));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+
+      let button2 = await driver.findComponent(ON.id('getStateByUrlBtn'));
+      await button2.click();
+      await CommonFunc.sleep(1000);
+
+      let values: newRouter.RouterState[] | undefined = AppStorage.get('getStateByUrlValue')
+      expect(values && values?.length > 0).assertTrue();
+      AppStorage.delete('getStateByUrlValue');
+      console.info('GetStateByIndexTest_0300 END');
       done();
     });
   })
