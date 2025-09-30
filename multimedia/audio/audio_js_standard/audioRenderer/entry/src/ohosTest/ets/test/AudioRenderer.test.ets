@@ -13964,7 +13964,7 @@ export default function audioRendererTest() {
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
       await audioManager.mute(audio.AudioVolumeType.MEDIA,true);
       try{
-        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MEDIA;
         let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
         expect(IsSystemMutedForStream).assertEqual(true);
