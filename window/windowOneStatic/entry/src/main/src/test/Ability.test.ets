@@ -1589,8 +1589,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'Listening enabled. Data: ' + JSON.stringify(data));
         };
         try {
-          display.on("add", callback1);
-          display.off("add", callback1);
+          display.onAdd(callback1);
+          display.offAdd(callback1);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_add success');
           expect(true).assertTrue();
         } catch (err: Error) {
