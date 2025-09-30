@@ -2306,10 +2306,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5200 end');
-              done();
             })
           });
         });
@@ -2351,10 +2350,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5300 end');
-              done();
             })
           });
         });
@@ -2397,10 +2395,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5400 end');
-              done();
             })
           });
         });
@@ -2444,10 +2441,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5500 end');
-              done();
             })
           });
         });
@@ -2496,10 +2492,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5600 end');
-              done();
             })
           });
         });
@@ -2555,10 +2550,9 @@ export default function pasteBoardJEtsunitTest() {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
                 expect(recordCount).assertEqual(0);
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_5700 end');
-              done();
             })
           });
         });
@@ -2585,7 +2579,6 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test58: Checks there is content in the pasteboard')
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('SUB_pasteBoard_function_JS_API_5800 end')
             done();
           });
@@ -2614,7 +2607,6 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test59: Checks there is content in the pasteboard')
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('SUB_pasteBoard_function_JS_API_5900 end')
             done();
           });
@@ -2643,7 +2635,6 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test60Checks there is content in the pasteboard');
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('SUB_pasteBoard_function_JS_API_6000 end')
             done();
           });
@@ -2674,7 +2665,6 @@ export default function pasteBoardJEtsunitTest() {
           console.info('Checks there is content in the pasteboard');
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('SUB_pasteBoard_function_JS_API_6100 end')
             done();
           });
@@ -2724,7 +2714,6 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test62 Checks there is content in the pasteboard')
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('SUB_pasteBoard_function_JS_API_6200 end')
             done();
           });
@@ -2766,10 +2755,9 @@ export default function pasteBoardJEtsunitTest() {
               console.info('f_test63 Checks there is content in the pasteboard')
               systemPasteboard.hasPasteData().then((data: boolean) => {
                 expect(data).assertTrue();
+                done();
               })
-
               console.info('SUB_pasteBoard_function_JS_API_6300 end');
-              done();
             })
           });
         });
@@ -2992,7 +2980,6 @@ export default function pasteBoardJEtsunitTest() {
      */
     it('pasteboard_function_test69', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6900 start')
-
       let systemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clear().then(() => {
         let uriText = 'https://www.baidu.com/';
@@ -3002,15 +2989,12 @@ export default function pasteBoardJEtsunitTest() {
           console.info('f_test69 Checks there is content in the pasteboard')
           systemPasteboard.hasPasteData().then((data: boolean) => {
             expect(data).assertTrue();
-
             console.info('f_test69 Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
-
               console.info('f_test69 Converts the PlainTextData to text')
               let pasteDataRecord = pasteData1.getRecordAt(0)
-
               pasteDataRecord.convertToText().then((data) => {
                 console.info('convertToText success data  ' + JSON.stringify(data));
               }).catch((error: ESObject) => {
@@ -3039,10 +3023,8 @@ export default function pasteBoardJEtsunitTest() {
       systemPasteboard.clear().then(() => {
         let textData0 = 'Hello World0';
         let pasteData = pasteboard.createPlainTextData(textData0);
-
         let uriText = pasteboard.createUriRecord("https://www.baidu.com/");
         pasteData.addRecord(uriText);
-
         systemPasteboard.setPasteData(pasteData).then(() => {
           console.info('---------------------------->1')
           systemPasteboard.hasPasteData().then((data: boolean) => {
@@ -3051,7 +3033,6 @@ export default function pasteBoardJEtsunitTest() {
               let pasteData1 = data;
               let recordCount = pasteData1.getRecordCount();
               expect(recordCount == 2).assertTrue();
-
               console.info('SUB_pasteBoard_function_JS_API_7000 end');
               done();
             })
