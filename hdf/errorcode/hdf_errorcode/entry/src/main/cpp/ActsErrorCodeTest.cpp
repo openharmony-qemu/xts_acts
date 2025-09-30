@@ -15,6 +15,13 @@
 
 #include "ActsBaseDDkTest.h"
 #include "ActsHidEmitCodeTest.h"
+#include "ActsHidEmitCodeTest1.h"
+#include "ActsHidEmitCodeTest2.h"
+#include "ActsHidEmitCodeTest3.h"
+#include "ActsHidEmitCodeTest4.h"
+#include "ActsUsbDDkTest.h"
+#include "UsbDDkTest.h"
+#include "UsbTest.h"
 #include <vector>
 
 EXTERN_C_START
@@ -22,7 +29,14 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> descData;
     addHidEmitErrorCodeTest(descData);
+    addHidEmitErrorCodeTest1(descData);
+    addHidEmitErrorCodeTest2(descData);
+    addHidEmitErrorCodeTest3(descData);
+    addHidEmitErrorCodeTest4(descData);
     addBaseDDkErrorCodeTest(descData);
+    addUsbDDkErrorCodeTest(descData);
+    addUsbDDKNoPermTest(descData);
+    UsbTest(descData);
     napi_define_properties(env, exports, descData.size(), descData.data());
     return exports;
 }
