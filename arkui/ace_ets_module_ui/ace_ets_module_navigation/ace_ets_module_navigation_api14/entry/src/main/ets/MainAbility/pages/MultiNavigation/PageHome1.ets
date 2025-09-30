@@ -93,6 +93,7 @@ export struct PageHome1 {
                     console.log('test switchFullScreenState');
                     let result = this.pageStack.switchFullScreenState(true);
                     hilog.info(0x0000, 'demotest', 'switchFullScreen return : ' + result);
+                    AppStorage.setOrCreate('switchFullScreenValue', result)
                   }
                 }).id('switchFullScreenId')
 
