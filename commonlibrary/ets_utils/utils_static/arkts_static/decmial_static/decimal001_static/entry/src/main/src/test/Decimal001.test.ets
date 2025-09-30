@@ -4058,7 +4058,7 @@ export default function DecimalTest001() {
       test_min_012(1, Decimal.min(1, '1e+9000000000000001', 1e200).valueOf());
       test_min_012(-Infinity, Decimal.min(1, '-1e+9000000000000001', -1e200).valueOf());
       test_min_012(0, Decimal.min(1, '1e-9000000000000001', 1e-200).valueOf());
-      test_min_012(-0, Decimal.min(1, '-1e-9000000000000001', 1e-200).valueOf());
+      test_min_012(-0.0, Decimal.min(1, '-1e-9000000000000001', 1e-200).valueOf());
       test_min_012(-3, Decimal.min(1, '2', 3, '-1', -2, '-3').valueOf());
     });
 
