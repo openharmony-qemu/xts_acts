@@ -13960,8 +13960,6 @@ export default function audioRendererTest() {
      *@tc.level     : Level 1
      */
     it("SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200';
-      //define manager
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
       await audioManager.mute(audio.AudioVolumeType.MEDIA,true);
@@ -13969,7 +13967,7 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
-        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(true);
+        expect(IsSystemMutedForStream).assertEqual(true);
         done();
       }catch(error){
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
