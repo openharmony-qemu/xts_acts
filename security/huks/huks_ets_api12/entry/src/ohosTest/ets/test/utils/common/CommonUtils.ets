@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { buffer } from '@kit.ArkTS';
+import { buffer, util } from '@kit.ArkTS';
 
-export function StringToUint8Array(str: string) {
-  let arr: number[] = [];
+export function StringToUint8Array(str: String) {
+  let arr: number[] = new Array();
   for (let i = 0, j = str.length; i < j; ++i) {
     arr.push(str.charCodeAt(i));
   }
@@ -23,11 +23,11 @@ export function StringToUint8Array(str: string) {
 }
 
 export function Uint8ArrayToString(fileData: Uint8Array) {
-  let dataString = '';
+  let str: string = "";
   for (let i = 0; i < fileData.length; i++) {
-    dataString += String.fromCharCode(fileData[i]);
+    str += String.fromCharCode(fileData[i]);
   }
-  return dataString;
+  return str;
 }
 
 export function HexToUint8Array(hexString: string) {
@@ -49,12 +49,23 @@ export function Uint8ArrayToHexString(data: Uint8Array) {
   return buffer.from(data).toString('hex');
 }
 
+export function GetDataBySize(size: number) {
+  return 'A'.repeat(size);
+}
 
-export function GetDataBySize(size: number): string {
-  if (size <= 0) {
-    return "";
-  }
-  let strArr: Array<string> = new Array(size);
-  strArr.fill("A");
-  return strArr.join("");
+export function Uint8ArrayToStringAscii(data: Uint8Array): string {
+  return String.fromCharCode(...data);
+}
+
+export function StringToUint8ArrayBak(str: string) {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+export async function Sleep(ms: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms)
+  })
 }

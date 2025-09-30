@@ -27,6 +27,7 @@ import SecurityHuksWrapKeyTest from './SecurityHuksWrapKey.test';
 import SecurityHuksAccessControlUserAuthTest from './SecurityHuksAccessControlUserAuth.test';
 import SecurityHuksApiTest from './SecurityHuksApi.test';
 import SecurityHuksKeyGenerateOverrideTest from './SecurityHuksKeyGenerateOverride.test';
+import SecurityHuksSignVerifySM2Test from './SecurityHuksSignVerifySM2.test';
 
 export default function testsuite() {
   SecurityHuksAccessControlAsUserTest();
@@ -43,5 +44,6 @@ export default function testsuite() {
   SecurityHuksWrapKeyTest();
   SecurityHuksAccessControlUserAuthTest();
   SecurityHuksApiTest();
-  SecurityHuksKeyGenerateOverrideTest()
+  SecurityHuksKeyGenerateOverrideTest();
+  SecurityHuksSignVerifySM2Test()
 }
