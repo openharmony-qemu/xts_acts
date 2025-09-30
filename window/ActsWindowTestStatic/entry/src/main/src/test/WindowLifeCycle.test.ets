@@ -437,7 +437,7 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
                 expect(!!win).assertTrue();
                 try {
-                    win.on('windowEvent', (data:window.WindowEventType) => {
+                    win.onWindowEvent((data:window.WindowEventType) => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Window event happened. Event:' + JSON.stringify(data));
                     });
                 } catch (exception:BusinessError) {
@@ -447,7 +447,7 @@ export default function WindowLifeCycleTest() {
                     done();
                 }
                 try {
-                    win.off('windowEvent');
+                    win.offWindowEvent();
                     expect(true).assertTrue();
                 } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -456,7 +456,7 @@ export default function WindowLifeCycleTest() {
                     done();
                 }
                 try {
-                    win.off('windowEvent');
+                    win.offWindowEvent();
                     await win.destroyWindow();
                     expect(true).assertTrue();
                     done();
@@ -1384,7 +1384,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = (res: window.WindowStageEventType) => {
                 };
-                windowStageStart.on("windowStageEvent", callback);
+                windowStageStart.onWindowStageEvent(callback);
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageEvent.');
                 expect(false).assertTrue();
                 done()
@@ -1413,7 +1413,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = (res: window.WindowStageEventType) => {
                 };
-                windowStageStart.off("windowStageEvent", callback);
+                windowStageStart.offWindowStageEvent(callback);
                 hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageEvent.');
                 expect(false).assertTrue();
                 done()
