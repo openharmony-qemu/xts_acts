@@ -676,5 +676,53 @@ export default function audioSessionManagerTest() {
         done();
       }
     })
+
+    /* *
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.desc      : setBluetoothAndNearlinkPreferredRecordCategory -6800101
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__SETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let recordCategory:ESObject = 5;
+        audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(recordCategory);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__ONCURRENTINPUTDEVICECHANGED_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__ONCURRENTINPUTDEVICECHANGED_0100
+    * @tc.desc      : oncurrentInputDeviceChanged -6800101
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION__ONCURRENTINPUTDEVICECHANGED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.on('currentInputDeviceChanged', (event: audio.CurrentInputDeviceChangedEvent) => {
+          console.info(`devices of currentInputDeviceChanged: ${event.devices} `);
+          console.info(`changeReason of currentInputDeviceChanged: ${event.changeReason} `);
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        expect(false).assertTrue();
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+    })
   })
 }

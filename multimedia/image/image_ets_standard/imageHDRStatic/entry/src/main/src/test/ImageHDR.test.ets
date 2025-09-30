@@ -46,7 +46,7 @@ export default function imageHDR() {
       // The int of execution times is the same as the int of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(() => {
+    afterEach(async () => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The int of execution times is the same as the int of test cases defined by **it**.
       // This API supports only one parameter: clear action function.

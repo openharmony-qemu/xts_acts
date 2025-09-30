@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 import { huks } from '@kit.UniversalKeystoreKit';
-import { GetDataBySize, StringToUint8Array } from '../CommonUtils';
+import { GetDataBySize, StringToUint8Array } from '../common/CommonUtils';
+import { Logger } from '../common/Logger';
 import { SignVerify, SignVerifyData } from './SignVerifyUtils';
 
 export function GenParam(paramTag: huks.HuksTag, paramValue: boolean | number | bigint | Uint8Array): huks.HuksParam {
@@ -85,8 +86,9 @@ export function MergeOptions(huksOptions: huks.HuksOptions, ...huksOptionsAddArr
 export function PrintOptions(huksOptions: huks.HuksOptions) {
   let properties: Array<huks.HuksParam> = huksOptions.properties as Array<huks.HuksParam>;
   for (let i = 0; i < properties.length; i++) {
-    console.info(`[${i}]tag: ${properties[i].tag}, value: ${properties[i].value}`);
+    Logger.info(`[${i}] tag: ${properties[i].tag}, value: ${properties[i].value}`);
   }
+  Logger.info(`inData length: ${huksOptions.inData ? huksOptions.inData.length : 0}, data: ${huksOptions.inData}`);
 }
 
 export function GetEmptyOptions() {
@@ -97,7 +99,6 @@ export function GetEmptyOptions() {
 }
 
 export function CopyHuksOptions(huksOptions: huks.HuksOptions): huks.HuksOptions {
-  // 不能用json字符串转来转去，用字符串会丢失类型，Uint8Array会退化成普通数组，导致napi里解析不了
   let copyOne: huks.HuksOptions = {
     properties: [],
     inData: new Uint8Array
@@ -161,7 +162,7 @@ export async function CheckWearable() {
     await huks.generateKeyItem(rsaAlias, rsaOptions);
     await SignVerify(rsaAlias, rsaOptions, signVerifyData);
     await huks.deleteKeyItem(rsaAlias, rsaOptions);
-    return true
+    return true;
   } catch (err) {
     return false;
   }

@@ -58,7 +58,9 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
      * @tc.level       : Level 0
      */
     it('testWebViewSharedRenderProcessTokenStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
       emitKey = 'emitWebViewSharedRenderProcessToken'
+      await Utils.msSleep(2000);
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testWebViewSharedRenderProcessToken', true, 1600, done,

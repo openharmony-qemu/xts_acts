@@ -41,9 +41,9 @@ export default function imageJsTest() {
     let filePath: string;
 
     let fdNumber: int;
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
-    let globalpacker: image.ImagePacker;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
+    let globalpacker: image.ImagePacker | undefined = undefined;
 
     const getFd = (fileName: string): int => {
       filePath = filesDir + "/" + fileName;
@@ -82,28 +82,38 @@ export default function imageJsTest() {
           globalimageSource = imageSourceApi;
           if (flag == 'Promise') {
             try {
-              let imageInfo = await imageSourceApi.getImageInfo();
-              expect(imageInfo.mimeType == expectedMimetype).assertTrue();
-              logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
-              done();
+              let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo();
+              if (imageInfo == undefined) {
+                expect(false).assertTrue();
+                logger.log("getImageInfo failed.");
+              } else {
+                expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
+                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              }
             } catch (error) {
               logger.log("getImageInfo error: " + error);
               expect(false).assertTrue();
-              done();
             }
+            await imageSourceApi.release();
+            done();
           } else if (flag == 'PromiseNumber') {
             try {
-              let imageInfo = await imageSourceApi.getImageInfo(0);
-              expect(imageInfo.mimeType == expectedMimetype).assertTrue();
-              logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
-              done();
+              let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo(0);
+              if (imageInfo == undefined) {
+                expect(false).assertTrue();
+                logger.log("getImageInfo failed.");
+              } else {
+                expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
+                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+              }
             } catch (error) {
               logger.log("getImageInfo error: " + error);
               expect(false).assertTrue();
-              done();
             }
+            await imageSourceApi.release();
+            done();
           } else if (flag == 'Callback') {
-            imageSourceApi.getImageInfo((err, imageInfo) => {
+            imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
               if (err && err.code) {
                 expect(false).assertTrue();
                 logger.log("getImageInfo error: " + err);
@@ -119,7 +129,7 @@ export default function imageJsTest() {
               done();
             });
           } else if (flag == 'CallbackNumber') {
-            imageSourceApi.getImageInfo(0, (err, imageInfo) => {
+            imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
               if (err && err.code) {
                 expect(false).assertTrue();
                 logger.log("getImageInfo error: " + err);
@@ -153,11 +163,11 @@ export default function imageJsTest() {
       console.info('beforeEach case');
     });
 
-    afterEach(() => {
+    afterEach(async () => {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -165,7 +175,7 @@ export default function imageJsTest() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -173,7 +183,7 @@ export default function imageJsTest() {
       if (globalpacker != undefined) {
         console.info('globalpacker release start');
         try {
-          await globalpacker.release();
+          await globalpacker!.release();
         } catch (error) {
           console.info('globalpacker release fail');
         }
@@ -235,6 +245,7 @@ export default function imageJsTest() {
         }
         if (res) {
           console.info('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_STATIC_0100 success');
+          expect(res).assertTrue();
           done();
         }
       } catch(error: Error) {
@@ -288,6 +299,7 @@ export default function imageJsTest() {
             if (bufferArr[i] == 0) {
               res = false;
               console.info('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_STATIC_0100 Success');
+              expect(!res).assertTrue();
               done();
               break;
             }
@@ -352,6 +364,7 @@ export default function imageJsTest() {
       }
       if (res) {
         console.info('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_SYNC_STATIC_0100 success');
+        expect(res).assertTrue();
         done();
       }
     });
@@ -399,7 +412,7 @@ export default function imageJsTest() {
         const imageSourceApi = image.createImageSource(filePath);
         globalimageSource = imageSourceApi;
         expect(imageSourceApi != undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_UR_STATIC_0200 success');
+        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 success');
         done();
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 error: ' + error);
@@ -558,6 +571,7 @@ export default function imageJsTest() {
               done();
             }
             if (imageInfo != undefined) {
+              expect(imageInfo != undefined).assertTrue();
               // fs.closeSync(fd);
               done();
             } else {
@@ -617,7 +631,7 @@ export default function imageJsTest() {
         done();
       } else {
         globalimageSource = imageSourceApi;
-        imageSourceApi.getImageInfo((err, imageInfo) => {
+        imageSourceApi!.getImageInfo((err: BusinessError | null, imageInfo:image.ImageInfo | undefined) => {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0300 imageInfo');
           expect(imageInfo != undefined).assertTrue();
           done();
@@ -811,7 +825,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo((err, imageInfo) => {
+                imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     if (err && err.code) {
                         expect(false).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0100 err:' + err);
@@ -820,9 +834,10 @@ export default function imageJsTest() {
                     }
                     if (imageInfo != undefined) {
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0100 imageInfo.size.height:' +
-                        imageInfo.size.height);
+                        imageInfo!.size.height);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0100 imageInfo.size.width:' +
-                        imageInfo.size.width);
+                        imageInfo!.size.width);
+                        expect(imageInfo != undefined).assertTrue();
                         fs.closeSync(fdNumber);
                         done();
                     } else {
@@ -860,7 +875,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo((err, imageInfo) => {
+                imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 imageInfo.size.height:' +
                     imageInfo!.size.height);
@@ -897,7 +912,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo((err, imageInfo) => {
+                imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 imageInfo.size.height:' +
                     imageInfo!.size.height);
@@ -934,7 +949,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo((err, imageInfo) => {
+                imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     if (err && err.code) {
                         expect(false).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400 error' + err);
@@ -942,10 +957,11 @@ export default function imageJsTest() {
                         return;
                     }
                     if (imageInfo != undefined && imageInfo != null) {
+                        expect(imageInfo != undefined).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400 imageInfo.size.height:' +
-                        imageInfo.size.height);
+                        imageInfo!.size.height);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400 imageInfo.size.width:' +
-                        imageInfo.size.width);
+                        imageInfo!.size.width);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400 success');
                         done();
                     } else {
@@ -983,7 +999,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo(0, (err, imageInfo) => {
+                imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 imageInfo.size.height:' +
                     imageInfo!.size.height);
@@ -1020,7 +1036,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo(0, (err, imageInfo) => {
+                imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 imageInfo.size.height:' +
                     imageInfo!.size.height);
@@ -1057,7 +1073,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo(0, (err, imageInfo) => {
+                imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 imageInfo.size.height:' +
                     imageInfo!.size.height);
@@ -1094,7 +1110,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.getImageInfo(0, (err, imageInfo) => {
+                imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
                     if (err && err.code) {
                         expect(false).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800 error' + err);
@@ -1102,10 +1118,11 @@ export default function imageJsTest() {
                         return;
                     }
                     if (imageInfo != undefined && imageInfo != null) {
+                        expect(imageInfo != undefined).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800 imageInfo.size.height:' +
-                        imageInfo.size.height);
+                        imageInfo!.size.height);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800 imageInfo.size.width:' +
-                        imageInfo.size.width);
+                        imageInfo!.size.width);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800 success');
                         done();
                     } else {
@@ -1269,6 +1286,7 @@ export default function imageJsTest() {
                 try{
                   let imageInfo = await imageSourceApi.getImageInfo(0)
                     if (imageInfo != undefined && imageInfo != null) {
+                        expect(imageInfo != undefined).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 imageInfo.size.height:' +
                         imageInfo.size.height);
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 imageInfo.size.width:' +
@@ -1433,7 +1451,7 @@ export default function imageJsTest() {
           done();
         } else {
           globalimageSource = imageSourceApi;
-          imageSourceApi.createPixelMap((err, pixelmap) => {
+          imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             if (err && err.code) {
               logger.log("createPixelMap error: " + err);
               expect(false).assertTrue();
@@ -1497,7 +1515,7 @@ export default function imageJsTest() {
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
           };
-          incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
+          incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 0014' + pixelmap);
             expect(pixelmap != undefined).assertTrue();
             done();
@@ -1555,7 +1573,7 @@ export default function imageJsTest() {
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
           };
-          incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
+          incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             expect(pixelmap != undefined).assertTrue();
             done();
           });
@@ -1627,7 +1645,7 @@ export default function imageJsTest() {
                 done();
             } else {
                 globalimageSource = imageSourceApi;
-                imageSourceApi.release((err) => {
+                imageSourceApi.release((err: BusinessError | null) => {
                     if (err && err.code) {
                         console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0100 err:' + err);
                         expect(false).assertTrue();
@@ -1778,6 +1796,7 @@ export default function imageJsTest() {
                 imageSourceApi.release(() => {
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0300 Success');
                     done();
+                    return;
                 });
             }
         } catch (error) {
@@ -1852,7 +1871,7 @@ export default function imageJsTest() {
           done();
         } else {
           globalimageSource = imageSourceApi;
-          imageSourceApi.createPixelMap((err, pixelmap) => {
+          imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             expect(pixelmap !== undefined).assertTrue();
             globalpixelmap = pixelmap!;
             logger.log("createPixelMap success;");
@@ -1931,7 +1950,7 @@ export default function imageJsTest() {
           done();
         } else {
           globalimageSource = imageSourceApi;
-          imageSourceApi.createPixelMap((err, pixelmap) => {
+          imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             expect(pixelmap != undefined).assertTrue();
             globalpixelmap = pixelmap!;
             logger.log("createPixelMap success;");
@@ -2010,7 +2029,7 @@ export default function imageJsTest() {
           done();
         } else {
           globalimageSource = imageSourceApi;
-          imageSourceApi.createPixelMap((err, pixelmap) => {
+          imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
             expect(pixelmap != undefined).assertTrue();
             globalpixelmap = pixelmap!;
             logger.log("createPixelMap success;");

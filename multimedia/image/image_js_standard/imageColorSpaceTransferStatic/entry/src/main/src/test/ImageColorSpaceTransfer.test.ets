@@ -28,8 +28,8 @@ const SRGB: int = colorSpaceManager.ColorSpace.SRGB
 const CUSTOM: int = colorSpaceManager.ColorSpace.CUSTOM
 
 let filesDir: string | undefined | null;
-let globalpixelmap: image.PixelMap;
-let globalimageSource: image.ImageSource;
+let globalpixelmap: image.PixelMap | undefined = undefined;
+let globalimageSource: image.ImageSource | undefined = undefined;
 
 function getFd(fileName:string) {
   let filePath = filesDir + "/" + fileName;
@@ -71,7 +71,7 @@ const createPixelmapTestPromise = async (
         csm = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
-      let pixelMap: image.PixelMap = await imageSource.createPixelMap(decodingOptions);
+      let pixelMap: image.PixelMap | undefined = await imageSource.createPixelMap(decodingOptions);
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
@@ -268,7 +268,7 @@ export default function ImageColorSpaceTransferTest() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -276,7 +276,7 @@ export default function ImageColorSpaceTransferTest() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }

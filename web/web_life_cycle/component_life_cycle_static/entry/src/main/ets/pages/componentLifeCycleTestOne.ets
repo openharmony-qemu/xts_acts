@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { OnPageBeginEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
+import { OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
@@ -40,10 +40,6 @@ struct httpAuthHandler {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  }
-
-  onPageHide() {
-    events_emitter.off(10)
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
@@ -203,6 +199,58 @@ struct httpAuthHandler {
               break;
             }
 
+            case 'emitSetRenderProcessMode': {
+              this.controllerone.loadUrl("resource://rawfile/metaViewport.html")
+              await Utils.msSleep(3000)
+              web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
+              await Utils.msSleep(1000);
+              let mode = web_webview.WebviewController.getRenderProcessMode();
+              console.info('>>>>>renderProcessMode:' + mode)
+              Utils.emitEvent(mode === web_webview.RenderProcessMode.MULTIPLE, 10005)
+              Utils.emitEvent(true, 10005)
+              break;
+            }
+
+            case 'emitWebViewGetAndSetRenderProcessMode01': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
+                this.controllerone.refresh();
+                await Utils.msSleep(2000);
+                let oldMode = web_webview.WebviewController.getRenderProcessMode();
+                console.log('oldMode===>'+oldMode)
+                if (oldMode === 0) {
+                  Utils.emitEvent('success', 8006);
+                } else {
+                  Utils.emitEvent('fail', 8006);
+                }
+              } catch (error: BusinessError) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'emitWebViewGetAndSetRenderProcessMode02': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
+                this.controllerone.refresh();
+                await Utils.msSleep(2000);
+                let oldMode = web_webview.WebviewController.getRenderProcessMode();
+                console.log('oldMode===>'+oldMode)
+                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
+                await Utils.msSleep(2000);
+                let newMode = web_webview.WebviewController.getRenderProcessMode();
+                console.log('newMode===>'+newMode)
+                if (oldMode===0&&newMode === 1) {
+                  Utils.emitEvent('success', 8007);
+                } else {
+                  Utils.emitEvent('fail', 8007);
+                }
+              } catch (error: BusinessError) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
             case 'emitWebViewOnRenderProcessResponding': {
               this.controllerone.refresh()
               this.controllerone.loadUrl("resource://rawfile/common_index.html")
@@ -256,6 +304,40 @@ struct httpAuthHandler {
       Web({ src: "www.example.com", controller: this.controllerone })
         .mediaPlayGestureAccess(true)
         .javaScriptAccess(true)
+        .forceDarkAccess(false)
+        .webSerifFont('serif')
+        .webFixedFont('fixed')
+        .webSansSerifFont('serif')
+        .minLogicalFontSize(1)
+        .horizontalScrollBarAccess(true)
+        .verticalScrollBarAccess(true)
+        .pinchSmooth(true)
+        .onControllerAttached(() => {
+          try {
+            let id = this.controllerone.getWebId();
+            this.webId = id
+          } catch (error: BusinessError) {
+            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+          }
+        })
+        .onRenderProcessNotResponding((data: RenderProcessNotRespondingData): void => {
+          console.log('onRenderProcessNotResponding: [jsStack]= ' + data.jsStack +
+            ', [process]=' + data.pid + ', [reason]=' + data.reason);
+          console.log('data.reason:' + RenderProcessNotRespondingReason.INPUT_TIMEOUT)
+          console.log('data.reason:' + RenderProcessNotRespondingReason.NAVIGATION_COMMIT_TIMEOUT)
+          await Utils.msSleep(1000)
+          this.controllerone.runJavaScript("stopBlockJs()", (error, result) => {
+            console.error(`The stopBlockJs() return error is: ${error}`);
+            console.log(`The stopBlockJs() return value is: ${result}`);
+          })
+          if(RenderProcessNotRespondingReason.NAVIGATION_COMMIT_TIMEOUT.toString() === '1'){
+            Utils.emitEvent(true,1338)
+          }
+        })
+        .onRenderProcessResponding((): void => {
+          console.log('onRenderProcessResponding again');
+          Utils.emitEvent(true,1336)
+        })
       Web({ src: "resource://rawfile/index.html", controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .key("onShowFileSelectorKey")

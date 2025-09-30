@@ -47,7 +47,13 @@
     ],
     "requestPermissions":[
       {
-        "name":"ohos.permission.READ_PASTEBOARD"
+        "name":"ohos.permission.READ_PASTEBOARD",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       } 
     ]
   }

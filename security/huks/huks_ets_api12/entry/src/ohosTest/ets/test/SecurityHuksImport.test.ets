@@ -12,34 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { GenParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
 import { Cipher, CipherData } from './utils/huks/CipherUtils';
 import { GetDesImportData, GetRsaImportData } from './utils/huks/ImportKeyUtils';
 import { SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksImportTest() {
 
   describe('SecurityHuksImportTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(() => {
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
 
     /**
      * @tc.number : SUB_Security_HUKS_Import_API16_Func_0100
@@ -80,7 +65,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -124,7 +109,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -168,7 +153,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -212,7 +197,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -241,7 +226,7 @@ export default function SecurityHuksImportTest() {
         await huks.importKeyItem(testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000003);
       }
     })
@@ -270,7 +255,7 @@ export default function SecurityHuksImportTest() {
         await huks.importKeyItem(testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000003);
       }
     })
@@ -311,7 +296,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -339,7 +324,7 @@ export default function SecurityHuksImportTest() {
         await huks.importKeyItem(testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })
@@ -381,7 +366,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -423,7 +408,7 @@ export default function SecurityHuksImportTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -451,7 +436,7 @@ export default function SecurityHuksImportTest() {
         await huks.importKeyItem(testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })
@@ -479,7 +464,7 @@ export default function SecurityHuksImportTest() {
         await huks.importKeyItem(testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })

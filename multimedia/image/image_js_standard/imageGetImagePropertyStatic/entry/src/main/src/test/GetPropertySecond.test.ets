@@ -61,7 +61,7 @@ const FOCUS_MODE: image.PropertyKey = image.PropertyKey.FOCUS_MODE;
 let filePath: string;
 let fdNumber: int;
 let filesDir: string | undefined;
-let globalimageSource: image.ImageSource;
+let globalimageSource: image.ImageSource | undefined = undefined;
 
 const getFd = (fileName: string): int => {
   filePath = filesDir + "/" + fileName;
@@ -141,7 +141,7 @@ export default function imageGetImagePropertySecond() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }

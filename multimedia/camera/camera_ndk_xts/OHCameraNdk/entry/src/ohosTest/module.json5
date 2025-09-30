@@ -47,6 +47,7 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.CAMERA",
+        "reason": "$string:test",
         "usedScene": {
           "abilities": [
             "TestAbility"
@@ -56,6 +57,7 @@
       },
       {
         "name": "ohos.permission.MICROPHONE",
+        "reason": "$string:test",
         "usedScene": {
           "abilities": [
             "TestAbility"
@@ -65,6 +67,7 @@
       },
       {
         "name": "ohos.permission.READ_MEDIA",
+        "reason": "$string:test",
         "usedScene": {
           "abilities": [
             "TestAbility"
@@ -74,6 +77,7 @@
       },
       {
         "name": "ohos.permission.WRITE_MEDIA",
+        "reason": "$string:test",
         "usedScene": {
           "abilities": [
             "TestAbility"
@@ -82,16 +86,40 @@
         }
       },
       {
-        "name": "ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS"
+        "name": "ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       },
       {
-        "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
+        "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       },
       {
-        "name": "ohos.permission.GET_SENSITIVE_PERMISSIONS"
+        "name": "ohos.permission.GET_SENSITIVE_PERMISSIONS",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       },
       {
-        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
+        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS",
+        "reason": "$string:test",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ]
+        }
       }
     ]
   }

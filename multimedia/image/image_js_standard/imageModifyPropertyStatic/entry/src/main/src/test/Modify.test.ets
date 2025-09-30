@@ -46,8 +46,8 @@ export default function imageModifyProperty() {
     const SCENE_BLUE_SKY_CONF = image.PropertyKey.SCENE_BLUE_SKY_CONF;
     const SCENE_GREEN_PLANT_CONF = image.PropertyKey.SCENE_GREEN_PLANT_CONF;
     const GIF_LOOP_COUNT = image.PropertyKey.GIF_LOOP_COUNT;
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -57,7 +57,7 @@ export default function imageModifyProperty() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -65,7 +65,7 @@ export default function imageModifyProperty() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -117,16 +117,13 @@ export default function imageModifyProperty() {
           await imageSourceApi.modifyImageProperties(props);
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
-            logger.log("dhs 111");
             for (let i = 0; i < checkKey.length; i++) {
               logger.log("getImageProperties data: " + data[checkKey[i]]);
               logger.log("getImageProperties props: " + props[checkKey[i]]);
             }
-            logger.log("dhs 222");
             checkKey.forEach((item: image.PropertyKey) => {
               expect(data[item] == props[item]).assertTrue();
             })
-            logger.log("dhs 333");
             done();
           } catch (error: BusinessError) {
             logger.log("getImageProperties failed error: " + error.code);
@@ -161,7 +158,7 @@ export default function imageModifyProperty() {
       checkProps: (result: string) => void
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buffer") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -180,11 +177,14 @@ export default function imageModifyProperty() {
           try {
             let fd = getFd(fileName);
             let imageSourceApi2 = image.createImageSource(fd);
-            let data = await imageSourceApi2.getImageProperty(key);
-            logger.log('getImageProperty key ' + key + ": " + data);
-            checkProps(data);
             if (imageSourceApi2 != undefined) {
+              let data = await imageSourceApi2.getImageProperty(key);
+              logger.log('getImageProperty key ' + key + ": " + data);
+              checkProps(data);
               await imageSourceApi2.release();
+            } else {
+              expect(false).assertTrue();
+              logger.log('create image source failed');
             }
             done();
           } catch (error: BusinessError) {

@@ -28,6 +28,7 @@ group("security") {
       "certificate_manager",
       "cipher/datacipher:datacipher",
       "cryptoFramework",
+      "crypto_architecture:ActsCryptoArchitectureTest",
       "crypto_framework_napi_BasicTest:ActsCryptoFrameworkNAPITest",
       "dlpNDKTest:ActsDlpNDKTest",
       "dlpNDK20Test:ActsDlpNDK20Test",

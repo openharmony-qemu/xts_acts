@@ -6,7 +6,11 @@
                 "xts": [
                     "SystemCapability.Account.AppAccount",
                     "SystemCapability.Account.OsAccount",
-                    "SystemCapability.MultimodalInput.Input.Core"
+                    "SystemCapability.MultimodalInput.Input.Core",
+                    "SystemCapability.Multimedia.Media.CodecBase",
+                    "SystemCapability.Multimedia.Media.VideoDecoder",
+                    "SystemCapability.Multimedia.Media.Spliter"
+
                 ]
             }
         ]

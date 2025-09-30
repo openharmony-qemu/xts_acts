@@ -18,8 +18,8 @@ import CameraNoPermissionTest from './CameraNoPermissionTest.test'
 import CameraFunctionTest from './CameraFunctionTest.test';
 import CameraOutTest from './CameraOutTest.test'
 export default function testsuite() {
+  CameraNoPermissionTest();
   CameraXtsTest();
   CameraFunctionTest();
-  CameraNoPermissionTest();
   CameraOutTest();
 }

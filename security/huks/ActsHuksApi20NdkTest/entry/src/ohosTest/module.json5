@@ -45,6 +45,12 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.ATTEST_KEY",
+        "reason": "$string:TestAbility_desc"
+      },
     ]
   }
 }

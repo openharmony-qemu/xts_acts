@@ -62,11 +62,12 @@ async function createPixelMapUsingAllocatorSyncNOColorsErrorTest(done: Function,
     } else {
       pixelMap = image.createPixelMapUsingAllocatorSync(param, allocatorType);
     }
-    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncNOColorsErrorTest`,JSON.stringify(pixelMap));
+    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncNOColorsErrorTest`, JSON.stringify(pixelMap));
     expect().assertFail();
     done();
   } catch (error) {
-    console.error(TAG, testName, `Failed createPixelMapUsingAllocatorSyncNOColorsErrorTest`, JSON.stringify(error), error.code);
+    console.error(TAG, testName, `Failed createPixelMapUsingAllocatorSyncNOColorsErrorTest`, JSON.stringify(error),
+      error.code);
     callback(error.code);
     done();
   }
@@ -83,11 +84,12 @@ async function createPixelMapUsingAllocatorSyncColorsTest(done: Function, testNa
     } else {
       pixelMap = image.createPixelMapUsingAllocatorSync(colors, param, allocatorType);
     }
-    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncColorsTest`,JSON.stringify(pixelMap));
+    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncColorsTest`, JSON.stringify(pixelMap));
     callback(pixelMap);
     done();
   } catch (error) {
-    console.error(TAG, testName, `failed createPixelMapUsingAllocatorSyncColorsTest`, JSON.stringify(error), error.code);
+    console.error(TAG, testName, `failed createPixelMapUsingAllocatorSyncColorsTest`, JSON.stringify(error),
+      error.code);
     expect().assertFail();
     done();
   }
@@ -104,11 +106,12 @@ async function createPixelMapUsingAllocatorSyncColorsErrorTest(done: Function, t
     } else {
       pixelMap = image.createPixelMapUsingAllocatorSync(colors, param, allocatorType);
     }
-    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncColorsErrorTest`,JSON.stringify(pixelMap));
+    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncColorsErrorTest`, JSON.stringify(pixelMap));
     expect().assertFail();
     done();
   } catch (error) {
-    console.error(TAG, testName, `failed createPixelMapUsingAllocatorSyncColorsErrorTest`, JSON.stringify(error), error.code);
+    console.error(TAG, testName, `failed createPixelMapUsingAllocatorSyncColorsErrorTest`, JSON.stringify(error),
+      error.code);
     callback(error.code);
     done();
   }
@@ -123,10 +126,49 @@ async function createPixelMapUsingAllocatorPromiseColorsTest(done: Function, tes
     callback(pixelMap);
     done();
   }).catch((error: BusinessError) => {
-    console.error(TAG, testName, `Failed createPixelMapUsingAllocatorPromiseColorsTest`, JSON.stringify(error), error.code);
+    console.error(TAG, testName, `Failed createPixelMapUsingAllocatorPromiseColorsTest`, JSON.stringify(error),
+      error.code);
     expect().assertFail();
     done();
   });
+}
+
+async function createPixelMapUsingAllocatorSyncColorsErrorTest2(done: Function, testName: string,
+  callback: (imageInfo: image.ImageInfo) => void, colors: ArrayBuffer,
+  param: image.InitializationOptions, allocatorType?: image.AllocatorType | undefined | null) {
+  try {
+    console.info(TAG, testName, 'Start');
+    let pixelMap: image.PixelMap;
+    pixelMap = image.createPixelMapUsingAllocatorSync(colors, param, allocatorType);
+    let imageInfo = await pixelMap.getImageInfo();
+    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncColorsErrorTest`, JSON.stringify(imageInfo));
+    callback(imageInfo);
+    done();
+  } catch (error) {
+    console.error(TAG, testName, `failed createPixelMapUsingAllocatorSyncColorsErrorTest`, JSON.stringify(error),
+      error.code);
+    expect().assertFail();
+    done();
+  }
+}
+
+async function createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done: Function, testName: string,
+  callback: (imageInfo: image.ImageInfo) => void,
+  param: image.InitializationOptions, allocatorType?: image.AllocatorType | undefined | null) {
+  try {
+    console.info(TAG, testName, 'Start');
+    let pixelMap: image.PixelMap;
+    pixelMap = image.createPixelMapUsingAllocatorSync(param, allocatorType);
+    let imageInfo = await pixelMap.getImageInfo();
+    console.info(TAG, testName, `Success createPixelMapUsingAllocatorSyncNOColorsErrorTest`, JSON.stringify(imageInfo));
+    callback(imageInfo);
+    done();
+  } catch (error) {
+    console.error(TAG, testName, `Failed createPixelMapUsingAllocatorSyncNOColorsErrorTest`, JSON.stringify(error),
+      error.code);
+    expect().assertFail();
+    done();
+  }
 }
 
 export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
@@ -2444,6 +2486,781 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
       }, colors, param, allocatorType);
     })
 
-  })
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600';
+      const param: image.InitializationOptions = {
+        alphaType: AppStorage.get('testString'),
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, param, allocatorType);
+    })
 
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: AppStorage.get('testString') as ESObject,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.pixelFormat).assertEqual(3)
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: AppStorage.get('testString'),
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: AppStorage.get('testString'),
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: AppStorage.get('testString') as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: AppStorage.get('testNumber') as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300';
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, null as ESObject, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400';
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, undefined as ESObject, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700';
+      const param: image.InitializationOptions = {
+        alphaType: null as ESObject,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800';
+      const param: image.InitializationOptions = {
+        alphaType: undefined,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: null as ESObject,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: undefined,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: null as ESObject,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: undefined,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: null as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800';
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: undefined as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncNOColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: AppStorage.get('testString'),
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNPREMUL,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: AppStorage.get('testString'),
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNPREMUL,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: AppStorage.get('testString'),
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNPREMUL,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: AppStorage.get('testString') as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
+     * @tc.desc      image_createPixelMapUsingAllocatorSync
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNPREMUL,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: AppStorage.get('testNumber') as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100';
+      const colors: ArrayBuffer = null as ESObject;
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200';
+      const colors: ArrayBuffer = undefined as ESObject;
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, null as ESObject, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, undefined as ESObject, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: null as ESObject,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: undefined,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(imageInfo.alphaType).assertEqual(2)
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: null as ESObject,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: undefined,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: null as ESObject,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: undefined,
+        size: { height: 50, width: 50 }
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest2(done, testName, (imageInfo) => {
+        expect(JSON.stringify(imageInfo.size)).assertEqual('{"width":50,"height":50}')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: null as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+
+    /**
+     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
+     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
+     * @tc.desc      image_createPixelMapUsingAllocator
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800';
+      const colors: ArrayBuffer = new ArrayBuffer(50 * 50 * 4);
+      const param: image.InitializationOptions = {
+        alphaType: image.AlphaType.UNKNOWN,
+        editable: false,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        scaleMode: image.ScaleMode.FIT_TARGET_SIZE,
+        size: undefined as ESObject
+      };
+      const allocatorType = image.AllocatorType.AUTO;
+      await createPixelMapUsingAllocatorSyncColorsErrorTest(done, testName, (ErrorCode) => {
+        expect(ErrorCode).assertEqual('7600201')
+      }, colors, param, allocatorType);
+    })
+  })
 }

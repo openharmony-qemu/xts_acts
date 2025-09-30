@@ -25,6 +25,7 @@ group("sensors") {
       "sensor_standard:sensor_js_test",
       "sensor_standard_nop:sensor_js_nop_test",
       "sensor_type_cpp:ActsSensorTypeTest",
+      "miscdevice_standardStatic:ActsMiscdeviceJSApiStaticTest",
     ]
   }
 }

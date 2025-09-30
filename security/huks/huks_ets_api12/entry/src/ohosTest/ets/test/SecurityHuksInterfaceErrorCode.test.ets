@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import * as huksCallback from './utils/huks/HuksCallbackUtils';
 import { AddParam, CheckSoftware, DeleteParam, MergeOptions, SetInData, SetMultiParam, SetParam } from './utils/huks/HuksOptionsUtils';
-import { StringToUint8Array } from './utils/CommonUtils';
+import { StringToUint8Array } from './utils/common/CommonUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
 import { Get3DesGenerateOptions, GetAesGenerateOptions, GetEccGenerateOptions, GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
@@ -24,7 +24,8 @@ import { GetAccessControlOptions } from './utils/huks/AccessControlUtils';
 import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
 import { GetGenWrapKeyOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
 import { GetCbcNoPaddingOptions, GetCbcPkcs7Options, GetCtrNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils';
-import { Derive, GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksInterfaceErrorCodeTest() {
@@ -39,10 +40,8 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
   let encryptOptionErrorAlg: huks.HuksOptions;
 
   describe('SecurityHuksInterfaceErrorCodeTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+
     beforeAll(async () => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
       useSoftware = await CheckSoftware();
     })
     beforeEach(() => {
@@ -55,15 +54,6 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
       AddParam(encryptOptionMultiAlg, huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
       encryptOptionNoAlg = DeleteParam(MergeOptions(GetAesGenerateOptions(256), GetCbcPkcs7Options(12)), huks.HuksTag.HUKS_TAG_ALGORITHM);
       encryptOptionErrorAlg = SetParam(MergeOptions(GetAesGenerateOptions(256), GetCbcPkcs7Options(12)), huks.HuksTag.HUKS_TAG_ALGORITHM, 4);
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -81,7 +71,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.deleteKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -102,7 +92,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.deleteKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -122,7 +112,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.deleteKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -143,7 +133,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.deleteKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -163,7 +153,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -185,7 +175,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -209,7 +199,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.exportKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -230,7 +220,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.exportKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -252,7 +242,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.exportKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -273,7 +263,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.exportKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -293,7 +283,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.getKeyItemProperties(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -314,7 +304,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.getKeyItemProperties(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -334,7 +324,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.getKeyItemProperties(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -355,7 +345,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.getKeyItemProperties(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -375,7 +365,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.hasKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -397,7 +387,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.hasKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -418,7 +408,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.initSession(testNumber, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -439,7 +429,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.initSession(testNumber, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -462,7 +452,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.updateSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -484,7 +474,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.updateSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -507,7 +497,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.updateSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -529,7 +519,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.updateSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -552,7 +542,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.finishSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -574,7 +564,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.finishSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -597,7 +587,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.finishSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -619,7 +609,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.finishSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -642,7 +632,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.abortSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -665,7 +655,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.abortSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -687,7 +677,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.anonAttestKeyItem(testNumber, attestOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -709,7 +699,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.anonAttestKeyItem(testNumber, attestOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -732,7 +722,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -755,7 +745,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -776,7 +766,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.isKeyItemExist(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -797,7 +787,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.isKeyItemExist(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -829,7 +819,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -861,7 +851,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -893,7 +883,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
         }
@@ -924,7 +914,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias + "emptyKey", importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -956,7 +946,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -988,7 +978,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -1020,7 +1010,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -1052,7 +1042,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
         }
@@ -1083,7 +1073,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias + "emptyKey", importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -1115,7 +1105,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -1139,7 +1129,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.update(handle, token, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
       }
     })
 
@@ -1160,7 +1150,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.update(handle, token, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
       }
     })
 
@@ -1178,7 +1168,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.wrapKeyItem(testNumber, SetMultiParam(GetWrapKeyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT);
       }
     }
@@ -1199,7 +1189,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.unwrapKeyItem(testNumber, SetMultiParam(GetWrapKeyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES), wrapRes);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT);
       }
     }
@@ -1219,7 +1209,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, MergeOptions(genKeyOption, GetGenWrapKeyOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     }
@@ -1239,7 +1229,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     }
@@ -1259,7 +1249,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -1279,7 +1269,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, genKeyOptionErrorAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -1300,7 +1290,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
       }
     })
@@ -1321,7 +1311,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1340,7 +1330,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOptionMultiAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1359,7 +1349,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOptionErrorAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1378,7 +1368,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, SetInData(MergeOptions(genKeyOption, GetGenWrapKeyOptions()), GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1399,7 +1389,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOption, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1420,7 +1410,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.anonAttestKeyItem(testNumber, attestOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1451,7 +1441,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1482,7 +1472,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1502,7 +1492,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.isKeyItemExist(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1522,7 +1512,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.initSession(testNumber, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1542,7 +1532,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCtrNoPaddingOptions(16)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1562,7 +1552,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCbcNoPaddingOptions(12)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1583,7 +1573,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.updateSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1604,7 +1594,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.finishSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1631,7 +1621,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huks.finishSession(res.handle, finishOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1650,7 +1640,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, MergeOptions(genKeyOption, GetGenWrapKeyOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     }
@@ -1670,7 +1660,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     }
@@ -1690,7 +1680,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -1710,7 +1700,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, genKeyOptionErrorAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -1731,7 +1721,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
       }
     })
@@ -1752,7 +1742,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1771,7 +1761,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, SetInData(genKeyOptionMultiAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1790,7 +1780,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, SetInData(genKeyOptionErrorAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1809,7 +1799,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, SetInData(MergeOptions(genKeyOption, GetGenWrapKeyOptions()), GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1830,7 +1820,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importKeyItem(testNumber, SetInData(genKeyOption, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1851,7 +1841,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.anonAttestKeyItem(testNumber, attestOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1882,7 +1872,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1913,7 +1903,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1933,7 +1923,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.isKeyItemExist(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1953,7 +1943,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.initSession(testNumber, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1973,7 +1963,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCtrNoPaddingOptions(16)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1993,7 +1983,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCbcNoPaddingOptions(12)));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -2014,7 +2004,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.updateSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -2035,7 +2025,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.finishSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -2062,7 +2052,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
         await huksCallback.finishSession(res.handle, finishOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })

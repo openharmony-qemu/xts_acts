@@ -19,7 +19,7 @@
             "type": "ShellKit",
             "run-command": [
                 "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/",
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/*"
+                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/*"
             ],
             "teardown-command": []
         },
@@ -36,8 +36,7 @@
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/test_exif.jpg",
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/moving_test_loop1.gif"
+                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/*"
             ],
             "teardown-command": [
                 "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/*"

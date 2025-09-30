@@ -45,11 +45,11 @@
         ]
       }
     ],
-//    "requestPermissions": [
-//      {
-//        "name": " ohos.permission.ATTEST_KEY",
-//        "reason": "$string:reason"
-//      }
-//    ]
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.ATTEST_KEY",
+        "reason": "$string:reason"
+      },
+    ]
   }
 }

@@ -22,9 +22,9 @@ import { initialize } from './AbilityContextHelper.test';
 export default function imagePackToData() {
   describe("imagePackToData", (): void => {
     let filesDir: string|undefined|null;
-    let globalpixelmap: image.PixelMap;
-    let globalPacker: image.ImagePacker;
-    let globalImagesource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalPacker: image.ImagePacker | undefined = undefined;
+    let globalImagesource: image.ImageSource | undefined = undefined;
     let filePath: string;
     let fdNumber: int;
     const ERROR_CODE = 401;
@@ -52,7 +52,7 @@ export default function imagePackToData() {
       if (globalpixelmap != undefined) {
         console.info("globalpixelmap release start");
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info("globalpixelmap release fail");
         }
@@ -60,7 +60,7 @@ export default function imagePackToData() {
       if (globalImagesource != undefined) {
         console.info("globalpixelmap release start");
         try {
-          await globalImagesource.release();
+          await globalImagesource!.release();
         } catch (error) {
           console.info("globalImagesource release fail");
         }
@@ -68,7 +68,7 @@ export default function imagePackToData() {
       if (globalPacker != undefined) {
         console.info("globalPacker release start");
         try {
-          await globalPacker.release();
+          await globalPacker!.release();
         } catch (error) {
           console.info("globalPacker release fail");
         }
@@ -228,7 +228,7 @@ export default function imagePackToData() {
     let packToDataimgSourcePromiseFail = async (done: () => void, testNum: string, packOpts: image.PackingOption) => {
       try {
         await getFd("test.png");
-        const imageSourceApi: image.ImageSource = image.createImageSource(fdNumber);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
         if (imageSourceApi == undefined) {
           console.info(`${testNum} create image source failed`);
           expect(false).assertTrue();

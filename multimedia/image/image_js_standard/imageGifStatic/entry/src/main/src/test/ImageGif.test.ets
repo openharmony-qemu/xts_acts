@@ -42,8 +42,8 @@ export default function imageGif() {
     const ERR_CODE2 = 62980118;
     const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -53,7 +53,7 @@ export default function imageGif() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -61,7 +61,7 @@ export default function imageGif() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -96,6 +96,7 @@ export default function imageGif() {
           let delayTimes = await imageSourceApi.getDelayTimeList();
           if (delayTimes != undefined) {
             logger.log("getDelayTimePromise getDelayTime success");
+            expect(true).assertTrue();
             logger.log("getDelayTimeList success: " + delayTimes.length);
             for (let i = 0; i < delayTimes.length; i++) {
               logger.log(`delayTimes[ ${i} ]= ${delayTimes[i]}`);
@@ -171,6 +172,7 @@ export default function imageGif() {
           try {
             let disposalTypes: Array<int> = await imageSourceApi.getDisposalTypeList();
             console.info(`${testNum} testGetDisposalTypePromise getDisposalTypeList success`);
+            expect(true).assertTrue();
             console.info(`${testNum} disposalTypes show begin length: ${disposalTypes.length} `);
             for (let i = 0; i < disposalTypes.length; i++) {
               console.info(`${testNum} disposalTypes[ ${i} ]= ${disposalTypes[i]}`);

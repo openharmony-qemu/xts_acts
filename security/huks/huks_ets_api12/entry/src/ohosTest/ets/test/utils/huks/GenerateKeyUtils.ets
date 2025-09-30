@@ -45,7 +45,6 @@ export function GetHmacGenerateOptions(size: number): huks.HuksOptions {
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)
     )
   };
-
   return huksOptions;
 }
 

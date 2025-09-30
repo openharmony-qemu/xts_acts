@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog';
 export default function addImage() {
   describe("addImage", () => {
     const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
-    let incSouce: image.ImageSource;
+    let incSouce: image.ImageSource | undefined;
     let filesDir: string | undefined | null;
 
     beforeAll(async () => {
@@ -39,7 +39,7 @@ export default function addImage() {
       console.info("afterEach case");
       if (incSouce != undefined) {
         try {
-          await incSouce.release();
+          await incSouce!.release();
         } catch (error) {
           console.info("incSouce release faile :" + error);
         }
@@ -85,7 +85,7 @@ export default function addImage() {
           isFinished = true;
         }
         try {
-          await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+          await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
           offset = offset + oneStep.byteLength as int;
           console.info(`${testNum} 0003 ` + offset);
           ret = true;
@@ -100,7 +100,7 @@ export default function addImage() {
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
         };
-        incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
+        incSouce!.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
           if (err && err.code) {
             console.info(`${testNum} createPixelMap err: ` + err);
             expect(false).assertTrue();
@@ -140,7 +140,7 @@ export default function addImage() {
           isFinished = true;
         }
         ret = await new Promise<boolean>((res) => {
-          incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
+          incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
             if (err && err.code) {
               res(false);
             } else {
@@ -161,7 +161,7 @@ export default function addImage() {
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
         };
-        incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
+        incSouce!.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
           if (err && err.code) {
             console.info(`${testNum} createPixelMap err: ` + err);
             expect(false).assertTrue();
