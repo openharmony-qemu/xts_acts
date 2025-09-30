@@ -24,9 +24,9 @@ struct WebViewControllerDownloadNetworkTest {
   controller: webView.WebviewController = new webView.WebviewController();
   delegate: webView.WebDownloadDelegate = new webView.WebDownloadDelegate();
   @State str: string = '';
-  @State downloadUrl: string = 'https://consumer.huawei.com/content/dam/' +
-    'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
-    'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
+  @State
+  downloadUrl: string = 'https:' +
+              '//mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz'
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -57,7 +57,6 @@ struct WebViewControllerDownloadNetworkTest {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.lastErrorCode = -1
-        this.blockNetwork = false
       }
     }
   }
@@ -93,7 +92,7 @@ struct WebViewControllerDownloadNetworkTest {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .blockNetwork(this.blockNetwork)
+        .blockNetwork(true)
         .onPageEnd(() => {
           if (!this.hasSetDownloadDelegate) {
             try {
