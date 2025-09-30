@@ -24,6 +24,7 @@ group("communication") {
       "btmanager_errorcode401:ActsBtManagerErrorCode401JsTest",
       "btmanager_switchoff:ActsBtManagerSwitchOff003JsTest",
       "dsoftbus/capi_ipc:ActsCAPIIPCTest",
+      "dsoftbus/capi20_ipc:ActsCAPI20IPCTest",
       "dsoftbus/ipc_stage/ipc_stageserver:ActsIPCEtsServer",
       "dsoftbus/ipc_stage/ipc_stagetest:ActsIPCEtsTest",
       "dsoftbus/linkEnhance:ActslinkEnhanceTest",
