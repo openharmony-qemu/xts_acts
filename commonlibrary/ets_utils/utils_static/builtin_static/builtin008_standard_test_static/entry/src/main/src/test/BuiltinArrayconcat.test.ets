@@ -53,8 +53,8 @@ export default function BuiltinArrayconcatTest() {
      * @tc.type    FUNCTION
      */
     it('testBuiltinArrayconcat10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const a: FixedArray<int> = new int[0];
-      const b: FixedArray<int> = new int[0];
+      const a: FixedArray<int> = new FixedArray<int>(0);
+      const b: FixedArray<int> = new FixedArray<int>(0);
       const res: FixedArray<int> = concat(a, b);
       expect(res.length).assertEqual(0);
     });
@@ -68,10 +68,10 @@ export default function BuiltinArrayconcatTest() {
      * @tc.type    FUNCTION
      */
     it('testBuiltinArrayconcat1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const a: FixedArray<int> = new int[2];
+      const a: FixedArray<int> = new FixedArray<int>(2);
       a[0] = 10;
       a[1] = 20;
-      const b: FixedArray<int> = new int[0];
+      const b: FixedArray<int> = new FixedArray<int>(0);
       const res: FixedArray<int> = concat(a, b);
       expect(res.length).assertEqual(2);
       expect(res[0]).assertEqual(10);
@@ -87,12 +87,12 @@ export default function BuiltinArrayconcatTest() {
      * @tc.type    FUNCTION
      */
     it('testBuiltinArrayconcat10003_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const a: FixedArray<int> = new int[1];
+      const a: FixedArray<int> = new FixedArray<int>(1);
       a[0] = 1;
-      const b: FixedArray<int> = new int[2];
+      const b: FixedArray<int> = new FixedArray<int>(2);
       b[0] = 2;
       b[1] = 3;
-      const c: FixedArray<int> = new int[1];
+      const c: FixedArray<int> = new FixedArray<int>(1);
       c[0] = 4;
       const res: FixedArray<int> = concat(a, b, c);
       expect(res.length).assertEqual(4);
