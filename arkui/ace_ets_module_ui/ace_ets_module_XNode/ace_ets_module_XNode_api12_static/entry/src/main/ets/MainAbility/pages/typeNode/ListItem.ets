@@ -43,7 +43,7 @@ class MyNodeController extends NodeController {
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    let list = typeNode.createListNode(uiContext, 'List');
+    let list = typeNode.createListNode(uiContext);
     list.initialize({ space: 5 } as ListOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     col.appendChild(list);
 
