@@ -541,10 +541,13 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0800
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Receive account information after the app subscribes to itself and changes additional information
+        /**
+        * @tc.number   ActsAccountChangeOnOff_0800
+        * @tc.name     ActsAccountChangeOnOff_0800
+        * @tc.desc     Receive account information after the app subscribes to itself and changes additional information
+        * @tc.level    Level3
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsAccountChangeOnOff_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_0800 start====");
@@ -557,6 +560,7 @@ export default function ActsAccountChangeOnOff() {
             function changeOnCallback(data){
                 console.info("====>receive change 0800 data:" + JSON.stringify(data));
                 console.info("====>data.length:" + data.length);
+                expect(data.length > 0).assertTrue();
                 for (let i = 0, len = data.length; i < len; i++) {
                     dataMap.set(data[i].name, data[i].owner)
                 }
