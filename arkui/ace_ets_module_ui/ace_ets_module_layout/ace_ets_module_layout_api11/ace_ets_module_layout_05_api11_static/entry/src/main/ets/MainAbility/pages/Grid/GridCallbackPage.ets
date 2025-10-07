@@ -46,7 +46,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GridCallbackPage {
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   @State columnsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State rowsTemplate: string = '1fr 1fr 1fr 1fr 1fr'
   @State columnsGap: number = 10
@@ -206,8 +206,8 @@ struct GridCallbackPage {
       .key('grid_default')
 
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -263,8 +263,8 @@ struct GridCallbackPage {
 
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid(this.scroller) {
-        ForEach(this.Number, (row: string) => {
-          ForEach(this.Number, (column: string) => {
+        ForEach(this.numberData, (row: string) => {
+          ForEach(this.numberData, (column: string) => {
             GridItem() {
               Text(row + '-' + column)
                 .fontSize(16)

@@ -109,7 +109,7 @@ const uiContext = new UIContext();
 @Entry
 @Component
 struct noBarriersGroup {
-  @State Number: String[] = ['0', '1'];
+  @State numberData: String[] = ['0', '1'];
   scroller: Scroller = new Scroller();
   @State arr: string[] = ["0", "1"];
   @State alignListItem: ListItemAlign = ListItemAlign.Start;
@@ -130,8 +130,8 @@ struct noBarriersGroup {
             .margin(10)
             .accessibilityText("I am Button")
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -195,8 +195,8 @@ struct noBarriersGroup {
             .margin(10)
             .accessibilityText("I am Button")
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -265,8 +265,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -331,8 +331,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -397,8 +397,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -464,8 +464,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -530,8 +530,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -597,8 +597,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -662,8 +662,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -728,8 +728,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -794,8 +794,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)
@@ -860,8 +860,8 @@ struct noBarriersGroup {
             .accessibilityText("I am Button")
 
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)

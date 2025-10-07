@@ -107,7 +107,7 @@ const uiContext = new UIContext();
 @Component
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
-  @State Number: Array<string> = ['0', '1'] as Array<string>;
+  @State numberData: Array<string> = ['0', '1'] as Array<string>;
   public valueArr: Array<double> = [10.0, 10.0] as Array<double>;
   @State isLunar: boolean = false;
   @State formId: number = 0;
@@ -192,8 +192,8 @@ struct noBarrierComponents {
         .width('90%')
 
         Grid() {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

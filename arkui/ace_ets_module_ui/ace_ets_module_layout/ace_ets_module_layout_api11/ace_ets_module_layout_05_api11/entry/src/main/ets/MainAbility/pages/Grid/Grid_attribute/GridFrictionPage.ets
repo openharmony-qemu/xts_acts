@@ -17,7 +17,7 @@ import { MessageManager, Callback, Message } from '../../../common/MessageManage
 @Entry
 @Component
 struct GridFrictionPage {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
   @State friction: number = 1000;
   messageManager: MessageManager<number> = new MessageManager();
@@ -40,8 +40,8 @@ struct GridFrictionPage {
   build() {
     Column({ space: 5 }) {
       Grid(this.scroller) {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -59,8 +59,8 @@ struct GridFrictionPage {
       .key('grid_friction_default')
 
       Grid(this.scroller) {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

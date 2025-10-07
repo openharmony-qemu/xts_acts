@@ -49,14 +49,14 @@ import {
 @Entry
 @Component
 struct scrollTo {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

@@ -50,7 +50,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
-  @State Number: Array<String> = new Array<String>('0', '1');
+  @State numberData: Array<String> = new Array<String>('0', '1');
   public valueArr: Array<number> = new Array<number>(10, 10);
   @State isLunar: boolean = false;
   @State formId: number = 0;

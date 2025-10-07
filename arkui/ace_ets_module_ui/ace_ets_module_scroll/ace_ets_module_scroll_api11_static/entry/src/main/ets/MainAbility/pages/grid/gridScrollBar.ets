@@ -30,14 +30,14 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct gridScrollBar {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
 
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

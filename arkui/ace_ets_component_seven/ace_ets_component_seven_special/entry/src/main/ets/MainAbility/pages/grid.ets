@@ -42,7 +42,7 @@ class GridModifier1 implements AttributeModifier<GridAttribute> {
 @Component
 struct GridMaxCount {
   @State gridModifier: GridModifier1 = new GridModifier1()
-  @State Number: String[] = ['5', '6', '7', '8', '9']
+  @State numberData: String[] = ['5', '6', '7', '8', '9']
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {

@@ -21,7 +21,7 @@ type MessageData = number | GridDirection
 @Entry
 @Component
 struct GridLayoutDirection {
-  @State Number: String[] = ['0', '1', '2']
+  @State numberData: String[] = ['0', '1', '2']
   scroller: Scroller = new Scroller()
   @State columnsTemplate: string = '1fr 1fr 1fr'
   @State layoutDirection: GridDirection = GridDirection.Row
@@ -54,8 +54,8 @@ struct GridLayoutDirection {
   build() {
     Column({ space: 5 }) {
       Grid() {
-        ForEach(this.Number, (day: string ,index1:number|undefined) => {
-          ForEach(this.Number, (day: string ,index2:number|undefined) => {
+        ForEach(this.numberData, (day: string ,index1:number|undefined) => {
+          ForEach(this.numberData, (day: string ,index2:number|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

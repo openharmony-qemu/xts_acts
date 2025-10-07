@@ -43,7 +43,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollBy {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
   @State distance: number = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
@@ -63,8 +63,8 @@ struct scrollBy {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        ForEach(this.Number, (item: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (item: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

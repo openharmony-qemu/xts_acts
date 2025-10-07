@@ -51,7 +51,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct ScrollToIndexForGrid03 {
   private scrollerForGrid: Scroller = new Scroller()
   @State numbers: string[] = ['']
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   @State isSmooth: boolean = false
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],

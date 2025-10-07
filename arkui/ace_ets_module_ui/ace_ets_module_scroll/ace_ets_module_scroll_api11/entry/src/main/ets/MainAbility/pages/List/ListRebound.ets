@@ -15,7 +15,7 @@
 @Entry
 @Component
 struct ListRebound {
-  @State Number: String[] = ['0', '1', '2', '3']
+  @State numberData: String[] = ['0', '1', '2', '3']
   scroller: Scroller = new Scroller()
   @State isRefreshing: boolean = false
 
@@ -32,8 +32,8 @@ struct ListRebound {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.Number, (day1: string) => {
-          ForEach(this.Number, (day2: string) => {
+        ForEach(this.numberData, (day1: string) => {
+          ForEach(this.numberData, (day2: string) => {
             GridItem() {
               Text(day1 + day2)
                 .fontSize(16)
@@ -60,8 +60,8 @@ struct ListRebound {
       Column() {
         Refresh({ refreshing: this.isRefreshing, offset: 60, friction: 100, builder: this.customBuilder }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string) => {
-              ForEach(this.Number, (day2: string) => {
+            ForEach(this.numberData, (day1: string) => {
+              ForEach(this.numberData, (day2: string) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)
@@ -90,8 +90,8 @@ struct ListRebound {
       Column() {
         Refresh({ refreshing: this.isRefreshing, offset: 60, friction: 100, builder: this.customBuilder }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string) => {
-              ForEach(this.Number, (day2: string) => {
+            ForEach(this.numberData, (day1: string) => {
+              ForEach(this.numberData, (day2: string) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)

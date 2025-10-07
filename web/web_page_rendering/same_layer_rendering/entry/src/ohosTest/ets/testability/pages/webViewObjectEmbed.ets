@@ -127,7 +127,7 @@ struct webViewObjectEmbed {
   @State isChange: boolean = false;
   @State eventTypes: string[] = []
   @State eventType: string = ''
-  @State number: number = 0
+  @State numberData: number = 0
   @State isEmbed: boolean = false;
   @State edges: Edges = {};
 
@@ -183,7 +183,7 @@ struct webViewObjectEmbed {
                 try {
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
                   await Utils.sleep(2000);
-                  let prevNum = this.number
+                  let prevNum = this.numberData
                   let driver: uiTest.Driver = uiTest.Driver.create()
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
                   console.log(component.toString())
@@ -205,7 +205,7 @@ struct webViewObjectEmbed {
                 try {
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
                   await Utils.sleep(2000);
-                  let prevNum = this.number
+                  let prevNum = this.numberData
                   let driver: uiTest.Driver = uiTest.Driver.create()
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
                   console.log(component.toString())
@@ -213,7 +213,7 @@ struct webViewObjectEmbed {
                   await Utils.sleep(3000)
                   let isEventUp = ( this.eventTypes.indexOf('Up') > -1 )
                   let isEventDown = ( this.eventTypes.indexOf('Down') > -1 )
-                  let isAdd = ( this.number - prevNum) >= 2
+                  let isAdd = ( this.numberData - prevNum) >= 2
 
                   if(this.isChange && isEventUp && isEventDown && isAdd) {
                     Utils.emitEvent('success', 8001);
@@ -230,7 +230,7 @@ struct webViewObjectEmbed {
                 try {
                   this.controller.loadUrl($rawfile('objectMultiple.html'));
                   await Utils.sleep(2000);
-                  let prevNum = this.number
+                  let prevNum = this.numberData
                   let driver: uiTest.Driver = uiTest.Driver.create()
                   let component: uiTest.Component = await driver.findComponent(uiTest.ON.id('btnEmbed1'))
                   console.log(component.toString())
@@ -238,12 +238,12 @@ struct webViewObjectEmbed {
                   await Utils.sleep(3000)
                   let isEventUp = ( this.eventTypes.indexOf('Up') > -1 )
                   let isEventDown = ( this.eventTypes.indexOf('Down') > -1 )
-                  let isAdd = ( this.number - prevNum) >= 2
+                  let isAdd = ( this.numberData - prevNum) >= 2
                   let rect = await component.getBounds()
                   driver.swipe(rect.left, rect.top, rect.right, rect.bottom)
                   await Utils.sleep(2000);
                   let isEventMove = ( this.eventTypes.indexOf('Move') > -1 )
-                  let isAddMove = ( this.number - prevNum) >= 2
+                  let isAddMove = ( this.numberData - prevNum) >= 2
 
                   if(this.isChange && isAddMove && isEventMove) {
                     Utils.emitEvent('success', 8002);
@@ -332,7 +332,7 @@ struct webViewObjectEmbed {
                 event.result.setGestureEventResult(ret);
               }
             }
-            this.number += 1
+            this.numberData += 1
             if (event && event.touchEvent) {
               if (event.touchEvent.type == TouchType.Down) {
                 this.eventType = 'Down'
@@ -340,13 +340,13 @@ struct webViewObjectEmbed {
               }
               if (event.touchEvent.type == TouchType.Up) {
                 this.eventType = 'Up'
-                if( this.number >= 2) {
+                if( this.numberData >= 2) {
                   Utils.emitEvent('success', 8001);
                 }
               }
               if (event.touchEvent.type == TouchType.Move) {
                 this.eventType = 'Move'
-                if( this.number >= 20) {
+                if( this.numberData >= 20) {
                   Utils.emitEvent('success', 8002);
                 }
               }

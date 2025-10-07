@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1];
-  @State Number: String[] = ['0', '1'];
+  @State numberData: String[] = ['0', '1'];
   private arrayA: string[] = ['安'];
   private arrayB: string[] = ['卜', '白', '包', '毕', '丙'];
   private arrayC: string[] = ['曹', '成', '陈', '催'];
@@ -98,8 +98,8 @@ struct noBarrierComponents {
         .width('90%')
 
         Grid() {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

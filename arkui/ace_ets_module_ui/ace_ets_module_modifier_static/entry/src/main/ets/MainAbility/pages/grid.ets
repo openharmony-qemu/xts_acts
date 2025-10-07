@@ -33,7 +33,7 @@ import {
 @Entry
 @Component
 struct GridMaxCount {
-  @State Number: String[] = ['5', '6', '7', '8', '9']
+  @State numberData: String[] = ['5', '6', '7', '8', '9']
 
 
 
