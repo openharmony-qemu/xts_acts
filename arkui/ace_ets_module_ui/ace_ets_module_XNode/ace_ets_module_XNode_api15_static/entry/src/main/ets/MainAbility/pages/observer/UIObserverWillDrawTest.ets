@@ -31,11 +31,11 @@ struct WillDrawIndex {
       Button('willDraw on').id('willDraw_on_id')
         .margin({ bottom: 10 } as Margin)
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().on('willDraw', this.willDrawCallback);
+          this.getUIContext().getUIObserver().onWillDraw(this.willDrawCallback);
         })
       Button('willDraw off').id('willDraw_off_id')
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().off('willDraw', this.willDrawCallback);
+          this.getUIContext().getUIObserver().offWillDraw(this.willDrawCallback);
         })
     }
     .height('100%')
