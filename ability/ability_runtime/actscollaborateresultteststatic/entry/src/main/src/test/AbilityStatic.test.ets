@@ -80,7 +80,7 @@ export default function abilitystaticTest() {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3100';
       console.info(`${caseName} Begin`);
       try {
-        expect(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '').assertEqual(String(0x00002000))
+        expect(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '').assertEqual(String((0x00002000).toInt()))
         done();
       } catch (err) {
         console.info(`${caseName} failed: ${JSON.stringify(err)}`);
