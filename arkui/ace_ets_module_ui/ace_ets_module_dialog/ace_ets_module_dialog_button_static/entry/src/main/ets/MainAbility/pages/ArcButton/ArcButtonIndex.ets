@@ -39,7 +39,8 @@ import {
   ArcButton,
   ArcButtonStatus,
   ArcButtonPosition,
-  ArcButtonStyleMode
+  ArcButtonStyleMode,
+  ArcButtonProgressConfig
 } from '@ohos.arkui.advanced.ArcButton';
 import { State, Local, AppStorage } from '@ohos.arkui.stateManagement';
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
@@ -68,6 +69,7 @@ struct ArcButtonIndex {
   }
 
   @Local allPropertiesOptions: ArcButtonOptions = new ArcButtonOptions({});
+  @Local progressArcOptions: ArcButtonOptions = new ArcButtonOptions({});
 
   aboutToAppear() {
     // Create ArcButtonOptions with all properties
@@ -99,7 +101,15 @@ struct ArcButtonIndex {
         console.info('ArcButton onClick event: ' + JSON.stringify(event));
         AppStorage.setOrCreate('arcButtonOnClickCalled', true);
       }
-    })
+    });
+
+    this.progressArcOptions = new ArcButtonOptions({
+      label: '40%' as ResourceStr,
+      status: ArcButtonStatus.NORMAL,
+      fontSize: new LengthMetrics(15, LengthUnit.FP),
+      shadowEnabled: true,
+      progressConfig: new ArcButtonProgressConfig(40, 120, '#FF1F71FF')
+    });
   }
 
   build() {
@@ -123,6 +133,10 @@ struct ArcButtonIndex {
       })
         .key('arcButtonBottomEdge')
         .id('arcButtonBottomEdge')
+
+      ArcButton({ options: this.progressArcOptions })
+        .key('arcButtonProgressConfig')
+        .id('arcButtonProgressConfig')
 
     }.width('100%')
     .height('100%')
