@@ -62,8 +62,8 @@ async function forKey(Key: string, text: string, icon?: ESObject1) {
   await sleep(2000)
 }
 interface ESObject1{
-  offIconSrc: string | Resource | null | undefined | number;
-  onIconSrc: string | Resource | null | undefined | number;
+  offIconSrc?: string | Resource | null | undefined | number;
+  onIconSrc?: string | Resource | null | undefined | number;
 }
 export default function textinputSec() {
   describe('textinputSec', () :void=> {
