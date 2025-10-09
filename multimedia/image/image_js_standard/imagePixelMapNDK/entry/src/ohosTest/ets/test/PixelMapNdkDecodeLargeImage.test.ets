@@ -136,6 +136,35 @@ export default function pixelMapNdkDecodeLargeImageTest() {
       }
     }
 
+    const DecodeRawImageTest = (
+      logger: Logger,
+      fileName: string,
+      type: string,
+      expectInfo: ndkTest.decodeOptions,
+      allocatorType: image.AllocatorType = AUTO
+    ): boolean => {
+      let filePath = filesDir + "/" + fileName;
+      let imageInfo: ndkTest.decodeOptions | number;
+      logger.log("filePath is: " + filePath);
+      if (type != "DMA") {
+        imageInfo = ndkTest.CreatePixelMapAndGetInfo(filePath);
+      } else {
+        imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType);
+      }
+      if (typeof imageInfo == 'object') {
+        let ret = (imageInfo.width == expectInfo.width) &&
+                (imageInfo.height == expectInfo.height) &&
+                (imageInfo.mimeType == expectInfo.mimeType);
+        logger.log("check result is: " + ret);
+        logger.log("expect info: " + JSON.stringify(expectInfo));
+        logger.log("Actual info: " + JSON.stringify(imageInfo));
+        return ret;
+      } else {
+        logger.log("CreatePixelMapForDMAAndGetInfo result is not object!");
+        return false;
+      }
+    }
+
     /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
      * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
@@ -1969,5 +1998,880 @@ export default function pixelMapNdkDecodeLargeImageTest() {
       expect(ret == IMAGE_UNSUPPORTED_OPERATION).assertTrue();
       done();
     });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1080,
+        mimeType: "image/x-sony-arw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SONY_A350.ARW", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1616,
+        height: 1080,
+        mimeType: "image/x-sony-arw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SONY_A900.ARW", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-canon-cr2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_CANON_G9.CR2", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-canon-cr2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_CANON_G10.CR2", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4288,
+        height: 2848,
+        mimeType: "image/x-nikon-nef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_D90.NEF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-nikon-nef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_D3300.NEF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4000,
+        height: 3000,
+        mimeType: "image/x-nikon-nrw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_COOLPIX_P340.NRW", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4224,
+        height: 3168,
+        mimeType: "image/x-nikon-nrw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_P6000_GPS.NRW", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-olympus-orf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_OLYMPUS_E3.ORF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-olympus-orf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_OLYMPUS_E410.ORF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3008,
+        height: 2000,
+        mimeType: "image/x-pentax-pef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PENTAX_STAR_DL.PEF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3008,
+        height: 2008,
+        mimeType: "image/x-pentax-pef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PENTAX_STARISTD_SRGB.PEF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-fuji-raf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_FUJI_S6500FD.RAF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-fuji-raf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_FUJI_S9500_SRGB.RAF", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1440,
+        mimeType: "image/x-panasonic-rw2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PANASONIC_G1.RW2", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1080,
+        mimeType: "image/x-panasonic-rw2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PANASONIC_LX3.RW2", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4000,
+        height: 2248,
+        mimeType: "image/x-samsung-srw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SAMSUNG_EX2F.SRW", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
+     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9785.CR3
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-canon-cr3"
+      };
+
+      let ret = DecodeRawImageTest(logger, "023A9785.CR3", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
+     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9867.CR3
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-canon-cr3"
+      };
+
+      let ret = DecodeRawImageTest(logger, "023A9867.CR3", "default", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1080,
+        mimeType: "image/x-sony-arw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SONY_A350.ARW", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1616,
+        height: 1080,
+        mimeType: "image/x-sony-arw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SONY_A900.ARW", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-canon-cr2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_CANON_G9.CR2", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-canon-cr2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_CANON_G10.CR2", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4288,
+        height: 2848,
+        mimeType: "image/x-nikon-nef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_D90.NEF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-nikon-nef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_D3300.NEF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4000,
+        height: 3000,
+        mimeType: "image/x-nikon-nrw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_COOLPIX_P340.NRW", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4224,
+        height: 3168,
+        mimeType: "image/x-nikon-nrw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_NIKON_P6000_GPS.NRW", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-olympus-orf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_OLYMPUS_E3.ORF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-olympus-orf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_OLYMPUS_E410.ORF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3008,
+        height: 2000,
+        mimeType: "image/x-pentax-pef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PENTAX_STAR_DL.PEF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3008,
+        height: 2008,
+        mimeType: "image/x-pentax-pef"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PENTAX_STARISTD_SRGB.PEF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-fuji-raf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_FUJI_S6500FD.RAF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1600,
+        height: 1200,
+        mimeType: "image/x-fuji-raf"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_FUJI_S9500_SRGB.RAF", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1440,
+        mimeType: "image/x-panasonic-rw2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PANASONIC_G1.RW2", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1920,
+        height: 1080,
+        mimeType: "image/x-panasonic-rw2"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_PANASONIC_LX3.RW2", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
+     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4000,
+        height: 2248,
+        mimeType: "image/x-samsung-srw"
+      };
+
+      let ret = DecodeRawImageTest(logger, "RAW_SAMSUNG_EX2F.SRW", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
+     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9785.CR3
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-canon-cr3"
+      };
+
+      let ret = DecodeRawImageTest(logger, "023A9785.CR3", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
+     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9867.CR3
+     *                 2.get imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900");
+
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 1620,
+        height: 1080,
+        mimeType: "image/x-canon-cr3"
+      };
+
+      let ret = DecodeRawImageTest(logger, "023A9867.CR3", "DMA", expectInfo);
+      expect(ret).assertTrue();
+      done();
+    });
+
   })
 }
