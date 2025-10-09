@@ -54,6 +54,7 @@ const LABEL_PRIVATE_SPACE = "privateSpace";
 const LABLE_EXTERNAL_STORAGE_CARD = "externalStorageCard";
 const LABLE_RANDOM_MAC = "randomMac";
 const LABEL_APP_CLONE = "appClone";
+const LABEL_MUTE_DEVICE = "muteDevice";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -326,6 +327,28 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+    /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0112
+   * @tc.name      : test_set_disallowed_policy_0112
+   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_disallowed_policy_0112 error 201 is expected, actually catch: ' + error.code);
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
@@ -579,6 +602,28 @@ function testGetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_get_disallowed_policy_0111 error 201 is expected, actually catch: ' + error.code);
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0112
+   * @tc.name      : test_get_disallowed_policy_0112
+   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_get_disallowed_policy_0112 error 201 is expected, actually catch: ' + error.code);
       expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
