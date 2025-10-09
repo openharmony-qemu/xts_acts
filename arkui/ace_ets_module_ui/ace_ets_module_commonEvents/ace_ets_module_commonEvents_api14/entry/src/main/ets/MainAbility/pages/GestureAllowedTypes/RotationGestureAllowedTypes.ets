@@ -26,7 +26,7 @@ struct RotationGestureAllowedTypes {
       }
       .rotate({ angle: this.angle })
       .width('90%')
-      .height('10%')
+      .height('55%')
       .backgroundColor(Color.Yellow)
       .key('RotationGestureAllowedTypes_Text')
       .gesture(
@@ -42,23 +42,23 @@ struct RotationGestureAllowedTypes {
           })
       )
 
-      Text(this.result).key('RotationGestureAllowedTypes_result')
+      Text(this.result).key('RotationGestureAllowedTypes_result').height('10%')
 
       Button('Mouse').id('Mouse_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
-        })
+        }).height('10%')
       Button('Finger').id('Finger_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];
-        })
+        }).height('10%')
       Button('Invalid').id('Invalid_type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [null, undefined];
-        })
+        }).height('10%')
     }
     .padding({ top: 10, left: 40 })
     .alignItems(HorizontalAlign.Start)
