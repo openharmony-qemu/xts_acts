@@ -19,7 +19,9 @@ group("statistics") {
     deps = [
     "statisticsHasCardHasData:ActsNetworkMgrStatisticsHasCardHasDataTest",
     "statisticsHasCardNoData:ActsNetworkMgrStatisticsHasCardNoDataTest",
-    "statisticswifi:ActsNetworkMgrStatisticsNetTest"
+    "statisticswifi:ActsNetworkMgrStatisticsNetTest",
+"ActsNetworkMgrStatisticsNetTestStatic:ActsNetworkMgrStatisticsNetStaticTest",
+"ActsNetworkMgrStatisticsNoDataTestStatic:ActsNetworkMgrStatisticsNoDataStaticTest" 
     ]
   }
 }
