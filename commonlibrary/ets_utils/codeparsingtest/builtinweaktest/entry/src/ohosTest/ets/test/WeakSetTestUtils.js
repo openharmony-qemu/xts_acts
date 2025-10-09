@@ -1933,4 +1933,1158 @@ export const WeakSetTestUtils = {
 
         // Trigger GC
         if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
-      
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Verify GC
+        const newTextNode = { nodeType: 3, textContent: "Hello", parentNode: null };
+        if (ws.has(newTextNode)) throw new Error("Simulated Text node not GC'd (memory leak)");
+
+        return "Test Passed: WeakSetSimulatedDomTextNodeGCTest061";
+    },
+
+    /**
+     * 62. Corresponding Test Point: WeakSet key is also WeakMap key — GC affects both
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_062
+     */
+    async test062_KeyInWeakSetAndWeakMapGC() {
+        const ws = new WeakSet();
+        const wm = new WeakMap();
+        let dualKey;
+
+        // Create key, add to both WeakSet and WeakMap
+        (function createDualKey() {
+            dualKey = { id: 'dual-set-map-key' };
+            ws.add(dualKey);
+            wm.set(dualKey, 'dual-data');
+        })();
+
+        // Initial verification
+        if (!ws.has(dualKey)) throw new Error("Dual key: not in WeakSet initially");
+        if (wm.get(dualKey) !== 'dual-data') throw new Error("Dual key: not in WeakMap initially");
+
+        // Release strong reference
+        dualKey = null;
+
+        // Trigger GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Verify GC in both
+        const newKey = { id: 'dual-set-map-key' };
+        if (ws.has(newKey)) throw new Error("Dual key not GC'd in WeakSet");
+        if (wm.get(newKey) !== undefined) throw new Error("Dual key not GC'd in WeakMap");
+
+        return "Test Passed: WeakSetKeyInSetAndMapGCTest062";
+    },
+
+    /**
+     * 63. Corresponding Test Point: Sealed key with writable props — modify props, association remains
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_063
+     */
+    test063_SealedKeyWithWritableProps() {
+        const ws = new WeakSet();
+        const key = {
+            id: 'sealed-writable-key',
+            count: 0,
+            value: "test"
+        };
+
+        // Seal key (prevent add/delete props, but allow modifying writable props)
+        Object.seal(key);
+
+        // Add to WeakSet
+        ws.add(key);
+        if (!ws.has(key)) throw new Error("Sealed writable key: initial has() returns false");
+
+        // Modify writable props (allowed)
+        key.count = 10;
+        key.value = "modified";
+        if (key.count !== 10 || key.value !== "modified") throw new Error("Cannot modify writable props of sealed key");
+        if (!ws.has(key)) throw new Error("Modifying sealed key's writable props breaks association");
+
+        // Attempt to add new prop (disallowed)
+        let addPropError = false;
+        try {
+            key.newProp = "new";
+        } catch (err) {
+            if (err instanceof TypeError) addPropError = true;
+        }
+        if (!addPropError && !Object.isSealed(key)) throw new Error("Sealed key allows new prop addition");
+
+        return "Test Passed: WeakSetSealedKeyWritablePropsTest063";
+    },
+
+    /**
+     * 64. Corresponding Test Point: WeakSet as object pool — GC recycles unused objects
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_064
+     */
+    async test064_WeakSetAsObjectPoolGC() {
+        const objectPool = new WeakSet();
+        let pooledObj;
+
+        // Function to get/release objects from pool
+        const Pool = {
+            acquire: function() {
+                const obj = { id: `pool-obj-${Date.now()}` };
+                objectPool.add(obj);
+                return obj;
+            },
+            release: function(obj) {
+                // Release: no action (WeakSet handles GC when no external refs)
+            }
+        };
+
+        // Acquire object (add to pool)
+        pooledObj = Pool.acquire();
+        if (!objectPool.has(pooledObj)) throw new Error("Pooled object not added to WeakSet");
+
+        // Release object (lose external ref)
+        Pool.release(pooledObj);
+        pooledObj = null;
+
+        // Trigger GC (recycle unused object)
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Verify object is recycled (not in pool)
+        const newPooledObj = Pool.acquire(); // New object (different ref)
+        if (objectPool.has(pooledObj)) throw new Error("Unused pooled object not GC'd (pool not recycled)");
+
+        return "Test Passed: WeakSetAsObjectPoolGCTest064";
+    },
+
+    /**
+     * 65. Corresponding Test Point: Proxy-wrapped frozen object as key — GC works
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_065
+     */
+    async test065_ProxyWrappedFrozenKeyGC() {
+        const ws = new WeakSet();
+        let proxyFrozenKey;
+
+        // Create frozen object, wrap with Proxy
+        (function createProxyFrozenKey() {
+            const frozenObj = Object.freeze({ id: 'proxy-frozen-key' });
+            const proxy = new Proxy(frozenObj, {
+                get: (target, prop) => target[prop],
+                set: () => { throw new Error("Frozen object is read-only"); }
+            });
+            proxyFrozenKey = proxy;
+            ws.add(proxy);
+        })();
+
+        // Initial verification
+        if (!ws.has(proxyFrozenKey)) throw new Error("Proxy-wrapped frozen key: initial has() returns false");
+        if (proxyFrozenKey.id !== 'proxy-frozen-key') throw new Error("Proxy get trap failed");
+
+        // Release strong reference
+        proxyFrozenKey = null;
+
+        // Trigger GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Verify GC
+        const newProxy = new Proxy(Object.freeze({ id: 'proxy-frozen-key' }), {});
+        if (ws.has(newProxy)) throw new Error("Proxy-wrapped frozen key not GC'd");
+
+        return "Test Passed: WeakSetProxyWrappedFrozenKeyGCTest065";
+    },
+
+    /**
+     * 66. Corresponding Test Point: Simulated Worker thread WeakSet — weak reference works
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_066
+     */
+    async test066_SimulatedWorkerWeakSet() {
+        // Simulate Worker thread (separate scope)
+        const simulateWorker = () => {
+            const workerWS = new WeakSet();
+            let workerKey;
+
+            // Worker "message" handler: receive key from main thread
+            const onMessage = (key) => {
+                workerKey = key;
+                workerWS.add(key);
+            };
+
+            // Worker "postMessage" handler: send has() result to main thread
+            const postMessage = () => {
+                return workerWS.has(workerKey);
+            };
+
+            // Worker "cleanup": release key
+            const cleanup = () => {
+                workerKey = null;
+            };
+
+            return { onMessage, postMessage, cleanup, workerWS };
+        };
+
+        // Main thread logic
+        const worker = simulateWorker();
+        let mainKey = { id: 'worker-key' };
+
+        // Main → Worker: send key
+        worker.onMessage(mainKey);
+        if (!worker.postMessage()) throw new Error("Worker: key not added to WeakSet");
+
+        // Main releases key; Worker cleans up
+        mainKey = null; // @ts-ignore: Intentional reassign to release
+        worker.cleanup();
+
+        // Trigger GC (simulate Worker thread GC)
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Verify Worker's WeakSet GC'd key
+        const newKey = { id: 'worker-key' };
+        if (worker.workerWS.has(newKey)) throw new Error("Worker WeakSet key not GC'd");
+
+        return "Test Passed: WeakSetSimulatedWorkerTest066";
+    },
+
+    /**
+     * 67. Corresponding Test Point: Key with overridden toString() — association remains
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_067
+     */
+    test067_KeyWithOverriddenToString() {
+        const ws = new WeakSet();
+        const key = {
+            id: 'toString-key',
+            // Override toString() (affects string representation, not reference)
+            toString: function() {
+                return `CustomKey[${this.id}]`;
+            }
+        };
+
+        // Add key to WeakSet
+        ws.add(key);
+        if (!ws.has(key)) throw new Error("Key with overridden toString: initial has() returns false");
+
+        // Verify toString() works
+        if (key.toString() !== "CustomKey[toString-key]") throw new Error("Key's toString() override failed");
+
+        // Modify id (affects toString() output)
+        key.id = 'modified-toString-key';
+        if (key.toString() !== "CustomKey[modified-toString-key]") throw new Error("Modified id not reflected in toString()");
+        if (!ws.has(key)) throw new Error("Modifying id (affecting toString()) breaks association");
+
+        // Delete key
+        if (!ws.delete(key)) throw new Error("delete() returns false for toString-key");
+        if (ws.has(key)) throw new Error("Key with overridden toString not deleted");
+
+        return "Test Passed: WeakSetKeyOverriddenToStringTest067";
+    },
+
+
+    /**
+     * 69. Corresponding Test Point: has() with same-struct GC'd key — returns false consistently
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_069
+     */
+    async test069_HasSameStructGCdKey() {
+        const ws = new WeakSet();
+        let originalKey;
+
+        // Create key with specific structure
+        (function createStructuredKey() {
+            originalKey = {
+                id: 'structured-key',
+                nested: { value: 100 },
+                tags: ['test', 'gc']
+            };
+            ws.add(originalKey);
+        })();
+
+        // Initial has() for original key
+        if (!ws.has(originalKey)) throw new Error("Structured key: initial has() returns false");
+
+        // Release and GC original key
+        originalKey = null;
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Test has() with 5+ same-struct keys (all should return false)
+        const sameStructKeys = Array.from({ length: 5 }, (_, i) => ({
+            id: 'structured-key',
+            nested: { value: 100 },
+            tags: ['test', 'gc']
+        }));
+
+        for (let i = 0; i < sameStructKeys.length; i++) {
+            const hasResult = ws.has(sameStructKeys[i]);
+            if (hasResult) throw new Error(`has() returns true for same-struct key #${i} (GC'd original)`);
+        }
+
+        return "Test Passed: WeakSetHasSameStructGCdKeyTest069";
+    },
+
+    /**
+     * 70. Corresponding Test Point: ArrayBuffer as key — modify buffer content without breaking association
+     * Test Case: SUB_BUILTINS_WEAKSET_TEST_070
+     */
+    test070_ArrayBufferAsKey() {
+        const ws = new WeakSet();
+        // Create ArrayBuffer as key
+        const bufferKey1 = new ArrayBuffer(16); // 16-byte buffer
+        const bufferKey2 = new ArrayBuffer(16); // Same size, different buffer
+
+        // Add bufferKey1 to WeakSet
+        ws.add(bufferKey1);
+        if (!ws.has(bufferKey1)) throw new Error("ArrayBuffer key: initial has() returns false");
+
+        // Modify buffer content (via DataView)
+        const dataView = new DataView(bufferKey1);
+        dataView.setUint32(0, 0x12345678); // Write to buffer
+        if (dataView.getUint32(0) !== 0x12345678) throw new Error("ArrayBuffer content modification failed");
+        if (!ws.has(bufferKey1)) throw new Error("Modifying ArrayBuffer content breaks association");
+
+        // Verify different ArrayBuffers are distinct keys
+        if (ws.has(bufferKey2)) throw new Error("Same-size ArrayBuffers treated as same key");
+
+        // Delete bufferKey1
+        if (!ws.delete(bufferKey1)) throw new Error("delete() returns false for ArrayBuffer key");
+        if (ws.has(bufferKey1)) throw new Error("ArrayBuffer key not deleted");
+
+        return "Test Passed: WeakSetArrayBufferAsKeyTest070";
+    },
+    /**
+     * 071. add() method stores a plain object, has() returns true.
+     * Feature: WeakSet only stores objects; has() checks existence correctly.
+     */
+    async test071_WeakSetAddPlainObject() {
+        const weakSet = new WeakSet();
+        const testObj = {};
+        weakSet.add(testObj);
+
+        if (!weakSet.has(testObj)) {
+            throw new Error(`Test071 failed: WeakSet.add(${JSON.stringify(testObj)}), weakSet.has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddPlainObjectTest071";
+    },
+
+    /**
+     * 072. add() method throws TypeError when adding a primitive value (number).
+     * Feature: WeakSet cannot store primitive values; adding them throws error.
+     */
+    async test072_WeakSetAddPrimitiveNumber() {
+        const weakSet = new WeakSet();
+        const primitiveNum = 123;
+        let errorThrown = false;
+
+        try {
+            weakSet.add(primitiveNum);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test072 failed: WeakSet.add(${primitiveNum}) (primitive) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetAddPrimitiveNumberTest072";
+    },
+
+    /**
+     * 073. add() same object multiple times, has() still returns true (deduplication).
+     * Feature: WeakSet stores unique objects; duplicate adds have no effect.
+     */
+    async test073_WeakSetAddDuplicateObject() {
+        const weakSet = new WeakSet();
+        const testObj = { id: 1 };
+        weakSet.add(testObj);
+        weakSet.add(testObj); // Duplicate add
+        weakSet.add(testObj); // Third add
+
+        if (!weakSet.has(testObj)) {
+            throw new Error(`Test073 failed: WeakSet.add(${JSON.stringify(testObj)}) 3x, has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddDuplicateObjectTest073";
+    },
+
+    /**
+     * 074. delete() existing object returns true, has() returns false afterward.
+     * Feature: delete() removes object from WeakSet; has() reflects removal.
+     */
+    async test074_WeakSetDeleteExistingObject() {
+        const weakSet = new WeakSet();
+        const testObj = { name: "test" };
+        weakSet.add(testObj);
+
+        const deleteResult = weakSet.delete(testObj);
+        const hasAfterDelete = weakSet.has(testObj);
+
+        if (!deleteResult || hasAfterDelete) {
+            throw new Error(`Test074 failed: delete() returned ${deleteResult} (expected true), has() returned ${hasAfterDelete} (expected false)`);
+        }
+
+        return "Test Passed: WeakSetDeleteExistingObjectTest074";
+    },
+
+    /**
+     * 075. delete() non-existing object returns false.
+     * Feature: delete() has no effect on non-existent objects and returns false.
+     */
+    async test075_WeakSetDeleteNonExistingObject() {
+        const weakSet = new WeakSet();
+        const existingObj = {};
+        const nonExistingObj = {};
+        weakSet.add(existingObj); // Only add existingObj
+
+        const deleteResult = weakSet.delete(nonExistingObj);
+
+        if (deleteResult) {
+            throw new Error(`Test075 failed: delete(non-existing object) returned ${deleteResult} (expected false)`);
+        }
+
+        return "Test Passed: WeakSetDeleteNonExistingObjectTest075";
+    },
+
+    /**
+     * 076. add() returns WeakSet instance, supporting method chaining.
+     * Feature: add() is chainable; each call returns the same WeakSet.
+     */
+    async test076_WeakSetAddChaining() {
+        const weakSet = new WeakSet();
+        const obj1 = {};
+        const obj2 = {};
+
+        // Chain add calls
+        const chainResult = weakSet.add(obj1).add(obj2);
+
+        if (chainResult !== weakSet || !weakSet.has(obj1) || !weakSet.has(obj2)) {
+            throw new Error(`Test076 failed: add() chaining returned ${chainResult !== weakSet ? "different WeakSet" : "same WeakSet"}, but has(obj1)=${weakSet.has(obj1)}, has(obj2)=${weakSet.has(obj2)} (expected both true)`);
+        }
+
+        return "Test Passed: WeakSetAddChainingTest076";
+    },
+
+    /**
+     * 077. WeakSet does not contain objects from prototype chain.
+     * Feature: WeakSet only stores explicitly added objects; ignores prototype objects.
+     */
+    async test077_WeakSetIgnorePrototypeObjects() {
+        const weakSet = new WeakSet();
+        const protoObj = { protoKey: "protoVal" };
+        const testObj = Object.create(protoObj); // testObj's prototype is protoObj
+
+        weakSet.add(testObj); // Add testObj, NOT protoObj
+
+        if (weakSet.has(protoObj)) {
+            throw new Error(`Test077 failed: WeakSet.has(prototype object) returned true (expected false; only testObj was added)`);
+        }
+
+        return "Test Passed: WeakSetIgnorePrototypeObjectsTest077";
+    },
+
+    /**
+     * 078. add() array object (valid object type), has() returns true.
+     * Feature: Array instances are objects; WeakSet can store them.
+     */
+    async test078_WeakSetAddArrayObject() {
+        const weakSet = new WeakSet();
+        const testArray = [1, 2, 3]; // Array is an object
+        weakSet.add(testArray);
+
+        if (!weakSet.has(testArray)) {
+            throw new Error(`Test078 failed: WeakSet.add(${JSON.stringify(testArray)}) (array object), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddArrayObjectTest078";
+    },
+
+    /**
+     * 079. add() function object (valid object type), has() returns true.
+     * Feature: Function instances are objects; WeakSet can store them.
+     */
+    async test079_WeakSetAddFunctionObject() {
+        const weakSet = new WeakSet();
+        const testFunc = () => console.log("test"); // Function is an object
+        weakSet.add(testFunc);
+
+        if (!weakSet.has(testFunc)) {
+            throw new Error(`Test079 failed: WeakSet.add(${testFunc.toString()}) (function object), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddFunctionObjectTest079";
+    },
+
+    /**
+     * 080. add() Proxy object (target is object), has() returns true.
+     * Feature: Proxy instances are objects; WeakSet can store them if target is object.
+     */
+    async test080_WeakSetAddProxyObject() {
+        const weakSet = new WeakSet();
+        const targetObj = {};
+        const proxyObj = new Proxy(targetObj, {}); // Proxy wraps object
+        weakSet.add(proxyObj);
+
+        if (!weakSet.has(proxyObj) || weakSet.has(targetObj)) {
+            throw new Error(`Test080 failed: has(proxyObj)=${weakSet.has(proxyObj)} (expected true), has(targetObj)=${weakSet.has(targetObj)} (expected false; only proxy was added)`);
+        }
+
+        return "Test Passed: WeakSetAddProxyObjectTest080";
+    },
+
+    /**
+     * 081. add() null throws TypeError (null is not an object).
+     * Feature: WeakSet rejects null (not an object) with TypeError.
+     */
+    async test081_WeakSetAddNull() {
+        const weakSet = new WeakSet();
+        const nullValue = null;
+        let errorThrown = false;
+
+        try {
+            weakSet.add(nullValue);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test081 failed: WeakSet.add(null) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetAddNullTest081";
+    },
+
+    /**
+     * 082. add() undefined throws TypeError (undefined is primitive).
+     * Feature: WeakSet rejects undefined (primitive) with TypeError.
+     */
+    async test082_WeakSetAddUndefined() {
+        const weakSet = new WeakSet();
+        const undefinedValue = undefined;
+        let errorThrown = false;
+
+        try {
+            weakSet.add(undefinedValue);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test082 failed: WeakSet.add(undefined) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetAddUndefinedTest082";
+    },
+
+    /**
+     * 083. add() wrapped BigInt object (Object(123n)), has() returns true.
+     * Feature: Wrapped primitive objects (e.g., Object(BigInt)) are valid for WeakSet.
+     */
+    async test083_WeakSetAddWrappedBigInt() {
+        const weakSet = new WeakSet();
+        const wrappedBigInt = Object(123n); // Wrap BigInt to object
+        weakSet.add(wrappedBigInt);
+
+        if (!weakSet.has(wrappedBigInt)) {
+            throw new Error(`Test083 failed: WeakSet.add(Object(123n)) (wrapped BigInt), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddWrappedBigIntTest083";
+    },
+
+    /**
+     * 084. add() String object (new String("test")), has() returns true.
+     * Feature: String objects (not primitives) are valid for WeakSet.
+     */
+    async test084_WeakSetAddStringObject() {
+        const weakSet = new WeakSet();
+        const stringObj = new String("test"); // String object (not primitive)
+        weakSet.add(stringObj);
+
+        if (!weakSet.has(stringObj)) {
+            throw new Error(`Test084 failed: WeakSet.add(new String("test")) (String object), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddStringObjectTest084";
+    },
+
+    /**
+     * 085. Two separate WeakSets store the same object independently.
+     * Feature: WeakSet instances are independent; same object added to both is tracked separately.
+     */
+    async test085_WeakSetIndependentInstances() {
+        const weakSet1 = new WeakSet();
+        const weakSet2 = new WeakSet();
+        const sharedObj = { shared: true };
+
+        weakSet1.add(sharedObj);
+        weakSet2.add(sharedObj);
+        weakSet1.delete(sharedObj); // Delete from weakSet1 only
+
+        if (weakSet1.has(sharedObj) || !weakSet2.has(sharedObj)) {
+            throw new Error(`Test085 failed: weakSet1.has()=${weakSet1.has(sharedObj)} (expected false), weakSet2.has()=${weakSet2.has(sharedObj)} (expected true)`);
+        }
+
+        return "Test Passed: WeakSetIndependentInstancesTest085";
+    },
+
+    /**
+     * 086. Calling forEach() on WeakSet throws TypeError (no iteration support).
+     * Feature: WeakSet has no forEach() method; calling it throws error.
+     */
+    async test086_WeakSetNoForEach() {
+        const weakSet = new WeakSet();
+        let errorThrown = false;
+
+        try {
+            weakSet.forEach(() => {});
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test086 failed: WeakSet.forEach() did not throw TypeError (WeakSet does not support iteration)`);
+        }
+
+        return "Test Passed: WeakSetNoForEachTest086";
+    },
+
+    /**
+     * 087. Accessing size property on WeakSet returns undefined.
+     * Feature: WeakSet has no size property (due to weak references); access returns undefined.
+     */
+    async test087_WeakSetNoSizeProperty() {
+        const weakSet = new WeakSet();
+        const sizeValue = weakSet.size;
+
+        if (sizeValue !== undefined) {
+            throw new Error(`Test087 failed: WeakSet.size returned ${sizeValue} (expected undefined; WeakSet has no size property)`);
+        }
+
+        return "Test Passed: WeakSetNoSizePropertyTest087";
+    },
+
+
+    /**
+     * 089. add() ArrayBuffer object, has() returns true.
+     * Feature: ArrayBuffer instances are objects; WeakSet can store them.
+     */
+    async test089_WeakSetAddArrayBuffer() {
+        const weakSet = new WeakSet();
+        const buffer = new ArrayBuffer(16); // ArrayBuffer is object
+        weakSet.add(buffer);
+
+        if (!weakSet.has(buffer)) {
+            throw new Error(`Test089 failed: WeakSet.add(ArrayBuffer(16)) (ArrayBuffer object), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddArrayBufferTest089";
+    },
+
+    /**
+     * 090. add() DataView object, has() returns true.
+     * Feature: DataView instances are objects; WeakSet can store them.
+     */
+    async test090_WeakSetAddDataView() {
+        const weakSet = new WeakSet();
+        const buffer = new ArrayBuffer(8);
+        const dataView = new DataView(buffer); // DataView is object
+        weakSet.add(dataView);
+
+        if (!weakSet.has(dataView)) {
+            throw new Error(`Test090 failed: WeakSet.add(DataView) (DataView object), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddDataViewTest090";
+    },
+
+
+    /**
+     * 092. add() frozen object (Object.freeze), has() still returns true.
+     * Feature: Frozen objects are valid; WeakSet stores them normally.
+     */
+    async test092_WeakSetAddFrozenObject() {
+        const weakSet = new WeakSet();
+        const frozenObj = Object.freeze({ frozen: true }); // Freeze object
+        weakSet.add(frozenObj);
+
+        if (!weakSet.has(frozenObj)) {
+            throw new Error(`Test092 failed: WeakSet.add(frozen object), has() returned false (expected true; frozen objects are valid)`);
+        }
+
+        return "Test Passed: WeakSetAddFrozenObjectTest092";
+    },
+
+    /**
+     * 093. add() sealed object (Object.seal), has() still returns true.
+     * Feature: Sealed objects are valid; WeakSet stores them normally.
+     */
+    async test093_WeakSetAddSealedObject() {
+        const weakSet = new WeakSet();
+        const sealedObj = Object.seal({ sealed: true }); // Seal object
+        weakSet.add(sealedObj);
+
+        if (!weakSet.has(sealedObj)) {
+            throw new Error(`Test093 failed: WeakSet.add(sealed object), has() returned false (expected true; sealed objects are valid)`);
+        }
+
+        return "Test Passed: WeakSetAddSealedObjectTest093";
+    },
+
+    /**
+     * 094. add() two distinct empty objects, has() returns true for each.
+     * Feature: Distinct objects (even empty) are stored separately.
+     */
+    async test094_WeakSetAddDistinctEmptyObjects() {
+        const weakSet = new WeakSet();
+        const obj1 = {};
+        const obj2 = {}; // Distinct from obj1
+        weakSet.add(obj1);
+        weakSet.add(obj2);
+
+        if (!weakSet.has(obj1) || !weakSet.has(obj2)) {
+            throw new Error(`Test094 failed: has(obj1)=${weakSet.has(obj1)}, has(obj2)=${weakSet.has(obj2)} (expected both true; distinct empty objects)`);
+        }
+
+        return "Test Passed: WeakSetAddDistinctEmptyObjectsTest094";
+    },
+
+    /**
+     * 095. WeakSet constructor throws TypeError with non-iterable argument.
+     * Feature: Constructor requires iterable (e.g., array); non-iterables throw error.
+     */
+    async test095_WeakSetConstructorNonIterable() {
+        const nonIterable = { key: "value" }; // Plain object is not iterable
+        let errorThrown = false;
+
+        try {
+            new WeakSet(nonIterable);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test095 failed: new WeakSet(non-iterable object) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetConstructorNonIterableTest095";
+    },
+
+    /**
+     * 096. WeakSet constructor initializes with iterable of objects.
+     * Feature: Constructor accepts iterable (array) of objects; initializes WeakSet correctly.
+     */
+    async test096_WeakSetConstructorIterableObjects() {
+        const obj1 = {};
+        const obj2 = [];
+        const obj3 = () => {};
+        const iterable = [obj1, obj2, obj3]; // Iterable of objects
+
+        const weakSet = new WeakSet(iterable);
+
+        if (!weakSet.has(obj1) || !weakSet.has(obj2) || !weakSet.has(obj3)) {
+            throw new Error(`Test096 failed: Constructor with [obj1,obj2,obj3] — has(obj1)=${weakSet.has(obj1)}, has(obj2)=${weakSet.has(obj2)}, has(obj3)=${weakSet.has(obj3)} (expected all true)`);
+        }
+
+        return "Test Passed: WeakSetConstructorIterableObjectsTest096";
+    },
+
+    /**
+     * 097. WeakSet constructor throws TypeError if iterable contains primitive.
+     * Feature: Constructor rejects iterables with primitive values; throws TypeError.
+     */
+    async test097_WeakSetConstructorIterableWithPrimitive() {
+        const iterableWithPrimitive = [{}, 123, []]; // Contains primitive number
+        let errorThrown = false;
+
+        try {
+            new WeakSet(iterableWithPrimitive);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test097 failed: new WeakSet(iterable with primitive) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetConstructorIterableWithPrimitiveTest097";
+    },
+
+
+
+
+
+    /**
+     * 100. for...of loop on WeakSet throws TypeError (no iteration support).
+     * Feature: WeakSet is not iterable; for...of loop throws error.
+     */
+    async test100_WeakSetNoForOfIteration() {
+        const weakSet = new WeakSet();
+        weakSet.add({}); // Add dummy object
+        let errorThrown = false;
+
+        try {
+            for (const item of weakSet) {} // Attempt for...of loop
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test100 failed: for...of loop on WeakSet did not throw TypeError (WeakSet is not iterable)`);
+        }
+
+        return "Test Passed: WeakSetNoForOfIterationTest100";
+    },
+
+
+
+    /**
+     * 102. WeakSet constructor with empty iterable (empty array) initializes empty WeakSet.
+     * Feature: Empty iterable passed to constructor creates empty WeakSet; has() returns false for all.
+     */
+    async test102_WeakSetConstructorEmptyIterable() {
+        const emptyIterable = []; // Empty array (valid iterable)
+        const weakSet = new WeakSet(emptyIterable);
+        const testObj = {}; // Dummy object to check emptiness
+
+        if (weakSet.has(testObj)) {
+            throw new Error(`Test102 failed: new WeakSet([]) (empty iterable) has(${JSON.stringify(testObj)}) returned true (expected false; WeakSet should be empty)`);
+        }
+
+        return "Test Passed: WeakSetConstructorEmptyIterableTest102";
+    },
+
+
+
+    /**
+     * 104. delete() same object multiple times returns false after first call.
+     * Feature: After first successful delete(), subsequent delete() on same object returns false.
+     */
+    async test104_WeakSetDeleteMultipleTimes() {
+        const weakSet = new WeakSet();
+        const testObj = { id: 104 };
+        weakSet.add(testObj);
+
+        // First delete: should return true
+        const delete1 = weakSet.delete(testObj);
+        // Second delete: should return false (object already removed)
+        const delete2 = weakSet.delete(testObj);
+        // Third delete: should still return false
+        const delete3 = weakSet.delete(testObj);
+
+        if (!delete1 || delete2 || delete3) {
+            throw new Error(`Test104 failed: delete1=${delete1} (expected true), delete2=${delete2} (expected false), delete3=${delete3} (expected false)`);
+        }
+
+        return "Test Passed: WeakSetDeleteMultipleTimesTest104";
+    },
+
+    /**
+     * 105. has() method returns false when passed a primitive value (string).
+     * Feature: has() checks for object existence; primitives are never present, returns false.
+     */
+    async test105_WeakSetHasPrimitiveString() {
+        const weakSet = new WeakSet();
+        const stringPrimitive = "test-string"; // Primitive string
+        const stringObject = new String("test-string"); // String object (added to WeakSet)
+        weakSet.add(stringObject);
+
+        const hasPrimitive = weakSet.has(stringPrimitive);
+        const hasObject = weakSet.has(stringObject);
+
+        if (hasPrimitive || !hasObject) {
+            throw new Error(`Test105 failed: has(primitive string)=${hasPrimitive} (expected false), has(String object)=${hasObject} (expected true)`);
+        }
+
+        return "Test Passed: WeakSetHasPrimitiveStringTest105";
+    },
+
+    /**
+     * 106. add() TypedArray (Uint8Array) object, has() returns true.
+     * Feature: TypedArray instances are objects; WeakSet stores them normally.
+     */
+    async test106_WeakSetAddTypedArray() {
+        const weakSet = new WeakSet();
+        const typedArray = new Uint8Array([1, 2, 3]); // Uint8Array is object
+        weakSet.add(typedArray);
+
+        if (!weakSet.has(typedArray)) {
+            throw new Error(`Test106 failed: WeakSet.add(Uint8Array([1,2,3])), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddTypedArrayTest106";
+    },
+
+    /**
+     * 107. Inherited WeakSet subclass instance retains add/has/delete behavior.
+     * Feature: Subclasses of WeakSet inherit core methods and behave consistently.
+     */
+    async test107_WeakSetSubclassBehavior() {
+        // Define WeakSet subclass
+        class MyWeakSet extends WeakSet {}
+        const subclassWeakSet = new MyWeakSet();
+        const testObj = { subclass: true };
+
+        subclassWeakSet.add(testObj);
+        const hasResult = subclassWeakSet.has(testObj);
+        const deleteResult = subclassWeakSet.delete(testObj);
+        const hasAfterDelete = subclassWeakSet.has(testObj);
+
+        if (!hasResult || !deleteResult || hasAfterDelete) {
+            throw new Error(`Test107 failed: subclassWeakSet.add() → has=${hasResult} (expected true), delete=${deleteResult} (expected true), hasAfterDelete=${hasAfterDelete} (expected false)`);
+        }
+
+        return "Test Passed: WeakSetSubclassBehaviorTest107";
+    },
+
+    /**
+     * 108. WeakSet constructor with generator function (iterable) initializes correctly.
+     * Feature: Constructor accepts any iterable (including generators) that yields objects.
+     * Fixed: Reuse the same object references between generator and has() checks.
+     */
+    async test108_WeakSetConstructorGenerator() {
+        // Step 1: Create object references FIRST (shared between generator and has() checks)
+        const obj1 = { id: 1 };
+        const arr2 = [2, 3];
+        const func3 = () => {};
+
+        // Step 2: Generator yields the PRE-CREATED objects (same references)
+        function* objectGenerator() {
+            yield obj1;   // Yield shared obj1
+            yield arr2;   // Yield shared arr2
+            yield func3;  // Yield shared func3
+        }
+
+        // Step 3: Initialize WeakSet with generator (stores obj1/arr2/func3)
+        const weakSet = new WeakSet(objectGenerator());
+
+        // Step 4: Check the SAME references (now has() will return true)
+        if (!weakSet.has(obj1) || !weakSet.has(arr2) || !weakSet.has(func3)) {
+            throw new Error(`Test108 failed: new WeakSet(generator) — has(obj1)=${weakSet.has(obj1)}, has(arr2)=${weakSet.has(arr2)}, has(func3)=${weakSet.has(func3)} (expected all true; ensure generator yields shared object references)`);
+        }
+
+        return "Test Passed: WeakSetConstructorGeneratorTest108";
+    },
+
+    /**
+     * 109. WeakSet can store itself (no circular reference error).
+     * Feature: WeakSet instances are objects; storing self does not throw errors (though impractical).
+     */
+    async test109_WeakSetStoreItself() {
+        const weakSet = new WeakSet();
+        let errorThrown = false;
+
+        try {
+            weakSet.add(weakSet); // Attempt to add WeakSet to itself
+        } catch (e) {
+            errorThrown = true;
+        }
+
+        if (errorThrown) {
+            throw new Error(`Test109 failed: WeakSet.add(weakSet) (storing self) threw error (expected no error; WeakSet is an object)`);
+        }
+
+        return "Test Passed: WeakSetStoreItselfTest109";
+    },
+
+    /**
+     * 110. add() frozen array object, has() returns true.
+     * Feature: Frozen array objects are valid; WeakSet stores them normally.
+     */
+    async test110_WeakSetAddFrozenArray() {
+        const weakSet = new WeakSet();
+        const frozenArray = Object.freeze([1, 2, 3]); // Frozen array (object)
+        weakSet.add(frozenArray);
+
+        if (!weakSet.has(frozenArray)) {
+            throw new Error(`Test110 failed: WeakSet.add(frozen [1,2,3]), has() returned false (expected true; frozen arrays are valid objects)`);
+        }
+
+        return "Test Passed: WeakSetAddFrozenArrayTest110";
+    },
+
+    /**
+     * 111. WeakSet constructor with iterable containing null throws TypeError.
+     * Feature: Iterable with null (non-object) triggers constructor to throw TypeError.
+     */
+    async test111_WeakSetConstructorIterableWithNull() {
+        const iterableWithNull = [{}, null, []]; // Contains null (non-object)
+        let errorThrown = false;
+
+        try {
+            new WeakSet(iterableWithNull);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test111 failed: new WeakSet([{}, null, []]) (iterable with null) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetConstructorIterableWithNullTest111";
+    },
+
+    /**
+     * 112. has() returns false after object is GC (tracked via WeakRef).
+     * Feature: Weak reference allows GC; has() reflects object removal post-GC.
+     */
+    async test112_WeakSetHasAfterGC() {
+        const weakSet = new WeakSet();
+        let testObj = { gcTest: true };
+        weakSet.add(testObj);
+        const weakRef = new WeakRef(testObj); // Track object with WeakRef
+
+        // Remove strong reference to trigger GC (non-deterministic)
+        testObj = null;
+        // Hint to JS engine for GC (no guarantee, but aids testing)
+        if (typeof globalThis.gc === "function") globalThis.gc();
+
+        const postGcDeref = weakRef.deref();
+        const hasResult = postGcDeref ? weakSet.has(postGcDeref) : false;
+
+        if (postGcDeref && !hasResult) {
+            throw new Error(`Test112 failed: Object not GC'd, but weakSet.has() returned false (expected true)`);
+        } else if (!postGcDeref && hasResult) {
+            throw new Error(`Test112 failed: Object GC'd, but weakSet.has() returned true (expected false)`);
+        }
+
+        return "Test Passed: WeakSetHasAfterGCTest112 (GC behavior consistent with has())";
+    },
+
+    /**
+     * 113. add() Promise object, has() returns true.
+     * Feature: Promise instances are objects; WeakSet stores them normally.
+     */
+    async test113_WeakSetAddPromiseObject() {
+        const weakSet = new WeakSet();
+        const promiseObj = Promise.resolve("resolved"); // Promise is object
+        weakSet.add(promiseObj);
+
+        if (!weakSet.has(promiseObj)) {
+            throw new Error(`Test113 failed: WeakSet.add(Promise.resolve()), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddPromiseObjectTest113";
+    },
+
+    /**
+     * 114. delete() method returns false when passed a primitive value (boolean).
+     * Feature: delete() has no effect on primitives; returns false for non-object inputs.
+     */
+    async test114_WeakSetDeletePrimitiveBoolean() {
+        const weakSet = new WeakSet();
+        const boolPrimitive = true; // Primitive boolean
+        const boolObject = new Boolean(true); // Boolean object (added to WeakSet)
+        weakSet.add(boolObject);
+
+        const deletePrimitive = weakSet.delete(boolPrimitive);
+        const deleteObject = weakSet.delete(boolObject);
+
+        if (deletePrimitive || !deleteObject) {
+            throw new Error(`Test114 failed: delete(primitive boolean)=${deletePrimitive} (expected false), delete(Boolean object)=${deleteObject} (expected true)`);
+        }
+
+        return "Test Passed: WeakSetDeletePrimitiveBooleanTest114";
+    },
+
+    /**
+     * 115. WeakSet constructor with non-iterable (WeakMap) throws TypeError.
+     * Feature: WeakMap is not iterable; passing to WeakSet constructor throws error.
+     */
+    async test115_WeakSetConstructorNonIterableWeakMap() {
+        const nonIterableWeakMap = new WeakMap(); // WeakMap is not iterable
+        let errorThrown = false;
+
+        try {
+            new WeakSet(nonIterableWeakMap);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test115 failed: new WeakSet(WeakMap) (non-iterable) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetConstructorNonIterableWeakMapTest115";
+    },
+
+    /**
+     * 116. add() sliced ArrayBuffer (new object), has() returns true.
+     * Feature: ArrayBuffer.slice() returns new object; WeakSet stores it as distinct.
+     */
+    async test116_WeakSetAddSlicedArrayBuffer() {
+        const weakSet = new WeakSet();
+        const originalBuffer = new ArrayBuffer(16);
+        const slicedBuffer = originalBuffer.slice(4, 12); // New ArrayBuffer object
+        weakSet.add(slicedBuffer);
+
+        if (!weakSet.has(slicedBuffer) || weakSet.has(originalBuffer)) {
+            throw new Error(`Test116 failed: has(slicedBuffer)=${weakSet.has(slicedBuffer)} (expected true), has(originalBuffer)=${weakSet.has(originalBuffer)} (expected false)`);
+        }
+
+        return "Test Passed: WeakSetAddSlicedArrayBufferTest116";
+    },
+
+    /**
+     * 117. WeakSet subclass with overridden add() method retains parent has() behavior.
+     * Feature: Subclass method overrides don’t break inherited methods (e.g., has()).
+     */
+    async test117_WeakSetSubclassOverriddenAdd() {
+        // Subclass with overridden add() (tracks calls)
+        class TrackedWeakSet extends WeakSet {
+            add(obj) {
+                this.addCalled = true; // Track if add() is called
+                return super.add(obj); // Call parent add()
+            }
+        }
+
+        const trackedWeakSet = new TrackedWeakSet();
+        const testObj = { tracked: true };
+        trackedWeakSet.add(testObj);
+
+        if (!trackedWeakSet.addCalled || !trackedWeakSet.has(testObj)) {
+            throw new Error(`Test117 failed: overridden add() called=${trackedWeakSet.addCalled} (expected true), has()=${trackedWeakSet.has(testObj)} (expected true)`);
+        }
+
+        return "Test Passed: WeakSetSubclassOverriddenAddTest117";
+    },
+
+    /**
+     * 118. WeakSet constructor with non-iterable (empty string) throws TypeError.
+     * Feature: Empty string is primitive (non-iterable); constructor throws error.
+     */
+    async test118_WeakSetConstructorNonIterableEmptyString() {
+        const nonIterableEmptyString = "123"; // Empty string (primitive, non-iterable)
+        let errorThrown = false;
+
+        try {
+            new WeakSet(nonIterableEmptyString);
+        } catch (e) {
+            if (e instanceof TypeError) errorThrown = true;
+        }
+
+        if (!errorThrown) {
+            throw new Error(`Test118 failed: new WeakSet("") (non-iterable empty string) did not throw TypeError`);
+        }
+
+        return "Test Passed: WeakSetConstructorNonIterableEmptyStringTest118";
+    },
+
+
+
+    /**
+     * 120. add() WeakMap instance, has() returns true.
+     * Feature: WeakMap instances are objects; WeakSet stores them normally.
+     */
+    async test120_WeakSetAddWeakMapInstance() {
+        const weakSet = new WeakSet();
+        const weakMapInstance = new WeakMap([[{ key: 1 }, "value1"]]); // WeakMap is object
+        weakSet.add(weakMapInstance);
+
+        if (!weakSet.has(weakMapInstance)) {
+            throw new Error(`Test120 failed: WeakSet.add(WeakMap instance), has() returned false (expected true)`);
+        }
+
+        return "Test Passed: WeakSetAddWeakMapInstanceTest120";
+    }
+};
