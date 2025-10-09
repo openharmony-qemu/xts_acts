@@ -1080,7 +1080,7 @@ export default function preferenceTest() {
         }
         let keys = new Array<string>(KEY_TEST_STRING_ELEMENT);
         mPreferences.on('dataChange', keys, testObserver);
-        mPreferences.on('dataChange', keys, testObserver);
+        mPreferences.off('dataChange', keys, testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
       } catch (err : BusinessError) {
