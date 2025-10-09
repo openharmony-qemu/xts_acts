@@ -138,13 +138,15 @@ napi_value FreeConfigDescriptorTest_001(napi_env env, napi_callback_info info)
     return result;
 }
 
-static bool IsInterruptInEndpoint(const UsbEndpointDescriptor &epDesc) {
+static bool IsInterruptInEndpoint(const UsbEndpointDescriptor &epDesc)
+{
     return (((epDesc.bEndpointAddress & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN) &&
             ((epDesc.bmAttributes & USB_DDK_ENDPOINT_XFERTYPE_MASK) == USB_DDK_ENDPOINT_XFER_INT));
 }
 
 static auto FindInterruptEndpoint(const UsbDdkEndpointDescriptor *epDesc, uint32_t numEp)
-    -> std::tuple<bool, uint8_t, uint8_t, uint16_t> {
+    -> std::tuple<bool, uint8_t, uint8_t, uint16_t>
+{
     for (uint32_t epIdx = 0; epIdx < numEp; ++epIdx) {
         if (IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
             return {true, epDesc[epIdx].endpointDescriptor.bEndpointAddress,
@@ -155,14 +157,13 @@ static auto FindInterruptEndpoint(const UsbDdkEndpointDescriptor *epDesc, uint32
     return {false, 0, 0, 0};
 }
 
-static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface) {
+static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface)
+{
     UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
     uint32_t numSetting = interface.numAltsetting;
-
     for (uint32_t setIdx = 0; setIdx < numSetting; ++setIdx) {
         auto result =
             FindInterruptEndpoint(intDesc[setIdx].endPoint, intDesc[setIdx].interfaceDescriptor.bNumEndpoints);
-
         if (std::get<0>(result)) {
             return {true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber, std::get<1>(result),
                     std::get<3>(result) << 8 | std::get<2>(result)};
@@ -171,7 +172,8 @@ static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const U
     return {false, 0, 0, 0};
 }
 
-static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config) {
+static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config)
+{
     for (uint32_t intIdx = PARAM_0; intIdx < config->configDescriptor.bNumInterfaces; ++intIdx) {
         auto result = FindForEachInterface(config->interface[intIdx]);
         if (std::get<0>(result)) {
