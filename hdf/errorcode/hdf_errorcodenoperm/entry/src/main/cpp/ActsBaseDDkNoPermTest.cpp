@@ -68,51 +68,44 @@ const uint32_t INVALID_NON_BLOCK = 2;
 
 void addBaseDDkErrorCodeNoPermTest(std::vector<napi_property_descriptor> &descData)
 {
-    descData.push_back(
-        {"IsHidDevice", nullptr, IsHidDevice, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"CreateTestDeviceDdkNOPERM", nullptr, CreateTestDeviceDdkNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"IsHidDevice", nullptr, IsHidDevice, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"CreateTestDeviceDdkNOPERM", nullptr, CreateTestDeviceDdkNOPERM, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
     descData.push_back(
         {"HidEmitEventNOPERM", nullptr, HidEmitEventNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidDestroyDeviceNOPERM", nullptr, HidDestroyDeviceNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidInitNOPERM", nullptr, HidInitNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidInitNOPERM", nullptr, HidInitNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidReleaseNOPERM", nullptr, HidReleaseNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidOpenNOPERM", nullptr, HidOpenNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidCloseNOPERM", nullptr, HidCloseNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidWriteNOPERM", nullptr, HidWriteNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidOpenNOPERM", nullptr, HidOpenNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCloseNOPERM", nullptr, HidCloseNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidWriteNOPERM", nullptr, HidWriteNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidReadTimeoutNOPERM", nullptr, HidReadTimeoutNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidReadNOPERM", nullptr, HidReadNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidReadNOPERM", nullptr, HidReadNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidDdkErrCodeNOPERM", nullptr, HidDdkErrCodeNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidSetNonBlockingNOPERM", nullptr, HidSetNonBlockingNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidSetNonBlockingNOPERM", nullptr, HidSetNonBlockingNOPERM, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
     descData.push_back(
         {"HidGetRawInfoNOPERM", nullptr, HidGetRawInfoNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidGetRawNameNOPERM", nullptr, HidGetRawNameNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidGetPhysicalAddressNOPERM", nullptr, HidGetPhysicalAddressNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidGetRawUniqueIdNOPERM", nullptr, HidGetRawUniqueIdNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidGetPhysicalAddressNOPERM", nullptr, HidGetPhysicalAddressNOPERM, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidGetRawUniqueIdNOPERM", nullptr, HidGetRawUniqueIdNOPERM, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
     descData.push_back(
         {"HidSendReportNOPERM", nullptr, HidSendReportNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"HidGetReportNOPERM", nullptr, HidGetReportNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"HidGetReportDescriptorNOPERM", nullptr, HidGetReportDescriptorNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidGetReportDescriptorNOPERM", nullptr, HidGetReportDescriptorNOPERM, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
     descData.push_back(
         {"UsbSerialReleaseNOPERM", nullptr, UsbSerialReleaseNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"UsbSerialCloseNOPERM", nullptr, UsbSerialCloseNOPERM, nullptr, nullptr, nullptr, napi_default, nullptr});
-    
 }
 
 static bool CompareIgnoreCase(char a, char b)
