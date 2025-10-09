@@ -314,6 +314,9 @@ export default function ConfigurationStatic() {
       hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.mnc: ' + context.config.mnc);
       expect(context.config.mnc).not().assertUndefined();
       expect(context.config.mnc).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.locale: ' + context.config.locale);
+      expect(context.config.locale).not().assertUndefined();
+      expect(context.config.locale).not().assertNull();
       done();
       console.log("------------end SUB_AA_OpenHarmony_Configuration_Static_0100-------------");
     });
