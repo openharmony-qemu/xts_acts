@@ -31,7 +31,7 @@ const TAG: string = "CameraSessionFocusTest: ";
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.PhotoSession;
-let mCameraNum: number;
+let mCameraNum: int;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
