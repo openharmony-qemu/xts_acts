@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import webSocketNoPTest from './webSocketNoP.test'
+import webSocketNoPTest from './WebSocketNoP.test'
 export default function testsuite() {
     webSocketNoPTest();
 }

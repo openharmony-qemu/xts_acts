@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import networkSecurityTest from "./networkSecurity.test";
+import networkSecurityTest from "./NetworkSecurity.test";
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
 
