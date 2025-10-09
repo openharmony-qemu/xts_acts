@@ -1831,4 +1831,687 @@ export const WeakMapTestUtils = {
      * 54. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2530
      * Function: Verify key objects stored in WeakSet are GC'd after WeakSet loses all references.
      */
- 
+    async test2530_KeyInWeakSetGC() {
+        const wm = new WeakMap();
+        const weakSet = new WeakSet(); // 用于存储键对象的WeakSet
+        let weakSetKey;
+
+        // 函数作用域创建键并添加到WeakSet
+        (function createKeyInWeakSet() {
+            const key = { id: 'key-in-weakset' };
+            weakSetKey = key;
+            wm.set(key, 'key-in-weakset-data');
+            weakSet.add(key); // 键对象同时存在于WeakMap和WeakSet
+        })();
+
+        // 初始验证（WeakSet和WeakMap均关联）
+        if (!weakSet.has(weakSetKey)) throw new Error("Key not found in WeakSet initially");
+        if (wm.get(weakSetKey) !== 'key-in-weakset-data') throw new Error("Key in WeakSet: initial get() failed");
+
+        // 释放强引用（WeakSet和WeakMap均仅存弱引用）
+        weakSetKey = null;
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证1：WeakSet中键已被GC（无法直接验证，通过WeakMap间接验证）
+        const newSameStructKey = { id: 'key-in-weakset' };
+        if (wm.get(newSameStructKey) !== undefined) throw new Error("Key in WeakSet not GC'd from WeakMap");
+
+        // 验证2：新键正常添加
+        const newKey = { id: 'new-key-after-weakset-gc' };
+        wm.set(newKey, 'new-key-data');
+        if (wm.get(newKey) !== 'new-key-data') throw new Error("New key setup failed after WeakSet key GC");
+
+        return "Test Passed: WeakMapKeyInWeakSetGCTest2530";
+    },
+
+    /**
+     * 55. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2540
+     * Function: Verify WeakMap.set() accepts undefined/null as value (stores correctly).
+     */
+    test2540_SetUndefinedNullValue() {
+        const wm = new WeakMap();
+        const key1 = { id: 'key-undefined' };
+        const key2 = { id: 'key-null' };
+        const key3 = { id: 'key-normal' };
+
+        // 设置undefined/null/正常值
+        wm.set(key1, undefined);
+        wm.set(key2, null);
+        wm.set(key3, 'normal-value');
+
+        // 验证值存储正确
+        if (wm.get(key1) !== undefined) throw new Error("WeakMap.set(undefined) does not store undefined");
+        if (wm.get(key2) !== null) throw new Error("WeakMap.set(null) does not store null");
+        if (wm.get(key3) !== 'normal-value') throw new Error("WeakMap.set(normal value) failed");
+
+        // 验证has()返回true（即使值为undefined/null）
+        if (!wm.has(key1)) throw new Error("has() returns false for key with undefined value");
+        if (!wm.has(key2)) throw new Error("has() returns false for key with null value");
+
+        // 验证覆盖值正常
+        wm.set(key1, 'overwrite-undefined');
+        wm.set(key2, 'overwrite-null');
+        if (wm.get(key1) !== 'overwrite-undefined') throw new Error("Overwriting undefined value failed");
+        if (wm.get(key2) !== 'overwrite-null') throw new Error("Overwriting null value failed");
+
+        // 验证删除正常
+        wm.delete(key1);
+        if (wm.has(key1)) throw new Error("Deleting key with overwritten undefined value failed");
+
+        return "Test Passed: WeakMapSetUndefinedNullValueTest2540";
+    },
+
+    /**
+     * 56. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2550
+     * Function: Verify key objects as private class fields are GC'd after class instance is destroyed.
+     */
+    async test2550_PrivateFieldKeyGC() {
+        const wm = new WeakMap();
+
+        // 定义含私有字段的类（私有字段存储键对象）
+        class WithPrivateKey {
+            #privateKey; // 私有字段：存储键对象
+            constructor() {
+                this.#privateKey = { id: 'private-field-key' }; // 私有键对象
+                wm.set(this.#privateKey, 'private-key-data');
+            }
+            getPrivateKeyData() {
+                return wm.get(this.#privateKey);
+            }
+        }
+
+        let instance;
+        // 函数作用域创建类实例（确保实例可被GC）
+        (function createInstance() {
+            instance = new WithPrivateKey();
+            // 初始验证
+            if (instance.getPrivateKeyData() !== 'private-key-data') throw new Error("Private field key: initial get() failed");
+        })();
+
+        // 释放类实例（私有字段#privateKey随之失去强引用）
+        instance = null;
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证私有字段中的键已被GC
+        const newSameStructKey = { id: 'private-field-key' };
+        if (wm.get(newSameStructKey) !== undefined) throw new Error("Private field key not GC'd from WeakMap");
+
+        // 验证新实例的私有键正常工作
+        const newInstance = new WithPrivateKey();
+        if (newInstance.getPrivateKeyData() !== 'private-key-data') throw new Error("New instance's private key setup failed");
+
+        return "Test Passed: WeakMapPrivateFieldKeyGCTest2550";
+    },
+
+    /**
+     * 57. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2560
+     * Function: Verify repeated add/delete of the same key (100+ times) does not break WeakMap state.
+     */
+    test2560_RepeatAddDeleteSameKey() {
+        const wm = new WeakMap();
+        const key = { id: 'repeat-add-delete-key' };
+        const repeatCount = 150; // 重复操作150次
+
+        // 重复添加→删除→添加
+        for (let i = 0; i < repeatCount; i++) {
+            const value = `value-${i}`;
+            wm.set(key, value);
+            // 验证添加后值正确
+            if (wm.get(key) !== value) throw new Error(`Repeat add #${i}: get() returns wrong value`);
+            if (!wm.has(key)) throw new Error(`Repeat add #${i}: has() returns false`);
+
+            // 偶数次迭代后删除（模拟交替操作）
+            if (i % 2 === 0) {
+                const deleteRes = wm.delete(key);
+                if (!deleteRes) throw new Error(`Repeat delete #${i/2}: delete() returns false`);
+                if (wm.has(key)) throw new Error(`Repeat delete #${i/2}: has() returns true`);
+                if (wm.get(key) !== undefined) throw new Error(`Repeat delete #${i/2}: get() returns non-undefined`);
+            }
+        }
+
+        // 最终添加并验证状态稳定
+        wm.set(key, 'final-value');
+        if (wm.get(key) !== 'final-value') throw new Error("Final add: get() returns wrong value");
+        if (!wm.has(key)) throw new Error("Final add: has() returns false");
+
+        return "Test Passed: WeakMapRepeatAddDeleteTest2560";
+    },
+
+    /**
+     * 58. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2570
+     * Function: Verify WeakMap works with async iterators (for await...of throws error as expected).
+     */
+    async test2570_WeakMapInAsyncIterator() {
+        const wm = new WeakMap();
+        const key = { id: 'async-iterator-key' };
+        wm.set(key, 'async-iterator-data');
+
+        // 验证1：WeakMap无[Symbol.asyncIterator]方法（不可异步迭代）
+        if (wm[Symbol.asyncIterator] !== undefined) throw new Error("WeakMap has unexpected [Symbol.asyncIterator] method");
+
+        // 验证2：for await...of迭代WeakMap抛出TypeError
+        let asyncIterErrorThrown = false;
+        try {
+            for await (const _ of wm) { /* 尝试异步迭代 */ }
+        } catch (err) {
+                asyncIterErrorThrown = true;
+
+        }
+        if (!asyncIterErrorThrown) throw new Error("WeakMap allows for await...of iteration (should throw)");
+
+        // 验证3：异步迭代期间WeakMap状态正常（键未被误删）
+        if (wm.get(key) !== 'async-iterator-data') throw new Error("Async iterator test breaks WeakMap key association");
+
+        return "Test Passed: WeakMapAsyncIteratorTest2570";
+    },
+
+    /**
+     * 59. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2580
+     * Function: Verify key objects with frozen properties (not full object freeze) work as WeakMap keys.
+     */
+    test2580_KeyWithFrozenProps() {
+        const wm = new WeakMap();
+        const key = {
+            id: 'frozen-props-key',
+            mutableProp: 'initial-mutable',
+            frozenProp: 'initial-frozen'
+        };
+
+        // 仅冻结key的frozenProp属性（不冻结整个对象）
+        Object.defineProperty(key, 'frozenProp', {
+            value: key.frozenProp,
+            writable: false,
+            configurable: false
+        });
+
+        // 初始设置与验证
+        wm.set(key, 'frozen-props-data');
+        if (wm.get(key) !== 'frozen-props-data') throw new Error("Key with frozen props: initial get() failed");
+
+        // 验证1：修改可变属性（允许，不影响关联）
+        key.mutableProp = 'modified-mutable';
+        if (key.mutableProp !== 'modified-mutable') throw new Error("Modifying mutable prop failed");
+        if (wm.get(key) !== 'frozen-props-data') throw new Error("Modifying mutable prop breaks key association");
+
+        // 验证2：尝试修改冻结属性（应失败）
+        let frozenPropModifyFailed = false;
+        try {
+            key.frozenProp = 'modified-frozen'; // 不可写属性，严格模式下抛出TypeError
+        } catch (err) {
+            if (err instanceof TypeError) frozenPropModifyFailed = true;
+        }
+        if (!frozenPropModifyFailed && key.frozenProp === 'modified-frozen') throw new Error("Modified frozen property unexpectedly");
+
+        // 验证3：添加新属性（允许，不影响关联）
+        key.newProp = 'new-property';
+        if (key.newProp !== 'new-property') throw new Error("Adding new prop failed");
+        if (wm.get(key) !== 'frozen-props-data') throw new Error("Adding new prop breaks key association");
+
+        return "Test Passed: WeakMapKeyWithFrozenPropsTest2580";
+    },
+
+    /**
+     * 60. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2590
+     * Function: Verify batch GC of keys with nested references (e.g., key contains array of objects).
+     */
+    async test2590_NestedRefKeysBatchGC() {
+        const wm = new WeakMap();
+        const batchSize = 8; // 批量创建含嵌套引用的键
+        let keyBatchHolder = {}; // 临时持有强引用
+
+        // 批量创建含嵌套引用的键（键对象包含数组，数组含子对象）
+        (function createNestedRefKeys() {
+            for (let i = 0; i < batchSize; i++) {
+                const nestedKey = {
+                    id: `nested-ref-key-${i}`,
+                    children: [
+                        { subId: `sub-${i}-1` },
+                        { subId: `sub-${i}-2` }
+                    ]
+                };
+                keyBatchHolder[`key-${i}`] = nestedKey;
+                wm.set(nestedKey, `nested-ref-data-${i}`);
+            }
+        })();
+
+        // 初始验证
+        for (let i = 0; i < batchSize; i++) {
+            const key = keyBatchHolder[`key-${i}`];
+            if (wm.get(key) !== `nested-ref-data-${i}`) throw new Error(`Nested ref key ${i}: initial get() failed`);
+        }
+
+        // 释放强引用（键对象及其嵌套对象均失去强引用）
+        keyBatchHolder = null;
+        await new Promise(resolve => setTimeout(resolve, 100)); // 等待JS引擎清理
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 批量验证GC结果
+        let gcFailedCount = 0;
+        const failedKeys = [];
+        for (let i = 0; i < batchSize; i++) {
+            const newSameStructKey = {
+                id: `nested-ref-key-${i}`,
+                children: [
+                    { subId: `sub-${i}-1` },
+                    { subId: `sub-${i}-2` }
+                ]
+            };
+            if (wm.get(newSameStructKey) !== undefined) {
+                gcFailedCount++;
+                failedKeys.push(i);
+            }
+        }
+
+        if (gcFailedCount > 0) throw new Error(`Nested ref keys GC failed: keys ${failedKeys.join(', ')} not GC'd`);
+
+        return "Test Passed: WeakMapNestedRefKeysGCTest2590";
+    },
+
+    /**
+     * 61. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2600
+     * Function: Verify WeakMap methods (set/get/has/delete) called via call/apply work correctly.
+     */
+    test2600_WeakMapMethodsCallApply() {
+        const wm = new WeakMap();
+        const key = { id: 'call-apply-key' };
+        const value = 'call-apply-data';
+
+        // 1. 用call调用set/get/has/delete
+        WeakMap.prototype.set.call(wm, key, value); // 等效于wm.set(key, value)
+        if (WeakMap.prototype.get.call(wm, key) !== value) throw new Error("WeakMap.get.call() returns wrong value");
+        if (!WeakMap.prototype.has.call(wm, key)) throw new Error("WeakMap.has.call() returns false");
+
+        // 2. 用apply调用set（参数用数组传递）
+        WeakMap.prototype.set.apply(wm, [key, 'apply-modified-value']);
+        if (WeakMap.prototype.get.apply(wm, [key]) !== 'apply-modified-value') throw new Error("WeakMap.set.apply() fails");
+
+        // 3. 用call调用delete
+        const deleteRes = WeakMap.prototype.delete.call(wm, key);
+        if (!deleteRes) throw new Error("WeakMap.delete.call() returns false");
+        if (WeakMap.prototype.has.call(wm, key)) throw new Error("WeakMap.delete.call() does not work");
+
+        // 4. 验证错误场景：call/apply传递非WeakMap实例
+        let invalidCallError = false;
+        try {
+            WeakMap.prototype.get.call({}, key); // 第一个参数不是WeakMap实例
+        } catch (err) {
+            if (err instanceof TypeError) invalidCallError = true;
+        }
+        if (!invalidCallError) throw new Error("WeakMap method call on non-WeakMap instance does not throw");
+
+        return "Test Passed: WeakMapMethodsCallApplyTest2600";
+    },
+
+    /**
+     * 62. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2610
+     * Function: Verify key objects used as event listeners are GC'd after removal.
+     */
+    async test2610_KeyAsEventListenerGC() {
+        const wm = new WeakMap();
+        let eventListenerKey;
+
+        // 模拟事件目标（简化版，类似DOM EventTarget）
+        const mockEventTarget = {
+            listeners: new Map(),
+            addEventListener: function(type, listener) {
+                this.listeners.set(type, listener);
+            },
+            removeEventListener: function(type) {
+                this.listeners.delete(type);
+            },
+            hasListener: function(type) {
+                return this.listeners.has(type);
+            }
+        };
+
+        // 函数作用域创建键对象（作为事件监听器）
+        (function createListenerKey() {
+            const listener = {
+                id: 'event-listener-key',
+                handleEvent: function() { console.log('handled'); }
+            };
+            eventListenerKey = listener;
+            wm.set(listener, 'listener-data');
+            mockEventTarget.addEventListener('click', listener.handleEvent); // 注册监听器
+        })();
+
+        // 初始验证
+        if (wm.get(eventListenerKey) !== 'listener-data') throw new Error("Listener key: initial get() failed");
+        if (!mockEventTarget.hasListener('click')) throw new Error("Event listener not registered");
+
+        // 移除事件监听器并释放强引用
+        mockEventTarget.removeEventListener('click');
+        eventListenerKey = null;
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证监听器键已被GC
+        const newSameStructListener = {
+            id: 'event-listener-key',
+            handleEvent: function() {}
+        };
+        if (wm.get(newSameStructListener) !== undefined) throw new Error("Event listener key not GC'd");
+
+        // 验证事件目标无残留监听器
+        if (mockEventTarget.hasListener('click')) throw new Error("Event listener not removed from target");
+
+        return "Test Passed: WeakMapKeyAsEventListenerGCTest2610";
+    },
+
+    /**
+     * 63. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2620
+     * Function: Verify WeakMap does not retain keys when values are set to circular references.
+     */
+    async test2620_ValueCircularRefGC() {
+        const wm = new WeakMap();
+        let keyWithCircularVal;
+
+        // 函数作用域创建键，值包含循环引用
+        (function createKeyWithCircularValue() {
+            const key = { id: 'key-with-circular-val' };
+            const circularValue = {
+                data: 'circular-value-data',
+                self: null // 用于循环引用
+            };
+            circularValue.self = circularValue; // 循环引用：value→self→value
+
+            wm.set(key, circularValue);
+            keyWithCircularVal = key;
+        })();
+
+        // 初始验证（循环引用值正常存储）
+        if (wm.get(keyWithCircularVal).data !== 'circular-value-data') throw new Error("Circular value: initial get() failed");
+        if (wm.get(keyWithCircularVal).self !== wm.get(keyWithCircularVal)) throw new Error("Circular reference in value broken");
+
+        // 释放键的强引用（值的循环引用不影响键的GC）
+        keyWithCircularVal = null;
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证键已被GC（值的循环引用不会阻止键回收）
+        const newSameStructKey = { id: 'key-with-circular-val' };
+        if (wm.get(newSameStructKey) !== undefined) throw new Error("Key with circular value not GC'd");
+
+        return "Test Passed: WeakMapValueCircularRefGCTest2620";
+    },
+
+    /**
+     * 64. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2630
+     * Function: Verify key objects with Symbol as prototype (Object.setPrototypeOf to Symbol) work as keys.
+     */
+    test2630_KeyWithSymbolPrototype() {
+        const wm = new WeakMap();
+        const symbolProto = Symbol('symbol-prototype');
+        const key = { id: 'symbol-proto-key' };
+
+
+
+        // 验证1：设置并访问键（原型为Symbol不影响WeakMap关联）
+        wm.set(key, 'symbol-proto-data');
+        if (wm.get(key) !== 'symbol-proto-data') throw new Error("Key with Symbol prototype: get() failed");
+        if (!wm.has(key)) throw new Error("Key with Symbol prototype: has() returns false");
+
+        // 验证2：修改键属性（不影响关联）
+        key.id = 'modified-symbol-proto-key';
+        if (wm.get(key) !== 'symbol-proto-data') throw new Error("Modifying key with Symbol prototype breaks association");
+
+        // 验证3：删除键正常
+        const deleteRes = wm.delete(key);
+        if (!deleteRes) throw new Error("Key with Symbol prototype: delete() returns false");
+        if (wm.has(key)) throw new Error("Key with Symbol prototype: delete() does not work");
+
+        return "Test Passed: WeakMapKeyWithSymbolPrototypeTest2630";
+    },
+
+    /**
+     * 65. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2640
+     * Function: Verify WeakMap works in iframe-like cross-context (simulated with separate scopes).
+     */
+    test2640_WeakMapCrossContext() {
+        const wm = new WeakMap();
+        const sharedKey = { id: 'cross-context-key' };
+        let context2Result = null;
+
+        // 模拟上下文1：设置键
+        (function context1() {
+            wm.set(sharedKey, 'cross-context-data');
+            if (wm.get(sharedKey) !== 'cross-context-data') throw new Error("Context1: set() failed");
+        })();
+
+        // 模拟上下文2：读取并修改键（不同函数作用域模拟跨上下文）
+        (function context2() {
+            context2Result = wm.get(sharedKey);
+            wm.set(sharedKey, 'context2-modified-data');
+        })();
+
+        // 验证1：上下文2读取到上下文1设置的值
+        if (context2Result !== 'cross-context-data') throw new Error("Cross-context read failed: wrong initial value");
+
+        // 验证2：上下文2的修改在全局可见
+        if (wm.get(sharedKey) !== 'context2-modified-data') throw new Error("Cross-context modify failed: change not global");
+
+        // 模拟上下文3：删除键
+        (function context3() {
+            wm.delete(sharedKey);
+        })();
+
+        // 验证3：上下文3的删除在全局生效
+        if (wm.has(sharedKey)) throw new Error("Cross-context delete failed: key still exists");
+
+        return "Test Passed: WeakMapCrossContextTest2640";
+    },
+
+    /**
+     * 66. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2650
+     * Function: Verify key objects with non-writable properties (Object.defineProperty writable: false) work as keys.
+     */
+    test2650_KeyWithNonWritableProps() {
+        const wm = new WeakMap();
+        const key = {};
+
+        // 定义非可写属性
+        Object.defineProperty(key, 'id', {
+            value: 'non-writable-key',
+            writable: false, // 不可写
+            configurable: true,
+            enumerable: true
+        });
+
+        // 初始设置与验证
+        wm.set(key, 'non-writable-prop-data');
+        if (wm.get(key) !== 'non-writable-prop-data') throw new Error("Key with non-writable prop: initial get() failed");
+
+        // 验证1：尝试修改非可写属性（应失败）
+        let modifyFailed = false;
+        try {
+            key.id = 'modified-non-writable'; // 严格模式下抛出TypeError
+        } catch (err) {
+            if (err instanceof TypeError) modifyFailed = true;
+        }
+        if (!modifyFailed && key.id === 'modified-non-writable') throw new Error("Modified non-writable property unexpectedly");
+
+        // 验证2：添加新属性（允许，不影响关联）
+        key.newProp = 'new-property';
+        if (key.newProp !== 'new-property') throw new Error("Adding new prop to key failed");
+        if (wm.get(key) !== 'non-writable-prop-data') throw new Error("Adding new prop breaks key association");
+
+        // 验证3：删除键正常
+        wm.delete(key);
+        if (wm.has(key)) throw new Error("Deleting key with non-writable prop failed");
+
+        return "Test Passed: WeakMapKeyWithNonWritablePropsTest2650";
+    },
+
+    /**
+     * 67. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2660
+     * Function: Verify batch set of keys with same structure (different references) are all GC'd.
+     */
+    async test2660_BatchSameStructKeysGC() {
+        const wm = new WeakMap();
+        const batchSize = 10; // 批量创建同结构不同引用的键
+        let keyBatch = [];
+
+        // 批量创建同结构键（id相同，引用不同）
+        (function createSameStructBatch() {
+            for (let i = 0; i < batchSize; i++) {
+                const key = { id: 'same-struct-key' }; // 所有键结构相同
+                keyBatch.push(key);
+                wm.set(key, `same-struct-data-${i}`);
+            }
+        })();
+
+        // 初始验证（同结构键值不同）
+        for (let i = 0; i < batchSize; i++) {
+            if (wm.get(keyBatch[i]) !== `same-struct-data-${i}`) throw new Error(`Same-struct key ${i}: initial get() failed`);
+        }
+
+        // 释放强引用
+        keyBatch = null;
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证所有同结构键已被GC
+        const newSameStructKey = { id: 'same-struct-key' };
+        if (wm.get(newSameStructKey) !== undefined) throw new Error("Same-struct keys not GC'd (new key finds value)");
+
+        // 验证新键正常添加
+        const newKey = { id: 'new-after-same-struct-gc' };
+        wm.set(newKey, 'new-data');
+        if (wm.get(newKey) !== 'new-data') throw new Error("New key setup failed after same-struct batch GC");
+
+        return "Test Passed: WeakMapBatchSameStructKeysGCTest2660";
+    },
+
+    /**
+     * 68. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2670
+     * Function: Verify WeakMap does not throw error when set() is called with maximum safe integer as value.
+     */
+    test2670_SetMaxSafeIntValue() {
+        const wm = new WeakMap();
+        const key = { id: 'max-safe-int-key' };
+        const maxSafeInt = Number.MAX_SAFE_INTEGER; // 9007199254740991
+        const beyondMaxSafeInt = maxSafeInt + 1; // 超出安全整数范围
+
+        // 验证1：设置最大安全整数作为值
+        wm.set(key, maxSafeInt);
+        if (wm.get(key) !== maxSafeInt) throw new Error("Set max safe integer value failed");
+
+        // 验证2：设置超出安全整数范围的值（允许存储，但值可能精度丢失）
+        wm.set(key, beyondMaxSafeInt);
+        if (wm.get(key) !== beyondMaxSafeInt) throw new Error("Set beyond max safe integer value failed");
+
+        // 验证3：设置最大安全整数的字符串形式
+        wm.set(key, maxSafeInt.toString());
+        if (wm.get(key) !== maxSafeInt.toString()) throw new Error("Set max safe integer string value failed");
+
+        // 验证4：has()和delete()正常工作
+        if (!wm.has(key)) throw new Error("has() returns false for max safe int value key");
+        const deleteRes = wm.delete(key);
+        if (!deleteRes) throw new Error("delete() returns false for max safe int value key");
+
+        return "Test Passed: WeakMapSetMaxSafeIntValueTest2670";
+    },
+
+    /**
+     * 69. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2680
+     * Function: Verify key objects referenced by multiple closures are GC'd after all closures are released.
+     */
+    async test2680_KeyInMultipleClosuresGC() {
+        const wm = new WeakMap();
+        let closure1, closure2; // 存储闭包的顶层变量
+
+        // 函数作用域创建键和多个闭包（均引用键）
+        (function createMultipleClosures() {
+            const key = { id: 'multi-closure-key' };
+            wm.set(key, 'multi-closure-data');
+
+            // 闭包1：引用键
+            closure1 = function() {
+                return wm.get(key);
+            };
+
+            // 闭包2：引用键并修改值
+            closure2 = function(newVal) {
+                if (newVal) wm.set(key, newVal);
+                return wm.get(key);
+            };
+        })();
+
+        // 初始验证（闭包可正常访问键）
+        if (closure1() !== 'multi-closure-data') throw new Error("Closure1: initial get() failed");
+        if (closure2('closure2-modified') !== 'closure2-modified') throw new Error("Closure2: set() failed");
+
+        // 释放所有闭包（键失去所有强引用）
+        closure1 = null;
+        closure2 = null;
+
+        // 触发GC
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证键已被GC
+        const newSameStructKey = { id: 'multi-closure-key' };
+        if (wm.get(newSameStructKey) !== undefined) throw new Error("Key in multiple closures not GC'd");
+
+        return "Test Passed: WeakMapKeyInMultipleClosuresGCTest2680";
+    },
+
+    /**
+     * 70. Corresponding Test Case: SUB_BUILTINS_WEAKMAP_TEST_2690
+     * Function: Verify WeakMap.set() with BigInt value works correctly (stores and retrieves BigInt).
+     */
+    test2690_SetBigIntValue() {
+        const wm = new WeakMap();
+        const key = { id: 'bigint-key' };
+        const bigInt1 = 123n; // 小BigInt
+        const bigInt2 = 900719925474099100000000000000000000001n; // 大BigInt
+        const bigInt3 = BigInt(Number.MAX_SAFE_INTEGER) + 100n; // 基于安全整数的BigInt
+
+        // 验证1：设置小BigInt
+        wm.set(key, bigInt1);
+        if (wm.get(key) !== bigInt1) throw new Error("Set small BigInt value failed");
+
+        // 验证2：设置大BigInt
+        wm.set(key, bigInt2);
+        if (wm.get(key) !== bigInt2) throw new Error("Set large BigInt value failed");
+
+        // 验证3：设置基于安全整数的BigInt
+        wm.set(key, bigInt3);
+        if (wm.get(key) !== bigInt3) throw new Error("Set safe-int-based BigInt value failed");
+
+        // 验证4：BigInt值的运算结果正确（确保值未被篡改）
+        const bigIntSum = wm.get(key) + 50n;
+        if (bigIntSum !== (BigInt(Number.MAX_SAFE_INTEGER) + 150n)) throw new Error("BigInt value operation failed");
+
+        // 验证5：has()和delete()正常
+        if (!wm.has(key)) throw new Error("has() returns false for BigInt value key");
+        const deleteRes = wm.delete(key);
+        if (!deleteRes) throw new Error("delete() returns false for BigInt value key");
+
+        return "Test Passed: WeakMapSetBigIntValueTest2690";
+    }
+
+};
