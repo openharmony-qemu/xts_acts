@@ -25,10 +25,10 @@
 #define USB_DDK_ENDPOINT_XFER_INT 0x03
 #define USB_DDK_TEST_BUF_SIZE 100
 
-uint8_t configIndex = 0;
-uint64_t interfaceHandle = 0;
-uint8_t settingIndex = 0;
-uint32_t timeout = 1000;
+static uint8_t g_configIndex = 0;
+static uint64_t g_interfaceHandle = 0;
+static uint8_t g_settingIndex = 0;
+static uint32_t g_timeout = 1000;
 
 void addUsbDDKNoPermTest(std::vector<napi_property_descriptor> &descData)
 {
@@ -115,7 +115,7 @@ napi_value GetConfigDescriptorTest_001(napi_env env, napi_callback_info info)
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
     uint64_t errorId = PARAM_1;
-    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, configIndex, &config);
+    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, g_configIndex, &config);
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
     napi_value result;
@@ -129,7 +129,7 @@ napi_value FreeConfigDescriptorTest_001(napi_env env, napi_callback_info info)
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
     uint64_t errorId = PARAM_1;
-    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, configIndex, &config);
+    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, g_configIndex, &config);
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
     napi_value result;
@@ -138,33 +138,40 @@ napi_value FreeConfigDescriptorTest_001(napi_env env, napi_callback_info info)
     return result;
 }
 
-static bool IsInterruptInEndpoint(const UsbEndpointDescriptor &epDesc)
-{
+static bool IsInterruptInEndpoint(const UsbEndpointDescriptor &epDesc) {
     return (((epDesc.bEndpointAddress & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN) &&
             ((epDesc.bmAttributes & USB_DDK_ENDPOINT_XFERTYPE_MASK) == USB_DDK_ENDPOINT_XFER_INT));
 }
 
-static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface)
-{
-    struct UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
-    uint32_t numSetting = interface.numAltsetting;
-    for (uint32_t setIdx = 0; setIdx < numSetting; ++setIdx) {
-        uint32_t numEp = intDesc[setIdx].interfaceDescriptor.bNumEndpoints;
-        struct UsbDdkEndpointDescriptor *epDesc = intDesc[setIdx].endPoint;
-        for (uint32_t epIdx = 0; epIdx < numEp; ++epIdx) {
-            if (IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
-                return {true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber,
-                        epDesc[epIdx].endpointDescriptor.bEndpointAddress,
-                        epDesc[epIdx].endpointDescriptor.wMaxPacketSize};
-            }
+static auto FindInterruptEndpoint(const UsbDdkEndpointDescriptor *epDesc, uint32_t numEp)
+    -> std::tuple<bool, uint8_t, uint8_t, uint16_t> {
+    for (uint32_t epIdx = 0; epIdx < numEp; ++epIdx) {
+        if (IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
+            return {true, epDesc[epIdx].endpointDescriptor.bEndpointAddress,
+                    epDesc[epIdx].endpointDescriptor.wMaxPacketSize & 0xFF,
+                    (epDesc[epIdx].endpointDescriptor.wMaxPacketSize >> 8) & 0xFF};
         }
     }
-
-    return {false, {}, {}, {}};
+    return {false, 0, 0, 0};
 }
 
-static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config)
-{
+static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface) {
+    UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
+    uint32_t numSetting = interface.numAltsetting;
+
+    for (uint32_t setIdx = 0; setIdx < numSetting; ++setIdx) {
+        auto result =
+            FindInterruptEndpoint(intDesc[setIdx].endPoint, intDesc[setIdx].interfaceDescriptor.bNumEndpoints);
+
+        if (std::get<0>(result)) {
+            return {true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber, std::get<1>(result),
+                    std::get<3>(result) << 8 | std::get<2>(result)};
+        }
+    }
+    return {false, 0, 0, 0};
+}
+
+static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config) {
     for (uint32_t intIdx = PARAM_0; intIdx < config->configDescriptor.bNumInterfaces; ++intIdx) {
         auto result = FindForEachInterface(config->interface[intIdx]);
         if (std::get<0>(result)) {
@@ -177,7 +184,7 @@ static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct
 static bool ParseConfiguration(uint64_t deviceId, std::tuple<bool, uint8_t, uint8_t, uint16_t> &source)
 {
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     if (ret != PARAM_0) {
         return false;
     }
@@ -197,8 +204,8 @@ napi_value ClaimInterfaceTest_001(napi_env env, napi_callback_info info)
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t ret = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t releaseValue = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t ret = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t releaseValue = OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -214,8 +221,8 @@ napi_value ReleaseInterfaceTest_001(napi_env env, napi_callback_info info)
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t ret = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t ret = OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -232,9 +239,9 @@ napi_value SelectInterfaceSettingTest_001(napi_env env, napi_callback_info info)
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t ret = OH_Usb_SelectInterfaceSetting(interfaceHandle, settingIndex);
-    int32_t ret1 = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t ret = OH_Usb_SelectInterfaceSetting(g_interfaceHandle, g_settingIndex);
+    int32_t ret1 = OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -251,10 +258,10 @@ napi_value GetCurrentInterfaceSettingTest_001(napi_env env, napi_callback_info i
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t returnValue = OH_Usb_SelectInterfaceSetting(interfaceHandle, settingIndex);
-    int32_t ret = OH_Usb_GetCurrentInterfaceSetting(interfaceHandle, &settingIndex);
-    int32_t ret1 = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t returnValue = OH_Usb_SelectInterfaceSetting(g_interfaceHandle, g_settingIndex);
+    int32_t ret = OH_Usb_GetCurrentInterfaceSetting(g_interfaceHandle, &g_settingIndex);
+    int32_t ret1 = OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -271,12 +278,12 @@ napi_value SendControlReadRequestTest_001(napi_env env, napi_callback_info info)
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t releaseValue1 = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t releaseValue1 = OH_Usb_ReleaseInterface(g_interfaceHandle);
     struct UsbControlRequestSetup setup;
     uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
     uint32_t dataLen = USB_DDK_TEST_BUF_SIZE;
-    int32_t ret = OH_Usb_SendControlReadRequest(interfaceHandle, &setup, timeout, data, &dataLen);
+    int32_t ret = OH_Usb_SendControlReadRequest(g_interfaceHandle, &setup, g_timeout, data, &dataLen);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -293,19 +300,19 @@ napi_value SendControlWriteRequestTest_001(napi_env env, napi_callback_info info
     std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
     bool result1 = ParseConfiguration(deviceId, source);
     uint8_t interface = std::get<1>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
-    int32_t releaseValue1 = OH_Usb_ReleaseInterface(interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    int32_t releaseValue1 = OH_Usb_ReleaseInterface(g_interfaceHandle);
     struct UsbControlRequestSetup setup;
     uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
     uint32_t dataLen = USB_DDK_TEST_BUF_SIZE;
-    int32_t returnValue = OH_Usb_SendControlReadRequest(interfaceHandle, &setup, timeout, data, &dataLen);
+    int32_t returnValue = OH_Usb_SendControlReadRequest(g_interfaceHandle, &setup, g_timeout, data, &dataLen);
     struct UsbControlRequestSetup setupW = {PARAM_0};
     setupW.bmRequestType = 0x00;
     setupW.bRequest = 0x09;
     setupW.wValue = (0x03 << PARAM_8) | 0x01;
     setupW.wIndex = 0;
     setupW.wLength = dataLen;
-    int32_t ret = OH_Usb_SendControlWriteRequest(interfaceHandle, &setupW, timeout, data, dataLen);
+    int32_t ret = OH_Usb_SendControlWriteRequest(g_interfaceHandle, &setupW, g_timeout, data, dataLen);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -324,12 +331,12 @@ napi_value CreateDeviceMemMapTest_001(napi_env env, napi_callback_info info)
     uint8_t interface = std::get<1>(source);
     uint8_t endpoint1 = std::get<PARAM_2>(source);
     uint16_t maxPktSize1 = std::get<PARAM_3>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
     struct UsbDeviceMemMap *devMemMap = nullptr;
     size_t bufferLen = maxPktSize1;
     int32_t ret = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
     OH_Usb_DestroyDeviceMemMap(devMemMap);
-    OH_Usb_ReleaseInterface(interfaceHandle);
+    OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
@@ -347,12 +354,12 @@ napi_value DestroyDeviceMemMapTest_001(napi_env env, napi_callback_info info)
     uint8_t interface = std::get<1>(source);
     uint8_t endpoint1 = std::get<PARAM_2>(source);
     uint16_t maxPktSize1 = std::get<PARAM_3>(source);
-    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
+    int32_t releaseValue = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
     struct UsbDeviceMemMap *devMemMap = nullptr;
     size_t bufferLen = maxPktSize1;
     int32_t ret = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
     OH_Usb_DestroyDeviceMemMap(devMemMap);
-    OH_Usb_ReleaseInterface(interfaceHandle);
+    OH_Usb_ReleaseInterface(g_interfaceHandle);
     OH_Usb_Release();
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret);
