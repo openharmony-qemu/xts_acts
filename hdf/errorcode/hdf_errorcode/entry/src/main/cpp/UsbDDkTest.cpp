@@ -25,10 +25,10 @@
 #define USB_DDK_ENDPOINT_XFER_INT 0x03
 #define USB_DDK_TEST_BUF_SIZE 100
 
-uint8_t configIndex = 0;
-uint64_t interfaceHandle = 0;
-uint8_t settingIndex = 0;
-uint32_t timeout = 1000;
+static uint8_t configIndex = 0;
+static uint64_t interfaceHandle = 0;
+static uint8_t settingIndex = 0;
+static uint32_t timeout = 1000;
 
 void addUsbDDKNoPermTest(std::vector<napi_property_descriptor> &descData)
 {
