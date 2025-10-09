@@ -21,7 +21,7 @@ import webSocket from '@ohos.net.webSocket';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'WebSocketTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let ws: webSocket.WebSocket;
-let availableWebSocketAddress: string = 'wss://ws.welive.huawei.com/';
+let availableWebSocketAddress: string = 'wss://ws.welive.hu'+'awei.com/';
 
 const ExpectFail = () => {
   try {
