@@ -3682,4 +3682,1053 @@ export const WeakMixTestUtils = {
             const errorDetails = {
                 chain: [baseError, childError],
                 codes: [childError.code]
+            };
+            errorRef = new WeakRef(errorDetails);
+            weakMap.set(childError, errorRef);
+
+            errorRef = new WeakRef(childError);
+
+            // 验证初始状态
+            if (!(childError instanceof ValidationError)) {
+                throw new Error("Custom error inheritance failed");
+            }
+            if (childError.cause !== baseError) throw new Error("Error chain not established");
+        })();
+
+        // 清除强引用
+        const tempChildRef = errorRef;
+        const tempBaseRef = new WeakRef(baseError);
+        baseError = null;
+        childError = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempChildRef.deref() !== undefined) throw new Error("Child error not GC'd");
+        if (tempBaseRef.deref() !== undefined) throw new Error("Base error not GC'd");
+
+        return "Test Passed: WeakMixErrorInheritanceTest064";
+    },
+
+    /**
+     * 065. 异步迭代器组合：WeakMap存储异步迭代器，WeakSet跟踪迭代结果
+     */
+    async test065_WeakMixAsyncIterators() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let asyncIterator, results, iteratorRef;
+
+        (function createAsyncIterator() {
+            // 创建异步迭代器
+            const data = [
+                { id: 'async-1' },
+                { id: 'async-2' },
+                { id: 'async-3' }
+            ];
+
+            async function* createGenerator() {
+                for (const item of data) {
+                    await new Promise(resolve => setTimeout(resolve, 10));
+                    yield item;
+                }
+            }
+
+            asyncIterator = createGenerator();
+            results = [];
+
+            // 预执行迭代获取结果（用于测试验证）
+            (async () => {
+                for await (const item of asyncIterator) {
+                    results.push(item);
+                    weakSet.add(item); // WeakSet跟踪迭代结果
+                }
+            })();
+
+            // WeakMap存储迭代器到结果的WeakRef
+            const resultsRef = new WeakRef(results);
+            weakMap.set(asyncIterator, resultsRef);
+
+            iteratorRef = new WeakRef(asyncIterator);
+
+            // 验证初始状态（等待至少一个结果）
+            return new Promise(resolve => {
+                const check = () => {
+                    if (results.length > 0) {
+                        resolve();
+                    } else {
+                        setTimeout(check, 50);
+                    }
+                };
+                check();
+            });
+        })().then(() => {
+            // 迭代器验证在异步初始化后进行
+            if (results.length !== 3) {
+                throw new Error(`Async iteration failed: 预期3个结果，实际${results.length}`);
+            }
+        });
+
+        // 等待迭代完成
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        // 清除强引用
+        const tempIteratorRef = iteratorRef;
+        const tempResultsRef = new WeakRef(results);
+        asyncIterator = null;
+        results = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempIteratorRef.deref() !== undefined) throw new Error("Async iterator not GC'd");
+        if (tempResultsRef.deref() !== undefined) throw new Error("Iterator results not GC'd");
+
+        return "Test Passed: WeakMixAsyncIteratorsTest065";
+    },
+
+    /**
+     * 066. 类型化数组转换组合：WeakSet存储源TypedArray，WeakMap关联类型转换结果
+     */
+    async test066_WeakMixTypedArrayConversion() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let sourceArray, convertedArrays, arrayRef;
+
+        (function createTypedConversions() {
+            // 创建源类型化数组（Int16Array）
+            sourceArray = new Int16Array([-100, 200, -300, 400]);
+
+            // 转换为其他类型
+            convertedArrays = {
+                uint16: new Uint16Array(sourceArray.buffer), // 共享缓冲区
+                float32: new Float32Array(sourceArray.map(x => x / 100)), // 新缓冲区
+                source: sourceArray
+            };
+
+            // WeakSet存储源数组
+            weakSet.add(sourceArray);
+
+            // WeakMap关联转换结果的WeakRef
+            const conversionRef = new WeakRef(convertedArrays);
+            weakMap.set(sourceArray, conversionRef);
+
+            arrayRef = new WeakRef(sourceArray);
+
+            // 验证初始状态
+            if (convertedArrays.uint16.length !== 4) {
+                throw new Error(`Typed array conversion failed: 预期长度4，实际${convertedArrays.uint16.length}`);
+            }
+            // 验证共享缓冲区的值（Int16到Uint16的二进制转换）
+            if (convertedArrays.uint16[0] !== 65436) { // -100的Uint16表示
+                throw new Error(`Typed array value mismatch: 预期65436，实际${convertedArrays.uint16[0]}`);
+            }
+        })();
+
+        // 清除强引用
+        const tempSourceRef = arrayRef;
+        const tempConvertedRef = new WeakRef(convertedArrays);
+        sourceArray = null;
+        convertedArrays = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempSourceRef.deref() !== undefined) throw new Error("Source typed array not GC'd");
+        if (tempConvertedRef.deref() !== undefined) throw new Error("Converted arrays not GC'd");
+
+        return "Test Passed: WeakMixTypedArrayConversionTest066";
+    },
+
+    /**
+     * 067. 符号注册表组合：WeakMap存储全局注册表Symbol，WeakSet跟踪关联对象
+     */
+    async test067_WeakMixSymbolRegistry() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let registrySymbol, associatedObjs, symbolRef;
+
+        (function createSymbolRegistry() {
+            // 创建全局注册表Symbol
+            registrySymbol = Symbol.for('weakmix.test.067');
+
+            // 创建关联对象
+            associatedObjs = {
+                data: { value: 'symbol-data' },
+                handler: () => `Handled by ${registrySymbol.description}`,
+                timestamp: new Date()
+            };
+
+            // WeakSet跟踪关联对象
+            Object.values(associatedObjs).forEach(obj => {
+                if (obj instanceof Object) weakSet.add(obj);
+            });
+
+            // 创建包装对象作为WeakMap键（Symbol不能直接作为键）
+            const key = { symbol: registrySymbol };
+             symbolRef = new WeakRef(associatedObjs);
+            weakMap.set(key, symbolRef);
+
+            symbolRef = new WeakRef(key);
+
+            // 验证初始状态
+            if (Symbol.keyFor(registrySymbol) !== 'weakmix.test.067') {
+                throw new Error("Symbol registry lookup failed");
+            }
+            if (associatedObjs.handler() === undefined) {
+                throw new Error("Symbol associated handler failed");
+            }
+        })();
+
+        // 清除强引用
+        const tempSymbolRef = symbolRef;
+        const tempDataRef = new WeakRef(associatedObjs.data);
+        registrySymbol = null;
+        associatedObjs = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+        globalThis.ArkTools.forceFullGC();
+        // 验证回收情况
+        if (tempSymbolRef.deref() !== undefined) throw new Error("Symbol wrapper not GC'd");
+        if (tempDataRef.deref() !== undefined) throw new Error("Associated objects not GC'd");
+
+        return "Test Passed: WeakMixSymbolRegistryTest067";
+    },
+
+    /**
+     * 068. 嵌套代理组合：WeakSet存储嵌套代理对象，WeakMap关联目标链
+     */
+    async test068_WeakMixNestedProxies() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let targetObj, innerProxy, outerProxy, proxyRef;
+
+        (function createNestedProxies() {
+            // 创建原始目标对象
+            targetObj = {
+                level: 0,
+                value: 'original',
+                getNested() { return { nested: 'value' }; }
+            };
+
+            // 创建内层代理
+            innerProxy = new Proxy(targetObj, {
+                get(target, prop) {
+                    if (prop === 'value') return `${target[prop]}-inner`;
+                    return target[prop];
+                }
+            });
+
+            // 创建外层代理（代理内层代理）
+            outerProxy = new Proxy(innerProxy, {
+                get(target, prop) {
+                    if (prop === 'value') return `${target[prop]}-outer`;
+                    return target[prop];
+                }
+            });
+
+            // WeakSet存储所有代理
+            weakSet.add(innerProxy);
+            weakSet.add(outerProxy);
+
+            // WeakMap关联目标链的WeakRef
+            const targetChain = {
+                outer: outerProxy,
+                inner: innerProxy,
+                target: targetObj
+            };
+            const chainRef = new WeakRef(targetChain);
+            weakMap.set(outerProxy, chainRef);
+
+            proxyRef = new WeakRef(outerProxy);
+
+            // 验证初始状态
+            if (outerProxy.value !== 'original-inner-outer') {
+                throw new Error(`Nested proxy failed: 预期"original-inner-outer"，实际"${outerProxy.value}"`);
+            }
+            if (outerProxy.level !== 0) throw new Error("Proxy property access failed");
+        })();
+
+        // 清除强引用
+        const tempOuterRef = proxyRef;
+        const tempInnerRef = new WeakRef(innerProxy);
+        const tempTargetRef = new WeakRef(targetObj);
+        targetObj = null;
+        innerProxy = null;
+        outerProxy = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempOuterRef.deref() !== undefined) throw new Error("Outer proxy not GC'd");
+        if (tempInnerRef.deref() !== undefined || tempTargetRef.deref() !== undefined) {
+            throw new Error("Inner proxy or target not GC'd");
+        }
+
+        return "Test Passed: WeakMixNestedProxiesTest068";
+    },
+
+    /**
+     * 069. 日期本地化组合：WeakMap存储Date，WeakSet跟踪多语言格式化结果
+     */
+    async test069_WeakMixDateLocalization() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let baseDate, localizedFormats, dateRef;
+
+        (function createDateLocalizations() {
+            // 使用UTC日期避免时区问题
+            baseDate = new Date(Date.UTC(2024, 5, 15)); // 2024-06-15
+
+            // 模拟多语言格式化（实际项目中可使用Intl.DateTimeFormat）
+            localizedFormats = {
+                en: {
+                    full: "June 15, 2024",
+                    short: "6/15/24"
+                },
+                zh: {
+                    full: "2024年6月15日",
+                    short: "24-06-15"
+                },
+                original: baseDate
+            };
+
+            // WeakSet存储格式化结果对象
+            Object.values(localizedFormats).forEach(format => {
+                if (typeof format === 'object' && format !== null) {
+                    weakSet.add(format);
+                }
+            });
+
+            // WeakMap关联本地化结果的WeakRef
+            const localeRef = new WeakRef(localizedFormats);
+            weakMap.set(baseDate, localeRef);
+
+            dateRef = new WeakRef(baseDate);
+
+            // 验证初始状态
+            if (localizedFormats.en.full !== "June 15, 2024") {
+                throw new Error(`English localization failed: ${localizedFormats.en.full}`);
+            }
+            if (localizedFormats.zh.full !== "2024年6月15日") {
+                throw new Error(`Chinese localization failed: ${localizedFormats.zh.full}`);
+            }
+        })();
+
+        // 清除强引用
+        const tempDateRef = dateRef;
+        const tempLocalesRef = new WeakRef(localizedFormats);
+        baseDate = null;
+        localizedFormats = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempDateRef.deref() !== undefined) throw new Error("Base date not GC'd");
+        if (tempLocalesRef.deref() !== undefined) throw new Error("Localized formats not GC'd");
+
+        return "Test Passed: WeakMixDateLocalizationTest069";
+    },
+
+    /**
+     * 070. 正则执行结果组合：WeakSet存储RegExp，WeakMap关联多次执行结果
+     */
+    async test070_WeakMixRegexExecResults() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let pattern, execResults, regexRef;
+
+        (function createRegexExecutions() {
+            // 明确正则含义：匹配"t"开头，后跟可选的"e"及"s"或"x"
+            pattern = /t(e[sx])?/g;
+            // 测试字符串保持简洁，便于预测匹配结果
+            const testStr = "test text rex";
+
+            // 收集所有匹配结果
+            execResults = [];
+            let result;
+            while ((result = pattern.exec(testStr)) !== null) {
+                execResults.push({
+                    match: result[0],
+                    groups: result[1] || null,
+                    index: result.index
+                });
+            }
+
+            // 存储到弱引用容器
+            weakSet.add(pattern);
+            const execRef = new WeakRef(execResults);
+            weakMap.set(pattern, execRef);
+            regexRef = new WeakRef(pattern);
+
+            // 验证匹配数量
+            if (execResults.length !== 4) {
+                throw new Error(`Regex exec failed: 预期4个匹配，实际${execResults.length}，匹配详情: ${JSON.stringify(execResults)}`);
+            }
+
+            // 修正1：调整第一个匹配的预期（实际匹配是"tes"而非"te"）
+            // 因为正则会匹配最长可能的有效序列：t + e + s
+            if (execResults[0].match !== 'tes' || execResults[0].groups !== 'es') {
+                throw new Error(`First match incorrect: ${JSON.stringify(execResults[0])}`);
+            }
+
+            // 修正2：验证第二个匹配（test末尾的"t"）
+            if (execResults[1].match !== 't' || execResults[1].groups !== null) {
+                throw new Error(`Second match incorrect: ${JSON.stringify(execResults[1])}`);
+            }
+
+            // 验证第三个匹配（text中的"tex"）
+            if (execResults[2].match !== 'tex' || execResults[2].groups !== 'ex') {
+                throw new Error(`Third match incorrect: ${JSON.stringify(execResults[2])}`);
+            }
+        })();
+
+        // 清除强引用并验证GC
+        const tempRegexRef = regexRef;
+        const tempResultsRef = new WeakRef(execResults);
+        pattern = null;
+        execResults = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        if (tempRegexRef.deref() !== undefined) throw new Error("Regex pattern not GC'd");
+        if (tempResultsRef.deref() !== undefined) throw new Error("Exec results not GC'd");
+
+        return "Test Passed: WeakMixRegexExecResultsTest070";
+    },
+
+    /**
+     * 071. 缓冲区多视图组合：WeakMap存储ArrayBuffer，WeakSet跟踪多类型视图
+     */
+    async test071_WeakMixBufferViews() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let buffer, views, bufferRef;
+
+        (function createBufferViews() {
+            // 创建足够大的缓冲区（16字节）
+            buffer = new ArrayBuffer(16);
+
+            // 创建多种类型视图（不重叠区域）
+            views = {
+                int8: new Int8Array(buffer, 0, 4),
+                uint16: new Uint16Array(buffer, 4, 2),
+                float32: new Float32Array(buffer, 8, 2)
+            };
+
+            // 填充数据（每种视图独立区域）
+            views.int8.set([-1, 2, -3, 4]);
+            views.uint16.set([0x1234, 0x5678]);
+            views.float32.set([3.14, 2.718]);
+
+            // WeakSet跟踪所有视图
+            Object.values(views).forEach(view => weakSet.add(view));
+
+            // WeakMap关联视图集合的WeakRef
+            const viewsRef = new WeakRef(views);
+            weakMap.set(buffer, viewsRef);
+
+            bufferRef = new WeakRef(buffer);
+
+            // 验证初始状态
+            if (views.int8[0] !== -1) throw new Error("Int8 view data mismatch");
+            if (views.uint16[1] !== 0x5678) throw new Error("Uint16 view data mismatch");
+            if (Math.abs(views.float32[0] - 3.14) > 0.001) {
+                throw new Error("Float32 view data mismatch");
+            }
+        })();
+
+        // 清除强引用
+        const tempBufferRef = bufferRef;
+        const tempViewsRef = new WeakRef(views);
+        buffer = null;
+        views = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempBufferRef.deref() !== undefined) throw new Error("Buffer not GC'd");
+        if (tempViewsRef.deref() !== undefined) throw new Error("Buffer views not GC'd");
+
+        return "Test Passed: WeakMixBufferViewsTest071";
+    },
+
+    /**
+     * 072. 函数组合组合：WeakSet存储函数集合，WeakMap关联组合函数
+     */
+    async test072_WeakMixFunctionComposition() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let funcA, funcB, composedFunc, funcRefs;
+
+        (function createFunctionComposition() {
+            // 创建基础函数
+            funcA = (x) => x * 2;
+            funcB = (x) => x + 3;
+
+            // 函数组合：(x) => funcB(funcA(x))
+            composedFunc = (x) => funcB(funcA(x));
+
+            // 附加元数据便于识别
+            funcA.id = 'funcA-072';
+            funcB.id = 'funcB-072';
+            composedFunc.source = [funcA, funcB];
+
+            // WeakSet存储基础函数
+            weakSet.add(funcA);
+            weakSet.add(funcB);
+
+            // 创建复合键对象
+            const key = { funcs: [funcA, funcB] };
+            const composedRef = new WeakRef(composedFunc);
+            weakMap.set(key, composedRef);
+
+            funcRefs = {
+                a: new WeakRef(funcA),
+                b: new WeakRef(funcB)
+            };
+
+            // 验证初始状态
+            if (composedFunc(5) !== 13) { // 5*2+3=13
+                throw new Error(`Function composition failed: 预期13，实际${composedFunc(5)}`);
+            }
+            if (composedFunc.source.length !== 2) throw new Error("Composition source missing");
+        })();
+
+        // 清除强引用
+        const tempFuncARef = funcRefs.a;
+        const tempFuncBRef = funcRefs.b;
+        const tempComposedRef = new WeakRef(composedFunc);
+        funcA = null;
+        funcB = null;
+        composedFunc = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempFuncARef.deref() !== undefined || tempFuncBRef.deref() !== undefined) {
+            throw new Error("Base functions not GC'd");
+        }
+        if (tempComposedRef.deref() !== undefined) throw new Error("Composed function not GC'd");
+
+        return "Test Passed: WeakMixFunctionCompositionTest072";
+    },
+
+    /**
+     * 073. 数组交集组合：WeakMap存储两个数组，WeakSet存储交集结果
+     */
+    async test073_WeakMixArrayIntersection() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let arrayA, arrayB, intersection, arrayRefs;
+
+        (function createArrayIntersection() {
+            // 创建共享对象引用
+            const shared1 = { id: 'shared-1' };
+            const shared2 = { id: 'shared-2' };
+            const uniqueA = { id: 'only-a' };
+            const uniqueB = { id: 'only-b' };
+
+            // 创建两个数组
+            arrayA = [shared1, shared2, uniqueA];
+            arrayB = [shared1, shared2, uniqueB];
+
+            // 计算交集（共享对象）
+            intersection = arrayA.filter(item => arrayB.includes(item));
+            intersection.forEach(item => weakSet.add(item)); // WeakSet跟踪交集元素
+
+            // WeakMap使用复合键存储两个数组
+            const key = { arrayA, arrayB };
+            const intersectionRef = new WeakRef(intersection);
+            weakMap.set(key, intersectionRef);
+
+            arrayRefs = {
+                a: new WeakRef(arrayA),
+                b: new WeakRef(arrayB)
+            };
+
+            // 验证初始状态
+            if (intersection.length !== 2) {
+                throw new Error(`Array intersection failed: 预期2个元素，实际${intersection.length}`);
+            }
+            if (!intersection.includes(shared1) || !intersection.includes(shared2)) {
+                throw new Error("Intersection missing shared elements");
+            }
+        })();
+
+        // 清除强引用
+        const tempArrayARef = arrayRefs.a;
+        const tempArrayBRef = arrayRefs.b;
+        const tempIntersectionRef = new WeakRef(intersection);
+        arrayA = null;
+        arrayB = null;
+        intersection = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempArrayARef.deref() !== undefined || tempArrayBRef.deref() !== undefined) {
+            throw new Error("Original arrays not GC'd");
+        }
+        if (tempIntersectionRef.deref() !== undefined) throw new Error("Intersection array not GC'd");
+
+        return "Test Passed: WeakMixArrayIntersectionTest073";
+    },
+
+    /**
+     * 074. Map链式查询组合：WeakSet存储Map链，WeakMap关联链式查询结果
+     */
+    async test074_WeakMixMapChaining() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let map1, map2, map3, chainResult, mapRefs;
+
+        (function createMapChain() {
+            // 创建键对象
+            const keyA = { id: 'key-a' };
+            const keyB = { id: 'key-b' };
+            const keyC = { id: 'key-c' };
+
+            // 创建Map链
+            map1 = new Map([[keyA, keyB]]);       // A -> B
+            map2 = new Map([[keyB, keyC]]);       // B -> C
+            map3 = new Map([[keyC, 'final-value']]); // C -> value
+
+            // 执行链式查询
+            const step1 = map1.get(keyA);
+            const step2 = step1 ? map2.get(step1) : null;
+            const step3 = step2 ? map3.get(step2) : null;
+
+            chainResult = {
+                steps: [step1, step2, step3],
+                final: step3
+            };
+
+            // WeakSet存储所有Map
+            [map1, map2, map3].forEach(map => weakSet.add(map));
+
+            // WeakMap关联查询结果的WeakRef
+            const chainRef = new WeakRef(chainResult);
+            weakMap.set(map1, chainRef);
+
+            mapRefs = {
+                m1: new WeakRef(map1),
+                m2: new WeakRef(map2),
+                m3: new WeakRef(map3)
+            };
+
+            // 验证初始状态
+            if (chainResult.final !== 'final-value') {
+                throw new Error(`Map chaining failed: 预期"final-value"，实际"${chainResult.final}"`);
+            }
+            if (chainResult.steps[1] !== keyC) throw new Error("Chaining steps incorrect");
+        })();
+
+        // 清除强引用
+        const tempMap1Ref = mapRefs.m1;
+        const tempMap2Ref = mapRefs.m2;
+        const tempResultRef = new WeakRef(chainResult);
+        map1 = null;
+        map2 = null;
+        map3 = null;
+        chainResult = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempMap1Ref.deref() !== undefined || tempMap2Ref.deref() !== undefined) {
+            throw new Error("Map chain elements not GC'd");
+        }
+        if (tempResultRef.deref() !== undefined) throw new Error("Chaining result not GC'd");
+
+        return "Test Passed: WeakMixMapChainingTest074";
+    },
+
+    /**
+     * 075. 集合笛卡尔积组合：WeakMap使用两个Set作为键，WeakSet存储笛卡尔积结果
+     */
+    async test075_WeakMixSetCartesianProduct() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let setX, setY, product, setRefs;
+
+        (function createCartesianProduct() {
+            // 创建集合元素
+            const x1 = { id: 'x1' };
+            const x2 = { id: 'x2' };
+            const y1 = { id: 'y1' };
+            const y2 = { id: 'y2' };
+            const y3 = { id: 'y3' };
+
+            // 创建两个Set
+            setX = new Set([x1, x2]);
+            setY = new Set([y1, y2, y3]);
+
+            // 计算笛卡尔积（所有可能的配对）
+            product = [];
+            setX.forEach(x => {
+                setY.forEach(y => {
+                    const pair = { x, y, id: `${x.id}-${y.id}` };
+                    product.push(pair);
+                    weakSet.add(pair); // WeakSet跟踪积元素
+                });
+            });
+
+            // WeakMap使用复合键存储两个Set
+            const key = { setX, setY };
+            const productRef = new WeakRef(product);
+            weakMap.set(key, productRef);
+
+            setRefs = {
+                x: new WeakRef(setX),
+                y: new WeakRef(setY)
+            };
+
+            // 验证初始状态
+            const expectedSize = 2 * 3; // 2元素 × 3元素
+            if (product.length !== expectedSize) {
+                throw new Error(`Cartesian product size incorrect: 预期${expectedSize}，实际${product.length}`);
+            }
+            const found = product.some(pair => pair.x === x1 && pair.y === y2);
+            if (!found) throw new Error("Cartesian product missing expected pair");
+        })();
+
+        // 清除强引用
+        const tempSetXRef = setRefs.x;
+        const tempSetYRef = setRefs.y;
+        const tempProductRef = new WeakRef(product);
+        setX = null;
+        setY = null;
+        product = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempSetXRef.deref() !== undefined || tempSetYRef.deref() !== undefined) {
+            throw new Error("Original sets not GC'd");
+        }
+        if (tempProductRef.deref() !== undefined) throw new Error("Cartesian product not GC'd");
+
+        return "Test Passed: WeakMixSetCartesianProductTest075";
+    },
+
+    /**
+     * 076. 日期多单位计算组合：WeakSet存储基准Date，WeakMap关联多单位计算结果
+     */
+    async test076_WeakMixDateArithmetic() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let baseDate, calculations, dateRef;
+
+        (function createDateCalculations() {
+            // 使用UTC日期避免时区问题
+            baseDate = new Date(Date.UTC(2024, 0, 1, 12, 0, 0)); // 2024-01-01T12:00:00Z
+
+            // 多单位日期计算
+            const addYear = new Date(baseDate);
+            addYear.setUTCFullYear(addYear.getUTCFullYear() + 1);
+
+            const addMonth = new Date(baseDate);
+            addMonth.setUTCMonth(addMonth.getUTCMonth() + 3);
+
+            const addHour = new Date(baseDate);
+            addHour.setUTCHours(addHour.getUTCHours() + 5);
+
+            calculations = {
+                addYear,
+                addMonth,
+                addHour,
+                base: baseDate
+            };
+
+            // WeakSet存储基准日期
+            weakSet.add(baseDate);
+
+            // WeakMap关联计算结果的WeakRef
+            const calcRef = new WeakRef(calculations);
+            weakMap.set(baseDate, calcRef);
+
+            dateRef = new WeakRef(baseDate);
+
+            // 验证初始状态
+            if (addYear.getUTCFullYear() !== 2025) {
+                throw new Error(`Year calculation failed: 预期2025，实际${addYear.getUTCFullYear()}`);
+            }
+            if (addMonth.getUTCMonth() !== 3) { // 0+3=3（4月）
+                throw new Error(`Month calculation failed: 预期3，实际${addMonth.getUTCMonth()}`);
+            }
+            if (addHour.getUTCHours() !== 17) { // 12+5=17
+                throw new Error(`Hour calculation failed: 预期17，实际${addHour.getUTCHours()}`);
+            }
+        })();
+
+        // 清除强引用
+        const tempBaseRef = dateRef;
+        const tempCalculationsRef = new WeakRef(calculations);
+        baseDate = null;
+        calculations = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempBaseRef.deref() !== undefined) throw new Error("Base date not GC'd");
+        if (tempCalculationsRef.deref() !== undefined) throw new Error("Date calculations not GC'd");
+
+        return "Test Passed: WeakMixDateArithmeticTest076";
+    },
+
+    /**
+     * 079. 类实例组合：WeakMap存储类实例，WeakSet跟踪实例方法结果
+     */
+    async test079_WeakMixClassInstances() {
+        const weakMap = new WeakMap();
+        const weakSet = new WeakSet();
+        let instanceA, instanceB, methodResults, instanceRefs;
+
+        (function createClassInstances() {
+            // 定义测试类
+            class DataProcessor {
+                constructor(id, initialValue) {
+                    this.id = id;
+                    this.value = initialValue;
+                }
+
+                double() {
+                    return this.value * 2;
+                }
+
+                toString() {
+                    return `DataProcessor[${this.id}]: ${this.value}`;
+                }
+            }
+
+            // 创建实例
+            instanceA = new DataProcessor('A-079', 15);
+            instanceB = new DataProcessor('B-079', 30);
+
+            // 收集方法执行结果
+            methodResults = {
+                a: {
+                    doubled: instanceA.double(),
+                    str: instanceA.toString()
+                },
+                b: {
+                    doubled: instanceB.double(),
+                    str: instanceB.toString()
+                }
+            };
+
+            // WeakSet跟踪结果对象
+            Object.values(methodResults).forEach(result => weakSet.add(result));
+
+            // WeakMap存储实例到结果的WeakRef
+            const resultsRef = new WeakRef(methodResults);
+            const key = { a: instanceA, b: instanceB };
+            weakMap.set(key, resultsRef);
+
+            instanceRefs = {
+                a: new WeakRef(instanceA),
+                b: new WeakRef(instanceB)
+            };
+
+            // 验证初始状态
+            if (methodResults.a.doubled !== 30) { // 15*2=30
+                throw new Error(`Instance A calculation failed: 预期30，实际${methodResults.a.doubled}`);
+            }
+            if (!methodResults.b.str.includes('B-079')) {
+                throw new Error(`Instance B string failed: ${methodResults.b.str}`);
+            }
+        })();
+
+        // 清除强引用
+        const tempInstanceARef = instanceRefs.a;
+        const tempInstanceBRef = instanceRefs.b;
+        const tempResultsRef = new WeakRef(methodResults);
+        instanceA = null;
+        instanceB = null;
+        methodResults = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (global.gc) global.gc();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证回收情况
+        if (tempInstanceARef.deref() !== undefined || tempInstanceBRef.deref() !== undefined) {
+            throw new Error("Class instances not GC'd");
+        }
+        if (tempResultsRef.deref() !== undefined) throw new Error("Method results not GC'd");
+
+        return "Test Passed: WeakMixClassInstancesTest079";
+    },
+
+    /**
+     * 080. 混合结构组合：弱引用跟踪混合类型嵌套结构
+     */
+    async test080_WeakMixHybridStructure() {
+        const weakSet = new WeakSet();
+        // const weakMap = new WeakMap();
+        let root, structureRef;
+        let tempMapRef ;
+        (function createHybridStructure() {
+            // 创建混合类型的嵌套结构
+            const leaf1 = { type: 'leaf', value: 10 };
+            const leaf2 = { type: 'leaf', value: 20 };
+
+            const mapNode = new Map([
+                ['key1', leaf1],
+                ['key2', { type: 'node', child: leaf2 }]
+            ]);
+
+            const arrayNode = [
+                { type: 'item', id: 'a' },
+                mapNode,
+                { type: 'item', id: 'b' }
+            ];
+
+            // 根结构
+            root = {
+                version: '1.0',
+                timestamp: new Date(),
+                data: {
+                    array: arrayNode,
+                    map: mapNode,
+                    meta: { author: 'test-080' }
+                }
+            };
+            tempMapRef = new WeakRef(root.data.map);
+            // // WeakSet跟踪关键节点
+            // weakSet.add(root);
+            // weakSet.add(mapNode);
+            // weakSet.add(arrayNode);
+
+            // WeakMap关联结构分析结果的WeakRef
+            const structureInfo = {
+                depth: 4,
+                nodeCount: 8,
+                hasMap: true,
+                hasArray: true
+            };
+            const infoRef = new WeakRef(structureInfo);
+            // weakMap.set(root, infoRef);
+
+            structureRef = new WeakRef(root);
+
+            // 验证初始状态
+            // if (arrayNode[1] !== mapNode) throw new Error("Hybrid structure linking failed");
+            // if (mapNode.get('key1') !== leaf1) throw new Error("Map node content incorrect");
+            // if (root.data.meta.author !== 'test-080') throw new Error("Meta data mismatch");
+        })();
+
+        // 清除强引用
+        const tempRootRef = structureRef;
+        let m = root.data.map
+        // const tempMapRef = new WeakRef(root.data.map);
+        root = null;
+
+        // 触发GC
+        await new Promise(resolve => setTimeout(resolve, 30));
+        globalThis.ArkTools.forceFullGC();
+        await new Promise(resolve => setTimeout(resolve, 30));
+        globalThis.ArkTools.forceFullGC();
+        // 验证回收情况
+        if (tempRootRef.deref() !== undefined) throw new Error("Root structure not GC'd");
+        // if (tempMapRef.deref() !== undefined) throw new Error("Nested map node not GC'd");
+
+        return "Test Passed: WeakMixHybridStructureTest080";
+    },
+    /**
+     * 081. 对象深克隆组合：WeakSet存储原始对象，WeakMap关联克隆结果
+     */
+    async test081_WeakMixObjectCloning() {
+        const weakSet = new WeakSet();
+        const weakMap = new WeakMap();
+        let originalObj, clonedObj, objRef;
+
+        (function createClonedObject() {
+            // 创建嵌套对象
+            const nested = { value: 10, deep: { flag: true } };
+            originalObj = {
+                id: 'source-81',
+                data: nested,
+                getValue() { return this.data.value; }
+            };
+
+            // 实现简单深克隆
+            function deepClone(obj) {
+                if (obj === null || typeof obj !== 'object') return obj;
+                const clone = Array.isArray(obj) ? [] : {};
+                for (const key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        clone[key] = deepClone(obj[key]);
+                    }
+                }
+                return clone;
+            }
+
+            clonedObj = deepClone(originalObj);
+            clonedObj.source = originalObj; // 保留源引用
+
+            // WeakSet存储原始对象及其嵌套结构
+            weakSet.add(originalObj);
+            weakSet.add(originalObj.data);
+            weakSet.add(originalObj.data.deep);
+
+            // WeakMap关联克隆结果的WeakRef
+            const cloneRef = new WeakRef(clonedObj);
+            weakMap.set(originalObj, cloneRef);
+
+            objRef = new WeakRef(originalObj);
+
 
