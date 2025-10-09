@@ -14,14 +14,14 @@
  */
 import WebSocketTest from "./WebSocket.test";
 import webSocketCreateTest from "./WebSocketCreate.test";
-import webSocketJsunit from './WebSocketJsunit.test';
+import webSocketJsunitTest from './WebSocketJsunit.test';
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
 export default function testsuite() {
-    webSocketJsunit();
+    webSocketJsunitTest();
     if(isDefaultNet){
         webSocketCreateTest();
         WebSocketTest();
