@@ -115,7 +115,7 @@ napi_value CstandardLibrary_memalign(napi_env env, napi_callback_info info)
     napi_value result;
     size_t size = 10;
     void *pr = memalign (size, size);
-    bool res = (pr == nullptr || pr != nullptr );
+    bool res = (pr == nullptr || pr != nullptr);
     napi_create_int32(env, res, &result);
     return result;
 }
