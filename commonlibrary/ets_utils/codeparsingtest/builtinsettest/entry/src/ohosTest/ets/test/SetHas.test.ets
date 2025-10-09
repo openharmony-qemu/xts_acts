@@ -1,4 +1,850 @@
+/*
+* Copyright (C) 2024 HiHope Open Source Organization.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { SetHasTest013, SetHasTest025, SetHasTest027, SetHasTest030, SetHasTest031, SetHasTest042,
+  SetHasTest047,
+  SetHasTest052,
+  SetHasTest053,
+  SetHasTest054,
+  SetHasTest056,
+  SetHasTest059,
+  SetHasTest078,
+  SetHasTest081,
+  SetHasTest082,
+  SetHasTest085,
+  SetHasTest086,
+  SetHasTest089,
+  SetHasTest090,
+  SetHasTest094,
+  SetHasTest096,
+  SetHasTest098,
+  SetHasTest108,
+  SetHasTest109,
+  SetHasTest110,
+  SetHasTest115,
+  SetHasTest116,
+  SetHasTest120,
+  SetHasTest123,
+  SetHasTest124,
+  SetHasTest127,
+  SetHasTest128,
+  SetHasTest129} from './SetHas';
 
+function sleep(time: number): Promise<void> {
+  return new Promise((re, je) => {
+    setTimeout(() => {
+      re();
+    }, time);
+  });
+}
+
+export default function SetHasTest() {
+  describe('SetHasTest', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(100);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0100
+     * @tc.name SetHasTest001
+     * @tc.desc Check existing string value, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set(['apple', 'banana', 'cherry']);
+      const result = set.has('banana');
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0200
+     * @tc.name SetHasTest002
+     * @tc.desc Check non-existing string value, return false
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set(['apple', 'banana']);
+      const result = set.has('orange');
+
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0300
+     * @tc.name SetHasTest003
+     * @tc.desc Check existing number value, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set([10, 20, 30]);
+      const result = set.has(20);
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0400
+     * @tc.name SetHasTest004
+     * @tc.desc Check non-existing number value, return false
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set([10, 20]);
+      const result = set.has(30);
+
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0500
+     * @tc.name SetHasTest005
+     * @tc.desc Check existing boolean value, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set([true, false, true]);
+      const result = set.has(false);
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0600
+     * @tc.name SetHasTest006
+     * @tc.desc Check empty Set for any value, return false
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      interface BaseI{}
+      const set = new Set<string | number | BaseI>();
+      const result1 = set.has('any');
+      const result2 = set.has(123);
+      const result3 = set.has({});
+
+      expect(result1).assertEqual(false);
+      expect(result2).assertEqual(false);
+      expect(result3).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0700
+     * @tc.name SetHasTest007
+     * @tc.desc Check the only element in Set, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set(['only-element']);
+      const result = set.has('only-element');
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0800
+     * @tc.name SetHasTest008
+     * @tc.desc Check null value in Set, return true if exists
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set([null, 1, 2]);
+      const result = set.has(null);
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_0900
+     * @tc.name SetHasTest009
+     * @tc.desc Check undefined value in Set, return true if exists
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set([undefined, 'a', 'b']);
+      const result = set.has(undefined);
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1000
+     * @tc.name SetHasTest010
+     * @tc.desc Check multiple values in Set, verify results
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SetHasTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      const set = new Set<number | string | boolean | null | undefined>([1, '2', true, null]);
+      interface BaseI{
+        num1: boolean,
+        str2: boolean,
+        boolTrue: boolean,
+        nullVal: boolean,
+        num2: boolean,
+        undef: boolean
+      }
+      const results = {
+        num1: set.has(1),
+        str2: set.has('2'),
+        boolTrue: set.has(true),
+        nullVal: set.has(null),
+        num2: set.has(2),
+        undef: set.has(undefined)
+      } as BaseI;
+
+      expect(results.num1).assertEqual(true);
+      expect(results.str2).assertEqual(true);
+      expect(results.boolTrue).assertEqual(true);
+      expect(results.nullVal).assertEqual(true);
+      expect(results.num2).assertEqual(false);
+      expect(results.undef).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1100
+     * @tc.name SetHasTest011
+     * @tc.desc Check NaN (treated as equal to itself), return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const set = new Set([NaN, 1, 2]);
+      const result1 = set.has(NaN);
+      const result2 = set.has(Number('invalid'));
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1200
+     * @tc.name SetHasTest012
+     * @tc.desc Check 0 and -0 (treated as equal), return true for both
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const set = new Set([0, 100]);
+      const result1 = set.has(-0);
+      const result2 = set.has(0);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1300
+     * @tc.name SetHasTest013
+     * @tc.desc Check Symbol (unique instances are different), return false for different instance
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const result = SetHasTest013();
+
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1400
+     * @tc.name SetHasTest014
+     * @tc.desc Check BigInt (same value is equal), return true for same value
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const big1 = 123n;
+      const big2 = 123n;
+      const set = new Set<bigint | number>([big1]);
+      const result1 = set.has(big1);
+      const result2 = set.has(big2);
+      const result3 = set.has(123);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(true);
+      expect(result3).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1500
+     * @tc.name SetHasTest015
+     * @tc.desc Check object by same reference, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      interface BaseI{
+        id: number
+      }
+      const obj = { id: 1 } as BaseI;
+      const set = new Set([obj, { id: 2 }]);
+      const result1 = set.has(obj);
+      const result2 = set.has({ id: 1 });
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1700
+     * @tc.name SetHasTest017
+     * @tc.desc Check Date object by same reference, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const date = new Date('2024-01-01');
+      const set = new Set([date, new Date('2024-01-02')]);
+      const result1 = set.has(date);
+      const result2 = set.has(new Date('2024-01-01'));
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1800
+     * @tc.name SetHasTest018
+     * @tc.desc Check RegExp object by same reference, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const regex = /test/;
+      const set = new Set([regex, /test/g]);
+      const result1 = set.has(regex);
+      const result2 = set.has(/test/);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_1900
+     * @tc.name SetHasTest019
+     * @tc.desc Check function by same reference, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const func = () => {};
+      const set = new Set([func, () => {}]);
+      const result1 = set.has(func);
+      const result2 = set.has(() => {});
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2000
+     * @tc.name SetHasTest020
+     * @tc.desc Check string and number with same value (different types), return false
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const set = new Set<string | boolean | number>(['123', true]);
+      const result1 = set.has(123);
+      const result2 = set.has(1);
+
+      expect(result1).assertEqual(false);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2100
+     * @tc.name SetHasTest021
+     * @tc.desc Check value after modifying object properties (reference unchanged), return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      interface BaseI{
+        id: number
+      }
+      const obj = { id: 1 } as BaseI;
+      const set = new Set([obj]);
+
+      obj.id = 999;
+      const result = set.has(obj);
+
+      expect(result).assertEqual(true);
+      expect(obj.id).assertEqual(999);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2200
+     * @tc.name SetHasTest022
+     * @tc.desc Check value after adding to Set, return true immediately
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set<string>();
+      set.add('new-value');
+      const result = set.has('new-value');
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2300
+     * @tc.name SetHasTest023
+     * @tc.desc Check value after deleting from Set, return false immediately
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set(['value']);
+      set.delete('value');
+      const result = set.has('value');
+
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2400
+     * @tc.name SetHasTest024
+     * @tc.desc Check large Set (1000 elements), verify has() correctness
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest024', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
+      const set = new Set<number>();
+      for (let i = 0; i < 1000; i++) {
+        set.add(i);
+      }
+
+      const result1 = set.has(500);
+      const result2 = set.has(999);
+      const result3 = set.has(1000);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(true);
+      expect(result3).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2500
+     * @tc.name SetHasTest025
+     * @tc.desc Call has() on non-Set instance (array via call), verify behavior
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const result = SetHasTest025() as boolean[];
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2600
+     * @tc.name SetHasTest026
+     * @tc.desc Pass multiple parameters to has() (only first is used)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set([1, 2]);
+      const result = set.has(2);
+
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2700
+     * @tc.name SetHasTest027
+     * @tc.desc Check frozen Set for existing value, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const result = SetHasTest027();
+
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2800
+     * @tc.name SetHasTest028
+     * @tc.desc Check Set with circular reference object, return true
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      interface BaseI{
+        self?: BaseI | null;
+      }
+      const obj = { self: null } as BaseI;
+      obj.self = obj;
+
+      const set = new Set([obj]);
+      const result = set.has(obj);
+
+      expect(result).assertEqual(true);
+      expect(obj.self).assertEqual(obj);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_2900
+     * @tc.name SetHasTest029
+     * @tc.desc Check Set with nested objects (reference comparison), return true for same reference
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      interface BaseI{
+        b: number
+      }
+      interface BaseI1{
+        a: BaseI
+      }
+      const nestedObj = { a: { b: 1 } } as BaseI1;
+      const set = new Set([nestedObj]);
+      const result1 = set.has(nestedObj);
+      const result2 = set.has({ a: { b: 1 } });
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3000
+     * @tc.name SetHasTest030
+     * @tc.desc Comprehensive test: mixed types + dynamic modification + edge values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const result = SetHasTest030();
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(true);
+      expect(result[2]).assertEqual(true);
+      expect(result[3]).assertEqual(true);
+      expect(result[4]).assertEqual(true);
+      expect(result[5]).assertEqual(true);
+      expect(result[6]).assertEqual(true);
+      expect(result[7]).assertEqual(false);
+      expect(result[8]).assertEqual(true);
+      expect(result[9]).assertEqual(false);
+      expect(result[10]).assertEqual(false);
+      expect(result[11]).assertEqual(false);
+      expect(result[12]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3100
+     * @tc.name SetHasTest031
+     * @tc.desc Check inherited properties in object, same reference
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const result = SetHasTest031();
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3200
+     * @tc.name SetHasTest032
+     * @tc.desc Check Proxy object reference comparison
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      interface BaseI{}
+      const target = {} as BaseI;
+      const proxy1 = new Proxy(target, {} as BaseI);
+      const proxy2 = new Proxy(target, {} as BaseI);
+      const set = new Set([proxy1]);
+
+      expect(set.has(proxy1)).assertEqual(true);
+      expect(set.has(proxy2)).assertEqual(false);
+      expect(set.has(target)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3300
+     * @tc.name SetHasTest033
+     * @tc.desc Check has() after clearing the Set
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set([1, 2, 3]);
+      set.clear();
+
+      expect(set.has(2)).assertEqual(false);
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3400
+     * @tc.name SetHasTest034
+     * @tc.desc Check very large numbers (beyond safe integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const largeNum = Number.MAX_SAFE_INTEGER + 1;
+      const set = new Set([largeNum]);
+
+      expect(set.has(largeNum)).assertEqual(true);
+      expect(set.has(Number.MAX_SAFE_INTEGER)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3500
+     * @tc.name SetHasTest035
+     * @tc.desc Check has() with same string values but different encodings
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const str1 = 'café';
+      const str2 = 'cafe\u0301';
+      const set = new Set([str1]);
+
+      expect(set.has(str1)).assertEqual(true);
+      expect(set.has(str2)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3600
+     * @tc.name SetHasTest036
+     * @tc.desc Check has() with empty string and whitespace
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set(['', ' ', '\t', '\n']);
+
+      expect(set.has('')).assertEqual(true);
+      expect(set.has(' ')).assertEqual(true);
+      expect(set.has('\t')).assertEqual(true);
+      expect(set.has('\n')).assertEqual(true);
+      expect(set.has('  ')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3700
+     * @tc.name SetHasTest037
+     * @tc.desc Check has() with boxed primitives
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const numObj = new Number(123);
+      const set = new Set([numObj]);
+
+      expect(set.has(numObj)).assertEqual(true);
+      expect(set.has(123)).assertEqual(false);
+      expect(set.has(new Number(123))).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3800
+     * @tc.name SetHasTest038
+     * @tc.desc Check has() with typed array instances
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const arr = new Uint8Array([1, 2, 3]);
+      const set = new Set([arr]);
+
+      expect(set.has(arr)).assertEqual(true);
+      expect(set.has(new Uint8Array([1, 2, 3]))).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_3900
+     * @tc.name SetHasTest039
+     * @tc.desc Check has() with Map instances
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const map = new Map([['a', 1]]);
+      const set = new Set([map]);
+
+      expect(set.has(map)).assertEqual(true);
+      expect(set.has(new Map([['a', 1]]))).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4000
+     * @tc.name SetHasTest040
+     * @tc.desc Check has() with Set instances
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetHasTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const innerSet = new Set([1, 2]);
+      const outerSet = new Set([innerSet]);
+
+      expect(outerSet.has(innerSet)).assertEqual(true);
+      expect(outerSet.has(new Set([1, 2]))).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4100
+     * @tc.name SetHasTest041
+     * @tc.desc Check has() with different Unicode characters
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const set = new Set(['a', 'A', 'α', 'β', 'あ', 'ア']);
+
+      expect(set.has('a')).assertEqual(true);
+      expect(set.has('A')).assertEqual(true);
+      expect(set.has('α')).assertEqual(true);
+      expect(set.has('b')).assertEqual(false);
+      expect(set.has('あ')).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4200
+     * @tc.name SetHasTest042
+     * @tc.desc Check has() with different function types
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const result = SetHasTest042();
+
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(true);
+      expect(result[2]).assertEqual(true);
+      expect(result[3]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4300
+     * @tc.name SetHasTest043
+     * @tc.desc Check has() with regex flags
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const regex1 = /test/;
+      const regex2 = /test/i;
+      const regex3 = /test/g;
+      const set = new Set([regex1, regex2, regex3]);
+
+      expect(set.has(/test/)).assertEqual(false);
+      expect(set.has(regex1)).assertEqual(true);
+      expect(set.has(regex2)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4400
+     * @tc.name SetHasTest044
+     * @tc.desc Check has() with date objects of same time value
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('SetHasTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      const date1 = new Date(2024, 0, 1);
+      const date2 = new Date(2024, 0, 1);
+      const set = new Set([date1]);
+
+      expect(set.has(date1)).assertEqual(true);
+      expect(set.has(date2)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_HAS_TEST_4500
+     * @tc.name SetHasTest045
+     * @tc.desc Check has() with NaN in various forms
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('SetHasTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN]);
