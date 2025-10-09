@@ -2428,6 +2428,114 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', summary.totalSize);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400 end");
     })
+
+    /**
+     * @tc.number    : UDMFApiTest65
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6500
+     * @tc.desc      : Test UDMF insertData promise 401.
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6500 start');
+      let options: unifiedDataChannel.Options = {
+      };
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        expect().assertFail();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error.code);
+        expect(error.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6500 end');
+    })
+
+    /**
+     * @tc.number    : UDMFApiTest66
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6600
+     * @tc.desc      : Test UDMF insertData callback 401.
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6600 start');
+      let options: unifiedDataChannel.Options = {
+      };
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      try {
+        unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
+          if (err) {
+            let error = err as BusinessError;
+            hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error.code);
+            expect(error.code).assertEqual(401);
+            done();
+            hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6600 end');
+          } else {
+            expect().assertFail();
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number    : UDMFApiTest67
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700
+     * @tc.desc      : Test UDMF queryData promise 401.
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700 start');
+      let options: unifiedDataChannel.Options = {
+      };
+      try {
+        let ret = await unifiedDataChannel.queryData(options);
+        expect().assertFail();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error.code);
+        expect(error.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700 end');
+    })
+
+    /**
+     * @tc.number    : UDMFApiTest68
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800
+     * @tc.desc      : Test UDMF queryData callback 401.
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800 start');
+      let options: unifiedDataChannel.Options = {
+      };
+      try {
+        unifiedDataChannel.queryData(options, (err, data) => {
+          if (err) {
+            let error = err as BusinessError;
+            hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error.code);
+            expect(error.code).assertEqual(401);
+            done();
+            hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800 end');
+          } else {
+            expect().assertFail();
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'Exception error: ' + error);
+        expect().assertFail();
+      }
+    })
     hilog.info(domain, tag, '%{public}s', 'UDMFApiTest end');
   });
 }
