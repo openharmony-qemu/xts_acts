@@ -38,5 +38,4 @@ napi_value UsbInterfaceDescriptor0400(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0500(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0600(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0700(napi_env env, napi_callback_info info);
-
 #endif //HDF_ERRORCODE_USBTEST_H

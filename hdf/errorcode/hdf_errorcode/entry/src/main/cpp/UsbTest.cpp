@@ -401,5 +401,3 @@ napi_value UsbInterfaceDescriptor0700(napi_env env, napi_callback_info info)
     OH_Usb_FreeConfigDescriptor(config);
     return value;
 }
-
-

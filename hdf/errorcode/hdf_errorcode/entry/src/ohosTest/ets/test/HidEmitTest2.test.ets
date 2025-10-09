@@ -764,9 +764,5 @@ export default function ActsHidEmitCodeTest2() {
         expect().assertFail();
       }
     })
-
-
-
   })
 }
-

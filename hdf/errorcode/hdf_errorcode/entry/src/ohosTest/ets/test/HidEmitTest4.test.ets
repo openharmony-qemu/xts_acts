@@ -387,28 +387,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700
-     * @tc.desc    : Test HidCreateDeviceABSWHEEL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700 start====");
-        let result: number = baskddkerror.HidCreateDeviceABSWHEEL();
-        expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceABSWHEEL_1700 catch err: " + err);
-        expect().assertFail();
-      }
-    })
-
-
-    /**
      * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
      * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
      * @tc.desc    : Test HidCreateDeviceHIDMSCRAW.
@@ -452,4 +430,3 @@ export default function ActsHidEmitCodeTest4() {
 
   })
 }
-

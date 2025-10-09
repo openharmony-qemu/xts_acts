@@ -117,7 +117,7 @@ void addUsbDDkErrorCodeTest1(std::vector<napi_property_descriptor> &descData)
         {"ScsiPeripheralRead", nullptr, ScsiPeripheralRead, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
-void addUsbDDkErrorCodeTest2(std::vector<napi_property_descriptor> &descData) 
+void addUsbDDkErrorCodeTest2(std::vector<napi_property_descriptor> &descData)
 {
     descData.push_back(
         {"ScsiPeripheralWrite", nullptr, ScsiPeripheralWrite, nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -164,8 +164,8 @@ void addUsbDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData)
         {"UsbSerialFlushOutput", nullptr, UsbSerialFlushOutput, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"UsbSerialNoFlowControl", nullptr, UsbSerialNoFlowControl, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
-        {"UsbSerialHardwareFlowControl", nullptr, UsbSerialHardwareFlowControl, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbSerialHardwareFlowControl", nullptr, UsbSerialHardwareFlowControl, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
     descData.push_back(
         {"UsbSerialParityNone", nullptr, UsbSerialParityNone, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
@@ -303,7 +303,8 @@ napi_value UsbDdkSuccess(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value UsbDdkFailure(napi_env env, napi_callback_info info) {
+napi_value UsbDdkFailure(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -316,7 +317,8 @@ napi_value UsbDdkFailure(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value UsbDdkInvalidParameter(napi_env env, napi_callback_info info) {
+napi_value UsbDdkInvalidParameter(napi_env env, napi_callback_info info) 
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -326,7 +328,8 @@ napi_value UsbDdkInvalidParameter(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value UsbDdkInvalidOperation(napi_env env, napi_callback_info info) {
+napi_value UsbDdkInvalidOperation(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -338,7 +341,8 @@ napi_value UsbDdkInvalidOperation(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value UsbDdkNullPTR(napi_env env, napi_callback_info info) {
+napi_value UsbDdkNullPTR(napi_env env, napi_callback_info info)
+{
     napi_value result;
     const uint8_t ashmemMapType = PORT_READ | PORT_WRITE;
     int32_t returnValue = OH_DDK_MapAshmem(nullptr, ashmemMapType);
@@ -346,14 +350,16 @@ napi_value UsbDdkNullPTR(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralDdkInit(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralDdkInit(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int32_t ret = OH_ScsiPeripheral_Init();
     napi_create_int32(env, ret == SCSIPERIPHERAL_DDK_SUCCESS ? 0 : -1, &result);
     return result;
 }
 
-napi_value ScsiPeripheralRelease(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralRelease(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int32_t ret = OH_ScsiPeripheral_Init();
     ret = OH_ScsiPeripheral_Release();
@@ -380,7 +386,8 @@ static uint64_t GetDeviceId(napi_env env, napi_callback_info info)
     return deviceId;
 }
 
-napi_value ScsiPeripheralOpen(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralOpen(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -392,7 +399,8 @@ napi_value ScsiPeripheralOpen(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralClose(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralClose(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -412,7 +420,8 @@ static void DeleteScsiPeripheralDevice(ScsiPeripheral_Device **dev)
     }
 }
 
-napi_value ScsiPeripheralTestUnitReady(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralTestUnitReady(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_Device *device = nullptr;
@@ -424,7 +433,8 @@ napi_value ScsiPeripheralTestUnitReady(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralInquiry(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralInquiry(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_Device *dev = nullptr;
@@ -436,7 +446,8 @@ napi_value ScsiPeripheralInquiry(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralReadCapacity10(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralReadCapacity10(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_Device *dev = nullptr;
@@ -448,7 +459,8 @@ napi_value ScsiPeripheralReadCapacity10(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralRequestSense(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralRequestSense(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_RequestSenseRequest req = {0};
@@ -458,7 +470,8 @@ napi_value ScsiPeripheralRequestSense(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralRead(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralRead(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_IORequest req = {0};
@@ -468,7 +481,8 @@ napi_value ScsiPeripheralRead(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ScsiPeripheralWrite(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralWrite(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_IORequest req = {0};
@@ -489,7 +503,8 @@ static ScsiPeripheral_Device *NewScsiPeripheralDevice()
     return new ScsiPeripheral_Device;
 }
 
-napi_value ScsiPeripheralSendRequestByCDB(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralSendRequestByCDB(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     ScsiPeripheral_Request request = {{0}};
@@ -532,7 +547,8 @@ static void AppendIntToString(char *buffer, int32_t ret)
     buffer[bufferLen + i] = '\0';
 }
 
-static napi_value ScsiPeripheralStatusCONDITIONMET(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusCONDITIONMET(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -557,7 +573,8 @@ napi_value ScsiPeripheralVerify10CONDITIONMET(napi_env env, napi_callback_info i
     return result;
 }
 
-static napi_value ScsiPeripheralStatusBUSY(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusBUSY(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -569,7 +586,8 @@ static napi_value ScsiPeripheralStatusBUSY(napi_env env, ScsiPeripheral_Device *
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10BUSY(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10BUSY(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -582,7 +600,8 @@ napi_value ScsiPeripheralVerify10BUSY(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value ScsiPeripheralStatusRESERVATIONCONFLICT(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusRESERVATIONCONFLICT(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -594,7 +613,8 @@ static napi_value ScsiPeripheralStatusRESERVATIONCONFLICT(napi_env env, ScsiPeri
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10RESERVATIONCONFLICT(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10RESERVATIONCONFLICT(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -607,7 +627,8 @@ napi_value ScsiPeripheralVerify10RESERVATIONCONFLICT(napi_env env, napi_callback
     return result;
 }
 
-static napi_value ScsiPeripheralStatusTASKSETFULL(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusTASKSETFULL(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -619,7 +640,8 @@ static napi_value ScsiPeripheralStatusTASKSETFULL(napi_env env, ScsiPeripheral_D
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10TASKSETFULL(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10TASKSETFULL(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -632,7 +654,8 @@ napi_value ScsiPeripheralVerify10TASKSETFULL(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value ScsiPeripheralStatusACAACTIVE(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusACAACTIVE(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -644,7 +667,8 @@ static napi_value ScsiPeripheralStatusACAACTIVE(napi_env env, ScsiPeripheral_Dev
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10ACAACTIVE(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10ACAACTIVE(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -657,7 +681,8 @@ napi_value ScsiPeripheralVerify10ACAACTIVE(napi_env env, napi_callback_info info
     return result;
 }
 
-static napi_value ScsiPeripheralStatusTASKABORTED(napi_env env, ScsiPeripheral_Device *device) {
+static napi_value ScsiPeripheralStatusTASKABORTED(napi_env env, ScsiPeripheral_Device *device)
+{
     ScsiPeripheral_VerifyRequest req;
     req.lbAddress = UINT32_MAX;
     req.timeout = TIMEOUT;
@@ -669,7 +694,8 @@ static napi_value ScsiPeripheralStatusTASKABORTED(napi_env env, ScsiPeripheral_D
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10TASKABORTED(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10TASKABORTED(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -856,7 +882,7 @@ napi_value UsbSerialHardwareFlowControl(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t returnValue = OH_UsbSerial_Init();
     UsbSerial_Device *deviceHandle = nullptr;
-    returnValue = OH_UsbSerial_SetFlowControl(deviceHandle, UsbSerial_FlowControl::USB_SERIAL_HARDWARE_FLOW_CONTROL );
+    returnValue = OH_UsbSerial_SetFlowControl(deviceHandle, UsbSerial_FlowControl::USB_SERIAL_HARDWARE_FLOW_CONTROL);
     OH_UsbSerial_Release();
     napi_create_int32(env, returnValue == USB_SERIAL_DDK_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
@@ -904,7 +930,7 @@ napi_value UsbSerialParityNone(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value UsbSerialParityEven(napi_env env, napi_callback_info info) 
+napi_value UsbSerialParityEven(napi_env env, napi_callback_info info)
 {
     napi_value result;
     UsbSerial_Device *deviceHandle = InitializeAndCreateDeviceHandle(env);

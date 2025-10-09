@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "ActsHidEmitCodeTest2.h"
+#include "ActsHidEmitCodeTest1.h"
 #include "hilog/log.h"
 #include "napi/native_api.h"
 #include "hid/hid_ddk_api.h"
@@ -46,84 +46,86 @@ const uint32_t INVALID_NON_BLOCK = 2;
 #define PORT_WRITE 0x02
 #define PORT_ILLEGAL 0x08
 
-void addHidEmitErrorCode1Test2(std::vector<napi_property_descriptor>& descData)
+void addHidEmitErrorCode1Test1(std::vector<napi_property_descriptor> &descData)
 {
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD8", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD8, nullptr, nullptr,
+    descData.push_back({"HidCreateDeviceKeyCodeKEYESC", nullptr, HidCreateDeviceKeyCodeKEYESC, nullptr, nullptr,
                         nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD9", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD9, nullptr, nullptr,
+    descData.push_back({"HidCreateDeviceKeyCodeKEY0", nullptr, HidCreateDeviceKeyCodeKEY0, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY1", nullptr, HidCreateDeviceKeyCodeKEY1, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY2", nullptr, HidCreateDeviceKeyCodeKEY2, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY3", nullptr, HidCreateDeviceKeyCodeKEY3, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY4", nullptr, HidCreateDeviceKeyCodeKEY4, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY5", nullptr, HidCreateDeviceKeyCodeKEY5, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY6", nullptr, HidCreateDeviceKeyCodeKEY6, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY7", nullptr, HidCreateDeviceKeyCodeKEY7, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY8", nullptr, HidCreateDeviceKeyCodeKEY8, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEY9", nullptr, HidCreateDeviceKeyCodeKEY9, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYGRAVE", nullptr, HidCreateDeviceKeyCodeKEYGRAVE, nullptr, nullptr,
                         nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeNUMPADDIVIDE", nullptr, HidCreateDeviceKeyCodeNUMPADDIVIDE, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY", nullptr, HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADADD", nullptr, HidCreateDeviceKeyCodeKEYNUMPADADD, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT", nullptr, HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADDOT", nullptr, HidCreateDeviceKeyCodeKEYNUMPADDOT, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADSYSRQ", nullptr, HidCreateDeviceKeyCodeKEYNUMPADSYSRQ, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPADDELETE", nullptr, HidCreateDeviceKeyCodeKEYNUMPADDELETE,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYMUTE", nullptr, HidCreateDeviceKeyCodeKEYMUTE, nullptr, nullptr,
+    descData.push_back({"HidCreateDeviceKeyCodeKEYMINUS", nullptr, HidCreateDeviceKeyCodeKEYMINUS, nullptr, nullptr,
                         nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYVOLUMEDOWN", nullptr, HidCreateDeviceKeyCodeKEYVOLUMEDOWN,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYVOLUMEUP", nullptr, HidCreateDeviceKeyCodeKEYVOLUMEUP,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN", nullptr, HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeKEYBRIGHTNESSUP", nullptr, HidCreateDeviceKeyCodeKEYBRIGHTNESSUP,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN0", nullptr, HidCreateDeviceKeyCodeBIN0,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN1", nullptr, HidCreateDeviceKeyCodeBIN1,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN2", nullptr, HidCreateDeviceKeyCodeBIN2,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN3", nullptr, HidCreateDeviceKeyCodeBIN3,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN4", nullptr, HidCreateDeviceKeyCodeBIN4,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN5", nullptr, HidCreateDeviceKeyCodeBIN5,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYEQUALS", nullptr, HidCreateDeviceKeyCodeKEYEQUALS, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYBACKSPACE", nullptr, HidCreateDeviceKeyCodeKEYBACKSPACE, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYLRFTBACKET", nullptr, HidCreateDeviceKeyCodeKEYLRFTBACKET, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYRIGHTBACKET", nullptr, HidCreateDeviceKeyCodeKEYRIGHTBACKET, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYENTER", nullptr, HidCreateDeviceKeyCodeKEYENTER, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYLEFTSHIFT", nullptr, HidCreateDeviceKeyCodeKEYLEFTSHIFT, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYBACKSLASH", nullptr, HidCreateDeviceKeyCodeKEYBACKSLASH, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
 }
 
-void addHidEmitErrorCodeTest2(std::vector<napi_property_descriptor>& descData)
+void addHidEmitErrorCodeTest1(std::vector<napi_property_descriptor> &descData)
 {
-    addHidEmitErrorCode1Test2(descData);
-    descData.push_back({"HidCreateDeviceKeyCodeBIN6", nullptr, HidCreateDeviceKeyCodeBIN6,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN7", nullptr, HidCreateDeviceKeyCodeBIN7,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN8", nullptr, HidCreateDeviceKeyCodeBIN8,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBIN9", nullptr, HidCreateDeviceKeyCodeBIN9,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINLEFT", nullptr, HidCreateDeviceKeyCodeBINLEFT,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINMIDDLE", nullptr, HidCreateDeviceKeyCodeBINMIDDLE,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINSIDE", nullptr, HidCreateDeviceKeyCodeBINSIDE,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINEXTRA", nullptr, HidCreateDeviceKeyCodeBINEXTRA,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINFORWARD", nullptr, HidCreateDeviceKeyCodeBINFORWARD,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINBACKWARD", nullptr, HidCreateDeviceKeyCodeBINBACKWARD,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINTASK", nullptr, HidCreateDeviceKeyCodeBINTASK,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINTOOLBRUSH", nullptr, HidCreateDeviceKeyCodeBINTOOLBRUSH,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINTOOLPENCIL", nullptr, HidCreateDeviceKeyCodeBINTOOLPENCIL,
-                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDeviceKeyCodeBINTOOLAIRBRUSH", nullptr, HidCreateDeviceKeyCodeBINTOOLAIRBRUSH,
-                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    addHidEmitErrorCode1Test1(descData);
+    descData.push_back({"HidCreateDeviceKeyCodeKEYSEMICOLON", nullptr, HidCreateDeviceKeyCodeKEYSEMICOLON, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYAPOSTROPHE", nullptr, HidCreateDeviceKeyCodeKEYAPOSTROPHE, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYSPACE", nullptr, HidCreateDeviceKeyCodeKEYSPACE, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYSLASH", nullptr, HidCreateDeviceKeyCodeKEYSLASH, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYCOMMA", nullptr, HidCreateDeviceKeyCodeKEYCOMMA, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYPERIOD", nullptr, HidCreateDeviceKeyCodeKEYPERIOD, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYRIGHTSHIFT", nullptr, HidCreateDeviceKeyCodeKEYRIGHTSHIFT, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD0", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD0, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD1", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD1, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD2", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD2, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD3", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD3, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD4", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD4, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD5", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD5, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD6", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD6, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"HidCreateDeviceKeyCodeKEYNUMPAD7", nullptr, HidCreateDeviceKeyCodeKEYNUMPAD7, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPAD8(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYESC(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -142,7 +144,7 @@ int32_t CreateTestDeviceKeyCodeNUMPAD8(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_8 };
+        HID_KEY_ESC };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -167,17 +169,17 @@ int32_t CreateTestDeviceKeyCodeNUMPAD8(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPAD8(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYESC(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPAD8(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYESC(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPAD9(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY0(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -196,7 +198,7 @@ int32_t CreateTestDeviceKeyCodeNUMPAD9(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_9 };
+        HID_KEY_0 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -221,17 +223,17 @@ int32_t CreateTestDeviceKeyCodeNUMPAD9(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPAD9(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY0(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPAD9(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY0(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADDIVIDE(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY1(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -250,7 +252,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADDIVIDE(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_DIVIDE };
+        HID_KEY_1 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -275,17 +277,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADDIVIDE(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeNUMPADDIVIDE(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADDIVIDE(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY1(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADMULTIPLY(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY2(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -304,7 +306,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADMULTIPLY(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_MULTIPLY };
+        HID_KEY_D };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -329,17 +331,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADMULTIPLY(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADMULTIPLY(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY2(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADMULTIPLY(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY2(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADSUBTRACT(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY3(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -358,7 +360,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADSUBTRACT(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_SUBTRACT };
+        HID_KEY_3 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -383,17 +385,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADSUBTRACT(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADSUBTRACT(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY3(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADSUBTRACT(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY3(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADADD(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY4(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -412,7 +414,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADADD(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_ADD };
+        HID_KEY_4 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -437,17 +439,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADADD(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADADD(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY4(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADADD(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY4(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADDOT(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY5(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -466,7 +468,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADDOT(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_NUMPAD_DOT };
+        HID_KEY_5 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -491,17 +493,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADDOT(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADDOT(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY5(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADDOT(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY5(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADSYSRQ(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY6(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -520,7 +522,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADSYSRQ(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_SYSRQ };
+        HID_KEY_6 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -545,17 +547,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADSYSRQ(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADSYSRQ(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY6(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADSYSRQ(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY6(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeNUMPADDELETE(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY7(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -574,7 +576,7 @@ int32_t CreateTestDeviceKeyCodeNUMPADDELETE(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_DELETE };
+        HID_KEY_7 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -599,17 +601,17 @@ int32_t CreateTestDeviceKeyCodeNUMPADDELETE(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYNUMPADDELETE(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY7(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeNUMPADDELETE(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY7(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeKEYMUTE(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY8(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -628,7 +630,7 @@ int32_t CreateTestDeviceKeyCodeKEYMUTE(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_MUTE };
+        HID_KEY_8 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -653,17 +655,17 @@ int32_t CreateTestDeviceKeyCodeKEYMUTE(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYMUTE(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY8(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeKEYMUTE(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY8(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeVOLUMEDOWN(const char* str)
+int32_t CreateTestDeviceKeyCodeKEY9(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -682,7 +684,7 @@ int32_t CreateTestDeviceKeyCodeVOLUMEDOWN(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_VOLUME_DOWN };
+        HID_KEY_9 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -707,17 +709,17 @@ int32_t CreateTestDeviceKeyCodeVOLUMEDOWN(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYVOLUMEDOWN(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEY9(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeVOLUMEDOWN(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEY9(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeVOLUMEUP(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYGRAVE(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -736,7 +738,7 @@ int32_t CreateTestDeviceKeyCodeVOLUMEUP(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_VOLUME_UP };
+        HID_KEY_GRAVE };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -761,17 +763,17 @@ int32_t CreateTestDeviceKeyCodeVOLUMEUP(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYVOLUMEUP(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYGRAVE(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeVOLUMEUP(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYGRAVE(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBRIGHTNESSDOWN(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYMINUS(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -790,7 +792,7 @@ int32_t CreateTestDeviceKeyCodeBRIGHTNESSDOWN(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_BRIGHTNESS_DOWN };
+        HID_KEY_MINUS };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -815,17 +817,17 @@ int32_t CreateTestDeviceKeyCodeBRIGHTNESSDOWN(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYBRIGHTNESSDOWN(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYMINUS(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBRIGHTNESSDOWN(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYMINUS(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBRIGHTNESSUP(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYEQUALS(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -844,7 +846,7 @@ int32_t CreateTestDeviceKeyCodeBRIGHTNESSUP(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_BRIGHTNESS_UP };
+        HID_KEY_EQUALS };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -869,17 +871,17 @@ int32_t CreateTestDeviceKeyCodeBRIGHTNESSUP(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeKEYBRIGHTNESSUP(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYEQUALS(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBRIGHTNESSUP(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYEQUALS(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN0(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYBACKSPACE(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -898,7 +900,7 @@ int32_t CreateTestDeviceKeyCodeBIN0(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_0 };
+        HID_KEY_BACKSPACE };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -923,17 +925,17 @@ int32_t CreateTestDeviceKeyCodeBIN0(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN0(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYBACKSPACE(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN0(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYBACKSPACE(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN1(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYLRFTBACKET(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -952,7 +954,7 @@ int32_t CreateTestDeviceKeyCodeBIN1(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_1 };
+        HID_KEY_LEFT_BRACKET };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -977,17 +979,17 @@ int32_t CreateTestDeviceKeyCodeBIN1(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN1(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYLRFTBACKET(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN1(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYLRFTBACKET(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN2(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYRIGHTBACKET(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1006,7 +1008,7 @@ int32_t CreateTestDeviceKeyCodeBIN2(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_2 };
+        HID_KEY_RIGHT_BRACKET };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1031,17 +1033,17 @@ int32_t CreateTestDeviceKeyCodeBIN2(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN2(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYRIGHTBACKET(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN2(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYRIGHTBACKET(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN3(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYENTER(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1060,7 +1062,7 @@ int32_t CreateTestDeviceKeyCodeBIN3(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_3 };
+        HID_KEY_ENTER };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1085,17 +1087,17 @@ int32_t CreateTestDeviceKeyCodeBIN3(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN3(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYENTER(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN3(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYENTER(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN4(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYLEFTSHIFT(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1114,7 +1116,7 @@ int32_t CreateTestDeviceKeyCodeBIN4(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_4 };
+        HID_KEY_LEFT_SHIFT };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1139,17 +1141,17 @@ int32_t CreateTestDeviceKeyCodeBIN4(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN4(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYLEFTSHIFT(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN4(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYLEFTSHIFT(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN5(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYBACKSLASH(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1168,7 +1170,7 @@ int32_t CreateTestDeviceKeyCodeBIN5(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_5 };
+        HID_KEY_BACKSLASH };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1193,17 +1195,17 @@ int32_t CreateTestDeviceKeyCodeBIN5(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN5(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYBACKSLASH(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN5(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYBACKSLASH(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN6(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYSEMICOLON(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1222,7 +1224,7 @@ int32_t CreateTestDeviceKeyCodeBIN6(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_6 };
+        HID_KEY_SEMICOLON };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1247,17 +1249,17 @@ int32_t CreateTestDeviceKeyCodeBIN6(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN6(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYSEMICOLON(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN6(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYSEMICOLON(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN7(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYAPOSTROPHE(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1276,7 +1278,7 @@ int32_t CreateTestDeviceKeyCodeBIN7(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_7 };
+        HID_KEY_APOSTROPHE };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1301,17 +1303,17 @@ int32_t CreateTestDeviceKeyCodeBIN7(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN7(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYAPOSTROPHE(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN7(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYAPOSTROPHE(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN8(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYSPACE(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1330,7 +1332,7 @@ int32_t CreateTestDeviceKeyCodeBIN8(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_8 };
+        HID_KEY_SPACE };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1355,17 +1357,17 @@ int32_t CreateTestDeviceKeyCodeBIN8(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN8(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYSPACE(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN8(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYSPACE(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBIN9(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYSLASH(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1384,7 +1386,7 @@ int32_t CreateTestDeviceKeyCodeBIN9(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_9 };
+        HID_KEY_SLASH };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1409,17 +1411,17 @@ int32_t CreateTestDeviceKeyCodeBIN9(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBIN9(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYSLASH(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBIN9(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYSLASH(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINLEFT(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYRCOMMA(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1438,7 +1440,7 @@ int32_t CreateTestDeviceKeyCodeBINLEFT(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_LEFT };
+        HID_KEY_COMMA };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1463,17 +1465,17 @@ int32_t CreateTestDeviceKeyCodeBINLEFT(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINLEFT(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYCOMMA(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINLEFT(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYRCOMMA(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINMIDDLE(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYPERIOD(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1492,7 +1494,7 @@ int32_t CreateTestDeviceKeyCodeBINMIDDLE(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_MIDDLE };
+        HID_KEY_PERIOD };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1517,17 +1519,17 @@ int32_t CreateTestDeviceKeyCodeBINMIDDLE(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINMIDDLE(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYPERIOD(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINMIDDLE(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYPERIOD(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINSIDE(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYRIGHTSHIFT(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1546,7 +1548,7 @@ int32_t CreateTestDeviceKeyCodeBINSIDE(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_SIDE };
+        HID_KEY_RIGHT_SHIFT };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1571,17 +1573,17 @@ int32_t CreateTestDeviceKeyCodeBINSIDE(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINSIDE(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYRIGHTSHIFT(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINSIDE(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYRIGHTSHIFT(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINEXTRA(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD0(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1600,7 +1602,7 @@ int32_t CreateTestDeviceKeyCodeBINEXTRA(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_EXTRA };
+        HID_KEY_NUMPAD_0 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1625,17 +1627,17 @@ int32_t CreateTestDeviceKeyCodeBINEXTRA(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINEXTRA(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD0(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINEXTRA(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD0(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINFORWARD(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD1(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1654,7 +1656,7 @@ int32_t CreateTestDeviceKeyCodeBINFORWARD(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_FORWARD };
+        HID_KEY_NUMPAD_1 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1679,17 +1681,17 @@ int32_t CreateTestDeviceKeyCodeBINFORWARD(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINFORWARD(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINFORWARD(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD1(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINBACKWARD(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD2(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1708,7 +1710,7 @@ int32_t CreateTestDeviceKeyCodeBINBACKWARD(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_BACKWARD };
+        HID_KEY_NUMPAD_2 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1733,17 +1735,17 @@ int32_t CreateTestDeviceKeyCodeBINBACKWARD(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINBACKWARD(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD2(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINBACKWARD(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD2(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINTASK(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD3(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1762,7 +1764,7 @@ int32_t CreateTestDeviceKeyCodeBINTASK(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TASK };
+        HID_KEY_NUMPAD_3 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1787,17 +1789,17 @@ int32_t CreateTestDeviceKeyCodeBINTASK(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINTASK(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD3(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINTASK(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD3(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINTOOLBRUSH(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD4(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1816,7 +1818,7 @@ int32_t CreateTestDeviceKeyCodeBINTOOLBRUSH(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_BRUSH };
+        HID_KEY_NUMPAD_4 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1841,17 +1843,17 @@ int32_t CreateTestDeviceKeyCodeBINTOOLBRUSH(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINTOOLBRUSH(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD4(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINTOOLBRUSH(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD4(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINTOOLPENCIL(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD5(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1870,7 +1872,7 @@ int32_t CreateTestDeviceKeyCodeBINTOOLPENCIL(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_PENCIL };
+        HID_KEY_NUMPAD_5 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1895,17 +1897,17 @@ int32_t CreateTestDeviceKeyCodeBINTOOLPENCIL(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINTOOLPENCIL(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD5(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINTOOLPENCIL(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD5(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
-int32_t CreateTestDeviceKeyCodeBINTOOLAIRBRUSH(const char* str)
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD6(const char* str)
 {
     std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
     Hid_Device hidDevice = {
@@ -1924,7 +1926,7 @@ int32_t CreateTestDeviceKeyCodeBINTOOLAIRBRUSH(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_AIRBRUSH };
+        HID_KEY_NUMPAD_6 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -1949,19 +1951,66 @@ int32_t CreateTestDeviceKeyCodeBINTOOLAIRBRUSH(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDeviceKeyCodeBINTOOLAIRBRUSH(napi_env env, napi_callback_info info)
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD6(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
-    deviceId = CreateTestDeviceKeyCodeBINTOOLAIRBRUSH(DEVICE_NAME);
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD6(DEVICE_NAME);
     OH_Hid_DestroyDevice(deviceId);
     napi_create_int32(env, deviceId, &result);
     return result;
 }
 
+int32_t CreateTestDeviceKeyCodeKEYNUMPAD7(const char* str)
+{
+    std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
+    Hid_Device hidDevice = {
+        .deviceName = str,
+        .vendorId = 0x6006,
+        .productId = 0x6006,
+        .version = 1,
+        .bustype = 3,
+        .properties = deviceProp.data(),
+        .propLength = (uint16_t)deviceProp.size()
+    };
 
+    std::vector<Hid_EventType> eventType = { HID_EV_ABS, HID_EV_KEY, HID_EV_SYN, HID_EV_MSC };
+    Hid_EventTypeArray eventTypeArray = {
+        .hidEventType = eventType.data(),
+        .length = (uint16_t)eventType.size()
+    };
+    std::vector<Hid_KeyCode> keyCode = {
+        HID_KEY_NUMPAD_7 };
+    Hid_KeyCodeArray keyCodeArray = {
+        .hidKeyCode = keyCode.data(),
+        .length = (uint16_t)keyCode.size()
+    };
+    std::vector<Hid_MscEvent> mscEvent = { HID_MSC_SCAN };
+    Hid_MscEventArray mscEventArray = {
+        .hidMscEvent = mscEvent.data(),
+        .length = (uint16_t)mscEvent.size()
+    };
+    std::vector<Hid_AbsAxes> absAxes = { HID_ABS_X, HID_ABS_Y, HID_ABS_PRESSURE };
+    Hid_AbsAxesArray absAxesArray = {
+        .hidAbsAxes = absAxes.data(),
+        .length = (uint16_t)absAxes.size()
+    };
+    Hid_EventProperties hidEventProp = {
+        .hidEventTypes = eventTypeArray,
+        .hidKeys = keyCodeArray,
+        .hidAbs = absAxesArray,
+        .hidMiscellaneous=mscEventArray
+    };
 
+    return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
+}
 
-
-
-
+napi_value HidCreateDeviceKeyCodeKEYNUMPAD7(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t deviceId = 0;
+    deviceId = CreateTestDeviceKeyCodeKEYNUMPAD7(DEVICE_NAME);
+    OH_Hid_DestroyDevice(deviceId);
+    napi_create_int32(env, deviceId, &result);
+    return result;
+}

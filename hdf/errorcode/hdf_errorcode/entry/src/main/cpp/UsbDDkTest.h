@@ -47,5 +47,4 @@ napi_value UsbConfigDescriptorTest_005(napi_env env, napi_callback_info info);
 napi_value UsbConfigDescriptorTest_006(napi_env env, napi_callback_info info);
 napi_value UsbConfigDescriptorTest_007(napi_env env, napi_callback_info info);
 napi_value DeviceArrayTest_001(napi_env env, napi_callback_info info);
-
 #endif //HDF_ERRORCODE_USBDDKNOPERMTEST_H

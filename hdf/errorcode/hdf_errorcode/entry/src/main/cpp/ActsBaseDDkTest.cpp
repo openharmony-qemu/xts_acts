@@ -31,14 +31,14 @@
 #define PORT_WRITE 0x02
 #define PORT_ILLEGAL 0x08
 
-struct Hid_DeviceHandle {
+struct HidDeviceHandle {
     int32_t fd = -1;
     int32_t nonBlock = 0;
 };
 
-Hid_DeviceHandle *NewHidDeviceHandle1()
+HidDeviceHandle *NewHidDeviceHandle1()
 {
-    return new Hid_DeviceHandle;
+    return new HidDeviceHandle;
 }
 
 void DeleteHidDeviceHandle(Hid_DeviceHandle **dev)
@@ -64,7 +64,8 @@ const uint32_t BUS_NUM_MASK = 0xFFFF0000;
 const uint32_t DEVICE_NUM_MASK = 0x0000FFFF;
 const uint32_t INVALID_NON_BLOCK = 2;
 
-void addBaseDDkErrorCodeTest1(std::vector<napi_property_descriptor> &descData) {
+void addBaseDDkErrorCodeTest1(std::vector<napi_property_descriptor> &descData)
+{
     descData.push_back(
         {"DdkMapAshmemAshmemFd", nullptr, DdkMapAshmemAshmemFd, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
@@ -104,7 +105,8 @@ void addBaseDDkErrorCodeTest1(std::vector<napi_property_descriptor> &descData) {
         {"HidDdkErrCodeIOError", nullptr, HidDdkErrCodeIOError, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
-void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData) {
+void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData)
+{
     addBaseDDkErrorCodeTest1(descData);
     descData.push_back({"HidDdkErrCodeHidRelAxesArrayHidRelAxes", nullptr, HidDdkErrCodeHidRelAxesArrayHidRelAxes,
                         nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -122,7 +124,6 @@ void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData) {
                         napi_default, nullptr});
     descData.push_back({"HidDestroyDeviceInvalidOperation", nullptr, HidDestroyDeviceInvalidOperation, nullptr, nullptr,
                         nullptr, napi_default, nullptr});
-    
 }
 
 static bool CompareIgnoreCase(char a, char b)
@@ -193,7 +194,8 @@ napi_value IsHidDevice1(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -206,7 +208,8 @@ napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -219,7 +222,8 @@ napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -232,7 +236,8 @@ napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -245,7 +250,8 @@ napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -258,7 +264,8 @@ napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -284,7 +291,8 @@ napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -294,7 +302,8 @@ napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -306,7 +315,8 @@ napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemNullPTR(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemNullPTR(napi_env env, napi_callback_info info)
+{
     napi_value result;
     const uint8_t ashmemMapType = PORT_READ | PORT_WRITE;
     int32_t returnValue = OH_DDK_MapAshmem(nullptr, ashmemMapType);
@@ -438,7 +448,7 @@ static int32_t CreateTestDeviceFailure(const char* str)
 napi_value HidDdkErrCodeFailure(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    int32_t deviceId = 0; 
+    int32_t deviceId = 0;
     for (int i = 0; i < MAX_DEVICE_NUM; i++) {
         deviceId = CreateTestDeviceFailure(DEVICE_NAME);
     }
@@ -499,7 +509,7 @@ static int32_t CreateTestDeviceHidRelAxesArrayHidRelAxes(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = { HID_REL_X , HID_REL_Y };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X, HID_REL_Y};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -559,7 +569,7 @@ static int32_t CreateTestDeviceHidRelAxesArraylength(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = { HID_REL_X , HID_REL_Y };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X, HID_REL_Y};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -632,7 +642,7 @@ static int32_t CreateTestDeviceFailure1(const char* str)
 napi_value CreateTestDeviceDdkFailure(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    int32_t deviceId = 0; 
+    int32_t deviceId = 0;
     for (int i = 0; i < MAX_DEVICE_NUM; i++) {
         deviceId = CreateTestDeviceFailure1(DEVICE_NAME);
     }
@@ -676,7 +686,6 @@ napi_value HidEmitEventInvalidOperation(napi_env env, napi_callback_info info)
 
 static int32_t CreateTestDevice(const char* str)
 {
-
     return OH_Hid_CreateDevice(nullptr, nullptr);
 }
 

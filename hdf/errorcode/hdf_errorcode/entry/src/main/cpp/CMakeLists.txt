@@ -12,7 +12,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                         ${NATIVERENDER_ROOT_PATH}/include)
 
 add_library(baskddkerrorcode SHARED ActsErrorCodeTest.cpp ActsBaseDDkTest.cpp ActsHidEmitCodeTest.cpp
-ActsHidEmitCodeTest1.cpp ActsHidEmitCodeTest2.cpp ActsHidEmitCodeTest3.cpp ActsHidEmitCodeTest4.cpp ActsUsbDDkTest.cpp
+ActsHidEmitCode1Test.cpp ActsHidEmitCode2Test.cpp ActsHidEmitCode3Test.cpp ActsHidEmitCode4Test.cpp ActsUsbDDkTest.cpp
 UsbDDkTest.cpp UsbTest.cpp)
 target_link_libraries(baskddkerrorcode PUBLIC libace_napi.z.so libhilog_ndk.z.so libc++.a libhid.z.so libqos.so
 libusb_ndk.z.so libipc_capi.so libddk_base.z.so libscsi.z.so libusb_serial_ndk.z.so)
