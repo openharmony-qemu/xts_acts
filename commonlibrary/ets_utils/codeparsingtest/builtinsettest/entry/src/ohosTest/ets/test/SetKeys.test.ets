@@ -3510,3 +3510,1617 @@ export default function SetKeysTest() {
       // Complex modification sequence
       set.add('a');
       set.add('b');
+      set.delete('a');
+      set.add('c');
+      set.add('a');
+      set.delete('b');
+      set.add('d');
+      set.delete('c');
+      set.add('b');
+      set.add('e');
+
+      const values: string[] = Array.from(set.values());
+
+      // Verify final values in insertion order
+      expect(values).assertDeepEquals(['a', 'd', 'b', 'e']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_077
+     * @tc.name testSetValues077
+     * @tc.desc Test Set.values() with nested objects that modify during iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs077()).assertDeepEquals(['modified1', 'modified2']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_078
+     * @tc.name testSetValues078
+     * @tc.desc Test Set.values() with WeakRef objects as elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      // Define interface for weak reference targets
+      interface RefTarget { data: string; }
+
+      const target1: RefTarget = { data: 'target1' };
+      const target2: RefTarget = { data: 'target2' };
+      const ref1: WeakRef<RefTarget> = new WeakRef(target1);
+      const ref2: WeakRef<RefTarget> = new WeakRef(target2);
+      const ref3: WeakRef<RefTarget> = new WeakRef(target1);
+
+      const set: Set<WeakRef<RefTarget>> = new Set([ref1, ref2, ref3]);
+      const values: WeakRef<RefTarget>[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(3);
+      expect(values[0].deref()?.data).assertEqual('target1');
+      expect(values[1].deref()?.data).assertEqual('target2');
+      expect(values[2].deref()?.data).assertEqual('target1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_079
+     * @tc.name testSetValues079
+     * @tc.desc Test Set.values() with mixed enum values and their numeric equivalents
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<Status | number> = new Set([
+        Status.PENDING,
+        0, // Numeric equivalent of PENDING
+        Status.PROCESSING,
+        1, // Numeric equivalent of PROCESSING
+        Status.COMPLETED
+      ]);
+
+      const values: (Status | number)[] = Array.from(set.values());
+
+      // Enum values and numbers are treated as distinct
+      expect(values.length).assertEqual(3);
+      expect(values).assertContain(Status.PENDING);
+      expect(values).assertContain(0);
+      expect(values).assertContain(Status.PROCESSING);
+      expect(values).assertContain(1);
+      expect(values).assertContain(Status.COMPLETED);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_080
+     * @tc.name testSetValues080
+     * @tc.desc Test Set.values() with very large string elements (100k+ characters)
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues080', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      // Generate large strings
+      const str1: string = 'a'.repeat(100000);
+      const str2: string = 'b'.repeat(100000);
+      const str3: string = 'a'.repeat(100000); // Duplicate of str1
+
+      const set: Set<string> = new Set([str1, str2, str3]);
+      const values: string[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(2);
+      expect(values[0]).assertEqual(str1);
+      expect(values[1]).assertEqual(str2);
+      expect(values[0].length).assertEqual(100000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_081
+     * @tc.name testSetValues081
+     * @tc.desc Test Set.values() with objects that override valueOf()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      class CustomNumber {
+        private num: number;
+
+        constructor(num: number) {
+          this.num = num;
+        }
+
+        valueOf(): number {
+          return this.num;
+        }
+      }
+
+      const num1: CustomNumber = new CustomNumber(10);
+      const num2: CustomNumber = new CustomNumber(20);
+      const num3: CustomNumber = new CustomNumber(10); // Same value, different instance
+
+      const set: Set<CustomNumber> = new Set([num1, num2, num3]);
+      const values: CustomNumber[] = Array.from(set.values());
+
+      // Set uses reference equality, not valueOf()
+      expect(values.length).assertEqual(3);
+      expect(values[0].valueOf()).assertEqual(10);
+      expect(values[1].valueOf()).assertEqual(20);
+      expect(values[2].valueOf()).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_082
+     * @tc.name testSetValues082
+     * @tc.desc Test Set.values() with recursive objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs082()).assertDeepEquals([2, 'root', 'root2']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_083
+     * @tc.name testSetValues083
+     * @tc.desc Test Set.values() with elements added from another Set's values iterator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const sourceSet: Set<number> = new Set([10, 20, 30, 40]);
+      const targetSet: Set<number> = new Set();
+
+      // Add elements from sourceSet's values iterator
+      const sourceValues: Iterator<number> = sourceSet.values();
+      let next: IteratorResult<number>;
+      while (!(next = sourceValues.next()).done) {
+        if (next.value % 20 === 0) { // Filter even multiples of 20
+          targetSet.add(next.value);
+        }
+      }
+
+      const targetValues: number[] = Array.from(targetSet.values());
+      expect(targetValues).assertDeepEquals([20, 40]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_084
+     * @tc.name testSetValues084
+     * @tc.desc Test Set.values() with Promise objects as elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const promise1: Promise<number> = Promise.resolve(100);
+      const promise2: Promise<number> = Promise.resolve(100); // Same value, different promise
+      const promise3: Promise<string> = Promise.resolve('completed');
+
+      const set: Set<Promise<number> | Promise<string>> = new Set([promise1, promise2, promise3]);
+      const values: (Promise<number> | Promise<string>)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(3);
+      expect(values[0]).assertDeepEquals(promise1);
+      expect(values[1]).assertDeepEquals(promise2);
+      expect(values[2]).assertDeepEquals(promise3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_085
+     * @tc.name testSetValues085
+     * @tc.desc Test Set.values() with elements that are Maps with identical content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const map1: Map<string, number> = new Map([['a', 1], ['b', 2]]);
+      const map2: Map<string, number> = new Map([['a', 1], ['b', 2]]); // Same content, different instance
+      const map3: Map<string, number> = map1; // Same reference as map1
+
+      const set: Set<Map<string, number>> = new Set([map1, map2, map3]);
+      const values: Map<string, number>[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(2); // map1/map3 are same reference
+      expect(values[0]).assertDeepEquals(map1);
+      expect(values[1]).assertDeepEquals(map2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_086
+     * @tc.name testSetValues086
+     * @tc.desc Test Set.values() with typed arrays sharing the same buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(16);
+      const int32View: Int32Array = new Int32Array(buffer);
+      const float64View: Float64Array = new Float64Array(buffer);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+
+      int32View.set([1, 2, 3, 4]);
+
+      const set: Set<Int32Array | Float64Array | Uint8Array> = new Set([
+        int32View, float64View, uint8View, new Int32Array(buffer)
+      ]);
+
+      const values: (Int32Array | Float64Array | Uint8Array)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(4); // All are distinct views or instances
+      expect(values[0]).assertDeepEquals(int32View);
+      expect(values[3].buffer).assertDeepEquals(buffer); // New view but same buffer
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_087
+     * @tc.name testSetValues087
+     * @tc.desc Test Set.values() with Error objects of different types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const error1: Error = new Error('Generic error');
+      const error2: TypeError = new TypeError('Type mismatch');
+      const error3: Error = new Error('Generic error'); // Same message, different instance
+      const error4: RangeError = new RangeError('Out of range');
+
+      const set: Set<Error> = new Set([error1, error2, error3, error4]);
+      const values: Error[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(4);
+      expect(values[0].message).assertEqual('Generic error');
+      expect(values[2].message).assertEqual('Generic error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_088
+     * @tc.name testSetValues088
+     * @tc.desc Test Set.values() with elements added via spread operator from multiple sources
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs088()).assertDeepEquals(['a', 'b', 'c', 'd', 'e', 'f', 'g']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_090
+     * @tc.name testSetValues090
+     * @tc.desc Test Set.values() with BigInt values and their string representations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const big1: bigint = 123456789012345678901234567890n;
+      const big2: bigint = 123456789012345678901234567890n; // Same value
+      const bigStr: string = big1.toString();
+
+      const set: Set<bigint | string> = new Set([big1, big2, bigStr]);
+      const values: (bigint | string)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(2); // big1 and big2 are same value
+      expect(values[0]).assertEqual(big1);
+      expect(values[1]).assertEqual(bigStr);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_091
+     * @tc.name testSetValues091
+     * @tc.desc Test Set.values() with multiple iterators operating simultaneously
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([1, 2, 3, 4, 5]);
+
+      // Create two concurrent iterators
+      const iter1: Iterator<number> = set.values();
+      const iter2: Iterator<number> = set.values();
+
+      // Alternate between iterators
+      expect(iter1.next().value).assertEqual(1);
+      expect(iter2.next().value).assertEqual(1);
+      expect(iter1.next().value).assertEqual(2);
+      expect(iter2.next().value).assertEqual(2);
+
+      // Modify set during iteration
+      set.delete(3);
+      set.add(6);
+
+      expect(iter1.next().value).assertEqual(4); // Original element
+      expect(iter2.next().value).assertEqual(4);
+      expect(iter1.next().value).assertEqual(5);
+      expect(iter2.next().value).assertEqual(5);
+      expect(iter1.next().value).assertEqual(6); // New element
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_092
+     * @tc.name testSetValues092
+     * @tc.desc Test Set.values() with objects created via Object.create()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs092()).assertDeepEquals([2, 1, 2, 'prototype']);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_093
+     * @tc.name testSetValues093
+     * @tc.desc Test Set.values() with regular expressions and their source equivalents
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const regex1: RegExp = /test/i;
+      const regex2: RegExp = /test/i; // Same pattern, different instance
+      const regex3: RegExp = new RegExp(regex1.source, regex1.flags); // Same pattern
+
+      const set: Set<RegExp> = new Set([regex1, regex2, regex3]);
+      const values: RegExp[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(3); // All are distinct instances
+      expect(values[0].source).assertEqual('test');
+      expect(values[1].flags).assertEqual('i');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_094
+     * @tc.name testSetValues094
+     * @tc.desc Test Set.values() with elements that are functions with same implementation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const func1: () => number = () => 42;
+      const func2: () => number = () => 42; // Same implementation, different function
+      const func3: () => number = func1; // Same reference as func1
+
+      const set: Set<() => number> = new Set([func1, func2, func3]);
+      const values: (() => number)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(2); // func1 and func3 are same reference
+      expect(values[0]).assertDeepEquals(func1);
+      expect(values[1]).assertDeepEquals(func2);
+      expect(values[0]()).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_096
+     * @tc.name testSetValues096
+     * @tc.desc Test Set.values() with elements that are HTML-like object representations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      interface HTMLElementLike {
+        tag: string;
+        attrs: Map<string, string>;
+        children: HTMLElementLike[];
+      }
+
+      const el1: HTMLElementLike = {
+        tag: 'div',
+        attrs: new Map([['id', 'container']]),
+        children: []
+      };
+
+      const el2: HTMLElementLike = {
+        tag: 'div',
+        attrs: new Map([['id', 'container']]),
+        children: []
+      }; // Same structure, different instance
+
+      const set: Set<HTMLElementLike> = new Set([el1, el2]);
+      const values: HTMLElementLike[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(2);
+      expect(values[0].tag).assertEqual('div');
+      expect(values[1].attrs.get('id')).assertEqual('container');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_097
+     * @tc.name testSetValues097
+     * @tc.desc Test Set.values() with elements added and removed in high frequency
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 1
+     */
+    it('testSetValues097', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const operations: number = 100000;
+
+      // Perform high-frequency add/delete operations
+      const startTime: number = Date.now();
+      for (let i = 0; i < operations; i++) {
+        set.add(i);
+        if (i % 3 === 0) { // Delete every third element
+          set.delete(i);
+        }
+      }
+      const modifyTime: number = Date.now() - startTime;
+
+      // Verify values iterator works correctly
+      const valuesTime: number = Date.now();
+      const values: number[] = Array.from(set.values());
+      const iterateTime: number = Date.now() - valuesTime;
+
+      expect(values.length).assertEqual(66666);
+      expect(modifyTime).assertLess(500);
+      expect(iterateTime).assertLess(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_098
+     * @tc.name testSetValues098
+     * @tc.desc Test Set.values() with mixed null/undefined and their string representations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<null | undefined | string> = new Set([
+        null, null,
+        undefined, undefined,
+        'null', 'null',
+        'undefined', 'undefined'
+      ]);
+
+      const values: (null | undefined | string)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(4); // null, undefined, 'null', 'undefined'
+      expect(values[0]).assertNull();
+      expect(values[1]).assertUndefined();
+      expect(values[2]).assertEqual('null');
+      expect(values[3]).assertEqual('undefined');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_099
+     * @tc.name testSetValues099
+     * @tc.desc Test Set.values() with elements that are instances of derived classes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetValues099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      class Base {
+        public id: number;
+
+        constructor(id: number) {
+          this.id = id;
+        }
+      }
+
+      class Derived extends Base {
+        public name: string;
+
+        constructor(id: number, name: string) {
+          super(id);
+          this.name = name;
+        }
+      }
+
+      const base1: Base = new Base(1);
+      const base2: Base = new Base(1); // Same id, different instance
+      const derived1: Derived = new Derived(2, 'test');
+      const derived2: Derived = new Derived(2, 'test'); // Same values, different instance
+
+      const set: Set<Base | Derived> = new Set([base1, base2, derived1, derived2]);
+      const values: (Base | Derived)[] = Array.from(set.values());
+
+      expect(values.length).assertEqual(4); // All are distinct instances
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_VALUES_100
+     * @tc.name testSetValues100
+     * @tc.desc Test Set.values() with extremely large dataset (1M+ elements)
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 1
+     */
+    it('testSetValues100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const targetSize: number = 1000000;
+
+      // Populate set with unique numbers
+      const populateStart: number = Date.now();
+      for (let i = 0; i < targetSize; i++) {
+        set.add(i);
+      }
+      const populateTime: number = Date.now() - populateStart;
+
+      // Verify values iterator performance and correctness
+      const iterateStart: number = Date.now();
+      const values: Iterator<number> = set.values();
+
+      // Check first 10 and last 10 elements
+      for (let i = 0; i < 10; i++) {
+        expect(values.next().value).assertEqual(i);
+      }
+
+      // Fast-forward to near the end
+      let next: IteratorResult<number>;
+      let count: number = 1;
+      while (!(next = values.next()).done && count < targetSize - 20) {
+        count++;
+      }
+
+      // Check last 10 elements
+      for (let i = targetSize - 10; i < targetSize; i++) {
+        expect(values.next().value).assertEqual(i);
+      }
+
+      const iterateTime: number = Date.now() - iterateStart;
+
+      // Performance assertions
+      expect(populateTime).assertLess(1000);
+      expect(iterateTime).assertLess(800);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_001
+     * @tc.name testSetSize001
+     * @tc.desc Verify size of empty Set
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const size: number = set.size;
+
+      expect(size).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_002
+     * @tc.name testSetSize002
+     * @tc.desc Verify size with unique string elements
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<string> = new Set(['a', 'b', 'c', 'd']);
+      const size: number = set.size;
+
+      expect(size).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_003
+     * @tc.name testSetSize003
+     * @tc.desc Verify size ignores duplicate number elements
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([1, 2, 2, 3, 3, 3]);
+      const size: number = set.size;
+
+      expect(size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_004
+     * @tc.name testSetSize004
+     * @tc.desc Verify size updates after add operations
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<boolean> = new Set();
+
+      set.add(true);
+      expect(set.size).assertEqual(1);
+
+      set.add(false);
+      expect(set.size).assertEqual(2);
+
+      set.add(true); // Duplicate
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_005
+     * @tc.name testSetSize005
+     * @tc.desc Verify size updates after delete operations
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<string> = new Set(['x', 'y', 'z']);
+
+      set.delete('y');
+      expect(set.size).assertEqual(2);
+
+      set.delete('a'); // Non-existent element
+      expect(set.size).assertEqual(2);
+
+      set.delete('x');
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_006
+     * @tc.name testSetSize006
+     * @tc.desc Verify size after clear operation
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([10, 20, 30]);
+
+      set.clear();
+      expect(set.size).assertEqual(0);
+
+      // Clear empty set
+      set.clear();
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_007
+     * @tc.name testSetSize007
+     * @tc.desc Verify size with object elements (distinct references)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const obj1: TestEntity = { id: 1, name: 'obj1' };
+      const obj2: TestEntity = { id: 2, name: 'obj2' };
+      const obj3: TestEntity = { id: 1, name: 'obj1' }; // Same content, different reference
+
+      const set: Set<TestEntity> = new Set([obj1, obj2, obj3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_008
+     * @tc.name testSetSize008
+     * @tc.desc Verify size with NaN elements (treated as equal)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([NaN, NaN, 5, NaN]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_009
+     * @tc.name testSetSize009
+     * @tc.desc Verify size with 0 and -0 elements (treated as equal)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([0, -0, 1, -0]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_010
+     * @tc.name testSetSize010
+     * @tc.desc Verify size with Symbol elements (always unique)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      try {
+        testSetSizeJs010();
+        expect(false).assertFail();
+      } catch (err) {
+        expect(true).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_011
+     * @tc.name testSetSize011
+     * @tc.desc Verify size with BigInt elements
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const big1: bigint = 100n;
+      const big2: bigint = 200n;
+      const big3: bigint = 100n; // Same value as big1
+
+      const set: Set<bigint> = new Set([big1, big2, big3]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_012
+     * @tc.name testSetSize012
+     * @tc.desc Verify size with class instances
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const inst1: TestModel = new TestModel('A', 10);
+      const inst2: TestModel = new TestModel('B', 20);
+      const inst3: TestModel = new TestModel('A', 10); // Same content, different instance
+
+      const set: Set<TestModel> = new Set([inst1, inst2, inst3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_013
+     * @tc.name testSetSize013
+     * @tc.desc Verify size with enum values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<TestStatus> = new Set([
+        TestStatus.New,
+        TestStatus.Processing,
+        TestStatus.New,
+        TestStatus.Completed
+      ]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_014
+     * @tc.name testSetSize014
+     * @tc.desc Verify size with mixed primitive types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<string | number | boolean | null> = new Set([
+        'text', 42, true, null, 42, 'text', false
+      ]);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_015
+     * @tc.name testSetSize015
+     * @tc.desc Verify size with large dataset (10,000+ elements)
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize015', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const targetSize: number = 15000;
+
+      for (let i = 0; i < targetSize; i++) {
+        set.add(i);
+      }
+
+      expect(set.size).assertEqual(targetSize);
+
+      // Add duplicates
+      for (let i = 0; i < 5000; i++) {
+        set.add(i);
+      }
+
+      expect(set.size).assertEqual(targetSize);
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_017
+     * @tc.name testSetSize017
+     * @tc.desc Verify size with Date objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const date1: Date = new Date('2024-01-01');
+      const date2: Date = new Date('2024-01-01'); // Same time, different instance
+      const date3: Date = new Date('2024-01-02');
+
+      const set: Set<Date> = new Set([date1, date2, date3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_018
+     * @tc.name testSetSize018
+     * @tc.desc Verify size with function elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const func1: () => void = () => {
+      };
+      const func2: () => void = () => {
+      };
+      const func3: () => void = func1; // Same reference as func1
+
+      const set: Set<() => void> = new Set([func1, func2, func3]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_019
+     * @tc.name testSetSize019
+     * @tc.desc Verify size immutability (cannot be assigned directly)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs019()).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_020
+     * @tc.name testSetSize020
+     * @tc.desc Verify size after consecutive add/delete operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<string> = new Set();
+
+      // Complex sequence of operations
+      set.add('a');
+      set.add('b');
+      set.add('c');
+      expect(set.size).assertEqual(3);
+
+      set.delete('b');
+      set.add('d');
+      set.add('a'); // Duplicate
+      expect(set.size).assertEqual(3);
+
+      set.add('e');
+      set.delete('a');
+      set.delete('x'); // Non-existent
+      set.add('f');
+      expect(set.size).assertEqual(4);
+
+      set.clear();
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_021
+     * @tc.name testSetSize021
+     * @tc.desc Verify size with extremely large string values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      // Create very long strings
+      const longStr1: string = 'a'.repeat(10000);
+      const longStr2: string = 'b'.repeat(10000);
+      const longStr3: string = 'a'.repeat(10000); // Duplicate of longStr1
+
+      const set: Set<string> = new Set([longStr1, longStr2, longStr3]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_022
+     * @tc.name testSetSize022
+     * @tc.desc Verify size with mixed case-sensitive string elements
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<string> = new Set(['Apple', 'apple', 'APPLE', 'Banana']);
+      expect(set.size).assertEqual(4); // Strings are case-sensitive
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_023
+     * @tc.name testSetSize023
+     * @tc.desc Verify size with sparse array elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      // Create sparse array with empty slots
+      const sparseArray: number[] = [];
+      sparseArray[0] = 10;
+      sparseArray[5] = 20;
+      sparseArray[10] = 30;
+
+      const set: Set<number> = new Set(sparseArray);
+      expect(set.size).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_025
+     * @tc.name testSetSize025
+     * @tc.desc Verify size with objects that have null prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs025()).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_026
+     * @tc.name testSetSize026
+     * @tc.desc Verify size with RegExp objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const regex1: RegExp = /test/i;
+      const regex2: RegExp = /test/i; // Same pattern, different instance
+      const regex3: RegExp = /example/g;
+
+      const set: Set<RegExp> = new Set([regex1, regex2, regex3]);
+      expect(set.size).assertEqual(3); // All are distinct instances
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_027
+     * @tc.name testSetSize027
+     * @tc.desc Verify size after adding and deleting the same element multiple times
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+
+      // Add and remove the same element multiple times
+      set.add(10);
+      expect(set.size).assertEqual(1);
+
+      set.delete(10);
+      expect(set.size).assertEqual(0);
+
+      set.add(10);
+      expect(set.size).assertEqual(1);
+
+      set.delete(10);
+      expect(set.size).assertEqual(0);
+
+      set.add(10);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_028
+     * @tc.name testSetSize028
+     * @tc.desc Verify size with Map objects as elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const map1: Map<string, number> = new Map([['a', 1]]);
+      const map2: Map<string, number> = new Map([['b', 2]]);
+      const map3: Map<string, number> = new Map([['a', 1]]); // Same content, different instance
+
+      const set: Set<Map<string, number>> = new Set([map1, map2, map3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_029
+     * @tc.name testSetSize029
+     * @tc.desc Verify size with Set objects as elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const innerSet1: Set<number> = new Set([1, 2]);
+      const innerSet2: Set<number> = new Set([3, 4]);
+      const innerSet3: Set<number> = new Set([1, 2]); // Same content, different instance
+
+      const set: Set<Set<number>> = new Set([innerSet1, innerSet2, innerSet3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_030
+     * @tc.name testSetSize030
+     * @tc.desc Verify size with TypedArray elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr1: Uint8Array = new Uint8Array([1, 2, 3]);
+      const arr2: Uint8Array = new Uint8Array([1, 2, 3]); // Same content, different instance
+      const arr3: Uint8Array = new Uint8Array([4, 5, 6]);
+
+      const set: Set<Uint8Array> = new Set([arr1, arr2, arr3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_031
+     * @tc.name testSetSize031
+     * @tc.desc Verify size with mixed unique and duplicate complex objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const data1: ImmutableData = new ImmutableData('key1', 100);
+      const data2: ImmutableData = new ImmutableData('key2', 200);
+      const data3: ImmutableData = new ImmutableData('key1', 100); // Same content, different instance
+      const data4: ImmutableData = data1; // Same reference as data1
+
+      const set: Set<ImmutableData> = new Set([data1, data2, data3, data4]);
+      expect(set.size).assertEqual(3); // data1/data4 are same reference
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_032
+     * @tc.name testSetSize032
+     * @tc.desc Verify size with maximum safe integer values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const maxSafe: number = Number.MAX_SAFE_INTEGER;
+      const maxSafePlus: number = Number.MAX_SAFE_INTEGER + 1;
+      const set: Set<number> = new Set([maxSafe, maxSafe, maxSafePlus, maxSafePlus]);
+
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_033
+     * @tc.name testSetSize033
+     * @tc.desc Verify size with negative zero and positive zero in mixed types
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number | string> = new Set([0, -0, '0', '-0', 0, -0]);
+      expect(set.size).assertEqual(3); // 0/-0 merged, '0', '-0'
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_034
+     * @tc.name testSetSize034
+     * @tc.desc Verify size with elements added during iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([1, 2, 3]);
+      let iterationCount: number = 0;
+
+      // Add elements during iteration
+      for (const item of set) {
+        iterationCount++;
+        if (item === 2) {
+          set.add(4);
+          set.add(5);
+        }
+      }
+
+      expect(set.size).assertEqual(5);
+      expect(iterationCount).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_035
+     * @tc.name testSetSize035
+     * @tc.desc Verify size with elements removed during iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([1, 2, 3, 4, 5]);
+      const values: Iterator<number> = set.values();
+
+      // Remove elements during iteration
+      let result: IteratorResult<number> = values.next();
+      while (!result.done) {
+        if (result.value % 2 === 0) { // Remove even numbers
+          set.delete(result.value);
+        }
+        result = values.next();
+      }
+
+      expect(set.size).assertEqual(3); // Remaining: 1, 3, 5
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_036
+     * @tc.name testSetSize036
+     * @tc.desc Verify size with complex union type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs036()).assertEqual(7);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_038
+     * @tc.name testSetSize038
+     * @tc.desc Verify size with generator function results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs038()).assertEqual(4); // Unique values: 1,2,3,4
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_039
+     * @tc.name testSetSize039
+     * @tc.desc Verify size with objects containing Symbols as properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      expect(testSetSizeJs039()).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_040
+     * @tc.name testSetSize040
+     * @tc.desc Verify size with maximum capacity elements (performance test)
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 1
+     */
+    it('testSetSize040', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const targetSize: number = 100000;
+
+      // Measure time to add elements
+      const startTime: number = Date.now();
+      for (let i = 0; i < targetSize; i++) {
+        set.add(i);
+      }
+      const addTime: number = Date.now() - startTime;
+
+      // Verify size
+      expect(set.size).assertEqual(targetSize);
+
+      // Performance assertion: Should complete in reasonable time
+      expect(addTime).assertLess(500); // Less than 500ms
+
+      // Measure time to clear
+      const clearStartTime: number = Date.now();
+      set.clear();
+      const clearTime: number = Date.now() - clearStartTime;
+
+      expect(set.size).assertEqual(0);
+      expect(clearTime).assertLess(100); // Clear should be fast
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_041
+     * @tc.name testSetSize041
+     * @tc.desc Verify size with empty and whitespace strings
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<string> = new Set(['', ' ', '  ', '\t', '\n', '']);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_042
+     * @tc.name testSetSize042
+     * @tc.desc Verify size with numbers in different formats (octal, hex, decimal)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([
+        10, // Decimal
+        0o12, // Octal for 10
+        0xa, // Hexadecimal for 10
+        20, // Decimal
+        0o24// Octal for 20
+      ]);
+      expect(set.size).assertEqual(2); // All represent 10 and 20
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_043
+     * @tc.name testSetSize043
+     * @tc.desc Verify size with objects after modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const obj1: GeneratedObjectLiteralInterface_1 = { id: 1 };
+      const obj2: GeneratedObjectLiteralInterface_1 = { id: 2 };
+
+      const set: Set<GeneratedObjectLiteralInterface_1> = new Set([obj1, obj2]);
+      expect(set.size).assertEqual(2);
+
+      // Modify object properties (should not affect size)
+      obj1.id = 100;
+      obj2.id = 200;
+
+      expect(set.size).assertEqual(2);
+
+      // Add modified object again (should not increase size)
+      set.add(obj1);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_044
+     * @tc.name testSetSize044
+     * @tc.desc Verify size with multiple NaN values mixed with other numbers
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([
+        NaN,
+        Number('invalid'), // Also NaN
+        0 / 0, // Also NaN
+        10,
+        20,
+        NaN
+      ]);
+      expect(set.size).assertEqual(3); // NaN (merged) + 10 + 20
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_045
+     * @tc.name testSetSize045
+     * @tc.desc Verify size with Proxy objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const target1: GeneratedObjectLiteralInterface_1 = { id: 1 };
+      const target2: GeneratedObjectLiteralInterface_1 = { id: 2 };
+      const emp1: EmptyObject = {};
+      const emp2: EmptyObject = {};
+      const proxy1: GeneratedObjectLiteralInterface_1 = new Proxy(target1, emp1);
+      const proxy2: GeneratedObjectLiteralInterface_1 = new Proxy(target1, emp2); // Same target, different proxy
+
+      const set: Set<GeneratedObjectLiteralInterface_1> = new Set([proxy1, proxy2, target2]);
+      expect(set.size).assertEqual(3); // All are distinct objects
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_046
+     * @tc.name testSetSize046
+     * @tc.desc Verify size with dates across different time zones
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      // Same moment in time, different time zones
+      const date1: Date = new Date('2024-01-01T00:00:00Z');
+      const date2: Date = new Date('2023-12-31T19:00:00-05:00'); // Same as date1 in UTC
+      const date3: Date = new Date('2024-01-01T08:00:00+08:00'); // Same as date1 in UTC
+
+      const set: Set<Date> = new Set([date1, date2, date3]);
+      expect(set.size).assertEqual(3); // Different Date instances
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_048
+     * @tc.name testSetSize048
+     * @tc.desc Verify size with unique and duplicate special types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const big1: bigint = 123n;
+      const big2: bigint = 123n;
+      const regex1: RegExp = /pattern/;
+      const regex2: RegExp = /pattern/;
+
+      const set: Set<SpecialTypes> = new Set([
+        null, null,
+        undefined, undefined,
+        big1, big2,
+        regex1, regex2
+      ]);
+      expect(set.size).assertEqual(5); // null, undefined, big1, regex1, regex2
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_049
+     * @tc.name testSetSize049
+     * @tc.desc Verify size remains consistent after serialization/deserialization
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      // Create objects and serialize/deserialize
+      const obj1: ImmutableItem = new ImmutableItem('a', '1');
+      const obj2: ImmutableItem = new ImmutableItem('b', '2');
+      const serialized1: string = JSON.stringify(obj1);
+      const serialized2: string = JSON.stringify(obj2);
+      const deserialized1: ImmutableItem = JSON.parse(serialized1);
+      const deserialized2: ImmutableItem = JSON.parse(serialized2);
+
+      const set: Set<ImmutableItem> = new Set([
+        obj1, obj2, deserialized1, deserialized2
+      ]);
+      expect(set.size).assertEqual(4); // All are distinct objects after deserialization
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_050
+     * @tc.name testSetSize050
+     * @tc.desc Verify size with elements added via spread operator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr1: number[] = [1, 2, 3];
+      const arr2: number[] = [3, 4, 5];
+      const set: Set<number> = new Set([...arr1, ...arr2]);
+
+      expect(set.size).assertEqual(5); // 1,2,3,4,5
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_051
+     * @tc.name testSetSize051
+     * @tc.desc Verify size with elements added from another Set
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const sourceSet: Set<string> = new Set(['a', 'b', 'c']);
+      const targetSet: Set<string> = new Set(['c', 'd', 'e']);
+
+      // Add all elements from sourceSet to targetSet
+      sourceSet.forEach(item => targetSet.add(item));
+
+      expect(targetSet.size).assertEqual(5); // a,b,c,d,e
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_052
+     * @tc.name testSetSize052
+     * @tc.desc Verify size with elements removed using multiple delete calls in sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([10, 20, 30, 40, 50, 60]);
+
+      // Delete even numbers
+      [20, 40, 60].forEach(num => set.delete(num));
+
+      expect(set.size).assertEqual(3); // 10,30,50 remain
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_053
+     * @tc.name testSetSize053
+     * @tc.desc Verify size with elements that are promises
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const promise1: Promise<number> = Promise.resolve(1);
+      const promise2: Promise<number> = Promise.resolve(1);
+      const promise3: Promise<number> = Promise.resolve(2);
+
+      const set: Set<Promise<number>> = new Set([promise1, promise2, promise3]);
+      expect(set.size).assertEqual(3); // All are distinct promise objects
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_054
+     * @tc.name testSetSize054
+     * @tc.desc Verify size with large negative numbers
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set([
+        -1, -10, -100, -1000,
+        -1, -100, // Duplicates
+        -Infinity, -Infinity// Duplicates
+      ]);
+      expect(set.size).assertEqual(5); // -1, -10, -100, -1000, -Infinity
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_055
+     * @tc.name testSetSize055
+     * @tc.desc Verify size with elements that are class instances with same values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const item1: ImmutableItem = new ImmutableItem('key', 'value');
+      const item2: ImmutableItem = new ImmutableItem('key', 'value'); // Same values, different instance
+      const item3: ImmutableItem = item1; // Same instance as item1
+
+      const set: Set<ImmutableItem> = new Set([item1, item2, item3]);
+      expect(set.size).assertEqual(2); // item1/item3 are same instance
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_056
+     * @tc.name testSetSize056
+     * @tc.desc Verify size with elements that are error objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const error1: Error = new Error('Message');
+      const error2: Error = new Error('Message'); // Same message, different instance
+      const error3: Error = new Error('Another message');
+
+      const set: Set<Error> = new Set([error1, error2, error3]);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_057
+     * @tc.name testSetSize057
+     * @tc.desc Verify size with elements added in different orders
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const set1: Set<string> = new Set(['x', 'y', 'z']);
+      const set2: Set<string> = new Set(['z', 'y', 'x']);
+
+      expect(set1.size).assertEqual(3);
+      expect(set2.size).assertEqual(3);
+      expect(set1.size).assertEqual(set2.size);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_058
+     * @tc.name testSetSize058
+     * @tc.desc Verify size with elements that are weak references
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const target1: EmptyObject = {};
+      const target2: EmptyObject = {};
+      const ref1: WeakRef<EmptyObject> = new WeakRef(target1);
+      const ref2: WeakRef<EmptyObject> = new WeakRef(target1); // Same target, different ref
+      const ref3: WeakRef<EmptyObject> = new WeakRef(target2);
+
+      const set: Set<WeakRef<EmptyObject>> = new Set([ref1, ref2, ref3]);
+      expect(set.size).assertEqual(3); // All are distinct WeakRef instances
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_059
+     * @tc.name testSetSize059
+     * @tc.desc Verify size with elements that are buffers of same content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const buffer1: ArrayBuffer = new ArrayBuffer(4);
+      const buffer2: ArrayBuffer = new ArrayBuffer(4);
+      const view1: Uint8Array = new Uint8Array(buffer1);
+      const view2: Uint8Array = new Uint8Array(buffer2);
+
+      // Fill with same content
+      view1.set([1, 2, 3, 4]);
+      view2.set([1, 2, 3, 4]);
+
+      const set: Set<ArrayBuffer> = new Set([buffer1, buffer2]);
+      expect(set.size).assertEqual(2); // Different buffer instances
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SET_SIZE_060
+     * @tc.name testSetSize060
+     * @tc.desc Verify size consistency across multiple operations
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSetSize060', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const set: Set<number> = new Set();
+      const operations: Array<GeneratedTypeLiteralInterface_2> = [];
+
+      // Generate random operations
+      for (let i = 0; i < 10000; i++) {
+        operations.push({
+          type: Math.random() > 0.3 ? 'add' : 'delete',
+          value: Math.floor(Math.random() * 1000)
+        });
+      }
+
+      // Execute operations
+      operations.forEach(op => {
+        if (op.type === 'add') {
+          set.add(op.value);
+        } else {
+          set.delete(op.value);
+        }
+      });
+
+      // Calculate expected size by tracking unique values that were added last
+      const lastOperations: Map<number, 'add' | 'delete'> = new Map();
+      operations.forEach(op => {
+        lastOperations.set(op.value, op.type);
+      });
+
+      let expectedSize: number = 0;
+      lastOperations.forEach((type) => {
+        if (type === 'add') {
+          expectedSize++;
+        }
+      });
+
+      expect(set.size).assertEqual(expectedSize);
+    });
+  })
+}
