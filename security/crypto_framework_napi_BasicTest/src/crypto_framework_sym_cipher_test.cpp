@@ -65,6 +65,12 @@ public:
     static void TearDownTestCase() {}
 };
 
+class SYMCIPHER_CHACHA20_IV_ERROR_TEST : public testing::TestWithParam<SymCipherSpec> {
+public:
+    static void SetUpTestCase() {}
+    static void TearDownTestCase() {}
+};
+
 class OHCryptoFrameworkSymCipherGcmNapiTest : public testing::Test {
 public:
     static void SetUpTestCase() {};
@@ -228,6 +234,9 @@ SymCipherSpec g_symCipherIvError[] = {
     {(uint8_t *)"AES192", (uint8_t *)"AES128|CFB|NoPadding", 17, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"AES128", (uint8_t *)"AES128|OFB|NoPadding", 15, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"AES192", (uint8_t *)"AES128|OFB|NoPadding", 17, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
+};
+
+SymCipherSpec g_chaCha20IvError[] = {
     {(uint8_t *)"ChaCha20", (uint8_t *)"ChaCha20", 15, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
 };
 
@@ -235,6 +244,7 @@ INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_TEST, ::te
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherGcmNapiTest, SYMCIPHER_GCM_TEST, ::testing::ValuesIn(g_symCipherGCMData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherCcmNapiTest, SYMCIPHER_CCM_TEST, ::testing::ValuesIn(g_symCipherCCMData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherIvErrorNapiTest, SYMCIPHER_IV_ERROR_TEST, ::testing::ValuesIn(g_symCipherIvError));
+INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherIvErrorNapiTest, SYMCIPHER_CHACHA20_IV_ERROR_TEST, ::testing::ValuesIn(g_chaCha20IvError));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_AES_WRAP_TEST, ::testing::ValuesIn(g_symAesWrapCipherData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_CHACHA20_POLY1305_TEST, ::testing::ValuesIn(g_symChaCha20Poly1305CipherData));
 
@@ -1620,6 +1630,43 @@ HWTEST_P(SYMCIPHER_CHACHA20_POLY1305_TEST, SUB_Security_CryptoFramework_NAPI_Sym
     HcfBlobDataClearAndFree(&aadBlob);
     HcfBlobDataClearAndFree((HcfBlob *)&tag);
     HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2900
+* @tc.name OHCryptoFrameworkSymCipherIvErrorNapiTest/SYMCIPHER_CHACHA20_IV_ERROR_TEST.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2900/x
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_P(SYMCIPHER_CHACHA20_IV_ERROR_TEST, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2900, TestSize.Level0)
+{
+    SymCipherSpec symCipherData = GetParam();
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t ivLen = symCipherData.ivLen;
+    HcfRand *randomObj = nullptr;
+    HcfBlob ivBlob = {0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)symCipherData.algName, &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherData.cipherAlgName, &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree(&ivBlob);
     HcfObjDestroy(randomObj);
 }
 
