@@ -140,6 +140,7 @@
         "MainAbility/pages/List/contentOffset/offsetEdgeBtm",
         "MainAbility/pages/List/contentOffset/offsetEdgeTop",
         "MainAbility/pages/List/contentOffset/offsetAlignEnd",
-        "MainAbility/pages/List/contentOffset/offsetAlignStart"
+        "MainAbility/pages/List/contentOffset/offsetAlignStart",
+        "MainAbility/pages/Scroll/IsAtEndScroll"
     ]
 }
