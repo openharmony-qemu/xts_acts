@@ -233,15 +233,18 @@ export default function WeakMapTest() {
         true
       ];
       mapKeys.forEach((key, idx) => map.set(key, `val${idx}`));
-      mapKeys.forEach((key, idx) => expect(map.get(key)).assertEqual(`val${idx}`));
-
+      mapKeys.forEach((key, idx) => {
+        expect(weakMap.get(key)).assertEqual(`val${idx}`);
+      });
       const validWeakMapKeys: KeyWithId[] = [
         { id: 1 },
         { id: 2 },
         { id: 3 }
       ];
       validWeakMapKeys.forEach((key, idx) => weakMap.set(key, `val${idx}`));
-      validWeakMapKeys.forEach((key, idx) => expect(weakMap.get(key)).assertEqual(`val${idx}`));
+      validWeakMapKeys.forEach((key, idx) => {
+        expect(weakMap.get(key)).assertEqual(`val${idx}`);
+      })
     });
 
     /**
