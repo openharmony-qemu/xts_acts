@@ -1864,11 +1864,194 @@ export default function SetClearTest() {
       const set = new Set([
         '😊', '😂', '😍', '👍', '❤️',
         '🇺🇸', '🇫🇷', '🇯🇵',
-        '©', '®', '�?, '§', '¶'
+        '©', '®', '™', '§', '¶'
       ]);
 
       set.clear();
 
       expect(set.size).assertEqual(0);
+      expect(set.has('😊')).assertEqual(false);
+    });
 
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9300
+     * @tc.name SetClearTest093
+     * @tc.desc Clear Set with bidirectional text characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        'א', 'ב', 'ג',
+        'ا', 'ب', 'ت',
+        'فارسی', 'عربی', 'हिन्दी'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('א')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9400
+     * @tc.name SetClearTest094
+     * @tc.desc Clear Set with zero-width characters
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        '\u200B',
+        '\u200C',
+        '\u200D',
+        '\uFEFF'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('\u200B')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9500
+     * @tc.name SetClearTest095
+     * @tc.desc Clear Set with control characters
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        '\0',
+        '\t',
+        '\n',
+        '\r',
+        '\x1B'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('\n')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9600
+     * @tc.name SetClearTest096
+     * @tc.desc Clear Set with mathematical symbols
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        '∀', '∃', '∄', '∅', '∈', '∉',
+        '∋', '∌', '∏', '∑', '∕', '√',
+        '∞', '∝', '∟', '∠', '∡', '∢'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('∞')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9700
+     * @tc.name SetClearTest097
+     * @tc.desc Clear Set with rare Unicode planes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        '𝌆',
+        '𝄞',
+        '𝓐',
+        '𝔹',
+        '😀',
+        '🅰️'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('😀')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9800
+     * @tc.name SetClearTest098
+     * @tc.desc Clear Set with mixed direction text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        'Hello א',
+        'ב World',
+        'مرحبا こんにちは',
+        'abcdef 12345 あいうえお'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('Hello א')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9900
+     * @tc.name SetClearTest099
+     * @tc.desc Clear Set with surrogate pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const set = new Set([
+        'A\uD83D\uDE00B',
+        '\uD834\uDD1E',
+        '\uD835\uDC00',
+        '\uD86D\uDE3A'
+      ]);
+
+      set.clear();
+
+      expect(set.size).assertEqual(0);
+      expect(set.has('A\uD83D\uDE00B')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_10000
+     * @tc.name SetClearTest100
+     * @tc.desc Ultimate comprehensive clear test with mixed types
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('SetClearTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
+      const result = SetClearTest100();
+
+      expect(result[0]).assertEqual(26);
+      expect(result[1]).assertEqual(0);
+
+      expect(result[2]).assertEqual(false);
+      expect(result[3]).assertEqual(false);
+      expect(result[4]).assertEqual(false);
+      expect(result[5]).assertEqual(false);
+      expect(result[6]).assertEqual(false);
+      expect(result[7]).assertEqual(false);
+      expect(result[8]).assertEqual(false);
+
+      expect(result[9]).assertEqual(3);
+    });
+
+  });
 }
