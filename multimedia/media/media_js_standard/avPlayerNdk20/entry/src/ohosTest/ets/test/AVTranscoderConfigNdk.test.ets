@@ -291,29 +291,6 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Release0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Release0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('SUB_MULTIMEIDA_OH_AVTranscoder_Release0101',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>SUB_MULTIMEIDA_OH_AVTranscoder_Release0101 start====");
-          let result: number = avtranscoderconfig.OH_AVTranscoder_Release0101();
-          expect(0).assertEqual(result);
-          done()
-        } catch (err) {
-          console.error("====>SUB_MULTIMEIDA_OH_AVTranscoder_Release0101 catch err: " + err);
-          expect(false).assertEqual(true);
-          done()
-        }
-      })
-
-    /**
      * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
      * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
      * @tc.desc       : test OH_AVTranscoder

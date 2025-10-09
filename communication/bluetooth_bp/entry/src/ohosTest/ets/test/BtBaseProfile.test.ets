@@ -146,7 +146,7 @@ describe('btBaseProfileTest', () => {
         try {
             let devices : Array<string> = A2dpSourceProfile.getConnectedDevices();
             console.info("address of connected devices list:" + devices);
-            expect(true).assertEqual(devices != null);
+            expect(devices.length == 0).assertTrue();
         } catch (err) {
             console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801 || err.code == 2900004) {

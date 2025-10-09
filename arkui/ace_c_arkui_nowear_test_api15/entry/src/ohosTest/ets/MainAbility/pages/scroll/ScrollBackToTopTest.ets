@@ -25,7 +25,7 @@ struct ScrollBackToTopTest {
 
   build() {
     Column() {
-      StatusClickComponent().margin({ top:60 })
+      StatusClickComponent()
       CommonView({
         pageTag: this.PAGE_TAG,
       }).onAppear(() => {

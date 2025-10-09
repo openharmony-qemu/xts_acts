@@ -15,8 +15,10 @@
 import ImagePixelMapNDKTest from './ImagePixelMapNDKTest';
 import PixelMapNDKTest from './PixelMapNDKTest';
 import pixelMapNdkForDMATest from './PixelMapNDKForDMATest';
+import pixelMapNdkDecodeLargeImageTest from './PixelMapNdkDecodeLargeImage.test'
 export default function testsuite() {
     ImagePixelMapNDKTest()
     PixelMapNDKTest()
     pixelMapNdkForDMATest();
+    pixelMapNdkDecodeLargeImageTest();
 }

@@ -43,6 +43,912 @@ ani_boolean test_String_UTF8([[maybe_unused]] ani_env *env, [[maybe_unused]] ani
     return ANI_TRUE;
 }
 
+ani_boolean test_String_UTF8_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"🙂🙂"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 30U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+    ASSERT_STREQ(utfBuffer, "🙂🙂");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+    ASSERT_STREQ(utfBuffer, "example");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // NOLINTNEXTLINE(readability-redundant-string-init)
+    const std::string example {""};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+    ASSERT_STREQ(utfBuffer, "");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 1U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"h\ni\r\\!"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+    ASSERT_STREQ(utfBuffer, "h\ni\r\\!");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 1U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, 0U, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->c_api->String_GetUTF8(nullptr, string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint32_t bufferSize = 100U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    ani_status status = env->String_GetUTF8(nullptr, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    const ani_size bufferSize = 100U;
+    status = env->String_GetUTF8(string, nullptr, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    const uint32_t bufferSize = 100U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 3U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const char *moduleName = "entry.src.main.src.ets.StringOperations";
+    const char *tupleGetterName = "getString";
+    ani_module mod{};
+    ASSERT_EQ(env->FindModule(moduleName, &mod), ANI_OK);
+    ani_function fn{};
+    ASSERT_EQ(env->Module_FindFunction(mod, tupleGetterName, nullptr, &fn), ANI_OK);
+    ani_ref ref{};
+    ASSERT_EQ(env->Function_Call_Ref(fn, &ref, 0), ANI_OK);
+
+    const auto string  = static_cast<ani_string>(ref);
+
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    ani_status status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 4U);
+    ASSERT_STREQ(utfBuffer, "test");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF8(string, utfBuffer, bufferSize, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, example.size());
+        ASSERT_STREQ(utfBuffer, "example");
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const size_t strSize = 11U;
+    const std::string example("abc\0def\0ghi", strSize);
+    ani_string aniString = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), strSize, &aniString);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF16Size(aniString, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    ani_size result2 = 0U;
+    const ani_size bufferSize = 20U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    status = env->String_GetUTF16(aniString, utf16Buffer, bufferSize, &result2);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result2, example.size());
+
+    ani_size resultUTF8 = 0U;
+    status = env->String_GetUTF8Size(aniString, &resultUTF8);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(resultUTF8, example.size());
+
+    ani_size result2UTF8 = 0U;
+    char utf8Buffer[bufferSize] = {0U};
+    status = env->String_GetUTF8(aniString, utf8Buffer, bufferSize, &result2UTF8);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result2UTF8, example.size());
+
+    for (size_t i = 0; i < strSize; ++i) {
+        ASSERT_EQ(example[i], utf16Buffer[i]);
+        ASSERT_EQ(example[i], utf8Buffer[i]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_size result = 0U;
+    ani_status status = env->String_GetUTF8Size(nullptr, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ani_size result = 0U;
+    auto status2 = env->c_api->String_GetUTF8Size(nullptr, string, &result);
+    ASSERT_EQ(status2, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    status = env->String_GetUTF8Size(string, nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF8Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example = {"测测试emoji🙂🙂"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF8Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // NOLINTNEXTLINE(readability-redundant-string-init)
+    const std::string example {""};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF8Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Size_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ani_size result = 0U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF8Size(string, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, example.size());
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"🙂🙂"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 30U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 7U;
+    ani_size result = 0U;
+    const ani_size utfBufferSize = 30U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, utfBufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "🙂");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {1U};
+    const uint32_t scope = 9U;
+    for (auto i = 0U; i < scope; ++i) {
+        utfBuffer[i] = 1;
+    }
+    const uint32_t strEnd = 9U;
+    utfBuffer[strEnd] = '\0';
+    ani_size substrOffset = 0U;
+    ani_size substrSize = example.size();
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "example");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"hi\n, \rtest\\?"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 20U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 1U;
+    const ani_size substrSize = 10U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "i\n, \rtest\\");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // NOLINTNEXTLINE(readability-redundant-string-init)
+    const std::string example {""};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, 0U, 0U, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 0U);
+    ASSERT_STREQ(utfBuffer, "");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 100U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    auto status2 = env->c_api->String_GetUTF8SubString(nullptr, string, 0U, 0U, utfBuffer, bufferSize, &result);
+    ASSERT_EQ(status2, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint32_t bufferSize = 100U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size result = 0U;
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    ani_status status = env->String_GetUTF8SubString(nullptr, substrOffset, substrSize,
+                                                     utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    const ani_size bufferSize = 100U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, nullptr, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    const uint32_t bufferSize = 100U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "exam");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = -1U;
+    ani_size substrSize = 2U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 10U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 34U;
+    ani_size substrSize = std::numeric_limits<uint32_t>::max() - 8U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer,
+                                          std::numeric_limits<uint32_t>::max(),
+                                          &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 0U;
+    const ani_size substrSize = 10U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 0U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 0U;
+    ani_size substrSize = -1U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 1U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 0U;
+    ani_size substrSize = 1U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {'\n', '\r', 'h', 'i', '\\', '\0'};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 0U;
+    ani_size substrSize = 3U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "exa");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, -1U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_STREQ(utfBuffer, "examp");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    const ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, 0U, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 3U;
+    char utfBuffer[bufferSize] = {0U};  // NOLINT(modernize-avoid-c-arrays)
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, substrSize);
+        ASSERT_STREQ(utfBuffer, "exam");
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string testStr = "Hello, 世界";
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(testStr.c_str(), testStr.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(string, nullptr);
+
+    ani_size result2 = 0U;
+    auto status2 = env->String_GetUTF8Size(string, &result2);
+    ASSERT_EQ(status2, ANI_OK);
+    ASSERT_EQ(result2, testStr.size());
+
+    const uint32_t bufferSize = 30U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size resultSize = 0U;
+    auto status3 = env->String_GetUTF8(string, utfBuffer, bufferSize, &resultSize);
+    ASSERT_EQ(status3, ANI_OK);
+    ASSERT_EQ(resultSize, testStr.size());
+    ASSERT_STREQ(utfBuffer, "Hello, 世界");
+
+    const ani_size bufferSize4 = 10U;
+    char utfBuffer4[bufferSize4] = {0U};
+    ani_size offset = 2U;
+    const ani_size subSize = 3U;
+    ani_size resultSize4 = 0U;
+    auto status4 = env->String_GetUTF8SubString(string, offset, subSize, utfBuffer4, bufferSize4, &resultSize4);
+    ASSERT_EQ(status4, ANI_OK);
+    ASSERT_EQ(resultSize4, subSize);
+    ASSERT_STREQ(utfBuffer4, "llo");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF8_Substr_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string testStr = "Hello World";
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(testStr.c_str(), testStr.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(string, nullptr);
+    const uint32_t bufferSize = 30U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size offset = 6U;
+    ani_size subSize = 5U;
+    ani_size resultSize = 0U;
+    env->String_GetUTF8SubString(string, offset, subSize, utfBuffer, sizeof(utfBuffer), &resultSize);
+    ASSERT_STREQ(utfBuffer, "World");
+    ASSERT_EQ(resultSize, subSize);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const ani_size size = 10U;
+    auto status = env->String_NewUTF8(nullptr, size, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+    ASSERT_EQ(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF8("", 0U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const int32_t longStringSize = 10000U;
+    std::string longString(longStringSize, 'a');
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF8(longString.c_str(), longString.size(), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"测测试emoji🙂🙂"};
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_string result2 = nullptr;
+    status = env->String_NewUTF8(example.c_str(), example.size(), &result2);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+    const uint32_t bufferSize = 30U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size resultSize = 0U;
+    env->String_GetUTF8SubString(result2, 0U, example.size(), utfBuffer, sizeof(utfBuffer), &resultSize);
+    ASSERT_EQ(resultSize, example.size());
+    ASSERT_EQ(std::strcmp(utfBuffer, example.c_str()), ANI_OK);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->c_api->String_NewUTF8(nullptr, example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string result = nullptr;
+    ani_status status = env->String_NewUTF8(example.c_str(), example.size() - 1U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_string result2 = nullptr;
+    status = env->String_NewUTF8(example.c_str(), example.size(), &result2);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size resultSize = 0U;
+    env->String_GetUTF8SubString(result2, 0U, example.size() - 1U, utfBuffer, sizeof(utfBuffer), &resultSize);
+    ASSERT_STREQ(utfBuffer, "exampl");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string result = nullptr;
+    ani_status status = env->String_NewUTF8(example.c_str(), 0U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_string result2 = nullptr;
+    status = env->String_NewUTF8(example.c_str(), example.size(), &result2);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+    const uint32_t bufferSize = 20U;
+    char utfBuffer[bufferSize] = {0U};
+    ani_size resultSize = 0U;
+    env->String_GetUTF8SubString(result2, 0U, 0U, utfBuffer, sizeof(utfBuffer), &resultSize);
+    ASSERT_STREQ(utfBuffer, "");
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"测测试emoji🙂🙂"};
+    ani_string result = nullptr;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        auto status = env->String_NewUTF8(example.c_str(), example.size(), &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_NE(result, nullptr);
+    }
+
+    return ANI_TRUE;
+}
+
 ani_boolean test_String_UTF16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ASSERT_NE(env, nullptr);
@@ -67,6 +973,946 @@ ani_boolean test_String_UTF16([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     ani_size substrSize = 2;
     status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
     ASSERT_EQ(status, ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string string = nullptr;
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    auto status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+    ASSERT_EQ(result, 0U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    auto status2 = env->c_api->String_GetUTF16(nullptr, string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status2, ANI_INVALID_ARGS);
+ 
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, 0U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 0U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"hello\nworld\r, hi\\?"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 30U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+    for (ani_size i = 0; i < result; ++i) {
+        ASSERT_EQ(utf16Buffer[i], example[i]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 5U);
+    ASSERT_EQ(utf16Buffer[4U], 0x006F);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 6U);
+    ASSERT_EQ(utf16Buffer[5U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 6U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 1U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 1U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 2U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 1U);
+    ASSERT_EQ(utf16Buffer[0U], 0x4F60);
+    ASSERT_EQ(utf16Buffer[1U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 8U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 7U);
+    ASSERT_EQ(utf16Buffer[6U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string {};
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 6U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+    ASSERT_EQ(result, 0U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    uint16_t utf16Buffer[3U] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, 0U, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+    ASSERT_EQ(result, 0U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 3U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+    ASSERT_EQ(result, 0U);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    ani_size exampleSize = sizeof(example) / sizeof(uint16_t) - 1U;
+    auto status = env->String_NewUTF16(example, exampleSize, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 30U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, exampleSize);
+    }
+
+    return ANI_TRUE;
+}
+
+// 添加UTF-16到UTF-8的转换函数
+bool Utf16ToUtf8(const std::u16string& utf16, std::string& utf8)
+{
+    utf8.clear();
+    if (utf16.empty()) {
+        return true;
+    }
+
+    // 计算所需缓冲区大小（UTF-16到UTF-8最大膨胀3倍）
+    size_t inputLen = utf16.size() * sizeof(char16_t);
+    size_t outputLen = inputLen * 3;
+    utf8.resize(outputLen);
+
+    // 准备iconv转换
+    iconv_t cd = iconv_open("UTF-8", "UTF-16LE"); // 假设是小端序，根据实际情况调整
+    if (cd == reinterpret_cast<iconv_t>(-1)) {
+        return false;
+    }
+
+    char* inBuf = reinterpret_cast<char*>(const_cast<char16_t*>(utf16.data()));
+    char* outBuf = &utf8[0];
+    size_t result = iconv(cd, &inBuf, &inputLen, &outBuf, &outputLen);
+    
+    iconv_close(cd);
+
+    if (result == static_cast<size_t>(-1)) {
+        return false;
+    }
+
+    // 调整字符串大小到实际转换后的长度
+    utf8.resize(utf8.size() - outputLen);
+    return true;
+}
+
+ani_boolean test_String_UTF16_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string testUtf8Str = "Hello, 世界🙂";
+    ani_string utf8String = nullptr;
+    ani_string utf16String = nullptr;
+
+    auto status = env->String_NewUTF8(testUtf8Str.c_str(), testUtf8Str.size(), &utf8String);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(utf8String, nullptr);
+
+    const uint32_t bufferSize = 30U;
+    char utf8Buffer[bufferSize] = {0U};
+    ani_size resultSize = 0U;
+    auto status1 = env->String_GetUTF8(utf8String, utf8Buffer, bufferSize, &resultSize);
+    ASSERT_EQ(status1, ANI_OK);
+    ASSERT_STREQ(utf8Buffer, "Hello, 世界🙂");
+    ASSERT_EQ(resultSize, testUtf8Str.size());
+
+    // 从UTF-8缓冲区创建UTF-16字符串（注意：这里的转换方式可能需要根据实际情况调整）
+    std::u16string utf16Converted(reinterpret_cast<const char16_t *>(utf8Buffer),
+                                  reinterpret_cast<const char16_t *>(utf8Buffer + (resultSize + 1)));
+
+    // 修复：将UTF-16字符串转换为UTF-8进行比较，避免直接使用c_str()的指针
+    // 每次比较时直接调用c_str()获取有效指针，不保存指针
+    std::string convertedToUtf8;
+    Utf16ToUtf8(utf16Converted, convertedToUtf8);
+    ASSERT_EQ(convertedToUtf8, std::string("Hello, 世界🙂"));
+
+    auto status2 = env->String_NewUTF16(reinterpret_cast<const uint16_t *>(utf16Converted.c_str()),
+                                        utf16Converted.size(),
+                                        &utf16String);
+    ASSERT_EQ(status2, ANI_OK);
+    ASSERT_NE(utf16String, nullptr);
+
+    const ani_size buffer16Size = 30U;
+    uint16_t utf16Buffer[buffer16Size] = {0U};
+    ani_size result2 = 0U;
+    auto status3 = env->String_GetUTF16(utf16String, utf16Buffer, buffer16Size, &result2);
+    ASSERT_EQ(status3, ANI_OK);
+    ASSERT_EQ(result2, utf16Converted.size());
+
+    // 同样修复第二个ASSERT_STREQ的问题
+    std::u16string bufferToUtf16(reinterpret_cast<const char16_t*>(utf16Buffer), result2);
+    std::string bufferToUtf8;
+    Utf16ToUtf8(bufferToUtf16, bufferToUtf8);
+    ASSERT_EQ(bufferToUtf8, std::string("Hello, 世界🙂"));
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_size result = 0U;
+    ani_status status = env->String_GetUTF16Size(nullptr, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ani_size result = 0U;
+    auto status2 = env->c_api->String_GetUTF16Size(nullptr, string, &result);
+    ASSERT_EQ(status2, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    status = env->String_GetUTF16Size(string, nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"example"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF16Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example = {"测测试emoji🙂🙂"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    const ani_size utf16Size = 12U;
+    status = env->String_GetUTF16Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, utf16Size);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // NOLINTNEXTLINE(readability-redundant-string-init)
+    const std::string example {""};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+
+    ani_size result = 0U;
+    status = env->String_GetUTF16Size(string, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, example.size());
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Size_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example = {"测测试emoji🙂🙂"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    ani_size result = 0U;
+    const ani_size utf16Size = 12U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF16Size(string, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, utf16Size);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0xD83D, 0xDE42, 0xD83D, 0xDE42, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 30U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 2U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    for (ani_size i = 0; i < result; ++i) {
+        ASSERT_EQ(utf16Buffer[i], example[i]);
+    }
+
+    return ANI_TRUE;
+}
+
+
+ani_boolean test_String_UTF16_Substr_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = sizeof(example) / sizeof(uint16_t) - 1U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    for (ani_size i = 0; i < result; ++i) {
+        ASSERT_EQ(utf16Buffer[i], example[i]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 9U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = sizeof(example) / sizeof(uint16_t) - 1U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    for (ani_size i = 0; i < result; ++i) {
+        ASSERT_EQ(utf16Buffer[i], example[i]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 9U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = sizeof(example) / sizeof(uint16_t);
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_EQ(utf16Buffer[7U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_size bufferSize = 100U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    ani_status status =
+        env->String_GetUTF16SubString(nullptr, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 100U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    status = env->c_api->String_GetUTF16SubString(nullptr, string, substrOffset, substrSize,
+                                                  utf16Buffer,
+                                                  bufferSize,
+                                                  &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 100U;
+    ani_size result = 0U;
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, nullptr, bufferSize, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 5U;
+    const ani_size bufferSize = 100U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, nullptr);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, 0U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 0U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    ASSERT_EQ(utf16Buffer[0U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"hello\nworld\r, hi\\?"};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF8(example.c_str(), example.size(), &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 30U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 4U;
+    ani_size substrSize = 13U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    for (ani_size i = 0; i < result; ++i) {
+        ASSERT_EQ(utf16Buffer[i], example[i + substrOffset]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 2U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, substrSize);
+    for (size_t i = 0; i < substrSize; i++) {
+        ASSERT_EQ(utf16Buffer[i], example[i + substrOffset]);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, -1U, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    const ani_size substrOffset = 10U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    const ani_size substrOffset = 2U;
+    ani_size substrSize = 6U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OUT_OF_RANGE);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 2U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, -1U, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, 0U, 0U, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(result, 0U);
+    ASSERT_EQ(utf16Buffer[0U], 0x0000);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 2U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, 0U, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 1U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = 4U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    const ani_size substrSize = 10U;
+    ani_size result = 0U;
+    status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+    ASSERT_EQ(status, ANI_BUFFER_TO_SMALL);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0065, 0x0078, 0x0061, 0x006D, 0x0070, 0x006C, 0x0065, 0x0000};
+    ani_string string = nullptr;
+    auto status = env->String_NewUTF16(example, sizeof(example) / sizeof(uint16_t) - 1U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    const ani_size bufferSize = 10U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size substrOffset = 0U;
+    ani_size substrSize = sizeof(example) / sizeof(uint16_t) - 1U;
+    ani_size result = 0U;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        status = env->String_GetUTF16SubString(string, substrOffset, substrSize, utf16Buffer, bufferSize, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_EQ(result, substrSize);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_Substr_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string string = nullptr;
+    ani_size exampleSize = sizeof(example) / sizeof(uint16_t) - 1U;
+    auto status = env->String_NewUTF16(example, exampleSize, &string);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(string, nullptr);
+
+    ani_size result1 = 0U;
+    auto status1 = env->String_GetUTF16Size(string, &result1);
+    ASSERT_EQ(status1, ANI_OK);
+    ASSERT_EQ(result1, exampleSize);
+
+    const ani_size bufferSize = 30U;
+    uint16_t utf16Buffer[bufferSize] = {0U};
+    ani_size result2 = 0U;
+    auto status2 = env->String_GetUTF16(string, utf16Buffer, bufferSize, &result2);
+    ASSERT_EQ(status2, ANI_OK);
+    ASSERT_EQ(result2, exampleSize);
+    for (size_t i = 0; i < exampleSize; i++) {
+        ASSERT_EQ(utf16Buffer[i], example[i]);
+    }
+    const ani_size bufferSize3 = 10U;
+    uint16_t utf16Buffer3[bufferSize3] = {0U};
+    ani_size offset = 0U;
+    const ani_size subSize = 3U;
+    ani_size result3 = 0U;
+    auto status3 = env->String_GetUTF16SubString(string, offset, subSize, utf16Buffer3, bufferSize3, &result3);
+    ASSERT_EQ(status3, ANI_OK);
+    ASSERT_EQ(result3, subSize);
+    ASSERT_EQ(utf16Buffer3[0U], 0x4F60);
+    ASSERT_EQ(utf16Buffer3[1U], 0x597D);
+    ASSERT_EQ(utf16Buffer3[2U], 0x002C);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const ani_size size = 10U;
+    auto status = env->String_NewUTF16(nullptr, size, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+    ASSERT_EQ(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const uint16_t stringTest[] = {0x0000};
+    auto status = env->String_NewUTF16(stringTest, 0U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    size_t length = sizeof(example) / sizeof(example[0U]) - 1U;
+    auto status = env->c_api->String_NewUTF16(nullptr, example, length, &result);
+    ASSERT_EQ(status, ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    size_t length = sizeof(example) / sizeof(example[0U]) - 1U;
+    auto status = env->String_NewUTF16(example, length, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    size_t length = sizeof(example) / sizeof(example[0U]);
+    auto status = env->String_NewUTF16(example, length, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x4F60, 0x597D, 0x002C, 0x0020, 0x4E16, 0x754C, 0x0000};
+    ani_string result = nullptr;
+    size_t length = sizeof(example) / sizeof(example[0U]) - 1U;
+    auto status = env->String_NewUTF16(example, length, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x4F60, 0x0021, 0x0000};
+    ani_string result = nullptr;
+    size_t length = sizeof(example) / sizeof(example[0U]) - 1U;
+    auto status = env->String_NewUTF16(example, length, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const uint16_t strSize = 1000U;
+    uint16_t example[strSize] = {0x0000};
+    std::fill(std::begin(example), std::end(example), 0x0048);
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF16(example, strSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF16_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    const uint16_t example[] = {0x0048, 0x0065, 0x006C, 0x006C, 0x006F, 0x0000};
+    size_t length = sizeof(example) / sizeof(example[0U]);
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; ++i) {
+        auto status = env->String_NewUTF16(example, length, &result);
+        ASSERT_EQ(status, ANI_OK);
+        ASSERT_NE(result, nullptr);
+    }
+
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_STRING_OPERATIONS_H

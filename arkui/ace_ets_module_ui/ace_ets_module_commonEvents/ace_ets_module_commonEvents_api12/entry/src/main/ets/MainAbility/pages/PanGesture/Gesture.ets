@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,11 +27,9 @@ struct PanGestureExample {
       Column() {
         Text('PanGesture offset:\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
       }
-      .height(20)
+      .height('50%')
       .width('30%')
-      .padding('20%')
       .border({ width: 3 })
-      .margin(50)
       .translate({ x: this.offsetX, y: this.offsetY, z: 0 }) // 以组件左上角为坐标原点进行移动
       // 左右拖动触发该手势事件
       .gesture(
@@ -51,14 +49,14 @@ struct PanGestureExample {
             console.info('Pan end')
           })
       )
-      Text(this.gesture1).id("gesture")
+      Text(this.gesture1).id("gesture").height('10%').width('30%')
       Button('修改PanGesture触发条件')
         .onClick(() => {
           // 将PanGesture手势事件触发条件改为双指以任意方向拖动
           this.panOption.setDirection(PanDirection.Right)
           this.gesture1 = this.panOption.getDirection()+""
           this.panOption.setFingers(2)
-        }).id('gesture1')
-    }
+        }).id('gesture1').height('10%').width('30%')
+    }.height('90%').width('100%').align(Alignment.Top)
   }
 }

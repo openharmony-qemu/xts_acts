@@ -265,13 +265,10 @@ export default function UsbApiDeprecatedEtsTest() {
     
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0500
-     * @tc.name     : testGetDevices001
-     * @tc.desc     : Positive test: Get device list
-     * @tc.desc     : 【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0500
+     * @tc.name     testGetDevices001
+     * @tc.desc     Positive test: Get device list
+     * @tc.desc     【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
      */
     it('testGetDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices001 begin');
@@ -287,12 +284,27 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0900
-     * @tc.name     : testHasRight001
-     * @tc.desc     : Positive test: Permission query
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_FuncRetValue_0200
+     * @tc.name     testGetDevices002
+     * @tc.desc     Positive test: Get device list is null
+     */
+    it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testGetDevices002 begin');
+      if (!isDeviceConnected) {
+        let res = usb.getDevices();
+        console.info(TAG, 'usb case getDevices ret length: ' + res.length);
+        expect(res.length).assertEqual(0);
+        done();
+      } else {
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0900
+     * @tc.name     testHasRight001
+     * @tc.desc     Positive test: Permission query
      */
     it('testHasRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testHasRight001 begin');
@@ -311,12 +323,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0800
-     * @tc.name     : testRequestRight001
-     * @tc.desc     : Positive test: Request permission
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0800
+     * @tc.name     testRequestRight001
+     * @tc.desc     Positive test: Request permission
      */
     it('testRequestRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight001 begin');
@@ -338,12 +347,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0100
-     * @tc.name     : testConnectDevice001
-     * @tc.desc     : Positive test: open device
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0100
+     * @tc.name     testConnectDevice001
+     * @tc.desc     Positive test: open device
      */
     it('testConnectDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice001 begin');
@@ -359,12 +365,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0300
-     * @tc.name     : testClosePipe001
-     * @tc.desc     : Positive test: close device
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0300
+     * @tc.name     testClosePipe001
+     * @tc.desc     Positive test: close device
      */
     it('testClosePipe001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe001 begin');
@@ -380,12 +383,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1300
-     * @tc.name     : testClosePipe002
-     * @tc.desc     : Negative test: close device, busNum error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1300
+     * @tc.name     testClosePipe002
+     * @tc.desc     Negative test: close device, busNum error -23
      */
     it('testClosePipe002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe002 begin');
@@ -405,12 +405,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1400
-     * @tc.name     : testClosePipe003
-     * @tc.desc     : Negative test: close device, devAddress error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1400
+     * @tc.name     testClosePipe003
+     * @tc.desc     Negative test: close device, devAddress error -23
      */
     it('testClosePipe003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe003 begin');
@@ -430,12 +427,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1500
-     * @tc.name     : testClosePipe004
-     * @tc.desc     : Negative test: close device, devAddress && busNum error -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1500
+     * @tc.name     testClosePipe004
+     * @tc.desc     Negative test: close device, devAddress && busNum error -23
      */
     it('testClosePipe004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClosePipe004 begin');
@@ -456,12 +450,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0700
-     * @tc.name     : testGetRawDescriptor001
-     * @tc.desc     : Positive test: Get the original USB descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0700
+     * @tc.name     testGetRawDescriptor001
+     * @tc.desc     Positive test: Get the original USB descriptor
      */
     it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetRawDescriptor001 begin');
@@ -478,12 +469,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0600
-     * @tc.name     : testGetFileDescriptor001
-     * @tc.desc     : Positive test: Get file descriptor
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0600
+     * @tc.name     testGetFileDescriptor001
+     * @tc.desc     Positive test: Get file descriptor
      */
     it('testGetFileDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor001 begin');
@@ -500,12 +488,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2900
-     * @tc.name     : testGetFileDescriptor002
-     * @tc.desc     : Negative test: Get file descriptor, error busNum=255 devAddress=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_2900
+     * @tc.name     testGetFileDescriptor002
+     * @tc.desc     Negative test: Get file descriptor, error busNum=255 devAddress=255
      */
     it('testGetFileDescriptor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor002 begin');
@@ -524,12 +509,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3000
-     * @tc.name     : testGetFileDescriptor003
-     * @tc.desc     : Negative test: Get file descriptor,error busNum=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3000
+     * @tc.name     testGetFileDescriptor003
+     * @tc.desc     Negative test: Get file descriptor,error busNum=255
      */
     it('testGetFileDescriptor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor003 begin');
@@ -548,12 +530,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3100
-     * @tc.name     : testGetFileDescriptor004
-     * @tc.desc     : Negative test: Get file descriptor,error devAddress=255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3100
+     * @tc.name     testGetFileDescriptor004
+     * @tc.desc     Negative test: Get file descriptor,error devAddress=255
      */
     it('testGetFileDescriptor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testGetFileDescriptor004 begin');
@@ -573,12 +552,9 @@ export default function UsbApiDeprecatedEtsTest() {
     //****************************************************************
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0100
-     * @tc.name     : testConnectDevice002
-     * @tc.desc     : Negative test: open device, error devAddress 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0100
+     * @tc.name     testConnectDevice002
+     * @tc.desc     Negative test: open device, error devAddress 2+10000
      */
     it('testConnectDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb SUB_USB_HostManager_JS_Compatibility_0100 begin');
@@ -600,12 +576,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0200
-     * @tc.name     : testConnectDevice003
-     * @tc.desc     : Negative test: open device, error busNum 2+1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0200
+     * @tc.name     testConnectDevice003
+     * @tc.desc     Negative test: open device, error busNum 2+1000
      */
     it('testConnectDevice003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice003 begin');
@@ -628,12 +601,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0300
-     * @tc.name     : testConnectDevice004
-     * @tc.desc     : Negative test: open device, error serial 'asdfsd'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0300
+     * @tc.name     testConnectDevice004
+     * @tc.desc     Negative test: open device, error serial 'asdfsd'
      */
     it('testConnectDevice004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice004 begin');
@@ -656,12 +626,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0600
-     * @tc.name     : testConnectDevice006
-     * @tc.desc     : Negative test: open device, error productName 'sdfsdfe'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDepr_Compatibility_0600
+     * @tc.name     testConnectDevice006
+     * @tc.desc     Negative test: open device, error productName 'sdfsdfe'
      */
     it('testConnectDevice006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice006 begin');
@@ -684,12 +651,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0600
-     * @tc.name     : testConnectDevice007
-     * @tc.desc     : Negative test: open device, error manufacturerName 'sdfsdfe'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0600
+     * @tc.name     testConnectDevice007
+     * @tc.desc     Negative test: open device, error manufacturerName 'sdfsdfe'
      */
     it('testConnectDevice007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice007 begin');
@@ -712,12 +676,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0700
-     * @tc.name     : testConnectDevice008
-     * @tc.desc     : Negative test: open device, error version 'gwefsdf'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0700
+     * @tc.name     testConnectDevice008
+     * @tc.desc     Negative test: open device, error version 'gwefsdf'
      */
     it('testConnectDevice008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb connect_device_08 begin');
@@ -740,12 +701,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0800
-     * @tc.name     : testConnectDevice009
-     * @tc.desc     : Negative test: open device, error vendorId 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0800
+     * @tc.name     testConnectDevice009
+     * @tc.desc     Negative test: open device, error vendorId 2+10000
      */
     it('testConnectDevice009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice009 begin');
@@ -768,12 +726,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_0900
-     * @tc.name     : testConnectDevice010
-     * @tc.desc     : Negative test: open device, error productId 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0900
+     * @tc.name     testConnectDevice010
+     * @tc.desc     Negative test: open device, error productId 2+10000
      */
     it('testConnectDevice010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice010 begin');
@@ -796,12 +751,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1000
-     * @tc.name     : testConnectDevice011
-     * @tc.desc     : Negative test: open device, error clazz 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1000
+     * @tc.name     testConnectDevice011
+     * @tc.desc     Negative test: open device, error clazz 2+10000
      */
     it('testConnectDevice011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb connect_device_11 begin');
@@ -824,12 +776,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1100
-     * @tc.name     : testConnectDevice012
-     * @tc.desc     : Negative test: open device, error subClass 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1100
+     * @tc.name     testConnectDevice012
+     * @tc.desc     Negative test: open device, error subClass 2+10000
      */
     it('testConnectDevice012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb connect_device_12 begin');
@@ -852,12 +801,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1200
-     * @tc.name     : testConnectDevice013
-     * @tc.desc     : Negative test: open device, error protocol 2+10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1200
+     * @tc.name     testConnectDevice013
+     * @tc.desc     Negative test: open device, error protocol 2+10000
      */
     it('testConnectDevice013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testConnectDevice013 begin');
@@ -880,12 +826,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3400
-     * @tc.name     : testHasRight002
-     * @tc.desc     : Negative test: parameters exception, error deviceName add '$#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3400
+     * @tc.name     testHasRight002
+     * @tc.desc     Negative test: parameters exception, error deviceName add '$#'
      */
     it('testHasRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testHasRight002 begin');
@@ -904,12 +847,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3500
-     * @tc.name     : testHasRight003
-     * @tc.desc     : Negative test: parameters exception, the device add 'abcdg'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3500
+     * @tc.name     testHasRight003
+     * @tc.desc     Negative test: parameters exception, the device add 'abcdg'
      */
     it('testHasRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testHasRight003 begin');
@@ -928,12 +868,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3200
-     * @tc.name     : testRequestRight002
-     * @tc.desc     : Negative test: Request permission, error deviceName add '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3200
+     * @tc.name     testRequestRight002
+     * @tc.desc     Negative test: Request permission, error deviceName add '@#'
      */
     it('testRequestRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight002 begin');
@@ -957,12 +894,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3300
-     * @tc.name     : testRequestRight003
-     * @tc.desc     : Negative test: Request permission, the device name is a number
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3300
+     * @tc.name     testRequestRight003
+     * @tc.desc     Negative test: Request permission, the device name is a number
      */
     it('testRequestRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight003 begin');
@@ -988,12 +922,9 @@ export default function UsbApiDeprecatedEtsTest() {
     //********************************************************
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_1000
-     * @tc.name     : testBulkTransfer001
-     * @tc.desc     : Positive test: bulk transfer, receive data
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_1000
+     * @tc.name     testBulkTransfer001
+     * @tc.desc     Positive test: bulk transfer, receive data
      */
     it('testBulkTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer001 begin');
@@ -1031,12 +962,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_1100
-     * @tc.name     : testBulkTransfer002
-     * @tc.desc     : Positive test: bulk transfer, send data
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_1100
+     * @tc.name     testBulkTransfer002
+     * @tc.desc     Positive test: bulk transfer, send data
      */
     it('testBulkTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer002 begin');
@@ -1080,12 +1008,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0400
-     * @tc.name     : testBulkTransfer003
-     * @tc.desc     : Undefined option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0400
+     * @tc.name     testBulkTransfer003
+     * @tc.desc     Undefined option arguments, use default options.
      */
     it('testBulkTransfer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer003 begin');
@@ -1130,12 +1055,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0500
-     * @tc.name     : testBulkTransfer004
-     * @tc.desc     : Null option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0500
+     * @tc.name     testBulkTransfer004
+     * @tc.desc     Null option arguments, use default options.
      */
     it('testBulkTransfer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer004 begin');
@@ -1179,12 +1101,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibilityErr_0500
-     * @tc.name     : testBulkTransfer801Err001
-     * @tc.desc     : Null option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibilityErr_0500
+     * @tc.name     testBulkTransfer801Err001
+     * @tc.desc     Null option arguments, use default options.
      */
     it('testBulkTransfer801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer801Err001 begin');
@@ -1231,12 +1150,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0600
-     * @tc.name     : testBulkTransfer005
-     * @tc.desc     : Ignore option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0600
+     * @tc.name     testBulkTransfer005
+     * @tc.desc     Ignore option arguments, use default options.
      */
     it('testBulkTransfer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer005 begin');
@@ -1279,12 +1195,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0400
-     * @tc.name     : testClaimInterface001
-     * @tc.desc     : Positive test: Get interface, and release
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_0400
+     * @tc.name     testClaimInterface001
+     * @tc.desc     Positive test: Get interface, and release
      */
     it('testClaimInterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface001 begin');
@@ -1316,12 +1229,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2100
-     * @tc.name     : testClaimInterface003
-     * @tc.desc     : Test the claimInterface() interface. Undefined option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_2100
+     * @tc.name     testClaimInterface003
+     * @tc.desc     Test the claimInterface() interface. Undefined option arguments, use default options.
      */
     it('testClaimInterface003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface003 begin');
@@ -1353,12 +1263,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2200
-     * @tc.name     : testClaimInterface004
-     * @tc.desc     : Test the claimInterface() interface. Null option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2200
+     * @tc.name     testClaimInterface004
+     * @tc.desc     Test the claimInterface() interface. Null option arguments, use default options.
      */
     it('testClaimInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface004 begin');
@@ -1390,12 +1297,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2300
-     * @tc.name     : testClaimInterface005
-     * @tc.desc     : Test the claimInterface() interface. Ignore option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2300
+     * @tc.name     testClaimInterface005
+     * @tc.desc     Test the claimInterface() interface. Ignore option arguments, use default options.
      */
     it('testClaimInterface005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface005 begin');
@@ -1427,12 +1331,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1000
-     * @tc.name     : testSetConfiguration001
-     * @tc.desc     : Positive test: Set Device Configuration
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_1000
+     * @tc.name     testSetConfiguration001
+     * @tc.desc     Positive test: Set Device Configuration
      */
     it('testSetConfiguration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration001 begin');
@@ -1455,12 +1356,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3600
-     * @tc.name     : testSetConfiguration002
-     * @tc.desc     : Negative test: Set Device Configuration, USBConfig id error 255
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3600
+     * @tc.name     testSetConfiguration002
+     * @tc.desc     Negative test: Set Device Configuration, USBConfig id error 255
      */
     it('testSetConfiguration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration002 begin');
@@ -1479,12 +1377,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1100
-     * @tc.name     : testSetInterface001
-     * @tc.desc     : Positive test: Set device interface
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Func_1100
+     * @tc.name     testSetInterface001
+     * @tc.desc     Positive test: Set device interface
      */
     it('testSetInterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface001 begin');
@@ -1506,12 +1401,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4100
-     * @tc.name     : testSetInterface002
-     * @tc.desc     : Negative test: Set device interface, error tmpInterface.id 234
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4100
+     * @tc.name     testSetInterface002
+     * @tc.desc     Negative test: Set device interface, error tmpInterface.id 234
      */
     it('testSetInterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface002 begin');
@@ -1535,12 +1427,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0100
-     * @tc.name     : testControlTransfer001
-     * @tc.desc     : Positive test: control transfer, GetDescriptor: cmd 6 target 2 reqType 128 value 512 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0100
+     * @tc.name     testControlTransfer001
+     * @tc.desc     Positive test: control transfer, GetDescriptor: cmd 6 target 2 reqType 128 value 512 index 0
      */
     it('testControlTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer001 begin');
@@ -1565,12 +1454,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0200
-     * @tc.name     : testControlTransfer002
-     * @tc.desc     : Positive test: control transfer, GetStatus: cmd 0 target 0 reqType 128 value 0 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0200
+     * @tc.name     testControlTransfer002
+     * @tc.desc     Positive test: control transfer, GetStatus: cmd 0 target 0 reqType 128 value 0 index 0
      */
     it('testControlTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer002 begin');
@@ -1595,12 +1481,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0300
-     * @tc.name     : testControlTransfer005
-     * @tc.desc     : Test the bulkTransfer interface. Ignore option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0300
+     * @tc.name     testControlTransfer005
+     * @tc.desc     Test the bulkTransfer interface. Ignore option arguments, use default options.
      */
     it('testControlTransfer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer005 begin');
@@ -1632,12 +1515,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibilityErr_0300
-     * @tc.name     : testControlTransfer801Err001
-     * @tc.desc     : Test the bulkTransfer interface. Ignore option arguments, use default options.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibilityErr_0300
+     * @tc.name     testControlTransfer801Err001
+     * @tc.desc     Test the bulkTransfer interface. Ignore option arguments, use default options.
      */
     it('testControlTransfer801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer801Err001 begin');
@@ -1673,12 +1553,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0300
-     * @tc.name     : testControlTransfer006
-     * @tc.desc     : Positive test: control transfer, GetConfiguration: cmd 8 target 0 reqType 128 value 0 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0300
+     * @tc.name     testControlTransfer006
+     * @tc.desc     Positive test: control transfer, GetConfiguration: cmd 8 target 0 reqType 128 value 0 index 0
      */
     it('testControlTransfer006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer006 begin');
@@ -1702,12 +1579,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0400
-     * @tc.name     : testControlTransfer007
-     * @tc.desc     : Positive test: control transfer, GetInterface: cmd 10 target 0 reqType 129 value 0 index 1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0400
+     * @tc.name     testControlTransfer007
+     * @tc.desc     Positive test: control transfer, GetInterface: cmd 10 target 0 reqType 129 value 0 index 1
      */
     it('testControlTransfer007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer007 begin');
@@ -1732,12 +1606,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0500
-     * @tc.name     : testControlTransfer008
-     * @tc.desc     : Positive test: control transfer, ClearFeature: cmd 1 target 0 reqType 0 value 0 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0500
+     * @tc.name     testControlTransfer008
+     * @tc.desc     Positive test: control transfer, ClearFeature: cmd 1 target 0 reqType 0 value 0 index 0
      */
     it('testControlTransfer008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer008 begin');
@@ -1761,12 +1632,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0600
-     * @tc.name     : testControlTransfer009
-     * @tc.desc     : Positive test: control transfer, ClearFeature: cmd 255 target 1 reqType 129 value 512 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0600
+     * @tc.name     testControlTransfer009
+     * @tc.desc     Positive test: control transfer, ClearFeature: cmd 255 target 1 reqType 129 value 512 index 0
      */
     it('testControlTransfer009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer009 begin');
@@ -1790,12 +1658,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0700
-     * @tc.name     : testControlTransfer010
-     * @tc.desc     : Positive test: control transfer, ClearFeature: cmd 255 target 2 reqType 34 value 512 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0700
+     * @tc.name     testControlTransfer010
+     * @tc.desc     Positive test: control transfer, ClearFeature: cmd 255 target 2 reqType 34 value 512 index 0
      */
     it('testControlTransfer010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer010 begin');
@@ -1819,12 +1684,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0800
-     * @tc.name     : testControlTransfer011
-     * @tc.desc     : Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 67 value 512 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0800
+     * @tc.name     testControlTransfer011
+     * @tc.desc     Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 67 value 512 index 0
      */
     it('testControlTransfer011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer011 begin');
@@ -1848,12 +1710,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranFunc_0900
-     * @tc.name     : testControlTransfer012
-     * @tc.desc     : Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 35 value 0 index 0
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranFunc_0900
+     * @tc.name     testControlTransfer012
+     * @tc.desc     Positive test: control transfer, ClearFeature: cmd 255 target 3 reqType 35 value 0 index 0
      */
     it('testControlTransfer012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testControlTransfer012 begin');
@@ -1877,12 +1736,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0700
-     * @tc.name     : testBulkTransfer006
-     * @tc.desc     : Negative test: bulk transfer, send data, error outEndpoint.address = 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0700
+     * @tc.name     testBulkTransfer006
+     * @tc.desc     Negative test: bulk transfer, send data, error outEndpoint.address = 123
      */
     it('testBulkTransfer006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer006 begin');
@@ -1917,12 +1773,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0800
-     * @tc.name     : testBulkTransfer007
-     * @tc.desc     : Negative test: bulk transfer, send data, error outEndpoint.number = 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0800
+     * @tc.name     testBulkTransfer007
+     * @tc.desc     Negative test: bulk transfer, send data, error outEndpoint.number = 123
      */
     it('testBulkTransfer007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer007 begin');
@@ -1957,12 +1810,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_0900
-     * @tc.name     : testBulkTransfer008
-     * @tc.desc     : Negative test: bulk transfer, send data, error outEndpoint.type = 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_TranCompatibility_0900
+     * @tc.name     testBulkTransfer008
+     * @tc.desc     Negative test: bulk transfer, send data, error outEndpoint.type = 123
      */
     it('testBulkTransfer008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransfer008 begin');
@@ -1997,12 +1847,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2400
-     * @tc.name     : testClaimInterface006
-     * @tc.desc     : Negative test: Get interface, USBInterface afferent error id
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2400
+     * @tc.name     testClaimInterface006
+     * @tc.desc     Negative test: Get interface, USBInterface afferent error id
      */
     it('testClaimInterface006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface006 begin');
@@ -2032,12 +1879,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2500
-     * @tc.name     : testClaimInterface007
-     * @tc.desc     : Negative test: Get interface, USBInterface afferent error protocol
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2500
+     * @tc.name     testClaimInterface007
+     * @tc.desc     Negative test: Get interface, USBInterface afferent error protocol
      */
     it('testClaimInterface007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface007 begin');
@@ -2067,12 +1911,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2600
-     * @tc.name     : testClaimInterface008
-     * @tc.desc     : Negative test: Get interface, USBInterface afferent error clazz
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2600
+     * @tc.name     testClaimInterface008
+     * @tc.desc     Negative test: Get interface, USBInterface afferent error clazz
      */
     it('testClaimInterface008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testClaimInterface008 begin');
@@ -2102,12 +1943,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2700
-     * @tc.name     : testClaimInterface009
-     * @tc.desc     : Negative test: Get interface, USBInterface afferent error name
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2700
+     * @tc.name     testClaimInterface009
+     * @tc.desc     Negative test: Get interface, USBInterface afferent error name
      */
     it('testClaimInterface009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb SUB_USB_HostManager_JS_Compatibility_2700 begin');
@@ -2137,12 +1975,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2800
-     * @tc.name     : testClaimInterface010
-     * @tc.desc     : Negative test: Get interface, USBInterface afferent error subClass
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2800
+     * @tc.name     testClaimInterface010
+     * @tc.desc     Negative test: Get interface, USBInterface afferent error subClass
      */
     it('testClaimInterface010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb SUB_USB_HostManager_JS_Compatibility_2800 begin');
@@ -2172,12 +2007,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1600
-     * @tc.name     : testReleaseInterface001
-     * @tc.desc     : Negative test: release Interface, error Interface id
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1600
+     * @tc.name     testReleaseInterface001
+     * @tc.desc     Negative test: release Interface, error Interface id
      */
     it('testReleaseInterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testReleaseInterface001 begin');
@@ -2213,12 +2045,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1700
-     * @tc.name     : testReleaseInterface002
-     * @tc.desc     : Negative test: release Interface, error Interface name
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1700
+     * @tc.name     testReleaseInterface002
+     * @tc.desc     Negative test: release Interface, error Interface name
      */
     it('testReleaseInterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testReleaseInterface002 begin');
@@ -2251,12 +2080,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1800
-     * @tc.name     : testReleaseInterface003
-     * @tc.desc     : Negative test: release Interface, error Interface clazz
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1800
+     * @tc.name     testReleaseInterface003
+     * @tc.desc     Negative test: release Interface, error Interface clazz
      */
     it('testReleaseInterface003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testReleaseInterface003 begin');
@@ -2288,12 +2114,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_1900
-     * @tc.name     : testReleaseInterface004
-     * @tc.desc     : Negative test: release Interface, error Interface protocol
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1900
+     * @tc.name     testReleaseInterface004
+     * @tc.desc     Negative test: release Interface, error Interface protocol
      */
     it('testReleaseInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb SUB_USB_HostManager_JS_Compatibility_1900 begin');
@@ -2325,12 +2148,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2000
-     * @tc.name     : testReleaseInterface005
-     * @tc.desc     : Negative test: release Interface, error Interface subClass
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2000
+     * @tc.name     testReleaseInterface005
+     * @tc.desc     Negative test: release Interface, error Interface subClass
      */
     it('testReleaseInterface005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testReleaseInterface005 begin');
@@ -2362,12 +2182,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_2100
-     * @tc.name     : testReleaseInterface006
-     * @tc.desc     : Negative test: release Interface, error Interface alternateSetting
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2100
+     * @tc.name     testReleaseInterface006
+     * @tc.desc     Negative test: release Interface, error Interface alternateSetting
      */
     it('testReleaseInterface006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testReleaseInterface006 begin');
@@ -2399,12 +2216,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4200
-     * @tc.name     : testSetInterface003
-     * @tc.desc     : Negative test: Set device interface, Interface protocol error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4200
+     * @tc.name     testSetInterface003
+     * @tc.desc     Negative test: Set device interface, Interface protocol error
      */
     it('testSetInterface003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface003 begin');
@@ -2432,12 +2246,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4300
-     * @tc.name     : testSetInterface004
-     * @tc.desc     : Negative test: Set device interface, Interface clazz error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4300
+     * @tc.name     testSetInterface004
+     * @tc.desc     Negative test: Set device interface, Interface clazz error
      */
     it('testSetInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface004 begin');
@@ -2465,12 +2276,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4400
-     * @tc.name     : testSetInterface005
-     * @tc.desc     : Negative test: Set device interface, Interface subClass error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4400
+     * @tc.name     testSetInterface005
+     * @tc.desc     Negative test: Set device interface, Interface subClass error
      */
     it('testSetInterface005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface005 begin');
@@ -2498,12 +2306,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4500
-     * @tc.name     : testSetInterface006
-     * @tc.desc     : Negative test: Set device interface, Interface name error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4500
+     * @tc.name     testSetInterface006
+     * @tc.desc     Negative test: Set device interface, Interface name error
      */
     it('testSetInterface006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetInterface006 begin');
@@ -2531,12 +2336,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3700
-     * @tc.name     : testSetConfiguration003
-     * @tc.desc     : Negative test: Set Device Configuration, USBConfig name error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3700
+     * @tc.name     testSetConfiguration003
+     * @tc.desc     Negative test: Set Device Configuration, USBConfig name error
      */
     it('testSetConfiguration003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration003 begin');
@@ -2555,12 +2357,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3800
-     * @tc.name     : testSetConfiguration004
-     * @tc.desc     : Negative test: Set Device Configuration, USBConfig name, id error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3800
+     * @tc.name     testSetConfiguration004
+     * @tc.desc     Negative test: Set Device Configuration, USBConfig name, id error
      */
     it('testSetConfiguration004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration004 begin');
@@ -2580,12 +2379,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_3900
-     * @tc.name     : testSetConfiguration005
-     * @tc.desc     : Negative test: Set Device Configuration, USBConfig attributes error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3900
+     * @tc.name     testSetConfiguration005
+     * @tc.desc     Negative test: Set Device Configuration, USBConfig attributes error
      */
     it('testSetConfiguration005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration005 begin');
@@ -2604,12 +2400,9 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Compatibility_4000
-     * @tc.name     : testSetConfiguration006
-     * @tc.desc     : Negative test: Set Device Configuration, USBConfig name interval(1-16) error
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number   SUB_USB_HostManager_JS_Compatibility_4000
+     * @tc.name     testSetConfiguration006
+     * @tc.desc     Negative test: Set Device Configuration, USBConfig name interval(1-16) error
      */
     it('testSetConfiguration006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testSetConfiguration006 begin');

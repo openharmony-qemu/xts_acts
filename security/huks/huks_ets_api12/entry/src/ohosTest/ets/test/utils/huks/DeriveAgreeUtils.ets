@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import huks from '@ohos.security.huks';
-import { StringToUint8Array } from '../CommonUtils';
+import { StringToUint8Array } from '../common/CommonUtils';
 import { GenParam } from './HuksOptionsUtils';
 
 export function GetEcdhAgreeOptions(size: number): huks.HuksOptions {

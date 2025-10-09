@@ -37,6 +37,7 @@ napi_value PluginManager::GetContext(napi_env env, napi_callback_info info)
     napi_value args[PARAM_1] = {nullptr};
     if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "GetContext napi_get_cb_info failed");
+        return nullptr;
     }
 
     if (argCnt != PARAM_1) {

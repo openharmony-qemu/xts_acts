@@ -88,7 +88,7 @@ struct cameraFormat {
   cameraListFn() {
     this.cameraList = []
     this.cameraListLength = CameraService.cameras.length
-    for (let index = 0; index < this.cameraListLength; index++) {
+    for (let index = 0; index < this.cameraListLength && index < 2; index++) {
       this.cameraList.push({ value: `Camera ${index}` })
     }
     // 测试总次数 = 摄像头0的分辨率 + 摄像头1的分辨率 优先以RK为主

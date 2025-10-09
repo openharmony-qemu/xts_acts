@@ -2,6 +2,8 @@
   "src": [
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/testgesture",
-    "MainAbility/pages/position/EdgesPositionPage"
+    "MainAbility/pages/position/EdgesPositionPage",
+    "MainAbility/pages/textContentAlign/TextContentAlignTest",
+    "MainAbility/pages/PixelRound/PixelRoundPage"
   ]
 }

@@ -16,6 +16,9 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function EmbedVisibilityChange() {
@@ -32,12 +35,12 @@ export default function EmbedVisibilityChange() {
         if (!("webTwo" == pages.name)) {
           console.info("get EmbedVisibilityChange state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push EmbedVisibilityChange page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push EmbedVisibilityChange page error: " + err);
       }
+      await waitForComponent("WebViewEmbedVisibilityChangeButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,7 +49,6 @@ export default function EmbedVisibilityChange() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,9 +62,8 @@ export default function EmbedVisibilityChange() {
     * @tc.level      : Level 1
     */
     it('emitEmbedVisibilityChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitEmbedVisibilityChange001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitEmbedVisibilityChange001", true, 16571657, done);
+      Utils.emitEvent("emitEmbedVisibilityChange001", 153510)
+      Utils.registerEvent("emitEmbedVisibilityChange001", true, 153520, done);
       sendEventByKey('WebViewEmbedVisibilityChangeButton', 10, '');
     })
 

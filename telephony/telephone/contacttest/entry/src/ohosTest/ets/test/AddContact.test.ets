@@ -20,6 +20,13 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -221,6 +228,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -260,7 +268,9 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
+          sleep(500);
           if (err) {
             console.log(`${caseName} addContact1: err>${JSON.stringify(err)}`);
             ExpectFail();
@@ -318,6 +328,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -356,6 +367,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -394,6 +406,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -432,6 +445,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -472,6 +486,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -516,6 +531,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -554,6 +570,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -593,6 +610,7 @@ export default function AddContactTest() {
       };
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -631,6 +649,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -669,6 +688,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -707,6 +727,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -745,6 +766,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -782,10 +804,12 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
           ExpectTrue(data > 0);
+          sleep(500);
           let promise2 = contact.addContact(context, phoneNumContact);
           promise2.then((data: number) => {
             console.log(`${caseName} success data>${JSON.stringify(data)}`);
@@ -838,6 +862,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -875,6 +900,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -912,6 +938,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -949,6 +976,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -988,6 +1016,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1031,6 +1060,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1068,6 +1098,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1107,6 +1138,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1145,6 +1177,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1182,6 +1215,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1219,6 +1253,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         let promise = contact.addContact(context, phoneNumContact);
         promise.then((data: number) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -1253,7 +1288,9 @@ export default function AddContactTest() {
       if (contactData.nickName !== undefined) {
         contactData.nickName.nickName = "小明";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1307,7 +1344,9 @@ export default function AddContactTest() {
       if (contactData.nickName !== undefined) {
         contactData.nickName.nickName = "小  明";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1362,7 +1401,9 @@ export default function AddContactTest() {
       if (contactData.nickName !== undefined) {
         contactData.nickName.nickName = "小明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明明";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1410,7 +1451,9 @@ export default function AddContactTest() {
       if (contactData.nickName !== undefined) {
         contactData.nickName.nickName = "";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1457,7 +1500,9 @@ export default function AddContactTest() {
       if (contactData.nickName !== undefined) {
         contactData.nickName.nickName = "contact.addContact()";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1511,7 +1556,9 @@ export default function AddContactTest() {
       if (contactData.note !== undefined) {
         contactData.note.noteContent = "同事";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1565,7 +1612,9 @@ export default function AddContactTest() {
       if (contactData.note !== undefined) {
         contactData.note.noteContent = "同事1990.3";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1619,7 +1668,9 @@ export default function AddContactTest() {
       if (contactData.note !== undefined) {
         contactData.note.noteContent = "同事~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ha";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1666,7 +1717,9 @@ export default function AddContactTest() {
       if (contactData.note !== undefined) {
         contactData.note.noteContent = "";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1761,7 +1814,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "organization_name";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1816,7 +1871,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "organization Development";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1870,7 +1927,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "organizationName";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1924,7 +1983,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName organizationName";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -1971,7 +2032,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2018,7 +2081,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.name = "contact.addContact(context, contactData)";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2065,7 +2130,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.title = "test title";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2119,7 +2186,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.title = "";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2173,7 +2242,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.title = "rgarhrthrtar16546841655gieruhgiuerhgi的回复i耳庇古如果发erjfioerhgiowwhgiorehgr8iiiiiiiiiiii(*&^!$#!@#iiiiiiiiiiiiiiiiiiiiiiiiiii还能否龟儿回归额外回归微软划归俄国会饿v与uvu余部i一个统一的如同当初太原分院吧";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2229,7 +2300,9 @@ export default function AddContactTest() {
       if (contactData.organization !== undefined) {
         contactData.organization.title = "contact.addContact(context, contactData, (err: BusinessError, addData) => {})";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2280,7 +2353,9 @@ export default function AddContactTest() {
       const caseName: string = "testTelephonyContactAddContact8100";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2328,7 +2403,9 @@ export default function AddContactTest() {
         contactData.name.fullName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
         contactData.name.familyName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2383,7 +2460,9 @@ export default function AddContactTest() {
         contactData.name.fullName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
         contactData.name.givenName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
       }
+      sleep(500);
       contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+        sleep(500);
         if (err) {
           console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -2438,7 +2517,9 @@ export default function AddContactTest() {
         contactData.name.fullName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
         contactData.name.givenNamePhonetic = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2493,7 +2574,9 @@ export default function AddContactTest() {
         contactData.name.fullName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
         contactData.name.middleName = "axdgdfgfhgdjg194986194949848所赋予的不要动不动辨别！#@￥#%￥……%&contact.queryKey()";
       }
+      sleep(500);
       contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
         if (addErr) {
           console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
           ExpectFail();
@@ -2552,6 +2635,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
@@ -2593,6 +2677,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.isLocalContact(context, 9999, (err: BusinessError<void>, data: boolean) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -2625,6 +2710,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.isLocalContact(context, -1, (err: BusinessError<void>, data: boolean) => {
           if (err) {
             console.log(`${caseName} err>${JSON.stringify(err)}`);
@@ -2656,6 +2742,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.isLocalContact(context, 1.5, (err: BusinessError<void>, data: boolean) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -2689,6 +2776,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.isLocalContact(context, -10000, (err: BusinessError<void>, data: boolean) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -2720,6 +2808,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.isLocalContact(context, 10000000, (err: BusinessError<void>, data: boolean) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -2759,6 +2848,7 @@ export default function AddContactTest() {
         }]
       };
       try {
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, data: number) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
@@ -2799,6 +2889,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         let promise = contact.isLocalContact(context, 9999);
         promise.then((data: boolean) => {
           console.log(`isLocalContact success: data>${JSON.stringify(data)}`);
@@ -2830,6 +2921,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.isLocalContact(context, -1);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -2860,6 +2952,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         let promise = contact.isLocalContact(context, 1.5);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -2891,6 +2984,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         let promise = contact.isLocalContact(context, -10000);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -2921,6 +3015,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         let promise = contact.isLocalContact(context, 100000000);
         promise.then((data: boolean) => {
           console.log(`isLocalContact success: data>${JSON.stringify(data)}`);
@@ -2951,7 +3046,9 @@ export default function AddContactTest() {
       const caseName: string = "testTelephonyContactDeleteContact0100";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
       contact.addContact(context, contactData, (err: BusinessError, data: number) => {
+        sleep(500);
         if (err) {
           console.log(`${caseName} addContact:err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -2997,6 +3094,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.deleteContact(context, '', (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} deleteContacts:err->${JSON.stringify(err)}`);
@@ -3028,7 +3126,9 @@ export default function AddContactTest() {
       const caseName: string = "testTelephonyContactDeleteContact0600";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
       contact.addContact(context, contactData, (err: BusinessError, data: number) => {
+        sleep(500);
         if (err) {
           console.log(`${caseName} addContact:err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -3073,6 +3173,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.deleteContact(context, "");
         promise.then(() => {
           console.info(`${caseName} deleteContacts:success`);
@@ -3106,6 +3207,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.queryHolders(context, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -3137,6 +3239,7 @@ export default function AddContactTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         let promise = contact.queryHolders(context);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);

@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import wantConstant from "@ohos.app.ability.wantConstant";
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 
 export default function abilitystaticTest() {

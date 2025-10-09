@@ -67,6 +67,10 @@ struct NativeType {
     }
   }
 
+  onBackPress(): boolean {
+    return true
+  }
+
   build() {
     Navigation(this.stack) {
       Column() {
@@ -74,6 +78,9 @@ struct NativeType {
           this.stack.pushPath({ name: 'myPageOne' });
         })
           .id('goto')
+        Button('Back').onClick((event: ClickEvent) => {
+          this.stack.popToName('myPageOne')
+        }).id('BackButton')
       }.height('40%').justifyContent(FlexAlign.SpaceAround)
     }.width('100%')
     .height('100%')

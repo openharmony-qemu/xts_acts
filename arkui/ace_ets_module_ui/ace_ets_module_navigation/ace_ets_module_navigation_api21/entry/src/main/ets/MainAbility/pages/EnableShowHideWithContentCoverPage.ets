@@ -38,7 +38,7 @@ struct EnableShowHideWithContentCoverPage {
     }
     .titleMode(NavigationTitleMode.Mini)
     .title('Navigation')
-    .enableShowHideWithContentCover(this.enableValue)
+    .enableVisibilityLifecycleWithContentCover(this.enableValue)
     .navDestination(this.pageMap)
     .mode(NavigationMode.Stack)
 
@@ -72,6 +72,7 @@ struct PageOne1 {
       })
       Button('openModal')
         .onClick(() => {
+          AppStorage.delete('testValue')
           this.testModal = true;
           this.isShow = true;
         })

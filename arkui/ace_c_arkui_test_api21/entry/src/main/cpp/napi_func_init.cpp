@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "invalidate/InvalidateAttributesTest.cpp"
 #include "commonEvent/RegisterCommonEventTest.cpp"
+#include "allowForceDark/AllowForceDarkTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -35,6 +36,8 @@ namespace ArkUICapiTest
             {"TestRegisterCommonEvent002", nullptr, TestRegisterCommonEvent002, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestRegisterCommonEvent003", nullptr, TestRegisterCommonEvent003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestAllowForceDark", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)

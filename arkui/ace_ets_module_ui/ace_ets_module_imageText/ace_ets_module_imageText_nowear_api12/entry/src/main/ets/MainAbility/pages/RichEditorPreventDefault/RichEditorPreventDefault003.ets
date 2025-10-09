@@ -21,6 +21,7 @@ struct RichEditorPreventDefault003 {
   build() {
 
     Column() {
+      Text('callNum:' + this.callNum).fontColor(Color.Black).id('callNum').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -68,10 +69,6 @@ struct RichEditorPreventDefault003 {
             })
         })
         .id('RichEditorPreventDefault003')
-
-      Column(){
-        Text('callNum:' + this.callNum).fontSize(20).fontColor(Color.Black).id('callNum')
-      }.margin({bottom: 10})
     }
   }
 }

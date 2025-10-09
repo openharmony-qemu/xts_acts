@@ -39,7 +39,7 @@ function buildText() {
     emitter.emit(innerEvent, eventData);
 
   })
-  .width('30%')
+  .width('20%')
 }
 
 @Entry
@@ -81,89 +81,90 @@ struct Index {
       Text(this.textPosition2.y + '').id('textPositionY2')
       Text(this.textPosition3.x + '').id('textPositionX3')
       Text(this.textPosition3.y + '').id('textPositionY3')
-      Button('updateMenu1')
-        .id('btn1')
-        .fontSize(20)
-        .width(200)
-        .height(100)
-        .margin({ top: 50, left: 100 })
-        .onAreaChange((oldValue: Area, newValue: Area) => {
-          this.textPosition1.x = newValue.globalPosition.x;
-          this.textPosition1.y = newValue.globalPosition.y;
-        })
-        .onClick(() => {
-          let context = this.getUIContext()
-          const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-          const promptAction = context.getPromptAction();
-          let uniqueId = this.getUniqueId();
-          let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          emitter.on(innerEvent, this.callback);
-          promptAction.openMenu(contentNode, { id: 'btn1', componentId: frameNode?.getUniqueId() }, {
-            anchorPosition: { x: 10, y: 10 },
+      Row(){
+        Button('updateMenu1')
+          .id('btn1')
+          .fontSize(20)
+          .width('20%')
+          .height('25%')
+          .margin({ top: 50, left: 50 })
+          .onAreaChange((oldValue: Area, newValue: Area) => {
+            this.textPosition1.x = newValue.globalPosition.x;
+            this.textPosition1.y = newValue.globalPosition.y;
           })
-          setTimeout(() => {
-            promptAction.updateMenu(contentNode, {
-              anchorPosition: { x: 20, y: 20 },
+          .onClick(() => {
+            let context = this.getUIContext()
+            const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+            const promptAction = context.getPromptAction();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+            emitter.on(innerEvent, this.callback);
+            promptAction.openMenu(contentNode, { id: 'btn1', componentId: frameNode?.getUniqueId() }, {
+              anchorPosition: { x: 10, y: 10 },
             })
-          }, 2000);
-        })
-
-      Button('updateMenu2')
-        .id('btn2')
-        .fontSize(20)
-        .width(200)
-        .height(100)
-        .margin({ top: 50, left: 100 })
-        .onAreaChange((oldValue: Area, newValue: Area) => {
-          this.textPosition2.x = newValue.globalPosition.x;
-          this.textPosition2.y = newValue.globalPosition.y;
-        })
-        .onClick(() => {
-          let context = this.getUIContext()
-          const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-          const promptAction = context.getPromptAction();
-          let uniqueId = this.getUniqueId();
-          let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          emitter.on(innerEvent, this.callback);
-          promptAction.openMenu(contentNode, { id: 'btn2', componentId: frameNode?.getUniqueId() }, {
-            anchorPosition: { x: -10, y: -20 },
+            setTimeout(() => {
+              promptAction.updateMenu(contentNode, {
+                anchorPosition: { x: 20, y: 20 },
+              })
+            }, 2000);
           })
-          setTimeout(() => {
-            promptAction.updateMenu(contentNode, {
-              anchorPosition: { x: 10, y: 20 },
-            })
-          }, 2000);
-        })
 
-      Button('updateMenu3')
-        .id('btn3')
-        .fontSize(20)
-        .width(200)
-        .height(100)
-        .margin({ top: 50, left: 100 })
-        .onAreaChange((oldValue: Area, newValue: Area) => {
-          this.textPosition3.x = newValue.globalPosition.x;
-          this.textPosition3.y = newValue.globalPosition.y;
-        })
-        .onClick(() => {
-          let context = this.getUIContext()
-          const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-          const promptAction = context.getPromptAction();
-          let uniqueId = this.getUniqueId();
-          let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          emitter.on(innerEvent, this.callback);
-          promptAction.openMenu(contentNode, { id: 'btn3', componentId: frameNode?.getUniqueId() }, {
-            anchorPosition: { x: 20, y: -20 },
+        Button('updateMenu2')
+          .id('btn2')
+          .fontSize(20)
+          .width('20%')
+          .height('25%')
+          .margin({ top: 50, left: 50 })
+          .onAreaChange((oldValue: Area, newValue: Area) => {
+            this.textPosition2.x = newValue.globalPosition.x;
+            this.textPosition2.y = newValue.globalPosition.y;
           })
-          setTimeout(() => {
-            promptAction.updateMenu(contentNode, {
-              anchorPosition: { x: -20, y: 20 },
+          .onClick(() => {
+            let context = this.getUIContext()
+            const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+            const promptAction = context.getPromptAction();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+            emitter.on(innerEvent, this.callback);
+            promptAction.openMenu(contentNode, { id: 'btn2', componentId: frameNode?.getUniqueId() }, {
+              anchorPosition: { x: -10, y: -20 },
             })
-          }, 2000);
-        })
+            setTimeout(() => {
+              promptAction.updateMenu(contentNode, {
+                anchorPosition: { x: 10, y: 20 },
+              })
+            }, 2000);
+          })
 
+        Button('updateMenu3')
+          .id('btn3')
+          .fontSize(20)
+          .width('20%')
+          .height('25%')
+          .margin({ top: 50, left: 50 })
+          .onAreaChange((oldValue: Area, newValue: Area) => {
+            this.textPosition3.x = newValue.globalPosition.x;
+            this.textPosition3.y = newValue.globalPosition.y;
+          })
+          .onClick(() => {
+            let context = this.getUIContext()
+            const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+            const promptAction = context.getPromptAction();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+            emitter.on(innerEvent, this.callback);
+            promptAction.openMenu(contentNode, { id: 'btn3', componentId: frameNode?.getUniqueId() }, {
+              anchorPosition: { x: 20, y: -20 },
+            })
+            setTimeout(() => {
+              promptAction.updateMenu(contentNode, {
+                anchorPosition: { x: -20, y: 20 },
+              })
+            }, 2000);
+          })
+      }
     }
-    .alignItems(HorizontalAlign.Start)
+    .alignItems(HorizontalAlign.Center)
     .width('100%')
     .height('100%')
   }

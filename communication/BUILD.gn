@@ -31,6 +31,7 @@ group("communication") {
       "dsoftbus/IPCTaiheTestStatic:ActsIPCTaiheStaticTest",
       "dsoftbus/capi_ipc:ActsCAPIIPCTest",
       "dsoftbus/ipc_Static/IPCTaiheServerTestStatic:ActsIPCTaiheServerStaticTest",
+      "dsoftbus/capi20_ipc:ActsCAPI20IPCTest",
       "dsoftbus/ipc_stage/ipc_stageserver:ActsIPCEtsServer",
       "dsoftbus/ipc_stage/ipc_stagetest:ActsIPCEtsTest",
       "dsoftbus/linkEnhance:ActslinkEnhanceTest",

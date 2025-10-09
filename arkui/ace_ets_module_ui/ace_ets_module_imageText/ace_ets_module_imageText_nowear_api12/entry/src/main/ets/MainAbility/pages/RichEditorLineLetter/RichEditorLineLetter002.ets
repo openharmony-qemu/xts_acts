@@ -22,10 +22,10 @@ struct RichEditorLineLetter002 {
   build() {
 
     Column() {
-      Text('textStyle:' + this.textStyle).id('textStyle')
+      Text('textStyle:' + this.textStyle).id('textStyle').height('5%').clip(true)
 
       RichEditor({ controller: this.controller1 })
-        .height(200)
+        .height('20%')
         .borderWidth(1)
         .borderColor(Color.Red)
         .width('100%')
@@ -44,7 +44,7 @@ struct RichEditorLineLetter002 {
         .id('RichEditor')
 
       RichEditor({ controller: this.controller })
-        .height(200)
+        .height('20%')
         .borderWidth(1)
         .borderColor(Color.Red)
         .width('100%')

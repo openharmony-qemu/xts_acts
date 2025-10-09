@@ -68,6 +68,7 @@ export default function editMenuIdAIWriterTest() {
       }else{
         await driver.assertComponentExist(ON.text('全选'));
       }
+      await driver.triggerKey(2070)
       console.info('editMenuIdAIWriterTest_0100 END');
       done();
     });
@@ -98,6 +99,7 @@ export default function editMenuIdAIWriterTest() {
       }else{
         await driver.assertComponentExist(ON.text('全选'));
       }
+      await driver.triggerKey(2070)
       console.info('editMenuIdAIWriterTest_0200 END');
       done();
     });

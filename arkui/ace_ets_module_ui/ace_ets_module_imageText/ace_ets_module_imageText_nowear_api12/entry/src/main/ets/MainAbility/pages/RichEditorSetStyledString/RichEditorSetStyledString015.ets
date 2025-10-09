@@ -59,33 +59,33 @@ struct RichEditorSetStyledString015 {
 
   build() {
     Column() {
-      Button('image Top').onClick(() => {
-        if (this.imagePixelMap !== undefined) {
-          let imageStyledString = new MutableStyledString(new ImageAttachment({
-            value: this.imagePixelMap,
-            size: { width: 30, height: 30 },
-            layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-            verticalAlign: ImageSpanAlignment.CENTER,
-            objectFit: ImageFit.Contain
-          }))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
-      }).id('image_top')
+      Row(){
+        Button('image Top').onClick(() => {
+          if (this.imagePixelMap !== undefined) {
+            let imageStyledString = new MutableStyledString(new ImageAttachment({
+              value: this.imagePixelMap,
+              size: { width: 30, height: 30 },
+              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+              verticalAlign: ImageSpanAlignment.CENTER,
+              objectFit: ImageFit.Contain
+            }))
+            this.richEditorStyledString = this.controller.getStyledString();
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
+        }).id('image_top').width('30%')
 
-      Button('set care').onClick(() => {
-        this.controller.setCaretOffset(2);
-      }).id('set_care')
+        Button('set care').onClick(() => {
+          this.controller.setCaretOffset(2);
+        }).id('set_care').width('30%')
 
-      Button('get care').onClick(() => {
-        this.careNum =  this.controller.getCaretOffset();
-      }).id('get_care')
-
-      Button('setTypingStyle')
-        .fontSize(10)
-        .onClick(() => {
+        Button('get care').onClick(() => {
+          this.careNum =  this.controller.getCaretOffset();
+        }).id('get_care').width('30%')
+      }.height('5%')
+      Row(){
+        Button('setTypingStyle').onClick(() => {
           this.controller.setTypingStyle(
             {
               fontWeight: 'medium',
@@ -95,20 +95,22 @@ struct RichEditorSetStyledString015 {
               fontStyle: FontStyle.Italic,
               decoration: { type: TextDecorationType.Underline, color: Color.Green }
             })
-        }).id('setTypingStyle')
+        }).id('setTypingStyle').width('30%')
 
-      Button('getTypingStyle').onClick(() => {
-        let richEditorTextStyle = this.controller.getTypingStyle();
-        this.textStyle = JSON.stringify(richEditorTextStyle);
-        console.log('RichEditor getTypingStyle:' + JSON.stringify(richEditorTextStyle));
-      }).id('getTypingStyle')
+        Button('getTypingStyle').onClick(() => {
+          let richEditorTextStyle = this.controller.getTypingStyle();
+          this.textStyle = JSON.stringify(richEditorTextStyle);
+          console.log('RichEditor getTypingStyle:' + JSON.stringify(richEditorTextStyle));
+        }).id('getTypingStyle').width('30%')
 
-      Button('close menu').onClick(() => {
-        this.controller.closeSelectionMenu();
-      }).id('close_menu')
-
-      Text('careNum:' + this.careNum).id('careNum')
-      Text('textStyle:' + this.textStyle).id('textStyle')
+        Button('close menu').onClick(() => {
+          this.controller.closeSelectionMenu();
+        }).id('close_menu').width('30%')
+      }.height('5%')
+      Row(){
+        Text('careNum:' + this.careNum).id('careNum').width('50%').clip(true)
+        Text('textStyle:' + this.textStyle).id('textStyle').width('50%').clip(true)
+      }.height('5%')
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.styledString);

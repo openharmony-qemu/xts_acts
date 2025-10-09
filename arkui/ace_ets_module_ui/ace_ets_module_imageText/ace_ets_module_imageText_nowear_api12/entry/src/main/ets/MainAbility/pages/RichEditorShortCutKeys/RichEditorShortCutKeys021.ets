@@ -23,7 +23,31 @@ struct RichEditorShortCutKeys021 {
   build() {
 
     Column() {
-
+      Row(){
+        Button('add text').onClick(() => {
+          this.controller.addTextSpan('    ', {
+            style: {
+              fontSize: 35,
+              fontWeight: FontWeight.Bolder,
+              fontColor: Color.Red,
+              fontFamily: Utils.FONT_FAMILY,
+              fontStyle: FontStyle.Italic,
+              decoration: { type: TextDecorationType.LineThrough, color: Color.Black, style: TextDecorationStyle.SOLID }
+            }
+          });
+        }).id('addText').width('50%')
+        Button('get spans').onClick(() => {
+          this.style = '';
+          this.controller.getSpans({
+            start: 0,
+            end: 4
+          }).forEach(item => {
+            this.style = JSON.stringify((item as RichEditorTextSpanResult));
+            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+          })
+        }).id('getSpans').width('50%')
+      }.height('5%')
+      Text('style:' + this.style).id('style').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(200)
@@ -41,32 +65,6 @@ struct RichEditorShortCutKeys021 {
           }
         })
         .id('RichEditorShortCutKeys021')
-
-      Button('add text').onClick(() => {
-        this.controller.addTextSpan('    ', {
-          style: {
-            fontSize: 35,
-            fontWeight: FontWeight.Bolder,
-            fontColor: Color.Red,
-            fontFamily: Utils.FONT_FAMILY,
-            fontStyle: FontStyle.Italic,
-            decoration: { type: TextDecorationType.LineThrough, color: Color.Black, style: TextDecorationStyle.SOLID }
-          }
-        });
-      }).id('addText')
-
-      Button('get spans').onClick(() => {
-        this.style = '';
-        this.controller.getSpans({
-          start: 0,
-          end: 4
-        }).forEach(item => {
-          this.style = JSON.stringify((item as RichEditorTextSpanResult));
-          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-        })
-      }).id('getSpans')
-
-      Text('style:' + this.style).id('style')
     }
   }
 }

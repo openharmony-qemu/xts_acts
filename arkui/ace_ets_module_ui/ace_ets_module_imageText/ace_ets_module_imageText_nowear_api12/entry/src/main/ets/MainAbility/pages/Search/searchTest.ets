@@ -34,7 +34,7 @@ struct searchTest {
           if (e) {
             this.text3 += 1
           }
-        }).height('5%').margin(50)
+        }).height('5%')
       Search()
         .width(150)
         .key('searchTest2')
@@ -58,6 +58,6 @@ struct searchTest {
     }.margin({
       left:30,
       top:1
-    }).height('100%')
+    }).height('90%')
   }
 }

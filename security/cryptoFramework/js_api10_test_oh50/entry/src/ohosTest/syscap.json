@@ -4,7 +4,11 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Startup.SystemInfo"
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.Security.CryptoFramework.MessageDigest",
+                    "SystemCapability.Security.CryptoFramework.Key.SymKey",
+                    "SystemCapability.Security.CryptoFramework.Cipher",
+                    "SystemCapability.Security.CryptoFramework.Kdf"
                 ]
             }
         ]

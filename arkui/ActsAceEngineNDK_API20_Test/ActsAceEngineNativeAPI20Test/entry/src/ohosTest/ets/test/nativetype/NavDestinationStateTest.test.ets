@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach, afterAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeEach, afterAll, afterEach, beforeAll } from '@ohos/hypium'
 import libnativetype from 'libnativetype.so'
 import { ON } from '@kit.TestKit';
 import Utils from '../common/Utils';
@@ -22,7 +22,7 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 
 export default function NavDestinationStateTest() {
   describe('NavDestinationStateTest', () => {
-    beforeEach(async (done: Function) => {
+    beforeAll(async (done: Function) => {
       await Utils.replacePageStandard("NativeType/NavDestination", done);
     })
     /**
@@ -39,9 +39,14 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0100 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(900);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
+          com = await Utils.driver.findComponent(ON.id('BackButton'));
+          if (com) {
+            await com.click();
+          } else {
+            await Utils.triggerKey(2);
+          }
+          await Utils.sleep(1000);
           let result: number = libnativetype.GetNavDestinationStateResult(0);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0100 result: " + result);
           expect(result).assertEqual(1);
@@ -66,9 +71,14 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0200 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(900);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
+          com = await Utils.driver.findComponent(ON.id('BackButton'));
+          if (com) {
+            await com.click();
+          } else {
+            await Utils.triggerKey(2);
+          }
+          await Utils.sleep(1000);
           let result: number = libnativetype.GetNavDestinationStateResult(1);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0200 result: " + result);
           expect(result).assertEqual(1);
@@ -93,9 +103,14 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0300 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(900);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
+          com = await Utils.driver.findComponent(ON.id('BackButton'));
+          if (com) {
+            await com.click();
+          } else {
+            await Utils.triggerKey(2);
+          }
+          await Utils.sleep(1000);
           let result: number = libnativetype.GetNavDestinationStateResult(2);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0300 result: " + result);
           expect(result).assertEqual(1);
@@ -120,9 +135,14 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0500 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(900);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
+          com = await Utils.driver.findComponent(ON.id('BackButton'));
+          if (com) {
+            await com.click();
+          } else {
+            await Utils.triggerKey(2);
+          }
+          await Utils.sleep(1000);
           let result: number = libnativetype.GetNavDestinationStateResult(4);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0500 result: " + result);
           expect(result).assertEqual(1);
@@ -134,24 +154,24 @@ export default function NavDestinationStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0900
-     * @tc.name    : testArkUIACENavDestinationState0900
+     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_01000
+     * @tc.name    : testArkUIACENavDestinationState01000
      * @tc.desc    : testing ArkUI_NavDestinationState enum.
      * @tc.level   : Level1
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('testArkUIACENavDestinationState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testArkUIACENavDestinationState01000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>SUB_ArkUI_ACE_NavDestinationState_0900 start====");
+          console.info("====>SUB_ArkUI_ACE_NavDestinationState_01000 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
           await Utils.triggerKey(2);
-          await Utils.sleep(900);
+          await Utils.sleep(1000);
           let result: number = libnativetype.GetNavDestinationStateResult(100);
-          console.info("====>SUB_ArkUI_ACE_NavDestinationState_0900 result: " + result);
+          console.info("====>SUB_ArkUI_ACE_NavDestinationState_01000 result: " + result);
           expect(result).assertEqual(1);
           done()
         } catch (err) {

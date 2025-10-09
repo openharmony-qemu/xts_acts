@@ -49,10 +49,17 @@ class NDKCamera {
 public:
     explicit NDKCamera(char *str);
     ~NDKCamera(void);
-    
+
     Camera_ErrorCode CreateCameraInput(void);
-    Camera_ErrorCode GetSupportedCameras(void);
+    Camera_ErrorCode CloseCameraInput(void);
+    Camera_ErrorCode CreateCameras(void);
+    Camera_ErrorCode CreatePhotoOutput(void);
+    Camera_ErrorCode ReleasePhotoOutput(void);
+    Camera_ErrorCode CreateCaptureSession(void);
+    Camera_ErrorCode ReleaseCaptureSession(void);
     Camera_ErrorCode ReleaseCameraManger(void);
+    Camera_ErrorCode CameraManagerRegisterCallback();
+    CameraManager_Callbacks *GetCameraManagerListener(void);
 
     Camera_ErrorCode CameraOperationNotAllowed();
     Camera_ErrorCode CameraSessionNotConfig();
@@ -62,7 +69,6 @@ public:
     Camera_ErrorCode CameraDeviceDisabled();
     Camera_ErrorCode CameraDevicePreempted();
     Camera_ErrorCode CameraUnresolvedConflictsWithCurrentConfigurations();
-    Camera_ErrorCode CreateSession(void);
     Camera_ErrorCode CaptureSessionRegisterCallback(void);
     CaptureSession_Callbacks* GetCaptureSessionRegister(void);
     Camera_ErrorCode SessionBegin(void);
@@ -83,17 +89,29 @@ public:
     Camera_ErrorCode PhotoOutputRegisterCallback(void);
     MetadataOutput_Callbacks* GetMetadataOutputListener(void);
     Camera_ErrorCode MetadataOutputRegisterCallback(void);
+    Camera_ErrorCode CameraManagerRegisterTorchStatusCallback();
+    Camera_ErrorCode CaptureSessionRegisterSmoothZoomInfoCallback();
+    Camera_ErrorCode PhotoOutputRegisterCaptureStartWithInfoCallback();
+    Camera_ErrorCode CameraManagerRegisterFoldStatusCallback();
+    Camera_ErrorCode RegisterAutoDeviceSwitchStatusCallback();
+    Camera_ErrorCode SessionSetQualityPrioritization(int32_t quality);
+    Camera_ErrorCode CameraOpenConcurrentCameras(int32_t type);
+    Camera_ErrorCode IsWhiteBalanceSupported(int32_t type);
+    Camera_ErrorCode RegisterSystemPressureLevel();
+    Camera_ErrorCode SessionGetSupportedEffectTypes(int32_t type);
+    Camera_ErrorCode RegisterControlCenterEffectStatusChange();
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
+protected:
+    Camera_Manager* cameraManager_;
     Camera_CaptureSession* captureSession_;
     Camera_Device* cameras_;
     Camera_Input* cameraInput_;
-    
-    uint32_t size_;
-private:
-    Camera_Manager* cameraManager_;
+    Camera_PhotoOutput* photoOutput_;
+    Camera_OutputCapability* outputCap_;
     std::string previewSurfaceId_;
+    uint32_t size_;
 };
 
 #endif // OHCAMERATEST_CAMERA_TEST_H

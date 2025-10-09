@@ -33,7 +33,7 @@ workerPort.onmessage = (event: MessageEvents) => {
       let pro = new process.ProcessManager();
       let tid = process.tid;
       let result = pro.getThreadPriority(tid);
-      if (result) {
+      if (result <= 19 && result >= -20) {
         console.info('getThreadPriority execute success');
         success++;
       } else {

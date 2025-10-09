@@ -15,6 +15,7 @@
 import { reg } from './commonParam';
 import { DataUint8Array, IAnyObj } from './commonType';
 import { buffer } from '@kit.ArkTS';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 function stringToArray(str: string) {
   let arr: number[] = [];
@@ -202,6 +203,29 @@ function decToHexString(data: Uint8Array) {
   console.log("##################### :" + arr);
 }
 
+async function createData(dataLen: number): Promise<cryptoFramework.DataBlob>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData;
+  } catch (error) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
+async function createUint8Array(dataLen: number): Promise<Uint8Array>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData.data;
+  } catch (error) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
 
 export {
   stringToArray,
@@ -215,5 +239,7 @@ export {
   convertToUint8Array,
   compareString,
   compareUint8Array,
-  decToHexString
+  decToHexString,
+  createData,
+  createUint8Array
 };

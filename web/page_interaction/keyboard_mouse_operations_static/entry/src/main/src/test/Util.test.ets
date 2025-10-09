@@ -82,11 +82,25 @@ class Utils{
       expect(action).assertEqual(expected);
     });
   }
+
+  static isPC(controller: webview.WebviewController): boolean {
+    let userAgent: string = controller.getUserAgent();
+    console.info('userAgent' + userAgent);
+
+    try {
+      let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+      console.log('device is pc:' + isPc)
+      return isPc
+    } catch (error) {
+      console.info('userAgent error:' + error);
+      return true
+    }
+  }
 }
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
     return true;
   } catch(error) {

@@ -70,9 +70,13 @@ struct Index {
             switch (this.emitKey) {
               case 'emitActiveWebEngineVersion001': {
                 try {
-                  test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.SYSTEM_DEFAULT);
-                  let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                  Utils.emitEvent(tmp_result, 20250903);
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.SYSTEM_DEFAULT);
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    Utils.emitEvent(tmp_result, 20250903);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250903);
+                  }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -81,9 +85,14 @@ struct Index {
               }
               case 'emitActiveWebEngineVersion002': {
                 try {
-                  test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114);
-                  let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                  Utils.emitEvent(tmp_result, 20250904);
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114);
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    Utils.emitEvent(tmp_result, 20250904);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M114, 20250904);
+                  }
+
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -93,9 +102,29 @@ struct Index {
 
               case 'emitActiveWebEngineVersion003': {
                 try {
-                  test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M132);
-                  let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                  Utils.emitEvent(tmp_result, 20250905);
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M132);
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    Utils.emitEvent(tmp_result, 20250905);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250905);
+                  }
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+              case 'emitActiveWebEngineVersion004': {
+                try {
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.ARKWEB_EVERGREEN);
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    Utils.emitEvent(tmp_result, 20250940);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250940);
+                  }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);

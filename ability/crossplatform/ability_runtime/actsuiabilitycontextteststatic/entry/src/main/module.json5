@@ -23,6 +23,10 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
+     "testRunner": {
+      "srcPath": "",
+      "name": ""
+    },
     "abilities": [
       {
         "name": "EntryAbility",
@@ -43,6 +47,17 @@
             ]
           }
         ]
+      },
+      {
+        "name": "MainAbility",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "visible": true,
+        "launchType": "singleton",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
       }
     ]
   }

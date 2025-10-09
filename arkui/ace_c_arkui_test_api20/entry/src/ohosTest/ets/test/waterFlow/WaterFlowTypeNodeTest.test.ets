@@ -93,5 +93,33 @@ export default function WaterFlowTypeNodeTest() {
       console.info('[WaterFlowTypeNodeTest_0100] END');
       done();
     });
+    /**
+     * @tc.number    WaterFlowTypeNodeTest_0200
+     * @tc.name      WaterFlowTypeNodeTest_0200
+     * @tc.desc      Test WaterFlowTypeNodePage undefined.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('WaterFlowTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[WaterFlowTypeNodeTest_0200] START');
+      await Utils.sleep(1000);
+      let driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('WaterFlowTypeNodePage_undefined'));
+      await btn.click();
+      console.info("[WaterFlowTypeNodeTest_0200] Click WaterFlowTypeNodePage_undefined.");
+      await Utils.sleep(1500);
+      console.info("[WaterFlowTypeNodeTest_0200] AppStorage.get('WaterFlowTypeNodeUn'): " + AppStorage.get('WaterFlowTypeNodeUn'));
+      expect(AppStorage.get('WaterFlowTypeNodeUn')).assertEqual(undefined);
+
+      console.info("[WaterFlowTypeNodeTest_0200] AppStorage.get('FlowItemTypeNodeUn'): " + AppStorage.get('FlowItemTypeNodeUn'));
+      expect(AppStorage.get('FlowItemTypeNodeUn')).assertEqual(undefined);
+
+      AppStorage.delete('WaterFlowTypeNodeUn')
+      AppStorage.delete('FlowItemTypeNodeUn')
+
+      console.info('[WaterFlowTypeNodeTest_0200] END');
+      done();
+    });
   })
 }

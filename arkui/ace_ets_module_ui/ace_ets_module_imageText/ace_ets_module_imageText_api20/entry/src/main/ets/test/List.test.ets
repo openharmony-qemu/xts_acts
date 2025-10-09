@@ -61,6 +61,7 @@ import OptimizeTrailingSpaceTest from './TextTest/OptimizeTrailingSpaceTest.test
 import TextBindControllerTest from './TextTest/TextBindControllerTest.test';
 import StyledStringVerticalAlignTest from './StyledStringTest/StyledStringVerticalAlignTest.test';
 import TextChangeReasonTest from './TextTest/TextChangeReasonTest.test';
+import ImageSupportSvg2Test from './ImageSvgTest/ImageSvg.test';
 
 export default function testsuite() {
   textAreaInputTest();
@@ -111,4 +112,5 @@ export default function testsuite() {
   OptimizeTrailingSpaceTest();
   StyledStringVerticalAlignTest();
   TextChangeReasonTest();
+  ImageSupportSvg2Test();
 }

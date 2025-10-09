@@ -39,13 +39,15 @@ class Utils{
     })
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: () => void) {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " start expectValue=" + JSON.stringify(expectedValue));
     try {
       let callBack = (backData: emitter.EventData) => {
         try {
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " get result is: " + JSON.stringify(backData));
-          expect(backData?.data?.get("ACTION")).assertEqual(expectedValue);
+          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expectedValue);
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " END");
         } catch (err) {
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " err: " + JSON.stringify(err));
@@ -61,7 +63,7 @@ class Utils{
     }
   }
 
-  static emitEvent(actVal: boolean | string | number | object, eId: number) {
+  static emitEvent(actVal: boolean | string | number | object, eId: Long) {
     try {
       let recordData: Record<string, object> = {
         "ACTION": actVal

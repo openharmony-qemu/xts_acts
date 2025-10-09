@@ -25,7 +25,7 @@ ani_int test_Object_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_obje
 
     ani_method ctor {};
     ani_object objResult {};
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":V", &ctor), ANI_OK);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":", &ctor), ANI_OK);
     ASSERT_EQ(env->Object_New(cls, ctor, &objResult), ANI_OK);
     ASSERT_NE(objResult, nullptr);
     return ANI_TRUE;
@@ -88,7 +88,7 @@ ani_int test_Reference_IsUndefined([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_int test_Reference_Equals([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum {};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/ObjectOperations/ToFind;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ObjectOperations.ToFind", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
 
     ani_enum_item redName {};
@@ -101,14 +101,13 @@ ani_int test_Reference_Equals([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return ANI_TRUE;
 }
 
-ani_int test_Array_New_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Array_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_class cls = nullptr;
-    ASSERT_EQ(env->FindClass("Lstd/core/String;", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
 
-    ani_array_ref array = nullptr;
-    ASSERT_EQ(env->Array_New_Ref(cls, LENGTH_5, nullptr, nullptr), ANI_INVALID_ARGS);
+    ani_array array = nullptr;
+    ASSERT_EQ(env->Array_New(LENGTH_5, undefinedRef, nullptr), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
 
@@ -117,7 +116,7 @@ ani_int test_Object_New_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
     ani_int weight = 200;
     const char m[] = "Pure P60";
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/ObjectOperations/MobilePhone;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.MobilePhone", &cls), ANI_OK);
     ani_method ctor {};
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "Lstd/core/String;I:V", &ctor), ANI_OK);
     ani_string model {};
@@ -193,8 +192,8 @@ template <typename R, typename... Args>
 R CallEtsFunctionV(ani_env *env, const std::string &moduleName, const std::string &fnName, Args &&...args)
 {
     std::optional<R> result;
-    auto moduleDescriptor = "L" + moduleName + ";";
-    CallEtsFunctionImplV(env, &result, moduleDescriptor, fnName, std::forward<Args>(args)...);
+    //auto moduleDescriptor = "L" + moduleName + ";";
+    CallEtsFunctionImplV(env, &result, moduleName, fnName, std::forward<Args>(args)...);
     if constexpr (!std::is_same_v<R, void>) {
         return result.value();
     }
@@ -222,17 +221,17 @@ ani_int GetTestString(ani_env *env, ani_string *tag)
 ani_int test_Object_New_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/ObjectOperations/Test;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Test", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method ctor {};
-    const char *tmpName = "ILstd/core/String;Lentry/src/main/src/ets/ObjectOperations/Animal;:V";
+    const char *tmpName = "iC{std.core.String}C{entry.src.main.src.ets.ObjectOperations.Animal}:";
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", tmpName, &ctor), ANI_OK);
     ASSERT_NE(ctor, nullptr);
 
     ani_string tag {};
     ASSERT_EQ(GetTestString(env, &tag), ANI_TRUE);
-    auto animalRef = CallEtsFunctionV<ani_ref>(env, "entry/src/main/src/ets/ObjectOperations", "newAnimalObject");
+    auto animalRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newAnimalObject");
 
     ani_object tmpObj {};
     ani_int value1 = 200;
@@ -242,7 +241,7 @@ ani_int test_Object_New_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
 
 ani_int test_Reference_IsNullishValue([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    auto ref = CallEtsFunctionV<ani_ref>(env, "entry/src/main/src/ets/ObjectOperations", "getNull");
+    auto ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "getNull");
     ani_boolean isUndefined = ANI_FALSE;
     ASSERT_EQ(env->Reference_IsNullishValue(ref, &isUndefined), ANI_OK);
     ASSERT_EQ(isUndefined, ANI_TRUE);

@@ -36,6 +36,8 @@ let mediaErrorTypeList: number[] = []
 let networkState: number = 0
 let readyState: number = 0
 let videoTime: number = 0
+const EVENT_ID_SET_EMIT_KEY = 361000;
+
 interface AVPlayerListener {
     onPlaying() : void
     onPaused() : void
@@ -51,27 +53,15 @@ interface AVPlayerListener {
     onVideoSizeChanged(width: number, height: number) : void
 }
 
-interface PlayCommand {
-    func: Function;
-    name?: string;
-}
-
-interface CheckPlayCommandResult {
-    ignore: boolean;
-    index_to_remove: number;
-}
-
 class AVPlayerDemo {
-    private surfaceID: string = '';
+    private sFaceId: string = '';
     private isSeek: boolean = true;
     private fd: number = 0;
     private listener?: AVPlayerListener
     public avPlayer?: media.AVPlayer;
-    prepared: boolean = false;
-    commands: PlayCommand[] = [];
 
-    setSfID(surfaceId: string) {
-        this.surfaceID = surfaceId;
+    setSfID(sFaceId: string) {
+        this.sFaceId = sFaceId;
     }
     // 注册avplayer回调函数
     setAVPlayerCallback(avPlayer: media.AVPlayer, listener: AVPlayerListener) {
@@ -94,45 +84,42 @@ class AVPlayerDemo {
         // 状态机变化回调函数
         avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
             switch (state) {
-                case 'idle': // 成功调用reset接口后触发该状态机上报
-                    console.info('AVPlayer state idle called.');
-                    avPlayer.release(); // 调用release接口销毁实例对象
-                    break;
-                case 'initialized': // avplayer 设置播放源后触发该状态上报
-                    console.info('AVPlayer state initialized called. ');
-                    avPlayer.surfaceId = this.surfaceID; // 设置显示画面，当播放的资源为纯音频时无需设置
-                    avPlayer.prepare();
-                    break;
-                case 'prepared': // prepare调用成功后上报该状态机
-                    isPlaying = true
-                    console.info('AVPlayer state prepared called.');
-                    this.prepared = true;
-                    this.schedule();
-                    break;
-                case 'playing': // play成功调用后触发该状态机上报
-                    isPlaying = true
-                    console.info('AVPlayer state playing called.');
-                    listener?.onPlaying();
-                    break;
-                case 'paused': // pause成功调用后触发该状态机上报
-                    console.info('AVPlayer state paused called.');
-                    listener?.onPaused();
-                    break;
-                case 'completed': // 播放结束后触发该状态机上报
-                    console.info('AVPlayer state completed called.');
-                    avPlayer.stop(); // 调用播放结束接口
-                    break;
-                case 'stopped': // stop接口成功调用后触发该状态机上报
-                    console.info('AVPlayer state stopped called.');
-                    listener?.onEnded();
-                    break;
-                case 'released':
-                    this.prepared = false;
-                    console.info('AVPlayer state released called.');
-                    break;
-                default:
-                    console.info('AVPlayer state unknown called.');
-                    break;
+              case 'idle': // 成功调用reset接口后触发该状态机上报
+                console.info('AVPlayer state idle called.');
+                avPlayer.release(); // 调用release接口销毁实例对象
+                break;
+              case 'initialized': // avplayer 设置播放源后触发该状态上报
+                console.info('AVPlayer state initialized called. ');
+                avPlayer.surfaceId = this.sFaceId; // 设置显示画面，当播放的资源为纯音频时无需设置
+                avPlayer.prepare();
+                break;
+              case 'prepared': // prepare调用成功后上报该状态机
+                isPlaying = true
+                console.info('AVPlayer state prepared called.');
+                break;
+              case 'playing': // play成功调用后触发该状态机上报
+                isPlaying = true
+                console.info('AVPlayer state playing called.');
+                listener?.onPlaying();
+                break;
+              case 'paused': // pause成功调用后触发该状态机上报
+                console.info('AVPlayer state paused called.');
+                listener?.onPaused();
+                break;
+              case 'completed': // 播放结束后触发该状态机上报
+                console.info('AVPlayer state completed called.');
+                avPlayer.stop(); // 调用播放结束接口
+                break;
+              case 'stopped': // stop接口成功调用后触发该状态机上报
+                console.info('AVPlayer state stopped called.');
+                listener?.onEnded();
+                break;
+              case 'released':
+                console.info('AVPlayer state released called.');
+                break;
+              default:
+                console.info('AVPlayer state unknown called.');
+                break;
             }
         })
         avPlayer.on('durationUpdate', (duration: number) => {
@@ -190,138 +177,31 @@ class AVPlayerDemo {
         this.avPlayer.fdSrc = avFileDescriptor;
     }
 
-    schedule() {
-        if (!this.avPlayer) {
-            return;
-        }
-        if (!this.prepared) {
-            return;
-        }
-        if (this.commands.length > 0) {
-            let command = this.commands.shift();
-            if (command) {
-                command.func();
-            }
-            if (this.commands.length > 0) {
-                setTimeout(() => {
-                    this.schedule();
-                });
-            }
-        }
-    }
-    private checkCommand(selfName: string, oppositeName: string) {
-        let index_to_remove = -1;
-        let ignore_this_action = false;
-        let index = this.commands.length - 1;
-        while (index >= 0) {
-            if (this.commands[index].name == selfName) {
-                ignore_this_action = true;
-                break;
-            }
-            if (this.commands[index].name == oppositeName) {
-                index_to_remove = index;
-                break;
-            }
-            index--;
-        }
-
-        let result : CheckPlayCommandResult = {
-            ignore: ignore_this_action,
-            index_to_remove: index_to_remove,
-        };
-        return result;
-    }
-
     play() {
-        let commandName = 'play';
-        let checkResult = this.checkCommand(commandName, 'pause');
-        if (checkResult.ignore) {
-            console.log(`AVPlayer ${commandName} ignored.`);
-            this.schedule();
-            return;
-        }
-        if (checkResult.index_to_remove >= 0) {
-            let removedCommand = this.commands.splice(checkResult.index_to_remove, 1);
-            console.log(`AVPlayer ${JSON.stringify(removedCommand)} removed.`);
-            return;
-        }
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.play()');
-            this.avPlayer?.play();
-        }, name: commandName});
-        this.schedule();
+        console.info('AVPlayer.play()');
+        this.avPlayer?.play()
     }
     pause() {
-        let commandName = 'pause';
-        let checkResult = this.checkCommand(commandName, 'play');
-        console.log(`checkResult:${JSON.stringify(checkResult)}`);
-        if (checkResult.ignore) {
-            console.log(`AVPlayer ${commandName} ignored.`);
-            this.schedule();
-            return;
-        }
-        if (checkResult.index_to_remove >= 0) {
-            let removedCommand = this.commands.splice(checkResult.index_to_remove, 1);
-            console.log(`AVPlayer ${JSON.stringify(removedCommand)} removed.`);
-            return;
-        }
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.pause()');
-            this.avPlayer?.pause();
-        }, name: commandName});
-        this.schedule();
+        console.info('AVPlayer.pause()');
+        this.avPlayer?.pause()
     }
     release() {
-        this.commands.push({ func: ()=>{
-            console.info('AVPlayer.release()');
-            this.avPlayer?.release();
-        }});
-        this.schedule();
+        console.info('AVPlayer.release()');
+        this.avPlayer?.release();
     }
     seek(time: number) {
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.seek(${time})`);
-            this.avPlayer?.seek(time * 1000);
-        }});
-        this.schedule();
+        console.info('AVPlayer.seek (' + time + ')');
+        this.listener?.onSeeking();
+        this.avPlayer?.seek(time * 1000);
     }
-    setVolume(volume: number) {
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setVolume(${volume})`);
-            this.avPlayer?.setVolume(volume);
-        }});
-        this.schedule();
-    }
-    setPlaybackRate(playbackRate: number) {
-        let speed = media.PlaybackSpeed.SPEED_FORWARD_1_00_X;
-        let delta = 0.05;
-        playbackRate += delta;
-        if (playbackRate < 1) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_0_75_X;
-        } else if (playbackRate < 1.25) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_00_X;
-        } else if (playbackRate < 1.5) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_25_X;
-        } else if (playbackRate < 2) {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_1_75_X;
-        } else {
-            speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
-        }
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setSpeed(${speed})`);
-            this.avPlayer?.setSpeed(speed);
-        }});
-        this.schedule();
+    setVolume(number: number) {
+        console.info('AVPlayer.setVolume(' + number + ')');
+        this.avPlayer?.setVolume(number)
     }
     setSpeed(speed: number){
-        this.commands.push({ func: ()=>{
-            console.info(`AVPlayer.setSpeed(${speed})`);
-            this.avPlayer?.setSpeed(speed);
-        }});
-        this.schedule();
+        this.avPlayer?.setSpeed(speed)
     }
 }
-
 class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
 
     private rawHandler: webview.NativeMediaPlayerHandler;
@@ -382,7 +262,7 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
 
     handleBufferedEndTimeChanged(bufferedEndTime: number): void {
         console.log('handle bufferedEndTime :' + bufferedEndTime)
-        Utils.emitEvent(bufferedEndTime >= 0, 1814)
+        Utils.emitEvent(bufferedEndTime >= 0, 361020)
         this.rawHandler.handleBufferedEndTimeChanged(bufferedEndTime)
     }
 
@@ -454,7 +334,7 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
 
     handleVideoSizeChanged(width: number, height: number): void {
         console.log('handleVideoSizeChanged:')
-        Utils.emitEvent(true, 1808)
+        Utils.emitEvent(true, 361010)
         this.rawHandler.handleVideoSizeChanged(width,height)
     }
 }
@@ -506,13 +386,14 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
         console.log('[BrowserShell] ===gpz=== videoTime(' + videoTime + ')');
         console.log('[BrowserShell] ===gpz=== seekList(' + seekList + ')');
         if (videoTime > 0 && targetTime === videoTime) {
-            Utils.emitEvent(true, 1809)
+            Utils.emitEvent(true, 361030)
         }
         if (targetTime === -1) {
-            Utils.emitEvent(false, 1810)
+            Utils.emitEvent(false, 361050)
         }
         if (targetTime === 20) {
-            Utils.emitEvent(true, 1811)
+            console.info('current seekList.indexOf(20)' + seekList.indexOf(20));
+            Utils.emitEvent(true, 361040)
         }
         this.nativePlayer?.seek(targetTime);
     }
@@ -601,7 +482,7 @@ class AVPlayerListenerImpl implements AVPlayerListener {
     }
     onBufferedTimeChanged(buffered: number) {
         console.log('[BrowserShell] onBufferedTimeChanged(' + buffered + '), handler[' + this.handler + ']')
-        Utils.emitEvent(buffered >= 0, 1814)
+        Utils.emitEvent(buffered >= 0, 361020)
         this.handler.handleBufferedEndTimeChanged(buffered);
     }
     onTimeUpdate(time: number) {
@@ -631,7 +512,7 @@ class AVPlayerListenerImpl implements AVPlayerListener {
     }
     onVideoSizeChanged(width: number, height: number) {
         console.log('[BrowserShell] onVideoSizeChanged(' + width + ',' + height + '), handler[' + this.handler + ']')
-        Utils.emitEvent(true, 1808)
+        Utils.emitEvent(true, 361010)
         this.handler.handleVideoSizeChanged(width, height);
         this.component.onSizeChanged(width, height);
     }
@@ -844,16 +725,22 @@ struct WebComponent {
     @State nodeHeight : number = 150;
     @State isShouldOverlay : boolean = true;
     @State isCallback : boolean = true;
+    @State isPageEnd:number = -1;
+    @State isReceive: number = -1;
 
     area?: Area
     @State emitKey: string = '';
 
     onPageShow() {
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
+            eventId: EVENT_ID_SET_EMIT_KEY,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    }
+
+    onPageHide() {
+        events_emitter.off(EVENT_ID_SET_EMIT_KEY)
     }
 
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -861,6 +748,7 @@ struct WebComponent {
             console.info('valueChangeCallBack:' + JSON.stringify(eventData));
             if (eventData.data != null && eventData.data.ACTION != null) {
                 this.emitKey = eventData.data.ACTION;
+                this.isReceive = 1;
                 console.info('valueChangeCallBack: this.emitKey' + this.emitKey);
             }
         }
@@ -918,145 +806,159 @@ struct WebComponent {
             Row() {
                 Button('NativeMediaPlayer4').key('webViewNativeMediaPlayerRateHandler4').onClick(async () => {
                     console.info('key==>' + this.emitKey)
+                    await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                    this.isReceive = -1;
                     isPlaying = false
                     isError = false
                     videoTime = 0
                     readyState = 0
                     this.isShouldOverlay = true
                     this.isCallback = false
-                    await Utils.sleep(2000)
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                    await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                     if (Utils.isPC(this.controller) ) {
-                        Utils.emitEvent(true, 1808)
-                        Utils.emitEvent(true, 1809)
-                        Utils.emitEvent(true, 1810)
-                        Utils.emitEvent(true, 1811)
-                        Utils.emitEvent(true, 1814)
+                        Utils.emitEvent(true, 361010)
+                        Utils.emitEvent(true, 361020)
+                        Utils.emitEvent(true, 361030)
+                        Utils.emitEvent(true, 361040)
+                        Utils.emitEvent(true, 361050)
                         return
                     }
                     switch (this.emitKey) {
-                        case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
-                            this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                            await Utils.sleep(3000)
-                            this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                                console.error(`The buttonPlay() return error is: ${error}`);
-                                console.log(`The buttonPlay() return value is: ${result}`);
-                            })
-                            this.controller.runJavaScript('buttonLoad()', (error, result) => {
-                                console.error(`The buttonLoad() return error is: ${error}`);
-                                console.log(`The buttonLoad() return value is: ${result}`);
-                            })
-                            await this.retryPlayingGen(this.emitKey)()
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('resize()', (error, result) => {
-                                console.error(`The resize() return error is: ${error}`);
-                                console.log(`The resize() return value is: ${result}`);
-                            })
-                            this.controller.runJavaScript('getSize()', (error, result) => {
-                                console.error(`The getSize() return error is: ${error}`);
-                                console.log(`The getSize() return value is: ${result}`);
-                                if (result == '"180px190px"'){
-                                    console.log('in getsize')
-                                    Utils.emitEvent(true, 1808)
-                                } else {
-                                    console.log('result:'+result)
-                                    console.log('resultType:'+ typeof result)
-                                }
-                            })
-                            console.log('video is playing:' + isPlaying)
-                            break;
-                        }
-                        case 'emitWebViewNativeMediaPlayerSeek500': {
-                            this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                            await Utils.sleep(10000)
-                            this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                                console.error(`The buttonPlay() return error is: ${error}`);
-                                console.log(`The buttonPlay() return value is: ${result}`);
-                            })
-                            await this.retryPlayingGen(this.emitKey)()
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('setSeek(20)', (error, result) => {
-                                console.error(`The setSeek(20) return error is: ${error}`);
-                                console.log(`The setSeek(20) return value is: ${result}`);
-                            })
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('setSeek(500)', (error, result) => {
-                                console.error(`The setSeek(500) return error is: ${error}`);
-                                console.log(`The setSeek(500) return value is: ${result}`);
-                            })
-                            await Utils.sleep(1000)
-                            console.info('current video time: ' + videoTime)
-                            console.log('video is playing:' + isPlaying)
-                            console.info('current seekList.indexOf(videoTime) '+ seekList + seekList.indexOf(videoTime))
-                            if (seekList.indexOf(videoTime) > -1){
-                                Utils.emitEvent(true, 1809)
-                            }else {
-                                Utils.emitEvent(false, 1809)
+                      case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
+                        this.isPageEnd = -1;
+                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'));
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
+                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                            console.error(`The buttonPlay() return error is: ${error}`);
+                            console.log(`The buttonPlay() return value is: ${result}`);
+                        })
+                        this.controller.runJavaScript('buttonLoad()', (error, result) => {
+                            console.error(`The buttonLoad() return error is: ${error}`);
+                            console.log(`The buttonLoad() return value is: ${result}`);
+                        })
+                        await this.retryPlayingGen(this.emitKey)()
+                        await Utils.sleep(1000)
+                        this.controller.runJavaScript('resize()', (error, result) => {
+                            console.error(`The resize() return error is: ${error}`);
+                            console.log(`The resize() return value is: ${result}`);
+                        })
+                        this.controller.runJavaScript('getSize()', (error, result) => {
+                            console.error(`The getSize() return error is: ${error}`);
+                            console.log(`The getSize() return value is: ${result}`);
+                            if (result == '"180px190px"'){
+                                console.log('in getsize')
+                                Utils.emitEvent(true, 361010)
+                            } else {
+                                console.log('result:'+result)
+                                console.log('resultType:'+ typeof result)
                             }
-                            break;
+                        })
+                        console.log('video is playing:' + isPlaying)
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerSeek500': {
+                        this.isPageEnd = -1;
+                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
+                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                            console.error(`The buttonPlay() return error is: ${error}`);
+                            console.log(`The buttonPlay() return value is: ${result}`);
+                        })
+                        await this.retryPlayingGen(this.emitKey)()
+                        await Utils.sleep(1000)
+                        this.controller.runJavaScript('setSeek(20)', (error, result) => {
+                            console.error(`The setSeek(20) return error is: ${error}`);
+                            console.log(`The setSeek(20) return value is: ${result}`);
+                        })
+                        await Utils.sleep(1000)
+                        this.isPageEnd = -1;
+                        this.controller.runJavaScript('setSeek(500)', (error, result) => {
+                            console.error(`The setSeek(500) return error is: ${error}`);
+                            console.log(`The setSeek(500) return value is: ${result}`);
+                            this.isPageEnd = 3;
+                        })
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 3, 1000);
+                        console.info('current video time: ' + videoTime)
+                        console.log('video is playing:' + isPlaying)
+                        console.info('current seekList.indexOf(videoTime) '+ seekList + seekList.indexOf(videoTime))
+                        if (seekList.indexOf(videoTime) > -1){
+                            Utils.emitEvent(true, 361030)
+                        }else {
+                            Utils.emitEvent(false, 361030)
                         }
-                        case 'emitWebViewNativeMediaPlayerSeekNegative1': {
-                            this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                            await Utils.sleep(8000)
-                            this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                                console.error(`The buttonPlay() return error is: ${error}`);
-                                console.log(`The buttonPlay() return value is: ${result}`);
-                            })
-                            await this.retryPlayingGen(this.emitKey)()
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('setSeek(20)', (error, result) => {
-                                console.error(`The setSeek(20) return error is: ${error}`);
-                                console.log(`The setSeek(20) return value is: ${result}`);
-                            })
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('setSeek(-1)', (error, result) => {
-                                console.error(`The setSeek(-1) return error is: ${error}`);
-                                console.log(`The setSeek(-1) return value is: ${result}`);
-                            })
-                            await Utils.sleep(2000)
-                            console.log('video is playing:' + isPlaying)
-                            console.info('current seekList.indexOf(-1) '+ seekList + seekList.indexOf(-1))
-                            if (seekList.indexOf(-1) > -1){
-                                Utils.emitEvent(false, 1810)
-                            }else {
-                                Utils.emitEvent(true, 1810)
-                            }
-                            break;
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerSeekNegative1': {
+                        this.isPageEnd = -1;
+                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
+                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                            console.error(`The buttonPlay() return error is: ${error}`);
+                            console.log(`The buttonPlay() return value is: ${result}`);
+                        })
+                        await this.retryPlayingGen(this.emitKey)()
+                        await Utils.sleep(1000)
+                        this.controller.runJavaScript('setSeek(20)', (error, result) => {
+                            console.error(`The setSeek(20) return error is: ${error}`);
+                            console.log(`The setSeek(20) return value is: ${result}`);
+                        })
+                        await Utils.sleep(1000)
+                        this.controller.runJavaScript('setSeek(-1)', (error, result) => {
+                            console.error(`The setSeek(-1) return error is: ${error}`);
+                            console.log(`The setSeek(-1) return value is: ${result}`);
+                        })
+                        await Utils.sleep(2000)
+                        console.log('video is playing:' + isPlaying)
+                        console.info('current seekList.indexOf(-1) '+ seekList + seekList.indexOf(-1))
+                        if (seekList.indexOf(-1) > -1){
+                            Utils.emitEvent(false, 361050)
+                        }else {
+                            Utils.emitEvent(true, 361050)
                         }
-                        case 'emitWebViewNativeMediaPlayerBufferedEndTime': {
-                            this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                            await Utils.sleep(8000)
-                            this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                                console.error(`The buttonPlay() return error is: ${error}`);
-                                console.log(`The buttonPlay() return value is: ${result}`);
-                            })
-                            await this.retryPlayingGen(this.emitKey)()
-                            await Utils.sleep(1000)
-                            console.log('video is playing:' + isPlaying)
-                            break;
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerBufferedEndTime': {
+                        this.isPageEnd = -1;
+                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
+                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                            console.error(`The buttonPlay() return error is: ${error}`);
+                            console.log(`The buttonPlay() return value is: ${result}`);
+                        })
+                        await this.retryPlayingGen(this.emitKey)()
+                        await Utils.sleep(1000)
+                        console.log('video is playing:' + isPlaying)
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerSeek20': {
+                        this.isPageEnd = -1;
+                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
+                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                            console.error(`The buttonPlay() return error is: ${error}`);
+                            console.log(`The buttonPlay() return value is: ${result}`);
+                        })
+                        await this.retryPlayingGen(this.emitKey)()
+                        await Utils.sleep(1000)
+                        this.controller.runJavaScript('setSeek(20)', (error, result) => {
+                            console.error(`The setSeek(20) return error is: ${error}`);
+                            console.log(`The setSeek(20) return value is: ${result}`);
+                        })
+                        await Utils.sleep(3000)
+                        console.info('current seekList.indexOf(20) '+ seekList + seekList.indexOf(20));
+                        console.log('video is playing:' + isPlaying);
+
+                        if (seekList.indexOf(20) > -1){
+                            console.info('current seekList.indexOf(20) is' + seekList.indexOf(20));
+                            Utils.emitEvent(true, 361040)
+                        }else {
+                            console.info('current seekList.indexOf(20) =' + seekList.indexOf(20));
+                            Utils.emitEvent(false, 361040)
                         }
-                        case 'emitWebViewNativeMediaPlayerSeek20': {
-                            this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                            await Utils.sleep(10000)
-                            this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                                console.error(`The buttonPlay() return error is: ${error}`);
-                                console.log(`The buttonPlay() return value is: ${result}`);
-                            })
-                            await this.retryPlayingGen(this.emitKey)()
-                            await Utils.sleep(1000)
-                            this.controller.runJavaScript('setSeek(10)', (error, result) => {
-                                console.error(`The setSeek(20) return error is: ${error}`);
-                                console.log(`The setSeek(20) return value is: ${result}`);
-                            })
-                            await Utils.sleep(2000)
-                            console.info('current seekList.indexOf(10) '+ seekList + seekList.indexOf(20))
-                            console.log('video is playing:' + isPlaying)
-                            if (seekList.indexOf(10) > -1){
-                                Utils.emitEvent(true, 1811)
-                            }else {
-                                Utils.emitEvent(false, 1811)
-                            }
-                            break;
-                        }
+                        break;
+                      }
                     }
                 })
             }
@@ -1080,7 +982,9 @@ struct WebComponent {
                         this.controller.pauseAllMedia();
                         console.error('exit onPageBegin');
                     })
-                    .onPageEnd(async () => {
+                    .onPageEnd((event) => {
+                        console.log('onPageEnd url:' + event.url);
+                        this.isPageEnd = 1;
                     })
                     .width('100%')
                     .height('100%')
@@ -1100,5 +1004,4 @@ struct WebComponent {
         }
     }
 }
-
-
+                    

@@ -15,7 +15,7 @@
 
 import notification from '@ohos.notification'
 import { UiDriver, BY } from '@ohos.UiTest';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import image from '@ohos.multimedia.image'
 import wantAgent from '@ohos.wantAgent'
 import notificationManager from '@ohos.notificationManager'
@@ -41,7 +41,7 @@ export default function ActsNotificationPublishTest() {
       alphaType: 0,
       scaleMode: 1
     }
-    
+
     let picture_buffer = new ArrayBuffer(picture_opts.size.height * picture_opts.size.width * 4)
     let notification_picture = undefined
 
@@ -111,12 +111,12 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} afterEach END`)
     })
 
-     /*
-     * @tc.number    : Sub_Notification_Ans_Enable_Query_2700
-     * @tc.name      : function requestEnableNotification(callback: AsyncCallback<void>): void
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
-     */
-     it('Sub_Notification_Ans_Enable_Query_2700', Level.LEVEL2, async function (done) {
+    /*
+    * @tc.number    : Sub_Notification_Ans_Enable_Query_2700
+    * @tc.name      : function requestEnableNotification(callback: AsyncCallback<void>): void
+    * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    */
+    it('Sub_Notification_Ans_Enable_Query_2700', Level.LEVEL2, async function (done) {
       notificationManager.requestEnableNotification(async (err) => {
         if (err) {
           console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -130,7 +130,7 @@ export default function ActsNotificationPublishTest() {
           done()
         }
       });
-  
+
       await sleep(1000);
       let driver = await UiDriver.create();
       console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>====>come in driveFn`);
@@ -150,13 +150,13 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2700 END`)
     })
 
-     /*
-     * @tc.number    : Sub_Notification_Ans_Enable_Query_2800
-     * @tc.name      : function requestEnableNotification(): Promise<void>
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
-     */
-     it('Sub_Notification_Ans_Enable_Query_2800', Level.LEVEL2, async function (done) {
-      
+    /*
+    * @tc.number    : Sub_Notification_Ans_Enable_Query_2800
+    * @tc.name      : function requestEnableNotification(): Promise<void>
+    * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    */
+    it('Sub_Notification_Ans_Enable_Query_2800', Level.LEVEL2, async function (done) {
+
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 START`)
       await sleep(2000);
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 2s`)
@@ -190,7 +190,7 @@ export default function ActsNotificationPublishTest() {
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_0300 END`)
     })
-    
+
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Publish_8300
      * @tc.name      : function publish(request: NotificationRequest, callback: AsyncCallback<void>): void
@@ -227,15 +227,24 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-          expect(true).assertTrue()
-          done()
+          notification.getActiveNotifications((err, data) => {
+            if (err.code) {
+              console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
+              expect(data.length > 0).assertTrue()
+              done()
+            }
+          })
         }
       })
 
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8300 END`)
     })
 
-    
+
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Publish_8350
      * @tc.name      : function publish(request: NotificationRequest): Promise<void>
@@ -265,9 +274,17 @@ export default function ActsNotificationPublishTest() {
         },
       }
 
-      notification.publish(notificationRequest).then(data => {
+      notification.publish(notificationRequest).then(async (data) => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        await notification.getActiveNotifications().then((data) => {
+          console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
+          expect(data.length > 0).assertTrue()
+          done()
+        }).catch((err) => {
+          console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -322,6 +339,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
+
           expect(true).assertTrue()
           done()
         }
@@ -992,7 +1010,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} getActiveNotifications AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(data.length == 0).assertTrue()
           done()
         }
       })
@@ -1008,7 +1026,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_0900 START`)
       await notification.getActiveNotifications().then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data.length == 0).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
@@ -1064,17 +1082,34 @@ export default function ActsNotificationPublishTest() {
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100 START`)
       let templateName = 'test_templateName'
-      await notification.isSupportTemplate(templateName, (err, data) => {
+      notification.isSupportTemplate(templateName, (err, data) => {
         if (err.code) {
           console.info(`${TAG} isSupportTemplate AsyncCallback err :${JSON.stringify(data)}`)
           expect(false).assertTrue()
           done()
         } else {
           console.info(`${TAG} isSupportTemplate AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(data).assertFalse()
           done()
         }
       })
+
+      await sleep(500);
+
+      let templateName1 = 'downloadTemplate'
+      notification.isSupportTemplate(templateName1, (err, data) => {
+        if (err.code) {
+          console.info(`${TAG} isSupportTemplate AsyncCallback err :${JSON.stringify(data)}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`${TAG} isSupportTemplate AsyncCallback success`)
+          expect(data).assertTrue()
+          done()
+        }
+      })
+
+      await sleep(500);
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0100 END`)
     })
 
@@ -1088,7 +1123,18 @@ export default function ActsNotificationPublishTest() {
       let templateName = 'test_templateName'
       await notification.isSupportTemplate(templateName).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+
+      let templateName1 = 'downloadTemplate'
+      await notification.isSupportTemplate(templateName1).then((data) => {
+        console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
+        expect(data).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1137,6 +1183,8 @@ export default function ActsNotificationPublishTest() {
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_0400 END`)
     })
+
+
 
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST END')
   })

@@ -20,8 +20,10 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000;
+let domain = 0x0000;
 let tag: string = 'testTag';
 
 export default function verificationStaticTest() {
@@ -36,7 +38,7 @@ export default function verificationStaticTest() {
       hilog.info(domain, tag, 'beforeAll end');
     })
 
-    /*
+    /**
      * @tc.number  SUB_AA_OpenHarmony_AbilityConstant_Static_0200
      * @tc.name    SUB_AA_OpenHarmony_AbilityConstant_Static_0200
      * @tc.desc    The startAbility interface starts the ability, not the start of call or continue.
@@ -53,5 +55,58 @@ export default function verificationStaticTest() {
       expect(windowStage).not().assertNull();
       done();
     })
+
+    /**
+     * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_static_0100
+     * @tc.name    SUB_AA_OpenHarmony_SetMissionLabel_static_0100
+     * @tc.desc    Verify setMissionLabel that the input parameter is string.
+     * @tc.level   3
+     */
+    it('SUB_AA_OpenHarmony_SetMissionLabel_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        tag = `SUB_AA_OpenHarmony_SetMissionLabel_static_0100`;
+        hilog.info(domain, tag, `it begin`);
+        let label = 'test';
+        let missionLabelUpdatedFlag = false;
+        const context: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+        context.setMissionLabel(label).then(() => {
+          hilog.info(domain, tag, 'setMissionLabel success');
+          missionLabelUpdatedFlag = true;
+          expect(missionLabelUpdatedFlag).assertTrue();
+          done();
+        }).catch((err: BusinessError<void>): void => {
+          hilog.info(domain, tag, 'setMissionLabel err');
+          expect().assertFail();
+          done();
+        });
+      })
+
+    /**
+     * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_static_0400
+     * @tc.name    SUB_AA_OpenHarmony_SetMissionLabel_static_0400
+     * @tc.desc    Verify multiple setMissionLabel that the input parameter is string.
+     * @tc.level   3
+     */
+    it('SUB_AA_OpenHarmony_SetMissionLabel_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        tag = `SUB_AA_OpenHarmony_SetMissionLabel_static_0400`;
+        hilog.info(domain, tag, `it begin`);
+        let label = 'test';
+        let missionLabelUpdatedFlag = false;
+        const context: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+        context.setMissionLabel(label, (err: BusinessError<void> | null) => {
+          if (err?.code == 0) {
+            missionLabelUpdatedFlag = true;
+            expect(missionLabelUpdatedFlag).assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, 'setMissionLabel err');
+            expect().assertFail();
+            done()
+          }
+        })
+      })
   })
 }

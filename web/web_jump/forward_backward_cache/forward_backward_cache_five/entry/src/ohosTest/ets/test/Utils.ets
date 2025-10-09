@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,21 +26,21 @@ export default class Utils {
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        resolve('ok')
       }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
     })
   }
-  
+
   static getSystemTime() {
-      return systemDateTime.getTime(true) / 1000
+    return systemDateTime.getTime(true) / 1000
   }
 
   static copyRawFileToSandbox(rawFileName: string): string {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let context = abilityDelegator.getAppContext();
-    let dir = context.filesDir + "/";
+    let dir = context.filesDir + '/';
     let rawFilePath = dir + rawFileName;
     try {
       let arrayBuffer = context.resourceManager.getRawFileContentSync(rawFileName);
@@ -49,31 +49,32 @@ export default class Utils {
       fs.closeSync(file);
       console.log(`[copyRawFileToSandbox] ${rawFileName} is copy success`);
     } catch (error) {
-      console.info("[copyRawFileToSandbox] getRawFileDescriptor api run failed" + error);
+      console.info('[copyRawFileToSandbox] getRawFileDescriptor api run failed' + error);
     }
-    console.info("[copyRawFileToSandbox] sandbox path:" + dir);
+    console.info('[copyRawFileToSandbox] sandbox path:' + dir);
     return rawFilePath
   }
-  
+
   static deleteFile(filePath: string) {
-      console.info("[deleteFile] filePath:" + filePath);
-      try {
-          fs.unlinkSync(filePath)
-      } catch (error) {
-          console.info("[deleteFile] error:" + error);
-      }
+    console.info('[deleteFile] filePath:' + filePath);
+    try {
+      fs.unlinkSync(filePath)
+    } catch (error) {
+      console.info('[deleteFile] error:' + error);
+    }
   }
 
   static isPC(controller: webview.WebviewController) {
     let userAgent: string = controller.getUserAgent();
-    console.info("userAgent" + userAgent);
+    console.info('userAgent' + userAgent);
 
     try {
-      let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+      let isPc: boolean =
+        userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes('2in1')
       console.log('device is pc:' + isPc)
       return isPc
     } catch (error) {
-      console.info("userAgent error:" + error);
+      console.info('userAgent error:' + error);
       return true
     }
   }
@@ -81,10 +82,10 @@ export default class Utils {
 
   static isEmulator() {
     let productModelInfo: string = deviceInfo.productModel;
-    if ( productModelInfo ) {
+    if (productModelInfo) {
       console.info('the value of the deviceInfo productModel is :' + productModelInfo);
       console.info('isEmulator start')
-      console.info('isEmulator is:' +  (productModelInfo.toString() === 'emulator'))
+      console.info('isEmulator is:' + (productModelInfo.toString() === 'emulator'))
       console.info('isEmulator end')
       return productModelInfo.toString() === 'emulator'
     }
@@ -92,54 +93,54 @@ export default class Utils {
   }
 
   static deleteDir(dirPath: string) {
-      console.info("[deleteFile] dirPath:" + dirPath);
-      try {
-          fs.rmdirSync(dirPath)
-      } catch (error) {
-          console.info("[deleteFile] error:" + error);
-      }
+    console.info('[deleteFile] dirPath:' + dirPath);
+    try {
+      fs.rmdirSync(dirPath)
+    } catch (error) {
+      console.info('[deleteFile] error:' + error);
+    }
   }
-  
+
   static listFile(dirPath: string): string[] {
-      console.info("[listFile] dirPath:" + dirPath);
-      try {
-          let files = fs.listFileSync(dirPath)
-          for ( let i = 0; i < files.length; i++) {
-              console.info('The name of file: ${files[i]}');
-          }
-          return files;
-      } catch (error) {
-          console.info("[listFile] error:" + error);
-          return [];
+    console.info('[listFile] dirPath:' + dirPath);
+    try {
+      let files = fs.listFileSync(dirPath)
+      for (let i = 0; i < files.length; i++) {
+        console.info('The name of file: ${files[i]}');
       }
+      return files;
+    } catch (error) {
+      console.info('[listFile] error:' + error);
+      return [];
+    }
   }
-  
+
   static isFileExist(filePath: string): boolean {
-      console.info("[isFileExist] filePath:" + filePath);
-      try {
-          let fileExist = fs.accessSync(filePath)
-          console.info("[isFileExist] return:" + fileExist);
-          return fileExist
-      } catch (error) {
-          console.info("[isFileExist] error:" + error);
-          return false;
-      }
+    console.info('[isFileExist] filePath:' + filePath);
+    try {
+      let fileExist = fs.accessSync(filePath)
+      console.info('[isFileExist] return:' + fileExist);
+      return fileExist
+    } catch (error) {
+      console.info('[isFileExist] error:' + error);
+      return false;
+    }
   }
 
   static async clickComponent(id: string) {
-      let driver = Driver.create();
-      let component = await driver.findComponent(ON.id(id));
-      await component.click();
+    let driver = Driver.create();
+    let component = await driver.findComponent(ON.id(id));
+    await component.click();
   }
-  
+
   static async triggerKey(id: number) {
-      let driver = Driver.create();
-      await driver.triggerKey(id);
+    let driver = Driver.create();
+    await driver.triggerKey(id);
   }
-  
-  
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number, 
-                           done: Function, expectFunction: Function) {
+
+
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -154,23 +155,25 @@ export default class Utils {
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
-  
+
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
+      (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
       });
   }
-  
+
   static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertContain(expected);
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
+      (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertContain(expected);
       });
   }
 
@@ -178,17 +181,17 @@ export default class Utils {
     try {
       let backData: events_emitter.EventData = {
         data: {
-          "ACTION": actualValue
-        }
+          'ACTION': actualValue,
+        },
       }
       let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      console.info("webFlag start to emit action state");
+      console.info('webFlag start to emit action state');
       events_emitter.emit(backEvent, backData);
     } catch (err) {
-      console.info("webFlag emit action state err: " + JSON.stringify(err));
+      console.info('webFlag emit action state err: ' + JSON.stringify(err));
     }
   }
 }

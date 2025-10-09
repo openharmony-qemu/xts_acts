@@ -65,6 +65,41 @@ void AddInputMethodTextConfigCapiTest2(std::vector<napi_property_descriptor> &de
                         TestOhTextConfigGetEnterKeyTypeNullPointer, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testOhTextConfigGetEnterKeyTypeOk", nullptr, TestOhTextConfigGetEnterKeyTypeOk, nullptr,
                         nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigIsPreviewTextSupportedNullPointer", nullptr,
+                        TestOhTextConfigIsPreviewTextSupportedNullPointer, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextConfigIsPreviewTextSupportedOk", nullptr, TestOhTextConfigIsPreviewTextSupportedOk,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetCursorInfoNullPointer", nullptr, TestOhTextConfigGetCursorInfoNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetCursorInfoOk", nullptr, TestOhTextConfigGetCursorInfoOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetTextAvoidInfoNullPointer", nullptr,
+                        TestOhTextConfigGetTextAvoidInfoNullPointer, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetTextAvoidInfoOk", nullptr, TestOhTextConfigGetTextAvoidInfoOk, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetSelectionNullPointer", nullptr, TestOhTextConfigGetSelectionNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetSelectionOk", nullptr, TestOhTextConfigGetSelectionOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetWindowIdNullPointer", nullptr, TestOhTextConfigGetWindowIdNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetWindowIdOk", nullptr, TestOhTextConfigGetWindowIdOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetPlaceholderNullPointer", nullptr, TestOhTextConfigGetPlaceholderNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetPlaceholderOk", nullptr, TestOhTextConfigGetPlaceholderOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetPlaceholderParamCheckError", nullptr,
+                        TestOhTextConfigGetPlaceholderParamCheckError, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextConfigGetAbilityNameNullPointer", nullptr, TestOhTextConfigGetAbilityNameNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetAbilityNameOk", nullptr, TestOhTextConfigGetAbilityNameOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextConfigGetAbilityNameParamCheckError", nullptr,
+                        TestOhTextConfigGetAbilityNameParamCheckError, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
 }
 
 void AddInputMethodTextConfigCapiTest(std::vector<napi_property_descriptor> &descData)
@@ -282,5 +317,229 @@ napi_value TestOhTextConfigGetEnterKeyTypeOk(napi_env env, napi_callback_info in
     OH_TextConfig_Destroy(config);
     napi_value result;
     napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigIsPreviewTextSupportedNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    bool supported = true;
+    int ret = OH_TextConfig_IsPreviewTextSupported(nullptr, &supported);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigIsPreviewTextSupportedOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    bool supported = true;
+    int ret = OH_TextConfig_IsPreviewTextSupported(config, &supported);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetCursorInfoNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    double left = 100;
+    double top = 200;
+    double width = 300;
+    double height = 400;
+    InputMethod_CursorInfo *cursorInfo = OH_CursorInfo_Create(left, top, width, height);
+    int ret = OH_TextConfig_GetCursorInfo(nullptr, &cursorInfo);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetCursorInfoOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    double left = 100;
+    double top = 200;
+    double width = 300;
+    double height = 400;
+    InputMethod_CursorInfo *cursorInfo = OH_CursorInfo_Create(left, top, width, height);
+    int ret = OH_TextConfig_GetCursorInfo(config, &cursorInfo);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetTextAvoidInfoNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    double positionY = 20;
+    double height = 20;
+    InputMethod_TextAvoidInfo *avoidInfo = OH_TextAvoidInfo_Create(positionY, height);
+    int ret = OH_TextConfig_GetTextAvoidInfo(nullptr, &avoidInfo);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetTextAvoidInfoOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    double positionY = 20;
+    double height = 20;
+    InputMethod_TextAvoidInfo *avoidInfo = OH_TextAvoidInfo_Create(positionY, height);
+    int ret = OH_TextConfig_GetTextAvoidInfo(config, &avoidInfo);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetSelectionNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    int32_t start = 1;
+    int32_t end = 2;
+    OH_TextConfig_SetSelection(config, start, end);
+    int32_t expStart;
+    int32_t expEnd;
+    int ret = OH_TextConfig_GetSelection(nullptr, &expStart, &expEnd);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetSelectionOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    int32_t start = 1;
+    int32_t end = 2;
+    OH_TextConfig_SetSelection(config, start, end);
+    int32_t expStart;
+    int32_t expEnd;
+    int ret = OH_TextConfig_GetSelection(config, &expStart, &expEnd);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetWindowIdNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    int32_t windowId = 100;
+    OH_TextConfig_SetWindowId(config, windowId);
+    int32_t expWindowId = 0;
+    int ret = OH_TextConfig_GetWindowId(nullptr, &expWindowId);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetWindowIdOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    int32_t windowId = 100;
+    OH_TextConfig_SetWindowId(config, windowId);
+    int32_t expWindowId = 0;
+    int ret = OH_TextConfig_GetWindowId(config, &expWindowId);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetPlaceholderNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *placeholder = u"abcdef";
+    size_t placeholderLength = 3;
+    OH_TextConfig_SetPlaceholder(config, placeholder, placeholderLength);
+    char16_t exPlaceholder[5];
+    size_t exPlaceholderLength = 4;
+    int ret = OH_TextConfig_GetPlaceholder(nullptr, exPlaceholder, &exPlaceholderLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetPlaceholderOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *placeholder = u"abcdef";
+    size_t placeholderLength = 3;
+    OH_TextConfig_SetPlaceholder(config, placeholder, placeholderLength);
+    char16_t exPlaceholder[5];
+    size_t exPlaceholderLength = 4;
+    int ret = OH_TextConfig_GetPlaceholder(config, exPlaceholder, &exPlaceholderLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetPlaceholderParamCheckError(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *placeholder = u"abcdef";
+    size_t placeholderLength = 3;
+    OH_TextConfig_SetPlaceholder(config, placeholder, placeholderLength);
+    char16_t exPlaceholder[5];
+    size_t exPlaceholderLength = 2;
+    int ret = OH_TextConfig_GetPlaceholder(config, exPlaceholder, &exPlaceholderLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_PARAMCHECK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetAbilityNameNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *abilityName = u"abcdef";
+    size_t abilityNameLength = 3;
+    OH_TextConfig_SetAbilityName(config, abilityName, abilityNameLength);
+    char16_t expAbilityName[5];
+    size_t expAbilityNameLength = 4;
+    int ret = OH_TextConfig_GetAbilityName(nullptr, expAbilityName, &expAbilityNameLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetAbilityNameOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *abilityName = u"abcdef";
+    size_t abilityNameLength = 3;
+    OH_TextConfig_SetAbilityName(config, abilityName, abilityNameLength);
+    char16_t expAbilityName[5];
+    size_t expAbilityNameLength = 4;
+    int ret = OH_TextConfig_GetAbilityName(config, expAbilityName, &expAbilityNameLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextConfigGetAbilityNameParamCheckError(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *abilityName = u"abcdef";
+    size_t abilityNameLength = 3;
+    OH_TextConfig_SetAbilityName(config, abilityName, abilityNameLength);
+    char16_t expAbilityName[5];
+    size_t expAbilityNameLength = 2;
+    int ret = OH_TextConfig_GetAbilityName(config, expAbilityName, &expAbilityNameLength);
+    OH_TextConfig_Destroy(config);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_PARAMCHECK ? 0 : -1, &result);
     return result;
 }

@@ -72,7 +72,11 @@
     "pages/Audio/AudioOutputRoutingBT",
     "pages/Player/Player_index",
     "pages/Experience/Experience_index",
+    "pages/Experience/PhotoFps",
+    "pages/Experience/PhotosColdStartTest",
+    "pages/Experience/SettingsColdStartTest",
     "pages/Experience/StartTaskManager",
+    "pages/Experience/StartNotification",
     "pages/Player/PlayAudio",
     "pages/Player/PlayVideo",
     "pages/Player/PlayAudioList",
@@ -163,6 +167,9 @@
     "pages/ArkUI/SliderTest",
     "pages/ArkUI/ModalTransition",
     "pages/ArkUI/BindContentCoverOption",
-    "pages/ArkUI/EnableShowHideWithContentCover"
+    "pages/ArkUI/EnableShowHideWithContentCover",
+    "pages/ArkUI/ImageAnimationControllerPage",
+    "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
+    "pages/ArkUI/GetDarkModeTest"
   ]
 }

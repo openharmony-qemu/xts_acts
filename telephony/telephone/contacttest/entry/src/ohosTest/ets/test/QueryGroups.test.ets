@@ -22,6 +22,13 @@ import account from '@ohos.account.osAccount';
 import dataShare from '@ohos.data.dataShare';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -244,7 +251,9 @@ export default function QueryGroupsTest() {
       contactData.groups = [{groupId: groupsId,title: '测试群组'}];
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -285,7 +294,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -328,7 +339,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -373,7 +386,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -414,7 +429,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -459,7 +476,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -504,7 +523,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -547,7 +568,9 @@ export default function QueryGroupsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();

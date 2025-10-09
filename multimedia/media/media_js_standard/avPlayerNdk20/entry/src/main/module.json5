@@ -44,6 +44,15 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": '$string:app_name',
+        "usedScene": {
+          "when": "always"
+        }
+      }
     ]
   }
 }
