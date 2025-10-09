@@ -1,4 +1,78 @@
-l Level 1
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { WeakSetTestUtils } from './WeakSetTestUtils.js'; // 导入JS验证工具
+
+
+
+export default function WeakSetTest() {
+  describe('WeakSetTest', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+    it('assertContain', 0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
+      let a = 'abc';
+      let b = 'b';
+      // Defines a variety of assertion methods, which are used to declare expected boolean conditions.
+      expect(a).assertContain(b);
+      expect(a).assertEqual(a);
+    })
+    // Predefine enums in advance (ignore if already existing in the project):
+    // const TestType = { FUNCTION: 1, COMPATIBILITY: 2, SCENARIO: 3 };
+    // const Size = { SMALLTEST: 1, MEDIUMTEST: 2, LARGETEST: 3 };
+    // const Level = { LEVEL1: 1, LEVEL2: 2, LEVEL3: 3 };
+
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_001
+     * @tc.name WeakSetPrimitiveKeyThrowErrorTest001
+     * @tc.desc Verify WeakSet throws TypeError when adding primitive values (number/string/symbol/null/undefined/BigInt) as keys.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('WeakSetPrimitiveKeyThrowErrorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const result = await WeakSetTestUtils.test001_PrimitiveKeyThrowError();
+      expect(result).assertEqual("Test Passed: WeakSetPrimitiveKeyThrowErrorTest001");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_002
+     * @tc.name WeakSetWeakRefKeyGCTest002
+     * @tc.desc Verify WeakSet holds weak references: key is GC'd when no strong references exist, has() returns false.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetWeakRefKeyGCTest002', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test002_WeakRefKeyGC();
+      expect(result).assertEqual("Test Passed: WeakSetWeakRefKeyGCTest002");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_003
+     * @tc.name WeakSetAddDuplicateKeyTest003
+     * @tc.desc Verify WeakSet.add() does not throw error or duplicate entries when adding the same key (same reference) multiple times.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('WeakSetAddDuplicateKeyTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = await WeakSetTestUtils.test003_AddDuplicateKey();
@@ -638,4 +712,743 @@ l Level 1
     });
 
     /**
-     * @tc.n
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_057
+     * @tc.name WeakSetKeyProtoArrayTest057
+     * @tc.desc Verify keys with Array as prototype retain WeakSet association after prototype modifications.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetKeyProtoArrayTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test057_KeyPrototypeSetToArr();
+      expect(result).assertEqual("Test Passed: WeakSetKeyProtoArrayTest057");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_058
+     * @tc.name WeakSetCrossModuleTest058
+     * @tc.desc Verify simulated cross-module WeakSet maintains consistent state (add in ModuleA, delete in ModuleB).
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetCrossModuleTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test058_CrossModuleWeakSet();
+      expect(result).assertEqual("Test Passed: WeakSetCrossModuleTest058");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_059
+     * @tc.name WeakSetRepeatAddSameKeyTest059
+     * @tc.desc Verify 150+ repeated add() of the same key does not create duplicates or throw errors.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('WeakSetRepeatAddSameKeyTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const result = await WeakSetTestUtils.test059_RepeatAddSameKey();
+      expect(result).assertEqual("Test Passed: WeakSetRepeatAddSameKeyTest059");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_060
+     * @tc.name WeakSetRepeatDeleteDeletedKeyTest060
+     * @tc.desc Verify 10+ repeated delete() of deleted/GC'd keys consistently returns false and does not throw.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('WeakSetRepeatDeleteDeletedKeyTest060', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
+      const result = await WeakSetTestUtils.test060_RepeatDeleteDeletedKey();
+      expect(result).assertEqual("Test Passed: WeakSetRepeatDeleteDeletedKeyTest060");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_061
+     * @tc.name WeakSetSimulatedDomTextNodeGCTest061
+     * @tc.desc Verify simulated DOM Text nodes as WeakSet keys are GC'd after node removal.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetSimulatedDomTextNodeGCTest061', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test061_SimulatedDomTextNodeGC();
+      expect(result).assertEqual("Test Passed: WeakSetSimulatedDomTextNodeGCTest061");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_062
+     * @tc.name WeakSetKeyInSetAndMapGCTest062
+     * @tc.desc Verify keys present in both WeakSet and WeakMap are GC'd in both when strong references are released.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetKeyInSetAndMapGCTest062', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test062_KeyInWeakSetAndWeakMapGC();
+      expect(result).assertEqual("Test Passed: WeakSetKeyInSetAndMapGCTest062");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_063
+     * @tc.name WeakSetSealedKeyWritablePropsTest063
+     * @tc.desc Verify sealed keys with writable properties retain WeakSet association after property modifications.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('WeakSetSealedKeyWritablePropsTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const result = await WeakSetTestUtils.test063_SealedKeyWithWritableProps();
+      expect(result).assertEqual("Test Passed: WeakSetSealedKeyWritablePropsTest063");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_064
+     * @tc.name WeakSetAsObjectPoolGCTest064
+     * @tc.desc Verify WeakSet used as an object pool recycles unused objects via GC.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAsObjectPoolGCTest064', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test064_WeakSetAsObjectPoolGC();
+      expect(result).assertEqual("Test Passed: WeakSetAsObjectPoolGCTest064");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_065
+     * @tc.name WeakSetProxyWrappedFrozenKeyGCTest065
+     * @tc.desc Verify Proxy-wrapped frozen objects as WeakSet keys are GC'd when strong references are released.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetProxyWrappedFrozenKeyGCTest065', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test065_ProxyWrappedFrozenKeyGC();
+      expect(result).assertEqual("Test Passed: WeakSetProxyWrappedFrozenKeyGCTest065");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_066
+     * @tc.name WeakSetSimulatedWorkerTest066
+     * @tc.desc Verify simulated Worker thread WeakSet maintains weak reference behavior (GC when no refs).
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetSimulatedWorkerTest066', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test066_SimulatedWorkerWeakSet();
+      expect(result).assertEqual("Test Passed: WeakSetSimulatedWorkerTest066");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_067
+     * @tc.name WeakSetKeyOverriddenToStringTest067
+     * @tc.desc Verify keys with overridden toString() retain WeakSet association after id modifications.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('WeakSetKeyOverriddenToStringTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const result = await WeakSetTestUtils.test067_KeyWithOverriddenToString();
+      expect(result).assertEqual("Test Passed: WeakSetKeyOverriddenToStringTest067");
+    });
+
+
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_069
+     * @tc.name WeakSetHasSameStructGCdKeyTest069
+     * @tc.desc Verify has() returns false consistently for same-structure keys of a GC'd original key.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetHasSameStructGCdKeyTest069', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test069_HasSameStructGCdKey();
+      expect(result).assertEqual("Test Passed: WeakSetHasSameStructGCdKeyTest069");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_WEAKSET_TEST_070
+     * @tc.name WeakSetArrayBufferAsKeyTest070
+     * @tc.desc Verify ArrayBuffer instances as WeakSet keys: modifying buffer content does not break association.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetArrayBufferAsKeyTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test070_ArrayBufferAsKey();
+      expect(result).assertEqual("Test Passed: WeakSetArrayBufferAsKeyTest070");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_071
+     * @tc.name WeakSetAddPlainObjectTest071
+     * @tc.desc Verify WeakSet.add() stores plain object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddPlainObjectTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test071_WeakSetAddPlainObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddPlainObjectTest071");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_072
+     * @tc.name WeakSetAddPrimitiveNumberTest072
+     * @tc.desc Verify WeakSet.add() throws TypeError when adding primitive number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddPrimitiveNumberTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test072_WeakSetAddPrimitiveNumber();
+      expect(result).assertEqual("Test Passed: WeakSetAddPrimitiveNumberTest072");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_073
+     * @tc.name WeakSetAddDuplicateObjectTest073
+     * @tc.desc Verify WeakSet.add() same object multiple times, has() still returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddDuplicateObjectTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test073_WeakSetAddDuplicateObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddDuplicateObjectTest073");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_074
+     * @tc.name WeakSetDeleteExistingObjectTest074
+     * @tc.desc Verify WeakSet.delete() existing object returns true, has() returns false afterward
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetDeleteExistingObjectTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test074_WeakSetDeleteExistingObject();
+      expect(result).assertEqual("Test Passed: WeakSetDeleteExistingObjectTest074");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_075
+     * @tc.name WeakSetDeleteNonExistingObjectTest075
+     * @tc.desc Verify WeakSet.delete() non-existing object returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetDeleteNonExistingObjectTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test075_WeakSetDeleteNonExistingObject();
+      expect(result).assertEqual("Test Passed: WeakSetDeleteNonExistingObjectTest075");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_076
+     * @tc.name WeakSetAddChainingTest076
+     * @tc.desc Verify WeakSet.add() returns instance, supporting method chaining
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddChainingTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test076_WeakSetAddChaining();
+      expect(result).assertEqual("Test Passed: WeakSetAddChainingTest076");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_077
+     * @tc.name WeakSetIgnorePrototypeObjectsTest077
+     * @tc.desc Verify WeakSet ignores objects from prototype chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetIgnorePrototypeObjectsTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test077_WeakSetIgnorePrototypeObjects();
+      expect(result).assertEqual("Test Passed: WeakSetIgnorePrototypeObjectsTest077");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_078
+     * @tc.name WeakSetAddArrayObjectTest078
+     * @tc.desc Verify WeakSet.add() array object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddArrayObjectTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test078_WeakSetAddArrayObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddArrayObjectTest078");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_079
+     * @tc.name WeakSetAddFunctionObjectTest079
+     * @tc.desc Verify WeakSet.add() function object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddFunctionObjectTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test079_WeakSetAddFunctionObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddFunctionObjectTest079");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_080
+     * @tc.name WeakSetAddProxyObjectTest080
+     * @tc.desc Verify WeakSet.add() Proxy object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddProxyObjectTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test080_WeakSetAddProxyObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddProxyObjectTest080");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_081
+     * @tc.name WeakSetAddNullTest081
+     * @tc.desc Verify WeakSet.add() null throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddNullTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test081_WeakSetAddNull();
+      expect(result).assertEqual("Test Passed: WeakSetAddNullTest081");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_082
+     * @tc.name WeakSetAddUndefinedTest082
+     * @tc.desc Verify WeakSet.add() undefined throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddUndefinedTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test082_WeakSetAddUndefined();
+      expect(result).assertEqual("Test Passed: WeakSetAddUndefinedTest082");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_083
+     * @tc.name WeakSetAddWrappedBigIntTest083
+     * @tc.desc Verify WeakSet.add() wrapped BigInt object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddWrappedBigIntTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test083_WeakSetAddWrappedBigInt();
+      expect(result).assertEqual("Test Passed: WeakSetAddWrappedBigIntTest083");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_084
+     * @tc.name WeakSetAddStringObjectTest084
+     * @tc.desc Verify WeakSet.add() String object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddStringObjectTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test084_WeakSetAddStringObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddStringObjectTest084");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_085
+     * @tc.name WeakSetIndependentInstancesTest085
+     * @tc.desc Verify two WeakSet instances store same object independently
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetIndependentInstancesTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test085_WeakSetIndependentInstances();
+      expect(result).assertEqual("Test Passed: WeakSetIndependentInstancesTest085");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_086
+     * @tc.name WeakSetNoForEachTest086
+     * @tc.desc Verify WeakSet.forEach() throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetNoForEachTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test086_WeakSetNoForEach();
+      expect(result).assertEqual("Test Passed: WeakSetNoForEachTest086");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_087
+     * @tc.name WeakSetNoSizePropertyTest087
+     * @tc.desc Verify WeakSet.size returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetNoSizePropertyTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test087_WeakSetNoSizeProperty();
+      expect(result).assertEqual("Test Passed: WeakSetNoSizePropertyTest087");
+    });
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_089
+     * @tc.name WeakSetAddArrayBufferTest089
+     * @tc.desc Verify WeakSet.add() ArrayBuffer object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddArrayBufferTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test089_WeakSetAddArrayBuffer();
+      expect(result).assertEqual("Test Passed: WeakSetAddArrayBufferTest089");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_090
+     * @tc.name WeakSetAddDataViewTest090
+     * @tc.desc Verify WeakSet.add() DataView object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddDataViewTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test090_WeakSetAddDataView();
+      expect(result).assertEqual("Test Passed: WeakSetAddDataViewTest090");
+    });
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_092
+     * @tc.name WeakSetAddFrozenObjectTest092
+     * @tc.desc Verify WeakSet.add() frozen object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddFrozenObjectTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test092_WeakSetAddFrozenObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddFrozenObjectTest092");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_093
+     * @tc.name WeakSetAddSealedObjectTest093
+     * @tc.desc Verify WeakSet.add() sealed object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddSealedObjectTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test093_WeakSetAddSealedObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddSealedObjectTest093");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_094
+     * @tc.name WeakSetAddDistinctEmptyObjectsTest094
+     * @tc.desc Verify WeakSet.add() two distinct empty objects, has() returns true for each
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddDistinctEmptyObjectsTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test094_WeakSetAddDistinctEmptyObjects();
+      expect(result).assertEqual("Test Passed: WeakSetAddDistinctEmptyObjectsTest094");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_095
+     * @tc.name WeakSetConstructorNonIterableTest095
+     * @tc.desc Verify WeakSet constructor throws TypeError with non-iterable argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorNonIterableTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test095_WeakSetConstructorNonIterable();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorNonIterableTest095");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_096
+     * @tc.name WeakSetConstructorIterableObjectsTest096
+     * @tc.desc Verify WeakSet constructor initializes with iterable of objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorIterableObjectsTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test096_WeakSetConstructorIterableObjects();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorIterableObjectsTest096");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_097
+     * @tc.name WeakSetConstructorIterableWithPrimitiveTest097
+     * @tc.desc Verify WeakSet constructor throws TypeError with iterable containing primitive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorIterableWithPrimitiveTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test097_WeakSetConstructorIterableWithPrimitive();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorIterableWithPrimitiveTest097");
+    });
+
+
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_100
+     * @tc.name WeakSetNoForOfIterationTest100
+     * @tc.desc Verify for...of loop on WeakSet throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetNoForOfIterationTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test100_WeakSetNoForOfIteration();
+      expect(result).assertEqual("Test Passed: WeakSetNoForOfIterationTest100");
+    });
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_102
+     * @tc.name WeakSetConstructorEmptyIterableTest102
+     * @tc.desc Verify WeakSet constructor with empty iterable initializes empty WeakSet
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorEmptyIterableTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test102_WeakSetConstructorEmptyIterable();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorEmptyIterableTest102");
+    });
+
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_104
+     * @tc.name WeakSetDeleteMultipleTimesTest104
+     * @tc.desc Verify WeakSet.delete() same object multiple times returns false after first call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetDeleteMultipleTimesTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test104_WeakSetDeleteMultipleTimes();
+      expect(result).assertEqual("Test Passed: WeakSetDeleteMultipleTimesTest104");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_105
+     * @tc.name WeakSetHasPrimitiveStringTest105
+     * @tc.desc Verify WeakSet.has() returns false for primitive string, true for String object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetHasPrimitiveStringTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test105_WeakSetHasPrimitiveString();
+      expect(result).assertEqual("Test Passed: WeakSetHasPrimitiveStringTest105");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_106
+     * @tc.name WeakSetAddTypedArrayTest106
+     * @tc.desc Verify WeakSet.add() TypedArray (Uint8Array) object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddTypedArrayTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test106_WeakSetAddTypedArray();
+      expect(result).assertEqual("Test Passed: WeakSetAddTypedArrayTest106");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_107
+     * @tc.name WeakSetSubclassBehaviorTest107
+     * @tc.desc Verify inherited WeakSet subclass retains add/has/delete behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetSubclassBehaviorTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test107_WeakSetSubclassBehavior();
+      expect(result).assertEqual("Test Passed: WeakSetSubclassBehaviorTest107");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_108
+     * @tc.name WeakSetConstructorGeneratorTest108
+     * @tc.desc Verify WeakSet constructor with generator function (iterable) initializes correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorGeneratorTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test108_WeakSetConstructorGenerator();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorGeneratorTest108");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_109
+     * @tc.name WeakSetStoreItselfTest109
+     * @tc.desc Verify WeakSet can store itself without circular reference error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetStoreItselfTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test109_WeakSetStoreItself();
+      expect(result).assertEqual("Test Passed: WeakSetStoreItselfTest109");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_110
+     * @tc.name WeakSetAddFrozenArrayTest110
+     * @tc.desc Verify WeakSet.add() frozen array object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddFrozenArrayTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test110_WeakSetAddFrozenArray();
+      expect(result).assertEqual("Test Passed: WeakSetAddFrozenArrayTest110");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_111
+     * @tc.name WeakSetConstructorIterableWithNullTest111
+     * @tc.desc Verify WeakSet constructor with iterable containing null throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorIterableWithNullTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test111_WeakSetConstructorIterableWithNull();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorIterableWithNullTest111");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_112
+     * @tc.name WeakSetHasAfterGCTest112
+     * @tc.desc Verify WeakSet.has() returns false after object is GC (tracked via WeakRef)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('WeakSetHasAfterGCTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const result = await WeakSetTestUtils.test112_WeakSetHasAfterGC();
+      expect(result).assertEqual("Test Passed: WeakSetHasAfterGCTest112 (GC behavior consistent with has())");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_113
+     * @tc.name WeakSetAddPromiseObjectTest113
+     * @tc.desc Verify WeakSet.add() Promise object, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddPromiseObjectTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test113_WeakSetAddPromiseObject();
+      expect(result).assertEqual("Test Passed: WeakSetAddPromiseObjectTest113");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_114
+     * @tc.name WeakSetDeletePrimitiveBooleanTest114
+     * @tc.desc Verify WeakSet.delete() returns false for primitive boolean, true for Boolean object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetDeletePrimitiveBooleanTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test114_WeakSetDeletePrimitiveBoolean();
+      expect(result).assertEqual("Test Passed: WeakSetDeletePrimitiveBooleanTest114");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_115
+     * @tc.name WeakSetConstructorNonIterableWeakMapTest115
+     * @tc.desc Verify WeakSet constructor with non-iterable WeakMap throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorNonIterableWeakMapTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test115_WeakSetConstructorNonIterableWeakMap();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorNonIterableWeakMapTest115");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_116
+     * @tc.name WeakSetAddSlicedArrayBufferTest116
+     * @tc.desc Verify WeakSet.add() sliced ArrayBuffer (new object), has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddSlicedArrayBufferTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test116_WeakSetAddSlicedArrayBuffer();
+      expect(result).assertEqual("Test Passed: WeakSetAddSlicedArrayBufferTest116");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_117
+     * @tc.name WeakSetSubclassOverriddenAddTest117
+     * @tc.desc Verify WeakSet subclass with overridden add() retains parent has() behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetSubclassOverriddenAddTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test117_WeakSetSubclassOverriddenAdd();
+      expect(result).assertEqual("Test Passed: WeakSetSubclassOverriddenAddTest117");
+    });
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_118
+     * @tc.name WeakSetConstructorNonIterableEmptyStringTest118
+     * @tc.desc Verify WeakSet constructor with non-iterable empty string throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetConstructorNonIterableEmptyStringTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test118_WeakSetConstructorNonIterableEmptyString();
+      expect(result).assertEqual("Test Passed: WeakSetConstructorNonIterableEmptyStringTest118");
+    });
+
+
+
+    /**
+     * @tc.number SUB_WEAKSET_TEST_120
+     * @tc.name WeakSetAddWeakMapInstanceTest120
+     * @tc.desc Verify WeakSet.add() WeakMap instance, has() returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('WeakSetAddWeakMapInstanceTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const result = await WeakSetTestUtils.test120_WeakSetAddWeakMapInstance();
+      expect(result).assertEqual("Test Passed: WeakSetAddWeakMapInstanceTest120");
+    });
+  })
+}
