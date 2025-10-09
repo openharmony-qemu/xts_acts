@@ -4,6 +4,7 @@
     "MainAbility/pages/Storage/appStorageRef",
     "MainAbility/pages/Storage/localStorageRef",
     "MainAbility/pages/Storage/appStorageV2",
+    "MainAbility/pages/Storage/AppStorageReturnValue",
     "MainAbility/pages/Storage/persistenceV2",
     "MainAbility/pages/Storage/AbstractPropertyRef",
     "MainAbility/pages/Storage/SubAbstractPropertyLink",
