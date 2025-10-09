@@ -607,7 +607,8 @@ export default function builtinsShortPrototypebTest() {
             value: Short.MAX_VALUE + 1
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -632,7 +633,8 @@ export default function builtinsShortPrototypebTest() {
             value: Short.MIN_VALUE - 1
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -657,7 +659,8 @@ export default function builtinsShortPrototypebTest() {
             value: 12.34
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);

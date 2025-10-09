@@ -109,9 +109,10 @@ export default function uitestComponentTest() {
           let msg = await bottom.getText();
           hilog.info(domain, tag, `testScrollToBottom_static msg, ${JSON.stringify(msg)} `);
         }
-      } catch (error : Error) {
-        hilog.info(domain, tag, `testScrollToBottom_static error, ${JSON.stringify(error)} `);
-        expect().assertFail();
+      } catch (error) {
+          error = error as Error;
+          hilog.info(domain, tag, `testScrollToBottom_static error, ${JSON.stringify(error)} `);
+          expect().assertFail();
       }
       hilog.info(domain, tag, "testScrollToBottom_static end !!!!!!!!!!!!!!!!!!!!!!!!!！");
       await stopApplication('com.uitestScene.acts');
@@ -143,7 +144,8 @@ export default function uitestComponentTest() {
           let msg = await bottom.getText();
           hilog.info(domain, tag, `testScrollToBottom_speed_static msg, ${JSON.stringify(msg)} `);
         }
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         hilog.info(domain, tag, `testScrollToBottom_speed_static error, ${JSON.stringify(error)} `);
         expect().assertFail();
       }
@@ -212,7 +214,8 @@ export default function uitestComponentTest() {
         let bottom = await driver.findComponent(ON.text('next page'));
         hilog.info(domain, tag, `testScrollToTop_speed_static bottom, ${JSON.stringify(bottom)} `);
         expect(bottom != null).assertTrue();
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         hilog.info(domain, tag, `testScrollToTop_speed_static error, ${JSON.stringify(error)} `);
       }
       await stopApplication('com.uitestScene.acts');

@@ -61,7 +61,8 @@ export default function builtinsTryTest() {
       try {
         testTryCatch();
         throw new Error('Simulated error');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         flag = 1;
         console.error('Error in main block:', error.message);
         expect(error.message).assertEqual('Simulated error');
@@ -80,7 +81,8 @@ export default function builtinsTryTest() {
     it('builtinsStatementTry0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         Input('@');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Validation failed:', error.message);
         flag = 2;
         expect(error.message).assertEqual('input error');
@@ -89,7 +91,8 @@ export default function builtinsTryTest() {
       await Utils.msSleep(100);
       try {
         Input('@');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Validation failed:', error.message);
         flag = 3;
         expect(error.message).assertEqual('input error');
@@ -109,7 +112,8 @@ export default function builtinsTryTest() {
     it('builtinsStatementTry0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         Input('ab');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         flag = 3;
         console.error('Validation failed:', error.message);
         expect(error.message).assertEqual('input error');
@@ -134,7 +138,8 @@ export default function builtinsTryTest() {
       ;
       try {
         Input('ab');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         flag = 3;
         console.error('Validation failed:', error.message);
         expect(error.message).assertEqual('input error');
@@ -155,7 +160,8 @@ export default function builtinsTryTest() {
     it('builtinsStatementTry0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       ;
       try {
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Validation failed:', error.message);
       } finally {
         flag = 5;
@@ -177,7 +183,8 @@ export default function builtinsTryTest() {
     it('builtinsStatementTry0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         Input('@');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         try {
           console.error('Validation failed:', error.message);
           flag = 6
@@ -185,7 +192,8 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Simulated error in catch execution.');
           }
-        } catch (err : Error) {
+        } catch (err) {
+          err = err as Error;
           flag = flag + 1;
           expect(err.message).assertEqual('Simulated error in catch execution.');
         }
@@ -230,7 +238,8 @@ export default function builtinsTryTest() {
       let errorMessage: string | null = null;
       try {
         Input2(-1, -2);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         errorOccurred = true;
         errorMessage = error.message;
         expect(errorMessage).assertEqual('a and b cannot be negative number');
@@ -254,7 +263,8 @@ export default function builtinsTryTest() {
       let errorOccurred = false;
       try {
         Input2(-1, -2);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         let errorOccurred = true;
         let errorMessage: string = '';
         errorMessage = error.message;
@@ -280,12 +290,14 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try1 execution.');
         }
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         try {
           if (Math.random() < 1) {
             throw new Error('Simulated error in try2 execution.');
           }
-        } catch (err : Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(err.message);
           expect(err.message).assertEqual('Simulated error in try2 execution.');
           flag = 10;
@@ -312,13 +324,15 @@ export default function builtinsTryTest() {
           throw new Error('Simulated error in try1 execution.');
         }
         ;
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         try {
           if (Math.random() < 1) {
             throw new Error('Simulated error in try2 execution.');
           }
           ;
-        } catch (err : Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(err.message);
           expect(err.message).assertEqual('Simulated error in try2 execution.');
           flag = 11;
@@ -345,12 +359,14 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         try {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           expect(err.message).assertEqual('Cache read error');
         } finally {
           flag = 12;
@@ -379,12 +395,14 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         try {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           expect(error.message).assertEqual('Cache read error');
         }
       } finally {
@@ -430,7 +448,8 @@ export default function builtinsTryTest() {
     it('builtinsStatementTry1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         throwDivisor(4, 0);
-      } catch (e : Error) {
+      } catch (e) {
+        e = e as Error;
         expect(e.message).assertEqual('The divisor cannot be zero');
       } finally {
         flag = 15;
@@ -471,7 +490,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try execution.');
         }
-      } catch (e : Error) {
+      } catch (e) {
+        e = e as Error;
         expect(e.message).assertEqual('Simulated error in try execution.')
       } finally {
         flag = 17;
@@ -494,14 +514,16 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try execution.');
         }
-      } catch (e : Error) {
+      } catch (e) {
+        e = e as Error;
         expect(e.message).assertEqual('Simulated error in try execution.');
       } finally {
         try {
           if (Math.random() < 1) {
             throw new Error('Simulated error in finally execution.');
           }
-        } catch (err : Error) {
+        } catch (err) {
+          err = err as Error;
           flag = 18;
           expect(err.message).assertEqual('Simulated error in finally execution.');
         }
@@ -548,7 +570,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error');
       } finally {
         asyncInput('@').finally(() => {
@@ -574,12 +597,14 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         try {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           expect(error.message).assertEqual('Cache read error');
         } finally {
           flag = 20;
@@ -606,7 +631,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error');
       } finally {
         num = num + 1;
@@ -630,7 +656,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error');
       } finally {
         let num: number = 1;
@@ -653,7 +680,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error')
       } finally {
         try {
@@ -661,7 +689,8 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           flag = flag + 1;
           expect(error.message).assertEqual('Cache read error');
         }
@@ -684,7 +713,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error')
       } finally {
         try {
@@ -711,7 +741,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('Cache read error')
       } finally {
         try {
@@ -719,7 +750,8 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           flag = flag + 1;
           expect(error.message).assertEqual('Cache read error');
         } finally {
@@ -746,7 +778,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         result += '\nOutside catch';
         expect(err.message).assertEqual('Cache read error');
       } finally {
@@ -756,7 +789,8 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           result += '\nOutside finally inside catch';
           flag = flag + 1;
           expect(error.message).assertEqual('Cache read error');
@@ -808,7 +842,8 @@ export default function builtinsTryTest() {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         flag += 1;
         expect(err.message).assertEqual('Cache read error');
       }
@@ -835,7 +870,8 @@ export default function builtinsTryTest() {
         if (num >= 0.3 && num < 0.6) {
           throw new Error('Cache read error2');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -861,7 +897,8 @@ export default function builtinsTryTest() {
         for (let i = 0; i < arr.length; i++) {
           console.info(string(arr[i]));
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -886,7 +923,8 @@ export default function builtinsTryTest() {
         let resultArray = new Array<number>(64, 34, 25, 12, 22, 11, 90);
         let result = bubbleSort(resultArray);
         expect(result.toString()).assertEqual('11,12,22,25,34,64,90');
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -909,7 +947,8 @@ export default function builtinsTryTest() {
       let num: number = 1;
       try {
         num += 1;
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -931,7 +970,8 @@ export default function builtinsTryTest() {
       let num: number = 1;
       try {
         let num = 2;
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -956,11 +996,13 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Simulated error in try execution.');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           flag += 1;
           expect(error.message).assertEqual('Simulated error in try execution.');
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -985,7 +1027,8 @@ export default function builtinsTryTest() {
         } finally {
           flag += 1;
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -1010,13 +1053,15 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Simulated error in try execution.');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           flag += 1;
           expect(error.message).assertEqual('Simulated error in try execution.');
         } finally {
           flag += 1;
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         console.info(`Caught an error: ${err.message}`);
       } finally {
         console.info('Executing finally block');
@@ -1043,7 +1088,8 @@ export default function builtinsTryTest() {
           if (Math.random() < 1) {
             throw new Error('Cache read error');
           }
-        } catch (error : Error) {
+        } catch (error) {
+          error = error as Error;
           result += '\nOutside try inside catch';
           expect(error.message).assertEqual('Cache read error');
         } finally {
@@ -1052,7 +1098,8 @@ export default function builtinsTryTest() {
             throw new Error('Cache read error');
           }
         }
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         result += '\nOutside catch';
         expect(err.message).assertEqual('Cache read error');
       } finally {

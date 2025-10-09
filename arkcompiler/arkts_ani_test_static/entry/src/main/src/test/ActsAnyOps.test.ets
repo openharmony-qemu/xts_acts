@@ -26,7 +26,8 @@ export default function anyOpsTest() {
   describe("ActsAnyOpsTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch(e: Error) {
+    } catch(e) {
+      e = e as Error;
       console.log('loadFailed', e.message);
     }
 

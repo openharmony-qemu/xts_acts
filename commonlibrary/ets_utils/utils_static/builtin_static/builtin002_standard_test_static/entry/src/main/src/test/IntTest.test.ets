@@ -347,7 +347,8 @@ export default function IntTest() {
             value: Int.MAX_VALUE + 1
           };
           const result = intInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Int from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -373,7 +374,8 @@ export default function IntTest() {
             value: Int.MIN_VALUE - 1
           };
           const result = intInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Int from JSON');
         }
         console.info(`${caseName}, test end`);

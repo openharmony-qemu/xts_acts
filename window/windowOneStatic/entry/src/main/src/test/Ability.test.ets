@@ -123,7 +123,8 @@ export default function abilityTest() {
           expect(ret.type != null).assertTrue();
           expect(ret.id >= 0).assertTrue();
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties sync Succeeded');
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties fail');
           expect(false).assertTrue();
         }
@@ -144,13 +145,15 @@ export default function abilityTest() {
           win.setWindowDecorHeight(100);
           hilog.info(0x0000, "hh", "finaltest [ANI] setWindowDecorHeight success");
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) { // promission
-            hilog.error(0x0000, "hh", "finaltest [ANI] setWindowDecorHeight success " + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.error(0x0000, "hh", "finaltest [ANI] setWindowDecorHeight error " + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) { // promission
+              hilog.error(0x0000, "hh", "finaltest [ANI] setWindowDecorHeight success " + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.error(0x0000, "hh", "finaltest [ANI] setWindowDecorHeight error " + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -169,13 +172,15 @@ export default function abilityTest() {
           let decorHeight = win.getWindowDecorHeight();
           hilog.info(0x0000, "hh", "finaltest [ANI] getWindowDecorHeight success" + JSON.stringify(decorHeight));
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.error(0x0000, "hh", "finaltest [ANI] getWindowDecorHeight 801");
-            expect(true).assertTrue();
-          } else {
-            hilog.error(0x0000, "hh", "finaltest [ANI] getWindowDecorHeight error");
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.error(0x0000, "hh", "finaltest [ANI] getWindowDecorHeight 801");
+              expect(true).assertTrue();
+            } else {
+              hilog.error(0x0000, "hh", "finaltest [ANI] getWindowDecorHeight error");
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -194,14 +199,16 @@ export default function abilityTest() {
           win.setWindowDecorVisible(false);
           hilog.info(0x0000, "hh", "finaltest [ANI] setWindowDecorVisible success");
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) { // e.code == 801 not support
-            hilog.info(0x0000, "hh", "finaltest [ANI] testsetWindowDecorVisible success: " + JSON.stringify(e.code));
-            expect(true).assertTrue();
-            done();
-          } else {
-            hilog.error(0x0000, "hh", "finaltest [ANI] testsetWindowDecorVisible error: " + JSON.stringify(e.code));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) { // e.code == 801 not support
+              hilog.info(0x0000, "hh", "finaltest [ANI] testsetWindowDecorVisible success: " + JSON.stringify(e.code));
+              expect(true).assertTrue();
+              done();
+            } else {
+              hilog.error(0x0000, "hh", "finaltest [ANI] testsetWindowDecorVisible error: " + JSON.stringify(e.code));
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -226,10 +233,12 @@ export default function abilityTest() {
           expect(false).assertTrue();
           done();
         });
-      } catch (err: BusinessError) {
-        hilog.error(0x0000, '[ANI]', `finaltest [ANI] getLastWindow promise err. message: ${err.code}`);
-        expect(false).assertTrue();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] getLastWindow promise err. message: ${err.code}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -254,10 +263,12 @@ export default function abilityTest() {
             done();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.error(0x0000, '[ANI]', `finaltest [ANI] getLastWindow callback err. message: ${err.code}`);
-        expect(false).assertTrue();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] getLastWindow callback err. message: ${err.code}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -305,7 +316,8 @@ export default function abilityTest() {
             hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowKeepScreenOn callback Succeed`);
             expect(true).assertTrue();
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.error(0x0000, '[ani]', 'finaltest [ANI] setWindowKeepScreenOn callback Failed: ' + e.message);
           expect(false).assertTrue();
         }
@@ -355,7 +367,8 @@ export default function abilityTest() {
             hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowTouchable callback Succeed`);
             expect(true).assertTrue();
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.error(0x0000, '[ani]', 'finaltest [ANI] setWindowTouchable callback Failed: ' + e.message);
           expect(false).assertTrue();
         }
@@ -397,7 +410,8 @@ export default function abilityTest() {
           win.setWindowBackgroundColor(color);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowBackgroundColor sync success ');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.error(0x0000, '[ANI]', 'finaltest [ANI] setWindowBackgroundColor sync Failed: ' + e.message);
           expect(false).assertTrue();
         }
@@ -425,7 +439,8 @@ export default function abilityTest() {
             hilog.info(0x0000, '[ANI]', 'finaltest [ANI] isWindowSupportWideGamut callback success= ' + data);
             expect(true).assertTrue();
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] isWindowSupportWideGamut callback Failed' + e);
           expect(false).assertTrue();
         }
@@ -548,13 +563,15 @@ export default function abilityTest() {
           win.setWindowTitleButtonVisible(true, true, true);
           expect(true).assertTrue();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowTitleButtonVisible sync Succeeded `);
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowTitleButtonVisible sync Succeeded');
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowTitleButtonVisible sync failed');
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowTitleButtonVisible sync Succeeded');
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowTitleButtonVisible sync failed');
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -580,13 +597,15 @@ export default function abilityTest() {
           win.setDecorButtonStyle(style);
           expect(true).assertTrue();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setDecorButtonStyle sync Succeeded `);
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setDecorButtonStyle sync Succeeded');
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setDecorButtonStyle sync failed' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setDecorButtonStyle sync Succeeded');
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setDecorButtonStyle sync failed' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -605,15 +624,16 @@ export default function abilityTest() {
           let windowStatusType = win.getWindowStatus();
           expect(windowStatusType != undefined).assertTrue();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] getWindowStatus sync Succeeded `);
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowStatus sync success' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowStatus sync failed' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code === 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowStatus sync success' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowStatus sync failed' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
           }
-
         }
         done();
       })
@@ -719,26 +739,29 @@ export default function abilityTest() {
           win.on('windowWillClose', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 1300002) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-            done();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
-            done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 1300002) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success e:' + JSON.stringify(e));
+              expect(true).assertTrue();
+              done();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose fail e:' + JSON.stringify(e));
+              expect(false).assertTrue();
+              done();
+            }
           }
-
         }
         try {
           win.off('windowWillClose', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose fail e:' + JSON.stringify(e));
-          expect(false).assertTrue();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose fail e:' + JSON.stringify(e));
+            expect(false).assertTrue();
+            done();
+          }
         }
         done();
       });
@@ -762,28 +785,32 @@ export default function abilityTest() {
           win.on('windowTitleButtonRectChange', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowTitleButtonRectChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]',
-              'finaltest [ANI] on_windowTitleButtonRectChange success e:' + JSON.stringify(e.message));
-            expect(true).assertTrue();
-            done();
-          } else {
-            hilog.info(0x0000, '[ANI]',
-              'finaltest [ANI] on_windowTitleButtonRectChange fail e:' + JSON.stringify(e.message));
-            expect(false).assertTrue();
-            done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code === 801) {
+              hilog.info(0x0000, '[ANI]',
+                'finaltest [ANI] on_windowTitleButtonRectChange success e:' + JSON.stringify(e.message));
+              expect(true).assertTrue();
+              done();
+            } else {
+              hilog.info(0x0000, '[ANI]',
+                'finaltest [ANI] on_windowTitleButtonRectChange fail e:' + JSON.stringify(e.message));
+              expect(false).assertTrue();
+              done();
+            }
           }
         }
         try {
           win.off('windowTitleButtonRectChange', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowTitleButtonRectChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          hilog.info(0x0000, '[ANI]',
-            'finaltest [ANI] off_windowTitleButtonRectChange fail e:' + JSON.stringify(e.message));
-          expect(false).assertTrue();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.info(0x0000, '[ANI]',
+              'finaltest [ANI] off_windowTitleButtonRectChange fail e:' + JSON.stringify(e.message));
+            expect(false).assertTrue();
+            done();
+          }
         }
         done();
       });
@@ -805,15 +832,17 @@ export default function abilityTest() {
           windowStage.on('windowStageClose', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-            done();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
-            done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code === 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose success e:' + JSON.stringify(e));
+              expect(true).assertTrue();
+              done();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose fail e:' + JSON.stringify(e));
+              expect(false).assertTrue();
+              done();
+            }
           }
 
         }
@@ -821,10 +850,12 @@ export default function abilityTest() {
           windowStage.off('windowStageClose', callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStageClose success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStageClose fail e:' + JSON.stringify(e));
-          expect(false).assertTrue();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStageClose fail e:' + JSON.stringify(e));
+            expect(false).assertTrue();
+            done();
+          }
         }
         done();
       });
@@ -929,13 +960,15 @@ export default function abilityTest() {
           win.onWindowStatusChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStatusChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowStatusChangeTest success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowStatusChangeTest fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowStatusChangeTest success e:' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowStatusChangeTest fail e:' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
           }
         }
 
@@ -943,13 +976,15 @@ export default function abilityTest() {
           win.offWindowStatusChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStatusChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowStatusChangeTest success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowStatusChangeTest fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowStatusChangeTest success e:' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowStatusChangeTest fail e:' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
           }
         }
         done();
@@ -973,7 +1008,8 @@ export default function abilityTest() {
           win.onWindowSizeChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowSizeChange success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowSizeChange fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -982,7 +1018,8 @@ export default function abilityTest() {
           win.offWindowSizeChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowSizeChange success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] windowSizeChange fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1008,29 +1045,33 @@ export default function abilityTest() {
           win.onWindowRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success code ===' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange fail code ===' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code === 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success code ===' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange fail code ===' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
+            done();
           }
-          done();
         }
         try {
           win.offWindowRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success code ===' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange fail code ===' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code === 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success code ===' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange fail code ===' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
+            done();
           }
-          done();
         }
         done();
       });
@@ -1053,7 +1094,8 @@ export default function abilityTest() {
           win.onWindowEvent(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_WindowEvent success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on WindowEvent fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1062,7 +1104,8 @@ export default function abilityTest() {
           win.offWindowEvent(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowEvent success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_WindowEvent fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1088,7 +1131,8 @@ export default function abilityTest() {
           win.onDialogTargetTouch(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_dialogTargetTouch success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_dialogTargetTouch fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1097,7 +1141,8 @@ export default function abilityTest() {
           win.offDialogTargetTouch(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_dialogTargetTouch success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] dialogTargetTouch fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1122,7 +1167,8 @@ export default function abilityTest() {
           win.onTouchOutside(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_touchOutside success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_touchOutside fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1131,7 +1177,8 @@ export default function abilityTest() {
           win.offTouchOutside(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_touchOutside success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] touchOutside fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1157,21 +1204,24 @@ export default function abilityTest() {
           win.onNoInteractionDetected(10, callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            if (e.code == 801) {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success e:' + JSON.stringify(e));
+              expect(true).assertTrue();
+            } else {
+              hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected fail e:' + JSON.stringify(e));
+              expect(false).assertTrue();
+            }
+            done();
           }
-          done();
         }
         try {
           win.offNoInteractionDetected(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_noInteractionDetected success');
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] noInteractionDetected fail e:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1193,7 +1243,8 @@ export default function abilityTest() {
           let area = win.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowAvoidArea success:' + JSON.stringify(area));
           expect(area != null).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowAvoidArea fail:' + JSON.stringify(e));
           expect(false).assertTrue();
           done();
@@ -1243,7 +1294,8 @@ export default function abilityTest() {
         try {
           win.recover();
           expect(true).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] recover fail.');
           expect(false).assertTrue();
         }
@@ -1398,7 +1450,8 @@ export default function abilityTest() {
           let foldable = display.isFoldable();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] isFoldable success: ${foldable}`);
           expect(true).assertTrue();
-        } catch (exception : Error) {
+        } catch (exception) {
+          exception = exception as Error;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] isFoldable fail: ${JSON.stringify(exception)}`);
           expect(false).assertTrue();
         }
@@ -1440,14 +1493,16 @@ export default function abilityTest() {
           let globalRect = win.getGlobalRect();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] globalRect success: ${JSON.stringify(globalRect)}`);
           expect(true).assertTrue();
-        } catch (err: BusinessError) {
-          if (err.code === 801) {
-            hilog.error(0x0000, '[ANI]', `finaltest [ANI] globalRect success:  code === ${JSON.stringify(err.code)}`);
-            expect(err.code === 801).assertTrue();
-          } else {
-            hilog.error(0x0000, '[ANI]',
-              `finaltest [ANI] globalRect fail: ${JSON.stringify(err.message)}  errcode ${JSON.stringify(err.code)}`);
-            expect(err.code === 801).assertTrue();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            if (err.code === 801) {
+              hilog.error(0x0000, '[ANI]', `finaltest [ANI] globalRect success:  code === ${JSON.stringify(err.code)}`);
+              expect(err.code === 801).assertTrue();
+            } else {
+              hilog.error(0x0000, '[ANI]',
+                `finaltest [ANI] globalRect fail: ${JSON.stringify(err.message)}  errcode ${JSON.stringify(err.code)}`);
+              expect(err.code === 801).assertTrue();
+            }
           }
         }
         done();
@@ -1491,7 +1546,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]',
             'finaltest [ANI] getCurrentFoldCreaseRegion success. Data: ' + JSON.stringify(foldCreaseRegion));
           expect(true).assertTrue();
-        } catch (exception : Error) {
+        } catch (exception) {
+          exception = exception as Error;
           hilog.error(0x0000, '[ANI]',
             `finaltest [ANI] getCurrentFoldCreaseRegion fail. Err: ${JSON.stringify(exception)}`);
           expect(false).assertTrue();
@@ -1514,7 +1570,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] getDefaultDisplaySync success. Data: ${JSON.stringify(display1)}`);
           expect(true).assertTrue();
-        } catch (exception : Error) {
+        } catch (exception) {
+          exception = exception as Error;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] getDefaultDisplaySync fail. Err: ${JSON.stringify(exception)}`);
           expect(false).assertTrue();
         }
@@ -1536,7 +1593,8 @@ export default function abilityTest() {
           let display2 = display.getDisplayByIdSync(displayId);
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] getDisplayByIdSync success. Data: ${JSON.stringify(display2)}`);
           expect(true).assertTrue();
-        } catch (exception : Error) {
+        } catch (exception) {
+          exception = exception as Error;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] getDisplayByIdSync fail. Err: ${JSON.stringify(exception)}`);
           expect(false).assertTrue();
         }
@@ -1568,7 +1626,8 @@ export default function abilityTest() {
             expect(true).assertTrue();
             done();
           });
-        } catch (err : Error) {
+        } catch (err) {
+          err = err as Error;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] getAllDisplays ayncCallback fail. Err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done();
@@ -1593,7 +1652,8 @@ export default function abilityTest() {
           display.offAdd(callback1);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_add success');
           expect(true).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_add fail Err: ' + JSON.stringify(err));
           expect(false).assertTrue();
         }
@@ -1618,9 +1678,11 @@ export default function abilityTest() {
         win.offKeyboardHeightChange(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardHeightChange callback success');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardHeightChange callback Failed. message: ${err}`);
-        expect(false).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardHeightChange callback Failed. message: ${err}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     });
@@ -1643,15 +1705,17 @@ export default function abilityTest() {
         win.offKeyboardDidShow(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        if(err?.code == 801){
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
-          expect(true).assertTrue();
-          done();
-        } else {
-          hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidShow callback Failed. errorcode: ${err.code}  message: ${err} `);
-          expect(false).assertTrue();
-          done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          if(err?.code == 801){
+            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
+            expect(true).assertTrue();
+            done();
+          } else {
+            hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidShow callback Failed. errorcode: ${err.code}  message: ${err} `);
+            expect(false).assertTrue();
+            done();
+          }
         }
       }
       done();
@@ -1674,15 +1738,17 @@ export default function abilityTest() {
         win.offKeyboardDidHide(callback);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        if(err?.code == 801){
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
-          expect(true).assertTrue();
-          done();
-        } else {
-          hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidHide callback Failed. errorcode: ${err.code}  message: ${err} `);
-          expect(false).assertTrue();
-          done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          if(err?.code == 801){
+            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
+            expect(true).assertTrue();
+            done();
+          } else {
+            hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidHide callback Failed. errorcode: ${err.code}  message: ${err} `);
+            expect(false).assertTrue();
+            done();
+          }
         }
       }
       done();
@@ -1701,14 +1767,16 @@ export default function abilityTest() {
         win.keepKeyboardOnFocus(false);
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] set keepKeyboardOnFocus success');
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.error(0x0000, '[ANI]', `finaltest [ANI] set keepKeyboardOnFocus Failed. message: ${err.code}`);
-        if (err?.code == 1300004 || err?.code == 801) {
-          expect(true).assertTrue();
-        } else {
-          expect(false).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] set keepKeyboardOnFocus Failed. message: ${err.code}`);
+          if (err?.code == 1300004 || err?.code == 801) {
+            expect(true).assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
         }
-        done();
       }
       done();
     });
