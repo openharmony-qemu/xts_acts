@@ -29,22 +29,7 @@ export default function componentLifeCycleTestOne() {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          console.log('onAbilityCreate end')
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.weblifecycleone.test.static")
+
       await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -143,7 +128,7 @@ export default function componentLifeCycleTestOne() {
      */
     it('testGetWebIdInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitGetWebIdInitErr", 10)
-      await Utils.msSleep(2000);
+      await Utils.msSleep(3000);
       Utils.registerBaseEvent('testGetWebIdInitErr', '17100001', 642, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, boolean | string | Int | object>;
@@ -160,12 +145,16 @@ export default function componentLifeCycleTestOne() {
         });
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
-
-      // When finish last case,switch to new page for next suite
-      Utils.emitEvent("emitonSwitchNextPage", 10)
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       done();
     })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+        await Utils.msSleep(5000)
+        done();
+      })
   })
 }

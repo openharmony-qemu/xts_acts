@@ -25,7 +25,7 @@ import PermissionRequestResult from 'security.PermissionRequestResult';
 import { BusinessError } from '@ohos.base'
 import { Driver, ON } from '@ohos.UiTest'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 let testAbilityContext: common.UIAbilityContext;
@@ -332,6 +332,54 @@ export default function requestPermissionsStaticTest() {
           expect(false).assertFail();
           done();
         }
+      }
+    })
+
+    /**
+     * @tc.number Test_requestPermissionsFromUser_008
+     * @tc.name Test_requestPermissionsFromUser_008
+     * @tc.desc test requestPermissionsFromUser callbck with invalid context, throw 401.
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_requestPermissionsFromUser_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 start");
+      let context: common.UIAbilityContext;
+      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
+      
+      try {
+        atManager.requestPermissionsFromUser(context, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+          expect(false).assertFail();
+          done();
+        });
+      } catch (error: BusinessError<void>) {
+        hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 error" + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        done();
+      }
+    })
+    
+    /**
+     * @tc.number Test_requestPermissionsFromUser_009
+     * @tc.name Test_requestPermissionsFromUser_009
+     * @tc.desc test requestPermissionsFromUser callback with empty permissionList, throw 401.
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_requestPermissionsFromUser_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 start");
+      let permissionList: Array<Permissions> = new Array<Permissions>();
+      try {
+        atManager.requestPermissionsFromUser(testAbilityContext, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+          expect(false).assertFail();
+          done();
+        });
+      } catch (error: BusinessError<void>) {
+        hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 error" + JSON.stringify(error));
+        expect(error?.code).assertEqual(ERR_PARAM_ILLEGAL);
+        done();
       }
     })
 

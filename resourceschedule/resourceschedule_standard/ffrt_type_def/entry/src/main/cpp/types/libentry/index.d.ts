@@ -14,5 +14,13 @@
  */
 
 export const ffrt_fiber_initTest: () => number;
-
 export const ffrt_rwlockattr_tTest: () => number;
+export const ffrt_reserveTest: () => number;
+export const ffrt_task_attr_tTest: () => number;
+export const ffrt_queue_attr_tTest: () => number;
+export const ffrt_condattr_tTest: () => number;
+export const ffrt_mutexattr_tTest: () => number;
+export const ffrt_rwlockattrTest: () => number;
+export const ffrt_mutex_typeTest1: () => number;
+export const ffrt_mutex_typeTest2: () => number;
+export const ffrt_fiber_tTest: () => number;

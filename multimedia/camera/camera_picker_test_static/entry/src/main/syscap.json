@@ -1,0 +1,14 @@
+{
+    "devices": {
+        "general": [],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Multimedia.Camera.Core",
+                    "SystemCapability.Multimedia.Image.Core",
+                    "SystemCapability.Multimedia.Media.Core"
+                ]
+            }
+        ]
+    }
+}

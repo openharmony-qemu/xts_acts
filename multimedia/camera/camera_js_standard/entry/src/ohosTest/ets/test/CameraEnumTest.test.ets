@@ -479,5 +479,21 @@ export default function cameraEnumTest() {
       console.info(`${TAG} CameraConcurrentType.CAMERA_FULL_CAPABILITY:${camera.CameraConcurrentType.CAMERA_FULL_CAPABILITY}`);
       done();
     })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.desc      : assert all photo quality prioritization enums
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100', Level.LEVEL0, async (done: Function) => {
+      expect(camera.PhotoQualityPrioritization.HIGH_QUALITY == 0).assertTrue();
+      console.info(`${TAG} PhotoQualityPrioritization.HIGH_QUALITY:${camera.PhotoQualityPrioritization.HIGH_QUALITY}`);
+      expect(camera.PhotoQualityPrioritization.SPEED == 1).assertTrue();
+      console.info(`${TAG} PhotoQualityPrioritization.SPEED:${camera.PhotoQualityPrioritization.SPEED}`);
+      done();
+    })
   })
 }

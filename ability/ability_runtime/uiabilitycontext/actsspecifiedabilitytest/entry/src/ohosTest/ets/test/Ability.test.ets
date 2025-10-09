@@ -1074,7 +1074,7 @@ export default function abilityTest() {
 
       try {
         await testContext.startAbility(noSpecifiedWant);
-        await sleep(30);
+        await sleep(100);
         await testContext.startAbility({
           bundleName: demo2BundleName,
           abilityName: 'SingletonAbility',

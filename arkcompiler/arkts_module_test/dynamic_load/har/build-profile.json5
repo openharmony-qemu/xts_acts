@@ -24,7 +24,7 @@
         "runtimeOnly": {
           "sources": [
             "./src/main/ets/testAdd.ets",
-            "./index.ets"
+            "./Index.ets"
           ]
         },
         "obfuscation": {

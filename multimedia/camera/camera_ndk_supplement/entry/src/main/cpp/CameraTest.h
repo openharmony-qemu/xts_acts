@@ -53,7 +53,10 @@ public:
     Camera_ErrorCode CreateCameraInput(void);
     Camera_ErrorCode CloseCameraInput(void);
     Camera_ErrorCode CreateCameras(void);
-    Camera_ErrorCode CreateSession(void);
+    Camera_ErrorCode CreatePhotoOutput(void);
+    Camera_ErrorCode ReleasePhotoOutput(void);
+    Camera_ErrorCode CreateCaptureSession(void);
+    Camera_ErrorCode ReleaseCaptureSession(void);
     Camera_ErrorCode ReleaseCameraManger(void);
     Camera_ErrorCode CameraManagerRegisterCallback();
     CameraManager_Callbacks *GetCameraManagerListener(void);
@@ -100,14 +103,15 @@ public:
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
+protected:
+    Camera_Manager* cameraManager_;
     Camera_CaptureSession* captureSession_;
     Camera_Device* cameras_;
     Camera_Input* cameraInput_;
-    
-    uint32_t size_;
-protected:
-    Camera_Manager* cameraManager_;
+    Camera_PhotoOutput* photoOutput_;
+    Camera_OutputCapability* outputCap_;
     std::string previewSurfaceId_;
+    uint32_t size_;
 };
 
 #endif // OHCAMERATEST_CAMERA_TEST_H

@@ -518,6 +518,22 @@ export class KeyboardController {
           console.debug(TAG + '====>Sub_InputMethod_IME_Immersive_0600 event:' + data.event);
           that.Sub_InputMethod_IME_Immersive_0600();
           break;
+        case 541:
+          console.debug(TAG + '====>Sub_InputMethod_IME_OffsetArea_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_OffsetArea_0100();
+          break;
+        case 542:
+          console.debug(TAG + '====>Sub_InputMethod_IME_OffsetArea_1200 event:' + data.event);
+          that.Sub_InputMethod_IME_OffsetArea_1200();
+          break;
+        case 543:
+          console.debug(TAG + '====>Sub_InputMethod_IME_OffsetArea_1000 event:' + data.event);
+          that.Sub_InputMethod_IME_OffsetArea_1000();
+          break;
+        case 544:
+          console.debug(TAG + '====>Sub_InputMethod_IME_OffsetArea_1100 event:' + data.event);
+          that.Sub_InputMethod_IME_OffsetArea_1100();
+          break;
       }
     }
 
@@ -1813,24 +1829,24 @@ export class KeyboardController {
           console.info(TAG + '====>Sub_InputMethod_IME_Custom_0900 sedMessages msgIdSize: ' + msgId.length );
           if (msgId === 'Sub_InputMethod_IME_Custom_0900') {
             console.info(TAG + '====>Sub_InputMethod_IME_Custom_0900 start sendMessage');
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0900', that.newArrayBuffer('SUCCESS'))
-          }else{
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0900', that.newArrayBuffer('FAILED'))
-          }
-          that.InputClient.recvMessage()
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0900', that.newArrayBuffer('SUCCESS'));
+          } else {
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0900', that.newArrayBuffer('FAILED'));
+          };
+          that.InputClient.recvMessage();
         }
-      }
+      };
       this.InputClient.recvMessage(msgHandler);
       commonEventPublishData = {
         data: 'SUCCESS'
       };
     } catch (error) {
       console.info(TAG + '====>Sub_InputMethod_IME_Custom_0900 recvMessage catch err!');
-    }
+    };
     let t = setTimeout(() => {
       clearTimeout(t);
       commoneventmanager.publish('Sub_InputMethod_IME_Custom_0900', commonEventPublishData, this.publishCallback);
-    }, 100)
+    }, 100);
   }
 
   private Sub_InputMethod_IME_Custom_0200(): void {
@@ -3708,6 +3724,125 @@ export class KeyboardController {
       console.info(TAG + '====>Sub_InputMethod_IME_Immersive_0600 cathch err: ' + JSON.stringify(err));
     };
     commoneventmanager.publish('Sub_InputMethod_IME_Immersive_0600', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_OffsetArea_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_OffsetArea_0100 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    }; 
+    try {
+      let fla_fixed = inputmethodengine.PanelFlag.FLG_FIXED;
+      let displayId = await this.softKeyboardPanel.getDisplayId();
+      console.info(TAG + `====>Panel.getDisplayId success. displayId: ${displayId}`);
+      await this.softKeyboardPanel.changeFlag(fla_fixed);
+      console.info(TAG + '====>Sub_InputMethod_IME_OffsetArea_0100 changeFlag  success ');
+      let SystemPanelInsets = await this.softKeyboardPanel.getSystemPanelCurrentInsets(displayId);
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_0100 getSystemPanelCurrentInsets success. insets is{left:  ${SystemPanelInsets.left}, right:  ${SystemPanelInsets.right}, bottom:  ${SystemPanelInsets.bottom}}`);
+      if (typeof(SystemPanelInsets.left) === 'number' && typeof(SystemPanelInsets.right) === 'number' && typeof(SystemPanelInsets.bottom) === 'number') {
+        commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+      }
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_0100 cathch err.code: ${err.code}  , err.message: ${err.message}`);
+    } finally {
+      console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_0100 getSystemPanelCurrentInsets end`);
+      commoneventmanager.publish('Sub_InputMethod_IME_OffsetArea_0100', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_OffsetArea_1200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_OffsetArea_1200 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let SystemPanelInsets = await this.softKeyboardPanel.getSystemPanelCurrentInsets(1008611);
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1200 getSystemPanelCurrentInsets success. insets is{left:  ${SystemPanelInsets.left}, right:  ${SystemPanelInsets.right}, bottom:  ${SystemPanelInsets.bottom}}`);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1200 cathch err.code: ${err.code}  , err.message: ${err.message}`);
+      if (err.code === 12800022) {
+        commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+      }
+    } finally {
+      console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_1200 getSystemPanelCurrentInsets end`);
+      commoneventmanager.publish('Sub_InputMethod_IME_OffsetArea_1200', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_OffsetArea_1000(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_OffsetArea_1000 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      if (this.softKeyboardPanel !== null) {
+        await inputMethodAbility.destroyPanel(this.softKeyboardPanel);
+      } else {
+        console.info(TAG + '====>Sub_InputMethod_IME_OffsetArea_1000 this.softKeyboardPanel is null');
+      };
+      let panelInfo1: inputMethodEngine.PanelInfo = {
+        type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+        flag: inputMethodEngine.PanelFlag.FLAG_CANDIDATE
+      };
+      let inputPanel = await inputMethodAbility.createPanel(this.mContext, panelInfo1);
+      console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_1000 createPanel success`);
+      let displayId = await inputPanel.getDisplayId();
+      console.info(TAG + `====>Panel.getDisplayId success. displayId: ${displayId}`);
+      try {
+        let SystemPanelInsets = await inputPanel.getSystemPanelCurrentInsets(displayId);
+        console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1000 getSystemPanelCurrentInsets success. insets is{left:  ${SystemPanelInsets.left}, right:  ${SystemPanelInsets.right}, bottom:  ${SystemPanelInsets.bottom}}`);
+      } catch (err) {
+        console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1000 getSystemPanelCurrentInsets cathch err.code: ${err.code}  , err.message: ${err.message}`);
+        if (err.code === 12800017) {
+          commonEventPublishData = {
+              data: 'SUCCESS'
+            };
+        }
+      } finally {
+        await inputMethodAbility.destroyPanel(inputPanel);
+        console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_1000 getSystemPanelCurrentInsets end`);
+      };
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1000 cathch err.code: ${err.code}  , err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_OffsetArea_1000', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_OffsetArea_1100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_OffsetArea_1100 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let panelInfo1: inputMethodEngine.PanelInfo = {
+        type: inputMethodEngine.PanelType.STATUS_BAR,
+      };
+      let inputPanel = await inputMethodAbility.createPanel(this.mContext, panelInfo1);
+      console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_1000 createPanel success`);
+      let displayId = await inputPanel.getDisplayId();
+      console.info(TAG + `====>Panel.getDisplayId success. displayId: ${displayId}`);
+      try {
+        let SystemPanelInsets = await inputPanel.getSystemPanelCurrentInsets(displayId);
+        console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1100 getSystemPanelCurrentInsets success. insets is{left:  ${SystemPanelInsets.left}, right:  ${SystemPanelInsets.right}, bottom:  ${SystemPanelInsets.bottom}}`);
+      } catch (err) {
+        console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1100 getSystemPanelCurrentInsets cathch err.code: ${err.code}  , err.message: ${err.message}`);
+        if (err.code === 12800017) {
+          commonEventPublishData = {
+              data: 'SUCCESS'
+            };
+        }
+      } finally {
+        await inputMethodAbility.destroyPanel(inputPanel);
+        console.info(TAG + `====>Panel.Sub_InputMethod_IME_OffsetArea_1100 getSystemPanelCurrentInsets end`);
+      };
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1100 cathch err.code: ${err.code}  , err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_OffsetArea_1100', commonEventPublishData, this.publishCallback);
   }
 
 }

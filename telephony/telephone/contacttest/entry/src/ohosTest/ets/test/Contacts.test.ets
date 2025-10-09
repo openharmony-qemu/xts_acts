@@ -20,6 +20,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -258,6 +259,7 @@ export default function ContactsTest() {
       try {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
+        await sleep()
         contact.addContact(context, contactData, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} Failed to addContact. Code:${JSON.stringify(err)}`)
@@ -309,6 +311,7 @@ export default function ContactsTest() {
       try {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
+        await sleep()
         contact.addContact(context, {}, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} Failed to addContact. Code:${JSON.stringify(err)}`)
@@ -360,6 +363,7 @@ export default function ContactsTest() {
       try {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
+        await sleep()
         contact.addContact(context, {
           name: {
             fullName: 'LiSi'
@@ -415,6 +419,7 @@ export default function ContactsTest() {
       try {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
+        await sleep()
         contact.addContact(context, contactData).then((data) => {
           console.info(`${caseName} sunccess to addContact. Code:${JSON.stringify(data)}`)
           contact.queryKey(context, data, (keyErr: BusinessError, keyData: string) => {
@@ -464,6 +469,7 @@ export default function ContactsTest() {
       try {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
+        await sleep()
         contact.addContact(context, {}).then((data) => {
           console.info(`${caseName} sunccess to addContact. Code:${JSON.stringify(data)}`)
           ExpectFail()

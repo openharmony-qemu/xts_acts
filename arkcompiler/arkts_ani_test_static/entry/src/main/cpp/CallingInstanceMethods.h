@@ -18,8 +18,8 @@
 #include "Common.h"
 #include <cstdarg>
 
-const char *CALLINSTMETH_CLASS_NAME = "Lentry/src/main/src/ets/CallingInstanceMethods/Test;";
-const char *CALLINSTMETH_MOD_NAME = "Lentry/src/main/src/ets/CallingInstanceMethods;";
+const char *CALLINSTMETH_CLASS_NAME = "entry.src.main.src.ets.CallingInstanceMethods.Test";
+const char *CALLINSTMETH_MOD_NAME = "entry.src.main.src.ets.CallingInstanceMethods";
 
 ani_boolean GetMethodAndObject([[maybe_unused]] ani_env *env, const char *methodName,
                                const char *signature, ani_object *object, ani_method *method)
@@ -107,7 +107,7 @@ ani_boolean test_Object_CallMethod_Double([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method), ANI_TRUE);
     ani_double sum = 0.0F;
     ani_double arg1 = 2.0F;
     ani_double arg2 = 3.0F;
@@ -120,7 +120,7 @@ ani_boolean test_Object_CallMethod_Double_A([[maybe_unused]] ani_env *env, [[may
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method);
+    GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method);
     ani_value args[2U] = {};
     ani_double arg1 = 2.0F;
     ani_double arg2 = 3.0F;
@@ -146,7 +146,7 @@ ani_boolean test_Object_CallMethod_Double_V([[maybe_unused]] ani_env *env, [[may
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method);
+    GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method);
     ani_double result = 0.0F;
     ani_double arg1 = 2.0F;
     ani_double arg2 = 3.0F;
@@ -159,7 +159,7 @@ ani_boolean test_Object_CallMethod_Int([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "intMethod", "II:I", &obj, &method);
+    GetMethodAndObject(env, "intMethod", "ii:i", &obj, &method);
     ani_int sum = 0U;
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
@@ -172,7 +172,7 @@ ani_boolean test_Object_CallMethod_Int_A([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "intMethod", "II:I", &obj, &method);
+    GetMethodAndObject(env, "intMethod", "ii:i", &obj, &method);
     ani_value args[2U];
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
@@ -198,7 +198,7 @@ ani_boolean test_Object_CallMethod_Int_V([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "intMethod", "II:I", &obj, &method);
+    GetMethodAndObject(env, "intMethod", "ii:i", &obj, &method);
     ani_int result = 0U;
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
@@ -263,9 +263,9 @@ ani_boolean test_Object_CallMethod_Void([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method);
+    GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_int a = 6U;
     ani_int b = 7U;
     ani_int sum = 0U;
@@ -279,9 +279,9 @@ ani_boolean test_Object_CallMethod_Void_A([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method);
+    GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_value args[2];
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
@@ -307,9 +307,9 @@ ani_boolean test_Object_CallMethod_Void_V([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method);
+    GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_int arg1 = 6U;
     ani_int arg2 = 7U;
     ani_int sum = 0U;
@@ -323,7 +323,7 @@ ani_boolean test_Object_CallMethod_Long([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "longMethod", "JJ:J", &obj, &method);
+    GetMethodAndObject(env, "longMethod", "ll:l", &obj, &method);
     ani_long sum = 0U;
     ani_long arg1 = 2U;
     ani_long arg2 = 3U;
@@ -336,7 +336,7 @@ ani_boolean test_Object_CallMethod_Long_A([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "longMethod", "JJ:J", &obj, &method);
+    GetMethodAndObject(env, "longMethod", "ll:l", &obj, &method);
     ani_value args[2U];
     ani_long arg1 = 2U;
     ani_long arg2 = 3U;
@@ -362,7 +362,7 @@ ani_boolean test_Object_CallMethod_Long_V([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "longMethod", "JJ:J", &obj, &method);
+    GetMethodAndObject(env, "longMethod", "ll:l", &obj, &method);
     ani_long arg1 = 2U;
     ani_long arg2 = 3U;
     ani_long sum = 0U;
@@ -394,7 +394,7 @@ ani_boolean test_Module_BindNativeFunctions([[maybe_unused]] ani_env *env, [[may
     ASSERT_EQ(env->FindModule(CALLINSTMETH_MOD_NAME, &module), ANI_OK);
     ASSERT_NE(module, nullptr);
     std::array functions = {
-        ani_native_function{"sum", "II:I", reinterpret_cast<void *>(callinstmethSum)},
+        ani_native_function{"sum", "ii:i", reinterpret_cast<void *>(callinstmethSum)},
     };
     ASSERT_EQ(env->Module_BindNativeFunctions(module, functions.data(), functions.size()), ANI_OK);
     ani_function fn{};
@@ -407,17 +407,15 @@ ani_boolean test_Module_BindNativeFunctions([[maybe_unused]] ani_env *env, [[may
 
 ani_boolean test_Namespace_BindNativeFunctions([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_module module{};
-    ASSERT_EQ(env->FindModule(CALLINSTMETH_MOD_NAME, &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
     ani_namespace nsA{};
     ani_function fn{};
-    ASSERT_EQ(env->Module_FindNamespace(module, "LA;", &nsA), ANI_OK);
+    const std::string nsName = std::string(CALLINSTMETH_MOD_NAME) + ".A";
+    ASSERT_EQ(env->FindNamespace(nsName.c_str(), &nsA), ANI_OK);
     ASSERT_NE(nsA, nullptr);
-    ASSERT_EQ(env->Namespace_FindFunction(nsA, "checkSumB", ":Z", &fn), ANI_OK);
+    ASSERT_EQ(env->Namespace_FindFunction(nsA, "checkSumB", ":z", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);
     std::array functions = {
-        ani_native_function{"sumB", "II:I", reinterpret_cast<void *>(callinstmethSumB)},
+        ani_native_function{"sumB", "ii:i", reinterpret_cast<void *>(callinstmethSumB)},
     };
     ASSERT_EQ(env->Namespace_BindNativeFunctions(nsA, functions.data(), functions.size()), ANI_OK);
     ani_boolean value = ANI_FALSE;
@@ -473,7 +471,7 @@ ani_boolean test_Function_Call_Boolean_V([[maybe_unused]] ani_env *env, [[maybe_
 ani_boolean test_Function_Call_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "CC:C", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "cc:c", &fn);
     ani_char arg1 = 'C';
     ani_char arg2 = 'A';
     ani_char value = '0';
@@ -485,7 +483,7 @@ ani_boolean test_Function_Call_Char([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_Function_Call_Char_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "CC:C", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "cc:c", &fn);
     ani_value args[2U];
     ani_char arg1 = 'C';
     ani_char arg2 = 'A';
@@ -509,7 +507,7 @@ ani_boolean TestFunctionCallCharV([[maybe_unused]] ani_env *env, ani_function fn
 ani_boolean test_Function_Call_Char_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "CC:C", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "charModuleFunction", "cc:c", &fn);
     ani_char arg1 = 'C';
     ani_char arg2 = 'A';
     ani_char value = '0';
@@ -521,7 +519,7 @@ ani_boolean test_Function_Call_Char_V([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Function_Call_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "BB:B", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "bb:b", &fn);
     ani_byte arg1 = 1U;
     ani_byte arg2 = 2U;
     ani_byte value{};
@@ -533,7 +531,7 @@ ani_boolean test_Function_Call_Byte([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_Function_Call_Byte_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "BB:B", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "bb:b", &fn);
     ani_value args[2U];
     ani_byte arg1 = 1U;
     ani_byte arg2 = 2U;
@@ -557,7 +555,7 @@ ani_boolean TestFunctionCallByteV([[maybe_unused]] ani_env *env, ani_function fn
 ani_boolean test_Function_Call_Byte_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "BB:B", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "byteModuleFunction", "bb:b", &fn);
     ani_byte arg1 = 1U;
     ani_byte arg2 = 2U;
     ani_byte value{};
@@ -569,7 +567,7 @@ ani_boolean test_Function_Call_Byte_V([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Function_Call_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "SS:S", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "ss:s", &fn);
     ani_short arg1 = 5;
     ani_short arg2 = 6;
     ani_short value{};
@@ -581,7 +579,7 @@ ani_boolean test_Function_Call_Short([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_boolean test_Function_Call_Short_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "SS:S", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "ss:s", &fn);
     ani_value args[2U];
     ani_short arg1 = 5;
     ani_short arg2 = 6;
@@ -605,7 +603,7 @@ ani_boolean TestFunctionCallShortV([[maybe_unused]] ani_env *env, ani_function f
 ani_boolean test_Function_Call_Short_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "SS:S", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "shortModuleFunction", "ss:s", &fn);
     ani_short arg1 = 5;
     ani_short arg2 = 6;
     ani_short value{};
@@ -617,7 +615,7 @@ ani_boolean test_Function_Call_Short_V([[maybe_unused]] ani_env *env, [[maybe_un
 ani_boolean test_Function_Call_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "II:I", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "ii:i", &fn);
     ani_int arg1 = 5;
     ani_int arg2 = 6;
     ani_int value = 0;
@@ -629,7 +627,7 @@ ani_boolean test_Function_Call_Int([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_boolean test_Function_Call_Int_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "II:I", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "ii:i", &fn);
     ani_value args[2U];
     ani_int arg1 = 5;
     ani_int arg2 = 6;
@@ -653,7 +651,7 @@ ani_boolean TestFunctionCallIntV([[maybe_unused]] ani_env *env, ani_function fn,
 ani_boolean test_Function_Call_Int_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "II:I", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "intModuleFunction", "ii:i", &fn);
     ani_int arg1 = 5;
     ani_int arg2 = 6;
     ani_int value = 0;
@@ -665,7 +663,7 @@ ani_boolean test_Function_Call_Int_V([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_boolean test_Function_Call_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "JJ:J", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "ll:l", &fn);
     ani_long arg1 = 100;
     ani_long arg2 = 200;
     ani_long value{};
@@ -677,7 +675,7 @@ ani_boolean test_Function_Call_Long([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_Function_Call_Long_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "JJ:J", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "ll:l", &fn);
     ani_value args[2U];
     ani_long arg1 = 100;
     ani_long arg2 = 200;
@@ -701,7 +699,7 @@ ani_boolean TestFunctionCallLongV([[maybe_unused]] ani_env *env, ani_function fn
 ani_boolean test_Function_Call_Long_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "JJ:J", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "longModuleFunction", "ll:l", &fn);
     ani_long arg1 = 100;
     ani_long arg2 = 200;
     ani_long value{};
@@ -713,7 +711,7 @@ ani_boolean test_Function_Call_Long_V([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Function_Call_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "FF:F", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "ff:f", &fn);
     ani_float arg1 = 1.5F;
     ani_float arg2 = 2.5F;
     ani_float value = 0.0;
@@ -725,7 +723,7 @@ ani_boolean test_Function_Call_Float([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_boolean test_Function_Call_Float_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "FF:F", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "ff:f", &fn);
     ani_value args[2U];
     ani_float arg1 = 1.5F;
     ani_float arg2 = 2.5F;
@@ -749,7 +747,7 @@ ani_boolean TestFunctionCallFloatV([[maybe_unused]] ani_env *env, ani_function f
 ani_boolean test_Function_Call_Float_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "FF:F", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "floatModuleFunction", "ff:f", &fn);
     ani_float arg1 = 1.5F;
     ani_float arg2 = 2.5F;
     ani_float value = 0.0;
@@ -761,7 +759,7 @@ ani_boolean test_Function_Call_Float_V([[maybe_unused]] ani_env *env, [[maybe_un
 ani_boolean test_Function_Call_Double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "DD:D", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "dd:d", &fn);
     ani_double arg1 = 1.5;
     ani_double arg2 = 2.5;
     ani_double value = 0.0;
@@ -773,7 +771,7 @@ ani_boolean test_Function_Call_Double([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Function_Call_Double_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "DD:D", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "dd:d", &fn);
     ani_value args[2U];
     ani_double arg1 = 1.5;
     ani_double arg2 = 2.5;
@@ -797,7 +795,7 @@ ani_boolean TestFunctionCallDoubleV([[maybe_unused]] ani_env *env, ani_function 
 ani_boolean test_Function_Call_Double_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "DD:D", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "doubleModuleFunction", "dd:d", &fn);
     ani_double arg1 = 1.5;
     ani_double arg2 = 2.5;
     ani_double value = 0.0;
@@ -809,7 +807,7 @@ ani_boolean test_Function_Call_Double_V([[maybe_unused]] ani_env *env, [[maybe_u
 ani_boolean test_Function_Call_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "II:Lstd/core/String;", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "ii:C{std.core.String}", &fn);
     ani_int arg1 = 1;
     ani_int arg2 = 2;
     ani_ref value{};
@@ -824,7 +822,7 @@ ani_boolean test_Function_Call_Ref([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_boolean test_Function_Call_Ref_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "II:Lstd/core/String;", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "ii:C{std.core.String}", &fn);
     ani_value args[2U];
     ani_int arg1 = 1;
     ani_int arg2 = 2;
@@ -851,7 +849,7 @@ ani_boolean TestFunctionCallRefV([[maybe_unused]] ani_env *env, ani_function fn,
 ani_boolean test_Function_Call_Ref_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "II:Lstd/core/String;", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "refModuleFunction", "ii:C{std.core.String}", &fn);
     ani_int arg1 = 1;
     ani_int arg2 = 2;
     ani_ref value{};
@@ -866,9 +864,9 @@ ani_boolean test_Function_Call_Ref_V([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_boolean test_Function_Call_Void([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "II:V", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "ii:", &fn);
     ani_function checkFn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":I", &checkFn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":i", &checkFn);
     ani_int arg1 = 5;
     ani_int arg2 = 6;
     ani_int sum = 0;
@@ -881,9 +879,9 @@ ani_boolean test_Function_Call_Void([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_Function_Call_Void_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "II:V", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "ii:", &fn);
     ani_function checkFn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":I", &checkFn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":i", &checkFn);
     ani_value args[2U];
     ani_int arg1 = 5;
     ani_int arg2 = 6;
@@ -908,9 +906,9 @@ ani_boolean TestFunctionCallVoidV([[maybe_unused]] ani_env *env, ani_function fn
 ani_boolean test_Function_Call_Void_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "II:V", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "voidModuleFunction", "ii:", &fn);
     ani_function checkFn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":I", &checkFn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "getIntExport", ":i", &checkFn);
     ani_int arg1 = 5;
     ani_int arg2 = 6;
     ani_int sum = 0;
@@ -924,7 +922,7 @@ ani_boolean test_Object_CallMethod_Char([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "charMethod", "CC:C", &obj, &method);
+    GetMethodAndObject(env, "charMethod", "cc:c", &obj, &method);
     ani_char result = '0';
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -937,7 +935,7 @@ ani_boolean test_Object_CallMethod_Char_A([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "charMethod", "CC:C", &obj, &method);
+    GetMethodAndObject(env, "charMethod", "cc:c", &obj, &method);
     ani_value args[2U];
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -963,7 +961,7 @@ ani_boolean test_Object_CallMethod_Char_V([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "charMethod", "CC:C", &obj, &method);
+    GetMethodAndObject(env, "charMethod", "cc:c", &obj, &method);
     ani_char result = '0';
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -976,7 +974,7 @@ ani_boolean test_Object_CallMethod_Byte([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "byteMethod", "BB:B", &obj, &method);
+    GetMethodAndObject(env, "byteMethod", "bb:b", &obj, &method);
     ani_byte sum = 0U;
     ani_byte arg1 = 2U;
     ani_byte arg2 = 3U;
@@ -989,7 +987,7 @@ ani_boolean test_Object_CallMethod_Byte_A([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "byteMethod", "BB:B", &obj, &method);
+    GetMethodAndObject(env, "byteMethod", "bb:b", &obj, &method);
     ani_byte result = 0U;
     ani_value args[2U] = {};
     ani_byte arg1 = 4U;
@@ -1015,7 +1013,7 @@ ani_boolean test_Object_CallMethod_Byte_V([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "byteMethod", "BB:B", &obj, &method);
+    GetMethodAndObject(env, "byteMethod", "bb:b", &obj, &method);
     ani_byte sum = 0U;
     ani_byte arg1 = 2U;
     ani_byte arg2 = 3U;
@@ -1028,7 +1026,7 @@ ani_boolean test_Object_CallMethod_Short([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "shortMethod", "SS:S", &obj, &method);
+    GetMethodAndObject(env, "shortMethod", "ss:s", &obj, &method);
     ani_short sum = 0U;
     ani_short arg1 = 2U;
     ani_short arg2 = 3U;
@@ -1041,7 +1039,7 @@ ani_boolean test_Object_CallMethod_Short_A([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "shortMethod", "SS:S", &obj, &method);
+    GetMethodAndObject(env, "shortMethod", "ss:s", &obj, &method);
     ani_value args[2U];
     ani_short arg1 = 2U;
     ani_short arg2 = 3U;
@@ -1067,7 +1065,7 @@ ani_boolean test_Object_CallMethod_Short_V([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "shortMethod", "SS:S", &obj, &method);
+    GetMethodAndObject(env, "shortMethod", "ss:s", &obj, &method);
     ani_short sum = 0U;
     ani_short arg1 = 2U;
     ani_short arg2 = 3U;
@@ -1080,7 +1078,7 @@ ani_boolean test_Object_CallMethod_Float([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method);
+    GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method);
     ani_float sum = 0.0F;
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
@@ -1093,7 +1091,7 @@ ani_boolean test_Object_CallMethod_Float_A([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method);
+    GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method);
     ani_value args[2U];
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
@@ -1119,7 +1117,7 @@ ani_boolean test_Object_CallMethod_Float_V([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method);
+    GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method);
     ani_float sum = 0.0F;
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
@@ -1132,7 +1130,7 @@ ani_boolean test_Object_CallMethod_Ref([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
     std::string str{};
@@ -1149,7 +1147,7 @@ ani_boolean test_Object_CallMethod_Ref_A([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ani_value args[2U];
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
@@ -1179,7 +1177,7 @@ ani_boolean test_Object_CallMethod_Ref_V([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ani_int arg1 = 2U;
     ani_int arg2 = 3U;
     std::string str{};
@@ -1249,11 +1247,11 @@ ani_boolean test_Object_CallMethodByName_Char([[maybe_unused]] ani_env *env, [[m
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "CC:C", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "cc:c", &obj, &method), ANI_TRUE);
     ani_char res = '0';
     ani_int arg1 = 'C';
     ani_int arg2 = 'A';
-    ASSERT_EQ(env->Object_CallMethodByName_Char(obj, "charByNameMethod", "CC:C", &res, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Char(obj, "charByNameMethod", "cc:c", &res, arg1, arg2), ANI_OK);
     ASSERT_EQ(res, arg1);
     return ANI_TRUE;
 }
@@ -1262,14 +1260,14 @@ ani_boolean test_Object_CallMethodByName_Char_A([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "CC:C", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "cc:c", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_int arg1 = 'C';
     ani_int arg2 = 'A';
     args[0U].c = arg2;
     args[1U].c = arg1;
     ani_char res = '0';
-    ASSERT_EQ(env->Object_CallMethodByName_Char_A(obj, "charByNameMethod", "CC:C", &res, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Char_A(obj, "charByNameMethod", "cc:c", &res, args), ANI_OK);
     ASSERT_EQ(res, arg1);
     return ANI_TRUE;
 }
@@ -1279,7 +1277,7 @@ ani_boolean TestObjectCallMethodByNameCharV([[maybe_unused]] ani_env *env, ani_o
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "CC:C", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "charByNameMethod", "cc:c", &obj, &method), ANI_TRUE);
     va_list args{};
     va_start(args, value);
     ASSERT_EQ(env->Object_CallMethodByName_Char_V(obj, methodName, signature, value, args), ANI_OK);
@@ -1292,7 +1290,7 @@ ani_boolean test_Object_CallMethodByName_Char_V([[maybe_unused]] ani_env *env, [
     ani_char res = '0';
     ani_int arg1 = 'C';
     ani_int arg2 = 'A';
-    TestObjectCallMethodByNameCharV(env, object, "charByNameMethod", "CC:C", &res, arg1, arg2);
+    TestObjectCallMethodByNameCharV(env, object, "charByNameMethod", "cc:c", &res, arg1, arg2);
     ASSERT_EQ(res, arg1);
     return ANI_TRUE;
 }
@@ -1301,11 +1299,11 @@ ani_boolean test_Object_CallMethodByName_Byte([[maybe_unused]] ani_env *env, [[m
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "BB:B", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "bb:b", &obj, &method), ANI_TRUE);
     ani_byte res{};
     ani_byte arg1 = 5U;
     ani_byte arg2 = 6U;
-    ASSERT_EQ(env->Object_CallMethodByName_Byte(obj, "byteByNameMethod", "BB:B", &res, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Byte(obj, "byteByNameMethod", "bb:b", &res, arg1, arg2), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1314,14 +1312,14 @@ ani_boolean test_Object_CallMethodByName_Byte_A([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "BB:B", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "bb:b", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_byte arg1 = 5U;
     ani_byte arg2 = 6U;
     args[0U].b = arg1;
     args[1U].b = arg2;
     ani_byte res{};
-    ASSERT_EQ(env->Object_CallMethodByName_Byte_A(obj, "byteByNameMethod", "BB:B", &res, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Byte_A(obj, "byteByNameMethod", "bb:b", &res, args), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1340,11 +1338,11 @@ ani_boolean test_Object_CallMethodByName_Byte_V([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "BB:B", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "byteByNameMethod", "bb:b", &obj, &method), ANI_TRUE);
     ani_byte res{};
     ani_byte arg1 = 5U;
     ani_byte arg2 = 6U;
-    TestObjectCallMethodByNameByteV(env, obj, "byteByNameMethod", "BB:B", &res, arg1, arg2);
+    TestObjectCallMethodByNameByteV(env, obj, "byteByNameMethod", "bb:b", &res, arg1, arg2);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1353,11 +1351,11 @@ ani_boolean test_Object_CallMethodByName_Short([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "SS:S", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "ss:s", &obj, &method), ANI_TRUE);
     ani_short arg1 = 5U;
     ani_short arg2 = 6U;
     ani_short res{};
-    ASSERT_EQ(env->Object_CallMethodByName_Short(obj, "shortByNameMethod", "SS:S", &res, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Short(obj, "shortByNameMethod", "ss:s", &res, arg1, arg2), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1366,14 +1364,14 @@ ani_boolean test_Object_CallMethodByName_Short_A([[maybe_unused]] ani_env *env, 
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "SS:S", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "ss:s", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_short arg1 = 5U;
     ani_short arg2 = 6U;
     args[0U].s = arg1;
     args[1U].s = arg2;
     ani_short res{};
-    ASSERT_EQ(env->Object_CallMethodByName_Short_A(obj, "shortByNameMethod", "SS:S", &res, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Short_A(obj, "shortByNameMethod", "ss:s", &res, args), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1392,11 +1390,11 @@ ani_boolean test_Object_CallMethodByName_Short_V([[maybe_unused]] ani_env *env, 
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "SS:S", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "shortByNameMethod", "ss:s", &obj, &method), ANI_TRUE);
     ani_short arg1 = 5U;
     ani_short arg2 = 6U;
     ani_short res{};
-    TestObjectCallMethodByNameShortV(env, obj, "shortByNameMethod", "SS:S", &res, arg1, arg2);
+    TestObjectCallMethodByNameShortV(env, obj, "shortByNameMethod", "ss:s", &res, arg1, arg2);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1405,11 +1403,11 @@ ani_boolean test_Object_CallMethodByName_Int([[maybe_unused]] ani_env *env, [[ma
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "II:I", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "ii:i", &obj, &method), ANI_TRUE);
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     ani_int res = 0;
-    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intByNameMethod", "II:I", &res, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intByNameMethod", "ii:i", &res, arg1, arg2), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1418,14 +1416,14 @@ ani_boolean test_Object_CallMethodByName_Int_A([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "II:I", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "ii:i", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     args[0U].i = arg1;
     args[1U].i = arg2;
     ani_int res = 0;
-    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intByNameMethod", "II:I", &res, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intByNameMethod", "ii:i", &res, args), ANI_OK);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1444,11 +1442,11 @@ ani_boolean test_Object_CallMethodByName_Int_V([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "II:I", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "intByNameMethod", "ii:i", &obj, &method), ANI_TRUE);
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     ani_int res = 0;
-    TestObjectCallMethodByNameIntV(env, obj, "intByNameMethod", "II:I", &res, arg1, arg2);
+    TestObjectCallMethodByNameIntV(env, obj, "intByNameMethod", "ii:i", &res, arg1, arg2);
     ASSERT_EQ(res, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1509,11 +1507,11 @@ ani_boolean test_Object_CallMethodByName_Float([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method), ANI_TRUE);
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
     ani_float sum = 0.0F;
-    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "FF:F", &sum, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, arg1, arg2), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1522,14 +1520,14 @@ ani_boolean test_Object_CallMethodByName_Float_A([[maybe_unused]] ani_env *env, 
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
     args[0U].f = arg1;
     args[1U].f = arg2;
     ani_float sum = 0.0F;
-    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "FF:F", &sum, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1548,11 +1546,11 @@ ani_boolean test_Object_CallMethodByName_Float_V([[maybe_unused]] ani_env *env, 
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "FF:F", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "floatMethod", "ff:f", &obj, &method), ANI_TRUE);
     ani_float arg1 = 2.0F;
     ani_float arg2 = 3.0F;
     ani_float sum = 0.0F;
-    TestObjectCallMethodByNameFloatV(env, obj, "floatMethod", "FF:F", &sum, arg1, arg2);
+    TestObjectCallMethodByNameFloatV(env, obj, "floatMethod", "ff:f", &sum, arg1, arg2);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1561,11 +1559,11 @@ ani_boolean test_Object_CallMethodByName_Double([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method), ANI_TRUE);
     ani_double arg1 = 2.0;
     ani_double arg2 = 3.0;
     ani_double sum = 0.0;
-    ASSERT_EQ(env->Object_CallMethodByName_Double(obj, "doubleMethod", "DD:D", &sum, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Double(obj, "doubleMethod", "dd:d", &sum, arg1, arg2), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1574,14 +1572,14 @@ ani_boolean test_Object_CallMethodByName_Double_A([[maybe_unused]] ani_env *env,
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     ani_double arg1 = 2.0;
     ani_double arg2 = 3.0;
     args[0U].d = arg1;
     args[1U].d = arg2;
     ani_double sum = 0.0;
-    ASSERT_EQ(env->Object_CallMethodByName_Double_A(obj, "doubleMethod", "DD:D", &sum, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Double_A(obj, "doubleMethod", "dd:d", &sum, args), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1600,11 +1598,11 @@ ani_boolean test_Object_CallMethodByName_Double_V([[maybe_unused]] ani_env *env,
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "DD:D", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "doubleMethod", "dd:d", &obj, &method), ANI_TRUE);
     ani_double arg1 = 2.0;
     ani_double arg2 = 3.0;
     ani_double sum = 0.0;
-    TestObjectCallMethodByNameDoubleV(env, obj, "doubleMethod", "DD:D", &sum, arg1, arg2);
+    TestObjectCallMethodByNameDoubleV(env, obj, "doubleMethod", "dd:d", &sum, arg1, arg2);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
 }
@@ -1613,13 +1611,13 @@ ani_boolean test_Object_CallMethodByName_Ref([[maybe_unused]] ani_env *env, [[ma
 {
     ani_object obj{};
     ani_method method{};
-    auto res = GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    auto res = GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ASSERT_EQ(res, ANI_TRUE);
     std::string str{};
     ani_ref result{};
     ani_int arg1 = 5;
     ani_int arg2 = 6;
-    ASSERT_EQ(env->Object_CallMethodByName_Ref(obj, "stringMethod", "II:Lstd/core/String;", &result, arg1, arg2),
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(obj, "stringMethod", "ii:C{std.core.String}", &result, arg1, arg2),
               ANI_OK);
     ASSERT_NE(result, nullptr);
     GetStdString(env, static_cast<ani_string>(result), str);
@@ -1633,7 +1631,7 @@ ani_boolean test_Object_CallMethodByName_Ref_A([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    auto res = GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    auto res = GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ASSERT_EQ(res, ANI_TRUE);
     std::string str{};
     ani_ref result{};
@@ -1642,7 +1640,7 @@ ani_boolean test_Object_CallMethodByName_Ref_A([[maybe_unused]] ani_env *env, [[
     ani_value args[2U];
     args[0U].i = arg1;
     args[1U].i = arg2;
-    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(obj, "stringMethod", "II:Lstd/core/String;", &result, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(obj, "stringMethod", "ii:C{std.core.String}", &result, args), ANI_OK);
     ASSERT_NE(result, nullptr);
     GetStdString(env, static_cast<ani_string>(result), str);
     std::string checkStr = "nihao";
@@ -1664,13 +1662,13 @@ ani_boolean test_Object_CallMethodByName_Ref_V([[maybe_unused]] ani_env *env, [[
 {
     ani_object obj{};
     ani_method method{};
-    auto res = GetMethodAndObject(env, "stringMethod", "II:Lstd/core/String;", &obj, &method);
+    auto res = GetMethodAndObject(env, "stringMethod", "ii:C{std.core.String}", &obj, &method);
     ASSERT_EQ(res, ANI_TRUE);
     std::string str{};
     ani_ref result{};
     ani_int arg1 = 5;
     ani_int arg2 = 6;
-    TestObjectCallMethodByNameRefV(env, obj, "stringMethod", "II:Lstd/core/String;", &result, arg1, arg2);
+    TestObjectCallMethodByNameRefV(env, obj, "stringMethod", "ii:C{std.core.String}", &result, arg1, arg2);
     ASSERT_NE(result, nullptr);
     GetStdString(env, static_cast<ani_string>(result), str);
     std::string checkStr = "nihao";
@@ -1682,13 +1680,13 @@ ani_boolean test_Object_CallMethodByName_Void([[maybe_unused]] ani_env *env, [[m
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method), ANI_TRUE);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_int arg1 = 6U;
     ani_int arg2 = 7U;
     ani_int sum = 0U;
-    ASSERT_EQ(env->Object_CallMethodByName_Void(obj, "voidMethod", "II:V", arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Void(obj, "voidMethod", "ii:", arg1, arg2), ANI_OK);
     ASSERT_EQ(env->Object_CallMethod_Int(obj, checkMethod, &sum), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
@@ -1698,16 +1696,16 @@ ani_boolean test_Object_CallMethodByName_Void_A([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method), ANI_TRUE);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_value args[2];
     ani_int arg1 = 6U;
     ani_int arg2 = 7U;
     args[0].i = arg1;
     args[1].i = arg2;
     ani_int sum = 0U;
-    ASSERT_EQ(env->Object_CallMethodByName_Void_A(obj, "voidMethod", "II:V", args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Void_A(obj, "voidMethod", "ii:", args), ANI_OK);
     ASSERT_EQ(env->Object_CallMethod_Int(obj, checkMethod, &sum), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
@@ -1727,13 +1725,13 @@ ani_boolean test_Object_CallMethodByName_Void_V([[maybe_unused]] ani_env *env, [
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "II:V", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "voidMethod", "ii:", &obj, &method), ANI_TRUE);
     ani_method checkMethod{};
-    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":I", &checkMethod);
+    GetMethod(env, CALLINSTMETH_CLASS_NAME, "getCount", ":i", &checkMethod);
     ani_int arg1 = 6U;
     ani_int arg2 = 7U;
     ani_int sum = 0U;
-    TestObjectCallMethodByNameVoidV(env, obj, "voidMethod", "II:V", arg1, arg2);
+    TestObjectCallMethodByNameVoidV(env, obj, "voidMethod", "ii:", arg1, arg2);
     ASSERT_EQ(env->Object_CallMethod_Int(obj, checkMethod, &sum), ANI_OK);
     ASSERT_EQ(sum, arg1 + arg2);
     return ANI_TRUE;
@@ -1744,7 +1742,7 @@ ani_boolean test_Class_CallStaticMethod_Char([[maybe_unused]] ani_env *env, [[ma
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "CC:C", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "cc:c", &method), ANI_OK);
     ani_char result = '0';
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -1758,7 +1756,7 @@ ani_boolean test_Class_CallStaticMethod_Char_A([[maybe_unused]] ani_env *env, [[
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "CC:C", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "cc:c", &method), ANI_OK);
     ani_value args[2U];
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -1785,7 +1783,7 @@ ani_boolean test_Class_CallStaticMethod_Char_V([[maybe_unused]] ani_env *env, [[
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "CC:C", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticCharMethod", "cc:c", &method), ANI_OK);
     ani_char result = '0';
     ani_char arg1 = 'a';
     ani_char arg2 = 'b';
@@ -1799,7 +1797,7 @@ ani_boolean test_Class_CallStaticMethod_Byte([[maybe_unused]] ani_env *env, [[ma
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "BB:B", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "bb:b", &method), ANI_OK);
     ani_byte sum = 0U;
     ani_byte arg1 = 2U;
     ani_byte arg2 = 3U;
@@ -1813,7 +1811,7 @@ ani_boolean test_Class_CallStaticMethod_Byte_A([[maybe_unused]] ani_env *env, [[
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "BB:B", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "bb:b", &method), ANI_OK);
     ani_byte result = 0U;
     ani_value args[2U] = {};
     ani_byte arg1 = 4U;
@@ -1840,7 +1838,7 @@ ani_boolean test_Class_CallStaticMethod_Byte_V([[maybe_unused]] ani_env *env, [[
     ani_class cls{};
     ASSERT_EQ(env->FindClass(CALLINSTMETH_CLASS_NAME, &cls), ANI_OK);
     ani_static_method method{};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "BB:B", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticByteMethod", "bb:b", &method), ANI_OK);
     ani_byte sum = 0U;
     ani_byte arg1 = 2U;
     ani_byte arg2 = 3U;

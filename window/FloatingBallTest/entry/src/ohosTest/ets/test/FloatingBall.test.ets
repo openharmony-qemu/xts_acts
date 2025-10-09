@@ -164,12 +164,15 @@ export default function abilityTest() {
         title: 'title',
         content: 'content'
       };
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
       try {
         floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
           let floatingBallController: floatingBall.FloatingBallController = data;
           console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
           floatingBallController.startFloatingBall(startParams).then(() => {
             console.info(CaseName+' Succeeded in starting floating ball.');
+            expect(issupportFloatingBall).assertEqual(true);
             floatingBallController.stopFloatingBall().then(() => {
               console.info(CaseName+ 'Succeeded in stopping floating ball.');
               expect(true).assertTrue();
@@ -189,6 +192,7 @@ export default function abilityTest() {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 801){
+            expect(issupportFloatingBall).assertEqual(false);
             done();
           }else{
             expect(false).assertTrue();

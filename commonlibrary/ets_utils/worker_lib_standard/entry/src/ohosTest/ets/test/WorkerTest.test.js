@@ -14,6 +14,7 @@
  */
 
 import worker from '@ohos.worker'
+import TreeSet from "@ohos.util.TreeSet";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "@ohos/hypium"
 
 export default function WorkerTest() {
@@ -1861,9 +1862,44 @@ export default function WorkerTest() {
             done();
         })
 
+        // Check the transmission types supported by Worker is ok.
+        /**
+         * @tc.name worker_support_types_test_010
+         * @tc.number worker_support_types_test_010
+         * @tc.desc Check the transmission types supported by Worker is ok.
+         */
+        it('worker_support_types_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker_027.js");
+            let res;
+            let flag = false;
+            let isTerminate = false;
+            ss.onmessage = function (d) {
+                res = d.data;
+                flag = true;
+            }
+            ss.onexit = function () {
+                isTerminate = true;
+            }
+            const data = new TreeSet();
+            ss.postMessage(data);
+            while (!flag) {
+                await promiseCase();
+            }
+
+            ss.terminate();
+            while (!isTerminate) {
+                await promiseCase();
+            }
+            expect(res.has(1)).assertTrue()
+            expect(res.has(2)).assertTrue()
+            expect(!res.has(1010)).assertTrue()
+            done();
+        })
+
         // Check the SharedArrayBuffer with worker.
         /**
          * @tc.name: worker_SharedArrayBuffer_test_001
+         * @tc.number: worker_SharedArrayBuffer_test_001
          * @tc.desc: Check the SharedArrayBuffer with worker is ok.
          */
         it('worker_SharedArrayBuffer_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {

@@ -12,33 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { CheckSoftware } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
 import { GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksWrapKeyTest() {
   let useSoftware: boolean = true;
 
   describe('SecurityHuksWrapKeyTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
       useSoftware = await CheckSoftware();
-    })
-    beforeEach(() => {
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -56,7 +43,7 @@ export default function SecurityHuksWrapKeyTest() {
         await huks.wrapKeyItem(testNumber, wrapKeyOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (useSoftware || err.code == 801) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
         } else {
@@ -80,7 +67,7 @@ export default function SecurityHuksWrapKeyTest() {
         await huks.unwrapKeyItem(testNumber, wrapKeyOptions, StringToUint8Array(GetDataBySize(64)));
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         if (useSoftware || err.code == 801) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
         } else {

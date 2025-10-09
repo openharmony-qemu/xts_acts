@@ -24,7 +24,7 @@ import { Permissions } from 'permissions';
 import PermissionRequestResult from 'security.PermissionRequestResult';
 import bundleManager from '@ohos.bundle.bundleManager'
 import { BusinessError } from '@ohos.base'
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 const ERR_PARAM_ILLEGAL = 401;
@@ -110,6 +110,8 @@ export default function AccessTokenStaticTest() {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 start");
       try {
         atManager.verifyAccessTokenSync(0, permissionNameUser);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -131,6 +133,8 @@ export default function AccessTokenStaticTest() {
       let permissionName: Permissions = "" as Permissions;
       try {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -152,6 +156,8 @@ export default function AccessTokenStaticTest() {
       let permissionName = 'a'.repeat(257) as Permissions;
       try {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -259,6 +265,8 @@ export default function AccessTokenStaticTest() {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 start");
       try {
         atManager.checkAccessTokenSync(0, permissionNameUser);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -280,6 +288,8 @@ export default function AccessTokenStaticTest() {
       let permissionName: Permissions = "" as Permissions;
       try {
         atManager.checkAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -301,6 +311,8 @@ export default function AccessTokenStaticTest() {
       let permissionName = 'a'.repeat(257) as Permissions;
       try {
         atManager.checkAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -517,7 +529,7 @@ export default function AccessTokenStaticTest() {
       }
     })
 
-   /**
+    /**
      * @tc.number Test_verifyAccessToken_Promise_001
      * @tc.name Test_verifyAccessToken_Promise_001
      * @tc.desc After the installation, user_grant permission is not granted by default(Promise).

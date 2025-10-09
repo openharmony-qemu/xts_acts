@@ -12,35 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
 import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
 import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
 import { Agree, Derive, GetDeriveAgreeFinishOptions, GetEcdhAgreeOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHuksKeyGenerateOverrideTest() {
   describe('SecurityHuksKeyGenerateOverrideTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
 
     /**
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100
@@ -56,7 +38,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.generateKeyItem(testNumber, GetAesGenerateOptions(256));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -75,7 +57,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.generateKeyItem(testNumber, SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -95,7 +77,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         await huks.generateKeyItem(testNumber, SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false));
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -113,7 +95,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.generateKeyItem(testNumber, SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -132,7 +114,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importKeyItem(testNumber, SetInData(GetAesGenerateOptions(256), GetAesImportData(256)));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -151,7 +133,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importKeyItem(testNumber, SetInData(SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true), GetAesImportData(256)));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -171,7 +153,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         await huks.importKeyItem(testNumber, SetInData(SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false), GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -189,7 +171,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importKeyItem(testNumber, SetInData(SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false), GetAesImportData(256)));
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -218,7 +200,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -247,7 +229,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -276,7 +258,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -304,7 +286,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -329,7 +311,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await Agree(testNumber + "_keyPairA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -355,7 +337,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         SetParam(finishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
         await Agree(testNumber + "_keyPairA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -382,7 +364,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         await Agree(testNumber + "_keyPairA", initOptions, finishOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -407,7 +389,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         SetParam(finishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
         await Agree(testNumber + "_keyPairA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -430,7 +412,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
       try {
         await Derive(testNumber + "_keyA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -454,7 +436,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         SetParam(finishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
         await Derive(testNumber + "_keyA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -479,7 +461,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         await Derive(testNumber + "_keyA", initOptions, finishOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -502,7 +484,7 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
         SetParam(finishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
         await Derive(testNumber + "_keyA", initOptions, finishOptions);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })

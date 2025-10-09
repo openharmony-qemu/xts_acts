@@ -68,7 +68,7 @@ export default function ReminderAgentTest() {
             console.info(`ReminderAgentTest come in driveFn`);
             await sleep(1000);
             console.info(`ReminderAgentTest driver is ${JSON.stringify(driver)}`);
-            let button = await driver.findComponent(ON.type('Button').text('允许').within(ON.type('Dialog')));
+            let button = await driver.findComponent(ON.text('允许').within(ON.type('Dialog')));
             console.info(`ReminderAgentTest button is ${JSON.stringify(button)}`);
             if(button != null){
                 await button.click();

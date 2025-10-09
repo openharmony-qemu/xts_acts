@@ -16,10 +16,12 @@ import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import textContentAlignTest from './TextTest/textContentAlign.test';
 import ImageAttachmentTest from './ImageAttachmentTest/ImageAttachment.test';
 import RichEditorScrollBarColorTest from './RichEditorTest/ScrollBarColor.test';
+import ImageContentTransitionEffectTest from './ImageContentTransitionEffectTest/ImageContentTransitionEffect.test';
 
 export default function testsuite() {
   textAreaInputTest();
   textContentAlignTest();
   ImageAttachmentTest();
   RichEditorScrollBarColorTest();
+  ImageContentTransitionEffectTest();
 }

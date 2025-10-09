@@ -12,33 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { GenParam } from './utils/huks/HuksOptionsUtils';
-import { StringToUint8Array } from './utils/CommonUtils';
+import { StringToUint8Array } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHUKSAccessControlAsUserTest() {
-  let useSoftware: boolean = true;
+
   describe('SecurityHuksAccessControlAsUserTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
 
     /**
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2200
@@ -62,7 +44,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.generateKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -91,7 +73,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.deleteKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -123,7 +105,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.importKeyItemAsUser(userid, testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -155,7 +137,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.importWrappedKeyItemAsUser(userid, testNumber, testNumber, importKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -184,7 +166,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.exportKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -213,7 +195,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.getKeyItemPropertiesAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -242,7 +224,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.hasKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -284,7 +266,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.initSessionAsUser(userid, testNumber, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -313,7 +295,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.attestKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })
@@ -355,7 +337,7 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         await huks.anonAttestKeyItemAsUser(userid, testNumber, anonAttestOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SYSTEM_APP);
       }
     })

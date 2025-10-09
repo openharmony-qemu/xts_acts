@@ -2704,6 +2704,7 @@ export default function windowPCTest() {
           await sleep(200);
           const callback = (data: window.WindowStatusType) => {
             console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+            expect(data).assertEqual(window.WindowStatusType.FLOATING);
             let windowRect2 = windowClass.getWindowProperties().windowRect;
             console.log(`${msgStr} windowRect2: ${JSON.stringify(windowRect2)}`);
             expect(Math.abs(windowRect.left - windowRect2.left)).assertLessOrEqual(1);
@@ -2757,6 +2758,7 @@ export default function windowPCTest() {
           console.log(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
           const callback = async (data: window.WindowStatusType) => {
             console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+            expect(data).assertEqual(window.WindowStatusType.FULL_SCREEN);
             let windowRect2 = windowClass.getWindowProperties().windowRect;
             console.log(`${msgStr} windowRect2: ${JSON.stringify(windowRect2)}`);
             expect(windowRect2.width - windowRect.width).assertLarger(0);
@@ -2782,6 +2784,148 @@ export default function windowPCTest() {
       }
     })
 
+    /**
+     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0500
+     * @tc.name       : testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
+     * @tc.desc       : testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      if (isPCStatus == '' && isAutoWindow != 'true') {
+        expect(true).assertTrue();
+        done();
+      } else {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowStatusType = windowClass.getWindowStatus();
+          console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
+          if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
+            await windowClass.recover();
+            await sleep(200);
+          }
+          let windowRect = windowClass.getWindowProperties().windowRect;
+          console.log(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
+          const callback = async (data: window.WindowStatusType) => {
+            console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+            expect(data).assertEqual(window.WindowStatusType.MAXIMIZE);
+            let windowRect2 = windowClass.getWindowProperties().windowRect;
+            console.log(`${msgStr} windowRect2: ${JSON.stringify(windowRect2)}`);
+            expect(windowRect2.width - windowRect.width).assertLarger(0);
+            expect(windowRect2.height - windowRect.height).assertLarger(0);
+            windowClass.off('windowStatusDidChange', callback);
+            await windowClass.recover();
+            await sleep(200);
+            done()
+          }
+          windowClass.on('windowStatusDidChange', callback);
+          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
+          await sleep(200)
+        } catch (err) {
+          console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+          if (err.code == 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        }
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0600
+     * @tc.name       : testOnwindowStatusDidChange_mimimize
+     * @tc.desc       : testOnwindowStatusDidChange_mimimize
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOnwindowStatusDidChange_mimimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testOnwindowStatusDidChange_mimimize";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+        try {
+          let windowClass = await windowStage.createSubWindow('testOnwindowStatusDidChange_mimimize');
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(300);
+          const callback = async (data: window.WindowStatusType) => {
+            console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+            expect(data).assertEqual(window.WindowStatusType.MINIMIZE);
+            windowClass.off('windowStatusDidChange', callback);
+            await windowClass.destroyWindow();
+            await sleep(200);
+            done()
+          }
+          windowClass.on('windowStatusDidChange', callback);
+          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          await windowClass.minimize();
+          await sleep(200)
+        } catch (err) {
+          console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+          if (err.code == 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        }
+      // }
+    })
+/**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0700
+     * @tc.name      : testOnwindowStatusDidChange_SPLIT_SCREEN
+     * @tc.desc      : testOnwindowStatusDidChange_SPLIT_SCREEN
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testOnwindowStatusDidChange_SPLIT_SCREEN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testOnwindowStatusDidChange_SPLIT_SCREEN';
+      let driver = Driver.create()
+      let options: StartOptions = {
+        supportWindowModes: [
+          bundleManager.SupportWindowMode.SPLIT,
+          bundleManager.SupportWindowMode.FULL_SCREEN,
+          bundleManager.SupportWindowMode.FLOATING
+        ]
+      };
+      if (isPCStatus != '') {
+        // startAbility - SupportWindowMode.FLOATING & SPLIT
+        let windowStageStart = await startAbility(message, context, options)
+        let windowClass = windowStageStart.getMainWindowSync()
+        // 获取窗口状态 - 自由窗口
+        let windowStatus = windowClass.getWindowStatus()
+        console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
+        expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+        
+        const callback = async (data: window.WindowStatusType) => {
+            console.log(`${message} callback data: ${JSON.stringify(data)}`);
+            expect(data).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+            windowClass.off('windowStatusDidChange', callback);
+            await sleep(200);
+            done()
+          }
+          windowClass.on('windowStatusDidChange', callback);
+          console.log(message  + 'Succeeded on windowStatusDidChange ');
+
+        // 模拟用户移动窗口到左边缘，可触发分屏
+        let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+        await sleep(1000)
+        let titlePoint = await title.getBounds()
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 200, 200)
+        await sleep(2000)
+      } else {
+        console.info(`${message} not support`);
+        done()
+      }
+    })
     
 
     /**

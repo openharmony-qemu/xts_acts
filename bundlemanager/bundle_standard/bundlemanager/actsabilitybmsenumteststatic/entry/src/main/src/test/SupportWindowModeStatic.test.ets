@@ -9,7 +9,7 @@ import Want from '@ohos.app.ability.Want';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'SupportWindowModeStaticTest';
 
 export default function SupportWindowModeStaticTest() {

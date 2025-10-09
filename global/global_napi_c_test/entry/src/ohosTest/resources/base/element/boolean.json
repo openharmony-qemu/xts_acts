@@ -3,6 +3,14 @@
     {
       "name": "boolean_one",
       "value": true
+    },
+    {
+      "name": "boolean_oneA",
+      "value": "$boolean:boolean_oneB"
+    },
+    {
+      "name": "boolean_oneB",
+      "value": "$boolean:boolean_oneA"
     }
   ]
 }

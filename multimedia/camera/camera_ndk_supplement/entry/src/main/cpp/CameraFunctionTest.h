@@ -20,7 +20,13 @@
 
 class CameraFunctionTest : public NDKCamera {
 public:
-    explicit CameraFunctionTest(char* str) : NDKCamera(str) {}
+    explicit CameraFunctionTest(char *surfaceId, char *videoId) : NDKCamera(surfaceId)
+    {
+        videoOutput_ = nullptr;
+        videoId_ = std::string(videoId);
+    }
+    Camera_ErrorCode CreateVideoOutput(void);
+    Camera_ErrorCode ReleaseVideoOutput(void);
 
     int32_t OHGetCameraManagerInvalidTest(int32_t caseCode);
     int32_t OHCameraDeleteCameraManagerTest(int32_t caseCode);
@@ -58,6 +64,56 @@ public:
     int32_t OHCameraManagerSetTorchModeTest(int32_t caseCode);
     int32_t OHCameraManagerGetCameraDeviceTest(int32_t caseCode);
     int32_t OHCameraManagerGetCameraConcurrentInfosTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetSessionModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionBeginConfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionCommitConfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddInputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveInputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddPreviewOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemovePreviewOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddPhotoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemovePhotoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddVideoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveVideoOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionAddMetadataOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionRemoveMetadataOutputTest(int32_t caseCode);
+    int32_t OHCaptureSessionStartTestTest(int32_t caseCode);
+    int32_t OHCaptureSessionStopTest(int32_t caseCode);
+    int32_t OHCaptureSessionReleaseTest(int32_t caseCode);
+    int32_t OHCaptureSessionHasFlashTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsFlashModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFlashModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFlashModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsExposureModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetExposureModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetMeteringPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetMeteringPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureBiasRangeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetExposureBiasTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureBiasTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsFocusModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocusModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFocusModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocusPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetFocusPointTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetZoomRatioRangeTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetZoomRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetZoomRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionIsVideoStabilizationModeSupportedTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetVideoStabilizationModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetVideoStabilizationModeTest(int32_t caseCode);
+    int32_t OHCaptureSessionPreconfigTest(int32_t caseCode);
+    int32_t OHCaptureSessionPreconfigWithRatioTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetExposureValueTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetFocalLengthTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetSmoothZoomTest(int32_t caseCode);
+    int32_t OHCaptureSessionGetActiveColorSpaceTest(int32_t caseCode);
+    int32_t OHCaptureSessionSetActiveColorSpaceTest(int32_t caseCode);
+
+private:
+    Camera_VideoOutput* videoOutput_;
+    std::string videoId_;
 };
 
 

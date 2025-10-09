@@ -22,6 +22,10 @@ struct RichEditorPreventDefault001 {
   build() {
 
     Column() {
+      Row(){
+        Text('textCall:' + this.textCall).fontColor(Color.Black).id('textCall').width('50%').clip(true)
+        Text('imageCall:' + this.imageCall).fontColor(Color.Black).id('imageCall').width('50%').clip(true)
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -61,11 +65,6 @@ struct RichEditorPreventDefault001 {
             })
         })
         .id('RichEditorPreventDefault001')
-
-      Column(){
-        Text('textCall:' + this.textCall).fontSize(20).fontColor(Color.Black).id('textCall')
-        Text('imageCall:' + this.imageCall).fontSize(20).fontColor(Color.Black).id('imageCall')
-      }.margin({bottom: 10})
     }
   }
 }

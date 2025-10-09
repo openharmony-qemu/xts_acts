@@ -13,4 +13,4 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(sensorNdk SHARED napi_init.cpp)
 
-target_link_libraries(sensorNdk PUBLIC libace_napi.z.so libhilog_ndk.z.so libohsensor.so)
+target_link_libraries(sensorNdk PUBLIC libace_napi.z.so libhilog_ndk.z.so libohsensor.so libohvibrator.z.so)

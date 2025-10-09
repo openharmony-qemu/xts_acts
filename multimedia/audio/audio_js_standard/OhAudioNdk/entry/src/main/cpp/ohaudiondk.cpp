@@ -31,6 +31,7 @@
 #include <web/native_interface_arkweb.h>
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_OpenHarmony.h>
+#include "hilog/log.h"
 
 #define FAIL (-1)
 #define SUCCESS 1
@@ -83,6 +84,10 @@
 #define KCHANNELCOUNT 2
 #define KRATE 48000
 #define KFRAMESIZE 240
+
+#define AUDIO_LOG_TAG "AUDIO_TAGLOG"
+#define AUDIO_LOG_DOMAIN 0x3200
+#define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_INFO, AUDIO_LOG_DOMAIN, AUDIO_LOG_TAG, fmt, ##__VA_ARGS__)
 
 FILE *g_file = nullptr;
 std::string g_filePath = "/data/storage/el2/base/files/S16LE.pcm";
@@ -503,9 +508,15 @@ int32_t onRendererError(OH_AudioRenderer *renderer, void *userData, OH_AudioStre
 #pragma mark - 音频播放器初始化方法
 void SetRendererNormalParam(OH_AudioStreamBuilder *builder)
 {
-    OH_AudioStream_Result oH_AudioStream_Result = 
+    OH_AudioStream_Result oH_AudioStream_Result =
         OH_AudioStreamBuilder_SetChannelCount(builder, KCHANNELCOUNT); // 设置通道数
+    if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
+        LOG("oH_AudioStream_Result is not AUDIOSTREAM_SUCCESS, it is : %{public}d", oH_AudioStream_Result);
+    }
     oH_AudioStream_Result = OH_AudioStreamBuilder_SetSamplingRate(builder, KRATE); // 设置采样率
+    if (oH_AudioStream_Result != AUDIOSTREAM_SUCCESS) {
+        LOG("oH_AudioStream_Result is not AUDIOSTREAM_SUCCESS, it is : %{public}d", oH_AudioStream_Result);
+    }
 }
 // 输出流音频初始化
 static napi_value CreatRendererAudioPlayer(napi_env env, napi_callback_info info)

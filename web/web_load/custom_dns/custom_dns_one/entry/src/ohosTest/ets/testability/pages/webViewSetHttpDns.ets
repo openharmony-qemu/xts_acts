@@ -137,7 +137,7 @@ struct webViewSetHttpDns {
                 web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, "https://www.example1.test")
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.isPageEnd = -1;
-                this.controller.loadUrl("https://www.openharmony.cn/mainPlay");
+                this.controller.loadUrl("https://www.openharmony.cn");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.title = this.controller.getTitle();
                 console.log('title of this page: ' + this.title);

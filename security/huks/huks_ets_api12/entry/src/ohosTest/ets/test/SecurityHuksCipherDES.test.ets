@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
-import { Cipher, CipherData } from './utils/huks/CipherUtils';
+import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Cipher, CipherData, GetEcbNoPaddingOptions } from './utils/huks/CipherUtils';
+import { Logger } from './utils/common/Logger';
+import { GetDesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 
 export default function SecurityHuksCipherDESTest() {
@@ -24,37 +26,10 @@ export default function SecurityHuksCipherDESTest() {
   let cipherOption: huks.HuksOptions;
 
   describe('SecurityHuksCipherDESTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
+
     beforeEach(() => {
-      genKeyOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_DES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_DES_KEY_SIZE_64),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-        ]
-      };
-      cipherOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_DES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_DES_KEY_SIZE_64),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
-          GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_ECB),
-          GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
-        ]
-      }
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      genKeyOption = GetDesGenerateOptions(64);
+      cipherOption = MergeOptions(GetDesGenerateOptions(64), GetEcbNoPaddingOptions());
     })
 
     /**
@@ -76,7 +51,7 @@ export default function SecurityHuksCipherDESTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -102,7 +77,7 @@ export default function SecurityHuksCipherDESTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -127,7 +102,7 @@ export default function SecurityHuksCipherDESTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })
@@ -153,7 +128,7 @@ export default function SecurityHuksCipherDESTest() {
         let res: boolean = await Cipher(testNumber, cipherOption, cipherData);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })
@@ -177,7 +152,7 @@ export default function SecurityHuksCipherDESTest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000003);
       }
     })

@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/webKeyboardController"
+    "pages/webKeyboardController",
+    "pages/webHitTestTypeEnumTest",
+    "pages/WebOnInterceptKeyEvent"
   ]
 }

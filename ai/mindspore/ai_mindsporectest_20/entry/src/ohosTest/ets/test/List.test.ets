@@ -13,8 +13,18 @@
  * limitations under the License.
  */
 
+import MindSporeContextTest from './mindsporetest/MindSporeContextTest.test'
+import MindSporeDataTypeTest from './mindsporetest/MindSporeDataTypeTest.test'
 import MindSporeFormatTest from './mindsporetest/MindSporeFormatTest.test'
+import MindSporeModelTest from './mindsporetest/MindSporeModelTest.test'
+import MindSporeStatusTest from './mindsporetest/MindSporeStatusTest.test'
+import MindSporeTypesTest from './mindsporetest/MindSporeTypesTest.test'
 
 export default function testsuite() {
+  MindSporeContextTest()
+  MindSporeDataTypeTest()
   MindSporeFormatTest()
+  MindSporeModelTest()
+  MindSporeStatusTest()
+  MindSporeTypesTest()
 }

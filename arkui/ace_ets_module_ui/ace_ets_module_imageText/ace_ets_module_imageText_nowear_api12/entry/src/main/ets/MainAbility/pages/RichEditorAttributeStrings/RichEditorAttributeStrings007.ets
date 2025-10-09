@@ -34,55 +34,52 @@ struct RichEditorAttributeStrings007 {
 
   build() {
     Column() {
-
-      Button('toStyledString 0,500').onClick(() => {
-        let str = this.controller.toStyledString({start: 0,
-          end: 500});
-        this.spans = str.getString();
-      }).id('toStyledString')
-
-      Button('toStyledString 2,2').onClick(() => {
-        let str = this.controller.toStyledString({start: 2,
-          end: 2});
-        this.spans = str.getString();
-      }).id('toStyledString1')
-
-      Button('toStyledString 2,1').onClick(() => {
-        let str = this.controller.toStyledString({start: 2,
-          end: 1});
-        this.spans = str.getString();
-      }).id('toStyledString2')
-
-      Button('toStyledString undefined').onClick(() => {
-        let str = this.controller.toStyledString(undefined);
-        this.spans = str.getString();
-      }).id('toStyledStringUndefined')
-
-      Button('builder').onClick(() => {
-        this.myBuilder = () => {
-          this.placeholderBuilder()
-        }
-      }).id('builder')
-
-      Button('add symbol builder').onClick(() => {
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
-          {
-            style:
+     Row(){
+        Button('toStyledString 0,500').onClick(() => {
+          let str = this.controller.toStyledString({start: 0,
+            end: 500});
+          this.spans = str.getString();
+        }).id('toStyledString').width('30%')
+        Button('toStyledString 2,2').onClick(() => {
+          let str = this.controller.toStyledString({start: 2,
+            end: 2});
+          this.spans = str.getString();
+        }).id('toStyledString1').width('30%')
+        Button('toStyledString 2,1').onClick(() => {
+          let str = this.controller.toStyledString({start: 2,
+            end: 1});
+          this.spans = str.getString();
+        }).id('toStyledString2').width('30%')
+      }.height('5%')
+      Row(){
+        Button('toStyledString undefined').onClick(() => {
+          let str = this.controller.toStyledString(undefined);
+          this.spans = str.getString();
+        }).id('toStyledStringUndefined').width('30%')
+        Button('builder').onClick(() => {
+          this.myBuilder = () => {
+            this.placeholderBuilder()
+          }
+        }).id('builder').width('30%')
+        Button('add symbol builder').onClick(() => {
+          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
-              fontSize: 30
-            }
-          })
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
-          {
-            style:
+              style:
+              {
+                fontSize: 30
+              }
+            })
+          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
-              fontSize: 30
-            }
-          })
-        this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
-        this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
-      }).id('addSpans')
-
+              style:
+              {
+                fontSize: 30
+              }
+            })
+          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+        }).id('addSpans').width('30%')
+      }.height('5%')
       Button('add image').onClick(() => {
         this.controller.addImageSpan($r('app.media.icon'),
           {
@@ -112,11 +109,9 @@ struct RichEditorAttributeStrings007 {
               size: ['57px', '57px']
             }
           })
-      }).id('addImage')
+      }).id('addImage').height('5%')
 
-
-      Text('spans:' + this.spans).id('spans')
-
+      Text('spans:' + this.spans).id('spans').height('5%').clip(true)
       RichEditor(this.options)
         .onReady(() => {
           this.controller.addTextSpan('0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789',

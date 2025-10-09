@@ -111,7 +111,7 @@ struct TextClockLongPage {
         ListItem(){
           Text('监控onDateChange事件：'+this.accumulateTime)
             .width("100%").textAlign(TextAlign.Center).id('accumulateTime2')
-        }.height('10%')
+        }.height('10%').margin({bottom:50})
       }
     }
   }

@@ -133,6 +133,82 @@ void AddInputMethodTextEditorProxyCapiTest3(std::vector<napi_property_descriptor
                         nullptr});
     descData.push_back({"testOhTextEditorProxyGetDeleteForwardFuncOk", nullptr,
                         TestOhTextEditorProxyGetDeleteForwardFuncOk, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetDeleteBackwardFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetDeleteBackwardFuncNullPointer, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetDeleteBackwardFuncOk", nullptr,
+                        TestOhTextEditorProxyGetDeleteBackwardFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSendKeyboardStatusFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetSendKeyboardStatusFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSendKeyboardStatusFuncOk", nullptr,
+                        TestOhTextEditorProxyGetSendKeyboardStatusFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSendEnterKeyFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetSendEnterKeyFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSendEnterKeyFuncOk", nullptr,
+                        TestOhTextEditorProxyGetSendEnterKeyFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetMoveCursorFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetMoveCursorFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetMoveCursorFuncOk", nullptr,
+                        TestOhTextEditorProxyGetMoveCursorFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetHandleSetSelectionFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetHandleSetSelectionFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetHandleSetSelectionFuncOk", nullptr,
+                        TestOhTextEditorProxyGetHandleSetSelectionFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+}
+
+void AddInputMethodTextEditorProxyCapiTest4(std::vector<napi_property_descriptor> &descData)
+{
+    descData.push_back({"testOhTextEditorProxyGetHandleExtendActionFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetHandleExtendActionFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetHandleExtendActionFuncOk", nullptr,
+                        TestOhTextEditorProxyGetHandleExtendActionFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetLeftTextOfCursorFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetGetLeftTextOfCursorFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetLeftTextOfCursorFuncOk", nullptr,
+                        TestOhTextEditorProxyGetGetLeftTextOfCursorFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetRightTextOfCursorFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetGetRightTextOfCursorFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetRightTextOfCursorFuncOk", nullptr,
+                        TestOhTextEditorProxyGetGetRightTextOfCursorFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetTextIndexAtCursorFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetGetTextIndexAtCursorFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetGetTextIndexAtCursorFuncOk", nullptr,
+                        TestOhTextEditorProxyGetGetTextIndexAtCursorFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetReceivePrivateCommandFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetReceivePrivateCommandFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetReceivePrivateCommandFuncOk", nullptr,
+                        TestOhTextEditorProxyGetReceivePrivateCommandFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSetPreviewTextFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetSetPreviewTextFuncNullPointer, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetSetPreviewTextFuncOk", nullptr,
+                        TestOhTextEditorProxyGetSetPreviewTextFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
+    descData.push_back({"testOhTextEditorProxyGetFinishTextPreviewFuncNullPointer", nullptr,
+                        TestOhTextEditorProxyGetFinishTextPreviewFuncNullPointer, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testOhTextEditorProxyGetFinishTextPreviewFuncOk", nullptr,
+                        TestOhTextEditorProxyGetFinishTextPreviewFuncOk, nullptr, nullptr, nullptr, napi_default,
+                        nullptr});
 }
 
 void AddInputMethodTextEditorProxyCapiTest(std::vector<napi_property_descriptor> &descData)
@@ -140,6 +216,7 @@ void AddInputMethodTextEditorProxyCapiTest(std::vector<napi_property_descriptor>
     AddInputMethodTextEditorProxyCapiTest1(descData);
     AddInputMethodTextEditorProxyCapiTest2(descData);
     AddInputMethodTextEditorProxyCapiTest3(descData);
+    AddInputMethodTextEditorProxyCapiTest4(descData);
 }
 
 void GetTextConfigFunc2(InputMethod_TextEditorProxy *textEditorProxy, InputMethod_TextConfig *config)
@@ -590,6 +667,294 @@ napi_value TestOhTextEditorProxyGetDeleteForwardFuncOk(napi_env env, napi_callba
     OH_TextEditorProxy_SetDeleteForwardFunc(proxy, DeleteForwardFunc2);
     OH_TextEditorProxy_DeleteForwardFunc deleteForwardFunc = nullptr;
     int ret = OH_TextEditorProxy_GetDeleteForwardFunc(proxy, &deleteForwardFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetDeleteBackwardFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetDeleteBackwardFunc(proxy, DeleteBackwardFunc2);
+    OH_TextEditorProxy_DeleteBackwardFunc deleteBackwardFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetDeleteBackwardFunc(nullptr, &deleteBackwardFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetDeleteBackwardFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetDeleteBackwardFunc(proxy, DeleteBackwardFunc2);
+    OH_TextEditorProxy_DeleteBackwardFunc deleteBackwardFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetDeleteBackwardFunc(proxy, &deleteBackwardFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSendKeyboardStatusFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSendKeyboardStatusFunc(proxy, SendKeyboardStatusFunc2);
+    OH_TextEditorProxy_SendKeyboardStatusFunc sendKeyboardStatusFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSendKeyboardStatusFunc(nullptr, &sendKeyboardStatusFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSendKeyboardStatusFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSendKeyboardStatusFunc(proxy, SendKeyboardStatusFunc2);
+    OH_TextEditorProxy_SendKeyboardStatusFunc sendKeyboardStatusFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSendKeyboardStatusFunc(proxy, &sendKeyboardStatusFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSendEnterKeyFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSendEnterKeyFunc(proxy, SendEnterKeyFunc2);
+    OH_TextEditorProxy_SendEnterKeyFunc sendEnterKeyFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSendEnterKeyFunc(nullptr, &sendEnterKeyFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSendEnterKeyFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSendEnterKeyFunc(proxy, SendEnterKeyFunc2);
+    OH_TextEditorProxy_SendEnterKeyFunc sendEnterKeyFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSendEnterKeyFunc(proxy, &sendEnterKeyFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetMoveCursorFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetMoveCursorFunc(proxy, MoveCursorFunc2);
+    OH_TextEditorProxy_MoveCursorFunc moveCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetMoveCursorFunc(nullptr, &moveCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetMoveCursorFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetMoveCursorFunc(proxy, MoveCursorFunc2);
+    OH_TextEditorProxy_MoveCursorFunc moveCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetMoveCursorFunc(proxy, &moveCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetHandleSetSelectionFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetHandleSetSelectionFunc(proxy, HandleSetSelectionFunc2);
+    OH_TextEditorProxy_HandleSetSelectionFunc handleSetSelectionFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetHandleSetSelectionFunc(nullptr, &handleSetSelectionFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetHandleSetSelectionFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetHandleSetSelectionFunc(proxy, HandleSetSelectionFunc2);
+    OH_TextEditorProxy_HandleSetSelectionFunc handleSetSelectionFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetHandleSetSelectionFunc(proxy, &handleSetSelectionFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetHandleExtendActionFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetHandleExtendActionFunc(proxy, HandleExtendActionFunc2);
+    OH_TextEditorProxy_HandleExtendActionFunc handleExtendActionFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetHandleExtendActionFunc(nullptr, &handleExtendActionFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetHandleExtendActionFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetHandleExtendActionFunc(proxy, HandleExtendActionFunc2);
+    OH_TextEditorProxy_HandleExtendActionFunc handleExtendActionFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetHandleExtendActionFunc(proxy, &handleExtendActionFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetLeftTextOfCursorFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetLeftTextOfCursorFunc(proxy, GetLeftTextOfCursorFunc2);
+    OH_TextEditorProxy_GetLeftTextOfCursorFunc getLeftTextOfCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetLeftTextOfCursorFunc(nullptr, &getLeftTextOfCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetLeftTextOfCursorFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetLeftTextOfCursorFunc(proxy, GetLeftTextOfCursorFunc2);
+    OH_TextEditorProxy_GetLeftTextOfCursorFunc getLeftTextOfCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetLeftTextOfCursorFunc(proxy, &getLeftTextOfCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetRightTextOfCursorFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetRightTextOfCursorFunc(proxy, GetRightTextOfCursorFunc2);
+    OH_TextEditorProxy_GetRightTextOfCursorFunc getRightTextOfCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetRightTextOfCursorFunc(nullptr, &getRightTextOfCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetRightTextOfCursorFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetRightTextOfCursorFunc(proxy, GetRightTextOfCursorFunc2);
+    OH_TextEditorProxy_GetRightTextOfCursorFunc getRightTextOfCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetRightTextOfCursorFunc(proxy, &getRightTextOfCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetTextIndexAtCursorFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetTextIndexAtCursorFunc(proxy, GetTextIndexAtCursorFunc2);
+    OH_TextEditorProxy_GetTextIndexAtCursorFunc getTextIndexAtCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetTextIndexAtCursorFunc(nullptr, &getTextIndexAtCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetGetTextIndexAtCursorFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetGetTextIndexAtCursorFunc(proxy, GetTextIndexAtCursorFunc2);
+    OH_TextEditorProxy_GetTextIndexAtCursorFunc getTextIndexAtCursorFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetGetTextIndexAtCursorFunc(proxy, &getTextIndexAtCursorFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetReceivePrivateCommandFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetReceivePrivateCommandFunc(proxy, ReceivePrivateCommandFunc2);
+    OH_TextEditorProxy_ReceivePrivateCommandFunc receivePrivateCommandFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetReceivePrivateCommandFunc(nullptr, &receivePrivateCommandFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetReceivePrivateCommandFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetReceivePrivateCommandFunc(proxy, ReceivePrivateCommandFunc2);
+    OH_TextEditorProxy_ReceivePrivateCommandFunc receivePrivateCommandFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetReceivePrivateCommandFunc(proxy, &receivePrivateCommandFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSetPreviewTextFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSetPreviewTextFunc(proxy, SetPreviewTextFunc2);
+    OH_TextEditorProxy_SetPreviewTextFunc setPreviewTextFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSetPreviewTextFunc(nullptr, &setPreviewTextFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetSetPreviewTextFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetSetPreviewTextFunc(proxy, SetPreviewTextFunc2);
+    OH_TextEditorProxy_SetPreviewTextFunc setPreviewTextFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetSetPreviewTextFunc(proxy, &setPreviewTextFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetFinishTextPreviewFuncNullPointer(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetFinishTextPreviewFunc(proxy, FinishTextPreviewFunc2);
+    OH_TextEditorProxy_FinishTextPreviewFunc finishTextPreviewFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetFinishTextPreviewFunc(nullptr, &finishTextPreviewFunc);
+    OH_TextEditorProxy_Destroy(proxy);
+    napi_value result;
+    napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_NULL_POINTER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOhTextEditorProxyGetFinishTextPreviewFuncOk(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextEditorProxy *proxy = OH_TextEditorProxy_Create();
+    OH_TextEditorProxy_SetFinishTextPreviewFunc(proxy, FinishTextPreviewFunc2);
+    OH_TextEditorProxy_FinishTextPreviewFunc finishTextPreviewFunc = nullptr;
+    int ret = OH_TextEditorProxy_GetFinishTextPreviewFunc(proxy, &finishTextPreviewFunc);
     OH_TextEditorProxy_Destroy(proxy);
     napi_value result;
     napi_create_int32(env, ret == InputMethod_ErrorCode::IME_ERR_OK ? 0 : -1, &result);

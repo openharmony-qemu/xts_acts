@@ -22,25 +22,27 @@ struct RichEditorLineMetrics023 {
   build() {
 
     Column() {
-      Text('lineMetricsOnCut' + this.lineMetricsOnCut).id('lineMetricsOnCut')
-      Text('lineMetricsOnPaste:' + this.lineMetricsOnPaste).id('lineMetricsOnPaste')
-      Button('select')
-        .id('select')
-        .margin(15)
-        .backgroundColor(Color.Transparent)
-        .onClick(() => {
-          let options: SelectionOptions = {
-            menuPolicy: MenuPolicy.SHOW
-          };
-          this.controller.setSelection(1, 2, options);
-        })
-      Button('set end')
-        .id('set_end')
-        .margin(15)
-        .backgroundColor(Color.Transparent)
-        .onClick(() => {
-          this.controller.setCaretOffset(5);
-        })
+      Row(){
+        Text('lineMetricsOnCut' + this.lineMetricsOnCut).id('lineMetricsOnCut').width('50%')
+        Text('lineMetricsOnPaste:' + this.lineMetricsOnPaste).id('lineMetricsOnPaste').width('50%')
+      }.height('5%')
+      Row(){
+        Button('select')
+          .id('select')
+          .backgroundColor(Color.Transparent)
+          .onClick(() => {
+            let options: SelectionOptions = {
+              menuPolicy: MenuPolicy.SHOW
+            };
+            this.controller.setSelection(1, 2, options);
+          }).width('50%')
+        Button('set end')
+          .id('set_end')
+          .backgroundColor(Color.Transparent)
+          .onClick(() => {
+            this.controller.setCaretOffset(5);
+          }).width('50%')
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)

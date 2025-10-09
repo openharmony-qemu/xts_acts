@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 import { huks } from '@kit.UniversalKeystoreKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
+import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { CheckSoftware, CheckWearable, GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
 
 export default function SecurityHuksCmacTest() {
@@ -24,24 +26,13 @@ export default function SecurityHuksCmacTest() {
   let macOption: huks.HuksOptions;
 
   describe('SecurityHuksCmacTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
       useSoftware = await CheckSoftware();
       isWearable = await CheckWearable();
     })
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-      genKeyOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_3DES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)
-        ]
-      };
+      genKeyOption = genKeyOption = Get3DesGenerateOptions(128);
+      SetParam(genKeyOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC);
       macOption = {
         properties: [
           GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_CMAC),
@@ -53,15 +44,6 @@ export default function SecurityHuksCmacTest() {
         ],
         inData: StringToUint8Array("123")
       }
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -79,7 +61,7 @@ export default function SecurityHuksCmacTest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + ` catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000003 : 12000001;
         expect(err.code).assertEqual(expectErrCode);
       }
@@ -104,7 +86,7 @@ export default function SecurityHuksCmacTest() {
         expect(isWearable).assertEqual(true);
         expect(res.length).assertEqual(8);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000003 : 12000012;
         expect(err.code).assertEqual(expectErrCode);
       }

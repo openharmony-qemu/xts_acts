@@ -18,5 +18,6 @@ group("ActsAceEtsModuleRenderControlTest") {
   deps = [
     "ace_ets_module_RenderControl_api12:ActsAceEtsModuleRenderControlApi12Test",
     "ace_ets_module_RenderControl_api18:ActsAceEtsModuleRenderControlApi18Test",
+    "ace_ets_module_RenderControl_nowear_api12:ActsAceEtsModuleRenderControlNoWearApi12Test",
   ]
 }

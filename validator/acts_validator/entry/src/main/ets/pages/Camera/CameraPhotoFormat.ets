@@ -102,7 +102,7 @@ struct cameraOrientation {
   cameraListFn() {
     this.cameraList = []
     this.cameraListLength = CameraService.cameras.length
-    for (let index = 0; index < this.cameraListLength; index++) {
+    for (let index = 0; index < this.cameraListLength && index < 2; index++) {
       this.cameraList.push({ value: `Camera ${index}` })
     }
 

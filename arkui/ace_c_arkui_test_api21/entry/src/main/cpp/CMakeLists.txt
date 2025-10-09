@@ -14,6 +14,7 @@ add_library(nativerender SHARED
     manager/plugin_manager.cpp
     napi_render_init.cpp
     position/EdgesPositionTest.cpp
+    textContentAlign/TextContentAlignTest.cpp
     PixelRound/PixelRoundTest.cpp
 )
 

@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { PreselectedInfo } from '@ohos.file.PhotoPickerComponent';
 
 export class PhotoPickerResult {
   public checkBoxColor: string = '';
@@ -27,4 +28,6 @@ export class PhotoPickerResult {
   public maxVideoSelectNumber: number = 500;
   public itemType: string = '';
   public checkboxTextColor: string = '';
+  public pickerIndex: number = -1;
+  public preselectedInfos: PreselectedInfo[] = [];
 }

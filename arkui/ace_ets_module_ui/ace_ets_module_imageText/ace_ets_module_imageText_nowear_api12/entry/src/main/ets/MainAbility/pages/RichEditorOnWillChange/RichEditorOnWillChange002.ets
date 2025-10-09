@@ -34,53 +34,51 @@ struct RichEditorOnWillChange002 {
   build() {
 
     Column() {
-
-      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback')
-      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-
-      Button('add iamge').onClick(() => {
-        this.controller.addImageSpan($r('app.media.icon'),
-          {
-            imageStyle:
-            {
-              size: ['57px', '57px']
-            }
-          })
-      }).id('add_image')
-
-      Button('add symbol').onClick(() => {
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
-          {
-            style:
-            {
-              fontSize: 30
-            }
-          })
-      }).id('add_symbol')
-
-      Button('add builder')
-        .onClick(() => {
-          let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
-          console.info('addBuilderSpan return ' + num)
-        }).id('add_builder')
-
-      Button('int callback status')
-        .onClick(() => {
-          this.onWillChangeCallback = false;
-          this.replacedSpansCallback = false;
-          this.onDidChangeCallback = false;
-        }).id('int_callback_status')
+      Row(){
+        Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback').width('30%').clip(true)
+        Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback').width('30%').clip(true)
+        Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').width('30%').clip(true)
+      }.height('5%')
 
       Row() {
+        Button('add iamge').onClick(() => {
+          this.controller.addImageSpan($r('app.media.icon'),
+            {
+              imageStyle:
+              {
+                size: ['57px', '57px']
+              }
+            })
+        }).id('add_image').width('20%')
+
+        Button('add symbol').onClick(() => {
+          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+            {
+              style:
+              {
+                fontSize: 30
+              }
+            })
+        }).id('add_symbol').width('20%')
+
+        Button('add builder')
+          .onClick(() => {
+            let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+            console.info('addBuilderSpan return ' + num)
+          }).id('add_builder').width('20%')
+
+        Button('int callback status')
+          .onClick(() => {
+            this.onWillChangeCallback = false;
+            this.replacedSpansCallback = false;
+            this.onDidChangeCallback = false;
+          }).id('int_callback_status').width('20%')
         Button('builder').onClick(() => {
           this.myBuilder = () => {
             this.placeholderBuilder()
           }
-        }).id('builder')
-      }
-
-
+        }).id('builder').width('20%')
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)

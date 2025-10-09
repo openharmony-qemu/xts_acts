@@ -39,6 +39,7 @@ const cameraPreconfigRatio = camera.PreconfigRatio;
 const albumSubtype = photoAccessHelper.AlbumSubtype;
 const albumKeys = photoAccessHelper.AlbumKeys;
 const albumType = photoAccessHelper.AlbumType;
+const photoKeys = photoAccessHelper.PhotoKeys;
 
 export function isEmpty(data: ESObject) {
   console.info(TAG, 'isEmpty test.');
@@ -207,4 +208,5 @@ export { COMMON_WAIT_DURATION,
   albumKeys,
   albumType,
   albumSubtype,
+  photoKeys,
 }

@@ -47,6 +47,47 @@ export default function NavigationLevelTest16() {
     });
 
     /**
+     * @tc.number    NavigationLevelTest16_0200
+     * @tc.name      NavigationLevelTest16_0200
+     * @tc.desc      Test getParamByName and getIndexByName return []
+     * @tc.level     Level 0
+     */
+    it('NavigationLevelTest16_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('[NavigationLevelTest16_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let btn = await driver.findComponent(ON.id('getParamByNameUndefinedBtn'));
+      await btn.click()
+      console.info('[NavigationLevelTest16_0200] btn click');
+      await CommonFunc.sleep(1000);
+      let paramByNameUndefined: ESObject[] | undefined= AppStorage.get('paramByNameUndefined')
+      expect(paramByNameUndefined?.length == 0).assertTrue();
+      AppStorage.delete('paramByNameUndefined')
+
+      await CommonFunc.sleep(1000);
+      let btn2 = await driver.findComponent(ON.id('getIndexByNameUndefinedBtn'));
+      await btn2.click()
+      console.info('[NavigationLevelTest16_0200] btn2 click');
+      await CommonFunc.sleep(1000);
+      let indexByNameUndefined: number[] | undefined = AppStorage.get('indexByNameUndefined')
+      expect(indexByNameUndefined && indexByNameUndefined?.length == 0).assertTrue();
+      AppStorage.delete('indexByNameUndefined')
+      await CommonFunc.sleep(1000);
+      
+      let btn3 = await driver.findComponent(ON.id('getPathStackNullBtn'));
+      await btn3.click()
+      console.info('[NavigationLevelTest16_0200] btn3 click');
+      await CommonFunc.sleep(1000);
+      let stackEmptyValue: number[] | undefined = AppStorage.get('stackEmptyValue')
+      expect(stackEmptyValue && stackEmptyValue?.length == 0).assertTrue();
+      AppStorage.delete('stackEmptyValue')
+
+      console.info('[NavigationLevelTest16_0200] END');
+      done();
+    });
+
+    /**
      * @tc.number    NavigationLevelTest16_0100
      * @tc.name      NavigationLevelTest16_0100
      * @tc.desc      Test Navigation
@@ -68,6 +109,30 @@ export default function NavigationLevelTest16() {
       await btn2.click()
       console.info('[NavigationLevelTest16_0100] btn2 click');
       await CommonFunc.sleep(1000);
+
+      let btn4 = await driver.findComponent(ON.id('getParamByNameBtn'));
+      await btn4.click()
+      console.info('[NavigationLevelTest16_0300] btn4 click');
+      await CommonFunc.sleep(1000);
+
+      let paramByName: ESObject[] | undefined = AppStorage.get('paramByName')
+      console.info('[NavigationLevelTest16_0100] paramByName ', JSON.stringify(paramByName));
+      expect(paramByName && paramByName?.length > 0).assertTrue();
+      AppStorage.delete('paramByName')
+
+      let indexByName: number[] | undefined = AppStorage.get('indexByName')
+      console.info('[NavigationLevelTest16_0100] indexByName ', JSON.stringify(indexByName));
+      expect(indexByName && indexByName?.length > 0).assertTrue();
+      AppStorage.delete('indexByName')
+      await CommonFunc.sleep(1000);
+
+      let btn5 = await driver.findComponent(ON.id('getPathStackBtn'));
+      await btn5.click()
+      console.info('[NavigationLevelTest16_0200] btn5 click');
+      await CommonFunc.sleep(1000);
+      let stackValue: number[] | undefined = AppStorage.get('stackValue')
+      expect(stackValue && stackValue?.length > 0).assertTrue();
+      AppStorage.delete('stackValue')
 
       let btn3 = await driver.findComponent(ON.id('NavigationLevelTest16_btn3'));
       await btn3.click()

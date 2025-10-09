@@ -59,6 +59,12 @@ struct Navigation_L0_18_pageOne{
         this.text1 = '' + this.pageInfos.removeByNavDestinationId(this.navDestinationId);
       }).id('Navigation_L0_18_pageOne_btn2')
 
+      Button('removeByNavDestinationIdFalse').onClick((event: ClickEvent) => {
+        let removeResult = this.pageInfos.removeByNavDestinationId('test');
+        console.log('Navigation_L0_18_pageOne removeResult: ', removeResult)
+        AppStorage.setOrCreate('removeResult', removeResult);
+      }).id('navigationfalseBtn')
+
     }.title('pageOne')
     .onReady((context: NavDestinationContext) => {
       this.navDestinationId = context.navDestinationId
