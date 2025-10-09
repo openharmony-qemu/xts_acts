@@ -249,6 +249,27 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
+     * @tc.number  : SUB_Driver_Ext_UsbDdkNullPTR_1100
+     * @tc.name    : SUB_Driver_Ext_UsbDdkNullPTR_1100
+     * @tc.desc    : Test UsbDdkNullPTR.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_UsbDdkNullPTR_1100', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_UsbDdkNullPTR_1100 start====");
+        let result:number = baskddkerror.UsbDdkNullPTR();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_UsbDdkNullPTR_1100 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_UsbDdkNullPTR_1100 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.number  : SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
      * @tc.name    : SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
      * @tc.desc    : Test ScsiPeripheralDdkInit.
