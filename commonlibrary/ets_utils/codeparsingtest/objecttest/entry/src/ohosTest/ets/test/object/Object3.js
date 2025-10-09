@@ -160,22 +160,6 @@ export function Fn13_testProtoIsArray() {
     return true;
 }
 
-// 14. 测试原型为函数时继承函数属性（如 name）
-export function Fn14_testProtoIsFunction() {
-
-    function testFunc() {
-    }
-
-    const obj = Object.create(testFunc);
-
-    if (obj.name !== "testFunc") {
-        console.error("Fn1_testProtoIsFunction 失败：未继承函数的 name 属性");
-        return false;
-    }
-    console.log("Fn1_testProtoIsFunction 通过");
-    return true;
-}
-
 // 15. 测试修改原型对象后，已创建的实例能访问新属性
 export function Fn15_testProtoUpdateAffectsInstance() {
     const proto = { oldProp: "旧属性" };

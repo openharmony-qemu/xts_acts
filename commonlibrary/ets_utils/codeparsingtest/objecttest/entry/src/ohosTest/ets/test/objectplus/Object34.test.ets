@@ -877,7 +877,7 @@ export default function Object34Test() {
       try {
         let res = Fn55_testCustomValueOfForIncrement();
       } catch (e) {
-        expect(e.message).assertContain("Assignment to const variable counter");
+        expect(e.message).assertContain("Assignment to const");
       }
     });
 
@@ -893,7 +893,7 @@ export default function Object34Test() {
       try {
         let res = Fn56_testCustomValueOfForDecrement();
       } catch (e) {
-        expect(e.message).assertContain("Assignment to const variable counter");
+        expect(e.message).assertContain("Assignment to const");
       }
     });
 

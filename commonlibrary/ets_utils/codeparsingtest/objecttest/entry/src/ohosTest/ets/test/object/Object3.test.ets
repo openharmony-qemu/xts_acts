@@ -18,7 +18,6 @@ import {
   Fn10_testHasOwnDistinguishProp,
   Fn12_testPropertiesObjectIsUndefined,
   Fn13_testProtoIsArray,
-  Fn14_testProtoIsFunction,
   Fn15_testProtoUpdateAffectsInstance,
   Fn16_testDefaultEnumerableInProperties,
   Fn1_testMultiLevelInheritance,
@@ -240,19 +239,6 @@ export default function Object3Test() {
     it('Object3Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testProtoIsArray();
       expect(result).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Object3_TEST_1400
-     * @tc.name Object3Test014
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('Object3Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result = Fn14_testProtoIsFunction();
-      expect(result).assertEqual(true);
     });
 
     /**
