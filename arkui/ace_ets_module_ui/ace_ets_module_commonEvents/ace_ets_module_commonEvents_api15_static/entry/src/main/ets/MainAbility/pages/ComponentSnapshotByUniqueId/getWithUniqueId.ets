@@ -87,20 +87,22 @@ struct SnapshotExample {
         .id('UniqueId_getSnapshot')
         .onClick((e: ClickEvent) => {
           try {
+            let uniqueId: Int = (this.myNodeController.imageNode?.getUniqueId() || 0) as Int;
             this.getUIContext()
-              .getComponentSnapshot()
-              .getWithUniqueId(this.myNodeController.imageNode?.getUniqueId() as number,
-                {
-                  scale: this.snapshotScale,
-                  waitUntilRenderFinished: this.snapshotWait
-                } as componentSnapshot.SnapshotOptions)
-              .then((pixmap: image.PixelMap) => {
-                this.pixmap = pixmap
-                this.text = 'UniqueId_getSnapshot_success'
-              })
-              .catch((err: Error) => {
-                console.log('error: ' + err)
-              })
+            .getComponentSnapshot()
+            .getWithUniqueId(uniqueId,
+              {
+                scale: this.snapshotScale,
+                waitUntilRenderFinished: this.snapshotWait
+              } as componentSnapshot.SnapshotOptions)
+            .then((pixmap: image.PixelMap) => {
+              this.pixmap = pixmap
+              this.text = 'UniqueId_getSnapshot_success'
+            })
+            .catch((err: Error) => {
+              console.log('error: ' + err)
+            })
+            
           } catch (error) {
             console.error('UniqueId get snapshot Error: ' + JSON.stringify(error))
           }
@@ -110,14 +112,16 @@ struct SnapshotExample {
         .id('UniqueId_getSyncSnapshot')
         .onClick((e: ClickEvent) => {
           try {
+            let uniqueId: Int = (this.myNodeController.imageNode?.getUniqueId() || 0) as Int;
             this.pixmap = this.getUIContext()
               .getComponentSnapshot()
-              .getSyncWithUniqueId(this.myNodeController.imageNode?.getUniqueId() as number,
+              .getSyncWithUniqueId(uniqueId,
                 {
                   scale: this.snapshotScale,
                   waitUntilRenderFinished: this.snapshotWait
                 } as componentSnapshot.SnapshotOptions)
             this.text = 'UniqueId_getSyncSnapshot_success'
+            
           } catch (error) {
             console.error('UniqueId getSync snapshot Error: ' + JSON.stringify(error))
           }
