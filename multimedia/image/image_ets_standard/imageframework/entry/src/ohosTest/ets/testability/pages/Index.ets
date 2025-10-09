@@ -15,11 +15,29 @@
 @Entry
 @Component
 struct Index {
-  aboutToAppear(): void {
-  }
+  private surfaceId: string = ''
+  private xComponentContext: Record<string, () => void> = {}
+  xComponentController: XComponentController = new XComponentController()
 
   build() {
-
-
+    Row() {
+      XComponent({
+        id: 'xcomponent',
+        type: XComponentType.SURFACE,
+        controller: this.xComponentController
+      })
+        .onLoad(() => {
+          console.info('come in onLoad!!');
+          this.xComponentController.setXComponentSurfaceSize({ surfaceWidth: 1920, surfaceHeight: 1080 })
+          this.surfaceId = this.xComponentController.getXComponentSurfaceId()
+          this.xComponentContext = this.xComponentController.getXComponentContext() as Record<string, () => void>
+          globalThis.surfaceId = this.surfaceId
+          console.info('ImageModuleTest: XComponent onLoad surfaceId: ' + globalThis.surfaceId);
+        })
+        .width('640px')
+        .height('480px')
+    }
+    .backgroundColor(Color.Black)
+    .position({ x: 0, y: 48 })
   }
 }
