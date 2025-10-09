@@ -560,7 +560,8 @@ static napi_value ScsiPeripheralStatusCONDITIONMET(napi_env env, ScsiPeripheral_
     return nullptr;
 }
 
-napi_value ScsiPeripheralVerify10CONDITIONMET(napi_env env, napi_callback_info info) {
+napi_value ScsiPeripheralVerify10CONDITIONMET(napi_env env, napi_callback_info info)
+{
     napi_value result;
     OH_ScsiPeripheral_Init();
     uint64_t deviceId = GetDeviceId(env, info);
@@ -866,7 +867,7 @@ napi_value UsbSerialFlushOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value UsbSerialNoFlowControl(napi_env env, napi_callback_info info) 
+napi_value UsbSerialNoFlowControl(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t returnValue = OH_UsbSerial_Init();
@@ -877,7 +878,7 @@ napi_value UsbSerialNoFlowControl(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value UsbSerialHardwareFlowControl(napi_env env, napi_callback_info info) 
+napi_value UsbSerialHardwareFlowControl(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t returnValue = OH_UsbSerial_Init();
@@ -914,7 +915,7 @@ UsbSerial_Device *InitializeAndCreateDeviceHandle(napi_env env)
     return NewSerialDeviceHandle();
 }
 
-napi_value UsbSerialParityNone(napi_env env, napi_callback_info info) 
+napi_value UsbSerialParityNone(napi_env env, napi_callback_info info)
 {
     napi_value result;
     UsbSerial_Device *deviceHandle = InitializeAndCreateDeviceHandle(env);

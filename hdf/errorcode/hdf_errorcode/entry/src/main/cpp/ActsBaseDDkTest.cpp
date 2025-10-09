@@ -278,7 +278,8 @@ napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";

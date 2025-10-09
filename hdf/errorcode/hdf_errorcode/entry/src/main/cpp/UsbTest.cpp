@@ -25,7 +25,7 @@
 #define PARAM_10 10
 #define PARAM_32 32
 #define PARAM_48 48
-static uint8_t configIndex = 0;
+static uint8_t g_configIndex = 0;
 #define USB_DDK_TEST_BUF_SIZE 100
 #define USB_DDK_ENDPOINT_DIR_MASK 0x80
 #define USB_DDK_DIR_IN 0x80
@@ -73,8 +73,8 @@ void UsbTest(std::vector<napi_property_descriptor> &descData)
 
 uint64_t JsDeviceIdToNative1(uint64_t deviceId)
 {
-    uint32_t busNum = (uint32_t)(deviceId >> PARAM_48);
-    uint32_t devNum = (uint32_t)((deviceId & 0x0000FFFF00000000) >> PARAM_32);
+    uint32_t busNum = static_cast<uint32_t>(deviceId >> PARAM_48);
+    uint32_t devNum = static_cast<uint32_t>((deviceId & 0x0000FFFF00000000) >> PARAM_32);
     return (((static_cast<uint64_t>(busNum)) << PARAM_32) | devNum);
 }
 
@@ -88,7 +88,7 @@ napi_value UsbDdkConfigDescriptor0100(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->extra;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -106,7 +106,7 @@ napi_value UsbDdkConfigDescriptor0200(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->extraLength;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -124,7 +124,7 @@ napi_value UsbDdkInterfaceDescriptor0100(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->extra;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -142,7 +142,7 @@ napi_value UsbDdkInterfaceDescriptor0200(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->extraLength;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -160,7 +160,7 @@ napi_value UsbDdkEndpointDescriptor0100(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->extra;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -178,7 +178,7 @@ napi_value UsbDdkEndpointDescriptor0200(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->extraLength;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -196,7 +196,7 @@ napi_value UsbEndpointDescriptor0100(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->endpointDescriptor.bLength;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -214,7 +214,7 @@ napi_value UsbEndpointDescriptor0200(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->endpointDescriptor.bDescriptorType;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -232,7 +232,7 @@ napi_value UsbEndpointDescriptor0300(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->endpointDescriptor.bInterval;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -250,7 +250,7 @@ napi_value UsbEndpointDescriptor0400(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->endpointDescriptor.bRefresh;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -268,7 +268,7 @@ napi_value UsbEndpointDescriptor0500(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->endPoint->endpointDescriptor.bSynchAddress;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -286,7 +286,7 @@ napi_value UsbInterfaceDescriptor0100(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bLength;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -304,7 +304,7 @@ napi_value UsbInterfaceDescriptor0200(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bDescriptorType;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -322,7 +322,7 @@ napi_value UsbInterfaceDescriptor0300(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bAlternateSetting;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -340,7 +340,7 @@ napi_value UsbInterfaceDescriptor0400(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bInterfaceClass;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -358,7 +358,7 @@ napi_value UsbInterfaceDescriptor0500(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bInterfaceSubClass;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -376,7 +376,7 @@ napi_value UsbInterfaceDescriptor0600(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.bInterfaceProtocol;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
@@ -394,7 +394,7 @@ napi_value UsbInterfaceDescriptor0700(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
     OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int res = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int res = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
     config->interface->altsetting->interfaceDescriptor.iInterface;
     napi_value value = nullptr;
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);

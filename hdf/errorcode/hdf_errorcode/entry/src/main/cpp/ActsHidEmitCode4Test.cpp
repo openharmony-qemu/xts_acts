@@ -121,7 +121,7 @@ int32_t CreateTestDeviceHIDRELX(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -181,7 +181,7 @@ int32_t CreateTestDeviceHIDRELY(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -241,7 +241,7 @@ int32_t CreateTestDeviceHIDRELZ(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Z };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Z};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -301,7 +301,7 @@ int32_t CreateTestDeviceHIDRELRX(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RX };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RX};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -361,7 +361,7 @@ int32_t CreateTestDeviceHIDRELRY(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_Y};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -421,7 +421,7 @@ int32_t CreateTestDeviceHIDRELRZ(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RZ };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RZ};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -481,7 +481,7 @@ int32_t CreateTestDeviceHIDRELHWHEEL(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_HWHEEL };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_HWHEEL};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -541,7 +541,7 @@ int32_t CreateTestDeviceHIDRELDIAL(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_DIAL };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_DIAL};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -601,7 +601,7 @@ int32_t CreateTestDeviceHIDRELWHEEL(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_WHEEL };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_WHEEL};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -721,7 +721,7 @@ int32_t CreateTestDeviceHIDRELRESERVED(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RESERVED };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_RESERVED};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -781,7 +781,7 @@ int32_t CreateTestDeviceHIDRELWHEELHIRES(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_WHEEL_HI_RES };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_WHEEL_HI_RES};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()
@@ -841,7 +841,7 @@ int32_t CreateTestDeviceHIDRELHWHEELHIRES(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_HWHEEL_HI_RES };
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X , HID_REL_HWHEEL_HI_RES};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()

@@ -25,10 +25,10 @@
 #define USB_DDK_ENDPOINT_XFER_INT 0x03
 #define USB_DDK_TEST_BUF_SIZE 100
 
-uint8_t configIndex = 0;
-uint64_t interfaceHandle = 0;
-uint8_t settingIndex = 0;
-uint32_t timeout = 1000;
+uint8_t configIndex_ = 0;
+uint64_t interfaceHandle_ = 0;
+uint8_t settingIndex_ = 0;
+uint32_t timeout_ = 1000;
 
 void addUsbDDKNoPermTest(std::vector<napi_property_descriptor> &descData)
 {
@@ -85,7 +85,6 @@ napi_value ErrcodeTest_001(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t usbInitReturnValue = OH_Usb_Init();
     OH_Usb_Release();
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", usbInitReturnValue);
     napi_create_int32(env, usbInitReturnValue == USB_DDK_SUCCESS ? 0 : 1, &result);
     return result;
 }
@@ -95,8 +94,7 @@ napi_value ErrcodeTest_002(napi_env env, napi_callback_info info)
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
     uint64_t errorId = PARAM_1;
-    uint8_t configIndex = 0;
-    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, configIndex, nullptr);
+    int32_t ret = OH_Usb_GetConfigDescriptor(errorId, configIndex_, nullptr);
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
     napi_value result;
@@ -107,8 +105,8 @@ napi_value ErrcodeTest_002(napi_env env, napi_callback_info info)
 
 uint64_t JsDeviceIdToNative(uint64_t deviceId)
 {
-    uint32_t busNum = (uint32_t)(deviceId >> PARAM_48);
-    uint32_t devNum = (uint32_t)((deviceId & 0x0000FFFF00000000) >> PARAM_32);
+    uint32_t busNum = static_cast<uint32_t>(deviceId >> PARAM_48);
+    uint32_t devNum = static_cast<uint32_t>((deviceId & 0x0000FFFF00000000) >> PARAM_32);
     return (((static_cast<uint64_t>(busNum)) << PARAM_32) | devNum);
 }
 
@@ -402,7 +400,7 @@ napi_value UsbConfigDescriptorTest_001(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.bLength;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -422,7 +420,7 @@ napi_value UsbConfigDescriptorTest_002(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.bDescriptorType;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -442,7 +440,7 @@ napi_value UsbConfigDescriptorTest_003(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.wTotalLength;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -462,7 +460,7 @@ napi_value UsbConfigDescriptorTest_004(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.bConfigurationValue;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -482,7 +480,7 @@ napi_value UsbConfigDescriptorTest_005(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.iConfiguration;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -502,7 +500,7 @@ napi_value UsbConfigDescriptorTest_006(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.bmAttributes;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -522,7 +520,7 @@ napi_value UsbConfigDescriptorTest_007(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct UsbDdkConfigDescriptor *config = nullptr;
-    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex_, &config);
     config->configDescriptor.bMaxPower;
     OH_Usb_FreeConfigDescriptor(config);
     OH_Usb_Release();
@@ -536,8 +534,8 @@ napi_value DeviceArrayTest_001(napi_env env, napi_callback_info info)
 {
     int32_t usbInitReturnValue = OH_Usb_Init();
     struct Usb_DeviceArray deviceArray;
-    constexpr size_t MAX_USB_DEVICE_NUM = PARAM_128;
-    deviceArray.deviceIds = new uint64_t[MAX_USB_DEVICE_NUM];
+    constexpr size_t MaxUsNum = PARAM_128;
+    deviceArray.deviceIds = new uint64_t[MaxUsNum];
     int32_t returnValue = OH_Usb_GetDevices(&deviceArray);
     uint32_t num = deviceArray.num;
     OH_Usb_Release();
