@@ -429,5 +429,115 @@ export default function UsbTest() {
       }
     })
 
+    /**
+     * @tc.number   TestUsbAddress0800
+     * @tc.name     TestUsbAddress0800
+     * @tc.desc     Test UsbAddress0800.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('TestUsbAddress0800', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====>TestUsbAddress0800 start====");
+          let result: number = baskddkerror.UsbAddress0800(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbAddress0800 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbAddress0800 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   TestUsbOffset0900
+     * @tc.name     TestUsbOffset0900
+     * @tc.desc     Test UsbOffset0900.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('TestUsbOffset0900', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====>TestUsbOffset0900 start====");
+          let result: number = baskddkerror.UsbOffset0900(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbOffset0900 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbOffset0900 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   TestUsbSize1000
+     * @tc.name     TestUsbSize1000
+     * @tc.desc     Test UsbSize1000.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('TestUsbSize1000', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====>TestUsbSize1000 start====");
+          let result: number = baskddkerror.UsbSize1000(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbSize1000 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbSize1000 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   TestUsbBufferLength1100
+     * @tc.name     TestUsbBufferLength1100
+     * @tc.desc     Test UsbBufferLength1100.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('TestUsbBufferLength1100', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====>TestUsbBufferLength1100 start====");
+          let result: number = baskddkerror.UsbBufferLength1100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbBufferLength1100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbBufferLength1100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   TestUsbTransferedLength1200
+     * @tc.name     TestUsbTransferedLength1200
+     * @tc.desc     Test UsbTransferedLength1200.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('TestUsbTransferedLength1200', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====>TestUsbTransferedLength1200 start====");
+          let result: number = baskddkerror.UsbTransferedLength1200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbTransferedLength1200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbTransferedLength1200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+
   })
 }

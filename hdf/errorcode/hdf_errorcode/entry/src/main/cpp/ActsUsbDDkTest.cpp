@@ -317,7 +317,7 @@ napi_value UsbDdkFailure(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value UsbDdkInvalidParameter(napi_env env, napi_callback_info info) 
+napi_value UsbDdkInvalidParameter(napi_env env, napi_callback_info info)
 {
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;

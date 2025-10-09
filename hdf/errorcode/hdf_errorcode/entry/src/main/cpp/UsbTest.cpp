@@ -69,6 +69,16 @@ void UsbTest(std::vector<napi_property_descriptor> &descData)
             nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"UsbInterfaceDescriptor0700", nullptr, UsbInterfaceDescriptor0700,
             nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbAddress0800", nullptr, UsbAddress0800,
+            nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbOffset0900", nullptr, UsbOffset0900,
+        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbSize1000", nullptr, UsbSize1000,
+        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbBufferLength1100", nullptr, UsbBufferLength1100,
+        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbTransferedLength1200", nullptr, UsbTransferedLength1200,
+        nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 uint64_t JsDeviceIdToNative1(uint64_t deviceId)
@@ -400,4 +410,114 @@ napi_value UsbInterfaceDescriptor0700(napi_env env, napi_callback_info info)
     napi_create_int32(env, res == USB_DDK_INVALID_OPERATION ? 0 : -1, &value);
     OH_Usb_FreeConfigDescriptor(config);
     return value;
+}
+
+napi_value UsbAddress0800(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    int64_t deviceId64;
+    uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
+    OH_Usb_Init();
+    struct UsbDeviceDescriptor devDesc;
+    OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    OH_Usb_FreeConfigDescriptor(config);
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = PARAM_10;
+    int32_t returnValue = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    devMemMap->address;
+    OH_Usb_DestroyDeviceMemMap(devMemMap);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+napi_value UsbOffset0900(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    int64_t deviceId64;
+    uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
+    OH_Usb_Init();
+    struct UsbDeviceDescriptor devDesc;
+    OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    OH_Usb_FreeConfigDescriptor(config);
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = PARAM_10;
+    int32_t returnValue = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    devMemMap->offset;
+    OH_Usb_DestroyDeviceMemMap(devMemMap);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+napi_value UsbSize1000(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    int64_t deviceId64;
+    uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
+    OH_Usb_Init();
+    struct UsbDeviceDescriptor devDesc;
+    OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    OH_Usb_FreeConfigDescriptor(config);
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = PARAM_10;
+    int32_t returnValue = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    devMemMap->size;
+    OH_Usb_DestroyDeviceMemMap(devMemMap);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+napi_value UsbBufferLength1100(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    int64_t deviceId64;
+    uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
+    OH_Usb_Init();
+    struct UsbDeviceDescriptor devDesc;
+    OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    OH_Usb_FreeConfigDescriptor(config);
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = PARAM_10;
+    int32_t returnValue = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    devMemMap->bufferLength;
+    OH_Usb_DestroyDeviceMemMap(devMemMap);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+napi_value UsbTransferedLength1200(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    int64_t deviceId64;
+    uint64_t deviceId = JsDeviceIdToNative1(static_cast<uint64_t>(deviceId64));
+    OH_Usb_Init();
+    struct UsbDeviceDescriptor devDesc;
+    OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    OH_Usb_FreeConfigDescriptor(config);
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = PARAM_10;
+    int32_t returnValue = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    devMemMap->transferedLength;
+    OH_Usb_DestroyDeviceMemMap(devMemMap);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
 }

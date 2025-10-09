@@ -38,4 +38,9 @@ napi_value UsbInterfaceDescriptor0400(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0500(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0600(napi_env env, napi_callback_info info);
 napi_value UsbInterfaceDescriptor0700(napi_env env, napi_callback_info info);
+napi_value UsbAddress0800(napi_env env, napi_callback_info info);
+napi_value UsbOffset0900(napi_env env, napi_callback_info info);
+napi_value UsbSize1000(napi_env env, napi_callback_info info);
+napi_value UsbBufferLength1100(napi_env env, napi_callback_info info);
+napi_value UsbTransferedLength1200(napi_env env, napi_callback_info info);
 #endif //HDF_ERRORCODE_USBTEST_H
