@@ -79,6 +79,11 @@ struct Navigation_SingleInstanceJump41{
         this.text = ''
         this.update()
       }).id('Navigation_SingleInstanceJump41_btn3')
+      Button('getUndefined').onClick(() => {
+        let undefinedValue: ESObject | undefined = this.pathInfos.getParamByIndex(0);
+        console.log('undefinedValue ', undefinedValue)
+        AppStorage.setOrCreate('undefinedValue', undefinedValue)
+      }).id('getUndefinedBtn').height('5%')
 
     }
   }

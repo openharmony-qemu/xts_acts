@@ -68,6 +68,15 @@ struct queryNavigationInfoTest {
               this.pageInfos.pushPath({ name: 'pageOne' , param:'mes'})
             })
             .id('queryNavigationInfoTest_btn1')
+          Button('testQueryNavigationInfoUndefined')
+            .onClick(()=>{
+              let navInfo = this.queryNavigationInfo();
+              if (navInfo == undefined) {
+                console.log('queryNavigationInfoTest navInfo: ', JSON.stringify(navInfo))
+              }
+             AppStorage.setOrCreate('queryNavigationInfoUndefined', navInfo)
+            })
+            .id('testQueryNavigationInfoUndefinedId')
         }
       }
       .mode(NavigationMode.Stack)

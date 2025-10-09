@@ -48,6 +48,30 @@ export default function queryNavigationInfoTest() {
     });
 
     /**
+     * @tc.number    queryNavigationInfoTest_0200
+     * @tc.name      queryNavigationInfoTest_0200
+     * @tc.desc      Test queryNavigationInfo return undefined
+     * @tc.level     Level 0
+     */
+    it('queryNavigationInfoTest_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('[queryNavigationInfoTest_0200] START');
+      await CommonFunc.sleep(1000);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let btn = await driver.findComponent(ON.id('testQueryNavigationInfoUndefinedId'));
+      await btn.click()
+      console.info('[queryNavigationInfoTest_0200] btn click');
+      await CommonFunc.sleep(2000);
+      let queryNavigationInfoUndefined: NavigationInfo | undefined = AppStorage.get('queryNavigationInfoUndefined')
+      expect(queryNavigationInfoUndefined).assertEqual(undefined);
+      AppStorage.delete('queryNavigationInfoUndefined');
+      console.info('[queryNavigationInfoTest_0200] END');
+      done();
+    });
+
+    /**
      * @tc.number    queryNavigationInfoTest_0100
      * @tc.name      queryNavigationInfoTest_0100
      * @tc.desc      Test queryNavigationInfo
