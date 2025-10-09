@@ -26,9 +26,8 @@ struct WebViewControllerDownloadNetworkTest {
   delegate: webView.WebDownloadDelegate = new webView.WebDownloadDelegate();
   @State str: string = '';
   @State
-  downloadUrl: string = 'https://www.openharmony.cn/content/dam/' +
-    'example-cbg-site/cn/mkt/mobileservices/2022/download/' +
-    'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
+  downloadUrl: string = 'https:' +
+              '//mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz'
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -38,7 +37,6 @@ struct WebViewControllerDownloadNetworkTest {
   @State hasSetDownloadDelegate: boolean = false;
   @State savePath: string = Utils.getSandboxFileDir() + 'testDownloadNetworkFile.exe'
   @State lastErrorCode: number = -1
-  @State blockNetwork: boolean = false
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
 
@@ -61,7 +59,6 @@ struct WebViewControllerDownloadNetworkTest {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.lastErrorCode = -1
-        this.blockNetwork = false
         this.isReceive = 1;
       }
     }
@@ -79,7 +76,6 @@ struct WebViewControllerDownloadNetworkTest {
             case "testDownloadNetwork001": {
               try {
                 this.isPageEnd = -1;
-                this.blockNetwork = true
                 this.controller.startDownload(this.downloadUrl);
                 await Utils.waitForExist(()=>this.isPageEnd, this.str, 1);
                 Utils.emitEvent(this.lastErrorCode, 142029)
@@ -100,7 +96,7 @@ struct WebViewControllerDownloadNetworkTest {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .blockNetwork(this.blockNetwork)
+        .blockNetwork(true)
         .onPageEnd(() => {
           if (!this.hasSetDownloadDelegate) {
             try {
