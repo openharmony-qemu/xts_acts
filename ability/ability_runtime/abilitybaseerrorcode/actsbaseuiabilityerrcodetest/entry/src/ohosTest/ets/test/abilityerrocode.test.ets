@@ -44,13 +44,13 @@ export default function errorCodeTest() {
     })
 
     afterEach( async ()=> {
-       await Utils.sleep(1800)
+       await Utils.sleep(200)
        let driver = await Driver.create();
        let text1:Component = await driver.findComponent(ON.text('暂无可用打开方式'));
        if (text1 != null || text1 != undefined) {
          // close the system dialog
           await driver.triggerKey(2070);
-          await Utils.sleep(500)
+          await Utils.sleep(200)
        }
         console.info("errorCodeTest after");
 
