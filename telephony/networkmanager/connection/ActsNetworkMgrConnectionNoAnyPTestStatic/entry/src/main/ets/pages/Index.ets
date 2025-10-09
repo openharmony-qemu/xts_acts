@@ -14,7 +14,7 @@ struct MyStateSample {
   build() {
     Column(undefined) {
       Text('Hello World').fontSize(20)
-      Button("getImsRegInfo")
+      Button('getImsRegInfo')
         .margin(8)
         .width('40%')
         .height('5%')
