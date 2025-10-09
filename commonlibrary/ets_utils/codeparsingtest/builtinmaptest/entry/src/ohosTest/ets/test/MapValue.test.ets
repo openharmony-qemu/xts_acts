@@ -64,7 +64,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest001', 0, () => {
+    it('MapValuesTest001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
       const values = Array.from(map.values());
       expect(values.length).assertEqual(0);
@@ -78,7 +78,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest002', 0, () => {
+    it('MapValuesTest002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
       const values = Array.from(map.values());
       expect(values.length).assertEqual(1);
@@ -93,7 +93,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest003', 0, () => {
+    it('MapValuesTest003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[3, 'c'], [1, 'a'], [2, 'b']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('c');
@@ -109,7 +109,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest004', 0, () => {
+    it('MapValuesTest004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
       map.set('key', 'old');
       map.set('key', 'new');
@@ -126,7 +126,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest005', 0, () => {
+    it('MapValuesTest005',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
       const iterator = map.values();
       expect(typeof iterator.next).assertEqual('function');
@@ -141,7 +141,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest006', 0, () => {
+    it('MapValuesTest006',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'x'], [2, 'y']]);
       const iterator = map.values();
       expect(iterator.next().value).assertEqual('x');
@@ -158,7 +158,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest007', 0, () => {
+    it('MapValuesTest007',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[10, 'foo'], [20, 'bar']]);
       const values = Array.from(map.values());
       const entries = Array.from(map.entries());
@@ -174,7 +174,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest008', 0, () => {
+    it('MapValuesTest008',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[5, 'test']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(map.get(5));
@@ -188,7 +188,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest009', 0, () => {
+    it('MapValuesTest009',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([['name', 'test']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('test');
@@ -202,7 +202,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest010', 0, () => {
+    it('MapValuesTest010',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[true, 'yes'], [false, 'no']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('yes');
@@ -217,7 +217,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest011', 0, () => {
+    it('MapValuesTest011',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         id: number
       }
@@ -236,7 +236,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest012', 0, () => {
+    it('MapValuesTest012',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest012 = MapValuesTest012();
       expect(ValuesTest012.values[0]).assertEqual('symbol value');
     });
@@ -249,7 +249,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest013', 0, () => {
+    it('MapValuesTest013',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[null, 'null value']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('null value');
@@ -263,7 +263,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest014', 0, () => {
+    it('MapValuesTest014',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[undefined, 'undefined value']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('undefined value');
@@ -277,7 +277,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest015', 0, () => {
+    it('MapValuesTest015',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const func = () => 'test';
       const map = new Map([[1, func]]);
       const values = Array.from(map.values());
@@ -293,7 +293,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest016', 0, () => {
+    it('MapValuesTest016',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
       const map = new Map([[1, arr]]);
       const values = Array.from(map.values());
@@ -309,7 +309,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest017', 0, () => {
+    it('MapValuesTest017',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         a: number;
       }
@@ -329,7 +329,7 @@ export default function MapValueTest() {
      * @tc.size MediumTest
      * @tc.level Level 1
      */
-    it('MapValuesTest018', 0, () => {
+    it('MapValuesTest018',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
       Array.from(map.values());
       expect(map.size).assertEqual(1);
@@ -344,7 +344,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest019', 0, () => {
+    it('MapValuesTest019',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
       const values1 = Array.from(map.values());
       const values2 = Array.from(map.values());
@@ -359,7 +359,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest020', 0, () => {
+    it('MapValuesTest020',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
       const iter1 = map.values();
       const iter2 = map.values();
@@ -374,7 +374,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest021', 0, () => {
+    it('MapValuesTest021',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
       const iterator = map.values();
       iterator.next(); // 消耗第一个值
@@ -390,7 +390,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest022', 0, () => {
+    it('MapValuesTest022',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
       const iterator = map.values();
       iterator.next(); // 消耗 'a'
@@ -406,7 +406,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest023', 0, () => {
+    it('MapValuesTest023',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
       const iterator = map.values();
       expect(iterator.next().value).assertEqual('a');
@@ -422,7 +422,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest024', 0, () => {
+    it('MapValuesTest024',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'x'], [2, 'y']]);
       const result: string[] = [];
       for (const value of map.values()) {
@@ -440,7 +440,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest025', 0, () => {
+    it('MapValuesTest025',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, NaN]]);
       const values = Array.from(map.values());
       expect(values[0] !== values[0]).assertEqual(true);
@@ -454,7 +454,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest026', 0, () => {
+    it('MapValuesTest026',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, Infinity]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(Infinity);
@@ -468,7 +468,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest027', 0, () => {
+    it('MapValuesTest027',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, -Infinity]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(-Infinity);
@@ -482,7 +482,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest028', 0, () => {
+    it('MapValuesTest028',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 42n]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(42n);
@@ -496,8 +496,8 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest029', 0, () => {
-      const date = new Date(2023, 0, 1);
+    it('MapValuesTest029',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const date = new Date(2023,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 1);
       const map = new Map([[1, date]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(date);
@@ -512,7 +512,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest030', 0, () => {
+    it('MapValuesTest030',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex = /test/;
       const map = new Map([[1, regex]]);
       const values = Array.from(map.values());
@@ -528,7 +528,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest031', 0, () => {
+    it('MapValuesTest031',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const innerMap = new Map([[1, 'a']]);
       const map = new Map([[1, innerMap]]);
       const values = Array.from(map.values());
@@ -544,7 +544,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest032', 0, () => {
+    it('MapValuesTest032',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const set = new Set([1, 2]);
       const map = new Map([[1, set]]);
       const values = Array.from(map.values());
@@ -560,7 +560,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest033', 0, () => {
+    it('MapValuesTest033',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
 
       const wm: WeakMap<MyObj, string> = new WeakMap();
@@ -580,7 +580,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest034', 0, () => {
+    it('MapValuesTest034',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
 
       const ws = new WeakSet();
@@ -600,7 +600,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest035', 0, () => {
+    it('MapValuesTest035',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest035 begin');
 
       class TestClass {
@@ -622,7 +622,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest036', 0, () => {
+    it('MapValuesTest036',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest036 begin');
       const map = new Map([[1, 'a'], [2, 'b']]);
       map.clear();
@@ -638,7 +638,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest037', 0, () => {
+    it('MapValuesTest037',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest037 begin');
       const map = new Map([[1, 'a'], [2, 'b']]);
       const iterator = map.values();
@@ -655,7 +655,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest038', 0, () => {
+    it('MapValuesTest038',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest038 begin');
       const map = new Map([[1, 0], [2, -0]]);
       const values = Array.from(map.values());
@@ -673,7 +673,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest039', 0, () => {
+    it('MapValuesTest039',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest039 begin');
       const map = new Map([[1, '']]);
       const values = Array.from(map.values());
@@ -689,7 +689,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest040', 0, () => {
+    it('MapValuesTest040',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest040 begin');
       const largeStr = 'a'.repeat(1000);
       const map = new Map([[1, largeStr]]);
@@ -706,7 +706,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest041', 0, () => {
+    it('MapValuesTest041',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest041 begin');
       const multiStr = 'line1\nline2';
       const map = new Map([[1, multiStr]]);
@@ -723,7 +723,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest042', 0, () => {
+    it('MapValuesTest042',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface LevelC {
         c: number;
       }
@@ -757,7 +757,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest043', 0, () => {
+    it('MapValuesTest043',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         prop: MyObj | null
       }
@@ -778,7 +778,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest044', 0, () => {
+    it('MapValuesTest044',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const typedArr = new Uint8Array([1, 2, 3]);
       const map = new Map([[1, typedArr]]);
       const values = Array.from(map.values());
@@ -794,7 +794,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest045', 0, () => {
+    it('MapValuesTest045',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testFunc = () => {
         return 'test';
       }
@@ -814,7 +814,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest046', 0, () => {
+    it('MapValuesTest046',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest046 = MapValuesTest046();
       const first = ValuesTest046.gen.next();
       const second = ValuesTest046.gen.next();
@@ -830,7 +830,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest047', 0, async () => {
+    it('MapValuesTest047',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncFunc = async () => 'async result';
       const map = new Map([[1, asyncFunc]]);
       const values = Array.from(map.values());
@@ -845,7 +845,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest048', 0, () => {
+    it('MapValuesTest048',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
       const map = new Map([[1, buffer]]);
       const values = Array.from(map.values());
@@ -861,7 +861,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest049', 0, () => {
+    it('MapValuesTest049',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest049 = MapValuesTest049();
       expect(ValuesTest049.values[0]).assertEqual(ValuesTest049.frozen);
       expect(ValuesTest049.values[0].a).assertEqual(1);
@@ -875,7 +875,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest050', 0, () => {
+    it('MapValuesTest050',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest050 = MapValuesTest050();
       expect(ValuesTest050.values[0]).assertEqual(ValuesTest050.sealed);
       expect(ValuesTest050.values[0].a).assertEqual(1);
@@ -889,7 +889,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('MapValuesTest051', 0, () => {
+    it('MapValuesTest051',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest051 = MapValuesTest051();
       expect(ValuesTest051.values[0]).assertDeepEquals(ValuesTest051.values1);
       expect(Object.keys(ValuesTest051.values[0]).length).assertEqual(0);
@@ -903,7 +903,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest052', 0, () => {
+    it('MapValuesTest052',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, null]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(null);
@@ -917,7 +917,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest053', 0, () => {
+    it('MapValuesTest053',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, undefined]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(undefined);
@@ -931,7 +931,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest054', 0, () => {
+    it('MapValuesTest054',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest054 = MapValuesTest054();
       expect(ValuesTest054.values[0]).assertEqual('string');
       expect(ValuesTest054.values[1]).assertEqual(42);
@@ -948,7 +948,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest055', 0, () => {
+    it('MapValuesTest055',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
       const count = 1000;
       for (let i = 0; i < count; i++) {
@@ -967,7 +967,7 @@ export default function MapValueTest() {
      * @tc.type Performance
      * @tc.level Level 3
      */
-    it('MapValuesTest056', 0, () => {
+    it('MapValuesTest056',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, number> = new Map();
       const count = 10000;
       for (let i = 0; i < count; i++) {
@@ -990,7 +990,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest057', 0, () => {
+    it('MapValuesTest057',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest057 = MapValuesTest057();
       expect(typeof ValuesTest057.iterator1).assertEqual('function');
       expect(ValuesTest057.iter.next().value).assertEqual('a');
@@ -1005,7 +1005,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest058', 0, () => {
+    it('MapValuesTest058',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest058 = MapValuesTest058();
       expect(ValuesTest058.interator1).assertEqual('[object Map Iterator]');
       expect(ValuesTest058.interator2).assertEqual('Map Iterator');
@@ -1019,7 +1019,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest059', 0, () => {
+    it('MapValuesTest059',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest059 = MapValuesTest059();
       expect(ValuesTest059.values2).assertEqual(true);
       expect(ValuesTest059.values1).assertEqual(false);
@@ -1033,7 +1033,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest060', 0, () => {
+    it('MapValuesTest060',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest060 = MapValuesTest060();
       expect(ValuesTest060.values1).assertEqual(true);
     });
@@ -1046,7 +1046,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest061', 0, () => {
+    it('MapValuesTest061',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
       const values: string[] = [];
 
@@ -1069,7 +1069,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest062', 0, () => {
+    it('MapValuesTest062',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
       const values: string[] = [];
 
@@ -1091,7 +1091,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest063', 0, () => {
+    it('MapValuesTest063',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest063 = MapValuesTest063();
       expect(ValuesTest063.result1).assertEqual('a');
       expect(ValuesTest063.result3).assertEqual(false);
@@ -1106,7 +1106,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest064', 0, () => {
+    it('MapValuesTest064',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         prop: string;
       }
@@ -1133,7 +1133,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest065', 0, () => {
+    it('MapValuesTest065',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[NaN, 'value']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('value');
@@ -1147,7 +1147,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest066', 0, () => {
+    it('MapValuesTest066',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[-0, 'value']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('value');
@@ -1161,7 +1161,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest067', 0, () => {
+    it('MapValuesTest067',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[0, 'zero'], [-0, 'neg-zero']]);
       const values = Array.from(map.values());
       // 注意：0和-0在Map中被视为相同的键，后设置的会覆盖先设置的
@@ -1177,7 +1177,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest068', 0, () => {
+    it('MapValuesTest068',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
 
       const key: MyObj = {};
@@ -1199,7 +1199,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest069', 0, () => {
+    it('MapValuesTest069',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest069 = MapValuesTest069();
       expect(ValuesTest069.values.length).assertEqual(2);
       expect(ValuesTest069.values[0]).assertEqual('first');
@@ -1214,7 +1214,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest070', 0, () => {
+    it('MapValuesTest070',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         a: string,
         b: string,
@@ -1239,7 +1239,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest071', 0, () => {
+    it('MapValuesTest071',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest071 = MapValuesTest071();
       expect(ValuesTest071.values[0]).assertEqual(1);
       expect(ValuesTest071.values[1]).assertEqual(2);
@@ -1254,7 +1254,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest072', 0, () => {
+    it('MapValuesTest072',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
       const map = new Map(original);
       const values = Array.from(map.values());
@@ -1270,7 +1270,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest073', 0, () => {
+    it('MapValuesTest073',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         prop: string;
       }
@@ -1291,7 +1291,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest074', 0, () => {
+    it('MapValuesTest074',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         prop: string;
       }
@@ -1317,7 +1317,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest075', 0, () => {
+    it('MapValuesTest075',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest075 = MapValuesTest075();
       expect(ValuesTest075.values.length).assertEqual(0);
       // 清理
@@ -1332,7 +1332,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest076', 0, () => {
+    it('MapValuesTest076',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest076 = MapValuesTest076();
       expect(ValuesTest076.values[0]).assertEqual('a');
       expect(ValuesTest076.values[1]).assertEqual('b');
@@ -1346,7 +1346,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest077', 0, () => {
+    it('MapValuesTest077',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest077 = MapValuesTest077();
       expect(ValuesTest077.values[0]).assertEqual('a');
       expect(ValuesTest077.values[1]).assertEqual('b');
@@ -1360,7 +1360,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest078', 0, () => {
+    it('MapValuesTest078',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest078 = MapValuesTest078();
       expect(ValuesTest078.values[0]).assertEqual('modified');
     });
@@ -1373,7 +1373,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest079', 0, () => {
+    it('MapValuesTest079',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest079 = MapValuesTest079();
       expect(ValuesTest079.values[0]).assertEqual('a');
       expect(ValuesTest079.values[1]).assertEqual('b');
@@ -1387,7 +1387,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest080', 0, () => {
+    it('MapValuesTest080',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 10], [2, 20], [3, 30]]);
       const values = Array.from(map.values());
       const doubled = values.map(v => v * 2);
@@ -1404,7 +1404,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest081', 0, () => {
+    it('MapValuesTest081',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 5], [2, 15], [3, 25], [4, 5]]);
       const values = Array.from(map.values());
       const filtered = values.filter(v => v > 10);
@@ -1421,7 +1421,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest082', 0, () => {
+    it('MapValuesTest082',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 1], [2, 2], [3, 3], [4, 4]]);
       const values = Array.from(map.values());
       const sum = values.reduce((acc, curr) => acc + curr, 0);
@@ -1437,7 +1437,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest083', 0, () => {
+    it('MapValuesTest083',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'apple'], [2, 'banana'], [3, 'cherry']]);
       const values = Array.from(map.values());
       const found = values.find(v => v.startsWith('b'));
@@ -1452,7 +1452,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest084', 0, () => {
+    it('MapValuesTest084',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 5], [2, 10], [3, 15]]);
       const map2 = new Map([[1, 5], [2, 20], [3, 15]]);
 
@@ -1474,7 +1474,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest085', 0, () => {
+    it('MapValuesTest085',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 'cat'], [2, 'dog'], [3, 'bird']]);
       const map2 = new Map([[1, 'cat'], [2, 'dog'], [3, 'fish']]);
 
@@ -1496,7 +1496,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest086', 0, () => {
+    it('MapValuesTest086',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
       const values = Array.from(map.values());
 
@@ -1513,7 +1513,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest087', 0, () => {
+    it('MapValuesTest087',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('a');
@@ -1529,7 +1529,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest088', 0, () => {
+    it('MapValuesTest088',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest088 = MapValuesTest088();
       expect(ValuesTest088.values[0]).assertEqual(ValuesTest088.map);
     });
@@ -1542,7 +1542,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest089', 0, () => {
+    it('MapValuesTest089',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 'a']]);
       const map2 = new Map([[2, 'b']]);
       const mainMap = new Map([[10, map1], [20, map2]]);
@@ -1561,7 +1561,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest090', 0, () => {
+    it('MapValuesTest090',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest090 = MapValuesTest090();
       expect(ValuesTest090.values1[0]).assertEqual(ValuesTest090.map2);
       expect(ValuesTest090.values2[0]).assertEqual(ValuesTest090.map1);
@@ -1575,7 +1575,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest091', 0, () => {
+    it('MapValuesTest091',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
       const entries = Array.from(original.entries());
       const newMap = new Map(entries);
@@ -1593,7 +1593,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest092', 0, () => {
+    it('MapValuesTest092',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest092 = MapValuesTest092();
       expect(ValuesTest092.json).assertEqual('[{"a":1},{"b":2}]');
     });
@@ -1606,7 +1606,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest093', 0, () => {
+    it('MapValuesTest093',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const func = () => {
       };
       const map = new Map([[1, func]]);
@@ -1624,7 +1624,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest094', 0, () => {
+    it('MapValuesTest094',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const iframeMap = new Map([[1, 'iframe value']]);
       const values = Array.from(iframeMap.values());
 
@@ -1639,7 +1639,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest095', 0, () => {
+    it('MapValuesTest095',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
       // 创建克隆
       const clone = new Map(original);
@@ -1658,7 +1658,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest096', 0, () => {
+    it('MapValuesTest096',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest096 = MapValuesTest096();
       expect(ValuesTest096.values[0]).assertEqual('a');
     });
@@ -1671,7 +1671,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest097', 0, () => {
+    it('MapValuesTest097',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest097 = MapValuesTest097();
       expect(ValuesTest097.values[0]).assertEqual('a');
     });
@@ -1684,7 +1684,7 @@ export default function MapValueTest() {
      * @tc.type Performance
      * @tc.level Level 3
      */
-    it('MapValuesTest098', 0, () => {
+    it('MapValuesTest098',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
       const count = 100;
       const largeValue = 'x'.repeat(100000);
@@ -1704,7 +1704,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest099', 0, () => {
+    it('MapValuesTest099',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let map: Map<number, string> | null = new Map([[1, 'a']]);
       const values = Array.from(map.values());
       const valueRef = values[0];
@@ -1720,7 +1720,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest100', 0, () => {
+    it('MapValuesTest100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
       map.set(1, 'a');
       map.delete(1);
@@ -1738,7 +1738,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest101', 0, () => {
+    it('MapValuesTest101',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[5, 'e'], [4, 'd'], [3, 'c'], [2, 'b'], [1, 'a']]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual('e');
@@ -1756,7 +1756,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest102', 0, () => {
+    it('MapValuesTest102',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([
         ['Apple', 'red'],
         ['banana', 'yellow'],
@@ -1777,7 +1777,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest103', 0, () => {
+    it('MapValuesTest103',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest103 = MapValuesTest103();
       expect(ValuesTest103.values.length).assertEqual(5);
       expect(ValuesTest103.values[0]).assertEqual('number');
@@ -1795,7 +1795,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest104', 0, () => {
+    it('MapValuesTest104',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest104 = MapValuesTest104();
       expect(ValuesTest104.values[0] instanceof Set).assertEqual(true);
       expect(ValuesTest104.values[1] instanceof Map).assertEqual(true);
@@ -1810,7 +1810,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest105', 0, () => {
+    it('MapValuesTest105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dynamicValue = 'initial';
       const map = new Map([[1, dynamicValue]]);
       dynamicValue = 'modified';
@@ -1826,7 +1826,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest106', 0, () => {
+    it('MapValuesTest106',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         value: string;
       }
@@ -1846,7 +1846,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest107', 0, () => {
+    it('MapValuesTest107',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest107 = MapValuesTest107();
       expect(ValuesTest107.values[0].a).assertEqual(2);
     });
@@ -1859,7 +1859,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('MapValuesTest108', 0, () => {
+    it('MapValuesTest108',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
         a: number
       }
@@ -1881,7 +1881,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest109', 0, () => {
+    it('MapValuesTest109',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest109 = MapValuesTest109();
       expect(ValuesTest109.values2).assertEqual(true);
       expect(ValuesTest109.values3).assertEqual(true);
@@ -1896,7 +1896,7 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest110', 0, () => {
+    it('MapValuesTest110',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest109 = MapValuesTest110();
       expect(ValuesTest109.values.length).assertEqual(14);
       expect(typeof ValuesTest109.values[0]).assertEqual('string');

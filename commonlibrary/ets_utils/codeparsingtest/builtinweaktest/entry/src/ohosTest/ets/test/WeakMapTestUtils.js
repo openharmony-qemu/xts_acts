@@ -1412,32 +1412,7 @@ export const WeakMapTestUtils = {
         });
         promiseResult = await promise2;
         if (promiseResult !== 'promise-modified-data') throw new Error("WeakMap in Promise: reject callback returns wrong value");
-
-        // // 3. 修正：函数作用域封装Promise，避免顶层强引用（关键修复）
-        // let gcPromiseResult = null;
-        // // 函数内临时持有键引用，执行后自动释放
-        // const gcPromise = (() => {
-        //     const innerTempKey = key; // 函数内临时引用（非顶层）
-        //     // 释放顶层引用：此时仅函数内innerTempKey持有强引用
-        //     key = null;
-        //
-        //     return new Promise(resolve => {
-        //         // 触发GC（确保强引用已释放）
-        //         if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
-        //         else if (window?.gc || global.gc) (window.gc || global.gc)();
-        //
-        //         setTimeout(() => {
-        //             // 此时函数已执行完毕，innerTempKey引用销毁，键对象仅存WeakMap弱引用
-        //             resolve(wm.get(innerTempKey));
-        //         }, 200);
-        //     });
-        // })(); // 函数执行完毕，innerTempKey引用销毁，键对象无强引用
-        //
-        // // 等待Promise执行并获取结果
-        // gcPromiseResult = await gcPromise;
-        // // 验证：键已被GC，get()返回undefined
-        // if (gcPromiseResult !== undefined) throw new Error("WeakMap in Promise: key not GC'd");
-
+        
         return "Test Passed: WeakMapInPromiseTest2410";
     },
 
