@@ -75,7 +75,10 @@ export default function IsAtEndScroll() {
       console.info('[IsAtEndScroll_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let btn: Component = await driver.findComponent(ON.id('isAtEnd_scroll'));
+      let btn_scroll: Component = await driver.findComponent(ON.id('isAtEnd_scroll'));
+      await btn_scroll.click();
+      await CommonFunc.sleep(1500);
+      let btn: Component = await driver.findComponent(ON.id('isAtEnd_get'));
       await btn.click();
       console.info("[IsAtEndScroll_0200] Click isAtEnd_get true.");
       await CommonFunc.sleep(1500);
