@@ -41,6 +41,7 @@ import Object33Test from './objectplus/Object33.test';
 import Object34Test from './objectplus/Object34.test';
 import Object35Test from './objectplus/Object35.test';
 import Object36Test from './objectplus/Object36.test';
+import Object27Test from './objectplus/Object27Test.test';
 
 export default function testsuite() {
 
