@@ -40,20 +40,17 @@ struct MyStateSample {
     try {
       hilog.info(DOMAIN, TAG, `Index enter1 ${formInfo.PublishFormErrorCode.SUCCESS === 0}`);
     } catch (err) {
-      err = err as Error;
-      hilog.info(DOMAIN, TAG, `Index enter1 ${err.message}`);
+      hilog.info(DOMAIN, TAG, `Index enter1 ${(err as Error).message}`);
     }
     try {
       hilog.info(DOMAIN, TAG, `Index enter2 ${batteryInfo.BatteryCapacityLevel.LEVEL_FULL}`);
     } catch (err) {
-      err = err as Error;
-      hilog.info(DOMAIN, TAG, `Index enter2 ${err.message}`);
+      hilog.info(DOMAIN, TAG, `Index enter2 ${(err as Error).message}`);
     }
     try {
       hilog.info(DOMAIN, TAG, `Index enter3 ${formError.FormError.ERR_COMMON}`);
     } catch (err) {
-      err = err as Error;
-      hilog.info(DOMAIN, TAG, `Index enter3 ${err.message}`);
+      hilog.info(DOMAIN, TAG, `Index enter3 ${(err as Error).message}`);
     }
   }
 
@@ -72,7 +69,8 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormBindingData'});
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -83,7 +81,8 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormComponent'});
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -94,7 +93,8 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -117,7 +117,8 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormProvider'});
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })

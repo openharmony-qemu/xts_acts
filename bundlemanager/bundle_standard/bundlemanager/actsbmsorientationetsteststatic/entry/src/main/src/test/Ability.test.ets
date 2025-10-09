@@ -105,9 +105,11 @@ export default function abilityTest() {
             expect(data != null).assertTrue();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s' + err.message);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s' + err.message);
+          expect().assertFail();
+        }
       }
       done();
     });

@@ -66,11 +66,13 @@ export default function uitestUiWindowTest() {
         let bar = await driver.findComponent(ON.type('DecorBar'))
         expect(bar == null).assertTrue()
       }
-      catch (err:BusinessError) {
-        if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          if (err.message == 'this device can not support this action') {
+            expect(window1 != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       await stopApplication('com.uitestScene.acts')
@@ -95,12 +97,14 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testResume split resume success`);
         }
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testResume find window1 success, ${JSON.stringify(err)}`);
-        if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testResume find window1 success, ${JSON.stringify(err)}`);
+          if (err.message == 'this device can not support this action') {
+            expect(window1 != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testResume end `);
@@ -172,12 +176,14 @@ export default function uitestUiWindowTest() {
           }
         }
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testWindowResizeA_static error, ${ JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testWindowResizeA_static error, ${ JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testWindowResizeA_static end `);
@@ -221,12 +227,14 @@ export default function uitestUiWindowTest() {
           }
         }
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testWindowMoveTo_static error, ${ JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testWindowMoveTo_static error, ${ JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testWindowMoveTo_static end `);
@@ -255,12 +263,14 @@ export default function uitestUiWindowTest() {
           expect(window1  == null).assertTrue();
         }
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testWindowMinimize_static error, ${ JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testWindowMinimize_static error, ${ JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testWindowMinimize_static end `);
@@ -303,12 +313,14 @@ export default function uitestUiWindowTest() {
         }
         await stopApplication('com.uitestScene.acts')
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testWindowMaximize_static error, ${ JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testWindowMaximize_static error, ${ JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
     })
@@ -464,12 +476,14 @@ export default function uitestUiWindowTest() {
           }
         }
       }
-      catch (err: BusinessError) {
-        hilog.info(domain, tag, `testGetWindowMode_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testGetWindowMode_static error, ${JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window1 != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testGetWindowMode_static end `);
@@ -527,12 +541,14 @@ export default function uitestUiWindowTest() {
         hilog.info(domain, tag, `testWindowClose_static window1, ${JSON.stringify(window1)} `);
         expect(window1 == null).assertTrue()
       }
-      catch (err: BusinessError) {
-        hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
+      catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
+          if (err.message == 'this device can not support this action') {
+            expect(window != null).assertTrue()
+          } else {
+            expect(false).assertTrue()
+          }
         }
       }
       hilog.info(domain, tag, `testWindowClose_static end `);

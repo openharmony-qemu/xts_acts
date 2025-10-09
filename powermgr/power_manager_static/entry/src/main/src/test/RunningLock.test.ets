@@ -279,7 +279,7 @@ export default function RunningLockTest() {
           expect(isSupported).assertTrue();
           done();
         } catch (e) {
-          if ( e instanceof BusinessError) {
+          if (e instanceof BusinessError) {
             hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
             expect().assertFail();
             done();

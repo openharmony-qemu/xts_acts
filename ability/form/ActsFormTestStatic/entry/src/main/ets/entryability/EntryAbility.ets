@@ -42,8 +42,7 @@ class EntryAbility extends UIAbility {
         let aRouter = this.uiContext?.getRouter();
         aRouter?.pushUrl({url: this.wantUri})
       } catch (e) {
-        e = e as Error;
-        hilog.error(DOMAIN, TAG, `pushUrl error: ${e?.message}`);
+        hilog.error(DOMAIN, TAG, `pushUrl error: ${(e as Error)?.message}`);
       }
     }
     this.wantUri = '';
@@ -62,8 +61,7 @@ class EntryAbility extends UIAbility {
         hilog.info(DOMAIN, TAG, 'loadContent ok');
       });
     } catch (e) {
-      e = e as Error;
-      hilog.error(DOMAIN, TAG, `loadContent catch error: ${e?.message}`);
+      hilog.error(DOMAIN, TAG, `loadContent catch error: ${(e as Error)?.message}`);
     }
 
     try {
@@ -71,8 +69,7 @@ class EntryAbility extends UIAbility {
       this.uiContext = windowClass!.getUIContext();
       hilog.info(DOMAIN, TAG, 'getUIContext');
     } catch (e) {
-      e = e as Error;
-      hilog.error(DOMAIN, TAG, `getUIContext error: ${e?.message}`);
+      hilog.error(DOMAIN, TAG, `getUIContext error: ${(e as Error)?.message}`);
     }
   }
 

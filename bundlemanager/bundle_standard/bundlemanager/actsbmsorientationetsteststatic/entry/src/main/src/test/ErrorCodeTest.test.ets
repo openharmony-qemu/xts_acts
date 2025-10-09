@@ -36,10 +36,12 @@ export default function ErrcodeTest() {
         hilog.info(domain, tag, `getLaunchWant_static_17700072 successfully bundleName:${want.bundleName} abilityName:${want.abilityName}`);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, `getLaunchWant_static_17700072 catch failed errCode:${err.code} message:${err.message}`);
-        expect(err.code).assertEqual(17700072);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, `getLaunchWant_static_17700072 catch failed errCode:${err.code} message:${err.message}`);
+          expect(err.code).assertEqual(17700072);
+          done();
+        }
       }
     });
 

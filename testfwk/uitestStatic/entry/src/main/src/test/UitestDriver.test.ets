@@ -337,7 +337,8 @@ export default function uitestDriverTest() {
           await strCom.click();
           await driver.delayMs(waitUiReadyMs);
         }
-      } catch(error: Error) {
+      } catch(error) {
+        error = error as Error;
         hilog.info(domain, tag, `test_penClick_function_displayId_static error, ${ JSON.stringify(error)}`);
         expect().assertFail();
       } finally {

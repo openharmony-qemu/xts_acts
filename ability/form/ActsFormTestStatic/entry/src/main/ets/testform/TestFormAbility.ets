@@ -43,8 +43,7 @@ class TestFormAbility extends UIAbility {
         let aRouter = this.uiContext?.getRouter();
         aRouter?.pushUrl({url: this.wantUri})
       } catch (e) {
-        e = e as Error;
-        hilog.error(DOMAIN, TAG, `pushUrl error, message: ${e?.message}`);
+        hilog.error(DOMAIN, TAG, `pushUrl error, message: ${(e as Error)?.message}`);
       }
     }
     this.wantUri = '';
