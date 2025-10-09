@@ -67,7 +67,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20600 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s class ' +
       'AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20700 -s unittest OpenHarmonyTestRunner';
@@ -87,7 +87,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20700 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20800 -s unittest OpenHarmonyTestRunner';
@@ -107,7 +107,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20800 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s class ' +
       'AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20900 -s unittest OpenHarmonyTestRunner';
@@ -127,7 +127,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20900 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21000 -s unittest OpenHarmonyTestRunner';
@@ -147,7 +147,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21000 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300 -s unittest OpenHarmonyTestRunner';
@@ -157,7 +157,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -166,7 +166,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400 -s unittest OpenHarmonyTestRunner';
@@ -176,7 +176,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -185,7 +185,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500 -s unittest OpenHarmonyTestRunner';
@@ -195,7 +195,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -204,7 +204,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600 -s unittest OpenHarmonyTestRunner';
@@ -214,7 +214,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -223,7 +223,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700 -s unittest OpenHarmonyTestRunner';
@@ -233,7 +233,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -242,7 +242,7 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800 -s unittest OpenHarmonyTestRunner';
@@ -252,7 +252,7 @@ export default class MainAbility extends Ability {
       await startAbilityTest('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800', this.context);
     })
 
-    await sleep(4000);
+    await sleep(2000);
 
     cmd = 'ps -ef | grep com.acts.abilitytoolrely';
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
@@ -261,11 +261,11 @@ export default class MainAbility extends Ability {
       console.info('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800 end');
     })
 
-    await sleep(2000);
+    await sleep(1000);
 
     setTimeout(() => {
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-    }, 6000)
+    }, 2000)
   }
 
   onDestroy() {
