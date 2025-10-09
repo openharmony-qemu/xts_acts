@@ -2283,4 +2283,1332 @@ export const WeakRefTestUtils = {
         }
         if (tempSourceRef.deref() !== undefined) throw new Error("Error source WeakRef not invalidated");
 
-   
+        return "Test Passed: WeakMapErrorKeySourceWeakRefValueTest065";
+    },
+
+    /**
+     * 66. WeakMap(key=时间对象, value=定时器的WeakRef) — 时间-定时器引用
+     */
+    async test066_WeakMapTimeKeyTimerWeakRefValue() {
+        const timeTimerMap = new WeakMap();
+        let timeObj, timerObj, tempTimerRef, tempTimeRef;
+
+        (function createTimeAndTimer() {
+            timeObj = { id: 'time-tracker', start: Date.now() };
+            timerObj = {
+                id: 'timer',
+                time: timeObj, // 定时器引用时间对象
+                interval: null
+            };
+            const refToTimer = new WeakRef(timerObj);
+            timeTimerMap.set(timeObj, refToTimer);
+
+            if (timerObj.time !== timeObj) throw new Error("Timer not linked to time");
+            if (timeTimerMap.get(timeObj)?.deref() !== timerObj) throw new Error("WeakRef mismatch");
+            tempTimerRef = refToTimer;
+            tempTimeRef = new WeakRef(timeObj); // 保存timeObj的WeakRef
+        })();
+
+        timeObj = null;
+        timerObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证：通过原timeObj的WeakRef获取键，检查是否存在条目
+        const gcTime = tempTimeRef.deref();
+        if (gcTime && timeTimerMap.has(gcTime)) {
+            throw new Error("WeakMap still contains entry for GC'd time key");
+        }
+        if (tempTimerRef.deref() !== undefined) throw new Error("Timer WeakRef not invalidated");
+
+        return "Test Passed: WeakMapTimeKeyTimerWeakRefValueTest066";
+    },
+
+
+    /**
+     * 68. WeakMap(key=权限对象, value=角色的WeakRef) — 权限-角色引用
+     */
+    async test068_WeakMapPermissionKeyRoleWeakRefValue() {
+        const permissionRoleMap = new WeakMap();
+        let roleObj, permissionObj, tempRoleRef, tempPermissionRef;
+
+        (function createPermissionAndRole() {
+            roleObj = { id: 'role-admin', permissions: [] };
+            permissionObj = {
+                id: 'perm-delete',
+                role: roleObj // 权限引用角色
+            };
+            roleObj.permissions.push(permissionObj);
+            const refToRole = new WeakRef(roleObj);
+            permissionRoleMap.set(permissionObj, refToRole);
+
+            if (!roleObj.permissions.includes(permissionObj)) throw new Error("Role missing permission");
+            if (permissionObj.role !== roleObj) throw new Error("Permission not linked to role");
+            tempRoleRef = refToRole;
+            tempPermissionRef = new WeakRef(permissionObj); // 保存permission的WeakRef
+        })();
+
+        permissionObj = null;
+        roleObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证：通过原permission的WeakRef获取键，检查是否存在条目
+        const gcPermission = tempPermissionRef.deref();
+        if (gcPermission && permissionRoleMap.has(gcPermission)) {
+            throw new Error("WeakMap still contains entry for GC'd permission key");
+        }
+        if (tempRoleRef.deref() !== undefined) throw new Error("Role WeakRef not invalidated");
+
+        return "Test Passed: WeakMapPermissionKeyRoleWeakRefValueTest068";
+    },
+
+
+
+    /**
+     * 70. WeakMap(key=会话对象, value=用户的WeakRef) — 会话-用户引用
+     */
+    async test070_WeakMapSessionKeyUserWeakRefValue() {
+        const sessionUserMap = new WeakMap();
+        let userObj, sessionObj, tempUserRef, tempSessionRef;
+
+        (function createSessionAndUser() {
+            userObj = { id: 'user-789', name: 'Test User' };
+            sessionObj = {
+                id: 'session-123',
+                user: userObj, // 会话引用用户
+                startTime: Date.now()
+            };
+            const refToUser = new WeakRef(userObj);
+            sessionUserMap.set(sessionObj, refToUser);
+
+            if (sessionObj.user !== userObj) throw new Error("Session not linked to user");
+            if (sessionUserMap.get(sessionObj)?.deref() !== userObj) throw new Error("WeakRef mismatch");
+            tempUserRef = refToUser;
+            tempSessionRef = new WeakRef(sessionObj); // 保存session的WeakRef
+        })();
+
+        sessionObj = null;
+        userObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证：通过原session的WeakRef获取键，检查是否存在条目
+        const gcSession = tempSessionRef.deref();
+        if (gcSession && sessionUserMap.has(gcSession)) {
+            throw new Error("WeakMap still contains entry for GC'd session key");
+        }
+        if (tempUserRef.deref() !== undefined) throw new Error("User WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSessionKeyUserWeakRefValueTest070";
+    },
+    /**
+     * 71. WeakMap(key=Array, value=数组元素的WeakRef) — 数组-元素引用
+     */
+    async test071_WeakMapArrayKeyElementWeakRefValue() {
+        const arrayElementMap = new WeakMap();
+        let mainArray, elementObj, tempElementRef, tempArrayRef;
+
+        (function createArrayAndElement() {
+            elementObj = { id: 'array-element-71', value: 'test' };
+            mainArray = [elementObj]; // 数组包含元素
+            const refToElement = new WeakRef(elementObj);
+            arrayElementMap.set(mainArray, refToElement);
+
+            if (!mainArray.includes(elementObj)) throw new Error("Array does not contain element");
+            if (arrayElementMap.get(mainArray)?.deref() !== elementObj) throw new Error("WeakRef mismatch");
+            tempElementRef = refToElement;
+            tempArrayRef = new WeakRef(mainArray); // 保存数组的WeakRef
+        })();
+
+        mainArray = null;
+        elementObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证数组键是否被GC回收，对应条目是否移除
+        const gcArray = tempArrayRef.deref();
+        if (gcArray && arrayElementMap.has(gcArray)) {
+            throw new Error("WeakMap still contains entry for GC'd array key");
+        }
+        if (tempElementRef.deref() !== undefined) throw new Error("Array element WeakRef not invalidated");
+
+        return "Test Passed: WeakMapArrayKeyElementWeakRefValueTest071";
+    },
+
+    /**
+     * 72. WeakMap(key=Set, value=集合元素的WeakRef) — 集合-元素引用
+     */
+    async test072_WeakMapSetKeyElementWeakRefValue() {
+        const setElementMap = new WeakMap();
+        let mainSet, elementObj, tempElementRef, tempSetRef;
+
+        (function createSetAndElement() {
+            elementObj = { id: 'set-element-72', value: 'test' };
+            mainSet = new Set([elementObj]); // Set包含元素
+            const refToElement = new WeakRef(elementObj);
+            setElementMap.set(mainSet, refToElement);
+
+            if (!mainSet.has(elementObj)) throw new Error("Set does not contain element");
+            if (setElementMap.get(mainSet)?.deref() !== elementObj) throw new Error("WeakRef mismatch");
+            tempElementRef = refToElement;
+            tempSetRef = new WeakRef(mainSet); // 保存Set的WeakRef
+        })();
+
+        mainSet = null;
+        elementObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Set键是否被GC回收，对应条目是否移除
+        const gcSet = tempSetRef.deref();
+        if (gcSet && setElementMap.has(gcSet)) {
+            throw new Error("WeakMap still contains entry for GC'd set key");
+        }
+        if (tempElementRef.deref() !== undefined) throw new Error("Set element WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetKeyElementWeakRefValueTest072";
+    },
+
+    /**
+     * 73. WeakMap(key=Map, value=映射值的WeakRef) — 映射-值引用
+     */
+    async test073_WeakMapMapKeyValueWeakRefValue() {
+        const mapValueMap = new WeakMap();
+        let mainMap, keyObj, valueObj, tempValueRef, tempMapRef;
+
+        (function createMapAndValue() {
+            keyObj = { id: 'map-key-73' };
+            valueObj = { id: 'map-value-73', data: 'test' };
+            mainMap = new Map([[keyObj, valueObj]]); // Map包含键值对
+            const refToValue = new WeakRef(valueObj);
+            mapValueMap.set(mainMap, refToValue);
+
+            if (mainMap.get(keyObj) !== valueObj) throw new Error("Map does not contain value");
+            if (mapValueMap.get(mainMap)?.deref() !== valueObj) throw new Error("WeakRef mismatch");
+            tempValueRef = refToValue;
+            tempMapRef = new WeakRef(mainMap); // 保存Map的WeakRef
+        })();
+
+        mainMap = null;
+        keyObj = null;
+        valueObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Map键是否被GC回收，对应条目是否移除
+        const gcMap = tempMapRef.deref();
+        if (gcMap && mapValueMap.has(gcMap)) {
+            throw new Error("WeakMap still contains entry for GC'd map key");
+        }
+        if (tempValueRef.deref() !== undefined) throw new Error("Map value WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyValueWeakRefValueTest073";
+    },
+
+    /**
+     * 74. WeakMap(key=Date, value=关联数据的WeakRef) — 日期-数据引用
+     */
+    async test074_WeakMapDateKeyDataWeakRefValue() {
+        const dateDataMap = new WeakMap();
+        let dateObj, dataObj, tempDataRef, tempDateRef;
+
+        (function createDateAndData() {
+            dateObj = new Date();
+            dataObj = {
+                id: 'date-data-74',
+                timestamp: dateObj.getTime(),
+                source: dateObj // 数据关联到Date对象
+            };
+            const refToData = new WeakRef(dataObj);
+            dateDataMap.set(dateObj, refToData);
+
+            if (dataObj.timestamp !== dateObj.getTime()) throw new Error("Data not linked to date");
+            if (dateDataMap.get(dateObj)?.deref() !== dataObj) throw new Error("WeakRef mismatch");
+            tempDataRef = refToData;
+            tempDateRef = new WeakRef(dateObj); // 保存Date的WeakRef
+        })();
+
+        dateObj = null;
+        dataObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Date键是否被GC回收，对应条目是否移除
+        const gcDate = tempDateRef.deref();
+        if (gcDate && dateDataMap.has(gcDate)) {
+            throw new Error("WeakMap still contains entry for GC'd date key");
+        }
+        if (tempDataRef.deref() !== undefined) throw new Error("Date data WeakRef not invalidated");
+
+        return "Test Passed: WeakMapDateKeyDataWeakRefValueTest074";
+    },
+
+    /**
+     * 75. WeakMap(key=RegExp, value=匹配结果的WeakRef) — 正则-结果引用
+     */
+    async test075_WeakMapRegExpKeyResultWeakRefValue() {
+        const regexResultMap = new WeakMap();
+        let regexObj, resultObj, tempResultRef, tempRegexRef;
+
+        (function createRegexAndResult() {
+            regexObj = /test(\d+)/;
+            const testStr = "test123";
+            const matchResult = testStr.match(regexObj);
+
+            resultObj = {
+                id: 'regex-result-75',
+                source: regexObj, // 结果关联到RegExp
+                match: matchResult
+            };
+            const refToResult = new WeakRef(resultObj);
+            regexResultMap.set(regexObj, refToResult);
+
+            if (resultObj.source !== regexObj) throw new Error("Result not linked to regex");
+            if (regexResultMap.get(regexObj)?.deref() !== resultObj) throw new Error("WeakRef mismatch");
+            tempResultRef = refToResult;
+            tempRegexRef = new WeakRef(regexObj); // 保存RegExp的WeakRef
+        })();
+
+        regexObj = null;
+        resultObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证RegExp键是否被GC回收，对应条目是否移除
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexResultMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex key");
+        }
+        if (tempResultRef.deref() !== undefined) throw new Error("Regex result WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyResultWeakRefValueTest075";
+    },
+
+    /**
+     * 76. WeakMap(key=数组元素, value=数组的WeakRef) — 元素-数组引用
+     */
+    async test076_WeakMapArrayElementKeyArrayWeakRefValue() {
+        const elementArrayMap = new WeakMap();
+        let mainArray, elementObj, tempArrayRef, tempElementRef;
+
+        (function createElementAndArray() {
+            elementObj = { id: 'array-element-76', value: 'test' };
+            mainArray = [elementObj]; // 数组包含元素
+            const refToMainArray = new WeakRef(mainArray);
+            elementArrayMap.set(elementObj, refToMainArray);
+
+            if (!mainArray.includes(elementObj)) throw new Error("Array does not contain element");
+            if (elementArrayMap.get(elementObj)?.deref() !== mainArray) throw new Error("WeakRef mismatch");
+            tempArrayRef = refToMainArray;
+            tempElementRef = new WeakRef(elementObj); // 保存元素的WeakRef
+        })();
+
+        elementObj = null;
+        mainArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证数组元素键是否被GC回收，对应条目是否移除
+        const gcElement = tempElementRef.deref();
+        if (gcElement && elementArrayMap.has(gcElement)) {
+            throw new Error("WeakMap still contains entry for GC'd array element key");
+        }
+        if (tempArrayRef.deref() !== undefined) throw new Error("Array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapArrayElementKeyArrayWeakRefValueTest076";
+    },
+
+    /**
+     * 77. WeakMap(key=Set元素, value=集合的WeakRef) — 元素-集合引用
+     */
+    async test077_WeakMapSetElementKeySetWeakRefValue() {
+        const elementSetMap = new WeakMap();
+        let mainSet, elementObj, tempSetRef, tempElementRef;
+
+        (function createElementAndSet() {
+            elementObj = { id: 'set-element-77', value: 'test' };
+            mainSet = new Set([elementObj]); // Set包含元素
+            const refToMainSet = new WeakRef(mainSet);
+            elementSetMap.set(elementObj, refToMainSet);
+
+            if (!mainSet.has(elementObj)) throw new Error("Set does not contain element");
+            if (elementSetMap.get(elementObj)?.deref() !== mainSet) throw new Error("WeakRef mismatch");
+            tempSetRef = refToMainSet;
+            tempElementRef = new WeakRef(elementObj); // 保存元素的WeakRef
+        })();
+
+        elementObj = null;
+        mainSet = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Set元素键是否被GC回收，对应条目是否移除
+        const gcElement = tempElementRef.deref();
+        if (gcElement && elementSetMap.has(gcElement)) {
+            throw new Error("WeakMap still contains entry for GC'd set element key");
+        }
+        if (tempSetRef.deref() !== undefined) throw new Error("Set WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetElementKeySetWeakRefValueTest077";
+    },
+
+    /**
+     * 78. WeakMap(key=Map键, value=映射的WeakRef) — 键-映射引用
+     */
+    async test078_WeakMapMapKeyKeyMapWeakRefValue() {
+        const keyMapMap = new WeakMap();
+        let mainMap, keyObj, valueObj, tempMapRef, tempKeyRef;
+
+        (function createKeyAndMap() {
+            keyObj = { id: 'map-key-78' };
+            valueObj = { id: 'map-value-78', data: 'test' };
+            mainMap = new Map([[keyObj, valueObj]]); // Map包含键值对
+            const refToMainMap = new WeakRef(mainMap);
+            keyMapMap.set(keyObj, refToMainMap);
+
+            if (mainMap.get(keyObj) !== valueObj) throw new Error("Map does not contain key");
+            if (keyMapMap.get(keyObj)?.deref() !== mainMap) throw new Error("WeakRef mismatch");
+            tempMapRef = refToMainMap;
+            tempKeyRef = new WeakRef(keyObj); // 保存Map键的WeakRef
+        })();
+
+        keyObj = null;
+        mainMap = null;
+        valueObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Map键是否被GC回收，对应条目是否移除
+        const gcKey = tempKeyRef.deref();
+        if (gcKey && keyMapMap.has(gcKey)) {
+            throw new Error("WeakMap still contains entry for GC'd map key");
+        }
+        if (tempMapRef.deref() !== undefined) throw new Error("Map WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyKeyMapWeakRefValueTest078";
+    },
+
+    /**
+     * 79. WeakMap(key=Map值, value=映射的WeakRef) — 值-映射引用
+     */
+    async test079_WeakMapMapValueKeyMapWeakRefValue() {
+        const valueMapMap = new WeakMap();
+        let mainMap, keyObj, valueObj, tempMapRef, tempValueRef;
+
+        (function createValueAndMap() {
+            keyObj = { id: 'map-key-79' };
+            valueObj = { id: 'map-value-79', data: 'test' };
+            mainMap = new Map([[keyObj, valueObj]]); // Map包含键值对
+            const refToMainMap = new WeakRef(mainMap);
+            valueMapMap.set(valueObj, refToMainMap);
+
+            if (mainMap.get(keyObj) !== valueObj) throw new Error("Map does not contain value");
+            if (valueMapMap.get(valueObj)?.deref() !== mainMap) throw new Error("WeakRef mismatch");
+            tempMapRef = refToMainMap;
+            tempValueRef = new WeakRef(valueObj); // 保存Map值的WeakRef
+        })();
+
+        valueObj = null;
+        mainMap = null;
+        keyObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Map值是否被GC回收，对应条目是否移除
+        const gcValue = tempValueRef.deref();
+        if (gcValue && valueMapMap.has(gcValue)) {
+            throw new Error("WeakMap still contains entry for GC'd map value key");
+        }
+        if (tempMapRef.deref() !== undefined) throw new Error("Map WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapValueKeyMapWeakRefValueTest079";
+    },
+
+    /**
+     * 80. WeakMap(key=Date, value=解析结果的WeakRef) — 日期-解析结果引用
+     */
+    async test080_WeakMapDateKeyParsedWeakRefValue() {
+        const dateParsedMap = new WeakMap();
+        let dateObj, parsedObj, tempParsedRef, tempDateRef;
+
+        (function createDateAndParsed() {
+            dateObj = new Date('2024-01-01T00:00:00Z');
+            parsedObj = {
+                id: 'date-parsed-80',
+                year: dateObj.getUTCFullYear(),
+                month: dateObj.getUTCMonth() + 1,
+                day: dateObj.getUTCDate(),
+                source: dateObj // 解析结果关联到Date
+            };
+            const refToParsed = new WeakRef(parsedObj);
+            dateParsedMap.set(dateObj, refToParsed);
+
+            if (parsedObj.source !== dateObj) throw new Error("Parsed result not linked to date");
+            if (dateParsedMap.get(dateObj)?.deref() !== parsedObj) throw new Error("WeakRef mismatch");
+            tempParsedRef = refToParsed;
+            tempDateRef = new WeakRef(dateObj); // 保存Date的WeakRef
+        })();
+
+        dateObj = null;
+        parsedObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Date键是否被GC回收，对应条目是否移除
+        const gcDate = tempDateRef.deref();
+        if (gcDate && dateParsedMap.has(gcDate)) {
+            throw new Error("WeakMap still contains entry for GC'd date key");
+        }
+        if (tempParsedRef.deref() !== undefined) throw new Error("Parsed date WeakRef not invalidated");
+
+        return "Test Passed: WeakMapDateKeyParsedWeakRefValueTest080";
+    },
+
+    /**
+     * 81. WeakMap(key=RegExp, value=目标字符串的WeakRef) — 正则-目标字符串引用
+     */
+    async test081_WeakMapRegExpKeyStringWeakRefValue() {
+        const regexStringMap = new WeakMap();
+        let regexObj, targetStr, tempStringRef, tempRegexRef;
+
+        (function createRegexAndString() {
+            regexObj = /example/gi;
+            targetStr = new String("This is an example string with Example content"); // 创建字符串对象
+            targetStr.regex = regexObj; // 字符串关联到正则
+            const refToTarget = new WeakRef(targetStr);
+            regexStringMap.set(regexObj, refToTarget);
+
+            if (targetStr.regex !== regexObj) throw new Error("String not linked to regex");
+            if (regexStringMap.get(regexObj)?.deref() !== targetStr) throw new Error("WeakRef mismatch");
+            tempStringRef = refToTarget;
+            tempRegexRef = new WeakRef(regexObj); // 保存RegExp的WeakRef
+        })();
+
+        regexObj = null;
+        targetStr = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证RegExp键是否被GC回收，对应条目是否移除
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexStringMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex key");
+        }
+        if (tempStringRef.deref() !== undefined) throw new Error("Target string WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyStringWeakRefValueTest081";
+    },
+
+    /**
+     * 82. WeakMap(key=ArrayBuffer, value=类型化数组的WeakRef) — 缓冲区-数组引用
+     */
+    async test082_WeakMapArrayBufferKeyArrayWeakRefValue() {
+        const bufferArrayMap = new WeakMap();
+        let buffer, typedArray, tempArrayRef, tempBufferRef;
+
+        (function createBufferAndArray() {
+            buffer = new ArrayBuffer(16); // 创建16字节缓冲区
+            typedArray = new Uint32Array(buffer); // 类型化数组引用缓冲区
+            typedArray.fill(0x12345678);
+            const refToTypedArray = new WeakRef(typedArray);
+            bufferArrayMap.set(buffer, refToTypedArray);
+
+            if (typedArray.buffer !== buffer) throw new Error("Typed array not linked to buffer");
+            if (bufferArrayMap.get(buffer)?.deref() !== typedArray) throw new Error("WeakRef mismatch");
+            tempArrayRef = refToTypedArray;
+            tempBufferRef = new WeakRef(buffer); // 保存ArrayBuffer的WeakRef
+        })();
+
+        buffer = null;
+        typedArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证ArrayBuffer键是否被GC回收，对应条目是否移除
+        const gcBuffer = tempBufferRef.deref();
+        if (gcBuffer && bufferArrayMap.has(gcBuffer)) {
+            throw new Error("WeakMap still contains entry for GC'd buffer key");
+        }
+        if (tempArrayRef.deref() !== undefined) throw new Error("Typed array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapArrayBufferKeyArrayWeakRefValueTest082";
+    },
+
+    /**
+     * 83. WeakMap(key=Map, value=键数组的WeakRef) — 映射-键数组引用
+     */
+    async test083_WeakMapMapKeyKeysArrayWeakRefValue() {
+        const mapKeysMap = new WeakMap();
+        let mainMap, keysArray, tempKeysRef, tempMapRef;
+
+        (function createMapAndKeys() {
+            const key1 = { id: 'key-1-83' };
+            const key2 = { id: 'key-2-83' };
+            mainMap = new Map([[key1, 'value1'], [key2, 'value2']]);
+            keysArray = Array.from(mainMap.keys()); // 键数组引用Map
+            keysArray.sourceMap = mainMap;
+            const refToKeys = new WeakRef(keysArray);
+            mapKeysMap.set(mainMap, refToKeys);
+
+            if (keysArray.sourceMap !== mainMap) throw new Error("Keys array not linked to map");
+            if (mapKeysMap.get(mainMap)?.deref() !== keysArray) throw new Error("WeakRef mismatch");
+            tempKeysRef = refToKeys;
+            tempMapRef = new WeakRef(mainMap); // 保存Map的WeakRef
+        })();
+
+        mainMap = null;
+        keysArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Map键是否被GC回收，对应条目是否移除
+        const gcMap = tempMapRef.deref();
+        if (gcMap && mapKeysMap.has(gcMap)) {
+            throw new Error("WeakMap still contains entry for GC'd map key");
+        }
+        if (tempKeysRef.deref() !== undefined) throw new Error("Keys array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyKeysArrayWeakRefValueTest083";
+    },
+
+    /**
+     * 84. WeakMap(key=Set, value=值数组的WeakRef) — 集合-值数组引用
+     */
+    async test084_WeakMapSetKeyValuesArrayWeakRefValue() {
+        const setValuesMap = new WeakMap();
+        let mainSet, valuesArray, tempValuesRef, tempSetRef;
+
+        (function createSetAndValues() {
+            const val1 = { id: 'val-1-84' };
+            const val2 = { id: 'val-2-84' };
+            mainSet = new Set([val1, val2]);
+            valuesArray = Array.from(mainSet.values()); // 值数组引用Set
+            valuesArray.sourceSet = mainSet;
+            const refToValues = new WeakRef(valuesArray);
+            setValuesMap.set(mainSet, refToValues);
+
+            if (valuesArray.sourceSet !== mainSet) throw new Error("Values array not linked to set");
+            if (setValuesMap.get(mainSet)?.deref() !== valuesArray) throw new Error("WeakRef mismatch");
+            tempValuesRef = refToValues;
+            tempSetRef = new WeakRef(mainSet); // 保存Set的WeakRef
+        })();
+
+        mainSet = null;
+        valuesArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Set键是否被GC回收，对应条目是否移除
+        const gcSet = tempSetRef.deref();
+        if (gcSet && setValuesMap.has(gcSet)) {
+            throw new Error("WeakMap still contains entry for GC'd set key");
+        }
+        if (tempValuesRef.deref() !== undefined) throw new Error("Values array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetKeyValuesArrayWeakRefValueTest084";
+    },
+
+    /**
+     * 85. WeakMap(key=Date, value=时间戳数组的WeakRef) — 日期-时间戳数组引用
+     */
+    async test085_WeakMapDateKeyTimestampsWeakRefValue() {
+        const dateTimestampsMap = new WeakMap();
+        let baseDate, timestampsArray, tempTimestampsRef, tempDateRef;
+
+        (function createDateAndTimestamps() {
+            baseDate = new Date();
+            timestampsArray = [
+                baseDate.getTime(),
+                baseDate.getTime() + 1000,
+                baseDate.getTime() + 2000
+            ];
+            timestampsArray.baseDate = baseDate; // 时间戳数组关联到Date
+            const refToTimestamps = new WeakRef(timestampsArray);
+            dateTimestampsMap.set(baseDate, refToTimestamps);
+
+            if (timestampsArray.baseDate !== baseDate) throw new Error("Timestamps not linked to date");
+            if (dateTimestampsMap.get(baseDate)?.deref() !== timestampsArray) throw new Error("WeakRef mismatch");
+            tempTimestampsRef = refToTimestamps;
+            tempDateRef = new WeakRef(baseDate); // 保存Date的WeakRef
+        })();
+
+        baseDate = null;
+        timestampsArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证Date键是否被GC回收，对应条目是否移除
+        const gcDate = tempDateRef.deref();
+        if (gcDate && dateTimestampsMap.has(gcDate)) {
+            throw new Error("WeakMap still contains entry for GC'd date key");
+        }
+        if (tempTimestampsRef.deref() !== undefined) throw new Error("Timestamps array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapDateKeyTimestampsWeakRefValueTest085";
+    },
+
+    /**
+     * 86. WeakMap(key=RegExp, value=替换后字符串的WeakRef) — 正则-替换结果引用
+     */
+    async test086_WeakMapRegExpKeyReplacedWeakRefValue() {
+        const regexReplacedMap = new WeakMap();
+        let regexObj, replacedStr, tempReplacedRef, tempRegexRef;
+
+        (function createRegexAndReplaced() {
+            regexObj = /old/gi;
+            const originalStr = "This is old content with OLD values";
+            replacedStr = new String(originalStr.replace(regexObj, "new")); // 创建字符串对象
+            replacedStr.originalRegex = regexObj; // 替换结果关联到正则
+            const refToReplaced = new WeakRef(replacedStr);
+            regexReplacedMap.set(regexObj, refToReplaced);
+
+            if (replacedStr.originalRegex !== regexObj) throw new Error("Replaced string not linked to regex");
+            if (regexReplacedMap.get(regexObj)?.deref() !== replacedStr) throw new Error("WeakRef mismatch");
+            tempReplacedRef = refToReplaced;
+            tempRegexRef = new WeakRef(regexObj); // 保存RegExp的WeakRef
+        })();
+
+        regexObj = null;
+        replacedStr = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证RegExp键是否被GC回收，对应条目是否移除
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexReplacedMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex key");
+        }
+        if (tempReplacedRef.deref() !== undefined) throw new Error("Replaced string WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyReplacedWeakRefValueTest086";
+    },
+
+    /**
+     * 87. WeakMap(key=Array, value=排序后数组的WeakRef) — 原数组-排序数组引用
+     */
+    async test087_WeakMapArrayKeySortedWeakRefValue() {
+        const arraySortedMap = new WeakMap();
+        let originalArray, sortedArray, tempSortedRef, tempOriginalRef;
+
+        (function createArrayAndSorted() {
+            originalArray = [3, 1, 4, 1, 5, 9];
+            sortedArray = [...originalArray].sort((a, b) => a - b); // 排序数组引用原数组
+            sortedArray.original = originalArray;
+            const refToSorted = new WeakRef(sortedArray);
+            arraySortedMap.set(originalArray, refToSorted);
+
+            if (sortedArray.original !== originalArray) throw new Error("Sorted array not linked to original");
+            if (arraySortedMap.get(originalArray)?.deref() !== sortedArray) throw new Error("WeakRef mismatch");
+            tempSortedRef = refToSorted;
+            tempOriginalRef = new WeakRef(originalArray); // 保存原数组的WeakRef
+        })();
+
+        originalArray = null;
+        sortedArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证原数组键是否被GC回收，对应条目是否移除
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && arraySortedMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original array key");
+        }
+        if (tempSortedRef.deref() !== undefined) throw new Error("Sorted array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapArrayKeySortedWeakRefValueTest087";
+    },
+
+    /**
+     * 88. WeakMap(key=Map, value=反转映射的WeakRef) — 原映射-反转映射引用
+     */
+    async test088_WeakMapMapKeyInvertedWeakRefValue() {
+        const mapInvertedMap = new WeakMap();
+        let originalMap, invertedMap, tempInvertedRef, tempOriginalRef;
+
+        (function createMapAndInverted() {
+            originalMap = new Map([
+                [{ id: 'key1' }, { id: 'val1' }],
+                [{ id: 'key2' }, { id: 'val2' }]
+            ]);
+            // 创建反转映射（值作为键，键作为值）
+            invertedMap = new Map();
+            originalMap.forEach((value, key) => invertedMap.set(value, key));
+            invertedMap.original = originalMap; // 反转映射关联到原映射
+            const refToInverted = new WeakRef(invertedMap);
+            mapInvertedMap.set(originalMap, refToInverted);
+
+            if (invertedMap.original !== originalMap) throw new Error("Inverted map not linked to original");
+            if (mapInvertedMap.get(originalMap)?.deref() !== invertedMap) throw new Error("WeakRef mismatch");
+            tempInvertedRef = refToInverted;
+            tempOriginalRef = new WeakRef(originalMap); // 保存原Map的WeakRef
+        })();
+
+        originalMap = null;
+        invertedMap = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证原Map键是否被GC回收，对应条目是否移除
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && mapInvertedMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original map key");
+        }
+        if (tempInvertedRef.deref() !== undefined) throw new Error("Inverted map WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyInvertedWeakRefValueTest088";
+    },
+
+    /**
+     * 89. WeakMap(key=Set, value=过滤后集合的WeakRef) — 原集合-过滤集合引用
+     */
+    async test089_WeakMapSetKeyFilteredWeakRefValue() {
+        const setFilteredMap = new WeakMap();
+        let originalSet, filteredSet, tempFilteredRef, tempOriginalRef;
+
+        (function createSetAndFiltered() {
+            originalSet = new Set([
+                { id: 'item1', value: 5 },
+                { id: 'item2', value: 15 },
+                { id: 'item3', value: 10 }
+            ]);
+            // 创建过滤后的集合（只保留value > 10的元素）
+            filteredSet = new Set();
+            originalSet.forEach(item => {
+                if (item.value > 10) filteredSet.add(item);
+            });
+            filteredSet.original = originalSet; // 过滤集合关联到原集合
+            const refToFiltered = new WeakRef(filteredSet);
+            setFilteredMap.set(originalSet, refToFiltered);
+
+            if (filteredSet.original !== originalSet) throw new Error("Filtered set not linked to original");
+            if (setFilteredMap.get(originalSet)?.deref() !== filteredSet) throw new Error("WeakRef mismatch");
+            tempFilteredRef = refToFiltered;
+            tempOriginalRef = new WeakRef(originalSet); // 保存原Set的WeakRef
+        })();
+
+        originalSet = null;
+        filteredSet = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证原Set键是否被GC回收，对应条目是否移除
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && setFilteredMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original set key");
+        }
+        if (tempFilteredRef.deref() !== undefined) throw new Error("Filtered set WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetKeyFilteredWeakRefValueTest089";
+    },
+
+    /**
+     * 90. WeakMap(key=RegExp, value=匹配数组的WeakRef) — 正则-匹配数组引用
+     */
+    async test090_WeakMapRegExpKeyMatchesWeakRefValue() {
+        const regexMatchesMap = new WeakMap();
+        let regexObj, matchesArray, tempMatchesRef, tempRegexRef;
+
+        (function createRegexAndMatches() {
+            regexObj = /(\w+)=(\w+)/g;
+            const targetStr = "name=test&age=30&lang=js";
+            // 获取所有匹配结果
+            matchesArray = [];
+            let match;
+            while ((match = regexObj.exec(targetStr)) !== null) {
+                matchesArray.push([...match]);
+            }
+            matchesArray.regex = regexObj; // 匹配数组关联到正则
+            const refToMatches = new WeakRef(matchesArray);
+            regexMatchesMap.set(regexObj, refToMatches);
+
+            if (matchesArray.regex !== regexObj) throw new Error("Matches array not linked to regex");
+            if (regexMatchesMap.get(regexObj)?.deref() !== matchesArray) throw new Error("WeakRef mismatch");
+            tempMatchesRef = refToMatches;
+            tempRegexRef = new WeakRef(regexObj); // 保存RegExp的WeakRef
+        })();
+
+        regexObj = null;
+        matchesArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        // 验证RegExp键是否被GC回收，对应条目是否移除
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexMatchesMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex key");
+        }
+        if (tempMatchesRef.deref() !== undefined) throw new Error("Matches array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyMatchesWeakRefValueTest090";
+    },
+
+    /**
+     * 91. WeakMap(key=Array, value=数组切片的WeakRef) — 原数组-切片引用
+     */
+    async test091_WeakMapArrayKeySliceWeakRefValue() {
+        const arraySliceMap = new WeakMap();
+        let originalArray, sliceArray, tempSliceRef, tempOriginalRef;
+
+        (function createArrayAndSlice() {
+            originalArray = [10, 20, 30, 40, 50];
+            sliceArray = originalArray.slice(1, 4); // 数组切片
+            sliceArray.source = originalArray; // 切片关联原数组
+            const refToSlice = new WeakRef(sliceArray);
+            arraySliceMap.set(originalArray, refToSlice);
+
+            if (sliceArray.source !== originalArray) throw new Error("Slice not linked to original array");
+            if (arraySliceMap.get(originalArray)?.deref() !== sliceArray) throw new Error("WeakRef mismatch");
+            tempSliceRef = refToSlice;
+            tempOriginalRef = new WeakRef(originalArray);
+        })();
+
+        originalArray = null;
+        sliceArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && arraySliceMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original array");
+        }
+        if (tempSliceRef.deref() !== undefined) throw new Error("Array slice WeakRef not invalidated");
+
+        return "Test Passed: WeakMapArrayKeySliceWeakRefValueTest091";
+    },
+
+    /**
+     * 92. WeakMap(key=Map, value=键值对数组的WeakRef) — 映射-键值对数组引用
+     */
+    async test092_WeakMapMapKeyEntriesWeakRefValue() {
+        const mapEntriesMap = new WeakMap();
+        let originalMap, entriesArray, tempEntriesRef, tempOriginalRef;
+
+        (function createMapAndEntries() {
+            originalMap = new Map([
+                ['a', { id: 'val-a' }],
+                ['b', { id: 'val-b' }]
+            ]);
+            entriesArray = Array.from(originalMap.entries()); // 键值对数组
+            entriesArray.sourceMap = originalMap;
+            const refToEntries = new WeakRef(entriesArray);
+            mapEntriesMap.set(originalMap, refToEntries);
+
+            if (entriesArray.sourceMap !== originalMap) throw new Error("Entries not linked to map");
+            if (mapEntriesMap.get(originalMap)?.deref() !== entriesArray) throw new Error("WeakRef mismatch");
+            tempEntriesRef = refToEntries;
+            tempOriginalRef = new WeakRef(originalMap);
+        })();
+
+        originalMap = null;
+        entriesArray = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && mapEntriesMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original map");
+        }
+        if (tempEntriesRef.deref() !== undefined) throw new Error("Entries array WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyEntriesWeakRefValueTest092";
+    },
+
+    /**
+     * 93. WeakMap(key=Set, value=集合并集的WeakRef) — 原集合-并集引用
+     */
+    async test093_WeakMapSetKeyUnionWeakRefValue() {
+        const setUnionMap = new WeakMap();
+        let originalSet, otherSet, unionSet, tempUnionRef, tempOriginalRef;
+
+        (function createSetAndUnion() {
+            originalSet = new Set([1, 2, 3]);
+            otherSet = new Set([3, 4, 5]);
+            // 计算并集
+            unionSet = new Set([...originalSet, ...otherSet]);
+            unionSet.source = originalSet;
+            const refToUnion = new WeakRef(unionSet);
+            setUnionMap.set(originalSet, refToUnion);
+
+            if (unionSet.source !== originalSet) throw new Error("Union not linked to original set");
+            if (setUnionMap.get(originalSet)?.deref() !== unionSet) throw new Error("WeakRef mismatch");
+            tempUnionRef = refToUnion;
+            tempOriginalRef = new WeakRef(originalSet);
+        })();
+
+        originalSet = null;
+        otherSet = null;
+        unionSet = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && setUnionMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original set");
+        }
+        if (tempUnionRef.deref() !== undefined) throw new Error("Union set WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetKeyUnionWeakRefValueTest093";
+    },
+
+    /**
+     * 94. WeakMap(key=Date, value=本地化字符串的WeakRef) — 日期-本地化字符串引用
+     */
+    async test094_WeakMapDateKeyLocaleWeakRefValue() {
+        const dateLocaleMap = new WeakMap();
+        let dateObj, localeStr, tempLocaleRef, tempDateRef;
+
+        (function createDateAndLocale() {
+            dateObj = new Date(2024, 0, 1);
+            localeStr = new String(dateObj.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })); // 本地化字符串对象
+            localeStr.sourceDate = dateObj;
+            const refToLocale = new WeakRef(localeStr);
+            dateLocaleMap.set(dateObj, refToLocale);
+
+            if (localeStr.sourceDate !== dateObj) throw new Error("Locale string not linked to date");
+            if (dateLocaleMap.get(dateObj)?.deref() !== localeStr) throw new Error("WeakRef mismatch");
+            tempLocaleRef = refToLocale;
+            tempDateRef = new WeakRef(dateObj);
+        })();
+
+        dateObj = null;
+        localeStr = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcDate = tempDateRef.deref();
+        if (gcDate && dateLocaleMap.has(gcDate)) {
+            throw new Error("WeakMap still contains entry for GC'd date");
+        }
+        if (tempLocaleRef.deref() !== undefined) throw new Error("Locale string WeakRef not invalidated");
+
+        return "Test Passed: WeakMapDateKeyLocaleWeakRefValueTest094";
+    },
+
+    /**
+     * 95. WeakMap(key=RegExp, value=分组匹配的WeakRef) — 正则-分组结果引用
+     */
+    async test095_WeakMapRegExpKeyGroupsWeakRefValue() {
+        const regexGroupsMap = new WeakMap();
+        let regexObj, groupsObj, tempGroupsRef, tempRegexRef;
+
+        (function createRegexAndGroups() {
+            regexObj = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+            const match = "2024-03-15".match(regexObj);
+            groupsObj = { ...match.groups, sourceRegex: regexObj }; // 分组结果
+            const refToGroups = new WeakRef(groupsObj);
+            regexGroupsMap.set(regexObj, refToGroups);
+
+            if (groupsObj.sourceRegex !== regexObj) throw new Error("Groups not linked to regex");
+            if (regexGroupsMap.get(regexObj)?.deref() !== groupsObj) throw new Error("WeakRef mismatch");
+            tempGroupsRef = refToGroups;
+            tempRegexRef = new WeakRef(regexObj);
+        })();
+
+        regexObj = null;
+        groupsObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexGroupsMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex");
+        }
+        if (tempGroupsRef.deref() !== undefined) throw new Error("Groups object WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyGroupsWeakRefValueTest095";
+    },
+
+    /**
+     * 96. WeakMap(key=数组缓冲区, value=数据视图的WeakRef) — 缓冲区-数据视图引用
+     */
+    async test096_WeakMapBufferKeyViewWeakRefValue() {
+        const bufferViewMap = new WeakMap();
+        let buffer, dataView, tempViewRef, tempBufferRef;
+
+        (function createBufferAndView() {
+            buffer = new ArrayBuffer(24); // 24字节缓冲区
+            dataView = new DataView(buffer); // 数据视图
+            dataView.setInt32(0, 0x12345678);
+            dataView.sourceBuffer = buffer;
+            const refToView = new WeakRef(dataView);
+            bufferViewMap.set(buffer, refToView);
+
+            if (dataView.sourceBuffer !== buffer) throw new Error("DataView not linked to buffer");
+            if (bufferViewMap.get(buffer)?.deref() !== dataView) throw new Error("WeakRef mismatch");
+            tempViewRef = refToView;
+            tempBufferRef = new WeakRef(buffer);
+        })();
+
+        buffer = null;
+        dataView = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcBuffer = tempBufferRef.deref();
+        if (gcBuffer && bufferViewMap.has(gcBuffer)) {
+            throw new Error("WeakMap still contains entry for GC'd buffer");
+        }
+        if (tempViewRef.deref() !== undefined) throw new Error("DataView WeakRef not invalidated");
+
+        return "Test Passed: WeakMapBufferKeyViewWeakRefValueTest096";
+    },
+
+    /**
+     * 97. WeakMap(key=Map, value=键值转换结果的WeakRef) — 映射-转换结果引用
+     */
+    async test097_WeakMapMapKeyTransformedWeakRefValue() {
+        const mapTransformedMap = new WeakMap();
+        let originalMap, transformedMap, tempTransformedRef, tempOriginalRef;
+
+        (function createMapAndTransformed() {
+            originalMap = new Map([
+                [1, 'one'],
+                [2, 'two']
+            ]);
+            // 键值类型转换
+            transformedMap = new Map();
+            originalMap.forEach((value, key) => {
+                transformedMap.set(String(key), key);
+            });
+            transformedMap.source = originalMap;
+            const refToTransformed = new WeakRef(transformedMap);
+            mapTransformedMap.set(originalMap, refToTransformed);
+
+            if (transformedMap.source !== originalMap) throw new Error("Transformed map not linked to original");
+            if (mapTransformedMap.get(originalMap)?.deref() !== transformedMap) throw new Error("WeakRef mismatch");
+            tempTransformedRef = refToTransformed;
+            tempOriginalRef = new WeakRef(originalMap);
+        })();
+
+        originalMap = null;
+        transformedMap = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && mapTransformedMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original map");
+        }
+        if (tempTransformedRef.deref() !== undefined) throw new Error("Transformed map WeakRef not invalidated");
+
+        return "Test Passed: WeakMapMapKeyTransformedWeakRefValueTest097";
+    },
+
+    /**
+     * 98. WeakMap(key=Set, value=集合交集的WeakRef) — 原集合-交集引用
+     */
+    async test098_WeakMapSetKeyIntersectionWeakRefValue() {
+        const setIntersectionMap = new WeakMap();
+        let originalSet, otherSet, intersectionSet, tempIntersectionRef, tempOriginalRef;
+
+        (function createSetAndIntersection() {
+            originalSet = new Set(['a', 'b', 'c']);
+            otherSet = new Set(['b', 'c', 'd']);
+            // 计算交集
+            intersectionSet = new Set([...originalSet].filter(x => otherSet.has(x)));
+            intersectionSet.source = originalSet;
+            const refToIntersection = new WeakRef(intersectionSet);
+            setIntersectionMap.set(originalSet, refToIntersection);
+
+            if (intersectionSet.source !== originalSet) throw new Error("Intersection not linked to original set");
+            if (setIntersectionMap.get(originalSet)?.deref() !== intersectionSet) throw new Error("WeakRef mismatch");
+            tempIntersectionRef = refToIntersection;
+            tempOriginalRef = new WeakRef(originalSet);
+        })();
+
+        originalSet = null;
+        otherSet = null;
+        intersectionSet = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcOriginal = tempOriginalRef.deref();
+        if (gcOriginal && setIntersectionMap.has(gcOriginal)) {
+            throw new Error("WeakMap still contains entry for GC'd original set");
+        }
+        if (tempIntersectionRef.deref() !== undefined) throw new Error("Intersection set WeakRef not invalidated");
+
+        return "Test Passed: WeakMapSetKeyIntersectionWeakRefValueTest098";
+    },
+
+    /**
+     * 99. WeakMap(key=Date, value=时间差对象的WeakRef) — 日期-时间差引用
+     */
+    async test099_WeakMapDateKeyDiffWeakRefValue() {
+        const dateDiffMap = new WeakMap();
+        let baseDate, otherDate, diffObj, tempDiffRef, tempBaseRef;
+
+        (function createDateAndDiff() {
+            baseDate = new Date(2024, 0, 1);
+            otherDate = new Date(2024, 6, 1);
+            const diffMs = otherDate.getTime() - baseDate.getTime();
+            diffObj = {
+                days: Math.floor(diffMs / (1000 * 60 * 60 * 24)),
+                source: baseDate // 时间差关联基准日期
+            };
+            const refToDiff = new WeakRef(diffObj);
+            dateDiffMap.set(baseDate, refToDiff);
+
+            if (diffObj.source !== baseDate) throw new Error("Date diff not linked to base date");
+            if (dateDiffMap.get(baseDate)?.deref() !== diffObj) throw new Error("WeakRef mismatch");
+            tempDiffRef = refToDiff;
+            tempBaseRef = new WeakRef(baseDate);
+        })();
+
+        baseDate = null;
+        otherDate = null;
+        diffObj = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcBase = tempBaseRef.deref();
+        if (gcBase && dateDiffMap.has(gcBase)) {
+            throw new Error("WeakMap still contains entry for GC'd base date");
+        }
+        if (tempDiffRef.deref() !== undefined) throw new Error("Date diff WeakRef not invalidated");
+
+        return "Test Passed: WeakMapDateKeyDiffWeakRefValueTest099";
+    },
+
+    /**
+     * 100. WeakMap(key=RegExp, value=替换函数结果的WeakRef) — 正则-函数替换结果引用
+     */
+    async test100_WeakMapRegExpKeyReplaceFnWeakRefValue() {
+        const regexReplaceFnMap = new WeakMap();
+        let regexObj, resultStr, tempResultRef, tempRegexRef;
+
+        (function createRegexAndReplace() {
+            regexObj = /(\d+)/g;
+            const originalStr = "Prices: 10, 20, 30";
+            // 使用函数进行替换
+            resultStr = new String(originalStr.replace(regexObj, (match) => {
+                return `$${match}`;
+            }));
+            resultStr.sourceRegex = regexObj;
+            const refToResult = new WeakRef(resultStr);
+            regexReplaceFnMap.set(regexObj, refToResult);
+
+            if (resultStr.sourceRegex !== regexObj) throw new Error("Replace result not linked to regex");
+            if (regexReplaceFnMap.get(regexObj)?.deref() !== resultStr) throw new Error("WeakRef mismatch");
+            tempResultRef = refToResult;
+            tempRegexRef = new WeakRef(regexObj);
+        })();
+
+        regexObj = null;
+        resultStr = null;
+
+        await new Promise(resolve => setTimeout(resolve, 30));
+        if (globalThis.ArkTools?.forceFullGC) globalThis.ArkTools.forceFullGC();
+        else if (window?.gc || global.gc) (window.gc || global.gc)();
+        await new Promise(resolve => setTimeout(resolve, 30));
+
+        const gcRegex = tempRegexRef.deref();
+        if (gcRegex && regexReplaceFnMap.has(gcRegex)) {
+            throw new Error("WeakMap still contains entry for GC'd regex");
+        }
+        if (tempResultRef.deref() !== undefined) throw new Error("Replace result WeakRef not invalidated");
+
+        return "Test Passed: WeakMapRegExpKeyReplaceFnWeakRefValueTest100";
+    }
+};
