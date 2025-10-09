@@ -25,20 +25,6 @@ export default function WeakSetTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    it('assertContain', 0, () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
-      let a = 'abc';
-      let b = 'b';
-      // Defines a variety of assertion methods, which are used to declare expected boolean conditions.
-      expect(a).assertContain(b);
-      expect(a).assertEqual(a);
-    })
-    // Predefine enums in advance (ignore if already existing in the project):
-    // const TestType = { FUNCTION: 1, COMPATIBILITY: 2, SCENARIO: 3 };
-    // const Size = { SMALLTEST: 1, MEDIUMTEST: 2, LARGETEST: 3 };
-    // const Level = { LEVEL1: 1, LEVEL2: 2, LEVEL3: 3 };
-
 
     /**
      * @tc.number SUB_BUILTINS_WEAKSET_TEST_001

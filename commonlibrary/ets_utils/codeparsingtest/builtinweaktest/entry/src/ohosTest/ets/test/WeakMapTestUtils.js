@@ -35,7 +35,7 @@ export const WeakMapTestUtils = {
         const key1 = { a: 1 };
         const key2 = { b: 2 };
         const key3 = { c: 3 };
-        //
+
         const chainResult = wm.set(key1, 'val1').set(key2, 'val2').set(key3, 'val3');
         if (chainResult !== wm) throw new Error("WeakMap.set chaining returns non-WeakMap instance (violates specification)");
         if (wm.get(key1) !== 'val1') throw new Error("After chaining, get() returns wrong value for key1 (expected 'val1')");

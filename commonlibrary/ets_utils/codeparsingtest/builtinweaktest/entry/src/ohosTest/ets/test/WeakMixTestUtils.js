@@ -4618,7 +4618,7 @@ export const WeakMixTestUtils = {
      */
     async test080_WeakMixHybridStructure() {
         const weakSet = new WeakSet();
-        // const weakMap = new WeakMap();
+    
         let root, structureRef;
         let tempMapRef ;
         (function createHybridStructure() {
@@ -4665,11 +4665,7 @@ export const WeakMixTestUtils = {
 
             structureRef = new WeakRef(root);
 
-            // 验证初始状态
-            // if (arrayNode[1] !== mapNode) throw new Error("Hybrid structure linking failed");
-            // if (mapNode.get('key1') !== leaf1) throw new Error("Map node content incorrect");
-            // if (root.data.meta.author !== 'test-080') throw new Error("Meta data mismatch");
-        })();
+             })();
 
         // 清除强引用
         const tempRootRef = structureRef;
@@ -4684,7 +4680,6 @@ export const WeakMixTestUtils = {
         globalThis.ArkTools.forceFullGC();
         // 验证回收情况
         if (tempRootRef.deref() !== undefined) throw new Error("Root structure not GC'd");
-        // if (tempMapRef.deref() !== undefined) throw new Error("Nested map node not GC'd");
 
         return "Test Passed: WeakMixHybridStructureTest080";
     },

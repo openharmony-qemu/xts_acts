@@ -271,7 +271,7 @@ export default function WeakMapTest() {
         expect(wm.get(newKey)).assertUndefined();
       } else {
         console.warn('globalThis.ArkTools.forceFullGC() is not available; skip GC assertions');
-        expect(true).assertTrue();
+      
       }
 
     });
@@ -950,32 +950,7 @@ export default function WeakMapTest() {
       const result = await WeakMapTestUtils.test2490_WeakMapKeyInClosureGC();
       expect(result).assertEqual("Test Passed: WeakMapKeyInClosureGCTest2490");
     });
-    // /**
-    //  * @tc.number SUB_BUILTINS_WEAKMAP_TEST_2100
-    //  * @tc.name WeakMapNonObjectKeyErrorTest2100
-    //  * @tc.desc Verify WeakMap.set() throws TypeError when non-object (primitive values like number/string/null) are used as keys.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('WeakMapNonObjectKeyErrorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-    //   const result = await WeakMapTestUtils.test2100_NonObjectKeyError();
-    //   expect(result).assertEqual("Test Passed: WeakMapNonObjectKeyErrorTest2100");
-    // });
-
-
-    // /**
-    //  * @tc.number SUB_BUILTINS_WEAKMAP_TEST_2160
-    //  * @tc.name WeakMapNoIterationTest2160
-    //  * @tc.desc Verify WeakMap cannot be iterated with for...of (throws TypeError) and has no entries()/keys()/values() methods.
-    //  * @tc.size SmallTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('WeakMapNoIterationTest2160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-    //   const result = await WeakMapTestUtils.test2160_NoIterationSupport();
-    //   expect(result).assertEqual("Test Passed: WeakMapNoIterationTest2160");
-    // });
+  
     /**
      * @tc.number SUB_BUILTINS_WEAKMAP_TEST_2500
      * @tc.name WeakMapTypedArrayKeyTest2500

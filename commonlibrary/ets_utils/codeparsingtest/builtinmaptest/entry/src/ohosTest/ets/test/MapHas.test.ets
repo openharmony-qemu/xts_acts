@@ -1,3 +1,17 @@
+/*
+* Copyright (C) 2024 HiHope Open Source Organization.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {
   MapHasTest003,
@@ -529,7 +543,7 @@ export default function MapHasTest() {
      */
     it('MapHasTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[0.1 + 0.2, 'precision']]);
-      expect(map.has(0.3)).assertEqual(false); // 0.1+0.2â‰ 0.3 due to floating point precision
+      expect(map.has(0.3)).assertEqual(false); // 0.1+0.2â‰?.3 due to floating point precision
       expect(map.has(0.1 + 0.2)).assertEqual(true);
     });
 
@@ -1116,7 +1130,7 @@ export default function MapHasTest() {
      * @tc.level Level 2
      */
     it('MapHasTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const key = 'â‚¬'; // Unicode character
+      const key = 'â‚?; // Unicode character
       const map = new Map([[key, 'unicode']]);
 
       expect(map.has(key)).assertEqual(true);

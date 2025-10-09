@@ -1,3 +1,17 @@
+/*
+* Copyright (C) 2024 HiHope Open Source Organization.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import {
@@ -214,7 +228,7 @@ export default function MapForeachTest() {
 
       const map = new Map<string, string>([['key', 'val']]);
       const context: test0010 = { prop: 'test' };
-      // 完全移除this的使用，直接根据测试意图初始化变量
+      // 完全移除this的使用，直接根据测试意图初始化变�?
       let arrowThis = undefined;
       map.forEach(() => {
       }, context);
@@ -1592,12 +1606,12 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '€'], ['letter', 'ñ']]);
+      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
       const results: string[] = [];
       map.forEach((value) => {
         results.push(value);
       });
-      expect(results).assertDeepEquals(['😊', '€', 'ñ']);
+      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
     });
 
     /**

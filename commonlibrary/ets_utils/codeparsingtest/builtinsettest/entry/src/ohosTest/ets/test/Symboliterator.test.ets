@@ -337,7 +337,7 @@ export default function SetSymbolIteratorTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0024
      * @tc.name testArrayConstructor0024
-     * @desc Verify Array constructor with max safe integer length
+     * @tc.desc Verify Array constructor with max safe integer length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
