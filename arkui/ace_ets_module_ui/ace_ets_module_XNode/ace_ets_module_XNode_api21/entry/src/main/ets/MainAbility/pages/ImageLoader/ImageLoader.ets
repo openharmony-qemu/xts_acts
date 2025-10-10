@@ -27,7 +27,7 @@ struct AnimatedDrawableDescriptorTestLoader {
     new AnimatedDrawableDescriptor($r('app.media.img2'), { iterations: -1 })
   @State imageHeight: number = 0
   @State imageWidth: number = 0
-  @State errorCode: number | string = ''
+  @State errorCode: string | Resource = ''
 
   build() {
     Column({ space: 10 }) {
