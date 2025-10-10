@@ -55,7 +55,7 @@ struct WaterFlowSecDemo {
   twoColumnSection: SectionOptions = {
     itemsCount: 2,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 100.0
     }
   } as SectionOptions

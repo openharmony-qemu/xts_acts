@@ -76,7 +76,7 @@ struct ListExample {
         }) 
         .edgeEffect(this.edgeEffect) 
         .chainAnimation(false) 
-        .onScrollIndex((firstIndex: number, lastIndex: number, center: number): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int, center: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })

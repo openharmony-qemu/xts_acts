@@ -63,8 +63,8 @@ struct OnlyRowsTemplate1 {
         }
         .borderColor(0x000000)
         .width(100)
-        .rowStart(this.rowStart1)
-        .rowEnd(this.rowEnd1)
+        .rowStart(Double.toInt(this.rowStart1))
+        .rowEnd(Double.toInt(this.rowEnd1))
         .columnStart(2)
         .columnEnd(2)
         .key('OnlyRowsTemplate1_GridItem_01')
@@ -80,8 +80,8 @@ struct OnlyRowsTemplate1 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .width(100)
-        .rowStart(this.rowStart2)
-        .rowEnd(this.rowEnd2)
+        .rowStart(Double.toInt(this.rowStart2))
+        .rowEnd(Double.toInt(this.rowEnd2))
         .key('OnlyRowsTemplate1_GridItem_02')
 
       }

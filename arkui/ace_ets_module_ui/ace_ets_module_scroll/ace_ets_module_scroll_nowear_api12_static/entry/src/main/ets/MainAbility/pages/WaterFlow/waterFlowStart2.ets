@@ -69,7 +69,7 @@ struct WaterFlowStart2 {
       .columnsGap(10)
       .rowsGap(5)
       .height('70%')
-      .onScrollIndex((first: number,last: number) => {
+      .onScrollIndex((first: int,last: int) => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })

@@ -77,7 +77,7 @@ struct onScrollIndexFlow2 {
       .backgroundColor(0xFAEEE0)
       .width('100%')
       .height('60%')
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         if (first !== 0) {
           this.temp = 5
         }

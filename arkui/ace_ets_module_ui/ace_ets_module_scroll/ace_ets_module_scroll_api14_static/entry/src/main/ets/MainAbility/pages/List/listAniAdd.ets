@@ -98,7 +98,7 @@ struct animationListAddExample {
       .height('40%')
       .scrollBar(BarState.On)
       .divider({ strokeWidth: 1, color: Color.Blue })
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

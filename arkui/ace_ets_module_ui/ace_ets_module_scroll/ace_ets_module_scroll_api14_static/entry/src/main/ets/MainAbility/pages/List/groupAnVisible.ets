@@ -150,7 +150,7 @@ struct groupAnimationVisibleExample {
       .backgroundColor(0xDCDCDC)
       .maintainVisibleContentPosition(true)
       .borderWidth(1)
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

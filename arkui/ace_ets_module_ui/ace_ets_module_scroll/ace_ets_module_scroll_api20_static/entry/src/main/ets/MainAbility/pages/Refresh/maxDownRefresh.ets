@@ -113,7 +113,7 @@ struct maxPullDownRefresh {
               }
             }, (item: string) => item)
           }
-          .onScrollIndex((start: number, end: number, center: number) => {
+          .onScrollIndex((start: int, end: int, center: int) => {
             console.info(start.toString())
           })
           .alignListItem(ListItemAlign.Center)

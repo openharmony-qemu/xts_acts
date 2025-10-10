@@ -84,7 +84,7 @@ struct ListLanes {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
         ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
