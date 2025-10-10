@@ -43,7 +43,7 @@ import {
   MapValuesTest107,
   MapValuesTest109,
   MapValuesTest110
-} from './MapValue';
+} from '../testability/pages/MapValue';
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
