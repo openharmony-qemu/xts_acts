@@ -36,7 +36,7 @@ import { MapClearTest011, MapClearTest037,
   MapClearTest087,
   MapClearTest090,
   MapClearTest100,
-  NewObject } from './MapClear'
+  NewObject } from '../testability/pages/MapClear'
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
