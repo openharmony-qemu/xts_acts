@@ -615,7 +615,7 @@ export default function PasteboardVarietyTest() {
       });
       await systemPasteboard.getMimeTypes().then((data: Array<String>) => {
         expect(data.length).assertEqual(3);
-        expect(data).assertDeepEquals(['text/plain','text/html','text/uri']);
+        expect(data).assertDeepEquals(['text/html','text/plain','text/uri']);
         console.info(TAG + 'Succeeded in getting mimeTypes. mimeTypes: ' + JSON.stringify(data));
       }).catch((err:BusinessError) => {
         console.error(TAG + 'Failed to get mimeTypes. Cause:' + err.message);
