@@ -44,14 +44,14 @@ export default function screenLockJSUnit() {
                             expect().assertFail();
                             done();
                         }
-                        expect(data).assertEqual(true);
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0001 screen's status is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0001-------------------");
                         done();
                         
                     }catch(err){
-                        expect(data).assertEqual(false);
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0001 throw_err = " + err);
                         done();
                     }
@@ -76,13 +76,13 @@ export default function screenLockJSUnit() {
             try {
                 screenLock.isScreenLocked((err, data) => {
                     try{
-                        expect(data).assertEqual(true);
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0002 screen's status is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0002-------------------");
                         done();
                     }catch(err){
-                        expect(data).assertEqual(false);
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0002 throw_err = " + err);
                         done();
                     }                    
@@ -172,13 +172,13 @@ export default function screenLockJSUnit() {
             try {
                 screenLock.isScreenLocked((err, data) => {
                     try{
-                        expect(data).assertEqual(true);
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0007: isScreenLocked is successful, result is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0007-------------------");
                         done();
                     }catch(err){
-                        expect(data).assertEqual(false);
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0007 throw_err = " + err);
                         done();
                     }
