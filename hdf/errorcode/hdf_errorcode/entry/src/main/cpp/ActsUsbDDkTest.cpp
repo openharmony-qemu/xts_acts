@@ -36,7 +36,7 @@
 #define PORT_WRITE 0x02
 #define PORT_ILLEGAL 0x08
 #define USB_SERIAL_TEST_BUF_SIZE 100
-static uint8_t settingIndex = 0;
+static uint8_t configIndex = 0;
 static uint8_t interfaceIndex = 0;
 static uint64_t interfaceHandle = 0;
 static uint8_t settingIndex = 0;
@@ -490,6 +490,17 @@ napi_value ScsiPeripheralWrite(napi_env env, napi_callback_info info)
     int32_t ret = OH_ScsiPeripheral_Write10(nullptr, &req, &resp);
     napi_create_int32(env, ret == SCSIPERIPHERAL_DDK_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
+}
+
+struct ScsiPeripheral_Device {
+    int32_t devFd = -1;
+    int32_t memMapFd = -1;
+    int32_t lbLength = 0;
+};
+
+static ScsiPeripheral_Device *NewScsiPeripheralDevice()
+{
+    return new ScsiPeripheral_Device;
 }
 
 napi_value ScsiPeripheralSendRequestByCDB(napi_env env, napi_callback_info info)
