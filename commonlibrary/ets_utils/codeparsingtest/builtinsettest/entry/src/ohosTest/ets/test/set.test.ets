@@ -31,7 +31,7 @@ import { MapSetTest007, MapSetTest009, MapSetTest010, MapSetTest016, MapSetTest0
   MapSetTest088,
   MapSetTest095,
   MapSetTest096,
-  MapSetTest097} from '../testability/pages/set';
+  MapSetTest097} from './set';
 
 export default function SetSetTest() {
   describe('SetSetTest', () => {
