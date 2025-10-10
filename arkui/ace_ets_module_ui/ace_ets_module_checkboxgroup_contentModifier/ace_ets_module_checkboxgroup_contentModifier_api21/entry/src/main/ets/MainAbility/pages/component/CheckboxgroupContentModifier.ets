@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 
 class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration> {
   public selectedColor: Color = Color.White;
+  public checkBoxGroupName: string = 'CheckboxGroup';
 
   constructor(selectedColor: Color) {
     this.selectedColor = selectedColor;
@@ -30,6 +31,7 @@ class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration
 function buildCheckboxGroup(config: CheckBoxGroupConfiguration) {
   Column({ space: 10 }) {
     Text(`selectedColor:${(config.contentModifier as MyCheckboxGroupStyle).selectedColor}`).id('CheckboxgroupContentModifier01')
+    Text(`checkBoxGroupName:${config.name}`).id('CheckboxgroupContentModifier02')
     Shape() {
       // 五边形复选框样式
       Path()
@@ -87,9 +89,14 @@ struct CheckboxgroupContentModifier {
   @State colorValue: Color = Color.Red;
   @State select1: boolean = false;
   @State select2: boolean = false;
+  @State groupName: CheckboxGroupOptions = { group: 'checkboxGroup' };
   private stateChangCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('CheckboxgroupContentModifier page state change called:' + JSON.stringify(eventData));
+      if (eventData.data?.groupName != null) {
+        this.groupName = eventData.data?.groupName;
+        this.myCheckboxGroupStyle = new MyCheckboxGroupStyle(this.colorValue)
+      }
       if (eventData.data?.colorValue != null) {
         this.colorValue = eventData.data?.colorValue;
         this.myCheckboxGroupStyle = new MyCheckboxGroupStyle(this.colorValue)
@@ -140,13 +147,18 @@ struct CheckboxgroupContentModifier {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(stateChangeEventThree, this.stateChangCallBack);
+    let stateChangeEventFour: events_emitter.InnerEvent = {
+      eventId: 70,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventFour, this.stateChangCallBack);
   }
 
   build() {
     Row() {
       Column() {
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-          CheckboxGroup({ group: 'checkboxGroup' })
+          CheckboxGroup(this.groupName)
             .selectedColor(Color.Orange)
             .key('CheckboxGroup')
             .checkboxShape(CheckBoxShape.ROUNDED_SQUARE)

@@ -420,5 +420,41 @@ export default function CheckboxgroupContentModifier() {
       console.info('[CheckboxgroupContentModifier_012] END');
       done();
     });
+    /*
+     * @tc.number     : CheckboxgroupContentModifier_013
+     * @tc.name       : CheckboxgroupContentModifier_013
+     * @tc.desc       : test CheckboxgroupContentModifier_013
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('CheckboxgroupContentModifier_013', Level.LEVEL0, async (done: Function) => {
+      console.info('[CheckboxgroupContentModifier_013] START');
+      await Utils.sleep(1000);
+      try {
+        let checkboxGroupName: CheckboxGroupOptions = { group: 'checkboxGroup12345' };
+        let eventData: events_emitter.EventData = {
+          data: {
+            "groupName": checkboxGroupName,
+          }
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 70,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('[CheckboxgroupContentModifier_013] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.log('[CheckboxgroupContentModifier_013] change component data error: ' + (err as BusinessError).message);
+      }
+      await Utils.sleep(2000);
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier02');
+      let obj: Record<string, ESObject>= JSON.parse(strJson);
+      await Utils.sleep(1000);
+      console.info('[CheckboxgroupContentModifier_013] obj is: ' + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertEqual('checkBoxGroupName:checkboxGroup12345');
+      console.info('[CheckboxgroupContentModifier_013] END');
+      done();
+    });
   })
 }
