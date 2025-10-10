@@ -170,6 +170,17 @@ class ReplaceClass extends MyClassBase {
     }
 }
 
+class DeviceManageViewModel {
+  static ans = '';
+  constructor(heldValue) {
+    util.AutoFinalizerCleaner.register(this, heldValue);
+  }
+
+  onFinalization(heldValue) {
+    DeviceManageViewModel.ans = heldValue;
+  }
+}
+
 let tempLower = new Temperature(30);
 let tempUpper = new Temperature(40);
 let tempLess = new Temperature(20);
@@ -9873,5 +9884,35 @@ describe('TextEncoderTest', function () {
     str = that.encoding;
     expect(str).assertEqual('IBM866')
   })
+  })
+
+  describe('AutoFinalizerTest', function () {
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_AUTO_FINALIZER_0001
+     * @tc.name: testAutoFinalizer_001
+     * @tc.desc: Auto finalizer test.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('testAutoFinalizer_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+      const originalFR = FinalizationRegistry;
+      let gc, heldValue;
+      try {
+        FinalizationRegistry = class {
+          constructor(cb) {
+            gc = cb;
+          }
+          register(obj, val) {
+            heldValue = val;
+          }
+        };
+        new DeviceManageViewModel('test');
+        gc(heldValue);
+        expect(DeviceManageViewModel.ans).assertEqual('test');
+      } finally {
+        FinalizationRegistry = originalFR;
+      }
+    })
   })
 }
