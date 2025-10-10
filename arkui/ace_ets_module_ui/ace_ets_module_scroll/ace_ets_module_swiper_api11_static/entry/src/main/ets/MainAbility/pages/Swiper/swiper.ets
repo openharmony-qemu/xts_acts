@@ -80,18 +80,18 @@ class MyDataSource implements IDataSource<string> {
 struct SwiperExample {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource([])
-  @State index: number = 1
-  @State displayCount: number = 3
+  @State index: Int = 1
+  @State displayCount: Int = 3
   @State displayMode: SwiperDisplayMode = SwiperDisplayMode.STRETCH
   
   @State edgeEffect: EdgeEffect = EdgeEffect.None
   @State autoPlay: boolean = false
-  @State interval: number = 4000
+  @State interval: Int = 4000
   @State indicator: boolean = true
   @State loop: boolean = false
-  @State duration: number = 1000
+  @State duration: Int = 1000
   @State vertical: boolean = false
-  @State itemSpace: number = 0
+  @State itemSpace: double = 0.0
   @State onActionCalledOne: boolean = false;
   @State onActionCalledTwo: boolean = false;
   @State onActionCalledThree: boolean = false;
@@ -136,7 +136,7 @@ struct SwiperExample {
           .itemHeight(2)
           .color(Color.Blue))
       .key('swiper')
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
         this.onActionCalledThree = true;
         console.info('onChange current action state is: ' + this.onActionCalledThree);
@@ -238,12 +238,12 @@ struct SwiperExample {
       console.info("swiper page state change called:" + JSON.stringify(eventData));
       const jsonElementInstance = JSON.parseJsonElement(JSON.stringify(eventData))
       const jsonElementData = jsonElementInstance.tryGetElement('data')
-      this.index = jsonElementData?.tryGetDouble('index') ?? 1;
+      this.index = jsonElementData?.tryGetDouble('index')?.toInt() ?? 1;
       this.autoPlay = jsonElementData?.tryGetBoolean('autoPlay') ?? false;
-      this.interval = jsonElementData?.tryGetDouble('interval') ?? 4000;
+      this.interval = jsonElementData?.tryGetDouble('interval')?.toInt() ?? 4000;
       this.indicator = jsonElementData?.tryGetBoolean('indicator') ?? false;
       this.loop = jsonElementData?.tryGetBoolean('loop') ?? false;
-      this.duration = jsonElementData?.tryGetDouble('duration') ?? 1000;
+      this.duration = jsonElementData?.tryGetDouble('duration')?.toInt() ?? 1000;
       this.vertical = jsonElementData?.tryGetBoolean('vertical') ?? false;
       this.itemSpace = jsonElementData?.tryGetDouble('itemSpace') ?? 0;
     }

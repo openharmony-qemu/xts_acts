@@ -105,15 +105,15 @@ struct SwiperAddExample {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
         this.stringValue = 'swiper'
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
         console.info("current offset: " + extraInfo.currentOffset)
@@ -122,7 +122,7 @@ struct SwiperAddExample {
         console.info("mode: " + SwiperDisplayMode.STRETCH)
         
       })
-      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })

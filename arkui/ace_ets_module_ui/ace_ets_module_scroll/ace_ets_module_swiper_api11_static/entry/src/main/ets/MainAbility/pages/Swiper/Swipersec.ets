@@ -200,7 +200,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle, true)
@@ -224,7 +224,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -250,7 +250,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -276,7 +276,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -304,7 +304,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle)
@@ -329,7 +329,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(true)
@@ -353,7 +353,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
       }

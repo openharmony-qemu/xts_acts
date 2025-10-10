@@ -41,7 +41,7 @@ struct maintainContentPositionSwiper {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource()
   @State maintainContentPosition: boolean = false
-  @State index: number = 5
+  @State index: Int = 5
 
   aboutToAppear() {
     let uiContext = this.getUIContext();
@@ -90,7 +90,7 @@ struct maintainContentPositionSwiper {
       }
       .index(this.index)
       
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.index = index
         console.error('Swiper onChange ' + index)
       })
