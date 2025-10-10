@@ -24,7 +24,6 @@ import { image } from '@kit.ImageKit';
 import { StartOptions } from '@kit.AbilityKit';
 import { display } from '@kit.ArkUI';
 import pipWindow from '@ohos.PiPWindow';
-import resourceManager from '@ohos.resourceManager';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 

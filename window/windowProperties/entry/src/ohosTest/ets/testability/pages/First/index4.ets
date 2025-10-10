@@ -16,6 +16,7 @@ import router from '@ohos.router';
 import { window } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@ohos.base';
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
@@ -45,18 +46,16 @@ struct Index4 {
         .backgroundColor('#0D9FFB')
         .width('35%')
         .height('5%')
-        .onClick(()=>{
-          let color: ArrayBuffer = new ArrayBuffer(96);
-          let initializationOptions: image.InitializationOptions = {
-            editable: true,
-            pixelFormat: image.PixelMapFormat.RGBA_8888,
-            size: {
-              height: 4,
-              width: 6,
-            },
-          };
-          image.createPixelMap(color, initializationOptions).then(async (pixelMap: image.PixelMap) => {
-            console.info(" Succeeded in creating pixelmap.");
+        .onClick(async ()=>{
+          let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+          const rawFile: Uint8Array = await context.resourceManager.getRawFileContent('test1.jpg');
+          let ops: image.SourceOptions = {
+            sourceDensity: 98,
+          }
+          let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+
+          imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+            console.info(' Succeeded in creating pixelmap.');
             try {
               await window.setWatermarkImageForAppWindows(pixelMap);
               await window.setWatermarkImageForAppWindows(undefined);
