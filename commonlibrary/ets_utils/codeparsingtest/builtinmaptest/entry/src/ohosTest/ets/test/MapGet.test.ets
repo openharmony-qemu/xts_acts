@@ -41,7 +41,7 @@ import {
   MapGetTest0095,
   MapGetTest0096,
   MapGetTest0100
-} from '../testability/pages/MapGet';
+} from './MapGet';
 
 interface GeneratedObjectLiteralInterface_1 {
   id: number;
