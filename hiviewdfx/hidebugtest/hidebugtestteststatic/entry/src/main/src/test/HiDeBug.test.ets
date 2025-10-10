@@ -328,7 +328,7 @@ export default function HidebugJsTest() {
                     hidebug.tags.NOTIFICATION, hidebug.tags.NWEB, hidebug.tags.OHOS, hidebug.tags.POWER_MANAGER,
                     hidebug.tags.RPC, hidebug.tags.SAMGR, hidebug.tags.WINDOW_MANAGER, hidebug.tags.AUDIO,
                     hidebug.tags.CAMERA, hidebug.tags.IMAGE, hidebug.tags.MEDIA];
-                let limit_size = 500 * 1024 * 1024;
+                let limit_size: int = 500 * 1024 * 1024;
                 let path = hidebug.startAppTraceCapture(tag, flag, limit_size);
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0100 > path =: ${path}`)
                 expect(path != "").assertTrue();
@@ -367,7 +367,7 @@ export default function HidebugJsTest() {
                     hidebug.tags.NOTIFICATION, hidebug.tags.NWEB, hidebug.tags.OHOS, hidebug.tags.POWER_MANAGER,
                     hidebug.tags.RPC, hidebug.tags.SAMGR, hidebug.tags.WINDOW_MANAGER, hidebug.tags.AUDIO,
                     hidebug.tags.CAMERA, hidebug.tags.IMAGE, hidebug.tags.MEDIA];
-                let limit_size = 500 * 1024 * 1024;
+                let limit_size: int = 500 * 1024 * 1024;
                 let path = hidebug.startAppTraceCapture(tag, flag, limit_size);
                 hidebug.stopAppTraceCapture();
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0200 > path =: ${path}`)
@@ -392,8 +392,8 @@ export default function HidebugJsTest() {
         it('testHiDebugJsStatic10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
                 let flag = hidebug.TraceFlag.ALL_THREADS;
-                let tag = [123];
-                let limit_size = 1;
+                let tag: long[] = [123];
+                let limit_size: int = 1;
                 let path1 = hidebug.startAppTraceCapture(tag, flag, limit_size);
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0300 > path1 =: ${path1}`);
@@ -540,7 +540,7 @@ export default function HidebugJsTest() {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1000 Test start*************');
             let path: string = "/data/storage/el2/base/files/serviceInfo3.txt";
             let file = fileIo.openSync(path, 0o102);
-            let serviceId = -10
+            let serviceId: int = -10
             let args: Array<string> = new Array<string>("allInfo");
             try {
                 hidebug.getServiceDump(serviceId, file.fd, args)
