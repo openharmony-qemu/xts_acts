@@ -54,7 +54,7 @@ import {
   MapConstructorTest101,
   MapConstructorTest102,
   MapConstructorTest103
-} from './mapConstructor'
+} from '../testability/pages/mapConstructor'
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
