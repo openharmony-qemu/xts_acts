@@ -106,7 +106,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0200', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -129,7 +129,7 @@ export default function abilityTest() {
                       console.info('====>AsyncCallback_0200 unSubscribeCallback pkill ng' + JSON.stringify(err));
                       done();
                     })
-                }, 2000)
+                }, 500)
               })
             }
           });
@@ -155,7 +155,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0300', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -191,7 +191,7 @@ export default function abilityTest() {
                       console.info('====>AsyncCallback_0300 unSubscribeCallback pkill ng' + JSON.stringify(err));
                       done();
                     })
-                }, 1000)
+                }, 500)
               })
             }
           });
@@ -210,7 +210,7 @@ export default function abilityTest() {
             }, (err) => {
               console.info('====>start Another Ability err:' + JSON.stringify(err));
             })
-          }, 2500);
+          }, 800);
         })
     })
 
@@ -226,7 +226,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0400', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -242,7 +242,7 @@ export default function abilityTest() {
                 setTimeout(() => {
                   globalThis.terminate('AsyncCallback_0400');
                   done();
-                }, 1000)
+                }, 500)
               })
             }
           });
@@ -262,7 +262,7 @@ export default function abilityTest() {
               .catch((err: BusinessError) => {
                 console.info('====>AsyncCallback_0400 pkill ng' + JSON.stringify(err));
               })
-          }, 2000)
+          }, 500)
         })
     })
 
@@ -277,7 +277,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0500', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -293,7 +293,7 @@ export default function abilityTest() {
                 setTimeout(() => {
                   globalThis.terminate('AsyncCallback_0500');
                   done();
-                }, 2000)
+                }, 500)
               })
             }
           });
@@ -318,7 +318,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0600', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -342,7 +342,7 @@ export default function abilityTest() {
                       console.info('====>AsyncCallback_0600 unSubscribeCallback pkill ng' + JSON.stringify(err));
                       done();
                     })
-                }, 1000)
+                }, 500)
               })
             }
           });
@@ -368,7 +368,7 @@ export default function abilityTest() {
  * @tc.level Level 1
  */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0100', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -449,7 +449,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0300', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(1000);
       let subscriber: commonEventManager.CommonEventSubscriber;
       await commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -505,7 +505,7 @@ export default function abilityTest() {
             }, (err) => {
               console.info('====>start Another Ability err:' + JSON.stringify(err));
             })
-          }, 2000);
+          }, 1000);
         })
     })
 
@@ -521,7 +521,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0400', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(1000);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -557,7 +557,7 @@ export default function abilityTest() {
               .catch((err: BusinessError) => {
                 console.info('====>Promise_0400 pkill ng' + JSON.stringify(err));
               })
-          }, 2000)
+          }, 1000)
         })
     })
 
@@ -572,7 +572,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0500', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(1000);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -613,7 +613,7 @@ export default function abilityTest() {
      * @tc.level Level 1
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0600', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
+      await sleep(1000);
       let subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction)
         .then(async (data) => {
@@ -637,7 +637,7 @@ export default function abilityTest() {
                       console.info('====>AsyncCallback_0600 unSubscribeCallback pkill ng' + JSON.stringify(err));
                       done();
                     })
-                }, 2000)
+                }, 1000)
               })
             }
           });
