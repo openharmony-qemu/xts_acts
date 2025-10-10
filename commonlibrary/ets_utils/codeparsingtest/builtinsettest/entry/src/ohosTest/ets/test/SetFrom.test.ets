@@ -20,7 +20,7 @@ import {
   testSetForOfJs024,
   testSetForOfJs025,
   testSetForOfJs036, testSetForOfJs038, testSetForOfJs060, testSetForOfJs061,
-  testSetForOfJs065 } from './SetFrom';
+  testSetForOfJs065 } from '../testability/pages/SetFrom';
 
 interface BasicEntity {
   id: string;
