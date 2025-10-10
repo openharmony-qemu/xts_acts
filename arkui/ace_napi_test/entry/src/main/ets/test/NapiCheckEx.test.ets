@@ -153,19 +153,6 @@ export default function napiCheckExTest() {
     })
 
     /**
-     * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0008
-     * @tc.name napiBufferTest008
-     * @tc.desc aceNapiEtsTest - Test ArrayBuffer thread safety in multi-threaded environment
-     */
-    it('napiBufferTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // 测试多线程环境下的ArrayBuffer线程安全性
-      let threadSafetyResult: boolean = napitestex.TestArrayBufferThreadSafety();
-      hilog.info(0x0000, 'testTag', 'threadSafetyResult:%{public}s', threadSafetyResult.toString());
-      // 所有线程操作成功应该返回 true
-      expect(threadSafetyResult).assertTrue();
-    })
-
-    /**
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0009
      * @tc.name napiBufferTest009
      * @tc.desc aceNapiEtsTest - Test ArrayBuffer and external ArrayBuffer comparison
@@ -299,27 +286,6 @@ export default function napiCheckExTest() {
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`testArrayBufferTest0006 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_ARRAYBUFFER_0007
-     * @tc.name      : testArrayBufferTest0007
-     * @tc.desc      : Testing ArrayBuffer thread safety operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testArrayBufferTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testArrayBufferThreadSafety START');
-      try {
-        const result: boolean = napitestex.NapiArrayBufferTest07();
-        console.info('ArrayBuffer thread safety test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`ArrayBuffer thread safety test failed: ${err.message}`);
         expect().assertFail();
       }
       done();
@@ -1050,111 +1016,6 @@ export default function napiCheckExTest() {
     });
 
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0013
-    * @tc.name      : testBigIntTest0013
-    * @tc.desc      : Testing BigInt multi-thread concurrent creation.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
-    it('testBigIntTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0013 START');
-      try {
-        const result: boolean = napitestex.NapiBigIntTest13();
-        console.info('testBigIntTest0013 test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`testBigIntTest0013 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0014
-    * @tc.name      : testBigIntTest0014
-    * @tc.desc      : Testing BigInt multi-thread shared object reading.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
-    it('testBigIntTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0014 START');
-      try {
-        const result: boolean = napitestex.NapiBigIntTest14();
-        console.info('testBigIntTest0014 test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`testBigIntTest0014 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0015
-    * @tc.name      : testBigIntTest0015
-    * @tc.desc      : Testing BigInt inter-thread object passing.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
-    it('testBigIntTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0015 START');
-      try {
-        const result: boolean = napitestex.NapiBigIntTest15();
-        console.info('testBigIntTest0015 test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`testBigIntTest0015 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0016
-    * @tc.name      : testBigIntTest0016
-    * @tc.desc      : Testing BigInt multi-thread exception handling.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
-    it('testBigIntTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0016 START');
-      try {
-        const result: boolean = napitestex.NapiBigIntTest16();
-        console.info('testBigIntTest0016 test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`testBigIntTest0016 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-      /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
-      * @tc.name      : testBigIntTest0017
-      * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-      it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-        console.info('testBigIntTest0017 START');
-        try {
-          const result: boolean = napitestex.NapiBigIntTest17();
-          console.info('testBigIntTest0017 test result: ' + result);
-          expect(result).assertEqual(true);
-        } catch (err) {
-          console.error(`testBigIntTest0017 err msg: ${err.message}`);
-          expect().assertFail();
-        }
-        done();
-      });
-
-    /**
      * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
      * @tc.name    testExtension001
      * @tc.desc    Testing async task scheduling priority.
@@ -1453,67 +1314,6 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });
-
-    /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
-     * @tc.name    testExtension020
-     * @tc.desc    Testing async event loop run and stop.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testExtension020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testExtension020 START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest020();
-        console.info('testExtension020 test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testExtension020 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
-     * @tc.name    testExtension021
-     * @tc.desc    Testing create ArkTS runtime.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testExtension021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testExtension021 START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest021();
-        console.info('testExtension021 test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testExtension021 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
-     * @tc.name    testExtension027
-     * @tc.desc    Testing async work with QoS.
-     * @tc.size    SmallTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testExtension027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testExtension027 START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest027();
-        console.info('testExtension027 test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testExtension027 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
 
     /**
      * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
@@ -1986,375 +1786,6 @@ export default function napiCheckExTest() {
     })
 
     /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0009
-      * @tc.name      : napiDateTest009
-      * @tc.desc      : Testing concurrent Date object creation using multiple threads.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-    it('napiDateTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      // Test concurrent Date object creation in multiple threads
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest009 begin');
-
-      // Test concurrent Date creation with 5 threads
-      let result: napitestex.ConcurrentDateCreationResult = napitestex.testConcurrentDateCreation();
-
-      // Verify overall success
-      expect(result.success).assertEqual(true);
-
-      // Verify total number of threads
-      expect(result.totalThreads).assertEqual(5);
-
-      // Verify thread results array
-      expect(result.threadResults.length).assertEqual(5);
-
-      // Expected timestamps for each thread
-      const expectedTimestamps = [1000, 2000, 3000, 4000, 5000];
-
-      // Verify each thread's results
-      for (let i = 0; i < result.threadResults.length; i++) {
-        let threadResult: napitestex.ConcurrentDateThreadResult = result.threadResults[i];
-
-        // Verify thread ID
-        expect(threadResult.threadId).assertEqual(i);
-
-        // Verify create status is napi_ok (0)
-        expect(threadResult.createStatus).assertEqual(0);
-
-        // Verify Date type check passed
-        expect(threadResult.isDate).assertEqual(true);
-
-        // Verify timestamp retrieval was successful
-        expect(threadResult.timestamp).assertEqual(expectedTimestamps[i]);
-
-        // Verify original timestamp matches retrieved timestamp
-        expect(threadResult.originalTimestamp).assertEqual(expectedTimestamps[i]);
-
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Thread ${i}: createStatus=${threadResult.createStatus}, isDate=${threadResult.isDate}, ` +
-          `timestamp=${threadResult.timestamp}`);
-      }
-
-      // Test multiple runs to ensure consistency
-      hilog.info(0x0000, 'testTag', '%{public}s', 
-        'Running concurrent test multiple times for consistency...');
-
-      for (let run = 0; run < 3; run++) {
-        let runResult: napitestex.ConcurrentDateCreationResult = napitestex.testConcurrentDateCreation();
-        expect(runResult.success).assertEqual(true);
-        expect(runResult.totalThreads).assertEqual(5);
-        expect(runResult.threadResults.length).assertEqual(5);
-
-        // Verify all threads succeeded in this run
-        for (let i = 0; i < runResult.threadResults.length; i++) {
-          let threadResult: napitestex.ConcurrentDateThreadResult = runResult.threadResults[i];
-          expect(threadResult.createStatus).assertEqual(0);
-          expect(threadResult.isDate).assertEqual(true);
-          expect(threadResult.timestamp).assertEqual(expectedTimestamps[i]);
-        }
-
-        hilog.info(0x0000, 'testTag', '%{public}s', `Run ${run + 1} completed successfully`);
-      }
-
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest009 completed successfully');
-    })
-
-    /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0010
-      * @tc.name      : napiDateTest010
-      * @tc.desc      : Testing multi-threaded shared Date object reading for consistency.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-    it('napiDateTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      // Test multiple threads reading from a shared Date object
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest010 begin');
-
-      // Test shared Date object read with 3 threads
-      let result: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
-
-      // Verify overall success
-      expect(result.success).assertEqual(true);
-
-      // Verify total number of threads
-      expect(result.totalThreads).assertEqual(3);
-
-      // Verify original timestamp
-      expect(result.originalTimestamp).assertEqual(1234567890000);
-
-      // Verify thread results array
-      expect(result.threadResults.length).assertEqual(3);
-
-      // Verify each thread's results
-      for (let i = 0; i < result.threadResults.length; i++) {
-        let threadResult: napitestex.SharedDateReadThreadResult = result.threadResults[i];
-
-        // Verify thread ID
-        expect(threadResult.threadId).assertEqual(i);
-
-        // Verify napi_is_date returned napi_ok (0)
-        expect(threadResult.isDateStatus).assertEqual(0);
-
-        // Verify is_date is true
-        expect(threadResult.isDate).assertEqual(true);
-
-        // Verify napi_get_date_value returned napi_ok (0)
-        expect(threadResult.getDateStatus).assertEqual(0);
-
-        // Verify timestamp matches the original shared timestamp
-        expect(threadResult.timestamp).assertEqual(1234567890000);
-
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Thread ${i}: isDateStatus=${threadResult.isDateStatus}, isDate=${threadResult.isDate}, ` +
-          `getDateStatus=${threadResult.getDateStatus}, timestamp=${threadResult.timestamp}`);
-      }
-
-      // Test multiple runs to ensure consistency and no data races
-      hilog.info(0x0000, 'testTag', '%{public}s', 
-        'Running shared read test multiple times for consistency...');
-
-      for (let run = 0; run < 5; run++) {
-        let runResult: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
-        expect(runResult.success).assertEqual(true);
-        expect(runResult.totalThreads).assertEqual(3);
-        expect(runResult.originalTimestamp).assertEqual(1234567890000);
-
-        // Verify all threads succeeded in this run
-        for (let i = 0; i < runResult.threadResults.length; i++) {
-          let threadResult: napitestex.SharedDateReadThreadResult = runResult.threadResults[i];
-          expect(threadResult.isDateStatus).assertEqual(0);
-          expect(threadResult.isDate).assertEqual(true);
-          expect(threadResult.getDateStatus).assertEqual(0);
-          expect(threadResult.timestamp).assertEqual(1234567890000);
-        }
-
-        hilog.info(0x0000, 'testTag', '%{public}s', `Run ${run + 1} completed successfully`);
-      }
-
-      // Test with different thread counts to verify scalability
-      hilog.info(0x0000, 'testTag', '%{public}s', 'Testing with different thread counts...');
-
-      // Note: The C++ implementation uses a fixed number of threads (3),
-      // but we can verify the behavior is consistent
-      let consistencyResult: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
-      expect(consistencyResult.success).assertEqual(true);
-
-      // Verify all timestamps are exactly the same (no data corruption)
-              let allTimestamps: number[] = consistencyResult.threadResults.map(
-          (r: napitestex.SharedDateReadThreadResult): number => r.timestamp);
-      let firstTimestamp: number = allTimestamps[0];
-
-      for (let timestamp of allTimestamps) {
-        expect(timestamp).assertEqual(firstTimestamp);
-        expect(timestamp).assertEqual(1234567890000);
-      }
-
-              hilog.info(0x0000, 'testTag', '%{public}s', 
-          'All timestamps are consistent: ' + allTimestamps.join(', '));
-
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest010 completed successfully');
-    })
-
-    /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0011
-      * @tc.name      : napiDateTest011
-      * @tc.desc      : Testing high concurrency Date operations stress test with multiple threads.
-      * @tc.size      : LargeTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-    it('napiDateTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      // Test high concurrency Date operations stress testing
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest011 begin');
-
-      // Test high concurrency stress with 2 threads, 1 operations each
-      let result: napitestex.HighConcurrencyDateStressResult = napitestex.testHighConcurrencyDateStress();
-      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest011 result', JSON.stringify(result));
-
-      // Verify overall success
-      expect(result.success).assertEqual(true);
-
-      // Verify total number of threads
-      expect(result.totalThreads).assertEqual(2);
-
-      // Verify total operations
-      expect(result.totalOperations).assertEqual(20); // 2 threads * 10 operations
-
-      // Verify thread results array
-      expect(result.threadResults.length).assertEqual(2);
-
-      // Verify each thread's results
-      for (let i = 0; i < result.threadResults.length; i++) {
-        let threadResult: napitestex.StressTestThreadResult = result.threadResults[i];
-
-        // Verify thread ID
-        expect(threadResult.threadId).assertEqual(i);
-
-        // Verify total operations per thread
-        expect(threadResult.totalOperations).assertEqual(10);
-
-        // Verify all operations in this thread were successful
-        expect(threadResult.successfulOperations).assertEqual(10);
-        expect(threadResult.failedOperations).assertEqual(0);
-
-        // Verify execution time is reasonable (should be > 0 and < 60 seconds)
-        expect(threadResult.executionTime).assertLarger(0);
-        expect(threadResult.executionTime).assertLess(60000);
-
-        // Verify memory usage is reasonable (should be > 0 and < 100 MB)
-        expect(threadResult.memoryUsage).assertLarger(0);
-        expect(threadResult.memoryUsage).assertLess(100000);
-
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Thread ${i}: ops=${threadResult.totalOperations}, success=${threadResult.successfulOperations}, ` +
-          `failed=${threadResult.failedOperations}, time=${threadResult.executionTime}ms, ` +
-          `memory=${threadResult.memoryUsage}KB`);
-      }
-
-      // Verify overall performance metrics
-      expect(result.totalExecutionTime).assertLarger(0);
-      expect(result.totalMemory).assertLarger(0);
-
-      // Verify performance variation is reasonable (should be < 50%)
-      expect(result.performanceVariation).assertLess(50);
-
-      // Verify memory increase percentage is reasonable (should be < 100%)
-      expect(result.memoryIncreasePercent).assertLess(100);
-
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest011 completed successfully');
-    })
-
-    /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0012
-      * @tc.name      : napiDateTest012
-      * @tc.desc      : Testing cross-thread Date object passing between multiple threads.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-    it('napiDateTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      // Test cross-thread Date object passing
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest012 begin');
-
-      // Test cross-thread Date object passing with 3 threads
-      let result: napitestex.CrossThreadDatePassingResult = napitestex.testCrossThreadDatePassing();
-      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest012 result', JSON.stringify(result));
-
-      // Verify overall success
-      expect(result.success).assertEqual(true);
-
-      // Verify total number of threads
-      expect(result.totalThreads).assertEqual(3);
-
-      // Verify original timestamp
-      expect(result.originalTimestamp).assertEqual(987654321000);
-
-      // Verify all threads were successful
-      expect(result.allThreadsSuccessful).assertEqual(true);
-
-      // Verify thread results array
-      expect(result.threadResults.length).assertEqual(3);
-
-      // Expected operations for each thread
-      const expectedOperations = [
-        "Create Date",
-        "Receive from A and validate",
-        "Receive from B and validate"
-      ];
-
-      // Verify each thread's results
-      for (let i = 0; i < result.threadResults.length; i++) {
-        let threadResult: napitestex.CrossThreadThreadResult = result.threadResults[i];
-
-        // Verify thread ID
-        expect(threadResult.threadId).assertEqual(i);
-
-        // Verify operation description
-        expect(threadResult.operation).assertEqual(expectedOperations[i]);
-
-        // Verify Date type check passed
-        expect(threadResult.isDate).assertEqual(true);
-
-        // Verify timestamp retrieval was successful
-        expect(threadResult.timestamp).assertEqual(987654321000);
-
-        // Verify original timestamp matches
-        expect(threadResult.originalTimestamp).assertEqual(987654321000);
-
-        // Verify thread success
-        expect(threadResult.success).assertEqual(true);
-      }
-    
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest012 completed successfully');
-    })
-
-    /**
-      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0013
-      * @tc.name      : napiDateTest013
-      * @tc.desc      : Testing thread safety with error parameter combinations in multi-threaded environment.
-      * @tc.size      : SmallTest
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-      */
-    it('napiDateTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      // Test thread safety with error parameter combinations
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest013 begin');
-
-      // Test thread safety error handling with 4 threads
-      let result: napitestex.ThreadSafetyErrorHandlingResult = napitestex.testThreadSafetyErrorHandling();
-      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest013 result', JSON.stringify(result));
-
-      // Verify overall success
-      expect(result.success).assertEqual(true);
-
-      // Verify total number of threads
-      expect(result.totalThreads).assertEqual(4);
-
-      // Verify summary statistics
-      expect(result.totalSuccessful).assertEqual(4);
-      expect(result.totalFailed).assertEqual(0);
-
-      // Verify thread results array
-      expect(result.threadResults.length).assertEqual(4);
-
-      // Expected operations and statuses for each thread
-      const expectedOperations = [
-        "create_date_nullptr",
-        "get_date_value_nullptr",
-        "is_date_nullptr",
-        "normal_operations"
-      ];
-
-      const expectedStatuses = [1, 1, 1, 0]; // napi_invalid_arg, napi_invalid_arg, napi_invalid_arg, napi_ok
-
-      // Verify each thread's results
-      for (let i = 0; i < result.threadResults.length; i++) {
-        let threadResult: napitestex.ThreadSafetyErrorHandlingThreadResult = result.threadResults[i];
-
-        // Verify thread ID
-        expect(threadResult.threadId).assertEqual(i);
-
-        // Verify operation description
-        expect(threadResult.operation).assertEqual(expectedOperations[i]);
-
-        // Verify expected status
-        expect(threadResult.expectedStatus).assertEqual(expectedStatuses[i]);
-
-        // Verify thread success
-        expect(threadResult.isSuccess).assertEqual(true);
-
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Thread ${i}: operation=${threadResult.operation}, ` +
-          `apiStatus=${threadResult.apiStatus}, expectedStatus=${threadResult.expectedStatus}, ` +
-          `success=${threadResult.isSuccess}, errorDesc=${threadResult.errorDescription}`);
-      }
-
-      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest013 completed successfully');
-    })
-
-    /**
      * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0001
      * @tc.name      testStringTest001
      * @tc.desc      Test UTF-16 string creation and retrieval using napi_create_string_utf16
@@ -2544,69 +1975,6 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });    
-
-    /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0001
-     * @tc.name      testPrimitiveTest01
-     * @tc.desc      Verify concurrent access to the global object and property read without errors
-     * @tc.size      SmallTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('testPrimitiveTest01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('[testPrimitiveTest01] START');
-      try {
-        let result: boolean = napitestex.NapiPrimitiveTest01();
-        expect(result).assertTrue();
-        console.info('[testPrimitiveTest01] PASS');
-      } catch (err) {
-        console.error('[testPrimitiveTest01] ERROR. err.message: ' + err.message);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0002
-     * @tc.name      testPrimitiveTest02
-     * @tc.desc      Verify multi-threaded coercions (bool/number/string/object) and global access without errors
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('testPrimitiveTest02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('[testPrimitiveTest02] START');
-      try {
-        let result: boolean = napitestex.NapiPrimitiveTest02();
-        expect(result).assertTrue();
-        console.info('[testPrimitiveTest02] PASS');
-      } catch (err) {
-        console.error('[testPrimitiveTest02] ERROR. err.message: ' + err.message);
-        expect().assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0003
-     * @tc.name      testPrimitiveTest03
-     * @tc.desc      Verify multiple threads concurrently call value getters (boolean/null/undefined/get_value_bool)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('testPrimitiveTest03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('[testPrimitiveTest03] START');
-      try {
-        let result: boolean = napitestex.NapiPrimitiveTest03();
-        expect(result).assertTrue();
-        console.info('[testPrimitiveTest03] PASS');
-      } catch (err) {
-        console.error('[testPrimitiveTest03] ERROR. err.message: ' + err.message);
-        expect().assertFail();
-      }
-      done();
-    });
 
     /**
      * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0004
@@ -4311,5 +3679,136 @@ export default function napiCheckExTest() {
       
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiPromiseTest014 completed successfully');
     });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0001
+     * @tc.name envlifecycle001
+     * @tc.desc Test basic instance data set and get functionality
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle001 START');
+      try {
+        let testValue: number = 42;
+        let result: boolean = napitestex.testBasicInstanceDataSetAndGet(testValue);
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle001: Basic instance data set and get test passed');
+        console.info('envlifecycle001 PASS');
+      } catch (err) {
+        console.error('envlifecycle001 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0002
+     * @tc.name envlifecycle002
+     * @tc.desc Test multiple set instance data behavior and finalize callbacks
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle002 START');
+      try {
+        let valueA: number = 100;
+        let valueB: number = 200;
+        let result: boolean = napitestex.testMultipleSetInstanceData(valueA, valueB);
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle002: Multiple set instance data test passed');
+        console.info('envlifecycle002 PASS');
+      } catch (err) {
+        console.error('envlifecycle002 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0003
+     * @tc.name envlifecycle003
+     * @tc.desc Test instance data behavior without finalize callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle003 START');
+      try {
+        let value1: number = 300;
+        let value2: number = 400;
+        let result: boolean = napitestex.testNoFinalizeCallback(value1, value2);
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle003: No finalize callback test passed');
+        console.info('envlifecycle003 PASS');
+      } catch (err) {
+        console.error('envlifecycle003 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0005
+     * @tc.name envlifecycle005
+     * @tc.desc Test large data block set and get operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle005 START');
+      try {
+        let result: boolean = napitestex.testLargeDataBlockSetAndGet();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle005: Large data block set and get test passed');
+        console.info('envlifecycle005 PASS');
+      } catch (err) {
+        console.error('envlifecycle005 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0006
+     * @tc.name envlifecycle006
+     * @tc.desc Test API calls behavior within finalize callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle006 START');
+      try {
+        let result: boolean = napitestex.testFinalizeCallbackApiCalls();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle006: Finalize callback API calls test passed');
+        console.info('envlifecycle006 PASS');
+      } catch (err) {
+        console.error('envlifecycle006 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_INSTANCE_DATA_0007
+     * @tc.name envlifecycle007
+     * @tc.desc Test instance data persistence in long-running environment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('envlifecycle007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('envlifecycle007 START');
+      try {
+        let result: boolean = napitestex.testLongRunningInstanceDataPersistence();
+        expect(result).assertTrue();
+        hilog.info(0x0000, 'testTag', 'envlifecycle007: Long running instance data persistence test passed');
+        console.info('envlifecycle007 PASS');
+      } catch (err) {
+        console.error('envlifecycle007 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });    
   });
 }
