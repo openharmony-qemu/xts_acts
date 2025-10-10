@@ -44,6 +44,26 @@ struct QueryNavDestinationInfoNavDestination {
   build() {
     Column({space:20}) {
       Text(this.tState).fontSize(26).fontWeight(700).key('QueryNavDestinationInfoNavDestinationTextObserver').fontColor(Color.Red)
+      Button('testUndefined').onClick(() => {
+        let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
+        console.log('QueryNavDestinationInfoNavDestination info1 is: ', JSON.stringify(info1))
+        if (info1 == undefined) {
+          console.log('QueryNavDestinationInfoNavDestination test undefined info1')
+        }
+        AppStorage.setOrCreate('testUndefined', info1)
+      })
+        .height('5%')
+        .id('testUndefinedId')
+      Button('testUndefinedWId').onClick(() => {
+        let info2: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo(true);
+        console.log('QueryNavDestinationInfoNavDestination info2 is: ', JSON.stringify(info2))
+        if (info2 == undefined) {
+          console.log('QueryNavDestinationInfoNavDestination test undefined info2')
+        }
+        AppStorage.setOrCreate('test2Undefined', info2)
+      })
+        .height('5%')
+        .id('testUndefinedWId')
       Navigation() {
         NavRouter() {
           Row() {
@@ -88,6 +108,13 @@ struct XX {
   build() {
     Column({space:20}){
       Text(tt).fontSize(26).fontWeight(700).key('XXqueryNavDestinationInfoNavDestinationText01').fontColor(Color.Blue)
+      Button('testQueryNavDestinationInfo').onClick(() => {
+        let info3: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo(false);
+        console.log('QueryNavDestinationInfoNavDestination info3 is: ', JSON.stringify(info3))
+        AppStorage.setOrCreate('testW', info3)
+      })
+        .height('5%')
+        .id('testWId')
     }
   }
 }

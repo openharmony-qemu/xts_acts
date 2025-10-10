@@ -18,6 +18,7 @@ group("hiviewdfxtestacts") {
       "hiappeventtest/hiappevent:ActsPerformanceAnalysis20Test",
       "abilityconstanttest:ActsAbilityConstantTest",
       "apprecoverytest:ActsAppRecoveryTest",
+      "apprecoveryteststatic:ActsAppRecoveryStaticTest",
       "bytracetest:ActsBytraceJsTest",
       "errormangertest/errormangertest:ActsErrormangerTest",
       "faultlogtest/faultloggerndktest:ActsFaultExTest",

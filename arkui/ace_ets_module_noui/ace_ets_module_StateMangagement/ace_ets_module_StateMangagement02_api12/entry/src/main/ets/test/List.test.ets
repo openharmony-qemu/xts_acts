@@ -14,6 +14,7 @@
  */
 
 import appStorageRefJsunit from './StorageTest/appStorageRefJsunit.test';
+import AppStorageReturnValue from './StorageTest/AppStorageReturnValue.test';
 import localStorageRefJsunit from './StorageTest/localStorageRefJsunit.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
 import persistenceV2 from './StorageTest/persistenceV2.test';
@@ -88,6 +89,7 @@ import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsun
 
 export default function testsuite() {
     appStorageRefJsunit();
+    AppStorageReturnValue();
     localStorageRefJsunit();
     appStorageV2();
     persistenceV2();

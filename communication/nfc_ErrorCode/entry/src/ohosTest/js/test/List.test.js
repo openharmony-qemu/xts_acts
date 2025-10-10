@@ -19,15 +19,17 @@ import MifareClassicErrorTest from './MifareClassicTag.test.js'
 import UltralightTagErrorTest from './MifareUltralightTag.test.js'
 import nfcNDEFErrorTest from './NDEFTag.test.js'
 import nfcTagABFVErrorTest from './TagABFV.test.js'
-import parameter from '@ohos.systemparameter';
-let info = parameter.getSync("const.SystemCapability.Communication.NFC.Core" ,"false");
+import EmptyTest from './Empty.test.js'	
+let info = canIUse("SystemCapability.Communication.NFC.Core");
 export default function testsuite() {
-if (info != "false")
+if (info)
 {
     nfcIsoDepErrorTest();
     MifareClassicErrorTest();
     UltralightTagErrorTest();
     nfcNDEFErrorTest();
     nfcTagABFVErrorTest();
+} else {
+    EmptyTest();
 }
 }

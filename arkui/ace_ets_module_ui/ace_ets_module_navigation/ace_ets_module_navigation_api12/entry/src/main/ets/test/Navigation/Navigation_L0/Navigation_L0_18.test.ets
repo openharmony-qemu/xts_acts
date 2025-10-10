@@ -67,7 +67,27 @@ export default function Navigation_L0_18() {
       done();
     });
 
-
+    /**
+     * @tc.number Navigation_L0_18_0200
+     * @tc.name removeByNavDestinationId return false
+     * @tc.desc
+     */
+    it('Navigation_L0_18_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('Navigation_L0_18_0200 START');
+      await CommonFunc.sleep(1000);
+      sendEventByKey('Navigation_L0_18_btn1',10,"")
+      await CommonFunc.sleep(1000);
+      sendEventByKey('Navigation_L0_18_pageOne_btn1',10,"")
+      await CommonFunc.sleep(1000);
+      sendEventByKey('navigationfalseBtn',10,"")
+      await CommonFunc.sleep(1000);
+      let result: boolean | undefined = AppStorage.get('removeResult');
+      expect(result).assertEqual(false);
+      AppStorage.delete('removeResult');
+      await CommonFunc.sleep(1000);
+      console.info('Navigation_L0_18_0200 END');
+      done();
+    });
 
   })
 }
