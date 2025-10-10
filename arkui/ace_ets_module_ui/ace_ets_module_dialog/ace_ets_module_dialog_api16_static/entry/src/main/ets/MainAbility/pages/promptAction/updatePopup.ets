@@ -74,7 +74,7 @@ struct Index {
           const promptAction = context.getPromptAction();
           let uniqueId = this.getUniqueId();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          let targetId = frameNode?.getFirstChild()?.getUniqueId() as Double;
+          let targetId = Long.toDouble(frameNode?.getFirstChild()?.getUniqueId()!);
           promptAction.openPopup(contentNode, { id: targetId })
           setTimeout(() => {
             promptAction.updatePopup(contentNode, { radius: 0 })
