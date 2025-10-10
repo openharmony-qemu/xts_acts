@@ -1297,8 +1297,9 @@ export default function etsIntlPtsFunTest() {
         let value = date.toLocaleTimeString('en-US');
         console.log('DateTest018 :' + value);
       } catch(e) {
+        e = e as Error;
         console.log('DateTest018 Err:' + e);
-        expect(e == "RangeError").assertTrue();
+        expect(e.name == "RangeError").assertTrue();
       }
     })
 
@@ -1316,8 +1317,9 @@ export default function etsIntlPtsFunTest() {
         let value = date.toLocaleTimeString('it-IT');
         console.log('DateTest019 :' + value);
       } catch(e) {
+        e = e as Error;
         console.log('DateTest018 Err:' + e);
-        expect(e == "RangeError").assertTrue();
+        expect(e.name == "RangeError").assertTrue();
       }
     })
 

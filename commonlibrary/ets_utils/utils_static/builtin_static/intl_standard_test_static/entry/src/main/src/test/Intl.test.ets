@@ -1248,8 +1248,9 @@ export default function etsIntlFunTest() {
                 let value = relativetimefmt.format(-1, 'month');
                 console.log('RelativeTimeFormatTest016 :' + value);
             } catch (e) {
+                e = e as Error;
                 console.log('RelativeTimeFormatTest016 Err:' + e);
-                expect(e == "RangeError").assertTrue();
+                expect(e.name == "RangeError").assertTrue();
             }
         })
 
