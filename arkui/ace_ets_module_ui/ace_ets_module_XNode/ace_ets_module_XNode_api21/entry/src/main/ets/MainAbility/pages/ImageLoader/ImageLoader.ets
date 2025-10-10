@@ -67,7 +67,7 @@ struct AnimatedDrawableDescriptorTestLoader {
             this.imageHeight = result.imageHeight
           } catch (e) {
             console.info(`load failed`)
-            this.errorCode = JSON.stringify(e.code)
+            this.errorCode = e.code
           }
         })
 
