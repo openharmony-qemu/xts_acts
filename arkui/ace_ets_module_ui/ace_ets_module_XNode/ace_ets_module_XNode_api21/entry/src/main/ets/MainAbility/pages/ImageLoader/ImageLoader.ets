@@ -41,7 +41,7 @@ struct AnimatedDrawableDescriptorTestLoader {
       }
       Row({ space: 5 }){
         Text('errorCode')
-        Text(String(this.errorCode)).id('errorCode')
+        Text(this.errorCode).id('errorCode')
       }
 
       Button('同步加载drawable')
