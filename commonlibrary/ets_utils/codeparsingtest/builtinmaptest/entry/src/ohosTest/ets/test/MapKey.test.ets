@@ -72,7 +72,7 @@ import {
   MapKeysTest095,
   MapKeysTest096,
   MapKeysTest099,
-} from '../testability/pages/MapKey';
+} from './MapKey';
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
