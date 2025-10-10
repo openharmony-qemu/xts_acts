@@ -1195,9 +1195,9 @@ napi_value JSImagePixelmapHdrMetadataValueTypeCode(napi_env env, napi_callback_i
 
 napi_value JSImagePixelmapHdrMetadataValueStaticMetadataCode(napi_env env, napi_callback_info info)
 {
-    OH_Pixelmap_HdrMetadataValue *value;
-    value->staticMetadata = {};
-    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, value);
+    OH_Pixelmap_HdrMetadataValue value;
+    value.staticMetadata = {};
+    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, &value);
     int32_t resultValue = errCode == IMAGE_BAD_PARAMETER ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -1207,12 +1207,12 @@ napi_value JSImagePixelmapHdrMetadataValueStaticMetadataCode(napi_env env, napi_
 napi_value JSImagePixelmapHdrMetadataValueDynamicMetadataCode(napi_env env, napi_callback_info info)
 {
     uint8_t my_data[] = {0x01, 0x02, 0x03};
-    OH_Pixelmap_HdrMetadataValue *value;
-    value->dynamicMetadata = {
+    OH_Pixelmap_HdrMetadataValue value;
+    value.dynamicMetadata = {
         .data = my_data,
         .length = sizeof(my_data)
     };
-    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, value);
+    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, &value);
     int32_t resultValue = errCode == IMAGE_BAD_PARAMETER ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -1221,11 +1221,11 @@ napi_value JSImagePixelmapHdrMetadataValueDynamicMetadataCode(napi_env env, napi
 
 napi_value JSImagePixelmapHdrMetadataValueGainmapMetadataCode(napi_env env, napi_callback_info info)
 {
-    OH_Pixelmap_HdrMetadataValue *value;
-    value->gainmapMetadata = {
+    OH_Pixelmap_HdrMetadataValue value;
+    value.gainmapMetadata = {
         .writerVersion = 0
     };
-    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, value);
+    Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, &value);
     int32_t resultValue = errCode == IMAGE_BAD_PARAMETER ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
