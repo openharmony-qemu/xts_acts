@@ -39,7 +39,7 @@ import {
   MapforeachTest009,
   MapforeachTest026,
   MapforeachTest069
-} from '../testability/pages/MapForeach';
+} from './MapForeach';
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
