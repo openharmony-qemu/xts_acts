@@ -23,7 +23,7 @@ import { SetAddTest027, SetAddTest063, SetAddTest065, SetAddTest067, SetAddTest0
   SetAddTest096,
   SetAddTest097,
   SetAddTest099,
-  SetAddTest100} from './SetAdd';
+  SetAddTest100} from '../testability/pages/SetAdd';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
