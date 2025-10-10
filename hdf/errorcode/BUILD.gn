@@ -17,7 +17,7 @@ group("hdf_errorcode") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "hdf_errorcode:ActsHdfErrorCodeTest" ，
+      "hdf_errorcode:ActsHdfErrorCodeTest",
       "hdf_errorcodenoperm:ActsHdfErrorCodeNoPermTest" 
     ]
   }
