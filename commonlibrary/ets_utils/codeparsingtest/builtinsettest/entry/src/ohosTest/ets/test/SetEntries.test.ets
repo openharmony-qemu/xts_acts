@@ -29,7 +29,7 @@ import {
   SetEntriesTest097,
   SetEntriesTest098,
   SetEntriesTest099,
-  SetEntriesTest100} from '../testability/pages/SetEntries';
+  SetEntriesTest100} from './SetEntries';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
