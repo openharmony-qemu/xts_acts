@@ -86,7 +86,7 @@ struct ListItem_Delete_Start {
         })
         .id('ListItem_Delete_Start_button1')
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('100%')
@@ -116,7 +116,7 @@ struct ListItem_Delete_Start {
               }
             }
           })
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .width('90%')
       .height('80%')

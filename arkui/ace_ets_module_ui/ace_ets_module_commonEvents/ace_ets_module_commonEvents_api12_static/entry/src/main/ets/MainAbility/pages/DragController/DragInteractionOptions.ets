@@ -89,7 +89,7 @@ struct DragInteractionOptions1 {
           .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
             this.flag = "drag succ"
           })
-        }, (item: number, index: number): string => String(item))
+        }, (item: number, index: int): string => String(item))
       }
       .columnsTemplate('1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr')

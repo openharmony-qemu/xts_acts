@@ -26,7 +26,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   
-  public getData(index: number): number {
+  public getData(index: int): number {
     return this.dataArray[index.toInt()]
   }
 
@@ -38,28 +38,28 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
   
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
   
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
   
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
@@ -73,7 +73,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length
   }
 
@@ -105,8 +105,8 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   
-  public addItem(index: number): void {
-    this.dataArray.splice(index.toInt(), 0, this.dataArray.length)
+  public addItem(index: int): void {
+    this.dataArray.splice(index, 0, this.dataArray.length)
     this.notifyDataAdd(index)
   }
 
@@ -129,8 +129,8 @@ export class WaterFlowDataSource implements IDataSource<number> {
   
 
   
-  public deleteItem(index: number): void {
-    this.dataArray.splice(index.toInt(), 1)
+  public deleteItem(index: int): void {
+    this.dataArray.splice(index, 1)
     this.notifyDataDelete(index)
   }
 

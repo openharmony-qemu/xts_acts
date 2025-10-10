@@ -69,9 +69,9 @@ struct getVisibleContentInfo {
   build() {
     Column() {
       List({ space: 5, scroller: this.scroller }) {
-        ForEach(this.timeTable, (item: TimeTable, index: number) => {
+        ForEach(this.timeTable, (item: TimeTable, index: int) => {
           ListItemGroup() {
-            ForEach(item.projects, (project: string, subIndex: number) => {
+            ForEach(item.projects, (project: string, subIndex: int) => {
               ListItem() {
                 Text(project)
                   .width('100%')

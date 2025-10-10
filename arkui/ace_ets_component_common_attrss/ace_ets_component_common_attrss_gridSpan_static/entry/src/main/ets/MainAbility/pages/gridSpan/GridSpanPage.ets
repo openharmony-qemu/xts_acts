@@ -568,14 +568,14 @@ struct GridSpanPage {
 
           } else if (this.targetView == 'Grid') {
             Grid() {
-              ForEach(['0', '1', '2', '3', '4'], (item: string, index: number) => {
+              ForEach(['0', '1', '2', '3', '4'], (item: string, index: int) => {
                 ForEach(['0', '1', '2', '3', '4'], (day: string) => {
                   GridItem() {
                     Text(day).backgroundColor(Color.White)
                       .width('100%').height('100%').textAlign(TextAlign.Center)
                   }
                 })
-              }, (item: string, index: number) => item)
+              }, (item: string, index: int) => item)
             }
             .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
             .rowsTemplate('1fr 1fr 1fr 1fr 1fr')

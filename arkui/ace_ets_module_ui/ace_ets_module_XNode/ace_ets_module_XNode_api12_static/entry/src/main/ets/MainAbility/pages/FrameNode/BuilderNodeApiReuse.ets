@@ -46,11 +46,11 @@ class MyDataSource implements IDataSource<string>{
   private dataArray: Array<string> = new Array<string>();
   private listener: DataChangeListener | null = null
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length;
   }
 
-  public getData(index: number) {
+  public getData(index: int) {
     return this.dataArray[index.toInt()];
   }
 

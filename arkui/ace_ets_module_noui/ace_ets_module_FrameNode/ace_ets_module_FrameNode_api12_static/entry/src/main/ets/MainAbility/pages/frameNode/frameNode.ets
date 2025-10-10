@@ -63,7 +63,7 @@ class MyNodeController extends NodeController{
 struct frameNode1{
   private myNodeController:MyNodeController=new MyNodeController()
   private uiContext:UIContext|null=null
-  @State index :number =0
+  @State index :int =0
   @State count1 :number =0
   @State count2 :number =0
   @State count3 :number =0

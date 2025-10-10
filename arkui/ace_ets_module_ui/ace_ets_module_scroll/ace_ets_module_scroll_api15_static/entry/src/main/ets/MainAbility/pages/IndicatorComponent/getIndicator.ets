@@ -56,7 +56,7 @@ struct DigitIndicatorDemo1 {
   build() {
     Column() {
       Swiper(this.swiperController) {
-        ForEach(this.list, (item: number, i: number) => {
+        ForEach(this.list, (item: number, i: int) => {
           Text(item.toString())
             .width('100%')
             .height(160)

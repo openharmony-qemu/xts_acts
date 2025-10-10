@@ -2171,13 +2171,13 @@ struct BorderPage {
 			if (this.targetView == 'Scroll') {
 				Scroll() {
 					Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
 							Text('Scroll' + item.toString())
 								.width('90%')
 								.height(50)
 								.backgroundColor(Color.White)
 								.textAlign(TextAlign.Center)
-            }, (item: int, index: number) => item.toString())
+            }, (item: int, index: int) => item.toString())
 					}
 					.width('100%')
 				}
@@ -2188,7 +2188,7 @@ struct BorderPage {
 			if (this.targetView == 'SideBarContainer') {
 				SideBarContainer(SideBarContainerType.Embed) {
 					Column() {
-						ForEach([1, 2, 3], (item: int, index: number) => {
+						ForEach([1, 2, 3], (item: int, index: int) => {
 							Column({ space: 5 } as ColumnOptions) {
 								Image($r('app.media.icon'))
 									.width(50)
@@ -2219,11 +2219,11 @@ struct BorderPage {
 			}
 			if (this.targetView == 'Swiper') {
 				Swiper() {
-          ForEach([1, 2, 3], (item: int, index: number) => {
+          ForEach([1, 2, 3], (item: int, index: int) => {
 						Text('Swiper' + item)
 							.width('90%')
 							.height(50)
-          }, (item: int, index: number) => item.toString())
+          }, (item: int, index: int) => item.toString())
 				}
 					.indicator(true)
 					.backgroundColor(Color.White)
@@ -2259,7 +2259,7 @@ struct BorderPage {
 			}
 			if (this.targetView == 'WaterFlow') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -2271,7 +2271,7 @@ struct BorderPage {
 									.objectFit(ImageFit.Fill)
 							}
 						}
-          }, (item: int, index: number) => item.toString())
+          }, (item: int, index: int) => item.toString())
 				}
 					
 					.attributeModifier(this._borderWaterFlowModifier)
@@ -2312,7 +2312,7 @@ struct BorderPage {
 			}
 			if (this.targetView == 'FlowItem') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -2327,7 +2327,7 @@ struct BorderPage {
 						.backgroundColor(Color.Yellow)
 						
 						.attributeModifier(this._borderFlowItemModifier)
-          }, (item: int, index: number) => item.toString())
+          }, (item: int, index: int) => item.toString())
 				}
 					.backgroundColor(Color.Pink)
 					.width('100%')

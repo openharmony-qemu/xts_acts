@@ -87,22 +87,20 @@ struct SnapshotExample {
         .id('UniqueId_getSnapshot')
         .onClick((e: ClickEvent) => {
           try {
-            let uniqueId: Int = (this.myNodeController.imageNode?.getUniqueId() || 0) as Int;
             this.getUIContext()
-            .getComponentSnapshot()
-            .getWithUniqueId(uniqueId,
-              {
-                scale: this.snapshotScale,
-                waitUntilRenderFinished: this.snapshotWait
-              } as componentSnapshot.SnapshotOptions)
-            .then((pixmap: image.PixelMap) => {
-              this.pixmap = pixmap
-              this.text = 'UniqueId_getSnapshot_success'
-            })
-            .catch((err: Error) => {
-              console.log('error: ' + err)
-            })
-            
+              .getComponentSnapshot()
+              .getWithUniqueId(Long.toInt(this.myNodeController.imageNode?.getUniqueId()!),
+                {
+                  scale: this.snapshotScale,
+                  waitUntilRenderFinished: this.snapshotWait
+                } as componentSnapshot.SnapshotOptions)
+              .then((pixmap: image.PixelMap) => {
+                this.pixmap = pixmap
+                this.text = 'UniqueId_getSnapshot_success'
+              })
+              .catch((err: Error) => {
+                console.log('error: ' + err)
+              })
           } catch (error) {
             console.error('UniqueId get snapshot Error: ' + JSON.stringify(error))
           }
@@ -112,10 +110,9 @@ struct SnapshotExample {
         .id('UniqueId_getSyncSnapshot')
         .onClick((e: ClickEvent) => {
           try {
-            let uniqueId: Int = (this.myNodeController.imageNode?.getUniqueId() || 0) as Int;
             this.pixmap = this.getUIContext()
               .getComponentSnapshot()
-              .getSyncWithUniqueId(uniqueId,
+              .getSyncWithUniqueId(Long.toInt(this.myNodeController.imageNode?.getUniqueId()!),
                 {
                   scale: this.snapshotScale,
                   waitUntilRenderFinished: this.snapshotWait

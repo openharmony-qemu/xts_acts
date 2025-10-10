@@ -98,7 +98,7 @@ struct DragControllerPage {
                   return
                 }
                 this.createDrag = 'success'
-                this.dragAction?.on('statusChange', (dragAndDropInfo) => {
+                this.dragAction?.onStatusChange((dragAndDropInfo) => {
                   if (dragAndDropInfo.status == dragController.DragStatus.STARTED) {
                     console.log("drag has start");
                     this.start = 'STARTED'
@@ -109,7 +109,7 @@ struct DragControllerPage {
                       return
                     }
                     this.customBuilders.splice(0, this.customBuilders.length)
-                    this.dragAction?.off('statusChange')
+                    this.dragAction?.offStatusChange()
                   }
                 })
                 this.dragAction?.startDrag().then(() => {

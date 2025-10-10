@@ -43,10 +43,10 @@ struct WaterFlowEventDemo {
   minSize: number = 80
   maxSize: number = 180
   fontSize: number = 24
-  colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
-  dataCount: number = this.dataSource.totalCount()
+  dataCount: int = this.dataSource.totalCount()
   private itemHeightArray: number[] = new Array<number>()
   @State onReachText:string = ''
   @State onScrollText:string = ''
@@ -139,7 +139,7 @@ struct WaterFlowEventDemo {
           
           
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .id('water_event')
       .columnsTemplate('1fr 1fr') 

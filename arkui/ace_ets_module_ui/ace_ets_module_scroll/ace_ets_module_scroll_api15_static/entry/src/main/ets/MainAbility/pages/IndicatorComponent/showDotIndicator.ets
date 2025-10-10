@@ -81,7 +81,7 @@ struct showDotIndicatorDemo {
           console.log('change Index 3');
         })
       Swiper(this.swiperController) {
-        ForEach(this.list, (item: number, i: number) => {
+        ForEach(this.list, (item: number, i: int) => {
           Text(item.toString())
             .width('100%')
             .height(160)

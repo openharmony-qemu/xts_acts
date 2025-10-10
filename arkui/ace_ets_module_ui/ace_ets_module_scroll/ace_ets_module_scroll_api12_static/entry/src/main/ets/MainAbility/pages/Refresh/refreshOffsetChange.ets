@@ -179,7 +179,7 @@ struct RefreshOffsetOffsetExample {
           Text(this.message5).id('refresh_mess3')
           Refresh({ refreshing: $$(this.isRefreshing).value } /*, builder: this.customRefreshComponent() }*/) {
             Swiper() {
-              ForEach(this.arr, (item: string, index: number) => {
+              ForEach(this.arr, (item: string, index: int) => {
                 Text('' + item)
                   .width('100%')
                   .height(100)
@@ -187,7 +187,7 @@ struct RefreshOffsetOffsetExample {
                   .textAlign(TextAlign.Center)
                   .borderRadius(10)
                   .backgroundColor(0xFFFFFF)
-              }, (item: string, index: number) => item)
+              }, (item: string, index: int) => item)
             }
             .vertical(true)
             .loop(false)

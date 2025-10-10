@@ -59,7 +59,7 @@ struct ListExampleA {
       Text(this.message3).id('listBackToTop')
       Text(this.message4).id('listAbnormal')
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
@@ -68,7 +68,7 @@ struct ListExampleA {
           .onAppear(() => {
             this.currentIndex = index;
           })
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .backToTop(this.isBackToTop)
       .id('listScroll_4')

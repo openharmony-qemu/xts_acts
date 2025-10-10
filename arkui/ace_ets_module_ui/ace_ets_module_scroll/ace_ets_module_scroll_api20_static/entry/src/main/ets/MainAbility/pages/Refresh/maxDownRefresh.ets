@@ -100,7 +100,7 @@ struct maxPullDownRefresh {
 
         Refresh({ refreshing: $$(this.isRefreshing) }) {
           List() {
-            ForEach(this.arr, (item: string, i: number) => {
+            ForEach(this.arr, (item: string, i: int) => {
               ListItem() {
                 Text('' + item)
                   .width('80%')

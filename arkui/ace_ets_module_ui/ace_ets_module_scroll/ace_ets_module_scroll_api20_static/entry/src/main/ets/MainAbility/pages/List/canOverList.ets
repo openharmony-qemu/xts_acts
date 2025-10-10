@@ -110,7 +110,7 @@ struct canOverScrollList {
       }
 
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
               .id('canOverScroll_list_' + item)

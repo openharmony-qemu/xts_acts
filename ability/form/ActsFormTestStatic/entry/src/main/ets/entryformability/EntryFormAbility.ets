@@ -358,10 +358,6 @@ export default class EntryFormAbility extends FormExtensionAbility {
     hilog.info(DOMAIN, TAG, 'onCastToNormalForm testing');
   }
 
-  onUpdateForm(formId: string) {
-    hilog.info(DOMAIN, TAG, 'onUpdateForm testing');
-  }
-
   onFormEvent(formId: string, message: string) {
     hilog.info(DOMAIN, TAG, 'onFormEvent testing');
   }
