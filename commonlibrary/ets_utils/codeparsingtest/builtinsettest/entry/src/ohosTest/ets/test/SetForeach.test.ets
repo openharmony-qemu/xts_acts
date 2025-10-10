@@ -66,7 +66,7 @@ import {
   SetForEachTest119,
   SetForEachTest120,
   SetForEachTest129
-} from '../testability/pages/SetForeach';
+} from './SetForeach';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
