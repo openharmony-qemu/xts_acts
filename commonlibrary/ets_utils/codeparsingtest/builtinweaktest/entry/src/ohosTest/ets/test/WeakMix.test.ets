@@ -14,7 +14,7 @@
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { WeakMixTestUtils } from '../testability/pages/WeakMixTestUtils.js'; // 导入JS验证工具
+import { WeakMixTestUtils } from './WeakMixTestUtils.js'; // 导入JS验证工具
 
 
 
