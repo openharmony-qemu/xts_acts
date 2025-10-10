@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption, createUserAlbum, genRandomStr } from '../../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, createUserAlbum, genRandomStr, fetchOption } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
 
@@ -26,11 +26,11 @@ async function setOrientationPromiseTest(done: Function, testName: string, orien
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
     let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-      await phAccessHelper.getAssets(fetchAllOption());
+      await phAccessHelper.getAssets(fetchOption(testName, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE));
     const count = await fetchResult.getCount();
     if (count == 0) {
       await createUserAlbum(testContext, 'setOrientation', 'testAlbum');
-      fetchResult = await phAccessHelper.getAssets(fetchAllOption());
+      fetchResult = await phAccessHelper.getAssets(fetchOption(testName, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE));
     }
     let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
     await asset.clone(genRandomStr(10));
