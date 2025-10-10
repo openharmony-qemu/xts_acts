@@ -29,7 +29,7 @@ import {
   SetDeleteTest073,
   SetDeleteTest094,
   SetDeleteTest100
-} from './SetDelete';
+} from '../testability/pages/SetDelete';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
