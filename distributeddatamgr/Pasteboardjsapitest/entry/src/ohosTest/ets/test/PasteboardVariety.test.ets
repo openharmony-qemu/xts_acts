@@ -237,7 +237,7 @@ export default function PasteboardVarietyTest() {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
         let pasteDataType: Array<String> = pasteData.getMimeTypes();
         expect(pasteDataType.length).assertEqual(1);
-        expect(pasteDataType[0]).assertEqual('app/xml');
+        expect(pasteDataType).assertDeepEquals(["app/xml"]);
       } catch (error) {
         console.info(TAG + 'code:' + error.code + ',message:' + error.message);
         expect().assertFail();
@@ -570,8 +570,8 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
      * @tc.number     PasteboardVariety_1100
+     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
      * @tc.desc       setUnifiedData Verify the properties of the appRecordData type
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -589,6 +589,39 @@ export default function PasteboardVarietyTest() {
         expect().assertFail();
       })
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_1900 end-----")
+    })
+
+    /**
+     * @tc.number     PasteboardVariety_1200
+     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_2000
+     * @tc.desc       setUnifiedData Verify the properties of the appRecordData type
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardVariety_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_2000 start-----")
+      let record: Record<string, pasteboard.ValueType> = {};
+      record[pasteboard.MIMETYPE_TEXT_PLAIN] = 'hello';
+      record[pasteboard.MIMETYPE_TEXT_URI] = 'dataability:///com.example.myapplication1/user.txt';
+      record[pasteboard.MIMETYPE_TEXT_HTML] = 'hello';
+      let pasteData: pasteboard.PasteData = pasteboard.createData(record);
+      await systemPasteboard.setData(pasteData).then(() => {
+        expect(systemPasteboard.hasDataSync()).assertTrue();
+        console.info(TAG + 'Succeeded in setting PasteData.');
+      }).catch((err: BusinessError) => {
+        console.error(TAG + 'Failed to set PasteData. Cause: ' + err.message);
+        expect().assertFail();
+      });
+      await systemPasteboard.getMimeTypes().then((data: Array<String>) => {
+        expect(data.length).assertEqual(3);
+        expect(data).assertDeepEquals(['text/plain','text/html','text/uri']);
+        console.info(TAG + 'Succeeded in getting mimeTypes. mimeTypes: ' + JSON.stringify(data));
+      }).catch((err:BusinessError) => {
+        console.error(TAG + 'Failed to get mimeTypes. Cause:' + err.message);
+        expect().assertFail();
+      })
+      console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_2000 end-----")
     })
   })
 }

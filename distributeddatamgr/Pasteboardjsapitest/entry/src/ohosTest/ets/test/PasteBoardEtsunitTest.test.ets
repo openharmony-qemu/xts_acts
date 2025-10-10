@@ -106,7 +106,8 @@ export default function pasteBoardJEtsunitTest() {
             expect(data).assertTrue();
 
             let types: Array<String> = pasteData.getMimeTypes();
-            expect("text/plain").assertEqual(types[0]);
+            expect(types.length == 1).assertTrue();
+            expect(types).assertDeepEquals(["text/plain"]);
             console.info('f_test1: Checks the number of records');
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
