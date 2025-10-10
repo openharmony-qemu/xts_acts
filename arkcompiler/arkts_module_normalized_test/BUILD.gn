@@ -19,12 +19,12 @@ group("ActsArktsModuleNormalizedTest") {
     deps = [
       "basic_scenario:ModuleNormalizedBasicScenarioTest",
       "dynamic_load:ModuleNormalizedDynamicLoadTest",
+      "execute_promise_after_module_load:ModuleNormalizedExecutePromiseTest",
       "exporttest:ModuleNormalizedExportTest",
+      "lazy_load:ModuleNormalizedLazyLoadTest",
       "napi_load:ModuleNormalizedNapiLoadTest",
       "static_load:ModuleNormalizedStaticLoadTest",
       "worker_path_load:ModuleNormalizedWorkerPathLoadTest",
-      "lazy_load:ModuleNormalizedLazyLoadTest",
-      "execute_promise_after_module_load:ModuleNormalizedExecutePromiseTest",
     ]
   }
 }
