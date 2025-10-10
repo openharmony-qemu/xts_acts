@@ -23,7 +23,12 @@ group("http") {
       "httpPublic:ActsNetManagerHttpETSTest",
       "httpRequest:ActsNetworkManagerHttpRequestTest",
       "httpRequestOnAndOff:ActsNetworkManagerHttpRequestOnAndOffTest",
-      "HttpResponse:ActsNetworkManagerHttpResponseTest"
+      "HttpResponse:ActsNetworkManagerHttpResponseTest",
+"ActsNetworkManagerHttpCacheTestStatic:ActsNetworkManagerHttpCacheStaticTest",
+"ActsNetworkManagerHttpDataOptionsTestStatic:ActsNetworkManagerHttpDataOptionsStaticTest",
+"ActsNetworkManagerHttpRequestTestStatic:ActsNetworkManagerHttpRequestStaticTest",
+"ActsNetworkManagerHttpResponseTestStatic:ActsNetworkManagerHttpResponseStaticTest",
+"ActsNetworkMgrHttpNopTestStatic:ActsNetworkMgrHttpNopStaticTest"
     ]
   }
 }
