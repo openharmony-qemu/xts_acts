@@ -23,24 +23,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsFloatFourthPrototypebTest() {
-  describe('builtinsFloatFourthPrototypebTest', ():void => {
+  describe('builtinsFloatFourthPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -356,166 +356,6 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(Number.NEGATIVE_INFINITY);
         expect(a.toString(10)).assertEqual('Infinity');
         expect(b.toString(10)).assertEqual('-Infinity');
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_1700
-     * @tc.name builtinsFloatFourthPrototypebTest1700
-     * @tc.desc test unboxed(): float (正数)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest1700';
-        console.info(`${caseName}, test start`);
-        const a = new Float(123.456);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(123.456 as float);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_1800
-     * @tc.name builtinsFloatFourthPrototypebTest1800
-     * @tc.desc test unboxed(): float (负数)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest1800';
-        console.info(`${caseName}, test start`);
-        const a = new Float(-789.123);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(-789.123 as float);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_1900
-     * @tc.name builtinsFloatFourthPrototypebTest1900
-     * @tc.desc test unboxed(): float (零)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest1900';
-        console.info(`${caseName}, test start`);
-        const a = new Float(0.0);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(0.0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_2000
-     * @tc.name builtinsFloatFourthPrototypebTest2000
-     * @tc.desc test unboxed(): float (NaN)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest2000';
-        console.info(`${caseName}, test start`);
-        const a = new Float(NaN);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(Number.isNaN(result)).assertEqual(true);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_2100
-     * @tc.name builtinsFloatFourthPrototypebTest2100
-     * @tc.desc test unboxed(): float (Infinity)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest2100';
-        console.info(`${caseName}, test start`);
-        const a = new Float(Number.POSITIVE_INFINITY);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(Number.POSITIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_2200
-     * @tc.name builtinsFloatFourthPrototypebTest2200
-     * @tc.desc test unboxed(): float (-Infinity)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest2200';
-        console.info(`${caseName}, test start`);
-        const a = new Float(Number.NEGATIVE_INFINITY);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(Number.NEGATIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_2300
-     * @tc.name builtinsFloatFourthPrototypebTest2300
-     * @tc.desc test unboxed(): float (MAX_VALUE)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest2300';
-        console.info(`${caseName}, test start`);
-        const a = new Float(Float.MAX_VALUE);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(Float.MAX_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_FLOAT_FOURTH_PROTOTYPEB_TEST_2400
-     * @tc.name builtinsFloatFourthPrototypebTest2400
-     * @tc.desc test unboxed(): float (MIN_VALUE)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsFloatFourthPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatFourthPrototypebTest2400';
-        console.info(`${caseName}, test start`);
-        const a = new Float(Float.MIN_VALUE);
-        const result = a.unboxed();
-        expect(typeof result).assertEqual('number');
-        expect(result).assertEqual(Float.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })

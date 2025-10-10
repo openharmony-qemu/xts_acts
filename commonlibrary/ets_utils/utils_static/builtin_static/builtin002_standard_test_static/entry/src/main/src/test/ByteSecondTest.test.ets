@@ -22,24 +22,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsByteSecondPrototypebTest() {
-  describe('builtinsByteSecondPrototypebTest', ():void => {
+  describe('builtinsByteSecondPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -53,7 +53,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0100'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(2);
@@ -73,7 +73,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0200'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(1);
@@ -93,7 +93,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0310'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(1);
@@ -113,7 +113,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0400'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(1);
@@ -133,7 +133,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0500'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(0);
@@ -153,7 +153,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0600'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(0);
@@ -173,7 +173,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0700'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(-1);
@@ -193,7 +193,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0800'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(1);
@@ -212,7 +212,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest0900'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte();
@@ -231,7 +231,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1000'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(-1);
@@ -240,7 +240,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1100
      * @tc.name builtinsByteSecondPrototypebTest1100
@@ -250,7 +250,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1100'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MAX_VALUE);
@@ -269,7 +269,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1200'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MIN_VALUE);
@@ -288,7 +288,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1310'
         console.info(`${caseName}, test start`);
         const testValue = 42;
@@ -308,7 +308,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1400'
         console.info(`${caseName}, test start`);
         const testValue = -42;
@@ -328,7 +328,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1500'
         const byte1 = new Byte(0);
         const byte2 = new Byte(1);
@@ -347,7 +347,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1600'
         const byte1 = new Byte(1);
         const result = byte1.toFloat();
@@ -365,7 +365,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1700'
         const byte1 = new Byte();
         const result = byte1.toFloat();
@@ -383,7 +383,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1800'
         const byte1 = new Byte(-1);
         const result = byte1.toFloat();
@@ -401,7 +401,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest1900'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toFloat();
@@ -419,7 +419,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2000'
         const byte1 = new Byte(Byte.MIN_VALUE);
         const result = byte1.toFloat();
@@ -427,7 +427,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2100
      * @tc.name builtinsByteSecondPrototypebTest2100
@@ -437,7 +437,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2100'
         const testValue = 42;
         const byte1 = new Byte(testValue);
@@ -456,7 +456,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2200'
         const testValue = -42;
         const byte1 = new Byte(testValue);
@@ -475,7 +475,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2310'
         const byte1 = new Byte(0);
         const byte2 = new Byte(1);
@@ -494,7 +494,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2400'
         const byte1 = new Byte(1);
         const byte2 = new Byte(1);
@@ -513,7 +513,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2500'
         const byte1 = new Byte(1);
         const result = byte1.toInt();
@@ -531,7 +531,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2600'
         const byte1 = new Byte();
         const result = byte1.toInt();
@@ -549,7 +549,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2700'
         const byte1 = new Byte(-1);
         const result = byte1.toInt();
@@ -567,7 +567,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2800'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toInt();
@@ -585,7 +585,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest2900'
         const byte1 = new Byte(Byte.MIN_VALUE);
         const result = byte1.toInt();
@@ -603,7 +603,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3000'
         const testValue = 42;
         const byte1 = new Byte(testValue);
@@ -622,7 +622,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3100'
         const testValue = -42;
         const byte1 = new Byte(testValue);
@@ -641,7 +641,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3200'
         const testValue = -42;
         const byte1 = new Byte(testValue);
@@ -660,7 +660,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3300'
         const byte1 = new Byte(0);
         const byte2 = new Byte(1);
@@ -679,7 +679,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3400'
         const byte1 = new Byte(0);
         const result = byte1.toLong();
@@ -697,7 +697,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3500'
         const byte1 = new Byte(42);
         const result = byte1.toLong();
@@ -715,7 +715,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3600'
         const byte1 = new Byte(42);
         const result = byte1.toLong();
@@ -733,7 +733,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3700'
         const byte1 = new Byte(-100);
         const result = byte1.toLong();
@@ -751,7 +751,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3800'
         const byte1 = new Byte(Byte.MIN_VALUE);
         const result = byte1.toLong();
@@ -769,7 +769,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest3900'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toLong();
@@ -777,7 +777,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4000
      * @tc.name builtinsByteSecondPrototypebTest4000
@@ -787,7 +787,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4000'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toLong();
@@ -805,7 +805,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4100'
         const byte1 = new Byte(1);
         const byte2 = new Byte(-1);
@@ -824,7 +824,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4200'
         const byte1 = new Byte(0);
         const result = byte1.toShort();
@@ -842,7 +842,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4300'
         const byte1 = new Byte(100);
         const result = byte1.toShort();
@@ -850,7 +850,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4400
      * @tc.name builtinsByteSecondPrototypebTest4400
@@ -860,7 +860,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4400'
         const byte1 = new Byte(-50);
         const result = byte1.toShort();
@@ -878,7 +878,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4500'
         const byte1 = new Byte(Byte.MIN_VALUE);
         const result = byte1.toShort();
@@ -896,7 +896,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4600'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toShort();
@@ -914,7 +914,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4700'
         const byte1 = new Byte(127);
         const result = byte1.toShort();
@@ -922,7 +922,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4800
      * @tc.name builtinsByteSecondPrototypebTest4800
@@ -932,7 +932,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4800'
         const byte1 = new Byte(-128);
         const result = byte1.toShort();
@@ -950,7 +950,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4900'
         const value: int = 65;
         const byte1 = new Byte(value);
@@ -958,7 +958,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5000
      * @tc.name builtinsByteSecondPrototypebTest5000
@@ -968,7 +968,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5000'
         const byte1 = new Byte(0);
         const result = byte1.toString();
@@ -986,7 +986,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5100'
         const byte1 = new Byte(5);
         const result = byte1.toString();
@@ -1004,7 +1004,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5200'
         const byte1 = new Byte(127);
         const result = byte1.toString();
@@ -1022,7 +1022,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5300'
         const byte1 = new Byte(-3);
         const result = byte1.toString();
@@ -1040,7 +1040,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5400'
         const byte1 = new Byte(-128);
         const result = byte1.toString();
@@ -1058,7 +1058,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5500'
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toString();
@@ -1066,7 +1066,7 @@ export default function builtinsByteSecondPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5600
      * @tc.name builtinsByteSecondPrototypebTest5600
@@ -1076,7 +1076,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5600'
         const byte1 = new Byte(Byte.MIN_VALUE);
         const result = byte1.toString();
@@ -1094,7 +1094,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest05700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5700'
         const value: int = 42;
         const byte1 = new Byte(value);
@@ -1113,7 +1113,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5701'
         const byte1 = new Byte(1);
         const byte2 = new Byte(-1);
@@ -1132,7 +1132,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5800'
         const result = Byte.valueOf(0);
         expect(result).assertEqual(0);
@@ -1149,175 +1149,175 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5900'
         const result = Byte.valueOf(0);
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6000
-         * @tc.name builtinsByteSecondPrototypebTest6000
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6000';
-            const result = Byte.valueOf(42);
-            expect(result).assertEqual(42);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6000
+     * @tc.name builtinsByteSecondPrototypebTest6000
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6000';
+        const result = Byte.valueOf(42);
+        expect(result).assertEqual(42);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6100
-         * @tc.name builtinsByteSecondPrototypebTest6100
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6100';
-            const result = Byte.valueOf(-100);
-            expect(result).assertEqual(-100);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6100
+     * @tc.name builtinsByteSecondPrototypebTest6100
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6100';
+        const result = Byte.valueOf(-100);
+        expect(result).assertEqual(-100);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6200
-         * @tc.name builtinsByteSecondPrototypebTest6200
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6200';
-            const result = Byte.valueOf(Byte.MAX_VALUE);
-            expect(result).assertEqual(127);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6200
+     * @tc.name builtinsByteSecondPrototypebTest6200
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6200';
+        const result = Byte.valueOf(Byte.MAX_VALUE);
+        expect(result).assertEqual(127);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6300
-         * @tc.name builtinsByteSecondPrototypebTest6300
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6300';
-            const result = Byte.valueOf(Byte.MIN_VALUE);
-            expect(result).assertEqual(-128);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6300
+     * @tc.name builtinsByteSecondPrototypebTest6300
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6300';
+        const result = Byte.valueOf(Byte.MIN_VALUE);
+        expect(result).assertEqual(-128);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6400
-         * @tc.name builtinsByteSecondPrototypebTest6400
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6400';
-            const result1 = Byte.valueOf(10);
-            const result2 = Byte.valueOf(10);
-            expect(result1).assertEqual(result2);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6400
+     * @tc.name builtinsByteSecondPrototypebTest6400
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6400';
+        const result1 = Byte.valueOf(10);
+        const result2 = Byte.valueOf(10);
+        expect(result1).assertEqual(result2);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6500
-         * @tc.name builtinsByteSecondPrototypebTest6500
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6500';
-            const maxResult = Byte.valueOf(Byte.MAX_VALUE);
-            const minResult = Byte.valueOf(Byte.MIN_VALUE);
-            expect(maxResult).assertEqual(127);
-            expect(minResult).assertEqual(-128);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6500
+     * @tc.name builtinsByteSecondPrototypebTest6500
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6500';
+        const maxResult = Byte.valueOf(Byte.MAX_VALUE);
+        const minResult = Byte.valueOf(Byte.MIN_VALUE);
+        expect(maxResult).assertEqual(127);
+        expect(minResult).assertEqual(-128);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6501
-         * @tc.name builtinsByteSecondPrototypebTest6501
-         * @tc.desc test valueOf() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6501';
-            const value = 65;
-            const fromConstructor = new Byte(value);
-            const fromValueOf = Byte.valueOf(value);
-            expect(fromValueOf).assertEqual(fromConstructor);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6501
+     * @tc.name builtinsByteSecondPrototypebTest6501
+     * @tc.desc test valueOf() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6501';
+        const value = 65;
+        const fromConstructor = new Byte(value);
+        const fromValueOf = Byte.valueOf(value);
+        expect(fromValueOf).assertEqual(fromConstructor);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6600
-         * @tc.name builtinsByteSecondPrototypebTest6600
-         * @tc.desc test sub() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6600';
-            const firstNumber = new Byte(50);
-            const secondNumber = new Byte(30);
-            const difference = firstNumber.sub(secondNumber);
-            expect(difference.unboxed()).assertEqual(20);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6600
+     * @tc.name builtinsByteSecondPrototypebTest6600
+     * @tc.desc test sub() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6600';
+        const firstNumber = new Byte(50);
+        const secondNumber = new Byte(30);
+        const difference = firstNumber.sub(secondNumber);
+        expect(difference).assertEqual(20);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
 
-        /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6700
-         * @tc.name builtinsByteSecondPrototypebTest6700
-         * @tc.desc test sub() return value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('builtinsByteSecondPrototypebTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-          async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6700';
-            const minuend = new Byte(-40);
-            const subtrahend = new Byte(-10);
-            const result = minuend.sub(subtrahend);
-            expect(result.unboxed()).assertEqual(-30);
-            console.info(`${caseName}, test end`);
-            Done();
-          })
-    
+    /**
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6700
+     * @tc.name builtinsByteSecondPrototypebTest6700
+     * @tc.desc test sub() return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('builtinsByteSecondPrototypebTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const caseName = 'builtinsByteSecondPrototypebTest6700';
+        const minuend = new Byte(-40);
+        const subtrahend = new Byte(-10);
+        const result = minuend.sub(subtrahend);
+        expect(result).assertEqual(-30);
+        console.info(`${caseName}, test end`);
+        Done();
+      })
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6800
      * @tc.name builtinsByteSecondPrototypebTest6800
@@ -1327,12 +1327,12 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest6800';
         const zeroValue = new Byte(0);
         const operand = new Byte(15);
         const negativeResult = zeroValue.sub(operand);
-        expect(negativeResult.unboxed()).assertEqual(-15);
+        expect(negativeResult).assertEqual(-15);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1346,12 +1346,12 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest6900';
         const positiveValue = new Byte(100);
         const sameValue = new Byte(100);
         const zeroResult = positiveValue.sub(sameValue);
-        expect(zeroResult.unboxed()).assertEqual(0);
+        expect(zeroResult).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1365,16 +1365,16 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7000';
         const maxByte = new Byte(Byte.MAX_VALUE);
         const unitValue = new Byte(1);
         const belowMax = maxByte.sub(unitValue);
-        expect(belowMax.unboxed()).assertEqual(126);
+        expect(belowMax).assertEqual(126);
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7100
      * @tc.name builtinsByteSecondPrototypebTest7100
@@ -1384,12 +1384,12 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7100';
         const minByte = new Byte(Byte.MIN_VALUE);
         const unitValue = new Byte(1);
         const result = minByte.sub(unitValue);
-        expect(result.unboxed()).assertEqual(127);
+        expect(result).assertEqual(127);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1403,7 +1403,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7200';
         const decimalValue = new Byte(5);
         const binaryString = decimalValue.toString(2);
@@ -1421,7 +1421,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7201';
         const negativeValue = new Byte(-3);
         const binaryResult = negativeValue.toString(2);
@@ -1439,7 +1439,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7300';
         const testValue = new Byte(64 as byte);
         const octalString = testValue.toString(8);
@@ -1457,7 +1457,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7400';
         const hexValue = new Byte(255 as byte);
         const hexString = hexValue.toString(16);
@@ -1475,7 +1475,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7500';
         const maxByte = new Byte(Byte.MAX_VALUE);
         const base36String = maxByte.toString(36);
@@ -1493,7 +1493,7 @@ export default function builtinsByteSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsByteSecondPrototypebTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7600';
         const zeroInstance = new Byte(0 as byte);
         expect(zeroInstance.toString(2)).assertEqual('0');
@@ -1503,113 +1503,5 @@ export default function builtinsByteSecondPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7700
-     * @tc.name builtinsByteSecondPrototypebTest7700
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest7700';
-        const emptyInstance = new Byte();
-        const primitiveValue = emptyInstance.unboxed();
-        expect(primitiveValue).assertEqual(0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8100
-     * @tc.name builtinsByteSecondPrototypebTest8100
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest8100';
-        const positiveNumber = new Byte(42 );
-        const extractedValue = positiveNumber.unboxed();
-        expect(extractedValue).assertEqual(42);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8200
-     * @tc.name builtinsByteSecondPrototypebTest8200
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest8200';
-        const negativeNumber = new Byte(-37);
-        const numericValue = negativeNumber.unboxed();
-        expect(numericValue).assertEqual(-37);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7800
-     * @tc.name builtinsByteSecondPrototypebTest7800
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest7800';
-        const maxValueHolder = new Byte(Byte.MAX_VALUE);
-        const maxPrimitive = maxValueHolder.unboxed();
-        expect(maxPrimitive).assertEqual(127);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7900
-     * @tc.name builtinsByteSecondPrototypebTest7900
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest7900';
-        const minValueContainer = new Byte(Byte.MIN_VALUE);
-        const minPrimitive = minValueContainer.unboxed();
-        expect(minPrimitive).assertEqual(-128);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8000
-     * @tc.name builtinsByteSecondPrototypebTest8000
-     * @tc.desc test unboxed return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsByteSecondPrototypebTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest8000';
-        const originalContainer = new Byte(100);
-        const operationResult = originalContainer.sub(new Byte(50));
-        const finalValue = operationResult.unboxed();
-        expect(finalValue).assertEqual(50);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
   })
 }
