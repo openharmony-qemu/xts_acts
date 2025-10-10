@@ -16,6 +16,9 @@ import("//build/ohos_var.gni")
 group("hdf_errorcode") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "hdf_errorcode:ActsHdfErrorCodeTest" ]
+    deps = [
+      "hdf_errorcode:ActsHdfErrorCodeTest",
+      "hdf_errorcodenoperm:ActsHdfErrorCodeNoPermTest" 
+    ]
   }
 }
