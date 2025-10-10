@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { WeakRefTestUtils } from '../testability/pages/WeakRefTestUtils'; // 导入JS验证工具
+import { WeakRefTestUtils } from './WeakRefTestUtils'; // 导入JS验证工具
 
 
 export default function WeakRefTest() {
