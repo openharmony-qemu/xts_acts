@@ -57,7 +57,7 @@ struct lanesHeaderGroupExample {
   build() {
     Column() {
       List({ space: 5, scroller: this.scroller }) {
-        ForEach(this.arr, (item0: number, groupIndex: number) => {
+        ForEach(this.arr, (item0: number, groupIndex: int) => {
           
           
           

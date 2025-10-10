@@ -53,7 +53,7 @@ struct scrollBarMarginWaterFlow {
   build() {
     Column(){
       WaterFlow({ scroller:this.scroller }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           FlowItem() {
             Text('N' + item)
               .width('100%')

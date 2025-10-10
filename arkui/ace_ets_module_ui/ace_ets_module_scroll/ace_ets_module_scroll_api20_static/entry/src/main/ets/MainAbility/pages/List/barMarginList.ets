@@ -52,7 +52,7 @@ struct scrollBarMarginList {
   build() {
     Column() {
       List({ scroller: this.listScroller }) {
-        ForEach(this.arr, (item1: string, index: number) => {
+        ForEach(this.arr, (item1: string, index: int) => {
           ListItem() {
             Text('item' + item1)
               .fontSize(16)

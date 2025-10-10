@@ -18,11 +18,11 @@ export class BasicDataSource<T> implements IDataSource<T> {
   private listeners: DataChangeListener[] = [];
   protected dataArray: T[] = [];
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length;
   }
 
-  public getData(index: number): T {
+  public getData(index: int): T {
     return this.dataArray[index.toInt()];
   }
 
@@ -47,25 +47,25 @@ export class BasicDataSource<T> implements IDataSource<T> {
     })
   }
 
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     })
   }
 
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     })
   }
 
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     })
   }
 
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
     })

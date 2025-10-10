@@ -46,7 +46,7 @@ struct focusedListItemExample {
   build() {
     Column() {
       List({ space: 10, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('item-' + item)
               .id('focused_color_' + item)

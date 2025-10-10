@@ -48,7 +48,7 @@ struct contentOffsetSnapAlignSTART {
     Column() {
       Text('scrollSnapAlign START')
       List({ space: 10, initialIndex: 5, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')

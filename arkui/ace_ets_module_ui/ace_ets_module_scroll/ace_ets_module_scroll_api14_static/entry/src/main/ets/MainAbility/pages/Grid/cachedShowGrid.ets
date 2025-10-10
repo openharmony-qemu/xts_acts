@@ -62,7 +62,7 @@ struct cachedCountShowGridExample {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.arr, (item: string, index: number) => {
+        ForEach(this.arr, (item: string, index: int) => {
           GridItem({ style: GridItemStyle.PLAIN }) {
             Text('' + item)
               .id('show_grid_' + item)

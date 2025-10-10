@@ -58,8 +58,8 @@ struct GridRowCol {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid() {
-        ForEach(this.Number, (day: string ,index1:number|undefined) => {
-          ForEach(this.Number, (day: string ,index2:number|undefined) => {
+        ForEach(this.Number, (day: string ,index1:int|undefined) => {
+          ForEach(this.Number, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

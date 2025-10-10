@@ -43,7 +43,7 @@ struct LazyVGridLayoutSample1 {
     Column() {
       WaterFlow() {
         LazyVGridLayout() {
-          LazyForEach(this.arr, (item: number, i: number) => {
+          LazyForEach(this.arr, (item: number, i: int) => {
             Text('item' + item.toString())
               .width('100%')
               .height('25%')

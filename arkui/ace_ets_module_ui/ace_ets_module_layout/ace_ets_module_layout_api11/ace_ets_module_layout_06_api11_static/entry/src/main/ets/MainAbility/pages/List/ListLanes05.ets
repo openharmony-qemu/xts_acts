@@ -58,13 +58,13 @@ struct ListLanes05 {
   build() {
     Column() {
       List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width(100).height('100%').fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem0501_' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey05_1')
       .listDirection(this.listDirection) 
@@ -74,13 +74,13 @@ struct ListLanes05 {
       .height('20%')
 
       List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width(100).height('100%').fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem02_' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey05_2')
       .listDirection(this.listDirection) 
@@ -90,13 +90,13 @@ struct ListLanes05 {
       .height('20%')
 
       List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width(100).height('100%').fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem03_' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey05_3')
       .listDirection(this.listDirection) 
@@ -106,13 +106,13 @@ struct ListLanes05 {
       .height('20%')
 
       List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width(100).height('100%').fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem04_' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey05_4')
       .listDirection(this.listDirection) 

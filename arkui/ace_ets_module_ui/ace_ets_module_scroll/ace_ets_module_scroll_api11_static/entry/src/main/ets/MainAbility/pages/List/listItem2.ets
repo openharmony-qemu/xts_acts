@@ -93,7 +93,7 @@ struct ListItemExample2 {
             })
         }.key('ListItem')
 
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')

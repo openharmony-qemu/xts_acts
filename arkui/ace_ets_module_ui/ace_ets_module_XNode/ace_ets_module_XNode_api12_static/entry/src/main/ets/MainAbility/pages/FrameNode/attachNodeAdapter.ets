@@ -115,9 +115,9 @@ class MyNodeAdapter extends NodeAdapter {
     console.log('UINodeAdapter after remove count:' + this.totalNodeCount);
   }
 
-  moveData(from: number, to: number): void {
-    let tmp = this.data.splice(from.toInt(), 1);
-    this.data.splice(to.toInt(), 0, tmp[0]);
+  moveData(from: int, to: int): void {
+    let tmp = this.data.splice(from, 1);
+    this.data.splice(to, 0, tmp[0]);
     this.moveItem(from, to);
   }
 

@@ -76,7 +76,7 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: number) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12).height('16')

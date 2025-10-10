@@ -45,8 +45,8 @@ struct scrollBarMarginGrid {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.numbers, (day: string, i: number) => {
-          ForEach(this.numbers, (day: string, i: number) => {
+        ForEach(this.numbers, (day: string, i: int) => {
+          ForEach(this.numbers, (day: string, i: int) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

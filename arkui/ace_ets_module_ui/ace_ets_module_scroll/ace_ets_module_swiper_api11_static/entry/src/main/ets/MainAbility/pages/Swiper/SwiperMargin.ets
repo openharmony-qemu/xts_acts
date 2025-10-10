@@ -95,7 +95,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper1')
 
         Swiper(this.swiperController2) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)
@@ -120,7 +120,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper2')
 
         Swiper(this.swiperController3) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)
@@ -145,7 +145,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper3')
 
         Swiper(this.swiperController4) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)

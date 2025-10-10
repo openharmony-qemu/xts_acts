@@ -376,19 +376,19 @@ struct HitTestBehaviorPage {
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
-          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:number) => {
+          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
             Text('Scroll' + item+'')
               .width('90%')
               .height(150)
               .backgroundColor(Color.White)
               .textAlign(TextAlign.Center)
-          }, (item: Int,index:number) => item+'')
+          }, (item: Int,index:int) => item+'')
         }.width('100%')//.onChildTouchStyle()
       }.scrollBar(BarState.On)//.commonStyle()
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
-          ForEach([1, 2, 3], (item: Int,index:number) => {
+          ForEach([1, 2, 3], (item: Int,index:int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image($r('app.media.icon')).width(50).height(50)
               Text('Index0' + item).fontSize(25)
@@ -409,21 +409,21 @@ struct HitTestBehaviorPage {
       }//.commonStyle()
     } else if (this.targetView == 'Swiper') {
       Swiper() {
-        ForEach([1, 2, 3], (item: Int,index:number) => {
+        ForEach([1, 2, 3], (item: Int,index:int) => {
           Text('Swiper' + item).width('90%').height(50)
             //.onChildTouchStyle()
-        }, (item: Int,index:number) => item+'')
+        }, (item: Int,index:int) => item+'')
       }.indicator(true).backgroundColor(Color.White)//.commonStyle()
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:number) => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int,index:int) => {
           FlowItem() {
             Column() {
               Text('WaterFlow' + item).fontSize(12).height('16')
               Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
             }
           }//.onChildTouchStyle()
-        }, (item: Int,index:number) => item+'')
+        }, (item: Int,index:int) => item+'')
       }//.commonStyle()
     } else if (this.targetView == 'GridItem') {
       Grid() {

@@ -76,7 +76,7 @@ struct ScrollExampleA {
       Text(this.message4).id('ScrollAbnormal')
       Scroll() {
         Column(){
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)

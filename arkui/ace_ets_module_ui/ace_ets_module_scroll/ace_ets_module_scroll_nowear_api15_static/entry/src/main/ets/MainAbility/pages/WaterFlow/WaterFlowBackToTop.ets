@@ -57,7 +57,7 @@ struct WaterFlowExampleA {
       Text(this.message3).id('waterFlowBackToTop')
       Text(this.message4).id('waterFlowAbnormal')
       WaterFlow() {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           FlowItem() {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
@@ -66,7 +66,7 @@ struct WaterFlowExampleA {
           .onAppear(() => {
             this.currentIndex = index;
           })
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .backToTop(this.isBackToTop)
       .id('WaterFlowScroll_4')
