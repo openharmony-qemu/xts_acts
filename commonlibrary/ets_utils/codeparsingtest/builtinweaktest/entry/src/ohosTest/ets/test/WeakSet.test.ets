@@ -14,7 +14,7 @@
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { WeakSetTestUtils } from '../testability/pages/WeakSetTestUtils.js'; // 导入JS验证工具
+import { WeakSetTestUtils } from './WeakSetTestUtils.js'; // 导入JS验证工具
 
 
 
