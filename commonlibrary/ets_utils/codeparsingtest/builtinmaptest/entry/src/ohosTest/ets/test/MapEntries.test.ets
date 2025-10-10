@@ -45,7 +45,7 @@ import {
   MapentriesTest098,
   MapentriesTest099,
   MapentriesTest100
-} from '../testability/pages/MapEntries';
+} from './MapEntries';
 
 
 interface GeneratedObjectLiteralInterface_1 {
