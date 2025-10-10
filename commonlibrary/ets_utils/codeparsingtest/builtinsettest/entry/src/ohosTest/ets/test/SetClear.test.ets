@@ -34,7 +34,7 @@ import { SetClearTest009, SetClearTest024, SetClearTest025, SetClearTest029, Set
   SetClearTest086,
   SetClearTest087,
   SetClearTest089,
-  SetClearTest100} from '../testability/pages/SetClear';
+  SetClearTest100} from './SetClear';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
