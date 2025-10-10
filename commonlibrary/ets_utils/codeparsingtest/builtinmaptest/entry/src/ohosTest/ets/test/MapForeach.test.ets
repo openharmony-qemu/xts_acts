@@ -39,7 +39,7 @@ import {
   MapforeachTest009,
   MapforeachTest026,
   MapforeachTest069
-} from './MapForeach';
+} from '../testability/pages/MapForeach';
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
@@ -228,7 +228,7 @@ export default function MapForeachTest() {
 
       const map = new Map<string, string>([['key', 'val']]);
       const context: test0010 = { prop: 'test' };
-      // 完全移除this的使用，直接根据测试意图初始化变�?
+      // 完全移除this的使用，直接根据测试意图初始化变�?
       let arrowThis = undefined;
       map.forEach(() => {
       }, context);
@@ -1606,12 +1606,12 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
+      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
       const results: string[] = [];
       map.forEach((value) => {
         results.push(value);
       });
-      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
+      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
     });
 
     /**
