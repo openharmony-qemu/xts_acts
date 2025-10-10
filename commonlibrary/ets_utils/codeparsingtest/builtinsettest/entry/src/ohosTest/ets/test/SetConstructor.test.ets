@@ -70,7 +70,7 @@ import {
   SetConstructorTest088,
   SetConstructorTest091,
   SetConstructorTest092
-} from '../testability/pages/SetConstructor';
+} from './SetConstructor';
 import { buffer } from '@kit.ArkTS';
 
 function sleep(time: number): Promise<void> {
