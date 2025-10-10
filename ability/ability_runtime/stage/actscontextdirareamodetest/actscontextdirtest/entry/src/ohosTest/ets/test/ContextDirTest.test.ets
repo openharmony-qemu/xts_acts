@@ -104,7 +104,7 @@ export default function ContextDirTest() {
           .then((ability) => {
             ability?.lastRequestWant?.abilityName !== 'TestAbility' && ability?.context?.terminateSelf();
           });
-        await sleep(1000);
+        await sleep(300);
       } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s', "close TopAbility error: " + JSON.stringify(error));
       }
@@ -112,7 +112,7 @@ export default function ContextDirTest() {
         bundleName: 'com.example.contextdirtest',
         abilityName: 'TestAbility',
       })
-      await sleep(2000);
+      await sleep(300);
     })
 
     /**
@@ -453,7 +453,7 @@ export default function ContextDirTest() {
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
         })
-        await sleep(1000);
+        await sleep(300);
         try {
           abilityDelegator.startAbility({
             bundleName: "com.example.contextdirnormaltest",
@@ -515,7 +515,7 @@ export default function ContextDirTest() {
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
         })
-        await sleep(1000);
+        await sleep(300);
         try {
           abilityDelegator.startAbility({
             bundleName: "com.example.contextdirnormaltest",
@@ -577,7 +577,7 @@ export default function ContextDirTest() {
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
         })
-        await sleep(1000);
+        await sleep(300);
         try {
           abilityDelegator.startAbility({
             bundleName: "com.example.contextdirnormaltest",
@@ -639,7 +639,7 @@ export default function ContextDirTest() {
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
         })
-        await sleep(1000);
+        await sleep(300);
         try {
           abilityDelegator.startAbility({
             bundleName: "com.example.contextdirnormaltest",
