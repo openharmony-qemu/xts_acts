@@ -19,6 +19,7 @@ import { GlobalContext } from '../test/global';
 import { ConfigurationConstant } from '@kit.AbilityKit';
 import { display } from '@kit.ArkUI';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import Utils from './common/Utils';
 
 const SUCCESS = 0 // 成功
 const ERROR_CODE_INVALID_INPUT_PARAMETER = 401 // 参数无效
@@ -532,16 +533,11 @@ export default function NativeApiString3Test() {
      */
     it('TestGetConfigurations0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let resultArray: Array<string> = ['phone', 'table', 'car', 'PC', 'TV', 'wearable', '2in1'];
         console.info("====>TestGetConfigurations0200 start====");
         let result: number = nativeTest.GetConfigurations0200();
         console.info(`====>TestGetConfigurations0200 result====${result}`);
-        let testString: string = deviceInfo.deviceType
-        if(result <= 4){
-          expect(resultArray[result]).assertEqual(testString);
-        }else{
-          expect(resultArray[result-1]).assertEqual(testString);
-        }
+        let testString: number = Utils.str2DeviceType(deviceInfo.deviceType);
+        expect(result).assertEqual(testString);
         done()
       } catch (err) {
         console.error("====>TestGetConfigurations0200 catch err: " + err);
