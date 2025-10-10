@@ -63,7 +63,7 @@ struct SwiperLoopTest {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSourceSwiper = new MyDataSourceSwiper([])
   @State loop: boolean = false
-  @State index: number = 0
+  @State index: Int = 0
   @State autoPlay: boolean = false
   @State swiperValue: string = ''
 
@@ -97,7 +97,7 @@ struct SwiperLoopTest {
       .duration(200)
       .itemSpace(0)
       .displayArrow(true, false)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.swiperValue = 'change'
       })
 

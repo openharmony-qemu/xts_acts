@@ -27,9 +27,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import uiObserver from '@ohos.arkui.observer';
 
 class StepperModifier implements AttributeModifier<StepperAttribute> {
-  private currentIndex: number;
+  private currentIndex: Int;
 
-  constructor(currentIndex?: number) {
+  constructor(currentIndex?: Int) {
     this.currentIndex = currentIndex!;
   }
 
@@ -48,14 +48,14 @@ class StepperModifier implements AttributeModifier<StepperAttribute> {
         AppStorage.setOrCreate('currentIndex', this.currentIndex);
         console.info('testTag onSkip')
       })
-      .onChange((prevIndex?: number, index?: number) => {
+      .onChange((prevIndex?: Int, index?: Int) => {
         console.info('testTag onChange')
         AppStorage.setOrCreate('currentIndex', index);
         if (index) {
           this.currentIndex = index
         }
       })
-      .onNext((index?: number, pendingIndex?: number) => {
+      .onNext((index?: Int, pendingIndex?: Int) => {
         console.info('testTag onNext')
         console.info('testTag onNext index: ' + index + 'onNext pendingIndex: ' + pendingIndex)
         AppStorage.setOrCreate('pendingIndex', pendingIndex);
@@ -63,7 +63,7 @@ class StepperModifier implements AttributeModifier<StepperAttribute> {
           this.currentIndex = pendingIndex
         }
       })
-      .onPrevious((index?: number, pendingIndex?: number) => {
+      .onPrevious((index?: Int, pendingIndex?: Int) => {
         console.info('testTag onPreview')
         console.info('testTag onPreview index: ' + index + 'onNext pendingIndex: ' + pendingIndex)
         AppStorage.setOrCreate('pendingIndex', pendingIndex);

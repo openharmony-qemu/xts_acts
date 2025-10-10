@@ -63,7 +63,7 @@ struct SwiperImplicitanimation0030 {
       .loop(false)
       .effectMode(EdgeEffect.Fade)
       .id('implicitanimation_0030')
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         this.index = index.toString()
         this.currentOffset = extraInfo.currentOffset.toFixed(0).toString()
       })

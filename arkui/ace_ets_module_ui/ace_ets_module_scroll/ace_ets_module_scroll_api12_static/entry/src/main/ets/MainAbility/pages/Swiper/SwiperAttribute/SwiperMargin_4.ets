@@ -35,7 +35,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct Index {
   private swiperController: SwiperController = new SwiperController()
-  @State curIndex: number = 2
+  @State curIndex: Int = 2
   @State nextMargin: number = 0
   @State prevMargin: number = 0
 
@@ -123,7 +123,7 @@ struct Index {
         .curve(Curve.Linear)
         .prevMargin(this.prevMargin)
         .nextMargin(this.nextMargin)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           this.curIndex = index + 1
         })
       }.margin({ top: 50 } as Margin).width('100%')

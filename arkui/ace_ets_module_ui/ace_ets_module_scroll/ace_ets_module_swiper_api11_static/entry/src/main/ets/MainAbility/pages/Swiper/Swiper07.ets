@@ -150,7 +150,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0300")
@@ -207,7 +207,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0310")
@@ -261,7 +261,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0320")
@@ -316,7 +316,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0330")
@@ -370,7 +370,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0340")

@@ -75,7 +75,7 @@ struct SwiperNextPrevMarginExample81 {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource81 = new MyDataSource81([])
   messageManager: MessageManager<number> = new MessageManager<number>()
-  @State displayCount: number = 1;
+  @State displayCount: Int = 1;
 
   aboutToAppear(): void {
     let list: number[] = []
@@ -94,7 +94,7 @@ struct SwiperNextPrevMarginExample81 {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'displayCount') {
-        this.displayCount = message.value
+        this.displayCount = message.value.toInt()
       }
     }
     this.messageManager.registerCallback(callback)

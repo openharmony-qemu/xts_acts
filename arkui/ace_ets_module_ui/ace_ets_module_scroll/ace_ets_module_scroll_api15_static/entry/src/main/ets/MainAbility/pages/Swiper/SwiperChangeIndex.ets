@@ -59,7 +59,7 @@ struct SwiperExample {
   private swiperController3: SwiperController = new SwiperController()
   private swiperController4: SwiperController = new SwiperController()
   private swiperController5: SwiperController = new SwiperController()
-  @State currentIndex: number = 0
+  @State currentIndex: Int = 0
   @State modeIndex: number = 0
   @State mode: (SwiperAnimationMode | boolean | null | undefined | number)[] = [SwiperAnimationMode.NO_ANIMATION,
     SwiperAnimationMode.DEFAULT_ANIMATION, SwiperAnimationMode.FAST_ANIMATION,
@@ -129,7 +129,7 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper1')
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           this.text1 = currentIndex + ''
         })
 
@@ -146,7 +146,7 @@ struct SwiperExample {
         .height(50)
         .index(2)
         .id('swiper2')
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           this.text2 = currentIndex + ''
         })
 
@@ -163,7 +163,7 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper3')
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           this.text3 = currentIndex + ''
         })
 
@@ -180,7 +180,7 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper4')
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           this.text4 = currentIndex + ''
         })
 
@@ -197,7 +197,7 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper5')
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           this.text5 = currentIndex + ''
         })
 

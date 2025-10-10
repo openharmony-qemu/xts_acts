@@ -46,7 +46,7 @@ import inspector from '@ohos.arkui.inspector';
 struct interceptSwiperExample {
   private swiperController: SwiperController = new SwiperController()
   @State data: number[] = [0, 1, 2, 3, 4] as number[]
-  private currentIndex: number = 2
+  private currentIndex: Int = 2
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -67,7 +67,7 @@ struct interceptSwiperExample {
       .index(this.currentIndex)
       .loop(false)
       .height('60%')
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.currentIndex = index
       })
       .onContentWillScroll((result: SwiperContentWillScrollResult): boolean => {
