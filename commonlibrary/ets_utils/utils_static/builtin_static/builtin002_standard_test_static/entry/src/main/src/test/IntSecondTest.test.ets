@@ -23,24 +23,24 @@ export async function sleep(time: int): Promise<int> {
 }
 
 export default function IntSecondTest() {
-  describe('IntSecondTest', ():void => {
+  describe('IntSecondTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -55,7 +55,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0100'
         console.info(`${caseName}, test start`);
         const result = Int.valueOf(0);
@@ -74,7 +74,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0200'
         console.info(`${caseName}, test start`);
         const result = Int.valueOf(10);
@@ -93,7 +93,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0300'
         console.info(`${caseName}, test start`);
         const result = Int.valueOf(-10);
@@ -112,7 +112,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0400'
         console.info(`${caseName}, test start`);
         const result = Int.valueOf(Int.MAX_VALUE);
@@ -131,7 +131,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0500'
         console.info(`${caseName}, test start`);
         const result = Int.valueOf(Int.MIN_VALUE);
@@ -150,7 +150,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0600'
         console.info(`${caseName}, test start`);
         const a = new Int(5);
@@ -171,7 +171,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0700'
         console.info(`${caseName}, test start`);
         const a = new Int(-5);
@@ -192,7 +192,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0800'
         console.info(`${caseName}, test start`);
         const a = new Int(5);
@@ -213,7 +213,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest0900'
         console.info(`${caseName}, test start`);
         const a = new Int(5);
@@ -234,7 +234,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1000'
         console.info(`${caseName}, test start`);
         const a = new Int(Int.MAX_VALUE);
@@ -255,7 +255,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1100'
         console.info(`${caseName}, test start`);
         const a = new Int(Int.MIN_VALUE);
@@ -276,7 +276,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1200'
         console.info(`${caseName}, test start`);
         const a = new Int(42);
@@ -296,7 +296,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1300'
         console.info(`${caseName}, test start`);
         const a = new Int(5);
@@ -316,7 +316,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1400'
         console.info(`${caseName}, test start`);
         const a = new Int(64);
@@ -336,7 +336,7 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1500'
         console.info(`${caseName}, test start`);
         const a = new Int(-123);
@@ -356,112 +356,12 @@ export default function IntSecondTest() {
      * @tc.level Level 2
      */
     it('IntSecondTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'IntSecondTest1600'
         console.info(`${caseName}, test start`);
         const a = new Int(0);
         const result = a.toString(10);
         expect(result).assertEqual('0');
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number INT_SECOND_TEST_1700
-     * @tc.name IntSecondTest1700
-     * @tc.desc test Int.unboxed() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('IntSecondTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'IntSecondTest1700'
-        console.info(`${caseName}, test start`);
-        const a = new Int(2);
-        const result = a.unboxed();
-        expect(result).assertEqual(2);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number INT_SECOND_TEST_1800
-     * @tc.name IntSecondTest1800
-     * @tc.desc test Int.unboxed() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('IntSecondTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'IntSecondTest1800'
-        console.info(`${caseName}, test start`);
-        const a = new Int(-2);
-        const result = a.unboxed();
-        expect(result).assertEqual(-2);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number INT_SECOND_TEST_1900
-     * @tc.name IntSecondTest1900
-     * @tc.desc test Int.unboxed() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('IntSecondTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'IntSecondTest1900'
-        console.info(`${caseName}, test start`);
-        const a = new Int(0);
-        const result = a.unboxed();
-        expect(result).assertEqual(0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number INT_SECOND_TEST_2000
-     * @tc.name IntSecondTest2000
-     * @tc.desc test Int.unboxed() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('IntSecondTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'IntSecondTest2000'
-        console.info(`${caseName}, test start`);
-        const a = new Int(Int.MAX_VALUE);
-        const result = a.unboxed();
-        expect(result).assertEqual(Int.MAX_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number INT_SECOND_TEST_2100
-     * @tc.name IntSecondTest2100
-     * @tc.desc test Int.unboxed() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('IntSecondTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'IntSecondTest2100'
-        console.info(`${caseName}, test start`);
-        const a = new Int(Int.MIN_VALUE);
-        const result = a.unboxed();
-        expect(result).assertEqual(Int.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })

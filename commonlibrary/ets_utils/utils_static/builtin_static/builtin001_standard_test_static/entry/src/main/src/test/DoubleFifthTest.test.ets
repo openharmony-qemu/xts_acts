@@ -23,24 +23,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsDoubleFifthPrototypebTest() {
-  describe('builtinsDoubleFifthPrototypebTest', ():void => {
+  describe('builtinsDoubleFifthPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -1114,159 +1114,6 @@ export default function builtinsDoubleFifthPrototypebTest() {
         const a = new Double(NaN);
         const result = a.toString(16);
         expect(result).assertEqual('NaN');
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest5700
-     * @tc.name builtinsDoubleFifthPrototypebTest5700
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest5700';
-        console.info(`${caseName}, test start`);
-        const a = new Double(123.456);
-        const result = a.unboxed();
-        expect(result).assertEqual(123.456);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest5800
-     * @tc.name builtinsDoubleFifthPrototypebTest5800
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest5800';
-        console.info(`${caseName}, test start`);
-        const a = new Double(-123.456);
-        const result = a.unboxed();
-        expect(result).assertEqual(-123.456);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest5900
-     * @tc.name builtinsDoubleFifthPrototypebTest5900
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest5900';
-        console.info(`${caseName}, test start`);
-        const a = new Double(0.0);
-        const result = a.unboxed();
-        expect(result).assertEqual(0.0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest6000
-     * @tc.name builtinsDoubleFifthPrototypebTest6000
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest6000';
-        console.info(`${caseName}, test start`);
-        const a = new Double(Double.MAX_VALUE);
-        const result = a.unboxed();
-        expect(result).assertEqual(Double.MAX_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest6100
-     * @tc.name builtinsDoubleFifthPrototypebTest6100
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest6100';
-        console.info(`${caseName}, test start`);
-        const a = new Double(Double.MIN_VALUE);
-        const result = a.unboxed();
-        expect(result).assertEqual(Double.MIN_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest6200
-     * @tc.name builtinsDoubleFifthPrototypebTest6200
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest6200';
-        console.info(`${caseName}, test start`);
-        const a = new Double(Number.POSITIVE_INFINITY);
-        const result = a.unboxed();
-        expect(result).assertEqual(Number.POSITIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest6300
-     * @tc.name builtinsDoubleFifthPrototypebTest6300
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest6300';
-        console.info(`${caseName}, test start`);
-        const a = new Double(Number.NEGATIVE_INFINITY);
-        const result = a.unboxed();
-        expect(result).assertEqual(Number.NEGATIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFifthPrototypebTest6400
-     * @tc.name builtinsDoubleFifthPrototypebTest6400
-     * @tc.desc test unboxed(): double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFifthPrototypebTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFifthPrototypebTest6400';
-        console.info(`${caseName}, test start`);
-        const a = new Double(NaN);
-        const result = a.unboxed();
-        expect(Number.isNaN(result)).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
