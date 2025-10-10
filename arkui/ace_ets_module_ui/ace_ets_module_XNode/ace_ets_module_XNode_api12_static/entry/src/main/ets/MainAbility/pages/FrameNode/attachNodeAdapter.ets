@@ -186,7 +186,7 @@ class MyNodeAdapterController extends NodeController {
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
-    let listNode = typeNode.createListNode(uiContext, 'List');
+    let listNode = typeNode.createListNode(uiContext);
     listNode.initialize({ space: 3 } as ListOptions).borderWidth(2).borderColor(Color.Black);
     this.rootNode?.appendChild(listNode);
     this.nodeAdapter = new MyNodeAdapter(uiContext, 100);

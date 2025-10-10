@@ -144,7 +144,7 @@ class NodeControllerTest1 extends NodeController {
   }
 
   makeNode(uiContext: UIContext): FrameNode | null {
-    let rootTypeNode = typeNode.createNode(uiContext, 'Scroll');
+    let rootTypeNode = typeNode.createScrollNode(uiContext);
     rootTypeNode.initialize();
     rootTypeNode.attribute.scrollable(ScrollDirection.Vertical).width('100%');
     this.rootNode = rootTypeNode;

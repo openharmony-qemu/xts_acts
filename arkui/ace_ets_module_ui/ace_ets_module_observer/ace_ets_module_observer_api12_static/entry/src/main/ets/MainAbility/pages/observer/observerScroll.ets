@@ -32,7 +32,7 @@ struct scrollEvent1 {
           Button('UIObserver on')
             .id('scrollEvent_3')
             .onClick((e: ClickEvent) => {
-              observer.on('scrollEvent', (info) => {
+              observer.onScrollEvent((info) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
                 if (observer.ScrollEventType.SCROLL_START == info.scrollEvent) {
                   this.message1 = 'SCROLL_START'
@@ -45,7 +45,7 @@ struct scrollEvent1 {
           Button('UIObserver off')
             .id('scrollEvent_5')
             .onClick((e: ClickEvent) => {
-              observer.off('scrollEvent', (info) => {
+              observer.offScrollEvent((info) => {
                 console.info('off scrollEvent', JSON.stringify(info));
               })
             })

@@ -60,7 +60,7 @@ class MyNodeController extends NodeController {
 
     for (let i = 0; i < this.dataSource.totalCount(); i++) {
 
-      let flowItem = typeNode.createNode(uiContext, 'FlowItem')
+      let flowItem = typeNode.createFlowItemNode(uiContext)
       flowItem.initialize().id('flowItem_node')
         .width('100%')
         .height(this.itemHeightArray[i.toInt() % 100])
