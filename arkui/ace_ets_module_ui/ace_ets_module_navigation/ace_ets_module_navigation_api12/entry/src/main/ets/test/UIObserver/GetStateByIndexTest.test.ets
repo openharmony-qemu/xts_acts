@@ -118,5 +118,30 @@ export default function GetStateByIndexTest() {
       console.info('GetStateByIndexTest_0300 END');
       done();
     });
+
+    /**
+     * @tc.number GetStateByIndexTest_0400
+     * @tc.name GetStateByIndexTest_0400
+     * @tc.desc router.getStateByUrl return length == 0
+     */
+    it('GetStateByIndexTest_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('GetStateByIndexTest_0400 START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id('push2Btn'));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+
+      let button2 = await driver.findComponent(ON.id('getStateByUrlEmptyBtn'));
+      await button2.click();
+      await CommonFunc.sleep(1000);
+
+      let values: newRouter.RouterState[] | undefined = AppStorage.get('getStateByUrlValueEmpty')
+      expect(values && values?.length == 0).assertTrue();
+      AppStorage.delete('getStateByUrlValueEmpty');
+      console.info('GetStateByIndexTest_0400 END');
+      done();
+    });
   })
 }
