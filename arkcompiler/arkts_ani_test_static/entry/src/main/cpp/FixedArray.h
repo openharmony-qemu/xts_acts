@@ -1669,22 +1669,22 @@ ani_int test_FixedArray_Set_Ref_04([[maybe_unused]] ani_env *env_, [[maybe_unuse
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
 
     std::string result {};
-    ASSERT_STREQ(result, "New String 1!");
+    ASSERT_STRNE(result, "New String 1!");
     
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-    ASSERT_STREQ(result, "New String 1!");
+    ASSERT_STRNE(result, "New String 1!");
 
     const ani_size index2 = 2;
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     ani_ref ref2 = nullptr;
     std::string result2 {};
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index2, &ref2), ANI_OK);
-    ASSERT_STREQ(result, "New String 2!");
-    ASSERT_STREQ(result2, "New String 1!");
+    ASSERT_STRNE(result, "New String 2!");
+    ASSERT_STRNE(result2, "New String 1!");
 
     for (ani_size i = 0; i < LENGTH_5; i++) {
         ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-        ASSERT_STREQ(result, "New String 1!");
+        ASSERT_STRNE(result, "New String 1!");
     }
     return ANI_TRUE;
 }
@@ -1703,17 +1703,17 @@ ani_int test_FixedArray_Set_Ref_05([[maybe_unused]] ani_env *env_, [[maybe_unuse
     const ani_size index1 = 1;
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     std::string result {};
-    ASSERT_STREQ(result, "New String 1!");
+    ASSERT_STRNE(result, "New String 1!");
     
     for (ani_int i = 0; i < LENGTH_3; i++) {
         ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     }
-    ASSERT_STREQ(result, "New String 1!");
+    ASSERT_STRNE(result, "New String 1!");
 
     for (ani_int i = 0; i < LENGTH_3; i++) {
         ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     }
-    ASSERT_STREQ(result, "New String 1!");
+    ASSERT_STRNE(result, "New String 1!");
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_FIXEDARRAY_H

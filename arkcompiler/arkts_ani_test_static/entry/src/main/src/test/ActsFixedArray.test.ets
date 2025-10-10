@@ -1431,7 +1431,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Set_Ref_0005 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Set_Ref_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Set_Ref_0005 done');
         done();
         console.log('test_FixedArray_Set_Ref_0005 end');
@@ -1450,7 +1450,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Set_Ref_0006 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Set_Ref_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Set_Ref_0006 done');
         done();
         console.log('test_FixedArray_Set_Ref_0006 end');

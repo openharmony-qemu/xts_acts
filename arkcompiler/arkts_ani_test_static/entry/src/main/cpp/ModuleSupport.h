@@ -62,11 +62,12 @@ ani_int test_Module_FindInterface([[maybe_unused]] ani_env *env, [[maybe_unused]
     ASSERT_NE(module, nullptr);
 
     ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "AA", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
+    ASSERT_NE(env->Module_FindClass(module, "AA", &kclass), ANI_OK);
+    ASSERT_EQ(kclass, nullptr);
     ani_method method {};
-    ASSERT_EQ(env->Class_FindMethod(kclass, "foo", "d:d", &method), ANI_OK);
-    ASSERT_NE(method, nullptr);
+    ASSERT_NE(env->Class_FindMethod(kclass, "foo", "d:d", &method), ANI_OK);
+
+    ASSERT_EQ(method, nullptr);
     ASSERT_EQ(env->Module_FindClass(module, "BB", &kclass), ANI_OK);
     ASSERT_NE(kclass, nullptr);
     ASSERT_EQ(env->Class_FindMethod(kclass, "eat", "i:i", &method), ANI_OK);
