@@ -62,7 +62,7 @@ export default function ImageAnalyzerControllerTest() {
       await button.click();
       await CommonFunc.sleep(500);
       let res: number[] | undefined = AppStorage.get('ImageAnalyzerControllerTypeArr');
-      expect(res?.length > 0).assertTrue();
+      expect(res && res.length > 0).assertTrue();
       AppStorage.delete('ImageAnalyzerControllerTypeArr')
       console.info('[ImageAnalyzerControllerTest001] END');
       done();
