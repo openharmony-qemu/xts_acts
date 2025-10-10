@@ -62,7 +62,7 @@ const LABEL_PRIVATE_SPACE = "privateSpace";
 const LABLE_EXTERNAL_STORAGE_CARD = "externalStorageCard";
 const LABLE_RANDOM_MAC = "randomMac";
 const LABEL_APP_CLONE = "appClone";
-const LABEL_MUTE_DEVICE = "muteDevice";
+const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1542,8 +1542,8 @@ function testSetDisallowedPolicy() {
   it("test_set_disallowed_policy_0170", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.setDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE, false);
-      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE)).assertFalse();
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE)).assertFalse();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -1563,9 +1563,9 @@ function testSetDisallowedPolicy() {
   it("test_set_disallowed_policy_0171", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.setDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE, true);
-      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE)).assertTrue();
-      restrictions.setDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE, false);
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE, true);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE)).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE, false);
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -1854,7 +1854,7 @@ function testGetDisallowedPolicy() {
   it("test_get_disallowed_policy_0113", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.getDisallowedPolicy(INVALID_WANT, LABEL_MUTE_DEVICE);
+      restrictions.getDisallowedPolicy(INVALID_WANT, LABEL_UNMUTE_DEVICE);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401).assertTrue();
@@ -1874,7 +1874,7 @@ function testGetDisallowedPolicy() {
    */
   it("test_get_disallowed_policy_0114", Level.LEVEL2, async (done: Function) => {
     try {
-      restrictions.getDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE);
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE);
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_disallowed_policy_0114 error 9200001 is expected, actually catch: ' + error.code);
@@ -1894,7 +1894,7 @@ function testGetDisallowedPolicy() {
   it("test_get_disallowed_policy_0115", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      restrictions.getDisallowedPolicy(SELFWANT, LABEL_MUTE_DEVICE);
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE);
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_disallowed_policy_0115 error 9200002 is expected, actually catch: ' + error.code);
