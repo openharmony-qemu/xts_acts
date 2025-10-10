@@ -202,10 +202,13 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0100
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : add null user in current app, then getAllAccessibleAccounts
+    /**
+    * @tc.number   ActsGetAllAccessibleAccounts_0100
+    * @tc.name     ActsGetAllAccessibleAccounts_0100
+    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
+    * @tc.level    Level3
+    * @tc.size     MediumTest
+    * @tc.type     Function
     */
     it('ActsGetAllAccessibleAccounts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0100 start====");
@@ -219,6 +222,7 @@ export default function ActsGetMultipleAccounts() {
           console.info("====>data.length:" + data.length);
           console.info("====>ActsGetAllAccessibleAccounts_0100 end====");
           expect(err).assertEqual(null);
+          expect(data.length > 0).assertTrue();
           done();
         });
       } catch (err) {
@@ -228,10 +232,13 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0200
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : add null user in current app, then getAllAccessibleAccounts
+    /**
+    * @tc.number   ActsGetAllAccessibleAccounts_0200
+    * @tc.name     ActsGetAllAccessibleAccounts_0200
+    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
+    * @tc.level    Level3
+    * @tc.size     MediumTest
+    * @tc.type     Function
     */
     it('ActsGetAllAccessibleAccounts_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0100 start====");
@@ -248,7 +255,7 @@ export default function ActsGetMultipleAccounts() {
       }
       console.info("====>getAllAccessibleAccounts 0200 data:" + JSON.stringify(data));
       console.info("====>data.length:" + data.length);
-      expect(data != null).assertTrue();
+      expect(data.length > 0).assertTrue();
       done()
     });
 
