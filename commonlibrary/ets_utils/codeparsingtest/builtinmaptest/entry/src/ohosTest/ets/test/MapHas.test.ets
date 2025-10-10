@@ -50,7 +50,7 @@ import {
   MapHasTest096,
   MapHasTest097,
   MapHasTest099
-} from '../testability/pages/MapHas';
+} from './MapHas';
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
