@@ -111,7 +111,7 @@ import {
   SetSpeciesTest098,
   SetSpeciesTest099,
   SetSpeciesTest100
-} from './SetSymbol';
+} from '../testability/pages/SetSymbol';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
