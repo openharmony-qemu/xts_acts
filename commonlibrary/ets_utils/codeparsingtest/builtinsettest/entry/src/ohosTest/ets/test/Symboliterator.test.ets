@@ -30,7 +30,7 @@ import { ArrayConstructor0014, ArrayConstructor0019, ArrayConstructor0029,
   ArrayConstructor0106,
   ArrayConstructor0108,
   ArrayConstructor0109,
-  ArrayConstructor0110} from './Symboliterator';
+  ArrayConstructor0110} from '../testability/pages/Symboliterator';
 
 interface GeneratedObjectLiteralInterface_2 {}
 
