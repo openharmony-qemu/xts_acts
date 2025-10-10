@@ -66,16 +66,16 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0160
-         * @tc.number    : PasteBoard_SystemPasteboard_0160
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0390
+         * @tc.number    : PasteBoard_SystemPasteboard_0390
          * @tc.desc      : Test pasteBoard SetProperty API functionality.
          * @tc.size      : MEDIUM
          * @tc.type      : Function
          * @tc.level     : Level 2
          */
-        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
-            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0160----------");
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0390----------");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
             try{
                 await systemPasteBoard.clearData();
@@ -86,20 +86,20 @@ export default function abilityTest() {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
-            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0160----------");
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0390----------");
             done();
         })
 
         /**
-         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0370
-         * @tc.number    : PasteBoard_SystemPasteboard_0370
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0380
+         * @tc.number    : PasteBoard_SystemPasteboard_0380
          * @tc.desc      : Test pasteBoard API functionality.
          * @tc.size      : MEDIUM
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0370----------");
+        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0380----------");
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
@@ -117,7 +117,7 @@ export default function abilityTest() {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
-            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0370----------");
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0380----------");
             done();
         })
 
