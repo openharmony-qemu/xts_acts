@@ -132,7 +132,7 @@ struct openCustomDialogWithCtrMode {
   @State levelMode: LevelMode | undefined|Int   = 0
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: number | undefined | Int = this.getUniqueId()
+  @State levelUniqueId: long | undefined | Int = this.getUniqueId()
   @State immersiveMode: ImmersiveMode | undefined | null | Int   = 0
   @State isModal: boolean = true
   @State maskRect: Rectangle = {

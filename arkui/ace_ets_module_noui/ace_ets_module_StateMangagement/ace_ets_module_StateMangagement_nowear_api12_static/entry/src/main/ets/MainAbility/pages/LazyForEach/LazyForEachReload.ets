@@ -94,7 +94,7 @@ struct ViewHolder {
 @Component
 struct WaterFlowDemo {
   @State disAppearCount: number = 0
-  colors: Array<number> = new Array<number>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
+  colors: Array<int> = new Array<int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
 
   aboutToAppear(){

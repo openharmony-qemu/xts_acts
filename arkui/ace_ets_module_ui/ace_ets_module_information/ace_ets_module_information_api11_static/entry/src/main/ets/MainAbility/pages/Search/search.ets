@@ -49,7 +49,7 @@ struct SearchExample {
         this.text = ((eventData.data) as ESObject ).getProperty('text').toString();
       }
       if (((eventData.data) as ESObject ).getProperty('maxLength') != null) {
-        this.maxLength = ((eventData.data) as ESObject ).getProperty('maxLength').toNumber() as int;
+        this.maxLength = Double.toInt(((eventData.data) as ESObject ).getProperty('maxLength').toNumber());
       }
       if (((eventData.data) as ESObject ).getProperty('copyOption') != null) {
         this.copyOption = ((eventData.data) as ESObject ).getProperty('copyOption').toStaticObject() as CopyOptions;

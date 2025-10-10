@@ -51,9 +51,9 @@ struct AlphabetIndexerTestux {
   @State popupSelectedColor: Color = Color.Orange
   @State popupUnselectedColor: Color = Color.Green
   @State popupItemBackgroundColor: Color = Color.Pink
-  @State popupSelectedColorNum: number = 0x00CED1
-  @State popupUnselectedColorNum: number = 0xC0FF3E
-  @State popupItemBackgroundNum: number = 0x8470FF
+  @State popupSelectedColorNum: int = 0x00CED1
+  @State popupUnselectedColorNum: int = 0xC0FF3E
+  @State popupItemBackgroundNum: int = 0x8470FF
   @State popupItemFontSizeNum: number = 30
   @State popupItemFontWeightNum: int = FontWeight.Normal as int
   @State popupSpaceNum: number = 50
@@ -109,15 +109,15 @@ struct AlphabetIndexerTestux {
       }
       const popupSelectedColorNum = (eventData.data as ESObject).getPropertySafe('popupSelectedColorNum')
       if (popupSelectedColorNum.isNumber()) {
-        this.popupSelectedColorNum = popupSelectedColorNum.toNumber();
+        this.popupSelectedColorNum = Double.toInt(popupSelectedColorNum.toNumber());
       }
       const popupUnselectedColorNum = (eventData.data as ESObject).getPropertySafe('popupUnselectedColorNum')
       if (popupUnselectedColorNum.isNumber()) {
-        this.popupUnselectedColorNum = popupUnselectedColorNum.toNumber();
+        this.popupUnselectedColorNum = Double.toInt(popupUnselectedColorNum.toNumber());
       }
       const popupItemBackgroundNum = (eventData.data as ESObject).getPropertySafe('popupItemBackgroundNum')
       if (popupItemBackgroundNum.isNumber()) {
-        this.popupItemBackgroundNum = popupItemBackgroundNum.toNumber();
+        this.popupItemBackgroundNum = Double.toInt(popupItemBackgroundNum.toNumber());
       }
       const popupItemFontSizeNum = (eventData.data as ESObject).getPropertySafe('popupItemFontSizeNum')
       if (popupItemFontSizeNum.isNumber()) {
