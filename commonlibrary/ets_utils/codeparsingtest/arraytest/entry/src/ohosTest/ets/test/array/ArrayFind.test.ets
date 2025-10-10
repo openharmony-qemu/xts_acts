@@ -177,7 +177,7 @@ export default function ArrayFindTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0011
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_00110
      * @tc.name testArrayFind0011
      * @tc.desc Should use thisArg to bind callback context
      * @tc.size MediumTest

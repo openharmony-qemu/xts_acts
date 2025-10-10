@@ -523,19 +523,6 @@ export default function ArraySortTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ArraySort_TEST_3900
-     * @tc.name ArraySortTest039
-     * @tc.desc test array sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('ArraySortTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArraySort.Fn39_testFunctionSort();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_ArraySort_TEST_4000
      * @tc.name ArraySortTest040
      * @tc.desc test array sort

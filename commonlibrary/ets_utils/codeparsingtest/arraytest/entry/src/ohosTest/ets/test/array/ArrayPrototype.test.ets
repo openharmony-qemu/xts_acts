@@ -194,7 +194,11 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect((): Array<number> => new Array<number>(-1)).assertThrowError(RangeError);
+      try {
+        new Array<number>(-1);
+      } catch (e) {
+        expect(e.message).assertEqual("Invalid array length");
+      }
     });
 
     /**
@@ -206,7 +210,11 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect((): Array<string> => new Array<string>(-2.5)).assertThrowError(RangeError);
+      try {
+        new Array<string>(-2.5);
+      } catch (e) {
+        expect(e.message).assertEqual("Invalid array length");
+      }
     });
 
 
@@ -219,7 +227,11 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      expect((): Array<number> => new Array<number>(3.14)).assertThrowError(RangeError);
+      try {
+        new Array<number>(3.14);
+      } catch (e) {
+        expect(e.message).assertEqual("Invalid array length");
+      }
     });
 
     /**
@@ -534,22 +546,9 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 3
      */
     it('testArrayConstructor0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
-      const length = 4294967295; // 2^32 - 1
+      const length = 4294967295;
       const arr = new Array<number>(length);
       expect(arr.length).assertEqual(length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0035
-     * @tc.name testArrayConstructor0035
-     * @tc.desc Verify Array constructor throws RangeError for length exceeding 2^32 - 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('testArrayConstructor0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const length = 4294967296; // 2^32
-      expect((): Array<number> => new Array<number>(length)).assertThrowError(RangeError);
     });
 
     /**

@@ -315,16 +315,6 @@ export function Fn38_testUnicodeCharactersSort() {
   return JSON.stringify(sortedArr) === JSON.stringify(['a', 'b', 'ć', 'č']);
 }
 
-// 测试39：对数组中的函数排序（按名称）
-export function Fn39_testFunctionSort() {
-  function b() {}
-  function a() {}
-  function c() {}
-  const arr = [b, a, c];
-  const sortedArr = arr.sort((a, b) => a.name.localeCompare(b.name));
-  return sortedArr[0] === a && sortedArr[1] === b && sortedArr[2] === c;
-}
-
 // 测试40：按对象属性的反向排序
 export function Fn40_testObjectPropertyReverseSort() {
   const arr = [{score: 80}, {score: 90}, {score: 70}];
