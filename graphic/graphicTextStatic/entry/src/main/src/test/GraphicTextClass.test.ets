@@ -205,6 +205,133 @@ export default function GraphicTextClass() {
       done();
     })
 
+    /**
+     * @tc.number     testPlaceholderSpanStatic
+     * @tc.name       testPlaceholderSpanStatic
+     * @tc.desc       test for PlaceholderSpan
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let msg = "testPlaceholderSpanStatic"
+      console.info(msg + 'begin');
+      let myTextStyle: text.TextStyle = {
+        color: {
+          alpha: 255,
+          red: 0,
+          green: 0,
+          blue: 255
+        },
+        fontSize: 66,
+      };
+      let myParagraphStyle: text.ParagraphStyle = {
+        textStyle: myTextStyle,
+        align: text.TextAlign.JUSTIFY,
+      };
+      let myPlaceholderSpan: text.PlaceholderSpan = {
+        width: 22,
+        height: 33,
+        align: text.PlaceholderAlignment.ABOVE_BASELINE,
+        baseline: text.TextBaseline.ALPHABETIC,
+        baselineOffset: 66
+      };
+      let fontCollection = new text.FontCollection();
+      let paragraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+      paragraphGraphBuilder.addPlaceholder(myPlaceholderSpan);
+      paragraphGraphBuilder.addText("123456789验证文字相关123456789验证文字相关12345678");
+      let paragraph = paragraphGraphBuilder.build();
+      paragraph.layoutSync(200);
+      let ideographicBaseline = paragraph.getIdeographicBaseline();
+      let wordRange = paragraph.getWordBoundary(1);
+      let lineCount = paragraph.getLineCount();
+      let lineHeight = paragraph.getLineHeight(1);
+      let lineWidth = paragraph.getLineWidth(1);
+      let didExceed = paragraph.didExceedMaxLines();
+      let rang = paragraph.getActualTextRange(1, true);
+      let placeholderRects = paragraph.getRectsForPlaceholders();
+      console.info('www data paragraph ideographicBaseline ', ideographicBaseline);
+      console.info('www data paragraph wordRange ', wordRange.start, wordRange.end);
+      console.info('www data paragraph lineCount ', lineCount);
+      console.info('www data paragraph lineHeight ', lineHeight);
+      console.info('www data paragraph lineWidth ', lineWidth);
+      console.info('www data paragraph didExceed ', didExceed);
+      console.info('www data paragraph rang ', rang);
+      console.info('www data paragraph placeholderRects ', placeholderRects);
+      expect(Math.floor(ideographicBaseline)).assertEqual(77);
+      expect(wordRange.start).assertEqual(1);
+      expect(wordRange.end).assertEqual(10);
+    })
+
+    /**
+     * @tc.number     testLineTypesetStatic
+     * @tc.name       testLineTypesetStatic
+     * @tc.desc       test for LineTypeset
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let msg = "testPlaceholderSpanStatic"
+      console.info(msg + 'begin');
+      let myTextStyle: text.TextStyle = {
+        color: {
+          alpha: 255,
+          red: 0,
+          green: 0,
+          blue: 255
+        },
+        fontSize: 66,
+      };
+      let myParagraphStyle: text.ParagraphStyle = {
+        textStyle: myTextStyle,
+        align: text.TextAlign.JUSTIFY,
+      };
+      let fontCollection = new text.FontCollection();
+      let paragraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+      paragraphGraphBuilder.addText("123456789验证文字相关123456789验证文字相关12345678");
+      let lineTypeset = paragraphGraphBuilder.buildLineTypeset();
+      let startIndex = 0;
+      let width = 100.0;
+      let count = lineTypeset.getLineBreak(startIndex, width);
+      let lineObj: text.TextLine = lineTypeset.createLine(startIndex, count);
+      console.info('www data LineTypeset count ', count);
+      console.info('www data LineTypeset line ', lineObj);
+      expect(count).assertEqual(2);
+      expect(lineObj !== undefined).assertTrue();
+    })
+
+    /**
+     * @tc.number     testLayoutStatic
+     * @tc.name       testLayoutStatic
+     * @tc.desc       test for Layout
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let msg = "testLayoutStatic"
+      console.info(msg + 'begin');
+      let myTextStyle: text.TextStyle = {
+        color: {
+          alpha: 255,
+          red: 0,
+          green: 0,
+          blue: 255
+        },
+        fontSize: 66,
+      };
+      let myParagraphStyle: text.ParagraphStyle = {
+        textStyle: myTextStyle,
+        align: text.TextAlign.JUSTIFY,
+      };
+      let fontCollection = new text.FontCollection();
+      let paragraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+      paragraphGraphBuilder.addText("123456789验证文字相关123456789验证文字相关12345678");
+      let paragraph = paragraphGraphBuilder.build();
+      paragraph.layout(200);
+      expect(paragraph !== undefined).assertTrue();
+    })
 
   })
 }
