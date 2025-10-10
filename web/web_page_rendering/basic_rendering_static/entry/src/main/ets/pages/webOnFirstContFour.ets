@@ -28,7 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 struct webOnFirstContFour {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = 'emitRefreshOnfirstcontentfulpaintWebc';
-  @State firstId: number = 428;
+  @State firstId: Int = 428;
   @State firstcontentfulpaint: boolean = false;
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -96,7 +96,7 @@ struct webOnFirstContFour {
           event.navigationStartTick + ', [firstContentfulPaintMs]:' + event.firstContentfulPaintMs + this.firstId)
           if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0) {
             this.firstcontentfulpaint = true;
-            Utils.emitEvent(this.firstcontentfulpaint, this.firstId as Int)
+            Utils.emitEvent(this.firstcontentfulpaint, this.firstId)
             console.error('result of onFirstContentfulPaint is: ' + this.firstcontentfulpaint + this.firstId);
           }
         })
