@@ -13,9 +13,23 @@
  * limitations under the License.
  */
 import ActsBaseDDkTest from "./BaseDdkTest.test";
-import ActsHidEmitCodeTest from "./HidEmitTest1.test";
+import ActsHidEmitCodeTest from "./HidEmitTest.test";
+import ActsHidEmitCodeTest1 from "./HidEmitTest1.test";
+import ActsHidEmitCodeTest2 from "./HidEmitTest2.test";
+import ActsHidEmitCodeTest3 from "./HidEmitTest3.test";
+import ActsHidEmitCodeTest4 from "./HidEmitTest4.test";
+import ActsUsbDDkTest from "./UsbDdkTest.test";
+import UsbDdkTest1 from "./UsbDdkTest1.test";
+import UsbTest from "./UsbTest.test";
 
 export default function testsuite() {
   ActsBaseDDkTest();
   ActsHidEmitCodeTest();
+  ActsHidEmitCodeTest1();
+  ActsHidEmitCodeTest2();
+  ActsHidEmitCodeTest3();
+  ActsHidEmitCodeTest4();
+  ActsUsbDDkTest();
+  UsbDdkTest1();
+  UsbTest();
 }

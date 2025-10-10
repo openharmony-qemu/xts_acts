@@ -19,16 +19,10 @@ import deviceManager from "@ohos.driver.deviceManager";
 
 const Success = 0
 const TAG: string = "[HidEmitEventTest]";
-const DEVICE_NOSUPPORT_ERRINFO: string = "The device does not support or cannot find hid_ddk_service;";
-function IsDevcieSupport(errCode: number, caseName: string) {
-  if (errCode == -3) {
-    console.info(TAG, `Test result ${caseName} : ${DEVICE_NOSUPPORT_ERRINFO}`);
-    expect('undefined').assertEqual(DEVICE_NOSUPPORT_ERRINFO);
-  }
-}
-export default function ActsHidEmitCodeTest() {
+
+export default function ActsHidEmitCodeTest1() {
   let deviceId: number = -1;
-  describe('ActsHidEmitCodeTest', () => {
+  describe('ActsHidEmitCodeTest1', () => {
     beforeAll(async () => {
       try {
         console.info(`before queryDevices`)
@@ -57,471 +51,739 @@ export default function ActsHidEmitCodeTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropPointer_0100
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropPointer_0100
-     * @tc.desc     Test HidCreateDevicePropPointer.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYESC.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropPointer_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 start====");
-        let result: number = baskddkerror.HidCreateDevicePropPointer();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYESC();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200
-     * @tc.desc     Test HidCreateDevicePropPointingStick.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY0.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200 start====");
-        let result: number = baskddkerror.HidCreateDevicePropPointingStick();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY0();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropPointingStick_0200 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300
-     * @tc.desc     Test HidCreateDevicePropButtonPad.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY1.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300 start====");
-        let result: number = baskddkerror.HidCreateDevicePropButtonPad();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY1();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropButtonPad_0300 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400
-     * @tc.desc     Test HidCreateDevicePropSemiMt.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY2.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400 start====");
-        let result: number = baskddkerror.HidCreateDevicePropSemiMt();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY2();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropSemiMt_0400 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500
-     * @tc.desc     Test HidCreateDevicePropTopButtonPad.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY3.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500 start====");
-        let result: number = baskddkerror.HidCreateDevicePropTopButtonPad();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY3();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropTopButtonPad_0500 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600
-     * @tc.name     SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600
-     * @tc.desc     Test HidCreateDevicePropAccelerometer.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY4.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600 start====");
-        let result: number = baskddkerror.HidCreateDevicePropAccelerometer();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY4();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropAccelerometer_0600 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700
-     * @tc.desc     Test HidCreateDeviceEventTypeHidEVRel.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY5.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700 start====");
-        let result: number = baskddkerror.HidCreateDeviceEventTypeHidEVRel();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY5();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceEventTypeHidEVRel_0700 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidSynEventReport_0800
-     * @tc.name     SUB_Driver_Ext_HidSynEventReport_0800
-     * @tc.desc     Test HidSynEventReport.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY6.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidSynEventReport_0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 start====");
-        let result: number = baskddkerror.HidSynEventReport();
-        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventReport_0800');
-        expect(result).assertEqual(Success);
-        console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidSynEventReport_0800 catch err: " + err);
-        expect().assertFail();
-      }
-    })
-
-    /**
-     * @tc.number   SUB_Driver_Ext_HidSynEventConfig_0900
-     * @tc.name     SUB_Driver_Ext_HidSynEventConfig_0900
-     * @tc.desc     Test HidSynEventConfig.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     */
-    it('SUB_Driver_Ext_HidSynEventConfig_0900', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 start====");
-        let result: number = baskddkerror.HidSynEventConfig();
-        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventConfig_0900');
-        expect(result).assertEqual(Success);
-        console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidSynEventConfig_0900 catch err: " + err);
-        expect().assertFail();
-      }
-    })
-
-    /**
-     * @tc.number   SUB_Driver_Ext_HidSynEventMtReport_1000
-     * @tc.name     SUB_Driver_Ext_HidSynEventMtReport_1000
-     * @tc.desc     Test HidSynEventMtReport.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     */
-    it('SUB_Driver_Ext_HidSynEventMtReport_1000', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 start====");
-        let result: number = baskddkerror.HidSynEventMtReport();
-        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventMtReport_1000');
-        expect(result).assertEqual(Success);
-        console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidSynEventMtReport_1000 catch err: " + err);
-        expect().assertFail();
-      }
-    })
-
-    /**
-     * @tc.number   SUB_Driver_Ext_HidSynEventDropped_1100
-     * @tc.name     SUB_Driver_Ext_HidSynEventDropped_1100
-     * @tc.desc     Test HidSynEventDropped.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     */
-    it('SUB_Driver_Ext_HidSynEventDropped_1100', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 start====");
-        let result: number = baskddkerror.HidSynEventReport();
-        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventDropped_1100');
-        expect(result).assertEqual(Success);
-        console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidSynEventDropped_1100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
-
-    /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYA.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYA();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY6();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYA_1200 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYB.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY7.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYB();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY7();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYB_1300 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYC.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY8.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYC();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY8();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYC_1400 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYD.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY9.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYD();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEY9();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYD_1500 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYE.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYGRAVE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYE();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYGRAVE();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYE_1600 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYF.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYMINUS.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYF();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYMINUS();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYF_1700 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYG.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYEQUALS.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYG();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYEQUALS();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYG_1800 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYA.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYBACKSPACE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYH();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYBACKSPACE();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYH_1900 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYI.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYLRFTBACKET.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYI();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYLRFTBACKET();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYI_2000 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYJ.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYRIGHTBACKET.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYJ();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYRIGHTBACKET();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYJ_2100 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700 catch err: " + err);
         expect().assertFail();
       }
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200
-     * @tc.name     SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200
-     * @tc.desc     Test HidCreateDeviceKeyCodeKEYK.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYENTER.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200 start====");
-        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYK();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYENTER();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYK_2200 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYLEFTSHIFT.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYLEFTSHIFT();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYBACKSLASH.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYBACKSLASH();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSEMICOLON.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYSEMICOLON();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYAPOSTROPHE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYAPOSTROPHE();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSPACE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYSPACE();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSLASH.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYSLASH();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYCOMMA.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYCOMMA();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYPERIOD.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYPERIOD();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYRIGHTSHIFT.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYRIGHTSHIFT();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD0.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD0();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD1.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD1();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD2.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD2();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD3.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD3();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD4.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD4();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD5.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD5();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD6.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD6();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
+     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
+     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD7.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYNUMPAD7();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500 catch err: " + err);
         expect().assertFail();
       }
     })
 
   })
 }
-
