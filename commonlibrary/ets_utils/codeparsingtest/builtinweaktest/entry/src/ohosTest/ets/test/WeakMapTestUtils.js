@@ -1,3 +1,17 @@
+/*
+* Copyright (C) 2024 HiHope Open Source Organization.
+* Licensed under the Apache License, Version 2.0 (the 'License');
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an 'AS IS' BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 /**
  * WeakMap Verification Utility Class: Function names follow the format "test[caseNumber]_FunctionDescription",
  * corresponding to TS test cases with the pattern "SUB_BUILTINS_WEAKMAP_TEST_XXX".
@@ -1637,10 +1651,7 @@ export const WeakMapTestUtils = {
         instance1.id = 99;
         if (DataStore.getInstanceData(instance1) !== 'instance1-data') throw new Error("Modifying instance breaks static WeakMap association");
 
-        // // 4. 静态WeakMap中删除实例
-        // DataStore.#staticWm.delete(instance2); // 直接操作私有静态WeakMap
-        // if (DataStore.hasInstanceData(instance2)) throw new Error("Static WeakMap: instance2 not deleted");
-
+       
         // 5. 验证新实例正常添加
         const instance3 = new DataStore(3);
         DataStore.setInstanceData(instance3, 'instance3-data');

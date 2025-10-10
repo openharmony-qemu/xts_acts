@@ -34,7 +34,7 @@ import { SetClearTest009, SetClearTest024, SetClearTest025, SetClearTest029, Set
   SetClearTest086,
   SetClearTest087,
   SetClearTest089,
-  SetClearTest100} from './SetClear';
+  SetClearTest100} from '../testability/pages/SetClear';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
@@ -1864,7 +1864,7 @@ export default function SetClearTest() {
       const set = new Set([
         '😊', '😂', '😍', '👍', '❤️',
         '🇺🇸', '🇫🇷', '🇯🇵',
-        '©', '®', '™', '§', '¶'
+        '©', '®', '�?, '§', '¶'
       ]);
 
       set.clear();
@@ -1949,15 +1949,15 @@ export default function SetClearTest() {
      */
     it('SetClearTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
-        '∀', '∃', '∄', '∅', '∈', '∉',
-        '∋', '∌', '∏', '∑', '∕', '√',
-        '∞', '∝', '∟', '∠', '∡', '∢'
+        '∀', '�?, '�?, '�?, '�?, '�?,
+        '�?, '�?, '�?, '�?, '�?, '�?,
+        '�?, '�?, '�?, '�?, '�?, '�?
       ]);
 
       set.clear();
 
       expect(set.size).assertEqual(0);
-      expect(set.has('∞')).assertEqual(false);
+      expect(set.has('�?)).assertEqual(false);
     });
 
     /**
@@ -1975,7 +1975,7 @@ export default function SetClearTest() {
         '𝓐',
         '𝔹',
         '😀',
-        '🅰️'
+        '🅰�?
       ]);
 
       set.clear();
@@ -1996,8 +1996,8 @@ export default function SetClearTest() {
       const set = new Set([
         'Hello א',
         'ב World',
-        'مرحبا こんにちは',
-        'abcdef 12345 あいうえお'
+        'مرحبا こんにち�?,
+        'abcdef 12345 あいうえ�?
       ]);
 
       set.clear();
