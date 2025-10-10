@@ -80,7 +80,7 @@ import {
   MapSymbolSpeciesTest099,
   MapSymbolSpeciesTest100,
   SymbolSpecies
-} from '../testability/pages/MapSymbolSpecies'
+} from './MapSymbolSpecies'
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
