@@ -21,6 +21,7 @@ group("arkcompiler") {
       "arkts_module_test:ActsArktsModuleTest",
       "ecmanewfeatures:ActsEcmaNewFeaturesTest",
       "esmodule:esmodule",
+      "arkts_module_normalized_test:ActsArktsModuleNormalizedTest",
     ]
   }
 }

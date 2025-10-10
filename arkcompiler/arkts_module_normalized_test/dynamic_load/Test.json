@@ -1,0 +1,23 @@
+{
+    "description": "Configuration for ecma_new_features Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "1800000",
+        "bundle-name": "com.example.dynamic_load",
+        "module-name": "entry_test",
+        "shell-timeout": "180000",
+        "compile-mode": "esmodule"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ModuleNormalizedDynamicLoadLibTest-loadHsp-default-signed.hsp",
+                "ModuleNormalizedDynamicLoadLibTest-hsp-default-signed.hsp",
+                "ModuleNormalizedDynamicLoadLibTest-entry-default-signed.hap",
+                "ModuleNormalizedDynamicLoadTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        }
+    ]
+}
