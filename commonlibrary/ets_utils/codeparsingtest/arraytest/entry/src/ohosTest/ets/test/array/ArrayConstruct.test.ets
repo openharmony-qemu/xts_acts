@@ -95,7 +95,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0001
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0001
      * @tc.name testArrayConstructor0001
      * @tc.desc Verify Array constructor creates empty array with single positive integer length
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0002
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0002
      * @tc.name testArrayConstructor0002
      * @tc.desc Verify Array constructor handles single large positive integer length (10000)
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0003
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0003
      * @tc.name testArrayConstructor0003
      * @tc.desc Verify Array constructor creates array with multiple string element arguments
      * @tc.size MediumTest
@@ -140,7 +140,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0004
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0004
      * @tc.name testArrayConstructor0004
      * @tc.desc Verify Array constructor creates array with multiple boolean element arguments
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0005
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0005
      * @tc.name testArrayConstructor0005
      * @tc.desc Verify Array constructor throws error when argument is non-integer float (3.7)
      * @tc.size MediumTest
@@ -173,7 +173,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0006
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0006
      * @tc.name testArrayConstructor0006
      * @tc.desc Verify Array constructor throws error when argument is negative integer (-5)
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0007
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0007
      * @tc.name testArrayConstructor0007
      * @tc.desc Verify Array constructor creates empty array with 0 as single argument
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0008
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0008
      * @tc.name testArrayConstructor0008
      * @tc.desc Verify Array works without 'new' keyword for multiple number elements
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0009
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0009
      * @tc.name testArrayConstructor0009
      * @tc.desc Verify Array works without 'new' keyword for single length argument (6)
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0010
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0010
      * @tc.name testArrayConstructor0010
      * @tc.desc Verify Array constructor creates array with nested array elements
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0011
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0011
      * @tc.name testArrayConstructor0011
      * @tc.desc Verify Array constructor creates array with object elements
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0012
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0012
      * @tc.name testArrayConstructor0012
      * @tc.desc Verify Array constructor preserves order of mixed-type elements
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0013
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0013
      * @tc.name testArrayConstructor0013
      * @tc.desc Verify Array constructor with no arguments creates empty array
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0014
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0014
      * @tc.name testArrayConstructor0014
      * @tc.desc Verify empty array from constructor can be modified with push()
      * @tc.size MediumTest
@@ -313,7 +313,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0015
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0015
      * @tc.name testArrayConstructor0015
      * @tc.desc Verify Array constructor treats array-like object as single element
      * @tc.size MediumTest
@@ -333,7 +333,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0016
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0016
      * @tc.name testArrayConstructor0016
      * @tc.desc Verify Array constructor preserves duplicate primitive elements
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0017
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0017
      * @tc.name testArrayConstructor0017
      * @tc.desc Verify Array constructor handles duplicate reference-type elements
      * @tc.size MediumTest
@@ -365,7 +365,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0018
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0018
      * @tc.name testArrayConstructor0018
      * @tc.desc Verify Array constructor creates array with Symbol elements
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0019
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0019
      * @tc.name testArrayConstructor0019
      * @tc.desc Verify Array constructor creates array with Date object elements
      * @tc.size MediumTest
@@ -394,7 +394,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0020
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0020
      * @tc.name testArrayConstructor0020
      * @tc.desc Verify Array constructor creates array with function elements
      * @tc.size MediumTest
@@ -411,7 +411,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0021
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0021
      * @tc.name testArrayConstructor0021
      * @tc.desc Verify Array constructor creates array with BigInt elements
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0022
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0022
      * @tc.name testArrayConstructor0022
      * @tc.desc Verify Array constructor handles single string argument as element
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0023
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0023
      * @tc.name testArrayConstructor0023
      * @tc.desc Verify Array constructor creates array with multi-line string elements
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0024
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0024
      * @tc.name testArrayConstructor0024
      * @tc.desc Verify Array constructor with single boolean argument as element
      * @tc.size MediumTest
@@ -471,7 +471,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0025
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0025
      * @tc.name testArrayConstructor0025
      * @tc.desc Verify Array constructor with single null argument as element
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0026
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0026
      * @tc.name testArrayConstructor0026
      * @tc.desc Verify Array constructor with single undefined argument as element
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0027
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0027
      * @tc.name testArrayConstructor0027
      * @tc.desc Verify Array constructor with Infinity as element
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0028
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0028
      * @tc.name testArrayConstructor0028
      * @tc.desc Verify Array constructor with NaN as element
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0029
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0029
      * @tc.name testArrayConstructor0029
      * @tc.desc Verify Array constructor creates array with regexp elements
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0030
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0030
      * @tc.name testArrayConstructor0030
      * @tc.desc Verify Array constructor creates array with typed array elements
      * @tc.size MediumTest
@@ -560,7 +560,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0031
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0031
      * @tc.name testArrayConstructor0031
      * @tc.desc Verify Array constructor creates array with Map elements
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0032
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0032
      * @tc.name testArrayConstructor0032
      * @tc.desc Verify Array constructor creates array with Set elements
      * @tc.size MediumTest
@@ -592,7 +592,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0033
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0033
      * @tc.name testArrayConstructor0033
      * @tc.desc Verify Array constructor with very large element count (5000 elements)
      * @tc.size LargeTest
@@ -604,7 +604,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0034
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0034
      * @tc.name testArrayConstructor0034
      * @tc.desc Verify Array constructor with sparse array elements
      * @tc.size MediumTest
@@ -620,7 +620,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0035
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0035
      * @tc.name testArrayConstructor0035
      * @tc.desc Verify Array constructor with single element that is an empty array
      * @tc.size MediumTest
@@ -635,7 +635,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0036
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0036
      * @tc.name testArrayConstructor0036
      * @tc.desc Verify Array constructor with deeply nested arrays
      * @tc.size MediumTest
@@ -650,7 +650,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0037
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0037
      * @tc.name testArrayConstructor0037
      * @tc.desc Verify Array constructor with elements that are class instances
      * @tc.size MediumTest
@@ -674,7 +674,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0038
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0038
      * @tc.name testArrayConstructor0038
      * @tc.desc Verify Array constructor with element that is a proxy object
      * @tc.size MediumTest
@@ -686,7 +686,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0039
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0039
      * @tc.name testArrayConstructor0039
      * @tc.desc Verify Array constructor with generator function elements
      * @tc.size MediumTest
@@ -698,7 +698,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0040
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0040
      * @tc.name testArrayConstructor0040
      * @tc.desc Verify Array constructor with promise elements
      * @tc.size MediumTest
@@ -714,7 +714,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0041
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0041
      * @tc.name testArrayConstructor0041
      * @tc.desc Verify Array constructor with single element that is a function returning array
      * @tc.size MediumTest
@@ -730,7 +730,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0042
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0042
      * @tc.name testArrayConstructor0042
      * @tc.desc Verify Array constructor with elements that are error objects
      * @tc.size MediumTest
@@ -747,7 +747,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0043
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0043
      * @tc.name testArrayConstructor0043
      * @tc.desc Verify Array constructor with elements that are JSON objects
      * @tc.size MediumTest
@@ -759,7 +759,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0044
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0044
      * @tc.name testArrayConstructor0044
      * @tc.desc Verify Array constructor with Unicode string elements
      * @tc.size MediumTest
@@ -773,7 +773,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0045
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0045
      * @tc.name testArrayConstructor0045
      * @tc.desc Verify Array constructor with emoji elements
      * @tc.size MediumTest
@@ -787,7 +787,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0046
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0046
      * @tc.name testArrayConstructor0046
      * @tc.desc Verify Array constructor with elements added via spread operator
      * @tc.size MediumTest
@@ -802,7 +802,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0047
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0047
      * @tc.name testArrayConstructor0047
      * @tc.desc Verify Array constructor with elements that are the array itself (circular reference)
      * @tc.size MediumTest
@@ -814,7 +814,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0048
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0048
      * @tc.name testArrayConstructor0048
      * @tc.desc Verify Array constructor with elements that are frozen objects
      * @tc.size MediumTest
@@ -826,7 +826,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0049
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0049
      * @tc.name testArrayConstructor0049
      * @tc.desc Verify Array constructor with elements that are sealed objects
      * @tc.size MediumTest
@@ -838,7 +838,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0050
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0050
      * @tc.name testArrayConstructor0050
      * @tc.desc Verify Array constructor with elements that are multiple types including special values
      * @tc.size MediumTest
@@ -850,7 +850,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0063
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0063
      * @tc.name testArrayConstructor0063
      * @tc.desc Verify Array constructor with BigInt elements (negative)
      * @tc.size MediumTest
@@ -866,7 +866,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0064
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0064
      * @tc.name testArrayConstructor0064
      * @tc.desc Verify Array constructor with Symbol elements
      * @tc.size MediumTest
@@ -878,7 +878,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0065
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0065
      * @tc.name testArrayConstructor0065
      * @tc.desc Verify Array constructor with unique Symbol elements
      * @tc.size MediumTest
@@ -890,7 +890,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0066
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0066
      * @tc.name testArrayConstructor0066
      * @tc.desc Verify Array constructor with Date objects (past dates)
      * @tc.size MediumTest
@@ -905,7 +905,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0067
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0067
      * @tc.name testArrayConstructor0067
      * @tc.desc Verify Array constructor with Date objects (future dates)
      * @tc.size MediumTest
@@ -920,7 +920,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0068
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0068
      * @tc.name testArrayConstructor0068
      * @tc.desc Verify Array constructor with RegExp objects (different flags)
      * @tc.size MediumTest
@@ -936,7 +936,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0069
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0069
      * @tc.name testArrayConstructor0069
      * @tc.desc Verify Array constructor with RegExp objects (different patterns)
      * @tc.size MediumTest
@@ -951,7 +951,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0070
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0070
      * @tc.name testArrayConstructor0070
      * @tc.desc Verify Array constructor with Uint8Array elements
      * @tc.size MediumTest
@@ -966,7 +966,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0071
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0071
      * @tc.name testArrayConstructor0071
      * @tc.desc Verify Array constructor with Float64Array elements
      * @tc.size MediumTest
@@ -981,7 +981,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0072
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0072
      * @tc.name testArrayConstructor0072
      * @tc.desc Verify Array constructor with Map elements (string keys)
      * @tc.size MediumTest
@@ -996,7 +996,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0073
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0073
      * @tc.name testArrayConstructor0073
      * @tc.desc Verify Array constructor with Map elements (number keys)
      * @tc.size MediumTest
@@ -1011,7 +1011,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0074
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0074
      * @tc.name testArrayConstructor0074
      * @tc.desc Verify Array constructor with Set elements (numbers)
      * @tc.size MediumTest
@@ -1026,7 +1026,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0075
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0075
      * @tc.name testArrayConstructor0075
      * @tc.desc Verify Array constructor with Set elements (strings)
      * @tc.size MediumTest
@@ -1041,7 +1041,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0076
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0076
      * @tc.name testArrayConstructor0076
      * @tc.desc Verify Array constructor with arrays of numbers
      * @tc.size MediumTest
@@ -1056,7 +1056,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0077
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0077
      * @tc.name testArrayConstructor0077
      * @tc.desc Verify Array constructor with arrays of strings
      * @tc.size MediumTest
@@ -1071,7 +1071,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0078
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0078
      * @tc.name testArrayConstructor0078
      * @tc.desc Verify Array constructor with objects with number properties
      * @tc.size MediumTest
@@ -1086,7 +1086,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0079
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0079
      * @tc.name testArrayConstructor0079
      * @tc.desc Verify Array constructor with objects with string properties
      * @tc.size MediumTest
@@ -1101,7 +1101,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0080
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0080
      * @tc.name testArrayConstructor0080
      * @tc.desc Verify Array constructor with objects with boolean properties
      * @tc.size MediumTest
@@ -1116,7 +1116,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0081
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0081
      * @tc.name testArrayConstructor0081
      * @tc.desc Verify Array constructor with objects with mixed properties
      * @tc.size MediumTest
@@ -1131,7 +1131,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0082
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0082
      * @tc.name testArrayConstructor0082
      * @tc.desc Verify Array constructor with objects containing arrays
      * @tc.size MediumTest
@@ -1146,7 +1146,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0083
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0083
      * @tc.name testArrayConstructor0083
      * @tc.desc Verify Array constructor with objects containing objects
      * @tc.size MediumTest
@@ -1163,7 +1163,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0084
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0084
      * @tc.name testArrayConstructor0084
      * @tc.desc Verify Array constructor with simple function elements
      * @tc.size MediumTest
@@ -1180,7 +1180,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0085
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0085
      * @tc.name testArrayConstructor0085
      * @tc.desc Verify Array constructor with string-returning function elements
      * @tc.size MediumTest
@@ -1196,7 +1196,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0086
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0086
      * @tc.name testArrayConstructor0086
      * @tc.desc Verify Array constructor with boolean-returning function elements
      * @tc.size MediumTest
@@ -1213,7 +1213,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0087
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0087
      * @tc.name testArrayConstructor0087
      * @tc.desc Verify Array constructor with class instances (simple class)
      * @tc.size MediumTest
@@ -1238,7 +1238,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0088
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0088
      * @tc.name testArrayConstructor0088
      * @tc.desc Verify Array constructor with class instances (with methods)
      * @tc.size MediumTest
@@ -1260,7 +1260,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0089
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0089
      * @tc.name testArrayConstructor0089
      * @tc.desc Verify Array constructor with Error objects (different types)
      * @tc.size MediumTest
@@ -1276,7 +1276,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0090
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0090
      * @tc.name testArrayConstructor0090
      * @tc.desc Verify Array constructor with Error objects (same type)
      * @tc.size MediumTest
@@ -1291,7 +1291,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0091
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0091
      * @tc.name testArrayConstructor0091
      * @tc.desc Verify Array constructor with Promises (resolved)
      * @tc.size MediumTest
@@ -1306,7 +1306,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0092
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0092
      * @tc.name testArrayConstructor0092
      * @tc.desc Verify Array constructor with Promises (rejected)
      * @tc.size MediumTest
@@ -1321,7 +1321,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0093
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0093
      * @tc.name testArrayConstructor0093
      * @tc.desc Verify Array constructor with mixed number and string elements
      * @tc.size MediumTest
@@ -1334,7 +1334,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0094
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0094
      * @tc.name testArrayConstructor0094
      * @tc.desc Verify Array constructor with mixed number and boolean elements
      * @tc.size MediumTest
@@ -1347,7 +1347,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0095
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0095
      * @tc.name testArrayConstructor0095
      * @tc.desc Verify Array constructor with mixed string and boolean elements
      * @tc.size MediumTest
@@ -1360,7 +1360,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0096
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0096
      * @tc.name testArrayConstructor0096
      * @tc.desc Verify Array constructor with mixed primitive and object elements
      * @tc.size MediumTest
@@ -1374,7 +1374,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0097
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0097
      * @tc.name testArrayConstructor0097
      * @tc.desc Verify Array constructor with mixed Date and string elements
      * @tc.size MediumTest
@@ -1388,7 +1388,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0098
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0098
      * @tc.name testArrayConstructor0098
      * @tc.desc Verify Array constructor with mixed Map and Set elements
      * @tc.size MediumTest
@@ -1403,7 +1403,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0099
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0099
      * @tc.name testArrayConstructor0099
      * @tc.desc Verify Array constructor with elements created via spread from another array
      * @tc.size MediumTest
@@ -1417,7 +1417,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0100
      * @tc.name testArrayConstructor0100
      * @tc.desc Verify Array constructor with elements created via spread from a Set
      * @tc.size MediumTest
@@ -1431,7 +1431,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0101
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0101
      * @tc.name testArrayConstructor0101
      * @tc.desc Verify Array constructor with positive integers and map method
      * @tc.size MediumTest
@@ -1446,7 +1446,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0102
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0102
      * @tc.name testArrayConstructor0102
      * @tc.desc Verify Array constructor with negative integers and filter method
      * @tc.size MediumTest
@@ -1461,7 +1461,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0103
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0103
      * @tc.name testArrayConstructor0103
      * @tc.desc Verify Array constructor with floating-point numbers and reduce method
      * @tc.size MediumTest
@@ -1476,7 +1476,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0104
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0104
      * @tc.name testArrayConstructor0104
      * @tc.desc Verify Array constructor with boolean values and every method
      * @tc.size MediumTest
@@ -1491,7 +1491,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0105
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0105
      * @tc.name testArrayConstructor0105
      * @tc.desc Verify Array constructor with mixed booleans and some method
      * @tc.size MediumTest
@@ -1506,7 +1506,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0106
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0106
      * @tc.name testArrayConstructor0106
      * @tc.desc Verify Array constructor with string elements and includes method
      * @tc.size MediumTest
@@ -1521,7 +1521,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0107
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0107
      * @tc.name testArrayConstructor0107
      * @tc.desc Verify Array constructor with empty strings and join method
      * @tc.size MediumTest
@@ -1536,7 +1536,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0108
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0108
      * @tc.name testArrayConstructor0108
      * @tc.desc Verify Array constructor with null values and fill method
      * @tc.size MediumTest
@@ -1551,7 +1551,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0109
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0109
      * @tc.name testArrayConstructor0109
      * @tc.desc Verify Array constructor with undefined values and findIndex method
      * @tc.size MediumTest
@@ -1566,7 +1566,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0110
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0110
      * @tc.name testArrayConstructor0110
      * @tc.desc Verify Array constructor with mixed primitives and forEach method
      * @tc.size MediumTest
@@ -1582,7 +1582,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0111
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0111
      * @tc.name testArrayConstructor0111
      * @tc.desc Verify Array constructor with nested arrays and flat method
      * @tc.size MediumTest
@@ -1599,7 +1599,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0112
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0112
      * @tc.name testArrayConstructor0112
      * @tc.desc Verify Array constructor with spread operator and concat method
      * @tc.size MediumTest
@@ -1614,7 +1614,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0113
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0113
      * @tc.name testArrayConstructor0113
      * @tc.desc Verify Array constructor with empty array and push method
      * @tc.size MediumTest
@@ -1630,7 +1630,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0114
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0114
      * @tc.name testArrayConstructor0114
      * @tc.desc Verify Array constructor with array and pop method
      * @tc.size MediumTest
@@ -1645,7 +1645,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0115
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0115
      * @tc.name testArrayConstructor0115
      * @tc.desc Verify Array constructor with array and shift method
      * @tc.size MediumTest
@@ -1660,7 +1660,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0116
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0116
      * @tc.name testArrayConstructor0116
      * @tc.desc Verify Array constructor with array and unshift method
      * @tc.size MediumTest
@@ -1674,7 +1674,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0117
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0117
      * @tc.name testArrayConstructor0117
      * @tc.desc Verify Array constructor with large array and slice method
      * @tc.size LargeTest
@@ -1693,7 +1693,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0118
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0118
      * @tc.name testArrayConstructor0118
      * @tc.desc Verify Array constructor with array and splice method
      * @tc.size MediumTest
@@ -1708,7 +1708,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0119
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0119
      * @tc.name testArrayConstructor0119
      * @tc.desc Verify Array constructor with numbers and reverse method
      * @tc.size MediumTest
@@ -1723,7 +1723,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0120
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0120
      * @tc.name testArrayConstructor0120
      * @tc.desc Verify Array constructor with strings and reverse method
      * @tc.size MediumTest
@@ -1738,7 +1738,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0121
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0121
      * @tc.name testArrayConstructor0121
      * @tc.desc Verify Array constructor with numbers and sort method
      * @tc.size MediumTest
@@ -1753,7 +1753,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0122
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0122
      * @tc.name testArrayConstructor0122
      * @tc.desc Verify Array constructor with strings and sort method
      * @tc.size MediumTest
@@ -1768,7 +1768,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0123
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0123
      * @tc.name testArrayConstructor0123
      * @tc.desc Verify Array constructor with dates and sort method
      * @tc.size MediumTest
@@ -1786,7 +1786,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0124
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0124
      * @tc.name testArrayConstructor0124
      * @tc.desc Verify Array constructor with typed arrays
      * @tc.size MediumTest
@@ -1804,7 +1804,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0125
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0125
      * @tc.name testArrayConstructor0125
      * @tc.desc Verify Array constructor with Maps
      * @tc.size MediumTest
@@ -1828,7 +1828,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0126
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0126
      * @tc.name testArrayConstructor0126
      * @tc.desc Verify Array constructor with Sets
      * @tc.size MediumTest
@@ -1846,7 +1846,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0127
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0127
      * @tc.name testArrayConstructor0127
      * @tc.desc Verify Array constructor with Error objects
      * @tc.size MediumTest
@@ -1864,7 +1864,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0128
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0128
      * @tc.name testArrayConstructor0128
      * @tc.desc Verify Array constructor with Date objects
      * @tc.size MediumTest
@@ -1882,7 +1882,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0129
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0129
      * @tc.name testArrayConstructor0129
      * @tc.desc Verify Array constructor with RegExp objects
      * @tc.size MediumTest
@@ -1900,7 +1900,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0130
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0130
      * @tc.name testArrayConstructor0130
      * @tc.desc Verify Array constructor with functions
      * @tc.size MediumTest
@@ -1918,7 +1918,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0131
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0131
      * @tc.name testArrayConstructor0131
      * @tc.desc Verify Array constructor with class instances
      * @tc.size MediumTest
@@ -1950,7 +1950,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0132
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0132
      * @tc.name testArrayConstructor0132
      * @tc.desc Verify Array constructor with Promises
      * @tc.size MediumTest
@@ -1968,7 +1968,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0133
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0133
      * @tc.name testArrayConstructor0133
      * @tc.desc Verify Array constructor with single numeric argument (length)
      * @tc.size MediumTest
@@ -1983,7 +1983,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0134
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0134
      * @tc.name testArrayConstructor0134
      * @tc.desc Verify Array constructor with no arguments
      * @tc.size MediumTest
@@ -1997,7 +1997,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0135
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0135
      * @tc.name testArrayConstructor0135
      * @tc.desc Verify Array works without 'new' keyword
      * @tc.size MediumTest
@@ -2011,7 +2011,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0136
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0136
      * @tc.name testArrayConstructor0136
      * @tc.desc Verify Array constructor with sparse array
      * @tc.size MediumTest
@@ -2031,7 +2031,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0137
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0137
      * @tc.name testArrayConstructor0137
      * @tc.desc Verify Array constructor with array-like object
      * @tc.size MediumTest
@@ -2043,7 +2043,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0138
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0138
      * @tc.name testArrayConstructor0138
      * @tc.desc Verify Array constructor with Unicode strings
      * @tc.size MediumTest
@@ -2057,7 +2057,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0139
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0139
      * @tc.name testArrayConstructor0139
      * @tc.desc Verify Array constructor with emoji strings
      * @tc.size MediumTest
@@ -2071,7 +2071,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0140
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0140
      * @tc.name testArrayConstructor0140
      * @tc.desc Verify Array constructor with special numeric values
      * @tc.size MediumTest
@@ -2087,7 +2087,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0141
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0141
      * @tc.name testArrayConstructor0141
      * @tc.desc Verify Array constructor with mixed types and flatMap method
      * @tc.size MediumTest
@@ -2099,7 +2099,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0142
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0142
      * @tc.name testArrayConstructor0142
      * @tc.desc Verify Array constructor with array and copyWithin method
      * @tc.size MediumTest
@@ -2114,7 +2114,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0143
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0143
      * @tc.name testArrayConstructor0143
      * @tc.desc Verify Array constructor with array and entries method
      * @tc.size MediumTest
@@ -2129,7 +2129,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0144
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0144
      * @tc.name testArrayConstructor0144
      * @tc.desc Verify Array constructor with array and keys method
      * @tc.size MediumTest
@@ -2144,7 +2144,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0145
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0145
      * @tc.name testArrayConstructor0145
      * @tc.desc Verify Array constructor with array and values method
      * @tc.size MediumTest
@@ -2159,7 +2159,7 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0146
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0146
      * @tc.name testArrayConstructor0146
      * @tc.desc Verify Array constructor with array and toString method
      * @tc.size MediumTest

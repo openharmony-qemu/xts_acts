@@ -1,4 +1,18 @@
-'use strict'
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 // 测试1：默认排序（将元素转换为字符串进行排序）
 export function Fn01_testDefaultStringSort() {
   const arr = [10, 5, 20, 15, 3];
@@ -1563,162 +1577,3 @@ export function Fn157_testReverseAfterSort() {
   return JSON.stringify(arr) === JSON.stringify([9, 8, 5, 3, 1]);
 }
 
-// 测试入口 - 按编号顺序排列 157条 1条失败，可删除
-// 80 new TextEncoder
-// console.log("测试1 - 默认字符串排序:", Fn01_testDefaultStringSort());
-// console.log("测试2 - 数字升序排序:", Fn02_testNumberAscendingSort());
-// console.log("测试3 - 原地排序特性:", Fn03_testInPlaceSort());
-// console.log("测试4 - 字符串数组按字母顺序排序:", Fn04_testStringAlphabeticalSort());
-// console.log("测试5 - 使用比较函数进行数字降序排序:", Fn05_testNumberDescendingSort());
-// console.log("测试6 - 空数组排序:", Fn06_testEmptyArraySort());
-// console.log("测试7 - 单元素数组排序:", Fn07_testSingleElementSort());
-// console.log("测试8 - 全部相同元素的数组排序:", Fn08_testAllSameElementsSort());
-// console.log("测试9 - 包含负数的数组排序:", Fn09_testNegativeNumbersSort());
-// console.log("测试10 - 包含零的数组排序:", Fn10_testZeroInArraySort());
-// console.log("测试11 - 字符串数组按长度排序:", Fn11_testStringLengthSort());
-// console.log("测试12 - 对象数组按属性排序:", Fn12_testObjectPropertySort());
-// console.log("测试13 - 包含字符串和数字的混合数组排序:", Fn13_testMixedStringNumberSort());
-// console.log("测试14 - 区分大小写的字符串排序:", Fn14_testCaseSensitiveSort());
-// console.log("测试15 - 不区分大小写的字符串排序:", Fn15_testCaseInsensitiveSort());
-// console.log("测试16 - 按字符串反向排序:", Fn16_testStringReverseSort());
-// console.log("测试17 - 数组包含null值的排序:", Fn17_testNullInArraySort());
-// console.log("测试18 - 数组包含undefined的排序:", Fn18_testUndefinedInArraySort());
-// console.log("测试19 - 按对象多个属性排序（先age后name）:", Fn19_testMultipleObjectPropertiesSort());
-// console.log("测试20 - 浮点数数组排序:", Fn20_testFloatNumbersSort());
-// console.log("测试21 - 大整数数组排序:", Fn21_testLargeIntegersSort());
-// console.log("测试22 - 包含布尔值的数组排序:", Fn22_testBooleansInArraySort());
-// console.log("测试23 - 按字符串中数字排序:", Fn23_testStringWithNumbersSort());
-// console.log("测试24 - 排序后原数组引用不变:", Fn24_testOriginalArrayReference());
-// console.log("测试25 - 使用箭头函数简写排序:", Fn25_testArrowFunctionSort());
-// console.log("测试26 - 稀疏数组排序:", Fn26_testSparseArraySort());
-// console.log("测试27 - 包含特殊字符的字符串排序:", Fn27_testSpecialCharactersSort());
-// console.log("测试28 - 按对象属性长度排序:", Fn28_testObjectPropertyLengthSort());
-// console.log("测试29 - 嵌套数组按第一个元素排序:", Fn29_testNestedArraySort());
-// console.log("测试30 - 使用localeCompare进行自然语言排序:", Fn30_testLocaleCompareSort());
-// console.log("测试31 - 包含NaN的数组排序（NaN会被排到最后）:", Fn31_testNaNInArraySort());
-// console.log("测试32 - 日期字符串排序:", Fn32_testDateStringSort());
-// console.log("测试33 - 日期对象排序:", Fn33_testDateObjectSort());
-// console.log("测试34 - 按字符串最后一个字符排序:", Fn34_testLastCharacterSort());
-// console.log("测试35 - 对数组排序后验证长度不变:", Fn35_testArrayLengthAfterSort());
-// console.log("测试36 - 使用函数表达式作为比较函数:", Fn36_testFunctionExpressionSort());
-// console.log("测试37 - 按绝对值排序:", Fn37_testAbsoluteValueSort());
-// console.log("测试38 - 对Unicode字符排序:", Fn38_testUnicodeCharactersSort());
-// console.log("测试39 - 对数组中的函数排序（按名称）:", Fn39_testFunctionSort());
-// console.log("测试40 - 按对象属性的反向排序:", Fn40_testObjectPropertyReverseSort());
-// console.log("测试41 - 对包含多种类型的数组排序:", Fn41_testMixedTypesSort());
-// console.log("测试42 - 按字符串中元音字母数量排序:", Fn42_testVowelCountSort());
-// console.log("测试43 - 对二维数组按第二列排序:", Fn43_test2DArraySecondColumnSort());
-// console.log("测试44 - 排序后验证最大值在最后（升序）:", Fn44_testMaxValuePosition());
-// console.log("测试45 - 排序后验证最小值在最前（升序）:", Fn45_testMinValuePosition());
-// console.log("测试46 - 使用比较函数返回0的情况（元素位置不变）:", Fn46_testCompareFunctionReturnZero());
-// console.log("测试47 - 按字符串首字母大写排序:", Fn47_testFirstLetterCapitalSort());
-// console.log("测试48 - 对数组中的正则表达式排序:", Fn48_testRegExpSort());
-// console.log("测试49 - 按对象嵌套属性排序:", Fn49_testNestedObjectPropertySort());
-// console.log("测试50 - 对Buffer数组排序（Node.js环境）:", Fn50_testBufferSort());
-// console.log("测试51 - 按字符串是否包含特定子串排序:", Fn51_testSubstringPresenceSort());
-// console.log("测试52 - 对大数组排序性能（仅验证不超时）:", Fn52_testLargeArraySort());
-// console.log("测试53 - 按数组元素出现次数排序:", Fn53_testOccurrenceCountSort());
-// console.log("测试54 - 使用比较函数返回正值的情况:", Fn54_testCompareFunctionReturnPositive());
-// console.log("测试55 - 使用比较函数返回负值的情况:", Fn55_testCompareFunctionReturnNegative());
-// console.log("测试56 - 按字符串的ASCII值总和排序:", Fn56_testAsciiSumSort());
-// console.log("测试57 - 对Set转换的数组排序:", Fn57_testSetToArraySort());
-// console.log("测试58 - 按对象创建时间排序:", Fn58_testObjectCreationTimeSort());
-// console.log("测试59 - 对Map的值数组排序:", Fn59_testMapValuesSort());
-// console.log("测试60 - 按字符串是否为回文排序:", Fn60_testPalindromeSort());
-// console.log("测试61 - 对类数组对象排序:", Fn61_testArrayLikeSort());
-// console.log("测试62 - 按数字的奇偶性排序（偶数在前）:", Fn62_testEvenOddSort());
-// console.log("测试63 - 对Symbol数组排序:", Fn63_testSymbolSort());
-// console.log("测试64 - 按对象属性是否存在排序:", Fn64_testPropertyExistenceSort());
-// console.log("测试65 - 对数字字符串按数值排序:", Fn65_testNumericStringSort());
-// console.log("测试66 - 按数组元素的类型排序:", Fn66_testElementTypeSort());
-// console.log("测试68 - 按字符串中数字的总和排序:", Fn68_testStringNumbersSumSort());
-// console.log("测试67 - 包含各种类型数组的排序（按类型优先级）:", Fn67_testArrayTypePrioritySort());
-// console.log("测试69 - 对数组排序后验证中间元素:", Fn69_testMiddleElementAfterSort());
-// console.log("测试70 - 按对象属性的字符串长度排序:", Fn70_testObjectStringPropertyLengthSort());
-// console.log("测试71 - 对空字符串和非空字符串排序:", Fn71_testEmptyStringSort());
-// console.log("测试72 - 按数组元素的平方值排序:", Fn72_testSquareValueSort());
-// console.log("测试73 - 对生成器函数结果排序:", Fn73_testGeneratorResultSort());
-// console.log("测试74 - 按对象属性的日期字符串排序:", Fn74_testObjectDateStringSort());
-// console.log("测试75 - 对数组排序后检查是否严格递增:", Fn75_testStrictlyIncreasingAfterSort());
-// console.log("测试76 - 按字符串中大写字母数量排序:", Fn76_testUpperCaseCountSort());
-// console.log("测试77 - 对数组的数组排序（按内部数组长度）:", Fn77_testArrayOfArraysSort());
-// console.log("测试78 - 按对象方法返回值排序:", Fn78_testObjectMethodReturnSort());
-// console.log("测试79 - 对包含Infinity的数组排序:", Fn79_testInfinityInArraySort());
-// console.log("测试80 - 按字符串的字节长度排序（考虑多字节字符）:", Fn80_testStringByteLengthSort());
-// console.log("测试81 - 对数组排序后使用every验证顺序:", Fn81_testEveryAfterSort());
-// console.log("测试82 - 按对象属性的反向字母顺序排序:", Fn82_testReverseAlphabeticalPropertySort());
-// console.log("测试83 - 对数组排序后检查是否与预期的副本一致:", Fn83_testSortedCopyEquality());
-// console.log("测试84 - 按函数参数数量排序:", Fn84_testFunctionParameterCountSort());
-// console.log("测试85 - 包含十六进制数字的数组排序:", Fn85_testHexadecimalNumbersSort());
-// console.log("测试86 - 按字符串中特定字符出现次数排序:", Fn86_testSpecificCharCountSort());
-// console.log("测试87 - 对包含Error对象的数组排序:", Fn87_testErrorObjectSort());
-// console.log("测试88 - 按数字是否为质数排序（质数在前）:", Fn88_testPrimeNumberSort());
-// console.log("测试89 - 对数组排序后验证第一个元素:", Fn89_testFirstElementAfterSort());
-// console.log("测试90 - 按对象属性的数组长度排序:", Fn90_testObjectArrayPropertyLengthSort());
-// console.log("测试91 - 包含科学计数法数字的数组排序:", Fn91_testScientificNotationSort());
-// console.log("测试92 - 按字符串是否以特定前缀开头排序:", Fn92_testStringPrefixSort());
-// console.log("测试93 - 对WeakMap键数组排序:", Fn93_testWeakMapKeysSort());
-// console.log("测试94 - 按数字的位数排序:", Fn94_testNumberDigitCountSort());
-// console.log("测试95 - 对数组排序后使用some验证存在性:", Fn95_testSomeAfterSort());
-// console.log("测试96 - 按对象的属性名称数量排序:", Fn96_testObjectPropertyCountSort());
-// console.log("测试97 - 包含负零的数组排序:", Fn97_testNegativeZeroSort());
-// console.log("测试98 - 按字符串中最后出现的特定字符位置排序:", Fn98_testLastCharPositionSort());
-// console.log("测试99 - 对包含Promise的数组排序（按状态排序）:", Fn99_testPromiseArraySort());
-// console.log("测试100 - 按数字是否为偶数排序（奇数在前）:", Fn100_testOddFirstSort());
-// console.log("测试101 - 对数组排序后检查是否与展开排序结果一致:", Fn101_testSpreadSortEquality());
-// console.log("测试102 - 对数组排序后使用keys获取索引:", Fn102_testKeysAfterSort());
-// console.log("测试103 - 包含RegExp对象的数组排序（按源字符串）:", Fn103_testRegExpSourceSort());
-// console.log("测试104 - 按对象属性的嵌套数组元素排序:", Fn104_testNestedArrayPropertySort());
-// console.log("测试105 - 对数组排序后使用find验证元素:", Fn105_testFindAfterSort());
-// console.log("测试106 - 按字符串中大写字母与小写字母的比例排序:", Fn106_testCaseRatioSort());
-// console.log("测试107 - 包含日期对象和时间戳的混合排序:", Fn107_testMixedDateTimestampSort());
-// console.log("测试108 - 按数组中元素的唯一值数量排序:", Fn108_testUniqueValueCountSort());
-// console.log("测试109 - 对数组排序后验证是否无重复元素（原数组无重复）:", Fn109_testNoDuplicatesAfterSort());
-// console.log("测试110 - 按函数返回值的类型排序:", Fn110_testFunctionReturnTypeSort());
-// console.log("测试111 - 包含Date和字符串日期的混合排序:", Fn111_testMixedDateStringSort());
-// console.log("测试112 - 按数字的立方值排序:", Fn112_testCubeValueSort());
-// console.log("测试113 - 对数组排序后使用filter验证范围:", Fn113_testFilterAfterSort());
-// console.log("测试114 - 按字符串中元音字母与辅音字母的比例排序:", Fn114_testVowelConsonantRatioSort());
-// console.log("测试115 - 包含Map和Set的数组排序（按大小）:", Fn115_testMapSetSizeSort());
-// console.log("测试116 - 按对象属性的数字字符串长度排序:", Fn116_testObjectNumericStringLengthSort());
-// console.log("测试117 - 对数组排序后使用reduce计算总和:", Fn117_testReduceAfterSort());
-// console.log("测试118 - 按字符串是否为字母数字混合排序:", Fn118_testAlphanumericMixedSort());
-// console.log("测试119 - 包含Proxy对象的数组排序:", Fn119_testProxyObjectSort());
-// console.log("测试120 - 按数字的因数数量排序:", Fn120_testFactorCountSort());
-// console.log("测试121 - 对数组排序后验证最后一个元素:", Fn121_testLastElementAfterSort());
-// console.log("测试122 - 按对象属性的布尔值排序（true在前）:", Fn122_testBooleanPropertySort());
-// console.log("测试123 - 包含负数和正数的数组排序（绝对值降序）:", Fn123_testAbsoluteValueDescSort());
-// console.log("测试124 - 按字符串的首字母在字母表中的位置排序:", Fn124_testFirstLetterPositionSort());
-// console.log("测试125 - 对数组排序后使用slice获取子数组:", Fn125_testSliceAfterSort());
-// console.log("测试126 - 按对象属性的数组中的最大值排序:", Fn126_testObjectArrayMaxSort());
-// console.log("测试127 - 包含无穷大和负无穷大的数组排序:", Fn127_testInfinityValuesSort());
-// console.log("测试128 - 按字符串中数字字符的总和排序:", Fn128_testNumericCharsSumSort());
-// console.log("测试129 - 对数组排序后使用indexOf验证位置:", Fn129_testIndexOfAfterSort());
-// console.log("测试130 - 按对象的嵌套属性的字符串长度排序:", Fn130_testNestedPropertyLengthSort());
-// console.log("测试131 - 包含不同基数数字的数组排序:", Fn131_testDifferentBaseNumbersSort());
-// console.log("测试132 - 按字符串是否包含大写字母排序:", Fn132_testUpperCasePresenceSort());
-// console.log("测试133 - 对数组排序后使用includes验证元素存在:", Fn133_testIncludesAfterSort());
-// console.log("测试134 - 按对象属性的平均值排序:", Fn134_testObjectPropertyAverageSort());
-// console.log("测试135 - 包含空对象和非空对象的数组排序:", Fn135_testEmptyObjectSort());
-// console.log("测试136 - 按字符串的字符频率最高的字符排序:", Fn136_testHighestFrequencyCharSort());
-// console.log("测试137 - 对数组排序后使用flat（针对嵌套数组）:", Fn137_testFlatAfterSort());
-// console.log("测试138 - 按对象的创建时间排序（使用Symbol存储创建时间）:", Fn138_testObjectCreationTimeSymbolSort());
-// console.log("测试139 - 包含各种特殊值的数组排序:", Fn139_testSpecialValuesSort());
-// console.log("测试140 - 按数字的平方根排序:", Fn140_testSquareRootSort());
-// console.log("测试141 - 对数组排序后使用concat合并:", Fn141_testConcatAfterSort());
-// console.log("测试142 - 按对象属性的数组是否包含特定元素排序:", Fn142_testObjectArrayIncludesSort());
-// console.log("测试143 - 包含正则表达式和字符串的混合数组排序:", Fn143_testMixedRegExpStringSort());
-// console.log("测试144 - 按字符串的反向字符串排序:", Fn144_testReversedStringSort());
-// console.log("测试145 - 对数组排序后使用fill填充并验证:", Fn145_testFillAfterSort());
-// console.log("测试146 - 按对象的方法数量排序:", Fn146_testObjectMethodCountSort());
-// console.log("测试147 - 包含数组和类数组对象的混合排序:", Fn147_testMixedArrayLikeSort());
-// console.log("测试148 - 按数字是否为完全平方数排序:", Fn148_testPerfectSquareSort());
-// console.log("测试149 - 对数组排序后使用join连接:", Fn149_testJoinAfterSort());
-// console.log("测试150 - 按对象属性的日期月份排序:", Fn150_testObjectDateMonthSort());
-// console.log("测试151 - 包含Symbol和字符串的混合数组排序:", Fn151_testMixedSymbolStringSort());
-// console.log("测试152 - 按字符串中不同字符的数量排序:", Fn152_testUniqueCharCountSort());
-// console.log("测试153 - 对数组排序后使用splice修改:", Fn153_testSpliceAfterSort());
-// console.log("测试154 - 按对象属性的数组元素总和排序:", Fn154_testObjectArraySumSort());
-// console.log("测试155 - 按对象属性的字符串是否为数字排序:", Fn155_testObjectStringIsNumberSort());
-// console.log("测试156 - 按数字的阶乘值排序（小数字）:", Fn156_testFactorialSort());
-// console.log("测试157 - 对数组排序后使用reverse反转:", Fn157_testReverseAfterSort());

@@ -1823,7 +1823,6 @@ export default function ArrayReduceTest() {
      */
     it('ArrayReduceTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       if (typeof SharedArrayBuffer === 'undefined') {
-        expect(true).assertEqual(true);
         return;
       }
 

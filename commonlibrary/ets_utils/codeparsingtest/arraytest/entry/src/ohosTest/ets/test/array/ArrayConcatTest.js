@@ -1,4 +1,17 @@
-'use strict'
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 // 测试1：基本功能 - 合并两个数组
 export function Fn01_testConcatTwoArrays() {
@@ -1602,9 +1615,7 @@ export function Fn158_concatWithComparisonResults() {
     const a = 5;
     const b = 10;
     const c = '5';
-    const res1 = [a
-    <
-    b, a > b, a === b];
+    const res1 = [a < b, a > b, a === b];
     const res2 = [a == c, a === c, a !== c];
     const arr1 = [res1];
     const arr2 = [res2];

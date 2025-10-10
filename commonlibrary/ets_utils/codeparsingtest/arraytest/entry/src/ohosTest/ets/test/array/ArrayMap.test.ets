@@ -1329,7 +1329,6 @@ export default function ArrayMapTest() {
       interface BaseI {}
 
       if (typeof WeakRef === 'undefined') {
-        expect(true).assertEqual(true);
         return;
       }
 
@@ -1811,7 +1810,6 @@ export default function ArrayMapTest() {
       try {
         new RegExp('(?<=a)b');
       } catch {
-        expect(true).assertEqual(true);
         return;
       }
 

@@ -62,7 +62,7 @@ export default function ArrayPrototypeTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0001
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0001
      * @tc.name testArrayConstructor0001
      * @tc.desc Verify Array constructor creates empty array with single positive integer length (1)
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0002
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0002
      * @tc.name testArrayConstructor0002
      * @tc.desc Verify Array constructor creates empty array with single positive integer length (100)
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0003
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0003
      * @tc.name testArrayConstructor0003
      * @tc.desc Verify Array constructor creates array with elements when multiple number arguments are passed
      * @tc.size MediumTest
@@ -106,7 +106,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0004
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0004
      * @tc.name testArrayConstructor0004
      * @tc.desc Verify Array constructor creates array with string elements when multiple string arguments are passed
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0005
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0005
      * @tc.name testArrayConstructor0005
      * @tc.desc Verify Array constructor creates array with boolean elements when multiple boolean arguments are passed
      * @tc.size MediumTest
@@ -138,9 +138,9 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0006
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0006
      * @tc.name testArrayConstructor0006
-     * @desc Verify Array constructor creates array with object elements when multiple object arguments are passed
+     * @tc.desc Verify Array constructor creates array with object elements when multiple object arguments are passed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -155,7 +155,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0007
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0007
      * @tc.name testArrayConstructor0007
      * @tc.desc Verify Array constructor creates array with mixed type elements when multiple mixed arguments are passed
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0008
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0008
      * @tc.name testArrayConstructor0008
      * @tc.desc Verify Array constructor creates empty array when called with 0 as length
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0009
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0009
      * @tc.name testArrayConstructor0009
      * @tc.desc Verify Array constructor throws RangeError when called with negative integer length (-1)
      * @tc.size MediumTest
@@ -198,7 +198,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0010
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0010
      * @tc.name testArrayConstructor0010
      * @tc.desc Verify Array constructor throws RangeError when called with negative float length (-2.5)
      * @tc.size MediumTest
@@ -211,7 +211,7 @@ export default function ArrayPrototypeTest() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0012
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0012
      * @tc.name testArrayConstructor0012
      * @tc.desc Verify Array constructor creates array with single float element when float argument is passed (0.5)
      * @tc.size MediumTest
@@ -223,7 +223,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0013
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0013
      * @tc.name testArrayConstructor0013
      * @tc.desc Verify Array constructor creates array with multiple float elements when multiple float arguments are passed
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0017
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0017
      * @tc.name testArrayConstructor0017
      * @tc.desc Verify Array constructor creates empty array when called without arguments
      * @tc.size MediumTest
@@ -253,7 +253,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0018
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0018
      * @tc.name testArrayConstructor0018
      * @tc.desc Verify Array constructor creates array with single null element when null is passed as argument
      * @tc.size MediumTest
@@ -267,7 +267,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0019
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0019
      * @tc.name testArrayConstructor0019
      * @tc.desc Verify Array constructor creates array with single undefined element when undefined is passed as argument
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0020
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0020
      * @tc.name testArrayConstructor0020
      * @tc.desc Verify Array constructor creates array with function elements when function arguments are passed
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0021
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0021
      * @tc.name testArrayConstructor0021
      * @tc.desc Verify Array constructor creates array with array elements when array arguments are passed
      * @tc.size MediumTest
@@ -317,7 +317,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0022
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0022
      * @tc.name testArrayConstructor0022
      * @tc.desc Verify Array constructor creates array with Date elements when Date arguments are passed
      * @tc.size MediumTest
@@ -336,7 +336,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0023
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0023
      * @tc.name testArrayConstructor0023
      * @tc.desc Verify Array constructor creates array with RegExp elements when RegExp arguments are passed
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0024
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0024
      * @tc.name testArrayConstructor0024
      * @tc.desc Verify Array constructor creates array with Symbol elements when Symbol arguments are passed
      * @tc.size MediumTest
@@ -372,7 +372,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0025
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0025
      * @tc.name testArrayConstructor0025
      * @tc.desc Verify Array constructor creates array with multiple Symbol elements
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0026
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0026
      * @tc.name testArrayConstructor0026
      * @tc.desc Verify Array constructor creates array with BigInt elements
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0027
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0027
      * @tc.name testArrayConstructor0027
      * @tc.desc Verify Array constructor creates array with single BigInt element
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0028
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0028
      * @tc.name testArrayConstructor0028
      * @tc.desc Verify Array constructor creates array with typed array elements
      * @tc.size MediumTest
@@ -439,7 +439,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0029
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0029
      * @tc.name testArrayConstructor0029
      * @tc.desc Verify Array constructor creates array with Map elements
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0030
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0030
      * @tc.name testArrayConstructor0030
      * @tc.desc Verify Array constructor creates array with Set elements
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0031
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0031
      * @tc.name testArrayConstructor0031
      * @tc.desc Verify Array constructor creates array with WeakMap elements
      * @tc.size MediumTest
@@ -490,7 +490,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0032
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0032
      * @tc.name testArrayConstructor0032
      * @tc.desc Verify Array constructor creates array with WeakSet elements
      * @tc.size MediumTest
@@ -509,7 +509,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0033
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0033
      * @tc.name testArrayConstructor0033
      * @tc.desc Verify Array constructor creates array with Promise elements
      * @tc.size MediumTest
@@ -526,7 +526,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0034
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0034
      * @tc.name testArrayConstructor0034
      * @tc.desc Verify Array constructor creates array with single large integer length (2^32 - 1)
      * @tc.size LargeTest
@@ -540,7 +540,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0035
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0035
      * @tc.name testArrayConstructor0035
      * @tc.desc Verify Array constructor throws RangeError for length exceeding 2^32 - 1
      * @tc.size MediumTest
@@ -553,7 +553,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0036
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0036
      * @tc.name testArrayConstructor0036
      * @tc.desc Verify Array constructor creates array with Boolean object elements
      * @tc.size MediumTest
@@ -570,7 +570,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0037
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0037
      * @tc.name testArrayConstructor0037
      * @tc.desc Verify Array constructor creates array with Number object elements
      * @tc.size MediumTest
@@ -587,7 +587,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0038
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0038
      * @tc.name testArrayConstructor0038
      * @tc.desc Verify Array constructor creates array with String object elements
      * @tc.size MediumTest
@@ -604,7 +604,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0039
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0039
      * @tc.name testArrayConstructor0039
      * @tc.desc Verify Array constructor creates array with Error objects
      * @tc.size MediumTest
@@ -620,7 +620,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0040
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0040
      * @tc.name testArrayConstructor0040
      * @tc.desc Verify Array constructor creates array with DOM element-like objects
      * @tc.size MediumTest
@@ -642,7 +642,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0041
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0041
      * @tc.name testArrayConstructor0041
      * @tc.desc Verify Array constructor creates empty array with length as string that converts to 0
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0042
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0042
      * @tc.name testArrayConstructor0042
      * @tc.desc Verify Array constructor treats single string argument as element not length
      * @tc.size MediumTest
@@ -670,7 +670,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0043
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0043
      * @tc.name testArrayConstructor0043
      * @tc.desc Verify Array constructor treats single string number as element not length
      * @tc.size MediumTest
@@ -684,7 +684,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0044
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0044
      * @tc.name testArrayConstructor0044
      * @tc.desc Verify Array constructor creates array with single element when passed object with valueOf 5
      * @tc.size MediumTest
@@ -701,7 +701,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0045
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0045
      * @tc.name testArrayConstructor0045
      * @tc.desc Verify Array constructor uses length when passed object with [Symbol.toPrimitive] returning number
      * @tc.size MediumTest
@@ -715,7 +715,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0046
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0046
      * @tc.name testArrayConstructor0046
      * @tc.desc Verify Array constructor creates array with single element when passed array-like object
      * @tc.size MediumTest
@@ -730,7 +730,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0047
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0047
      * @tc.name testArrayConstructor0047
      * @tc.desc Verify Array constructor creates array with single element when passed null (non-primitive)
      * @tc.size MediumTest
@@ -744,7 +744,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0048
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0048
      * @tc.name testArrayConstructor0048
      * @tc.desc Verify Array constructor creates array with multiple null elements
      * @tc.size MediumTest
@@ -759,7 +759,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0049
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0049
      * @tc.name testArrayConstructor0049
      * @tc.desc Verify Array constructor creates array with multiple undefined elements
      * @tc.size MediumTest
@@ -774,7 +774,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0050
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0050
      * @tc.name testArrayConstructor0050
      * @tc.desc Verify Array constructor creates array with mixed null and undefined elements
      * @tc.size MediumTest
@@ -790,7 +790,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0051
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0051
      * @tc.name testArrayConstructor0051
      * @tc.desc Verify Array constructor creates array with empty string elements
      * @tc.size MediumTest
@@ -805,7 +805,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0052
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0052
      * @tc.name testArrayConstructor0052
      * @tc.desc Verify Array constructor creates array with whitespace string elements
      * @tc.size MediumTest
@@ -821,7 +821,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0053
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0053
      * @tc.name testArrayConstructor0053
      * @tc.desc Verify Array constructor creates array with very large number elements
      * @tc.size MediumTest
@@ -838,7 +838,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0054
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0054
      * @tc.name testArrayConstructor0054
      * @tc.desc Verify Array constructor creates array with very small number elements
      * @tc.size MediumTest
@@ -855,7 +855,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0055
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0055
      * @tc.name testArrayConstructor0055
      * @tc.desc Verify Array constructor creates array with multiple NaN elements
      * @tc.size MediumTest
@@ -870,7 +870,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0056
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0056
      * @tc.name testArrayConstructor0056
      * @tc.desc Verify Array constructor creates array with elements of different numeric types
      * @tc.size MediumTest
@@ -887,7 +887,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0057
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0057
      * @tc.name testArrayConstructor0057
      * @tc.desc Verify Array constructor creates array with empty objects
      * @tc.size MediumTest
@@ -905,7 +905,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0058
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0058
      * @tc.name testArrayConstructor0058
      * @tc.desc Verify Array constructor creates array with nested objects
      * @tc.size MediumTest
@@ -919,7 +919,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0059
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0059
      * @tc.name testArrayConstructor0059
      * @tc.desc Verify Array constructor creates array with circular reference objects
      * @tc.size MediumTest
@@ -935,7 +935,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0060
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0060
      * @tc.name testArrayConstructor0060
      * @tc.desc Verify Array constructor creates array with frozen objects
      * @tc.size MediumTest
@@ -950,7 +950,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0061
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0061
      * @tc.name testArrayConstructor0061
      * @tc.desc Verify Array constructor creates array with sealed objects
      * @tc.size MediumTest
@@ -965,7 +965,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0062
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0062
      * @tc.name testArrayConstructor0062
      * @tc.desc Verify Array constructor creates array with multiple regular expressions
      * @tc.size MediumTest
@@ -982,7 +982,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0063
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0063
      * @tc.name testArrayConstructor0063
      * @tc.desc Verify Array constructor creates array with date objects of different time zones
      * @tc.size MediumTest
@@ -999,7 +999,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0064
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0064
      * @tc.name testArrayConstructor0064
      * @tc.desc Verify Array constructor creates array with empty functions
      * @tc.size MediumTest
@@ -1018,7 +1018,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0065
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0065
      * @tc.name testArrayConstructor0065
      * @tc.desc Verify Array constructor creates array with arrow functions
      * @tc.size MediumTest
@@ -1033,7 +1033,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0066
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0066
      * @tc.name testArrayConstructor0066
      * @tc.desc Verify Array constructor creates array with generator functions
      * @tc.size MediumTest
@@ -1048,7 +1048,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0067
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0067
      * @tc.name testArrayConstructor0067
      * @tc.desc Verify Array constructor creates array with async functions
      * @tc.size MediumTest
@@ -1061,7 +1061,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0068
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0068
      * @tc.name testArrayConstructor0068
      * @tc.desc Verify Array constructor creates array with class instances
      * @tc.size MediumTest
@@ -1086,7 +1086,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0069
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0069
      * @tc.name testArrayConstructor0069
      * @tc.desc Verify Array constructor creates array with class constructors
      * @tc.size MediumTest
@@ -1103,7 +1103,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0070
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0070
      * @tc.name testArrayConstructor0070
      * @tc.desc Verify Array constructor creates array with module-like objects
      * @tc.size MediumTest
@@ -1118,7 +1118,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0071
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0071
      * @tc.name testArrayConstructor0071
      * @tc.desc Verify Array constructor creates array with multiple NaN values from different sources
      * @tc.size MediumTest
@@ -1137,7 +1137,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0072
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0072
      * @tc.name testArrayConstructor0072
      * @tc.desc Verify Array constructor creates array with Infinity and -Infinity
      * @tc.size MediumTest
@@ -1154,7 +1154,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0073
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0073
      * @tc.name testArrayConstructor0073
      * @tc.desc Verify Array constructor creates array with special string values
      * @tc.size MediumTest
@@ -1171,7 +1171,7 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0074
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0074
      * @tc.name testArrayConstructor0074
      * @tc.desc Verify Array constructor creates array with multi-line string elements
      * @tc.size MediumTest
@@ -1190,7 +1190,7 @@ lineB`;
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0076
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0076
      * @tc.name testArrayConstructor0076
      * @tc.desc Verify Array constructor creates array with multiple empty arrays
      * @tc.size MediumTest
@@ -1209,7 +1209,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0077
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0077
      * @tc.name testArrayConstructor0077
      * @tc.desc Verify Array constructor creates array with multi-dimensional arrays
      * @tc.size MediumTest
@@ -1226,7 +1226,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0078
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0078
      * @tc.name testArrayConstructor0078
      * @tc.desc Verify Array constructor creates array with sparse arrays
      * @tc.size MediumTest
@@ -1247,7 +1247,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0079
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0079
      * @tc.name testArrayConstructor0079
      * @tc.desc Verify Array constructor creates array with arguments objects
      * @tc.size MediumTest
@@ -1262,7 +1262,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0080
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0080
      * @tc.name testArrayConstructor0080
      * @tc.desc Verify Array constructor creates array with various collection types
      * @tc.size MediumTest
@@ -1277,7 +1277,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0081
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0081
      * @tc.name testArrayConstructor0081
      * @tc.desc Verify Array constructor creates array with length 1 when passed single boolean true
      * @tc.size MediumTest
@@ -1291,7 +1291,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0082
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0082
      * @tc.name testArrayConstructor0082
      * @tc.desc Verify Array constructor creates array with length 1 when passed single boolean false
      * @tc.size MediumTest
@@ -1305,7 +1305,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0083
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0083
      * @tc.name testArrayConstructor0083
      * @tc.desc Verify Array constructor creates array with length 10 when passed 10 as single argument
      * @tc.size MediumTest
@@ -1319,7 +1319,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0084
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0084
      * @tc.name testArrayConstructor0084
      * @tc.desc Verify Array constructor creates array with elements when passed multiple boolean values
      * @tc.size MediumTest
@@ -1337,7 +1337,7 @@ lineB`;
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0086
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0086
      * @tc.name testArrayConstructor0086
      * @tc.desc Verify Array constructor creates array with mixed positive and negative numbers
      * @tc.size MediumTest
@@ -1354,7 +1354,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0087
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0087
      * @tc.name testArrayConstructor0087
      * @tc.desc Verify Array constructor creates array with elements when passed numbers and strings
      * @tc.size MediumTest
@@ -1372,7 +1372,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0088
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0088
      * @tc.name testArrayConstructor0088
      * @tc.desc Verify Array constructor creates array with elements when passed various primitives
      * @tc.size MediumTest
@@ -1391,7 +1391,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0089
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0089
      * @tc.name testArrayConstructor0089
      * @tc.desc Verify Array constructor creates array with length 1 when passed single empty object
      * @tc.size MediumTest
@@ -1406,7 +1406,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0090
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0090
      * @tc.name testArrayConstructor0090
      * @tc.desc Verify Array constructor creates array with elements when passed objects with same properties
      * @tc.size MediumTest
@@ -1428,7 +1428,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0091
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0091
      * @tc.name testArrayConstructor0091
      * @tc.desc Verify Array constructor creates array with length 1 when passed single regexp
      * @tc.size MediumTest
@@ -1444,7 +1444,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0092
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0092
      * @tc.name testArrayConstructor0092
      * @tc.desc Verify Array constructor creates array with length 1 when passed single date object
      * @tc.size MediumTest
@@ -1460,7 +1460,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0093
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0093
      * @tc.name testArrayConstructor0093
      * @tc.desc Verify Array constructor creates array with length 1 when passed single function
      * @tc.size MediumTest
@@ -1476,7 +1476,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0094
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0094
      * @tc.name testArrayConstructor0094
      * @tc.desc Verify Array constructor creates array with length 1 when passed single symbol
      * @tc.size MediumTest
@@ -1491,7 +1491,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0095
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0095
      * @tc.name testArrayConstructor0095
      * @tc.desc Verify Array constructor creates array with length 1 when passed single bigint
      * @tc.size MediumTest
@@ -1506,7 +1506,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0096
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0096
      * @tc.name testArrayConstructor0096
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Map
      * @tc.size MediumTest
@@ -1522,7 +1522,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0097
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0097
      * @tc.name testArrayConstructor0097
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Set
      * @tc.size MediumTest
@@ -1538,7 +1538,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0098
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0098
      * @tc.name testArrayConstructor0098
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Promise
      * @tc.size MediumTest
@@ -1553,7 +1553,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0099
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0099
      * @tc.name testArrayConstructor0099
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Error
      * @tc.size MediumTest
@@ -1569,7 +1569,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0100
      * @tc.name testArrayConstructor0100
      * @tc.desc Verify Array constructor creates array with mixed element types including objects and primitives
      * @tc.size MediumTest
@@ -1587,7 +1587,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0101
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0101
      * @tc.name testArrayConstructor0101
      * @tc.desc Verify Array constructor creates array with length 1000 when passed 1000 as single argument
      * @tc.size LargeTest
@@ -1601,7 +1601,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0102
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0102
      * @tc.name testArrayConstructor0102
      * @tc.desc Verify Array constructor creates array with 1000 elements when passed 1000 arguments
      * @tc.size LargeTest
@@ -1616,7 +1616,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0103
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0103
      * @tc.name testArrayConstructor0103
      * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed number
      * @tc.size MediumTest
@@ -1632,7 +1632,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0104
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0104
      * @tc.name testArrayConstructor0104
      * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed string
      * @tc.size MediumTest
@@ -1648,7 +1648,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0105
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0105
      * @tc.name testArrayConstructor0105
      * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed boolean
      * @tc.size MediumTest
@@ -1664,7 +1664,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0106
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0106
      * @tc.name testArrayConstructor0106
      * @tc.desc Verify Array constructor creates array with length 1 when passed single ArrayBuffer
      * @tc.size MediumTest
@@ -1680,7 +1680,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0107
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0107
      * @tc.name testArrayConstructor0107
      * @tc.desc Verify Array constructor creates array with length 1 when passed single DataView
      * @tc.size MediumTest
@@ -1697,7 +1697,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0108
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0108
      * @tc.name testArrayConstructor0108
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Int32Array
      * @tc.size MediumTest
@@ -1713,7 +1713,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0109
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0109
      * @tc.name testArrayConstructor0109
      * @tc.desc Verify Array constructor creates array with length 1 when passed single Float64Array
      * @tc.size MediumTest
@@ -1729,7 +1729,7 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0110
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0110
      * @tc.name testArrayConstructor0110
      * @tc.desc Verify Array constructor creates array with various typed array elements
      * @tc.size MediumTest

@@ -2050,7 +2050,6 @@ export default function ArraySomeTest() {
      */
     it('ArraySomeTest148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       if (typeof EvalError === 'undefined') {
-        expect(true).assertEqual(true);
         return;
       }
 
@@ -2072,7 +2071,6 @@ export default function ArraySomeTest() {
      */
     it('ArraySomeTest149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       if (typeof AggregateError === 'undefined') {
-        expect(true).assertEqual(true);
         return;
       }
 
