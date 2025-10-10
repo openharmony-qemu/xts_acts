@@ -14,7 +14,7 @@
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { WeakMapTestUtils } from './WeakMapTestUtils.js'; // 导入JS验证工具
+import { WeakMapTestUtils } from '../testability/pages/WeakMapTestUtils.js'; // 导入JS验证工具
 // Define specific interfaces for object literals (ArkTS requires explicit types)
 interface KeyWithId {
   id: number;
