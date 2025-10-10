@@ -39,7 +39,7 @@ import {
   testSetValuesJs046,
   testSetValuesJs052,
   testSetValuesJs059
-} from './SetKeys';
+} from '../testability/pages/SetKeys';
 
 export interface GeneratedObjectLiteralInterface_1 {
   id: number;
