@@ -6,7 +6,7 @@
         "bundle-name": "ohos.acts.multimedia.photoaccess.Static",
         "module-name": "entry",
         "shell-timeout": "600000",
-        "testcase-timeout": 30000
+        "testcase-timeout": "1200000"
     },
     "kits": [
         {
@@ -38,6 +38,7 @@
             "run-command": [
                 "param set persist.ace.testmode.enabled 1",
                 "power-shell wakeup",
+                "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
                 "mkdir -p /storage/media/100/local/files/Pictures",

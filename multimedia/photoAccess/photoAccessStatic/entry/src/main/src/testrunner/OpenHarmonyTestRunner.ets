@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
 import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
@@ -23,7 +23,7 @@ import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: int= 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export class OpenHarmonyTestRunner implements TestRunner {
@@ -37,24 +37,11 @@ export class OpenHarmonyTestRunner implements TestRunner {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-    if (abilityDelegatorArguments != undefined) {
-      Hypium.set('abilityDelegatorArguments', abilityDelegatorArguments);
-      let temp: abilityDelegatorRegistry.AbilityDelegatorArgs =
-        Hypium.get('abilityDelegatorArguments') as abilityDelegatorRegistry.AbilityDelegatorArgs;
-      if (temp != undefined) {
-        hilog.info(0x0000, 'testTag', 'zhaoxu temp is not undefined');
-      } else {
-        hilog.info(0x0000, 'testTag', 'zhaoxu temp is undefined');
-      }
-    } else {
-      hilog.info(domain, tag, 'abilityDelegatorArguments is undefined');
-    }
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
     abilityDelegator.addAbilityMonitor({
       abilityName: 'EntryAbility',
       moduleName: 'entry',
-    }, (err: BusinessError | null): void => {
+    }, (err: BusinessError<void> | null): void => {
       if (err != null) {
         hilog.info(domain, tag, '%{public}s', '-----' + err?.code);
       }
