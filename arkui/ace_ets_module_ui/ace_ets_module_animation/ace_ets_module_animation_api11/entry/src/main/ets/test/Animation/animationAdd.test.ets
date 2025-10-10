@@ -47,7 +47,7 @@ export default function animationAdd() {
     /*
      * @tc.number       animationAdd_0100
      * @tc.name         animationAdd_0100
-     * @tc.desic        test AnimatableArithmetic equals return boolean
+     * @tc.desc        test AnimatableArithmetic equals return boolean
      */
     it('animationAdd_0100', Level.LEVEL0, async (done: Function) => {
       console.info('animationAdd_0100 START');
