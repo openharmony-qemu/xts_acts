@@ -40,7 +40,7 @@ import { SetHasTest013, SetHasTest025, SetHasTest027, SetHasTest030, SetHasTest0
   SetHasTest124,
   SetHasTest127,
   SetHasTest128,
-  SetHasTest129} from '../testability/pages/SetHas';
+  SetHasTest129} from './SetHas';
 
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
