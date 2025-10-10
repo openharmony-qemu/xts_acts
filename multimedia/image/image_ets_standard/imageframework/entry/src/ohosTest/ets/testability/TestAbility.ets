@@ -35,6 +35,8 @@ export default class TestAbility extends UIAbility {
         Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
         globalThis.uiContext = this.context;
         AppStorage.setOrCreate('thisContext', this.context)
+        let pathDir: string = this.context.filesDir;
+        AppStorage.setOrCreate<string>('pathDir', pathDir);
     }
 
     onDestroy() {

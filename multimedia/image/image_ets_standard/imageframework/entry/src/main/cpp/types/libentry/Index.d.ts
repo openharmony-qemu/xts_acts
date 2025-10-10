@@ -14,6 +14,7 @@
  */
 
 import { image } from '@kit.ImageKit';
+import { Callback } from '@kit.BasicServicesKit';
 
 interface pixelMapPots {
   width: number,
@@ -40,6 +41,18 @@ interface PackingOption_format {
 
 interface PackingOption_quality {
   quality: number;
+}
+
+interface imageClipRectSize {
+  x: number,
+  y: number,
+  width: number,
+  height: number
+}
+
+interface imageSize {
+  width: number,
+  height: number
 }
 
 export const ImagePackerCreate1: () => number;
@@ -484,37 +497,628 @@ export const PixelMapScaleWithAntiAliasingLow: () => number;
 
 export const PixelMapScaleWithAntiAliasingMedium: () => number;
 
+export const OHImageEffectInsertFilterByFilterEffectSuccess: () => number;
+
+export const OHImageEffectConfigureEffectParamError: () => number;
+
+export const OHImageEffectSetInputNativeBufferErrorCode: () => number;
+
+export const OHImageEffectSetOutputNativeBufferErrorCode: () => number;
+
+export const OHImageEffectSetInputPictureErrorCode: (path: string) => number;
+
+export const OHImageEffectSetOutputPictureErrorCode: () => number;
+
+export const OHImageEffectStartErrorCode: () => number;
+
+export const OHImageEffectStopErrorCode: () => number;
+
+export const ImageEffectErrorCodeErrorParamInvalid: () => number;
+
+export const ImageEffectErrorCodeParamError: () => number;
+
+export const ImageEffectErrorCodeKeyError: () => number;
+
+export const ImageEffectDataTypeUnknown: () => number;
+
+export const ImageEffectBufferTypeUnknown: () => number;
+
+export const OHEffectFilterSetValueErrorCode: () => number;
+
+export const OHEffectFilterGetValueErrorCode: () => number;
+
+export const OHImageEffectImageEffectRegion: () => number;
+
+export const OHImageEffectImageEffectSize: () => number;
+
+export const OHEffectFilterLookupFiltersFilterNames: () => number;
+
+export const createImageReceiver: (...params: ESObject[]) => image.ImageReceiver;
+
+export const readLatestImage: (a: image.ImageReceiver) => image.Image;
+
+export const on: (a: image.ImageReceiver) => number;
+
+export const jsReadLatestImageSuccess: (a: image.ImageReceiver) => number;
+
+export const jsReadNextImageSuccess: (a: image.ImageReceiver) => number;
+
+export const imageClipRect: (a: image.Image) => imageClipRectSize;
+
+export const imageClipBadParameter: () => number;
+
+export const imageClipJniEnvAbnormal: () => number;
+
+export const imageSize: (a: image.Image) => imageSize;
+
+export const imageFormatBadParameter: () => number;
+
+export const imageFormatJniEnvAbnormal: () => number;
+
+export const imageFormat: (a: image.Image) => number;
+
+export const imageSizeJniEnvAbnormal: () => number;
+
+export const imageGetComponent: (a: image.Image, b: image.ComponentType.JPEG) => number;
+
+export const imageGetComponentBadParameter: () => number;
+
+export const imageGetComponentJniEnvAbnormal: () => number;
+
+export const receiverRelease: (a: image.ImageReceiver) => number;
+
+export const imageRelease: (a: image.Image) => number;
+
+export const imageFormatYcbcr422Sp: () => number;
+
+export const imageFormatJPEG: () => number;
+
+export const imageComponentFormatYUVY: (a: image.Image) => number;
+
+export const imageComponentFormatYUVU: (a: image.Image) => number;
+
+export const imageComponentFormatYUVV: (a: image.Image) => number;
+
+export const imageComponentFormatJPEG: (a: image.Image) => number;
+
+export const createPixelMapSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const createPixelMapThirdpartSkiaError: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const jsImageReceiverOptionsSetCapacity: (a: number, b: number | boolean) => number;
+
+export const jsGetReceivingSurfaceId: (a: image.ImageReceiver) => string;
+
+export const jsReadNextImage: (a: image.ImageReceiver) => image.Image;
+
+export const jsImageReceiverOptionsGetCapacity: (a: number) => number;
+
+export const jsCreateImageReceiverOptions: (a: number, b: number, c: number) => number;
+
+export const jsCreateImageReceiver: (a: number) => image.ImageReceiver;
+
+export const jsReadLatestImage: (a: image.ImageReceiver) => image.Image;
+
+export const jsImageReceiverNativeOn: (a: image.ImageReceiver, b: Callback<image.ImageReceiver>) => number;
+
+export const jsGetImageSize: (a: image.Image) => number;
+
+export const jsGetImageSizeBadParameter: () => number;
+
+export const jsGetImageComponentTypes: (a: image.Image) => number[];
+
+export const jsGetImageByteBuffer: (a: image.Image, b: number[]) => number;
+
+export const jsGetImageByteBufferBadParameter: () => number;
+
+export const jsGetImageBufferSize: (a: image.Image, b: number[]) => number;
+
+export const jsGetImageBufferSizeBadParameter: () => number;
+
+export const jsGetImageRowStride: (a: image.Image, b: number[]) => number;
+
+export const jsGetImageRowStrideBadParameter: () => number;
+
+export const jsGetImagePixelStride: (a: image.Image, b: number[]) => number;
+
+export const jsGetImagePixelStrideBadParameter: () => number;
+
+export const jsGetImageTimestamp: (a: image.Image) => number;
+
+export const jsGetImageTimestampBadParameter: () => number;
+
+export const jsReleaseImage: (a: image.Image) => number;
+
+export const jsReleaseImageBadParameter: () => number;
+
+export const jSImagePackerDynamicRangeAuto: () => number;
+
+export const jSImagePackerDynamicRangeSdr: () => number;
+
+export const jsIOHPackingOptionsCreate: () => number;
+
+export const createPackingOptions: () => image.PackingOption;
+
+export const jsPackingOptionsSetMimeType: (packing: image.PackingOption, mimeType: String) => number;
+
+export const jsPackingOptionsSetMimeTypeImageAllocFailed: (packing: image.PackingOption, mimeType: String) => number;
+
+export const jsPackingOptionsSetMimeTypeImageBadParameter: () => number;
+
+export const jsPackingOptionsGetMimeType: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetMimeTypeImageAllocFailed: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetMimeTypeImageBadParameter: () => number;
+
+export const jsPackingOptionsGetMimeTypeNull: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetMimeTypeNullInvalidParameter: () => number;
+
+export const jsPackingOptionsGetQuality: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetQualityBadParameter: () => number;
+
+export const jsPackingOptionsSetQuality: (packing: image.PackingOption, mimeType: number) => number;
+
+export const jsPackingOptionsSetQualityBadParameter: () => number;
+
+export const jsPackingOptionsGetDesiredDynamicRange: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetDesiredDynamicRangeBadParameter: () => number;
+
+export const jsPackingOptionsSetDesiredDynamicRange: (packing: image.PackingOption, dynamicRange: number) => number;
+
+export const jsPackingOptionsSetDesiredDynamicRangeBadParameter: () => number;
+
+export const jsPackingOptionsGetNeedsPackProperties: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsGetNeedsPackPropertiesBadParameter: () => number;
+
+export const jsPackingOptionsSetNeedsPackProperties: (packing: image.PackingOption,
+  needsPackProperties: number) => number;
+
+export const jsPackingOptionsSetNeedsPackPropertiesBadParameter: () => number;
+
+export const jsPackingOptionsRelease: (packing: image.PackingOption) => number;
+
+export const jsPackingOptionsReleaseBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceCreate: () => number;
+
+export const jsPackingOptionsForSequenceSetFrameCount: () => number;
+
+export const jsPackingOptionsForSequenceSetFrameCountBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceGetFrameCount: () => number;
+
+export const jsPackingOptionsForSequenceGetFrameCountBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceSetDelayTimeList: () => number;
+
+export const jsPackingOptionsForSequenceSetDelayTimeListBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceGetDelayTimeList: () => number;
+
+export const jsPackingOptionsForSequenceGetDelayTimeListBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceSetDisposalTypes: () => number;
+
+export const jsPackingOptionsForSequenceSetDisposalTypesBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceGetDisposalTypes: () => number;
+
+export const jsPackingOptionsForSequenceGetDisposalTypesBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceSetLoopCount: () => number;
+
+export const jsPackingOptionsForSequenceSetLoopCountBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceGetLoopCount: () => number;
+
+export const jsPackingOptionsForSequenceGetLoopCountBadParameter: () => number;
+
+export const jsPackingOptionsForSequenceRelease: () => number;
+
+export const jsPackingOptionsForSequenceReleaseBadParameter: () => number;
+
+export const jsImagePackerNativeCreate: () => number;
+
+export const packerCreate: () => image.ImagePacker;
+
+export const createFromFd: (fd: number) => image.ImageSource;
+
+export const createDecodingOptions: () => image.DecodingOptions;
+
+export const createPixelMapWithImageSoure: (source: image.ImageSource,
+  options?: image.DecodingOptions) => image.PixelMap | number;
+
+export const jsPackToDataFromImageSource: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.ImageSource, buffer: ArrayBuffer) => number;
+
+export const jsPackToDataFromImageSourceBadParamter: () => number;
+
+export const jsPackToDataFromPixelmap: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.PixelMap | number, buffer: ArrayBuffer) => number;
+
+export const jsPackToDataFromPixelmapBadParamter: () => number;
+
+export const jsPackToDataFromPicture: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.PixelMap | number, buffer: ArrayBuffer) => number;
+
+export const jsPackToDataFromPictureBadParamter: () => number;
+
+export const jsPackToDataFromPixelmapSequence: (packer: image.ImagePacker, source: image.PixelMap | number,
+  buffer: ArrayBuffer) => number;
+
+export const jsPackToDataFromPixelmapSequenceBadParamter: () => number;
+
+export const jsPackToFileFromImageSource: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.ImageSource, fd: number) => number;
+
+export const jsPackToFileFromImageSourceBadParamter: () => number;
+
+export const jsPackToFileFromPixelmap: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.PixelMap | number, fd: number) => number;
+
+export const jsPackToFileFromPixelmapBadParamter: () => number;
+
+export const jsPackToFileFromPicture: (packer: image.ImagePacker, packing: image.PackingOption,
+  source: image.PixelMap | number, fd: number) => number;
+
+export const jsPackToFileFromPictureBadParamter: () => number;
+
+export const jsPackToFileFromPixelmapSequenceBadParamter: () => number;
+
+export const jsImagePackerNativeRelease: () => number;
+
+export const jsImagePackerNativeReleaseBadParamter: () => number;
+
+export const jsGetSupportedFormats: () => number;
+
+export const jsGetSupportedFormatsBadParamter: () => number;
+
+export const jsImageReceiverOptionsCreate: () => number;
+
+export const jsImageReceiverOptionsCreateBadParamter: () => number;
+
+export const jsImageReceiverOptionsGetSize: () => number;
+
+export const jsImageReceiverOptionsSetSize: () => number;
+
+export const jsImageReceiverOptionsSetSizeBadParamter: () => number;
+
+export const jsImageReceiverOptionsGetCapacitySuccess: () => number;
+
+export const jsImageReceiverOptionsSetCapacitySuccess: () => number;
+
+export const jsImageReceiverOptionsSetCapacityBadParamter: () => number;
+
+export const jsImageReceiverOptionsRelease: () => number;
+
+export const jsImageReceiverNativeCreate: () => number;
+
+export const jsImageReceiverNativeCreateBadParamter: () => number;
+
+export const jsImageReceiverNativeGetReceivingSurfaceId: () => number;
+
+export const jsImageReceiverNativeReadLatestImage: () => number;
+
+export const jsImageReceiverNativeReadLatestImageBadParamter: () => number;
+
+export const jsImageReceiverNativeReadLatestImageUnknownError: () => number;
+
+export const jsImageReceiverNativeReadNextImage: () => number;
+
+export const jsImageReceiverNativeReadNextImageBadParamter: () => number;
+
+export const jsImageReceiverNativeReadNextImageUnknownError: () => number;
+
+export const jsImageReceiverNativeOnSuccess: () => number;
+
+export const jsImageReceiverNativeOnBadParamter: () => number;
+
+export const jsImageReceiverNativeOff: () => number;
+
+export const jsImageReceiverNativeOffBadParamter: () => number;
+
+export const jsImageReceiverNativeOnImageArrive: () => number;
+
+export const jsImageReceiverNativeOnImageArriveInvaildParamter: () => number;
+
+export const jsImageReceiverNativeOffImageArrive: () => number;
+
+export const jsImageReceiverNativeOffImageArriveInvaildParamter: () => number;
+
+export const jsImageReceiverNativeGetSize: () => number;
+
+export const jsImageReceiverNativeGetCapacity: () => number;
+
+export const jsImageReceiverNativeRelease: () => number;
+
+export const jsImageReceiverNativeReleaseBadParamter: () => number;
+
+export const jsImageSoureNativeImageDynamicRangeAuto: () => number;
+
+export const jsImageSoureNativeImageDynamicRangeSDR: () => number;
+
+export const jsImageSoureNativeImageDynamicRangeHDR: () => number;
+
+export const jsImageSoureNativeImageAllocatorTypeAuto: (uri: string) => number;
+
+export const jsImageSoureNativeImageAllocatorTypeDMA: (uri: string) => number;
+
+export const jsImageSoureNativeImageAllocatorTypeShareMemory: (uri: string) => number;
+
+export const jsImageSoureNativeImageCropAndScaleStrategyScaleFirst: () => number;
+
+export const jsImageSoureNativeImageCropAndScaleStrategyCropFirst: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetWidth: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetWidthBadParameter: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetHeight: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetHeightBadParameter: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetDynamicRange: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetDynamicRangeBadParameter: () => number;
+
+export const jsImageSoureNativeImageSourceInfoGetMimeType: () => number;
+
+export const jsImageSoureNativeImageSourceInfoRelease: () => number;
+
+export const jsImageSoureNativeImageSourceInfoReleasBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetPixelFormat: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetPixelFormatBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetPixelFormatBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetIndex: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetIndexBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetIndex: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetIndexBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetRotate: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetRotateBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetRotate: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetRotateBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredSize: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredSizeBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredSizeBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredRegion: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredRegionBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredRegion: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredRegionBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredDynamicRange: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredDynamicRangeBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredDynamicRange: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredDynamicRangeBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetCropAndScaleStrategy: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetCropAndScaleStrategyBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetCropAndScaleStrategy: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetCropAndScaleStrategyBadParameter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetCropRegionInvaildParamter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetCropRegionInvaildParamter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredColorSpace: () => number;
+
+export const jsImageSoureNativeDecodingOptionsGetDesiredColorSpaceInvaildParamter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredColorSpace: () => number;
+
+export const jsImageSoureNativeDecodingOptionsSetDesiredColorSpaceInvaildParamter: () => number;
+
+export const jsImageSoureNativeDecodingOptionsRelease: () => number;
+
+export const jsImageSoureNativeDecodingOptionsReleaseBadParameter: () => number;
+
+export const jsImageSoureNativeCreateFromUri: (uri: string) => number;
+
+export const jsImageSoureNativeCreateFromUriBadParameter: () => number;
+
+export const jsImageSoureNativeCreateFromFdBadParameter: () => number;
+
+export const jsImageSoureNativeCreateFromData: (buf: ArrayBufferLike) => number;
+
+export const jsImageSoureNativeCreateFromDataBadParameter: () => number;
+
+export const jsImageSoureNativeCreateFromDataWithUserBuffer: (buf: ArrayBufferLike) => number;
+
+export const jsImageSoureNativeCreateFromDataWithUserBufferInvaildParamter: () => number;
+
+export const jsImageSoureNativeCreateFromRawFile: (fd: number, offset: number, length: number) => number;
+
+export const jsImageSoureNativeCreateFromRawFileBadParameter: () => number;
+
+export const jsImageSoureNativeCreatePixelmapBadParameter: () => number;
+
+export const jsImageSoureNativeCreatePixelmapUsingAllocatorBadParameter: () => number;
+
+export const jsImageSoureNativeCreatePixelmapUsingAllocatorUnsuportedAllocatorType: (uri: string) => number;
+
+export const jsImageSoureNativeCreatePixelmapList: (uri: string) => number;
+
+export const jsImageSoureNativeCreatePixelmapListBadParameter: () => number;
+
+export const jsImageSoureNativeCreatePicture: (uri: string) => number;
+
+export const jsImageSoureNativeCreatePictureBadParameter: () => number;
+
+export const jsImageSoureNativeCreatePictureAtIndex: (uri: string) => number;
+
+export const jsImageSoureNativeCreatePictureAtIndexBadSource: () => number;
+
+export const jsImageSoureNativeCreatePictureAtIndexUnsuportedOptions: (uri: string) => number;
 
 
+export const jsImageSoureNativeGetDelayTimeList: (uri: string) => number;
 
+export const jsImageSoureNativeGetDelayTimeListBadParameter: () => number;
 
+export const jsImageSoureNativeGetImageInfo: (uri: string) => number;
 
+export const jsImageSoureNativeGetImageInfoBadParameter: () => number;
 
+export const jsImageSoureNativeGetImagePropertyBadParameter: () => number;
 
+export const jsImageSoureNativeGetImagePropertyAllocFailed: (uri: string, key: string) => number;
 
+export const jsImageSoureNativeGetImagePropertyWithNullInvaildParamter: () => number;
 
+export const jsImageSoureNativeModifyImageProperty: (uri: string) => number;
 
+export const jsImageSoureNativeModifyImagePropertyBadParameter: () => number;
 
+export const jsImageSoureNativeGetFrameCount: (uri: string) => number;
 
+export const jsImageSoureNativeGetFrameCountBadParameter: () => number;
 
+export const jsImageSoureNativeRelease: (uri: string) => number;
 
+export const jsImageSoureNativeReleaseBadParameter: () => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureCreateBadParameter: () => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureGetDesiredAuxiliaryPictures: (arraySize: number,
+  auxTypes: Array<image.AuxiliaryPictureType>) => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureGetDesiredAuxiliaryPicturesBadParameter: () => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureSetDesiredAuxiliaryPictures: (arraySize: number,
+  auxTypes: Array<image.AuxiliaryPictureType>) => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureSetDesiredAuxiliaryPicturesBadParameter: () => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureRelease: () => number;
 
+export const jsImageSoureNativeDecodingOptionsForPictureReleaseBadParameter: () => number;
 
+export const jsImageSoureNativeGetSupportedFormats: (uri: string) => number;
 
+export const jsImageSoureNativeGetSupportedFormatsInvalidParameter: () => number;
 
+export const pixelmapNative_AntiAliasingLevel_NONE: () => number;
 
+export const pixelmapNative_AntiAliasingLevel_LOW: () => number;
 
+export const pixelmapNative_AntiAliasingLevel_MEDIUM: () => number;
 
+export const pixelmap_HdrMetadataKey_HDR_STATIC_METADATA: () => number;
 
+export const pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA: () => number;
 
+export const pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA: () => number;
 
+export const imageErrorCode_IMAGE_DMA_NOT_EXIST: () => number;
 
+export const pixelmap_HdrMetadataType_NONE: () => number;
 
+export const pixelmap_HdrMetadataType_BASE: () => number;
 
+export const pixelmap_HdrMetadataType_GAINMAP: () => number;
 
+export const pixelmap_HdrMetadataType_ALTERNATE: () => number;
+
+export const pixelmap_HdrStaticMetadata_displayPrimariesX: () => number;
+
+export const pixelmap_HdrStaticMetadata_displayPrimariesY: () => number;
+
+export const pixelmap_HdrStaticMetadata_whitePointX: () => number;
+
+export const pixelmap_HdrStaticMetadata_whitePointY: () => number;
+
+export const pixelmap_HdrStaticMetadata_maxLuminance: () => number;
+
+export const pixelmap_HdrStaticMetadata_minLuminance: () => number;
+
+export const pixelmap_HdrStaticMetadata_maxContentLightLevel: () => number;
+
+export const pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel: () => number;
+
+export const pixelmap_HdrDynamicMetadata_data: () => number;
+
+export const pixelmap_HdrDynamicMetadata_length: () => number;
+
+export const pixelmap_HdrGainmapMetadata_writerVersion: () => number;
+
+export const pixelmap_HdrGainmapMetadata_miniVersion: () => number;
+
+export const pixelmap_HdrGainmapMetadata_gainmapChannelNum: () => number;
+
+export const pixelmap_HdrGainmapMetadata_useBaseColorFlag: () => number;
+
+export const pixelmap_HdrGainmapMetadata_baseHeadroom: () => number;
+
+export const pixelmap_HdrGainmapMetadata_alternateHeadroom: () => number;
+
+export const pixelmap_HdrGainmapMetadata_gainmapMax: () => number;
+
+export const pixelmap_HdrGainmapMetadata_gainmapMin: () => number;
+
+export const pixelmap_HdrGainmapMetadata_gamma: () => number;
+
+export const pixelmap_HdrGainmapMetadata_baselineOffset: () => number;
+
+export const pixelmap_HdrGainmapMetadata_alternateOffset: () => number;
+
+export const pixelFormat_RGB_565: () => number;
+
+export const pixelFormat_RGB_888: () => number;
+
+export const pixelFormat_ALPHA_8: () => number;
+
+export const pixelFormat_RGBA_F16: () => number;
+
+export const pixelFormat_NV21: () => number;
+
+export const pixelFormat_NV12: () => number;
+
+export const pixelFormat_RGBA_1010102: () => number;
+
+export const pixelFormat_YCBCR_P010: () => number;
+
+export const pixelFormat_YCRCB_P010: () => number;
+
+export const JSImageImageAllocatorModeDmaCode: () => number;
+
+export const JSImageImageAllocatorModeSharedMemoryCode: () => number;
+
+export const JSImagePixelmapAlphaTypeOpaqueCode: () => number;
+
+export const JSImagePixelmapAlphaTypeUnpremultipliedCode: () => number;
+
+export const JSImagePixelmapHdrMetadataValueTypeCode: () => number;
+
+export const JSImagePixelmapHdrMetadataValueStaticMetadataCode: () => number;
+
+export const JSImagePixelmapHdrMetadataValueDynamicMetadataCode: () => number;
+
+export const JSImagePixelmapHdrMetadataValueGainmapMetadataCode: () => number;

@@ -5,7 +5,8 @@
             {
                 "xts": [
                     "SystemCapability.Account.AppAccount",
-                    "SystemCapability.Account.OsAccount"
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.FileManagement.File.FileIO"
                 ]
             }
         ]
