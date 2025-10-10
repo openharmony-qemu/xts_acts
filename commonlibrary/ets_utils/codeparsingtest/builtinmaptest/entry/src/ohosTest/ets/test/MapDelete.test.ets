@@ -35,7 +35,7 @@ import {
   MapDeleteTest098,
   NewObject,
   symbol
-} from './MapDelete'
+} from '../testability/pages/MapDelete'
 
 export function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
