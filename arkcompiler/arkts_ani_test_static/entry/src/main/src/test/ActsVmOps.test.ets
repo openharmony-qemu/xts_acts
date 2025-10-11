@@ -26,27 +26,27 @@ export default function vmOpsTest() {
   describe("ActsVmOpsTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch (e) {
-      console.log("loadFailed" + (e as Error).message)
+    } catch (e: Error) {
+      console.log("loadFailed" + e.message)
     }
 
-    /*
-     * @tc.number    : AttachCurrentThreadAndDetachCurrentThread_0100
-     * @tc.name      : AttachCurrentThreadAndDetachCurrentThread_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.number    SUB_ANI_ATTACH_CURRENT_THREAD_DETACH_CURRENT_THREAD_0100
+     * @tc.name      AttachCurrentThreadAndDetachCurrentThread_0001
+     * @tc.desc      test attach current thread and detach thread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it("AttachCurrentThreadAndDetachCurrentThread_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("AttachCurrentThreadAndDetachCurrentThread_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('AttachCurrentThreadAndDetachCurrentThread_0100 start');
+        console.log('AttachCurrentThreadAndDetachCurrentThread_0001 start');
         let cls = new Foo();
         let result = cls.test_AttachCurrentThreadAndDetachCurrentThread();
         expect(result).assertTrue();
-        console.log('AttachCurrentThreadAndDetachCurrentThread_0100 done');
+        console.log('AttachCurrentThreadAndDetachCurrentThread_0001 done');
         done();
-        console.log('AttachCurrentThreadAndDetachCurrentThread_0100 end');
+        console.log('AttachCurrentThreadAndDetachCurrentThread_0001 end');
       })
   })
 }
