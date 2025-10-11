@@ -136,8 +136,144 @@ struct GridSpanPage {
               columns: 1,
               direction: GridRowDirection.Row
             }) {
-              GridCol() {
-                Row().width('100%').height('20vp')
+              ForEach(new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green,
+                Color.Pink, Color.Grey, Color.Blue, Color.Brown), (color: Color) => {
+                GridCol({
+                  span: {
+                    xs: 1,
+                    sm: 2,
+                    md: 3,
+                    lg: 4
+                  } as GridColColumnOption
+                } as GridColOptions) {
+                  Row().width('100%').height('20vp')
+                }.borderColor(color).borderWidth(2)
+              })
+            }
+
+            
+
+          } else if (this.targetView == 'Grid') {
+            Grid() {
+              ForEach(['0', '1', '2', '3', '4'], (item: string, index: int) => {
+                ForEach(['0', '1', '2', '3', '4'], (day: string) => {
+                  GridItem() {
+                    Text(day).backgroundColor(Color.White)
+                      .width('100%').height('100%').textAlign(TextAlign.Center)
+                  }
+                })
+              }, (item: string, index: int) => item)
+            }
+            .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+            .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
+
+            
+
+            .backgroundColor(0xFAEEE0)
+          } else if (this.targetView == 'List') {
+            List() {
+            }
+            
+            .width("100%").height("100%")
+          } else if (this.targetView == 'Navigator') {
+            
+            
+            
+            
+            
+          } else if (this.targetView == 'Panel') {
+            
+            
+            
+            
+
+          } else if (this.targetView == 'Refresh') {
+            Refresh({ refreshing: true }) {
+              Text('123')
+            }
+
+            
+
+          } else if (this.targetView == 'RelativeContainer') {
+            RelativeContainer() {
+              Row()
+                .width(100)
+                .height(100)
+                .backgroundColor('#FF3333')
+                .alignRules({
+                  top: { anchor: '__container__', align: VerticalAlign.Top },
+                  left: { anchor: '__container__', align: HorizontalAlign.Start }
+                })
+                .id('constraintSize')
+            }
+
+            
+
+          } else if (this.targetView == 'Row') {
+            Row()
+            
+
+          } else if (this.targetView == 'RowSplit') {
+            RowSplit() {
+              Text('Text')
+            }
+
+            
+
+          } else if (this.targetView == 'Scroll') {
+            Scroll() {
+              Column() {
+                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number) => {
+                  Text('Scroll' + String(item))
+                    .width('90%')
+                    .height(50)
+                    .backgroundColor(Color.White)
+                    .textAlign(TextAlign.Center)
+                }, (item: number) => String(item))
+              }.width('100%')
+            }.scrollBar(BarState.On)
+
+            
+
+          } else if (this.targetView == 'SideBarContainer') {
+            SideBarContainer(SideBarContainerType.Embed) {
+              Column() {
+                ForEach(new Array<number>(1, 2, 3), (item: number) => {
+                  Column({ space: 5 } as ColumnOptions) {
+                    Image($r('app.media.icon')).width(50).height(50)
+                    Text('Index0' + item).fontSize(25)
+                  }
+                })
+              }.width('100%').justifyContent(FlexAlign.SpaceEvenly).backgroundColor(Color.Green)
+
+              Column() {
+                Text('SideBarContainer content').fontSize(25)
+              }.backgroundColor(Color.Orange)
+            }
+
+            
+
+          } else if (this.targetView == 'Stack') {
+            Stack() {
+            }
+
+            
+
+          } else if (this.targetView == 'Swiper') {
+            Swiper() {
+              ForEach(new Array<number>(1, 2, 3), (item: number) => {
+                Text('Swiper' + item).width('90%').height(50)
+              }, (item: number) => String(item))
+            }
+            .indicator(true)
+            .backgroundColor(Color.White)
+
+            
+
+          } else if (this.targetView == 'Tabs') {
+            Tabs() {
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor('#00CB87')
               }
               .applyStyles(this.commonStyle)
 

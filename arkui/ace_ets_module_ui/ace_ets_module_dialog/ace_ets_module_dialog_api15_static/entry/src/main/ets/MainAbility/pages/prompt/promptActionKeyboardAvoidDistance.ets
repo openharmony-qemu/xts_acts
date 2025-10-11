@@ -58,7 +58,7 @@ struct promptKeyboard {
         this.controller1.stopEditing()
       })
       Grid() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string, index: number):void => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string, index: int):void => {
           GridItem() {
             Button(item + '')
               .width('30%').onClick(():void => {

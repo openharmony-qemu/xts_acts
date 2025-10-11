@@ -61,7 +61,7 @@ class MyNodeController extends NodeController {
   }
 
   removeChild(idx:number){
-    let child = this.rootNode?.getChild(idx)
+    let child = this.rootNode?.getChild(Double.toInt(idx))
     if (child){
       this.rootNode?.removeChild(child)
       console.log(`sally-----removechild(${idx})`)
@@ -79,7 +79,7 @@ class MyNodeController extends NodeController {
   }
 
   getPreviousSibling(idx:number){
-    let child = this.rootNode?.getChild(idx)
+    let child = this.rootNode?.getChild(Double.toInt(idx))
     if (child){
       let previousSibling = child.getPreviousSibling()
       console.log(`sally-----getPreviousSibling(${idx}) is ${previousSibling}}`)
@@ -87,7 +87,7 @@ class MyNodeController extends NodeController {
   }
 
   getNextSibling(idx:number){
-    let child = this.rootNode?.getChild(idx)
+    let child = this.rootNode?.getChild(Double.toInt(idx))
     if (child){
       let nextSibling = child.getNextSibling()
       console.log(`sally-----getNextSibling(${idx}) is ${nextSibling}}`)

@@ -40,7 +40,7 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow() {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12)
@@ -49,7 +49,7 @@ export struct WaterFlowView {
         .width('100%')
         .height('10')
         .backgroundColor('#FF00FF00')
-      }, (item: int, index: number) => String(item))
+      }, (item: int, index: int) => String(item))
     }
     .key('WaterFlowKey1')
     

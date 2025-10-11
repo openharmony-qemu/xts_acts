@@ -49,7 +49,7 @@ export struct NavigationView {
   build() {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
               Row() {
                 Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)

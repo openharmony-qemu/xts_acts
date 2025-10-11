@@ -329,7 +329,8 @@ export default function PromiseRejectSecondTest() {
             successMessage = `Inner promise success at step ${i + 1}: ${result}`;
             console.log(successMessage);
           }
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           arr.push(22);
           errorMessage = `Rejected: ${error.message}`;
           console.error('Caught error:', error.message);
@@ -376,7 +377,8 @@ export default function PromiseRejectSecondTest() {
             if (i === 9) {
               try {
                 throw error;
-              } catch (e: Error) {
+              } catch (e) {
+                e = e as Error;
                 arr.push(22);
                 errorMessage = `Rejected: ${e.message}`;
                 console.error('Caught error:', e.message);

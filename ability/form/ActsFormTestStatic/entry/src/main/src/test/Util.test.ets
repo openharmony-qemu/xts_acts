@@ -68,9 +68,11 @@ export default class Utils {
         isSuccessStartAbility = true;
       });
       await Utils.msSleep(500);
-    } catch (error: BusinessError) {
-      hilog.error(DOMAIN, TAG, `start ${abilityName} fail. message: ${error?.message}`);
-      return false;
+    } catch (error) {
+      if (error instanceof BusinessError) {
+        hilog.error(DOMAIN, TAG, `start ${abilityName} fail. message: ${error?.message}`);
+        return false;
+      }
     }
     if (isSuccessStartAbility) {
       return true;

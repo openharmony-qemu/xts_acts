@@ -57,10 +57,12 @@ export default function TreeMapTest1() {
       try {
         let treeMap = new TreeMap<number, number>();
         expect(String(treeMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 
@@ -87,10 +89,12 @@ export default function TreeMapTest1() {
         expect(treeMap.remove("b")).assertEqual(2);
         expect(treeMap.remove("c")).assertEqual(3);
         expect(treeMap.remove("d")).assertEqual(4);
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 

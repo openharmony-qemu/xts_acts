@@ -129,7 +129,7 @@ struct ListExample {
     Stack({ alignContent: Alignment.TopStart }) {
       Column() {
         List({ space: 20, initialIndex: 0 }) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             ListItem() {
               Text('' + item)
                 .width('100%')

@@ -110,8 +110,8 @@ struct grid {
       Text('origin')
 
       Grid(scroller, layoutOptions1) {
-        ForEach(this.number1, (day: string, index: number) => {
-          ForEach(this.number1, (day: string, index: number) => {
+        ForEach(this.number1, (day: string, index: int) => {
+          ForEach(this.number1, (day: string, index: int) => {
             GridItem({ style: GridItemStyle.NONE }) {
               Text(day)
                 .fontSize(16)

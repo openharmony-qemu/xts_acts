@@ -26,8 +26,8 @@ export default function vmOpsTest() {
   describe("ActsVmOpsTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch (e: Error) {
-      console.log("loadFailed" + e.message)
+    } catch (e) {
+      console.log("loadFailed" + (e as Error).message)
     }
 
     /*

@@ -44,7 +44,7 @@ struct onUnselectedSwiperExample {
   private swiperController: SwiperController = new SwiperController()
   private data: number[] = [] as number[];
   @State autoPlay: boolean = false
-  @State displayCount: number = 1
+  @State displayCount: Int = 1
   @State hideIndex: number = -1
   @State backColor: Color = Color.Gray
   @State selectedIndex: number = -1
@@ -97,21 +97,21 @@ struct onUnselectedSwiperExample {
         arrowSize: 18,
         arrowColor: Color.Blue
       } as ArrowStyle, false)
-      .onSelected((index: number): void => {
+      .onSelected((index: Int): void => {
         console.log('onSelected index:' + index);
         this.selectedIndex = index
       })
-      .onUnselected((index: number): void => {
+      .onUnselected((index: Int): void => {
         this.hideIndex = index
         console.log('onUnselected: ' + index)
       })
-      .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('onGestureSwipe index: ' + index)
         console.info('onGestureSwipe current offset: ' + extraInfo.currentOffset)
         console.info('onGestureSwipe target offset: ' + extraInfo.targetOffset)
         console.info('onGestureSwipe velocity: ' + extraInfo.velocity)
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('onAnimationStart index: ' + index)
         console.info('onAnimationStart targetIndex: ' + targetIndex)
         console.info('onAnimationStart current offset: ' + extraInfo.currentOffset)
@@ -122,7 +122,7 @@ struct onUnselectedSwiperExample {
         }
         this.selectedIndex = targetIndex
       })
-      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info(String(index))
         console.info('onAnimationEnd index: ' + index)
         console.info('onAnimationEnd current offset: ' + extraInfo.currentOffset)

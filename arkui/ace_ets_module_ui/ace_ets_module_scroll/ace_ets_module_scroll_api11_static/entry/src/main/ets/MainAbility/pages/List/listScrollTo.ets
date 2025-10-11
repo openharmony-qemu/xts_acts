@@ -47,7 +47,7 @@ struct listScroll100Example {
   build() {
     Column() {
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')

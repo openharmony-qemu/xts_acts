@@ -60,7 +60,7 @@ class MyNodeController extends NodeController {
 struct CustomLayout {
   @Builder
   childrenBuilder() {
-    ForEach([0, 1], (item: Int, index: Double) => { 
+    ForEach([0, 1], (item: Int, index: int) => { 
       NodeContainer(new MyNodeController())
         .id('CustomLayoutUniqueid_NodeContainer_' + index)
     })

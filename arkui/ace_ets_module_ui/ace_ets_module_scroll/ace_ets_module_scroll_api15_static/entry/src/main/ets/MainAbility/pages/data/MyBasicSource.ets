@@ -22,11 +22,11 @@ export class MyBasicSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 

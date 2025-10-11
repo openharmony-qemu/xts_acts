@@ -108,7 +108,7 @@ struct canOverScrollGrid {
       }
 
       Grid(this.scroller) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           GridItem() {
             Text(item.toString())
               .id('canOverScroll_grid_' + item)

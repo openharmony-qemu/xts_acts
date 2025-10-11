@@ -28,8 +28,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct RichEditor01 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  private start: number = -1;
-  private end: number = -1;
+  private start: int = -1;
+  private end: int = -1;
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State text: string = ""

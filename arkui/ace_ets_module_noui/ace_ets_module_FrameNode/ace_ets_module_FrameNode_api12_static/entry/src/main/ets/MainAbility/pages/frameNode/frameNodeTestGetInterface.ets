@@ -89,13 +89,13 @@ class MyNodeController extends NodeController {
   insertChildAfter(index : number)
   {
     let insertNode = new FrameNode(this.uiContext!);
-    let childNode = this.rootNode!.getChild(index);
+    let childNode = this.rootNode!.getChild(Double.toInt(index));
     this.rootNode!.insertChildAfter(insertNode,childNode);
     this.childrenCount = this.childrenCount + 1;
   }
   removeChild(index : number)
   {
-    let childNode = this.rootNode!.getChild(index);
+    let childNode = this.rootNode!.getChild(Double.toInt(index));
     if(childNode == null)
     {
       console.log(`${TEST_TAG} getchild at index {${index}} : fail`);

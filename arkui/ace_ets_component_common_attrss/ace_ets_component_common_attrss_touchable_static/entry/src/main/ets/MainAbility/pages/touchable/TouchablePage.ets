@@ -414,11 +414,11 @@ struct TouchablePage {
             
           } else if (this.targetView == 'List') {
             List({ space: 20, initialIndex: 0 }) {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: number) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
                 ListItem() {
                   Button('ListItem' + item)
                 }
-              }, (item: Int, index: number) => item.toString())
+              }, (item: Int, index: int) => item.toString())
             }
             .listDirection(Axis.Vertical)
             
@@ -466,9 +466,9 @@ struct TouchablePage {
           } else if (this.targetView == 'Scroll') {
             Scroll() {
               Column() {
-                ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: number) => {
+                ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
                   Button('Scroll item' + item)
-                }, (item: Int, index: number) => item.toString())
+                }, (item: Int, index: int) => item.toString())
               }.width('100%')
             }
             .scrollBar(BarState.On)
@@ -491,11 +491,11 @@ struct TouchablePage {
             }.backgroundColor(Color.Orange)
           } else if (this.targetView == 'Swiper') {
             Swiper() {
-              ForEach([1, 2, 3], (item: Int,index: number) => {
+              ForEach([1, 2, 3], (item: Int,index: int) => {
                 Text('Swiper' + item)
                   .width('90%')
                   .height(160)
-              }, (item: Int,index: number) => item+'')
+              }, (item: Int,index: int) => item+'')
             }
             .indicator(true)
             .backgroundColor(Color.White)

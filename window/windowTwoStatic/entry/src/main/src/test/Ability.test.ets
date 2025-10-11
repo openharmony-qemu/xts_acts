@@ -72,14 +72,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'screenshot triggered.');
         };
         try {
-          win.on('screenshot', callback);
+          win.onScreenshot(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on screenshot fail.');
           expect(false).assertTrue();
         }
         try {
-          win.off('screenshot', callback);
+          win.offScreenshot(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off screenshot fail.');
@@ -102,14 +102,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'windowHighlightChange triggered.');
         };
         try {
-          win.on('windowHighlightChange', callback);
+          win.onWindowHighlightChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on windowHighlightChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
-          win.off('windowHighlightChange', callback);
+          win.offWindowHighlightChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off windowHighlightChange fail.');
@@ -132,14 +132,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'avoidAreaChange triggered.');
         };
         try {
-          win.on('avoidAreaChange', callback);
+          win.onAvoidAreaChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on avoidAreaChange fail.');
           expect(false).assertTrue();
         }
         try {
-          win.off('avoidAreaChange', callback);
+          win.offAvoidAreaChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off avoidAreaChange fail.');
@@ -162,14 +162,14 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', 'windowVisibilityChange triggered.');
         };
         try {
-          win.on('windowVisibilityChange', callback);
+          win.onWindowVisibilityChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'on windowVisibilityChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
-          win.off('windowVisibilityChange', callback);
+          win.offWindowVisibilityChange(callback);
           expect(true).assertTrue();
         } catch (e: BusinessError) {
           hilog.info(0x0000, '[ANI]', 'off windowVisibilityChange fail.');
@@ -412,9 +412,9 @@ export default function abilityTest() {
         try {
           let callback = (data: window.WindowStageEventType): void => {
           };
-          windowStage.on('windowStageEvent', callback);
+          windowStage.onWindowStageEvent(callback);
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onWindowStageEventTest success.`);
-          windowStage.off('windowStageEvent', callback);
+          windowStage.offWindowStageEvent(callback);
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] offWindowStageEventTest success.`);
           expect(true).assertTrue();
           done();
@@ -709,7 +709,7 @@ export default function abilityTest() {
             return undefined;
           };
         try {
-          win.on('rotationChange', callback);
+          win.onRotationChange(callback);
           win.setPreferredOrientation(window.Orientation.LANDSCAPE);
           win.setPreferredOrientation(window.Orientation.PORTRAIT);
           expect(true).assertTrue();
@@ -720,7 +720,7 @@ export default function abilityTest() {
           }
         }
         try {
-          win.off('rotationChange', callback);
+          win.offRotationChange(callback);
           expect(true).assertTrue();
         } catch (err: BusinessError) {
           const errCode: number = err.code;

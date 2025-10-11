@@ -44,7 +44,7 @@ struct RichEditorTest {
           this.controller.addTextSpan("0123456789\n", {
             style: {
               fontColor: Color.Pink,
-              fontSize: "32",
+              fontSize: 32.0,
             },
             paragraphStyle: {
               textAlign: TextAlign.Start,

@@ -58,7 +58,8 @@ export default function builtinsThrowTest() {
     it('builtinsStatementThrow0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): Promise<void> => {
       try {
         throwDivisor(1, 0);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(error.message);
         flag = 1
         expect(error.message).assertEqual('The divisor cannot be zero')
@@ -79,7 +80,8 @@ export default function builtinsThrowTest() {
       try {
         console.log('Testing testData1:');
         positiveNumbers([1, 0, 3, 4, 5]);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Error in testData1:', error.message);
         flag = 4;
         expect(error.message).assertEqual('The number cannot be zero');
@@ -89,7 +91,8 @@ export default function builtinsThrowTest() {
       try {
         console.log('Testing testData2:');
         positiveNumbers([1, 2, -3, 4, 5]);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Error in testData2:', error.message);
         flag = 5;
         expect(error.message).assertEqual('Numbers should not be negative');
@@ -110,7 +113,8 @@ export default function builtinsThrowTest() {
       try {
         console.log('Testing testData1:');
         UserWithAddressAddress('Alice', 30, '123');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Error in testData1:', error.message);
         flag = 6;
         expect(error.message).assertEqual('address length must be between 5 and 20 characters');
@@ -120,7 +124,8 @@ export default function builtinsThrowTest() {
       try {
         console.log('Testing testData2:');
         UserWithAddressAddress('ab', 30, '123 Main St Wonderland');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Error in testData2:', error.message);
         flag = 7;
         expect(error.message).assertEqual('Username too short: must be at least 3 characters long');
@@ -130,7 +135,8 @@ export default function builtinsThrowTest() {
       try {
         console.log('Testing testData3:');
         UserWithAddressAddress('abb', 10, '123 Main St Wonderland');
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error('Error in testData3:', error.message);
         flag = 8;
         expect(error.message).assertEqual('Age too young: must be at least 18 years old');
@@ -164,7 +170,8 @@ export default function builtinsThrowTest() {
     it('builtinsStatementThrow0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         throw new Error('This is a global error');
-      } catch (err : Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('This is a global error');
       }
       done();;

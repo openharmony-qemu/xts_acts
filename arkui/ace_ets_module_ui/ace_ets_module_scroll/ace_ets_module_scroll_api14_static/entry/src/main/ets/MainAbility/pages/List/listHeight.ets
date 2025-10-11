@@ -61,7 +61,7 @@ struct listAnimationHeightExample {
         })
 
       List({ scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, itemIndex: number) => {
+        ForEach(this.arr, (item: number, itemIndex: int) => {
           ListItem() {
             Text('Item:' + item + ', itemIndex:' + itemIndex)
               .width('100%')
@@ -78,7 +78,7 @@ struct listAnimationHeightExample {
           })
           .borderColor(Color.Pink)
           .borderWidth(2)
-        }, (item: number, itemIndex: number) => (item + itemIndex).toString())
+        }, (item: number, itemIndex: int) => (item + itemIndex).toString())
       }
       .width('90%')
       .height('50%')

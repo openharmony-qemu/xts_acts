@@ -42,11 +42,11 @@ class MyDataSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -75,14 +75,14 @@ struct nestedScrollSwiperExample {
     Column({ space: 5 } as ColumnOptions) {
       Text('Swiper start1')
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('100%')
             .height('100%')
             .backgroundColor(0xAFEEEE)
             .textAlign(TextAlign.Center)
             .fontSize(30)
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .id('swiper_nestedScroll_1')
       .width('80%')
@@ -118,10 +118,10 @@ struct nestedScrollSwiperExample {
       } as ArrowStyle, false)
       .nestedScroll(SwiperNestedScrollMode.SELF_ONLY)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('current offset: ' + extraInfo.currentOffset)
         console.info('target offset: ' + extraInfo.targetOffset)
@@ -130,14 +130,14 @@ struct nestedScrollSwiperExample {
 
       Text('Swiper end2')
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('100%')
             .height('100%')
             .backgroundColor(0xAFEEEE)
             .textAlign(TextAlign.Center)
             .fontSize(30)
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .id('swiper_nestedScroll_2')
       .width('80%')
@@ -173,17 +173,17 @@ struct nestedScrollSwiperExample {
       } as ArrowStyle, false)
       .nestedScroll(SwiperNestedScrollMode.SELF_FIRST)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('targetIndex: ' + targetIndex)
         console.info('current offset: ' + extraInfo.currentOffset)
         console.info('target offset: ' + extraInfo.targetOffset)
         console.info('velocity: ' + extraInfo.velocity)
       })
-      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('current offset: ' + extraInfo.currentOffset)
       })

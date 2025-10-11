@@ -37,17 +37,17 @@ struct UIComponentScrollSwiperDrag0280 {
   build() {
     Column() {
       Swiper(this.swiperController) {
-        ForEach(this.data, (item: number, index: number) => {
+        ForEach(this.data, (item: number, index: int) => {
           Column() {
             Text(item.toString()).fontSize(80)
           }
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .width(250)
       .height(250)
       .curve(Curve.LinearOutSlowIn)
       .backgroundColor(Color.Gray)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.index = index.toString()
       })
       .key('UIComponentScrollSwiperDrag0280_swiper')

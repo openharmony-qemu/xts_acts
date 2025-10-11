@@ -66,7 +66,7 @@ struct ListIndexExample {
         .height(20)
 
       List({ space: this.listSpace, initialIndex: 2, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('item-' + item)
               .height(item < 5 ? 100 : this.listChildrenSize.childDefaultSize)

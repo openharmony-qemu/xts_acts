@@ -26,7 +26,7 @@ import {
 function buildDataPanel(config: DataPanelConfiguration) {
   Column() {
     Column() {
-      ForEach(config.values, (item: number, index: number) => {
+      ForEach(config.values, (item: number, index: int) => {
         ChildItem({ item: item, index: index, max: config.maxValue })
       })
     }.padding(10)

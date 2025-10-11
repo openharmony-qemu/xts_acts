@@ -35,7 +35,7 @@ struct scrollEventUIIndex {
           Button('UIObserver on')
             .id('scrollEvent_off_ui')
             .onClick((e: ClickEvent) => {
-              this.observer.on('scrollEvent', (info) => {
+              this.observer.onScrollEvent((info) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
                 console.info('scrollEvent id', JSON.stringify(info.id));
                 console.info('scrollEvent uniqueId', JSON.stringify(info.uniqueId));
@@ -46,7 +46,7 @@ struct scrollEventUIIndex {
           Button('UIObserver off')
             .id('scrollEvent_off_on')
             .onClick((e: ClickEvent) => {
-              this.observer.off('scrollEvent');
+              this.observer.offScrollEvent();
             })
         }
 
@@ -54,7 +54,7 @@ struct scrollEventUIIndex {
           Button('UIObserverWithId on')
             .id('scrollEvent_uiId_on')
             .onClick((e: ClickEvent) => {
-              this.observer.on('scrollEvent', { id:'testId_uiScroll' }, (info) => {
+              this.observer.onScrollEvent({ id:'testId_uiScroll' }, (info) => {
                 console.info('scrollEventInfo options', JSON.stringify(info));
                 console.info('scrollEvent options id', JSON.stringify(info.id));
                 console.info('scrollEvent options uniqueId', JSON.stringify(info.uniqueId));
@@ -69,7 +69,7 @@ struct scrollEventUIIndex {
           Button('UIObserverWithId off')
             .id('scrollEvent_uiId_off')
             .onClick((e: ClickEvent) => {
-              this.observer.off('scrollEvent', { id:'testId_uiScroll' });
+              this.observer.offScrollEvent({ id:'testId_uiScroll' });
             })
         }
         Scroll(this.scroller) {

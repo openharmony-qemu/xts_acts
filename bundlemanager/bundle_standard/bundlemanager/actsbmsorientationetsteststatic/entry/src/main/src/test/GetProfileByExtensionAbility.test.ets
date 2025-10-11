@@ -272,10 +272,12 @@ export default function getProfileByExtensionAbility() {
         manager.getProfileByExtensionAbilitySync('INVALID_NAME', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "testGetProfileByExtensionAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "testGetProfileByExtensionAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -290,10 +292,12 @@ export default function getProfileByExtensionAbility() {
         manager.getProfileByExtensionAbilitySync(MODULE_NAME, 'INVALID_NAME', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "testGetProfileByExtensionAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "testGetProfileByExtensionAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -308,10 +312,12 @@ export default function getProfileByExtensionAbility() {
         manager.getProfileByExtensionAbilitySync(MODULE_NAME, ABILITY_NAME, "METADATA_NAME");
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -326,10 +332,12 @@ export default function getProfileByExtensionAbility() {
         manager.getProfileByExtensionAbilitySync('', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -344,10 +352,12 @@ export default function getProfileByExtensionAbility() {
         manager.getProfileByExtensionAbilitySync(MODULE_NAME, '', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByExtensionAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 

@@ -61,7 +61,7 @@ struct GridExampleA {
       Text(this.message3).id('gridBackToTop')
       Text(this.message4).id('gridAbnormal')
       Grid() {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           GridItem() {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)

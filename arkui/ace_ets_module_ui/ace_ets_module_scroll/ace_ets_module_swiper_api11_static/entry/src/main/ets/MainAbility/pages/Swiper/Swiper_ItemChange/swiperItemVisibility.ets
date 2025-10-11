@@ -49,7 +49,7 @@ struct SwiperItemVisibilityTest {
   @State testVisibility1: Visibility = Visibility.Visible;
   @State testVisibility2: Visibility = Visibility.Visible;
   @State testVisibility3: Visibility = Visibility.Visible;
-  @State testIndex: number = 0;
+  @State testIndex: Int = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
 
   getVisibilityValue(num: number): Visibility {

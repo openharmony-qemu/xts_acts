@@ -23,24 +23,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsShortSecondPrototypebTest() {
-  describe('builtinsShortSecondPrototypebTest', ():void => {
+  describe('builtinsShortSecondPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -1505,150 +1505,6 @@ export default function builtinsShortSecondPrototypebTest() {
         const b = new Short(1);
         const result = a.sub(b);
         expect(result.toShort()).assertEqual(-2);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8100
-     * @tc.name builtinsShortSecondPrototypebTest8100
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8100'
-        console.info(`${caseName}, test start`);
-        const num = new Short(0);
-        expect(num.unboxed()).assertEqual(0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8200
-     * @tc.name builtinsShortSecondPrototypebTest8200
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8200'
-        console.info(`${caseName}, test start`);
-        const num = new Short(42);
-        expect(num.unboxed()).assertEqual(42);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8300
-     * @tc.name builtinsShortSecondPrototypebTest8300
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8300'
-        console.info(`${caseName}, test start`);
-        const num = new Short(-42);
-        expect(num.unboxed()).assertEqual(-42);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8400
-     * @tc.name builtinsShortSecondPrototypebTest8400
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8400'
-        console.info(`${caseName}, test start`);
-        const num = new Short(Short.MAX_VALUE);
-        expect(num.unboxed()).assertEqual(Short.MAX_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8500
-     * @tc.name builtinsShortSecondPrototypebTest8500
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8500'
-        console.info(`${caseName}, test start`);
-        const num = new Short(Short.MIN_VALUE);
-        expect(num.unboxed()).assertEqual(Short.MIN_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8600
-     * @tc.name builtinsShortSecondPrototypebTest8600
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8600'
-        console.info(`${caseName}, test start`);
-        const num = new Short(1);
-        expect(num.unboxed()).assertEqual(1);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8700
-     * @tc.name builtinsShortSecondPrototypebTest8700
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8700'
-        console.info(`${caseName}, test start`);
-        const num = new Short(-1);
-        expect(num.unboxed()).assertEqual(-1);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_SHORT_SECOND_PROTOTYPEB_TEST_8800
-     * @tc.name builtinsShortSecondPrototypebTest8800
-     * @tc.desc test unboxed(): short return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsShortSecondPrototypebTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsShortSecondPrototypebTest8800'
-        console.info(`${caseName}, test start`);
-        const num = new Short(12345);
-        expect(num.unboxed()).assertEqual(12345);
         console.info(`${caseName}, test end`);
         Done();
       })

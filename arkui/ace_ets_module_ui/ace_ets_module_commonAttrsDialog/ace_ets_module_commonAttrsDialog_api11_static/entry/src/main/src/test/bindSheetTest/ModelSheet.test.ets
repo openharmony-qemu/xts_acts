@@ -133,8 +133,12 @@ export default function ModelSheetTest() {
         }
         let callback = (indexData: emitter.EventData) => {
           console.info("ArkUX_Model_Visual_0160 get state result is: " + JSON.stringify(indexData));
+          let detents_arr: Array<SheetSize|int> = new Array<SheetSize|int>();
+          detents_arr.push(SheetSize.MEDIUM);
+          detents_arr.push(SheetSize.LARGE);
+          detents_arr.push(100);
           expect(((indexData.data) as ESObject)?.getProperty('detents'))
-            .assertEqual([SheetSize.MEDIUM, SheetSize.LARGE, 100]);
+            .assertEqual(detents_arr);
           expect(((indexData.data) as ESObject)?.getProperty('blurStyle')).assertEqual(BlurStyle.Thick);
           expect(((indexData.data) as ESObject)?.getProperty('showClose')).assertEqual(true);
           expect(((indexData.data) as ESObject)?.getProperty('title')).assertEqual("title");
@@ -175,7 +179,12 @@ export default function ModelSheetTest() {
         }
         let callback = (indexData: emitter.EventData) => {
           console.info("ArkUX_Model_Visual_0170 get state result is: " + JSON.stringify(indexData));
-          expect(((indexData.data) as ESObject)?.getProperty('detents')).assertEqual([100, 100, SheetSize.LARGE]);
+          let detents_arr: Array<SheetSize|int> = new Array<SheetSize|int>();
+          detents_arr.push(100);
+          detents_arr.push(100);
+          detents_arr.push(SheetSize.LARGE);
+          expect(((indexData.data) as ESObject)?.getProperty('detents'))
+            .assertEqual(detents_arr);
           expect(((indexData.data) as ESObject)?.getProperty('blurStyle')).assertEqual(BlurStyle.Regular);
           expect(((indexData.data) as ESObject)?.getProperty('showClose')).assertEqual(false);
           expect(((indexData.data) as ESObject)?.getProperty('title')).assertEqual("asdasd");
@@ -256,8 +265,12 @@ export default function ModelSheetTest() {
         }
         let callback = (indexData: emitter.EventData) => {
           console.info("ArkUX_Model_Visual_0200 get state result is: " + JSON.stringify(indexData));
+          let detents_arr: Array<SheetSize|int> = new Array<SheetSize|int>();
+          detents_arr.push(SheetSize.LARGE);
+          detents_arr.push(10000);
+          detents_arr.push(SheetSize.MEDIUM);
           expect(((indexData.data) as ESObject)?.getProperty('detents'))
-            .assertEqual([SheetSize.LARGE, 10000, SheetSize.MEDIUM]);
+            .assertEqual(detents_arr);
           expect(((indexData.data) as ESObject)?.getProperty('blurStyle')).assertEqual(BlurStyle.BACKGROUND_THIN);
           expect(((indexData.data) as ESObject)?.getProperty('showClose')).assertEqual(false);
           expect(((indexData.data) as ESObject)?.getProperty('title')).assertEqual("标题");

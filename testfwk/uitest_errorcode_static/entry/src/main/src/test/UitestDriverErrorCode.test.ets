@@ -42,9 +42,11 @@ export default function uitestDriverErrorTest() {
         await driver.delayMs(waitUiReadyMs);
         await driver.assertComponentExist(ON.text('NotTest'));
         await driver.delayMs(waitUiReadyMs);
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_assertComponentExist_17000003_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000003);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_assertComponentExist_17000003_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(17000003);
+        }
       }
       await sleep(1000);
       console.log(`${TestTag}, test_assertComponentExist_17000003_static end`);
@@ -62,9 +64,11 @@ export default function uitestDriverErrorTest() {
         await driver.inputText({x:100, y:100}, '123456', {
           paste: false
         });
-      }catch (e: BusinessError) {
-        hilog.info(domain, tag, `test_driver_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(CapabilityCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          hilog.info(domain, tag, `test_driver_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(CapabilityCode);
+        }
       }
       hilog.info(domain, tag, `test_driver_inputTextMode_801_static end`);
     })
@@ -80,9 +84,11 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.pressBack(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
-        hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 error is, ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(ParameterErrorCode);
+        }
       }
       hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 end`);
     })
@@ -98,9 +104,11 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.getDisplaySize(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
-        hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static error is, ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(ParameterErrorCode);
+        }
       }
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
     })

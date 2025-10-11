@@ -48,9 +48,9 @@ struct lanesItemGroupExample {
   build() {
     Column() {
       List({ scroller: this.scroller }) {
-        ForEach(this.arr, (item0: number, groupIndex: number) => {
+        ForEach(this.arr, (item0: number, groupIndex: int) => {
           ListItemGroup() {
-            ForEach(this.arr2, (item: number, itemIndex: number) => {
+            ForEach(this.arr2, (item: number, itemIndex: int) => {
               ListItem() {
                 Text('Group:' + (groupIndex + 1) + ', Item:' + item)
                   .id('group_ver_' + (groupIndex + 1) + '_' + item)

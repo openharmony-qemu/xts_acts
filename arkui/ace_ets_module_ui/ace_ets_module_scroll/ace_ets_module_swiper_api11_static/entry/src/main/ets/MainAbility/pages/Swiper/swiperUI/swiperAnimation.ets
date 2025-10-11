@@ -50,11 +50,11 @@ class MyDataSourceA implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -102,7 +102,7 @@ struct SwiperAnimationExample {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('90%')
             .height(160)
@@ -129,15 +129,15 @@ struct SwiperAnimationExample {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info("GestureSwipe index: " + index)
         this.onAnimationGesture = "GestureSwipe index: " + index;
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         this.onAnimationS = "Start" + index + "-->" + targetIndex;
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
@@ -145,7 +145,7 @@ struct SwiperAnimationExample {
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
       })
-      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
         this.onAnimationE = "End" + index + "-->";
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)

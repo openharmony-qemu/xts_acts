@@ -97,7 +97,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
                       .fontSize(16)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 } as Margin)
-                  }, (item: number, index: number): string => String(item))
+                  }, (item: number, index: int): string => String(item))
                 }.width('100%')
               }
             }

@@ -344,13 +344,13 @@ export default function PromiseAllTest() {
         ];
         arr.push(2);
         Promise.all<Promise<number> | string | number>(taskPromises)
-          .then((results: Array<Promise<Double>|String|Double>) => {
+          .then((results: Array<Double | String>) => {
             arr.push(3);
             console.log('All promises are resolved, results:', results);
             successMessage = `All promises are resolved: ${JSON.stringify(results)}`;
             return results;
           })
-          .then((results: Array<Promise<Double>|String|Double>) => {
+          .then((results: Array<Double | String>) => {
             if (results.every((results) => typeof results === 'number')) {
               arr.push(4);
               console.log('All results are numbers');
@@ -406,13 +406,13 @@ export default function PromiseAllTest() {
         ];
         arr.push(2);
         Promise.all<Promise<number> | string | number>(taskPromises)
-          .then((results:Array<Promise<Double>|String|Double>) => {
+          .then((results:Array<Double | String>) => {
             arr.push(3);
             console.log('All promises are resolved, results:', results);
             successMessage = `All promises are resolved: ${JSON.stringify(results)}`;
             return results;
           })
-          .then((results:Array<Promise<Double>|String|Double>) => {
+          .then((results:Array<Double | String>) => {
             if (results.every((result) => typeof result === 'number')) {
               arr.push(4);
               console.log('All results are numbers');
@@ -968,13 +968,13 @@ export default function PromiseAllTest() {
             reject(new Error('Failure'));
           }, 100);
         });
-        const nestedPromiseAny:Promise<Promise<Promise<String>>|Promise<String>> = Promise.any([Promise.any([successPromise, failurePromise]), failurePromise]);
+        const nestedPromiseAny:Promise<string> = Promise.any([Promise.any([successPromise, failurePromise]), failurePromise]);
         taskPromises.push(successPromise);
         taskPromises.push(failurePromise);
         taskPromises.push(nestedPromiseAny);
         arr.push(2);
         Promise.all(taskPromises)
-          .then((results:Array<Promise<Promise<Promise<String>>|Promise<String>>|Promise<String>>) => {
+          .then((results:Array<String>) => {
             arr.push(3);
             console.log('All promises are resolved:', results);
             successMessage = `All promises are resolved: ${JSON.stringify(results)}`;
@@ -1043,7 +1043,7 @@ export default function PromiseAllTest() {
         taskPromises.push(nestedPromiseAny2);
         arr.push(2);
         Promise.all<Promise<String>|Promise<Promise<Promise<String>>|Promise<String>>>(taskPromises)
-          .then((results:Array<Promise<String>|Promise<Promise<Promise<String>>|Promise<String>>>) => {
+          .then((results:Array<String>) => {
             arr.push(3);
             console.log('All promises are resolved:', results);
             successMessage = `All promises are resolved: ${JSON.stringify(results)}`;

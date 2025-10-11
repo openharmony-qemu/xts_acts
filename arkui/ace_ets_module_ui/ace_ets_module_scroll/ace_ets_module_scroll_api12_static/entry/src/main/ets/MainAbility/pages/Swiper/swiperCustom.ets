@@ -36,7 +36,7 @@ struct SwiperCustomPage {
   @State translateList: number[] = new Array<number>()
   @State zIndexList: number[] = new Array<number>()
   @State message: string = 'message'
-  private DISPLAY_COUNT: number = 2
+  private DISPLAY_COUNT: Int = 2
   private MIN_SCALE: number = 0.75
   @State text: string = 'text'
 
@@ -54,7 +54,7 @@ struct SwiperCustomPage {
       Text(this.message).id('swiper_mess')
       Text(this.text).id('swiper_texts')
       Swiper(this.swiperController) {
-        ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+        ForEach(this.backgroundColors, (backgroundColor: Color, index: int) => {
           Text(index.toString())
             .width('100%')
             .height('100%')

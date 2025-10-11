@@ -430,19 +430,19 @@ struct OnAppearPage {
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
-            ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:number):void => {
+            ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
               Text('Scroll' + item.toString())
                 .width('90%')
                 .height(150)
                 .backgroundColor(Color.White)
                 .textAlign(TextAlign.Center)
-            }, (item: number, index:number):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }.width('100%')
         }.scrollBar(BarState.On)
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(50).height(50)
                 Text('Index0' + item).fontSize(25)
@@ -462,9 +462,9 @@ struct OnAppearPage {
           
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+          ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
             Text('Swiper' + item)
-          }, (item: number, index:number):string => String(item))
+          }, (item: number, index:int):string => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.Pink)

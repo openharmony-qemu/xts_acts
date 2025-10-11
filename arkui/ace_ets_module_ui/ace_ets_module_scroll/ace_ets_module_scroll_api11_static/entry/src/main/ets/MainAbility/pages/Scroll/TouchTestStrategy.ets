@@ -72,7 +72,7 @@ struct TouchStrategyExample {
             })
 
           List({ space: 20, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number, index: number) => {
+            ForEach(this.arr, (item: number, index: int) => {
               ListItem() {
                 Text('' + item)
                   .width('100%')
@@ -82,7 +82,7 @@ struct TouchStrategyExample {
                   .borderRadius(10)
                   .backgroundColor(0xFFFFFF)
               }
-            }, (item: number, index: number) => String(item))
+            }, (item: number, index: int) => String(item))
           }
           .listDirection(Axis.Vertical) 
           .edgeEffect(EdgeEffect.Spring) 

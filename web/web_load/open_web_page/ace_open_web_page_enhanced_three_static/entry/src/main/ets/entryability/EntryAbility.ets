@@ -47,8 +47,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {

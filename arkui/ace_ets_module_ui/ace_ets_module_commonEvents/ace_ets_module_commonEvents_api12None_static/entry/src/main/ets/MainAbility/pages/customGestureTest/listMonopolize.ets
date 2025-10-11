@@ -59,7 +59,7 @@ struct ListGesture {
           .fontColor(Color.Blue)
           .margin(10)
         List({ space: 20, initialIndex: 0 }) {
-          ForEach(this.arr, (item: number, index: number): void => {
+          ForEach(this.arr, (item: number, index: int): void => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -69,7 +69,7 @@ struct ListGesture {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-          }, (item: number, index: number): string => String(item))
+          }, (item: number, index: int): string => String(item))
         }
         .padding({ top: 5 } as Padding)
         .listDirection(Axis.Vertical)

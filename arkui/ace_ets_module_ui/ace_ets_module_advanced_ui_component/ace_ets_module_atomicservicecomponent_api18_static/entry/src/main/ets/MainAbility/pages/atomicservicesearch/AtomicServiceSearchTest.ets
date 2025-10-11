@@ -61,7 +61,7 @@ struct AtomicServiceSearchTest {
 
         Scroll() {
           Column() {
-            ForEach(this.simpleList, (item: string, index: number) => {
+            ForEach(this.simpleList, (item: string, index: int) => {
               Button(item)
                 .width('100%')
                 .height(30)

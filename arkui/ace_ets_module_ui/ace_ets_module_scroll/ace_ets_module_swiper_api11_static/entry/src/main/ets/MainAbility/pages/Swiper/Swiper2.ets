@@ -60,11 +60,11 @@ class MyDataSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -93,7 +93,7 @@ struct SwiperExample2 {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('90%')
             .height(160)
@@ -113,7 +113,7 @@ struct SwiperExample2 {
       .vertical(false)
       .disableSwipe(true)
       .itemSpace(0)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
 

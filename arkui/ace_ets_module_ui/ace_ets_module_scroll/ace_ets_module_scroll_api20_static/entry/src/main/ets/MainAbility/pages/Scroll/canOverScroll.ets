@@ -114,7 +114,7 @@ struct canOverScrollScroll {
 
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, i: number) => {
+          ForEach(this.arr, (item: number, i: int) => {
             Text(item.toString())
               .id('canOverScroll_scroll_' + item)
               .width('100%')

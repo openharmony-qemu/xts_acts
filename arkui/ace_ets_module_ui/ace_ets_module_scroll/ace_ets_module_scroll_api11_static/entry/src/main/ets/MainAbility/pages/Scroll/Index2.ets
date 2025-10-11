@@ -65,7 +65,7 @@ struct Index {
     Stack({ alignContent: Alignment.TopStart }) {
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height(150)

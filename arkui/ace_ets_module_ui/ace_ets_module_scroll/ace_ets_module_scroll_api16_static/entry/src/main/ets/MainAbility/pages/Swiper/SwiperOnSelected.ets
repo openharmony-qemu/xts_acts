@@ -67,7 +67,7 @@ struct SwiperMirroring0010 {
       
       .interval(1000)
       .direction(Direction.Ltr)
-      .onSelected((index: number): void => {
+      .onSelected((index: Int): void => {
         this.onAnimationStart = 'onSelected'
       })
 
@@ -99,7 +99,7 @@ struct SwiperMirroring0010 {
       
       .interval(1000)
       .direction(Direction.Rtl)
-      .onSelected((index: number): void => {
+      .onSelected((index: Int): void => {
         this.onAnimationStart2 = 'onSelected'
       })
 

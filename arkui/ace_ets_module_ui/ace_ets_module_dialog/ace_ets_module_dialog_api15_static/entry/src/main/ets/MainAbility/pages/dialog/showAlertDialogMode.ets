@@ -103,7 +103,7 @@ struct showAlertDialogMode {
   //@State levelMode: LevelMode | undefined = 0
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: number | undefined | null |Int = this.getUniqueId()
+  @State levelUniqueId: long | undefined | null |Int = this.getUniqueId()
   @State immersiveMode: ImmersiveMode | undefined = undefined
   @State isModal: boolean = true
   @State maskRect: Rectangle = {

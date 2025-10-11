@@ -149,7 +149,7 @@ struct WordListSample {
 
       Stack() {
         List({ initialIndex: 0, scroller: this.listScroller }) {
-          ForEach(this.wordsGroup, (item: WordGroup, index: number) => {
+          ForEach(this.wordsGroup, (item: WordGroup, index: int) => {
             
             
             

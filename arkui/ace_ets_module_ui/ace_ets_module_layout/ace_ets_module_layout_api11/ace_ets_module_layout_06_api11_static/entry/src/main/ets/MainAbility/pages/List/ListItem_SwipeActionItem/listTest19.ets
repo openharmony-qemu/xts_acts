@@ -79,7 +79,7 @@ struct ListItemExample19 {
   build() {
     Column() {
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('50%')
@@ -112,7 +112,7 @@ struct ListItemExample19 {
 
           })
           .key('lSwipe19Action' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }.listDirection(Axis.Horizontal).height('60%')
 
       Text(this.enterEndDeleteAreaString).fontSize(20)

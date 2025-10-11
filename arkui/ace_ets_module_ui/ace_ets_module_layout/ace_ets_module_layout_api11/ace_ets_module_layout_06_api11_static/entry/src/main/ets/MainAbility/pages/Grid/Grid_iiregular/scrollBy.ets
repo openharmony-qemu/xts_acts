@@ -75,7 +75,7 @@ struct scrollBy {
                 .key('content' + day + item)
             }
           }, (day: string) => day)
-        }, (item: string,index:number) => item)
+        }, (item: string,index:int) => item)
       }
       .columnsTemplate('1fr')
       .columnsGap(10)
