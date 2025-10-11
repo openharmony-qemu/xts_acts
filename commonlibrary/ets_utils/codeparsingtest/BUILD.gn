@@ -28,6 +28,7 @@ group("codeparsingtest") {
       "specialchartest:ActsSpecialCharTest",
       "proxytest:ActsProxyTest",
       "objecttest:ActsObjectTest",
+      "arraytest:ActsArrayTest",
     ]
   }
 }
