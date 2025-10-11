@@ -106,9 +106,6 @@ ani_int test_Module_Invalid_Arg_Descriptor([[maybe_unused]] ani_env *env, [[mayb
 
 ani_int test_Module_Many_Descriptor([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-//    ani_module module {};
-//    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-//    ASSERT_NE(module, nullptr);
     ani_class kclass {};
     char end = 'J';
     const int32_t loopCount = 3;
