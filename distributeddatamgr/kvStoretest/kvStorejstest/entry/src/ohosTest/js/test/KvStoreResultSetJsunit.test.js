@@ -420,7 +420,7 @@ describe('kvStoreResultSetTest', function() {
             await kvStore.getResultSet('test').then((result) => {
                 console.info('testKvStoreResultSetMoveToFirst006 getResultSet success');
                 rs = result;
-                var moved = rs.MoveToFirst();
+                var moved = rs.moveToFirst();
                 console.info('testKvStoreResultSetMoveToFirst006 getResultSet fail ' + moved);
                 expect(moved).assertFalse();
             }).catch((err) => {
@@ -648,7 +648,7 @@ describe('kvStoreResultSetTest', function() {
             await kvStore.getResultSet('test').then((result) => {
                 console.info('testKvStoreResultSetMoveToNext005 getResultSet success');
                 rs = result;
-                var moved = rs.MoveToNext();
+                var moved = rs.moveToNext();
                 console.info('testKvStoreResultSetMoveToNext005 getResultSet fail ' + moved);
                 expect(moved).assertFalse();
             }).catch((err) => {
