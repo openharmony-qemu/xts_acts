@@ -69,13 +69,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page One')
-          
+            
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        } 
+        }
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -83,13 +83,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Two')
-          
+            
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        } 
+        }
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -98,21 +98,21 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Three')
-          
+            
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.thirdState = this.thirdState === ItemState.Waiting ? ItemState.Normal : ItemState.Waiting
             })
-        } 
+        }
       }
       .status(this.thirdState)
 
       StepperItem() {
         Column() {
           Text('Page Four')
-          
-        } 
+            
+        }
       }
     }
     .backgroundColor('#F1F3F5')

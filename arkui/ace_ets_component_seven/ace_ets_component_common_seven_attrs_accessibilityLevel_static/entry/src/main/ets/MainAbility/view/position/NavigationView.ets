@@ -49,33 +49,7 @@ export struct NavigationView {
       List({ space: 12, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
           }
         }, (item: number) => String(item))
       }

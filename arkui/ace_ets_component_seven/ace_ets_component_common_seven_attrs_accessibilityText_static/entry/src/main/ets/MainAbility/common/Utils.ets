@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core"
 import { jsonx } from "std/core";
@@ -83,11 +83,11 @@ export class PageConfig {
 export default class Utils {
   public static instance: Utils = new Utils();
 
-  static async sleep(time: int) : Promise<int>  {
+  static sleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
-      }, time)
+      }, count)
     })
   }
 
@@ -114,17 +114,17 @@ export default class Utils {
       let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
 
+
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        const paramData: RouterParams = {
-          view: obj
-        }
-        const routerParams: router.RouterOptions = {
+        router.pushUrl({
           url: obj.pageUrl,
-          params: paramData
-        }
-        router.pushUrl(routerParams)
-        await Utils.sleep(2000)
+          params: {
+            view: obj
+          } as RouterParams
+        });
+        await Utils.sleep(2000);
+        console.info('push ' + obj.pageName);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -133,7 +133,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!router.getState().name.endsWith("/Index")) {
+    if (!('Index' == router.getState().name)) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -162,25 +162,13 @@ export default class Utils {
     } as RectValue
   }
 
-  static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
-    console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    let rect_value: RectValue = {
-      left:Number(rectInfo[0][0] ?? 0),
-      top:Number(rectInfo[0][1] ?? 0),
-      right:Number(rectInfo[1][0] ?? 0),
-      bottom:Number(rectInfo[1][1] ?? 0),
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
-  }
+
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
-    return JSON.parseJsonElement(strJson);
+    let strObj = JSON.parseJsonElement(strJson)
+    console.info('[' + componentKey + '] obj is: ' + String(strObj));
+    return strObj;
   }
 
   static getRectHorizontalCenterX(rect: RectValue) {
