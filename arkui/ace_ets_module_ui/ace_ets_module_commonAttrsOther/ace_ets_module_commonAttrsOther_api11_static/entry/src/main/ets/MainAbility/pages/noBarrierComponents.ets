@@ -108,11 +108,11 @@ const uiContext = new UIContext();
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
   @State Number: Array<string> = ['0', '1'] as Array<string>;
-  public valueArr: Array<number> = [10, 10] as Array<number>;
+  public valueArr: Array<double> = [10.0, 10.0] as Array<double>;
   @State isLunar: boolean = false;
   @State formId: number = 0;
   @State start: boolean = false;
-  @State passwords: Array<number> = [] as Array<number>;
+  @State passwords: Array<int> = [] as Array<int>;
   @State message: string = 'please input password!';
   @State rating: number = 3.5;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
@@ -407,7 +407,7 @@ struct noBarrierComponents {
           .key("PatternLock")
           .accessibilityText("我是无障碍组件")
           .autoReset(true)
-          .onPatternComplete((input: Array<number>) => {
+          .onPatternComplete((input: Array<int>) => {
             if (input === null || input === undefined || input.length < 5) {
               this.message = 'The password length needs to be greater than 5, please enter again.'
               return

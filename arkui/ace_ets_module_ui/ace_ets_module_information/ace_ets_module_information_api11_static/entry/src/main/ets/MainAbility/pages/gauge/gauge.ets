@@ -19,10 +19,10 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GaugeExample {
-  @State gaugeValue: number = 50;
+  @State gaugeValue: double = 50;
   @State strokeWidthValue: string = '20';
-  @State startAngleValue: number = 210;
-  @State endAngleValue: number = 150;
+  @State startAngleValue: double = 210;
+  @State endAngleValue: double = 150;
   @State colorValues: string = JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1], [0xD94838, 1]]);
   private stateChangCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {

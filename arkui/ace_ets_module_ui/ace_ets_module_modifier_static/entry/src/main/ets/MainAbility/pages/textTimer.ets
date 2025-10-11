@@ -67,7 +67,7 @@ struct TextTimerExample {
       TextTimer({ isCountDown: true, count: 30000, controller: this.textTimerController })
         .key('TextTimerKey1')
         
-        .onTimer((utc: number, elapsedTime: number) => {
+        .onTimer((utc: long, elapsedTime: long) => {
           console.info('textTimer notCountDown utc is：' + utc + ', elapsedTime: ' + elapsedTime)
         })
       Row() {

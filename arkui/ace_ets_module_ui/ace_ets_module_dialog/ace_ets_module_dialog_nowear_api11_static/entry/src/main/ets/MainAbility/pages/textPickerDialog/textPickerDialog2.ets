@@ -70,7 +70,7 @@ import { Link, ObjectLink, Observed, PropRef, State, } from '@ohos.arkui.stateMa
 @Entry
 @Component
 struct TextPickerDialog22Example {
-  @State select: number | number[] = 1.0;
+  @State select: int | int[] = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'] as string[];
 
   build() {

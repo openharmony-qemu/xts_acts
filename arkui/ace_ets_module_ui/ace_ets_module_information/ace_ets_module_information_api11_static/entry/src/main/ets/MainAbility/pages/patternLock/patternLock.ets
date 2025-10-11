@@ -22,11 +22,11 @@ import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct PatternLockExample {
-  @State passwords: Array<number> = new Array<number>();
+  @State passwords: Array<int> = new Array<int>();
   @State message: string = 'please input password';
   @State sideLength: number = 150;
   @State circleRadius: number = 7;
-  @State pathStrokeWidth: number = 17;
+  @State pathStrokeWidth: double = 17;
   @State backgroundColor1: string = "#FF008000";
   @State autoReset: boolean = true;
   private patternLockController: PatternLockController = new PatternLockController();
@@ -74,7 +74,7 @@ struct PatternLockExample {
         .backgroundColor(`${this.backgroundColor1}`)
         .autoReset(this.autoReset)
         .key('PatternLock')
-        .onPatternComplete((input: Array<number>) => {
+        .onPatternComplete((input: Array<int>) => {
           console.log('PatternLock onPatternComplete')
           if (input == null || input == undefined || input.length < 5) {
             this.message = 'The password length needs to be greater than 5.';

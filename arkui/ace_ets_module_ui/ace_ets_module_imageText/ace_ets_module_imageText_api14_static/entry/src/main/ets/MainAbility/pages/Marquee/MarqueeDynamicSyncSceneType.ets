@@ -30,7 +30,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
   private step: number = 10
   private loop: int = Number.POSITIVE_INFINITY as int
   controller: TextClockController = new TextClockController()
-  convert2time(value: number): string{
+  convert2time(value: long): string{
     let date = new Date(Number(value+'000'));
     let hours = String(date.getHours()).padStart(2, '0');
     let minutes = String(date.getMinutes()).padStart(2, '0');
@@ -80,7 +80,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
 
       TextClock({ timeZoneOffset: -8, controller: this.controller } )
         .format('hms')
-        .onDateChange((value: number) => {
+        .onDateChange((value: long) => {
           this.src = this.convert2time(value) + AppStorage.get('MarqueeDynamicSyncSceneType');
         })
         .margin(1)

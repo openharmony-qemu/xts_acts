@@ -18,7 +18,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct badge {
-  @State counts: number = 33
+  @State counts: int = 33
   @State message: string = 'new'
   @State active: boolean = false
   private content: string = "badge Page";

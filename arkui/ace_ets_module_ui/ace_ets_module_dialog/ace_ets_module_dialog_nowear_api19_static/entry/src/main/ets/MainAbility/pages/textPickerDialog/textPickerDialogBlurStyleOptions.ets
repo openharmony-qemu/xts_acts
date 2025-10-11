@@ -47,8 +47,8 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 struct textPickerDialog1 {
   @State v: string = '';
   uiContext: UIContext = this.getUIContext();
-  private select: undefined | Double | Array<Double> = 0 as undefined | Double | Array<Double>
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
+  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
 
   build() {
     Column({ space: 10 } as ColumnOptions) {

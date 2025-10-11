@@ -21,7 +21,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerExample {
-  @State select: number = 1
+  @State select: int = 1;
   private multipleColumns: TextPickerRangeContent[] = [
     { icon: $r('app.media.icon'), text: 'apple1' } as TextPickerRangeContent,
     { icon: $r('app.media.icon'), text: 'orange2' } as TextPickerRangeContent,
@@ -80,7 +80,7 @@ struct TextPickerExample {
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
         .key('textPicker')
-        .onChange((value: string|string[], index: number|number[]):void => {
+        .onChange((value: string | string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
 
@@ -89,7 +89,7 @@ struct TextPickerExample {
         .textStyle(this.textStyleDefault)
         .selectedTextStyle(this.selectedTextStyleDefault)
         .key('textPickerDefault')
-        .onChange((value: string|string[], index: number|number[]):void => {
+        .onChange((value: string | string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
     }

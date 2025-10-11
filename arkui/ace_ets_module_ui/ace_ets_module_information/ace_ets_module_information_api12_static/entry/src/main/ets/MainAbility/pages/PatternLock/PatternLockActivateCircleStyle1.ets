@@ -38,7 +38,7 @@ struct PatternLockActivateCircleStyleTest1 {
           radius: new LengthMetrics(16, LengthUnit.VP),
           enableWaveEffect: true
         })
-        .onDotConnect((index: number) => {
+        .onDotConnect((index: int) => {
           console.log('onDotConnect index: ' + index)
         })
         .id('PatternLock_activateCircleStyle')
