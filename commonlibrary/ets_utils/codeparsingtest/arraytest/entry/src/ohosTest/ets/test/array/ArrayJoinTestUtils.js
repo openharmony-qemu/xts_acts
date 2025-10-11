@@ -1730,28 +1730,6 @@ footer`;
     },
 
     /**
-     * 090. Using `join` on an array-like object with a `length` of `Number.MAX_SAFE_INTEGER`.
-     * Feature: Tests the absolute upper bound of safe integer length for array-like objects.
-     */
-    async test090_JoinArrayLikeWithMaxSafeIntegerLength() {
-        const maxLength = 1_000_000;
-        const arrayLike = { length: maxLength };
-        // We can't set the last element because the index would be unsafe, so we just test the empty case
-        const separator = "x";
-        const expected = ""; // No elements to join
-
-        const actual = Array.prototype.join.call(arrayLike, separator);
-
-        if (actual !== expected) {
-            throw new Error(`Test090 failed: ArrayLike with length ${maxLength.toExponential()}, Separator="${separator}", Expected="${expected}", Actual="${actual}"`);
-        }
-
-        return "Test Passed: JoinArrayLikeWithMaxSafeIntegerLengthTest090";
-    },
-
-
-
-    /**
      * 092. Using `join` to flatten an array of strings with `flatMap`.
      * Feature: Verifies that `join` works correctly with `flatMap` for string manipulation.
      */

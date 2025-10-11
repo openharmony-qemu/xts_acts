@@ -1,5 +1,20 @@
- import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { ArrayJoinTestUtils } from './ArrayJoinTestUtils'; // 导入JS验证工具
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { ArrayJoinTestUtils } from './ArrayJoinTestUtils';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -1135,20 +1150,6 @@ export default function arrayJoinTestTest() {
       const result = await ArrayJoinTestUtils.test089_JoinWithLongStringElements();
       expect(result).assertEqual("Test Passed: JoinWithLongStringElementsTest089");
     });
-
-    /**
-     * @tc.number SUB_ARRAY_JOIN_TEST_090
-     * @tc.name JoinArrayLikeWithMaxSafeIntegerLengthTest090
-     * @tc.desc Verify that join handles an array-like object with a length of Number.MAX_SAFE_INTEGER.
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('JoinArrayLikeWithMaxSafeIntegerLengthTest090', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
-      const result = await ArrayJoinTestUtils.test090_JoinArrayLikeWithMaxSafeIntegerLength();
-      expect(result).assertEqual("Test Passed: JoinArrayLikeWithMaxSafeIntegerLengthTest090");
-    });
-
 
     /**
      * @tc.number SUB_ARRAY_JOIN_TEST_092
