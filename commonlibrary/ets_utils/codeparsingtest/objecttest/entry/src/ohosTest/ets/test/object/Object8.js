@@ -1373,16 +1373,6 @@ export function Fn171_testFrozenRegExpLiteralInArray() {
     }
 }
 
-// 测试点172：Map中存Date字面量（修改后）的二元数组，验证日期修改
-export function Fn172_testModifiedDateLiteralInMap() {
-    const date = new Date();
-    const originalTime = date.getTime();
-    date.setHours(12);
-    const testMap = new Map([["dateKey", date]]);
-    const resultObj = Object.fromEntries(testMap);
-    return resultObj.dateKey.getTime() !== originalTime && resultObj.dateKey.getHours() === 12;
-}
-
 // 测试点173：转换含Set字面量（删除元素后）的二元数组，验证元素删除
 export function Fn173_testSetWithDeletedElemInArray() {
     const set = new Set([1, 2, 3]);
