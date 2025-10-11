@@ -122,6 +122,7 @@ group("multimedia") {
       "media/media_js_standard/avImageGenerator:av_image_generator_ets_hap",
       "media/media_js_standard/avPlayer:avplayer_js_hap",
       "media/media_js_standard/avPlayerNdk:ActsAVPlayerNdkTest",
+      "media/media_js_standard/avPlayerNdk20:ActsAVPlayerNdk20Test",
       "media/media_js_standard/avRecorder:av_recorder_js_hap",
       "media/media_js_standard/avplayeraudiondk:avplayer_audio_ndk_ets_hap",
       "media/media_js_standard/recorderFormat:recorder_format_js_hap",
