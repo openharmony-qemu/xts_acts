@@ -17,8 +17,8 @@ ohos_app_assist_suite("NetstackWebsocket_ndk_main") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsNetStackWebsocketNDKMainTest"
-  subsystem_name = "telephony"
-  part_name = "sms_mms"
+  part_name = "netstack"
+  subsystem_name = "communication"
   js_build_mode = "debug"
 }
 
