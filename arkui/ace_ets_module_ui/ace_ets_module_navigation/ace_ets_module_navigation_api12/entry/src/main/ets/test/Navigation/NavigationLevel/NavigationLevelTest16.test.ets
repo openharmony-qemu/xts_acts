@@ -83,6 +83,13 @@ export default function NavigationLevelTest16() {
       expect(stackEmptyValue && stackEmptyValue?.length == 0).assertTrue();
       AppStorage.delete('stackEmptyValue')
 
+      let btn4 = await driver.findComponent(ON.id('getParentNullBtn'));
+      await btn4.click()
+      console.info('[NavigationLevelTest16_0200] btn4 click');
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('parentValue') == null).assertTrue();
+      AppStorage.delete('parentValue')
+
       console.info('[NavigationLevelTest16_0200] END');
       done();
     });
