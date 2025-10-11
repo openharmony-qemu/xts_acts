@@ -37,8 +37,8 @@ class TestChar {
   static special6: char = c'\t';
   static special7: char = c'\b';
   static special8: char = c'\0';
-  static charMin: char = 0;
-  static charMax: char = 65535;
+  static charMin: char = c'\0';
+  static charMax: char = c'\xff';
 }
 
 class TestByte {
@@ -149,8 +149,8 @@ class GetCharStatic {
   static specia10: char = c'\f';
   static specia11: char = c'\v';
   static specia12: char = c'\0';
-  static charMin: char = 0;
-  static charMax: char = 65535;
+  static charMin: char = c'\0';
+  static charMax: char = c'\xff';
 }
 
 class GetbyteStatic {
