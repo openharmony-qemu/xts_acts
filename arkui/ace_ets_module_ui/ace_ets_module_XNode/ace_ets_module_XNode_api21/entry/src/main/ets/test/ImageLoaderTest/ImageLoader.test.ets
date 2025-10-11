@@ -97,15 +97,41 @@ export default function ImageLoaderTest() {
 
       let strJson = getInspectorByKey('imageWidth');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('[ImageLoaderTest001] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
+      console.info('[ImageLoaderTest002] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
 
       let strJson1 = getInspectorByKey('imageHeight');
       let obj1: ESObject = JSON.parse(strJson1);
-      console.info('[ImageLoaderTest001] obj1.$attrs.content is: ' + JSON.stringify(obj1.$attrs.content));
+      console.info('[ImageLoaderTest002] obj1.$attrs.content is: ' + JSON.stringify(obj1.$attrs.content));
 
       expect(obj.$attrs.content).assertEqual('500');
       expect(obj1.$attrs.content).assertEqual('320');
       console.info('[ImageLoaderTest002] END');
+      done();
+    });
+
+    /**
+     * @tc.number    ImageLoaderTest003
+     * @tc.name      ImageLoaderTest003
+     * @tc.desc      test the loadSync errorCode 111001
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageLoaderTest003', Level.LEVEL1, async (done: Function) => {
+      console.info('[ImageLoaderTest003] START');
+      await CommonFunc.sleep(1500);
+      let driver = await Driver.create()
+      let button3 = await driver.findComponent(ON.id('btnLoadSyncErr'));
+      await CommonFunc.sleep(500);
+      await button3.click();
+      await CommonFunc.sleep(500);
+
+      let strJson = getInspectorByKey('errorCode');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[ImageLoaderTest003] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
+
+      expect(obj.$attrs.content).assertEqual('111001');
+      console.info('[ImageLoaderTest003] END');
       done();
     });
   })

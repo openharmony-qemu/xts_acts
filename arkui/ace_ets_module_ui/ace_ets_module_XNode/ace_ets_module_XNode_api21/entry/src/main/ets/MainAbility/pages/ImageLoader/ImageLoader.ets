@@ -21,10 +21,13 @@ import { DrawableDescriptorLoadedResult } from '@ohos.arkui.drawableDescriptor'
 struct AnimatedDrawableDescriptorTestLoader {
   @State drawable1: DrawableDescriptor =
     new AnimatedDrawableDescriptor($r('app.media.img1'), { iterations: -1 })
+  @State drawable2: DrawableDescriptor =
+    new AnimatedDrawableDescriptor('xxx/xxx/xxx', { iterations: -1 })
   @State drawable3: DrawableDescriptor =
     new AnimatedDrawableDescriptor($r('app.media.img2'), { iterations: -1 })
   @State imageHeight: number = 0
   @State imageWidth: number = 0
+  @State errorCode: string | Resource = ''
 
   build() {
     Column({ space: 10 }) {
@@ -36,8 +39,13 @@ struct AnimatedDrawableDescriptorTestLoader {
         Text('imageHeight')
         Text(String(this.imageHeight)).id('imageHeight')
       }
+      Row({ space: 5 }){
+        Text('errorCode')
+        Text(this.errorCode).id('errorCode')
+      }
 
       Button('同步加载drawable')
+        .height('6%')
         .id('btnLoadSync')
         .onClick(() => {
           try {
@@ -48,7 +56,23 @@ struct AnimatedDrawableDescriptorTestLoader {
             console.info(`load failed`)
           }
         })
+
+      Button('同步加载drawable-错误码场景')
+        .height('6%')
+        .id('btnLoadSyncErr')
+        .onClick(() => {
+          try {
+            let result = this.drawable2.loadSync()
+            this.imageWidth = result.imageWidth
+            this.imageHeight = result.imageHeight
+          } catch (e) {
+            console.info(`load failed`)
+            this.errorCode = e.code
+          }
+        })
+
       Button('异步加载drawable')
+        .height('6%')
         .id('btnLoad')
         .onClick(() => {
           this.drawable3.load().then((result: DrawableDescriptorLoadedResult) => {
