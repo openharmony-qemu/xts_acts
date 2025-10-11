@@ -63,7 +63,7 @@ struct scrollOffsetExample {
       Button('scroll 100').id('canOver_scroll')
         .onClick((e: ClickEvent) => { 
           let curve = Curves.interpolatingSpring(10, 1, 228, 30) as ICurve 
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({
             xOffset: 0,
             yOffset: yOffset + 100,

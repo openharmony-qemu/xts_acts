@@ -67,7 +67,7 @@ struct layoutModeWaterFlow {
           .id('layout_scroll')
           .onClick((e: ClickEvent) => {
             this.scroller.scrollTo({ xOffset: 0, yOffset: 100 })
-            this.num = this.scroller.currentOffset().yOffset
+            this.num = this.scroller.currentOffset()!.yOffset
           })
       }.height('20%')
 

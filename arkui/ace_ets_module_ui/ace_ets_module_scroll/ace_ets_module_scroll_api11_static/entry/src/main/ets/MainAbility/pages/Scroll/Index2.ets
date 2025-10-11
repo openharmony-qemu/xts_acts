@@ -104,7 +104,7 @@ struct Index {
       Button('scroll 100')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100 })
         })
         .margin({ top: 60, left: 20 } as Margin)
@@ -112,7 +112,7 @@ struct Index {
         .height('5%')
         .onClick((e: ClickEvent) => {
           let curve = Curves.interpolatingSpring(100, 1, 228, 30) as ICurve
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100, animation: { duration: 1000, curve: curve } })
         })
         .margin({ top: 110, left: 20 } as Margin)

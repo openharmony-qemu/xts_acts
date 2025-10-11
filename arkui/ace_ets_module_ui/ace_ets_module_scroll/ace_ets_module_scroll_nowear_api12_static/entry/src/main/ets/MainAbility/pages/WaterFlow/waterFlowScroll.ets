@@ -96,7 +96,7 @@ struct WaterFlowScroll {
         .id('flow_scrollBy')
         .onClick((event: ClickEvent) => {
           this.scroller.scrollBy(0, 200)
-          this.num = Math.round(this.scroller.currentOffset().yOffset)
+          this.num = Math.round(this.scroller.currentOffset()!.yOffset)
         })
 
     }

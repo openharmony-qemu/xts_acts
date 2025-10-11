@@ -182,7 +182,7 @@ struct listUx {
                 let curve = Curves.springCurve(7, 1, 227, 33)
                 this.scrollerForList.scrollTo({
                   xOffset: 0,
-                  yOffset: this.scrollerForList.currentOffset().yOffset + 600,
+                  yOffset: this.scrollerForList.currentOffset()!.yOffset + 600,
                   animation: true
                 })
               })
