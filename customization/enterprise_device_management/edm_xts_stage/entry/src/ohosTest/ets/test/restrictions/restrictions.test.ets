@@ -63,6 +63,7 @@ const LABLE_EXTERNAL_STORAGE_CARD = "externalStorageCard";
 const LABLE_RANDOM_MAC = "randomMac";
 const LABEL_APP_CLONE = "appClone";
 const LABEL_UNMUTE_DEVICE = "unmuteDevice";
+const LABEL_HDC_REMOTE = "hdcRemote";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1568,6 +1569,49 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE, false);
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0172
+   * @tc.name      : test_set_disallowed_policy_0172
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0172", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE)).assertFalse();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0173
+   * @tc.name      : test_set_disallowed_policy_0173
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0173", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, true);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE)).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
