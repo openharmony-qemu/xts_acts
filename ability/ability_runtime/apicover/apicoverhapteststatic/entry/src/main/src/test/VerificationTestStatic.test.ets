@@ -48,10 +48,10 @@ export default function verificationStaticTest() {
       tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0200 ==>';
       let launchWant: Want = AppStorage.get<Want>("launchWant") as Want;
       let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant") as Want;
-      // let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
+      let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
       expect(launchWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
       expect(lastRequestWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
-      // expect(windowStage).not().assertNull();
+      expect(windowStage).not().assertNull();
       done();
     })
 
