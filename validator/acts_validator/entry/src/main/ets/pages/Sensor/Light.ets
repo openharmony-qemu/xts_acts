@@ -28,14 +28,15 @@ const TAG = '[Light]';
 struct Light {
   @State FillColor: string = '#FF000000';
   @State name: string = 'Light';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有光传感器' + '\n操作步骤：\n1.确定设备是否有光传感器\n2.如果有该传感器，点击开启并调节设备周边的环境亮度，观察光强值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
-    + '\n预期结果：数值发生变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有光传感器' + '\n操作步骤：\n1.确定设备是否有光传感器\n2.如果有该传感器，点击开启并调节设备周边的环境亮度，观察光强值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
+    + '\n预期结果：数值或触发次数发生变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State sensorChange: boolean = false;
   @State dataIntensity: string = '';
   @State nextIntensity: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -48,11 +49,12 @@ struct Light {
       Logger.info(TAG, 'enter')
       try {
         sensor.on(sensor.SensorId.AMBIENT_LIGHT, (data: sensor.LightResponse) => {
+          this.backCount += 1;
           console.info('Succeeded in getting the ambient light intensity: ' + data.intensity);
           this.dataIntensity = data.intensity.toString();
           this.intervalNum = setInterval(() => {
             this.nextIntensity = data.intensity.toFixed(0);
-            if (this.nextIntensity !== this.dataIntensity) {
+            if (this.nextIntensity !== this.dataIntensity || this.backCount > 0) {
               this.Vue = true;
             }
           }, 100)
@@ -201,6 +203,12 @@ struct Light {
 
       Column() {
         Text('环境光强值: ' + this.dataIntensity)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
           .fontColor(Color.White)
           .fontSize('18fp')
           .textAlign(TextAlign.Start)
