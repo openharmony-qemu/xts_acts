@@ -25,9 +25,10 @@
 #include "ImageEffectErrorCodeTest.h"
 #include "ImageReceiverMdk1Test.h"
 #include "ImageKitErrorCodeTest.h"
+#include "ImageProcessingTest.h"
 EXTERN_C_START
 
-napi_property_descriptor desc[] = {
+std::vector<napi_property_descriptor> desc = {
     {"ImagePackerCreate1", nullptr, ImagePackerCreate1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"ImagePackerRelease", nullptr, ImagePackerRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"PictureMetadataCreate1", nullptr, PictureMetadataCreate1, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -994,7 +995,8 @@ napi_property_descriptor desc[] = {
 
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    addImageProcessingTest(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

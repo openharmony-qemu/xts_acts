@@ -1156,5 +1156,10 @@ export const PixelMapAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots
 export const PixelMapUnAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
 
 export const PixelMapSetDensityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+export const test_COLOR_SPACE_CONVERSION: () => number;
+export const test_DETAIL_ENHANCER: () => number;
+export const test_COMPOSITION: () => number;
+export const test_DECOMPOSITION: () => number;
+export const test_METADATA_GENERATION: () => number;
 
 
