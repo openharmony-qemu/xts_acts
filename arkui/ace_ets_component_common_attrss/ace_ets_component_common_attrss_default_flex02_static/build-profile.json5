@@ -20,7 +20,7 @@
         "name": "default",
         "signingConfig": "default",
         "arkTSVersion": "1.2",
-        "compatibleSdkVersion": "20",
+        "compatibleSdkVersion": "21",
         "compileSdkVersion": "21",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -39,7 +39,9 @@
         "name": "release"
       }
     ],
-    "signingConfigs": []
+    "signingConfigs": [
+
+    ]
   },
   "modules": [
     {

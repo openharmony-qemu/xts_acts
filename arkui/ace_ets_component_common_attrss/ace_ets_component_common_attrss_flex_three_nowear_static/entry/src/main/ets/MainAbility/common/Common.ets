@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
@@ -34,8 +35,8 @@ export default class CommonFunc {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<String,undefined|null|Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
@@ -56,8 +57,8 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<String,undefined|null|Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
@@ -75,4 +76,21 @@ export default class CommonFunc {
       "bottom": CommonFunc.rect_bottom
     }
   }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

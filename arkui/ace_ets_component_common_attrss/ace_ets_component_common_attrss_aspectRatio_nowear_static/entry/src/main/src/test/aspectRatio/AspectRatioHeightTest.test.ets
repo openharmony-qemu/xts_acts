@@ -14,10 +14,18 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {Color,$r} from '@ohos.arkui.component'
-import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
+import { Color, $r } from '@ohos.arkui.component'
+import Utils, {
+  CurrentRatio,
+  BasePageConfig,
+  PageConfig,
+  TestValue,
+  RectValue,
+  SetValue,
+  StrJsonObj
+} from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { describe, expect, beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -28,16 +36,22 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-interface Attrs{
+let testAbilityContext: common.UIAbilityContext;
+
+interface Attrs {
   $attrs: SetValue
 }
 
 export default function aspectRatioHeightTest() {
-
-  //Component to be tested
+  console.info("aspectRatioHeightTest beforeAll start");
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static",
+    "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  let context: UIContext = AppStorage.get<UIContext>('uiContext') as UIContext
+  
   let supportView: Array<string> = new Array<string>(
     'Select',
     'ColumnSplit',
@@ -47,7 +61,7 @@ export default function aspectRatioHeightTest() {
     'WaterFlow'
   )
 
-  //Custom params.
+  
   let parentWidth = 300;
   let parentHeight = 600;
 
@@ -60,7 +74,7 @@ export default function aspectRatioHeightTest() {
     parentHeight: parentHeight
   }
 
-  //Test content and expected results
+  
   let testValues: TestValue[] = [{
     describe: 'SetNumber',
     setValue: {
@@ -69,7 +83,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      
+      heightValue: context.vp2px(100),
       aspectRatio: 2.0
     }
   }, {
@@ -80,45 +94,55 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      
+      heightValue: context.vp2px(100),
       aspectRatio: 0.5
     }
   }]
 
   describe('AspectRatioHeightTest', () => {
     beforeAll(() => {
-      console.info("aspectRatioHeightTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
-CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      //Gets Rect information for the target component
-      let targetRect = Utils.getComponentRect(data.pageConfig.componentKey??'');
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      
+      AppStorage.setOrCreate<number>('_aspectRatio', data.testValue.setValue.aspectRatio)
+      AppStorage.setOrCreate<number>('_height', data.testValue.setValue.height as number)
+      let targetRect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
       let targetRectWidth = targetRect.right - targetRect.left;
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
-      let attrs = data.viewObj as Attrs
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.$attrs.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.$attrs.aspectRatio);
+      let attrs = data.viewObj
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' +
+      attrs?.getElement('$attrs').getString('height'));
+      console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' +
+      attrs?.getElement('$attrs').getDouble('aspectRatio'));
 
-      //Check height and aspectRatio are set successfully
-      expect(attrs?.$attrs.height).assertEqual(data.testValue.expectValue.height);
-      expect(attrs?.$attrs.aspectRatio).assertEqual(data.testValue.expectValue.aspectRatio);
+      
+      expect(attrs?.getElement('$attrs').getString('height')).assertEqual(data.testValue.expectValue.height);
+      expect(attrs?.getElement('$attrs').getDouble('aspectRatio')).assertEqual(data.testValue.expectValue.aspectRatio);
       console.info('[' + data.caseTag + '] targetRectWidth is:' + targetRectWidth);
       console.info('[' + data.caseTag + '] targetRectHeight is:' + targetRectHeight);
       console.info('[' + data.caseTag + '] targetRectAspectRatio:' + targetRectAspectRatio);
 
-      //Check the width, height, and aspectRatio are correct
-      console.info('[' + data.caseTag + '] data.testValue.expectValue.heightValue:' + data.testValue.expectValue.heightValue);
-      console.info('[' + data.caseTag + '] data.testValue.expectValue.aspectRatio:' + data.testValue.expectValue.aspectRatio);
-      console.info('[' + data.caseTag + '] data.testValue.expectValue.heightValue * data.testValue.expectValue.aspectRatio:' + (data.testValue.expectValue.heightValue as number) * data.testValue.expectValue.aspectRatio);
+      
+      console.info('[' + data.caseTag + '] data.testValue.expectValue.heightValue:' +
+      data.testValue.expectValue.heightValue);
+      console.info('[' + data.caseTag + '] data.testValue.expectValue.aspectRatio:' +
+      data.testValue.expectValue.aspectRatio);
+      console.info('[' + data.caseTag +
+        '] data.testValue.expectValue.heightValue * data.testValue.expectValue.aspectRatio:' +
+        (data.testValue.expectValue.heightValue as number) * data.testValue.expectValue.aspectRatio);
       if (data.pageConfig.componentKey == 'TextInput') {
-        expect(Math.floor(Math.abs(targetRectHeight - (data.testValue.expectValue.heightValue as number))) <= 2).assertTrue();
+        expect(Math.floor(Math.abs(targetRectHeight - (data.testValue.expectValue.heightValue as number))) <= 2)
+          .assertTrue();
       } else {
-        expect(Math.floor(Math.abs(targetRectHeight - (data.testValue.expectValue.heightValue as number))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(targetRectHeight - (data.testValue.expectValue.heightValue as number))) <= 1)
+          .assertTrue();
       }
       expect(Math.floor(Math.abs(targetRectAspectRatio - data.testValue.expectValue.aspectRatio)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(targetRectWidth - (data.testValue.expectValue.heightValue as number) * data.testValue.expectValue.aspectRatio)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(targetRectWidth -
+        (data.testValue.expectValue.heightValue as number) * data.testValue.expectValue.aspectRatio)) <= 1)
+        .assertTrue();
     });
   })
 }

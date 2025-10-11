@@ -47,11 +47,11 @@ export struct NavigationView {
   build() {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: int) => {
+        ForEach(this.arr, (item: number, index: Int) => {
           ListItem() {
 
           }
-        }, (item: number) => String(item))
+        }, (item: number,index:Int) => String(item))
       }
       .height('100%')
       .width('100%')
