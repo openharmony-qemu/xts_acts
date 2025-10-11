@@ -272,7 +272,7 @@ export default function GraphicTextClass() {
      * @tc.level      Level 3
      */
     it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let msg = "testPlaceholderSpanStatic"
+      let msg = "testLineTypesetStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
         color: {
@@ -332,6 +332,84 @@ export default function GraphicTextClass() {
       paragraph.layout(200);
       expect(paragraph !== undefined).assertTrue();
     })
+
+    /**
+     * @tc.number     testAddSymbolStatic
+     * @tc.name       testAddSymbolStatic
+     * @tc.desc       test for addSymbol
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let msg = "testAddSymbolStatic"
+        console.info(msg + 'begin');
+        let myTextStyle: text.TextStyle = {
+          color: {
+            alpha: 255,
+            red: 0,
+            green: 0,
+            blue: 255
+          },
+          fontSize: 66,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          align: text.TextAlign.JUSTIFY,
+        };
+        let fontCollection = new text.FontCollection();
+        let paragraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        paragraphGraphBuilder.addSymbol(0xF0000);
+        paragraphGraphBuilder.addText("123456789验证文字相关123456789验证文字相关12345678");
+        let paragraph = paragraphGraphBuilder.build();
+        paragraph.layoutSync(200);
+        expect(paragraph !== undefined).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number     testGetFullNameStatic
+     * @tc.name       testGetFullNameStatic
+     * @tc.desc       test for Layout
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      () => {
+        let msg = "www data testGetFullNameStatic "
+        console.info(msg + 'www data begin');
+        let fontType: text.SystemFontType = text.SystemFontType.GENERIC;
+        console.info(msg + 111);
+        try {
+          let fullNames = await text.getSystemFontFullNamesByType(fontType);
+          console.info(msg + JSON.stringify(fullNames))
+          expect(fullNames !== undefined).assertTrue();
+          expect(fullNames.length > 0).assertTrue();
+        } catch (err){
+          console.info(msg + err);
+        }
+        try {
+          let fontDescriptor = await text.getFontDescriptorByFullName("HarmonyOS Sans", fontType);
+          console.info(msg + JSON.stringify(fontDescriptor))
+          expect(fontDescriptor !== undefined).assertTrue();
+          expect(Object.keys(fontDescriptor).length > 0).assertTrue();
+          console.info('www data 00000 ', Object.keys(fontDescriptor).length)
+        } catch (err){
+          console.info(msg + err);
+        }
+        try {
+          let fontDescriptors = await text.matchFontDescriptors({
+            weight: text.FontWeight.W400,
+          })
+          console.info(msg + JSON.stringify(fontDescriptors))
+          expect(fontDescriptors !== undefined).assertTrue();
+          expect(fontDescriptors.length > 0).assertTrue();
+        } catch (err){
+          console.info(msg + err);
+        }
+      })
 
   })
 }

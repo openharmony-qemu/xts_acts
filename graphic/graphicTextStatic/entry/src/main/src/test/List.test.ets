@@ -23,6 +23,7 @@ import TextLineParagraphTest from './TextLineParagraphTest.test';
 import TextGetFontDescTest from './TextGetFontDescTest.test';
 import TextRunTest from './TextRunTest.test';
 import TextTextLineTest from './TextTextLineTest.test';
+import GraphicTextProperty from './GraphicTextProperty.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
@@ -35,4 +36,5 @@ export default function testsuite() {
   TextGetFontDescTest();
   TextRunTest();
   TextTextLineTest();
+  GraphicTextProperty();
 }
