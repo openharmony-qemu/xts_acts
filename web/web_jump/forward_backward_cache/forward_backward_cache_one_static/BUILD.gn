@@ -15,7 +15,7 @@ import("//test/xts/tools/build/suite.gni")
 
 
 # xts_acts_arkts1.2/web/web_jump/forward_backward_cache/forward_backward_cache_one
-# ohos_js_app_static_suite("ActsWebForwardBackwardCacheOneStaticTest") {
+ohos_js_app_static_suite("ActsWebForwardBackwardCacheOneStaticTest") {
 #   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
@@ -23,4 +23,3 @@ import("//test/xts/tools/build/suite.gni")
   part_name = "webview"
   subsystem_name = "web"
 }
-
