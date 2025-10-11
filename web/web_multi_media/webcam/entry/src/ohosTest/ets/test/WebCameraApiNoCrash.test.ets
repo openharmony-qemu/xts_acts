@@ -12,15 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 export default function WebCameraApiNoCrash() {
 
   describe('WebCameraApiNoCrash', () => {
@@ -63,8 +66,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0100", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0100", true, 300410, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0100", true, 300410, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -77,8 +83,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0200", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0200", true, 300420, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0200", true, 300420, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -91,8 +100,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0300", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0300", true, 300430, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0300", true, 300430, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -105,8 +117,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0400", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0400", true, 300440, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0400", true, 300440, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -119,8 +134,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0500", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0500", true, 300450, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0500", true, 300450, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -133,8 +151,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0600", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0600", true, 300460, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0600", true, 300460, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -147,8 +168,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0700", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0700", true, 300470, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0700", true, 300470, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -161,8 +185,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0800", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0800", true, 300480, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0800", true, 300480, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -175,8 +202,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash0900", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash0900", true, 300490, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash0900", true, 300490, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
 
     /*
@@ -189,8 +219,11 @@ export default function WebCameraApiNoCrash() {
     */
     it('WebCameraApiNoCrash1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebCameraApiNoCrash1000", 300400)
-      Utils.registerEvent("WebCameraApiNoCrash1000", true, 300500, done);
-      sendEventByKey('WebCameraApiNoCrash', 10, '');
+      Utils.registerBaseEvent("WebCameraApiNoCrash1000", true, 300500, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCameraApiNoCrash');
     })
   })
 }
