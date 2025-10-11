@@ -2074,7 +2074,7 @@ static napi_value testu_versionFromUString(napi_env env, napi_callback_info info
     }
     return nValue;
 }
-uint32_t MapValueFilter(const void* context, uint32_t value)
+uint32_t map_value_filter(const void* context, uint32_t value)
 {
     return value + 1;
 }
