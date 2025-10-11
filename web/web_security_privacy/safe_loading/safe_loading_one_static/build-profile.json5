@@ -16,6 +16,7 @@
 {
   "app": {
     "signingConfigs": [
+<<<<<<< HEAD
       {
         "name": "default",
         "material": {
@@ -28,6 +29,8 @@
           "storePassword": "000000195C2B637A447AC7804BEA8175A59DB4B82312CC85C9BF1A993A031C78F5684B932565C604A6"
         }
       }
+=======
+>>>>>>> 7e37e2d6c1d55f71fd3c5974e295997964857ac9
     ],
     "products": [
       {
