@@ -19,7 +19,7 @@
         },
         {
             "test-file-name": [
-                "ActsScreenLockStaticETSApiTest.hap"
+                "ActsScreenLockETSApiStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
