@@ -207,7 +207,6 @@ export default function HitraceMeterTest() {
         hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.DEBUG);
         hiTraceMeter.startSyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, 'myTestAsyncTrace2');
         hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL);
-        expect(true).assertTrue();
         console.info("DFX_DFR_HitraceMeter_Static_0800 1 success");
       } catch (err) {
         console.info("DFX_DFR_HitraceMeter_Static_0800 1 fail!");

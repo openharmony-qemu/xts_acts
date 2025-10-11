@@ -2291,7 +2291,7 @@ export default function addWatcherTest() {
     it('HiAppEventSub31', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub31 start')
       let holder: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("testConstructor");
-      expect(true).assertTrue()
+      expect(holder != null).assertTrue()
       hilog.info(logDomain, tag, 'HiAppEventSub31 end')
       done();
     })

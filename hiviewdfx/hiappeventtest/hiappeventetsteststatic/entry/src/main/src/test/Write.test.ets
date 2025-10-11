@@ -357,7 +357,6 @@ export default function writeTest() {
             return;
           } else {
             hilog.info(domain, tag, `success to write event`);
-            expect(true).assertTrue()
             done()
           }
         });

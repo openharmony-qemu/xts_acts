@@ -502,7 +502,6 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam12 Event parameters set successfully.');
-          expect(true).assertTrue()
           done()
         } catch (error: BusinessError) {
           hilog.error(logDomain, tag, 'testHiAppEventSetPam12 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
