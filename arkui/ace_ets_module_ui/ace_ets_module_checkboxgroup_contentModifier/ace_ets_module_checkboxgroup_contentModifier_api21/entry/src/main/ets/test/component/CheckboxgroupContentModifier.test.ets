@@ -17,7 +17,7 @@ import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import Utils from './Utils';
-
+import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 
 export default function CheckboxgroupContentModifier() {
   describe('CheckboxgroupContentModifier', () => {
@@ -78,8 +78,8 @@ export default function CheckboxgroupContentModifier() {
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_002] obj is: ' + JSON.stringify(obj));
-      expect(obj.$attrs.width).assertEqual('200.00vp');
-      expect(obj.$attrs.height).assertEqual('60.00vp');
+      expect(obj.$attrs.width).assertEqual('100.00vp');
+      expect(obj.$attrs.height).assertEqual('100.00vp');
       expect(obj.$attrs.fillOpacity).assertEqual('0.000000');
       console.info('[CheckboxgroupContentModifier_002] END');
       done();
@@ -104,9 +104,9 @@ export default function CheckboxgroupContentModifier() {
       expect(obj.$attrs.fill).assertEqual('#FFFF0000');
       expect(obj.$attrs.stroke).assertEqual('#FFFF0000');
       let left = JSON.stringify(JSON.parse(obj.$attrs.margin).left)
-      expect(left).assertEqual('\"20.00vp\"');
+      expect(left).assertEqual('\"10.00vp\"');
       let top = JSON.stringify(JSON.parse(obj.$attrs.margin).top)
-      expect(top).assertEqual('\"20.00vp\"');
+      expect(top).assertEqual('\"10.00vp\"');
       console.info('[CheckboxgroupContentModifier_003] END');
       done();
     });
@@ -130,7 +130,7 @@ export default function CheckboxgroupContentModifier() {
       expect(obj.$attrs.fill).assertEqual('#FFFFFF00');
       expect(obj.$attrs.stroke).assertEqual('#FFFF0000');
       let left = JSON.stringify(JSON.parse(obj.$attrs.margin).left)
-      expect(left).assertEqual('\"11.00vp\"');
+      expect(left).assertEqual('\"10.00vp\"');
       let top = JSON.stringify(JSON.parse(obj.$attrs.margin).top)
       expect(top).assertEqual('\"10.00vp\"');
       console.info('[CheckboxgroupContentModifier_004] END');
@@ -454,6 +454,33 @@ export default function CheckboxgroupContentModifier() {
       console.info('[CheckboxgroupContentModifier_013] obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('checkBoxGroupName:checkboxGroup12345');
       console.info('[CheckboxgroupContentModifier_013] END');
+      done();
+    });
+    /**
+     * @tc.number     : CheckboxgroupContentModifier_014
+     * @tc.name       : CheckboxgroupContentModifier_014
+     * @tc.desc       : test CheckboxgroupContentModifier_014
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('CheckboxgroupContentModifier_014', Level.LEVEL0, async (done: Function) => {
+      console.info('[CheckboxgroupContentModifier_014] START');
+
+      await Utils.sleep(1000);
+      let driver = Driver.create();
+  
+      let component = await driver.findComponent(ON.id('checkboxgroup_shape'));
+      await component.click();
+      
+      await Utils.sleep(2000);
+      let strJson = getInspectorByKey('triangle1');
+      let obj: Record<string, ESObject>= JSON.parse(strJson);
+      await Utils.sleep(1000);
+      console.info('[CheckboxgroupContentModifier_014] obj is: ' + JSON.stringify(obj));
+      console.info('[CheckboxgroupContentModifier_014] visibility is: ' + obj.$attrs.visibility);
+      expect(obj.$attrs.visibility).assertEqual("Visibility.Visible");
+      console.info('[CheckboxgroupContentModifier_014] END');
       done();
     });
   })

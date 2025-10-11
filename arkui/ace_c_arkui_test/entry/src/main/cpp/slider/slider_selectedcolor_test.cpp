@@ -112,14 +112,12 @@ static napi_value TestSliderSelectedColor008(napi_env env, napi_callback_info in
     ret = nodeAPI->resetAttribute(slider, NODE_SLIDER_SELECTED_LINEAR_GRADIENT_COLOR);
     ASSERT_EQ(ret, SUCCESS);
     attrItem = nodeAPI->getAttribute(slider, NODE_SLIDER_SELECTED_LINEAR_GRADIENT_COLOR);
-    if (!attrItem)
-    {
+    if (!attrItem) {
         napi_value errorResult = nullptr;
         return errorResult;
     }
     gradients = static_cast<ArkUI_ColorStop*>(attrItem->object);
-    if (!gradients)
-    {
+    if (!gradients) {
         napi_value errorResult = nullptr;
         return errorResult;
     }
