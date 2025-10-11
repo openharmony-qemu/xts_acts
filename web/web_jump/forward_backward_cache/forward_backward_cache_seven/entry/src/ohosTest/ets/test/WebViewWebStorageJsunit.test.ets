@@ -41,7 +41,7 @@ export default function WebViewWebStorageJsunit() {
       } catch (err) {
         console.error('push webStorage page error: ' + err);
       }
-      await waitForComponent('webStorage');
+      await Utils.sleep(1000)
       done()
     });
 
