@@ -72,6 +72,7 @@ export default function QueryRouterPageInfoUndefined() {
       await CommonFunc.sleep(1000);
 
       expect(AppStorage.get('undefinedValue')).assertUndefined();
+      AppStorage.delete('undefinedValue')
 
       console.info('QueryRouterPageInfoUndefined_0100 END');
       done();
