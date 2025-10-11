@@ -75,7 +75,7 @@ struct WebComponent {
         .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
-          this.isPageEnd = 1;
+          this.isPageEnd = 0;
         })
     }
   }
