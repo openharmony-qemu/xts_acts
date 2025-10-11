@@ -18,10 +18,9 @@ import { describe, it, expect, TestType, Size, Level} from "../../../hypium/inde
 import { BusinessError } from "@ohos.base"
 import hilog from '@ohos.hilog'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let COMMON_PARAMETER_CODE: number = 401;
 let PARAMETER_DEVICEID_TYPE_MSG: string = 'Parameter error. The type of deviceId must be number.';
 let PARAMETER_CALLBACK_TYPE_MSG: string = 'Parameter error. The type of callback must be function.';
 
