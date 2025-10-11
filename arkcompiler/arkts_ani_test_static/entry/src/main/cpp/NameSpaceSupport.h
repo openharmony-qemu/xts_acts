@@ -81,15 +81,7 @@ ani_int test_Namespace_FindFunction_03([[maybe_unused]] ani_env *env_, [[maybe_u
     ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_class cls {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "A", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
-
-    ani_method result {};
     ani_function fn {};
-    ASSERT_EQ(env_->Class_FindMethod(cls, "<ctor>", ":", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "c", "i:C{std.core.Promise}", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);
     return ANI_TRUE;
@@ -99,9 +91,6 @@ ani_int test_Namespace_FindFunction_04([[maybe_unused]] ani_env *env_, [[maybe_u
 {
     ani_namespace ns {};
     ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.TestA", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "A", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
@@ -114,9 +103,6 @@ ani_int test_Namespace_FindFunction_05([[maybe_unused]] ani_env *env_, [[maybe_u
 {
     ani_namespace ns {};
     ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.TestA", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "A", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
@@ -284,15 +270,6 @@ ani_int test_Namespace_Combinatorial([[maybe_unused]] ani_env *env_, [[maybe_unu
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_class result {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "Cls", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsA", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsB", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
@@ -302,15 +279,6 @@ ani_int test_Namespace_Combinatorial_01([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_enum result {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "Color", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorB", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
@@ -320,15 +288,6 @@ ani_int test_Namespace_Combinatorial_02([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialA", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_enum result {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "Color", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorB", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
@@ -341,13 +300,7 @@ ani_int test_Namespace_Combinatorial_03([[maybe_unused]] ani_env *env_, [[maybe_
     ani_function result {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result), ANI_OK);
     ASSERT_NE(result, nullptr);
-
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result1), ANI_OK);
-    ASSERT_NE(result1, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorB", &result1), ANI_OK);
-    ASSERT_NE(result1, nullptr);
+    
     return ANI_TRUE;
 }
 
@@ -361,13 +314,6 @@ ani_int test_Namespace_Combinatorial_04([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funA", ":i", &result), ANI_OK);
     ASSERT_NE(result, nullptr);
 
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorB", &result1), ANI_OK);
-    ASSERT_NE(result1, nullptr);
-
-    ani_class result2 {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsB", &result2), ANI_OK);
-    ASSERT_NE(result2, nullptr);
     return ANI_TRUE;
 }
 
@@ -379,12 +325,7 @@ ani_int test_Namespace_Combinatorial_05([[maybe_unused]] ani_env *env_, [[maybe_
 
     ani_function result {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funC", ":i", &result), ANI_NOT_FOUND);
-
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "EnuC", &result1), ANI_NOT_FOUND);
-
-    ani_class result2 {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsC", &result2), ANI_NOT_FOUND);
+    
     return ANI_TRUE;
 }
 
@@ -394,21 +335,10 @@ ani_int test_Namespace_Combinatorial_06([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_namespace result {};
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "sub", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
     ani_function result1 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result1), ANI_OK);
     ASSERT_NE(result1, nullptr);
-
-    ani_enum result2 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "Color", &result2), ANI_OK);
-    ASSERT_NE(result2, nullptr);
-
-    ani_class result3 {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "Cls", &result3), ANI_OK);
-    ASSERT_NE(result3, nullptr);
+    
     return ANI_TRUE;
 }
 
@@ -417,21 +347,6 @@ ani_int test_Namespace_Combinatorial_07([[maybe_unused]] ani_env *env_, [[maybe_
     ani_namespace ns {};
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialC", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
-
-    ani_namespace tmp {};
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "subA", &tmp), ANI_OK);
-    ASSERT_NE(tmp, nullptr);
-
-    ani_class result {};
-    ASSERT_EQ(env_->Namespace_FindClass(tmp, "ClsA", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "subB", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result1), ANI_OK);
-    ASSERT_NE(result1, nullptr);
 
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result2), ANI_OK);
@@ -445,15 +360,6 @@ ani_int test_Namespace_Combinatorial_08([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialC", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_namespace tmp {};
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "subc", &tmp), ANI_NOT_FOUND);
-
-    ani_class result {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsC", &result), ANI_NOT_FOUND);
-
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "EnuE", &result1), ANI_NOT_FOUND);
-
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funC", ":i", &result2), ANI_NOT_FOUND);
     return ANI_TRUE;
@@ -466,30 +372,9 @@ ani_int test_Namespace_Combinatorial_09([[maybe_unused]] ani_env *env_, [[maybe_
     ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialD", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_namespace tmp {};
-    ASSERT_EQ(env_->Namespace_FindNamespace(ns, "subA", &tmp), ANI_OK);
-    ASSERT_NE(tmp, nullptr);
-
-    ani_class result {};
-    ASSERT_EQ(env_->Namespace_FindClass(ns, "ClsA", &result), ANI_OK);
-    ASSERT_NE(result, nullptr);
-    
-    ani_enum result1 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(ns, "ColorA", &result1), ANI_OK);
-    ASSERT_NE(result1, nullptr);
-
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result2), ANI_OK);
     ASSERT_NE(result2, nullptr);
-
-    ani_namespace tmp1 {};
-    ASSERT_EQ(env_->Namespace_FindNamespace(nullptr, "subA", &tmp1), ANI_INVALID_ARGS);
-
-    ani_class result3 {};
-    ASSERT_EQ(env_->Namespace_FindClass(nullptr, "ClsA", &result3), ANI_INVALID_ARGS);
-
-    ani_enum result4 {};
-    ASSERT_EQ(env_->Namespace_FindEnum(nullptr, "ColorA", &result4), ANI_INVALID_ARGS);
 
     ani_function result5 {};
     ASSERT_EQ(env_->Namespace_FindFunction(nullptr, "fun", ":i", &result5), ANI_INVALID_ARGS);

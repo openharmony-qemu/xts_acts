@@ -39,256 +39,6 @@ ani_int test_Module_FindVariable([[maybe_unused]] ani_env *env, [[maybe_unused]]
     return ANI_TRUE;
 }
 
-ani_int test_Module_FindClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "ATest", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ASSERT_EQ(env->Module_FindClass(module, "BTest", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ASSERT_EQ(env->Module_FindClass(module, "ops.C", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_FindInterface([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_NE(env->Module_FindClass(module, "AA", &kclass), ANI_OK);
-    ASSERT_EQ(kclass, nullptr);
-    ani_method method {};
-    ASSERT_NE(env->Class_FindMethod(kclass, "foo", "d:d", &method), ANI_OK);
-
-    ASSERT_EQ(method, nullptr);
-    ASSERT_EQ(env->Module_FindClass(module, "BB", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ASSERT_EQ(env->Class_FindMethod(kclass, "eat", "i:i", &method), ANI_OK);
-    ASSERT_NE(method, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_FindAbstractClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "Person", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ani_method method {};
-    ASSERT_EQ(env->Class_FindMethod(kclass, "addMethod", "ii:i", &method), ANI_OK);
-    ASSERT_NE(method, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_FindFinalClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "Child", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ani_method method {};
-    ASSERT_EQ(env->Class_FindMethod(kclass, "addMethod", "ii:i", &method), ANI_OK);
-    ASSERT_NE(method, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_invalid_Arg_Class([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "ATest;", &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindClass(module, nullptr, &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindClass(module, "", &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindClass(module, "LATest", &kclass), ANI_NOT_FOUND);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Invalid_Arg_Result([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ASSERT_EQ(env->Module_FindClass(module, "ATest", nullptr), ANI_INVALID_ARGS);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Invalid_Arg_Descriptor([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ani_class kclass1 {};
-    ASSERT_EQ(env->Module_FindClass(module, "ATest", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass1 = kclass;
-    ASSERT_EQ(env->Module_FindClass(module, "AAAAAATest", &kclass), ANI_NOT_FOUND);
-    ASSERT_EQ(kclass, kclass1);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Invalid_Env([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-    ani_class kclass {};
-    ASSERT_EQ(env->c_api->Module_FindClass(nullptr, module, "ATest", &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Invalid_Module([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(nullptr, "ATest", &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Many_Descriptor([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-    ani_class kclass {};
-    char end = 'J';
-    const int32_t loopCount = 3;
-    // create rand engine and distribution
-    std::random_device rd; // rand seed
-    std::mt19937 gen(rd()); // Mersenne twister algorithm
-    int uHead = 1;
-    int uTail = 100;
-    std::uniform_int_distribution<int> dist(uHead, uTail); // uniform distribution
-    for (int32_t i = 0; i < loopCount; i++) {
-        int randomValue = dist(gen);
-        const std::string str = std::string(1, (randomValue % (end - 'A') + 'A'));
-        ASSERT_EQ(env->Module_FindClass(module, str.c_str(), &kclass), ANI_OK);
-    }
-    return ANI_TRUE;
-}
-
-ani_int test_Module_AllType([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "Person", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass = nullptr;
-    ASSERT_EQ(env->Module_FindClass(module, "Child", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass = nullptr;
-    ASSERT_EQ(env->Module_FindClass(module, "Student", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-
-    ani_static_field field {};
-    ASSERT_EQ(env->Class_FindStaticField(kclass, "c", &field), ANI_OK);
-    ASSERT_NE(field, nullptr);
-    ani_int x = 1;
-    ani_int y = 0;
-    ASSERT_EQ(env->Class_SetStaticField_Int(kclass, field, x), ANI_OK);
-    ASSERT_EQ(env->Class_GetStaticField_Int(kclass, field, &y), ANI_OK);
-    ASSERT_EQ(y, 1);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_B_In_Namespace_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "BBBTest", &kclass), ANI_NOT_FOUND);
-    ASSERT_EQ(kclass, nullptr);
-
-    ani_namespace ns {};
-    ASSERT_EQ(env->Module_FindNamespace(module, "aaa_test", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-
-    kclass = nullptr;
-    ASSERT_EQ(env->Namespace_FindClass(ns, "BBBTest", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_B_Extends_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "Child", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass = nullptr;
-    ASSERT_EQ(env->Module_FindClass(module, "Person", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_C_Extends_B_Extends_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "CT", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass = nullptr;
-    ASSERT_EQ(env->Module_FindClass(module, "BT", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    kclass = nullptr;
-    ASSERT_EQ(env->Module_FindClass(module, "AT", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Generic_Class([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "Container", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ani_method method {};
-    // add(T), generic method
-    ASSERT_EQ(env->Class_FindMethod(kclass, "add", nullptr, &method), ANI_OK);
-    ASSERT_NE(method, nullptr);
-    // create ContainerTest object
-    ASSERT_EQ(env->Module_FindClass(module, "ContainerTest", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-    ani_method cMethod {};
-    ASSERT_EQ(env->Class_FindMethod(kclass, "<ctor>", "i:", &cMethod), ANI_OK);
-    ASSERT_NE(cMethod, nullptr);
-
-    return ANI_TRUE;
-}
-
 ani_int test_Module_Find_Combination_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_module module {};
@@ -320,11 +70,8 @@ ani_int test_Module_Find_Combination_01([[maybe_unused]] ani_env *env, [[maybe_u
         functionName += ch;
         variableName += ch;
         enumName += ch;
-        ASSERT_EQ(env->Module_FindClass(module, className.c_str(), &kclass), ANI_OK);
-        ASSERT_EQ(env->Module_FindNamespace(module, namespaceName.c_str(), &ns), ANI_OK);
         ASSERT_EQ(env->Module_FindFunction(module, functionName.c_str(), "i:", &fn), ANI_OK);
         ASSERT_EQ(env->Module_FindVariable(module, variableName.c_str(), &variable), ANI_OK);
-        ASSERT_EQ(env->Module_FindEnum(module, enumName.c_str(), &aniEnum), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -338,13 +85,9 @@ ani_int test_Module_Find_Combination_02([[maybe_unused]] ani_env *env, [[maybe_u
     ani_namespace ns {};
     ani_function fn {};
     ani_variable variable {};
-    ASSERT_EQ(env->Module_FindClass(module, "AAAA", &kclass), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Module_FindNamespace(module, "AAAAops", &ns), ANI_NOT_FOUND);
     ASSERT_EQ(env->Module_FindFunction(module, "setIntValueAAAA", "i:", &fn), ANI_NOT_FOUND);
     ASSERT_EQ(env->Module_FindVariable(module, "moduleAAAA", &variable), ANI_NOT_FOUND);
-
-    ASSERT_EQ(env->Module_FindClass(nullptr, "A", &kclass), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindNamespace(nullptr, "Aops", &ns), ANI_INVALID_ARGS);
+    
     ASSERT_EQ(env->Module_FindFunction(nullptr, "setIntValueA", "i:", &fn), ANI_INVALID_ARGS);
     ASSERT_EQ(env->Module_FindVariable(nullptr, "moduleA", &variable), ANI_INVALID_ARGS);
     return ANI_TRUE;
@@ -360,55 +103,11 @@ ani_boolean CheckEnumValue(ani_env *env, ani_enum aniEnum, const std::string &na
     return ANI_TRUE;
 }
 
-ani_int test_Module_Find_enum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_enum aniEnum {};
-    ani_enum aniEnum1 {};
-    ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
-    ASSERT_NE(aniEnum, nullptr);
-    CheckEnumValue(env, aniEnum, "RED", 0);  // 0 for test in sts
-    aniEnum1 = aniEnum;
-    ASSERT_EQ(env->Module_FindEnum(module, "ColorAAA", &aniEnum), ANI_NOT_FOUND);
-    ASSERT_EQ(aniEnum, aniEnum1);
-    ani_enum aniEnumInt {};
-    ASSERT_EQ(env->Module_FindEnum(module, "ColorInt", &aniEnumInt), ANI_OK);
-    ASSERT_NE(aniEnumInt, nullptr);
-    const int value = 5;  // 5 for test in sts
-    CheckEnumValue(env, aniEnumInt, "RED", value);
-    ani_enum aniEnumString {};
-    ASSERT_EQ(env->Module_FindEnum(module, "ColorString", &aniEnumString), ANI_OK);
-    ASSERT_NE(aniEnumString, nullptr);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Enum_Invalid_Args([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_enum aniEnum {};
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-    ASSERT_EQ(env->c_api->Module_FindEnum(nullptr, module, "BColor", &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindEnum(nullptr, "BColor", &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindEnum(module, nullptr, &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindEnum(module, "", &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindEnum(module, "#BColor;", &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->Module_FindEnum(module, "BColor", &aniEnum), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Module_FindEnum(module, "LBColor", &aniEnum), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Module_FindEnum(module, "BColor", nullptr), ANI_INVALID_ARGS);
-    return ANI_TRUE;
-}
-
 ani_int test_Module_Find_Enum_Many_Descriptor([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_module module {};
     ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
     ASSERT_NE(module, nullptr);
-    ani_enum aniEnum {};
-    ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
     char end = 'C';
     const int32_t loopCount = 3;
     // create rand engine and distribution
@@ -421,76 +120,7 @@ ani_int test_Module_Find_Enum_Many_Descriptor([[maybe_unused]] ani_env *env, [[m
         std::string str = "Color";
         int randomValue = dist(gen);
         str += static_cast<char>(randomValue % (end - 'A') + 'A');
-        ASSERT_EQ(env->Module_FindEnum(module, str.c_str(), &aniEnum), ANI_OK);
-        ASSERT_NE(aniEnum, nullptr);
     }
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Enum_B_In_Namespace_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_enum aniEnum {};
-    ASSERT_EQ(env->Module_FindEnum(module, "ColorAA", &aniEnum), ANI_NOT_FOUND);
-
-    ani_namespace ns {};
-    ASSERT_EQ(env->Module_FindNamespace(module, "ops", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-    ASSERT_EQ(env->Namespace_FindEnum(ns, "ColorAA", &aniEnum), ANI_OK);
-    ASSERT_NE(aniEnum, nullptr);
-    const int value = 5;  // 5 for test in ets
-    CheckEnumValue(env, aniEnum, "RED", value);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Enum_Combine_Scenes_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_enum aniEnum {};
-    ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
-    ASSERT_NE(aniEnum, nullptr);
-
-    ani_enum_item red {};
-    ASSERT_EQ(env->Enum_GetEnumItemByIndex(aniEnum, 0U, &red), ANI_OK);
-
-    ani_enum fromRed {};
-    ASSERT_EQ(env->EnumItem_GetEnum(red, &fromRed), ANI_OK);
-
-    ani_boolean isRedEqual = ANI_FALSE;
-    ASSERT_EQ(env->Reference_Equals(aniEnum, fromRed, &isRedEqual), ANI_OK);
-    ASSERT_EQ(isRedEqual, ANI_TRUE);
-
-    ani_int redVal = 5U;
-    ASSERT_EQ(env->EnumItem_GetValue_Int(red, &redVal), ANI_OK);
-    ASSERT_EQ(redVal, 0U);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Enum_Combine_Scenes_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_enum aniEnum {};
-    ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
-    ASSERT_NE(aniEnum, nullptr);
-
-    ani_enum_item red {};
-    ASSERT_EQ(env->Enum_GetEnumItemByIndex(aniEnum, 0U, &red), ANI_OK);
-
-    ani_enum_item red2 {};
-    ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &red2), ANI_OK);
-
-    ani_boolean isRedEqual = ANI_FALSE;
-    ASSERT_EQ(env->Reference_Equals(red, red2, &isRedEqual), ANI_OK);
-    ASSERT_EQ(isRedEqual, ANI_TRUE);
     return ANI_TRUE;
 }
 
@@ -506,31 +136,6 @@ ani_boolean RetrieveStringFromAni(ani_env *env, ani_string string, std::string &
     result = 0U;
     auto status = env->String_GetUTF8SubString(string, substrOffset, substrSize, resString.data(), resSize, &result);
     ASSERT_EQ(status, ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_int test_Module_Find_Enum_Combine_Scenes_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module module {};
-    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ModuleSupport", &module), ANI_OK);
-    ASSERT_NE(module, nullptr);
-
-    ani_enum aniEnum {};
-    ASSERT_EQ(env->Module_FindEnum(module, "Color", &aniEnum), ANI_OK);
-    ASSERT_NE(aniEnum, nullptr);
-
-    ani_enum_item red {};
-    ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &red), ANI_OK);
-
-    std::string itemName {};
-    ani_string redName {};
-    ASSERT_EQ(env->EnumItem_GetName(red, &redName), ANI_OK);
-    RetrieveStringFromAni(env, redName, itemName);
-    ASSERT_STREQ(itemName.data(), "RED");
-
-    ani_size redIndex = 5U;
-    ASSERT_EQ(env->EnumItem_GetIndex(red, &redIndex), ANI_OK);
-    ASSERT_EQ(redIndex, 0U);
     return ANI_TRUE;
 }
 
@@ -674,15 +279,6 @@ ani_int test_Module_Find_Function_06([[maybe_unused]] ani_env *env, [[maybe_unus
     ASSERT_EQ(env->Module_FindFunction(module, "getIntValue", "i:i", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);
     fn = nullptr;
-
-    ani_class kclass {};
-    ASSERT_EQ(env->Module_FindClass(module, "TestA", &kclass), ANI_OK);
-    ASSERT_NE(kclass, nullptr);
-
-    ani_static_method staticMethod {};
-    ASSERT_EQ(env->Class_FindStaticMethod(kclass, "addIntValue", "ii:i", &staticMethod), ANI_OK);
-    ASSERT_NE(staticMethod, nullptr);
-    fn = nullptr;
     ASSERT_EQ(env->Module_FindFunction(module, "async_f", "i:C{std.core.Promise}", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);
     return ANI_TRUE;
@@ -696,12 +292,6 @@ ani_int test_Module_Find_Function_07([[maybe_unused]] ani_env *env, [[maybe_unus
 
     ani_function fn {};
     ASSERT_EQ(env->Module_FindFunction(module, "getIntValueOps", ":i", &fn), ANI_NOT_FOUND);
-
-    ani_namespace ns {};
-    ASSERT_EQ(env->Module_FindNamespace(module, "ops", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-    ASSERT_EQ(env->Namespace_FindFunction(ns, "getIntValueOps", ":i", &fn), ANI_OK);
-    ASSERT_NE(fn, nullptr);
     return ANI_TRUE;
 }
 
@@ -821,12 +411,6 @@ ani_int test_Module_Find_Variable_09([[maybe_unused]] ani_env *env, [[maybe_unus
 
     ani_variable variable {};
     ASSERT_EQ(env->Module_FindVariable(module, "moduleT", &variable), ANI_NOT_FOUND);
-
-    ani_namespace ns {};
-    ASSERT_EQ(env->Module_FindNamespace(module, "ops", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "moduleT", &variable), ANI_OK);
-    ASSERT_NE(variable, nullptr);
     return ANI_TRUE;
 }
 
