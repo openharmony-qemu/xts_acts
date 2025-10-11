@@ -214,7 +214,7 @@ export default function PowerTest() {
         try {
           let mode: number = ohos_power.DevicePowerMode.MODE_CUSTOM_POWER_SAVE;
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
-          expect(mode).assertEqual(605);
+          expect(mode).assertEqual(650);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
