@@ -542,5 +542,110 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  testScanDuty
+         * @tc.name    testScanDuty
+         * @tc.desc    Test testScanDuty API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testScanDuty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let scanModeLowPower = ble.ScanDuty.SCAN_MODE_LOW_POWER;
+                let scanModeBalanced = ble.ScanDuty.SCAN_MODE_BALANCED;
+                let scanModeLowLatency = ble.ScanDuty.SCAN_MODE_LOW_LATENCY;
+                expect(scanModeLowPower).assertEqual(0);
+                expect(scanModeBalanced).assertEqual(1);
+                expect(scanModeLowLatency).assertEqual(2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testScanDuty errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testStartAdvertising
+         * @tc.name    testStartAdvertising
+         * @tc.desc    Test testStartAdvertising API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testStartAdvertising", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let started = ble.AdvertisingState.STARTED;
+                let enabled = ble.AdvertisingState.ENABLED;
+                let disabled = ble.AdvertisingState.DISABLED;
+                let stopped = ble.AdvertisingState.STOPPED;
+                expect(started).assertEqual(1);
+                expect(enabled).assertEqual(2);
+                expect(disabled).assertEqual(3);
+                expect(stopped).assertEqual(4);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testStartAdvertising errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testPhyType
+         * @tc.name    testPhyType
+         * @tc.desc    Test testPhyType API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testPhyType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let phyLe1m = ble.PhyType.PHY_LE_1M;
+                let phyLeAllSupported = ble.PhyType.PHY_LE_ALL_SUPPORTED;
+                expect(phyLe1m).assertEqual(1);
+                expect(phyLeAllSupported).assertEqual(255);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testPhyType errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testScanReportMode
+         * @tc.name    testScanReportMode
+         * @tc.desc    Test testScanReportMode API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testScanReportMode", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let normal = ble.ScanReportMode.NORMAL;
+                hilog.info(domain, tag, "ScanReportMode NORMAL: " + JSON.stringify(normal));
+                expect(normal).assertEqual(1);
+
+                let fenceSensitivityLow = ble.ScanReportMode.FENCE_SENSITIVITY_LOW;
+                hilog.info(domain, tag, "ScanReportMode FENCE_SENSITIVITY_LOW: " + JSON.stringify(fenceSensitivityLow));
+                expect(fenceSensitivityLow).assertEqual(10);
+
+                let fenceSensitivityHigh = ble.ScanReportMode.FENCE_SENSITIVITY_HIGH;
+                hilog.info(domain, tag, "ScanReportMode FENCE_SENSITIVITY_HIGH: " + JSON.stringify(fenceSensitivityHigh));
+                expect(fenceSensitivityHigh).assertEqual(11);
+
+                let batch = ble.ScanReportMode.BATCH;
+                hilog.info(domain, tag, "ScanReportMode BATCH: " + JSON.stringify(batch));
+                expect(batch).assertEqual(2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testScanReportMode errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
     })
 }
