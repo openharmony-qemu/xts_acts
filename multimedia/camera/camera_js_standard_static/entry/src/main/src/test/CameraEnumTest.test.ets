@@ -456,5 +456,27 @@ export default function cameraEnumTest() {
       console.info(`${TAG} CameraConcurrentType.CAMERA_FULL_CAPABILITY:${camera.CameraConcurrentType.CAMERA_FULL_CAPABILITY}`);
       done();
     })
+
+    /**
+      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
+      * @tc.desc   assert all system pressure level enums
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_NORMAL == 0).assertTrue();
+      console.info(`${TAG} SystemPressureLevel.SYSTEM_PRESSURE_NORMAL:${camera.SystemPressureLevel.SYSTEM_PRESSURE_NORMAL}`);
+      expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_MILD == 1).assertTrue();
+      console.info(`${TAG} SystemPressureLevel.SYSTEM_PRESSURE_MILD:${camera.SystemPressureLevel.SYSTEM_PRESSURE_MILD}`);
+      expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_SEVERE == 2).assertTrue();
+      console.info(`${TAG} SystemPressureLevel.SYSTEM_PRESSURE_SEVERE:${camera.SystemPressureLevel.SYSTEM_PRESSURE_SEVERE}`);
+      expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_CRITICAL == 3).assertTrue();
+      console.info(`${TAG} SystemPressureLevel.SYSTEM_PRESSURE_CRITICAL:${camera.SystemPressureLevel.SYSTEM_PRESSURE_CRITICAL}`);
+      expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_SHUTDOWN == 4).assertTrue();
+      console.info(`${TAG} SystemPressureLevel.SYSTEM_PRESSURE_SHUTDOWN:${camera.SystemPressureLevel.SYSTEM_PRESSURE_SHUTDOWN}`);
+      done();
+    })
   })
 }
