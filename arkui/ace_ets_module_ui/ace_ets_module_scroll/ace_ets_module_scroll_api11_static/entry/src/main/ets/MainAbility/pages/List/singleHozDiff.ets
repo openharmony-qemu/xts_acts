@@ -54,7 +54,7 @@ struct singleListHorizontalDiffHeight {
           this.scroller.scrollToItemInGroup(1, 2)
         })
       List({ scroller: this.scroller }) {
-        ForEach(this.arr, (item0: number, groupIndex: number) => {
+        ForEach(this.arr, (item0: number, groupIndex: int) => {
           
           
           

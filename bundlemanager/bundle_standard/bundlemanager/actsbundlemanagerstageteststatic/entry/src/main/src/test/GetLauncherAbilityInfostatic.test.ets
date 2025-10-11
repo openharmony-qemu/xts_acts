@@ -77,6 +77,11 @@ export default function abilityTest() {
         expect(data![0].applicationInfo.appIndex).assertEqual(APP_Index);
         expect(data![0].applicationInfo.installSource).assertEqual("unknown");
         expect(data![0].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
+        expect(data![0].applicationInfo.descriptionId).assertLarger(0);
+        expect(data![0].applicationInfo.labelId).assertLarger(0);
+        expect(data![0].applicationInfo.iconId).assertLarger(0);
+        expect(data![0].applicationInfo.accessTokenId).assertLarger(0);
+        expect(data![0].applicationInfo.uid).assertLarger(0);
         expect(data![0].elementName.deviceId).assertEqual("");
         expect(data![0].elementName.bundleName).assertEqual(BUNDLE_NAME100);
         expect(data![0].elementName.moduleName).assertEqual("entry");

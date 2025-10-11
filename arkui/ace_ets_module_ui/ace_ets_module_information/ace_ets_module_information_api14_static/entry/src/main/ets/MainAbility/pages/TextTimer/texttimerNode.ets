@@ -17,7 +17,7 @@ import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, $r,
   Text, Badge, Image, $r, Row, QRCode, TextClockController, Scroll, FlexOptions, TextClock, Margin, ClickEvent, FlexDirection, ItemAlign,
   FlexAlign, TextTimerController, TextTimerOptions, TextTimer, Button} from '@ohos.arkui.component'
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 let timerController = new TextTimerController()
 let data: TextTimerOptions = {

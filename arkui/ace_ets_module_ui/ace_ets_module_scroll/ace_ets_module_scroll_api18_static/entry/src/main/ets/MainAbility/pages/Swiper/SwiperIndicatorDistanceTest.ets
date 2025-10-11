@@ -58,11 +58,11 @@ class MyDataSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -78,9 +78,9 @@ class MyDataSource implements IDataSource<number> {
 struct SwiperExample {
   public isLandScape: boolean = false;
   @State autoPlay: boolean = false
-  @State indexNumber: number = 1
+  @State indexNumber: Int = 1
   @State space: LengthMetrics | null | undefined = LengthMetrics.vp(8)
-  @State maxDisplayCount: number = 9
+  @State maxDisplayCount: Int = 9
   @State loop: boolean = true
   @State list1item: number = 10
   @State bottom: LengthMetrics | Length | null | undefined = LengthMetrics.vp(3)
@@ -168,7 +168,7 @@ struct SwiperExample {
           arrowColor: Color.Blue
         } as ArrowStyle, false)
         .curve(Curve.Linear)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -201,7 +201,7 @@ struct SwiperExample {
           .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
         .displayArrow({ isSidebarMiddle: false } as ArrowStyle, false)
         .curve(Curve.Linear)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 

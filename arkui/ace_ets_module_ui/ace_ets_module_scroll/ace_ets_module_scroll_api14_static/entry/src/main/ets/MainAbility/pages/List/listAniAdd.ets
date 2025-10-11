@@ -82,7 +82,7 @@ struct animationListAddExample {
       }
 
       List({ space: 10, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('item-' + item)
               .width('100%')

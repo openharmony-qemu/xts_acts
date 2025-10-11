@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
@@ -119,13 +134,17 @@ export default function getBundleInfoForSelf() {
      * @tc.name: getBundleInfoForSelfWithROUTERMAP
      * @tc.desc: Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_ROUTER_MAP flag
      */
-    it('getBundleInfoForSelfWithROUTERMAP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('getBundleInfoForSelfWithROUTERMAP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ROUTER_MAP).then((data: BundleInfo) => {
           hilog.info(domain, tag, 'getBundleInfoForSelfWithROUTERMAP  ====> start');
           expect(data.appInfo).assertEqual(null);
-          expect(data.hapModulesInfo[0].type + '').assertEqual('1');
+          expect(data.hapModulesInfo[0].type).assertEqual(bundle.ModuleType.ENTRY);
+          expect(bundle.BundleType.ATOMIC_SERVICE).assertEqual(1);
+          expect(bundle.ModuleType.FEATURE).assertEqual(2);
+          expect(bundle.ModuleType.SHARED).assertEqual(3);
+          expect(bundle.CompatiblePolicy.BACKWARD_COMPATIBILITY).assertEqual(1);
           expect(data.hapModulesInfo[0].routerMap.length).assertLarger(0.0);
           expect(data.hapModulesInfo[0].routerMap[0].name).assertEqual("DynamicPage1");
           expect(data.hapModulesInfo[0].routerMap[0].pageSourceFile).assertEqual("src/main/ets");
@@ -158,7 +177,7 @@ export default function getBundleInfoForSelf() {
           let skillUrl: bundle.SkillUrl = skill.uris[0];
           expect(data.hapModulesInfo[0].abilitiesInfo[0].skills.length).assertEqual(1);
           expect(skill.actions[0])
-            .assertEqual('action.system.home');
+            .assertEqual('ohos.want.action.home');
           expect(skill.entities[0])
             .assertEqual('entity.system.home');
           expect(skill.domainVerify).assertEqual(false);

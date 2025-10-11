@@ -18,7 +18,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import { Entry, Component, Column, Flex, Row, Image, FlexDirection, $r, ItemAlign, BadgeParamWithNumber, BadgeParamWithString, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, TextAlign, Margin} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct badgeTest {

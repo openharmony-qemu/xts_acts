@@ -367,7 +367,7 @@ struct MarkAnchor {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64)
                 Text('Index0' + item).fontSize(25)
@@ -477,9 +477,9 @@ struct MarkAnchor {
         .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach(new Array<number>(1, 2, 3), (item: number, index:number):void => {
+          ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
             Text('Swiper' + item).width('90%').height(160)
-          }, (item: number, index:number):string => String(item))
+          }, (item: number, index:int):string => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)
@@ -493,7 +493,7 @@ struct MarkAnchor {
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: number, index:number):void => {
+            ForEach(this.arr, (item: number, index:int):void => {
               Row() {
                 Text(String(item))
                   .width(80)
@@ -504,7 +504,7 @@ struct MarkAnchor {
                   .textAlign(TextAlign.Center)
                   .margin({ top: 5 } as Margin)
               }
-            }, (item: number, index:number):string => String(item))
+            }, (item: number, index:int):string => String(item))
           }.margin({ right: 15 } as Margin)
         }.width(this.subassemblyWidth).height(this.subassemblyHeight)
       } else if (this.targetView == 'TextTimer') {
@@ -518,7 +518,7 @@ struct MarkAnchor {
           direction: GridRowDirection.Row
         }) {
           ForEach(new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue),
-            (color: Color, index:number):void => {
+            (color: Color, index:int):void => {
               GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
                 Row().width('100%').height('20vp')
               }

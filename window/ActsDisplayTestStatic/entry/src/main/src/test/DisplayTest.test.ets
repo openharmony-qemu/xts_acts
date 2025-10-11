@@ -112,7 +112,8 @@ export default function DisplayTest() {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
                     try {
                         expect().assertFail();
-                    } catch (error: Error) {
+                    } catch (error) {
+                        error = error as Error;
                         hilog.info(0x0000, '[ANI]',`display.getAllDisplays catch error: ${JSON.stringify(error)}`);
                     }
                     done();
@@ -155,23 +156,26 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on('foldStatusChange', callback);
-            } catch (exception:Error) {
+                display.onFoldStatusChange(callback);
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldStatusChange");
-            } catch (exception:Error) {
+                display.offFoldStatusChange();
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldStatusChange");
+                display.offFoldStatusChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -190,9 +194,10 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("foldStatusChange");
+                display.offFoldStatusChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -214,23 +219,26 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on('foldDisplayModeChange', callback);
-            } catch (exception:Error) {
+                display.onFoldDisplayModeChange(callback);
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldDisplayModeChange");
-            } catch (exception:Error) {
+                display.offFoldDisplayModeChange();
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldDisplayModeChange");
+                display.offFoldDisplayModeChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error; 
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -392,7 +400,8 @@ export default function DisplayTest() {
                 expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_SUB).assertEqual(3);
                 expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_COORDINATION).assertEqual(4);
                 done();
-            } catch (err:Error) {
+            } catch (err) {
+                err = err as Error;
                 hilog.error(0x0000, '[ANI]',tag + 'getFoldDisplayMode failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
@@ -426,7 +435,8 @@ export default function DisplayTest() {
                 expect(dsp.xDPI != null).assertTrue();
                 // expect(dsp.yDPI != null).assertTrue();
                 done();
-            } catch (err:Error) {
+            } catch (err) {
+                err = err as Error;
                 hilog.error(0x0000, '[ANI]','getDisplayByIdSyncTest1 error ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -481,24 +491,27 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("add", callback);
-            } catch (exception:Error) {
+                display.onAdd(callback);
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
 
             }
             try {
-                display.off("add");
-            } catch (exception:Error) {
+                display.offAdd();
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("add");
+                display.offAdd();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -520,24 +533,27 @@ export default function DisplayTest() {
                 console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("change", callback);
-            } catch (exception:Error) {
+                display.onChange(callback);
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
-            } catch (exception:Error) {
+                display.offChange();
+            } catch (exception) {
+                exception = exception as Error
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
+                display.offChange();
                 done();
 
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -559,23 +575,26 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("remove", callback);
-            } catch (exception:Error) {
+                display.onRemove(callback);
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
-            } catch (exception:Error) {
+                display.offRemove();
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
+                display.offRemove();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
+                exception = exception as Error;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -596,7 +615,8 @@ export default function DisplayTest() {
                 display.isFoldable();
                 expect(true).assertTrue();
                 done();
-            } catch (err:Error) {
+            } catch (err) {
+                err = err as Error;
                 hilog.info(0x0000, '[ANI]',tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
@@ -646,21 +666,25 @@ export default function DisplayTest() {
                 }
             };
             try {
-                display.on('foldAngleChange', callback);
+                display.onFoldAngleChange(callback);
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -683,29 +707,35 @@ export default function DisplayTest() {
                 }
             };
             try {
-                display.on('foldAngleChange', callback);
+                display.onFoldAngleChange(callback);
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
-            }
-            try {
-                display.off("foldAngleChange");
-            }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
+            }
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+            }
+            try {
+                display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -721,13 +751,15 @@ export default function DisplayTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -747,21 +779,25 @@ export default function DisplayTest() {
                 done();
             };
             try {
-                display.on('captureStatusChange', callback);
+                display.onCaptureStatusChange(callback);
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -780,29 +816,35 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'capture status: ' + status);
             };
             try {
-                display.on('captureStatusChange', callback);
+                display.onCaptureStatusChange(callback);
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
-            }
-            try {
-                display.off("captureStatusChange");
-            }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
+            }
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+            }
+            try {
+                display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -818,13 +860,15 @@ export default function DisplayTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -845,10 +889,12 @@ export default function DisplayTest() {
                 expect(status).assertFalse();
                 done();
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -867,10 +913,12 @@ export default function DisplayTest() {
                 expect(5).assertEqual(display.DisplayState.STATE_VR);
                 expect(6).assertEqual(display.DisplayState.STATE_ON_SUSPEND);
                 done();
-            } catch (err: BusinessError) {
-                hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
-                expect().assertFail();
-                done();
+            } catch (err) {
+                if (err instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done();
+                }
             }
         })
         /**
@@ -886,9 +934,11 @@ export default function DisplayTest() {
                 expect(display.Orientation.PORTRAIT_INVERTED).assertEqual(2)
                 expect(display.Orientation.LANDSCAPE_INVERTED).assertEqual(3)
                 done()
-            } catch (error: BusinessError) {
-                expect().assertFail()
-                done()
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    expect().assertFail()
+                    done()
+                }
             }
         })
 
@@ -935,10 +985,12 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -1000,11 +1052,13 @@ export default function DisplayTest() {
                                 }
                             });
                         }
-                        catch (exception: BusinessError) {
-                            hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                            subWindow.destroyWindow();
-                            expect().assertFail();
-                            done();
+                        catch (exception) {
+                            if (exception instanceof BusinessError) {
+                                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
+                                subWindow.destroyWindow();
+                                expect().assertFail();
+                                done();
+                            }
                         }
                     }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
@@ -1018,10 +1072,12 @@ export default function DisplayTest() {
                     done();
                 });
             }
-            catch (err: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to the case. Cause code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-                done();
+            catch (err) {
+                if (err instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to the case. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         });
         /**
@@ -1079,10 +1135,12 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -1154,10 +1212,12 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
+            catch (exception) {
+                if (exception instanceof BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
         /**
@@ -1175,11 +1235,11 @@ export default function DisplayTest() {
             let displayClass: display.Display;
             displayClass = display.getDefaultDisplaySync();
             try {
-                displayClass.on('availableAreaChange', (data: display.Rect) => {
+                displayClass.onAvailableAreaChange((data: display.Rect) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
                     done();
                 });
-                displayClass.off('availableAreaChange');
+                displayClass.offAvailableAreaChange();
                 done();
             }
             catch (err: BusinessError) {
@@ -1219,11 +1279,11 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', (data: display.Rect) => {
+                        displayClass.onAvailableAreaChange((data: display.Rect) => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
                             Utils.msSleep(500);
                             expect(data.height).assertLarger(AvailableArea.height);
-                            displayClass.off('availableAreaChange');
+                            displayClass.offAvailableAreaChange();
                             mainWindowClass.recover();
                             done();
                         });
@@ -1286,13 +1346,13 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
                         expect(num).assertEqual(4);
-                        displayClass.off('availableAreaChange');
+                        displayClass.offAvailableAreaChange();
                         mainWindowClass.recover();
                         done();
                     }
@@ -1351,14 +1411,14 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
-                        displayClass.off('availableAreaChange', callback2);
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
+                        displayClass.offAvailableAreaChange(callback2);
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
                         expect(num).assertEqual(2);
-                        displayClass.off('availableAreaChange');
+                        displayClass.offAvailableAreaChange();
                         mainWindowClass.recover();
                         done();
                     }
@@ -1417,9 +1477,9 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
-                        displayClass.off('availableAreaChange');
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
+                        displayClass.offAvailableAreaChange();
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
@@ -1464,7 +1524,7 @@ export default function DisplayTest() {
             let displayClass: display.Display;
             try {
                 displayClass = display.getDefaultDisplaySync();
-                displayClass.off('availableAreaChange');
+                displayClass.offAvailableAreaChange();
                 expect(true).assertTrue();
                 done();
             }

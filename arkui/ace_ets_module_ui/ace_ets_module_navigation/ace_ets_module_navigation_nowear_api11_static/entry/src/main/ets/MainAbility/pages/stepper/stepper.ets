@@ -23,7 +23,7 @@ import { MessageManager, Callback, Message } from '../../utils/MessageManager';
 @Entry
 @Component
 struct StepperExample {
-  @State currentIndex: number = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State disabled: ItemState = ItemState.Normal
@@ -97,7 +97,7 @@ struct StepperExample {
     .onSkip(() => {
       console.log('onSkip')
     })
-    .onChange((prevIndex: number, index: number) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
     })
     .align(Alignment.Center)

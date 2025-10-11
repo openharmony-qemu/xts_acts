@@ -58,7 +58,7 @@ struct textAreaUx {
       console.info("valueChangeCallBack TextNum:" + JSON.stringify(eventData));
       this.flag = true
       this.isNum = true
-      this.textNum = ((eventData.data) as ESObject).getProperty('text').toNumber() as int
+      this.textNum = Double.toInt(((eventData.data) as ESObject).getProperty('text').toNumber())
     }
     if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextStr") {
       console.info("valueChangeCallBack TextStr:" + JSON.stringify(eventData));

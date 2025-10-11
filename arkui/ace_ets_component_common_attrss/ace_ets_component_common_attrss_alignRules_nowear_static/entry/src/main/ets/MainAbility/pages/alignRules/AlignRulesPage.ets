@@ -283,8 +283,8 @@ struct AlignRules {
           .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Grid') {
         Grid() {
-          ForEach(['0', '1', '2', '3', '4'], (d: string, i: number) => {
-            ForEach(['0', '1', '2', '3', '4'], (day: string, index: number) => {
+          ForEach(['0', '1', '2', '3', '4'], (d: string, i: int) => {
+            ForEach(['0', '1', '2', '3', '4'], (day: string, index: int) => {
               GridItem() {
                 Text(day).backgroundColor(Color.White)
                   .width('100%').height('100%').textAlign(TextAlign.Center)
@@ -350,7 +350,7 @@ struct AlignRules {
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: number) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
               Text('Scroll' + item)
                 .width('90%')
                 .height(150)
@@ -368,7 +368,7 @@ struct AlignRules {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3] as number[], (item: number, index: number) => {
+            ForEach([1, 2, 3] as number[], (item: number, index: int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64)
                 Text('Index0' + item).fontSize(25)
@@ -395,7 +395,7 @@ struct AlignRules {
         
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3] as number[], (item: number, index: number) => {
+          ForEach([1, 2, 3] as number[], (item: number, index: int) => {
             Text('Swiper' + item).width('90%').height(160)
           }, (item: number) => String(item))
         }

@@ -47,7 +47,7 @@ struct paddingStartOffsetExample {
   build() {
     Column() {
       List({ space: 10, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('item' + item)
               .width('90%')

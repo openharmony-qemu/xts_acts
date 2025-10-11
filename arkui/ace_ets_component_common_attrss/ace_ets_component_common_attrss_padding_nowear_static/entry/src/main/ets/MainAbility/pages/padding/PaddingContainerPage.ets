@@ -33,9 +33,6 @@ import {
 import {
   State,
   
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 
 } from '@ohos.arkui.stateManagement'
@@ -145,7 +142,7 @@ struct paddingPage {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach(new Array<number>(1, 2, 3), (item:number,index:number) => {
+            ForEach(new Array<number>(1, 2, 3), (item:number,index:int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(64)

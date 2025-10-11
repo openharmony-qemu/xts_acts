@@ -86,7 +86,7 @@ struct MarqueeExample {
       Marquee({
         start: this.start,
         step: this.step,
-        loop: this.loop,
+        loop: this.loop as int,
         fromStart: this.fromStart,
         src: this.src
       })

@@ -72,7 +72,7 @@ struct ScrollFrictionPage {
     Column() {
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('100%')
               .height('30%')
@@ -87,7 +87,7 @@ struct ScrollFrictionPage {
 
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height(150)

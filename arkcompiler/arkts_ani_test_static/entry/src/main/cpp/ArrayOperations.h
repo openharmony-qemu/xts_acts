@@ -67,7 +67,7 @@ ani_int test_Array_New_Set_Get([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
     ani_method intCtor = nullptr;
     env_->FindClass("std.core.Int", &intClass);
     env_->Class_FindMethod(intClass, "<ctor>", "i:", &intCtor);
-    env_->Class_FindMethod(intClass, "unboxed", ":i", &intUnbox);
+    env_->Class_FindMethod(intClass, "toInt", ":i", &intUnbox);
     ani_size arrSize = 5U;
     ani_object boxedInt{};
     ani_array array{};
@@ -105,7 +105,7 @@ ani_int test_Array_Push_Pop([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani
     ani_method intCtor = nullptr;
     env_->FindClass("std.core.Int", &intClass);
     env_->Class_FindMethod(intClass, "<ctor>", "i:", &intCtor);
-    env_->Class_FindMethod(intClass, "unboxed", ":i", &intUnbox);
+    env_->Class_FindMethod(intClass, "toInt", ":i", &intUnbox);
     ani_size arrSize = 5U;
     ani_array array{};
     ani_ref undefinedRef {};

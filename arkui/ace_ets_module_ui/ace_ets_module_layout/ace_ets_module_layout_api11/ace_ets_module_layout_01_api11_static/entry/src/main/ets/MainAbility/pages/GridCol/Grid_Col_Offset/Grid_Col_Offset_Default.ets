@@ -35,7 +35,7 @@ struct Grid_Col_Offset_Default {
           reference: BreakpointsReference.ComponentSize },
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 2 }) {
 
           }.borderColor(color).borderWidth(2).key("Grid_Col_Offset_Default_0" + index).height(50)

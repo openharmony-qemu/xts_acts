@@ -40,9 +40,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_getBundleName_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_getBundleName_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004_static end`);
@@ -68,9 +70,11 @@ export default function uitestUiWindowErrorTest() {
           await window.getBounds();
         }
         await driver.delayMs(waitUiReadyMs);
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static end`);
@@ -96,9 +100,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_getTitle_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_getTitle_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_getTitle_17000004_static end`);
@@ -125,9 +131,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static end`);
@@ -153,9 +161,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static end`);
@@ -181,9 +191,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_isActive_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_isActive_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_isActive_17000004_static end`);
@@ -210,9 +222,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail()
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_isactive_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_isactive_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_isactive_17000004_static end`);
@@ -238,9 +252,11 @@ export default function uitestUiWindowErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_focus_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_focus_17000004_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(InvisibleErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_focus_17000004_static end`);
@@ -261,9 +277,11 @@ export default function uitestUiWindowErrorTest() {
           await window.moveTo(100, 100);
         }
         isSupport = true;
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static isSupport error is: ${JSON.stringify(e)}`);
-        isSupport = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static isSupport error is: ${JSON.stringify(e)}`);
+          isSupport = false;
+        }
       }
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static isSupport is: ${ isSupport }`);
       if (isSupport) {
@@ -280,9 +298,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -303,9 +323,11 @@ export default function uitestUiWindowErrorTest() {
           await window.moveTo(100, 100);
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static end`);
@@ -326,10 +348,12 @@ export default function uitestUiWindowErrorTest() {
           await window.resize(100, 100, ResizeDirection.LEFT);
         }
         isSupportResize = true;
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resize_17000004_static isSupportResize error is: ${JSON.stringify(e)}`);
-        if (e.code == DeviceErrorCode) {
-          isSupportResize = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_resize_17000004_static isSupportResize error is: ${JSON.stringify(e)}`);
+          if (e.code == DeviceErrorCode) {
+            isSupportResize = false;
+          }
         }
       }
       console.log(`${TestTag}, test_UiWindow_resize_17000004_static isSupportResize is: ${isSupportResize}`);
@@ -347,9 +371,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_resize_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_resize_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -370,9 +396,11 @@ export default function uitestUiWindowErrorTest() {
           await window.resize(100, 100, ResizeDirection.LEFT);
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_resize_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_resize_17000005_static end`);
@@ -393,10 +421,12 @@ export default function uitestUiWindowErrorTest() {
           await window.split();
         }
         isSupportSpilt = true;
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_split_17000004_static isSupportSpilt error is: ${JSON.stringify(e)}`);
-        if (e.code == DeviceErrorCode) {
-          isSupportSpilt = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_split_17000004_static isSupportSpilt error is: ${JSON.stringify(e)}`);
+          if (e.code == DeviceErrorCode) {
+            isSupportSpilt = false;
+          }
         }
       }
       console.log(`${TestTag}, test_UiWindow_split_17000004_static isSupportSpilt is: ${isSupportSpilt}`);
@@ -414,9 +444,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_split_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_split_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -437,9 +469,11 @@ export default function uitestUiWindowErrorTest() {
           await window.split();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_split_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_split_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_split_17000005_static end`);
@@ -460,10 +494,12 @@ export default function uitestUiWindowErrorTest() {
           await window.maximize();
         }
         isSupportMaximize = true;
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_maximize_17000004_static isSupportMaximize error is: ${JSON.stringify(e)}`);
-        if (e.code == DeviceErrorCode) {
-          isSupportMaximize = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_maximize_17000004_static isSupportMaximize error is: ${JSON.stringify(e)}`);
+          if (e.code == DeviceErrorCode) {
+            isSupportMaximize = false;
+          }
         }
       }
       if (isSupportMaximize) {
@@ -480,9 +516,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_maximize_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_maximize_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -503,9 +541,11 @@ export default function uitestUiWindowErrorTest() {
           await window.maximize();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_maximize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_maximize_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_maximize_17000005_static end`);
@@ -545,9 +585,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_minimize_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_minimize_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -568,9 +610,11 @@ export default function uitestUiWindowErrorTest() {
           await window.minimize();
         }
         expect().assertFail()
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_minimize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_minimize_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_minimize_17000005_static end`);
@@ -591,10 +635,12 @@ export default function uitestUiWindowErrorTest() {
           await window.resume();
         }
         isSupportResume = true;
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resume_17000004_static isSupportResume error is: ${JSON.stringify(e)}`);
-        if (e.code == DeviceErrorCode) {
-          isSupportResume = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_resume_17000004_static isSupportResume error is: ${JSON.stringify(e)}`);
+          if (e.code == DeviceErrorCode) {
+            isSupportResume = false;
+          }
         }
       }
       if (isSupportResume) {
@@ -611,9 +657,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_resume_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_resume_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -634,9 +682,11 @@ export default function uitestUiWindowErrorTest() {
           await window.resume();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resume_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_resume_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_resume_17000005_static end`);
@@ -656,10 +706,12 @@ export default function uitestUiWindowErrorTest() {
         if (window != null) {
           await window.close();
         }
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_close_17000004_static isSupportClose error is: ${JSON.stringify(e)}`);
-        if (e.code == DeviceErrorCode) {
-          isSupportClose = false;
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_close_17000004_static isSupportClose error is: ${JSON.stringify(e)}`);
+          if (e.code == DeviceErrorCode) {
+            isSupportClose = false;
+          }
         }
       }
       console.log(`${TestTag}, test_UiWindow_close_17000004_static isSupportClose is: ${ isSupportClose }`);
@@ -677,9 +729,11 @@ export default function uitestUiWindowErrorTest() {
           }
           await driver.delayMs(waitUiReadyMs);
           expect().assertFail();
-        }catch (e: BusinessError) {
-          console.log(`${TestTag}, test_UiWindow_close_17000004_static error is: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(InvisibleErrorCode);
+        }catch (e) {
+          if (e instanceof BusinessError) {
+            console.log(`${TestTag}, test_UiWindow_close_17000004_static error is: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(InvisibleErrorCode);
+          }
         }
       }
       await Utils.msSleep(1000)
@@ -700,9 +754,11 @@ export default function uitestUiWindowErrorTest() {
           await window.close();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_close_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
+      }catch (e) {
+        if (e instanceof BusinessError) {
+          console.log(`${TestTag}, test_UiWindow_close_17000005_static error is: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(DeviceErrorCode);
+        }
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_close_17000005_static end`);

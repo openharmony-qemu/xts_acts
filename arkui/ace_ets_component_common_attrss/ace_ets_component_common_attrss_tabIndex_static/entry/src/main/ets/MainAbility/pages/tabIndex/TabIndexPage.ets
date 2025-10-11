@@ -433,7 +433,7 @@ struct TabIndexPage {
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: Int,index:number) => {
+            ForEach([1, 2, 3], (item: Int,index:int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(64)
@@ -466,9 +466,9 @@ struct TabIndexPage {
         //.commonStyle()
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: Int,index:number) => {
+          ForEach([1, 2, 3], (item: Int,index:int) => {
             Text('Swiper' + item).width('90%').height(160).focusable(true)
-          }, (item: Int,index:number) => item+'')
+          }, (item: Int,index:int) => item+'')
         }
         .indicator(true)
         .backgroundColor(Color.White)

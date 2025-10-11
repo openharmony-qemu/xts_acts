@@ -17,9 +17,6 @@ import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alig
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 

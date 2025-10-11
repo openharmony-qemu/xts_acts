@@ -110,7 +110,7 @@ struct TabsCustomAnimationExample1 {
         .margin({ top: 10 } as Margin)
 
       Tabs({ index: this.currentIndexOri, controller: this.controllerOri }) {
-        ForEach(this.data, (item: itemType, index: number) => {
+        ForEach(this.data, (item: itemType, index: int) => {
           TabContent() {
           }
           .tabBar(item.text)

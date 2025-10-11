@@ -78,6 +78,7 @@ group("ability_runtime") {
       "actsopenlinkteststatic:actsopenlinkStaticTest",
       "actsparsingparameterstest:actsparsingparameterstest",
       "actsphotoeditorextensiontest:ActsPhotoEditorExtensionTest",
+      "actsphotoeditorextensionteststatic:ActsPhotoEditorextEnsionStaticTest",
       "actsqueryfunctiontest:actsqueryfunctiontest",
       "actsrequestdialogtest:actsrequestdialogtest",
       "actsrestartapptest:ActsRestartAppTest",

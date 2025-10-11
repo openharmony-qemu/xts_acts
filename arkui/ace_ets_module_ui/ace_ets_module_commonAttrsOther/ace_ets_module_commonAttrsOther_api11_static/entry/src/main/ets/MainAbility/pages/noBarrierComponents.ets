@@ -134,7 +134,7 @@ struct noBarrierComponents {
   private selectedDate: Date = new Date('2021-08-08');
   private fromStart: boolean = true;
   private step: number = 50;
-  private loop: number = Infinity;
+  private loop: int = Infinity as int;
   private src: string = "Running Marquee starts rolling";
   private patternLockController: PatternLockController = new PatternLockController();
   private value1: string = 'hello world';
@@ -163,7 +163,7 @@ struct noBarrierComponents {
           .accessibilityText("我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件")
 
         List({ space: 20, initialIndex: 0 } as ListOptions) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -173,7 +173,7 @@ struct noBarrierComponents {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-          }, (item: number, index: number) => item + '')
+          }, (item: number, index: int) => item + '')
         }
         .key("list")
         .listDirection(Axis.Vertical)

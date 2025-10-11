@@ -30,45 +30,44 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.name  : ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.number  ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.name    ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.desc    Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.size    MediumTest
+     * @tc.type    Method
+     * @tc.level   Level 2
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001 :start");
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      setTimeout(() => {
-        abilityDelegator.startAbility({
-          abilityName: "Main4Ability",
-          bundleName: "com.example.delegatortest.static",
-          moduleName: "entry",
-        }, () => {
-          setTimeout(() => {
-            abilityDelegator.getCurrentTopAbility((err: BusinessError | null, ability2: UIAbility | undefined) => {
-              if (ability2 != null) {
-                abilityDelegator.printSync(
-                  "ACTS_GetCurrentTopAbility_CALLBACK_0001 getCurrentTopAbility2: " +
-                  ability2?.context?.abilityInfo.name
-                );
-                expect(ability2?.context?.abilityInfo.name).assertEqual(
-                  "Main4Ability"
-                );
-                done();
-              } else {
-                abilityDelegator.printSync(
-                  "ACTS_GetCurrentTopAbility_CALLBACK_0001 getCurrentTopAbility2 not found."
-                );
-                expect().assertFail();
-                done();
-              }
-            });
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-        });
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+    
+      await abilityDelegator.startAbility({
+        abilityName: 'Main4Ability',
+        bundleName: 'com.example.delegatortest.static',
+        moduleName: 'entry',
+      })
+      await Utils.msSleep(START_ABILITY_TIMEOUT_TWO_THOUSAND);
+
+      abilityDelegator.getCurrentTopAbility((err: BusinessError | null, ability2: UIAbility | undefined) => {
+        if (ability2 != null) {
+          abilityDelegator.printSync(
+            'ACTS_GetCurrentTopAbility_CALLBACK_0001 getCurrentTopAbility2: ' +
+            ability2?.context?.abilityInfo.name
+          );
+          expect(ability2?.context?.abilityInfo.name).assertEqual(
+            "Main4Ability"
+          );
+        } else {
+          abilityDelegator.printSync(
+            'ACTS_GetCurrentTopAbility_CALLBACK_0001 getCurrentTopAbility2 not found.'
+          );
+          expect().assertFail();
+        }
+      });
+      
+      await Utils.msSleep(START_ABILITY_TIMEOUT_TWO_THOUSAND)
+      done();
     });
 
     /**

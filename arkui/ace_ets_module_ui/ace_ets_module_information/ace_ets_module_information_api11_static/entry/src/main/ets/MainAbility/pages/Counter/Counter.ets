@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, ColumnOptions, Button, Text, ClickEvent, Flex, FlexOptions, FlexDirection, ItemAlign, FlexAlign, FontWeight, Counter} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct counter {

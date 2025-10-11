@@ -23,24 +23,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsShortPrototypebTest() {
-  describe('builtinsShortPrototypebTest', ():void => {
+  describe('builtinsShortPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -54,7 +54,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0100'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -74,7 +74,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0200'
         console.info(`${caseName}, test start`);
         const a = new Short(-100);
@@ -94,7 +94,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0300'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -114,7 +114,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0400'
         console.info(`${caseName}, test start`);
         const a = new Short(200);
@@ -134,10 +134,10 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0500'
         console.info(`${caseName}, test start`);
-        const a:short = new Short(Short.MAX_VALUE - 100 as short);
+        const a: short = new Short(Short.MAX_VALUE - 100 as short);
         const b = new Short(100);
         const result = a.add(b);
         expect(result).assertEqual(Short.MAX_VALUE);
@@ -154,10 +154,10 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0600'
         console.info(`${caseName}, test start`);
-        const a:short = new Short(Short.MIN_VALUE - 100 as short);
+        const a: short = new Short(Short.MIN_VALUE - 100 as short);
         const b = new Short(100);
         const result = a.add(b);
         expect(result).assertEqual(Short.MIN_VALUE);
@@ -174,7 +174,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0700'
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MAX_VALUE);
@@ -194,7 +194,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0800'
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MIN_VALUE);
@@ -214,7 +214,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0900'
         console.info(`${caseName}, test start`);
         const defaultShort = new Short();
@@ -234,7 +234,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1000'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -252,7 +252,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1100'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -270,7 +270,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1200'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -290,7 +290,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1300'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -310,7 +310,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1400'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -330,7 +330,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1500'
         console.info(`${caseName}, test start`);
         const a = new Short();
@@ -348,17 +348,17 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1600'
         console.info(`${caseName}, test start`);
         const value = 12345;
         const shortObj = new Short(value);
-        const result = shortObj.unboxed();
+        const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_1700
      * @tc.name builtinsShortPrototypebTest1700
@@ -368,12 +368,12 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1700'
         console.info(`${caseName}, test start`);
         const value = -12345;
         const shortObj = new Short(value);
-        const result = shortObj.unboxed();
+        const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
         Done();
@@ -388,12 +388,12 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1800'
         console.info(`${caseName}, test start`);
         const value = Short.MIN_VALUE;
         const shortObj = new Short(value);
-        const result = shortObj.unboxed();
+        const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
         Done();
@@ -408,12 +408,12 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest1900'
         console.info(`${caseName}, test start`);
         const value = Short.MAX_VALUE;
         const shortObj = new Short(value);
-        const result = shortObj.unboxed();
+        const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
         Done();
@@ -428,13 +428,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2000'
         console.info(`${caseName}, test start`);
         const value = 100;
         const shortObj = new Short(value);
         const result = shortObj.add(new Short(50));
-        expect(result.unboxed()).assertEqual(150);
+        expect(result).assertEqual(150);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -448,7 +448,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2100'
         console.info(`${caseName}, test start`);
         const value = 200;
@@ -469,7 +469,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2200'
         console.info(`${caseName}, test start`);
         const short1 = new Short(100);
@@ -489,7 +489,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2300'
         console.info(`${caseName}, test start`);
         const value = 12345;
@@ -512,14 +512,14 @@ export default function builtinsShortPrototypebTest() {
 
 
     it('builtinsShortPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2400'
         console.info(`${caseName}, test start`);
         const json: JSONNumber = {
           value: 12345
         };
         const shortObj = new Short().createFromJSONValue(json);
-        expect(shortObj.unboxed()).assertEqual(12345);
+        expect(shortObj).assertEqual(12345);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -535,14 +535,14 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2500'
         console.info(`${caseName}, test start`);
         const json: JSONNumber = {
           value: Short.MIN_VALUE
         };
         const shortObj = new Short().createFromJSONValue(json);
-        expect(shortObj.unboxed()).assertEqual(Short.MIN_VALUE);
+        expect(shortObj).assertEqual(Short.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -556,14 +556,14 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2600'
         console.info(`${caseName}, test start`);
         const json: JSONNumber = {
           value: Short.MAX_VALUE
         };
         const shortObj = new Short().createFromJSONValue(json);
-        expect(shortObj.unboxed()).assertEqual(Short.MAX_VALUE);
+        expect(shortObj).assertEqual(Short.MAX_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -577,14 +577,14 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2700'
         console.info(`${caseName}, test start`);
         const json: JSONNumber = {
           value: 0
         };
         const shortObj = new Short().createFromJSONValue(json);
-        expect(shortObj.unboxed()).assertEqual(0);
+        expect(shortObj).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -598,16 +598,17 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2800'
         console.info(`${caseName}, test start`);
-        try{
+        try {
           const shortInstance = new Short();
           const jsonValue: JSONNumber = {
             value: Short.MAX_VALUE + 1
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -623,16 +624,17 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest2900'
         console.info(`${caseName}, test start`);
-        try{
+        try {
           const shortInstance = new Short();
           const jsonValue: JSONNumber = {
             value: Short.MIN_VALUE - 1
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -648,16 +650,17 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3000'
         console.info(`${caseName}, test start`);
-        try{
+        try {
           const shortInstance = new Short();
           const jsonValue: JSONNumber = {
             value: 12.34
           };
           const result = shortInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Short from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -673,16 +676,16 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3100'
         console.info(`${caseName}, test start`);
 
 
-          const shortInstance = new Short();
-          const jsonValue: JSONNumber = {
-            value: -12345
-          };
-          const result = shortInstance.createFromJSONValue(jsonValue);
+        const shortInstance = new Short();
+        const jsonValue: JSONNumber = {
+          value: -12345
+        };
+        const result = shortInstance.createFromJSONValue(jsonValue);
         expect(result).assertEqual(-12345);
 
         console.info(`${caseName}, test end`);
@@ -698,13 +701,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3200'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
         const b = new Short(20);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(5);
+        expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -718,13 +721,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3300'
         console.info(`${caseName}, test start`);
         const a = new Short(-100);
         const b = new Short(20);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(-5);
+        expect(result).assertEqual(-5);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -738,13 +741,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3400'
         console.info(`${caseName}, test start`);
         const a = new Short(10);
         const b = new Short(20);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(0);
+        expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -758,13 +761,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3500'
         console.info(`${caseName}, test start`);
         const a = new Short(12345);
         const b = new Short(1);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(12345);
+        expect(result).assertEqual(12345);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -778,13 +781,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3600'
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MAX_VALUE);
         const b = new Short(2);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(16383);
+        expect(result).assertEqual(16383);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -798,13 +801,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3700'
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MIN_VALUE);
         const b = new Short(2);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(-16384);
+        expect(result).assertEqual(-16384);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -818,13 +821,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3800'
         console.info(`${caseName}, test start`);
         const a = new Short(0);
         const b = new Short(20);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(0);
+        expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -838,13 +841,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest3900'
         console.info(`${caseName}, test start`);
         const a = new Short(10);
         const b = new Short(3);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(3);
+        expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -858,13 +861,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4000'
         console.info(`${caseName}, test start`);
         const a = new Short(-100);
         const b = new Short(-20);
         const result = a.div(b);
-        expect(result.unboxed()).assertEqual(5);
+        expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -878,7 +881,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4100'
         console.info(`${caseName}, test start`);
         const shortObj = new Short(100);
@@ -896,7 +899,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4200'
         console.info(`${caseName}, test start`);
         const short1 = new Short(100);
@@ -915,7 +918,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4300'
         console.info(`${caseName}, test start`);
         const short1 = new Short(100);
@@ -934,7 +937,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4400'
         console.info(`${caseName}, test start`);
         const shortObj = new Short(100);
@@ -952,7 +955,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4500'
         console.info(`${caseName}, test start`);
         const shortObj = new Short(100);
@@ -970,7 +973,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4600'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -990,7 +993,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4700'
         console.info(`${caseName}, test start`);
         const max1 = new Short(Short.MAX_VALUE);
@@ -1014,7 +1017,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4800'
         console.info(`${caseName}, test start`);
         const zero1 = new Short(0);
@@ -1036,7 +1039,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest4900'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -1055,7 +1058,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5000'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -1074,7 +1077,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5100'
         console.info(`${caseName}, test start`);
         const a = new Short(50);
@@ -1093,7 +1096,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5200'
         console.info(`${caseName}, test start`);
         const a = new Short(-50);
@@ -1113,7 +1116,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5300'
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);
@@ -1133,7 +1136,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5400'
         console.info(`${caseName}, test start`);
         const min = new Short(Short.MIN_VALUE);
@@ -1153,7 +1156,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5500'
         console.info(`${caseName}, test start`);
         const positive = new Short(100);
@@ -1176,13 +1179,13 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5600'
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);
         const min = new Short(Short.MIN_VALUE);
-        const almostMax:short = new Short(Short.MAX_VALUE - 1 as short);
-        const almostMin:short = new Short(Short.MIN_VALUE + 1 as short);
+        const almostMax: short = new Short(Short.MAX_VALUE - 1 as short);
+        const almostMin: short = new Short(Short.MIN_VALUE + 1 as short);
 
         expect(max.isGreaterEqualThan(almostMax)).assertEqual(true);
         expect(almostMin.isGreaterEqualThan(min)).assertEqual(true);
@@ -1200,7 +1203,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5700'
         console.info(`${caseName}, test start`);
         const larger = new Short(150);
@@ -1220,7 +1223,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5800'
         console.info(`${caseName}, test start`);
         const a = new Short(100);
@@ -1239,7 +1242,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest5900'
         console.info(`${caseName}, test start`);
         const higherNeg = new Short(-50);
@@ -1259,11 +1262,11 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest6000'
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);
-        const belowMax:short = new Short(Short.MAX_VALUE - 1 as short);
+        const belowMax: short = new Short(Short.MAX_VALUE - 1 as short);
         expect(max.isGreaterThan(belowMax)).assertEqual(true);
         expect(belowMax.isGreaterThan(max)).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -1279,11 +1282,11 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest6100'
         console.info(`${caseName}, test start`);
         const min = new Short(Short.MIN_VALUE);
-        const aboveMin:short = new Short(Short.MIN_VALUE + 1 as short);
+        const aboveMin: short = new Short(Short.MIN_VALUE + 1 as short);
         expect(aboveMin.isGreaterThan(min)).assertEqual(true);
         expect(min.isGreaterThan(aboveMin)).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -1299,7 +1302,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest6200'
         console.info(`${caseName}, test start`);
         const positive = new Short(1);
@@ -1322,7 +1325,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest6300'
         console.info(`${caseName}, test start`);
         const positive = new Short(1);
@@ -1342,7 +1345,7 @@ export default function builtinsShortPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsShortPrototypebTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest6400'
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);

@@ -55,7 +55,7 @@ struct List_ListInitialIndex2 {
             .width(100)
             .height(100)
             .key('List_ListInitialIndex2_' + item)
-          }, (item: string,index:number) => item)
+          }, (item: string,index:int) => item)
         }
         .cachedCount(0)
         .width('80%')

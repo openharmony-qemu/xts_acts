@@ -26,9 +26,6 @@ import { Entry, Text, TextAttribute, Column, Component, Button,ColumnOptions, Bu
   EdgeEffect,HorizontalAlign,FlexAlign } from '@ohos.arkui.component';
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -36,7 +33,7 @@ import {
 struct WaterFlowEdge {
   @State minSize: number = 80
   @State maxSize: number = 180
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[];
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[];
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
   private itemWidthArray: number[] = [] as number[];

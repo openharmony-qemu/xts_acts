@@ -62,14 +62,9 @@ struct CanvasAttrsTest {
     this.node = null
   }
 
-  
-  
-  
-  
-
   aboutToDisappear(): void {
-    this.context.off('onAttach', this.attachCallback)
-    this.context.off('onDetach', this.detachCallback)
+    this.context.offAttach(this.attachCallback)
+    this.context.offDetach(this.detachCallback)
   }
 
   build() {

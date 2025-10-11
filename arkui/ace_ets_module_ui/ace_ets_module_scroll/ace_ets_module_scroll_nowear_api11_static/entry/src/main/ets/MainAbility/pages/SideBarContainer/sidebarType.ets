@@ -34,7 +34,7 @@ struct sidebarType {
     Column() {
       SideBarContainer(SideBarContainerType.AUTO) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -45,7 +45,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -81,7 +81,7 @@ struct sidebarType {
 
       SideBarContainer(SideBarContainerType.AUTO) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -92,7 +92,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -127,7 +127,7 @@ struct sidebarType {
 
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -138,7 +138,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -174,7 +174,7 @@ struct sidebarType {
 
       SideBarContainer(SideBarContainerType.Overlay) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index2" + item)
@@ -185,7 +185,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -221,7 +221,7 @@ struct sidebarType {
 
       SideBarContainer() {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -232,7 +232,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')

@@ -66,11 +66,11 @@ class MyDataSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -108,7 +108,7 @@ struct SwiperCurve {
 
       Column({ space: 5 } as ColumnOptions) {
         Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: number, index: number) => {
+          LazyForEach(this.data, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height(160)
@@ -128,13 +128,13 @@ struct SwiperCurve {
         .vertical(false) 
         .itemSpace("0px")
         .curve(Curve.Linear) 
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
-        .onAnimationStart((index: number): void => {
+        .onAnimationStart((index: Int): void => {
           console.info(index.toString())
         })
-        .onAnimationEnd((index: number): void => {
+        .onAnimationEnd((index: Int): void => {
           console.info(index.toString())
         })
 

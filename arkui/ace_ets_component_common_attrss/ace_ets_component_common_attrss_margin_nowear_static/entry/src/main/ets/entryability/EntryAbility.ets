@@ -19,7 +19,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 class EntryAbility extends UIAbility {
@@ -53,8 +53,7 @@ class EntryAbility extends UIAbility {
             AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
-            hilog.error(0x0000, 'testTag',
-              'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
           
           if (windowClass !== null) {
@@ -68,8 +67,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {

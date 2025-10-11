@@ -50,7 +50,7 @@ struct UIComponentScrollSwiperAnimated0260 {
   build() {
     Column() {
       Swiper() {
-        ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+        ForEach(this.backgroundColors, (backgroundColor: Color, index: int) => {
           Text(index.toString())
             .width('100%')
             .height('100%')

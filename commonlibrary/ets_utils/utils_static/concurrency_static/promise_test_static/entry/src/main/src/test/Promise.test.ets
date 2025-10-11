@@ -61,7 +61,8 @@ export default function PromiseTest() {
           });
           const result = await promise1 as null;
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -88,7 +89,8 @@ export default function PromiseTest() {
           });
           result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -114,7 +116,8 @@ export default function PromiseTest() {
           });
           const result = await promise1;
           expect(result).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -141,7 +144,8 @@ export default function PromiseTest() {
           });
           const result = await promise1;
           expect(result).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -167,7 +171,8 @@ export default function PromiseTest() {
           });
           const result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -194,7 +199,8 @@ export default function PromiseTest() {
           const result = await promise1;
           expect(result[0]).assertEqual(10);
           expect(result[1]).assertEqual('aaa');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -223,7 +229,8 @@ export default function PromiseTest() {
           });
           const result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -253,7 +260,8 @@ export default function PromiseTest() {
           });
           const result = await promise1;
           expect(result()).assertEqual(20);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -280,7 +288,8 @@ export default function PromiseTest() {
           });
           result = await promise1;
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual("Intentional error for testing");
         }
@@ -306,7 +315,8 @@ export default function PromiseTest() {
           });
           result = await promise1;
           expect(result).assertEqual("Promise resolved immediately");
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -334,7 +344,8 @@ export default function PromiseTest() {
           });
           result = await promise1;
           expect(result).assertEqual("Promise resolved successfully after delay");
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -366,7 +377,8 @@ export default function PromiseTest() {
           });
           result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -399,7 +411,8 @@ export default function PromiseTest() {
             try {
               const result = job.Await();
               resolve(result);
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               reject(new Error("Worker intentionally rejected the promise"));
             } finally {
@@ -409,10 +422,12 @@ export default function PromiseTest() {
           try {
             const result = await promise1;
             console.log(`${TAG}: Success with result: ${result}`);
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.log(`${TAG}: Expected rejection: ${err.message}`);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -438,7 +453,8 @@ export default function PromiseTest() {
           const promise1 = Promise.resolve<NullishType>(null);
           const result = await promise1 as null;
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -461,7 +477,8 @@ export default function PromiseTest() {
           const promise1 = Promise.resolve<Float>(10);
           const result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -485,7 +502,8 @@ export default function PromiseTest() {
           const promise1 = Promise.resolve<double>(10.5);
           result = await promise1;
           expect(result).assertEqual(10.5);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -508,7 +526,8 @@ export default function PromiseTest() {
           const promise1 = Promise.resolve<Char>(1);
           const result = await promise1 as Char;
           expect(result).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -533,7 +552,8 @@ export default function PromiseTest() {
           const result = await promise1;
           expect(result[0]).assertEqual(10);
           expect(result[1]).assertEqual('success');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -554,14 +574,15 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         let result: number | undefined;
         try {
-          const promise1: Promise<Promise<number>> = Promise.resolve<Promise<number>>(
+          const promise1: Promise<number> = Promise.resolve<Promise<number>>(
             new Promise<number>((resolve) => {
               setTimeout(() => resolve(10), 100);
             })
           );
           result = await promise1;
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -588,7 +609,8 @@ export default function PromiseTest() {
           const numberFunction = await promise1;
           result = numberFunction();
           expect(result).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -610,7 +632,8 @@ export default function PromiseTest() {
         try {
           const promise = Promise.reject<NullishType>(new Error(undefined));
           const result = await promise as undefined;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('');
           // expect(err.message).assertEqual(undefined);
@@ -634,7 +657,8 @@ export default function PromiseTest() {
         try {
           const promise = Promise.reject<String>(new Error('zxx'));
           await promise;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('zxx');
         }
@@ -658,7 +682,8 @@ export default function PromiseTest() {
         try {
           const promise1 = Promise.reject<bigint>(new Error('12345678901234567890n'));
           const result = await promise1 as bigint;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('12345678901234567890n');
         }
@@ -681,7 +706,8 @@ export default function PromiseTest() {
         try {
           const promise1 = Promise.reject<Long>(new Error('1234567890123456789'));
           const result = await promise1 as Long;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('1234567890123456789');
         }
@@ -704,7 +730,8 @@ export default function PromiseTest() {
         try {
           const promise1 = Promise.reject<[number, string]>(new Error("10"));
           const result = await promise1 as [number, string];
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('10');
         }
@@ -726,9 +753,10 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         let result: number | undefined;
         try {
-          const promise1: Promise<Promise<number>> = Promise.reject<Promise<number>>(Error('10'));
+          const promise1: Promise<number> = Promise.reject<Promise<number>>(Error('10'));
           result = await promise1 as number;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('10');
         }
@@ -754,7 +782,8 @@ export default function PromiseTest() {
           const promise1: Promise<() => number> = Promise.reject<funcType>(new Error('10'));
           const numberFunction = await promise1;
           result = numberFunction();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('10');
         }
@@ -791,7 +820,8 @@ export default function PromiseTest() {
           expect(resultBoolean).assertEqual(true);
           const tuple = results[3] as [number, string]
           expect(tuple?.[0]).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -832,7 +862,8 @@ export default function PromiseTest() {
           expect(resultFun()).assertEqual(20);
           expect(resultNum).assertEqual(30);
           expect(tuple?.[1]).assertEqual('tupleValue');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual(30);
         } finally {
@@ -868,7 +899,8 @@ export default function PromiseTest() {
           expect(resultNullish).assertEqual(undefined);
           expect(tuple?.[0]).assertEqual(1);
           expect(resultNum).assertEqual(10);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Error occurred');
         } finally {
@@ -910,7 +942,8 @@ export default function PromiseTest() {
           expect(resultFun()).assertEqual(20);
           expect(resultNum).assertEqual(30);
           expect(tuple?.[1]).assertEqual('tupleValue');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Error occurred');
         } finally {
@@ -948,7 +981,8 @@ export default function PromiseTest() {
             .assertEqual('aaa');
           expect(((results[2] as PromiseFulfilledResult<NullishType | Person | [number, string]>).value as [number, string])[0])
             .assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -994,7 +1028,8 @@ export default function PromiseTest() {
           expect(result4).assertEqual(30);
           expect(((results[3] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
             .assertEqual('tupleValue');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1036,7 +1071,8 @@ export default function PromiseTest() {
           expect(((results[3] as PromiseFulfilledResult<NullishType | Byte | int | [number, string]>).value as [number, string])[0])
             .assertEqual(1);
           expect((results[4] as PromiseRejectedResult).reason.message).assertEqual('Error occurred');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1087,7 +1123,8 @@ export default function PromiseTest() {
           expect(((results[3] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
             .assertEqual('tupleValue');
           expect((results[4] as PromiseRejectedResult).reason.message).assertEqual('Error occurred');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1119,7 +1156,8 @@ export default function PromiseTest() {
           let result = await Promise.any([promise1, promise2, promise3,
             promise4]) as undefined;
           expect(result).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1152,7 +1190,8 @@ export default function PromiseTest() {
           let result = await Promise.any([promise1, promise2, promise3,
             promise4]) as number;
           expect(result).assertEqual(30);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1186,7 +1225,8 @@ export default function PromiseTest() {
             promise4]) as undefined;
           expect(result).assertEqual(undefined);
           Done();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1221,7 +1261,8 @@ export default function PromiseTest() {
           let result = await Promise.any([promise1, promise2, promise3, promise4,
             promise5]) as number;
           expect(result).assertEqual(30);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1253,7 +1294,8 @@ export default function PromiseTest() {
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result = await Promise.race<NullishType | [number, string]>([promise1, promise2, promise3]) as undefined;
           expect(result).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1288,7 +1330,8 @@ export default function PromiseTest() {
           const promise5 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result = await Promise.race([promise1, promise2, promise3, promise4]) as null;
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Error occurred');
         } finally {
@@ -1324,7 +1367,8 @@ export default function PromiseTest() {
             await Promise.race<number | NullishType | [number, string] | containers.LinkedBlockingQueue<number>>([promise1,
               promise2, promise3, promise4]) as undefined;
           expect(result).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1362,7 +1406,8 @@ export default function PromiseTest() {
             await Promise.race<NullishType | () => number | [number, string]>([promise1, promise2, promise3, promise4,
               promise5]) as null;
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {

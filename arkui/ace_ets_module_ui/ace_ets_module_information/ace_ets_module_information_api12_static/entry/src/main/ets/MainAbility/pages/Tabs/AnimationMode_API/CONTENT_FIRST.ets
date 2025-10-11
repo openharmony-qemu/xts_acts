@@ -14,7 +14,7 @@
  */
 import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Color, ProgressMask, Padding, Image, $r,Button, ClickEvent, Margin, Builder, TabsController,
   Divider, Tabs, TabContent, BarPosition, AnimationMode, BarMode} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component

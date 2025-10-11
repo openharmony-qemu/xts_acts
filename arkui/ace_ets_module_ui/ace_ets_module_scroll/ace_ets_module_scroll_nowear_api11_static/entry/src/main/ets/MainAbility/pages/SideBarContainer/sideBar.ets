@@ -38,7 +38,7 @@ struct SideBarShowSideBar {
   build() {
     SideBarContainer(SideBarContainerType.Embed) {
       Column() {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           Column({ space: 5 } as ColumnOptions) {
             Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
             Text("Index0" + item)
@@ -49,7 +49,7 @@ struct SideBarShowSideBar {
           .onClick((e: ClickEvent) => {
             this.current = item
           })
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }.width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor('#19000000')

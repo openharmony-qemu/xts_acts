@@ -56,11 +56,11 @@ import { RecordData } from '@ohos.base';
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
-  public totalCount(): number {
+  public totalCount(): int {
     return 0
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return ''
   }
 
@@ -85,25 +85,25 @@ class BasicDataSource implements IDataSource<string> {
     })
   }
 
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
@@ -113,7 +113,7 @@ class BasicDataSource implements IDataSource<string> {
 class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['/path/image0']
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length
   }
 
@@ -121,8 +121,8 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray[index]
   }
 
-  public addData(index: number, data: string): void {
-    this.dataArray.splice(index.toInt(), 0, data)
+  public addData(index: int, data: string): void {
+    this.dataArray.splice(index, 0, data)
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
     for (let i = 0; i < datatest; i++) {

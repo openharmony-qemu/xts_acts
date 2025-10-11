@@ -69,7 +69,7 @@ export default function observerManagerSimStateTest1() {
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         done();
       }
       console.info(`${caseName} test end`);
@@ -99,7 +99,7 @@ export default function observerManagerSimStateTest1() {
         ExpectTrue(true);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -128,7 +128,7 @@ export default function observerManagerSimStateTest1() {
         ExpectTrue(myNumber === 1);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -162,7 +162,7 @@ export default function observerManagerSimStateTest1() {
             // await sim.activateSim(0);
             done();
           } catch (error) {
-            console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+            console.info(`${caseName} catchError ${JSON.stringify(error)}`);
             ExpectTrue(false);
             done();
           }
@@ -191,13 +191,11 @@ export default function observerManagerSimStateTest1() {
         ExpectTrue(myNumber == 1);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error == 401);
         done();
       }
       console.info(`${caseName} test end`);
     });
-
-
   });
 }

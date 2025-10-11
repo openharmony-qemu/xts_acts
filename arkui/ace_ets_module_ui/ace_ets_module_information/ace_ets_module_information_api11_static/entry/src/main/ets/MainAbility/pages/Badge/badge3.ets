@@ -14,7 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Flex, FlexDirection, FlexOptions, BadgeParamWithNumber, BadgeParamWithString, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, TextAlign, Margin} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component

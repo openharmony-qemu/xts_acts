@@ -54,7 +54,7 @@ struct List_ListInitialIndex5 {
           .width('60%')
           .height('12%')
           .key('List_ListInitialIndex5_' + item)
-        }, (item: string,index:number) => item)
+        }, (item: string,index:int) => item)
       }
       .cachedCount(0)
       .width('90%')

@@ -306,9 +306,9 @@ struct DisplayPriorityPage {
         
     } else if (this.targetView == 'Swiper') {
       Swiper() {
-        ForEach([1, 2, 3], (item: Int, index: number) => {
+        ForEach([1, 2, 3], (item: Int, index: int) => {
           Text('Swiper' + item)
-        }, (item: Int, index: number) => String(item))
+        }, (item: Int, index: int) => String(item))
       }
       .indicator(true)
       .backgroundColor(Color.Pink)

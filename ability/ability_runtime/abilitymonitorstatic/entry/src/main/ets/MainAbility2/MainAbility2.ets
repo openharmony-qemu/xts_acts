@@ -45,9 +45,9 @@ class MainAbility2 extends UIAbility {
     }, 2000)
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag MainAbility2', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageRestore() {

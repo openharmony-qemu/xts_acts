@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Component, Row, Column, TextInput, TextOverflow, EllipsisMode, ColumnOptions, TextInputOptions, TextInputStyle, $r } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct textInputFontScaleTest {

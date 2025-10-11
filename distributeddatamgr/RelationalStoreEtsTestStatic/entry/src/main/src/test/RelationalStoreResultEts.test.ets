@@ -449,16 +449,44 @@ export default function RdbResultSetTest() {
       done();
       hilog.info(domain, tag, '%{public}s', '************* errcode003 end *************');
     })
+
     /**
      * @tc.name        errcode004
      * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1400
-     * @tc.desc        getString 14800012 test
+     * @tc.desc        getAssets 14800013 test
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 2
      */
     it('errcode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode004 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      try{
+        resultSet.goToFirstRow();
+        resultSet.getAssets(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* errcode004 end *************');
+    })
+
+    /**
+     * @tc.name        errcode044
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1440
+     * @tc.desc        getString 14800012 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('errcode044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* errcode044 start *************');
       await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
       let num = rdbStore2.batchInsertSync("testerrcode", vbs);
       hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
@@ -472,7 +500,7 @@ export default function RdbResultSetTest() {
       }
       await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
       done();
-      hilog.info(domain, tag, '%{public}s', '************* errcode004 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* errcode044 end *************');
     })
     /**
      * @tc.name        errcode005

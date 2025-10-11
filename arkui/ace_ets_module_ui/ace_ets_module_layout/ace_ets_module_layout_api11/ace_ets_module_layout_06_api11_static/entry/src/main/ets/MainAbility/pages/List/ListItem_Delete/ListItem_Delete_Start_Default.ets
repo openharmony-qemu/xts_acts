@@ -48,9 +48,6 @@ import {
 } from '@ohos.arkui.component'
 import{
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -85,7 +82,7 @@ struct ListItem_Delete_Start_Default {
         })
         .id('ListItem_Delete_Start_Default_button1')
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('100%')
@@ -114,7 +111,7 @@ struct ListItem_Delete_Start_Default {
               }
             }
           })
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }.key('ListItem_Delete_Start_Default_1')
       .width('90%')
       .height('80%')

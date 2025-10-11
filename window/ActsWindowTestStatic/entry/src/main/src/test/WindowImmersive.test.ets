@@ -696,7 +696,7 @@ export default function WindowImmersiveTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             try {
-                (win as window.Window).on('avoidAreaChange', (data:window.AvoidAreaOptions) => {
+                (win as window.Window).onAvoidAreaChange((data:window.AvoidAreaOptions) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for system avoid area changes. type:' +
                     JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
                 });
@@ -706,13 +706,13 @@ export default function WindowImmersiveTest() {
 
             }
             try {
-                (win as window.Window).off('avoidAreaChange');
+                (win as window.Window).offAvoidAreaChange();
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
             }
             try {
-                (win as window.Window).off('avoidAreaChange');
+                (win as window.Window).offAvoidAreaChange();
                 await (win as window.Window).destroyWindow();
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' + JSON.stringify(exception));

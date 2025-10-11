@@ -105,11 +105,11 @@ struct groupAnimationVisibleExample {
       Text(this.onText)
         .id('group_visible_mess')
       List({ scroller: this.scroller }) {
-        LazyForEach(this.dataBean, (item0: DataBean, groupIndex: number) => {
+        LazyForEach(this.dataBean, (item0: DataBean, groupIndex: int) => {
           ListItemGroup({
             style: ListItemGroupStyle.CARD
           }) {
-            LazyForEach(item0.value, (item: string, itemIndex: number) => {
+            LazyForEach(item0.value, (item: string, itemIndex: int) => {
               ListItem({
                 style: ListItemStyle.CARD
               }) {
@@ -126,7 +126,7 @@ struct groupAnimationVisibleExample {
               .borderColor(Color.Pink)
               .borderWidth(2)
               .visibility(itemIndex % 2 == 0 ? this.mViewShow1[this.mViewShowIndex1.toInt()] : Visibility.Visible)
-            }, (item: string, itemIndex: number) => item + itemIndex)
+            }, (item: string, itemIndex: int) => item + itemIndex)
           }
           .onAppear(() => {
             console.info('LIST_TEST:Group:' + item0 + ':onAppear')
@@ -143,7 +143,7 @@ struct groupAnimationVisibleExample {
           .borderColor(Color.Green)
           .borderWidth(2)
           .visibility(groupIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex.toInt()] : Visibility.Visible)
-        }, (item0: DataBean, groupIndex: number) => groupIndex.toString())
+        }, (item0: DataBean, groupIndex: int) => groupIndex.toString())
       }
       .width('100%')
       .height('40%')

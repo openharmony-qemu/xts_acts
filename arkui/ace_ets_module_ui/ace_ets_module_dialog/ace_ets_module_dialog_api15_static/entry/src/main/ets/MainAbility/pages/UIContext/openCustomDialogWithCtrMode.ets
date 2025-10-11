@@ -23,7 +23,7 @@ import {
   Text,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
 import {
   State,
@@ -36,7 +36,7 @@ import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UI
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode } from '@ohos.promptAction';
+import { ImmersiveMode,LevelMode } from '@ohos.promptAction';
 import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
 import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
@@ -132,7 +132,7 @@ struct openCustomDialogWithCtrMode {
   @State levelMode: LevelMode | undefined|Int   = 0
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: number | undefined | Int = this.getUniqueId()
+  @State levelUniqueId: long | undefined | Int = this.getUniqueId()
   @State immersiveMode: ImmersiveMode | undefined | null | Int   = 0
   @State isModal: boolean = true
   @State maskRect: Rectangle = {

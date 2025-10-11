@@ -76,7 +76,7 @@ struct ListDelete {
     Column() {
       Text(this.tSting).key('MyList5ListItemOnDeleteH')
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -101,7 +101,7 @@ struct ListDelete {
       .key('MyList1')
 
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -127,7 +127,7 @@ struct ListDelete {
       .key('MyList2')
 
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -152,7 +152,7 @@ struct ListDelete {
       .key('MyList3')
 
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -177,7 +177,7 @@ struct ListDelete {
       .key('MyList4')
 
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr2, (item: number, index: number) => {
+        ForEach(this.arr2, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')

@@ -96,10 +96,12 @@ export default function actsStageContextTestStatic() {
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
-        hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
-        expect().assertFail();
-        done()
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
+          expect().assertFail();
+          done()
+        }
       }
     });
 
@@ -121,10 +123,12 @@ export default function actsStageContextTestStatic() {
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
-        hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
-        expect().assertFail();
-        done()
+      } catch (error) {
+        if (error instanceof  BusinessError) {
+          hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
+          expect().assertFail();
+          done()
+        }
       }
     });
 

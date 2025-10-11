@@ -72,8 +72,10 @@ export default function ConsoleTest() {
         console.debug('count: %d', str);
         console.debug('count: %d');
         console.debug(str);
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -95,8 +97,10 @@ export default function ConsoleTest() {
         console.log('count: %d', str);
         console.log('count: %d');
         console.log(str);
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -118,8 +122,10 @@ export default function ConsoleTest() {
         console.info('count: %d', str);
         console.info('count: %d');
         console.info(str);
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -141,8 +147,10 @@ export default function ConsoleTest() {
         console.warn('count: %d', str);
         console.warn('count: %d');
         console.warn(str);
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -164,8 +172,10 @@ export default function ConsoleTest() {
         console.error('count: %d', str);
         console.error('count: %d');
         console.error(str);
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -188,8 +198,10 @@ export default function ConsoleTest() {
         console.assert('count: %d');
         console.assert(str);
         console.assert();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -209,8 +221,10 @@ export default function ConsoleTest() {
         console.count(str);
         console.count('count: %d');
         console.count();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -230,8 +244,10 @@ export default function ConsoleTest() {
         console.countReset(str);
         console.countReset('count: %d');
         console.countReset();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -251,8 +267,10 @@ export default function ConsoleTest() {
         console.dir(str);
         console.dir('count: %d');
         console.dir();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -272,8 +290,10 @@ export default function ConsoleTest() {
         console.dir(str);
         console.dir('count: %d');
         console.dir();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -293,8 +313,10 @@ export default function ConsoleTest() {
         console.group(str);
         console.group('count: %d');
         console.group();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -315,8 +337,10 @@ export default function ConsoleTest() {
         console.groupCollapsed('count: %d');
         console.groupCollapsed();
         console.groupCollapsed(number1, str, "sdsf");
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -331,8 +355,10 @@ export default function ConsoleTest() {
     it('testConsole050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         console.groupEnd();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -352,8 +378,10 @@ export default function ConsoleTest() {
         console.table(str);
         console.table('count: %d');
         console.table();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -373,8 +401,10 @@ export default function ConsoleTest() {
         console.time(str);
         console.time('count: %d');
         console.time();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -394,8 +424,10 @@ export default function ConsoleTest() {
         console.dirxml(str);
         console.dirxml('count: %d');
         // console.dirxml();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -415,8 +447,10 @@ export default function ConsoleTest() {
         console.timeEnd(str);
         console.timeEnd('count: %d');
         console.timeEnd();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -436,8 +470,10 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeLog('count: %d');
         console.timeLog();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -457,8 +493,10 @@ export default function ConsoleTest() {
         console.trace(str);
         console.trace('count: %d');
         console.trace();
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
 
@@ -473,8 +511,10 @@ export default function ConsoleTest() {
     //  it('testConsole057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //    try {
     //      console.traceHybridStack();
-    // } catch (e:BusinessError) {
-    //      expect().assertFail();
+    // } catch (e) {
+    //     if (e instanceof BusinessError) { 
+    //       expect().assertFail();
+    //     }
     //    }
     //  });
 
@@ -490,8 +530,10 @@ export default function ConsoleTest() {
       try {
         console.log(Math.log2(7) + "NaN", "DDGFWDJDGDKDHDJ");
         console.log(Number.isNaN(Math.log2(10)) + "NaN", "dasffheggjh")
-      } catch (e: BusinessError) {
-        expect().assertFail();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -507,9 +549,11 @@ export default function ConsoleTest() {
       try {
         console.assert();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -525,9 +569,11 @@ export default function ConsoleTest() {
       try {
         console.assert(true, 'does nothing');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -543,9 +589,11 @@ export default function ConsoleTest() {
       try {
         console.assert(2 % 1 == 0, 'does nothing');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -561,9 +609,11 @@ export default function ConsoleTest() {
       try {
         console.assert(false, 'console %s work', 'didn\'t');
         expect(false).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertTrue();
+        }
       }
     });
     /**
@@ -579,9 +629,11 @@ export default function ConsoleTest() {
       try {
         console.assert(2 % 3 == 0, 'console %s work', 'didn\'t');
         expect(false).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(true).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(true).assertTrue();
+        }
       }
     });
     /**
@@ -597,9 +649,11 @@ export default function ConsoleTest() {
       try {
         console.assert(2 % 3 == 0, 'console %s work', 'didn\'t');
         expect(false).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(true).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(true).assertTrue();
+        }
       }
     });
     /**
@@ -616,9 +670,11 @@ export default function ConsoleTest() {
         console.assert([2 % 3 == 0, 2 % 3 == 1, 2 + 2 == 3, 3 + 3 == 6],
           'console %s work', 'didn\'t');
         expect(false).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(true).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(true).assertTrue();
+        }
       }
     });
     /**
@@ -634,9 +690,11 @@ export default function ConsoleTest() {
       try {
         console.assert(2 * 2 == 4, 3 + 3 == 6, 'console %s work', 'didn\'t');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(false).assertFalse();
+        }
       }
     });
     /**
@@ -652,9 +710,11 @@ export default function ConsoleTest() {
       try {
         console.assert(false, 'a', 'b', 'c', 'd');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error:${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error:${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -670,9 +730,11 @@ export default function ConsoleTest() {
       try {
         console.count();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -688,9 +750,11 @@ export default function ConsoleTest() {
       try {
         console.count('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -709,9 +773,11 @@ export default function ConsoleTest() {
         console.count('abc');
         console.count('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -729,9 +795,11 @@ export default function ConsoleTest() {
         console.count('default')
         console.count('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -749,9 +817,11 @@ export default function ConsoleTest() {
         console.countReset();
         console.count();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -769,9 +839,11 @@ export default function ConsoleTest() {
         console.countReset('abc');
         console.count('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -794,9 +866,11 @@ export default function ConsoleTest() {
         console.countReset('abc');
         console.countReset('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -813,9 +887,11 @@ export default function ConsoleTest() {
         let a: bar = new bar();
         console.dir(a);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFalse();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFalse();
+        }
       }
     });
     /**
@@ -832,9 +908,11 @@ export default function ConsoleTest() {
         const Buffer = buffer.from('Hello World')
         console.dir(Buffer);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -851,9 +929,11 @@ export default function ConsoleTest() {
         let arrayList: Array<number> = [1, 2, 3];
         console.dir(arrayList);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -873,9 +953,11 @@ export default function ConsoleTest() {
         list.add(3);
         console.dir(list);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -892,9 +974,11 @@ export default function ConsoleTest() {
         const nun = new Number(1);
         console.dir(nun);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -911,9 +995,11 @@ export default function ConsoleTest() {
         const str = new String('Hello World');
         console.dir(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -929,9 +1015,11 @@ export default function ConsoleTest() {
       try {
         console.table([1, 2, 3]);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -952,9 +1040,11 @@ export default function ConsoleTest() {
         }
         console.table(a);
         expect(true).assertTrue();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -974,9 +1064,11 @@ export default function ConsoleTest() {
         }
         console.table(a);
         expect(true).assertTrue();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -996,9 +1088,11 @@ export default function ConsoleTest() {
         }
         console.table();
         expect(true).assertTrue();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error:${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error:${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1014,9 +1108,11 @@ export default function ConsoleTest() {
       try {
         console.time('testTime0001');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1032,9 +1128,11 @@ export default function ConsoleTest() {
       try {
         console.time();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1050,9 +1148,11 @@ export default function ConsoleTest() {
       try {
         console.time('default');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1068,9 +1168,11 @@ export default function ConsoleTest() {
       try {
         console.time('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1086,9 +1188,11 @@ export default function ConsoleTest() {
       try {
         console.time('NaN');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1104,9 +1208,11 @@ export default function ConsoleTest() {
     //   try {
     //     console.time(null)
     //     expect(true).assertTrue();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       console.error(`${TAG} failed, error: ${err.message}`);
+    //       expect().assertFail();
+    //     }
     //   }
     // });
     /**
@@ -1122,9 +1228,11 @@ export default function ConsoleTest() {
       try {
         console.time(undefined);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1141,9 +1249,11 @@ export default function ConsoleTest() {
         const str = '!!\\"\\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\\\\\]]^^__``{{||}}~~';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1160,9 +1270,11 @@ export default function ConsoleTest() {
         const str = '!!\\"\\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\\\\\]]^^__``{{||}}~~';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1179,9 +1291,11 @@ export default function ConsoleTest() {
         const str = '\a';
         console.time('\a');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1198,9 +1312,11 @@ export default function ConsoleTest() {
         const str = '\b';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1217,9 +1333,11 @@ export default function ConsoleTest() {
         const str = '\f';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1236,9 +1354,11 @@ export default function ConsoleTest() {
         const str = '\n';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1255,9 +1375,11 @@ export default function ConsoleTest() {
         const str = '\t';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1274,9 +1396,11 @@ export default function ConsoleTest() {
         const str = '\r';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1293,9 +1417,11 @@ export default function ConsoleTest() {
         const str = '\t';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1312,9 +1438,11 @@ export default function ConsoleTest() {
         const str = '\v';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1331,9 +1459,11 @@ export default function ConsoleTest() {
         const str = '\\';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1350,9 +1480,11 @@ export default function ConsoleTest() {
         const str = '\'';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1369,9 +1501,11 @@ export default function ConsoleTest() {
         const str = '\"';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1388,9 +1522,11 @@ export default function ConsoleTest() {
         const str = '\?';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1407,7 +1543,8 @@ export default function ConsoleTest() {
         const str = '\0';
         console.time(str);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
@@ -1427,9 +1564,11 @@ export default function ConsoleTest() {
         const str = '\d72';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1446,9 +1585,11 @@ export default function ConsoleTest() {
         const str = '\x85';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1465,9 +1606,11 @@ export default function ConsoleTest() {
         const str = '\ud83d';
         console.time(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1484,9 +1627,11 @@ export default function ConsoleTest() {
         console.time('testTimeEnd0001');
         console.timeEnd('testTimeEnd0001');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1503,9 +1648,11 @@ export default function ConsoleTest() {
         console.time();
         console.timeEnd();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1522,9 +1669,11 @@ export default function ConsoleTest() {
         console.time('default');
         console.timeEnd('default');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1541,9 +1690,11 @@ export default function ConsoleTest() {
         console.time('abc');
         console.timeEnd('abc');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1560,9 +1711,11 @@ export default function ConsoleTest() {
         console.time('NaN');
         console.timeEnd('NaN');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1579,9 +1732,11 @@ export default function ConsoleTest() {
     //     console.time(null);
     //     console.timeEnd(null);
     //     expect(true).assertTrue();
-    //   } catch (err:BusinessError) {
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect().assertFail();
+    //     }
     //   }
     // });
     /**
@@ -1598,9 +1753,11 @@ export default function ConsoleTest() {
         console.time(undefined);
         console.timeEnd(undefined);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1618,9 +1775,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1638,9 +1797,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1658,9 +1819,11 @@ export default function ConsoleTest() {
         console.time('\a');
         console.timeEnd('\a');
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1678,9 +1841,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1698,9 +1863,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1718,9 +1885,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1738,9 +1907,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1758,9 +1929,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1778,9 +1951,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1798,9 +1973,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        if (err instanceof BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1818,9 +1995,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1838,9 +2017,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1858,9 +2039,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1878,9 +2061,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1898,7 +2083,8 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
@@ -1919,9 +2105,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1939,9 +2127,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1959,9 +2149,11 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -1980,9 +2172,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2000,9 +2194,11 @@ export default function ConsoleTest() {
         console.timeLog();
         console.timeEnd();
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2021,9 +2217,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2042,9 +2240,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2063,9 +2263,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2084,9 +2286,11 @@ export default function ConsoleTest() {
     //     console.timeLog(str);
     //     console.timeEnd(str);
     //     expect(true).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       console.error(`${TAG} failed, error: ${err.message}`);
+    //       expect().assertFail();
+    //     }
     //   }
     // });
     /**
@@ -2105,9 +2309,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2126,9 +2332,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2147,9 +2355,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2168,9 +2378,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2189,9 +2401,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2210,9 +2424,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2231,9 +2447,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2252,9 +2470,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2273,9 +2493,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2294,9 +2516,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2315,9 +2539,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2336,9 +2562,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2357,9 +2585,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2378,9 +2608,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2399,9 +2631,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2419,7 +2653,8 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeLog(str);
         console.timeEnd(str);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
@@ -2441,9 +2676,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2462,9 +2699,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2483,9 +2722,11 @@ export default function ConsoleTest() {
         console.timeLog(str);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2507,9 +2748,11 @@ export default function ConsoleTest() {
         // console.timeLog(str, TestLog);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2529,9 +2772,11 @@ export default function ConsoleTest() {
         // console.timeLog(str, TestLog);
         console.timeEnd(str);
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
       }
     });
     /**
@@ -2551,9 +2796,11 @@ export default function ConsoleTest() {
     //     console.timeLog(str, TestLog);
     //     console.timeEnd(str);
     //     expect(true).assertTrue();
-    //   } catch (err:BusinessError) {
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect().assertFail();
+    //     }
     //   }
     // });
     /**
@@ -2573,9 +2820,11 @@ export default function ConsoleTest() {
     //     console.timeLog(str, TestLog);
     //     console.timeEnd(str);
     //     expect(true).assertTrue();
-    //   } catch (err:BusinessError) {
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect().assertFail();
+    //     }
     //   }
     // });
     /**
@@ -2595,9 +2844,11 @@ export default function ConsoleTest() {
     //     console.timeLog(str, TestLog);
     //     console.timeEnd(str);
     //     expect(true).assertTrue();
-    //   } catch (err:BusinessError) {
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect().assertFail();
+    //     }
     //   }
     // });
   })

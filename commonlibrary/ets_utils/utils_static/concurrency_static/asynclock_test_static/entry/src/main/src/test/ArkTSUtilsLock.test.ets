@@ -86,7 +86,8 @@ export default function arkTSUtilsLockTest() {
         try {
           let states: AsyncLockState[] = AsyncLock.queryAll();
           expect(states.length).assertEqual(0);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -108,7 +109,8 @@ export default function arkTSUtilsLockTest() {
         try {
           let states: AsyncLockState[] = AsyncLock.queryAll();
           expect(Array.isArray(states)).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -134,7 +136,8 @@ export default function arkTSUtilsLockTest() {
           let states: AsyncLockState[] = AsyncLock.queryAll();
           console.info(`${TAG} state.` + JSON.stringify(states));
           expect(states.length).assertEqual(3);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -156,7 +159,8 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = new AsyncLock();
           expect(lock instanceof AsyncLock).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -178,7 +182,8 @@ export default function arkTSUtilsLockTest() {
           const lockName = "";
           AsyncLock.query(lockName);
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
         }
         done()
@@ -199,7 +204,8 @@ export default function arkTSUtilsLockTest() {
           const lockName = "name";
           AsyncLock.query(lockName);
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
         }
         done()
@@ -221,7 +227,8 @@ export default function arkTSUtilsLockTest() {
           const lockName = "";
           let lock = AsyncLock.request(lockName);
           expect(lock.name).assertEqual(lockName);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -245,7 +252,8 @@ export default function arkTSUtilsLockTest() {
           AsyncLock.request(lockName);
           let lock = AsyncLock.request(lockName);
           expect(lock.name).assertEqual(lockName);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -268,7 +276,8 @@ export default function arkTSUtilsLockTest() {
           const lockName = "name";
           let lock = AsyncLock.request(lockName);
           expect(lock.name).assertEqual(lockName);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -292,7 +301,8 @@ export default function arkTSUtilsLockTest() {
           AsyncLock.request(lockName);
           let lock = AsyncLock.request(lockName);
           expect(lock.name).assertEqual(lockName);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -318,7 +328,8 @@ export default function arkTSUtilsLockTest() {
           AsyncLock.request(lockName);
           let lock = AsyncLock.request(newLockName);
           expect(lock.name).assertEqual(newLockName);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -345,7 +356,8 @@ export default function arkTSUtilsLockTest() {
           console.info(`${TAG} state.held:  => ${JSON.stringify(state.held)}`);
           console.info(`${TAG} state.pending:  => ${JSON.stringify(state.pending)}`);
           expect(state && Array.isArray(state.held) && Array.isArray(state.pending)).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -372,7 +384,8 @@ export default function arkTSUtilsLockTest() {
           console.info(`${TAG} state.held:  => ${JSON.stringify(state.held)}`);
           console.info(`${TAG} state.pending:  => ${JSON.stringify(state.pending)}`);
           expect(state && Array.isArray(state.held) && Array.isArray(state.pending)).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -397,7 +410,8 @@ export default function arkTSUtilsLockTest() {
           AsyncLock.request(lockName);
           AsyncLock.query(newLockName);
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
+          error  = error as Error;
           console.error(`${TAG} catch error: ${error}`);
         }
         done()
@@ -420,7 +434,8 @@ export default function arkTSUtilsLockTest() {
           lock.lockAsync<void>(() => {
           }, AsyncLockMode.SHARED);
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: code =>  message => ${err.message}`);
         }
         done()
@@ -465,7 +480,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(result).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -496,7 +512,8 @@ export default function arkTSUtilsLockTest() {
             await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
         }
         done()
@@ -532,7 +549,8 @@ export default function arkTSUtilsLockTest() {
             await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           expect(result).assertEqual('');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -577,7 +595,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(result).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -610,7 +629,8 @@ export default function arkTSUtilsLockTest() {
             await sleep(1500);
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
         }
         done()
@@ -643,7 +663,8 @@ export default function arkTSUtilsLockTest() {
             });
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(result).assertEqual('A');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -685,7 +706,8 @@ export default function arkTSUtilsLockTest() {
             });
           }, AsyncLockMode.SHARED, options);
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
         }
         done()
@@ -731,7 +753,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('l1开始-l2开始-l1结束-l2结束')
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -776,7 +799,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('l1开始-l1结束-l2开始-l2结束');
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -819,7 +843,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('l1开始-l1结束-l2开始-l2结束');
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -862,7 +887,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('l1开始-l1结束-l2开始-l2结束');
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: ${error}`);
           expect(false).assertFail();
         }
@@ -922,7 +948,8 @@ export default function arkTSUtilsLockTest() {
           console.error(`${TAG} l2_end: ${l2_end}`);
           const res = (l1_start < l2_start) && (l2_start <= l1_end) && (l1_end < l2_end);
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -965,7 +992,8 @@ export default function arkTSUtilsLockTest() {
           }
           res = B - A >= 200;
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1008,7 +1036,8 @@ export default function arkTSUtilsLockTest() {
           }
           res = B - A >= 500;
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1045,7 +1074,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1111,7 +1141,8 @@ export default function arkTSUtilsLockTest() {
           console.error(`${TAG} l2_end: ${l2_end}`);
           const res = (l1_start < l2_start) && (l2_start <= l1_end) && (l1_end < l2_end);
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1141,7 +1172,8 @@ export default function arkTSUtilsLockTest() {
             res += (value as string);
           })
           expect(res).assertEqual('A');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1179,7 +1211,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('BA');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1217,7 +1250,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1255,7 +1289,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1296,7 +1331,8 @@ export default function arkTSUtilsLockTest() {
             await loadCase();
           }
           expect(res).assertEqual('AB');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1320,7 +1356,8 @@ export default function arkTSUtilsLockTest() {
           expect(options.isAvailable).assertFalse();
           //expect(options.signal).assertNull();
           expect(options.timeout).assertEqual(0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1358,7 +1395,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + res);
           expect(options.isAvailable).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1386,7 +1424,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.isAvailable);
           expect(options.isAvailable).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1414,7 +1453,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.signal);
           expect(options.signal).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1445,7 +1485,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + JSON.stringify(options.signal));
           expect(JSON.stringify(options.signal)).assertEqual('{"aborted":true,"reason":"error"}');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1476,7 +1517,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + JSON.stringify(options.signal));
           expect(JSON.stringify(options.signal)).assertEqual('{"aborted":false,"reason":"error"}');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1504,7 +1546,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.timeout);
           expect(options.timeout).assertEqual(0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1532,7 +1575,8 @@ export default function arkTSUtilsLockTest() {
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.timeout);
           expect(options.timeout).assertEqual(1000);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1564,7 +1608,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1596,7 +1641,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1628,7 +1674,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1660,7 +1707,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1694,7 +1742,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1728,7 +1777,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1762,7 +1812,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }
@@ -1796,7 +1847,8 @@ export default function arkTSUtilsLockTest() {
             }
           }
           expect(res).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} failed, error: ${err}`);
           expect(false).assertFail();
         }

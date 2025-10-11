@@ -1180,7 +1180,7 @@ export default function RelationStoreRdbStoreTest() {
       let resultSet = await  rdbStore.querySql("SELECT * FROM test");
       try{
         resultSet.goToFirstRow();
-        let res = resultSet.getAssets(resultSet.getColumnIndex("data1"));
+        let res = resultSet.getAssets(resultSet.getColumnIndex("data6"));
         hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetAssets0001 res.length *************' +res.length);
         expect(res.length == 0).assertEqual(true);
         done();

@@ -1802,7 +1802,8 @@ export default function PromiseRaceTest() {
 
         expect(JSON.stringify(executionOrder)).assertEqual(JSON.stringify(expectedOrder));
 
-      } catch (error:Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${caseName} Test failed with error: ${error}`);
         expect(false).assertTrue();
       } finally {

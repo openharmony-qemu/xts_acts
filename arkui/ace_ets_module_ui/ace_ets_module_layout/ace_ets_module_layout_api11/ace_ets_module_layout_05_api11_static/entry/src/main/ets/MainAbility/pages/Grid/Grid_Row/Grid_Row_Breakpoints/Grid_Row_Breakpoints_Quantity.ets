@@ -44,9 +44,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -88,7 +85,7 @@ struct Grid_Row_Breakpoints_Quantity {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       } as GridRowOptions) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 1 }) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).key('Grid_Row_Breakpoints_Quantity' + index)

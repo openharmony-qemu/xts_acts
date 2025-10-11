@@ -32,7 +32,7 @@ export class RectValue {
 }
 export class SetValue {
   height: Length = 0;
-  borderColor: number | string = 0;
+  borderColor: int | string = 0;
 }
 export class ExpectValue {
   width: Length = 0

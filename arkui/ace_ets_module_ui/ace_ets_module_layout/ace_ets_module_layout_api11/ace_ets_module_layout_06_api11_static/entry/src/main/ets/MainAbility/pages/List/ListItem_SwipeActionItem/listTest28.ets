@@ -51,9 +51,6 @@ import {
 } from '@ohos.arkui.component'
 import{
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -84,7 +81,7 @@ struct ListItemExample28 {
   build() {
     Column() {
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('50%')
@@ -121,7 +118,7 @@ struct ListItemExample28 {
 
           })
           .key('lSwipe28Action' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }.listDirection(Axis.Horizontal).height('60%')
 
       Text(this.enterEndDeleteAreaString).fontSize(20)

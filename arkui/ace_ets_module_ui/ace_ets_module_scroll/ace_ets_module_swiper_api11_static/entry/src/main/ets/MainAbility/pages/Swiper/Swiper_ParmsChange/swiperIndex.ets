@@ -46,7 +46,7 @@ import { MessageManager, Callback, Message, GlobalMessage } from '../../../commo
 @Entry
 @Component
 struct SwiperIndexTest {
-  @State testSwiperIndex: number = 0;
+  @State testSwiperIndex: Int = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
 
   onPageShow() {
@@ -58,7 +58,7 @@ struct SwiperIndexTest {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'swiperIndex') {
-        this.testSwiperIndex = message.value;
+        this.testSwiperIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);

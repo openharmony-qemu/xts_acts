@@ -1591,7 +1591,8 @@ export default function streamTest() {
       try {
         let writableStream = new MyWritableWriteError003();
         writableStream.write('my', 'test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of test must be string.');
@@ -1650,7 +1651,8 @@ export default function streamTest() {
       let err: Error = new Error();
       try {
         writableStream.end('test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('The doWrite() method is not implemented.');
@@ -2198,7 +2200,8 @@ export default function streamTest() {
         testWritable.setDefaultEncoding("abc");
         testWritable.write('bar');
         testWritable.end();
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of abc must be string.');
@@ -3069,7 +3072,8 @@ export default function streamTest() {
       let err: Error = new Error();
       try {
         transform.end('test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('The doTransform() method is not implemented.');
@@ -4955,7 +4959,8 @@ function mustCallCheckAll(sleep:Double = 20) {
         });
         mustChecks.length = 0;
         resolve(undefined);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         hilog.info(0x0000, 'testTags', '%{public}s', `error :${e}`);
         reject(e)
       }

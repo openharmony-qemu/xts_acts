@@ -41,7 +41,7 @@ struct ListExampleAdd {
   build() {
     Column() {
       List({ space: 2, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem({ style: ListItemStyle.CARD }) {
             Text('' + item)
               .width('100%')
@@ -52,7 +52,7 @@ struct ListExampleAdd {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.height('18%')
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .listDirection(Axis.Vertical) 
       .scrollBar(BarState.Off)

@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import MarginTest from './margin/MarginTest.test';
-
 export default function testsuite() {
   MarginTest();
 }

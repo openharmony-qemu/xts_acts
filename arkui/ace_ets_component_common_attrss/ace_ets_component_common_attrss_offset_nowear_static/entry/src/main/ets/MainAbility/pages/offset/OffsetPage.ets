@@ -465,7 +465,7 @@ struct Offset {
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index: number): void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon')).width(64).height(64)
                       Text('Index0' + item).fontSize(25)
@@ -483,9 +483,9 @@ struct Offset {
               
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index: number): void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
                   Text('Swiper' + item).width('90%').height(160)
-                }, (item: number, index: number): string => String(item))
+                }, (item: number, index: int): string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)

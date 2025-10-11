@@ -18,9 +18,6 @@ import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alig
 import {
   State,
   PropRef,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -29,7 +26,7 @@ import {
 function buildDataPanel(config: DataPanelConfiguration) {
   Column() {
     Column() {
-      ForEach(config.values, (item: number, index: number) => {
+      ForEach(config.values, (item: number, index: int) => {
         ChildItem({ item: item, index: index, max: config.maxValue })
       })
     }.padding(10)

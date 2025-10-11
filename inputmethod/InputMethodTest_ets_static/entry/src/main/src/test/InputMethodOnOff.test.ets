@@ -44,7 +44,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("imeChange");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -73,7 +74,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("selectByMovement");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -102,7 +104,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("selectByRange");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -131,7 +134,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("sendKeyboardStatus");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -160,7 +164,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("sendFunctionKey");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -189,7 +194,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("moveCursor");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -218,7 +224,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("deleteRight");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -247,7 +254,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("deleteLeft");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -276,7 +284,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("handleExtendAction");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -305,7 +314,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("insertText");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -336,7 +346,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("getRightTextOfCursor");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -367,7 +378,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("getLeftTextOfCursor");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -398,7 +410,8 @@ export default function inputMethodOnOffTest() {
                 inputMethodSetting.off("getTextIndexAtCursor");
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();

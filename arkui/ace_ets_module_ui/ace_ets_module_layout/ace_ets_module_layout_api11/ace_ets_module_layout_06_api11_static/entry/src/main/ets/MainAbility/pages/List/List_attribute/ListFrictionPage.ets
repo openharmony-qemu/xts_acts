@@ -49,9 +49,6 @@ import {
 } from '@ohos.arkui.component'
 import{
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback,Message } from '../../../common/MessageManager';
@@ -77,7 +74,7 @@ struct ListFrictionPage {
   build() {
     Column() {
       List({ initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -92,7 +89,7 @@ struct ListFrictionPage {
       .key('list_friction_default')
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')

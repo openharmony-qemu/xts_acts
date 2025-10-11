@@ -49,7 +49,7 @@ struct SwiperAcross0300 {
           })
       }
       .id('swiperacr_0030')
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.onAnimationStart = index + ''
       })
 

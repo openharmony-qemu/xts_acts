@@ -23,9 +23,6 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   Color,
   EdgeEffect,ColumnOptions } from '@ohos.arkui.component';
 import {State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage} from '@ohos.arkui.stateManagement';
 
 @Entry

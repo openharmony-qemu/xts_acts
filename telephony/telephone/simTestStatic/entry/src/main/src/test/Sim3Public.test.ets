@@ -18,6 +18,9 @@ import sim from '@ohos.telephony.sim';
 import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium/index';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
+import hilog from '@ohos.hilog';
+let domain: int = 0x0000;
+let tag: string = 'ObserverTestTag';
 
 const ExpectFail = () => {
   try {
@@ -114,5 +117,43 @@ export default function Sim3Public() {
       });
     });
 
+    /**
+     * @tc.number : SUB_Telephony_Sim_HasSimCardSync_0300
+     * @tc.name   : testTelephonySimHasSimCardSync_static_0300
+     * @tc.desc   : Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 1
+     */
+    it('testTelephonySimHasSimCardSync_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySimHasSimCardSync_static_0300';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let hasSimCard: boolean = sim.hasSimCardSync(-1);
+        if (hasSimCard === false) {
+          hilog.info(domain, tag, `${caseName}  success has not sim card1: ` + hasSimCard);
+          ExpectTrue(true);
+          hilog.info(domain, tag, `${caseName} test end `);
+          done();
+        } else {
+          hilog.info(domain, tag, `${caseName}  false has sim card1: ` + hasSimCard);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName} test end `);
+          done();
+        }
+      } catch (error: Error) {
+        let err = error as BusinessError;
+        if (err?.code === 8300001) {
+          hilog.info(domain, tag,`${caseName}	Invalid parameter value: err->${JSON.stringify(err)}`);
+          ExpectTrue(true);
+          hilog.info(domain, tag,`${caseName} test end `);
+          done();
+        } else {
+          ExpectFail();
+          hilog.info(domain, tag,`${caseName} test end `);
+          done();
+        }
+      }
+    });
   });
 }
