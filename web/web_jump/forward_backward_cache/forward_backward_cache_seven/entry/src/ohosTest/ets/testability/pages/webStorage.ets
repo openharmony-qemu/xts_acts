@@ -80,6 +80,8 @@ struct getOrigins {
                 if (origins) {
                   origin = origins[0].origin;
                   console.log(`PBBorigin is: ${origins[0].origin}`);
+                } else {
+                  break;
                 }
                 for (let i = 0; i < origins.length; i++) {
                   console.log('origin: ' + origins[i].origin);
