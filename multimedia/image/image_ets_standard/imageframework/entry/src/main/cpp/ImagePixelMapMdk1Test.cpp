@@ -421,7 +421,7 @@ napi_value PixelMapSetOpacityResultSuccess(napi_env env, napi_callback_info info
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
     int32_t editable = 0;
-    errorCode = OH_PixelMap_SetOpacity(Native, 1);
+    errorCode = OH_PixelMap_SetOpacity(Native, NUM_1);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -455,7 +455,7 @@ napi_value PixelMapScaleResultSuccess(napi_env env, napi_callback_info info)
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_Scale(Native, 1, 2);
+    errorCode = OH_PixelMap_Scale(Native, NUM_1, NUM_2);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -489,7 +489,7 @@ napi_value PixelMapScaleWithAntiAliasingResultSuccess(napi_env env, napi_callbac
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_ScaleWithAntiAliasing(Native, 1, 2, OH_PixelMap_AntiAliasing_HIGH);
+    errorCode = OH_PixelMap_ScaleWithAntiAliasing(Native, NUM_1, NUM_2, OH_PixelMap_AntiAliasing_HIGH);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -523,7 +523,7 @@ napi_value PixelMapTranslateResultSuccess(napi_env env, napi_callback_info info)
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_Translate(Native, 1, 2);
+    errorCode = OH_PixelMap_Translate(Native, NUM_1, NUM_2);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -557,7 +557,7 @@ napi_value PixelMapRotateResultSuccess(napi_env env, napi_callback_info info)
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_Rotate(Native, 1);
+    errorCode = OH_PixelMap_Rotate(Native, NUM_1);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -591,7 +591,7 @@ napi_value PixelMapFlipResultSuccess(napi_env env, napi_callback_info info)
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_Flip(Native, 1, 2);
+    errorCode = OH_PixelMap_Flip(Native, NUM_1, NUM_2);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -625,7 +625,7 @@ napi_value PixelMapCropResultSuccess(napi_env env, napi_callback_info info)
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_Crop(Native, 1, 2, 3, 4);
+    errorCode = OH_PixelMap_Crop(Native, NUM_1, NUM_2, NUM_3, NUM_4);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -765,7 +765,7 @@ napi_value PixelMapSetDensityResultSuccess(napi_env env, napi_callback_info info
     napi_value alphaPixelmap = nullptr;
     errorCode = OH_PixelMap_CreateAlphaPixelMap(env, pixelmap, &alphaPixelmap);
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
-    errorCode = OH_PixelMap_SetDensity(Native,1);
+    errorCode = OH_PixelMap_SetDensity(Native, NUM_1);
     int32_t resultValue = errorCode == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
