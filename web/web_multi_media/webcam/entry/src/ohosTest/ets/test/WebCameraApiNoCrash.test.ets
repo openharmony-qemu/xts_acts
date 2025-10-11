@@ -20,7 +20,6 @@ import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
-import { Driver } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const driver = Driver.create();
