@@ -1122,3 +1122,39 @@ export const JSImagePixelmapHdrMetadataValueStaticMetadataCode: () => number;
 export const JSImagePixelmapHdrMetadataValueDynamicMetadataCode: () => number;
 
 export const JSImagePixelmapHdrMetadataValueGainmapMetadataCode: () => number;
+
+export const PixelMapCreatePixelMapResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetBytesNumberPerRowResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetIsEditableResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapIsSupportAlphaResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetAlphaAbleResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetDensityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetOpacityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapScaleResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapScaleWithAntiAliasingResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapTranslateResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapRotateResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapFlipResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapCropResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetImageInfoResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapUnAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetDensityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+
