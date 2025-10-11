@@ -699,6 +699,30 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0271
+     * @tc.name testBatteryInfoTest_static_2710
+     * @tc.desc BatteryHealthState values Interface Test
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it("testBatteryInfoTest_static_2710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testBatteryInfoTest_static_2710';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let batteryCapacityLevelNone: number = batteryInfo.BatteryCapacityLevel.LEVEL_NONE;
+          hilog.info(domain, tag, `${TAG} batteryCapacityLevelNone: ${JSON.stringify(batteryCapacityLevelNone)}`);
+          expect(batteryCapacityLevelNone).assertEqual(0);
+          done();
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0280
      * @tc.name testBatteryInfoTest_static_2800
      * @tc.desc BatteryHealthState values Interface Test
