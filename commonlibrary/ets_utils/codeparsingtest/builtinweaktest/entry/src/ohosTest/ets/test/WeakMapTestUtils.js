@@ -508,9 +508,9 @@ export const WeakMapTestUtils = {
         try {
             for (const _ of wm) { /* Empty iteration */ }
         } catch (err) {
-            // if (err instanceof TypeError && err.message.includes('is not iterable')) {
+
                 iterationErrorThrown = true;
-            // }
+
         }
         if (!iterationErrorThrown) throw new Error("WeakMap allows for...of iteration (should throw)");
 

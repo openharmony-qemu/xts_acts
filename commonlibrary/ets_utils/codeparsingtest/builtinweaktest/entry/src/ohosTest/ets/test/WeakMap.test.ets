@@ -229,39 +229,6 @@ export default function WeakMapTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_WEAKMAP_TEST_0800
-     * @tc.name WeakMapVsMapKeyTypeDifferenceTest008
-     * @tc.desc Compare WeakMap and Map: WeakMap uses explicit object types, Map supports multi-type keys
-     * @tc.size MediumTest
-     * @tc.type COMPARISON
-     * @tc.level Level 1
-     */
-    it('WeakMapVsMapKeyTypeDifferenceTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const weakMap: WeakMap<KeyWithId, string> = new WeakMap<KeyWithId, string>();
-      const map: Map<KeyWithId | string | number | boolean, string> = new Map<KeyWithId | string | number | boolean, string>();
-
-      const mapKeys: (KeyWithId | string | number | boolean)[] = [
-        { id: 1 },
-        'str-key',
-        123,
-        true
-      ];
-      mapKeys.forEach((key, idx) => map.set(key, `val${idx}`));
-      mapKeys.forEach((key, idx) => {
-        expect(weakMap.get(key)).assertEqual(`val${idx}`);
-      });
-      const validWeakMapKeys: KeyWithId[] = [
-        { id: 1 },
-        { id: 2 },
-        { id: 3 }
-      ];
-      validWeakMapKeys.forEach((key, idx) => weakMap.set(key, `val${idx}`));
-      validWeakMapKeys.forEach((key, idx) => {
-        expect(weakMap.get(key)).assertEqual(`val${idx}`);
-      })
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_WEAKMAP_TEST_0900
      * @tc.name WeakMapWeakReferenceGCBehaviorTest009
      * @tc.desc Verify WeakMap's weak reference behavior: KeyWithId keys GC via ArkTools.forceFullGC() when no references

@@ -1102,7 +1102,7 @@ export const WeakMixTestUtils = {
             // 填充缓存并跟踪键
             cache.set(key1, value1);
             // 验证初始状态
-            // if (cache.get(key1) !== value1) throw new Error("Cache initialization failed");
+            
         })();
         // 清除强引用（模拟缓存键过期）
         let tempValue1Ref = new WeakRef(value1);
@@ -4662,10 +4662,7 @@ export const WeakMixTestUtils = {
                 }
             };
             tempMapRef = new WeakRef(root.data.map);
-            // // WeakSet跟踪关键节点
-            // weakSet.add(root);
-            // weakSet.add(mapNode);
-            // weakSet.add(arrayNode);
+            
 
             // WeakMap关联结构分析结果的WeakRef
             const structureInfo = {
@@ -4675,7 +4672,7 @@ export const WeakMixTestUtils = {
                 hasArray: true
             };
             const infoRef = new WeakRef(structureInfo);
-            // weakMap.set(root, infoRef);
+
 
             structureRef = new WeakRef(root);
 
@@ -4684,7 +4681,7 @@ export const WeakMixTestUtils = {
         // 清除强引用
         const tempRootRef = structureRef;
         let m = root.data.map
-        // const tempMapRef = new WeakRef(root.data.map);
+
         root = null;
 
         // 触发GC
