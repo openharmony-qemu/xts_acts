@@ -33,16 +33,16 @@ export default function GraphicTextProperty() {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
     })
     /**
-     * @tc.number     testPlaceholderSpanStatic
-     * @tc.name       testPlaceholderSpanStatic
+     * @tc.number     testPlaceholderSpanPropertyStatic
+     * @tc.name       testPlaceholderSpanPropertyStatic
      * @tc.desc       To test the enum value of PlaceholderSpan.
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level3
      */
-    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testPlaceholderSpanPropertyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "testPlaceholderSpanStatic"
+        let msg = "testPlaceholderSpanPropertyStatic"
         console.info(msg + 'begin');
         try {
           let placeholderSpan: text.PlaceholderSpan = {
@@ -59,7 +59,7 @@ export default function GraphicTextProperty() {
           expect('100').assertEqual(placeholderSpan.baselineOffset + '');
           done();
         } catch (err) {
-          console.info(msg + 'test enum value of testPlaceholderSpanStatic error ' + JSON.stringify(err));
+          console.info(msg + 'test enum value of testPlaceholderSpanPropertyStatic error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }
