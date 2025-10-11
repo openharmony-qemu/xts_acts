@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -70,6 +70,7 @@ export default function TranslateTest() {
   describe('translateTest', () => {
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
+      console.error('translateTest start');
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -80,7 +81,7 @@ export default function TranslateTest() {
       console.error('[' + data.caseTag + '] check translate.' + ` ${data.testValue.setValue.translate.x} 
       ${data.testValue.setValue.translate.y} ${data.testValue.setValue.translate.z}`);
       console.error('[' + data.testValue.expectValue.translate + '] expectValue');
-      console.error('[' + data.viewObj!.getElement('$attrs').getElement('translate') + '] viewObj.$attrs.translate');
+      console.error('[' + JSON.stringifyJsonElement(data.viewObj!.getElement('$attrs').getElement('translate')) + '] viewObj.$attrs.translate');
       expect(data.viewObj!.getElement('$attrs').getElement('translate').getString('x')).assertEqual(data.testValue.expectValue.translate.x);
       expect(data.viewObj!.getElement('$attrs').getElement('translate').getString('y')).assertEqual(data.testValue.expectValue.translate.y);
       expect(data.viewObj!.getElement('$attrs').getElement('translate').getString('z')).assertEqual(data.testValue.expectValue.translate.z);
