@@ -109,6 +109,22 @@ static napi_value TestSliderTrackColor007(napi_env env, napi_callback_info info)
         ASSERT_EQ(gradients->colors[i], colors[i]);
         ASSERT_FLOATEQ(gradients->stops[i], stops[i]);
     }
+    ret = nodeAPI->resetAttribute(slider, NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR);
+    ASSERT_EQ(ret, SUCCESS);
+    attrItem = nodeAPI->getAttribute(slider, NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR);
+    if (!attrItem)
+    {
+        napi_value errorResult = nullptr;
+        return errorResult;
+    }
+    gradients = static_cast<ArkUI_ColorStop*>(attrItem->object);
+    if (!gradients)
+    {
+        napi_value errorResult = nullptr;
+        return errorResult;
+    }
+    size = gradients->size;
+    ASSERT_EQ(size, SIZE_2);
     NAPI_END;
 }
 } // namespace ArkUICapiTest
