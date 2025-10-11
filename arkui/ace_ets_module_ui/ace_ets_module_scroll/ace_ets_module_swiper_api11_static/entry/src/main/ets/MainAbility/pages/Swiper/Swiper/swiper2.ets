@@ -99,7 +99,7 @@ struct swiper2 {
           .selectedItemHeight(15)
           .color(Color.Gray)
           .selectedColor(Color.Blue))
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.value = 'change'
       })
     }.width('100%')

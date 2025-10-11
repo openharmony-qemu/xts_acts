@@ -113,7 +113,7 @@ struct SwiperExample2 {
       .vertical(false)
       .disableSwipe(true)
       .itemSpace(0)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         console.info(index.toString())
       })
 

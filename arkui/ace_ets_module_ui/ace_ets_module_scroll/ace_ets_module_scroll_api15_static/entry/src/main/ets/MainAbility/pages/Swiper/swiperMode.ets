@@ -58,13 +58,13 @@ struct SwiperAnimationModeExample {
   private swiperController: SwiperController = new SwiperController()
   private data: MyBasicSource = new MyBasicSource([])
   private list: number[] = [] as number[]
-  @State currentIndex: number = 0
+  @State currentIndex: Int = 0
   @State index: number = 0
   @State text1: string = '0'
   @State autoPlay: boolean = false
   @State isLoop: boolean = false
   @State swipeByGroup: boolean = false
-  @State count: number = 1
+  @State count: Int = 1
 
   build() {
     Scroll(this.scroller) {
@@ -112,7 +112,7 @@ struct SwiperAnimationModeExample {
 
           }, (item: number) => String(item))
         }
-        .onChange((currentIndex: number): void => {
+        .onChange((currentIndex: Int): void => {
           console.log('change: ' + currentIndex)
           this.index = currentIndex
         })
@@ -138,14 +138,14 @@ struct SwiperAnimationModeExample {
           console.info('onContentDidScroll selectedIndex: ' + selectedIndex + ', index: ' + index + ', position: ' +
             position + ', mainAxisLength: ' + mainAxisLength)
         })
-        .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+        .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
           console.info('index: ' + index)
           console.info('targetIndex: ' + targetIndex)
           console.info('current offset: ' + extraInfo.currentOffset)
           console.info('target offset: ' + extraInfo.targetOffset)
           console.info('velocity: ' + extraInfo.velocity)
         })
-        .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+        .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
           console.info('index: ' + index)
           console.info('current offset: ' + extraInfo.currentOffset)
         })

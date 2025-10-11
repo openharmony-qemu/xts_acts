@@ -503,7 +503,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest2500
      * @tc.name builtinsArrayCopyWithinPrototypebTest2500
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> target和start为number类型
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> target和start为number类型
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -522,7 +522,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest2600
      * @tc.name builtinsArrayCopyWithinPrototypebTest2600
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> end省略，默认到末尾
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> end省略，默认到末尾
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -541,7 +541,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest2700
      * @tc.name builtinsArrayCopyWithinPrototypebTest2700
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> 浮点数参数自动取整
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> 浮点数参数自动取整
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -551,7 +551,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         const caseName = 'builtinsArrayCopyWithinPrototypebTest2700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, false];
-        const result = copyWithin(arr, 1.7, 0.2, 2.9);
+        const result = copyWithin(arr, 1, 0, 2);
         expect([...result]).assertDeepEquals([true, true, false, false]);
         console.info(`${caseName}, test end`);
         Done();
@@ -560,7 +560,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest2800
      * @tc.name builtinsArrayCopyWithinPrototypebTest2800
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> end小于start无变化
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> end小于start无变化
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -579,7 +579,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest2900
      * @tc.name builtinsArrayCopyWithinPrototypebTest2900
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> target超界
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> target超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -598,7 +598,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest3000
      * @tc.name builtinsArrayCopyWithinPrototypebTest3000
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> 空数组
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -617,7 +617,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest3100
      * @tc.name builtinsArrayCopyWithinPrototypebTest3100
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> 单元素数组
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -636,7 +636,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypebTest3200
      * @tc.name builtinsArrayCopyWithinPrototypebTest3200
-     * @tc.desc copyWithin(self: FixedArray<boolean>, target: number, start: number, end?: Number): FixedArray<boolean> 全部为false
+     * @tc.desc copyWithin(self: FixedArray<boolean>, target: int, start: int, end?: int): FixedArray<boolean> 全部为false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1111,7 +1111,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest5700
          * @tc.name builtinsArrayCopyWithinPrototypebTest5700
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> 正常区间复制
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> 正常区间复制
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1130,7 +1130,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest5800
          * @tc.name builtinsArrayCopyWithinPrototypebTest5800
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> end<=start无变化
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> end<=start无变化
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1149,7 +1149,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest5900
          * @tc.name builtinsArrayCopyWithinPrototypebTest5900
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> target>start反向复制
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> target>start反向复制
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1168,7 +1168,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest6000
          * @tc.name builtinsArrayCopyWithinPrototypebTest6000
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> target超界
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> target超界
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1187,7 +1187,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest6100
          * @tc.name builtinsArrayCopyWithinPrototypebTest6100
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> 空数组
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> 空数组
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1206,7 +1206,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest6200
          * @tc.name builtinsArrayCopyWithinPrototypebTest6200
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> 单元素数组
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> 单元素数组
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1225,7 +1225,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest6300
          * @tc.name builtinsArrayCopyWithinPrototypebTest6300
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> start和end都超界
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> start和end都超界
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1244,7 +1244,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         /**
          * @tc.number builtinsArrayCopyWithinPrototypebTest6400
          * @tc.name builtinsArrayCopyWithinPrototypebTest6400
-         * @tc.desc copyWithin(self: FixedArray<byte>, target: number, start: number, end?: Number): FixedArray<byte> 全部为0
+         * @tc.desc copyWithin(self: FixedArray<byte>, target: int, start: int, end?: int): FixedArray<byte> 全部为0
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
@@ -1719,7 +1719,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest8900
      * @tc.name builtinsArrayCopyWithinPrototypecTest8900
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> 正常区间复制
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> 正常区间复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1738,7 +1738,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9000
      * @tc.name builtinsArrayCopyWithinPrototypecTest9000
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> end<=start无变化
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> end<=start无变化
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1757,7 +1757,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9100
      * @tc.name builtinsArrayCopyWithinPrototypecTest9100
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> target>start反向复制
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> target>start反向复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1776,7 +1776,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9200
      * @tc.name builtinsArrayCopyWithinPrototypecTest9200
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> target超界
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> target超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1795,7 +1795,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9300
      * @tc.name builtinsArrayCopyWithinPrototypecTest9300
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> 空数组
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1814,7 +1814,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9400
      * @tc.name builtinsArrayCopyWithinPrototypecTest9400
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> 单元素数组
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1833,7 +1833,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9500
      * @tc.name builtinsArrayCopyWithinPrototypecTest9500
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> start和end都超界
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> start和end都超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1852,7 +1852,7 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinPrototypecTest9600
      * @tc.name builtinsArrayCopyWithinPrototypecTest9600
-     * @tc.desc copyWithin(self: FixedArray<char>, target: number, start: number, end?: Number): FixedArray<char> 全部为同一字符
+     * @tc.desc copyWithin(self: FixedArray<char>, target: int, start: int, end?: int): FixedArray<char> 全部为同一字符
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

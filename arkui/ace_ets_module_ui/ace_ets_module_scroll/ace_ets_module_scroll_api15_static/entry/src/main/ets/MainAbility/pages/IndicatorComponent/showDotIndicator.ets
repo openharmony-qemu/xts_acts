@@ -100,7 +100,7 @@ struct showDotIndicatorDemo {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number) => {
+      .onChange((index: Int) => {
         console.info(index.toString())
       })
 
@@ -117,7 +117,7 @@ struct showDotIndicatorDemo {
         .loop(true)
         .count(6)
         .vertical(true)
-        .onChange((index: number) => {
+        .onChange((index: Int) => {
           console.log('current index: ' + index)
         })
     }

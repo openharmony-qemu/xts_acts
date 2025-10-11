@@ -103,7 +103,7 @@ struct showDialogMode {
   @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: number | Int |undefined  = this.getUniqueId()
+  @State levelUniqueId: long | Int |undefined  = this.getUniqueId()
   @State immersiveMode: ImmersiveMode | undefined = undefined
   @State isModal: boolean = true
   @State maskRect: Rectangle = {

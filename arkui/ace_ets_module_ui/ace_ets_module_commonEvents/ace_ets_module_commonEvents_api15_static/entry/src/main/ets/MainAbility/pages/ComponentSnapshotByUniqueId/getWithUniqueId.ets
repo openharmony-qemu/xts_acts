@@ -89,7 +89,7 @@ struct SnapshotExample {
           try {
             this.getUIContext()
               .getComponentSnapshot()
-              .getWithUniqueId(this.myNodeController.imageNode?.getUniqueId() as number,
+              .getWithUniqueId(Long.toDouble(this.myNodeController.imageNode?.getUniqueId()!),
                 {
                   scale: this.snapshotScale,
                   waitUntilRenderFinished: this.snapshotWait
@@ -112,7 +112,7 @@ struct SnapshotExample {
           try {
             this.pixmap = this.getUIContext()
               .getComponentSnapshot()
-              .getSyncWithUniqueId(this.myNodeController.imageNode?.getUniqueId() as number,
+              .getSyncWithUniqueId(Long.toDouble(this.myNodeController.imageNode?.getUniqueId()!),
                 {
                   scale: this.snapshotScale,
                   waitUntilRenderFinished: this.snapshotWait

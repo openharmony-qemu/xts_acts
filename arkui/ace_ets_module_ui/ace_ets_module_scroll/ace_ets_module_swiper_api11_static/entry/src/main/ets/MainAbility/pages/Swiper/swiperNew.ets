@@ -128,13 +128,13 @@ struct SwiperCurve {
         .vertical(false) 
         .itemSpace("0px")
         .curve(Curve.Linear) 
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
-        .onAnimationStart((index: number): void => {
+        .onAnimationStart((index: Int): void => {
           console.info(index.toString())
         })
-        .onAnimationEnd((index: number): void => {
+        .onAnimationEnd((index: Int): void => {
           console.info(index.toString())
         })
 

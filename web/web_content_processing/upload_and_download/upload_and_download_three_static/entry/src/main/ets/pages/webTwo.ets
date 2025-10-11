@@ -15,11 +15,10 @@
 
 import { Entry, Text,Column, Component, Button, ClickEvent, Web, Row, Stack } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { BusinessError } from '@ohos.arkui.component'
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
+import { Callback, RecordData, BusinessError } from '@ohos.base'
 import web_webview from '@ohos.web.webview';
 
 class StringFields {

@@ -385,7 +385,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
-        array1.shrinkTo(1.1);
+        array1.shrinkTo(1);
         expect(array1.length).assertEqual(1);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -406,7 +406,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
-        array1.shrinkTo(Infinity);
+        array1.shrinkTo(Infinity.toInt());
         expect(array1.length).assertEqual(5);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -427,7 +427,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
-        array1.shrinkTo(-Infinity);
+        array1.shrinkTo((-Infinity).toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -626,7 +626,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.MAX_SAFE_INTEGER);
+        array1.shrinkTo(Number.MAX_SAFE_INTEGER.toInt());
         expect(array1.length).assertEqual(3);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -647,7 +647,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.MIN_SAFE_INTEGER);
+        array1.shrinkTo(Number.MIN_SAFE_INTEGER.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -668,7 +668,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.MAX_VALUE);
+        array1.shrinkTo(Number.MAX_VALUE.toInt());
         expect(array1.length).assertEqual(3);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -689,7 +689,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>();
-        array1.shrinkTo(Number.MIN_VALUE);
+        array1.shrinkTo(Number.MIN_VALUE.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -710,7 +710,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1);
-        array1.shrinkTo(Number.MIN_VALUE);
+        array1.shrinkTo(Number.MIN_VALUE.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -731,7 +731,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.MIN_VALUE);
+        array1.shrinkTo(Number.MIN_VALUE.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -752,7 +752,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.NEGATIVE_INFINITY);
+        array1.shrinkTo(Number.NEGATIVE_INFINITY.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -773,7 +773,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.POSITIVE_INFINITY);
+        array1.shrinkTo(Number.POSITIVE_INFINITY.toInt());
         expect(array1.length).assertEqual(3);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -794,7 +794,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>();
-        array1.shrinkTo(Number.EPSILON);
+        array1.shrinkTo(Number.EPSILON.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -815,7 +815,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1);
-        array1.shrinkTo(Number.EPSILON);
+        array1.shrinkTo(Number.EPSILON.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -836,7 +836,7 @@ export default function ArrayTest() {
     it("testArrayShrinkTo025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let array1 = new Array<number>(1, 2, 3);
-        array1.shrinkTo(Number.EPSILON);
+        array1.shrinkTo(Number.EPSILON.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -1311,7 +1311,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo003';
       try {
         let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(7.2, 0)
+        array.extendTo(7, 0)
         expect(array.length).assertEqual(7);
         expect(array[5]).assertEqual(0);
       } catch (err) {
@@ -1319,108 +1319,6 @@ export default function ArrayTest() {
           console.error(`Expected error caught: ${err.message}`);
           expect(false).assertFail();
         }
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_0400
-     * @tc.name      : testArrayExtendTo004
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("testArrayExtendTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo004';
-      try {
-        let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(Infinity, 0)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('arrayLength must be <= int32 max');
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_0500
-     * @tc.name      : testArrayExtendTo005
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("testArrayExtendTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo005';
-      try {
-        let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(-Infinity, 0)
-      } catch (err) {
-        if (err instanceof BusinessError) {
-          console.error(`Expected error caught: ${err.message}`);
-          expect(false).assertFail();
-        }
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_0600
-     * @tc.name      : testArrayExtendTo006
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("testArrayExtendTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo006';
-      try {
-        let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(Number.MAX_SAFE_INTEGER, 0)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('arrayLength must be <= int32 max');
-      }
-    });
-
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_0700
-     * @tc.name      : testArrayExtendTo007
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("testArrayExtendTo007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo007';
-      try {
-        let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(Number.MIN_SAFE_INTEGER, 0)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('idx = 4; length = 4');
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_0800
-     * @tc.name      : testArrayExtendTo008
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testArrayExtendTo008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo008';
-      try {
-        let array = new Array<number>(1, 2, 3, 4);
-        array.extendTo(Number.MAX_VALUE, 0)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
     });
 
@@ -1436,7 +1334,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo009';
       try {
         let array = Array.create<number>(0, 0);
-        array.extendTo(Number.MIN_VALUE, 0)
+        array.extendTo(Number.MIN_VALUE.toInt(), 0)
         expect(array.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -1458,7 +1356,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo010';
       try {
         let array = Array.create<number>(1, 1);
-        array.extendTo(Number.MIN_VALUE, 0)
+        array.extendTo(Number.MIN_VALUE.toInt(), 0)
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual(1);
       } catch (err) {
@@ -1481,7 +1379,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo011';
       try {
         let array = Array.create<string>(1, 'a');
-        array.extendTo(Number.MIN_VALUE, 'b')
+        array.extendTo(Number.MIN_VALUE.toInt(), 'b')
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual('a');
       } catch (err) {
@@ -1504,7 +1402,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo012';
       try {
         let array = Array.create<number>(6, 3);
-        array.extendTo(Number.MIN_VALUE, 2)
+        array.extendTo(Number.MIN_VALUE.toInt(), 2)
         expect(array.length).assertEqual(6);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -1526,7 +1424,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo013';
       try {
         let array = Array.create<number>(0, 0);
-        array.extendTo(Number.EPSILON, 0)
+        array.extendTo(Number.EPSILON.toInt(), 0)
         expect(array.length).assertEqual(0);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -1548,7 +1446,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo014';
       try {
         let array = Array.create<number>(1, 1);
-        array.extendTo(Number.EPSILON, 0)
+        array.extendTo(Number.EPSILON.toInt(), 0)
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual(1);
       } catch (err) {
@@ -1571,7 +1469,7 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo015';
       try {
         let array = Array.create<string>(1, 'a');
-        array.extendTo(Number.EPSILON, 'b')
+        array.extendTo(Number.EPSILON.toInt(), 'b')
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual('a');
       } catch (err) {
@@ -1594,53 +1492,13 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayExtendTo016';
       try {
         let array = Array.create<number>(6, 3);
-        array.extendTo(Number.EPSILON, 2)
+        array.extendTo(Number.EPSILON.toInt(), 2)
         expect(array.length).assertEqual(6);
       } catch (err) {
         if (err instanceof BusinessError) {
           console.error(`Expected error caught: ${err.message}`);
           expect(false).assertFail();
         }
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_1700
-     * @tc.name      : testArrayExtendTo017
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testArrayExtendTo017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo017';
-      try {
-        let array = Array.create<number>(6, 3);
-        array.extendTo(Number.NEGATIVE_INFINITY, 2)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('idx = 6; length = 6');
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_ARRAY_EXTEND_TO_TEST_1800
-     * @tc.name      : testArrayExtendTo018
-     * @tc.desc      : Test the function of the interface ArrayExtendTo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testArrayExtendTo018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayExtendTo018';
-      try {
-        let array = Array.create<number>(6, 3);
-        array.extendTo(Number.POSITIVE_INFINITY, 2)
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
     });
 

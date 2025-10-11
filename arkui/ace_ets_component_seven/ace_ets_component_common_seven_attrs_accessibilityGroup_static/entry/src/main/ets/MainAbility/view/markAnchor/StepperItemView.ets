@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,33 +28,28 @@ import {
   Position,
   TextAlign,
   Color,
-  ItemState
+  ItemState,
+  CommonMethod,
+  TextAttribute,
+  applyStyles,
+  Margin
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function superFancyText(this: TextAttribute): this {
+  this.fontSize(36);
+  this.fontColor('#182431')
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: number = 0
-  @State currentIndex: number = 0
+  @State prevIndex: Int = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _markAnchor!: Position;
@@ -66,6 +61,14 @@ export struct StepperItemView {
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
 
+  fancy(instance: CommonMethod) {
+    instance.width(336);
+    instance.height(621);
+    instance.backgroundColor(Color.White);
+    instance.margin({ top: 48, left: 12 } as Margin)
+    instance.borderRadius(24)
+  }
+
   build() {
     Stepper({
       index: this.currentIndex
@@ -73,13 +76,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+  .superFancyText()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)
@@ -91,13 +94,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+  .superFancyText()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)
@@ -113,7 +116,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: number, index: number) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

@@ -36,7 +36,7 @@ struct SwiperCustomPage {
   @State translateList: number[] = new Array<number>()
   @State zIndexList: number[] = new Array<number>()
   @State message: string = 'message'
-  private DISPLAY_COUNT: number = 2
+  private DISPLAY_COUNT: Int = 2
   private MIN_SCALE: number = 0.75
   @State text: string = 'text'
 

@@ -110,7 +110,7 @@ struct SwiperVisibilityTest {
       .duration(100)
       .itemSpace(0)
       .displayArrow(true, false)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.swiperValue = index + ''
       })
 

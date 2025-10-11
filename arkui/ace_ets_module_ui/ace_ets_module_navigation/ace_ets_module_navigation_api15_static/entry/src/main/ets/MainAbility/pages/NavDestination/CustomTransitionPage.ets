@@ -138,7 +138,7 @@ struct PageTwo {
     }
     .title('pageTwo')
     .customTransition((op: NavigationOperation, isEnter: boolean): Array<NavDestinationTransition> | undefined => {
-      let transitionOneDuration: number = 500;
+      let transitionOneDuration: Int = 500;
       let testTag: string = '[NavDestCustomTransition]';
       let transitionOneEvent: voidFunc = () => { console.log(testTag, 'reached transitionOne, empty now!'); }
       let transitionOneFinishEvent: voidFunc = () => {

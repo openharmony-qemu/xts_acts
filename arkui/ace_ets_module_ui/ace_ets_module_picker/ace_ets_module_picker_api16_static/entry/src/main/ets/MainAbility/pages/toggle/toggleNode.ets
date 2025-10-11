@@ -30,7 +30,7 @@ class MyNodeController extends  NodeController {
     col1.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
     let col = typeNode.createNode(uiContext, 'Column')
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    let scroll = typeNode.createNode(uiContext, 'Scroll')
+    let scroll = typeNode.createScrollNode(uiContext)
     scroll.initialize()
     
     

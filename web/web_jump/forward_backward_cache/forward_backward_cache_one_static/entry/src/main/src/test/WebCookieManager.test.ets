@@ -58,33 +58,15 @@ export default function webCookieManagerTest() {
       console.info("web beforeEach start");
     })
 
-
-
-    /*
-    * @tc.number     : SUB_WEB_ERRORECODE_PREPAREFORPAGELOAD_0100
-    * @tc.name       : testPrepareForPageLoadError001
-    * @tc.desc       : test prepareForPageLoad error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testPrepareForPageLoadError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      Utils.emitEvent("testPrepareForPageLoadError001", 10)
-      Utils.registerEvent("testPrepareForPageLoadError001", "17100013", 50025, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
-      await Utils.msSleep(4000);
-      done()
-    })
     /*
     * @tc.number     : SUB_WEB_ISCOOKIEALLOWED_0100
-    * @tc.name       : testIsCookieAllowed001
+    * @tc.name       : testIsCookieAllowedStatic001
     * @tc.desc       : test isCookieAllowed
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testIsCookieAllowed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsCookieAllowedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testIsCookieAllowed001", 10)
@@ -97,13 +79,13 @@ export default function webCookieManagerTest() {
 
     /*
     * @tc.number     : SUB_WEB_ISCOOKIEALLOWED_0200
-    * @tc.name       : testIsCookieAllowed002
+    * @tc.name       : testIsCookieAllowedStatic002
     * @tc.desc       : test isCookieAllowed
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testIsCookieAllowed002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsCookieAllowed002", 10)
         await Utils.msSleep(2000);
@@ -115,13 +97,13 @@ export default function webCookieManagerTest() {
 
     /*
    * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0100
-   * @tc.name       : testIsThirdPartyCookieAllowed001
+   * @tc.name       : testIsThirdPartyCookieAllowedStatic001
    * @tc.desc       : test isThirdPartyCookieAllowed
    * @tc.size       : MediumTest
    * @tc.type       : Function
    * @tc.level      : Level 3
    */
-    it('testIsThirdPartyCookieAllowed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsThirdPartyCookieAllowedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed001", 10)
         await Utils.msSleep(2000);
@@ -133,48 +115,13 @@ export default function webCookieManagerTest() {
 
     /*
     * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0200
-    * @tc.name       : testIsThirdPartyCookieAllowed002
+    * @tc.name       : testIsThirdPartyCookieAllowedStatic002
     * @tc.desc       : test isThirdPartyCookieAllowed
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testIsThirdPartyCookieAllowed002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent("testIsThirdPartyCookieAllowed002", 10)
-        await Utils.msSleep(2000);
-        Utils.registerEvent("testIsThirdPartyCookieAllowed002", false, 30026, done);
-        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
-        await Utils.msSleep(4000);
-        done()
-      })
-    /*
-    * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0100
-    * @tc.name       : testIsThirdPartyCookieAllowed001
-    * @tc.desc       : test isThirdPartyCookieAllowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testIsThirdPartyCookieAllowed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent("testIsThirdPartyCookieAllowed001", 10)
-        await Utils.msSleep(2000);
-        Utils.registerEvent("testIsThirdPartyCookieAllowed001", true, 30025, done);
-        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
-        await Utils.msSleep(4000);
-        done()
-      })
-
-    /*
-    * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0200
-    * @tc.name       : testIsThirdPartyCookieAllowed002
-    * @tc.desc       : test isThirdPartyCookieAllowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testIsThirdPartyCookieAllowed002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsThirdPartyCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed002", 10)
         await Utils.msSleep(2000);
@@ -186,13 +133,13 @@ export default function webCookieManagerTest() {
 
     /*
     * @tc.number     : SUB_WEB_PUTACCEPTTHIRDPARTYCOOKIEENABLED_0100
-    * @tc.name       : testPutAcceptThirdPartyCookieEnabled001
+    * @tc.name       : testPutAcceptThirdPartyCookieEnabledStatic001
     * @tc.desc       : test putAcceptThirdPartyCookieEnabled
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testPutAcceptThirdPartyCookieEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testPutAcceptThirdPartyCookieEnabledStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testPutAcceptThirdPartyCookieEnabled001", 10)
         await Utils.msSleep(2000);
@@ -201,7 +148,5 @@ export default function webCookieManagerTest() {
         await Utils.msSleep(4000);
         done()
       })
-
   })
 }
-

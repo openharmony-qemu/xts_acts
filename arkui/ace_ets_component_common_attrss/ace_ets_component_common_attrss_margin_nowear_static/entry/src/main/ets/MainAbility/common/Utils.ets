@@ -14,30 +14,16 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager, GrowValue } from './AttrsManager';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import {
-  TouchType,
-  KeyType,
-  MouseButton,
-  MouseAction,
-  AlignRuleOption,
-  focusControl,
-  KeySource,
-  SourceTool,
-  SourceType,
-  Margin
-} from '@ohos.arkui.component';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Margin } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-import { jsonx } from "std/core";
 
 import { jsonx } from "std/core";
-
 export class RectValue {
   left: number = 0;
   top: number = 0;
@@ -45,41 +31,43 @@ export class RectValue {
   bottom: number = 0;
 }
 
+export class GrowValue {
+  margin: Margin = {};
+  top: number = 0;
+  bottom: number = 0;
+  left: number = 0;
+  right: number = 0;
+}
+export class AttrContent {
+  content: string = ''
+}
+export class StrJsonObj {
+  $attrs: AttrContent = new AttrContent()
+}
+
+export interface CurrentRatio{
+  currentRatio: number
+  isVisible: boolean
+};
+export class SetValue {
+  margin: Margin = {}
+}
+export class ExpectValue {
+  margin: Margin = {}
+  top: Length = 0
+  right: Length = 0
+  bottom: Length = 0
+  left: Length = 0
+}
 export class RouterParams {
   view: PageConfig = new PageConfig()
 }
 
-interface EM {
-  flexShrink: number;
-}
-
 export class TestValue {
   describe: string = '';
-  setValue: GrowValue = {
-    margin: {
-      left: 0,
-      top: 0,
-      right: 0,
-      bottom: 0,
-    },
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0,
-  };
+  setValue: SetValue = new SetValue();
   exceptView: string = '';
-  expectValue: GrowValue = {
-    margin: {
-      left: 0,
-      top: 0,
-      right: 0,
-      bottom: 0,
-    },
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0
-  };
+  expectValue:ExpectValue=new ExpectValue()
 }
 
 export class BasePageConfig {
@@ -91,26 +79,19 @@ export class BasePageConfig {
 }
 
 export class PageConfig {
+  childWidth: number
+  childHeight: number
+  parentBackGroundColor: Color = Color.Red
+  BackGroundColor: Color = Color.Red
   testName: string = '';
   pageName: string = '';
   pageUrl: string = '';
-  targetGroupView: string = '';
-  buttonComponentKey: string = '';
-  childWidth: number = 0;
-  childHeight: number = 0;
   parentWidth: number = 0;
   parentHeight: number = 0;
-  compareWidth: number = 0;
-  compareHeight: number = 0;
-  standardWidth: number = 0;
-  standardHeight: number = 0;
-  standardComponentKey: string = '';
-  compareComponentKey: string = '';
-  targetWidth: number = 0;
-  targetHeight: number = 0;
   subassemblyWidth: number = 0;
   subassemblyHeight: number = 0;
   subassemblyCenter: AlignRuleOption = {};
+  buttonComponentKey:string = '';
   parentComponentKey: string = '';
   referenceComponentKey: string = '';
   targetView: string = '';
@@ -118,24 +99,38 @@ export class PageConfig {
   componentKey: string = '';
   sharePage?: boolean;
   containerView?: string;
+  targetGroupView: string = ''
+  compareTextKey: string = ''
+  compareTextWidth: number = 0
+  compareTextHeight: number = 0
+  scrollWidth: number = 0
+  scrollHeight: number = 0
+  columnWidth: number = 0
+  columnHeight: number = 0
+  buttonWidth: number = 0
+  buttonHeight: number = 0
+  componentWidth: number = 0
+  componentHeight: number = 0
+  referenceComponentKeyTop: string = ''
+  referenceComponentKeyBottom: string = ''
+  referenceComponentKeyLeft: string = ''
+  referenceComponentKeyRight: string = ''
+
 }
 
 export default class Utils {
   public static instance: Utils = new Utils();
 
-  static sleep(time: number) {
-    return new Promise<string>((resolve, reject) => {
+  static async sleep(time: int) : Promise<int>  {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok");
-      }, time.toInt());
-    }).then(() => {
-      console.info(`sleep ${time} over...`);
-    });
+        resolve(0)
+      }, time)
+    })
   }
 
   static getStringFromFile(fileName: string): Promise<string> {
-    const abilityContext =
-      AppStorage.get<common.Context>("abilityContext") as common.Context
+    const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
@@ -154,20 +149,25 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams = router.getParams();
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
+      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+        console.info('targetView: ' + obj.targetView);
+        await Utils.back();
+        pages = router.getState();
+      }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        const paramData: RouterParams = {
-          view: obj
-        }
-        const routerParams: router.RouterOptions = {
+        router.pushUrl({
           url: obj.pageUrl,
-          params: paramData
-        }
-        router.pushUrl(routerParams)
-        await Utils.sleep(2000)
+          params: {
+            view: obj
+          } as RouterParams
+        });
+        await Utils.sleep(2000);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -176,10 +176,9 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!router.getState().name.endsWith("/Index")) {
+    if (!('Index' == router.getState().name)) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -192,12 +191,12 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
@@ -209,24 +208,24 @@ export default class Utils {
   }
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
-    console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    let rect_value: RectValue = {
-      left: Number(rectInfo[0][0] ?? 0),
-      top: Number(rectInfo[0][1] ?? 0),
-      right: Number(rectInfo[1][0] ?? 0),
-      bottom: Number(rectInfo[1][1] ?? 0),
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+    const str = obj.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
-    let strJson = inspector.getInspectorByKey(componentKey);
-    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
+    let strJson = inspector.getInspectorByKey(componentKey)
+    console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
 
@@ -338,7 +337,7 @@ export default class Utils {
       timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -395,7 +394,7 @@ export default class Utils {
       pressure: 0,
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }

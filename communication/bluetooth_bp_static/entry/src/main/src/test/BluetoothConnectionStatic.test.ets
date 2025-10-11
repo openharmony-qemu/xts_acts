@@ -1017,5 +1017,122 @@ export default function bluetoothConnectionTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  testBluetoothTransport
+         * @tc.name    testBluetoothTransport
+         * @tc.desc    Test testBluetoothTransport API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testBluetoothTransport", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let TRANSPORT_BR_EDR = connection.BluetoothTransport.TRANSPORT_BR_EDR;
+                let TRANSPORT_LE = connection.BluetoothTransport.TRANSPORT_LE;
+                expect(TRANSPORT_BR_EDR).assertEqual(0);
+                expect(TRANSPORT_LE).assertEqual(1);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "BluetoothTransport errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testScanMode
+         * @tc.name    testScanMode
+         * @tc.desc    Test testScanMode API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testScanMode", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let SCAN_MODE_NONE = connection.ScanMode.SCAN_MODE_NONE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_NONE: " + SCAN_MODE_NONE);
+                expect(SCAN_MODE_NONE).assertEqual(0);
+
+                let SCAN_MODE_CONNECTABLE = connection.ScanMode.SCAN_MODE_CONNECTABLE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_CONNECTABLE: " + SCAN_MODE_CONNECTABLE);
+                expect(SCAN_MODE_CONNECTABLE).assertEqual(1);
+
+                let SCAN_MODE_GENERAL_DISCOVERABLE = connection.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_GENERAL_DISCOVERABLE: " + SCAN_MODE_GENERAL_DISCOVERABLE);
+                expect(SCAN_MODE_GENERAL_DISCOVERABLE).assertEqual(2);
+
+                let SCAN_MODE_LIMITED_DISCOVERABLE = connection.ScanMode.SCAN_MODE_LIMITED_DISCOVERABLE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_LIMITED_DISCOVERABLE: " + SCAN_MODE_LIMITED_DISCOVERABLE);
+                expect(SCAN_MODE_LIMITED_DISCOVERABLE).assertEqual(3);
+
+                let SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE = connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE: " + SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE);
+                expect(SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE).assertEqual(4);
+
+                let SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE = connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE;
+                hilog.info(domain, tag, "ScanMode SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE: " + SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE);
+                expect(SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE).assertEqual(5);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testScanMode errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testDeviceChargeState
+         * @tc.name    testDeviceChargeState
+         * @tc.desc    Test testDeviceChargeState API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testDeviceChargeState", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let deviceNormalChargeNotCharged = connection.DeviceChargeState.DEVICE_NORMAL_CHARGE_NOT_CHARGED;
+                let deviceNormalChargeInCharging = connection.DeviceChargeState.DEVICE_NORMAL_CHARGE_IN_CHARGING;
+                let deviceSuperChargeNotCharged = connection.DeviceChargeState.DEVICE_SUPER_CHARGE_NOT_CHARGED;
+                let deviceSuperChargeInCharging = connection.DeviceChargeState.DEVICE_SUPER_CHARGE_IN_CHARGING;
+                expect(deviceNormalChargeNotCharged).assertEqual(0);
+                expect(deviceNormalChargeInCharging).assertEqual(1);
+                expect(deviceSuperChargeNotCharged).assertEqual(2);
+                expect(deviceSuperChargeInCharging).assertEqual(3);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testDeviceChargeState errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testUnbondCause
+         * @tc.name    testUnbondCause
+         * @tc.desc    Test testUnbondCause API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testUnbondCause", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let userRemoved = connection.UnbondCause.USER_REMOVED;
+                let remoteDeviceDown = connection.UnbondCause.REMOTE_DEVICE_DOWN;
+                let authFailure = connection.UnbondCause.AUTH_FAILURE;
+                let authRejected = connection.UnbondCause.AUTH_REJECTED;
+                let internalRrror = connection.UnbondCause.INTERNAL_ERROR;
+                expect(userRemoved).assertEqual(0);
+                expect(remoteDeviceDown).assertEqual(1);
+                expect(authFailure).assertEqual(2);
+                expect(authRejected).assertEqual(3);
+                expect(internalRrror).assertEqual(4);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testUnbondCause errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
     })
 }

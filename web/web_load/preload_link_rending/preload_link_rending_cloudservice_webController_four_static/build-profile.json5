@@ -16,18 +16,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/zhou/.ohos/config/openharmony/default_system_events_static_-unbOnwmHzaUp0F_AMOJdpUOKnsBCMYpCk_yAGW_H6g=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001A331BF8B277ED535C85F9B14DD810B5AACB3BE592F761A0D359EB5E6A8E2B195578DD95B8C645",
-          "profile": "C:/Users/zhou/.ohos/config/openharmony/default_system_events_static_-unbOnwmHzaUp0F_AMOJdpUOKnsBCMYpCk_yAGW_H6g=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/zhou/.ohos/config/openharmony/default_system_events_static_-unbOnwmHzaUp0F_AMOJdpUOKnsBCMYpCk_yAGW_H6g=.p12",
-          "storePassword": "0000001AC508C717F5B52B2865FDD7EE3572796820ED93230CF6112209D7EF7A1BE2E1345B56C410C6A7"
-        }
-      }
     ],
     "products": [
       {

@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct stepperInterface006 {
-  @State currentIndex: number | undefined = 0
+  @State currentIndex: Int | undefined = 0
   build() {
     Column(){
       Text(this.currentIndex?.toString())
@@ -35,10 +35,10 @@ struct stepperInterface006 {
           }
           .prevLabel('Previous')
       }
-      .onNext((index?: number, pendingIndex?: number) => {
+      .onNext((index?: Int, pendingIndex?: Int) => {
         this.currentIndex = pendingIndex
       })
-      .onPrevious((index?: number, pendingIndex?: number) => {
+      .onPrevious((index?: Int, pendingIndex?: Int) => {
         this.currentIndex = pendingIndex
       })
     }
