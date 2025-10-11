@@ -13,12 +13,17 @@
 * limitations under the License.
 */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import libavcode from 'libavcode.so'
 
 export default function AVCodeBaseTest() {
   let TAG = '';
   describe('AVCodeBaseTest', () => {
+
+    beforeAll(async () => {
+      libavcode.WriteMp4File();
+      console.info(TAG + "beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.")
+    })
 
     /**
      * @tc.number   SUB_AVCodeBase_Test_00100
@@ -2325,5 +2330,205 @@ export default function AVCodeBaseTest() {
         done()
       }
     });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_20600
+     * @tc.name     testAVCodeBaseTest20600
+     * @tc.desc     testing OH_AVDemuxer_ReadSampleBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest20600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest20600';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVDemuxer_ReadSampleBufferTestNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_20700
+     * @tc.name     testAVCodeBaseTest20700
+     * @tc.desc     testing OH_AVDemuxer_SeekToTime AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest20700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest20700';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVDemuxer_SeekToTimeTestNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_20800
+     * @tc.name     testAVCodeBaseTest20800
+     * @tc.desc     testing OH_AVMuxer_SetRotation AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest20800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest20800';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_SetRotationNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_20900
+     * @tc.name     testAVCodeBaseTest20900
+     * @tc.desc     testing OH_AVMuxer_SetFormat AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest20900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest20900';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_SetFormatNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_21000
+     * @tc.name     testAVCodeBaseTest21000
+     * @tc.desc     testing OH_AVMuxer_AddTrack AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest21000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest21000';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_AddTrackNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_21100
+     * @tc.name     testAVCodeBaseTest21100
+     * @tc.desc     testing OH_AVMuxer_Start AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest21100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest21100';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_StartNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_21200
+     * @tc.name     testAVCodeBaseTest21200
+     * @tc.desc     testing OH_AVMuxer_WriteSample AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest21200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest21200';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_WriteSampleNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_21300
+     * @tc.name     testAVCodeBaseTest21300
+     * @tc.desc     testing OH_AVMuxer_WriteSampleBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest21300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest21300';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_WriteSampleBufferNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBase_Test_21400
+     * @tc.name     testAVCodeBaseTest21400
+     * @tc.desc     testing OH_AVMuxer_StopNot AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTest21400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTest21400';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.OH_AVMuxer_StopNotPermit();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+
   })
 }

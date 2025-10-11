@@ -17,6 +17,7 @@
 #define OSACCOUNT_NATIVE_AUDIO_CODE_TEST_H
 #include <napi/native_api.h>
 
+napi_value WriteMp4File(napi_env env, napi_callback_info info);
 napi_value EnumOHAudioChannelSet1(napi_env env, napi_callback_info info);
 napi_value EnumOHAudioChannelSet2(napi_env env, napi_callback_info info);
 napi_value EnumOHAudioChannelSet3(napi_env env, napi_callback_info info);
@@ -366,4 +367,47 @@ napi_value OH_AVErrCodeTest16(napi_env env, napi_callback_info info);
 napi_value OH_AVErrCodeTest17(napi_env env, napi_callback_info info);
 napi_value OH_AVErrCodeTest18(napi_env env, napi_callback_info info);
 napi_value OH_AVFormat_SetIntValueTest(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_FreeOutputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_RegisterParameterCallback_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_SetParameter_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_NotifyEndOfStream_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_PushInputData_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_PushInputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_PushInputParameter_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryOutputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryOutputBuffer_Test2(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryOutputBuffer_Test3(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryInputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryInputBuffer_Test2(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryInputBuffer_Test3(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_SetSurface_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_SetParameter_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_PushInputData_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_RenderOutputData_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_FreeOutputData_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_PushInputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_RenderOutputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_RenderOutputBufferAtTime_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_FreeOutputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryOutputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryOutputBuffer_Test2(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryOutputBuffer_Test3(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryInputBuffer_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryInputBuffer_Test2(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_QueryInputBuffer_Test3(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_Configure_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_Prepare_Test(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryOutputBuffer(napi_env env, napi_callback_info info);
+napi_value VideoEncoder_QueryInputBuffer(napi_env env, napi_callback_info info);
+napi_value VideoDecoder_AVDecodeSync(napi_env env, napi_callback_info info);
+napi_value OH_AVDemuxer_ReadSampleBufferTestNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVDemuxer_SeekToTimeTestNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_SetRotationNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_SetFormatNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_AddTrackNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_StartNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_WriteSampleNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_WriteSampleBufferNotPermit(napi_env env, napi_callback_info info);
+napi_value OH_AVMuxer_StopNotPermit(napi_env env, napi_callback_info info);
 #endif

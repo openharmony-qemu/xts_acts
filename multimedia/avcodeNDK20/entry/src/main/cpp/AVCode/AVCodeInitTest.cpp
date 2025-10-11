@@ -410,6 +410,16 @@ static void InitPushOH_AVDemuxeFunctionTest(std::vector<napi_property_descriptor
     desc.push_back(XL("OH_AVCencInfo_SetSubsampleInfoTest", OH_AVCencInfo_SetSubsampleInfoTest));
     desc.push_back(XL("OH_AVCencInfo_SetModeTest", OH_AVCencInfo_SetModeTest));
     desc.push_back(XL("OH_AVCencInfo_SetAVBufferTest", OH_AVCencInfo_SetAVBufferTest));
+    desc.push_back(XL("OH_AVDemuxer_ReadSampleBufferTestNotPermit", OH_AVDemuxer_ReadSampleBufferTestNotPermit));
+    desc.push_back(XL("OH_AVDemuxer_SeekToTimeTestNotPermit", OH_AVDemuxer_SeekToTimeTestNotPermit));
+    desc.push_back(XL("OH_AVMuxer_SetRotationNotPermit", OH_AVMuxer_SetRotationNotPermit));
+    desc.push_back(XL("OH_AVMuxer_SetFormatNotPermit", OH_AVMuxer_SetFormatNotPermit));
+    desc.push_back(XL("OH_AVMuxer_AddTrackNotPermit", OH_AVMuxer_AddTrackNotPermit));
+    desc.push_back(XL("OH_AVMuxer_StartNotPermit", OH_AVMuxer_StartNotPermit));
+    desc.push_back(XL("OH_AVMuxer_WriteSampleNotPermit", OH_AVMuxer_WriteSampleNotPermit));
+    desc.push_back(XL("OH_AVMuxer_WriteSampleBufferNotPermit", OH_AVMuxer_WriteSampleBufferNotPermit));
+    desc.push_back(XL("OH_AVMuxer_StopNotPermit", OH_AVMuxer_StopNotPermit));
+    desc.push_back(XL("WriteMp4File", WriteMp4File));
 }
 
 static void InitPushOH_AVErrCodeTest(std::vector<napi_property_descriptor> &desc)
@@ -432,6 +442,44 @@ static void InitPushOH_AVErrCodeTest(std::vector<napi_property_descriptor> &desc
     desc.push_back(XL("OH_AVErrCodeTest17", OH_AVErrCodeTest17));
     desc.push_back(XL("OH_AVErrCodeTest18", OH_AVErrCodeTest18));
     desc.push_back(XL("OH_AVFormat_SetIntValueTest", OH_AVFormat_SetIntValueTest));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer", VideoEncoder_QueryOutputBuffer));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer", VideoEncoder_QueryInputBuffer));
+    desc.push_back(XL("VideoDecoder_AVDecodeSync", VideoDecoder_AVDecodeSync));
+}
+
+static void InitPushOH_VideoEncoderFunction2Test(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoEncoder_FreeOutputBuffer", VideoEncoder_FreeOutputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_RegisterParameterCallback", VideoEncoder_RegisterParameterCallback_Test));
+    desc.push_back(XL("VideoEncoder_SetParameter", VideoEncoder_SetParameter_Test));
+    desc.push_back(XL("VideoEncoder_NotifyEndOfStream", VideoEncoder_NotifyEndOfStream_Test));
+    desc.push_back(XL("VideoEncoder_PushInputData", VideoEncoder_PushInputData_Test));
+    desc.push_back(XL("VideoEncoder_PushInputBuffer", VideoEncoder_PushInputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_PushInputParameter", VideoEncoder_PushInputParameter_Test));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer1", VideoEncoder_QueryInputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer2", VideoEncoder_QueryInputBuffer_Test2));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer3", VideoEncoder_QueryInputBuffer_Test3));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer1", VideoEncoder_QueryOutputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer2", VideoEncoder_QueryOutputBuffer_Test2));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer3", VideoEncoder_QueryOutputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_SetSurface", VideoDecoder_SetSurface_Test));
+    desc.push_back(XL("VideoDecoder_SetParameter", VideoDecoder_SetParameter_Test));
+    desc.push_back(XL("VideoDecoder_PushInputData", VideoDecoder_PushInputData_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputData", VideoDecoder_RenderOutputData_Test));
+    desc.push_back(XL("VideoDecoder_FreeOutputData", VideoDecoder_FreeOutputData_Test));
+    desc.push_back(XL("VideoDecoder_PushInputBuffer", VideoDecoder_PushInputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputBuffer", VideoDecoder_RenderOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputBufferAtTime", VideoDecoder_RenderOutputBufferAtTime_Test));
+    desc.push_back(XL("VideoDecoder_FreeOutputBuffer", VideoDecoder_FreeOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer", VideoDecoder_QueryInputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer2", VideoDecoder_QueryInputBuffer_Test2));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer3", VideoDecoder_QueryInputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer1", VideoDecoder_QueryOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer2", VideoDecoder_QueryOutputBuffer_Test2));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer3", VideoDecoder_QueryOutputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_Configure", VideoDecoder_Configure_Test));
+    desc.push_back(XL("VideoDecoder_Prepare", VideoDecoder_Prepare_Test));
+    desc.push_back(XL("VideoDecoder_Start", VideoDecoder_Start_Test));
 }
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -450,6 +498,7 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPushOH_VideoEncoderFunctionTest(desc);
     InitPushOH_AVDemuxeFunctionTest(desc);
     InitPushOH_AVErrCodeTest(desc);
+    InitPushOH_VideoEncoderFunction2Test(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

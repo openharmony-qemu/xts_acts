@@ -18,6 +18,7 @@ import AVCodeTest2 from "./AVCode/AVCodeTest2.test";
 import AVCodeTest3 from "./AVCode/AVCodeTest3.test";
 import AVCodeBaseTest from "./AVCode/AVCodeBase.test";
 import AVCodeBaseTwoTest from "./AVCode/AVCodeBaseTwo.test";
+import AVCodeBaseThreeTest from "./AVCode/AVCodeBaseThree.test";
 
 export default function testsuite() {
   AVCodeTest()
@@ -25,4 +26,5 @@ export default function testsuite() {
   AVCodeTest3()
   AVCodeBaseTest()
   AVCodeBaseTwoTest()
+  AVCodeBaseThreeTest()
 }
