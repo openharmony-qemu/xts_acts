@@ -26,6 +26,16 @@
 #include "hilog/log.h"
 #include "unicode/ubrk.h"
 #include "unicode/ustring.h"
+#include "unicode/uversion.h"
+#include "unicode/uldnames.h"
+#include "unicode/udisplaycontext.h"
+#include "unicode/uchar.h"
+#include "unicode/ulocdata.h"
+#include "unicode/utf.h"
+#include "unicode/utf8.h"
+#include "unicode/utf16.h"
+#include "unicode/ucpmap.h"
+#include "unicode/uchar.h"
 
 
 static napi_value TestUidna_openUTS46(napi_env env, napi_callback_info)
@@ -1420,6 +1430,1560 @@ static napi_value testUbrk_clone_0300(napi_env env, napi_callback_info info)
     return result;
 }
 
+
+static napi_value testU_getUnicodeVersion(napi_env env, napi_callback_info info)
+{
+    UVersionInfo uniVersion = {0, 0, 0, 0};
+    u_getUnicodeVersion(uniVersion);
+    bool flag = (uniVersion[0] != 0);
+    napi_value result;
+    napi_status status = napi_get_boolean(env, flag, &result);
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value testU_charAge(napi_env env, napi_callback_info info)
+{
+    UVersionInfo uniVersion = {7, 2, 0, 0};
+    UChar32 ch = 0;
+    u_charAge(ch, uniVersion);
+    bool flag = (ch == 0);
+    napi_value result;
+    napi_status status = napi_get_boolean(env, flag, &result);
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value testuldn_localeDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    int32_t len = uldn_localeDisplayName(ldn, "de_DE", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = (len > 7);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testUldn_getLocale(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    ULocaleDisplayNames *ldn = uldn_open(NULL, ULDN_STANDARD_NAMES, &status);
+    const char* locale = uldn_getLocale(ldn);
+    uldn_close(ldn);
+    bool flag = (locale != nullptr);
+    napi_value result;
+    napi_status nStatus = napi_get_boolean(env, flag, &result);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value testUldn_getDialectHandling(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    ULocaleDisplayNames *ldn = uldn_open(NULL, ULDN_STANDARD_NAMES, &status);
+    UDialectHandling uDialectHandling = uldn_getDialectHandling(ldn);
+    uldn_close(ldn);
+    bool flag = (uDialectHandling == UDialectHandling::ULDN_STANDARD_NAMES);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_languageDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_languageDisplayName(ldn, "en", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_scriptDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_scriptDisplayName(ldn, "Hant", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_scriptaCodeDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_scriptCodeDisplayName(ldn, USCRIPT_TRADITIONAL_HAN, result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_regionDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_regionDisplayName(ldn, "US", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_variantDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_variantDisplayName(ldn, "PRE_EURO", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_keyDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_keyDisplayName(ldn, "calendar", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_keyValueDisplayName(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_open("de_DE", ULDN_STANDARD_NAMES, &status);
+    uldn_keyValueDisplayName(ldn, "calendar", "gregorian", result, kMaxResultSize, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testuldn_openForContext(napi_env env, napi_callback_info info)
+{
+    typedef struct {
+        const char* displayLocale;
+        UDisplayContext dialectHandling;
+        UDisplayContext capitalization;
+        UDisplayContext displayLength;
+        const char* localeToBeNamed;
+        const UChar* result;
+    } LocNameDispContextItem;
+    static char en[] = "en";
+    static UChar daFor_en[] = {0x65, 0x6E, 0x67, 0x65, 0x6c, 0x73, 0x6B, 0};
+    LocNameDispContextItem item {
+        "da",
+        UDISPCTX_STANDARD_NAMES,
+        UDISPCTX_CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE,
+        UDISPCTX_LENGTH_FULL,
+        en,
+        daFor_en};
+    UDisplayContext contexts[3] = {item.dialectHandling, item.capitalization, item.displayLength};
+    UErrorCode status = U_ZERO_ERROR;
+    const int32_t kMaxResultSize = 150;
+    UChar result[150];
+    ULocaleDisplayNames *ldn = uldn_openForContext(item.displayLocale, contexts, 3,  &status);
+    uldn_getContext(ldn, UDISPCTX_TYPE_DIALECT_HANDLING, &status);
+    uldn_close(ldn);
+    bool flag = U_SUCCESS(status);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testulocdata_getCLDRVersion(napi_env env, napi_callback_info info)
+{
+    UErrorCode status = U_ZERO_ERROR;
+    UVersionInfo uniVersion ;
+    ulocdata_getCLDRVersion(uniVersion, &status);
+    bool flag = (uniVersion[0] != 0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_UNICODE_NONCHAR(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xfdd0;
+    bool flag = U_IS_UNICODE_NONCHAR(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_UNICODE_CHAR(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xd700;
+    bool flag = U_IS_UNICODE_CHAR(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_BMP(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xfdd0;
+    bool flag = U_IS_BMP(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_SUPPLEMENTARY(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0x10005;
+    bool flag = U_IS_SUPPLEMENTARY(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_LEAD(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0x0000d966;
+    bool flag = U_IS_LEAD(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_TRAIL(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xdc00;
+    bool flag = U_IS_TRAIL(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_SURROGATE(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xd800;
+    bool flag = U_IS_SURROGATE(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_SURROGATE_LEAD(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0x0df;
+    bool flag = U_IS_SURROGATE_LEAD(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU_IS_SURROGATE_TRAIL(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0xfdd0;
+    bool flag = U_IS_SURROGATE_TRAIL(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_IS_SINGLE(napi_env env, napi_callback_info info)
+{
+    int16_t c0 = 0xd830;
+    bool flag = U16_IS_SINGLE(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_IS_LEAD(napi_env env, napi_callback_info info)
+{
+    UChar32 c0 = 0xd900;
+    bool flag = U16_IS_LEAD(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+static napi_value testU16_IS_TRAIL(napi_env env, napi_callback_info info)
+{
+    UChar32 c0 = 0xdd00;
+    bool flag = U16_IS_TRAIL(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+static napi_value testU16_IS_SURROGATE(napi_env env, napi_callback_info info)
+{
+    int32_t c0 = 0x0000d966;
+    bool flag = U16_IS_SURROGATE(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_IS_SURROGATE_LEAD(napi_env env, napi_callback_info info)
+{
+    UChar32 c0 = 0xd830;
+    bool flag = U16_IS_SURROGATE_LEAD(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_IS_SURROGATE_TRAIL(napi_env env, napi_callback_info info)
+{
+    UChar32 c0 = 0x401;
+    bool flag = U16_IS_SURROGATE_TRAIL(c0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_LEAD(napi_env env, napi_callback_info info)
+{
+    UChar32 lead = 0xd800;
+    UChar32 c = U16_LEAD(lead);
+    bool flag = c == 0xd7f6;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_TRAIL(napi_env env, napi_callback_info info)
+{
+    int16_t c0 = 0xd830;
+    UChar32 c = U16_TRAIL(c0);
+    bool flag = c == 0xdc30;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_LENGTH(napi_env env, napi_callback_info info)
+{
+    UChar32 lead = 0xd800;
+    bool flag = U16_LENGTH(lead) == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_GET_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    const UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint32_t offset = 8;
+    U16_GET_UNSAFE(input, offset, output);
+    bool flag = output == 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_GET(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t offset = 3;
+    uint32_t length = 14;
+    U16_GET(input, 0, offset, length, output);
+    bool flag = output == 0x61;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_GET_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t offset = 3;
+    uint32_t length = 14;
+    U16_GET_OR_FFFD(input, 0, offset, length, output);
+    bool flag = output == 0x61;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_NEXT_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t offset = 1;
+    U16_NEXT_UNSAFE(input, offset, output);
+    bool flag = output == 0x20ac;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_NEXT(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t offset = 2;
+    uint32_t length = 14;
+    U16_NEXT(input, offset, length, output);
+    bool flag = output == 0xd841;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_NEXT_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t i = 1;
+    uint32_t length = 14;
+    U16_NEXT_OR_FFFD(input, i, length, output);
+    bool flag = output == 0x20ac;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_APPEND_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output = 0x003d;
+    UChar input[] = {
+        0xdc00, 0x20ac, 0xd841, 0x61, 0xd841, 0xdc02, 0xd842,
+        0xdc06, 0, 0xd842, 0xd7ff, 0xdc41, 0xe000, 0xd800
+    };
+    uint16_t i = 1;
+    U16_APPEND_UNSAFE(input, i, output);
+    bool flag = input[1] == 0x3d;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testu_versionFromString(napi_env env, napi_callback_info info)
+{
+    UVersionInfo newIcu;
+    char   ver[40] = "72.1";
+    u_versionFromString(newIcu, ver);
+    bool flag = newIcu[0] == 72;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testu_versionToString(napi_env env, napi_callback_info info)
+{
+    UVersionInfo newIcu = {72, 1, 0, 0};
+    char   str[200] = "";
+    u_versionToString(newIcu, str);
+    std::string newStr(str);
+    bool flag = (newStr.compare("72.1") == 0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testu_getVersion(napi_env env, napi_callback_info info)
+{
+    UVersionInfo icuVersion;
+    u_getVersion(icuVersion);
+    bool flag = icuVersion[0] != 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testu_versionFromUString(napi_env env, napi_callback_info info)
+{
+    UVersionInfo icuVersion = {};
+    const UChar str[] = u"72.1";
+    u_versionFromUString(icuVersion, str);
+    bool flag = icuVersion[0] == 72;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+uint32_t MapValueFilter(const void* context, uint32_t value)
+{
+    return value + 1;
+}
+
+static napi_value testUCPMapValueFilter(napi_env env, napi_callback_info info)
+{
+    uint32_t value = 233;
+    UCPMapValueFilter* filter = &map_value_filter;
+    bool flag = filter(nullptr, value) == 234;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_APPEND(napi_env env, napi_callback_info info)
+{
+    UBool isError;
+    UChar buffer[100];
+    UChar32 c = 0xdbff;
+    int32_t i = 1;
+    uint32_t length = 100;
+    U16_APPEND(buffer, i, length, c, isError);
+    bool flag = isError;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_FWD_1_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t offunsafe = 0;
+    U16_FWD_1_UNSAFE(input, offunsafe);
+    bool flag = offunsafe == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_FWD_1(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t offUnsafe = 0;
+    uint32_t length = 12;
+    U16_FWD_1(input, offUnsafe, length);
+    bool flag = offUnsafe == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_FWD_N_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t offUnsafe = 0;
+    uint16_t n = 2;
+    U16_FWD_N_UNSAFE(input, offUnsafe, n);
+    bool flag = input[0] == 0x0061;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_FWD_N(napi_env env, napi_callback_info info)
+{
+    const UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t offUnsafe = 0;
+    uint16_t n = 2;
+    uint32_t length = 14;
+    U16_FWD_N(input, offUnsafe, length, n);
+    bool flag = input[0] == 0x0061;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_SET_CP_START_UNSAFE(napi_env env, napi_callback_info info)
+{
+    const UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    U16_SET_CP_START_UNSAFE(input, i);
+    bool flag = i == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_SET_CP_START(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    U16_SET_CP_START(input, start, i);
+    bool flag = i == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+
+static napi_value testU16_PREV_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    U16_PREV_UNSAFE(input, i, output);
+    bool flag = output == 0xd800;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+
+static napi_value testU16_PREV(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    U16_PREV(input, start, i, output);
+    bool flag = output == 0xd800;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_PREV_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    U16_PREV_OR_FFFD(input, start, i, output);
+    bool flag = output == 0xfffd;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_BACK_1_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    U16_BACK_1_UNSAFE(input, i);
+    bool flag = i == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_BACK_1(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    U16_BACK_1(input, start, i);
+    bool flag = i == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_BACK_N_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t n = 2;
+    U16_BACK_N_UNSAFE(input, i, n);
+    bool flag = (i == 0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_BACK_N(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    uint16_t n = 2;
+    U16_BACK_N(input, start, i, n);
+    bool flag = (i == 0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_SET_CP_LIMIT_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    U16_SET_CP_LIMIT_UNSAFE(input, i);
+    bool flag = i == 3;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU16_SET_CP_LIMIT(napi_env env, napi_callback_info info)
+{
+    UChar input[] = {
+        0x0061, 0xd800, 0xdc00, 0xdbff, 0xdfff, 0x0062,
+        0xd841, 0xd7ff, 0xd841, 0xdc41, 0xdc00, 0x0000
+    };
+    uint16_t i = 2;
+    uint16_t start = 0;
+    uint32_t length = 12;
+    U16_SET_CP_LIMIT(input, start, i, length);
+    bool flag = i > 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_IS_SINGLE(napi_env env, napi_callback_info info)
+{
+    uint32_t c = 0x7a;
+    bool flag = U8_IS_SINGLE(c);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_IS_LEAD(napi_env env, napi_callback_info info)
+{
+    uint32_t c = 0xc2;
+    bool flag = U8_IS_LEAD(c);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_IS_TRAIL(napi_env env, napi_callback_info info)
+{
+    uint32_t c = 0x80;
+    bool flag = U8_IS_TRAIL(c);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_LENGTH(napi_env env, napi_callback_info info)
+{
+    uint32_t c = 0x80;
+    bool flag = U8_LENGTH(c) == 2;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_GET_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 0;
+    U8_GET_UNSAFE(input, offset, output);
+    bool flag = output == 0x61;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_GET(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0, 0xc9
+    };
+    uint32_t offset = 11;
+    uint32_t length = 14;
+    U8_GET(input, 0, offset, length, output);
+    bool flag = output == 0x31;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_GET_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xfe, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 5;
+    uint32_t length = 14;
+    U8_GET_OR_FFFD(input, 0, offset, length, output);
+    bool flag = output == 0xfffd;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_NEXT_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 0;
+    U8_NEXT_UNSAFE(input, offset, output);
+    bool flag = output == 0x61;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_NEXT(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 12;
+    uint32_t length = 14;
+    U8_NEXT(input, offset, length, output);
+    bool flag = output < 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_NEXT_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    UChar32 output;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 13;
+    uint32_t length = 14;
+    U8_NEXT_OR_FFFD(input, offset, length, output);
+    bool flag = output == 0xfffd;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_APPEND_UNSAFE(napi_env env, napi_callback_info info)
+{
+    UChar32 c = 0x7f;
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 2;
+    U8_APPEND_UNSAFE(input, offset, c);
+    bool flag = input[2] == 0x7f;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_APPEND(napi_env env, napi_callback_info info)
+{
+    UBool isError;
+    uint8_t buffer[100];
+    UChar32 appChar = 0x7f;
+    uint32_t length = 0;
+    uint32_t lengths = 100;
+    U8_APPEND(buffer, length, lengths, appChar, isError);
+    bool flag = buffer[0] != 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_FWD_1_UNSAFE(napi_env env, napi_callback_info info)
+{
+    uint8_t input[] = {
+        0x61, 0x7f, 0xe4, 0xba, 0x8c, 0xF0, 0x90,
+        0x90, 0x81, 0xc0, 0x65, 0x31, 0x9a, 0xc9
+    };
+    uint32_t offset = 2;
+    U8_FWD_1_UNSAFE(input, offset);
+    bool flag = offset == 5;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_FWD_1(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    uint32_t j = 0;
+    U8_FWD_1(input, j, -1);
+    bool flag = j == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_FWD_N_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    uint32_t i = 1;
+    uint32_t offset2 = 0;
+    U8_FWD_N_UNSAFE(input, offset2, i);
+    bool flag = i == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_FWD_N(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    int32_t cpIndex = 2;
+    int32_t k = 0;
+    U8_FWD_N(input, k, -1, cpIndex);
+    bool flag = k > 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_SET_CP_START_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    int32_t cpIndex = 2;
+    U8_SET_CP_START_UNSAFE(input, cpIndex);
+    bool flag = cpIndex == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_SET_CP_START(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    int32_t cpIndex = 2;
+    U8_SET_CP_START(input, 0, cpIndex);
+    bool flag = cpIndex == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_TRUNCATE_IF_INCOMPLETE(napi_env env, napi_callback_info info)
+{
+    const char* s = "\xED\xA0";
+    int32_t adjusted = static_cast<int32_t>(strlen(s));
+    U8_TRUNCATE_IF_INCOMPLETE(s, 0, adjusted);
+    bool flag = adjusted > 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_PREV_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0xc3, 0x9f,
+        0xed, 0x9f, 0xbf
+    };
+    UChar32 cu;
+    uint32_t j = 4;
+    U8_PREV_UNSAFE(input, j, cu);
+    bool flag = cu > 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_PREV(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0xc3, 0x9f,
+        0xed, 0x9f, 0xbf,
+        0xed, 0xa0, 0x81,
+        0xed, 0xbf, 0xbe,
+        0xee, 0x80, 0x80,
+        0xf0, 0x97, 0xbf, 0xbe
+    };
+    UChar32 cu;
+    int32_t setOffset = 18;
+    U8_PREV(input, 0, setOffset, cu);
+    bool flag = (cu > 0);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_PREV_OR_FFFD(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0xc3, 0x9f,
+        0xed, 0x9f, 0xbf,
+        0xed, 0xa0, 0x81,
+        0xed, 0xbf, 0xbe,
+        0xee, 0x80, 0x80,
+        0xf0, 0x97, 0xbf, 0xbe
+    };
+    UChar32 cu;
+    int32_t setOffset = sizeof(input) - 1;
+    U8_PREV_OR_FFFD(input, 0, setOffset, cu);
+    bool flag = cu == 0xfffd;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+
+static napi_value testU8_BACK_1_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61,
+        0xF0, 0x90, 0x90, 0x81,
+        0xff,
+        0x62,
+        0xc0,
+        0x80,
+        0x7f,
+        0x8f,
+        0xc0,
+        0x63,
+        0x81,
+        0x90,
+        0x90,
+        0xF0,
+        0x00
+    };
+    uint32_t offSafe = sizeof(s);
+    U8_BACK_1_UNSAFE(s, offSafe);
+    bool flag = offSafe > 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_BACK_1(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61,
+        0xF0, 0x90, 0x90, 0x81,
+        0xff,
+        0x62,
+        0xc0,
+        0x80,
+        0x7f,
+        0x8f,
+        0xc0,
+        0x63,
+        0x81,
+        0x90,
+        0x90,
+        0xF0,
+        0x00
+    };
+    uint32_t offSafe = sizeof(s);
+    U8_BACK_1(s, 0, offSafe);
+    bool flag = offSafe > 0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_BACK_N_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61,
+        0xF0, 0x90, 0x90, 0x81,
+        0xff,
+        0x62,
+        0xc0,
+        0x80,
+        0x7f,
+        0x8f,
+        0xc0,
+        0x63,
+        0x81,
+        0x90,
+        0x90,
+        0xF0,
+        0x00
+    };
+    uint32_t offSafe = sizeof(s);
+    U8_BACK_N_UNSAFE(s, offSafe, 1);
+    bool flag = offSafe > 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_BACK_N(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61,
+        0xF0, 0x90, 0x90, 0x81,
+        0xff,
+        0x62,
+        0xc0,
+        0x80,
+        0x7f,
+        0x8f,
+        0xc0,
+        0x63,
+        0x81,
+        0x90,
+        0x90,
+        0xF0,
+        0x00
+    };
+    uint32_t offSafe = sizeof(s);
+    static const uint16_t mValue[] = {0, 1, 2, 4, 1, 2, 1, 5};
+    U8_BACK_N(s, 0, offSafe, mValue[1]);
+    bool flag = s[1] == 0xF0;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_SET_CP_LIMIT_UNSAFE(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61, 0xe4, 0xba, 0x8c, 0x7f, 0xfe, 0x62, 0xc5, 0x7f, 0x61, 0x80, 0x80, 0xe0, 0x00
+    };
+    int32_t setOffSet = 1;
+    U8_SET_CP_LIMIT_UNSAFE(s, setOffSet);
+    bool flag = s[1] == 0xe4;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+static napi_value testU8_SET_CP_LIMIT(napi_env env, napi_callback_info info)
+{
+    static const uint8_t s[] = {
+        0x61, 0xe4, 0xba, 0x8c, 0x7f, 0xfe, 0x62, 0xc5, 0x7f, 0x61, 0x80, 0x80, 0xe0, 0x00
+    };
+    int32_t setOffSet = 1;
+    U8_SET_CP_LIMIT(s, 0, setOffSet, static_cast<int32_t>(sizeof(s)));
+    bool flag = s[1] == 0xe4;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+
+static napi_value testutf8_back1SafeBody(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0x61,
+        0xf0, 0x90, 0x90, 0x81,
+        0xc0, 0x80,
+        0xe2, 0x82, 0xac,
+        0xc2, 0xa1,
+        0xf4, 0x8f, 0xbf, 0xbf,
+        0x00
+    };
+    int32_t cpIndex = 2;
+    uint8_t result = utf8_back1SafeBody(input, 0, cpIndex);
+    bool flag = result == 1;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
+
+static napi_value testutf8_prevCharSafeBody(napi_env env, napi_callback_info info)
+{
+    static const uint8_t input[] = {
+        0xc3, 0x9f,
+        0xed, 0x9f, 0xbf,
+        0xed, 0xa0, 0x81,
+        0xed, 0xbf, 0xbe,
+        0xee, 0x80, 0x80,
+        0xf0, 0x97, 0xbf, 0xbe
+    };
+    UChar32 c;
+    int32_t setOffset = sizeof(input) - 1;
+    UChar32 result = utf8_prevCharSafeBody(input, 0, &(setOffset), c, -3);
+    bool flag = result == 0xfffd;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    return nValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1601,6 +3165,186 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testubrk_clone_0200", nullptr, testUbrk_clone_0200, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"testubrk_clone_0300", nullptr, testUbrk_clone_0300, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_getUnicodeVersion", nullptr, testU_getUnicodeVersion, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_charAge", nullptr, testU_charAge, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_localeDisplayName", nullptr, testuldn_localeDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testUldn_getLocale", nullptr, testUldn_getLocale, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testUldn_getDialectHandling", nullptr, testUldn_getDialectHandling, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_languageDisplayName", nullptr, testuldn_languageDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_scriptDisplayName", nullptr, testuldn_scriptDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_scriptaCodeDisplayName", nullptr, testuldn_scriptaCodeDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_regionDisplayName", nullptr, testuldn_regionDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_variantDisplayName", nullptr, testuldn_variantDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_keyDisplayName", nullptr, testuldn_keyDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_keyValueDisplayName", nullptr, testuldn_keyValueDisplayName, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testuldn_openForContext", nullptr, testuldn_openForContext, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testulocdata_getCLDRVersion", nullptr, testulocdata_getCLDRVersion, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_UNICODE_NONCHAR", nullptr, testU_IS_UNICODE_NONCHAR, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_UNICODE_CHAR", nullptr, testU_IS_UNICODE_CHAR, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_BMP", nullptr, testU_IS_BMP, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_SUPPLEMENTARY", nullptr, testU_IS_SUPPLEMENTARY, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_LEAD", nullptr, testU_IS_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_TRAIL", nullptr, testU_IS_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_SURROGATE", nullptr, testU_IS_SURROGATE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_SURROGATE_LEAD", nullptr, testU_IS_SURROGATE_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU_IS_SURROGATE_TRAIL", nullptr, testU_IS_SURROGATE_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_SINGLE", nullptr, testU16_IS_SINGLE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_LEAD", nullptr, testU16_IS_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_TRAIL", nullptr, testU16_IS_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_SURROGATE", nullptr, testU16_IS_SURROGATE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_SURROGATE_LEAD", nullptr, testU16_IS_SURROGATE_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_IS_SURROGATE_TRAIL", nullptr, testU16_IS_SURROGATE_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_LEAD", nullptr, testU16_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_TRAIL", nullptr, testU16_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_LENGTH", nullptr, testU16_LENGTH, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_GET_UNSAFE", nullptr, testU16_GET_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_GET", nullptr, testU16_GET, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_GET_OR_FFFD", nullptr, testU16_GET_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_NEXT_UNSAFE", nullptr, testU16_NEXT_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_NEXT", nullptr, testU16_NEXT, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_NEXT_OR_FFFD", nullptr, testU16_NEXT_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_APPEND_UNSAFE", nullptr, testU16_APPEND_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testu_versionFromString", nullptr, testu_versionFromString, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testu_versionToString", nullptr, testu_versionToString, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testu_getVersion", nullptr, testu_getVersion, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testu_versionFromUString", nullptr, testu_versionFromUString, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testUCPMapValueFilter", nullptr, testUCPMapValueFilter, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_APPEND", nullptr, testU16_APPEND, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_FWD_1_UNSAFE", nullptr, testU16_FWD_1_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_FWD_1", nullptr, testU16_FWD_1, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_FWD_N_UNSAFE", nullptr, testU16_FWD_N_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_FWD_N", nullptr, testU16_FWD_N, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_SET_CP_START_UNSAFE", nullptr, testU16_SET_CP_START_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_SET_CP_START", nullptr, testU16_SET_CP_START, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_PREV_UNSAFE", nullptr, testU16_PREV_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_PREV", nullptr, testU16_PREV, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_PREV_OR_FFFD", nullptr, testU16_PREV_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_BACK_1_UNSAFE", nullptr, testU16_BACK_1_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_BACK_1", nullptr, testU16_BACK_1, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_BACK_N_UNSAFE", nullptr, testU16_BACK_N_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_BACK_N", nullptr, testU16_BACK_N, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_SET_CP_LIMIT_UNSAFE", nullptr, testU16_SET_CP_LIMIT_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU16_SET_CP_LIMIT", nullptr, testU16_SET_CP_LIMIT, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_IS_SINGLE", nullptr, testU8_IS_SINGLE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_IS_LEAD", nullptr, testU8_IS_LEAD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_IS_TRAIL", nullptr, testU8_IS_TRAIL, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_LENGTH", nullptr, testU8_LENGTH, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_GET_UNSAFE", nullptr, testU8_GET_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_GET", nullptr, testU8_GET, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_GET_OR_FFFD", nullptr, testU8_GET_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_NEXT_UNSAFE", nullptr, testU8_NEXT_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_NEXT", nullptr, testU8_NEXT, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_NEXT_OR_FFFD", nullptr, testU8_NEXT_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_APPEND_UNSAFE", nullptr, testU8_APPEND_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_APPEND", nullptr, testU8_APPEND, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_FWD_1_UNSAFE", nullptr, testU8_FWD_1_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_FWD_1", nullptr, testU8_FWD_1, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_FWD_N_UNSAFE", nullptr, testU8_FWD_N_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_FWD_N", nullptr, testU8_FWD_N, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_SET_CP_START_UNSAFE", nullptr, testU8_SET_CP_START_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_SET_CP_START", nullptr, testU8_SET_CP_START, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_TRUNCATE_IF_INCOMPLETE", nullptr, testU8_TRUNCATE_IF_INCOMPLETE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_PREV_UNSAFE", nullptr, testU8_PREV_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_PREV", nullptr, testU8_PREV, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_PREV_OR_FFFD", nullptr, testU8_PREV_OR_FFFD, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_BACK_1_UNSAFE", nullptr, testU8_BACK_1_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_BACK_1", nullptr, testU8_BACK_1, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_BACK_N_UNSAFE", nullptr, testU8_BACK_N_UNSAFE,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testU8_BACK_N", nullptr, testU8_BACK_N, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_SET_CP_LIMIT_UNSAFE", nullptr, testU8_SET_CP_LIMIT_UNSAFE, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testU8_SET_CP_LIMIT", nullptr, testU8_SET_CP_LIMIT, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testutf8_back1SafeBody", nullptr, testutf8_back1SafeBody, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"testutf8_prevCharSafeBody", nullptr, testutf8_prevCharSafeBody, nullptr,
             nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
