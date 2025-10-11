@@ -59,7 +59,15 @@ export default function webOnFirstContFour() {
       await Utils.msSleep(12000);
       done();
     })
-
+	
+    /*
+     * @tc.number :  SUB_ACE_BASIC_ETS_WEBPATR5_API_0500
+     * @tc.name : emitonSwitchNextPage
+     * @tc.desc : onfirstcontentfulpaint with web refresh
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)
@@ -71,5 +79,3 @@ export default function webOnFirstContFour() {
       })
   })
 }
-
-

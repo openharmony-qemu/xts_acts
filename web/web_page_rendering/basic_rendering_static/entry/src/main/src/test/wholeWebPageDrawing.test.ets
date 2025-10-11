@@ -40,6 +40,7 @@ export default function wholeWebPageDrawing() {
       await Utils.msSleep(2000);
       console.info("web afterEach finish");
     })
+	
     /*
      *@tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
      *@tc.name wholeWebPageDrawing0100
@@ -48,7 +49,6 @@ export default function wholeWebPageDrawing() {
      *@tc.type : Function
      *@tc.level : Level 3
      */
-
     it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("wholeWebPageDrawing0100", 10)
@@ -58,7 +58,5 @@ export default function wholeWebPageDrawing() {
         inspector.sendEventByKey('wholeWebPageDrawingButton', 10, '');
         done()
       })
-
-
   })
 }

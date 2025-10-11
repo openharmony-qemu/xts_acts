@@ -54,6 +54,7 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
+	  
     /*
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0200
      * @tc.name emitTerminateRenderProcessstatic0200
@@ -69,6 +70,7 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
+	  
     /*
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0300
      * @tc.name emitTerminateRenderProcessstatic0300
@@ -85,6 +87,11 @@ export default function webviewTerminateRenderProcess() {
         done();
       })
 
+    /*
+     * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
+     * @tc.name emitonSwitchNextPage
+     * @tc.desc terminateRenderProcess
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)
@@ -94,6 +101,5 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
-
   })
 }

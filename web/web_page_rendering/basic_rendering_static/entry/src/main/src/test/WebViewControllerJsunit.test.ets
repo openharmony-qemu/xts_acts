@@ -81,7 +81,12 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(5000);
       done();
     })
-
+	
+    /*
+     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0200
+     * @tc.name: emitonSwitchNextPage
+     * @tc.desc: Get the WebId
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)
@@ -94,6 +99,5 @@ export default function webViewControllerJsunit() {
         await Utils.msSleep(5000)
         done()
       })
-
   })
 }

@@ -68,9 +68,6 @@ struct webViewController {
         Button('WebViewController click').key('WebViewControllerButton')
           .onClick((e: ClickEvent) => {
             console.info('key==>' + this.str)
-          //  let webRect = Utils.getComponentRect('RowSize');
-          //  let X = Utils.getRectHorizontalCenterX(webRect)
-          //  let Y = Utils.getRectVerticalCenterY(webRect)
             switch (this.str) {
               case 'testBackForwardListCurrentIndex001': {
                 try {
