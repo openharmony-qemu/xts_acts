@@ -959,7 +959,6 @@ std::vector<napi_property_descriptor> desc = {
      napi_default, nullptr},
     {"jsImageSoureNativeGetSupportedFormatsInvalidParameter", nullptr,
      JSImageSoureNativeGetSupportedFormatsInvalidParameter, nullptr, nullptr, nullptr, napi_default, nullptr},
-
     {"testPictureNative_CreatePicture", nullptr,
      Test_PictureNative_CreatePicture, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testPictureNative_GetMainPixelmap", nullptr,
@@ -992,8 +991,6 @@ std::vector<napi_property_descriptor> desc = {
      Test_OH_AuxiliaryPictureNative_GetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testAuxiliaryPictureNative_SetMetadata", nullptr,
      Test_OH_AuxiliaryPictureNative_SetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
-    
-    
     {"PixelMapCreatePixelMapResultSuccess", nullptr, PixelMapCreatePixelMapResultSuccess, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"PixelMapGetBytesNumberPerRowResultSuccess", nullptr, PixelMapGetBytesNumberPerRowResultSuccess, nullptr, nullptr,

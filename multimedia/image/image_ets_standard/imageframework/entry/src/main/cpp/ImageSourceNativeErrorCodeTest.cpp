@@ -1542,7 +1542,7 @@ napi_value Test_OH_PictureNative_GetGainmapPixelmap(napi_env env, napi_callback_
     OH_PixelmapNative *pixelMap2 = nullptr;
     errCode = OH_PictureNative_GetGainmapPixelmap(picture, &pixelMap2);
 
-    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_ALLOC_FAILED )? 0 : -1;
+    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_ALLOC_FAILED)? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
     return ret;
@@ -1625,7 +1625,7 @@ napi_value Test_OH_PictureNative_GetAuxiliaryPicture(napi_env env, napi_callback
     errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
         Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     errCode = OH_PictureNative_SetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP, auxiliaryPicture);
-    errCode = OH_PictureNative_GetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP,&auxiliaryPicture);
+    errCode = OH_PictureNative_GetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     
     int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
     napi_value ret;
@@ -1731,15 +1731,14 @@ napi_value Test_OH_PictureNative_Release(napi_env env, napi_callback_info info)
 
 napi_value Test_OH_AuxiliaryPictureNativeWritePixelsImage(napi_env env, napi_callback_info info)
 {
-
     OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
     std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
     size_t dataLength = BUFFER_LENGTH;
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     size_t bufferSize = BUFFER_LENGTH;
     uint8_t *source = (uint8_t*)malloc(bufferSize);
     errCode = OH_AuxiliaryPictureNative_WritePixels(auxiliaryPicture, source, bufferSize);
@@ -1757,8 +1756,8 @@ napi_value Test_OH_AuxiliaryPictureNative_ReadPixels(napi_env env, napi_callback
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     size_t bufferSize = BUFFER_LENGTH;
     uint8_t source;
     errCode = OH_AuxiliaryPictureNative_ReadPixels(auxiliaryPicture, &source, &bufferSize);
@@ -1776,8 +1775,8 @@ napi_value Test_OH_AuxiliaryPictureNative_GetType(napi_env env, napi_callback_in
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     Image_AuxiliaryPictureType type;
     errCode = OH_AuxiliaryPictureNative_GetType(auxiliaryPicture, &type);
     int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
@@ -1793,8 +1792,8 @@ napi_value Test_OH_AuxiliaryPictureNative_GetInfo(napi_env env, napi_callback_in
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     OH_AuxiliaryPictureInfo* info2 = nullptr;
     errCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &info2);
     int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
@@ -1810,8 +1809,8 @@ napi_value Test_OH_AuxiliaryPictureNative_SetInfo(napi_env env, napi_callback_in
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     OH_AuxiliaryPictureInfo* info2;
     errCode = OH_AuxiliaryPictureInfo_Create(&info2);
     errCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &info2);
@@ -1830,8 +1829,8 @@ napi_value Test_OH_AuxiliaryPictureNative_GetMetadata(napi_env env, napi_callbac
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     OH_AuxiliaryPictureInfo* info2;
     errCode = OH_AuxiliaryPictureInfo_Create(&info2);
     
@@ -1855,8 +1854,8 @@ napi_value Test_OH_AuxiliaryPictureNative_SetMetadata(napi_env env, napi_callbac
     Image_Size size;
     size.width = SIZE_WIDTH;
     size.height = SIZE_HEIGHT;
-    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
-        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength,
+        &size, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
     OH_AuxiliaryPictureInfo* info2;
     errCode = OH_AuxiliaryPictureInfo_Create(&info2);
     OH_PictureMetadata *metadata = nullptr;
