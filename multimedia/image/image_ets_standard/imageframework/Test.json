@@ -20,9 +20,9 @@
     {
       "type": "PushKit",
       "push": [
-        "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/com.acts.imageframework20Test/files/testImages",
-        "./resource/image/test5.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/com.acts.imageframework20Test/files/testImages",
-        "./resource/image/test6.gif ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/com.acts.imageframework20Test/files/testImages"
+        "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/testImages",
+        "./resource/image/test5.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/testImages",
+        "./resource/image/test6.gif ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/testImages"
       ]
     },
     {
