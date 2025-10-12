@@ -35,6 +35,13 @@ function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
 }
 
+function onReceiveEvent1(data: baseProfile.StateChangeParam) {
+    hilog.info(domain, tag, 'connection StateChangeParam:'+ JSON.stringify(data));
+    hilog.info(domain, tag, 'connection StateChangeParam deviceId:'+ data.deviceId);
+    hilog.info(domain, tag, 'connection StateChangeParam state:'+ data.state);
+    hilog.info(domain, tag, 'connection StateChangeParam cause:'+ data.cause);
+}
+
 export default function bluetoothProfilesTest() {
 
     describe("bluetoothProfilesTest", (): void => {
@@ -451,6 +458,28 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, "DisconnectCause get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertFalse();
             }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnConnectionStateChange_003
+         * @tc.name    testOnConnectionStateChange_003
+         * @tc.desc    Test testOnConnectionStateChange_003 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnConnectionStateChange_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            try {
+                hfpProfile.on('connectionStateChange', onReceiveEvent1);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnConnectionStateChange_003 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            hfpProfile.off('connectionStateChange', onReceiveEvent1);
             done();
         })
     })
