@@ -40,13 +40,13 @@ struct TabsApi {
   @State tabContent1Opacity: number = 1.0
   @State tabContent2Opacity: number = 1.0
   tabsController: TabsController = new TabsController()
-  private firstTimeout: number = 3000
-  private secondTimeout: number = 5000
+  private firstTimeout: int = 3000
+  private secondTimeout: int = 5000
   private first2secondDuration: number = 2000
   private second2thirdDuration: number = 5000
   private first2thirdDuration: number = 2000
-  private baseCustomAnimation: (from: number, to: number) => TabContentAnimatedTransition =
-    (from: number, to: number) => {
+  private baseCustomAnimation: (from: int, to: int) => TabContentAnimatedTransition =
+    (from: int, to: int) => {
       if ((from === 0 && to === 1) || (from === 1 && to === 0)) {
         
         let firstCustomTransition = {
@@ -61,7 +61,7 @@ struct TabsApi {
             }
 
             animateTo({
-              duration: this.first2secondDuration,
+              duration: this.first2secondDuration.toInt(),
               onFinish: () => {
                 proxy.finishTransition()
               }
@@ -91,7 +91,7 @@ struct TabsApi {
                 this.tabContent2Opacity = 1.0
               }
               animateTo({
-                duration: this.second2thirdDuration,
+                duration: this.second2thirdDuration.toInt(),
                 onFinish: () => {
                   proxy.finishTransition()
                 }
@@ -113,7 +113,7 @@ struct TabsApi {
                 this.tabContent2Opacity = 1.0
               }
               animateTo({
-                duration: this.first2thirdDuration,
+                duration: this.first2thirdDuration.toInt(),
                 onFinish: () => {
                   proxy.finishTransition()
                 }
@@ -173,7 +173,7 @@ struct TabsApi {
       .margin({ top: 5 } as Margin)
       .customContentTransition(this.useCustomAnimation ? this.baseCustomAnimation : undefined)
       .barMode(BarMode.Scrollable)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.text = 'onChange'
       })
     }

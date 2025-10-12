@@ -23,16 +23,16 @@ import events_emitter from '@ohos.events.emitter'
 import { RecordData } from '@ohos.base';
 
 interface EventD {
-  duration?: number
-  delay?: number
+  duration?: int
+  delay?: int
   type?: SharedTransitionEffectType
 }
 @Entry
 @Component
 struct SharedTransition7Example {
   @State active: boolean = false
-  @State duration: number = 1000
-  @State delay: number = 0
+  @State duration: int = 1000
+  @State delay: int = 0
   @State type: SharedTransitionEffectType = SharedTransitionEffectType.Static
 
   build() {

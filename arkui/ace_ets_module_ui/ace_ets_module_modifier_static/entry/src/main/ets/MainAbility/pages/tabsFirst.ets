@@ -84,7 +84,7 @@ struct ModifierComponent {
       }
     .key('tabsTest')
         
-        .onChange((index: number) => {
+        .onChange((index: int) => {
           this.currentIndex = index
         })
         .width(200)

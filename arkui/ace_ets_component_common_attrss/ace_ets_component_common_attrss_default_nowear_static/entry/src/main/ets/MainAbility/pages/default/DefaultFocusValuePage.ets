@@ -42,7 +42,7 @@ struct DefaultFocusValuePage {
   build() {
     Row() {
       if (this.targetView == 'AlphabetIndexer') {
-        AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
       } else if (this.targetView == 'Button') {
         Button('button')
       } else if (this.targetView == 'Checkbox') {
