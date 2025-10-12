@@ -89,7 +89,7 @@ struct select1 {
           style: FontStyle.Normal
         })
         .key('select')
-        .onSelect((index: number, text?: string | undefined) => {
+        .onSelect((index: int, text?: string | undefined) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
     }

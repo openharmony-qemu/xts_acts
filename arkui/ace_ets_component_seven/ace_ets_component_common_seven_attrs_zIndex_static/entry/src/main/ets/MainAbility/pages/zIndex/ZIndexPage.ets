@@ -178,7 +178,7 @@ import { ItemState } from '@ohos.arkui.advanced.ToolBar'
 let navPathStack = new NavPathStack()
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -186,7 +186,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 }
 
 class BadgeModifier implements AttributeModifier<BadgeAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: BadgeAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -194,7 +194,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 }
 
 class ButtonModifier implements AttributeModifier<ButtonAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -202,7 +202,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 }
 
 class BlankModifier implements AttributeModifier<BlankAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: BlankAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -210,7 +210,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 }
 
 class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -218,7 +218,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 }
 
 class CanvasModifier implements AttributeModifier<CanvasAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CanvasAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -226,7 +226,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 }
 
 class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -234,7 +234,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 }
 
 class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -242,7 +242,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 }
 
 class CircleModifier implements AttributeModifier<CircleAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CircleAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -250,7 +250,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 }
 
 class ColumnModifier implements AttributeModifier<ColumnAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -258,7 +258,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 }
 
 class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -266,7 +266,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 }
 
 class CounterModifier implements AttributeModifier<CounterAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: CounterAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -274,7 +274,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 }
 
 class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: DataPanelAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -282,7 +282,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 }
 
 class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -290,7 +290,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 }
 
 class DividerModifier implements AttributeModifier<DividerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: DividerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -298,7 +298,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 }
 
 class EllipseModifier implements AttributeModifier<EllipseAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: EllipseAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -306,7 +306,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 }
 
 class FlexModifier implements AttributeModifier<FlexAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: FlexAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -314,7 +314,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 }
 
 class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -322,7 +322,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 }
 
 class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -330,7 +330,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 }
 
 class GaugeModifier implements AttributeModifier<GaugeAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: GaugeAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -338,7 +338,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 }
 
 class GridModifier implements AttributeModifier<GridAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: GridAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -346,7 +346,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 }
 
 class GridColModifier implements AttributeModifier<GridColAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: GridColAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -354,7 +354,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 }
 
 class GridItemModifier implements AttributeModifier<GridItemAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: GridItemAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -362,7 +362,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 }
 
 class GridRowModifier implements AttributeModifier<GridRowAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: GridRowAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -370,7 +370,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 }
 
 class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -378,7 +378,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 }
 
 class ImageModifier implements AttributeModifier<ImageAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -386,7 +386,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 }
 
 class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -394,7 +394,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 }
 
 class LineModifier implements AttributeModifier<LineAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: LineAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -402,7 +402,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 }
 
 class ListModifier implements AttributeModifier<ListAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ListAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -410,7 +410,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 }
 
 class ListItemModifier implements AttributeModifier<ListItemAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ListItemAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -418,7 +418,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 }
 
 class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -426,7 +426,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 }
 
 class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -434,7 +434,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 }
 
 class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: MarqueeAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -442,7 +442,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 }
 
 class MenuModifier implements AttributeModifier<MenuAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: MenuAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -450,7 +450,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 }
 
 class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: MenuItemAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -458,7 +458,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 }
 
 class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -466,7 +466,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 }
 
 class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -474,7 +474,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 }
 
 class NavigationModifier implements AttributeModifier<NavigationAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -482,7 +482,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 }
 
 class PanelModifier implements AttributeModifier<ColumnAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -490,7 +490,7 @@ class PanelModifier implements AttributeModifier<ColumnAttribute> {
 }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: PathAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -498,7 +498,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 }
 
 class PolygonModifier implements AttributeModifier<PolygonAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: PolygonAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -506,7 +506,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 }
 
 class PolylineModifier implements AttributeModifier<PolylineAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: PolylineAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -514,7 +514,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 }
 
 class ProgressModifier implements AttributeModifier<ProgressAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ProgressAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -522,7 +522,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 }
 
 class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: QRCodeAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -530,7 +530,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 }
 
 class RadioModifier implements AttributeModifier<RadioAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RadioAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -538,7 +538,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 }
 
 class RatingModifier implements AttributeModifier<RatingAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RatingAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -546,7 +546,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 }
 
 class RectModifier implements AttributeModifier<RectAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RectAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -554,7 +554,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 }
 
 class RefreshModifier implements AttributeModifier<RefreshAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RefreshAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -562,7 +562,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 }
 
 class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -570,7 +570,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 }
 
 class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -578,7 +578,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 }
 
 class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -586,7 +586,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 }
 
 class RichTextModifier implements AttributeModifier<RichTextAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RichTextAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -594,7 +594,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 }
 
 class RowModifier implements AttributeModifier<RowAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RowAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -602,7 +602,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 }
 
 class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: RowSplitAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -610,7 +610,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 }
 
 class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -618,7 +618,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 }
 
 class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -626,7 +626,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 }
 
 class SearchModifier implements AttributeModifier<SearchAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SearchAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -634,7 +634,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 }
 
 class SelectModifier implements AttributeModifier<SelectAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SelectAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -642,7 +642,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 }
 
 class ShapeModifier implements AttributeModifier<ShapeAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ShapeAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -650,7 +650,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 }
 
 class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -658,7 +658,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 }
 
 class SliderModifier implements AttributeModifier<SliderAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -666,7 +666,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 }
 
 class SpanModifier implements AttributeModifier<SpanAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SpanAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -674,7 +674,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 }
 
 class StackModifier implements AttributeModifier<StackAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: StackAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -682,7 +682,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 }
 
 class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: StepperAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -690,7 +690,7 @@ class StepperModifier implements AttributeModifier<StepperAttribute> {
 }
 
 class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: StepperItemAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -698,7 +698,7 @@ class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
 }
 
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: SwiperAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -706,7 +706,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 }
 
 class TabContentModifier implements AttributeModifier<TabContentAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TabContentAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -714,7 +714,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 }
 
 class TabsModifier implements AttributeModifier<TabsAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TabsAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -722,7 +722,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 }
 
 class TextModifier implements AttributeModifier<TextAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -730,7 +730,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 }
 
 class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -738,7 +738,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 }
 
 class TextClockModifier implements AttributeModifier<TextClockAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -746,7 +746,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 }
 
 class TextInputModifier implements AttributeModifier<TextInputAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -754,7 +754,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 }
 
 class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextPickerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -762,7 +762,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 }
 
 class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -770,7 +770,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 }
 
 class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: TimePickerAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -778,7 +778,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 }
 
 class ToggleModifier implements AttributeModifier<ToggleAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: ToggleAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -786,7 +786,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 }
 
 class VideoModifier implements AttributeModifier<VideoAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: VideoAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -794,7 +794,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 }
 
 class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -802,7 +802,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 }
 
 class WebModifier implements AttributeModifier<WebAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: WebAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -810,7 +810,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 }
 
 class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: WindowSceneAttribute): void {
     instance.zIndex(this.mZIndex)
@@ -818,7 +818,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 }
 
 class XComponentModifier implements AttributeModifier<XComponentAttribute> {
-  mZIndex: number = 7
+  mZIndex: int = 7
 
   applyNormalAttribute(instance: XComponentAttribute): void {
     instance.zIndex(this.mZIndex)

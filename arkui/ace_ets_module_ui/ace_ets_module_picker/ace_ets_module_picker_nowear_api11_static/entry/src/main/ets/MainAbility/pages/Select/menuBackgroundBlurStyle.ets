@@ -33,7 +33,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct menuBackgroundBlurStyleExample {
   @State text: string = "TTTTT"
-  @State index: number = 2
+  @State index: int = 2
   @State space: number = 8
   @State arrowPosition: ArrowPosition = ArrowPosition.END
 
@@ -58,7 +58,7 @@ struct menuBackgroundBlurStyleExample {
         .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
         .optionWidth(200)
         .optionHeight(100)
-        .onSelect((index: number, text?: string | undefined) => {
+        .onSelect((index: int, text?: string | undefined) => {
           console.info('Select:' + index)
           this.index = index;
           if (text) {

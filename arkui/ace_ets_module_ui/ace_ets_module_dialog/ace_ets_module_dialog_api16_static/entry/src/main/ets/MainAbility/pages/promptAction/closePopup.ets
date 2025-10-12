@@ -74,7 +74,7 @@ struct Index {
           const promptAction = context.getPromptAction();
           let uniqueId = this.getUniqueId();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          let targetId = Long.toDouble(frameNode?.getFirstChild()?.getUniqueId()!);
+          let targetId = Long.toInt(frameNode?.getFirstChild()?.getUniqueId()!);
           promptAction.openPopup(contentNode, { id: targetId }, {
             radius: 16,
             enableArrow: true

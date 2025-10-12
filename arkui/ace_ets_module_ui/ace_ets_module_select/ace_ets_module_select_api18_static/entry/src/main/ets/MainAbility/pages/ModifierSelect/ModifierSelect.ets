@@ -78,7 +78,7 @@ export class MyMenuAvoidanceModifier implements AttributeModifier<SelectAttribut
 @Component
 export struct ModifierPage {
   @State private text: string = 'TTTTT';
-  @State private index: number = 2;
+  @State private index: int = 2;
   @State private space: number = 8;
   @State private arrowPosition: ArrowPosition = ArrowPosition.END;
   @State private positionX: number = 0;
@@ -240,7 +240,7 @@ export struct ModifierPage {
           .space(this.space)
           .arrowPosition(this.arrowPosition)
           .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-          .onSelect((index: number, text?: string | undefined) => {
+          .onSelect((index: int, text?: string | undefined) => {
             console.info('Select:' + index);
             this.index = index;
             if (text) {

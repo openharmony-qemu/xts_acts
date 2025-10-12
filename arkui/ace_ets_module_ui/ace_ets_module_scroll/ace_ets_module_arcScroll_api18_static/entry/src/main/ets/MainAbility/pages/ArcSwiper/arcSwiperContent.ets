@@ -39,7 +39,7 @@ struct arcSwiperContentTest {
   @State opacityList: number[] = new Array<Number>()
   @State scaleList: number[] = new Array<Number>()
   @State translateList: number[] = new Array<Number>()
-  @State zIndexList: number[] = new Array<Number>()
+  @State zIndexList: int[] = new Array<int>()
   @State selectedIndex1: number = -1
   @State index1: number = -1
   @State onAnimationStartIndex: number = -1

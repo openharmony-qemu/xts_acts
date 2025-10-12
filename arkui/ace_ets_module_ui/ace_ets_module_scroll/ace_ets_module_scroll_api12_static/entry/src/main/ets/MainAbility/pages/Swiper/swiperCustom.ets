@@ -34,7 +34,7 @@ struct SwiperCustomPage {
   @State opacityList: number[] = new Array<number>()
   @State scaleList: number[] = new Array<number>()
   @State translateList: number[] = new Array<number>()
-  @State zIndexList: number[] = new Array<number>()
+  @State zIndexList: int[] = new Array<int>()
   @State message: string = 'message'
   private DISPLAY_COUNT: Int = 2
   private MIN_SCALE: number = 0.75

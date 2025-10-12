@@ -36,7 +36,7 @@ struct finishTransitionSwiperAnimated {
   @State opacityList: number[] = new Array<number>()
   @State scaleList: number[] = new Array<number>()
   @State translateList: number[] = new Array<number>()
-  @State zIndexList: number[] = new Array<number>()
+  @State zIndexList: int[] = new Array<int>()
   @State strindex: string = '111'
   @State selectedIndex: number = -1
 

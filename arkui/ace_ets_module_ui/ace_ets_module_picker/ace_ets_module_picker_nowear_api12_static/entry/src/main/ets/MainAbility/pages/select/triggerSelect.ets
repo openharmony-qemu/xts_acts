@@ -52,7 +52,7 @@ struct triggerSelectExample {
         Select([{ value: 'item1', icon: $r("app.media.icon") },
           { value: 'item2', icon: $r("app.media.icon") }])
           .value(this.text)
-          .onSelect((index:number, text?: string)=>{
+          .onSelect((index:int, text?: string)=>{
             this.triggerSelect = 'Select index:' + index + 'Select text:' + text
             console.info('Select index:' + index)
             console.info('Select text:' + text)

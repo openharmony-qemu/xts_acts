@@ -39,7 +39,7 @@ import {
   Link,
   PropRef,
 } from '@ohos.arkui.stateManagement';
-let customDialogId: number = 0
+let customDialogId: int = 0
 let promptAction = new PromptAction()
 class Params {
   text: string = ""

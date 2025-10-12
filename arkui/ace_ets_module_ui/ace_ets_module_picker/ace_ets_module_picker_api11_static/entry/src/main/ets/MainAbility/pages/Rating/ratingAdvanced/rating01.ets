@@ -17,7 +17,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct rating01 {
-  @State rating: number = 1
+  @State rating: double = 1
   @State ratingSet:string = 'failed rating'
 
   build() {
@@ -32,7 +32,7 @@ struct rating01 {
         .stars(8)
         .stepSize(2)
         .margin({ top: 24 } as Margin)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
           this.ratingSet = 'success rating'
         })

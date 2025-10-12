@@ -87,7 +87,7 @@ struct text_textcase {
   @State myOpacity: number = 1
   @State myVisibility: Visibility = Visibility.Visible
   @State myEnabled: boolean = false
-  @State myZIndex: number = 1
+  @State myZIndex: int = 1
   @State fontStyle: FontStyle = FontStyle.Italic
   @State fontSize: number = 15
   @State minFontSize: number = 15

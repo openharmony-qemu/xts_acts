@@ -17,8 +17,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ratingFocus04 {
-  @State rating: number = 1
-  @State stars: number = 5
+  @State rating: double = 1
+  @State stars: int = 5
   @State focusResult:string = 'Rating is not focusAble'
 
   build() {
@@ -33,7 +33,7 @@ struct ratingFocus04 {
         .stars(this.stars)
         .stepSize(1)
         .margin({ top: 24 } as Margin)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
         })
         .focusable(false)

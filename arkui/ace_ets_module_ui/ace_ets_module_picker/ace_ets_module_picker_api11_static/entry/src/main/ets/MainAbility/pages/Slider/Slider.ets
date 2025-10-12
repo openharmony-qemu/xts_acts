@@ -41,9 +41,9 @@ import {
 @Entry
 @Component
 struct slider {
-  @State inSetValue: number = 40
-  @State outSetValue: number = 40
-  @State Begin: number = SliderChangeMode.Begin
+  @State inSetValue: double = 40
+  @State outSetValue: double = 40
+  @State Begin: SliderChangeMode = SliderChangeMode.Begin
   onPageShow() {
     console.info('Slider page show called');
   }
@@ -72,7 +72,7 @@ struct slider {
           .trackColor('#FF808080')
           .showTips(false)
           .showSteps(false)
-          .onChange((value: number, mode: SliderChangeMode): void => {
+          .onChange((value: double, mode: SliderChangeMode): void => {
             this.outSetValue = value
             this.Begin = mode
             console.info('value: ' + value + '---mode: ' + mode)

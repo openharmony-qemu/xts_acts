@@ -39,7 +39,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct SelectOnSelect {
-  @State selectIndex: number = 1
+  @State selectIndex: int = 1
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear SelectOnSelect start`)
@@ -77,7 +77,7 @@ struct SelectOnSelect {
             family: 'serif',
             style: FontStyle.Normal
           })
-          .onSelect((index: number, text?: string | undefined) => {
+          .onSelect((index: int, text?: string | undefined) => {
             console.info("Select:" + index)
             this.selectIndex = index
             try {
