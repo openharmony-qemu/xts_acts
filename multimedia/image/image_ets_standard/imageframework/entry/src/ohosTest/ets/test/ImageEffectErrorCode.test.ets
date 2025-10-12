@@ -50,13 +50,13 @@ export default function imageEffectErrorCodeTest() {
     });
 
     const getFd = async (fileName: string) => {
-      filePath = filesDir + '/testImages/' + fileName;
+      filePath = filesDir + '/' + fileName;
       console.log('filePath:', filePath)
 
       //resfile下面文件 只有只读权限 copy到沙箱下面在操作.注意:测试图片放到resfile下，不要放到rawfile下。
       if(!fs.accessSync(filePath)){
-        let srcPath = testContext.resourceDir + '/testImages/';
-        let desPath = testContext.filesDir + '/testImages/';
+        let srcPath = testContext.resourceDir + '/';
+        let desPath = testContext.filesDir + '/';
         if (!fs.accessSync(desPath)) {
           fs.mkdirSync(desPath)
         }
