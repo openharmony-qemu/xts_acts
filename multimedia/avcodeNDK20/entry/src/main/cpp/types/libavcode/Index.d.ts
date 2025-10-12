@@ -709,3 +709,90 @@ export const OH_AVErrCodeTest18: () => number;
 
 export const OH_AVFormat_SetIntValueTest: () => number;
 
+export const VideoEncoder_QueryOutputBuffer: () => number;
+
+export const VideoEncoder_QueryInputBuffer: () => number;
+
+export const VideoDecoder_AVDecodeSync: () => number;
+
+export const WriteMp4File: () => number;
+
+export const OH_AVDemuxer_ReadSampleBufferTestNotPermit: () => number;
+
+export const OH_AVDemuxer_SeekToTimeTestNotPermit: () => number;
+
+export const OH_AVMuxer_SetRotationNotPermit: () => number;
+
+export const OH_AVMuxer_SetFormatNotPermit: () => number;
+
+export const OH_AVMuxer_AddTrackNotPermit: () => number;
+
+export const OH_AVMuxer_StartNotPermit: () => number;
+
+export const OH_AVMuxer_WriteSampleNotPermit: () => number;
+
+export const OH_AVMuxer_WriteSampleBufferNotPermit: () => number;
+
+export const OH_AVMuxer_StopNotPermit: () => number;
+
+export const VideoEncoder_FreeOutputBuffer: () => number;
+
+export const VideoEncoder_RegisterParameterCallback: () => number;
+
+export const VideoEncoder_SetParameter: () => number;
+
+export const VideoEncoder_NotifyEndOfStream: () => number;
+
+export const VideoEncoder_PushInputData: () => number;
+
+export const VideoEncoder_PushInputBuffer: () => number;
+
+export const VideoEncoder_PushInputParameter: () => number;
+
+export const VideoEncoder_QueryInputBuffer1: () => number;
+
+export const VideoEncoder_QueryInputBuffer2: () => number;
+
+export const VideoEncoder_QueryInputBuffer3: () => number;
+
+export const VideoEncoder_QueryOutputBuffer1: () => number;
+
+export const VideoEncoder_QueryOutputBuffer2: () => number;
+
+export const VideoEncoder_QueryOutputBuffer3: () => number;
+
+export const VideoDecoder_SetSurface: () => number;
+
+export const VideoDecoder_SetParameter: () => number;
+
+export const VideoDecoder_PushInputData: () => number;
+
+export const VideoDecoder_RenderOutputData: () => number;
+
+export const VideoDecoder_FreeOutputData: () => number;
+
+export const VideoDecoder_PushInputBuffer: () => number;
+
+export const VideoDecoder_RenderOutputBuffer: () => number;
+
+export const VideoDecoder_RenderOutputBufferAtTime: () => number;
+
+export const VideoDecoder_FreeOutputBuffer: () => number;
+
+export const VideoDecoder_QueryInputBuffer1: () => number;
+
+export const VideoDecoder_QueryInputBuffer2: () => number;
+
+export const VideoDecoder_QueryInputBuffer3: () => number;
+
+export const VideoDecoder_QueryOutputBuffer1: () => number;
+
+export const VideoDecoder_QueryOutputBuffer2: () => number;
+
+export const VideoDecoder_QueryOutputBuffer3: () => number;
+
+export const VideoDecoder_Configure: () => number;
+
+export const VideoDecoder_Prepare: () => number;
+
+export const VideoDecoder_Start: () => number;
