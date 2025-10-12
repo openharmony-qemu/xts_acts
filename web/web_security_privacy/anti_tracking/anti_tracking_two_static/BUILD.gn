@@ -22,4 +22,3 @@ ohos_js_app_static_suite("ActsWebAntiTrackingTwoStaticTest") {
   part_name = "webview"
   subsystem_name = "web"
 }
-
