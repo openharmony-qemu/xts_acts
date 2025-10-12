@@ -105,7 +105,7 @@ struct zIndexExample {
     if (eventData != null) {
       console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
       if (((eventData.data) as ESObject)?.getProperty('zIndex') != null) {
-        this.zIndexValue = ((eventData.data) as ESObject).getProperty('zIndex').toInt()
+        this.zIndexValue = ((eventData.data) as ESObject).getProperty('zIndex').toNumber() as int
       }
     }
   }

@@ -147,7 +147,7 @@ class RouterParams {
 @Entry
 @Component
 struct ZIndexPage {
-  @State _zIndex: number = 0
+  @State _zIndex: int = 0
   @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
   @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
   @State targetComponentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetComponentWidth
@@ -157,7 +157,7 @@ struct ZIndexPage {
   onPageShow() {
     console.info('zIndex page show called ')
     attrsManager.registerDataChange((value: number) => {
-      this._zIndex = value
+      this._zIndex = value as int
     })
   }
 
