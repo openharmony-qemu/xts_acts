@@ -1025,6 +1025,23 @@ export const jsImageSoureNativeGetSupportedFormats: (uri: string) => number;
 
 export const jsImageSoureNativeGetSupportedFormatsInvalidParameter: () => number;
 
+export const testPictureNative_CreatePicture: (uri: string) => number;
+export const testPictureNative_GetMainPixelmap: (uri: string) => number;
+export const testPictureNative_GetHdrComposedPixelmap: (uri: string) => number;
+export const testPictureNative_GetGainmapPixelmap: (uri: string) => number;
+export const testPictureNative_SetAuxiliaryPicture: (uri: string) => number;
+export const testPictureNative_GetAuxiliaryPicture: (uri: string) => number;
+export const testPictureNative_GetMetadata: (uri: string) => number;
+export const testPictureNative_SetMetadata: (uri: string) => number;
+export const testPictureNative_Release: (uri: string) => number;
+export const testAuxiliaryPictureNativeWritePixelsImage: (uri: string) => number;
+export const testAuxiliaryPictureNative_ReadPixels: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetType: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetInfo: (uri: string) => number;
+export const testAuxiliaryPictureNative_SetInfo: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetMetadata: (uri: string) => number;
+export const testAuxiliaryPictureNative_SetMetadata: (uri: string) => number;
+
 export const pixelmapNative_AntiAliasingLevel_NONE: () => number;
 
 export const pixelmapNative_AntiAliasingLevel_LOW: () => number;

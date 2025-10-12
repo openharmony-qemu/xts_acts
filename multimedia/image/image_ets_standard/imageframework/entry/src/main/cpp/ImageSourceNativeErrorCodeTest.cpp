@@ -19,7 +19,7 @@
 #include "node_api.h"
 #include <multimedia/image_framework/image/image_packer_native.h>
 #include "native_color_space_manager/native_color_space_manager.h"
-
+#include <multimedia/image_framework/image/picture_native.h>
 using namespace std;
 
 #define IMAGE_LOG_TAG "IMAGE_RECEIVER_TAGLOG"
@@ -1415,6 +1415,454 @@ napi_value JSImageSoureNativeGetSupportedFormatsInvalidParameter(napi_env env, n
     size_t length;
     Image_ErrorCode errCode = OH_ImageSourceNative_GetSupportedFormats(nullptr, &length);
     int32_t resultValue = errCode == IMAGE_SOURCE_INVALID_PARAMETER ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_PictureNative_CreatePicture(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_GetMainPixelmap(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_PixelmapNative *pixelMap2 = nullptr;
+    errCode = OH_PictureNative_GetMainPixelmap(picture, &pixelMap2);
+
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_GetHdrComposedPixelmap(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_PixelmapNative *pixelMap2 = nullptr;
+    errCode = OH_PictureNative_GetHdrComposedPixelmap(picture, &pixelMap2);
+
+    int32_t resultValue = (errCode == IMAGE_SUCCESS ||  errCode == IMAGE_UNSUPPORTED_OPERATION)? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_GetGainmapPixelmap(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_PixelmapNative *pixelMap2 = nullptr;
+    errCode = OH_PictureNative_GetGainmapPixelmap(picture, &pixelMap2);
+
+    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_ALLOC_FAILED )? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+const int32_t BUFFER_LENGTH = 255900;
+const int32_t SIZE_WIDTH = 820;
+const int32_t SIZE_HEIGHT = 312;
+napi_value Test_OH_PictureNative_SetAuxiliaryPicture(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    
+    errCode = OH_PictureNative_SetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP, auxiliaryPicture);
+    
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_GetAuxiliaryPicture(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    errCode = OH_PictureNative_SetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP, auxiliaryPicture);
+    errCode = OH_PictureNative_GetAuxiliaryPicture(picture, AUXILIARY_PICTURE_TYPE_GAINMAP,&auxiliaryPicture);
+    
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_GetMetadata(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    errCode = OH_PictureNative_SetMetadata(picture, EXIF_METADATA, metadata);
+    errCode = OH_PictureNative_GetMetadata(picture, EXIF_METADATA, &metadata);
+
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_SetMetadata(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    errCode = OH_PictureNative_SetMetadata(picture, EXIF_METADATA, metadata);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_PictureNative_Release(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    const size_t maxUrlLen = MAX_BUFFER_SIZE;
+    char url[maxUrlLen];
+    size_t urlSize = 0;
+    napi_get_value_string_utf8(env, argValue[NUM_0], url, maxUrlLen, &urlSize);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &imageSource);
+    OH_ImageSourceNative *tempImageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    OH_DecodingOptions *ops = nullptr;
+    errCode = OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    errCode = OH_ImageSourceNative_CreatePixelmap(tempImageSource, ops, &pixelMap);
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_PictureNative_CreatePicture(pixelMap, &picture);
+    errCode = OH_PictureNative_Release(picture);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_AuxiliaryPictureNativeWritePixelsImage(napi_env env, napi_callback_info info)
+{
+
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    size_t bufferSize = BUFFER_LENGTH;
+    uint8_t *source = (uint8_t*)malloc(bufferSize);
+    errCode = OH_AuxiliaryPictureNative_WritePixels(auxiliaryPicture, source, bufferSize);
+    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_COPY_FAILED)? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_AuxiliaryPictureNative_ReadPixels(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    size_t bufferSize = BUFFER_LENGTH;
+    uint8_t source;
+    errCode = OH_AuxiliaryPictureNative_ReadPixels(auxiliaryPicture, &source, &bufferSize);
+    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_BAD_PARAMETER)? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_AuxiliaryPictureNative_GetType(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    Image_AuxiliaryPictureType type;
+    errCode = OH_AuxiliaryPictureNative_GetType(auxiliaryPicture, &type);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+napi_value Test_OH_AuxiliaryPictureNative_GetInfo(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    OH_AuxiliaryPictureInfo* info2 = nullptr;
+    errCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &info2);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+napi_value Test_OH_AuxiliaryPictureNative_SetInfo(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    OH_AuxiliaryPictureInfo* info2;
+    errCode = OH_AuxiliaryPictureInfo_Create(&info2);
+    errCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &info2);
+    errCode = OH_AuxiliaryPictureNative_SetInfo(auxiliaryPicture, info2);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_AuxiliaryPictureNative_GetMetadata(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    OH_AuxiliaryPictureInfo* info2;
+    errCode = OH_AuxiliaryPictureInfo_Create(&info2);
+    
+    OH_PictureMetadata *metadata0 = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata0);
+    errCode = OH_AuxiliaryPictureNative_SetMetadata(auxiliaryPicture, EXIF_METADATA, metadata0);
+    
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_AuxiliaryPictureNative_GetMetadata(auxiliaryPicture, EXIF_METADATA, &metadata);
+    int32_t resultValue = (errCode == IMAGE_SUCCESS || errCode == IMAGE_UNSUPPORTED_METADATA)? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
+napi_value Test_OH_AuxiliaryPictureNative_SetMetadata(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureNative* auxiliaryPicture = nullptr;
+    std::unique_ptr<uint32_t[]> color = std::make_unique<uint32_t[]>(BUFFER_LENGTH);
+    size_t dataLength = BUFFER_LENGTH;
+    Image_Size size;
+    size.width = SIZE_WIDTH;
+    size.height = SIZE_HEIGHT;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_Create(reinterpret_cast<uint8_t *>(color.get()), dataLength, &size,
+        Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_GAINMAP, &auxiliaryPicture);
+    OH_AuxiliaryPictureInfo* info2;
+    errCode = OH_AuxiliaryPictureInfo_Create(&info2);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    errCode = OH_AuxiliaryPictureNative_SetMetadata(auxiliaryPicture, EXIF_METADATA, metadata);
+    int32_t resultValue = errCode == IMAGE_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
     return ret;

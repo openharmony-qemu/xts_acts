@@ -1416,7 +1416,243 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
 
+    /**
+     * @tc.number   : SUB_testPictureNative_CreatePicture
+     * @tc.name     : SUB_testPictureNative_CreatePicture
+     * @tc.desc     : OH_PictureNative_CreatePicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_CreatePicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_CreatePicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
 
+    /**
+     * @tc.number   : SUB_testPictureNative_GetMainPixelmap
+     * @tc.name     : SUB_testPictureNative_GetMainPixelmap
+     * @tc.desc     : OH_PictureNative_GetMainPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetMainPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_GetMainPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.name     : SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.desc     : OH_PictureNative_GetHdrComposedPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetHdrComposedPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_GetHdrComposedPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.name     : SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.desc     : OH_PictureNative_GetGainmapPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetGainmapPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_GetGainmapPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.name     : SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.desc     : OH_PictureNative_SetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_SetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let auxPicture :image.AuxiliaryPicture
+      let res: number = ndkTest.testPictureNative_SetAuxiliaryPicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.name     : SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.desc     : OH_PictureNative_GetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_GetAuxiliaryPicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetMetadata
+     * @tc.name     : SUB_testPictureNative_GetMetadata
+     * @tc.desc     : Test OH_PictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_GetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_SetMetadata
+     * @tc.name     : SUB_testPictureNative_SetMetadata
+     * @tc.desc     : Test OH_PictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_SetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testPictureNative_Release
+     * @tc.name     : SUB_testPictureNative_Release
+     * @tc.desc     : Test OH_PictureNative_Release return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_Release", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testPictureNative_Release(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.name     : SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.desc     : Test OH_AuxiliaryPictureNativeWritePixelsImage return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNativeWritePixelsImage", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNativeWritePixelsImage(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.name     : SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_ReadPixels return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_ReadPixels", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_ReadPixels(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetType
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetType
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetType return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetType", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetType(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetInfo return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetInfo", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetInfo(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.name     : SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetInfo return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_SetInfo", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_SetInfo(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.name     : SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test6.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_SetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
   })
 }
 
