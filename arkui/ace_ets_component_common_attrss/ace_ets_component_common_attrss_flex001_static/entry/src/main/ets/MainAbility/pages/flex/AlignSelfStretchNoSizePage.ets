@@ -158,7 +158,7 @@ struct AlignSelfStretchNoSizePage {
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }) //.commonStyle()
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 as int }) //.commonStyle()
     } else if (this.targetView == 'Button') {
       Button('button1') //.commonStyle()
     } else if (this.targetView == 'Checkbox') {

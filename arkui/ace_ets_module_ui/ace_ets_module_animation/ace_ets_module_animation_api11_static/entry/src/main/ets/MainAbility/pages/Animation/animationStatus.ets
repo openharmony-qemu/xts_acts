@@ -33,7 +33,7 @@ import { RecordData } from '@ohos.base';
 struct ImageAnimatorExampleu {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State reverse: boolean = false;
-  @State iterations: number = 1;
+  @State iterations: int = 1;
 
   build() {
     Column({ space: 5 } as ColumnOptions) {

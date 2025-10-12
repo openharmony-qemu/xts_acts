@@ -33,7 +33,7 @@ function callbackFunc(info: uiObserver.TabContentInfo) {
 @Entry
 @Component
 struct TabsUIExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State index1:number = -1
 
@@ -83,7 +83,7 @@ struct TabsUIExample {
         }
         return true
       })
-      .onChange((index: number) => {
+      .onChange((index: int) => {
         console.info('onChange index: '+ index)
         this.index1 = index
       })

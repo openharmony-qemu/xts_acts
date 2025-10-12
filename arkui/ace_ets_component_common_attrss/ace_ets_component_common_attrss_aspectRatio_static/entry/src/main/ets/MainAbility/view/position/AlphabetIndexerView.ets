@@ -24,7 +24,7 @@ export struct AlphabetIndexerView {
     'V', 'W', 'X', 'Y', 'Z')
 
   build() {
-    AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+    AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
       .selectedColor(0xFFFFFF)
       .popupColor(0xFFFAF0)
       .selectedBackgroundColor(0xCCCCCC)

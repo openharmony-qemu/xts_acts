@@ -40,18 +40,18 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 
 class AnimatorOption implements AnimatorOptions {
-  duration: number = 0;
+  duration: int = 0;
   easing: string = '';
-  delay: number = 0;
+  delay: int = 0;
   fill: "none" | "forwards" | "backwards" | "both" = 'forwards';
   direction: "normal" | "reverse" | "alternate" | "alternate-reverse" = 'normal';
-  iterations: number = 0;
-  begin: number = 0;
-  end: number = 0;
+  iterations: int = 0;
+  begin: double = 0;
+  end: double = 0;
 
-  constructor(duration: number, easing: string, delay: number, fill: "none" | "forwards" | "backwards" | "both",
-    direction: "normal" | "reverse" | "alternate" | "alternate-reverse", iterations: number, begin: number,
-    end: number) {
+  constructor(duration: int, easing: string, delay: int, fill: "none" | "forwards" | "backwards" | "both",
+    direction: "normal" | "reverse" | "alternate" | "alternate-reverse", iterations: int, begin: double,
+    end: double) {
     this.duration = duration
     this.easing = easing
     this.delay = delay
@@ -72,11 +72,11 @@ struct AnimatorInterpolatingSpringTest {
   @State stiffnes: number = 1;
   @State damping: number = 1;
   @State curve: string = 'linear';
-  @State delay: number = 0;
+  @State delay: int = 0;
   @State fill: "none" | "forwards" | "backwards" | "both" = 'forwards';
   @State myDirection: "normal" | "reverse" | "alternate" | "alternate-reverse" = 'normal';
-  @State iteration: number = 1;
-  @State duration: number = 1000;
+  @State iteration: int = 1;
+  @State duration: int = 1000;
   @State onframenum: number = 0;
   @State onframeflag: boolean = false;
   @State numflag: string = 'null';

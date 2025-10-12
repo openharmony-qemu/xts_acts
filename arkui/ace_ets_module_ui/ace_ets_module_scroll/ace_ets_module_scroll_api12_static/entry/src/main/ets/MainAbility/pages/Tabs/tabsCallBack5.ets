@@ -34,7 +34,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct tabsCallBack5Example {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State message1: string = 'tabs: '
 
@@ -62,26 +62,26 @@ struct tabsCallBack5Example {
         .scrollable(true)
         .barMode(BarMode.Fixed)
         .animationDuration(undefined)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           this.message1 += 'onChange-'
           console.info(index.toString())
         })
-        .onContentWillChange((currentIndex: number, comingIndex: number): boolean => {
+        .onContentWillChange((currentIndex: int, comingIndex: int): boolean => {
           if (comingIndex == 2) {
             return false
           }
           return true
         })
-        .onGestureSwipe((index: number, extraInfo: TabsAnimationEvent): void => {
+        .onGestureSwipe((index: int, extraInfo: TabsAnimationEvent): void => {
           this.message1 += 'onGestureSwipe-'
           console.info('GestureSwipe index: ' + index)
           console.info('current offset: ' + extraInfo.currentOffset)
         })
-        .onAnimationStart((index: number): void => {
+        .onAnimationStart((index: int): void => {
           this.message1 += 'onAnimationStart-'
           console.info(index.toString())
         })
-        .onAnimationEnd((index: number): void => {
+        .onAnimationEnd((index: int): void => {
           this.message1 += 'onAnimationEnd-'
           console.info(index.toString())
         })
