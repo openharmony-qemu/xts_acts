@@ -80,16 +80,17 @@ struct getOrigins {
                 if (origins) {
                   origin = origins[0].origin;
                   console.log(`PBBorigin is: ${origins[0].origin}`);
+                  for (let i = 0; i < origins.length; i++) {
+                    console.log('origin: ' + origins[i].origin);
+                    console.log('usage: ' + origins[i].usage);
+                    console.log('quota: ' + origins[i].quota);
+                  }
+                  Utils.emitEvent(origin, 137860);
+                  console.log(`PBBgetOrigins callback call end` + origin);
                 } else {
-                  break;
+                  console.log(`PBBgetOrigins callback origin is null`);
+                  Utils.emitEvent(origin, 137860);
                 }
-                for (let i = 0; i < origins.length; i++) {
-                  console.log('origin: ' + origins[i].origin);
-                  console.log('usage: ' + origins[i].usage);
-                  console.log('quota: ' + origins[i].quota);
-                }
-                Utils.emitEvent(origin, 137860);
-                console.log(`PBBgetOrigins callback call end` + origin);
               })
             } catch (error) {
               console.error(`PBBErrorCode: ${error.code},  Message: ${error.message}`);
