@@ -87,9 +87,6 @@ struct getOrigins {
                   }
                   Utils.emitEvent(origin, 137860);
                   console.log(`PBBgetOrigins callback call end` + origin);
-                } else {
-                  console.log(`PBBgetOrigins callback origin is null`);
-                  Utils.emitEvent(origin, 137860);
                 }
               })
             } catch (error) {
