@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -34,6 +34,7 @@ export default function webviewNApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+      await driver.waitForComponent(ON.id("SetErrorButton"), 10000);
       done();
     });
 
