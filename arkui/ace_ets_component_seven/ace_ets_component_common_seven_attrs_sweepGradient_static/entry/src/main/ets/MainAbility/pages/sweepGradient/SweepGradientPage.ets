@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, SweepGradientOptions } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -610,49 +610,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 		instance.sweepGradient(this.mSweepGradient)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1286,6 +1243,408 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	}
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyleButton(this: ButtonAttribute, componentKey: string,_sweepGradient: SweepGradientOptions | undefined): this {
+	this.sweepGradient(_sweepGradient)
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
 @Entry
 @Component
 struct SweepGradientPage {
@@ -1372,103 +1731,36 @@ struct SweepGradientPage {
 	@State _sweepGradientWebModifier: WebModifier = new WebModifier()
 	@State _sweepGradientWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _sweepGradientXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns ?? 0
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter ?? 0
-	@State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? '#FFFF00'
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+	@State targetView: string = '';
+	@State componentKey: string = '';
+	@State parentWidth: number = 0;
+	@State parentHeight: number = 0;
+	@State columns: number = 0
+	@State gutter: number = 0
+	@State parentBackGroundColor: string = '#FFFF00'
+  @State parentComponentKey: string = '';
+	@StoragePropRef('_sweepGradient') _sweepGradient: SetValue = {
+		height: 0,sweepGradient: {
+			center: [0, 0],
+			start: 0,
+			end: 0,
+			colors: [['#FFFF0000', 0.0]],
+			repeating: true
+		}
+	}
 
 	onPageShow() {
 		console.info('sweepGradient translate page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-			console.info('sweepGradient [registerDataChange] ' + JSON.stringify(value.sweepGradient))
-			this._sweepGradientAlphabetIndexerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientBadgeModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientButtonModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientBlankModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCalendarPickerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCanvasModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCheckboxModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCheckboxGroupModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCircleModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientColumnModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientColumnSplitModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientCounterModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientDataPanelModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientDatePickerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientDividerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientEllipseModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientFlexModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientFlowItemModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientFormLinkModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientGaugeModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientGridModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientGridColModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientGridItemModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientGridRowModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientHyperlinkModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientImageModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientImageAnimatorModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientLineModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientListModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientListItemModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientListItemGroupModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientLoadingProgressModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientMarqueeModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientMenuModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientMenuItemModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientMenuItemGroupModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientNavDestinationModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientNavigationModifier.mSweepGradient = value.sweepGradient
-			
-			
-			
-			this._sweepGradientPathModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientPolygonModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientPolylineModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientProgressModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientQRCodeModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRadioModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRatingModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRectModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRefreshModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRelativeContainerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRemoteWindowModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRichEditorModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRichTextModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRowModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientRowSplitModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientScrollModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientScrollBarModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSearchModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSelectModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientShapeModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSideBarContainerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSliderModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSpanModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientStackModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientStepperModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientStepperItemModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientSwiperModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTabContentModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTabsModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextAreaModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextClockModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextInputModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextPickerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTextTimerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientTimePickerModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientToggleModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientVideoModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientWaterFlowModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientWebModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientWindowSceneModifier.mSweepGradient = value.sweepGradient
-			this._sweepGradientXComponentModifier.mSweepGradient = value.sweepGradient
-		})
+		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+			.getElement("view")
+		this.targetView = viewElement.getString("targetView")
+		this.componentKey = viewElement.getString("componentKey")
+		this.parentWidth = viewElement.getDouble("parentWidth")
+		this.parentHeight = viewElement.getDouble("parentHeight")
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
+		this.parentComponentKey = viewElement.getString("parentComponentKey")
+		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
 
   
@@ -1480,82 +1772,82 @@ struct SweepGradientPage {
 		Column() {
 			if (this.targetView == 'AlphabetIndexer') {
 				AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientAlphabetIndexerModifier)
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					
+					.commonStyleButton(this.componentKey,this._sweepGradient.sweepGradient)
 					.attributeModifier(this._sweepGradientButtonModifier)
 			}
 			if (this.targetView == 'Blank') {
 				Blank()
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientBlankModifier)
 			}
 			if (this.targetView == 'Checkbox') {
 				Checkbox()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCheckboxModifier)
 			}
 			if (this.targetView == 'CheckboxGroup') {
 				CheckboxGroup({ group: 'checkboxGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCheckboxGroupModifier)
 			}
 			if (this.targetView == 'DataPanel') {
 				DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientDataPanelModifier)
 			}
 			if (this.targetView == 'DatePicker') {
 				DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientDatePickerModifier)
 			}
 			if (this.targetView == 'Divider') {
 				Divider()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientDividerModifier)
 			}
 			if (this.targetView == 'Gauge') {
 				Gauge({ value: 105 })
 					.colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientGaugeModifier)
 			}
 			if (this.targetView == 'Image') {
 				Image($r('app.media.icon'))
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientImageModifier)
 			}
 			if (this.targetView == 'ImageAnimator') {
 				ImageAnimator()
 					.images([{ src: $r('app.media.icon') }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientImageAnimatorModifier)
 			}
 			if (this.targetView == 'LoadingProgress') {
 				LoadingProgress()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientLoadingProgressModifier)
 			}
 			if (this.targetView == 'Marquee') {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientMarqueeModifier)
 			}
 			if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Menu') {
@@ -1563,7 +1855,7 @@ struct SweepGradientPage {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
 				}
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
@@ -1582,22 +1874,22 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientProgressModifier)
 			}
 			if (this.targetView == 'QRCode') {
 				QRCode('Running Marquee starts rolling')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientQRCodeModifier)
 			}
 			if (this.targetView == 'Radio') {
 				Radio({ value: 'Radio1', group: 'radioGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRadioModifier)
 			}
 			if (this.targetView == 'Rating') {
 				Rating({ rating: 3.5, indicator: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRatingModifier)
 			}
 			if (this.targetView == 'ScrollBar') {
@@ -1608,23 +1900,23 @@ struct SweepGradientPage {
 						.borderRadius(10)
 						.backgroundColor('#C0C0C0')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientScrollBarModifier)
 			}
 			if (this.targetView == 'Search') {
 				Search()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientSearchModifier)
 			}
 			if (this.targetView == 'Select') {
 				Select([{ value: 'aaa' }, { value: 'bbb' }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientSelectModifier)
 			}
 			if (this.targetView == 'Slider') {
 				Slider({ value: 50, min: 0, max: 100, style: SliderStyle.OutSet })
 					.showTips(true)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientSliderModifier)
 			}
 			if (this.targetView == 'Stepper') {
@@ -1635,7 +1927,7 @@ struct SweepGradientPage {
 						}
 					}
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'StepperItem') {
@@ -1646,7 +1938,7 @@ struct SweepGradientPage {
 						}
 					}
 						.backgroundColor(Color.Red)
-						
+						.commonStyle(this.componentKey)
 						
 				}
 					.backgroundColor(Color.Yellow)
@@ -1655,62 +1947,62 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextModifier)
 			}
 			if (this.targetView == 'TextArea') {
 				TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextAreaModifier)
 			}
 			if (this.targetView == 'TextClock') {
 				TextClock({ timeZoneOffset: -8 })
 					.format('hms')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextClockModifier)
 			}
 			if (this.targetView == 'TextInput') {
 				TextInput({ placeholder: 'input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextInputModifier)
 			}
 			if (this.targetView == 'TextPicker') {
 				TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextPickerModifier)
 			}
 			if (this.targetView == 'TextTimer') {
 				TextTimer({ isCountDown: true, count: 30000 })
 					.format('mm:ss.SS')
 					.fontColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTextTimerModifier)
 			}
 			if (this.targetView == 'TimePicker') {
 				TimePicker({ selected: new Date('2022-07-22T08:00:00') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTimePickerModifier)
 			}
 			if (this.targetView == 'Toggle') {
 				Toggle({ type: ToggleType.Switch, isOn: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientToggleModifier)
 			}
 			if (this.targetView == 'Web') {
         Web({ src: 'www.example.com', controller: new WebviewController() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientWebModifier)
 			}
 			if (this.targetView == 'Circle') {
 				Circle()
 					.width(150)
 					.height(200)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCircleModifier)
 			}
 			if (this.targetView == 'Ellipse') {
 				Ellipse()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientEllipseModifier)
 			}
 			if (this.targetView == 'Line') {
@@ -1718,27 +2010,27 @@ struct SweepGradientPage {
 					.startPoint([0, 0])
 					.endPoint([50, 100])
 					.backgroundColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientLineModifier)
 			}
 			if (this.targetView == 'Polyline') {
 				Polyline()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientPolylineModifier)
 			}
 			if (this.targetView == 'Polygon') {
 				Polygon()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientPolygonModifier)
 			}
 			if (this.targetView == 'Path') {
 				Path()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientPathModifier)
 			}
 			if (this.targetView == 'Rect') {
 				Rect()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRectModifier)
 			}
 			if (this.targetView == 'Shape') {
@@ -1747,7 +2039,7 @@ struct SweepGradientPage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientShapeModifier)
 			}
 			if (this.targetView == 'Badge') {
@@ -1757,7 +2049,7 @@ struct SweepGradientPage {
 						.height(50)
 						.backgroundColor(0x317aff)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientBadgeModifier)
 			}
 			if (this.targetView == 'Column') {
@@ -1766,7 +2058,7 @@ struct SweepGradientPage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientColumnModifier)
 			}
 			if (this.targetView == 'ColumnSplit') {
@@ -1777,13 +2069,13 @@ struct SweepGradientPage {
 						.backgroundColor(0xF5DEB3)
 						.textAlign(TextAlign.Center)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientColumnSplitModifier)
 			}
 			if (this.targetView == 'Counter') {
 				Counter() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCounterModifier)
 			}
 			if (this.targetView == 'Flex') {
@@ -1793,7 +2085,7 @@ struct SweepGradientPage {
 						.height(50)
 						.backgroundColor(0xF5DEB3)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientFlexModifier)
 			}
 			if (this.targetView == 'GridRow') {
@@ -1811,7 +2103,7 @@ struct SweepGradientPage {
 						}
 					)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientGridRowModifier)
 			}
 			if (this.targetView == 'Grid') {
@@ -1831,7 +2123,7 @@ struct SweepGradientPage {
 					.columnsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.rowsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.backgroundColor(0xFAEEE0)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientGridModifier)
 			}
 			if (this.targetView == 'List') {
@@ -1839,7 +2131,7 @@ struct SweepGradientPage {
 				}
 					.height('100%')
 					.width('100%')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientListModifier)
 			}
 			if (this.targetView == 'ListItem') {
@@ -1850,7 +2142,7 @@ struct SweepGradientPage {
 							.textAlign(TextAlign.Center)
 							.backgroundColor(Color.White)
 					}
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientListItemModifier)
 				}
 					.width('100%')
@@ -1860,7 +2152,7 @@ struct SweepGradientPage {
 				List({ space: 0, initialIndex: 0 }) {
 					ListItemGroup()
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientListItemGroupModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1889,7 +2181,7 @@ struct SweepGradientPage {
 				Refresh({ refreshing: true }) {
 					Text('123')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRefreshModifier)
 			}
 			if (this.targetView == 'RelativeContainer') {
@@ -1904,42 +2196,42 @@ struct SweepGradientPage {
 						})
 						.id('constraintSize')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRelativeContainerModifier)
 			}
 			if (this.targetView == 'Row') {
 				Row()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRowModifier)
 			}
 			if (this.targetView == 'RowSplit') {
 				RowSplit() {
 					Text('Text')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientRowSplitModifier)
 			}
 			if (this.targetView == 'Scroll') {
 				Scroll() {
 					Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
 							Text('Scroll' + item.toString())
 								.width('90%')
 								.height(50)
 								.backgroundColor(Color.White)
 								.textAlign(TextAlign.Center)
-            }, (item: int, index: int) => item.toString())
+            }, (item: int, index: Int) => item.toString())
 					}
 					.width('100%')
 				}
 					.scrollBar(BarState.On)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientScrollModifier)
 			}
 			if (this.targetView == 'SideBarContainer') {
 				SideBarContainer(SideBarContainerType.Embed) {
 					Column() {
-						ForEach([1, 2, 3], (item: int, index: int) => {
+						ForEach([1, 2, 3], (item: int, index: Int) => {
 							Column({ space: 5 } as ColumnOptions) {
 								Image($r('app.media.icon'))
 									.width(50)
@@ -1959,26 +2251,26 @@ struct SweepGradientPage {
 					}
 						.backgroundColor(Color.Orange)
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientStackModifier)
 			}
 			if (this.targetView == 'Swiper') {
 				Swiper() {
-          ForEach([1, 2, 3], (item: int, index: int) => {
+          ForEach([1, 2, 3], (item: int, index: Int) => {
 						Text('Swiper' + item)
 							.width('90%')
 							.height(50)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
 				}
 					.indicator(true)
 					.backgroundColor(Color.White)
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Tabs') {
@@ -1990,7 +2282,7 @@ struct SweepGradientPage {
 							.backgroundColor('#00CB87')
 					}
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientTabsModifier)
 			}
 			if (this.targetView == 'TabContent') {
@@ -2002,7 +2294,7 @@ struct SweepGradientPage {
 							.backgroundColor(Color.White)
 					}
 						.tabBar('Tabs1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientTabContentModifier)
 				}
 					.width('100%')
@@ -2010,7 +2302,7 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'WaterFlow') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -2022,9 +2314,9 @@ struct SweepGradientPage {
 									.objectFit(ImageFit.Fill)
 							}
 						}
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientWaterFlowModifier)
 			}
 			if (this.targetView == 'GridCol') {
@@ -2035,7 +2327,7 @@ struct SweepGradientPage {
 							.height('20vp')
 					}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientGridColModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -2054,7 +2346,7 @@ struct SweepGradientPage {
 						.rowStart(1)
 						.rowEnd(4)
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientGridItemModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -2063,7 +2355,7 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'FlowItem') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: Int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -2076,9 +2368,9 @@ struct SweepGradientPage {
 							}
 						}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientFlowItemModifier)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int, index: Int) => item.toString())
 				}
 					.backgroundColor(Color.Pink)
 					.width('100%')
@@ -2088,7 +2380,7 @@ struct SweepGradientPage {
 				Row() {
 					Menu() {
 						MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._sweepGradientMenuItemModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -2105,7 +2397,7 @@ struct SweepGradientPage {
 						MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
 						}
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._sweepGradientMenuItemGroupModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -2118,13 +2410,13 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'CalendarPicker') {
 				CalendarPicker({ hintRadius: 10, selected: new Date() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCalendarPickerModifier)
 			}
 			if (this.targetView == 'Canvas') {
 				Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
 					.backgroundColor('#FFFF00')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientCanvasModifier)
 			}
 			if (this.targetView == 'FormLink') {
@@ -2135,19 +2427,19 @@ struct SweepGradientPage {
         } as FormLinkOptions) {
 					Button("router event").width(120)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientHyperlinkModifier)
 			}
 			if (this.targetView == 'Span') {
 				Text() {
 					Span('Span1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._sweepGradientSpanModifier)
 				}
 			}
