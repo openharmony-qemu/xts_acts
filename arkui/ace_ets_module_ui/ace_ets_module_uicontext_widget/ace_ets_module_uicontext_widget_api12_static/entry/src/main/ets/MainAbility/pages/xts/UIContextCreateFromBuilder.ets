@@ -37,7 +37,7 @@ struct UIContextCreateFromBuilder {
     Gauge({ value: 30, min: 0, max: 100 })
       .startAngle(210)
       .endAngle(150)
-      .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+      .colors([[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]])
       .strokeWidth(20)
       .width(200)
       .height(200)

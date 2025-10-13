@@ -44,7 +44,7 @@ struct stageTimePickerDialog {
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {
@@ -90,7 +90,7 @@ struct stageTimePickerDialog {
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {
@@ -136,7 +136,7 @@ struct stageTimePickerDialog {
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {

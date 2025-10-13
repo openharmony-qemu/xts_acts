@@ -13,19 +13,10 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import { Color, $r } from '@ohos.arkui.component'
-import Utils, {
-  CurrentRatio,
-  BasePageConfig,
-  PageConfig,
-  TestValue,
-  RectValue,
-  SetValue,
-  StrJsonObj
-} from '../../../ets/MainAbility/common/Utils';
+import {Color,$r} from '@ohos.arkui.component'
+import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect,beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -36,16 +27,17 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 
-interface Attrs {
-  $attrs: SetValue
-}
 
 export default function marginLengthTest() {
+  console.info("marginLengthTest beforeAll start");
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  let context:UIContext = AppStorage.get<UIContext>('uiContext') as UIContext
   let childWidth = 100;
   let childHeight = 50;
   let parentWidth = 400;
@@ -80,14 +72,10 @@ export default function marginLengthTest() {
     expectValue: {
       margin: '50.00vp',
       
-      
-      
-      
-      
-      top: 50,
-      right: 50,
-      bottom: 50,
-      left: 50
+      top: context.vp2px(50),
+      right: context.vp2px(50),
+      bottom: context.vp2px(50),
+      left: context.vp2px(50)
     }
   }, {
     describe: 'SetStringPx',
@@ -109,40 +97,31 @@ export default function marginLengthTest() {
     expectValue: {
       margin: '50.00vp',
       
-      
-      
-      
-      
-      top: 50,
-      right: 50,
-      bottom: 50,
-      left: 50
+      top: context.vp2px(50),
+      right: context.vp2px(50),
+      bottom: context.vp2px(50),
+      left: context.vp2px(50)
     }
   }]
 
   describe('MarginLengthTest', () => {
     beforeAll(() => {
-      console.info("marginLengthTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static",
-        "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       
-      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey ?? '');
+      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey??'');
       
       let top: number = 0;
       let left: number = 0;
       let right: number = 0;
-      let bottom: number = 0;
+      let bottom: number= 0;
       if ((data.pageConfig.componentKey == 'ListItem')
         || (data.pageConfig.componentKey == 'ListItemGroup')) {
         
-        let rectReference = Utils.getComponentRect(data.pageConfig.referenceComponentKey ?? '');
+        let rectReference = Utils.getComponentRect(data.pageConfig.referenceComponentKey??'');
         
         top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
@@ -150,7 +129,7 @@ export default function marginLengthTest() {
         bottom = rectReference.top - rect.bottom;
       } else if (data.pageConfig.componentKey == 'TabContent') {
         
-        let referenceRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey ?? '');
+        let referenceRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey??'');
         
         top = rect.top - referenceRect.top;
         left = rect.left - rectParent.left;
@@ -158,15 +137,15 @@ export default function marginLengthTest() {
         bottom = rectParent.bottom - rect.bottom;
       } else if (data.pageConfig.componentKey == 'StepperItem') {
         
+        let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]);
         
-        
-        
-        
-        
-        
-        
-        
-        
+        top = rect.top - rectParent.top;
+        left = rect.left - rectParent.left;
+        right = rectParent.right - rect.right;
+        bottom = rectParent.bottom - rect.bottom;
       } else {
         
         top = rect.top - rectParent.top;
@@ -174,15 +153,15 @@ export default function marginLengthTest() {
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;
       }
-      let attrs = data.viewObj as Attrs
+      let attrs = data.viewObj
       console.info('[' + data.caseTag + ']' + 'top is:' + top);
       console.info('[' + data.caseTag + ']' + 'left is:' + left);
       console.info('[' + data.caseTag + ']' + 'right is:' + right);
       console.info('[' + data.caseTag + ']' + 'bottom is:' + bottom);
-      console.info('[' + data.caseTag + ']' + 'margin is:' + attrs?.$attrs.margin);
+      console.info('[' + data.caseTag + ']' + 'margin is:' + attrs?.getElement('$attrs').getElement('margin'));
       
 
-      expect(attrs?.$attrs.margin).assertEqual(data.testValue.expectValue.margin);
+      expect(attrs?.getElement('$attrs').getString('margin')).assertEqual(data.testValue.expectValue.margin);
       expect(Math.abs(top - (data.testValue.expectValue.top as number)) <= 1).assertTrue();
       expect(Math.abs(right - (data.testValue.expectValue.right as number)) <= 1).assertTrue();
       expect(Math.abs(bottom - (data.testValue.expectValue.bottom as number)) <= 1).assertTrue();

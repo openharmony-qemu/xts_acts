@@ -35,20 +35,6 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Component
 export struct StepperItemView {
   @State prevIndex: Int = 0
@@ -69,29 +55,28 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-          
+            
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        } 
+        }
       }
       .nextLabel('Next')
       .status(this.firstState)
       .position(this._position)
       .key(this.componentKey)
-
       StepperItem() {
         Column() {
           Text('Page Two')
-          
+            
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        } 
+        }
       }
       .nextLabel('Next')
       .prevLabel('Previous')

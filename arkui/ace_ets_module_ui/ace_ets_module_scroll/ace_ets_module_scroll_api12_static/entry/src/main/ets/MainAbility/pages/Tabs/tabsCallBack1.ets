@@ -32,7 +32,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct tabsCallBack1Example {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State message1: string = 'tabs: '
 
@@ -78,22 +78,22 @@ struct tabsCallBack1Example {
         .vertical(false)
         .scrollable(true)
         .barMode(BarMode.Fixed)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           this.message1 += 'onChange-'
           console.info(index.toString())
         })
-        .onTabBarClick((index: number): void => {
+        .onTabBarClick((index: int): void => {
           this.message1 += 'onTabBarClick-'
           console.info('onTabBarClick index: ' + index)
         })
-        .onContentWillChange((currentIndex: number, comingIndex: number): boolean => {
+        .onContentWillChange((currentIndex: int, comingIndex: int): boolean => {
           if (comingIndex == 2) {
             return false
           }
           this.message1 += 'onContentWillChange-'
           return true
         })
-        .onAnimationStart((index: number): void => {
+        .onAnimationStart((index: int): void => {
           this.message1 += 'onAnimationStart-'
           console.info(index.toString())
         })

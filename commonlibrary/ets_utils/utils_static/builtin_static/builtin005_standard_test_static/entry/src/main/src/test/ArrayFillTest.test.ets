@@ -217,7 +217,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest0900
      * @tc.name builtinsArrayFillPrototypebTest0900
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) 只传value，全部填充为true
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) 只传value，全部填充为true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -238,7 +238,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1000
      * @tc.name builtinsArrayFillPrototypebTest1000
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) 只传value和start，部分填充
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) 只传value和start，部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -248,7 +248,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest1000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false, false, false, false];
-        const result = fill(arr, true, 2.0.toDouble());
+        const result = fill(arr, true, 2);
         expect(result[0]).assertEqual(false);
         expect(result[1]).assertEqual(false);
         expect(result[2]).assertEqual(true);
@@ -260,7 +260,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1100
      * @tc.name builtinsArrayFillPrototypebTest1100
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) 只传value和end，前半部分填充
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) 只传value和end，前半部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -270,7 +270,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest1100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false, false, false, false];
-        const result = fill(arr, true, undefined, 2.0.toDouble());
+        const result = fill(arr, true, undefined, 2);
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(false);
@@ -282,7 +282,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1200
      * @tc.name builtinsArrayFillPrototypebTest1200
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) start和end都不传，全部填充为false
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) start和end都不传，全部填充为false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -303,7 +303,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1300
      * @tc.name builtinsArrayFillPrototypebTest1300
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) start为负数
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) start为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -313,7 +313,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest1300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false, false, false, false];
-        const result = fill(arr, true, -2.0.toDouble());
+        const result = fill(arr, true, -2);
         expect(result[0]).assertEqual(false);
         expect(result[1]).assertEqual(false);
         expect(result[2]).assertEqual(true);
@@ -325,7 +325,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1400
      * @tc.name builtinsArrayFillPrototypebTest1400
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) end超过数组长度
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) end超过数组长度
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -335,7 +335,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest1400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false, false, false];
-        const result = fill(arr, true, 1.0.toDouble(), 10.0.toDouble());
+        const result = fill(arr, true, 1, 10);
         expect(result[0]).assertEqual(false);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(true);
@@ -346,7 +346,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1500
      * @tc.name builtinsArrayFillPrototypebTest1500
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) 空数组
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -365,7 +365,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest1600
      * @tc.name builtinsArrayFillPrototypebTest1600
-     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: Number, end?: Number) start和end都为负数
+     * @tc.desc fill(self: FixedArray<boolean>, value: boolean, start?: int, end?: int) start和end都为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -375,7 +375,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest1600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false, false, false, false];
-        const result = fill(arr, true, -3.0.toDouble(), -1.0.toDouble());
+        const result = fill(arr, true, -3, -1);
         expect(result[0]).assertEqual(false);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(true);
@@ -557,7 +557,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest2500
      * @tc.name builtinsArrayFillPrototypebTest2500
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) 只传value，全部填充为1
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) 只传value，全部填充为1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -578,7 +578,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest2600
      * @tc.name builtinsArrayFillPrototypebTest2600
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) 只传value和start，部分填充
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) 只传value和start，部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -588,7 +588,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest2600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0, 0];
-        const result = fill(arr, 2 , 2.0.toDouble());
+        const result = fill(arr, 2 , 2);
         expect(result[0]).assertEqual(0 );
         expect(result[1]).assertEqual(0 );
         expect(result[2]).assertEqual(2 );
@@ -600,7 +600,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest2700
      * @tc.name builtinsArrayFillPrototypebTest2700
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) 只传value和end，前半部分填充
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) 只传value和end，前半部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -610,7 +610,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest2700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0, 0];
-        const result = fill(arr, 3 , undefined, 2.0.toDouble());
+        const result = fill(arr, 3 , undefined, 2);
         expect(result[0]).assertEqual(3 );
         expect(result[1]).assertEqual(3 );
         expect(result[2]).assertEqual(0 );
@@ -622,7 +622,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest2800
      * @tc.name builtinsArrayFillPrototypebTest2800
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) start和end都不传，全部填充为4
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) start和end都不传，全部填充为4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -643,7 +643,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest2900
      * @tc.name builtinsArrayFillPrototypebTest2900
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) start为负数
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) start为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -653,7 +653,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest2900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0, 0];
-        const result = fill(arr, 5 , -2.0.toDouble());
+        const result = fill(arr, 5 , -2);
         expect(result[0]).assertEqual(0 );
         expect(result[1]).assertEqual(0 );
         expect(result[2]).assertEqual(5 );
@@ -665,7 +665,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest3000
      * @tc.name builtinsArrayFillPrototypebTest3000
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) end超过数组长度
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) end超过数组长度
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -675,7 +675,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest3000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0];
-        const result = fill(arr, 6 , 1.0.toDouble(), 10.0.toDouble());
+        const result = fill(arr, 6 , 1, 10);
         expect(result[0]).assertEqual(0 );
         expect(result[1]).assertEqual(6 );
         expect(result[2]).assertEqual(6 );
@@ -686,7 +686,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest3100
      * @tc.name builtinsArrayFillPrototypebTest3100
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) start和end都为负数
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) start和end都为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -696,7 +696,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest3100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0, 0];
-        const result = fill(arr, 7 , -3.0.toDouble(), -1.0.toDouble());
+        const result = fill(arr, 7 , -3, -1);
         expect(result[0]).assertEqual(0 );
         expect(result[1]).assertEqual(7 );
         expect(result[2]).assertEqual(7 );
@@ -708,7 +708,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest3200
      * @tc.name builtinsArrayFillPrototypebTest3200
-     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: Number, end?: Number) 空数组
+     * @tc.desc fill(self: FixedArray<byte>, value: byte, start?: int, end?: int) 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -718,7 +718,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest3200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [];
-        const result = fill(arr, 1 , 0.0.toDouble(), 1.0.toDouble());
+        const result = fill(arr, 1 , 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -897,7 +897,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4100
      * @tc.name builtinsArrayFillPrototypebTest4100
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) 只传value，全部填充为'a'
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) 只传value，全部填充为'a'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -918,7 +918,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4200
      * @tc.name builtinsArrayFillPrototypebTest4200
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) 只传value和start，部分填充
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) 只传value和start，部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -928,7 +928,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [c'b', c'b', c'b', c'b'];
-        const result = fill(arr, c'c', 2.0.toDouble());
+        const result = fill(arr, c'c', 2);
         expect(result[0]).assertEqual(c'b');
         expect(result[1]).assertEqual(c'b');
         expect(result[2]).assertEqual(c'c');
@@ -940,7 +940,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4300
      * @tc.name builtinsArrayFillPrototypebTest4300
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) 只传value和end，前半部分填充
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) 只传value和end，前半部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +950,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [c'b', c'b', c'b', c'b'];
-        const result = fill(arr, c'd', undefined, 2.0.toDouble());
+        const result = fill(arr, c'd', undefined, 2);
         expect(result[0]).assertEqual(c'd');
         expect(result[1]).assertEqual(c'd');
         expect(result[2]).assertEqual(c'b');
@@ -962,7 +962,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4400
      * @tc.name builtinsArrayFillPrototypebTest4400
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) start和end都不传，全部填充为'e'
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) start和end都不传，全部填充为'e'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -983,7 +983,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4500
      * @tc.name builtinsArrayFillPrototypebTest4500
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) start为负数
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) start为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -993,7 +993,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [c'g', c'g', c'g', c'g'];
-        const result = fill(arr, c'h', -2.0.toDouble());
+        const result = fill(arr, c'h', -2);
         expect(result[0]).assertEqual(c'g');
         expect(result[1]).assertEqual(c'g');
         expect(result[2]).assertEqual(c'h');
@@ -1005,7 +1005,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4600
      * @tc.name builtinsArrayFillPrototypebTest4600
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) end超过数组长度
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) end超过数组长度
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1015,7 +1015,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [c'i', c'i', c'i'];
-        const result = fill(arr, c'j', 1.0.toDouble(), 10.0.toDouble());
+        const result = fill(arr, c'j', 1, 10);
         expect(result[0]).assertEqual(c'i');
         expect(result[1]).assertEqual(c'j');
         expect(result[2]).assertEqual(c'j');
@@ -1026,7 +1026,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4700
      * @tc.name builtinsArrayFillPrototypebTest4700
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) start和end都为负数
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) start和end都为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1036,7 +1036,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [c'k', c'k', c'k', c'k'];
-        const result = fill(arr, c'l', -3.0.toDouble(), -1.0.toDouble());
+        const result = fill(arr, c'l', -3, -1);
         expect(result[0]).assertEqual(c'k');
         expect(result[1]).assertEqual(c'l');
         expect(result[2]).assertEqual(c'l');
@@ -1048,7 +1048,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest4800
      * @tc.name builtinsArrayFillPrototypebTest4800
-     * @tc.desc fill(self: FixedArray<char>, value: char, start?: Number, end?: Number) 空数组
+     * @tc.desc fill(self: FixedArray<char>, value: char, start?: int, end?: int) 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1058,7 +1058,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest4800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [];
-        const result = fill(arr, c'z', 0.0.toDouble(), 1.0.toDouble());
+        const result = fill(arr, c'z', 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1237,7 +1237,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest5700
      * @tc.name builtinsArrayFillPrototypebTest5700
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) 只传value，全部填充为1.1
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) 只传value，全部填充为1.1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1258,7 +1258,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest5800
      * @tc.name builtinsArrayFillPrototypebTest5800
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) 只传value和start，部分填充
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) 只传value和start，部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1268,7 +1268,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0, 0.0];
-        const result = fill(arr, 2.2.toDouble(), 2.0.toDouble());
+        const result = fill(arr, 2.2.toDouble(), 2);
         expect(result[0]).assertEqual(0.0.toDouble());
         expect(result[1]).assertEqual(0.0.toDouble());
         expect(result[2]).assertEqual(2.2.toDouble());
@@ -1280,7 +1280,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest5900
      * @tc.name builtinsArrayFillPrototypebTest5900
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) 只传value和end，前半部分填充
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) 只传value和end，前半部分填充
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1290,7 +1290,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0, 0.0];
-        const result = fill(arr, 3.3.toDouble(), undefined, 2.0.toDouble());
+        const result = fill(arr, 3.3.toDouble(), undefined, 2);
         expect(result[0]).assertEqual(3.3.toDouble());
         expect(result[1]).assertEqual(3.3.toDouble());
         expect(result[2]).assertEqual(0.0.toDouble());
@@ -1302,7 +1302,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest6000
      * @tc.name builtinsArrayFillPrototypebTest6000
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) start和end都不传，全部填充为4.4
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) start和end都不传，全部填充为4.4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1323,7 +1323,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest6100
      * @tc.name builtinsArrayFillPrototypebTest6100
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) start为负数
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) start为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1333,7 +1333,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest6100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0, 0.0];
-        const result = fill(arr, 5.5.toDouble(), -2.0.toDouble());
+        const result = fill(arr, 5.5.toDouble(), -2);
         expect(result[0]).assertEqual(0.0.toDouble());
         expect(result[1]).assertEqual(0.0.toDouble());
         expect(result[2]).assertEqual(5.5.toDouble());
@@ -1345,7 +1345,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest6200
      * @tc.name builtinsArrayFillPrototypebTest6200
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) end超过数组长度
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) end超过数组长度
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1355,7 +1355,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest6200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0];
-        const result = fill(arr, 6.6.toDouble(), 1.0.toDouble(), 10.0.toDouble());
+        const result = fill(arr, 6.6.toDouble(), 1, 10);
         expect(result[0]).assertEqual(0.0.toDouble());
         expect(result[1]).assertEqual(6.6.toDouble());
         expect(result[2]).assertEqual(6.6.toDouble());
@@ -1366,7 +1366,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest6300
      * @tc.name builtinsArrayFillPrototypebTest6300
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) start和end都为负数
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) start和end都为负数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1376,7 +1376,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0, 0.0];
-        const result = fill(arr, 7.7.toDouble(), -3.0.toDouble(), -1.0.toDouble());
+        const result = fill(arr, 7.7.toDouble(), -3, -1);
         expect(result[0]).assertEqual(0.0.toDouble());
         expect(result[1]).assertEqual(7.7.toDouble());
         expect(result[2]).assertEqual(7.7.toDouble());
@@ -1388,7 +1388,7 @@ export default function builtinsArrayFillPrototypebTest(){
     /**
      * @tc.number builtinsArrayFillPrototypebTest6400
      * @tc.name builtinsArrayFillPrototypebTest6400
-     * @tc.desc fill(self: FixedArray<double>, value: double, start?: Number, end?: Number) 空数组
+     * @tc.desc fill(self: FixedArray<double>, value: double, start?: int, end?: int) 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1398,7 +1398,7 @@ export default function builtinsArrayFillPrototypebTest(){
         const caseName = 'builtinsArrayFillPrototypebTest6400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [];
-        const result = fill(arr, 1.1.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = fill(arr, 1.1.toDouble(), 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();

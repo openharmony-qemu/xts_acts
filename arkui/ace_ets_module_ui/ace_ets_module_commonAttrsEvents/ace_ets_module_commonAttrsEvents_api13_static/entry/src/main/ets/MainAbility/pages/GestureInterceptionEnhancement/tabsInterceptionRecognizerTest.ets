@@ -62,7 +62,7 @@ interface testRecognizer {
 @Entry
 @Component
 struct GestureTest5 {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State selectedIndex: number = 0
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
@@ -190,7 +190,7 @@ struct GestureTest5 {
         }
 
       }
-      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
 
         this.selectedIndex = targetIndex
       })

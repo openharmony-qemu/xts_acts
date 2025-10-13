@@ -43,9 +43,9 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 interface Ani {
-  duration: number
+  duration: int
   curve: curves.Curve
-  delay: number
+  delay: int
   iterations: number
   playMode: PlayMode
 }

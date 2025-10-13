@@ -19,12 +19,7 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-export class RectValue {
-  left: number = 0;
-  top: number = 0;
-  right: number = 0;
-  bottom: number = 0;
-}
+export { RectValue }
 
 export default class CommonFunc {
   static rect_left: number = 0;
@@ -32,16 +27,6 @@ export default class CommonFunc {
   static rect_right: number = 0;
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {

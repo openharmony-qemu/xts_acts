@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TabsAp1 {
-  @State currentIndex: number = 1
+  @State currentIndex: int = 1
   private tabsController: TabsController = new TabsController()
 
   onPageShow(): void {
@@ -52,7 +52,7 @@ struct TabsAp1 {
       .width(360)
       .height(296)
       .backgroundColor('#F1F3F5')
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
     }

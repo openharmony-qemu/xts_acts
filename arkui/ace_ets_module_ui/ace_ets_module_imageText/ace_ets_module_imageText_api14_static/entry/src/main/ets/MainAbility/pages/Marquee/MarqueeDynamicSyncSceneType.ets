@@ -31,7 +31,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
   private loop: int = Number.POSITIVE_INFINITY as int
   controller: TextClockController = new TextClockController()
   convert2time(value: long): string{
-    let date = new Date(Number(value+'000'));
+    let date = new Date(Number(value+'000').toLong());
     let hours = String(date.getHours()).padStart(2, '0');
     let minutes = String(date.getMinutes()).padStart(2, '0');
     let seconds = String(date.getSeconds()).padStart(2, '0');

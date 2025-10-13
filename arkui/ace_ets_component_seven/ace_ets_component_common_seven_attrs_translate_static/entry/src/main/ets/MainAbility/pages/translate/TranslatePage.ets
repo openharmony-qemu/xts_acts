@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,9 +35,9 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
-  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
+  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,TranslateOptions,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -343,28 +343,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 		instance.translate(this.mTranslate)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -704,6 +682,409 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	}
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+	this.height('100%')
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ButtonAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyleDataPanel(this: DataPanelAttribute, componentKey: string, _translate: TranslateOptions| undefined): this {
+	this.translate(_translate)
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
 @Entry
 @Component
 struct TranslatePage {
@@ -720,6 +1101,7 @@ struct TranslatePage {
 	@State _translateColumnSplitModifier: ColumnSplitModifier = new ColumnSplitModifier()
 	@State _translateCounterModifier: CounterModifier = new CounterModifier()
 	@State _translateDataPanelModifier: DataPanelModifier = new DataPanelModifier()
+
 	@State _translateDatePickerModifier: DatePickerModifier = new DatePickerModifier()
 	@State _translateDividerModifier: DividerModifier = new DividerModifier()
 	@State _translateEllipseModifier: EllipseModifier = new EllipseModifier()
@@ -790,190 +1172,113 @@ struct TranslatePage {
 	@State _translateWebModifier: WebModifier = new WebModifier()
 	@State _translateWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _translateXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns ?? 0
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter ?? 0
-  @State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? '#FFFF00'
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number =  0
+  @State gutter: number =  0
+  @State parentBackGroundColor: string =  '#FFFF00'
+  @State parentComponentKey: string =  '';
+	@StoragePropRef('_translateObj') _translate: SetValue = {
+	height: 0, translate: { x: 0, y: 0, z: 0}
+}
 
 	onPageShow() {
 		console.info('translate translate page show called ')
-		attrsManager.registerDataChange((value: SetValue) => {
-			console.info('translate [registerDataChange] ' + JSON.stringify(value.translate))
-			this._translateAlphabetIndexerModifier.mTranslate = value.translate
-			this._translateBadgeModifier.mTranslate = value.translate
-			this._translateButtonModifier.mTranslate = value.translate
-			this._translateBlankModifier.mTranslate = value.translate
-			this._translateCalendarPickerModifier.mTranslate = value.translate
-			this._translateCanvasModifier.mTranslate = value.translate
-			this._translateCheckboxModifier.mTranslate = value.translate
-			this._translateCheckboxGroupModifier.mTranslate = value.translate
-			this._translateCircleModifier.mTranslate = value.translate
-			this._translateColumnModifier.mTranslate = value.translate
-			this._translateColumnSplitModifier.mTranslate = value.translate
-			this._translateCounterModifier.mTranslate = value.translate
-			this._translateDataPanelModifier.mTranslate = value.translate
-			this._translateDatePickerModifier.mTranslate = value.translate
-			this._translateDividerModifier.mTranslate = value.translate
-			this._translateEllipseModifier.mTranslate = value.translate
-			this._translateFlexModifier.mTranslate = value.translate
-			this._translateFlowItemModifier.mTranslate = value.translate
-			this._translateFormLinkModifier.mTranslate = value.translate
-			this._translateGaugeModifier.mTranslate = value.translate
-			this._translateGridModifier.mTranslate = value.translate
-			this._translateGridColModifier.mTranslate = value.translate
-			this._translateGridItemModifier.mTranslate = value.translate
-			this._translateGridRowModifier.mTranslate = value.translate
-			this._translateHyperlinkModifier.mTranslate = value.translate
-			this._translateImageModifier.mTranslate = value.translate
-			this._translateImageAnimatorModifier.mTranslate = value.translate
-			this._translateLineModifier.mTranslate = value.translate
-			this._translateListModifier.mTranslate = value.translate
-			this._translateListItemModifier.mTranslate = value.translate
-			this._translateListItemGroupModifier.mTranslate = value.translate
-			this._translateLoadingProgressModifier.mTranslate = value.translate
-			this._translateMarqueeModifier.mTranslate = value.translate
-			this._translateMenuModifier.mTranslate = value.translate
-			this._translateMenuItemModifier.mTranslate = value.translate
-			this._translateMenuItemGroupModifier.mTranslate = value.translate
-			this._translateNavDestinationModifier.mTranslate = value.translate
-			this._translateNavigationModifier.mTranslate = value.translate
-			
-			
-			
-			this._translatePathModifier.mTranslate = value.translate
-			this._translatePolygonModifier.mTranslate = value.translate
-			this._translatePolylineModifier.mTranslate = value.translate
-			this._translateProgressModifier.mTranslate = value.translate
-			this._translateQRCodeModifier.mTranslate = value.translate
-			this._translateRadioModifier.mTranslate = value.translate
-			this._translateRatingModifier.mTranslate = value.translate
-			this._translateRectModifier.mTranslate = value.translate
-			this._translateRefreshModifier.mTranslate = value.translate
-			this._translateRelativeContainerModifier.mTranslate = value.translate
-			this._translateRemoteWindowModifier.mTranslate = value.translate
-			this._translateRichEditorModifier.mTranslate = value.translate
-			this._translateRichTextModifier.mTranslate = value.translate
-			this._translateRowModifier.mTranslate = value.translate
-			this._translateRowSplitModifier.mTranslate = value.translate
-			this._translateScrollModifier.mTranslate = value.translate
-			this._translateScrollBarModifier.mTranslate = value.translate
-			this._translateSearchModifier.mTranslate = value.translate
-			this._translateSelectModifier.mTranslate = value.translate
-			this._translateShapeModifier.mTranslate = value.translate
-			this._translateSideBarContainerModifier.mTranslate = value.translate
-			this._translateSliderModifier.mTranslate = value.translate
-			this._translateSpanModifier.mTranslate = value.translate
-			this._translateStackModifier.mTranslate = value.translate
-			this._translateStepperModifier.mTranslate = value.translate
-			this._translateStepperItemModifier.mTranslate = value.translate
-			this._translateSwiperModifier.mTranslate = value.translate
-			this._translateTabContentModifier.mTranslate = value.translate
-			this._translateTabsModifier.mTranslate = value.translate
-			this._translateTextModifier.mTranslate = value.translate
-			this._translateTextAreaModifier.mTranslate = value.translate
-			this._translateTextClockModifier.mTranslate = value.translate
-			this._translateTextInputModifier.mTranslate = value.translate
-			this._translateTextPickerModifier.mTranslate = value.translate
-			this._translateTextTimerModifier.mTranslate = value.translate
-			this._translateTimePickerModifier.mTranslate = value.translate
-			this._translateToggleModifier.mTranslate = value.translate
-			this._translateVideoModifier.mTranslate = value.translate
-			this._translateWaterFlowModifier.mTranslate = value.translate
-			this._translateWebModifier.mTranslate = value.translate
-			this._translateWindowSceneModifier.mTranslate = value.translate
-			this._translateXComponentModifier.mTranslate = value.translate
-		})
+		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+			.getElement("view")
+		this.targetView = viewElement.getString("targetView")
+		this.componentKey = viewElement.getString("componentKey")
+		this.parentWidth = viewElement.getDouble("parentWidth")
+		this.parentHeight = viewElement.getDouble("parentHeight")
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
+		this.parentComponentKey = viewElement.getString("parentComponentKey")
+		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}
 
-  
-  
-  
-  
 
 	build() {
 		Column() {
 			if (this.targetView == 'AlphabetIndexer') {
 				AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateAlphabetIndexerModifier)
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateButtonModifier)
 			}
 			if (this.targetView == 'Blank') {
 				Blank()
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateBlankModifier)
 			}
 			if (this.targetView == 'Checkbox') {
 				Checkbox()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCheckboxModifier)
 			}
 			if (this.targetView == 'CheckboxGroup') {
 				CheckboxGroup({ group: 'checkboxGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCheckboxGroupModifier)
 			}
 			if (this.targetView == 'DataPanel') {
 				DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-					
+					.commonStyleDataPanel(this.componentKey, this._translate.translate)
 					.attributeModifier(this._translateDataPanelModifier)
 			}
 			if (this.targetView == 'DatePicker') {
 				DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateDatePickerModifier)
 			}
 			if (this.targetView == 'Divider') {
 				Divider()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateDividerModifier)
 			}
 			if (this.targetView == 'Gauge') {
 				Gauge({ value: 105 })
 					.colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateGaugeModifier)
 			}
 			if (this.targetView == 'Image') {
 				Image($r('app.media.icon'))
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateImageModifier)
 			}
 			if (this.targetView == 'ImageAnimator') {
 				ImageAnimator()
 					.images([{ src: $r('app.media.icon') }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateImageAnimatorModifier)
 			}
 			if (this.targetView == 'LoadingProgress') {
 				LoadingProgress()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateLoadingProgressModifier)
 			}
 			if (this.targetView == 'Marquee') {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateMarqueeModifier)
 			}
 			if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Menu') {
@@ -981,7 +1286,7 @@ struct TranslatePage {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
 				}
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
@@ -1000,22 +1305,22 @@ struct TranslatePage {
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateProgressModifier)
 			}
 			if (this.targetView == 'QRCode') {
 				QRCode('Running Marquee starts rolling')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateQRCodeModifier)
 			}
 			if (this.targetView == 'Radio') {
 				Radio({ value: 'Radio1', group: 'radioGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRadioModifier)
 			}
 			if (this.targetView == 'Rating') {
 				Rating({ rating: 3.5, indicator: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRatingModifier)
 			}
 			if (this.targetView == 'ScrollBar') {
@@ -1026,23 +1331,23 @@ struct TranslatePage {
 						.borderRadius(10)
 						.backgroundColor('#C0C0C0')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateScrollBarModifier)
 			}
 			if (this.targetView == 'Search') {
 				Search()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateSearchModifier)
 			}
 			if (this.targetView == 'Select') {
 				Select([{ value: 'aaa' }, { value: 'bbb' }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateSelectModifier)
 			}
 			if (this.targetView == 'Slider') {
 				Slider({ value: 50, min: 0, max: 100, style: SliderStyle.OutSet })
 					.showTips(true)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateSliderModifier)
 			}
 			if (this.targetView == 'Stepper') {
@@ -1053,7 +1358,7 @@ struct TranslatePage {
 						}
 					}
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'StepperItem') {
@@ -1064,7 +1369,7 @@ struct TranslatePage {
 						}
 					}
 						.backgroundColor(Color.Red)
-						
+						.commonStyle(this.componentKey)
 						
 				}
 					.backgroundColor(Color.Yellow)
@@ -1073,62 +1378,62 @@ struct TranslatePage {
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextModifier)
 			}
 			if (this.targetView == 'TextArea') {
 				TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextAreaModifier)
 			}
 			if (this.targetView == 'TextClock') {
 				TextClock({ timeZoneOffset: -8 })
 					.format('hms')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextClockModifier)
 			}
 			if (this.targetView == 'TextInput') {
 				TextInput({ placeholder: 'input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextInputModifier)
 			}
 			if (this.targetView == 'TextPicker') {
 				TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextPickerModifier)
 			}
 			if (this.targetView == 'TextTimer') {
 				TextTimer({ isCountDown: true, count: 30000 })
 					.format('mm:ss.SS')
 					.fontColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTextTimerModifier)
 			}
 			if (this.targetView == 'TimePicker') {
 				TimePicker({ selected: new Date('2022-07-22T08:00:00') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTimePickerModifier)
 			}
 			if (this.targetView == 'Toggle') {
 				Toggle({ type: ToggleType.Switch, isOn: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateToggleModifier)
 			}
 			if (this.targetView == 'Web') {
         Web({ src: 'www.example.com', controller: new WebviewController() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateWebModifier)
 			}
 			if (this.targetView == 'Circle') {
 				Circle()
 					.width(150)
 					.height(200)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCircleModifier)
 			}
 			if (this.targetView == 'Ellipse') {
 				Ellipse()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateEllipseModifier)
 			}
 			if (this.targetView == 'Line') {
@@ -1136,27 +1441,27 @@ struct TranslatePage {
 					.startPoint([0, 0])
 					.endPoint([50, 100])
 					.backgroundColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateLineModifier)
 			}
 			if (this.targetView == 'Polyline') {
 				Polyline()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translatePolylineModifier)
 			}
 			if (this.targetView == 'Polygon') {
 				Polygon()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translatePolygonModifier)
 			}
 			if (this.targetView == 'Path') {
 				Path()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translatePathModifier)
 			}
 			if (this.targetView == 'Rect') {
 				Rect()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRectModifier)
 			}
 			if (this.targetView == 'Shape') {
@@ -1165,7 +1470,7 @@ struct TranslatePage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateShapeModifier)
 			}
 			if (this.targetView == 'Badge') {
@@ -1175,7 +1480,7 @@ struct TranslatePage {
 						.height(50)
 						.backgroundColor(0x317aff)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateBadgeModifier)
 			}
 			if (this.targetView == 'Column') {
@@ -1184,7 +1489,7 @@ struct TranslatePage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateColumnModifier)
 			}
 			if (this.targetView == 'ColumnSplit') {
@@ -1195,13 +1500,13 @@ struct TranslatePage {
 						.backgroundColor(0xF5DEB3)
 						.textAlign(TextAlign.Center)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateColumnSplitModifier)
 			}
 			if (this.targetView == 'Counter') {
 				Counter() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCounterModifier)
 			}
 			if (this.targetView == 'Flex') {
@@ -1211,7 +1516,7 @@ struct TranslatePage {
 						.height(50)
 						.backgroundColor(0xF5DEB3)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateFlexModifier)
 			}
 			if (this.targetView == 'GridRow') {
@@ -1229,7 +1534,7 @@ struct TranslatePage {
 						}
 					)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateGridRowModifier)
 			}
 			if (this.targetView == 'Grid') {
@@ -1249,7 +1554,7 @@ struct TranslatePage {
 					.columnsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.rowsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.backgroundColor(0xFAEEE0)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateGridModifier)
 			}
 			if (this.targetView == 'List') {
@@ -1257,7 +1562,7 @@ struct TranslatePage {
 				}
 					.height('100%')
 					.width('100%')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateListModifier)
 			}
 			if (this.targetView == 'ListItem') {
@@ -1268,7 +1573,7 @@ struct TranslatePage {
 							.textAlign(TextAlign.Center)
 							.backgroundColor(Color.White)
 					}
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateListItemModifier)
 				}
 					.width('100%')
@@ -1278,7 +1583,7 @@ struct TranslatePage {
 				List({ space: 0, initialIndex: 0 }) {
 					ListItemGroup()
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateListItemGroupModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1307,7 +1612,7 @@ struct TranslatePage {
 				Refresh({ refreshing: true }) {
 					Text('123')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRefreshModifier)
 			}
 			if (this.targetView == 'RelativeContainer') {
@@ -1322,19 +1627,19 @@ struct TranslatePage {
 						})
 						.id('constraintSize')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRelativeContainerModifier)
 			}
 			if (this.targetView == 'Row') {
 				Row()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRowModifier)
 			}
 			if (this.targetView == 'RowSplit') {
 				RowSplit() {
 					Text('Text')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateRowSplitModifier)
 			}
 			if (this.targetView == 'Scroll') {
@@ -1351,7 +1656,7 @@ struct TranslatePage {
 					.width('100%')
 				}
 					.scrollBar(BarState.On)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateScrollModifier)
 			}
 			if (this.targetView == 'SideBarContainer') {
@@ -1377,13 +1682,13 @@ struct TranslatePage {
 					}
 						.backgroundColor(Color.Orange)
 				}
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateStackModifier)
 			}
 			if (this.targetView == 'Swiper') {
@@ -1396,7 +1701,7 @@ struct TranslatePage {
 				}
 					.indicator(true)
 					.backgroundColor(Color.White)
-					
+					.commonStyle(this.componentKey)
 					
 			}
 			if (this.targetView == 'Tabs') {
@@ -1408,7 +1713,7 @@ struct TranslatePage {
 							.backgroundColor('#00CB87')
 					}
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateTabsModifier)
 			}
 			if (this.targetView == 'TabContent') {
@@ -1420,7 +1725,7 @@ struct TranslatePage {
 							.backgroundColor(Color.White)
 					}
 						.tabBar('Tabs1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateTabContentModifier)
 				}
 					.width('100%')
@@ -1442,7 +1747,7 @@ struct TranslatePage {
 						}
 					}, (item: int) => item.toString())
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateWaterFlowModifier)
 			}
 			if (this.targetView == 'GridCol') {
@@ -1453,7 +1758,7 @@ struct TranslatePage {
 							.height('20vp')
 					}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateGridColModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1472,7 +1777,7 @@ struct TranslatePage {
 						.rowStart(1)
 						.rowEnd(4)
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateGridItemModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1494,7 +1799,7 @@ struct TranslatePage {
 							}
 						}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateFlowItemModifier)
 					}, (item: int) => item.toString())
 				}
@@ -1506,7 +1811,7 @@ struct TranslatePage {
 				Row() {
 					Menu() {
 						MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._translateMenuItemModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -1523,7 +1828,7 @@ struct TranslatePage {
 						MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
 						}
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._translateMenuItemGroupModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -1536,13 +1841,13 @@ struct TranslatePage {
 			}
 			if (this.targetView == 'CalendarPicker') {
 				CalendarPicker({ hintRadius: 10, selected: new Date() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCalendarPickerModifier)
 			}
 			if (this.targetView == 'Canvas') {
 				Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
 					.backgroundColor('#FFFF00')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateCanvasModifier)
 			}
 			if (this.targetView == 'FormLink') {
@@ -1553,19 +1858,19 @@ struct TranslatePage {
         } as FormLinkOptions) {
 					Button("router event").width(120)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._translateHyperlinkModifier)
 			}
 			if (this.targetView == 'Span') {
 				Text() {
 					Span('Span1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._translateSpanModifier)
 				}
 			}

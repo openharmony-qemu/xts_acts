@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -41,8 +41,8 @@ export struct WaterFlowView {
   @State fontSize: number = 24
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
-  private itemWidthArray: number[] = [] as number[]
-  private itemHeightArray: number[] = [] as number[]
+  private itemWidthArray: Int[] = [] as Int[]
+  private itemHeightArray: Int[] = [] as Int[]
 
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
@@ -51,8 +51,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize())
-      this.itemHeightArray.push(this.getSize())
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
@@ -84,7 +84,7 @@ export struct WaterFlowView {
         .width(this.itemWidthArray[item.toInt()])
         .height(this.itemHeightArray[item.toInt()])
         .backgroundColor(this.colors[item.toInt() % 5])
-      }, (item: number) => String(item))
+      }, (item: number,index:Int) => item!.toString())
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
     .itemConstraintSize({

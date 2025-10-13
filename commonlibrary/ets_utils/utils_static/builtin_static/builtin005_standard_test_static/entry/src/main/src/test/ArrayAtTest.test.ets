@@ -144,7 +144,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest0900
      * @tc.name builtinsArrayAtPrototypebTest0900
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
+     * @tc.desc at(self: FixedArray<boolean>, index: int): Boolean | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,7 +154,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest0900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
@@ -163,7 +163,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest1000
      * @tc.name builtinsArrayAtPrototypebTest1000
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
+     * @tc.desc at(self: FixedArray<boolean>, index: int): Boolean | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -173,7 +173,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest1000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
@@ -182,7 +182,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest1100
      * @tc.name builtinsArrayAtPrototypebTest1100
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
+     * @tc.desc at(self: FixedArray<boolean>, index: int): Boolean | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -192,7 +192,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest1100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, 1.7.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
@@ -201,7 +201,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest1200
      * @tc.name builtinsArrayAtPrototypebTest1200
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
+     * @tc.desc at(self: FixedArray<boolean>, index: int): Boolean | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -211,7 +211,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest1200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, -1.2.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
@@ -221,7 +221,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest1500
      * @tc.name builtinsArrayAtPrototypebTest1500
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
+     * @tc.desc at(self: FixedArray<boolean>, index: int): Boolean | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,8 +231,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest1500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(false);
         expect(result2).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -342,7 +342,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest2500
      * @tc.name builtinsArrayAtPrototypebTest2500
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
+     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -352,7 +352,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest2500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -361,7 +361,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest2600
      * @tc.name builtinsArrayAtPrototypebTest2600
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
+     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -371,7 +371,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest2600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -380,7 +380,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest2700
      * @tc.name builtinsArrayAtPrototypebTest2700
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
+     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -390,7 +390,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest2700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, 1.7.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -399,7 +399,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest2800
      * @tc.name builtinsArrayAtPrototypebTest2800
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
+     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -409,7 +409,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest2800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, -1.2.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -419,7 +419,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest3100
      * @tc.name builtinsArrayAtPrototypebTest3100
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
+     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,8 +429,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest3100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [9];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(9);
         expect(result2).assertEqual(9);
         console.info(`${caseName}, test end`);
@@ -540,7 +540,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest4100
      * @tc.name builtinsArrayAtPrototypebTest4100
-     * @tc.desc at(self: FixedArray<char>, index: number): Char | undefined
+     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -550,7 +550,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest4100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(new Char(c'b'));
         console.info(`${caseName}, test end`);
         Done();
@@ -559,7 +559,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest4200
      * @tc.name builtinsArrayAtPrototypebTest4200
-     * @tc.desc at(self: FixedArray<char>, index: number): Char | undefined
+     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -569,7 +569,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest4200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(new Char(c'c'));
         console.info(`${caseName}, test end`);
         Done();
@@ -578,7 +578,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest4300
      * @tc.name builtinsArrayAtPrototypebTest4300
-     * @tc.desc at(self: FixedArray<char>, index: number): Char | undefined
+     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -588,7 +588,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest4300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, 1.7.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(new Char(c'b'));
         console.info(`${caseName}, test end`);
         Done();
@@ -597,7 +597,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest4400
      * @tc.name builtinsArrayAtPrototypebTest4400
-     * @tc.desc at(self: FixedArray<char>, index: number): Char | undefined
+     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -607,7 +607,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest4400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, -1.2.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(new Char(c'c'));
         console.info(`${caseName}, test end`);
         Done();
@@ -617,7 +617,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest4700
      * @tc.name builtinsArrayAtPrototypebTest4700
-     * @tc.desc at(self: FixedArray<char>, index: number): Char | undefined
+     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -627,8 +627,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest4700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [new Char(c'z')];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(new Char(c'z'));
         expect(result2).assertEqual(new Char(c'z'));
         console.info(`${caseName}, test end`);
@@ -740,7 +740,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest5700
      * @tc.name builtinsArrayAtPrototypebTest5700
-     * @tc.desc at(self: FixedArray<double>, index: number): Double | undefined
+     * @tc.desc at(self: FixedArray<double>, index: int): Double | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -750,7 +750,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest5700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(2.2);
         console.info(`${caseName}, test end`);
         Done();
@@ -759,7 +759,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest5800
      * @tc.name builtinsArrayAtPrototypebTest5800
-     * @tc.desc at(self: FixedArray<double>, index: number): Double | undefined
+     * @tc.desc at(self: FixedArray<double>, index: int): Double | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -769,7 +769,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(3.3);
         console.info(`${caseName}, test end`);
         Done();
@@ -778,7 +778,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest5900
      * @tc.name builtinsArrayAtPrototypebTest5900
-     * @tc.desc at(self: FixedArray<double>, index: number): Double | undefined
+     * @tc.desc at(self: FixedArray<double>, index: int): Double | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -788,7 +788,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = at(arr, 1.7.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(2.2);
         console.info(`${caseName}, test end`);
         Done();
@@ -797,7 +797,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest6000
      * @tc.name builtinsArrayAtPrototypebTest6000
-     * @tc.desc at(self: FixedArray<double>, index: number): Double | undefined
+     * @tc.desc at(self: FixedArray<double>, index: int): Double | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -807,7 +807,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest6000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = at(arr, -1.2.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(3.3);
         console.info(`${caseName}, test end`);
         Done();
@@ -817,7 +817,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest6300
      * @tc.name builtinsArrayAtPrototypebTest6300
-     * @tc.desc at(self: FixedArray<double>, index: number): Double | undefined
+     * @tc.desc at(self: FixedArray<double>, index: int): Double | undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -827,8 +827,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [9.9];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(9.9);
         expect(result2).assertEqual(9.9);
         console.info(`${caseName}, test end`);
@@ -937,7 +937,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest7300
      * @tc.name builtinsArrayAtPrototypebTest7300
-     * @tc.desc at(self: FixedArray<float>, index: number): Float | undefined 正向索引取第一个元素
+     * @tc.desc at(self: FixedArray<float>, index: int): Float | undefined 正向索引取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -947,7 +947,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest7300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()];
-        const result = at(arr, 0.0.toDouble());
+        const result = at(arr, 0);
         expect(result).assertEqual(1.5);
         console.info(`${caseName}, test end`);
         Done();
@@ -956,7 +956,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest7400
      * @tc.name builtinsArrayAtPrototypebTest7400
-     * @tc.desc at(self: FixedArray<float>, index: number): Float | undefined 正向索引取中间元素
+     * @tc.desc at(self: FixedArray<float>, index: int): Float | undefined 正向索引取中间元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -966,7 +966,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest7400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(2.5);
         console.info(`${caseName}, test end`);
         Done();
@@ -975,7 +975,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest7500
      * @tc.name builtinsArrayAtPrototypebTest7500
-     * @tc.desc at(self: FixedArray<float>, index: number): Float | undefined 负向索引取最后一个元素
+     * @tc.desc at(self: FixedArray<float>, index: int): Float | undefined 负向索引取最后一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -985,7 +985,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest7500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(3.5);
         console.info(`${caseName}, test end`);
         Done();
@@ -994,7 +994,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest7600
      * @tc.name builtinsArrayAtPrototypebTest7600
-     * @tc.desc at(self: FixedArray<float>, index: number): Float | undefined 负向索引取第一个元素
+     * @tc.desc at(self: FixedArray<float>, index: int): Float | undefined 负向索引取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1004,7 +1004,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest7600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()];
-        const result = at(arr, -3.0.toDouble());
+        const result = at(arr, -3);
         expect(result).assertEqual(1.5);
         console.info(`${caseName}, test end`);
         Done();
@@ -1013,7 +1013,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest7900
      * @tc.name builtinsArrayAtPrototypebTest7900
-     * @tc.desc at(self: FixedArray<float>, index: number): Float | undefined 单元素数组正负索引
+     * @tc.desc at(self: FixedArray<float>, index: int): Float | undefined 单元素数组正负索引
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1023,8 +1023,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest7900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [9.9.toFloat()];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(9.9.toFloat());
         expect(result2).assertEqual(9.9.toFloat());
         console.info(`${caseName}, test end`);
@@ -1133,7 +1133,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest8900
      * @tc.name builtinsArrayAtPrototypebTest8900
-     * @tc.desc at(self: FixedArray<int>, index: number): Int | undefined 正向索引取第一个元素
+     * @tc.desc at(self: FixedArray<int>, index: int): Int | undefined 正向索引取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1143,7 +1143,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest8900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [10, 20, 30];
-        const result = at(arr, 0.0.toDouble());
+        const result = at(arr, 0);
         expect(result).assertEqual(10);
         console.info(`${caseName}, test end`);
         Done();
@@ -1152,7 +1152,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest9000
      * @tc.name builtinsArrayAtPrototypebTest9000
-     * @tc.desc at(self: FixedArray<int>, index: number): Int | undefined 正向索引取中间元素
+     * @tc.desc at(self: FixedArray<int>, index: int): Int | undefined 正向索引取中间元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,7 +1162,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest9000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [10, 20, 30];
-        const result = at(arr, 1.0.toDouble());
+        const result = at(arr, 1);
         expect(result).assertEqual(20);
         console.info(`${caseName}, test end`);
         Done();
@@ -1171,7 +1171,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest9100
      * @tc.name builtinsArrayAtPrototypebTest9100
-     * @tc.desc at(self: FixedArray<int>, index: number): Int | undefined 负向索引取最后一个元素
+     * @tc.desc at(self: FixedArray<int>, index: int): Int | undefined 负向索引取最后一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1181,7 +1181,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest9100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [10, 20, 30];
-        const result = at(arr, -1.0.toDouble());
+        const result = at(arr, -1);
         expect(result).assertEqual(30);
         console.info(`${caseName}, test end`);
         Done();
@@ -1190,7 +1190,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest9200
      * @tc.name builtinsArrayAtPrototypebTest9200
-     * @tc.desc at(self: FixedArray<int>, index: number): Int | undefined 负向索引取第一个元素
+     * @tc.desc at(self: FixedArray<int>, index: int): Int | undefined 负向索引取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1200,7 +1200,7 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest9200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [10, 20, 30];
-        const result = at(arr, -3.0.toDouble());
+        const result = at(arr, -3);
         expect(result).assertEqual(10);
         console.info(`${caseName}, test end`);
         Done();
@@ -1209,7 +1209,7 @@ export default function builtinsArrayAtPrototypebTest() {
     /**
      * @tc.number builtinsArrayAtPrototypebTest9500
      * @tc.name builtinsArrayAtPrototypebTest9500
-     * @tc.desc at(self: FixedArray<int>, index: number): Int | undefined 单元素数组正负索引
+     * @tc.desc at(self: FixedArray<int>, index: int): Int | undefined 单元素数组正负索引
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1219,8 +1219,8 @@ export default function builtinsArrayAtPrototypebTest() {
         const caseName = 'builtinsArrayAtPrototypebTest9500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [99];
-        const result1 = at(arr, 0.0.toDouble());
-        const result2 = at(arr, -1.0.toDouble());
+        const result1 = at(arr, 0);
+        const result2 = at(arr, -1);
         expect(result1).assertEqual(99);
         expect(result2).assertEqual(99);
         console.info(`${caseName}, test end`);

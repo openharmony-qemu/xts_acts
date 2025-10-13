@@ -29,27 +29,22 @@ import {
   TextAlign,
   Color,
   ItemState,
-  Margin
+  Margin,
+  TextAttribute,
+  CommonMethod,
+  applyStyles
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function superFancyText(this: TextAttribute): this {
+  this.fontSize(36);
+  this.fontColor('#182431')
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 
 @Component
@@ -62,6 +57,14 @@ export struct StepperView {
   @Link _offset!: Position;
   private componentKey: string = '';
 
+  fancy(instance: CommonMethod) {
+    instance.width(336);
+    instance.height(621);
+    instance.backgroundColor(Color.White);
+    instance.margin({ top: 48, left: 12 } as Margin)
+    instance.borderRadius(24)
+  }
+
   build() {
     Stepper({
       index: this.currentIndex
@@ -69,13 +72,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+            .superFancyText()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -83,13 +86,13 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+            .superFancyText()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -98,21 +101,21 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Three')
-            
+            .superFancyText()
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.thirdState = this.thirdState === ItemState.Waiting ? ItemState.Normal : ItemState.Waiting
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .status(this.thirdState)
 
       StepperItem() {
         Column() {
           Text('Page Four')
-            
-        }
+            .superFancyText()
+        }.applyStyles(this.fancy)
       }
     }
     .backgroundColor('#F1F3F5')

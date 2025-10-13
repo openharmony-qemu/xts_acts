@@ -22,7 +22,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 struct Gauge3Example {
   @State startAngle:double = 0;
   @State endAngle:double = 0;
-  @State colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient , int]> = [[0x317AF7, 1], [0x5BA854, 2], [0xE08C3A, 3], [0x9C554B, 4]] as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient , int]>
+  @State colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]> = [[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]] as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
   @State strokeWidth:number = 0;
   @State value:double = 30;
   @State min:double = 0;
@@ -43,7 +43,7 @@ struct Gauge3Example {
           this.endAngle = message.value as double
       }
       if (message.name == 'colors') {
-          this.colors = message.value as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, int]>
+          this.colors = message.value as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
       }
       if (message.name == 'strokeWidth') {
           this.strokeWidth = message.value as number

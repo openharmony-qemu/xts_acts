@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValues } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
   /**
@@ -33,13 +33,13 @@ export default class CommonTest {
 
       
       let lastIndex: number = 0;
-      testValues.forEach((temp: TestValues, index) => {
+      testValues.forEach((temp: TestValues, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValues, index) => {
+      testValues.forEach((testValue: TestValues, index: Int) => {
 
         
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -94,7 +94,7 @@ export default class CommonTest {
                 testValue: testValue,
               }
               if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
+                let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
                 
                 if (customParams) {
                   data.customParams = customParams;
@@ -102,14 +102,13 @@ export default class CommonTest {
               } else {
                 
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
                 await Utils.sleep(1000);
               }
-
               
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
+              console.info('[' + caseTag + '] ================== strJson: ' + strJson);
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
             } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err

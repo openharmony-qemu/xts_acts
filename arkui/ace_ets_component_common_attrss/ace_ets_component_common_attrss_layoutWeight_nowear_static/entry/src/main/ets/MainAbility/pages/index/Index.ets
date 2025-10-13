@@ -12,41 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import common2D from '@ohos.graphics.displaySync'
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
+
+  aboutToAppear(){
     try {
+      let uiContext = this.getUIContext()
       let router1 = this.getUIContext().getRouter();
+      console.log('AppStorage.setOrCreate<UIContext>(uiContext, uiContext)')
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error: Error) {
-      console.log('error ' + error);
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
+    } catch (e) {
+      console.log('e' + e);
     }
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
+        
         .fontSize(50)
       Button(' ') {
         Text('next page')
@@ -56,7 +47,7 @@ struct Index {
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick((e: ClickEvent) => {
+      .onClick((e:ClickEvent) => {
 
       })
     }

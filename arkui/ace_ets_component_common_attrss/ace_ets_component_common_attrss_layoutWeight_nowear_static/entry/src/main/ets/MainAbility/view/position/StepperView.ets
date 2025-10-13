@@ -12,55 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  FlexDirection,
-  FlowItem,
-  WaterFlow,
-  ColumnOptions,
-  IndexerAlign,
-  FontWeight,
-  AlphabetIndexer,
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
-  Component,
-  StepperItem,
-  ClickEvent,
-  Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import {FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 
 
 @Component
@@ -70,8 +23,8 @@ export struct StepperView {
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  @Link _position: Position = { x: 0, y: 0 };
-  private componentKey: string = '';
+  @Link _position: Position = {x:0,y:0};
+  private componentKey: string='';
 
   build() {
     Stepper({
@@ -80,8 +33,8 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page One')
+            
 
-          
 
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
@@ -90,7 +43,6 @@ export struct StepperView {
             })
         }
 
-        
 
       }
       .nextLabel('Next')
@@ -99,8 +51,8 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Two')
+            
 
-          
 
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
@@ -109,7 +61,6 @@ export struct StepperView {
             })
         }
 
-        
 
       }
       .nextLabel('Next')
@@ -119,8 +70,8 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Three')
+            
 
-          
 
           Button('change status:' + this.thirdState)
             .backgroundColor('#007dFF')
@@ -129,7 +80,6 @@ export struct StepperView {
             })
         }
 
-        
 
       }
       .status(this.thirdState)
@@ -137,12 +87,11 @@ export struct StepperView {
       StepperItem() {
         Column() {
           Text('Page Four')
+            
 
-          
 
         }
 
-        
 
       }
     }

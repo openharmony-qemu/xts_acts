@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function etsIntlFunTest() {
     describe('etsIntlFunTest', (): void => {
         console.log('*************start IntlTest*************');
-        let newDate = new Date((24. * 60 * 60 * 1000) * (52 * 365 + 9 * 30 + 23));
+        let newDate = new Date((24. * 60 * 60 * 1000).toLong() * (52 * 365 + 9 * 30 + 23));
         let numberValue = 123456.789;
         let vehicles = ['Motorcycle', 'Bus', 'Car'];
         /**
@@ -54,7 +54,7 @@ export default function etsIntlFunTest() {
          * @tc.level     : Level 0
         */
         it('testIntlDateTimeFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-            let newDate = new Date((24. * 60 * 60 * 1000) * (52 * 365 + 9 * 30 + 23));
+            let newDate = new Date((24. * 60 * 60 * 1000).toLong() * (52 * 365 + 9 * 30 + 23));
             let options: Intl.DateTimeFormatOptions =
             {
                 year: "2-digit", month: "2-digit", day: "2-digit",

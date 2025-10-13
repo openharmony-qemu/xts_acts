@@ -54,7 +54,6 @@ export default function abilityTest() {
                 let pasteData = pasteboard.createData("ArrayBuffer", ARRAY_BUFFER);
                 let record = pasteData.getRecord(0);
                 let data =  record.data;
-                record.data = data;
                 let str = record.toPlainText();
                 expect(str).assertEqual("");
             } catch (err: BusinessError) {

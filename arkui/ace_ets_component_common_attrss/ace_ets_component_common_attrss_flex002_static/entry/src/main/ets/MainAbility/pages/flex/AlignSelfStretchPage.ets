@@ -161,7 +161,7 @@ struct AlignSelfStretchPage {
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }) 
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 as int }) 
     } else if (this.targetView == 'Button') {
       Button('button1') 
     } else if (this.targetView == 'Checkbox') {

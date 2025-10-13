@@ -90,7 +90,7 @@ struct dateTimeOptionsExample {
         .useMilitaryTime(this.isMilitaryTime)
         .onChange((value: TimePickerResult):void => {
           if(value.hour) {
-            this.setTime[this.indexNumber1.toInt()].setHours(value.hour, value.minute)
+            this.setTime[this.indexNumber1.toInt()].setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })

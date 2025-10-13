@@ -46,7 +46,7 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct TabsAnimationModeExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State currentAnimationMode: AnimationMode = AnimationMode.CONTENT_FIRST
   private controller: TabsController = new TabsController()
   private data: MyBasicSource = new MyBasicSource([]) as MyBasicSource
@@ -61,7 +61,7 @@ struct TabsAnimationModeExample {
   }
 
   @Builder
-  tabBuilder(title: string, targetIndex: number) {
+  tabBuilder(title: string, targetIndex: int) {
     Column() {
       Text(title).fontColor(this.currentIndex === targetIndex ? '#FF0000' : '#6B6B6B')
     }.width('100%')
@@ -113,7 +113,7 @@ struct TabsAnimationModeExample {
       .barMode(BarMode.Fixed)
       .animationMode(this.currentAnimationMode)
       .animationDuration(3000)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('90%')

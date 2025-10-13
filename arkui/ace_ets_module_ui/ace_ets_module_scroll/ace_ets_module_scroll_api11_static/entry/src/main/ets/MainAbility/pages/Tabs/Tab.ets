@@ -66,7 +66,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight(150)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .width('90%')
@@ -88,7 +88,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight(150)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .width('90%')

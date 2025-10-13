@@ -12,57 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Alignment,
-  Scroller,
-  TabsController,
-  BarPosition,
-  BarMode,
-  TabContent,
-  Tabs,
-  Divider,
-  FlexDirection,
-  FlowItem,
-  WaterFlow,
-  ColumnOptions,
-  IndexerAlign,
-  FontWeight,
-  AlphabetIndexer,
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
-  Component,
-  StepperItem,
-  ClickEvent,
-  Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
-
+import {Alignment,Scroller,TabsController,BarPosition,BarMode,TabContent,Tabs,Divider,FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct WaterFlowView {
-  @Link _position: Position = { x: 0, y: 0 };
-  private componentKey: string = '';
+  @Link _position: Position={x:0,y:0};
+  private componentKey: string='';
   @State minSize: number = 50
   @State maxSize: number = 100
   @State fontSize: number = 24
-  @State colors: number[] = new Array<number>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F)
+  @State colors: Int[] = new Array<Int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F)
   scroller: Scroller = new Scroller()
-  private itemWidthArray: number[] = new Array<number>()
-  private itemHeightArray: number[] = new Array<number>()
+  private itemWidthArray: Int[] =  new Array<Int>()
+  private itemHeightArray: Int[] = new Array<Int>()
 
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
@@ -71,8 +33,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize())
-      this.itemHeightArray.push(this.getSize())
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
@@ -94,38 +56,38 @@ export struct WaterFlowView {
   }
 
   build() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
+      ForEach(new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number,index:Int) => {
+        FlowItem() {
+          Column() {
+            Text('N' + item).fontSize(12).height('16')
+          }
+        }
+        .width(this.itemWidthArray[item.toInt()])
+        .height(this.itemHeightArray[item.toInt()])
+        .backgroundColor(this.colors[item.toInt() % 5])
+      }, (item: number,index:Int) => String(item))
+    }
+    .columnsTemplate('1fr 1fr 1fr 1fr')
+    .itemConstraintSize({
+      minWidth: 0,
+      maxWidth: '100%',
+      minHeight: 0,
+      maxHeight: '100%'
+    })
+    .columnsGap(10)
+    .rowsGap(5)
+    .onReachStart(() => {
+      console.info('onReachStart')
+    })
+    .onReachEnd(() => {
+      console.info('onReachEnd')
+    })
+    .backgroundColor(0xFAEEE0)
+    .width('100%')
+    .height('80%')
+    .layoutDirection(FlexDirection.Column)
+    .position(this._position)
+    .key(this.componentKey)
   }
 }

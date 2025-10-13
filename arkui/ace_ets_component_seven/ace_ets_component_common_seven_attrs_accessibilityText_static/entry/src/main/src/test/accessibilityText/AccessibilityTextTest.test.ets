@@ -19,7 +19,8 @@ import Utils, {
   PageConfig,
   TestValue,
   RectValue,
-  ExpectValue
+  ExpectValue,
+  SetV
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, beforeAll, expect } from '../../../../hypium/index';
@@ -91,6 +92,7 @@ beforeAll(() => {
     
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       
+      AppStorage.setOrCreate<SetV>('_zIndexButtonModifier',data.testValue.setValue)
       console.error('[' + data.caseTag + '] accessibilityTextTest');
       AttrsManager.change(data.caseTag, data.testValue.setValue);
       console.error('[' + data.caseTag + '] check accessibilityText.' + ` ${data.testValue.setValue.accessibilityText}`);

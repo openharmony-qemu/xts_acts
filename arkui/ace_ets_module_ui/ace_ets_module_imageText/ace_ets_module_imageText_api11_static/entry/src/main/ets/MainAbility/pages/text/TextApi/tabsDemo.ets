@@ -41,12 +41,12 @@ struct TabsCustomAnimationExample {
   @State tabContent2Opacity: number = 1.0
   @State Text: string = '123'
   tabsController: TabsController = new TabsController()
-  private firstTimeout: number = 3000
-  private secondTimeout: number = 5000
-  private first2secondDuration: number = 3000
-  private second2thirdDuration: number = 5000
-  private first2thirdDuration: number = 2000
-  private baseCustomAnimation: (from: number, to: number) => TabContentAnimatedTransition = (from: number, to: number) => {
+  private firstTimeout: int = 3000
+  private secondTimeout: int = 5000
+  private first2secondDuration: int = 3000
+  private second2thirdDuration: int = 5000
+  private first2thirdDuration: int = 2000
+  private baseCustomAnimation: (from: int, to: int) => TabContentAnimatedTransition = (from: int, to: int) => {
     if ((from === 0 && to === 1) || (from === 1 && to === 0)) {
      
       let firstCustomTransition = {
@@ -172,11 +172,11 @@ struct TabsCustomAnimationExample {
       .margin({ top: 5 } as Margin)
       .customContentTransition(this.useCustomAnimation ? this.baseCustomAnimation : undefined)
       .barMode(BarMode.Scrollable)
-      .onChange((index: number) : void=> {
+      .onChange((index: int) : void=> {
         console.info("onChange index: " + index)
         this.Text = '456'
       })
-      .onTabBarClick((index: number) :void=> {
+      .onTabBarClick((index: int) :void=> {
         console.info("onTabBarClick index: " + index)
       })
     }
