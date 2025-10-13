@@ -38,15 +38,15 @@ class MyNodeController extends NodeController {
       .borderColor(Color.Gray)
       .borderWidth(1)
       .margin({ left: 10 } as Margin);
-    let col = typeNode.createColumnNode(uiContext, 'Column');
+    let col = typeNode.createColumnNode(uiContext);
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    let gridRow = typeNode.createGridRowNode(uiContext, 'GridRow');
+    let gridRow = typeNode.createGridRowNode(uiContext);
     gridRow.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).borderWidth(1);
     col.appendChild(gridRow);
 
-    let gridCol = typeNode.createGridColNode(uiContext, 'GridCol');
+    let gridCol = typeNode.createGridColNode(uiContext);
     gridCol.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).borderWidth(1);
     gridRow.appendChild(gridCol);
     storage.set('GridColType', '' + gridCol.getNodeType());

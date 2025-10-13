@@ -52,10 +52,10 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
     this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
-    let col = typeNode.createColumnNode(uiContext, "Column")
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions)
     this.node?.appendChild(col)
-    let row4 = typeNode.createRowNode(uiContext, "Row")
+    let row4 = typeNode.createRowNode(uiContext)
     row4.attribute.width(200)
       .height(200)
       .borderWidth(1)

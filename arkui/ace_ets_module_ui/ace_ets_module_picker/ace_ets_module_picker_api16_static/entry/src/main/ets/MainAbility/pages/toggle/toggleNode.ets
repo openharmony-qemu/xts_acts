@@ -26,9 +26,9 @@ let toggleOptions:ToggleOptions = {type: ToggleType.Checkbox, isOn: false};
 class MyNodeController extends  NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    let col1 = typeNode.createNode(uiContext, 'Column')
+    let col1 = typeNode.createColumnNode(uiContext)
     col1.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
     let scroll = typeNode.createScrollNode(uiContext)
     scroll.initialize()

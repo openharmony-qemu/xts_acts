@@ -29,10 +29,10 @@ let data: TextTimerOptions = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
 
-    let row = typeNode.createNode(uiContext, 'Row')
+    let row = typeNode.createRowNode(uiContext)
     row.initialize().width('100%')
    
     col.appendChild(row)

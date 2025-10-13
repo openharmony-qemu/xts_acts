@@ -39,11 +39,11 @@ class MyNodeController extends NodeController {
       .borderColor(Color.Gray)
       .borderWidth(1)
       .margin({ left: 10 } as Margin);
-    let col = typeNode.createColumnNode(uiContext, 'Column');
+    let col = typeNode.createColumnNode(uiContext);
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    let blank = typeNode.createBlankNode(uiContext, 'Blank');
+    let blank = typeNode.createBlankNode(uiContext);
     blank.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).backgroundColor(Color.Red);
     col.appendChild(blank);
     storage.set('BlankType', '' + blank.getNodeType());
