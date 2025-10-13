@@ -64,15 +64,15 @@ export default function ConnectionAppProxyTest() {
   describe('ConnectionAppProxyTest',()=>{
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0100
-     * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0100
+     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0100
+     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0100
      * @tc.desc   : Setting Application level Proxy.
      * @tc.level  : level0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testNetworkMgrConnectionSetAppHttpProxy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0100';
+    it('testNetworkMgrConnectionGetDefaultHttpProxy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0100';
       console.info(`${caseName} test start`);
       try {
             connection.setAppHttpProxy(httpProxy);
@@ -104,15 +104,15 @@ export default function ConnectionAppProxyTest() {
     });
   
    /**
-     * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0200
-     * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0200
+     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0200
+     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0200
      * @tc.desc   : Setting Application level Proxy.
      * @tc.level  : level0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testNetworkMgrConnectionSetAppHttpProxy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0200';
+    it('testNetworkMgrConnectionGetDefaultHttpProxy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0200';
       console.info(`${caseName} test start`);
       try {
             connection.setAppHttpProxy(httpProxy2);
@@ -140,15 +140,15 @@ export default function ConnectionAppProxyTest() {
       }
     });
    /**
-     * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0300
-     * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0300
+     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0300
+     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0300
      * @tc.desc   : Setting Application level Proxy.
      * @tc.level  : level0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testNetworkMgrConnectionSetAppHttpProxy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0300';
+    it('testNetworkMgrConnectionGetDefaultHttpProxy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0300';
       console.info(`${caseName} test start`);
       try {
             connection.setAppHttpProxy(httpProxy3);
@@ -177,15 +177,15 @@ export default function ConnectionAppProxyTest() {
       }
     });
   /**
-     * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0400
-     * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0400
+     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0400
+     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0400
      * @tc.desc   : Setting Application level Proxy.
      * @tc.level  : level0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testNetworkMgrConnectionSetAppHttpProxy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0400';
+    it('testNetworkMgrConnectionGetDefaultHttpProxy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0400';
       console.info(`${caseName} test start`);
       try {
             connection.setAppHttpProxy(httpProxy4);
@@ -213,15 +213,15 @@ export default function ConnectionAppProxyTest() {
       }
     });     
 /**
-     * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0500
-     * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0500
+     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0500
+     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0500
      * @tc.desc   : Setting Application level Proxy.
      * @tc.level  : level0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testNetworkMgrConnectionSetAppHttpProxy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0500';
+    it('testNetworkMgrConnectionGetDefaultHttpProxy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0500';
       console.info(`${caseName} test start`);
       try {
             connection.setAppHttpProxy(httpProxy);
