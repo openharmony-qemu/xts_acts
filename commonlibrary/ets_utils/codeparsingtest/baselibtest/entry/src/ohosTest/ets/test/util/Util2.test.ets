@@ -13,16 +13,14 @@
 * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import taskpool from '@ohos.taskpool';
 import util from '@ohos.util';
-import worker, { MessageEvents } from '@ohos.worker';
+
 import {
   ArrayList,
   buffer,
   Deque,
   HashMap,
   HashSet,
-  JSON,
   LightWeightMap,
   LightWeightSet,
   LinkedList,
@@ -35,11 +33,12 @@ import {
   uri,
   url
 } from '@kit.ArkTS';
+import * as nameSpace from './util';
+import { foo, generator } from './util';
 
 function sleep(ms: number) {
   return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
 }
-
 
 
 export default function util2Test() {
@@ -851,5 +850,367 @@ export default function util2Test() {
         expect(err.code).assertEqual(401);
       }
     });
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3501
+     * @tc.name       : testGetHash_036
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isAsyncFunction(async () => {
+      });
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3502
+     * @tc.name       : testGetHash_037
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isAsyncFunction(() => {
+      });
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3503
+     * @tc.name       : testGetHash_038
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isGeneratorFunction(foo);
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3504
+     * @tc.name       : testGetHash_039
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let b = "false"
+      let result = type.isGeneratorFunction(b);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3505
+     * @tc.name       : testGetHash_040
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isGeneratorObject(generator);
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3506
+     * @tc.name       : testGetHash_041
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let b = "false"
+      let result = type.isGeneratorObject(b);
+      expect(result).assertEqual(false);
+    });
+
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3507
+     * @tc.name       : testGetHash_042
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isModuleNamespaceObject(nameSpace);
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3508
+     * @tc.name       : testGetHash_043
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let res = "aaa";
+      let result = type.isModuleNamespaceObject(res);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3509
+     * @tc.name       : testGetHash_044
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isPromise(Promise.resolve(1));
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3510
+     * @tc.name       : testGetHash_045
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let res = "aaa";
+      let result = type.isPromise(res);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3511
+     * @tc.name       : testGetHash_046
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let type = new util.types();
+      let result = type.isRegExp(new RegExp('abc'));
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3512
+     * @tc.name       : testGetHash_047
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = "aaa";
+      let type = new util.types();
+      let result = type.isRegExp(res);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3513
+     * @tc.name       : testGetHash_048
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new ArrayList<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+      let result2 = res.remove(2);
+      expect(result2).assertEqual(false);
+      let result3 = res.remove(1);
+      expect(result3).assertEqual(true);
+      let result: Array<number> = res.convertToArray();
+      expect(result.toString()).assertEqual("");
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3514
+     * @tc.name       : testGetHash_049
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new HashSet<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3515
+     * @tc.name       : testGetHash_050
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new LightWeightMap<number, number>();
+      let result1 = res.setValueAt(1, 1);
+      expect(result1).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3516
+     * @tc.name       : testGetHash_051
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new LightWeightSet<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+      let result2 = res.remove(1);
+      expect(result2).assertEqual(1);
+      expect(res.toArray().toString()).assertEqual("");
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3517
+     * @tc.name       : testGetHash_052
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new LinkedList<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+      let result2 = res.remove(1);
+      expect(result2).assertEqual(true);
+      let result3 = res.remove(31);
+      expect(result3).assertEqual(false);
+      expect(res.convertToArray().toString()).assertEqual("");
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3518
+     * @tc.name       : testGetHash_053
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new List<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+      let result2 = res.remove(1);
+      expect(result2).assertEqual(true);
+      let result3 = res.remove(31);
+      expect(result3).assertEqual(false);
+      expect(res.convertToArray().toString()).assertEqual("");
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3519
+     * @tc.name       : testGetHash_054
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new Queue<number>();
+      let result1 = res.add(1);
+      expect(result1).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3520
+     * @tc.name       : testGetHash_055
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let res = new TreeSet<number>();
+      let result1 =res.add(1);
+      expect(result1).assertEqual(true);
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3521
+     * @tc.name       : testGetHash_056
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3522
+     * @tc.name       : testGetHash_057
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3523
+     * @tc.name       : testGetHash_058
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3524
+     * @tc.name       : testGetHash_059
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3525
+     * @tc.name       : testGetHash_060
+     * @tc.desc       : Testing the getHash interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testGetHash_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    });
   })
 }
+

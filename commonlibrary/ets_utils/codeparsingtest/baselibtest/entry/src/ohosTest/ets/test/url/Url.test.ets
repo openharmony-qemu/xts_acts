@@ -14,8 +14,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import Url from '@ohos.url';
-import { url } from '@kit.ArkTS';
-import { ArrayList } from '@kit.ArkTS';
+import { ArrayList, url } from '@kit.ArkTS';
 
 let str2 =
   '%21%21%22%22%23%23%24%24%25%25%27%27%28%28%29%29**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D%7E%7E';
@@ -2359,13 +2358,54 @@ export default function urlTest() {
      * @tc.level      : Level 1
      */
     it('testParseURL90004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = 'testParseURL90004';
+      try {
+        let urlObject = url.URL.parseURL('https://developer.exampleUrl/');
+        let params = new url.URLParams(urlObject.search.slice(1));
+        params.append('fod', '3');
+        let res = params.getAll('foe');
+        expect(res.toString()).assertEqual("")
+      } catch (e) {
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0800
+     * @tc.name       : testParseURL90005
+     * @tc.desc       : Test the function of the interface parseURL9.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testParseURL90005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testParseURL90005';
       try {
         let url5 = url.URL.parseURL('https://www.example.com/test/test1', '');
         expect().assertFail();
       } catch (e) {
         console.error(`${TAG} failed: ${e.message}`);
         expect(e.message).assertEqual('Parameter error. The type of  must be string');
+      }
+    });
+
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0900
+     * @tc.name       : testParseURL90006
+     * @tc.desc       : Test the function of the interface parseURL9.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testParseURL90006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testParseURL90006';
+      try {
+        let urlObject = url.URL.parseURL('https://developer.exampleUrl/');
+        let params = new url.URLParams(urlObject.search.slice(1));
+        params.append('fod', '3');
+        let res = params.get('foe');
+        expect(res === undefined).assertEqual(true)
+      } catch (e) {
+        expect().assertFail();
       }
     });
   })
