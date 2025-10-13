@@ -93,6 +93,26 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.number: settings_get_value_static_119
+     * @tc.name: settings_get_value_static_119
+     * @tc.desc: check getValueSync value
+     */
+    it('settings_get_value_static_119',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness119';//关键字
+      let default = '323445.00';//值
+      let domainName = 'secure';
+      try{
+        let value = settings.getValueSync(abilityContext, name, default, domainName);
+        console.info("[settings_set_value_119] value is: " + value);
+        expect(default).assertEqual(value);
+      } catch (err) {
+        console.error("[settings_set_value_119] error = " + err);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.number: settings_get_value_static_033
      * @tc.name: settings_get_value_static_033
      * @tc.desc: check getValue value
@@ -134,6 +154,36 @@ export default function settingUiJsunit() {
         })
       } catch(err){
         console.info("[settings_get_value_034] error is: " + String(err));
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number: settings_get_value_static_117
+     * @tc.name: settings_get_value_static_117
+     * @tc.desc: check getValue value
+     */
+    it('settings_get_value_static_117',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness117';//关键字
+      let value = 'brightness117';//值
+      let domainName = 'secure';
+      try{
+        settings.setValue(abilityContext, name, value, domainName)
+          .then((data)=>{
+            console.info("[settings_get_value_117] value is:" + data);
+            settings.getValue(abilityContext, name, domainName).then(ret => {
+              console.info("[settings_get_value_117] value is:" + ret);
+              expect(ret).assertEqual(value);
+              done();
+            })
+          })
+          .catch((err)=>{
+            console.info("[settings_get_value_117] 1252 error is:" + String(err));
+            expect().assertFail();
+            done();
+          })
+      }catch (err) {
+        console.error("[settings_set_value_118] error = " + err);
         expect().assertFail();
         done();
       }
@@ -1048,7 +1098,7 @@ export default function settingUiJsunit() {
     /**
      * @tc.number: settings_get_value_static_118
      * @tc.name: settings_get_value_static_118
-     * @tc.desc: check settings get value
+     * @tc.desc: check registerKeyObserver
      */
     it('settings_get_value_static_118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness118';//关键字
@@ -1064,6 +1114,33 @@ export default function settingUiJsunit() {
       }catch (err) {
         console.error("[settings_set_value_static_118] error = " + err);
         expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number: settings_get_value_static_122
+     * @tc.name: settings_get_value_static_122
+     * @tc.desc: check unregisterKeyObserver
+     */
+    it('settings_get_value_static_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness122';//关键字
+      let domainName = 'global';
+      try{
+        let value = settings.registerKeyObserver(abilityContext, name, domainName, (err, ret) => {
+          if (err) {
+            console.info("[settings_get_value_static_118] error is:" + String(err));
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        })
+        let value2 = settings.unregisterKeyObserver(abilityContext, name, domainName);
+        expect(value2).assertEqual(true);
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_122] error = " + err);
+        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
           .assertTrue();
       }
       done();
