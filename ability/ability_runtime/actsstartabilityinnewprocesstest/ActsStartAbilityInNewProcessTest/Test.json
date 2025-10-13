@@ -21,7 +21,6 @@
             "type": "ShellKit",
             "run-command": [
                 "param set persist.sys.abilityms.support.start_other_app true",
-                "reboot",
                 "power-shell wakeup",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
                 "uinput -T -m 300 1279 280 200",
@@ -31,7 +30,6 @@
             ],
             "teardown-command": [
                 "param set persist.sys.abilityms.support.start_other_app true",
-                "reboot",
                 "power-shell wakeup",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice true",
                 "uinput -T -m 300 1279 280 200",
