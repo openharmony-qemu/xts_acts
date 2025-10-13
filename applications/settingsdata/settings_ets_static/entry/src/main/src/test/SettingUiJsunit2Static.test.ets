@@ -18,7 +18,7 @@ import settings from '@ohos.settings'
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
-import Utils from '../Util.test';
+import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base';
 
