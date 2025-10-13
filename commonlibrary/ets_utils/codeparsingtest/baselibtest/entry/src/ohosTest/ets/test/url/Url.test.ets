@@ -2192,7 +2192,7 @@ export default function urlTest() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SYMBOL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_1300
      * @tc.name testSymbol0002
      * @tc.desc Testing URLSearchParams for special characters extraction.
      * @tc.size MediumTest
