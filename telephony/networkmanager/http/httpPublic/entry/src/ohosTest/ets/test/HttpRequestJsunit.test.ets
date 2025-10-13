@@ -159,7 +159,7 @@ export default function httpRequestJsunit() {
       console.info(`${caseName}---Start`);
       try {
         let httpRequest = http.createHttp();
-        let resp = httpRequest.request("https://www.baidu.com/", {
+        let resp = await httpRequest.request("https://www.baidu.com/", {
              dnsServers:['223.5.5.5'],
         });
         console.info(`${caseName} createHttp success `+ JSON.stringify(resp));
