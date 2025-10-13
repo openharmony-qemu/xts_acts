@@ -1587,7 +1587,8 @@ function testSetDisallowedPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
-      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE)).assertFalse();
+      let res = restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE);
+      expect(res).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -1608,7 +1609,8 @@ function testSetDisallowedPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, true);
-      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE)).assertTrue();
+      let res = restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE);
+      expect(res).assertTrue();
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
     } catch (error) {
       expect(error.code == 801).assertTrue();
