@@ -12,32 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import {
-  Component,
-  Text,
-  Button,
-  ClickEvent,
-  Column,
-  List,
-  ListItemGroup,
-  Stepper,
-  StepperItem,
-  ListItem,
-  StickyStyle,
-  Position,
-  TextAlign,
-  Color,
-  ItemState,
-  Builder,
-  ListItemGroupOptions
-} from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
-
-
+import {Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct ListItemGroupView {
-  @Link _offset!: Position;
+  @Link _offset: Position = {x: 10, y:10};
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;
@@ -45,7 +24,7 @@ export struct ListItemGroupView {
   private subassemblyHeight: number = 0;
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
-  private projects: string[] = ['Chinese', 'mathematics', 'English']
+  private projects: string[] = new Array<string>('Chinese', 'mathematics', 'English')
 
   @Builder
   itemHead(text: string) {
@@ -76,12 +55,6 @@ export struct ListItemGroupView {
   }
 
   build() {
-    List({ space: 20 }) {
 
-    }
-    .width(this.parentWidth)
-    .height(this.parentHeight)
-    .key(this.parentComponentKey)
-    .sticky(StickyStyle.Header)
   }
 }

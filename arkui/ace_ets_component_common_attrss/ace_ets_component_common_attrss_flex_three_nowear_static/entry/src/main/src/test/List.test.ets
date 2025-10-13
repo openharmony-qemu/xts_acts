@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import flexShrinkTest from './flex/FlexShrinkTest.test';
+import flexGrowTest from './flex/FlexGrowTest.test';
 export default function testsuite() {
-  flexShrinkTest();
+  flexGrowTest();
 }

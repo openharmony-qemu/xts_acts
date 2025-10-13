@@ -12,33 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import {
-  Component,
-  Text,
-  Button,
-  ClickEvent,
-  Column,
-  Builder,
-  BarMode,
-  TabContent,
-  Tabs,
-  Divider,
-  Margin,
-  TabsController,
-  Position,
-  BarPosition
-} from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
-
+import {TabsController,BarPosition,BarMode,TabContent,Tabs,Divider,FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
-  @Link _position!: Position;
-  private componentKey: string = '';
+  @Link _position: Position={x:0,y:0};
+  private componentKey: string='';
 
   @Builder
   TabBuilder(index: number, name: string) {
@@ -58,7 +41,25 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
+      TabContent() {
+        Column().width('100%').height('100%').backgroundColor('#00CB87')
+      }
+      
 
+      TabContent() {
+        Column().width('100%').height('100%').backgroundColor('#007DFF')
+      }
+      
+
+      TabContent() {
+        Column().width('100%').height('100%').backgroundColor('#FFBF00')
+      }
+      
+
+      TabContent() {
+        Column().width('100%').height('100%').backgroundColor('#E67C92')
+      }
+      
     }
     .vertical(false)
     .barMode(BarMode.Fixed)

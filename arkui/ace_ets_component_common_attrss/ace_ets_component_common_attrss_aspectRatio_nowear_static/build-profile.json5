@@ -15,15 +15,13 @@
 
 {
   "app": {
-    "signingConfigs": [
-
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
         "arkTSVersion": "1.2",
-        "compatibleSdkVersion": "21",
+        "compatibleSdkVersion": "20",
         "compileSdkVersion": "21",
         "runtimeOS": "OpenHarmony",
         "buildOption": {

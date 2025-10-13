@@ -24,7 +24,6 @@ import {
   ForEach,
   Position,
   Margin,
-  
   TextAlign,
   Color,
   NavDestination

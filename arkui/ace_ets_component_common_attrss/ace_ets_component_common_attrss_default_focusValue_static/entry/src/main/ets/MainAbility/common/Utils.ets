@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -113,7 +113,7 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams: RouterParams = router.getParams() as RouterParams;
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
@@ -125,6 +125,7 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
+
         router.pushUrl({
           url: obj.pageUrl,
           params: {
@@ -157,14 +158,15 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj1 = JSON.parseJsonElement(strJson)
-    const str = obj1.getString("$rect")
-    let parts = str.substring(1, str.length - 1).split("],[");
-    let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
-    });
+    let obj: Record<string, Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+    let rectInfo: Array<Array<number>> =
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
+
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -173,18 +175,7 @@ export default class Utils {
     } as RectValue
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);

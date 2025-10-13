@@ -31,7 +31,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -111,15 +111,8 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-        console.info('targetView: ' + obj.targetView);
-        await Utils.back();
-        pages = router.getState();
-      }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
@@ -139,7 +132,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('index' == router.getState().name)) {
+    if (!router.getState().name.endsWith("/index")) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -155,15 +148,15 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj1 = JSON.parseJsonElement(strJson)
-    console.log("================================== strJson" + strJson)
-    const str = obj1.getString("$rect")
-    console.log("=================================== obj1.getString($rect): " + str);
+    let obj: Record<string, Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+    let rectInfo: Array<Array<number>> =
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
 
-    let parts = str.substring(1, str.length - 1).split("],[");
-    let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
-    });
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -174,7 +167,6 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
@@ -190,7 +182,6 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(2000);
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }

@@ -30,22 +30,6 @@ import { State, Link } from '@ohos.arkui.stateManagement';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Component
 export struct StepperView {
   @State prevIndex: Int = 0
