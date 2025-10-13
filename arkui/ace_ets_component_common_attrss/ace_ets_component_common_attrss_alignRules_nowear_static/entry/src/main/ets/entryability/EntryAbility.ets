@@ -56,7 +56,7 @@ class EntryAbility extends UIAbility {
             hilog.error(0x0000, 'testTag',
               'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
-          // Obtain a UIContext instance.
+          
           if (windowClass !== null) {
             AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
@@ -68,9 +68,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void>|undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
+    return undefined
   }
 
   onWindowStageDestroy() {

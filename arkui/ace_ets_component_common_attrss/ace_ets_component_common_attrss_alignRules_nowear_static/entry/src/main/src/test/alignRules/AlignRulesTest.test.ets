@@ -31,16 +31,23 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function AlignRulesTest() {
-  //A list of components that support the position attribute, which is required.
+  
   let supportView = ['Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper']
 
-  //The size of the parent component, when set as a percentage, serves as the calculation basis.
+  
   let parentWidth = 300;
   let parentHeight = 300;
   let subassemblyWidth = 100;
   let subassemblyHeight = 100;
-
-  //Page config, this param is required.
+  let subassemblyCenter: AlignRuleOption = {
+    center: {
+      anchor: '__container__', align: VerticalAlign.Center
+    },
+    middle: {
+      anchor: '__container__', align: HorizontalAlign.Center
+    }
+  }
+  
   let pageConfig: PageConfig = {
     testName: 'testAlignRules',
     pageName: 'AlignRulesPage',
@@ -49,47 +56,245 @@ export default function AlignRulesTest() {
     parentHeight: parentHeight,
     subassemblyWidth: subassemblyWidth,
     subassemblyHeight: subassemblyHeight,
-    
+    subassemblyCenter: subassemblyCenter,
     parentComponentKey: 'parentComponentKey',
     referenceComponentKey: 'referenceComponentKey'
   }
 
-  //Test values, looped to create cases, this param is required.
+  
   let testValues: TestValue[] = [
+    {
+    describe: 'ParentAlignTopLeftJustifying',
+    setValue: {
+      left: {
+        anchor: '__container__', align: HorizontalAlign.Start
+      },
+      top: {
+        anchor: '__container__', align: VerticalAlign.Top
+      }
+    }
+  },
+    {
+    describe: 'ParentAlignTopHorizontalCenter',
+    setValue: {
+      middle: {
+        anchor: '__container__', align: HorizontalAlign.Center
+      },
+      top: {
+        anchor: '__container__', align: VerticalAlign.Top
+      }
+    }
+  },
+    {
+    describe: 'ParentAlignTopRightAlignment',
+    setValue: {
+      right: {
+        anchor: '__container__', align: HorizontalAlign.End
+      },
+      top: {
+        anchor: '__container__', align: VerticalAlign.Top
+      }
+    }
+  },
+    {
+    describe: 'ParentVerticalCenterLeftJustifying',
+    setValue: {
+      left: {
+        anchor: '__container__', align: HorizontalAlign.Start
+      },
+      center: {
+        anchor: '__container__', align: VerticalAlign.Center
+      }
+    }
+  },
+    {
+    describe: 'ParentVerticalCenterHorizontally',
+    setValue: {
+      middle: {
+        anchor: '__container__', align: HorizontalAlign.Center
+      },
+      center: {
+        anchor: '__container__', align: VerticalAlign.Center
+      }
+    }
+  },
+    {
+    describe: 'ParentVerticalCenterRightAlignment',
+    setValue: {
+      right: {
+        anchor: '__container__', align: HorizontalAlign.End
+      },
+      center: {
+        anchor: '__container__', align: VerticalAlign.Center
+      }
+    }
+  },
+    {
+    describe: 'ParentAlignmentLeftJustifying',
+    setValue: {
+      left: {
+        anchor: '__container__', align: HorizontalAlign.Start
+      },
+      bottom: {
+        anchor: '__container__', align: VerticalAlign.Bottom
+      }
+    }
+  },
+    {
+    describe: 'ParentAlignmentLeftJustifyingHorizontally',
+    setValue: {
+      middle: {
+        anchor: '__container__', align: HorizontalAlign.Center
+      },
+      bottom: {
+        anchor: '__container__', align: VerticalAlign.Bottom
+      }
+    }
+  },
+{
+    describe: 'ParentAlignmentLeftJustifyingRightAlignment',
+    setValue: {
+      right: {
+        anchor: '__container__', align: HorizontalAlign.End
+      },
+      bottom: {
+        anchor: '__container__', align: VerticalAlign.Bottom
+      }
+    }
+  }, {
+    describe: 'SubassemblyAlignTopLeftJustifying',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.Start
+      },
+      bottom: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyAlignTopHorizontalCenter',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      bottom: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyAlignTopRightAlignment',
+    setValue: {
+      left: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      bottom: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyVerticalCenterLeftJustifying',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.Start
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyVerticalCenterHorizontally',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyVerticalCenterRightAlignment',
+    setValue: {
+      left: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Top
+      }
+    }
+  }, {
+    describe: 'SubassemblyAlignmentLeftJustifying',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.Start
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
+      }
+    }
+  },
+  {
+    describe: 'SubassemblyAlignmentLeftJustifyingHorizontally',
+    setValue: {
+      right: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
+      }
+    }
+  },
+  {
+    describe: 'SubassemblyAlignmentLeftJustifyingRightAlignment',
+    setValue: {
+      left: {
+        anchor: 'referenceComponentKey', align: HorizontalAlign.End
+      },
+      top: {
+        anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
+      }
+    }
+  }
   ]
+  
+  
+  
 
   describe('AlignRulesTest', () => {
 
     beforeAll(() => {
       console.info("SizeTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.alignRules.nowear.test.static",
         "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    //Create test cases by config.
+    
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-
-      //Obtain the region information of the target component.
+      
       console.info('[' + data.caseTag + '] get targetComponent rect after position changed.');
       let rec: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
-      //Obtain the region information of the parent component.
+      
       console.info('[' + data.caseTag + '] get parentComponent rect after position changed.');
       let recParent: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
 
-      //Obtain the region information of the reference component.
+      
       console.info('[' + data.caseTag + '] get referenceComponent rect after position changed.');
       let recReference: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
       console.info('[' + data.caseTag + '] check alignRules value.');
+      console.info("================================= rec: " + JSON.stringify(rec))
+      console.info("================================= recParent: " + JSON.stringify(recParent))
+      console.info("================================= recReference: " + JSON.stringify(recReference))
 
-      //Verify actual alignment position after alignment
+      
       if (data.testValue.describe == 'ParentAlignTopLeftJustifying') {
         expect(Math.floor(Math.abs(rec.left - recParent.left)) <= 1).assertTrue();
         expect(Math.floor(Math.abs(rec.top - recParent.top)) <= 1).assertTrue();
       } else if (data.testValue.describe == 'ParentAlignTopHorizontalCenter') {
+        console.log("========================================== " + Math.abs(Number(Number((rec.left + (rec.right - rec.left) / 2)).toFixed(2))))
+        console.log("========================================== " + Number(Number((recReference.left + (recReference.right - recReference.left) / 2)).toFixed(2)))
+
         expect(Math.abs(Number(Number((rec.left + (rec.right - rec.left) / 2)).toFixed(2)) -
         Number(Number((recReference.left + (recReference.right - recReference.left) / 2)).toFixed(2))) <= 1)
           .assertTrue()

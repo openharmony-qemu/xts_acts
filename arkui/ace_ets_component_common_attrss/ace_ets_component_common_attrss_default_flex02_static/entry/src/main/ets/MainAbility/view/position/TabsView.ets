@@ -58,7 +58,21 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     }
     .vertical(false)
     .barMode(BarMode.Fixed)

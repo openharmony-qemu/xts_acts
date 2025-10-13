@@ -12,16 +12,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
-import { State ,Link } from '@ohos.arkui.stateManagement'
+
+import {
+  Component,
+  AlphabetIndexer,
+  AlphabetIndexerOptions,
+  IndexerAlign,
+  Position,
+  FontWeight
+} from '@ohos.arkui.component';
+import { Link } from '@ohos.arkui.stateManagement';
+
 @Component
 export struct AlphabetIndexerView {
-  @Link _position: Position = {x:0,y:0};
+  @Link _position!: Position;
   private componentKey: string = '';
-  private value: string[] = new Array<string>('#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
     'H', 'I', 'J', 'K', 'L', 'M', 'N',
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-    'V', 'W', 'X', 'Y', 'Z')
+    'V', 'W', 'X', 'Y', 'Z']
 
   build() {
     AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })

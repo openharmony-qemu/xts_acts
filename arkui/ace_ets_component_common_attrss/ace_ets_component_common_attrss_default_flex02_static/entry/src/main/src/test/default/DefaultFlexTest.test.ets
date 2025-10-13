@@ -34,7 +34,7 @@ export default function defaultFlexTest() {
 
   let containerView: Array<string> = new Array<string>('Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse')
 
-  //Component to be tested
+  
   let supportView: Array<string> = new Array<string>(
     'Text',
     'TextArea',
@@ -65,7 +65,7 @@ export default function defaultFlexTest() {
     'Shape'
   )
 
-  //Custom params.
+  
   let parentWidth = 300;
   let parentHeight = 600;
 
@@ -78,7 +78,7 @@ export default function defaultFlexTest() {
     parentHeight: parentHeight
   }
 
-  //Test content and expected results
+  
   let testValues: TestValue[] = [{
     describe: 'FlexBasis',
     exceptView: ['Blank'],
@@ -108,26 +108,26 @@ export default function defaultFlexTest() {
     });
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if (data.testValue.describe == 'FlexBasis') {
-        // Test flexBasis defaults
+        
         console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexBasis:' + data.viewObj!.getElement('$attrs').getString('flexBasis'));
         expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.flexBasis);
       } else if (data.testValue.describe == 'FlexGrow') {
-        // Test flexGrow defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getString('flexGrow'));
-        expect(data.viewObj!.getElement('$attrs').getString('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
+        
+        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexGrow:' + data.viewObj!.getElement('$attrs').getDouble('flexGrow'));
+        expect(data.viewObj!.getElement('$attrs').getDouble('flexGrow')).assertEqual(data.testValue.expectValue.flexGrow);
       } else if (data.testValue.describe == 'FlexShrink') {
-        // Test flexShrink defaults
-        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexShrink:' + data.viewObj!.getElement('$attrs').getString('flexShrink'));
+        
+        console.info('[' + data.caseTag + ']data.viewObj!.$attrs.flexShrink:' + data.viewObj!.getElement('$attrs').getDouble('flexShrink'));
         if ((data.pageConfig.containerView == 'Row') || (data.pageConfig.containerView == 'Column')) {
           console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.getElement('$attrs').getString('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
+          expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkRowColumn);
         } else if ((data.pageConfig.containerView == 'FlexRow') || (data.pageConfig.containerView == 'FlexRowReverse')
           || (data.pageConfig.containerView == 'FlexColumn') || (data.pageConfig.containerView == 'FlexColumnReverse')) {
           console.info('[' + data.caseTag + ']data.pageConfig.containerView:' + data.pageConfig.containerView);
-          expect(data.viewObj!.getElement('$attrs').getString('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkFlex);
+          expect(data.viewObj!.getElement('$attrs').getDouble('flexShrink')).assertEqual(data.testValue.expectValue.flexShrinkFlex);
         }
       } else if (data.testValue.describe == 'AlignSelf') {
-        // Test alignSelf defaults
+        
         if (data.pageConfig.componentKey == 'Blank') {
           console.info('[' + data.caseTag + ']data.viewObj!.$attrs.alignSelf:' + data.viewObj!.getElement('$attrs').getString('alignSelf'));
           expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.alignSelfBlank);

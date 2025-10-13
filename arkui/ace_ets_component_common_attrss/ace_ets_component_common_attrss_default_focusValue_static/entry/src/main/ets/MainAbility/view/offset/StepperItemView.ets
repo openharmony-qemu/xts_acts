@@ -51,7 +51,7 @@ export struct StepperItemView {
     Stepper({
       index: this.currentIndex
     }) {
-      // First step page
+      
       StepperItem() {
         Column() {
           Text('Page One')
@@ -68,7 +68,7 @@ export struct StepperItemView {
       .offset(this._offset)
       .key(this.componentKey)
 
-      // Second step page
+      
       StepperItem() {
         Column() {
           Text('Page Two')

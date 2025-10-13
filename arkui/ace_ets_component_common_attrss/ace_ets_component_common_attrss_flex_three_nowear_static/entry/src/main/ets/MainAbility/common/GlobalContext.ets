@@ -14,7 +14,7 @@
 */
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-// 构造单例对象
+
 export class GlobalContext {
   private constructor() {
   }
