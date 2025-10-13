@@ -459,6 +459,104 @@ export const EnumMPEGProfile20: () => number;
 
 export const EnumMPEGProfile21: () => number;
 
+export const EnumOHH263Profile1: () => number;
+
+export const EnumOHH263Profile2: () => number;
+
+export const EnumOHAVOutputFormat1: () => number;
+
+export const EnumOHAVOutputFormat2: () => number;
+
+export const EnumOHAVOutputFormat3: () => number;
+
+export const EnumOHAVOutputFormat4: () => number;
+
+export const EnumOHAVOutputFormat5: () => number;
+
+export const EnumOHAVOutputFormat6: () => number;
+
+export const EnumOHAVColorPrimary1: () => number;
+
+export const EnumOHAVColorPrimary2: () => number;
+
+export const EnumOHAVColorPrimary3: () => number;
+
+export const EnumOHAVColorPrimary4: () => number;
+
+export const EnumOHAVColorPrimary5: () => number;
+
+export const EnumOHAVColorPrimary6: () => number;
+
+export const EnumOHAVColorPrimary7: () => number;
+
+export const EnumOHAVColorPrimary8: () => number;
+
+export const EnumOHTransferCharacteristic1: () => number;
+
+export const EnumOHTransferCharacteristic2: () => number;
+
+export const EnumOHTransferCharacteristic3: () => number;
+
+export const EnumOHTransferCharacteristic4: () => number;
+
+export const EnumOHTransferCharacteristic5: () => number;
+
+export const EnumOHTransferCharacteristic6: () => number;
+
+export const EnumOHTransferCharacteristic7: () => number;
+
+export const EnumOHTransferCharacteristic8: () => number;
+
+export const EnumOHTransferCharacteristic9: () => number;
+
+export const EnumOHTransferCharacteristic10: () => number;
+
+export const EnumOHTransferCharacteristic11: () => number;
+
+export const EnumOHTransferCharacteristic12: () => number;
+
+export const EnumOHTransferCharacteristic13: () => number;
+
+export const EnumOHMatrixCoefficient1: () => number;
+
+export const EnumOHMatrixCoefficient2: () => number;
+
+export const EnumOHMatrixCoefficient3: () => number;
+
+export const EnumOHMatrixCoefficient4: () => number;
+
+export const EnumOHMatrixCoefficient5: () => number;
+
+export const EnumOHMatrixCoefficient6: () => number;
+
+export const EnumOHMatrixCoefficient7: () => number;
+
+export const EnumOHMatrixCoefficient8: () => number;
+
+export const EnumOHMatrixCoefficient9: () => number;
+
+export const EnumOHMatrixCoefficient10: () => number;
+
+export const EnumOHBitsPerSample1: () => number;
+
+export const EnumOHBitsPerSample2: () => number;
+
+export const EnumOHBitsPerSample3: () => number;
+
+export const EnumOHBitsPerSample4: () => number;
+
+export const EnumOHBitsPerSample5: () => number;
+
+export const EnumOHBitsPerSample6: () => number;
+
+export const EnumOHBitsPerSample7: () => number;
+
+export const AVCodeOHAudioDecoderSetCallbackInvalidVal: () => number;
+
+export const AVCodeOHAudioEncoderSetCallbackInvalidVal: () => number;
+
+export const AVCodeOHAVDataSource: () => number;
+
 export const OH_AVCLevelTest1: () => number;
 
 export const OH_AVCLevelTest2: () => number;
@@ -796,3 +894,7 @@ export const VideoDecoder_Configure: () => number;
 export const VideoDecoder_Prepare: () => number;
 
 export const VideoDecoder_Start: () => number;
+
+export const EnumOHScalingMode1: () => number;
+
+export const EnumOHScalingMode2: () => number;
