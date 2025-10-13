@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function defaultFocusValueTest() {
 
-  
+  //Component to be tested
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
     'Button',
@@ -71,7 +71,7 @@ export default function defaultFocusValueTest() {
     'TabContent'
   )
 
-  
+  //Custom params.
   let parentWidth = 300;
   let parentHeight = 600;
 
@@ -84,7 +84,7 @@ export default function defaultFocusValueTest() {
     parentHeight: parentHeight
   }
 
-  
+  //Test content and expected results
   let testValues: TestValue[] = [{
     describe: 'TabIndex',
     expectValue: {
@@ -116,21 +116,21 @@ export default function defaultFocusValueTest() {
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if (data.testValue.describe == 'TabIndex') {
-        
+        // Test tabIndex defaults
         console.info('[' + data.caseTag + ']data.viewObj.$attrs.tabIndex:' + data.viewObj!.getElement('$attrs').getInteger('tabIndex'));
         expect(data.viewObj!.getElement('$attrs').getInteger('tabIndex')).assertEqual(data.testValue.expectValue.tabIndex);
       } else if (data.testValue.describe == 'DefaultFocus') {
-        
+        // Test defaultFocus defaults
         console.info('[' + data.caseTag + ']data.viewObj.$attrs.defaultFocus:' + data.viewObj!.getElement('$attrs').getBoolean('defaultFocus'));
         expect(data.viewObj!.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(data.testValue.expectValue.defaultFocus);
       } else if (data.testValue.describe == 'GroupDefault') {
-        
+        // Test groupDefaultFocus defaults
         console.info('[' + data.caseTag + ']data.viewObj.$attrs.groupDefaultFocus:' +
         data.viewObj!.getElement('$attrs').getBoolean('groupDefaultFocus'));
         expect(data.viewObj!.getElement('$attrs').getBoolean('groupDefaultFocus'))
           .assertEqual(data.testValue.expectValue.groupDefaultFocus);
       } else if (data.testValue.describe == 'FocusOnTouch') {
-        
+        // Test focusOnTouch defaults
         console.info('[' + data.caseTag + ']data.viewObj.$attrs.focusOnTouch:' +
         data.viewObj!.getElement('$attrs').getBoolean('focusOnTouch'));
         expect(data.viewObj!.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(data.testValue.expectValue.focusOnTouch);

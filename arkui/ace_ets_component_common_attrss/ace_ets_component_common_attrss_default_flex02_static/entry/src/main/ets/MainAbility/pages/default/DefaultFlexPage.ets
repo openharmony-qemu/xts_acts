@@ -23,202 +23,175 @@ import { Entry, Component, TextTimerController, Scroller, Builder, AlphabetIndex
   Grid, List, Refresh, RelativeContainer, Row, RowSplit, Scroll, SideBarContainer, Stack, Swiper,
   Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, $r, StepperItem, ToggleType,
   BadgeStyle, BadgeParamWithString, SideBarContainerType, TextAlign, Color, FlexDirection, MenuItem, NavPathStack,
-  MenuItemOptions, CommonMethod, applyStyles } from '@ohos.arkui.component';
+  MenuItemOptions } from '@ohos.arkui.component';
 
 @Entry
 @Component
 struct DefaultFlexPage {
-  @State containerView: string = ''
-  @State parentWidth: number = 0
-  @State parentHeight: number = 0
-  @State targetView: string = ""
-  @State targetGroupView: string = ""
-  @State componentKey: string = ""
-  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; 
-  private Marquee_src: string = 'Running Marquee starts rolling A B C D E F G H I J K L'; 
-  textTimerController: TextTimerController = new TextTimerController() 
-  private scroller: Scroller = new Scroller() 
+  @State containerView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.containerView ?? ''
+  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
+  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
+  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
+  @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView ?? ''
+  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? ''
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G']; //Use by AlphabetIndexer TextPicker
+  private Marquee_src: string = 'Running Marquee starts rolling A B C D E F G H I J K L'; //Use by Marquee QRCode
+  textTimerController: TextTimerController = new TextTimerController() //Use by TextTimer
+  private scroller: Scroller = new Scroller() //Use by ScrollBar Scroll
 
   onPageShow() {
     console.info('DefaultFlexPage show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    this.containerView = routerParamOptions.view.containerView ?? ""
-    this.componentKey = routerParamOptions.view.componentKey ?? ""
-    this.parentWidth = routerParamOptions.view.parentWidth
-    this.parentHeight = routerParamOptions.view.parentHeight
-    this.targetGroupView = routerParamOptions.view.targetGroupView ?? ""
-    this.targetView = routerParamOptions.view.targetView
   }
 
-  commonStyle(instance: CommonMethod){
-    instance.key(this.componentKey)
-  }
 
-  @Builder
-  myBuilder() {
-    Column() {
-      Text("bindSheet")
-        .fontSize(20)
-    }
-    .width('100%')
-    .height('100%')
-    .backgroundColor(Color.Pink)
-  }
 
   @Builder buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
       AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
     } else if (this.targetView == 'Blank') {
-      Blank().applyStyles(this.commonStyle)
+      Blank()
     } else if (this.targetView == 'Button') {
-      Button('button').applyStyles(this.commonStyle)
+      Button('button')
     } else if (this.targetView == 'Checkbox') {
-      Checkbox().applyStyles(this.commonStyle)
+      Checkbox()
     } else if (this.targetView == 'CheckboxGroup') {
-      CheckboxGroup().applyStyles(this.commonStyle)
+      CheckboxGroup()
     } else if (this.targetView == 'DataPanel') {
-      DataPanel({ values: [25] }).applyStyles(this.commonStyle)
+      DataPanel({ values: [25] })
     } else if (this.targetView == 'DatePicker') {
-      DatePicker().applyStyles(this.commonStyle)
+      DatePicker()
     } else if (this.targetView == 'Divider') {
-      Divider().applyStyles(this.commonStyle)
+      Divider()
     } else if (this.targetView == 'Gauge') {
-      Gauge({ value: 75 }).applyStyles(this.commonStyle)
+      Gauge({ value: 75 })
     } else if (this.targetView == 'Image') {
-      Image($r('app.media.icon')).applyStyles(this.commonStyle)
+      Image($r('app.media.icon'))
     } else if (this.targetView == 'ImageAnimator') {
       ImageAnimator()
         .images([{ src: $r('app.media.icon') }])
-        .applyStyles(this.commonStyle)
+        
     } else if (this.targetView == 'LoadingProgress') {
-      LoadingProgress().applyStyles(this.commonStyle)
+      LoadingProgress()
     } else if (this.targetView == 'Marquee') {
       Marquee({
         start: true,
         src: this.Marquee_src
-      }).applyStyles(this.commonStyle)
+      })
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-      }.applyStyles(this.commonStyle)
+      }
     } else if (this.targetView == 'Navigation') {
-      Navigation(new NavPathStack()).applyStyles(this.commonStyle)
+      Navigation(new NavPathStack())
     } else if (this.targetView == 'NavRouter') {
-      Navigation(new NavPathStack()).applyStyles(this.commonStyle)
+    
     } else if (this.targetView == 'Progress') {
-      Progress({ value: 20 }).applyStyles(this.commonStyle)
+      Progress({ value: 20 })
     } else if (this.targetView == 'QRCode') {
-      QRCode(this.Marquee_src).applyStyles(this.commonStyle)
+      QRCode(this.Marquee_src)
     } else if (this.targetView == 'Radio') {
-      Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
+      Radio({ value: 'Radio1', group: 'radioGroup' })
     } else if (this.targetView == 'Rating') {
-      Rating().applyStyles(this.commonStyle)
+      Rating()
     } else if (this.targetView == 'ScrollBar') {
-      ScrollBar({ scroller: this.scroller }).applyStyles(this.commonStyle)
+      ScrollBar({ scroller: this.scroller })
     } else if (this.targetView == 'Search') {
-      Search().applyStyles(this.commonStyle)
+      Search()
     } else if (this.targetView == 'Select') {
-      Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
+      Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }])
     } else if (this.targetView == 'Slider') {
-      Slider().applyStyles(this.commonStyle)
+      Slider()
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem()
-      }.applyStyles(this.commonStyle)
+      }
     } else if (this.targetView == 'Text') {
-      Text('text').applyStyles(this.commonStyle)
+      Text('text')
     } else if (this.targetView == 'TextArea') {
-      TextArea().applyStyles(this.commonStyle)
+      TextArea()
     } else if (this.targetView == 'TextClock') {
-      TextClock().applyStyles(this.commonStyle)
+      TextClock()
     } else if (this.targetView == 'TextInput') {
-      TextInput().applyStyles(this.commonStyle)
+      TextInput()
     } else if (this.targetView == 'TextPicker') {
-      TextPicker({ range: this.value }).applyStyles(this.commonStyle)
+      TextPicker({ range: this.value })
     } else if (this.targetView == 'TextTimer') {
-      TextTimer({ controller: this.textTimerController }).applyStyles(this.commonStyle)
+      TextTimer({ controller: this.textTimerController })
     } else if (this.targetView == 'TimePicker') {
-      TimePicker().applyStyles(this.commonStyle)
+      TimePicker()
     } else if (this.targetView == 'Toggle') {
-      Toggle({ type: ToggleType.Switch }).applyStyles(this.commonStyle)
+      Toggle({ type: ToggleType.Switch })
     } else if (this.targetView == 'Badge') {
       Badge({
         value: '',
         style: { badgeSize: 6, badgeColor: '#FA2A2D' } as BadgeStyle
-      } as BadgeParamWithString).applyStyles(this.commonStyle)
+      } as BadgeParamWithString)
     } else if (this.targetView == 'Column') {
-      Column().applyStyles(this.commonStyle)
+      Column()
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
         Text('2').width('100%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
         Text('3').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-      }.applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Counter') {
-      Counter().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Flex') {
-      Flex().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'GridRow') {
-      GridRow().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Grid') {
-      Grid().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'List') {
-      List().applyStyles(this.commonStyle).width(100).height(100)
-    } else if (this.targetView == 'Navigator') {
-      
-    } else if (this.targetView == 'Panel') {
-      Column(){
-        Text('Text')
       }
-      .backgroundColor(Color.Yellow)
-      .applyStyles(this.commonStyle)
-      .bindSheet(true,this.myBuilder)
+    } else if (this.targetView == 'Counter') {
+      Counter()
+    } else if (this.targetView == 'Flex') {
+      Flex()
+    } else if (this.targetView == 'GridRow') {
+      GridRow()
+    } else if (this.targetView == 'Grid') {
+      Grid()
+    } else if (this.targetView == 'List') {
+      List().width(100).height(100)
+    } else if (this.targetView == 'Navigator') {
+    } else if (this.targetView == 'Panel') {
     } else if (this.targetView == 'Refresh') {
-      Refresh({ refreshing: false }).applyStyles(this.commonStyle)
+      Refresh({ refreshing: false })
     } else if (this.targetView == 'RelativeContainer') {
-      RelativeContainer().applyStyles(this.commonStyle)
+      RelativeContainer()
     } else if (this.targetView == 'Row') {
-      Row().applyStyles(this.commonStyle)
+      Row()
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
         Text('1')
         Text('2')
-      }.applyStyles(this.commonStyle)
+      }
     } else if (this.targetView == 'Scroll') {
-      Scroll(this.scroller).applyStyles(this.commonStyle)
+      Scroll(this.scroller)
     } else if (this.targetView == 'SideBarContainer') {
-      SideBarContainer(SideBarContainerType.Embed).applyStyles(this.commonStyle)
+      SideBarContainer(SideBarContainerType.Embed)
     } else if (this.targetView == 'Stack') {
-      Stack().applyStyles(this.commonStyle)
+      Stack()
     } else if (this.targetView == 'Swiper') {
-      Swiper().applyStyles(this.commonStyle)
+      Swiper()
     } else if (this.targetView == 'Tabs') {
-      Tabs().applyStyles(this.commonStyle)
+      Tabs()
     } else if (this.targetView == 'WaterFlow') {
-      WaterFlow().applyStyles(this.commonStyle)
+      WaterFlow()
     } else if (this.targetView == 'Circle') {
-      Circle().applyStyles(this.commonStyle)
+      Circle()
     } else if (this.targetView == 'Ellipse') {
-      Ellipse().applyStyles(this.commonStyle)
+      Ellipse()
     } else if (this.targetView == 'Line') {
       Line()
         .startPoint([0, 0])
         .endPoint([50, 100])
-        .applyStyles(this.commonStyle)
+        
     } else if (this.targetView == 'Polyline') {
-      Polyline().applyStyles(this.commonStyle)
+      Polyline()
     } else if (this.targetView == 'Polygon') {
-      Polygon().applyStyles(this.commonStyle)
+      Polygon()
     } else if (this.targetView == 'Path') {
-      Path().applyStyles(this.commonStyle)
+      Path()
     } else if (this.targetView == 'Rect') {
-      Rect().applyStyles(this.commonStyle)
+      Rect()
     } else if (this.targetView == 'Shape') {
-      Shape().applyStyles(this.commonStyle)
+
     }
   }
 
-  
+  //Draw screen
   build() {
     if (this.containerView == 'Row') {
       Row() {

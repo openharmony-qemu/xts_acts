@@ -12,34 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import {
-  Component,
-  List,
-  ListItemGroup,
-  ListItem,
-  FlowItem,
-  Text,
-  FlexDirection,
-  Color,
-  Position,
-  Builder,
-  TextAlign,
-  ForEach,
-  StickyStyle,
-  ListItemGroupOptions
-} from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
-
+import {FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct ListItemGroupView {
-  @Link _position!: Position;
+  @Link _position: Position = { x:0,y:0};
   private componentKey: string = '';
-  private parentWidth: number = 0;
-  private parentHeight: number = 0;
-  private parentComponentKey: string = '';
-  private referenceComponentKey: string = '';
-  private projects: string[] = ['item1', 'item2', 'item3']
+  private parentWidth: number=0;
+  private parentHeight: number=0;
+  private parentComponentKey: string='';
+  private referenceComponentKey: string='';
+  private projects: string[] = new Array<string>('item1', 'item2', 'item3')
 
   @Builder
   itemHead(text: string) {
@@ -70,12 +53,6 @@ export struct ListItemGroupView {
   }
 
   build() {
-    List({ space: 20 }) {
 
-    }
-    .width(this.parentWidth)
-    .height(this.parentHeight)
-    .key(this.parentComponentKey)
-    .sticky(StickyStyle.Header)
   }
 }

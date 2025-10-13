@@ -34,7 +34,6 @@ import {
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
-
 @Component
 export struct ListItemGroupView {
   @Link _offset!: Position;

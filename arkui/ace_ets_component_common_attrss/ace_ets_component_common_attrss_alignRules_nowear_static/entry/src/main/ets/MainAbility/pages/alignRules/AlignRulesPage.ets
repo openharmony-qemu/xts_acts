@@ -45,11 +45,9 @@ import {
   Menu,
   ScrollBar,
   TextTimer,
-
   ColumnSplit,
   RowSplit,
   Refresh,
-
   Shape,
   Rect,
   Path,
@@ -115,12 +113,10 @@ import {
   ColumnOptions,
   ShapePoint,
   MenuItemOptions,
-  NavPathStack,
-  CommonMethod,
-  applyStyles
+  NavPathStack
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -129,75 +125,67 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct AlignRules {
-  @State show: boolean = false 
-  @StoragePropRef("_alignRules") _alignRules: AlignRuleOption  = {
+  @State show: boolean = false //For Panel
+  @State _alignRules: AlignRuleOption = {
     center: { anchor: '__container__', align: VerticalAlign.Center },
     middle: { anchor: '__container__', align: HorizontalAlign.Center }
   } as AlignRuleOption;
-  @State targetView: string = "";
-  @State componentKey: string = "";
-  @State parentWidth: number = 0;
-  @State parentHeight: number = 0;
-  @State subassemblyWidth: number = 0;
-  @State subassemblyHeight: number = 0
-  @State subassemblyCenter: AlignRuleOption = {} as AlignRuleOption;
-  @State parentComponentKey: string = "";
-  @State referenceComponentKey: string = ""
+  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
+  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+  @State subassemblyWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.subassemblyWidth;
+  @State subassemblyHeight: number =
+    (this.getUIContext().getRouter().getParams() as RouterParams).view.subassemblyHeight;
+  @State subassemblyCenter: AlignRuleOption =
+    (this.getUIContext().getRouter().getParams() as RouterParams).view.subassemblyCenter;
+  @State parentComponentKey: string =
+    (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+  @State referenceComponentKey: string =
+    (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey;
 
   onPageShow() {
     console.info('[AlignRules] page show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    AppStorage.setOrCreate<AlignRuleOption>('_alignRules', routerParamOptions.view.testValue.setValue)
-    console.info("================================================  " +'_alignRules: ' + JSON.stringify(routerParamOptions.view.testValue.setValue))
-    this.targetView = routerParamOptions.view.targetView
-    this.componentKey = routerParamOptions.view.componentKey ?? ""
-    this.parentWidth = routerParamOptions.view.parentWidth
-    this.parentHeight = routerParamOptions.view.parentHeight
-    this.subassemblyWidth = routerParamOptions.view.subassemblyWidth
-    this.subassemblyHeight = routerParamOptions.view.subassemblyHeight
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey
-    this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
-    this.subassemblyCenter = routerParamOptions.view.subassemblyCenter
+    //Register data change call back.
+    attrsManager.registerDataChange((value: AlignRuleOption) => {
+      this._alignRules = value
+    })
   }
 
 
-  commonStyle(instance: CommonMethod){
-    instance.id(this.componentKey)
-    instance.alignRules(this._alignRules)
-  }
 
   build() {
     RelativeContainer() {
-      
+      //Set view by page config.
       if (this.targetView == 'Button') {
         Button('button1')
           .width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa', icon: '../../../../common/public_icon.svg' },
           { value: 'bbb', icon: '../../../../common/public_icon.svg' }])
           .width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'Checkbox') {
         Checkbox({ name: 'checkbox1' })
           .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'CheckboxGroup') {
         CheckboxGroup()
           .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'DataPanel') {
         DataPanel({ values: [25] })
           .width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'DatePicker') {
         DatePicker({})
           .width(this.subassemblyWidth).height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+       
       } else if (this.targetView == 'Divider') {
         Divider()
           .strokeWidth(10)
@@ -205,98 +193,98 @@ struct AlignRules {
           .vertical(false)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Gauge') {
         Gauge({ value: 0 })
           .colors([[0x317AF7, 1], [0x9C554B, 1]])
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'LoadingProgress') {
         LoadingProgress()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Marquee') {
         Marquee({ start: true, src: 'Marquee' })
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack())
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
           .expandSafeArea([], [])
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Image') {
         Image($r('app.media.icon'))
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Ring })
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'QRCode') {
         QRCode('Hello Harmony')
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Rating') {
         Rating({ rating: 3.5 })
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Search') {
         Search()
-          .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Slider') {
         Slider()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Text') {
         Text('Text')
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'TextArea') {
         TextArea()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'TextClock') {
         TextClock()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'TextInput') {
         TextInput()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'TextPicker') {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'TimePicker') {
         TimePicker()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Toggle') {
         Toggle({ type: ToggleType.Switch })
-          .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .margin(0).width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Badge') {
         Badge({ value: '', style: { badgeSize: 6, badgeColor: Color.Red } as BadgeStyle } as BadgeParamWithString) {
           Button('BadgeContent')
         }
-        .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+        .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Column') {
         Column()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Counter') {
         Counter()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Flex') {
         Flex()
-          .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Grid') {
         Grid() {
-          ForEach(['0', '1', '2', '3', '4'], (d: string, i: Int) => {
-            ForEach(['0', '1', '2', '3', '4'], (day: string, index: Int) => {
+          ForEach(['0', '1', '2', '3', '4'], (d: string, i: int) => {
+            ForEach(['0', '1', '2', '3', '4'], (day: string, index: int) => {
               GridItem() {
                 Text(day).backgroundColor(Color.White)
                   .width('100%').height('100%').textAlign(TextAlign.Center)
@@ -304,7 +292,7 @@ struct AlignRules {
             })
           })
         }
-        .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+        .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'GridRow') {
         GridRow({
           columns: 5,
@@ -329,13 +317,13 @@ struct AlignRules {
               }.borderColor(color).borderWidth(2)
             })
         }
-        .width(this.subassemblyWidth).height(this.subassemblyHeight) .applyStyles(this.commonStyle)
+        .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'List') {
         List()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'RelativeContainer') {
         RelativeContainer() {
           Row()
@@ -352,23 +340,23 @@ struct AlignRules {
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
 
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Row') {
         Row()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: Int) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
               Text('Scroll' + item)
                 .width('90%')
                 .height(150)
                 .backgroundColor(Color.White)
                 .textAlign(TextAlign.Center)
-            }, (item: number,index:Int) => String(item))
+            }, (item: number) => String(item))
           }.width('100%')
         }
         .scrollBar(BarState.On)
@@ -376,16 +364,16 @@ struct AlignRules {
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
 
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3] as number[], (item: number, index: Int) => {
+            ForEach([1, 2, 3] as number[], (item: number, index: int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64)
                 Text('Index0' + item).fontSize(25)
               }
-            }, (item: number,index:Int) => String(item))
+            }, (item: number) => String(item))
           }.width('100%')
           .justifyContent(FlexAlign.SpaceEvenly)
           .backgroundColor(Color.Green)
@@ -398,101 +386,81 @@ struct AlignRules {
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
 
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Stack') {
         Stack()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3] as number[], (item: number, index: Int) => {
+          ForEach([1, 2, 3] as number[], (item: number, index: int) => {
             Text('Swiper' + item).width('90%').height(160)
-          }, (item: number,index:Int) => String(item))
+          }, (item: number) => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
 
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Tabs') {
         Tabs()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'WaterFlow') {
         WaterFlow()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Circle') {
         Circle()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Ellipse') {
         Ellipse()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Line') {
         Line()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Polyline') {
         Polyline()
           .points([[50, 10] as ShapePoint, [50, 50] as ShapePoint, [90, 90] as ShapePoint] as Array<ShapePoint>)
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Polygon') {
         Polygon()
           .points([[50, 10] as ShapePoint, [50, 50] as ShapePoint, [90, 90] as ShapePoint] as Array<ShapePoint>)
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Path') {
         Path()
-          
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+        
       } else if (this.targetView == 'Rect') {
         Rect()
           .backgroundColor(Color.Blue)
           .width(this.subassemblyWidth)
           .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
-        
-        
-        
-        
-        
-        
-        
-        
-        .applyStyles(this.commonStyle)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
       } else if (this.targetView == 'Refresh') {
         Refresh({ refreshing: false }) {
           Text('Pull Down and refresh:0 ')
@@ -500,29 +468,20 @@ struct AlignRules {
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
         .alignRules(this.subassemblyCenter)
-        .applyStyles(this.commonStyle)
+
+        
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
           Text('2').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-        }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
+        }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
           Text('2').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-        }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
         TextTimer({ isCountDown: true, count: 30000 })
-          .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
+          .width(this.subassemblyWidth).height(this.subassemblyHeight) 
       } else if (this.targetView == 'Stepper') {
         StepperView({
           _alignRules: this._alignRules,
@@ -538,7 +497,8 @@ struct AlignRules {
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
         .backgroundColor('#ededed')
-        .applyStyles(this.commonStyle)
+
+        
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
@@ -546,7 +506,8 @@ struct AlignRules {
         .backgroundColor(Color.Yellow)
         .width(this.subassemblyWidth)
         .height(this.subassemblyHeight)
-        .applyStyles(this.commonStyle)
+
+        
       }
       Button('button')
         .width(this.subassemblyWidth)
