@@ -34,6 +34,14 @@ function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // dataä
     hilog.info(domain, tag, "setDevicePairingConfirmation data.pinCode:" + data.pinCode);
 }
 
+function onReceiveEvent(data: Array<connection.DiscoveryResult>) {
+    hilog.info(domain, tag, 'bluetooth discoveryResult result:'+ JSON.stringify(data));
+    hilog.info(domain, tag, 'bluetooth discoveryResult deviceId result:'+ JSON.stringify(data[0].deviceId));
+    hilog.info(domain, tag, 'bluetooth discoveryResult rssi result:'+ JSON.stringify(data[0].rssi));
+    hilog.info(domain, tag, 'bluetooth discoveryResult deviceName result:'+ JSON.stringify(data[0].deviceName));
+    hilog.info(domain, tag, 'bluetooth discoveryResult deviceClass result:'+ JSON.stringify(data[0].deviceClass));
+}
+
 function onReceiveEvent2(data: Array<string>) {
     hilog.info(domain, tag, 'Device' + JSON.stringify(data) +
         'length' + data.length);
@@ -43,6 +51,11 @@ function onReceiveEvent2(data: Array<string>) {
 function BondStateParam(data: connection.BondStateParam) {
     hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data)
         +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state);
+}
+
+function BondStateParam1(data: connection.BondStateParam) {
+    hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data)
+        +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state + 'bondStateChange cause:' + data.cause);
 }
 
 export default function bluetoothConnectionTest() {
@@ -151,6 +164,7 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result:" + JSON.stringify(deviceClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorClass:" + JSON.stringify(deviceClass.majorClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + JSON.stringify(deviceClass.majorMinorClass));
+                hilog.info(domain, tag, "getRemoteDeviceClass result classOfDevice:" + JSON.stringify(deviceClass.classOfDevice));
                 expect(true).assertEqual(deviceClass != null);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1131,6 +1145,62 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testUnbondCause errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnBondStateChange
+         * @tc.name    testOnBondStateChange
+         * @tc.desc    Test testOnBondStateChange API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnBondStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.on('bondStateChange', BondStateParam1);
+                await connection.pairDevice("11:22:55:66:33:44").then(() => {
+                    hilog.info(domain, tag, "pairDevice success");
+                });
+                await Utils.msSleep(900);
+                expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.off('bondStateChange', BondStateParam1);
+            done();
+        })
+
+        /**
+         * @tc.number  testOnDiscoveryResult
+         * @tc.name    testOnDiscoveryResult
+         * @tc.desc    Test testOnDiscoveryResult API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnDiscoveryResult", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.on('discoveryResult', onReceiveEvent);
+                await Utils.msSleep(900);
+                connection.off('discoveryResult', onReceiveEvent);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "testOnDiscoveryResult, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })

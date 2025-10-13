@@ -647,5 +647,30 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  testScanReportType
+         * @tc.name    testScanReportType
+         * @tc.desc    Test testScanReportType API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testScanReportType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let ON_FOUND = ble.ScanReportType.ON_FOUND;
+                hilog.info(domain, tag, "ScanReportType ON_FOUND: " + JSON.stringify(ON_FOUND));
+                expect(ON_FOUND).assertEqual(1);
+
+                let ON_LOST = ble.ScanReportType.ON_LOST;
+                hilog.info(domain, tag, "ScanReportType ON_LOST: " + JSON.stringify(ON_LOST));
+                expect(ON_LOST).assertEqual(2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testScanReportType errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
     })
 }
