@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function stringOperationsTest() {
@@ -1339,6 +1339,25 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0016 done');
         done();
         console.log('test_String_Utf16_0016 end');
+      });
+
+    /**
+     * @tc.number    STRING_UTF16_1700
+     * @tc.name      test_String_Utf16_0017
+     * @tc.desc      new string and get UTF16 comUTF8 to UTF16
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_String_Utf16_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_String_Utf16_0017 start');
+        let cls = new Foo();
+        let result = cls.test_String_UTF16_17();
+        expect(result).assertTrue();
+        console.log('test_String_Utf16_0017 done');
+        done();
+        console.log('test_String_Utf16_0017 end');
       });
 
      /**

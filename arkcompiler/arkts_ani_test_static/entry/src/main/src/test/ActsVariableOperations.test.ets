@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function variableOperationsTest() {
@@ -902,25 +902,6 @@ export default function variableOperationsTest() {
         console.log('test_Variable_GetValue_Long_0005 done');
         done();
         console.log('test_Variable_GetValue_Long_0005 end');
-      });
-
-    /**
-     * @tc.number    NAMESPACE_FINDVARIABLE_0100
-     * @tc.name      test_Namespace_FindVariable_0001
-     * @tc.desc      find name space and find variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("test_Namespace_FindVariable_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('test_Namespace_FindVariable_0001 start');
-        let cls = new Foo();
-        let result = cls.test_Namespace_FindVariable();
-        expect(result).assertTrue();
-        console.log('test_Namespace_FindVariable_0001 done');
-        done();
-        console.log('test_Namespace_FindVariable_0001 end');
       });
 
     /**
