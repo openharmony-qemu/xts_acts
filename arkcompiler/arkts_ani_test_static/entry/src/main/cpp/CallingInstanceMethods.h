@@ -80,16 +80,6 @@ ani_boolean GetFunction([[maybe_unused]] ani_env *env, const char *moduleName, c
     return ANI_TRUE;
 }
 
-ani_boolean GetStdString(ani_env *env, ani_string str, std::string &result)
-{
-    ani_size sz{};
-    ASSERT_EQ(env->String_GetUTF8Size(str, &sz), ANI_OK);
-    result.resize(sz + 1);
-    ASSERT_EQ(env->String_GetUTF8SubString(str, 0, sz, result.data(), result.size(), &sz), ANI_OK);
-    result.resize(sz);
-    return ANI_TRUE;
-}
-
 ani_boolean CheckANIStr(ani_env *env, const ani_string &str, const std::string &expected)
 {
     const ani_size utfBufferSize = 20;

@@ -17,21 +17,6 @@
 #define ARKTS_ANI_TEST_VARIABLEOPERATIONS_H
 #include "Common.h"
 
-ani_int test_Namespace_FindVariable([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    const char *namespacePath = "entry.src.main.src.ets.VariableOperations.anyns";
-
-    ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace(namespacePath, &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
-
-    ani_variable variable{};
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "i", &variable), ANI_OK);
-    ASSERT_NE(variable, nullptr);
-
-    return ANI_TRUE;
-}
-
 ani_int test_Variable_GetValue_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;

@@ -30,23 +30,42 @@ export default function exceptionsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-     * @tc.number    : ResetError_0100
-     * @tc.name      : ResetError_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.number    SUB_ANI_EXISTUNHANDLEDERROR_0100
+     * @tc.name      test_ExistUnhandledError_0001
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
      */
-    it("ResetError_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_ExistUnhandledError_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('ResetError_0100 start');
+        console.log('test_ExistUnhandledError_0001 start');
+        let cls = new Foo();
+        let result = cls.test_ExistUnhandledError();
+        expect(result).assertTrue();
+        console.log('test_ExistUnhandledError_0001 done');
+        done();
+        console.log('test_ExistUnhandledError_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_RESETEROR_0100
+     * @tc.name      test_ResetError_0001
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it("test_ResetError_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_ResetError_0001 start');
         let cls = new Foo();
         let result = cls.test_ResetError();
         expect(result).assertTrue();
-        console.log('ResetError_0100 done');
+        console.log('test_ResetError_0001 done');
         done();
-        console.log('ResetError_0100 end');
+        console.log('test_ResetError_0001 end');
       })
   })
 }

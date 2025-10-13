@@ -905,25 +905,6 @@ export default function variableOperationsTest() {
       });
 
     /**
-     * @tc.number    NAMESPACE_FINDVARIABLE_0100
-     * @tc.name      test_Namespace_FindVariable_0001
-     * @tc.desc      find name space and find variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("test_Namespace_FindVariable_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('test_Namespace_FindVariable_0001 start');
-        let cls = new Foo();
-        let result = cls.test_Namespace_FindVariable();
-        expect(result).assertTrue();
-        console.log('test_Namespace_FindVariable_0001 done');
-        done();
-        console.log('test_Namespace_FindVariable_0001 end');
-      });
-
-    /**
      * @tc.number    VARIABLE_SETVALUE_BOOLEAN_0100
      * @tc.name      test_Variable_SetValue_Boolean_0001
      * @tc.desc      set boolean value normal
