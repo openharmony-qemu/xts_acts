@@ -51,3 +51,5 @@ export const normalAVScreenCaptureStrategyForPickerPopUpFalse: () => number;
 export const normalAVScreenCaptureStrategyForPickerPopUpTrue: () => number;
 export const normalAVScreenCaptureStrategyForFillModeAspect: () => number;
 export const normalAVScreenCaptureStrategyForFillModeScale: () => number;
+export const normalAVScreenCaptureStrategyForCornerWrapMode: () => number;
+export const normalAVScreenCaptureStrategyForClosedMode: () => number;
