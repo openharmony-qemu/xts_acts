@@ -34,7 +34,6 @@
 #include <ohaudio/native_audiostreambuilder.h>
 #include <queue>
 
-// c++标准库命名空间。
 using namespace std;
 static bool g_isFirstFrame = true;
 static int32_t g_qpAverage = 20;
@@ -189,6 +188,366 @@ napi_value EnumAudioChannelSet30(napi_env env, napi_callback_info info)
     OH_AudioStreamBuilder_Create(&builder, type);
     int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
     OH_AudioStreamBuilder_Destroy(builder);
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet31(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN1);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet32(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN2);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet33(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN3);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet34(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_W);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet35(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_Y);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet36(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_Z);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet37(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_X);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet38(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN4);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet39(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN5);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet40(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN6);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet41(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN7);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet42(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN8);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet43(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN9);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet44(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN10);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet45(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN11);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet46(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN12);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet47(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN13);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet48(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN14);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet49(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN15);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
+    napi_value retValue;
+    if (setResult == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value EnumAudioChannelSet50(napi_env env, napi_callback_info info)
+{
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(AMBISONICS_ACN0);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    int32_t setResult = OH_AudioStreamBuilder_SetChannelLayout(builder, channelLayout);
+    OH_AudioStreamBuilder_Destroy(builder);
+
     napi_value retValue;
     if (setResult == AUDIOSTREAM_SUCCESS) {
         napi_create_int32(env, 0, &retValue);
@@ -1491,7 +1850,6 @@ napi_value AVCodeOHAudioEncoderPushFreeOutputDataInvalidVal(napi_env env, napi_c
     return retValue;
 }
 
-
 napi_value AVCodeOHAudioEncoderPushFreeOutputDataInvalidState(napi_env env, napi_callback_info info)
 {
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -1567,40 +1925,6 @@ napi_value AVCodeOHAudioCodecSetParameterOperateInvalidState(napi_env env, napi_
     int32_t setResult = OH_AudioCodec_SetParameter(codec, dynamicFormat);
     napi_value retValue = nullptr;
     if (setResult == AV_ERR_INVALID_STATE) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, 1, &retValue);
-    }
-    return retValue;
-}
-
-
-napi_value AVCodeOHAudioCodecSetParameterOperateUnknown(napi_env env, napi_callback_info info)
-{
-    const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
-    bool isEncoder = true;
-    OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, isEncoder);
-    OH_AVFormat *invalidFormat = OH_AVFormat_Create();
-    OH_AudioCodec_Destroy(codec);
-    OH_AVFormat_SetIntValue(invalidFormat, OH_MD_KEY_BITRATE, PARAM_100000);
-    OH_AVFormat_SetStringValue(invalidFormat, "UNSUPPORTED_KEY", "invalid_value");
-    int32_t setResult = OH_AudioCodec_SetParameter(codec, invalidFormat);
-    napi_value retValue = nullptr;
-    if (setResult == AV_ERR_UNKNOWN) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, 1, &retValue);
-    }
-    return retValue;
-}
-
-napi_value AVCodeOHAudioCodecPushInputBufferInvalidVal(napi_env env, napi_callback_info info)
-{
-    OH_AVCodec *codec = nullptr;
-    uint32_t index;
-    int32_t inputResult = OH_AudioCodec_PushInputBuffer(codec, index);
-    napi_value retValue = nullptr;
-    if (inputResult == AV_ERR_INVALID_VAL) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, 1, &retValue);

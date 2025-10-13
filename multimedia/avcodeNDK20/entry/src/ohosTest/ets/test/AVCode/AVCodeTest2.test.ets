@@ -621,6 +621,407 @@ export default function AVCodeTest2() {
       });
 
     /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_031
+     * @tc.name testAudioChannelSet031
+     * @tc.desc testing audio channel set with EnumAudioChannelSet31 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet31();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet031 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_032
+     * @tc.name testAudioChannelSet032
+     * @tc.desc testing audio channel set with EnumAudioChannelSet32 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet32();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet032 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_033
+     * @tc.name testAudioChannelSet033
+     * @tc.desc testing audio channel set with EnumAudioChannelSet33 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet33();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet033 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_034
+     * @tc.name testAudioChannelSet034
+     * @tc.desc testing audio channel set with EnumAudioChannelSet34 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet34();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet034 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_035
+     * @tc.name testAudioChannelSet035
+     * @tc.desc testing audio channel set with EnumAudioChannelSet35 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet35();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet035 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_036
+     * @tc.name testAudioChannelSet036
+     * @tc.desc testing audio channel set with EnumAudioChannelSet36 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet36();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet036 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_037
+     * @tc.name testAudioChannelSet037
+     * @tc.desc testing audio channel set with EnumAudioChannelSet37 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet37();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet037 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_038
+     * @tc.name testAudioChannelSet038
+     * @tc.desc testing audio channel set with EnumAudioChannelSet38 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet38();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet038 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_039
+     * @tc.name testAudioChannelSet039
+     * @tc.desc testing audio channel set with EnumAudioChannelSet39 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet39();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet039 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_040
+     * @tc.name testAudioChannelSet040
+     * @tc.desc testing audio channel set with EnumAudioChannelSet40 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet40();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet040 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_041
+     * @tc.name testAudioChannelSet041
+     * @tc.desc testing audio channel set with EnumAudioChannelSet41 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet41();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet041 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_042
+     * @tc.name testAudioChannelSet042
+     * @tc.desc testing audio channel set with EnumAudioChannelSet42 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet42();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet042 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_043
+     * @tc.name testAudioChannelSet043
+     * @tc.desc testing audio channel set with EnumAudioChannelSet43 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet43();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet043 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_044
+     * @tc.name testAudioChannelSet044
+     * @tc.desc testing audio channel set with EnumAudioChannelSet44 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet44();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet044 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_045
+     * @tc.name testAudioChannelSet045
+     * @tc.desc testing audio channel set with EnumAudioChannelSet45 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet45();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet045 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_046
+     * @tc.name testAudioChannelSet046
+     * @tc.desc testing audio channel set with EnumAudioChannelSet46 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet46();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet046 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_047
+     * @tc.name testAudioChannelSet047
+     * @tc.desc testing audio channel set with EnumAudioChannelSet47 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet47();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet047 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_048
+     * @tc.name testAudioChannelSet048
+     * @tc.desc testing audio channel set with EnumAudioChannelSet48 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet48();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet048 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_049
+     * @tc.name testAudioChannelSet049
+     * @tc.desc testing audio channel set with EnumAudioChannelSet49 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet49();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet049 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_Audio_ChannelSet_050
+     * @tc.name testAudioChannelSet050
+     * @tc.desc testing audio channel set with EnumAudioChannelSet50 function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAudioChannelSet050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAudioChannelSet50();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAudioChannelSet050 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
      * @tc.number SUB_AVCode_AudioChannelLayout_001
      * @tc.name testAudioChannelLayout001
      * @tc.desc testing audio channel layout with EnumAudioChannelLayout1 function.
@@ -1736,6 +2137,46 @@ export default function AVCodeTest2() {
           done()
         } catch (err) {
           console.error("====>testAVCodeOHAudioDecoderIsValid002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_AudioDecoder_SetCallback_002
+     * @tc.name testAVCodeOHAudioDecoderSetCallback002
+     * @tc.desc testing audio decoder validity check with AVCodeOHAudioDecoderIsValidInvalidVal function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHAudioDecoderSetCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.AVCodeOHAudioDecoderSetCallbackInvalidVal();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAudioDecoderSetCallback002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_AudioEncoder_SetCallback_002
+     * @tc.name testAVCodeOHAudioEncoderSetCallback002
+     * @tc.desc testing audio encoder validity check with AVCodeOHAudioEncoderIsValidInvalidVal function.
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHAudioEncoderSetCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.AVCodeOHAudioEncoderSetCallbackInvalidVal();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAudioEncoderSetCallback002 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
