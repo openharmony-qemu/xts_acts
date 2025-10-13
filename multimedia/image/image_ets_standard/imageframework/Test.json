@@ -18,6 +18,14 @@
       "cleanup-apps": true
     },
     {
+      "type": "ShellKit",
+      "run-command": [
+        "remount",
+        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files",
+        "chmod 777 -R /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test"
+      ]
+    },
+    {
       "type": "PushKit",
       "pre-push": [],
       "push": [
