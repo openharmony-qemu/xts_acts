@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -82,11 +82,11 @@ export default function OverlayTest() {
       console.info('[' + data.caseTag + '] overlayTest');
       
       console.info('[' + data.testValue.expectValue.overlay + '] expectValue');
-      console.info('[' + data.viewObj!.$attrs.overlay + '] viewObj.$attrs.overlay');
-      expect(data.viewObj!.$attrs.overlay.title).assertEqual(data.testValue.expectValue.overlay.value);
-      expect(data.viewObj!.$attrs.overlay.options.align).assertEqual(data.testValue.expectValue.overlay.options.align);
-      expect(data.viewObj!.$attrs.overlay.options.offset.x).assertEqual(data.testValue.expectValue.overlay.options.offset.x);
-      expect(data.viewObj!.$attrs.overlay.options.offset.y).assertEqual(data.testValue.expectValue.overlay.options.offset.y);
+      console.info('[' + data.viewObj!.getElement('$attrs').getElement('overlay') + '] viewObj.$attrs.overlay');
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getString('title')).assertEqual(data.testValue.expectValue.overlay.value);
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getString('align')).assertEqual(data.testValue.expectValue.overlay.options.align);
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getElement('offset').getString('x')).assertEqual(data.testValue.expectValue.overlay.options.offset.x);
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getElement('offset').getString('y')).assertEqual(data.testValue.expectValue.overlay.options.offset.y);
     });
   })
 }

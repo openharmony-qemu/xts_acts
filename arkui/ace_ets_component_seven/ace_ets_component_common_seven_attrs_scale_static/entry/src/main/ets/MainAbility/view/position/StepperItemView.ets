@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,20 +35,6 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Component
 export struct StepperItemView {
   @State prevIndex: Int = 0
@@ -69,28 +55,29 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+          
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        } 
       }
       .nextLabel('Next')
       .status(this.firstState)
       .position(this._position)
       .key(this.componentKey)
+
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+          
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        } 
       }
       .nextLabel('Next')
       .prevLabel('Previous')

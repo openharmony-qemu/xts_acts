@@ -43,7 +43,7 @@ import {  FrameNode } from '@ohos.arkui.node';
 struct CanvasAttrsTabTest {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State selectedIndex: number = 0
   private controller: TabsController = new TabsController()
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
@@ -152,7 +152,7 @@ struct CanvasAttrsTabTest {
       }
       .vertical(false)
       .barMode(BarMode.Fixed)
-      .onChange((index: number) => {
+      .onChange((index: int) => {
         
         this.currentIndex = index
         this.selectedIndex = index

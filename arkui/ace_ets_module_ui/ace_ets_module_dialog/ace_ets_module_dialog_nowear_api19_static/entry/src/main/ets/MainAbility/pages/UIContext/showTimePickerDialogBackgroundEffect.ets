@@ -61,7 +61,7 @@ struct ShowTimePickerDialog2 {
             onAccept: (value: TimePickerResult): void => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour, value.minute)
+                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
@@ -91,7 +91,7 @@ struct ShowTimePickerDialog2 {
             onAccept: (value: TimePickerResult): void => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour, value.minute)
+                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
@@ -109,7 +109,7 @@ struct ShowTimePickerDialog2 {
             onAccept: (value: TimePickerResult): void => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour, value.minute)
+                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },

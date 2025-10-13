@@ -92,7 +92,7 @@ export default class Commmon {
       }
     }
   }
-  async msleepAsync(count:int) : Promise<int> {
+  async msleepAsync(count: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -100,7 +100,7 @@ export default class Commmon {
     })
   }
   // callback function for promise call back error
-  failureCallback(error: BusinessError|null) {
+  failureCallback(error: BusinessError | null) {
     expect().assertFail();
     console.info(`case error called,errMessage is ${error!!.message}`);
   }
@@ -152,7 +152,7 @@ export default class Commmon {
   }
 
   msleep(time: number) {
-    for (let t = Date.now(); Date.now() - t <= time; ) {
+    for (let t = Date.now(); Date.now() - t <= time;) {
       ;
     }
   }
@@ -182,7 +182,7 @@ export default class Commmon {
   // create avRecorder(promise)
   async idle(avRecorder: media.AVRecorder) {
     console.info('case createAVRecorder called');
-    await media.createAVRecorder().then((recorder: media.AVRecorder|undefined) => {
+    await media.createAVRecorder().then((recorder: media.AVRecorder | undefined) => {
       if (recorder) {
         avRecorder = recorder;
         console.info('createAVRecorder success');
@@ -208,7 +208,7 @@ export default class Commmon {
   prepareCallback(avRecorder: media.AVRecorder, avConfig: media.AVRecorderConfig) {
     if (typeof (avRecorder) === 'undefined') {
     } else {
-      avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+      avRecorder.prepare(avConfig, (err: BusinessError | null) => {
         console.info('case prepare called' + err);
         if (err == null) {
           this.sleep(200)
@@ -239,7 +239,7 @@ export default class Commmon {
     let surfaceID: string | undefined = undefined;
     if (typeof (avRecorder) == 'undefined') {
     } else {
-      await avRecorder.getInputSurface().then((surfaceId: string|undefined) => {
+      await avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
         console.info('getInputSurface success');
         surfaceID = surfaceId;
       }).catch((err: Error) => {
@@ -253,7 +253,7 @@ export default class Commmon {
       return;
     }
     let surfaceID: string | undefined = undefined;
-    avRecorder.getInputSurface((err: BusinessError|null, surfaceId: string|undefined) => {
+    avRecorder.getInputSurface((err: BusinessError | null, surfaceId: string | undefined) => {
       if (err == null) {
         console.info('getInputSurface success');
         surfaceID = surfaceId;
@@ -280,7 +280,7 @@ export default class Commmon {
     if (typeof (avRecorder) == 'undefined') {
       return;
     }
-    avRecorder.start((err: BusinessError|null) => {
+    avRecorder.start((err: BusinessError | null) => {
       console.info('case start called');
       if (err == null) {
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.STARTED);
@@ -316,7 +316,7 @@ export default class Commmon {
   async pauseCallback(avRecorder: media.AVRecorder) {
     if (typeof (avRecorder) == 'undefined') {
     } else {
-      avRecorder.pause((err: BusinessError|null) => {
+      avRecorder.pause((err: BusinessError | null) => {
         console.info('case pause called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PAUSED);
@@ -344,7 +344,7 @@ export default class Commmon {
     if (typeof (avRecorder) == 'undefined') {
       return;
     }
-    avRecorder.resume((err: BusinessError|null) => {
+    avRecorder.resume((err: BusinessError | null) => {
       console.info('case resume called');
       if (err == null) {
         console.info('resume AVRecorder success');
@@ -367,7 +367,7 @@ export default class Commmon {
     if (typeof (avRecorder) == 'undefined') {
       return;
     }
-    avRecorder.stop((err: BusinessError|null) => {
+    avRecorder.stop((err: BusinessError | null) => {
       console.info('case stop called');
       if (err == null) {
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.STOPPED);
@@ -393,7 +393,7 @@ export default class Commmon {
   async resetCallback(avRecorder: media.AVRecorder) {
     if (typeof (avRecorder) == 'undefined') {
     } else {
-      avRecorder.reset((err: BusinessError|null) => {
+      avRecorder.reset((err: BusinessError | null) => {
         console.info('case reset called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.IDLE);
@@ -419,7 +419,7 @@ export default class Commmon {
   async releaseCallback(avRecorder: media.AVRecorder) {
     if (typeof (avRecorder) == 'undefined') {
     } else {
-      avRecorder.release((err: BusinessError|null) => {
+      avRecorder.release((err: BusinessError | null) => {
         console.info('case release called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.RELEASED);
@@ -511,7 +511,7 @@ export default class Commmon {
       }
     });
 
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
     });
   }
@@ -745,7 +745,7 @@ export default class Commmon {
     let result = true;
     avRecorder = await this.idle(avRecorder);
     this.sleep(2000)
-    avRecorder.pause((err: BusinessError|null) => {
+    avRecorder.pause((err: BusinessError | null) => {
       if (err == null) {
         console.info('pause avRecorderReliabilitTest01 success');
       } else {
@@ -1332,7 +1332,7 @@ export default class Commmon {
     let surfaceID: string | undefined = undefined;
     let result = true;
     avRecorder = await this.idle(avRecorder);
-    await avRecorder.getInputSurface().then((surfaceId: string|undefined) => {
+    await avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
       console.info('avRecorderReliabilitTest31 getInputSurface success');
       surfaceID = surfaceId;
     }).catch((err: Error) => {
@@ -1371,7 +1371,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case getInputSurfaceTest32 avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1418,7 +1418,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1468,7 +1468,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1521,7 +1521,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1574,7 +1574,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1626,7 +1626,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1640,7 +1640,7 @@ export default class Commmon {
   }
 
   async getInputSurfaceCatachError(avRecorder: media.AVRecorder, result: boolean, surfaceID: string | undefined) {
-    await avRecorder.getInputSurface().then((surfaceId: string|undefined) => {
+    await avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
       console.info('getInputSurfaceTest38 getInputSurface success');
       surfaceID = surfaceId;
     }).catch((err: Error) => {
@@ -1682,7 +1682,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1756,7 +1756,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case getAVRecorderConfigTest40 avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1803,7 +1803,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1853,7 +1853,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1906,7 +1906,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1959,7 +1959,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -2004,7 +2004,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError|null) => {
+    avRecorder.on('error', (err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -2051,7 +2051,7 @@ export default class Commmon {
       let start = Date.now();
       console.info(`prepareTimeWithoutCallback start time is : ${start}`)
       let end = Date.now();
-      avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+      avRecorder.prepare(avConfig, (err: BusinessError | null) => {
         if (err == null) {
           expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PREPARED);
           console.info('prepareTimeWithoutCallback avPlayer state is prepared')
@@ -2089,8 +2089,8 @@ export default class Commmon {
 
       let start = Date.now();
       console.info(`getInputSurfaceTimeTestCallback start time is : ${start}`)
-      let end: number;
-      avRecorder.getInputSurface((err: BusinessError|null, surfaceId: string|undefined) => {
+      let end: long;
+      avRecorder.getInputSurface((err: BusinessError | null, surfaceId: string | undefined) => {
         if (err == null) {
           console.info('getInputSurfaceTimeTestCallback success');
           surfaceID = surfaceId;
@@ -2126,8 +2126,8 @@ export default class Commmon {
       }).catch(this.catchCallback);
       let start = Date.now();
       console.info(`startTimeTestCallback start time is : ${start}`)
-      let end: number;
-      avRecorder.start((err: BusinessError|null) => {
+      let end: long;
+      avRecorder.start((err: BusinessError | null) => {
         if (err == null) {
           end = Date.now()
           console.info(`startTimeTestCallback end time is : ${end}`)
@@ -2168,8 +2168,8 @@ export default class Commmon {
       });
       let start = Date.now();
       console.info(`pauseTimeTestCallback start time is : ${start}`)
-      let end: number;
-      avRecorder.pause((err: BusinessError|null) => {
+      let end: long;
+      avRecorder.pause((err: BusinessError | null) => {
         if (err == null) {
           end = Date.now()
           console.info(`pauseTimeTestCallback end time is : ${end}`)
@@ -2208,8 +2208,8 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('resumeTimeTestCallback start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
-      avRecorder.pause((err: BusinessError|null) => {
+      let end: long;
+      avRecorder.pause((err: BusinessError | null) => {
         if (err == null) {
           console.info('pause resumeTimeTestCallback success');
         } else {
@@ -2218,7 +2218,7 @@ export default class Commmon {
       });
       let start = Date.now();
       console.info(`resumeTimeTestCallback start time is : ${start}`)
-      avRecorder.resume((err: BusinessError|null) => {
+      avRecorder.resume((err: BusinessError | null) => {
         if (err == null) {
           console.info('resume resumeTimeTestCallback success');
           end = Date.now()
@@ -2257,10 +2257,10 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('stopTimeTestCallback start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`stopTimeTestCallback start time is : ${start}`)
-      avRecorder.stop((err: BusinessError|null) => {
+      avRecorder.stop((err: BusinessError | null) => {
         if (err == null) {
           console.info('resume stopTimeTestCallback success');
           end = Date.now()
@@ -2299,10 +2299,10 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('resetTimeTestCallback start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`resetTimeTestCallback start time is : ${start}`)
-      avRecorder.reset((err: BusinessError|null) => {
+      avRecorder.reset((err: BusinessError | null) => {
         if (err == null) {
           console.info('resume resetTimeTestCallback success');
           end = Date.now()
@@ -2341,10 +2341,10 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('releaseTimeTestCallback start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`releaseTimeTestCallback start time is : ${start}`)
-      avRecorder.release((err: BusinessError|null) => {
+      avRecorder.release((err: BusinessError | null) => {
         if (err == null) {
           console.info(`releaseTimeTestCallback current state is : ${avRecorder.state}`)
           console.info('release releaseTimeTestCallback success');
@@ -2397,7 +2397,7 @@ export default class Commmon {
       await this.sleep(20)
       let start = Date.now();
       console.info(`prepareTimeWithoutPromise start time is : ${start}`)
-      let end: number;
+      let end: long;
       await avRecorder.prepare(avConfig).then(() => {
         console.info('prepare success');
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PREPARED);
@@ -2429,14 +2429,14 @@ export default class Commmon {
     for (let i = 0; i < 10; i++) {
       avRecorder = await this.idle(avRecorder);
       await this.sleep(20)
-      let end: number;
+      let end: long;
       await avRecorder.prepare(avConfig).then(() => {
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PREPARED);
         console.info('getInputSurfaceTimeTestPromise avPlayer state is prepared')
       });
       let start = Date.now();
       console.info(`getInputSurfaceTimeTestPromise start time is : ${start}`)
-      await avRecorder.getInputSurface().then((surfaceId: string|undefined) => {
+      await avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
         console.info('getInputSurfaceTimeTestPromise success');
         surfaceID = surfaceId;
         end = Date.now()
@@ -2464,7 +2464,7 @@ export default class Commmon {
     for (let i = 0; i < 10; i++) {
       avRecorder = await this.idle(avRecorder);
       await this.sleep(20)
-      let end: number;
+      let end: long;
       await avRecorder.prepare(avConfig).then(() => {
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PREPARED);
         console.info('startTimeTestPromise avPlayer state is prepared')
@@ -2510,7 +2510,7 @@ export default class Commmon {
       });
       let start = Date.now();
       console.info(`pauseTimeTestPromise start time is : ${start}`)
-      let end: number;
+      let end: long;
       await avRecorder.pause().then(() => {
         console.info('pause AVRecorder success');
         end = Date.now()
@@ -2549,8 +2549,8 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('resumeTimeTestPromise start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
-      avRecorder.pause((err: BusinessError|null) => {
+      let end: long;
+      avRecorder.pause((err: BusinessError | null) => {
         if (err == null) {
           console.info('pause resumeTimeTestPromise success');
         } else {
@@ -2597,7 +2597,7 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('stopTimeTestPromise start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`stopTimeTestPromise start time is : ${start}`)
       await avRecorder.stop().then(() => {
@@ -2638,7 +2638,7 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('resetTimeTestPromise start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`resetTimeTestPromise start time is : ${start}`)
       await avRecorder.reset().then(() => {
@@ -2679,7 +2679,7 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('releaseTimeTestPromise start avRecorder failed and catch error is ' + err.message);
       });
-      let end: number;
+      let end: long;
       let start = Date.now();
       console.info(`releaseTimeTestPromise start time is : ${start}`)
       await avRecorder.release().then(() => {

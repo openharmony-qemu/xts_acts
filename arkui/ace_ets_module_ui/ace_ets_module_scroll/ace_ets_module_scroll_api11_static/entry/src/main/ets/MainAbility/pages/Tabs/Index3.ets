@@ -307,7 +307,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -340,7 +340,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -372,7 +372,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -405,7 +405,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -437,7 +437,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -477,7 +477,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .divider({

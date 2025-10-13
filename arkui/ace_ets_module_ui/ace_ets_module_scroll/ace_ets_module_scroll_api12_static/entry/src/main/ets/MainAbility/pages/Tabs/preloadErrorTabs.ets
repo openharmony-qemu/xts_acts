@@ -36,7 +36,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct preloadItemsErrorTabsExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State selectedIndex: number = 0
   @State textResult: string = 'Hello world'
@@ -85,17 +85,17 @@ struct preloadItemsErrorTabsExample {
       .height('60%')
       .edgeEffect(EdgeEffect.Spring)
       .animationMode(AnimationMode.CONTENT_FIRST)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.log('onChange index:' + index);
         this.currentIndex = index
       })
-      .onGestureSwipe((index: number, extraInfo: TabsAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: TabsAnimationEvent): void => {
         console.info('onGestureSwipe index: ' + index)
         console.info('onGestureSwipe current offset: ' + extraInfo.currentOffset)
         console.info('onGestureSwipe target offset: ' + extraInfo.targetOffset)
         console.info('onGestureSwipe velocity: ' + extraInfo.velocity)
       })
-      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
         console.info('onAnimationStart index: ' + index)
         console.info('onAnimationStart current offset: ' + event.currentOffset)
         console.info('onAnimationStart target offset: ' + event.targetOffset)
@@ -105,7 +105,7 @@ struct preloadItemsErrorTabsExample {
         }
         this.selectedIndex = targetIndex
       })
-      .onAnimationEnd((index: number, event: TabsAnimationEvent): void => {
+      .onAnimationEnd((index: int, event: TabsAnimationEvent): void => {
         console.info(index.toString())
         console.info('onAnimationEnd index: ' + index)
         console.info('onAnimationEnd current offset: ' + event.currentOffset)

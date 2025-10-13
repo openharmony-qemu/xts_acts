@@ -47,8 +47,8 @@ import {
 @Entry
 @Component
 struct GestureTest2 {
-  @State currentIndex: number = 0
-  @State selectedIndex: number = 0
+  @State currentIndex: int = 0
+  @State selectedIndex: int = 0
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   controller?: TabsController = new TabsController();
@@ -57,7 +57,7 @@ struct GestureTest2 {
   @State timestamp: number = 0
 
   @Builder
-  tabBuilder(index: number, name: string) {
+  tabBuilder(index: int, name: string) {
     Column() {
       Text(name)
         .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
@@ -153,7 +153,7 @@ struct GestureTest2 {
         }
 
       }
-      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
 
         this.selectedIndex = targetIndex
       })

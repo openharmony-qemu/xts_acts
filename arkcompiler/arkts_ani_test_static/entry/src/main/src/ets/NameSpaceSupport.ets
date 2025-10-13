@@ -37,3 +37,235 @@ namespace ops {
     return a0 + a1;
   }
 }
+
+namespace Fnns {
+  function getInitialIntValue(): int {
+    return 0;
+  }
+  function getInitialStringValue(): String {
+    return '';
+  }
+  // Note: replace it to new overload once FE #ICIITH is solved
+  function overloaded(i: int): int {
+    return 0
+  }
+  function overloaded(): int {
+    return 1
+  }
+  function getInitialDoubleValue(): double {
+    return 1.00;
+  }
+
+  abstract class B {
+    abstract getInitialDoubleValue(): double;
+  }
+
+  class A extends B {
+    constructor() {};
+    static B(): double {
+      return 1.00;
+    };
+    getInitialDoubleValue(): double {
+      return 1.00;
+    }
+
+    getInitialIntValue(): int {
+      return 0;
+    }
+    getInitialIntValue(a: int, b: int): int {
+      return a + b;
+    }
+  }
+
+  async function c(a: int): Promise<int> {
+    return a;
+  };
+
+}
+
+namespace TestA {
+  namespace A {
+    function b(): int {
+      return 1;
+    }
+  }
+}
+
+namespace anyns {
+  let x: int = 3;
+  let s: String = "abc";
+}
+
+namespace combinatorial {
+  namespace sub {
+    class Cls {
+    }
+
+    enum Enum {
+      RED = 1,
+      GREEN = 2,
+      BLUE = 3
+    }
+
+    function fn() {
+    }
+  }
+
+  class Cls {
+  }
+
+  class ClsA {
+  }
+
+  class ClsB {
+  }
+
+  enum Color {
+    RED = 1,
+    GREEN = 2,
+    BLUE = 3
+  }
+
+  enum ColorA {
+    RED = 4,
+    GREEN = 5,
+    BLUE = 6
+  }
+
+  enum ColorB {
+    RED = 7,
+    GREEN = 8,
+    BLUE = 9
+  }
+
+  function fun(): int {
+    return 1;
+  }
+
+  function funA(): int {
+    return 1;
+  }
+
+  function funB(): int {
+    return 1;
+  }
+}
+
+namespace combinatorialA {
+  class Cls {
+  }
+
+  class ClsA {
+  }
+
+  class ClsB {
+  }
+
+  enum Color {
+    RED = 1,
+    GREEN = 2,
+    BLUE = 3
+  }
+
+  enum ColorA {
+    RED = 4,
+    GREEN = 5,
+    BLUE = 6
+  }
+
+  enum ColorB {
+    RED = 7,
+    GREEN = 8,
+    BLUE = 9
+  }
+
+  function fun(): int {
+    return 1;
+  }
+
+  function funA(): int {
+    return 1;
+  }
+
+  function funB(): int {
+    return 1;
+  }
+}
+
+namespace combinatorialB {
+  class Cls {
+  }
+
+  class ClsA {
+  }
+
+  class ClsB {
+  }
+
+  enum Color {
+    RED = 1,
+    GREEN = 2,
+    BLUE = 3
+  }
+
+  enum ColorA {
+    RED = 4,
+    GREEN = 5,
+    BLUE = 6
+  }
+
+  enum ColorB {
+    RED = 7,
+    GREEN = 8,
+    BLUE = 9
+  }
+
+  function fun(): int {
+    return 1;
+  }
+
+  function funA(): int {
+    return 1;
+  }
+
+  function funB(): int {
+    return 1;
+  }
+}
+
+namespace combinatorialC {
+  namespace subA {
+    class ClsA {
+    }
+  }
+
+  namespace subB {
+    enum ColorA {
+      RED = 10,
+      GREEN = 11,
+      BLUE = 12
+    }
+
+    function fun(): int {
+      return 1;
+    }
+  }
+}
+
+namespace combinatorialD {
+  namespace subA {
+  }
+
+  class ClsA {
+  }
+
+  enum ColorA {
+    RED = 10,
+    GREEN = 11,
+    BLUE = 12
+  }
+
+  function fun(): int {
+    return 1;
+  }
+}

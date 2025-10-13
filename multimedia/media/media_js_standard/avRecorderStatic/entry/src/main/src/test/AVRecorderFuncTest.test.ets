@@ -82,7 +82,7 @@ export default function avRecorderTest() {
 
     let execTimes: Array<number>;
     //用例跑完取消消息订阅
-    let offFmitterEvent = ()=>{
+    let offFmitterEvent = () => {
       eventEmitter.off(SETONCALLBACK_EVENT);
       eventEmitter.off(CREATE_EVENT);
       eventEmitter.off(PREPARE_EVENT);
@@ -103,7 +103,7 @@ export default function avRecorderTest() {
       await commonFun.msleepAsync(2000);
       let permissionNames: Array<Permissions> =
         ['ohos.permission.MICROPHONE', 'ohos.permission.MEDIA_LOCATION', 'ohos.permission.READ_MEDIA',
-          'ohos.permission.WRITE_MEDIA','ohos.permission.CAMERA'];
+          'ohos.permission.WRITE_MEDIA', 'ohos.permission.CAMERA'];
       await commonFun.getPermission(permissionNames);
       await commonFun.msleepAsync(2000);
       await commonFun.driveFn(4);
@@ -114,7 +114,7 @@ export default function avRecorderTest() {
       console.info('beforeEach case');
       await commonFun.sleep(3000);
       fdObject = {
-        fileAsset:  null,
+        fileAsset: null,
         fdNumber: null
       };
     })
@@ -158,7 +158,7 @@ export default function avRecorderTest() {
       (avRecorder: media.AVRecorder, avConfig: media.AVRecorderConfig, recorderTime: number, steps: Array<string>,
         done: () => void) => {
         console.info('toNextStep 00 steps = ', steps);
-        try{
+        try {
           if (steps[0] == END_EVENT) {
             console.info('toNextStep case success!!');
             done();
@@ -186,7 +186,7 @@ export default function avRecorderTest() {
         console.info(TAG + 'audioCapturerChange');
       });
       // 错误上报回调函数
-      avRecorder.on('error', (err: BusinessError|null) => {
+      avRecorder.on('error', (err: BusinessError | null) => {
         try {
           console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
           // await releaseRecorderPromise(avRecorder, done);
@@ -220,7 +220,7 @@ export default function avRecorderTest() {
       let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
-      media.createAVRecorder((error: BusinessError|null, recorder: undefined|media.AVRecorder) => {
+      media.createAVRecorder((error: BusinessError | null, recorder: undefined | media.AVRecorder) => {
         console.info('CREATE_EVENT case createAVRecorder called');
         if (recorder != null) {
           let avRecorder = recorder;
@@ -247,7 +247,7 @@ export default function avRecorderTest() {
         let done: () => void = data?.get("done") as (() => void)
         let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
         let recorderTime: number = data?.get("recorderTime") as number
-        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+        avRecorder.prepare(avConfig, (err: BusinessError | null) => {
           console.info('case prepare called');
           if (err == null) {
             console.error(`case prepare success, state is ${avRecorder.state}`);
@@ -273,7 +273,7 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime = data?.get("recorderTime")
-      avRecorder.start((err: BusinessError|null) => {
+      avRecorder.start((err: BusinessError | null) => {
         console.info('case start called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.STARTED);
@@ -305,7 +305,7 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      avRecorder.stop((err: BusinessError|null) => {
+      avRecorder.stop((err: BusinessError | null) => {
         console.info('case stop called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.STOPPED);
@@ -335,7 +335,7 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      avRecorder.pause((err: BusinessError|null) => {
+      avRecorder.pause((err: BusinessError | null) => {
         console.info('case pause called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PAUSED);
@@ -365,7 +365,7 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      avRecorder.resume((err: BusinessError|null) => {
+      avRecorder.resume((err: BusinessError | null) => {
         console.info('case resume called');
         if (err == null) {
           console.info('resume AVRecorder success');
@@ -395,7 +395,7 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      avRecorder.release((err: BusinessError|null) => {
+      avRecorder.release((err: BusinessError | null) => {
         console.info('case release called');
         if (err == null) {
           expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
@@ -447,16 +447,16 @@ export default function avRecorderTest() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      let end: number;
-      let start: number = Date.now();
+      let end: long;
+      let start: long = Date.now();
       console.info(`releaseTimeTestCallback start time is : ${start}`)
-      avRecorder.release((err: BusinessError|null) => {
+      avRecorder.release((err: BusinessError | null) => {
         if (err == null) {
           console.info(`releaseTimeTestCallback current state is : ${avRecorder.state}`)
           console.info('release releaseTimeTestCallback success');
           end = Date.now()
           console.info(`releaseTimeTestCallback end time is : ${end}`)
-          let numStr: string = (end - start) +'';
+          let numStr: string = (end - start) + '';
           let execution = parseInt(numStr)
           console.info("releaseTimeTestCallback execution time  is :" + execution)
 
@@ -2226,7 +2226,7 @@ export default function avRecorderTest() {
         END_EVENT
       );
 
-      eventEmitterFun( avRecorder, avConfig, 3000, mySteps, done);
+      eventEmitterFun(avRecorder, avConfig, 3000, mySteps, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_001 end');
       done();
     })

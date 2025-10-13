@@ -261,7 +261,7 @@ struct noBarrierComponents {
             .width('50%')
             .height('100%')
 
-            AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 as int } as AlphabetIndexerOptions)
               .selectedColor(0xFFFFFF)
               .popupColor(0xFFFAF0)
               .selectedBackgroundColor(0xCCCCCC)
@@ -271,10 +271,10 @@ struct noBarrierComponents {
               .popupFont({ size: 30, weight: FontWeight.Bolder })
               .itemSize(28)
               .alignStyle(IndexerAlign.Left)
-              .onSelect((index: Double): void => {
+              .onSelect((index: int): void => {
 
               })
-              .onRequestPopupData(((index: number): Array<String> | undefined => {
+              .onRequestPopupData(((index: int): Array<String> | undefined => {
                 if (this.value[index as int] == 'A') {
                   return this.arrayA
                 } else if (this.value[index as int] == 'B') {
@@ -287,7 +287,7 @@ struct noBarrierComponents {
                   return undefined
                 }
               }) as OnAlphabetIndexerRequestPopupDataCallback)
-              .onPopupSelect((index: Double): void => {
+              .onPopupSelect((index: int): void => {
                 console.info('onPopupSelected:' + index)
               })
           }
@@ -509,7 +509,7 @@ struct noBarrierComponents {
         })
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult): void => {
-            this.selectedTime.setHours(value.hour, value.minute)
+            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           })
           .key("TimePicker")
