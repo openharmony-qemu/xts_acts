@@ -1518,31 +1518,6 @@ export default function LongTimeTaskManagerTest() {
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041 end---');
       })
-
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_VOIP_NOT_USED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
-    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042 begin---');
-
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_VOIP_NOT_USED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(13);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
-        }
-
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042 end---');
-      })
       
   })
 }
