@@ -132,7 +132,7 @@ export default function imageEffectErrorCodeTest() {
      * @tc.level  : Level 3
      */
     it('testOHImageEffectSetInputPicture002', Level.LEVEL3, async (done: Function) => {
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       let result: number = testNapi.OHImageEffectSetInputPictureErrorCode(filePath);
       expect(result).assertEqual(EXPEXTED_RESULT);
       done();

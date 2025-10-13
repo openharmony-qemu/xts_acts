@@ -29,9 +29,9 @@
       "type": "PushKit",
       "pre-push": [],
       "push": [
-        "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
-        "./resource/image/test5.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
-        "./resource/image/test6.gif ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/"
+        "./resource/image/test_exif_v21.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
+        "./resource/image/test51.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
+        "./resource/image/test61.gif ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/"
       ]
     },
     {
