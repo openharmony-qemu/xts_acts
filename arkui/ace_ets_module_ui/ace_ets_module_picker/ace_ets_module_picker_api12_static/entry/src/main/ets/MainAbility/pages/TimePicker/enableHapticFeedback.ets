@@ -44,7 +44,7 @@ struct TimePickerExample {
         .useMilitaryTime(this.isMilitaryTime)
         .onChange((value: TimePickerResult):void => {
           if(value.hour >= 0) {
-            this.selectedTime.setHours(value.hour, value.minute)
+            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })

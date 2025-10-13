@@ -87,7 +87,7 @@ struct TimePickerDialogOptions111 {
               height: 250
             },
             onAccept: (value: TimePickerResult) => {
-              this.selectTime.setHours(value.hour, value.minute)
+              this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
               console.info("TimePickerDialog: onAccept()" + JSON.stringify(value))
             },
             onCancel: () => {
