@@ -181,6 +181,42 @@ export default function ErrorCode201() {
                 done()
             }
         })
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
+         * @tc.name      testSetWindowTopmost201_static
+         * @tc.desc      Set the window to be top most.
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testSetWindowTopmost201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testSetWindowTopmost201_static';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setWindowTopmost(false).then(() => {
+                    hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
+                    expect(true).assertTrue();
+                    done();
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.error(domain, tag,domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code === 801) {
+                        done();
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                });
+            } catch (exception: BusinessError) {
+                if (exception.code === 801) {
+                    hilog.error(domain, tag,domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
+                    done();
+                } else {
+                    hilog.error(domain, tag,domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${exception.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
 
 
 
