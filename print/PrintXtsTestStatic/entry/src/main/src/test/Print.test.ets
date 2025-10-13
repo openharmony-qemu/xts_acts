@@ -2277,7 +2277,7 @@ export default function printTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('print_function_6300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('print_function_6800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6300 start');
       try {
         let info: print.PrinterInformation = {
