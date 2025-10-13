@@ -30,13 +30,17 @@ export default function HitraceMeterTest() {
      */
     it("DFX_DFR_HitraceMeter_Static_0100", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_0100 start--------");
-      for (let i = 0; i < 3; i++) {
-        console.info("DFX_DFR_HitraceMeter_Static_0100 i = " + i)
-        console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + " finishTrace start");
-        hiTraceMeter.finishTrace("test-" + JSON.stringify(i), 111 + i);
-        console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + "finishTrace end");
-      }
-      expect(true).assertTrue();
+      try {
+        for (let i = 0; i < 3; i++) {
+          console.info("DFX_DFR_HitraceMeter_Static_0100 i = " + i)
+          console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + " finishTrace start");
+          hiTraceMeter.finishTrace("test-" + JSON.stringify(i), 111 + i);
+          console.info("DFX_DFR_HitraceMeter_Static_0100 " + JSON.stringify(i) + "finishTrace end");
+        }
+        } catch (err) {
+          console.info("DFX_DFR_HitraceMeter_Static_0100 1 err = " + err);
+          expect(false).assertTrue();
+        }
       console.info("DFX_DFR_HitraceMeter_Static_0100 end");
       done();
     })
@@ -99,12 +103,15 @@ export default function HitraceMeterTest() {
      */
     it("DFX_DFR_HitraceMeter_Static_0400", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_Static_0400 start--------");
-      for (let i = 0; i < 3; i++) {
-        console.info("DFX_DFR_HitraceMeter_Static_0400 :" + i);
-        hiTraceMeter.traceByValue("test4-" + JSON.stringify(i), 3 + i);
+      try {
+        for (let i = 0; i < 3; i++) {
+          console.info("DFX_DFR_HitraceMeter_Static_0400 :" + i);
+          hiTraceMeter.traceByValue("test4-" + JSON.stringify(i), 3 + i);
+        }
+      } catch (err) {
+        console.info("DFX_DFR_HitraceMeter_Static_0400 1 err = " + err);
+        expect(false).assertTrue();
       }
-      expect(true).assertTrue();
-      console.info("DFX_DFR_HitraceMeter_Static_0400 end");
       done();
     })
 

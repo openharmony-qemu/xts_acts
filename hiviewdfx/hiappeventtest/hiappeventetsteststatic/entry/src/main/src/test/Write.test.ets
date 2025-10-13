@@ -44,7 +44,6 @@ export default function writeTest() {
           } as Record<string, Double|string|boolean|(Double|string|boolean)[]>
         })
         hilog.info(domain, tag, 'success to write event');
-        expect(true).assertTrue();
         done();
       } catch (error: BusinessError) {
         hilog.error(domain, tag, "failed to write event because: " + error.code);
