@@ -77,7 +77,7 @@ export default function testsuite() {
   RectRadiusTest()
   RectCommonShapeMethodTest()
   Matrix2DTest()
+  CanvasGetLineDashTest()
   circleNewJsunit()
 
-  CanvasGetLineDashTest()
 }

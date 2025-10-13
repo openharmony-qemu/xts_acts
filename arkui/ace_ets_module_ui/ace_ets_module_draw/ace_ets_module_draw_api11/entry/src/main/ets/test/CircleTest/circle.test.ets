@@ -21,7 +21,7 @@ import resourceManager from '@ohos.resourceManager';
 import { BusinessError } from '@ohos.base';
 
 export default function circleNewJsunit() {
-  describe('circleNewTest', () => {
+  describe('circleNewJsunit', () => {
     beforeAll(async () => {
       console.info("circle beforeEach start");
      let options:router.RouterOptions = {
