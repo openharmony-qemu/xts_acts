@@ -21,7 +21,10 @@
       "type": "ShellKit",
       "run-command": [
         "remount",
-        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files"
+        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files",
+        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test",
+        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
+        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/*"
       ]
     },
     {
@@ -36,13 +39,11 @@
     {
       "type": "ShellKit",
       "run-command": [
+        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
         "power-shell wakeup",
         "power-shell setmode 602",
         "power-shell timeout -o 86400000",
-        "hidumper -s 3301 -a -t",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/*"
+        "hidumper -s 3301 -a -t"
       ]
     }
   ]
