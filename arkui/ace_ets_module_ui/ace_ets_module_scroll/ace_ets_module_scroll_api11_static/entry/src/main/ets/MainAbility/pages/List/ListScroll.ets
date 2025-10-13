@@ -100,7 +100,7 @@ struct ListScroll {
       .margin({ top: 10 } as Margin)
       .edgeEffect(EdgeEffect.None)
       .alignListItem(ListItemAlign.Center)
-      .onScrollIndex((start: number, end: number, center: number): void => {
+      .onScrollIndex((start: int, end: int, center: int): void => {
         let eventData: events_emitter.EventData = {
           data: {
             'start': start,

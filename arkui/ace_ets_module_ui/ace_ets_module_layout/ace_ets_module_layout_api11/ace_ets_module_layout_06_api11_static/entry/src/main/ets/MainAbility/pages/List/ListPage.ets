@@ -177,7 +177,7 @@ struct ListPage {
       }.key('list_default')
       .height('5%')
 
-      List({ space: this.space, initialIndex: this.initialIndex, scroller: this.scroller }) {
+      List({ space: this.space, initialIndex: Double.toInt(this.initialIndex), scroller: this.scroller }) {
         ForEach(this.arr, (item: string) => {
           ListItem() {
             Text('' + item)
@@ -200,11 +200,11 @@ struct ListPage {
       .divider({strokeWidth: this.strokeWidth, color: this.dividerColor,
         startMargin: this.startMargin, endMargin: this.endMargin })
       .scrollBar(this.scrollBar)
-      .cachedCount(this.cachedCount)
+      .cachedCount(Double.toInt(this.cachedCount))
       .edgeEffect(this.edgeEffect)
       .chainAnimation(this.chainAnimation)
       .multiSelectable(this.multiSelectable)
-      .lanes(this.lanes)
+      .lanes(Double.toInt(this.lanes))
       .alignListItem(this.alignListItem)
       /*.onItemDelete((index: number) => {
         this.onScrollText = "onItemDelete:succ"
@@ -243,12 +243,12 @@ struct ListPage {
         this.onScrollStopText = "onScrollStop:succ"
         console.info('onScrollStop  succ')
       })
-      .onItemMove((from: number, to: number) => {
+      .onItemMove((from: int, to: int) => {
         this.onItemMoveText = "onItemMove:succ"
         console.info('onItemMove: from: ' + from + ' to: ' + to)
         return true
       })
-      .onItemDragStart((event: ItemDragInfo, itemIndex: number) => {
+      .onItemDragStart((event: ItemDragInfo, itemIndex: int) => {
         this.onItemDragText = "onItemDragStart:succ"
         console.info('onItemDragStart: event: ' + event + ', itemIndex: ' + itemIndex)
       })
@@ -256,15 +256,15 @@ struct ListPage {
         this.onItemDragText = "onItemDragEnter:succ"
         console.info('onItemDragEnter event: ' + event)
       })
-      .onItemDragMove((event: ItemDragInfo, itemIndex: number, insertIndex: number) => {
+      .onItemDragMove((event: ItemDragInfo, itemIndex: int, insertIndex: int) => {
         this.onItemDragText = "onItemDragMove:succ"
         console.info('onItemDragMove: event: ' + event + ', itemIndex: ' + itemIndex + ', insertIndex: ' + insertIndex)
       })
-      .onItemDragLeave((event: ItemDragInfo, itemIndex: number) => {
+      .onItemDragLeave((event: ItemDragInfo, itemIndex: int) => {
         this.onItemDragText = "onItemDragLeave:succ"
         console.info('onItemDragLeave: event: ' + event + ', itemIndex: ' + itemIndex)
       })
-      .onItemDrop((event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => {
+      .onItemDrop((event: ItemDragInfo, itemIndex: int, insertIndex: int, isSuccess: boolean) => {
         this.onItemDropText = "onItemDrop:succ"
         console.info('onItemDrop: event: ' + event + ', itemIndex: ' + itemIndex + ', insertIndex: ' + insertIndex + ', isSuccess: ' + isSuccess)
       })

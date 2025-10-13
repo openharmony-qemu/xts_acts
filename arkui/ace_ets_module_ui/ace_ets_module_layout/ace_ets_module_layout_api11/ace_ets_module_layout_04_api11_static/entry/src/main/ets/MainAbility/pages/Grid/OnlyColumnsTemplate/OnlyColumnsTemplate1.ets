@@ -58,8 +58,8 @@ struct OnlyColumnsTemplate1 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .height(50)
-        .columnStart(this.columnStart1)
-        .columnEnd(this.columnEnd1)
+        .columnStart(Double.toInt(this.columnStart1))
+        .columnEnd(Double.toInt(this.columnEnd1))
         .key('OnlyColumnsTemplate1_GridItem_01')
 
 
@@ -74,8 +74,8 @@ struct OnlyColumnsTemplate1 {
         .border({ width: 1 })
         .borderColor(0x000000)
         .height(50)
-        .columnStart(this.columnStart2)
-        .columnEnd(this.columnEnd2)
+        .columnStart(Double.toInt(this.columnStart2))
+        .columnEnd(Double.toInt(this.columnEnd2))
         .key('OnlyColumnsTemplate1_GridItem_02')
 
       }

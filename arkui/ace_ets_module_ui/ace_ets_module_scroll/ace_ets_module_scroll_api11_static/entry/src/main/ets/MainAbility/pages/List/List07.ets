@@ -111,7 +111,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -145,7 +145,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -179,7 +179,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -213,7 +213,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -247,7 +247,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })

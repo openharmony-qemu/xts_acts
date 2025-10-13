@@ -65,8 +65,8 @@ struct Grid_RowCol_ItemColumnStartEnd {
         }
         .rowStart(0)
         .rowEnd(0)
-        .columnStart(this.testColumnStart)
-        .columnEnd(this.testColumnEnd)
+        .columnStart(Double.toInt(this.testColumnStart))
+        .columnEnd(Double.toInt(this.testColumnEnd))
         .key('Grid_RowCol_ItemColumnStartEnd1')
 
         ForEach(this.textNumber, (item: string) => {

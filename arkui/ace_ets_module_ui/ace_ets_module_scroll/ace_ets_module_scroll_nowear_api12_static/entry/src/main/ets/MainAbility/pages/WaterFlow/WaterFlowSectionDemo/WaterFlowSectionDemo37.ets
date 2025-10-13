@@ -52,14 +52,14 @@ struct WaterFlowSectionDemo37 {
     crossCount: -1,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 100.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 2,
     crossCount: 1,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 100.0
     }
   } as SectionOptions
@@ -69,7 +69,7 @@ struct WaterFlowSectionDemo37 {
     let count = 0
     while (count < this.dataCount) {
       sectionOptions.push(this.twoColumnSection)
-      this.lastSection.itemsCount = this.dataCount - this.twoColumnSection.itemsCount
+      this.lastSection.itemsCount = Double.toInt(this.dataCount - this.twoColumnSection.itemsCount)
       sectionOptions.push(this.lastSection)
       break;
     }

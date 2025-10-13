@@ -45,7 +45,7 @@ struct List_ListInitialIndex6 {
 
   build() {
     Column({ space: 30 } as ColumnOptions) {
-      List({ space: 20, initialIndex: this.testInitialIndex }) {
+      List({ space: 20, initialIndex: Double.toInt(this.testInitialIndex) }) {
         ForEach(this.arr, (item: string) => {
           ListItem() {
             Text('' + item)
@@ -62,7 +62,7 @@ struct List_ListInitialIndex6 {
       .listDirection(Axis.Vertical)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .lanes(this.testLanes)
+      .lanes(Double.toInt(this.testLanes))
       .backgroundColor(0xAFEEEE)
       .key('List_ListInitialIndex6_Container01')
     }

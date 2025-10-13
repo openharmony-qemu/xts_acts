@@ -98,7 +98,7 @@ struct List_lanes_1 {
       .width('80%')
       .key('List_lanes_1_01')
       .backgroundColor(0xAFEEEE)
-      .lanes(this.addLanes)
+      .lanes(Double.toInt(this.addLanes))
       .scrollBar(BarState.On)
     }.width('100%').height('100%').backgroundColor(0xDCDCDC)
   }

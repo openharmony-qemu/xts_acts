@@ -52,7 +52,7 @@ struct OnlyRowsTemplate2 {
         .borderColor(0x000000)
         .width(100)
         .height("100%")
-        .rowStart(this.rowStart1)
+        .rowStart(Double.toInt(this.rowStart1))
         .key('OnlyRowsTemplate2_GridItem_01')
 
         GridItem() {
@@ -67,7 +67,7 @@ struct OnlyRowsTemplate2 {
         .borderColor(0x000000)
         .width(100)
         .height("100%")
-        .rowStart(this.rowStart2)
+        .rowStart(Double.toInt(this.rowStart2))
         .key('OnlyRowsTemplate2_GridItem_02')
 
       }

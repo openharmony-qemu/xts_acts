@@ -61,8 +61,8 @@ struct Grid_RowCol_ItemRowStartEnd {
         GridItem() {
           Text('1').width('100%').height('100%').backgroundColor(0xF5DEB3);
         }
-        .rowStart(this.testRowStart)
-        .rowEnd(this.testRowEnd)
+        .rowStart(Double.toInt(this.testRowStart))
+        .rowEnd(Double.toInt(this.testRowEnd))
         .columnStart(0)
         .columnEnd(0)
         .key('Grid_RowCol_ItemRowStartEnd1')

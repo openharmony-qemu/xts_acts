@@ -93,7 +93,7 @@ struct ListExample11 {
         })
         .edgeEffect(EdgeEffect.None)
         .chainAnimation(false)
-        .onScrollIndex((firstIndex: number, lastIndex: number, center: number): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int, center: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })
@@ -118,12 +118,12 @@ struct ListExample11 {
         .onScrollStop(() => {
           console.info("On Scroll Stop")
         })
-        .onItemMove((from: number, to: number) => {
+        .onItemMove((from: int, to: int) => {
           console.info(from + 'from')
           console.info(to + 'to')
           return true
         })
-        .onItemDragStart((event: ItemDragInfo, itemIndex: number): CustomBuilder => {
+        .onItemDragStart((event: ItemDragInfo, itemIndex: int): CustomBuilder => {
           this.bool1 = true
           this.text = this.arr1[itemIndex.toInt()]
           console.log('onItemDragStart, itemIndex:' + itemIndex);
@@ -132,13 +132,13 @@ struct ListExample11 {
         .onItemDragEnter((event: ItemDragInfo) => {
           console.log('onItemDragEnter');
         })
-        .onItemDragMove((event: ItemDragInfo, itemIndex: number, insertIndex: number) => {
+        .onItemDragMove((event: ItemDragInfo, itemIndex: int, insertIndex: int) => {
           console.log('onItemDragMove,itemIndex:' + itemIndex + 'insertIndex:' + insertIndex)
         })
-        .onItemDragLeave((event: ItemDragInfo, itemIndex: number) => {
+        .onItemDragLeave((event: ItemDragInfo, itemIndex: int) => {
           console.log('onItemDragLeave, itemIndex:' + itemIndex);
         })
-        .onItemDrop((event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => {
+        .onItemDrop((event: ItemDragInfo, itemIndex: int, insertIndex: int, isSuccess: boolean) => {
           console.log('ItemDragInfo, itemIndex:' + itemIndex + 'insertIndex:' + insertIndex + 'isSuccess:' + isSuccess);
           if (isSuccess) {
             if (this.bool2) {

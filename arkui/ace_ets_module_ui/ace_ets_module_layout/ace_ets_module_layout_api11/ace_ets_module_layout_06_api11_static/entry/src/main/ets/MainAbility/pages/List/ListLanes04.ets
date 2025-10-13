@@ -56,7 +56,7 @@ struct ListLanes04 {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
         ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
@@ -72,7 +72,7 @@ struct ListLanes04 {
       .width('100%')
       .height('30%')
 
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
         ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
@@ -88,7 +88,7 @@ struct ListLanes04 {
       .width('100%')
       .height('30%')
 
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
         ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)

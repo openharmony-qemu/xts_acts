@@ -53,7 +53,7 @@ struct RefreshOffsetExample {
             }
           }, (item: string) => item)
         }
-        .onScrollIndex((first: number): void => {
+        .onScrollIndex((first: int): void => {
           console.info(first.toString())
         })
         .width('100%')

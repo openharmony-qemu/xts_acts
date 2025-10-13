@@ -61,21 +61,21 @@ struct WaterFlowEventDemo {
     columnsGap: '5vp',
     rowsGap: 10,
     margin: this.sectionMargin,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return this.itemHeightArray[index.toInt() % 100]
     }
   } as SectionOptions
   twoColumnSection: SectionOptions = {
     itemsCount: 2,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 100.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 20,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return this.itemHeightArray[index.toInt() % 100]
     }
   } as SectionOptions
@@ -101,7 +101,7 @@ struct WaterFlowEventDemo {
     let oneOrTwo = 0
     while (count < this.dataCount) {
       if (this.dataCount - count < 20) {
-        this.lastSection.itemsCount = this.dataCount - count
+        this.lastSection.itemsCount = Double.toInt(this.dataCount - count)
         sectionOptions.push(this.lastSection)
         break;
       }
@@ -149,7 +149,7 @@ struct WaterFlowEventDemo {
       .width('100%')
       .height('70%')
       .layoutWeight(1)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         this.onScrollIndex = 'last:' + last
         console.info("onScrollIndex first:" + first.toString() + " last:" + last.toString())
       })

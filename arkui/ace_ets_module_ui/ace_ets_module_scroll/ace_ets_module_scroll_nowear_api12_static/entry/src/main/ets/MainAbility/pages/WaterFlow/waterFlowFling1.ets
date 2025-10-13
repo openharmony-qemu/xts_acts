@@ -84,7 +84,7 @@ struct WaterFlowFling1 {
       .width('100%')
       .height('40%')
       .layoutWeight(1)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         this.onText += 'onScrollIndex-'
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })
