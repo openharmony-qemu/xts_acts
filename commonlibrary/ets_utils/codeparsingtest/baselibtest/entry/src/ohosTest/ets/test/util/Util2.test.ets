@@ -65,12 +65,12 @@ export default function util2Test() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0100
-     * @tc.name       : testGetHash_001
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0100
+     * @tc.name testGetHash_001
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testGetHash_001';
@@ -87,12 +87,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0200
-     * @tc.name       : testGetHash_002
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0200
+     * @tc.name testGetHash_002
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testGetHash_001';
@@ -110,12 +110,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0300
-     * @tc.name       : testGetHash_003
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0300
+     * @tc.name testGetHash_003
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -131,12 +131,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0400
-     * @tc.name       : testGetHash_004
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0400
+     * @tc.name testGetHash_004
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -152,12 +152,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0500
-     * @tc.name       : testGetHash_005
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0500
+     * @tc.name testGetHash_005
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -173,12 +173,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0600
-     * @tc.name       : testGetHash_006
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0600
+     * @tc.name testGetHash_006
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -194,12 +194,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0700
-     * @tc.name       : testGetHash_007
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0700
+     * @tc.name testGetHash_007
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -215,12 +215,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0800
-     * @tc.name       : testGetHash_008
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0800
+     * @tc.name testGetHash_008
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -236,12 +236,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0900
-     * @tc.name       : testGetHash_009
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0900
+     * @tc.name testGetHash_009
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -257,12 +257,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1000
-     * @tc.name       : testGetHash_010
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1000
+     * @tc.name testGetHash_010
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -278,12 +278,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1100
-     * @tc.name       : testGetHash_011
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1100
+     * @tc.name testGetHash_011
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -299,12 +299,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1200
-     * @tc.name       : testGetHash_012
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1200
+     * @tc.name testGetHash_012
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -320,12 +320,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1300
-     * @tc.name       : testGetHash_013
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1300
+     * @tc.name testGetHash_013
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -342,12 +342,12 @@ export default function util2Test() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1400
-     * @tc.name       : testGetHash_014
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1400
+     * @tc.name testGetHash_014
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -363,12 +363,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1500
-     * @tc.name       : testGetHash_015
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1500
+     * @tc.name testGetHash_015
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -384,12 +384,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1600
-     * @tc.name       : testGetHash_016
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1600
+     * @tc.name testGetHash_016
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -405,12 +405,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1700
-     * @tc.name       : testGetHash_017
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1700
+     * @tc.name testGetHash_017
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -426,12 +426,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1800
-     * @tc.name       : testGetHash_018
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1800
+     * @tc.name testGetHash_018
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -448,12 +448,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1900
-     * @tc.name       : testGetHash_019
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1900
+     * @tc.name testGetHash_019
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -471,12 +471,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2000
-     * @tc.name       : testGetHash_020
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2000
+     * @tc.name testGetHash_020
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -493,12 +493,12 @@ export default function util2Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2100
-     * @tc.name       : testGetHash_021
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2100
+     * @tc.name testGetHash_021
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -518,12 +518,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2200
-     * @tc.name       : testGetHash_022
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2200
+     * @tc.name testGetHash_022
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -543,12 +543,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2300
-     * @tc.name       : testGetHash_023
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2300
+     * @tc.name testGetHash_023
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -568,12 +568,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2400
-     * @tc.name       : testGetHash_024
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2400
+     * @tc.name testGetHash_024
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -593,12 +593,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2500
-     * @tc.name       : testGetHash_025
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2500
+     * @tc.name testGetHash_025
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -618,12 +618,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2600
-     * @tc.name       : testGetHash_026
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2600
+     * @tc.name testGetHash_026
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -643,12 +643,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2700
-     * @tc.name       : testGetHash_027
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2700
+     * @tc.name testGetHash_027
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -668,12 +668,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2800
-     * @tc.name       : testGetHash_028
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2800
+     * @tc.name testGetHash_028
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -693,12 +693,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2900
-     * @tc.name       : testGetHash_029
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2900
+     * @tc.name testGetHash_029
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -718,12 +718,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3000
-     * @tc.name       : testGetHash_030
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3000
+     * @tc.name testGetHash_030
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -743,12 +743,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3100
-     * @tc.name       : testGetHash_031
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3100
+     * @tc.name testGetHash_031
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -768,12 +768,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3200
-     * @tc.name       : testGetHash_032
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3200
+     * @tc.name testGetHash_032
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -793,12 +793,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3300
-     * @tc.name       : testGetHash_033
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3300
+     * @tc.name testGetHash_033
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -818,12 +818,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3400
-     * @tc.name       : testGetHash_034
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3400
+     * @tc.name testGetHash_034
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -835,12 +835,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3500
-     * @tc.name       : testGetHash_035
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3500
+     * @tc.name testGetHash_035
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -851,12 +851,12 @@ export default function util2Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3501
-     * @tc.name       : testGetHash_036
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3501
+     * @tc.name testGetHash_036
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -866,12 +866,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3502
-     * @tc.name       : testGetHash_037
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3502
+     * @tc.name testGetHash_037
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -881,12 +881,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3503
-     * @tc.name       : testGetHash_038
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3503
+     * @tc.name testGetHash_038
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -895,12 +895,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3504
-     * @tc.name       : testGetHash_039
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3504
+     * @tc.name testGetHash_039
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -910,12 +910,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3505
-     * @tc.name       : testGetHash_040
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3505
+     * @tc.name testGetHash_040
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -924,12 +924,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3506
-     * @tc.name       : testGetHash_041
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3506
+     * @tc.name testGetHash_041
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -940,12 +940,12 @@ export default function util2Test() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3507
-     * @tc.name       : testGetHash_042
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3507
+     * @tc.name testGetHash_042
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -954,12 +954,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3508
-     * @tc.name       : testGetHash_043
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3508
+     * @tc.name testGetHash_043
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -969,12 +969,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3509
-     * @tc.name       : testGetHash_044
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3509
+     * @tc.name testGetHash_044
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -983,12 +983,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3510
-     * @tc.name       : testGetHash_045
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3510
+     * @tc.name testGetHash_045
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -998,12 +998,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3511
-     * @tc.name       : testGetHash_046
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3511
+     * @tc.name testGetHash_046
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let type = new util.types();
@@ -1012,12 +1012,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3512
-     * @tc.name       : testGetHash_047
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3512
+     * @tc.name testGetHash_047
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = "aaa";
@@ -1027,12 +1027,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3513
-     * @tc.name       : testGetHash_048
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3513
+     * @tc.name testGetHash_048
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new ArrayList<number>();
@@ -1047,12 +1047,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3514
-     * @tc.name       : testGetHash_049
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3514
+     * @tc.name testGetHash_049
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new HashSet<number>();
@@ -1061,12 +1061,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3515
-     * @tc.name       : testGetHash_050
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3515
+     * @tc.name testGetHash_050
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new LightWeightMap<number, number>();
@@ -1075,12 +1075,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3516
-     * @tc.name       : testGetHash_051
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3516
+     * @tc.name testGetHash_051
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new LightWeightSet<number>();
@@ -1092,12 +1092,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3517
-     * @tc.name       : testGetHash_052
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3517
+     * @tc.name testGetHash_052
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new LinkedList<number>();
@@ -1111,12 +1111,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3518
-     * @tc.name       : testGetHash_053
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3518
+     * @tc.name testGetHash_053
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new List<number>();
@@ -1130,12 +1130,12 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3519
-     * @tc.name       : testGetHash_054
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3519
+     * @tc.name testGetHash_054
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new Queue<number>();
@@ -1144,72 +1144,17 @@ export default function util2Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3520
-     * @tc.name       : testGetHash_055
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3520
+     * @tc.name testGetHash_055
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testGetHash_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new TreeSet<number>();
-      let result1 =res.add(1);
+      let result1 = res.add(1);
       expect(result1).assertEqual(true);
-    });
-
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3521
-     * @tc.name       : testGetHash_056
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testGetHash_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    });
-
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3522
-     * @tc.name       : testGetHash_057
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testGetHash_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    });
-
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3523
-     * @tc.name       : testGetHash_058
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testGetHash_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    });
-
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3524
-     * @tc.name       : testGetHash_059
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testGetHash_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    });
-
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3525
-     * @tc.name       : testGetHash_060
-     * @tc.desc       : Testing the getHash interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testGetHash_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
     });
   })
 }

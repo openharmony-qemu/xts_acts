@@ -14,7 +14,7 @@
 */
 
 import decimalTest from './decimal/Decimal.test'
-import decimalTest from './decimal/Decimal2.test'
+import Decimal2Test from './decimal/Decimal2.test'
 
 
 export default function testsuite() {
