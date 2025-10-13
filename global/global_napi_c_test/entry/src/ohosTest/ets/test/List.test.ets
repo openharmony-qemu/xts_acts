@@ -13,8 +13,12 @@
  * limitations under the License.
  */
 
+import NativeApiString2Test from './NativeApiString2Test.test';
+import NativeApiString3Test from './NativeApiString3Test.test';
 import napiStringTest from './NativeApiStringTest.test';
 
 export default function testsuite() {
   napiStringTest()
+  NativeApiString2Test()
+  NativeApiString3Test()
 }

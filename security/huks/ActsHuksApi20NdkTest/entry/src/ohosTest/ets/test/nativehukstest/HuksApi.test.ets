@@ -94,6 +94,29 @@ export default function HuksApiTest() {
       })
 
     /**
+       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0300
+       * @tc.name    testOH_Huks_GenerateKeyItem0300
+       * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+       * @tc.size    MediumTest
+       * @tc.type    Function
+       * @tc.level   Level 1
+       */
+    it('testOH_Huks_GenerateKeyItem0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOH_Huks_GenerateKeyItem0300 start====");
+          let result: number = nativehuksndk.GenerateKeyItemTest_003();
+          console.info(`====>testOH_Huks_GenerateKeyItem0300 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOH_Huks_GenerateKeyItem0300 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+
+    /**
        * @tc.number  SUB_SECURITY_HUKS_OH_Huks_GenerateKeyItem_0400
        * @tc.name    testOH_Huks_GenerateKeyItem0400
        * @tc.desc    testing OH_Huks_GenerateKeyItem interface OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT (12000002)
@@ -209,6 +232,29 @@ export default function HuksApiTest() {
       })
 
     /**
+       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportKeyItem_0400
+       * @tc.name    testOH_Huks_ImportKeyItem0400
+       * @tc.desc    testing OH_Huks_ImportKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+       * @tc.size    MediumTest
+       * @tc.type    Function
+       * @tc.level   Level 1
+       */
+    it('testOH_Huks_ImportKeyItem0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOH_Huks_ImportKeyItem0400 start====");
+          let result: number = nativehuksndk.ImportKeyItemTest_004();
+          console.info(`====>testOH_Huks_ImportKeyItem0400 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOH_Huks_ImportKeyItem0400 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+
+    /**
        * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0100
        * @tc.name    testOH_Huks_ImportWrappedKeyItem0100
        * @tc.desc    testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT(401)
@@ -226,6 +272,29 @@ export default function HuksApiTest() {
           done();
         } catch (err) {
           console.error("====>testOH_Huks_ImportWrappedKeyItem0100 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+
+    /**
+       * @tc.number  SUB_SECURITY_HUKS_OH_Huks_ImportWrappedKeyItem_0200
+       * @tc.name    testOH_Huks_ImportWrappedKeyItem0200
+       * @tc.desc    testing OH_Huks_ImportWrappedKeyItem interface OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST(12000017)
+       * @tc.size    MediumTest
+       * @tc.type    Function
+       * @tc.level   Level 1
+       */
+    it('testOH_Huks_ImportWrappedKeyItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOH_Huks_ImportWrappedKeyItem0200 start====");
+          let result: number = nativehuksndk.ImportWrappedKeyItemTest_002();
+          console.info(`====>testOH_Huks_ImportWrappedKeyItem0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOH_Huks_ImportWrappedKeyItem0200 err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -715,6 +784,29 @@ export default function HuksApiTest() {
       })
 
     /**
+     * @tc.number  SUB_SECURITY_HUKS_OH_Huks_WrapKey_0300
+     * @tc.name    testOH_Huks_WrapKey0300
+     * @tc.desc    testing OH_Huks_WrapKey interface OH_HUKS_ERR_CODE_ITEM_NOT_EXIST(12000011)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+    */
+    it('testOH_Huks_WrapKey0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOH_Huks_WrapKey0300 start====");
+          let result: number = nativehuksndk.WrapKeyTest_003();
+          console.info(`====>testOH_Huks_WrapKey0300 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOH_Huks_WrapKey0300 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+
+    /**
      * @tc.number  SUB_SECURITY_HUKS_OH_Huks_UnwrapKey_0200
      * @tc.name    testOH_Huks_UnwrapKey0200
      * @tc.desc    testing OH_Huks_UnwrapKey interface OH_HUKS_ERR_CODE_INVALID_ARGUMENT(12000018)
@@ -726,7 +818,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_UnwrapKey0200 start====");
-          let result: number = nativehuksndk.UnwrapKeyTest_002();
+          let result: number = nativehuksndk.UnwrapKeyTest_001();
           console.info(`====>testOH_Huks_UnwrapKey0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();

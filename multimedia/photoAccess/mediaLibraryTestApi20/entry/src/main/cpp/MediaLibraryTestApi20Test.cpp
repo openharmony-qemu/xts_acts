@@ -14,6 +14,7 @@
  */
 
 #include "MediaAssetChangeRequestCapiTest.h"
+#include "MediaAssetCapiTest.h"
 #include <js_native_api.h>
 #include <vector>
 
@@ -23,6 +24,7 @@ static napi_value Init(napi_env env, napi_value exports)
     std::vector<napi_property_descriptor> descData;
     
     AddMediaAssetChangeRequestCapiTest(descData);
+    AddMediaAssetCapiTest(descData);
     
     napi_define_properties(env, exports, descData.size(), descData.data());
     return exports;

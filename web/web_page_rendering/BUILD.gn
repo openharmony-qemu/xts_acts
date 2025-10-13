@@ -24,10 +24,15 @@ group("webPageRenderingTest") {
       "basic_rendering_static:ActsWebBasicRenderingStaticTest",
       "dark_color_mode:ActsWebDarkColorModeTest",
       "same_layer_rendering:ActsWebSameLayerRenderingTest",
+      "same_layer_rendering_static:ActsWebSameLayerRenderingStaticTest",
       "viewport_processing:ActsWebViewportProcessingTest",
+      "viewport_processing_static:ActsWebViewportProcessingStaticTest",
       "web_page_font:ActsWebPageFontTest",
+      "web_page_font_static:ActsWebPageFontStaticTest",
       "web_page_zoom_rotate:ActsWebPageZoomRotateTest",
+      "web_page_zoom_rotate_static:ActsWebPageZoomRotateStaticTest",
       "web_page_size_static:ActsWebPageSizeStaticTest",
+      "screen_capture_static:ActsWebScreenCaptureStaticTest",
     ]
   }
 }

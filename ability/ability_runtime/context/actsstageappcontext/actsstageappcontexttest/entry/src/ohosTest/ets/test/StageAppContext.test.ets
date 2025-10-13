@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
 
         afterEach(async () => {
             console.log("ActsStageContextPropertiesTest run afterEach with await");
-            await sleep(2000);
+            await sleep(1000);
         })
 
         /**
@@ -311,7 +311,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbility',
@@ -321,8 +321,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -334,7 +333,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -381,7 +380,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbility',
@@ -391,8 +390,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -404,7 +402,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -451,7 +449,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbilityFeature',
@@ -461,8 +459,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpFeature failed:' + JSON.stringify(error));
@@ -474,7 +471,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -521,7 +518,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbilityFeature',
@@ -531,8 +528,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpFeature failed:' + JSON.stringify(error));
@@ -544,7 +540,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -591,7 +587,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelpSystem',
                     abilityName: 'MainAbility',
@@ -601,8 +597,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -614,7 +609,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -661,7 +656,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             };
             let startAbility = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelpSystem',
                     abilityName: 'MainAbility',
@@ -671,8 +666,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -684,7 +678,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         startAbility(true);
                     } else {
@@ -727,7 +721,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             let createFile = true;
             let startEntery = async () => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbility',
@@ -737,8 +731,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -755,12 +748,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         await startSystem();
                     } else {
                         expect(haveFileFlg).assertTrue();
                         console.log(TAG + 'Close Subscriber');
-                        await sleep(2000);
+                        await sleep(1000);
                         createFileSys = false;
                         await startSystem(true);
                         commonEventManager.unsubscribe(Subscriber);
@@ -783,7 +776,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             let createFileSys = true;
             let startSystem = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelpSystem',
                     abilityName: 'MainAbility',
@@ -793,8 +786,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile: createFileSys
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -811,7 +803,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFileSys) {
                         expect(haveFileFlgSys).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         await startEntery();
                     } else {
@@ -854,7 +846,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             let createFile = true;
             let startEntery = async () => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelp',
                     abilityName: 'MainAbility',
@@ -864,8 +856,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -882,12 +873,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFile) {
                         expect(haveFileFlg).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         await startSystem();
                     } else {
                         expect(haveFileFlg).assertTrue();
                         console.log(TAG + 'Close Subscriber');
-                        await sleep(2000);
+                        await sleep(1000);
                         createFileSys = false;
                         await startSystem(true);
                         commonEventManager.unsubscribe(Subscriber);
@@ -910,7 +901,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
             let createFileSys = true;
             let startSystem = async (notClear = false) => {
                 await abilityDelegator.doAbilityForeground(TestUiAbility);
-                await sleep(3000);
+                await sleep(1000);
                 await abilityContext.startAbility({
                     bundleName: 'com.example.clearUpApplicationDataHelpSystem',
                     abilityName: 'MainAbility',
@@ -920,8 +911,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                         createFile: createFileSys
                     }
                 }).then(async () => {
-                    await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
+                    let openBtn = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 3000);
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -938,7 +928,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                 try {
                     if (createFileSys) {
                         expect(haveFileFlgSys).assertTrue();
-                        await sleep(2000);
+                        await sleep(1000);
                         createFile = false;
                         await startEntery();
                     } else {

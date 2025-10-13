@@ -20,7 +20,7 @@
 ani_boolean test_FindClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Person;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_NE(cls, nullptr);
     return ANI_TRUE;
@@ -29,11 +29,11 @@ ani_boolean test_FindClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_o
 ani_boolean test_Class_FindStaticMethodBoolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Person;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_static_method method = nullptr;
-    status = env->Class_FindStaticMethod(cls, "or", "ZZ:Z", &method);
+    status = env->Class_FindStaticMethod(cls, "or", "zz:z", &method);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_NE(method, nullptr);
     return ANI_TRUE;
@@ -42,11 +42,11 @@ ani_boolean test_Class_FindStaticMethodBoolean([[maybe_unused]] ani_env *env, [[
 ani_boolean test_Class_FindStaticMethodInt([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Person;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_static_method method = nullptr;
-    status = env->Class_FindStaticMethod(cls, "sum", "II:I", &method);
+    status = env->Class_FindStaticMethod(cls, "sum", "ii:i", &method);
     ASSERT_EQ(status, ANI_OK);
     ASSERT_NE(method, nullptr);
     return ANI_TRUE;
@@ -55,10 +55,10 @@ ani_boolean test_Class_FindStaticMethodInt([[maybe_unused]] ani_env *env, [[mayb
 ani_boolean test_Class_FindMethod([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Person;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
     ASSERT_EQ(status, ANI_TRUE);
     const char *name = "func";
-    const char *signature = "II:I";
+    const char *signature = "ii:i";
     ani_method result;
     status = env->Class_FindMethod(cls, name, signature, &result);
     ASSERT_EQ(status, ANI_OK);
@@ -75,10 +75,10 @@ ani_int NativeMethodsFooNative(ani_env *, ani_class)
 ani_boolean test_Class_BindNativeMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Person;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
     ASSERT_EQ(status, ANI_OK);
     std::array methods = {
-        ani_native_function{"foo", ":I", reinterpret_cast<void *>(NativeMethodsFooNative)},
+        ani_native_function{"foo", ":i", reinterpret_cast<void *>(NativeMethodsFooNative)},
     };
     status = env->Class_BindNativeMethods(cls, methods.data(), methods.size());
     ASSERT_EQ(status, ANI_OK);
@@ -88,7 +88,7 @@ ani_boolean test_Class_BindNativeMethods([[maybe_unused]] ani_env *env, [[maybe_
 ani_boolean test_Type_GetSuperClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = nullptr;
-    auto status = env->FindClass("Lentry/src/main/src/ets/ClassOperations/Son;", &cls);
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Son", &cls);
     ASSERT_EQ(status, ANI_OK);
     ani_class result = nullptr;
     status = env->Type_GetSuperClass(cls, &result);
@@ -100,10 +100,10 @@ ani_boolean test_Type_GetSuperClass([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_Type_IsAssignableFrom([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class fromCls;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/ClassOperations/A;", &fromCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.A", &fromCls), ANI_OK);
     ASSERT_NE(fromCls, nullptr);
     ani_class toCls;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/ClassOperations/I;", &toCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.I", &toCls), ANI_OK);
     ASSERT_NE(toCls, nullptr);
     ani_boolean result;
     ASSERT_EQ(env->Type_IsAssignableFrom(fromCls, toCls, &result), ANI_OK);
@@ -113,7 +113,7 @@ ani_boolean test_Type_IsAssignableFrom([[maybe_unused]] ani_env *env, [[maybe_un
 ani_boolean test_FindModule([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_module module{};
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/ClassOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ClassOperations", &module), ANI_OK);
     ASSERT_NE(module, nullptr);
     return ANI_TRUE;
 }
@@ -121,7 +121,7 @@ ani_boolean test_FindModule([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_
 ani_boolean test_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns{};
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/ClassOperations/test001;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.ClassOperations.test001", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
     return ANI_TRUE;
 }
@@ -129,7 +129,7 @@ ani_boolean test_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] a
 ani_boolean test_FindEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/ClassOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ClassOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
     return ANI_TRUE;
 }

@@ -47,8 +47,18 @@ let allowOpen = async () => {
 }
 export default function StartManagerTest() {
   describe('StartManagerTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       uiAbilityContext = AppStorage.get<Context>('uiAbilityContext') as common.UIAbilityContext;
+
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (e) {
+        hilog.info(DOMAIN, TAG, 'advanced_dialog_button_0 not found: %{public}s', JSON.stringify(e));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
     })
     beforeEach(() => {
 

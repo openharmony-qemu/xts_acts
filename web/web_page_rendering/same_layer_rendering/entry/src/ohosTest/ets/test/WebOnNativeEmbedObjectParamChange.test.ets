@@ -37,11 +37,11 @@ export default function WebOnNativeEmbedObjectParamChange() {
           console.info('get WebOnNativeEmbedObjectParamChange state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info('push WebOnNativeEmbedObjectParamChange state success ' + JSON.stringify(result));
+          await driver.waitForComponent(ON.id('WebOnNativeEmbedObjectParamChangeButton'), 10000);
         }
       } catch (err) {
         console.error('push WebOnNativeEmbedObjectParamChange page error:' + err);
       }
-      await driver.waitForComponent(ON.id('WebOnNativeEmbedObjectParamChangeButton'), 10000);
       done()
     });
 

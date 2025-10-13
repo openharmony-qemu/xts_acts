@@ -31,7 +31,13 @@ const ExpectTrue = (n: boolean) => {
     console.info(`exportTrue failed err: ${JSON.stringify(err)}`);
   }
 }
-
+function sleep(time: number): Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok');
+    }, time)
+  });
+}
 let httpRequestOptions: http.HttpRequestOptions = {
   method: http.RequestMethod.GET,
   header: "content-type': 'application/json",
@@ -85,7 +91,7 @@ export default function HttpRequestInStreamTest() {
         httpRequest.on("dataReceive", dataReceive_on_callback);
         httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
         httpRequest.on("dataEnd", dataEnd_on_callback);
-        httpRequest.requestInStream(Address_Img, httpRequestOptions, (error, data) => {
+        httpRequest.requestInStream(Address_Img, httpRequestOptions, async (error, data) => {
           console.log(`${caseName} get error is `+ JSON.stringify(error)+ " data is " + JSON.stringify(data));
           if (error) {
             console.error(`${caseName} get err is `+JSON.stringify(error));
@@ -97,6 +103,7 @@ export default function HttpRequestInStreamTest() {
             httpRequest.off("dataReceiveProgress");
             httpRequest.off("dataEnd");
             httpRequest.destroy();
+            await sleep(200);
             ExpectTrue(data == 200 && isONEventDataReceive !=0 && isONEventDataReceiveProgress != 0 && isONEventDataEnd !=0);
             console.log(`${caseName }---isONEventDataReceive: `, isONEventDataReceive,"isONEventDataReceiveProgress: ",isONEventDataReceiveProgress,"isONEventDataEnd: ",isONEventDataEnd)
             done();
@@ -125,8 +132,9 @@ export default function HttpRequestInStreamTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceive", dataReceive_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then((data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataReceive: `+ isONEventDataReceive+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceive > 0);
           httpRequest.off("dataReceive");
           httpRequest.destroy();
@@ -160,8 +168,9 @@ export default function HttpRequestInStreamTest() {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceive", dataReceive_on_callback);
         httpRequest.off("dataReceive", dataReceive_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then((data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataReceive: `+ isONEventDataReceive+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceive == 0);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
@@ -194,8 +203,9 @@ export default function HttpRequestInStreamTest() {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceive", dataReceive_on_callback);
         httpRequest.off("dataReceive");
-        httpRequest.requestInStream(Address_Baidu).then( (data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataReceive: `+ isONEventDataReceive+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceive == 0);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
@@ -227,8 +237,9 @@ export default function HttpRequestInStreamTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then( (data)=> {
+        httpRequest.requestInStream(Address_Baidu).then(async (data)=> {
           console.info(`${caseName} isONEventDataReceiveProgress: `+ isONEventDataReceiveProgress+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceiveProgress > 0);
           httpRequest.off("dataReceiveProgress");
           httpRequest.destroy();
@@ -262,8 +273,9 @@ export default function HttpRequestInStreamTest() {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
         httpRequest.off("dataReceiveProgress", dataReceiveProgress_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then( (data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataReceiveProgress: `+ isONEventDataReceiveProgress+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceiveProgress == 0);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
@@ -297,8 +309,9 @@ export default function HttpRequestInStreamTest() {
         let httpRequest = http.createHttp();
         httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
         httpRequest.off("dataReceiveProgress");
-        httpRequest.requestInStream(Address_Baidu).then( (data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataReceiveProgress: `+ isONEventDataReceiveProgress+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataReceiveProgress == 0);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
@@ -332,8 +345,9 @@ export default function HttpRequestInStreamTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.on("dataEnd", dataEnd_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then((data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataEnd is `+ isONEventDataEnd+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataEnd > 0 );
           httpRequest.off("dataEnd", dataEnd_on_callback);
           httpRequest.destroy();
@@ -354,20 +368,21 @@ export default function HttpRequestInStreamTest() {
 
     /**
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0100
-     * @tc.name httprequestInStream::off_dataEnd
+     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataEnd0100
      * @tc.desc Test off(type: "dataEnd", callback?: Callback<void>): void.
      * @tc.level LEVEL2
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
-      let caseName = "SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0100";
+    it("testTelephonyNetStackHttprequestInStreamoffdataEnd0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyNetStackHttprequestInStreamoffdataEnd0100";
       try {
         let httpRequest = http.createHttp();
         httpRequest.on("dataEnd", dataEnd_on_callback);
         httpRequest.off("dataEnd", dataEnd_on_callback);
-        httpRequest.requestInStream(Address_Baidu).then((data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataEnd is `+ isONEventDataEnd+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataEnd == 0 );
           httpRequest.off("dataEnd", dataEnd_on_callback);
           httpRequest.destroy();
@@ -387,20 +402,21 @@ export default function HttpRequestInStreamTest() {
 
     /**
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0200
-     * @tc.name httprequestInStream::off_dataEnd
+     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataEnd0200
      * @tc.desc Test off(type: "dataEnd"): void;.
      * @tc.level LEVEL2
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
-      let caseName = "SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0200";
+    it("testTelephonyNetStackHttprequestInStreamoffdataEnd0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyNetStackHttprequestInStreamoffdataEnd0200";
       try {
         let httpRequest = http.createHttp();
         httpRequest.on("dataEnd", dataEnd_on_callback);
         httpRequest.off("dataEnd");
-        httpRequest.requestInStream(Address_Baidu).then((data) =>{
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
           console.info(`${caseName} isONEventDataEnd is `+ isONEventDataEnd+ ' data: '+data);
+          await sleep(200);
           ExpectTrue(data == 200 && isONEventDataEnd == 0 );
           httpRequest.off("dataEnd", dataEnd_on_callback);
           httpRequest.destroy();

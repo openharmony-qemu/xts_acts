@@ -25,9 +25,11 @@ export default function testsuite() {
   networkManagerWithoutPermissionsTest();
   networkSecurityNoPTest();
   if (canIUse("SystemCapability.Communication.NetManager.Ethernet")) {
-       ethernetNoPTest();
+      ethernetNoPTest();
     }
-  dataNoPTest();
+  if (canIUse("SystemCapability.Telephony.CellularData")) {
+     dataNoPTest();
+   }
   socketNopTest();
   if (canIUse('SystemCapability.Communication.NetManager.NetFirewall')){
     netfirewallNoPTest();

@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 import { huks } from '@kit.UniversalKeystoreKit';
-import { StringToUint8Array } from '../CommonUtils';
+import { StringToUint8Array } from '../common/CommonUtils';
 import { GenParam } from './HuksOptionsUtils';
+import { util } from '@kit.ArkTS';
+import { cert } from '@kit.DeviceCertificateKit';
 
 export function GetAttestKeyOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
@@ -26,4 +28,17 @@ export function GetAttestKeyOptions(): huks.HuksOptions {
     )
   };
   return huksOptions;
+}
+
+async function ParsingCert(certData: string): Promise<void> {
+  let textEncoder = new util.TextEncoder();
+  let encodingBlob: cert.EncodingBlob = {
+    data: textEncoder.encodeInto(certData),
+    encodingFormat: cert.EncodingFormat.FORMAT_PEM
+  };
+  let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
+  let version = x509Cert.getVersion();
+  let serial = x509Cert.getCertSerialNumber();
+  let pubKey = x509Cert.getPublicKey();
+  await x509Cert.verify(pubKey);
 }

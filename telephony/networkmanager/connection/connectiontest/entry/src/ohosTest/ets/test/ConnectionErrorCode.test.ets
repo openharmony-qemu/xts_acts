@@ -26,11 +26,11 @@ export default function ConnextionErrorCode() {
      * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0100
      * @tc.name   : testConnectionGetAddressesByNameErrCo0100
      * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 3
+     * @tc.level  : Level 0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it("testConnectionGetAddressesByNameErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testConnectionGetAddressesByNameErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0100';
       console.info(`${caseName}---Start`);
       try{
@@ -56,11 +56,11 @@ export default function ConnextionErrorCode() {
      * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0200
      * @tc.name   : testConnectionGetAddressesByNameErrCo0200
      * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 3
+     * @tc.level  : Level 0
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it("testConnectionGetAddressesByNameErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testConnectionGetAddressesByNameErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0200';
       console.info(`${caseName}---Start`);
       try{

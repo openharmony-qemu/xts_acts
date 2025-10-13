@@ -25,6 +25,8 @@ public:
     static int32_t direction;
     static int32_t listIndex;
     static int32_t listGroupIndex;
+    static int32_t directionRight;
+    static int32_t listIndexOne;
 };
 
 } // namespace ArkUICapiTest

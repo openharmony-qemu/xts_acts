@@ -3,6 +3,14 @@
     {
       "name": "integer_one",
       "value": 100
+    },
+    {
+      "name": "integer_oneA",
+      "value": "$integer:integer_oneB"
+    },
+    {
+      "name": "integer_oneB",
+      "value": "$integer:integer_oneA"
     }
   ]
 }

@@ -20,7 +20,9 @@ group("WebMultimedia") {
       "video_hosting:videoHosting",
       "video_play:ActsWebVideoPlayTest",
       "video_playTwo:ActsWebVideoPlayTwoTest",
+      "video_playTwo_static:ActsWebVideoPlayTwoStaticTest",
       "webcam:ActsWebcamTest",
+      "webcam_static:ActsWebcamStaticTest",
     ]
   }
 }

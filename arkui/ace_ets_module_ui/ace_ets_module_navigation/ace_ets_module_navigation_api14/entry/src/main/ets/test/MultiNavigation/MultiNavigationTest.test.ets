@@ -96,6 +96,10 @@ export default function MultiNavigationTest() {
       console.info('[MultiNavigation_0200] btn1 click');
       await CommonFunc.sleep(500);
 
+      let result: boolean | undefined = AppStorage.get('switchFullScreenValue');
+      expect(result).assertTrue();
+      AppStorage.delete('switchFullScreenValue');
+
       let strJson: string = getInspectorByKey('homePageId');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[MultiNavigation_0200] component obj is: ' + JSON.stringify(obj));

@@ -19,23 +19,38 @@ import { Router, router } from '@kit.ArkUI'
 struct getStateByIndexPage {
   @State routerStateIndex:number = 0
   build() {
-    Column(){
-      Row(){
-        Text(this.routerStateIndex == 0?'getStateByIndex':'OK').id('getStateByIndex_content')
-        Button('Push').onClick(()=>{
+    Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Column() {
+        Text(this.routerStateIndex == 0 ? 'getStateByIndex' : 'OK').id('getStateByIndex_content')
+        Button('getUndefined').onClick(() => {
+          let router: Router = this.getUIContext().getRouter()
+          let options: router.RouterState | undefined = router.getStateByIndex(5)
+          console.log('getStateByIndexPage options', JSON.stringify(options))
+          if (options == undefined) {
+            console.log('getStateByIndexPage undefined options', options)
+          }
+          AppStorage.setOrCreate('stateByIndexUndefined', options)
+        }).id('getUndefinedBtn')
+        Button('Push').onClick(() => {
           this.getUIContext().getRouter().pushUrl({
-            url:'pages/GetStateByIndexPage'
+            url: 'pages/getStateByIndexPage'
           })
         })
           .id('getStateByIndex_btn_push')
-        Button('get').onClick(()=> {
-          let router:Router = this.getUIContext().getRouter()
-          let options:router.RouterState | undefined = router.getStateByIndex(1)
+        Button('get').onClick(() => {
+          let router: Router = this.getUIContext().getRouter()
+          let options: router.RouterState | undefined = router.getStateByIndex(1)
           if (options != undefined) {
             this.routerStateIndex = options.index
           }
         }).id('getStateByIndex_btn_get')
-      }.height(44).width('100%').margin({bottom:20})
-    }.alignItems(HorizontalAlign.Center).width('100%')
+        Button('push2').onClick(() => {
+          this.getUIContext().getRouter().pushUrl({
+            url: 'MainAbility/pages/UIObserver/PushNameRouterPage'
+          })
+        })
+        .id('push2Btn')
+      }.alignItems(HorizontalAlign.Center).width('100%')
+    }.height('100%').width('100%')
   }
 }

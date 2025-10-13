@@ -51,24 +51,32 @@ struct BindMenuAnchorPosition {
     })
     .width(100)
   }
-  
+
   build() {
     Column() {
-      Text(this.menuPosition.x + '').id('menuPositionX')
-      Text(this.menuPosition.y + '').id('menuPositionY')
-      Text(this.textPosition1.x + '').id('textPositionX1')
-      Text(this.textPosition1.y + '').id('textPositionY1')
-      Text(this.textPosition2.x + '').id('textPositionX2')
-      Text(this.textPosition2.y + '').id('textPositionY2')
-      Text(this.textPosition3.x + '').id('textPositionX3')
-      Text(this.textPosition3.y + '').id('textPositionY3')
+      Row() {
+        Text(this.menuPosition.x + '').id('menuPositionX').margin({left: '10'})
+        Text(this.menuPosition.y + '').id('menuPositionY').margin({left: '10'})
+      }
+      Row() {
+        Text(this.textPosition1.x + '').id('textPositionX1').margin({left: '10'})
+        Text(this.textPosition1.y + '').id('textPositionY1').margin({left: '10'})
+        }
+      Row() {
+        Text(this.textPosition2.x + '').id('textPositionX2').margin({left: '10'})
+        Text(this.textPosition2.y + '').id('textPositionY2').margin({left: '10'})
+      }
+      Row() {
+        Text(this.textPosition3.x + '').id('textPositionX3').margin({left: '10'})
+        Text(this.textPosition3.y + '').id('textPositionY3').margin({left: '10'})
+      }
 
       Text('bindMenu1')
         .id('bindMenuAnchorPosition1')
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
-        .margin({ top: 50, left: 150 })
+        .margin({ left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition1.x = newValue.globalPosition.x;
           this.textPosition1.y = newValue.globalPosition.y;
@@ -82,7 +90,7 @@ struct BindMenuAnchorPosition {
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
-        .margin({ top: 50, left: 150 })
+        .margin({ left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition2.x = newValue.globalPosition.x;
           this.textPosition2.y = newValue.globalPosition.y;
@@ -96,7 +104,7 @@ struct BindMenuAnchorPosition {
         .width(200)
         .height(100)
         .backgroundColor('#F0F0F0')
-        .margin({ top: 50, left: 150 })
+        .margin({  left: 150 })
         .onAreaChange((oldValue: Area, newValue: Area) => {
           this.textPosition3.x = newValue.globalPosition.x;
           this.textPosition3.y = newValue.globalPosition.y;

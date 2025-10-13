@@ -212,5 +212,27 @@ export default function systemDateTimeSyncJsunit() {
         done();
       }
     });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getAutoTimeStatus_sync_0100
+     * @tc.name      Test systemTimeDate.getAutoTimeStatus
+     * @tc.desc      Test systemTimeDate_getAutoTimeStatus API functionality..
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */   
+    it("SUB_systemDateTime_getAutoTimeStatus_sync_0100", Level.LEVEL2, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getAutoTimeStatus_sync_0100 start----------------");
+      try {
+        let status: boolean = systemDateTime.getAutoTimeStatus();
+        console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 status:${status}`);
+        expect(status == true || status == false).assertTrue();
+        done(); 
+      } catch (err){
+        console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 err.code:${err.code}, err.message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   });
 };

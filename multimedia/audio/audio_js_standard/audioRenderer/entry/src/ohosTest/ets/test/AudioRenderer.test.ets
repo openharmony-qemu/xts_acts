@@ -13922,8 +13922,6 @@ export default function audioRendererTest() {
         done();
       }
     })
-    
-
 
     /**
      *@tc.number    : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0100
@@ -13952,6 +13950,32 @@ export default function audioRendererTest() {
         done();
       }
     })
+
+    /**
+     *@tc.number    : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200
+     *@tc.name      : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200
+     *@tc.desc      : isSystemMutedForStream
+     *@tc.size      : MEDIUM
+     *@tc.type      : Function
+     *@tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+      await audioManager.mute(audio.AudioVolumeType.MEDIA,true);
+      try{
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MEDIA;
+        let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
+        console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
+        expect(IsSystemMutedForStream).assertEqual(true);
+        done();
+      }catch(error){
+        console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
     /**
      *@tc.number    : SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_0100
      *@tc.name      : SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_0100

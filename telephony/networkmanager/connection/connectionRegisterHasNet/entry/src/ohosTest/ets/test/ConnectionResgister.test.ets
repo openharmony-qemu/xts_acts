@@ -121,11 +121,11 @@ export default function ConnectionRegisterTest() {
      * @tc.number SUB_NetworkManager_Register_Async_0100
      * @tc.name testNetworkManagerRegisterAsync0100
      * @tc.desc activate the default network, and see if the callback information is generated
-     * @tc.level Level0
+     * @tc.level Level1
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('testNetworkManagerRegisterAsync0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkManagerRegisterAsync0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testNetworkManagerRegisterAsync0100';
         console.info(`${caseName}---Start`);
         try {
@@ -168,11 +168,11 @@ export default function ConnectionRegisterTest() {
      * @tc.number SUB_NetworkManager_Register_Async_0200
      * @tc.name testNetworkManagerRegisterAsync0200
      * @tc.desc activate the default network, and see if the callback information is generated
-     * @tc.level Level0
+     * @tc.level Level1
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('testNetworkManagerRegisterAsync0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkManagerRegisterAsync0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testNetworkManagerRegisterAsync0200';
         console.info(`${caseName}---Start`);
         try {
@@ -220,11 +220,11 @@ export default function ConnectionRegisterTest() {
      * @tc.number SUB_NetworkManager_Register_Async_0300
      * @tc.name testNetworkManagerRegisterAsync0300
      * @tc.desc activate the default network,and see if the callback information is generated
-     * @tc.level Level0
+     * @tc.level Level1
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('testNetworkManagerRegisterAsync0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkManagerRegisterAsync0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testNetworkManagerRegisterAsync0300';
         console.info(`${caseName}---Start`);
         try {
@@ -1192,11 +1192,11 @@ export default function ConnectionRegisterTest() {
        *@tc.number SUB_NetworkManager_register_Async_2400
        *@tc.name testNetworkManagerRegisterAsync2400
        *@tc.desc  activate the default network ,and see if the callback information is generated
-       * @tc.level Level0
+       * @tc.level Level1
        * @tc.type: Function
        * @tc.size: SmallTest
        */
-      it('testNetworkManagerRegisterAsync2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      it('testNetworkManagerRegisterAsync2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testNetworkManagerRegisterAsync2400';
         console.info(`${caseName}---Start`);
         try{
@@ -1247,11 +1247,11 @@ export default function ConnectionRegisterTest() {
      * @tc.number SUB_NetworkManager_Register_Async_2500
      * @tc.name testNetworkManagerRegisterAsync2500
      * @tc.desc activate the default network, and see if the callback information is generated
-     * @tc.level Level0
+     * @tc.level Level1
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('testNetworkManagerRegisterAsync2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkManagerRegisterAsync2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testNetworkManagerRegisterAsync2500';
       console.info(`${caseName}---Start`);
       try {
@@ -1294,11 +1294,11 @@ export default function ConnectionRegisterTest() {
      * @tc.number SUB_NetworkManager_Register_Async_2600
      * @tc.name testNetworkManagerRegisterAsync2600
      * @tc.desc activate the default network, and see if the callback information is generated
-     * @tc.level Level0
+     * @tc.level Level1
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('testNetworkManagerRegisterAsync2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkManagerRegisterAsync2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testNetworkManagerRegisterAsync2600';
       console.info(`${caseName}---Start`);
       try {

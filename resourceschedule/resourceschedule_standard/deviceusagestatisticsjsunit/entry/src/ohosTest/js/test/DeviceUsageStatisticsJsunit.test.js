@@ -133,6 +133,7 @@ export default function DeviceUsageStatisticsJsTest() {
             bundleState.queryCurrentBundleActiveStates(beginTime, endTime).then((res) => {
                 console.info(' DeviceUsageStatisticsJsTest005 queryCurrentBundleActiveStates promise success.' + res);
                 expect(res).assertInstanceOf('Array');
+                expect(res.length).assertLarger(0);
                 done();
             }).catch((err) => {
                 console.info(' DeviceUsageStatisticsJsTest005 queryCurrentBundleActiveStates promise failure.' + err.code);
@@ -154,6 +155,7 @@ export default function DeviceUsageStatisticsJsTest() {
                 } else {
                     console.info(' DeviceUsageStatisticsJsTest006 queryCurrentBundleActiveStates callback success.' + res);
                     expect(res).assertInstanceOf('Array');
+                    expect(res.length).assertLarger(0);
                     done();
                 }
             });

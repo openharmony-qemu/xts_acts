@@ -20,10 +20,8 @@ import image from '@ohos.multimedia.image'
 import { BusinessError } from "@ohos.base"
 import { describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
-let COMMON_PARAMETER_CODE: number = 401;
-let DEVICE_NOT_SUPPORT: number = 401;
 
 let PARAMETER_CALLBACK_TYPE_MSG: string = 'Parameter error. The type of callback must be function.';
 let PARAMETER_WINDOWID_TYPE_MSG: string = 'Parameter error. The type of windowId must be number.';

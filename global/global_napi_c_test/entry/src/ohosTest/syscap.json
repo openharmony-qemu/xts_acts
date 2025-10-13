@@ -4,7 +4,9 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Global.ResourceManager"
+                    "SystemCapability.Global.ResourceManager",
+                    "SystemCapability.WindowManager.WindowManager.Core",
+                    "SystemCapability.Ability.AbilityRuntime.Core"
                 ]
             }
         ]

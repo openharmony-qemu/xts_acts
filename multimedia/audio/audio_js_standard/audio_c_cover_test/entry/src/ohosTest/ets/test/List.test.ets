@@ -12,9 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
+import AudioEnumTest from './AudioEnumTest.test';
 import AudioTest from './AudioTest.test'
+import AudioTest1 from './AudioTest1.test'
 
 export default function testsuite() {
-  AudioTest()
+  AudioTest();
+  AudioTest1();
+  AudioEnumTest();
 }

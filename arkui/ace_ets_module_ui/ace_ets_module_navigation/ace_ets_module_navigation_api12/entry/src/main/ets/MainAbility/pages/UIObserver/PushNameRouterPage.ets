@@ -49,12 +49,30 @@ struct PushNameRouterPage {
   }
 
   build() {
-    Column(){
-      Row(){
+    Flex({alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center} ) {
+      Column(){
         Button('Push').onClick(()=>{
           this.routePage()
         }).id('PushNameRouter_btn_push')
-      }.height(44).width('100%').margin({bottom:20})
-    }.alignItems(HorizontalAlign.Center).width('100%')
+       Button('getStateByUrlEmpty').onClick(()=> {
+          let router:Router = this.getUIContext().getRouter()
+          let options: router.RouterState[] = router.getStateByUrl('MainAbility/pages/UIObserver/PushNameRouterPage1')
+          console.log('getStateByIndexPage getStateByUrl options', options?.length)
+          if (options?.length > 0) {
+            console.log('getStateByIndexPage getStateByUrl Empty options length', options?.length)
+          }
+          AppStorage.setOrCreate('getStateByUrlValueEmpty', options)
+        }).id('getStateByUrlEmptyBtn')
+        Button('getStateByUrl').onClick(()=> {
+          let router:Router = this.getUIContext().getRouter()
+          let options: router.RouterState[] = router.getStateByUrl('MainAbility/pages/UIObserver/PushNameRouterPage')
+          console.log('getStateByIndexPage getStateByUrl options', options?.length)
+          if (options?.length > 0) {
+            console.log('getStateByIndexPage getStateByUrl options length', options?.length)
+          }
+          AppStorage.setOrCreate('getStateByUrlValue', options)
+        }).id('getStateByUrlBtn')
+      }.alignItems(HorizontalAlign.Center).width('100%')
+    }.height('100%').width('100%')
   }
 }

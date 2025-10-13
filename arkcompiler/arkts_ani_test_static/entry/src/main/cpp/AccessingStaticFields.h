@@ -20,7 +20,7 @@
 ani_int test_Class_GetStaticField_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestBoolean;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestBoolean", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "boolean_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -33,7 +33,7 @@ ani_int test_Class_GetStaticField_Boolean([[maybe_unused]] ani_env *env, [[maybe
 ani_int test_Class_GetStaticField_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestChar;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestChar", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -47,7 +47,7 @@ ani_int test_Class_GetStaticField_Char([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_GetStaticField_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestByte;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestByte", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -61,7 +61,7 @@ ani_int test_Class_GetStaticField_Byte([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_GetStaticField_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestShort;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestShort", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "short_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -74,7 +74,7 @@ ani_int test_Class_GetStaticField_Short([[maybe_unused]] ani_env *env, [[maybe_u
 ani_int test_Class_GetStaticField_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestInt;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestInt", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -87,7 +87,7 @@ ani_int test_Class_GetStaticField_Int([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_GetStaticField_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestLong;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestLong", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "long_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -100,7 +100,7 @@ ani_int test_Class_GetStaticField_Long([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_GetStaticField_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestFloat;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestFloat", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -114,7 +114,7 @@ ani_int test_Class_GetStaticField_Float([[maybe_unused]] ani_env *env, [[maybe_u
 ani_int test_Class_GetStaticField_Double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestDouble;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestDouble", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -128,7 +128,7 @@ ani_int test_Class_GetStaticField_Double([[maybe_unused]] ani_env *env, [[maybe_
 ani_int test_Class_GetStaticField_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestRef;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestRef", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -142,7 +142,7 @@ ani_int test_Class_SetStaticField_Boolean([[maybe_unused]] ani_env *env, [[maybe
     ani_class cls {};
     ani_static_field field {};
     ani_boolean single = ANI_FALSE;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestBoolean;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestBoolean", &cls), ANI_OK);
     ASSERT_EQ(env->Class_FindStaticField(cls, "boolean_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
     ASSERT_EQ(env->Class_SetStaticField_Boolean(cls, field, ANI_FALSE), ANI_OK);
@@ -155,7 +155,7 @@ ani_int test_Class_SetStaticField_Boolean([[maybe_unused]] ani_env *env, [[maybe
 ani_int test_Class_SetStaticField_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetChar;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetChar", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -176,7 +176,7 @@ ani_int test_Class_SetStaticField_Byte([[maybe_unused]] ani_env *env, [[maybe_un
     ani_static_field field {};
     const ani_byte setTarget = 127;
     ani_byte single = 0U;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestByte;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestByte", &cls), ANI_OK);
     ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
     ASSERT_EQ(env->Class_SetStaticField_Byte(cls, field, setTarget), ANI_OK);
@@ -189,7 +189,7 @@ ani_int test_Class_SetStaticField_Byte([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_SetStaticField_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetShort;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetShort", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "short_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -205,7 +205,7 @@ ani_int test_Class_SetStaticField_Short([[maybe_unused]] ani_env *env, [[maybe_u
 ani_int test_Class_SetStaticField_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetInt;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetInt", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -221,7 +221,7 @@ ani_int test_Class_SetStaticField_Int([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_SetStaticField_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetLong;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetLong", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "long_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -237,7 +237,7 @@ ani_int test_Class_SetStaticField_Long([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_SetStaticField_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetFloat;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetFloat", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -255,7 +255,7 @@ ani_int test_Class_SetStaticField_Float([[maybe_unused]] ani_env *env, [[maybe_u
 ani_int test_Class_SetStaticField_Double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetDouble;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetDouble", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -273,7 +273,7 @@ ani_int test_Class_SetStaticField_Double([[maybe_unused]] ani_env *env, [[maybe_
 ani_int test_Class_SetStaticField_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/TestSetRef;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.TestSetRef", &cls), ANI_OK);
     ani_static_field field {};
     ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
     ASSERT_NE(field, nullptr);
@@ -286,7 +286,7 @@ ani_int test_Class_SetStaticField_Ref([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_GetStaticFieldByName_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetBoolStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetBoolStatic", &cls), ANI_OK);
     ani_boolean single = ANI_TRUE;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "single", &single), ANI_OK);
     ASSERT_EQ(single, ANI_FALSE);
@@ -296,7 +296,7 @@ ani_int test_Class_GetStaticFieldByName_Boolean([[maybe_unused]] ani_env *env, [
 ani_int test_Class_GetStaticFieldByName_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetCharStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetCharStatic", &cls), ANI_OK);
     ani_char name = 'c';
     ASSERT_EQ(env->Class_GetStaticFieldByName_Char(cls, "name", &name), ANI_OK);
     ASSERT_EQ(name, static_cast<ani_char>('b'));
@@ -306,7 +306,7 @@ ani_int test_Class_GetStaticFieldByName_Char([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_GetStaticFieldByName_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetbyteStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetbyteStatic", &cls), ANI_OK);
     ani_byte age;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Byte(cls, "age", &age), ANI_OK);
     ASSERT_EQ(age, static_cast<ani_byte>(0));
@@ -316,7 +316,7 @@ ani_int test_Class_GetStaticFieldByName_Byte([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_GetStaticFieldByName_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetShortStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetShortStatic", &cls), ANI_OK);
     ani_short age = 1U;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "age", &age), ANI_OK);
     ASSERT_EQ(age, static_cast<ani_short>(20U));
@@ -326,7 +326,7 @@ ani_int test_Class_GetStaticFieldByName_Short([[maybe_unused]] ani_env *env, [[m
 ani_int test_Class_GetStaticFieldByName_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetIntStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetIntStatic", &cls), ANI_OK);
     ani_int age = 0;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Int(cls, "age", &age), ANI_OK);
     ASSERT_EQ(age, static_cast<ani_int>(20U));
@@ -336,7 +336,7 @@ ani_int test_Class_GetStaticFieldByName_Int([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_GetStaticFieldByName_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetLongStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetLongStatic", &cls), ANI_OK);
     ani_long age = 0L;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "age", &age), ANI_OK);
     ASSERT_EQ(age, static_cast<ani_long>(20L));
@@ -346,7 +346,7 @@ ani_int test_Class_GetStaticFieldByName_Long([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_GetStaticFieldByName_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/GetFloatStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.GetFloatStatic", &cls), ANI_OK);
     ani_float age = 0.0F;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Float(cls, "age", &age), ANI_OK);
     ASSERT_EQ(age, static_cast<ani_float>(20.0F));
@@ -356,7 +356,7 @@ ani_int test_Class_GetStaticFieldByName_Float([[maybe_unused]] ani_env *env, [[m
 ani_int test_Class_GetStaticFieldByName_Double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/Woman;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.Woman", &cls), ANI_OK);
     ani_double age = 0.0;
     const ani_double expectedAge = 20.0;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Double(cls, "age", &age), ANI_OK);
@@ -367,7 +367,7 @@ ani_int test_Class_GetStaticFieldByName_Double([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_GetStaticFieldByName_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/ArrayClass;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.ArrayClass", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_ref ref = nullptr;
@@ -379,7 +379,7 @@ ani_int test_Class_GetStaticFieldByName_Ref([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_SetStaticFieldByName_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/BoolStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.BoolStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Boolean(cls, "bool_value", ANI_TRUE), ANI_OK);
     ani_boolean resultValue = ANI_FALSE;
@@ -392,7 +392,7 @@ ani_int test_Class_SetStaticFieldByName_Char([[maybe_unused]] ani_env *env, [[ma
 {
     ani_class cls {};
     const ani_char target = 'b';
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/CharStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.CharStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Char(cls, "char_value", target), ANI_OK);
     ani_char resultValue;
@@ -405,7 +405,7 @@ ani_int test_Class_SetStaticFieldByName_Byte([[maybe_unused]] ani_env *env, [[ma
 {
     ani_class cls {};
     const ani_short setTarget = 2U;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/ByteStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.ByteStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Byte(cls, "byte_value", setTarget), ANI_OK);
     ani_byte resultValue;
@@ -418,7 +418,7 @@ ani_int test_Class_SetStaticFieldByName_Short([[maybe_unused]] ani_env *env, [[m
 {
     ani_class cls {};
     const ani_short setTarget = 2U;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/ShortStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.ShortStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Short(cls, "short_value", setTarget), ANI_OK);
     ani_short resultValue = 1U;
@@ -431,7 +431,7 @@ ani_int test_Class_SetStaticFieldByName_Int([[maybe_unused]] ani_env *env, [[may
 {
     ani_class cls {};
     const ani_short setTarget = 2U;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/Packstatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.Packstatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Int(cls, "int_value", setTarget), ANI_OK);
     ani_int resultValue = 0;
@@ -443,7 +443,7 @@ ani_int test_Class_SetStaticFieldByName_Int([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_SetStaticFieldByName_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/PackageStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.PackageStatic", &cls), ANI_OK);
     ASSERT_EQ(env->Class_SetStaticFieldByName_Long(cls, "long_value", 8L), ANI_OK);
     ani_long resultValue = 0L;
     ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "long_value", &resultValue), ANI_OK);
@@ -455,7 +455,7 @@ ani_int test_Class_SetStaticFieldByName_Float([[maybe_unused]] ani_env *env, [[m
 {
     ani_class cls {};
     const ani_short setTarget = 2.0F;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/FloatStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.FloatStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Float(cls, "float_value", setTarget), ANI_OK);
     ani_float resultValue = 0.0F;
@@ -468,7 +468,7 @@ ani_int test_Class_SetStaticFieldByName_Double([[maybe_unused]] ani_env *env, [[
 {
     ani_class cls {};
     const ani_double age = 2.0;
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/DoubleStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.DoubleStatic", &cls), ANI_OK);
 
     ASSERT_EQ(env->Class_SetStaticFieldByName_Double(cls, "double_value", age), ANI_OK);
     ani_double resultValue;
@@ -480,7 +480,7 @@ ani_int test_Class_SetStaticFieldByName_Double([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_SetStaticFieldByName_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingStaticFields/BoxStatic;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingStaticFields.BoxStatic", &cls), ANI_OK);
 
     ani_string string {};
     ASSERT_EQ(env->String_NewUTF8("abcdef", 6U, &string), ANI_OK);

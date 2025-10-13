@@ -64,10 +64,100 @@ export const TestHiCollieStuckWithTimeoutNdk1: () => number;
 
 export const TestHiCollieJankC: () => number;
 
+export const HiAppEventSetConfigItem: () => number;
 
+export const SetEventConfigSuccess: () => number;
 
+export const HiAppEventCreateProcessor: () => number;
 
+export const HiCollieInitStuckDetectionSuccess: () => number;
 
+export const HiCollieInitJankDetectionSuccess: () => number;
 
+export const HiCollieInitJankDetectionInvalid: () => number;
 
+export const HiCollieReportInvalid: () => number;
 
+export const HiCollieFlagDefaultCode: () => number;
+
+export const HiCollieFlagLogCode: () => number;
+
+export const HiCollieFlagRecoveryCode: () => number;
+
+export const HiDebugStartAppTraceCaptureSuccess: () => number;
+
+export const HiDebugStartAppTraceCaptureInvalid: () => number;
+
+export const HiDebugStartAppTraceCaptureCapturedAlReady: () => number;
+
+export const HiDebugStopAppTraceCaptureSuccess: () => number;
+
+export const HiDebugStopAppTraceCaptureNoTraceRunning: () => number;
+
+export const HiDebugGetGraphicsMemorySuccess: () => number;
+
+export const HiDebugGetGraphicsMemoryInvalid: () => number;
+
+export const HiDebugSetMallocDispatchTableSuccess: () => number;
+
+export const HiDebugSetMallocDispatchTableInvalid: () => number;
+
+export const HiDebugSymbolicAddressInvalid: () => number;
+
+export const HiDebugGetGraphicsMemorySummarySuccess: () => number;
+
+export const HiDebugGetGraphicsMemorySummaryInvalid: () => number;
+
+export const HiDebugSuccessCode: () => number;
+
+export const HiDebugInvalidArgumentCode: () => number;
+
+export const HiDebugTraceCapturedAlreadyCode: () => number;
+
+export const HiDebugNoTraceRunningCode: () => number;
+
+export const HiDebugTraceFlagAllThreadsCode: () => number;
+
+export const HiLogLogFatalCode: () => number;
+
+export const HiTraceIdInvalidCode: () => number;
+
+export const HiTraceIdTraceIdValidCode: () => number;
+
+export const HiTraceVer1Code: () => number;
+
+export const HiTraceFlagDonotCreateSpanCode: () => number;
+
+export const HiTraceFlagTpInfoCode: () => number;
+
+export const HiTraceFlagNoBeInfoCode: () => number;
+
+export const HiTraceFlagDonotEnableLogCode: () => number;
+
+export const HiTraceFlagD2dTpInfoCode: () => number;
+
+export const HiTraceTpCrCode: () => number;
+
+export const HiTraceTpSsCode: () => number;
+
+export const HiTraceTpSrCode: () => number;
+
+export const HiTraceTpGeneralCode: () => number;
+
+export const HiTraceCmThreadCode: () => number;
+
+export const HiTraceCmProcessCode: () => number;
+
+export const HiTraceCmDeviceCode: () => number;
+
+export const HiTraceIdValidCode: () => number;
+
+export const HiTraceIdVerCode: () => number;
+
+export const HiTraceIdChainIdCode: () => number;
+
+export const HiTraceIdFlagsCode: () => number;
+
+export const HiTraceIdSpanIdCode: () => number;
+
+export const HiTraceIdParentSpanIdCode: () => number;
