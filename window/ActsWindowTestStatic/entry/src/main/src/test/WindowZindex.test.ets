@@ -261,7 +261,7 @@ export default function WindowZindexTest() {
         })
 
         /**
-         * @tc.number    SUB_BASIC_WMS_RAISETOAPPTOP_static_0300
+         * @tc.number    SUB_BASIC_WMS_RAISETOAPPTOP_static_0400
          * @tc.name      test_raiseToAppTop_Two_subWindow_normal_static
          * @tc.desc      test_raiseToAppTop_Two_subWindow_normal_static
          * @tc.size      MediumTest
