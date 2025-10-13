@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import imageModifyProperty from './modify.test'
+import imageModifyPropertiesEnhanced from './ModifyEnhanced.test'
 export default function testsuite() {
     imageModifyProperty()
+    imageModifyPropertiesEnhanced()
 }
