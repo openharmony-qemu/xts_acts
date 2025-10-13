@@ -435,5 +435,201 @@ export default function statisticsNoNetTest() {
                 done();
             }
         })
+
+        /*
+         * @tc.number: SUB_NetworkMgr_Statistics_GetCellularRxBytes_0500
+         * @tc.name  : testNetworkMgrStatisticsGetCellularRxBytes_static_0500
+         * @tc.desc  : Get cellular real-time downlink traffic without card;callback.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsGetCellularRxBytes_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsGetCellularRxBytes_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularRxBytes((error: BusinessError<void>|null, stats: long| undefined) => {
+                    if (error?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                        ExpectTrue(error?.code == 2103012);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
+                        ExpectTrue(true);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    }
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2103012);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: SUB_NetworkMgr_Statistics_GetCellularRxBytes_0600
+         * @tc.name  : testNetworkMgrStatisticsGetCellularRxBytes_static_0600
+         * @tc.desc  : Get cellular real-time downlink traffic without card;promise
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsGetCellularRxBytes_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsGetCellularRxBytes_static_0600';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+
+            try{
+                statistics.getCellularRxBytes().then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103012);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                })
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2103012);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: SUB_NetworkMgr_Statistics_GetCellularTxBytes_0500
+         * @tc.name  : testNetworkMgrStatisticsGetCellularTxBytes_static_0500
+         * @tc.desc  : Get cellular real-time downlink traffic without card;callback.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsGetCellularTxBytes_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsGetCellularTxBytes_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularTxBytes((error: BusinessError<void>|null, stats: long| undefined) => {
+                    if (error?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                        ExpectTrue(error?.code == 2103012);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
+                        ExpectTrue(true);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    }
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2103012);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: SUB_NetworkMgr_Statistics_GetCellularTxBytes_0600
+         * @tc.name  : testNetworkMgrStatisticsGetCellularTxBytes_static_0600
+         * @tc.desc  : Get cellular real-time downlink traffic without card;promise
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsGetCellularTxBytes_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsGetCellularTxBytes_static_0600';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularTxBytes().then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103012);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                })
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2103012);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /**
+         * @tc.number: SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0700
+         * @tc.name  : testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0700
+         * @tc.desc  : Test	Invalid parameter value.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0700';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdTxBytes(12345, (error: BusinessError<void>|null, stats: long| undefined) => {
+                    if (error?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                        ExpectTrue(error?.code == 2100002);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
+                        ExpectTrue(false);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    }
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100002);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /**
+         * @tc.number: SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0800
+         * @tc.name  : testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0800
+         * @tc.desc  : Test Invalid parameter value.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0800';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdTxBytes(12345).then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100002);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                })
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100002);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
     })
 }
