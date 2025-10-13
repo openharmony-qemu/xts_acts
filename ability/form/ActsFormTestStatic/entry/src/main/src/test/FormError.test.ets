@@ -19,7 +19,7 @@ import formError from "@ohos.application.formError";
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formErrorTest() {

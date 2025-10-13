@@ -49,6 +49,16 @@
         ]
       },
       {
+        "name": "EntryAbility1",
+        "srcEntry": "./ets/entryability1/EntryAbility1.ets",
+        "description": "$string:EntryAbility1_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility1_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": false
+      },
+      {
         "name": "TestFormAbility",
         "srcEntry": "./ets/testform/TestFormAbility.ets",
         "description": "$string:EntryAbility_desc",
@@ -92,6 +102,14 @@
             "resource": "$profile:form_config"
           }
         ]
+      },
+      {
+        "name": "ServiceExt",
+        "srcEntry": "./ets/serviceext/ServiceExt.ets",
+        "icon": "$media:layered_image",
+        "description": "service",
+        "type": "service",
+        "exported": true
       }
     ],
     "requestPermissions": [
@@ -103,6 +121,15 @@
       },
       {
         "name": "ohos.permission.REMOVE_CACHE_FILES"
+      },
+      {
+        "name": "ohos.permission.PUBLISH_FORM_CROSS_BUNDLE"
+      },
+      {
+        "name": "ohos.permission.OBSERVE_FORM_RUNNING"
+      },
+      {
+        "name": "ohos.permission.AGENT_REQUIRE_FORM"
       }
     ]
   }

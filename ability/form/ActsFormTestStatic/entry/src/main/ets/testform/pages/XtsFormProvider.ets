@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { Text, Component, Entry } from '@ohos.arkui.component';
+import { Text, Component, Column, Button, ClickEvent, Entry } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import formProvider from '@ohos.app.form.formProvider';
+import Want from '@ohos.app.ability.Want';
 
-
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry
@@ -55,6 +55,41 @@ struct XtsFormProvider {
   }
 
   build() {
-    Text('XTS FormProvider').fontSize(20)
+    Column(undefined) {
+      Text('XTS FormProvider').fontSize(20)
+
+      Button('openFormManagerCrossBundle success').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick openFormManagerCrossBundle');
+          let want: Want = {
+            bundleName: 'com.example.actsformtest.static',
+            abilityName: 'EntryAbility',
+            parameters: {
+              'ohos.extra.param.key.form_dimension': 2,
+              'ohos.extra.param.key.form_name': 'widget',
+              'ohos.extra.param.key.module_name': 'entry'
+            } as Record<string, Object>
+          };
+          try {
+            formProvider.openFormManagerCrossBundle(want)
+            hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
+          } catch (error: BusinessError) {
+            hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${error.code}, ${error.message}`);
+          }
+        })
+
+      Button('openFormManagerCrossBundle error').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick openFormManagerCrossBundle');
+          let want: Want = {};
+          try {
+            formProvider.openFormManagerCrossBundle(want)
+            hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
+          } catch (error: BusinessError) {
+            hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${JSON.stringify(error)}`);
+              hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
+          }
+        })
+    }
   }
 }

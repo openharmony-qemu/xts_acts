@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag TestFormAbility';
 
 class TestFormAbility extends UIAbility {
@@ -53,7 +53,8 @@ class TestFormAbility extends UIAbility {
     hilog.info(DOMAIN, TAG, 'onWindowStageCreate');
     this.xtsWindowStage = windowStage;
     try {
-      this.xtsWindowStage?.loadContent(this.wantUri || 'testform/pages/XtsFormLink', (err: BusinessError<void> | null): void => {
+      this.xtsWindowStage?.loadContent(this.wantUri || 'testform/pages/XtsFormLink',
+        (err: BusinessError<void> | null): void => {
         if (err?.code) {
           hilog.info(DOMAIN, TAG, 'loadContent error');
           return;
