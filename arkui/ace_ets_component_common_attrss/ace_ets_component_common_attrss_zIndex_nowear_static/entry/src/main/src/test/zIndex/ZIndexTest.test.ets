@@ -28,21 +28,6 @@ let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default function zIndexTest() {
   let supportView = [
     'Select',
@@ -89,8 +74,8 @@ export default function zIndexTest() {
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      console.info('[' + data.caseTag + ']' + 'zIndex is:' + data.viewObj.$attrs.zIndex);
-      expect(data.viewObj.$attrs.zIndex).assertEqual(data.testValue.expectValue.zIndex);
+      console.info('[' + data.caseTag + ']' + 'zIndex is:' + data.viewObj?.getElement('$attrs').getDouble('zIndex'));
+      expect(data.viewObj?.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.zIndex);
     });
   })
 }
