@@ -11,11 +11,11 @@
     "kits": [
         {
             "test-file-name": [
-                "module_normalized_napi_load_test-hspTwo-default-signed.hsp",
-                "module_normalized_napi_load_test-hspOne-default-signed.hsp",
-                "module_normalized_napi_load_test-sharedHspOne-default-signed.hsp",
-                "module_normalized_napi_load_test-entry-default-signed.hap",
-                "module_normalized_napi_load_test.hap"
+                "ModuleNormalizedNapiLoadTest-hspTwo-default-signed.hsp",
+                "ModuleNormalizedNapiLoadTest-hspOne-default-signed.hsp",
+                "ModuleNormalizedNapiLoadTest-sharedHspOne-default-signed.hsp",
+                "ModuleNormalizedNapiLoadTest-entry-default-signed.hap",
+                "ModuleNormalizedNapiLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

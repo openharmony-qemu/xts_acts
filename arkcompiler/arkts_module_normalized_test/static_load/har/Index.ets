@@ -48,6 +48,6 @@ export { add as hspAdd } from 'loadHsp';
 
 export { add as hspAdd2 } from 'library1';
 
-export { subtract as hspSubtract } from 'loadHsp/src/test/testSubtract';
+export { subtract as hspSubtract } from 'loadHsp/src/test/TestSubtract.test';
 
 export { subtract as hspSubtract2 } from 'library1/src/test/testSubtract';

@@ -14,7 +14,7 @@
                 "ModuleNormalizedDynamicLoadLibTest-loadHsp-default-signed.hsp",
                 "ModuleNormalizedDynamicLoadLibTest-hsp-default-signed.hsp",
                 "ModuleNormalizedDynamicLoadLibTest-entry-default-signed.hap",
-                "module_normalized_dynamic_load_test.hap"
+                "ModuleNormalizedDynamicLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

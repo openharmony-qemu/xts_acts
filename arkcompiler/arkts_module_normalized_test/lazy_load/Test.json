@@ -13,7 +13,7 @@
             "test-file-name": [
                 "ModuleNormalizedLazyLoadLibTest-lazyhsp-default-signed.hsp",
                 "ModuleNormalizedLazyLoadLibTest-entry-default-signed.hap",
-                "module_normalized_lazy_load_test.hap"
+                "ModuleNormalizedLazyLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

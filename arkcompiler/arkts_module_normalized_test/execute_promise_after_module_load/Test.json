@@ -12,7 +12,7 @@
         {
             "test-file-name": [
                 "ModuleNormalizedExecutePromiseLibTest.hap",
-                "module_normalized_execute_promise_test.hap"
+                "ModuleNormalizedExecutePromiseTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

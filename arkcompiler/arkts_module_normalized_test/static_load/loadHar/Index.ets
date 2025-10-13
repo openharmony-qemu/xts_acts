@@ -27,4 +27,4 @@ export { subtract } from './src/main/ets/test';
 
 export { multiply } from './src/main/ets/test';
 
-export { getInfo as testGetCNInfo } from './src/main/ets/test/中文';
+export { getInfo as testGetCNInfo } from './src/main/ets/test/中文.test';

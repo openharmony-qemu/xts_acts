@@ -11,5 +11,5 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED Napi_init.cpp)
+add_library(entry SHARED NapiInitTest.cpp)
 target_link_libraries(entry PUBLIC libace_napi.z.so)

@@ -22,7 +22,7 @@ ohos_app_assist_suite("ModuleNormalizedExecutePromiseLibTest") {
 }
 
 ohos_js_app_suite("module_normalized_execute_promise_test") {
-  hap_name = "module_normalized_execute_promise_test"
+  hap_name = "ModuleNormalizedExecutePromiseTest"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"

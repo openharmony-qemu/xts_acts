@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "module_normalized_export_test.hap"
+                "ModuleNormalizedExportTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

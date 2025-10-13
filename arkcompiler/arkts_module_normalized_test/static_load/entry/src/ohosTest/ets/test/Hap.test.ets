@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from "@ohos/hypium";
-import { add as testAdd } from './TestAdd';
+import { add as testAdd } from './TestAdd.test';
 import { subtract as testSubtract } from '../testSubtract';
 import { multiply as testMultiply } from './fileTest';
 import { getInfo as testGetCNInfo } from './fileTest/中文';

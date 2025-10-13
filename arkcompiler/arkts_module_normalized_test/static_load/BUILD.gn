@@ -22,7 +22,7 @@ ohos_app_assist_suite("ModuleNormalizedStaticLoadLibTest") {
 }
 
 ohos_js_app_suite("module_normalized_static_load_test") {
-  hap_name = "module_normalized_static_load_test"
+  hap_name = "ModuleNormalizedStaticLoadTest"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"
