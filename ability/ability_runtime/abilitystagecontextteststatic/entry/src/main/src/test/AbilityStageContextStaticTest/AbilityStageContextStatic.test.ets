@@ -108,6 +108,7 @@ export default function AbilityStageContextStatic() {
         expect().assertFail()
         done()
       }
+      await Utils.msSleep(1000);
       try {
         hilog.info(domain, tag, "SUB_AA_AbilityStageMonitor_0800 removeAbilityStageMonitor");
         abilityDelegator.removeAbilityStageMonitor(stageMonitor, (err) => {
@@ -119,6 +120,7 @@ export default function AbilityStageContextStatic() {
         expect().assertFail()
         done()
       }
+      await Utils.msSleep(1000);
       expect(addMonitor).assertTrue()
       expect(removeMonitor).assertTrue()
       done()
