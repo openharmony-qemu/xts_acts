@@ -514,7 +514,7 @@ napi_value EnumOHAudioChannelSet29(napi_env env, napi_callback_info info)
 
 napi_value EnumOHAudioChannelSet30(napi_env env, napi_callback_info info)
 {
-    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(CH_SET_BOTTOM_FRONT_RIGHT);
+    OH_AudioChannelLayout channelLayout = static_cast<OH_AudioChannelLayout>(BOTTOM_FRONT_RIGHT);
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
     OH_AudioStreamBuilder_Create(&builder, type);
