@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import appManager from "@ohos.app.ability.appManager"
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 class CustomApplicationStateObserver implements appManager.ApplicationStateObserver {

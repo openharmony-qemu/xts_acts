@@ -23,7 +23,7 @@ import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function verificationStaticTest() {

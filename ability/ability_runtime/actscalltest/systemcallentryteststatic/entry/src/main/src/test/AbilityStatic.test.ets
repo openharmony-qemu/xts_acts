@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Caller } from '@ohos.app.ability.UIAbility';
 import rpc from '@ohos.rpc';
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 class CustomParcelable implements rpc.Parcelable {
