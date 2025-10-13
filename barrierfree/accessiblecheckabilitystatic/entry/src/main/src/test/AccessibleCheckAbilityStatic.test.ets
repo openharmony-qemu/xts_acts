@@ -27,9 +27,6 @@ class Rect {
   	height: number;
 }
 
-
-
-
 type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedSansSerif' | 'sansSerif' | 'casual' | 'cursive' | 'smallCapitals';
 type CaptionsFontEdgeType = 'none' | 'raised' | 'depressed' | 'uniform' | 'dropShadow';
 
@@ -43,7 +40,6 @@ const eventType : accessibility.EventType = 'accessibilityFocus';
 export default function abilityTest() {
   describe("AccessibleCheckAbilityStaticTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-
 
     /*
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
@@ -133,8 +129,6 @@ export default function abilityTest() {
         console.error('SUB_BASIC_BARRIERFREE_API_getAccessibilityExtensionList_static_0500 failed to AccessibilityExtensionListSync because ' + JSON.stringify(err));
         done();
       });
-
-
     })
 
     /*
@@ -160,7 +154,6 @@ export default function abilityTest() {
         console.error('SUB_BASIC_BARRIERFREE_API_getAccessibilityExtensionList_static_0500 failed to AccessibilityExtensionListSync because ' + JSON.stringify(err));
         done();
       });
-
     })
 
     /*
@@ -186,8 +179,7 @@ export default function abilityTest() {
         expect(Array.isArray(data)).assertEqual(true);
         done();
       });
-
-      })
+    })
 
     /*
       * @tc.number  SUB_BASIC_BARRIERFREE_API_Rect_3500
@@ -213,7 +205,6 @@ export default function abilityTest() {
       }
       expect(result).assertEqual(true);
       done();
-
     })
 
     /*
@@ -261,9 +252,7 @@ export default function abilityTest() {
       }
       expect(result).assertEqual(true);
       done();
-
     })
-
 
     /*
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibilityAbilityInfo_static_3800
@@ -296,10 +285,7 @@ export default function abilityTest() {
         console.error('SUB_BASIC_BARRIERFREE_API_AccessibilityAbilityInfo_static_3800 failed to AccessibilityExtensionListSync because ' + JSON.stringify(err));
         done();
       });
-
-
     })
-
 
     /*
     * @tc.number  SUB_BASIC_BARRIERFREE_API_EventInfo_static_3900
@@ -492,13 +478,5 @@ export default function abilityTest() {
       };
 
     })
-
-
-
-
-
-
-
-
   })
 }
