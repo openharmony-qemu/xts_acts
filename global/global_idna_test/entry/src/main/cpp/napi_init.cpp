@@ -2074,7 +2074,7 @@ static napi_value testu_versionFromUString(napi_env env, napi_callback_info info
     }
     return nValue;
 }
-uint32_t mapValueFilter(const void* context, uint32_t value)
+uint32_t MapValueFilter(const void* context, uint32_t value)
 {
     return value + 1;
 }
@@ -2082,7 +2082,7 @@ uint32_t mapValueFilter(const void* context, uint32_t value)
 static napi_value testUCPMapValueFilter(napi_env env, napi_callback_info info)
 {
     uint32_t value = 233;
-    UCPMapValueFilter* filter = &mapValueFilter;
+    UCPMapValueFilter* filter = &MapValueFilter;
     bool flag = filter(nullptr, value) == 234;
     napi_value nValue;
     napi_status nStatus = napi_get_boolean(env, flag, &nValue);
