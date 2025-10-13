@@ -53,6 +53,7 @@ import alphabetBorderRadiusTest from './AlphabetIndexerTest/alphabetBorderRadius
 import swiperCountJsunit from './SwiperTest/swiperCountJsunit.test';
 import ListAddApi from './ListTest/ListAddApi.test';
 import listOffsetJsunit from './ListTest/listOffsetJsunit.test';
+import SyncTypeNull from './SwiperTest/SyncTypeNull.test';
 import swiperSyncType from './SwiperTest/swiperSyncType.test';
 import SwiperAttribute_1 from './SwiperTest/SwiperAttributeTest/SwiperAttribute_1.test';
 import SwiperAttribute_2 from './SwiperTest/SwiperAttributeTest/SwiperAttribute_2.test';
@@ -171,6 +172,7 @@ export default function testsuite() {
   swiperCountJsunit()
   ListAddApi()
   listOffsetJsunit()
+  SyncTypeNull()
   swiperSyncType()
   SwiperAttribute_1()
   SwiperAttribute_2()
