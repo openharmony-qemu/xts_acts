@@ -21,6 +21,10 @@
 #include <string>
 #include "ani/ani.h"
 #include "hilog/log.h"
+#include <iconv.h>
+#include <cstring>
+#include <codecvt>
+#include <locale>
 
 const uint32_t ANI_RES_INVALID_ARGS = 2;
 const uint32_t ANI_RES_INVALID_TYPE = 3;
@@ -43,6 +47,15 @@ const ani_int TEST_INT_VAL2 = 6;
         if ((a) == (b)) { \
             return ANI_FALSE; \
         } \
+    } while (0)
+
+#define ASSERT_STREQ(lhs, rhs)                                    \
+    do {                                                          \
+        std::string_view _sv1(lhs);                               \
+        std::string_view _sv2(rhs);                               \
+        if (_sv1 != _sv2) {                                       \
+            return ANI_FALSE;                                     \
+        }                                                         \
     } while (0)
 
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
@@ -88,7 +101,7 @@ ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor,
 }
 
 ani_ref g_doubleCls {};
-ani_method toType {};
+ani_method unboxed {};
 
 ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
 {
@@ -103,11 +116,21 @@ ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
         if (status != ANI_OK) {
             return ANI_ERROR;
         }
-        status = env->Class_FindMethod(cls, "toDouble", ":d", &toType);
+        status = env->Class_FindMethod(cls, "unboxed", ":d", &unboxed);
         if (status != ANI_OK) {
             return ANI_ERROR;
         }
     }
-    return env->Object_CallMethod_Double(obj, toType, result);
+    return env->Object_CallMethod_Double(obj, unboxed, result);
+}
+
+ani_boolean GetStdString(ani_env *env, ani_string str, std::string &result)
+{
+    ani_size sz{};
+    ASSERT_EQ(env->String_GetUTF8Size(str, &sz), ANI_OK);
+    result.resize(sz + 1);
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0, sz, result.data(), result.size(), &sz), ANI_OK);
+    result.resize(sz);
+    return ANI_TRUE;
 }
 #endif //ARKTS_ANI_TEST_COMMON_H
