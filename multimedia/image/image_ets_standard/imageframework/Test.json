@@ -22,7 +22,11 @@
       "run-command": [
         "remount",
         "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files",
-        "chmod 777 -R /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test"
+        "chmod 777 -R /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test",
+        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
+        "chmod -R 666 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
+        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/cache/",
+        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/*"
       ]
     },
     {
