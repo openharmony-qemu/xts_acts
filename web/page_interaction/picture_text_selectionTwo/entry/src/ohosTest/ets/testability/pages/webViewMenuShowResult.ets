@@ -232,19 +232,20 @@ struct WebViewMenuShowResult {
               } else {
                 await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
               }
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.sleep(2000);
               this.menuShowState = 'Cut'
               this.isOnContextMenuShow = -1
               await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
               await Utils.waitForExist(()=>this.isOnContextMenuShow, this.str+' isOnContextMenuShow', 1, 1000);
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.sleep(2000);
               this.menuShowState = 'cutPaste'
+              await Utils.sleep(2000);
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: webRect.left + 120, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT)
               } else {
                 await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 40 }, MouseButton.MOUSE_BUTTON_RIGHT)
               }
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.sleep(2000);
               this.controller.runJavaScript('getInputValue()', (error, result) => {
                 console.log("getInputValue return data >>> ", result, error)
                 if (result == '"1301234"') {
@@ -255,7 +256,7 @@ struct WebViewMenuShowResult {
               })
               let window: UiWindow = await driver.findWindow({actived: true});
               await window.resume();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.sleep(2000);
               break;
             }
 
