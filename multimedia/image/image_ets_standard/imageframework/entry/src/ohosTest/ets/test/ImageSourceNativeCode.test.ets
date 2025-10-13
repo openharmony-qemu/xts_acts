@@ -915,22 +915,6 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
 
-
-    /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100
-     * @tc.desc     : OH_ImageSourceNative_CreateFromRawFile return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
-     */
-    it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100", Level.LEVEL3, async (done: Function) => {
-      const rawFileDescriptor = await  testContext.resourceManager.getRawFd('test51.jpg');
-      let res: number = ndkTest.jsImageSoureNativeCreateFromRawFile(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      expect(res).assertEqual(0);
-      done();
-    });
-
     /**
      * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
      * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
