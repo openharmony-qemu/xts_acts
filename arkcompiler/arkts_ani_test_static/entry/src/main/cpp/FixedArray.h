@@ -1662,29 +1662,54 @@ ani_int test_FixedArray_Set_Ref_04([[maybe_unused]] ani_env *env_, [[maybe_unuse
     std::string_view rawString {"1234"};
     ani_string str {};
     ASSERT_EQ(env_->String_NewUTF8(rawString.data(), rawString.length(), &str), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Ref(cls, LENGTH_3, str, &array), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Ref(cls, LENGTH_5, str, &array), ANI_OK);
+
+    std::string_view newString1 {"New String 1!"};
+    ani_string newStr1 {};
+    ASSERT_EQ(env_->String_NewUTF8(newString1.data(), newString1.length(), &newStr1), ANI_OK);
 
     const ani_size index1 = 1;
+    ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
     ani_ref ref1 = nullptr;
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
 
     std::string result {};
-    ASSERT_STRNE(result, "New String 1!");
-    
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    ASSERT_STREQ(result.c_str(), "New String 1!");
+
+    for (ani_size i = 0; i < LENGTH_5; i++) {
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
+    }
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-    ASSERT_STRNE(result, "New String 1!");
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    ASSERT_STREQ(result.c_str(), "New String 1!");
 
     const ani_size index2 = 2;
+
+    std::string_view newString2 {"New String 2!"};
+    ani_string newStr2 {};
+    ASSERT_EQ(env_->String_NewUTF8(newString2.data(), newString2.length(), &newStr2), ANI_OK);
+
+    ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_Set_Ref(array, index2, newStr2), ANI_OK);
+    for (ani_int i = 0; i < LENGTH_5; i++) {
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr2), ANI_OK);
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index2, newStr1), ANI_OK);
+    }
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     ani_ref ref2 = nullptr;
     std::string result2 {};
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index2, &ref2), ANI_OK);
-    ASSERT_STRNE(result, "New String 2!");
-    ASSERT_STRNE(result2, "New String 1!");
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    GetStdString(env_, static_cast<ani_string>(ref2), result2);
+    ASSERT_STREQ(result.c_str(), "New String 2!");
+    ASSERT_STREQ(result2.c_str(), "New String 1!");
 
+    ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
     for (ani_size i = 0; i < LENGTH_5; i++) {
         ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-        ASSERT_STRNE(result, "New String 1!");
+        GetStdString(env_, static_cast<ani_string>(ref1), result);
+        ASSERT_STREQ(result.c_str(), "New String 1!");
     }
     return ANI_TRUE;
 }
@@ -1699,21 +1724,35 @@ ani_int test_FixedArray_Set_Ref_05([[maybe_unused]] ani_env *env_, [[maybe_unuse
     ASSERT_EQ(env_->String_NewUTF8(rawString.data(), rawString.length(), &str), ANI_OK);
     ASSERT_EQ(env_->FixedArray_New_Ref(cls, LENGTH_3, str, &array), ANI_OK);
     ani_ref ref1 = nullptr;
-
+    
+    std::string_view newString1 {"New String 1!"};
+    ani_string newStr1 {};
+    ASSERT_EQ(env_->String_NewUTF8(newString1.data(), newString1.length(), &newStr1), ANI_OK);
+    
     const ani_size index1 = 1;
+    for (ani_int i = 0; i < LENGTH_3; i++) {
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
+    }
     ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     std::string result {};
-    ASSERT_STRNE(result, "New String 1!");
-    
-    for (ani_int i = 0; i < LENGTH_3; i++) {
-        ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
-    }
-    ASSERT_STRNE(result, "New String 1!");
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    ASSERT_STREQ(result.c_str(), "New String 1!");
 
     for (ani_int i = 0; i < LENGTH_3; i++) {
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
+    }
+    for (ani_int i = 0; i < LENGTH_3; i++) {
         ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
     }
-    ASSERT_STRNE(result, "New String 1!");
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    ASSERT_STREQ(result.c_str(), "New String 1!");
+
+    for (ani_int i = 0; i < LENGTH_3; i++) {
+        ASSERT_EQ(env_->FixedArray_Set_Ref(array, index1, newStr1), ANI_OK);
+        ASSERT_EQ(env_->FixedArray_Get_Ref(array, index1, &ref1), ANI_OK);
+    }
+    GetStdString(env_, static_cast<ani_string>(ref1), result);
+    ASSERT_STREQ(result.c_str(), "New String 1!");
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_FIXEDARRAY_H

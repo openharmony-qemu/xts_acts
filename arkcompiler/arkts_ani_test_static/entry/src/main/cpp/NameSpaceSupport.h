@@ -33,11 +33,14 @@ ani_int test_Namespace_FindFunction([[maybe_unused]] ani_env *env, [[maybe_unuse
 
 ani_int test_Namespace_FindFunction_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
+    ani_namespace ns{};
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.Fnns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
+    ASSERT_EQ(env_->Namespace_FindFunction(ns, "getInitialIntValue", ":i", &fn), ANI_OK);
+    ASSERT_NE(fn, nullptr);
+
     const int32_t loopCount = 3;
     for (int32_t i = 0; i < loopCount; i++) {
         ASSERT_EQ(env_->Namespace_FindFunction(ns, "getInitialIntValue", ":i", &fn), ANI_OK);
@@ -58,7 +61,7 @@ ani_int test_Namespace_FindFunction_01([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.Fnns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn1 {};
@@ -78,10 +81,18 @@ ani_int test_Namespace_FindFunction_02([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.Fnns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
+    ani_class cls {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.Fnns.A", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method result {};
     ani_function fn {};
+    ASSERT_EQ(env_->Class_FindMethod(cls, "<ctor>", ":", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "c", "i:C{std.core.Promise}", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);
     return ANI_TRUE;
@@ -90,7 +101,10 @@ ani_int test_Namespace_FindFunction_03([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.TestA", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.TestA", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.TestA.A", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
@@ -102,7 +116,10 @@ ani_int test_Namespace_FindFunction_04([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_05([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.TestA", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.TestA", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.TestA.A", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
@@ -129,7 +146,7 @@ ani_int test_Namespace_FindFunction_05([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_06([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.Fnns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn {};
@@ -140,7 +157,7 @@ ani_int test_Namespace_FindFunction_06([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindFunction_07([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_function_test.Fnns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.Fnns", &ns), ANI_OK);
 
     ani_function fn {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "getInitialIntValue", ":i", &fn), ANI_OK);
@@ -150,7 +167,7 @@ ani_int test_Namespace_FindFunction_07([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -162,7 +179,7 @@ ani_int test_Namespace_FindVariable([[maybe_unused]] ani_env *env_, [[maybe_unus
 ani_int test_Namespace_FindVariable_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -173,7 +190,7 @@ ani_int test_Namespace_FindVariable_01([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -185,7 +202,7 @@ ani_int test_Namespace_FindVariable_02([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -203,7 +220,7 @@ ani_int test_Namespace_FindVariable_04([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_05([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -214,7 +231,7 @@ ani_int test_Namespace_FindVariable_05([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_06([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -225,7 +242,7 @@ ani_int test_Namespace_FindVariable_06([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_07([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -236,7 +253,7 @@ ani_int test_Namespace_FindVariable_07([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_08([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable {};
@@ -247,7 +264,7 @@ ani_int test_Namespace_FindVariable_08([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_09([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ASSERT_EQ(env_->Namespace_FindVariable(ns, "s", nullptr), ANI_INVALID_ARGS);
@@ -257,7 +274,7 @@ ani_int test_Namespace_FindVariable_09([[maybe_unused]] ani_env *env_, [[maybe_u
 ani_int test_Namespace_FindVariable_10([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_find_variable_test.anyns", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.anyns", &ns), ANI_OK);
 
     ani_variable variable {};
     ASSERT_EQ(env_->Namespace_FindVariable(ns, "x", &variable), ANI_OK);
@@ -266,87 +283,149 @@ ani_int test_Namespace_FindVariable_10([[maybe_unused]] ani_env *env_, [[maybe_u
 
 ani_int test_Namespace_Combinatorial([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
+    ani_class result {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorial.Cls", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
 
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorial.ClsA", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorial.ClsB", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
+    ani_enum result {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorial.Color", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
 
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorial.ColorA", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorial.ColorB", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialA", &ns), ANI_OK);
-    ASSERT_NE(ns, nullptr);
+    ani_enum result {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialA.Color", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
 
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialA.ColorA", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialA.ColorB", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialA", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialA", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function result {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result), ANI_OK);
     ASSERT_NE(result, nullptr);
-    
+
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialA.ColorA", &result1), ANI_OK);
+    ASSERT_NE(result1, nullptr);
+
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialA.ColorB", &result1), ANI_OK);
+    ASSERT_NE(result1, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialB", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialB", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function result {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funA", ":i", &result), ANI_OK);
     ASSERT_NE(result, nullptr);
 
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialB.ColorB", &result1), ANI_OK);
+    ASSERT_NE(result1, nullptr);
+
+    ani_class result2 {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorialB.ClsB", &result2), ANI_OK);
+    ASSERT_NE(result2, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_05([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialB", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialB", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function result {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funC", ":i", &result), ANI_NOT_FOUND);
-    
+
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.EnuC", &result1), ANI_NOT_FOUND);
+
+    ani_class result2 {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.ClsC", &result2), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_06([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorial", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorial", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
+
+    ani_namespace result {};
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorial.sub", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
 
     ani_function result1 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result1), ANI_OK);
     ASSERT_NE(result1, nullptr);
-    
+
+    ani_enum result2 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorial.Color", &result2), ANI_OK);
+    ASSERT_NE(result2, nullptr);
+
+    ani_class result3 {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorial.Cls", &result3), ANI_OK);
+    ASSERT_NE(result3, nullptr);
     return ANI_TRUE;
 }
 
 ani_int test_Namespace_Combinatorial_07([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialC", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
+
+    ani_namespace tmp {};
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subA", &tmp), ANI_OK);
+    ASSERT_NE(tmp, nullptr);
+
+    ani_class result {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subA.ClsA", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subB", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subB", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+    
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subB.ColorA", &result1), ANI_OK);
+    ASSERT_NE(result1, nullptr);
 
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result2), ANI_OK);
@@ -357,8 +436,17 @@ ani_int test_Namespace_Combinatorial_07([[maybe_unused]] ani_env *env_, [[maybe_
 ani_int test_Namespace_Combinatorial_08([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns {};
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialC", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
+
+    ani_namespace tmp {};
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.subc", &tmp), ANI_NOT_FOUND);
+
+    ani_class result {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.ClsC", &result), ANI_NOT_FOUND);
+
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialC.EnuE", &result1), ANI_NOT_FOUND);
 
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "funC", ":i", &result2), ANI_NOT_FOUND);
@@ -369,12 +457,33 @@ ani_int test_Namespace_Combinatorial_09([[maybe_unused]] ani_env *env_, [[maybe_
 {
     ani_namespace ns {};
 
-    ASSERT_EQ(env_->FindNamespace("namespace_combinatorial_test.combinatorialD", &ns), ANI_OK);
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialD", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
+
+    ani_namespace tmp {};
+    ASSERT_EQ(env_->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.combinatorialD.subA", &tmp), ANI_OK);
+    ASSERT_NE(tmp, nullptr);
+
+    ani_class result {};
+    ASSERT_EQ(env_->FindClass("entry.src.main.src.ets.NameSpaceSupport.combinatorialD.ClsA", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_enum result1 {};
+    ASSERT_EQ(env_->FindEnum("entry.src.main.src.ets.NameSpaceSupport.combinatorialD.ColorA", &result1), ANI_OK);
+    ASSERT_NE(result1, nullptr);
 
     ani_function result2 {};
     ASSERT_EQ(env_->Namespace_FindFunction(ns, "fun", ":i", &result2), ANI_OK);
     ASSERT_NE(result2, nullptr);
+
+    ani_namespace tmp1 {};
+    ASSERT_EQ(env_->FindNamespace(nullptr, &tmp1), ANI_INVALID_ARGS);
+
+    ani_class result3 {};
+    ASSERT_EQ(env_->FindClass(nullptr, &result3), ANI_INVALID_ARGS);
+
+    ani_enum result4 {};
+    ASSERT_EQ(env_->FindEnum(nullptr, &result4), ANI_INVALID_ARGS);
 
     ani_function result5 {};
     ASSERT_EQ(env_->Namespace_FindFunction(nullptr, "fun", ":i", &result5), ANI_INVALID_ARGS);

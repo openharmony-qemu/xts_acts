@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function nameSpaceSupportTest() {
@@ -62,7 +62,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0002 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0002 done');
         done();
         console.log('test_Namespace_Find_Function_0002 end');
@@ -81,7 +81,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0003 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0003 done');
         done();
         console.log('test_Namespace_Find_Function_0003 end');
@@ -100,7 +100,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0004 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0004 done');
         done();
         console.log('test_Namespace_Find_Function_0004 end');
@@ -119,7 +119,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0005 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0005 done');
         done();
         console.log('test_Namespace_Find_Function_0005 end');
@@ -138,7 +138,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0006 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0006 done');
         done();
         console.log('test_Namespace_Find_Function_0006 end');
@@ -157,7 +157,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0007 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_06();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0007 done');
         done();
         console.log('test_Namespace_Find_Function_0007 end');
@@ -176,7 +176,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Function_0008 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindFunction_07();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Function_0008 done');
         done();
         console.log('test_Namespace_Find_Function_0008 end');
@@ -195,7 +195,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0001 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0001 done');
         done();
         console.log('test_Namespace_Find_Variable_0001 end');
@@ -214,7 +214,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0002 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0002 done');
         done();
         console.log('test_Namespace_Find_Variable_0002 end');
@@ -233,7 +233,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0003 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0003 done');
         done();
         console.log('test_Namespace_Find_Variable_0003 end');
@@ -252,7 +252,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0004 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0004 done');
         done();
         console.log('test_Namespace_Find_Variable_0004 end');
@@ -290,7 +290,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0006 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0006 done');
         done();
         console.log('test_Namespace_Find_Variable_0006 end');
@@ -309,7 +309,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0007 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_06();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0007 done');
         done();
         console.log('test_Namespace_Find_Variable_0007 end');
@@ -328,7 +328,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0008 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_07();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0008 done');
         done();
         console.log('test_Namespace_Find_Variable_0008 end');
@@ -347,7 +347,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0009 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_08();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0009 done');
         done();
         console.log('test_Namespace_Find_Variable_0009 end');
@@ -366,7 +366,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0010 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_09();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0010 done');
         done();
         console.log('test_Namespace_Find_Variable_0010 end');
@@ -385,7 +385,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Find_Variable_0011 start');
         let cls = new Foo();
         let result = cls.test_Namespace_FindVariable_10();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Find_Variable_0011 done');
         done();
         console.log('test_Namespace_Find_Variable_0011 end');
@@ -404,7 +404,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0001 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0001 done');
         done();
         console.log('test_Namespace_Combinatorial_0001 end');
@@ -423,7 +423,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0002 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0002 done');
         done();
         console.log('test_Namespace_Combinatorial_0002 end');
@@ -442,7 +442,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0003 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0003 done');
         done();
         console.log('test_Namespace_Combinatorial_0003 end');
@@ -461,7 +461,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0004 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0004 done');
         done();
         console.log('test_Namespace_Combinatorial_0004 end');
@@ -480,7 +480,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0005 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0005 done');
         done();
         console.log('test_Namespace_Combinatorial_0005 end');
@@ -499,7 +499,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0006 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0006 done');
         done();
         console.log('test_Namespace_Combinatorial_0006 end');
@@ -518,7 +518,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0007 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_06();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0007 done');
         done();
         console.log('test_Namespace_Combinatorial_0007 end');
@@ -537,7 +537,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0008 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_07();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0008 done');
         done();
         console.log('test_Namespace_Combinatorial_0008 end');
@@ -556,7 +556,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0009 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_08();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0009 done');
         done();
         console.log('test_Namespace_Combinatorial_0009 end');
@@ -575,7 +575,7 @@ export default function nameSpaceSupportTest() {
         console.log('test_Namespace_Combinatorial_0010 start');
         let cls = new Foo();
         let result = cls.test_Namespace_Combinatorial_09();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Namespace_Combinatorial_0010 done');
         done();
         console.log('test_Namespace_Combinatorial_0010 end');

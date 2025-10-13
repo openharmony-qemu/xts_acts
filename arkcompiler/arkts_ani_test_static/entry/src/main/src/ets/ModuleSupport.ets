@@ -294,3 +294,21 @@ namespace ops {
     let moduleT: int = 3;
 }
 const moduleXB = 1;
+
+interface FoodAction {
+    foo(x: double): double;
+};
+
+interface EatingAction {
+    eat(x: int): int;
+};
+
+export class Actionor implements FoodAction, EatingAction {
+    foo(x: double): double {
+        return x;
+    }
+
+    eat(x: int): int {
+        return x;
+    }
+}

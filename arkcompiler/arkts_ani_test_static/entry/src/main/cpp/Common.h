@@ -58,15 +58,6 @@ const ani_int TEST_INT_VAL2 = 6;
         }                                                         \
     } while (0)
 
-#define ASSERT_STRNE(lhs, rhs)                                    \
-    do {                                                          \
-        std::string_view _sv1(lhs);                               \
-        std::string_view _sv2(rhs);                               \
-        if (_sv1 == _sv2) {                                       \
-            return ANI_FALSE;                                     \
-        }                                                         \
-    } while (0)
-
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
 {
     ani_class cls {};
