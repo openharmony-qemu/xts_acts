@@ -1070,8 +1070,13 @@ export default function util2Test() {
      */
     it('testGetHash_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let res = new LightWeightMap<number, number>();
-      let result1 = res.setValueAt(1, 1);
-      expect(result1).assertEqual(true);
+      res.set(1, 1);
+      try {
+        let result1 = res.setValueAt(1, 1);
+        expect(result1).assertEqual(false);
+      } catch (e) {
+        expect(e.code).assertEqual(10200001);
+      }
     });
 
     /**
