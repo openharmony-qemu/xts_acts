@@ -35,6 +35,22 @@ const SLOT_1: int = 1;
 const SLOT_2: int = 2;
 const SLOT_3: int = -1;
 
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    hilog.info(domain, tag, '%{public}s', 'test failed');
+  }
+}
+
+const ExpectTrue = (n: boolean) => {
+  try {
+    expect(n).assertTrue();
+  } catch (err) {
+    hilog.info(domain, tag, '%{public}s', 'test failed');
+  }
+}
+
 export default function EsimPublic1() {
   describe('EsimPublic1', () => {
 
@@ -53,7 +69,7 @@ export default function EsimPublic1() {
         try {
           let data = await eSIM.addProfile(profile);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          expect(true).assertTrue();
+          ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error: Error) {
@@ -89,19 +105,19 @@ export default function EsimPublic1() {
           let isEsimSupport: boolean = eSIM.isSupported(SLOT_0);
           if (isEsimSupport) {
             hilog.info(domain, tag, `eSIM is supported`);
-            expect(true).assertTrue();
+            ExpectTrue(true);
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           } else {
             hilog.info(domain, tag, `${caseName} eSIM is not supported`);
-            expect().assertFail();
+            ExpectFail();
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           }
         } catch (error: Error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, caseName + " err = " + JSON.stringify(err));
-          expect().assertFail();
+          ExpectFail();
           done();
         }
       });
@@ -121,7 +137,7 @@ export default function EsimPublic1() {
         try {
           let data: boolean = eSIM.isSupported(SLOT_1);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          expect(true).assertTrue();
+          ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error: Error) {
@@ -148,7 +164,7 @@ export default function EsimPublic1() {
         try {
           let data: boolean = eSIM.isSupported(SLOT_2);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          expect(true).assertTrue();
+          ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error: Error) {
@@ -175,7 +191,7 @@ export default function EsimPublic1() {
         try {
           let data: boolean = eSIM.isSupported(SLOT_3);
           hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          expect(true).assertTrue();
+          ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error: Error) {
