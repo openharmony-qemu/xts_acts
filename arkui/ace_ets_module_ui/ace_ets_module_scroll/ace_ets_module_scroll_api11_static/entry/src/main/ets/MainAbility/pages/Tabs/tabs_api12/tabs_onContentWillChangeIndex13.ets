@@ -32,7 +32,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TabsExampleApi12I13 {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
   
@@ -107,14 +107,14 @@ struct TabsExampleApi12I13 {
       .barWidth(60)
       .barHeight(360)
       .animationDuration(0)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('90%')
       .height('60%')
       .scrollable(true)
       .backgroundColor('#F1F3F5')
-      .onContentWillChange((currentIndex: number, comingIndex: number): boolean => {
+      .onContentWillChange((currentIndex: int, comingIndex: int): boolean => {
         this.currentIndex = currentIndex
         if (comingIndex == 3) {
           return false

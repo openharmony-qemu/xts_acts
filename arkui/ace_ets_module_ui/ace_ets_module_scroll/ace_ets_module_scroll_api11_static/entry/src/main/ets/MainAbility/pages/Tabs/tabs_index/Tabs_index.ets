@@ -32,7 +32,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct Tabs_Index {
   @State fontColor: string = '#182431';
   @State selectedFontColor: string = '#007DFF';
-  @State currentIndex: number = 0;
+  @State currentIndex: int = 0;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number> = new MessageManager<number>();
 
@@ -42,7 +42,7 @@ struct Tabs_Index {
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.currentIndex = message.value;
+        this.currentIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -81,7 +81,7 @@ struct Tabs_Index {
       .barWidth(330)
       .barHeight(56)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width(330)

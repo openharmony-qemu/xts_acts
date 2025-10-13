@@ -199,7 +199,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -207,7 +207,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -222,7 +222,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20 } as Margin)
@@ -236,14 +236,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -258,7 +258,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -278,14 +278,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -300,7 +300,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -320,14 +320,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -342,7 +342,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -362,14 +362,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -384,7 +384,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -403,7 +403,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -411,7 +411,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -426,7 +426,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -441,7 +441,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -449,7 +449,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -464,7 +464,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)

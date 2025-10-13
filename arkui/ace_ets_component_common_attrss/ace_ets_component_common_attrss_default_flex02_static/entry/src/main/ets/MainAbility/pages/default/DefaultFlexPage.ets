@@ -67,7 +67,7 @@ struct DefaultFlexPage {
 
   @Builder buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: this.value, selected: 0 }).applyStyles(this.commonStyle)
+      AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
     } else if (this.targetView == 'Blank') {
       Blank().applyStyles(this.commonStyle)
     } else if (this.targetView == 'Button') {

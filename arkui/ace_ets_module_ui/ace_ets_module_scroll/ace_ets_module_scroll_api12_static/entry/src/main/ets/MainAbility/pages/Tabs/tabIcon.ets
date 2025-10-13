@@ -100,7 +100,7 @@ struct TabIconStyleExample {
         .vertical(false)
         .scrollable(true)
         .barMode(BarMode.Fixed)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
         .width('100%')

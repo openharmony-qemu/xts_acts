@@ -44,9 +44,9 @@ import common from '@ohos.app.ability.common';
 @Component
 struct SimpleAnimatorOptionsPage {
   @State cube_size: number = 50
-  @State animator_duration: number = 3000;
-  @State animator_delay: number = 0;
-  @State animator_iterations: number = 1;
+  @State animator_duration: int = 3000;
+  @State animator_delay: int = 0;
+  @State animator_iterations: int = 1;
   @State animator_ease: string = 'ease';
   @State animator_direction: PlayMode = PlayMode.Normal;
   @State animator_fill: FillMode = FillMode.Backwards;
@@ -115,7 +115,7 @@ struct SimpleAnimatorOptionsPage {
       }).id('changeFillMode').height('5%')
 
       Button('changeDelay').onClick((e: ClickEvent) => {
-        this.animator_delay = 1000.5;
+        this.animator_delay = 1000;
       }).id('changeDelayId').height('5%')
 
       Button('changeIterations').onClick((e: ClickEvent) => {

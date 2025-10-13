@@ -98,10 +98,10 @@ struct AlphabetIndexerEnable {
           .popupItemBorderRadius(24)
           .itemBorderRadius(14)
           .enableHapticFeedback(true)
-          .onSelect((index: number): void => {
+          .onSelect((index: int): void => {
             console.info(this.value[index.toInt()] + ' Selected!')
           })
-          .onRequestPopupData((index: number): string[] => {
+          .onRequestPopupData((index: int): string[] => {
             if (this.value[index.toInt()] == 'A') {
               return this.arrayA 
             } else if (this.value[index.toInt()] == 'B') {
@@ -114,7 +114,7 @@ struct AlphabetIndexerEnable {
               return [''] 
             }
           })
-          .onPopupSelect((index: number): void => {
+          .onPopupSelect((index: int): void => {
             console.info('onPopupSelected:' + index)
           })
       }

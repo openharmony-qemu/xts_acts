@@ -66,7 +66,7 @@ export struct TabsView {
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: number): void => {
+    .onChange((index: int): void => {
       this.currentIndex = index
     })
     .width(360)

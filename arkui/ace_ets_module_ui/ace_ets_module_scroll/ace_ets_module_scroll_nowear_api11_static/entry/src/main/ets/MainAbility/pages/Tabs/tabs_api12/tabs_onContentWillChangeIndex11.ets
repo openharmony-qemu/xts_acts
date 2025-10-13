@@ -35,7 +35,7 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct TabsExampleApi12I11 {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   aboutToAppear() {
     let uiContext = this.getUIContext();
@@ -46,7 +46,7 @@ struct TabsExampleApi12I11 {
       console.log('error ' + error);
     }
   }
-  @Builder tabBuilder(title: string,targetIndex: number) {
+  @Builder tabBuilder(title: string, targetIndex: int) {
     Column(){
       Text(title).fontColor(this.currentIndex === targetIndex ? '#1698CE' : '#6B6B6B')
     }.width('100%')
@@ -98,7 +98,7 @@ struct TabsExampleApi12I11 {
       .barWidth(360)
       .barHeight(60)
       .animationDuration(0)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('90%')

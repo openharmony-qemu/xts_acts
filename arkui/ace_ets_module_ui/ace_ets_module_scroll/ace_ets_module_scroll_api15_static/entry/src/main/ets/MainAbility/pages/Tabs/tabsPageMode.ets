@@ -161,10 +161,10 @@ struct TabsPageFlipModeDemo1 {
       .fadingEdge(this.selfFadingFade)
       .width('80%')
       .height('60%')
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.onChange = index
       })
-      .onTabBarClick((index: number): void => {
+      .onTabBarClick((index: int): void => {
         this.onTabBarClick = index
       })
 
