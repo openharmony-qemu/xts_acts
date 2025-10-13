@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jsMessageExt from './jsMessageExt.test'
+import jsMessageExt from './JsMessageExt.test'
 import webJsunit from './WebJsunit.test'
 import webJsunitTwo from './WebJsunitTwo.test'
 export default function testsuite() {
