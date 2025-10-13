@@ -16,18 +16,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/chenmo/.ohos/config/openharmony/default_runjavascript_static_xr9zXhiDZwTt3Y0K_QRhRqzEyjV4R4f6puMnCyuNeWg=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B3E4EFF82EA07E04C97712EBFC16EB68D577CEC4D51AA4443BA584B6BCF305C9E5324D44DAB4744",
-          "profile": "C:/Users/chenmo/.ohos/config/openharmony/default_runjavascript_static_xr9zXhiDZwTt3Y0K_QRhRqzEyjV4R4f6puMnCyuNeWg=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/chenmo/.ohos/config/openharmony/default_runjavascript_static_xr9zXhiDZwTt3Y0K_QRhRqzEyjV4R4f6puMnCyuNeWg=.p12",
-          "storePassword": "0000001BB16E2D5780E58EFDA41C48C75F635A57BDD16E4B87C7531F50F05D9792F8DDDF7FABA410167496"
-        }
-      }
     ],
     "products": [
       {
