@@ -28,7 +28,9 @@ import deviceKvStoreCallbackErrcodeTest from './DeviceKvStoreCallbackErrcode.tes
 import deviceKvStorePromiseErrcodeTest from './DeviceKvStorePromiseErrcode.test';
 import SingleKvStoreDataChange from './SingleKvStoreDataChange.test';
 import DeviceKvStoreReturnValue from './DeviceKvStoreReturnValue.test';
+import SingleKvStoreReturnValue from './SingleKvStoreReturnValue.test';
 import KVStoreResultSetReturnValue from './KVStoreResultSetReturnValue.test';
+
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -46,5 +48,8 @@ export default function testsuite() {
   deviceKvStorePromiseErrcodeTest();
   SingleKvStoreDataChange();
   DeviceKvStoreReturnValue();
+  SingleKvStoreReturnValue();
   KVStoreResultSetReturnValue();
+
+
 }
