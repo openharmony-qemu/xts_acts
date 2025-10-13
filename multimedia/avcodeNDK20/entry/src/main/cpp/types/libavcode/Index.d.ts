@@ -245,6 +245,86 @@ export const EnumAudioChannelSet29: () => number;
 
 export const EnumAudioChannelSet30: () => number;
 
+export const EnumAudioChannelSet31: () => number;
+
+export const EnumAudioChannelSet32: () => number;
+
+export const EnumAudioChannelSet33: () => number;
+
+export const EnumAudioChannelSet34: () => number;
+
+export const EnumAudioChannelSet35: () => number;
+
+export const EnumAudioChannelSet36: () => number;
+
+export const EnumAudioChannelSet37: () => number;
+
+export const EnumAudioChannelSet38: () => number;
+
+export const EnumAudioChannelSet39: () => number;
+
+export const EnumAudioChannelSet40: () => number;
+
+export const EnumAudioChannelSet41: () => number;
+
+export const EnumAudioChannelSet42: () => number;
+
+export const EnumAudioChannelSet43: () => number;
+
+export const EnumAudioChannelSet44: () => number;
+
+export const EnumAudioChannelSet45: () => number;
+
+export const EnumAudioChannelSet46: () => number;
+
+export const EnumAudioChannelSet47: () => number;
+
+export const EnumAudioChannelSet48: () => number;
+
+export const EnumAudioChannelSet49: () => number;
+
+export const EnumAudioChannelSet50: () => number;
+
+export const EnumOHCoreHdrType1: () => number;
+
+export const EnumOHCoreHdrType2: () => number;
+
+export const EnumAACPROFILEHE1: () => number;
+
+export const EnumHEVCProfile1: () => number;
+
+export const EnumHEVCProfile2: () => number;
+
+export const EnumVVCProfile1: () => number;
+
+export const EnumVVCProfile2: () => number;
+
+export const EnumVVCProfile3: () => number;
+
+export const EnumVVCProfile4: () => number;
+
+export const EnumVVCProfile5: () => number;
+
+export const EnumVVCProfile6: () => number;
+
+export const EnumVVCProfile7: () => number;
+
+export const EnumVVCProfile8: () => number;
+
+export const EnumVVCProfile9: () => number;
+
+export const EnumVVCProfile10: () => number;
+
+export const EnumVVCProfile11: () => number;
+
+export const EnumVVCProfile12: () => number;
+
+export const EnumVVCProfile13: () => number;
+
+export const EnumVVCProfile14: () => number;
+
+export const EnumVVCProfile15: () => number;
+
 export const EnumAudioChannelLayout1: () => number;
 
 export const EnumAudioChannelLayout2: () => number;
