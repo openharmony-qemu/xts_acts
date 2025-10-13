@@ -352,7 +352,6 @@ export default function writeTest() {
         }, (err: BusinessError<void> | null) => {
           if (err) {
             hilog.error(domain, tag, `HiAppEventSub37 > code: ${err.code}, message: ${err.message}`);
-            expect(true).assertTrue()
             done()
             return;
           } else {

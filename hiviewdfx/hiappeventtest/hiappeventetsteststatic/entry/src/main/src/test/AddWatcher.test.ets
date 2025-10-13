@@ -2253,8 +2253,12 @@ export default function addWatcherTest() {
      */
     it('HiAppEventSub27', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub27 start')
-      hiAppEvent.clearData()
-      expect(true).assertTrue()
+      try {
+        hiAppEvent.clearData()
+      } catch (err) {
+        hilog.info(logDomain, tag, 'testHiAppEventSub30 clearData fail')
+        expect(false).assertTrue()
+      }
       hilog.info(logDomain, tag, 'HiAppEventSub27 end')
       done();
     })
