@@ -32,10 +32,12 @@ import common from '@ohos.app.ability.common';
 @Component
 struct Index {
 
-  aboutToAppear(){
+  onPageShow(){
     try {
       let router1 = this.getUIContext().getRouter();
+      let uiContext = this.getUIContext()
       AppStorage.setOrCreate<Router>('router', router1);
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
     } catch (error: Error) {
       console.log('error ' + error);
     }

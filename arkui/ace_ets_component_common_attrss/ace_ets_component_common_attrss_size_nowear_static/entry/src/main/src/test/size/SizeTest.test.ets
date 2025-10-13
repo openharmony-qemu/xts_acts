@@ -44,7 +44,7 @@ export default function sizeTest() {
     'SideBarContainer',
     'WaterFlow',
     'Stepper',
-    'FlowItem'
+    'FlowItem',
   )
 
   
@@ -66,65 +66,70 @@ export default function sizeTest() {
   }
 
   
-  let testValues: TestValue[] = [{
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    }]
+  let testValues: TestValue[] = [
+    {
+    describe: 'StringNumber',
+    setValue: {
+      width: 200, height: 200
+    },
+    expectValue: {
+      widthCompare: '200.00vp', heightCompare: '200.00vp',
+      width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)), height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))
+    }
+  },
+    {
+    describe: 'StringPercent',
+    setValue: {
+      width: '50%', height: '50%'
+    },
+    expectValue: {
+      widthCompare: '50.00%', heightCompare: '50.00%',
+      width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.5, height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentHeight)) * 0.5
+    }
+  },
+    {
+    describe: 'Resource',
+    setValue: {
+      width: $r('app.float.200vp'),
+      height: $r('app.float.100vp')
+    },
+    expectValue: {
+      widthCompare: '200.00vp', heightCompare: '100.00vp',
+      width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)),
+      height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))
+    }
+  }, {
+    describe: 'StringPx',
+    setValue: {
+      width: '300px',
+      height: '300px'
+    },
+    expectValue: {
+      widthCompare: '300.00px', heightCompare: '300.00px',
+      width: 300, height: 300
+    }
+  }, {
+    describe: 'SetStringWidth',
+    setValue: {
+      width: '300px'
+    },
+    expectValue: {
+      widthCompare: '300.00px',
+      width: 300
+    }
+  },
+    {
+      describe: 'SetStringHeight',
+      setValue: {
+        height: '300px'
+      },
+      expectValue: {
+        heightCompare: '300.00px',
+        height: 300
+      }
+    }
+    ]
+
 
   /**
    * Create test suite.
@@ -140,9 +145,63 @@ export default function sizeTest() {
     
     CommonTest.initTest(pageConfig, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
+        console.log('expectValueexpectValue',AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth),Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.5)
+        let testData: BasePageConfig = data
+        if(testData.testValue.describe == 'StringNumber'){
+          testData = {
+            pageConfig: data.pageConfig,
+            testValue: {
+              describe: data.testValue.describe,
+              setValue: data.testValue.setValue,
+              exceptView: data.testValue.exceptView,
+              expectValue:{
+                widthCompare: '200.00vp', heightCompare: '200.00vp',
+                width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)), height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))
+              }
+            },
+            caseTag: data.caseTag,
+            customParams: data.customParams,
+            viewObj: data.viewObj
+          }
+        }
+        if(testData.testValue.describe == 'StringPercent'){
+          testData = {
+            pageConfig: data.pageConfig,
+            testValue: {
+              describe: data.testValue.describe,
+              setValue: data.testValue.setValue,
+              exceptView: data.testValue.exceptView,
+              expectValue:{
+                widthCompare: '50.00%', heightCompare: '50.00%',
+                width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentWidth)) * 0.5, height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(parentHeight)) * 0.5
+              }
+            },
+            caseTag: data.caseTag,
+            customParams: data.customParams,
+            viewObj: data.viewObj
+          }
+        }
+        if(testData.testValue.describe == 'Resource'){
+          testData = {
+            pageConfig: data.pageConfig,
+            testValue: {
+              describe: data.testValue.describe,
+              setValue: data.testValue.setValue,
+              exceptView: data.testValue.exceptView,
+              expectValue:{
+                widthCompare: '200.00vp', heightCompare: '100.00vp',
+                width: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)),
+                height: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))
+              }
+            },
+            caseTag: data.caseTag,
+            customParams: data.customParams,
+            viewObj: data.viewObj
+          }
+        }
 
-      
-      let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
+        
+      let rect: RectValue = Utils.getComponentRect(testData.pageConfig.componentKey);
 
       
       let strJsonRectWidth = rect.right - rect.left;
@@ -150,31 +209,33 @@ export default function sizeTest() {
       
       let strJsonRectHeight = rect.bottom - rect.top;
 
-      console.info('[' + data.caseTag + '] strJsonRectWidth is: ' + strJsonRectWidth);
-      console.info('[' + data.caseTag + '] strJsonRectHeight is: ' + strJsonRectHeight);
-      console.info('[' + data.caseTag + '] data.testValue.expectValue.width:' + data.testValue.expectValue?.width);
-      console.info('[' + data.caseTag + '] data.testValue.expectValue.height:' + data.testValue.expectValue?.height);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.size.width:' + data.viewObj?.size?.width);
-      console.info('[' + data.caseTag + '] data.viewObj.$attrs.size.height:' + data.viewObj?.size?.height);
+      console.info('[' + testData.caseTag + '] strJsonRectWidth is: ' + strJsonRectWidth);
+      console.info('[' + testData.caseTag + '] strJsonRectHeight is: ' + strJsonRectHeight);
+      console.info('[' + testData.caseTag + '] testData.testValue.expectValue.width:' + testData.testValue.expectValue?.width);
+      console.info('[' + testData.caseTag + '] testData.testValue.expectValue.height:' + testData.testValue.expectValue?.height);
+      console.info('[' + testData.caseTag + '] testData.viewObj!.$attrs.size.width:' + testData.viewObj!.getElement('$attrs').getElement('size').getString('width'));
+      console.info('[' + testData.caseTag + '] testData.viewObj!.$attrs.size.height:' + testData.viewObj!.getElement('$attrs').getElement('size').getString('height'));
 
-      if (data.testValue.describe == 'SetStringWidth') {
+      if (testData.testValue.describe == 'SetStringWidth') {
         
         
-        expect(data.viewObj?.size?.width).assertEqual(data.testValue.expectValue?.widthCompare);
-        expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(data.testValue.expectValue?.width as number)) <= 2).assertTrue();
-      } else if (data.testValue.describe == 'SetStringHeight') {
+        expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('width')).assertEqual(testData.testValue.expectValue?.widthCompare);
+        expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(testData.testValue.expectValue!.width ?? 0)) <= 2).assertTrue();
+      } else if (testData.testValue.describe == 'SetStringHeight') {
         
         
-        expect(data.viewObj?.size?.height).assertEqual(data.testValue.expectValue?.heightCompare);
-        expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(data.testValue.expectValue?.height as number)) <= 2).assertTrue();
+        expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('height')).assertEqual(testData.testValue.expectValue?.heightCompare);
+        expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(testData.testValue.expectValue!.height ?? 0)) <= 2).assertTrue();
       } else {
+        console.log('testData.testValue.expectValue?.widthCompare',testData.testValue.expectValue?.widthCompare)
+        console.log('testData.testValue.expectValue?.widthCompare222',testData.viewObj!.getElement('$attrs').getElement('size').getString('width'))
         
-        expect(data.viewObj?.size?.width).assertEqual(data.testValue.expectValue?.widthCompare);
-        expect(data.viewObj?.size?.height).assertEqual(data.testValue.expectValue?.heightCompare);
-
+        expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('width')).assertEqual(testData.testValue.expectValue?.widthCompare);
+        expect(testData.viewObj!.getElement('$attrs').getElement('size').getString('height')).assertEqual(testData.testValue.expectValue?.heightCompare);
+        console.log('testData.testValue.expectValue!.width',testData.testValue.expectValue!.width)
         
-        expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(data.testValue.expectValue?.width as number)) <= 2).assertTrue()
-        expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(data.testValue.expectValue?.height as number)) <= 2).assertTrue()
+        expect(Math.abs(Math.round(strJsonRectWidth) - Math.round(testData.testValue.expectValue!.width ?? 0)) <= 2).assertTrue()
+        expect(Math.abs(Math.round(strJsonRectHeight) - Math.round(testData.testValue.expectValue!.height ?? 0)) <= 2).assertTrue()
       }
     })
   })

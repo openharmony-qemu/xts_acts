@@ -24,7 +24,7 @@ import {
   Stepper,
   StepperItem,
   ListItem,
-  StickyStyle,
+  StickyStyle,ForEach,
   Position,
   TextAlign,
   Color,
@@ -77,36 +77,36 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      ListItemGroup({
+        header: ()=>{this.itemHead('Monday')},
+        footer: ()=>{this.itemFoot(this.projects.length)}
+      } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .width(this.subassemblyWidth)
+      .height(this.subassemblyHeight)
+      .borderRadius(20)
+      .offset(this._offset)
+      .key(this.componentKey)
+      .divider({ strokeWidth: 1, color: Color.Blue }) 
+
+      ListItemGroup({
+        header: ()=>{this.itemHead('Tuesday')},
+        footer: ()=>{this.itemFoot(this.projects.length)}
+      } as ListItemGroupOptions) {
+        ForEach(this.projects, (project: string) => {
+          ListItem() {
+            this.content(project)
+          }
+        }, (item: string) => item)
+      }
+      .borderRadius(20)
+      .key(this.referenceComponentKey)
+      .divider({ strokeWidth: 1, color: Color.Blue }) 
     }
     .width(this.parentWidth)
     .height(this.parentHeight)
