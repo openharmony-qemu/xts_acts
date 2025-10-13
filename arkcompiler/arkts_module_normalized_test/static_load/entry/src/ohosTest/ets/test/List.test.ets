@@ -15,9 +15,9 @@
 
 import staticExport from './export.test';
 import staticLoadHap from './hap.test';
-import staticLoadSourceHar from './sourceHar.test';
+import staticLoadSourceHar from './SourceHar.test';
 import staticLoadHsp from './hsp.test';
-import staticLoadRemoteHar from './remoteHar.test';
+import staticLoadRemoteHar from './RemoteHar.test';
 
 export default function testsuite() {
   staticLoadHap();

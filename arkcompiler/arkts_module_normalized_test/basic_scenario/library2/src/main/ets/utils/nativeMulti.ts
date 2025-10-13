@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { add } from 'liblibrary2.so'
+import { add } from 'liblibrary2.so';
 
 export function nativeAdd(a: number, b: number) {
   return add(a, b);

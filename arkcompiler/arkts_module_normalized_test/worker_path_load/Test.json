@@ -13,7 +13,7 @@
             "test-file-name": [
                 "ModuleNormalizedWorkerPathLoadLibTest-hsp-default-signed.hsp",
                 "ModuleNormalizedWorkerPathLoadLibTest-entry-default-signed.hap",
-                "ModuleNormalizedWorkerPathLoadTest.hap"
+                "module_normalized_worker_path_load_test.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-export function getModuleDescription() {
+export function getModuleDescription(): string {
   return "This is library3";
 }

@@ -33,7 +33,7 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0001
+     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0001
      * @tc.name: test hsp so load
      * @tc.desc: Test the loading of SO files in the HSP package
      * @tc.size: MediumTest
@@ -141,7 +141,7 @@ export default function HspNapiLoadTest() {
       })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0007
+     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0007
      * @tc.name: test hsp so load
      * @tc.desc: Test the loading of SO files in the HSP package
      * @tc.size: MediumTest

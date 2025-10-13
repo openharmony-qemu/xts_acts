@@ -15,7 +15,7 @@
                 "ModuleNormalizedBasicScenarioMainTest-library-default-signed.hsp",
                 "ModuleNormalizedBasicScenarioMainTest-library3-default-signed.hsp",
                 "ModuleNormalizedBasicScenarioMainTest-entry-default-signed.hap",
-                "ModuleNormalizedBasicScenarioTest.hap"
+                "module_normalized_basic_scenario_test.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

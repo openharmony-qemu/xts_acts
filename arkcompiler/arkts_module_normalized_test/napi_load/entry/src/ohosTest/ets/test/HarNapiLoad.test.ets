@@ -51,7 +51,7 @@ export default function HarNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0002
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0002
      * @tc.name: test har loading from har
      * @tc.desc: Test loading the HAR package into the HAR package
      * @tc.size: MediumTest
@@ -69,7 +69,7 @@ export default function HarNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0003
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0003
      * @tc.name: test har file loading from har
      * @tc.desc: Test loading files from the Har package into the HAR package
      * @tc.size: MediumTest
@@ -87,7 +87,7 @@ export default function HarNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0004
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0004
      * @tc.name: test hsp loading from har
      * @tc.desc: Test loading the HSP package in the HAR package
      * @tc.size: MediumTest
@@ -105,7 +105,7 @@ export default function HarNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0005
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0005
      * @tc.name: test hsp file loading from har
      * @tc.desc: Test loading files from the HSP package in the HAR package
      * @tc.size: MediumTest
@@ -123,7 +123,7 @@ export default function HarNapiLoadTest() {
     })
 
       /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0006
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0006
      * @tc.name: test loading system modules
      * @tc.desc: Test loading system modules in HAR package
      * @tc.size: MediumTest
@@ -159,7 +159,7 @@ export default function HarNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0008
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0008
      * @tc.name: test har loading from har
      * @tc.desc: Test loading the HAR package into the HAR package
      * @tc.size: MediumTest
@@ -177,7 +177,7 @@ export default function HarNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0009
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0009
      * @tc.name: test har file loading from har
      * @tc.desc: Test loading files from the Har package into the HAR package
      * @tc.size: MediumTest
@@ -195,7 +195,7 @@ export default function HarNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0010
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0010
      * @tc.name: test hsp loading from har
      * @tc.desc: Test loading the HSP package in the HAR package
      * @tc.size: MediumTest
@@ -213,7 +213,7 @@ export default function HarNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0011
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0011
      * @tc.name: test hsp file loading from har
      * @tc.desc: Test loading files from the HSP package in the HAR package
      * @tc.size: MediumTest
@@ -231,7 +231,7 @@ export default function HarNapiLoadTest() {
     })
 
      /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0012
+     * @tc.number: ARK_ETSRuntime_HAR_NAPI_LOAD_0012
      * @tc.name: test loading system modules
      * @tc.desc: Test loading system modules in HAR package
      * @tc.size: MediumTest

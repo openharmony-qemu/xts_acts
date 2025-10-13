@@ -21,8 +21,8 @@ ohos_app_assist_suite("dynamic_load_main") {
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
 }
 
-ohos_js_app_suite("ModuleNormalizedDynamicLoadTest") {
-  hap_name = "ModuleNormalizedDynamicLoadTest"
+ohos_js_app_suite("module_normalized_dynamic_load_test") {
+  hap_name = "module_normalized_dynamic_load_test"
   testonly = true
   test_hap = true
   part_name = "runtime_core"

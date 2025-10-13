@@ -21,8 +21,8 @@ ohos_app_assist_suite("ModuleNormalizedLazyLoadLibTest") {
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
 }
 
-ohos_js_app_suite("ModuleNormalizedLazyLoadTest") {
-  hap_name = "ModuleNormalizedLazyLoadTest"
+ohos_js_app_suite("module_normalized_lazy_load_test") {
+  hap_name = "module_normalized_lazy_load_test"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"

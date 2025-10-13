@@ -17,14 +17,14 @@ group("ActsArktsModuleNormalizedTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "basic_scenario:ModuleNormalizedBasicScenarioTest",
-      "dynamic_load:ModuleNormalizedDynamicLoadTest",
-      "execute_promise_after_module_load:ModuleNormalizedExecutePromiseTest",
-      "exporttest:ModuleNormalizedExportTest",
-      "lazy_load:ModuleNormalizedLazyLoadTest",
-      "napi_load:ModuleNormalizedNapiLoadTest",
-      "static_load:ModuleNormalizedStaticLoadTest",
-      "worker_path_load:ModuleNormalizedWorkerPathLoadTest",
+      "basic_scenario:module_normalized_basic_scenario_test",
+      "dynamic_load:module_normalized_dynamic_load_test",
+      "execute_promise_after_module_load:module_normalized_execute_promise_test",
+      "exporttest:module_normalized_export_test",
+      "lazy_load:module_normalized_lazy_load_test",
+      "napi_load:module_normalized_napi_load_test",
+      "static_load:module_normalized_static_load_test",
+      "worker_path_load:module_normalized_worker_path_load_test",
     ]
   }
 }
