@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,12 +24,13 @@ import {
   ForEach,
   Position,
   Margin,
-
   TextAlign,
   Color,
   NavDestination,
   $r,
-  Padding
+  Flex,
+  Padding,
+  FlexDirection
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
@@ -42,28 +43,28 @@ export struct NavRouterView {
 
   build() {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      Row() {
+        Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+        Text(`NavRouter`)
+          .fontSize(22)
+          .fontWeight(500)
+          .textAlign(TextAlign.Center)
+      }
+      .width(180)
+      .height(72)
+      .backgroundColor('#fff')
+      .borderRadius(24)
+
+      NavDestination() {
+        Text(`Page 1 Content`).fontSize(50)
+        Flex({ direction: FlexDirection.Row }) {
+          Row() {
+            Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+            Text('Seven classes in total').fontSize(30)
+          }.padding({ left: 15 } as Padding)
+        }
+      }.backgroundColor('#ccc')
+      .title(`NavDestination`)
     
     
     

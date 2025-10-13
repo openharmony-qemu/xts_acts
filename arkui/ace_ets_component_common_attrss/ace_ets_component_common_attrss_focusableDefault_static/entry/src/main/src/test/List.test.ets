@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import focusableDefaultTest from './focusableDefault/FocusableDefaultTest.test';
-
 export default function testsuite() {
   focusableDefaultTest();
 }

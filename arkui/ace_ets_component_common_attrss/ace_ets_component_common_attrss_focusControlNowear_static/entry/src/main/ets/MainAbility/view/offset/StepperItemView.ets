@@ -28,27 +28,30 @@ import {
   Position,
   TextAlign,
   Color,
-  ItemState
+  ItemState,
+  Margin,
+  ColumnAttribute,
+  TextAttribute
+
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function itemStyle(this: ColumnAttribute): ColumnAttribute {
+  this.width(336)
+  this.height(621)
+  this.margin({ top: 48, left: 12 } as Margin)
+  this.borderRadius(24)
+  this.backgroundColor('#FFFFFF')
+  return this;
+}
+function itemTextStyle(this: TextAttribute): TextAttribute {
+  this.fontColor('#182431')
+  this.fontSize(36)
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 @Component
 export struct StepperItemView {
@@ -71,13 +74,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-          
+          .itemTextStyle()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        } 
+        } .itemStyle()
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -88,13 +91,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-          
+          .itemTextStyle()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        } 
+        } .itemStyle()
       }
       .nextLabel('Next')
       .prevLabel('Previous')
