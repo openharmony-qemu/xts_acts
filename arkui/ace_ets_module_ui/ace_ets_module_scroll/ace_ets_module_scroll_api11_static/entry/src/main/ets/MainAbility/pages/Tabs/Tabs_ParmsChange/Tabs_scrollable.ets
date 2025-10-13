@@ -32,8 +32,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct Tabs_scrollable {
   @State fontColor: string = '#182431';
   @State selectedFontColor: string = '#007DFF';
-  @State currentIndex: number = 0;
-  @State currentIndexTwo: number = 0;
+  @State currentIndex: int = 0;
+  @State currentIndexTwo: int = 0;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number> = new MessageManager<number>();
 
@@ -43,17 +43,17 @@ struct Tabs_scrollable {
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'currentIndex') {
-        this.currentIndex = message.value;
+        this.currentIndex = message.value.toInt();
       }
       if (message.name == 'currentIndexTwo') {
-        this.currentIndexTwo = message.value;
+        this.currentIndexTwo = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
   }
 
   @Builder
-  TabBuilder(index: number, name: string) {
+  TabBuilder(index: int, name: string) {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
@@ -95,7 +95,7 @@ struct Tabs_scrollable {
       .barHeight(56)
       .animationDuration(400)
       .scrollable(true)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('90%')
@@ -121,7 +121,7 @@ struct Tabs_scrollable {
       .barHeight(56)
       .animationDuration(400)
       .scrollable(false)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndexTwo = index
       })
       .width('90%')

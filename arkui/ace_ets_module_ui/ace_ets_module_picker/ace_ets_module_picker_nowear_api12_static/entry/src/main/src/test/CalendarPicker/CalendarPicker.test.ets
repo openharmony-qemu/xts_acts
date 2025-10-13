@@ -27,7 +27,6 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import Utils from '../Utils/Utils';
 
 export default function calendarPickerJsunit() {
   describe('ActsAceCalendarPickerTest', () => {

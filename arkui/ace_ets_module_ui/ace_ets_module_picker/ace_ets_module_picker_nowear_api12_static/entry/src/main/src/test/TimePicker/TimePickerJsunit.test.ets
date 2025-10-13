@@ -28,7 +28,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../Utils/Utils';
 
 export default function timepickerJsunit() {
   describe('ActsAceTimePickerTest', () => {

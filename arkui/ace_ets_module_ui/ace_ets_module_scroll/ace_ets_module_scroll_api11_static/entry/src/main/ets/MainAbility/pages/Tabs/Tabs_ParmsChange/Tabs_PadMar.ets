@@ -35,7 +35,7 @@ struct Tabs_PadMar {
   @State selectedFontColor: string = '#007DFF';
   @State testPadding: number = 0;
   @State testMargin: number = 0;
-  @State currentIndex: number = 0;
+  @State currentIndex: int = 0;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number> = new MessageManager<number>();
 
@@ -51,7 +51,7 @@ struct Tabs_PadMar {
         this.testMargin = message.value;
       }
       if (message.name == 'index') {
-        this.currentIndex = message.value;
+        this.currentIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -86,7 +86,7 @@ struct Tabs_PadMar {
       .key("Tabs_PadMar_01")
       .vertical(false)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('90%')

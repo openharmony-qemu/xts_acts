@@ -126,7 +126,7 @@ struct EnabledPage {
         Row() {
           //Set view by page config.
           if (this.targetView == 'AlphabetIndexer') {
-            AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D'], selected: 0 })
+            AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D'], selected: 0 as int })
           } else if (this.targetView == 'Blank') {
             Blank().backgroundColor(Color.Orange)
           } else if (this.targetView == 'Button') {

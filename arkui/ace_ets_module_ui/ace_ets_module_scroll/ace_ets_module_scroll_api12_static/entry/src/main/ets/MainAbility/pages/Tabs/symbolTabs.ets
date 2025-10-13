@@ -85,7 +85,7 @@ struct symbolModifierIndex {
         .height('60%')
         .width('90%')
         .barMode(BarMode.Fixed)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
         .backgroundColor(0xF1F3F5)

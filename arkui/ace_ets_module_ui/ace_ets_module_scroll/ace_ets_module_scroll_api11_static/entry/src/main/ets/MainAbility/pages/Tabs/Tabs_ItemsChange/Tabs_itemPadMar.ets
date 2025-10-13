@@ -34,7 +34,7 @@ struct Tabs_itemPadMar {
   @State selectedFontColor: string = '#007DFF';
   @State dadPadding: number = 0;
   @State dadMargin: number = 0;
-  @State currentIndex: number = 0;
+  @State currentIndex: int = 0;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number> = new MessageManager<number>();
 
@@ -50,7 +50,7 @@ struct Tabs_itemPadMar {
         this.dadMargin = message.value;
       }
       if (message.name == 'currentIndex') {
-        this.currentIndex = message.value;
+        this.currentIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -90,7 +90,7 @@ struct Tabs_itemPadMar {
       .barWidth(330)
       .barHeight(56)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width(330)
