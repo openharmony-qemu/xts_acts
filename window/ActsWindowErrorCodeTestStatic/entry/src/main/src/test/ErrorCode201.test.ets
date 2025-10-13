@@ -194,12 +194,15 @@ export default function ErrorCode201() {
             try {
                 let windowClass:window.Window = windowStage.getMainWindowSync();
                 windowClass.setWindowTopmost(false).then(() => {
-                    hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
+                    hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
                     expect(true).assertTrue();
                     done();
                 }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
-                    hilog.error(domain, tag,domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
-                    if (err.code === 801) {
+                    hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
+                    if (err!.code === 801) {
+                        done();
+                    } else if(err!.code === 201){
+                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -208,10 +211,10 @@ export default function ErrorCode201() {
                 });
             } catch (exception: BusinessError) {
                 if (exception.code === 801) {
-                    hilog.error(domain, tag,domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
+                    hilog.error(domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
                     done();
                 } else {
-                    hilog.error(domain, tag,domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${exception.code}, message: ${exception.message}`);
+                    hilog.error(domain, tag,`${caseName} Failed  to be top most. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
                     done();
                 }
