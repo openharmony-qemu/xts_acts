@@ -706,6 +706,44 @@ describe('HiAppEventApiTest', function () {
             }
         });
 
+    HiAppEvent.write(HiAppEvent.Event.APP_KILLED, HiAppEvent.EventType.BEHAVIOR,
+        HiAppEvent.Param = {
+            USER_ID: HiAppEvent.Param.USER_ID,
+            DISTRIBUTED_SERVICE_NAME: HiAppEvent.Param.DISTRIBUTED_SERVICE_NAME,
+            DISTRIBUTED_SERVICE_INSTANCE_ID: HiAppEvent.Param.DISTRIBUTED_SERVICE_INSTANCE_ID,
+        },
+        (err, value) => {
+            console.log('HiAppEvent into json-callback');
+            if (err) {
+                console.error(`HiAppEvent json-callback-error code=${err.code}`);
+                expect().assertFail();
+                done();
+            } else {
+                console.log(`HiAppEvent json-callback-success value=${value}`);
+                expect(value == 0).assertTrue();
+                done();
+            }
+        });
+
+    HiAppEvent.write(HiAppEvent.Event.APP_HICOLLIE, HiAppEvent.EventType.BEHAVIOR,
+        HiAppEvent.Param = {
+            USER_ID: HiAppEvent.Param.USER_ID,
+            DISTRIBUTED_SERVICE_NAME: HiAppEvent.Param.DISTRIBUTED_SERVICE_NAME,
+            DISTRIBUTED_SERVICE_INSTANCE_ID: HiAppEvent.Param.DISTRIBUTED_SERVICE_INSTANCE_ID,
+        },
+        (err, value) => {
+            console.log('HiAppEvent into json-callback');
+            if (err) {
+                console.error(`HiAppEvent json-callback-error code=${err.code}`);
+                expect().assertFail();
+                done();
+            } else {
+                console.log(`HiAppEvent json-callback-success value=${value}`);
+                expect(value == 0).assertTrue();
+                done();
+            }
+        });
+
     HiAppEvent.write(HiAppEvent.Event.DISTRIBUTED_SERVICE_START, HiAppEvent.EventType.BEHAVIOR,
         HiAppEvent.Param = {
             USER_ID: HiAppEvent.Param.USER_ID,
@@ -942,7 +980,7 @@ describe('HiAppEventApiTest', function () {
         console.info('testHiAppEventApi37 end')
         done()
     })
-    
+
     /**
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3800
      * @tc.name: testHiAppEventApi38
@@ -1371,9 +1409,9 @@ describe('HiAppEventApiTest', function () {
         let configret =false;
         configret = HiAppEvent.configure(null);
         expect(configret).assertFalse();
-        console.info('testHiAppEventApi23 end')
-        done()
-      })
+        console.info('testHiAppEventApi23 end');
+        done();
+    });
 
 })
 }

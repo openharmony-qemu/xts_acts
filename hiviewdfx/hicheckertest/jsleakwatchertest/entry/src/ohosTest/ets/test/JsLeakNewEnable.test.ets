@@ -58,9 +58,9 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.enableLeakWatcher(true, config, (filepath : Array<string>) => {
           console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 leakListFileName: ' + filepath[0]);
           console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 heapDumpFileName: ' + filepath[1]);
-          leakFilePath = filepath
-          expect(filepath.length>0).assertTrue();
+          leakFilePath = filepath;
         });
+        expect(leakFilePath.length == 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 wait start')
@@ -70,6 +70,7 @@ export default function JsLeakWatcherNewTest() {
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 checkstr' + checkstr)
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 leakListFileName1 check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 heapDumpFileName1 check: ' + leakFilePath[1]);
+        expect(leakFilePath.length > 0).assertTrue();
         expect(leakFilePath[0]).assertContain(".jsleaklist");
         expect(leakFilePath[1]).assertContain(".rawheap");
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 enable success')
@@ -98,7 +99,6 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.enableLeakWatcher(undefined, config, (filepath : Array<string>) => {
           console.log('testJsLeakWatcher leakListFileName: ' + filepath[0]);
           console.log('testJsLeakWatcher heapDumpFileName: ' + filepath[1]);
-          expect(filepath.length==0).assertTrue();
         });
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0800 isEnabled undefined')
         expect(false).assertTrue();
@@ -122,11 +122,14 @@ export default function JsLeakWatcherNewTest() {
     it('testJsLeakWatcher09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0900 start");
       try {
+        let leakFilePath:Array<string> = [];
         let config : Array<string> = [];
         jsLeakWatcher.enableLeakWatcher(false, config, (filepath : Array<string>) => {
           console.log('testJsLeakWatcher leakListFileName: ' + filepath[0]);
           console.log('testJsLeakWatcher heapDumpFileName: ' + filepath[1]);
+          leakFilePath = filepath;
         });
+        expect(leakFilePath.length == 0).assertTrue();
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0900 isEnabled false')
         done();
       } catch (err) {
