@@ -5367,6 +5367,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5508,6 +5509,7 @@ export default function ConnectionPublicTest() {
           let host: string = "192.168.1.1";
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
@@ -5628,6 +5630,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5663,6 +5666,7 @@ export default function ConnectionPublicTest() {
           let host: string = "127.0.0.1";
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
@@ -5699,6 +5703,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5736,6 +5741,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5773,6 +5779,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5810,6 +5817,7 @@ export default function ConnectionPublicTest() {
           netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
             if (error == undefined) {
               console.info(`${caseName}  data:${JSON.stringify(data)}`);
+              ExpectTrue(data.length > 0);
               ExpectTrue(data[0].address == host);
               console.info(`${caseName}---End`);
               done();
@@ -5846,6 +5854,7 @@ export default function ConnectionPublicTest() {
           netHandle.netId = 0;
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
@@ -5881,6 +5890,7 @@ export default function ConnectionPublicTest() {
           netHandle.netId = 23;
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
@@ -5916,6 +5926,7 @@ export default function ConnectionPublicTest() {
           netHandle.netId = 200;
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
@@ -5951,6 +5962,7 @@ export default function ConnectionPublicTest() {
           netHandle.netId = 999999;
           netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
             console.info(`${caseName} data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             ExpectTrue(data[0].address == host);
             console.info(`${caseName}---End`);
             done();
