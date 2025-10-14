@@ -18,6 +18,7 @@ group("ActsWebPageSavingTest") {
       "ace_web_page_saving_dev_three:ActsAceWebPageSavingDevThreeTest",
       "ace_web_page_saving_enhanced_one:ActsAceWebPageSavingEnhancedTest",
       "ace_web_page_saving_enhanced_three:ActsAceWebPageSavingEnhancedTestThreeTest",
+      "ace_web_page_saving_enhanced_three_static:ActsAceWebPageSavingEnhancedTestThreeStaticTest",
       "ace_web_page_saving_webviewController:ActsAceWebPageSavingWebViewControllerTest",
     ]
   }
