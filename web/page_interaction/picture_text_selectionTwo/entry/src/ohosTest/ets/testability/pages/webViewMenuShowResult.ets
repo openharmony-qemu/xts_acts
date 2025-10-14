@@ -73,6 +73,7 @@ struct WebViewMenuShowResult {
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              await Utils.sleep(2000);
               await driver.mouseClick({ x: X, y: Y - 80 }, MouseButton.MOUSE_BUTTON_RIGHT);
               setTimeout(async () => {
                 await driver.mouseClick({ x: X, y: Y - 80 }, MouseButton.MOUSE_BUTTON_RIGHT);
