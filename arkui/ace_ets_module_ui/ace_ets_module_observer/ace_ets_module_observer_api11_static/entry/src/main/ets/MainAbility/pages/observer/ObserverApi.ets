@@ -68,14 +68,14 @@ struct ObserverApiTest {
       Button('ObserverOn')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.on('routerPageUpdate', this.context, this.testFunc)
+          uiObserver.onRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOn')
 
       Button('ObserverOff')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.off('routerPageUpdate', this.context, this.testFunc)
+          uiObserver.offRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOff')
 

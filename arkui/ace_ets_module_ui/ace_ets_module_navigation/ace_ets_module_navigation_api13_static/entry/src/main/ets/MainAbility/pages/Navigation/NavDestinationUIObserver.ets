@@ -79,16 +79,16 @@ struct NavDestinationUIObserver {
   }
 
   contextObserverOn(){
-    this.obs?.on('navDestinationSwitch', this.navDestinationSwitchCallbackWithUIContext1);
-    this.obs?.on('navDestinationUpdate', this.navDesUpdateCallback1);
+    this.obs?.onNavDestinationSwitch(this.navDestinationSwitchCallbackWithUIContext1);
+    this.obs?.onNavDestinationUpdate(this.navDesUpdateCallback1);
   }
 
   contextObserverOff(){
     AppStorage.setOrCreate('showText', 'off');
     AppStorage.setOrCreate('showUpdateText', 'off');
     console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get('showUpdateText')! as string}`);
-    this.obs?.off('navDestinationSwitch', this.navDestinationSwitchCallbackWithUIContext1);
-    this.obs?.off('navDestinationUpdate', this.navDesUpdateCallback1);
+    this.obs?.offNavDestinationSwitch(this.navDestinationSwitchCallbackWithUIContext1);
+    this.obs?.offNavDestinationUpdate(this.navDesUpdateCallback1);
   }
 
   build() {
