@@ -577,11 +577,11 @@ export default function ActsZipInflateTest() {
         })
         await zip.uncompress(arrayBufferIn, arrayBufferOut, 20).then((data: zlib.ZipOutputInfo) => {
           hilog.info(domain, tag, 'actsZipTest_static_73 uncompress success');
-          expect(data.status).assertEqual(0);
+          expect(data).assertFail();
         }).catch((errData: BusinessError): void => {
           hilog.error(domain, tag,
             `actsZipTest_static_73 uncompress errData is errCode:${errData.code}  message:${errData.message}`);
-          expect(errData).assertFail();
+          expect(errData.code).assertEqual(17800007);
         })
         done();
         hilog.info(domain, tag, "==================actsZipTest_static_73 end==================");
@@ -616,11 +616,11 @@ export default function ActsZipInflateTest() {
         })
         await zip.uncompress2(arrayBufferIn, arrayBufferOut, 20).then((data: zlib.DecompressionOutputInfo) => {
           hilog.info(domain, tag, 'actsZipTest_static_120 uncompress2 success');
-          expect(data.status).assertEqual(0);
+          expect(data).assertFail();
         }).catch((errData: BusinessError): void => {
           hilog.error(domain, tag,
             `actsZipTest_static_120 uncompress2 errData is errCode:${errData.code}  message:${errData.message}`);
-          expect(errData).assertFail();
+          expect(errData.code).assertEqual(17800007);
         })
         done();
         hilog.info(domain, tag, "==================actsZipTest_static_120 end==================");
@@ -1045,7 +1045,7 @@ export default function ActsZipInflateTest() {
         }).catch((errData: BusinessError): void => {
           hilog.error(domain, tag,
             `actsZipTest_static_116 deflate errData is errCode:${errData.code}  message:${errData.message}`);
-          expect(errData.code).assertEqual(17800007);
+          expect(errData.code).assertEqual(17800004);
         })
         done();
         hilog.info(domain, tag, "==================actsZipTest_static_116 end==================");

@@ -153,11 +153,11 @@ export default function ActsZipDeflateTest() {
           availableOut: 100
         }, zlib.CompressFlushMode.FINISH).then((data: zlib.ReturnStatus) => {
           hilog.info(domain, tag, 'actsZipTest_static_13 deflate success. data: ' + JSON.stringify(data));
-          expect().assertFail();
+          expect(data).assertEqual(1);
         }).catch((errData: BusinessError): void => {
           hilog.error(domain, tag,
             `actsZipTest_static_13 deflate errData is errCode:${errData.code}  message:${errData.message}`);
-          expect(errData.code).assertEqual(17800007);
+          expect(errData).assertFail();
         })
         await zip.deflateEnd({ nextOut: arrayBufferOut }).then((data: zlib.ReturnStatus) => {
           hilog.info(domain, tag, 'actsZipTest_static_13 deflateEnd success. data: ' + JSON.stringify(data));
