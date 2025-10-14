@@ -54,19 +54,19 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ADD_FORM_MENU_ITEM_0100
-     * @tc.name: testAddFormMenuItem0100
+     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
+     * @tc.name: SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
      * @tc.desc: add form component to desktop, judge the FormId is not null. Zh-CN OS only;
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level Level 3
      */
-    it('testAddFormMenuItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.log("testAddFormMenuItem0100 start");
+    it('SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.log("SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100 start");
       emitter.on({
         eventId: ERR_DEVICE_NOT_SUPPORTED 
       }, () => {
-        console.log(`testAddFormMenuItem0100 emitter callback`);
+        console.log(`SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100 emitter callback`);
         done();
       });
       const descButton = await driver.findComponent(ON.text(await resourceManager.getStringValue($r('app.string.TestFormAbility_desc'))));

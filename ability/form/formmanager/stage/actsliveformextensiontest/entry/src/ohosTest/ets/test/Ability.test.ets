@@ -66,17 +66,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_ABILITY_FORM_LIVEFORMEXTENSION_TEST_0100
-     * @tc.name   : test_LiveFormExtension_0100
+     * @tc.number : SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
+     * @tc.name   : SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
      * @tc.desc   : Start the LiveFormExtensionAbility, and the test is successful.
      * @tc.size   : MediumTest
      * @tc.level  : Level 0
      * @tc.type   : Function
      */
-    it('test_LiveFormExtension_0100', Level.LEVEL0, async () => {
+    it('SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100', Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters:
       // test case name, filter parameter, and test case function.
-      const newTag = 'ACTS_LiveFormExtension_0100 == ';
+      const newTag = 'SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100 == ';
 
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['ACTS_LiveFormExtension_OnRemoteReady'],
