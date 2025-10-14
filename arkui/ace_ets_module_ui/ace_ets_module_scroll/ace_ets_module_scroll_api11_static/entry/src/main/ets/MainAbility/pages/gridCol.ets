@@ -108,7 +108,7 @@ struct GridColXl {
             .height(70)
             .align(Alignment.Center)
         }
-        .order(10.0)
+        .order(10)
         .backgroundColor(Color.Blue)
       }.backgroundColor(Color.Red)
       .key("orderText")

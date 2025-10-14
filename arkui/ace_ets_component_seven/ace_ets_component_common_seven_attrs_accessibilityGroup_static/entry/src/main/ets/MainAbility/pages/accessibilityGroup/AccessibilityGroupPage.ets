@@ -901,10 +901,10 @@ struct accessibilityGroupTestDropPage {
   @State _accessibilityGroupXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string = ''
-  @State parentWidth: number = 0
-  @State parentHeight: number =  0
-  @State columns: number =  0
-  @State gutter: number =  0
+  @State parentWidth: double = 0
+  @State parentHeight: double =  0
+  @State columns: int =  0
+  @State gutter: int =  0
   @State parentComponentKey: string = ''
   @State isShow: boolean = false
   pathStack:NavPathStack = new NavPathStack()
@@ -923,8 +923,8 @@ struct accessibilityGroupTestDropPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = viewElement.getDouble("columns")
-    this.gutter = viewElement.getDouble("gutter")
+    this.columns = (viewElement.getDouble("columns")).toInt()
+    this.gutter = (viewElement.getDouble("gutter")).toInt()
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     console.log('aboutToAppear routerParamOptions success' + this.targetView)
     attrsManager.registerDataChange((value: SetValue) => {

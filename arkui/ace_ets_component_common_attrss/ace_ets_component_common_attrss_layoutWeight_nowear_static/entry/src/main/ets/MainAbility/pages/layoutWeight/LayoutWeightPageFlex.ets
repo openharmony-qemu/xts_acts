@@ -100,22 +100,23 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct LayoutWeightPageFlex {
-  @StoragePropRef('_layoutWeight') _layoutWeight: number = 0;
+  @StoragePropRef('_layoutWeight') _layoutWeight: double = 0;
   @State targetView: string = ''
   @State targetGroupView: string =''
   @State componentKey: string = ''
-  @State childWidth: number = 0
-  @State childHeight: number = 0
-  @State parentWidth: number = 0
-  @State parentHeight: number = 0
+  @State childWidth: double = 0
+  @State childHeight: double = 0
+  @State parentWidth: double = 0
+  @State parentHeight: double = 0
 
 
   onPageShow() {
     console.info('LayoutWeight page show called ')
-    AppStorage.setOrCreate<number | string>('_layoutWeight',0)
+    AppStorage.setOrCreate<double | string>('_layoutWeight',0)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
-      AppStorage.setOrCreate<number | string>('_layoutWeight',routerParamOptions.view.testValue.setValue.layoutWeight)
+      let routerParamOptionsLayoutWeight = routerParamOptions.view.testValue.setValue.layoutWeight;
+      AppStorage.setOrCreate<double | string>('_layoutWeight', routerParamOptionsLayoutWeight)
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
       this.componentKey = routerParamOptions.view.componentKey

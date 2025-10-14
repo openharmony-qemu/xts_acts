@@ -20,7 +20,7 @@ import {State,AppStorage} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Grid_Col_Span_Number {
-  @State addSpan: number = 0;
+  @State addSpan: int = 0;
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
   messageManager: MessageManager<number> = new MessageManager<number>();
@@ -34,7 +34,7 @@ struct Grid_Col_Span_Number {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpan') {
-        this.addSpan = message.value;
+        this.addSpan = message.value as int;
       }
     };
     this.messageManager.registerCallback(callback);

@@ -71,13 +71,13 @@ export class BasePageConfig {
 export class PageConfig {
   BackGroundColor: Color = Color.Red
   parentBackGroundColor: string = ''
-  childWidth: number
-  childHeight: number
-  parentHeight: number
+  childWidth: double
+  childHeight: double
+  parentHeight: double
   testName: string = '';
   pageName: string = '';
   pageUrl: string = '';
-  parentWidth: number = 0;
+  parentWidth: double = 0.0;
   subassemblyWidth: number = 0;
   subassemblyHeight: number = 0;
   subassemblyCenter: AlignRuleOption = {};
@@ -90,20 +90,20 @@ export class PageConfig {
   containerView?: string;
   targetGroupView: string = '';
   compareTextKey: string = '';
-  compareTextWidth: number;
-  compareTextHeight: number;
-  scrollWidth: number;
-  scrollHeight: number;
-  columnWidth: number;
-  columnHeight: number;
-  buttonWidth: number;
-  buttonHeight: number;
-  componentWidth: number;
-  componentHeight: number;
-  columns: number;
-  gutter: number;
-  targetComponentHeight: number;
-  targetComponentWidth: number;
+  compareTextWidth: double;
+  compareTextHeight: double;
+  scrollWidth: double;
+  scrollHeight: double;
+  columnWidth: double;
+  columnHeight: double;
+  buttonWidth: double;
+  buttonHeight: double;
+  componentWidth: double;
+  componentHeight: double;
+  columns: int;
+  gutter: int;
+  targetComponentHeight: double;
+  targetComponentWidth: double;
 }
 
 export default class Utils {

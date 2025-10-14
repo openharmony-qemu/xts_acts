@@ -26,7 +26,7 @@ struct GridRowPage {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
   @State gutter: GutterOption = { x: 5, y: 10 } as GutterOption
-  @State columns: number = 4
+  @State columns: int = 4
   @State breakpoints: BreakPoints = { value: ["400vp", "600vp", "800vp"], reference: BreakpointsReference.WindowSize } as BreakPoints
   @State grDirection: GridRowDirection = GridRowDirection.Row
   messageManager: MessageManager<object> = new MessageManager<object>()
@@ -40,7 +40,7 @@ struct GridRowPage {
         this.currentBp = message.value as string
       }
       if (message.name == 'columns') {
-        this.columns = message.value as number
+        this.columns = (message.value as number).toInt()
       }
       if (message.name == 'gutter') {
         this.gutter = message.value as GutterOption

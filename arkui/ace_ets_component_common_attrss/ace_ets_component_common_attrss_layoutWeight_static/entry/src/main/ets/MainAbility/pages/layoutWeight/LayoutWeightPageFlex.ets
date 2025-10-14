@@ -101,19 +101,19 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct LayoutWeightPageFlex {
-  @State _layoutWeight: number = 0;
+  @State _layoutWeight: double = 0;
   @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
   @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView;
   @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey??'';
-  @State childWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.childWidth;
-  @State childHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.childHeight;
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+  @State childWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.childWidth;
+  @State childHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.childHeight;
+  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
 
   onPageShow() {
     console.info('LayoutWeight page show called ')
     attrsManager.registerDataChange((value: SetValue) => {
-      this._layoutWeight = value.layoutWeight as number
+      this._layoutWeight = value.layoutWeight as double
     })
   }
 
