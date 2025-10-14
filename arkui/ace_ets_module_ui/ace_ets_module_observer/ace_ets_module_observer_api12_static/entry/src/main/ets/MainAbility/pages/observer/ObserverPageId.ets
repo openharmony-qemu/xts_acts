@@ -29,11 +29,11 @@ struct ObserverPageId {
   }
 
   aboutToAppear(): void {
-    observer.on('routerPageUpdate', this.getUIContext(), this.testFunc)
+    observer.onRouterPageUpdate(this.getUIContext(), this.testFunc)
   }
 
   aboutToDisappear(): void {
-    observer.off('routerPageUpdate', this.getUIContext(), this.testFunc)
+    observer.offRouterPageUpdate(this.getUIContext(), this.testFunc)
   }
 
 

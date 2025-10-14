@@ -68,7 +68,7 @@ struct NavDestinationStateActive {
   
 
   aboutToDisappear() {
-    uiObserver.off('navDestinationUpdate');
+    uiObserver.offNavDestinationUpdate();
   }
 
   build() {
