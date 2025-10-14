@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe , it, expect, Level, TestType, Size } from '../../../hypium/index'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
 import notificationManager from '@ohos.notificationManager'
 import image from '@ohos.multimedia.image';
 import {BusinessError, RecordData} from '@ohos.base';
@@ -20,15 +21,59 @@ import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import UIAbility from '@ohos.app.ability.UIAbility';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import Utils from './Util.test';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundleName: string = 'com.example.systemliveView.static'
 let count: int = 0;
-
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 const TAG = 'NotificationActs'
 const TEST_SUITE_NAME = 'testNotificationLiveNotification'
+let bundle :string = 'com.example.systemliveView.static'
+let testAbilityContext: common.UIAbilityContext
 
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
+    beforeAll((done: () => void) => {
+      hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      await Utils.msSleep(2000)
+      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
+
+      notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        console.info(`beforeAll come in requestEnableNotification`);
+        if (err) {
+          console.info(`beforeAll requestEnableNotification err: ${err.code}`)
+          expect(false).assertTrue()
+          done()
+        }else {
+          console.info(`beforeAll requestEnableNotification success`)
+          expect(true).assertTrue()
+          await Utils.msSleep(1000)
+          done()
+        }
+      })
+      await Utils.msSleep(1000)
+      let driver = Driver.create()
+      await Utils.msSleep(1000)
+      console.info(`beforeAll driver is ${JSON.stringify(driver)}`)
+      let button = await driver.findComponent(ON.text('允许'));
+      console.info(`beforeAll button is ${JSON.stringify(button)}`)
+      if (button !== null) {
+        await button.click()
+        console.info(`beforeAll button is click`)
+        await Utils.msSleep(1000)
+      } else {
+        console.info(`beforeAll null button`)
+      }
+    })
 
 
     /**
@@ -41,7 +86,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      */
     it('Sub_Notification_Ans_Live_Publish_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
+        const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_2300'
         const color: ArrayBuffer = new ArrayBuffer(96); //96为需要创建的像素buffer大小，取值为：height * width *4
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
@@ -55,7 +100,6 @@ export default function ActsNotificationSystemLiveViewTest() {
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 1,
-          notificationSlotType: notificationManager.SlotType.LIVE_VIEW,
           content: {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
             systemLiveView: {
@@ -101,13 +145,14 @@ export default function ActsNotificationSystemLiveViewTest() {
             if (err) {
               hilog.info(0x000, `${TAG}`,
                 `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(err));
-              expect(err.code).assertEqual(401);
+              expect(false).assertTrue();
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
               done();
             } else {
               hilog.info(0x000, `${TAG}`,
                 `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-              expect(false).assertTrue();
+              count++;
+              expect(count).assertEqual(1);
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
               done();
             }
@@ -134,7 +179,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
         count = 0;
         let notificationRequest: notificationManager.NotificationRequest = {
-          id: 1,
+          id: 2700,
           content: {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
             systemLiveView: {
@@ -1026,7 +1071,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       */
     it('Sub_Notification_Ans_Live_Publish_Static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
+        const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7600'
         const color: ArrayBuffer = new ArrayBuffer(96); //96为需要创建的像素buffer大小，取值为：height * width *4
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
@@ -1171,7 +1216,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       */
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
+        const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7700'
         const color: ArrayBuffer = new ArrayBuffer(96); //96为需要创建的像素buffer大小，取值为：height * width *4
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
