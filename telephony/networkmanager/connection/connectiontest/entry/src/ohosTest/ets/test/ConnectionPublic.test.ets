@@ -2596,12 +2596,12 @@ export default function ConnectionPublicTest() {
       try {
         connection.getAllNets((error: BusinessError, data: connection.NetHandle[]) => {
           if (error == undefined) {
-            console.info(`${caseName} getAllNets: err->${JSON.stringify(error)}`);
-            ExpectTrue(true);
+            console.info(`${caseName} getAllNets: success data->${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
             console.info(`${caseName}---End`);
             done();
           } else {
-            console.info(`${caseName} getAllNets: success data->${JSON.stringify(data)}`);
+            console.info(`${caseName} getAllNets: err->${JSON.stringify(error)}`);
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
@@ -2629,7 +2629,7 @@ export default function ConnectionPublicTest() {
       try {
         connection.getAllNets().then((data: connection.NetHandle[]) => {
           console.info(`${caseName} getAllNets: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data.length >= 0);
+          ExpectTrue(data.length > 0);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -2660,7 +2660,7 @@ export default function ConnectionPublicTest() {
       try {
         let netHandle: connection.NetHandle[] = connection.getAllNetsSync();
         console.info(`${caseName} GetAllNetsSync: success data->${JSON.stringify(netHandle)}`);
-        ExpectTrue(netHandle.length >= 0);
+        ExpectTrue(netHandle.length > 0);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
