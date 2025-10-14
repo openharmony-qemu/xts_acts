@@ -53,7 +53,7 @@ export default function webviewNApi() {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, "SetErrorButton");
+      await Utils.waitAndClickComponent(driver, "SetErrorButton");
     });
   });
 }
