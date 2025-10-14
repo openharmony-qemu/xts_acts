@@ -405,5 +405,25 @@ export default function graphicImagePixelMap2() {
         done();
       })
 
+    /**
+     * @tc.number   graphicImagePixelMap2_static_1300
+     * @tc.name     graphicImagePixelMap2_static_1300
+     * @tc.desc     image API ArkTS1.2
+     * @tc.size     SmallTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('graphicImagePixelMap2_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.setTransferDetached(true);
+          } catch (err) {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
   })
 }
