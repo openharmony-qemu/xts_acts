@@ -33,7 +33,7 @@ struct AnimationControllerPage {
     '操作步骤：' + '\n' + '1、点击c1 start,c1 stop,c1 pause,c1 resume(可不按照顺序点击),再点击c1 status' + '\n' +
       '2、点击c2 start,c2 stop,c2 pause,c2 resume(可不按照顺序点击),再点击c2 status' + '\n' +
       '3、点击c3 start,c3 stop,c3 pause,c3 resume(可不按照顺序点击),再点击c3 status' + '\n' +
-      '预期结果：点击对应status按钮，可获取对应动图的状态,所有操作完成后，点击确认按钮';
+      '预期结果：点击对应status按钮，可获取对应动图的状态（c3 status均返回undefined）,所有操作完成后，点击确认按钮';
   @State Vue: boolean = false;
   @State animatedDrawable1?: AnimatedDrawableDescriptor | Resource = undefined
   @State animatedDrawable2?: AnimatedDrawableDescriptor = undefined
@@ -204,7 +204,7 @@ struct AnimationControllerPage {
             .syncLoad(true)
             .id('Component2')
 
-          Image(this.animatedDrawable3)
+          Image(this.animatedDrawable2)
             .borderColor(Color.Red)
             .borderWidth(1)
             .width(this.componentSize)
@@ -291,32 +291,32 @@ struct AnimationControllerPage {
           Button('c3 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.start()
               }
             })
           Button('c3 stop')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.stop()
               }
             })
           Button('c3 pause')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.pause()
               }
             })
           Button('c3 resume')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.resume()
               }
             })
@@ -358,8 +358,8 @@ struct AnimationControllerPage {
           Button('c3 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 let status = drawable?.getAnimationController()?.getStatus()
                 try {
                   this.getUIContext()
