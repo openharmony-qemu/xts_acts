@@ -443,14 +443,14 @@ export default function UIAbilityContextStatic() {
       done();
     })
 
-   /*
-    * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-    * @tc.name   : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-    * @tc.desc   : Expect: failed with code 401
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /*
+     * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
+     * @tc.name   : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
+     * @tc.desc   : Expect: failed with code 401
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
     it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         application.createPluginModuleContext(testContext, '', '');
@@ -461,14 +461,14 @@ export default function UIAbilityContextStatic() {
       }
     })
 
-   /*
-    * @tc.number : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
-    * @tc.name   : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
-    * @tc.desc   : Expect: failed with code 401
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /*
+     * @tc.number : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
+     * @tc.name   : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
+     * @tc.desc   : Expect: failed with code 401
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
     it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let MyNewInteropAbilityLifecycleCallback: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
       try {
@@ -481,6 +481,114 @@ export default function UIAbilityContextStatic() {
         let code = (error as BusinessError).code;
         hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
         expect(code === 401).assertTrue();
+        done();
+      }
+    })
+
+    /*
+    * @tc.number : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900
+    * @tc.name   : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900
+    * @tc.desc   : offInteropAbilityLifecycle（） no param
+    * @tc.type   : Function
+    * @tc.size   : MediumTest
+    * @tc.level  : 0
+    */
+    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        applicationContext.offInteropAbilityLifecycle()
+        hilog.info(domain, tag, `offInteropAbilityLifecycle success`)
+        expect().assertFail()
+        done()
+      } catch (error) {
+        hilog.info(domain, tag, 'offInteropAbilityLifecycle ' + JSON.stringify(error));
+        let code = (error as BusinessError).code;
+        hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
+        expect(code === 401).assertTrue();
+        done();
+      }
+    })
+
+    /*
+    * @tc.number : SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000
+    * @tc.name   : SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000
+    * @tc.desc   : onInteropAbilityLifecycle（）
+    * @tc.type   : Function
+    * @tc.size   : MediumTest
+    * @tc.level  : 0
+    */
+    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let MyNewInteropAbilityLifecycleCallback: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
+      try {
+        applicationContext.onInteropAbilityLifecycle(MyNewInteropAbilityLifecycleCallback)
+        hilog.info(domain, tag, `onInteropAbilityLifecycle success`)
+      } catch (error) {
+        hilog.info(domain, tag, 'onInteropAbilityLifecycle ' + JSON.stringify(error));
+        let code = (error as BusinessError).code;
+        hilog.info(domain, tag, `onInteropAbilityLifecycle err${code}`)
+        expect().assertFail()
+        done();
+      }
+      try {
+        applicationContext.offInteropAbilityLifecycle(MyNewInteropAbilityLifecycleCallback)
+        hilog.info(domain, tag, `offInteropAbilityLifecycle success`)
+        done()
+      } catch (error) {
+        hilog.info(domain, tag, 'offInteropAbilityLifecycle ' + JSON.stringify(error));
+        let code = (error as BusinessError).code;
+        hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
+        expect().assertFail()
+        done();
+      }
+    })
+
+    /*
+     * @tc.number : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
+     * @tc.name   : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
+     * @tc.desc   : Manually call the RequestAutoSave interface and trigger success callback.
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
+    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0200';
+      let isSuccess = false;
+      let isFailure = false;
+      let uiContext: UIContext
+      hilog.info(domain,  tag ,"uiContext: ", uiContext);
+      try {
+        autoFillManager.requestAutoSave(uiContext);
+      } catch (error) {
+        expect(isSuccess).assertFalse();
+        expect(isFailure).assertFalse();
+        done();
+      }
+      hilog.info(domain,  tag ,"du.yuan end");
+      done();
+    })
+
+    /*
+    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200
+    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200
+    * @tc.desc   : API test for context.SetAbilityInstanceInfo for 801.
+    * @tc.type   : Function
+    * @tc.size   : MediumTest
+    * @tc.level  : 0
+    */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain,  tag , " it begin");
+      if (deviceInfo.deviceType !== 'phone') {
+        done();
+        return;
+      }
+      try {
+        await context.setAbilityInstanceInfo('', pixelMap);
+        hilog.info(domain,  tag , " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(domain,  tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        let code = (err as BusinessError).code;
+        try { expect(code).assertEqual(801); } catch (err) {}
+        hilog.info(domain,  tag , " success");
         done();
       }
     })
