@@ -114,12 +114,12 @@ struct noBarrierComponents {
   @State start: boolean = false;
   @State passwords: Array<number> = [] as Array<number>;
   @State message: string = 'please input password!';
-  @State rating: number = 3.5;
+  @State rating: double = 3.5;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: number = 40;
+  @State outSetValueOne: double = 40.0;
   @State isMilitaryTime: boolean = false;
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
@@ -455,7 +455,7 @@ struct noBarrierComponents {
           .margin({ top: 24 } as Margin)
           .key("Rating")
           .accessibilityText("我是无障碍组件")
-          .onChange((value: number): void => {
+          .onChange((value: double): void => {
             this.rating = value
           })
 
@@ -492,12 +492,12 @@ struct noBarrierComponents {
           .margin(20)
         Slider({
           value: this.outSetValueOne,
-          min: 0,
-          max: 100,
+          min: 0.0,
+          max: 100.0,
           style: SliderStyle.OutSet
         })
           .showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })

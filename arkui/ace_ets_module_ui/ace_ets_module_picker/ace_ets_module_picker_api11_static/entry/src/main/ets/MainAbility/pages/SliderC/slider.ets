@@ -34,21 +34,21 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct SliderExample {
-  @State outSetValueOne: number = 40
+  @State outSetValueOne: double = 40
   @State style: SliderStyle = SliderStyle.InSet
   @State directionT: Axis = Axis.Vertical
   @State reverse: boolean = true
-  @State min: number = 2
-  @State max: number = 1000
-  @State step: number = 0.7
-  @State inSetValueOne: number = 40
-  @State outSetValueTwo: number = 40
-  @State inSetValueTwo: number = 40
-  @State vOutSetValueOne: number = 40
-  @State vInSetValueOne: number = 40
-  @State vInSetValueOne1: number = 40
-  @State vOutSetValueTwo: number = 40
-  @State vInSetValueTwo: number = 40
+  @State min: double = 2
+  @State max: double = 1000
+  @State step: double = 0.7
+  @State inSetValueOne: double = 40
+  @State outSetValueTwo: double = 40
+  @State inSetValueTwo: double = 40
+  @State vOutSetValueOne: double = 40
+  @State vInSetValueOne: double = 40
+  @State vInSetValueOne1: double = 40
+  @State vOutSetValueTwo: double = 40
+  @State vInSetValueTwo: double = 40
   @State blockColor: string = "#191970"
   @State trackColor: string = "#ADD8E6"
   @State selectedColor: string = "#191970"
@@ -81,7 +81,7 @@ struct SliderExample {
           .showTips(this.showTips)
           .trackThickness(this.trackThickness)
           .showSteps(this.showSteps)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.vOutSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -100,12 +100,12 @@ struct SliderExample {
           max: this.max,
           step: this.step
         }).showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.vInSetValueOne = value
             console.info('value:' + value + 'm`ode:' + mode.toString())
           }).key('sliderConstructor')
         Slider().showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.vInSetValueOne1 = value
             this.modeT = mode.toString()
             console.info('value:' + value + 'm`ode:' + mode.toString())

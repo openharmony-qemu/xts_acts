@@ -138,7 +138,7 @@ import { RouterParams } from '../../common/Utils'
 @Entry
 @Component
 struct ZIndexPage {
-  @StoragePropRef("_zIndex") _zIndex: number = 0
+  @StoragePropRef("_zIndex") _zIndex: int = 0
   @State targetView: string = ''
   @State componentKey: string = ''
   @State targetComponentWidth: number = 0

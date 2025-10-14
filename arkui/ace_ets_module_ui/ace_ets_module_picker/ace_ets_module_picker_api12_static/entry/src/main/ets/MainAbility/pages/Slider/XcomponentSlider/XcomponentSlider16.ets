@@ -26,7 +26,7 @@ struct XSlider16 {
   private surfaceId: string = ''
   private xComponentContext: Record<string, () => void> = {} as Record<string, () => void>
   xComponentController: XComponentController = new XComponentController()
-  @State outSetValueOne: number = 10
+  @State outSetValueOne: double = 10
 
   build() {
     Column() {
@@ -50,7 +50,7 @@ struct XSlider16 {
           .id('XSlider16')
           .width('400px')
           .showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })

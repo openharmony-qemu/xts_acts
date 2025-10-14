@@ -43,7 +43,7 @@ let promptAction = new PromptAction()
 @Entry
 @Component
 struct promptKeyboard {
-  private customDialogComponentId: number = 0
+  private customDialogComponentId: int = 0
   @State textValue: string = 'click me'
   @State modal: boolean = true
   @State mode: KeyboardAvoidMode = KeyboardAvoidMode.DEFAULT
@@ -121,7 +121,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })
@@ -151,7 +151,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })
@@ -181,7 +181,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })

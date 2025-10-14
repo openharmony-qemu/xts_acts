@@ -57,13 +57,13 @@ struct noBarrierComponents {
   @State start: boolean = false;
   @State passwords: Array<number> = new Array<number>();
   @State message: string = 'please input password!';
-  @State rating: number = 3.5;
+  @State rating: double = 3.5;
   @State target?: WindowAnimationTarget = undefined;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: number = 40;
+  @State outSetValueOne: double = 40.0;
   @State isMilitaryTime: boolean = false;
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
@@ -100,7 +100,7 @@ struct noBarrierComponents {
           .optionFont({ size: 16, weight: 400 })
           .key("Select")
           .accessibilityText("我是无障碍组件")
-          .onSelect((index: number): void => {
+          .onSelect((index: int): void => {
             console.info('Select:' + index)
           })
 

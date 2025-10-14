@@ -49,7 +49,7 @@ const TAG: string = 'OpenDialogTest';
 @Entry
 @Component
 struct Index {
-  private customDialogComponentId: number = 0
+  private customDialogComponentId: int = 0
   @State private isEnableTransition: boolean = false;
   @State private isEnableDialogTransition: boolean = false;
   @State private isEnableMaskTransition: boolean = false;
