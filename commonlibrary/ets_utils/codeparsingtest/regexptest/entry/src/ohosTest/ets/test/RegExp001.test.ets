@@ -229,8 +229,8 @@ export default function RegExpTest001() {
       const reSticky: RegExp = new RegExp('abc', 'y');
       reGlobal.lastIndex = 4;
       reSticky.lastIndex = 4;
-      const globalMatch: RegExpExecArray | null = reGlobal.exec(str);
-      const stickyMatch: RegExpExecArray | null = reSticky.exec(str);
+      const globalMatch = reGlobal.exec(str);
+      const stickyMatch = reSticky.exec(str);
       expect(globalMatch![0]).assertEqual('abc');
       expect(stickyMatch).assertDeepEquals(['abc']);
     });
