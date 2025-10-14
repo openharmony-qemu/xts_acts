@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import workerLoad from './worker.test';
+import workerLoad from './Worker.test';
 
 export default function testsuite() {
   workerLoad();
