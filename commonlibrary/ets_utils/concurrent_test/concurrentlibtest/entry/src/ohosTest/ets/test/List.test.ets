@@ -20,6 +20,7 @@ import TaskPoolErrorCodeTest from './taskpool/TaskpoolErrorCode.test';
 import workerTest from './worker/Worker.test';
 import workerAddTest from './worker/WorkerAdd.test';
 import workerErrorCodeTest from './worker/WorkerErrorCode.test';
+import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
 
 export default function testsuite() {
   arkTSUtilsTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   TaskPoolErrorCodeTest();
   workerAddTest();
   workerErrorCodeTest()
+  concurrencyReturnCoveredTest()
 }
