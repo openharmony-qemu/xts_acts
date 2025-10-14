@@ -14,8 +14,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import Url from '@ohos.url';
-import { url } from '@kit.ArkTS';
-import { ArrayList } from '@kit.ArkTS';
+import { ArrayList, url } from '@kit.ArkTS';
 
 let str2 =
   '%21%21%22%22%23%23%24%24%25%25%27%27%28%28%29%29**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D%7E%7E';
@@ -47,12 +46,12 @@ export default function urlTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0100
-     * @tc.name       : testParamsEntries0001
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0100
+     * @tc.name testParamsEntries0001
+     * @tc.desc Testing URLParams.entries() to validate it correctly parses and returns key-value pairs.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0001";
@@ -70,13 +69,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0200
-     * @tc.name       : testParamsEntries0002
-     * @tc.desc       : Testing URLParams.entries() with empty string to validate it handles absence of
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0200
+     * @tc.name testParamsEntries0002
+     * @tc.desc Testing URLParams.entries() with empty string to validate it handles absence of
      *                  key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0002";
@@ -94,13 +93,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0300
-     * @tc.name       : testParamsEntries0003
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0300
+     * @tc.name testParamsEntries0003
+     * @tc.desc Testing URLParams.entries() to validate it correctly parses and returns key-value
      *                  pairs from a nested array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0003";
@@ -119,13 +118,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0400
-     * @tc.name       : testParamsEntries0004
-     * @tc.desc       : Testing URLParams.entries() with an empty nested array to validate it handles absence
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0400
+     * @tc.name testParamsEntries0004
+     * @tc.desc Testing URLParams.entries() with an empty nested array to validate it handles absence
      *                  of key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0004";
@@ -143,13 +142,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0500
-     * @tc.name       : testParamsEntries0005
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0500
+     * @tc.name testParamsEntries0005
+     * @tc.desc Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      *                  from an object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0005";
@@ -170,13 +169,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0600
-     * @tc.name       : testParamsEntries0006
-     * @tc.desc       : Testing URLParams.entries() with an empty object to validate it handles absence of
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0600
+     * @tc.name testParamsEntries0006
+     * @tc.desc Testing URLParams.entries() with an empty object to validate it handles absence of
      *                  key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0006";
@@ -194,13 +193,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0700
-     * @tc.name       : testParamsEntries0007
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0700
+     * @tc.name testParamsEntries0007
+     * @tc.desc Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      *                  from URL search parameters and toString() produces correct query string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0007";
@@ -216,13 +215,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0800
-     * @tc.name       : testParamsEntries0008
-     * @tc.desc       : Testing URLParams.entries() with URL having no search parameters to validate it handles
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0800
+     * @tc.name testParamsEntries0008
+     * @tc.desc Testing URLParams.entries() with URL having no search parameters to validate it handles
      *                   absence of key-value pairs correctly and toString() is an empty string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testParamsEntries0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParamsEntries0008";
@@ -238,13 +237,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0900
-     * @tc.name       : testParamsEntries0009
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0900
+     * @tc.name testParamsEntries0009
+     * @tc.desc Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      *                  from URL params and toString() produces correct query string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntries0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntries0009";
@@ -260,13 +259,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_1000
-     * @tc.name       : testParamsEntries0010
-     * @tc.desc       : Testing URLParams.entries() with URL having no search parameters to validate it handles
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_1000
+     * @tc.name testParamsEntries0010
+     * @tc.desc Testing URLParams.entries() with URL having no search parameters to validate it handles
      *                  absence of key-value pairs correctly and toString() is an empty string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntries0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntries0010";
@@ -282,12 +281,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0100
-     * @tc.name       : testParamsEntriesAppend0001
-     * @tc.desc       : Testing URLParams.append() to validate it correctly adds new key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0100
+     * @tc.name testParamsEntriesAppend0001
+     * @tc.desc Testing URLParams.append() to validate it correctly adds new key-value pairs.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0001";
@@ -303,13 +302,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0200
-     * @tc.name       : testParamsEntriesAppend0002
-     * @tc.desc       : Testing URLParams.append() to validate it correctly handles adding a key with an empty
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0200
+     * @tc.name testParamsEntriesAppend0002
+     * @tc.desc Testing URLParams.append() to validate it correctly handles adding a key with an empty
      *                  string to an existing URLParams object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0002";
@@ -325,12 +324,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0300
-     * @tc.name       : testParamsEntriesAppend0003
-     * @tc.desc       : Testing URLParams.append() to validate it correctly adds new key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0300
+     * @tc.name testParamsEntriesAppend0003
+     * @tc.desc Testing URLParams.append() to validate it correctly adds new key-value pairs.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0003";
@@ -350,12 +349,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0400
-     * @tc.name       : testParamsEntriesAppend0004
-     * @tc.desc       : Testing URLParams.append() to validate adding a key with the same name and different values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0400
+     * @tc.name testParamsEntriesAppend0004
+     * @tc.desc Testing URLParams.append() to validate adding a key with the same name and different values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0004";
@@ -371,12 +370,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0500
-     * @tc.name       : testParamsEntriesAppend0005
-     * @tc.desc       : Testing URLParams.append() to validate adding multiple keys with the same name.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0500
+     * @tc.name testParamsEntriesAppend0005
+     * @tc.desc Testing URLParams.append() to validate adding multiple keys with the same name.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0005";
@@ -392,12 +391,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0600
-     * @tc.name       : testParamsEntriesAppend0006
-     * @tc.desc       : Testing URLParams.append() to validate key-value pairs with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0600
+     * @tc.name testParamsEntriesAppend0006
+     * @tc.desc Testing URLParams.append() to validate key-value pairs with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsEntriesAppend0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsEntriesAppend0006";
@@ -417,12 +416,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0100
-     * @tc.name       : testParamsDelete0001
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly deletes key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0100
+     * @tc.name testParamsDelete0001
+     * @tc.desc Testing URLParams.delete() to validate it correctly deletes key-value pairs.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0001";
@@ -445,12 +444,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0200
-     * @tc.name       : testParamsDelete0002
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly handles deleting non-existent keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0200
+     * @tc.name testParamsDelete0002
+     * @tc.desc Testing URLParams.delete() to validate it correctly handles deleting non-existent keys.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0002";
@@ -466,12 +465,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0300
-     * @tc.name       : testParamsDelete0003
-     * @tc.desc       : Testing URLParams.delete() to validate it handles deleting keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0300
+     * @tc.name testParamsDelete0003
+     * @tc.desc Testing URLParams.delete() to validate it handles deleting keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0003";
@@ -490,12 +489,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0400
-     * @tc.name       : testParamsDelete0004
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly deletes all instances of a key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0400
+     * @tc.name testParamsDelete0004
+     * @tc.desc Testing URLParams.delete() to validate it correctly deletes all instances of a key.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0004";
@@ -511,12 +510,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0500
-     * @tc.name       : testParamsDelete0005
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly updates the URLParams object after deletion.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0500
+     * @tc.name testParamsDelete0005
+     * @tc.desc Testing URLParams.delete() to validate it correctly updates the URLParams object after deletion.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0005";
@@ -532,12 +531,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0600
-     * @tc.name       : testParamsDelete0006
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly handles empty URLParams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0600
+     * @tc.name testParamsDelete0006
+     * @tc.desc Testing URLParams.delete() to validate it correctly handles empty URLParams.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParamsDelete0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParamsDelete0006";
@@ -553,13 +552,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
-     * @tc.name       : testParseAndIterateParams0001
-     * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
+     * @tc.name testParseAndIterateParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParams0001";
@@ -574,13 +573,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
-     * @tc.name       : testParseAndIterateParams0002
-     * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
+     * @tc.name testParseAndIterateParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
      *                  ensure correct parsing and retrieval of all values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParams0002";
@@ -595,12 +594,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
-     * @tc.name       : testParseAndIterateParams0003
-     * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
+     * @tc.name testParseAndIterateParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParams0003";
@@ -626,13 +625,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
-     * @tc.name       : testParseAndForeachParams0001
-     * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
+     * @tc.name testParseAndForeachParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndForeachParams0001";
@@ -650,13 +649,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
-     * @tc.name       : testParseAndForeachParams0002
-     * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
+     * @tc.name testParseAndForeachParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
      *                  ensure correct parsing and retrieval of all values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndForeachParams0002";
@@ -680,12 +679,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
-     * @tc.name       : testParseAndForeachParams0003
-     * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
+     * @tc.name testParseAndForeachParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndForeachParams0003";
@@ -708,13 +707,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
-     * @tc.name       : testParseAndIterateParamsSymbol0001
-     * @tc.desc       : Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
+     * @tc.name testParseAndIterateParamsSymbol0001
+     * @tc.desc Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParamsSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParamsSymbol0001";
@@ -730,13 +729,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0200
-     * @tc.name       : testParseAndIterateParamsSymbol0002
-     * @tc.desc       : Testing URLParams [Symbol.iterator]() method to ensure it handles multiple identical
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0200
+     * @tc.name testParseAndIterateParamsSymbol0002
+     * @tc.desc Testing URLParams [Symbol.iterator]() method to ensure it handles multiple identical
      *                  sets of parameters correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParamsSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParamsSymbol0002";
@@ -761,13 +760,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0300
-     * @tc.name       : testParseAndIterateParamsSymbol0003
-     * @tc.desc       : Testing URLParams [Symbol.iterator]() method to ensure values are correctly appended
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0300
+     * @tc.name testParseAndIterateParamsSymbol0003
+     * @tc.desc Testing URLParams [Symbol.iterator]() method to ensure values are correctly appended
      *                  and retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParamsSymbol0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseAndIterateParamsSymbol0003";
@@ -791,12 +790,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
-     * @tc.name       : testGetAllValuesForKey0001
-     * @tc.desc       : Testing URLParams getAll() method for key "" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
+     * @tc.name testGetAllValuesForKey0001
+     * @tc.desc Testing URLParams getAll() method for key "" to ensure all values are correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetAllValuesForKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetAllValuesForKey0001";
@@ -815,12 +814,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0200
-     * @tc.name       : testGetAllValuesForKey0002
-     * @tc.desc       : Testing URLParams getAll() method for key "b" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0200
+     * @tc.name testGetAllValuesForKey0002
+     * @tc.desc Testing URLParams getAll() method for key "b" to ensure all values are correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetAllValuesForKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetAllValuesForKey0002";
@@ -839,12 +838,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0300
-     * @tc.name       : testGetAllValuesForKey0003
-     * @tc.desc       : Testing URLParams getAll() method for key "c" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0300
+     * @tc.name testGetAllValuesForKey0003
+     * @tc.desc Testing URLParams getAll() method for key "c" to ensure all values are correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetAllValuesForKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetAllValuesForKey0003";
@@ -863,13 +862,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0400
-     * @tc.name       : testGetAllValuesForKey0004
-     * @tc.desc       : Testing URLParams getAll() method for a non-existing key "d" to ensure an empty array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0400
+     * @tc.name testGetAllValuesForKey0004
+     * @tc.desc Testing URLParams getAll() method for a non-existing key "d" to ensure an empty array
      *                  is returned.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetAllValuesForKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetAllValuesForKey0004";
@@ -885,13 +884,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0500
-     * @tc.name       : testGetAllValuesForKey0005
-     * @tc.desc       : Testing URLParams getAll() method for a key with special characters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0500
+     * @tc.name testGetAllValuesForKey0005
+     * @tc.desc Testing URLParams getAll() method for a key with special characters
      *                  "耄耋鍟毗粢ASGDDest1312%#^$%" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetAllValuesForKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetAllValuesForKey0005";
@@ -911,12 +910,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0100
-     * @tc.name       : testGetValueForKey0001
-     * @tc.desc       : Testing URLParams get() method for key "" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0100
+     * @tc.name testGetValueForKey0001
+     * @tc.desc Testing URLParams get() method for key "" to ensure the first value is correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0001";
@@ -932,12 +931,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0200
-     * @tc.name       : testGetValueForKey0002
-     * @tc.desc       : Testing URLParams get() method for key "b" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0200
+     * @tc.name testGetValueForKey0002
+     * @tc.desc Testing URLParams get() method for key "b" to ensure the first value is correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0002";
@@ -953,12 +952,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0300
-     * @tc.name       : testGetValueForKey0003
-     * @tc.desc       : Testing URLParams get() method for key "c" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0300
+     * @tc.name testGetValueForKey0003
+     * @tc.desc Testing URLParams get() method for key "c" to ensure the first value is correctly retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0003";
@@ -974,12 +973,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0400
-     * @tc.name       : testGetValueForKey0004
-     * @tc.desc       : Testing URLParams get() method for a non-existing key "d" to ensure null is returned.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0400
+     * @tc.name testGetValueForKey0004
+     * @tc.desc Testing URLParams get() method for a non-existing key "d" to ensure null is returned.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0004";
@@ -994,13 +993,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0500
-     * @tc.name       : testGetValueForKey0005
-     * @tc.desc       : Testing URLParams get() method for a key with special characters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0500
+     * @tc.name testGetValueForKey0005
+     * @tc.desc Testing URLParams get() method for a key with special characters
      *                  "耄耋鍟毗粢ASGDDest1312%#^$%" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0005";
@@ -1017,13 +1016,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0600
-     * @tc.name       : testGetValueForKey0006
-     * @tc.desc       : Testing URLParams get() method for various special character cases,
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0600
+     * @tc.name testGetValueForKey0006
+     * @tc.desc Testing URLParams get() method for various special character cases,
      *                  ensuring the method correctly retrieves the first value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetValueForKey0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetValueForKey0006";
@@ -1080,12 +1079,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0100
-     * @tc.name       : testHasKey0001
-     * @tc.desc       : Testing URLParams has() method for key "" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0100
+     * @tc.name testHasKey0001
+     * @tc.desc Testing URLParams has() method for key "" to ensure it correctly identifies existence.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0001";
@@ -1100,12 +1099,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0200
-     * @tc.name       : testHasKey0002
-     * @tc.desc       : Testing URLParams has() method for key "b" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0200
+     * @tc.name testHasKey0002
+     * @tc.desc Testing URLParams has() method for key "b" to ensure it correctly identifies existence.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0002";
@@ -1120,12 +1119,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0300
-     * @tc.name       : testHasKey0003
-     * @tc.desc       : Testing URLParams has() method for key "c" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0300
+     * @tc.name testHasKey0003
+     * @tc.desc Testing URLParams has() method for key "c" to ensure it correctly identifies existence.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0003";
@@ -1140,12 +1139,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0400
-     * @tc.name       : testHasKey0004
-     * @tc.desc       : Testing URLParams has() method for a non-existing key "d" to ensure it correctly identifies non-existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0400
+     * @tc.name testHasKey0004
+     * @tc.desc Testing URLParams has() method for a non-existing key "d" to ensure it correctly identifies non-existence.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0004";
@@ -1160,13 +1159,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0500
-     * @tc.name       : testHasKey0005
-     * @tc.desc       : Testing URLParams has() method for special character key "耄耋鍟毗粢ASGDDest1312%#^$%"
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0500
+     * @tc.name testHasKey0005
+     * @tc.desc Testing URLParams has() method for special character key "耄耋鍟毗粢ASGDDest1312%#^$%"
      *                  to ensure the method correctly identifies the existence of the key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0005";
@@ -1196,13 +1195,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0600
-     * @tc.name       : testHasKey0006
-     * @tc.desc       : Testing URLParams has() method for special character keys ("%20", "%2b", "%26")
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0600
+     * @tc.name testHasKey0006
+     * @tc.desc Testing URLParams has() method for special character keys ("%20", "%2b", "%26")
      *                  to ensure the method correctly identifies the non-existence of these keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testHasKey0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0006";
@@ -1239,12 +1238,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0100
-     * @tc.name       : testSetKeyAndValue0001
-     * @tc.desc       : Testing URLSearchParams set() method with an empty name.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0100
+     * @tc.name testSetKeyAndValue0001
+     * @tc.desc Testing URLSearchParams set() method with an empty name.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0001";
@@ -1262,12 +1261,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0200
-     * @tc.name       : testSetKeyAndValue0002
-     * @tc.desc       : Testing URLSearchParams set() method with an empty value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0200
+     * @tc.name testSetKeyAndValue0002
+     * @tc.desc Testing URLSearchParams set() method with an empty value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0002";
@@ -1285,12 +1284,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0300
-     * @tc.name       : testSetKeyAndValue0003
-     * @tc.desc       : Testing URLSearchParams set() method with an empty name and empty value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0300
+     * @tc.name testSetKeyAndValue0003
+     * @tc.desc Testing URLSearchParams set() method with an empty name and empty value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0003";
@@ -1308,12 +1307,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0400
-     * @tc.name       : testSetKeyAndValue0004
-     * @tc.desc       : Testing URLSearchParams set() method with multiple duplicate keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0400
+     * @tc.name testSetKeyAndValue0004
+     * @tc.desc Testing URLSearchParams set() method with multiple duplicate keys.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0004";
@@ -1329,12 +1328,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0500
-     * @tc.name       : testSetKeyAndValue0005
-     * @tc.desc       : Testing URLSearchParams set() method with a single key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0500
+     * @tc.name testSetKeyAndValue0005
+     * @tc.desc Testing URLSearchParams set() method with a single key.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0005";
@@ -1350,12 +1349,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0600
-     * @tc.name       : testSetKeyAndValue0006
-     * @tc.desc       : Testing URLSearchParams set() method with a non-existent key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0600
+     * @tc.name testSetKeyAndValue0006
+     * @tc.desc Testing URLSearchParams set() method with a non-existent key.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0006";
@@ -1373,12 +1372,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0700
-     * @tc.name       : testSetKeyAndValue0007
-     * @tc.desc       : Testing URLSearchParams set() method with a key containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0700
+     * @tc.name testSetKeyAndValue0007
+     * @tc.desc Testing URLSearchParams set() method with a key containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0007";
@@ -1397,12 +1396,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0800
-     * @tc.name       : testSetKeyAndValue0008
-     * @tc.desc       : Testing URLSearchParams set() method with encoded characters in key and value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0800
+     * @tc.name testSetKeyAndValue0008
+     * @tc.desc Testing URLSearchParams set() method with encoded characters in key and value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetKeyAndValue0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetKeyAndValue0008";
@@ -1430,12 +1429,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0100
-     * @tc.name       : testSort0001
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0100
+     * @tc.name testSort0001
+     * @tc.desc Testing URLParams sort() method to ensure parameters are sorted correctly.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSort0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSort0001";
@@ -1461,13 +1460,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0200
-     * @tc.name       : testSort0002
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with same keys but different
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0200
+     * @tc.name testSort0002
+     * @tc.desc Testing URLParams sort() method to ensure parameters with same keys but different
      *                  values are sorted by adding order correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSort0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSort0002";
@@ -1497,12 +1496,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0300
-     * @tc.name       : testSort0003
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with special characters are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0300
+     * @tc.name testSort0003
+     * @tc.desc Testing URLParams sort() method to ensure parameters with special characters are sorted correctly.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSort0003";
@@ -1527,13 +1526,13 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0400
-     * @tc.name       : testSort0004
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with special characters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0400
+     * @tc.name testSort0004
+     * @tc.desc Testing URLParams sort() method to ensure parameters with special characters
      *                  in values are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSort0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSort0004";
@@ -1558,12 +1557,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0100
-     * @tc.name       : testKeysIterableIterator0001
-     * @tc.desc       : Testing URLParams keys() method with mixed string types: numbers and characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0100
+     * @tc.name testKeysIterableIterator0001
+     * @tc.desc Testing URLParams keys() method with mixed string types: numbers and characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testKeysIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testKeysIterableIterator0001";
@@ -1586,12 +1585,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
-     * @tc.name       : testKeysIterableIterator0002
-     * @tc.desc       : Testing URLParams keys() method with keys containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
+     * @tc.name testKeysIterableIterator0002
+     * @tc.desc Testing URLParams keys() method with keys containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testKeysIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testKeysIterableIterator0002";
@@ -1614,12 +1613,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
-     * @tc.name       : testKeysIterableIterator0003
-     * @tc.desc       : Testing URLParams keys() method with add, query, delete, and query operations.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
+     * @tc.name testKeysIterableIterator0003
+     * @tc.desc Testing URLParams keys() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testKeysIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testKeysIterableIterator0003";
@@ -1645,12 +1644,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0100
-     * @tc.name       : testValuesIterableIterator0001
-     * @tc.desc       : Testing URLParams values() method with mixed key formats (numbers and characters).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0100
+     * @tc.name testValuesIterableIterator0001
+     * @tc.desc Testing URLParams values() method with mixed key formats (numbers and characters).
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testValuesIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValuesIterableIterator0001";
@@ -1666,12 +1665,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
-     * @tc.name       : testValuesIterableIterator0002
-     * @tc.desc       : Testing URLParams values() method with values containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
+     * @tc.name testValuesIterableIterator0002
+     * @tc.desc Testing URLParams values() method with values containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testValuesIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValuesIterableIterator0002";
@@ -1694,12 +1693,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
-     * @tc.name       : testValuesIterableIterator0003
-     * @tc.desc       : Testing URLParams values() method with add, query, delete, and query operations.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
+     * @tc.name testValuesIterableIterator0003
+     * @tc.desc Testing URLParams values() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testValuesIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValuesIterableIterator0003";
@@ -1728,12 +1727,12 @@ export default function urlTest() {
     //特殊符号
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
-     * @tc.name       : testSpecial0001
-     * @tc.desc       : Testing URLParams for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
+     * @tc.name testSpecial0001
+     * @tc.desc Testing URLParams for handling special characters in query values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0001";
@@ -1754,12 +1753,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0200
-     * @tc.name       : testSpecial0002
-     * @tc.desc       : Testing append for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0200
+     * @tc.name testSpecial0002
+     * @tc.desc Testing append for handling special characters in query values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0002";
@@ -1779,12 +1778,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0300
-     * @tc.name       : testSpecial0003
-     * @tc.desc       : Testing getAll for handling multiple values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0300
+     * @tc.name testSpecial0003
+     * @tc.desc Testing getAll for handling multiple values with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0003";
@@ -1803,12 +1802,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0400
-     * @tc.name       : testSpecial0004
-     * @tc.desc       : Testing set for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0400
+     * @tc.name testSpecial0004
+     * @tc.desc Testing set for handling special characters in query values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0004";
@@ -1835,12 +1834,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0500
-     * @tc.name       : testSpecial0005
-     * @tc.desc       : Testing values for handling multiple values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0500
+     * @tc.name testSpecial0005
+     * @tc.desc Testing values for handling multiple values with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0005";
@@ -1860,12 +1859,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0600
-     * @tc.name       : testSpecial0006
-     * @tc.desc       : Testing entries for handling keys and values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0600
+     * @tc.name testSpecial0006
+     * @tc.desc Testing entries for handling keys and values with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0006";
@@ -1901,12 +1900,12 @@ export default function urlTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0700
-     * @tc.name       : testSpecial0007
-     * @tc.desc       : Testing forEach for handling keys and values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0700
+     * @tc.name testSpecial0007
+     * @tc.desc Testing forEach for handling keys and values with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0007";
@@ -1928,12 +1927,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0800
-     * @tc.name       : testSpecial0008
-     * @tc.desc       : Testing parseURL for handling special characters in query parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0800
+     * @tc.name testSpecial0008
+     * @tc.desc Testing parseURL for handling special characters in query parameters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0008";
@@ -1950,12 +1949,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0900
-     * @tc.name       : testSpecial0009
-     * @tc.desc       : Testing delete for handling keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0900
+     * @tc.name testSpecial0009
+     * @tc.desc Testing delete for handling keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0009";
@@ -1989,12 +1988,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
-     * @tc.name       : testSpecial0010
-     * @tc.desc       : Testing getting values using keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
+     * @tc.name testSpecial0010
+     * @tc.desc Testing getting values using keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0010";
@@ -2020,12 +2019,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1100
-     * @tc.name       : testSpecial0011
-     * @tc.desc       : Testing has method for checking existence of keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1100
+     * @tc.name testSpecial0011
+     * @tc.desc Testing has method for checking existence of keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0011";
@@ -2041,12 +2040,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1200
-     * @tc.name       : testSpecial0012
-     * @tc.desc       : Testing sort method for URL parameters with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1200
+     * @tc.name testSpecial0012
+     * @tc.desc Testing sort method for URL parameters with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0012";
@@ -2085,12 +2084,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1300
-     * @tc.name       : testSpecial0013
-     * @tc.desc       : Testing URLSearchParams for special characters extraction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1300
+     * @tc.name testSpecial0013
+     * @tc.desc Testing URLSearchParams for special characters extraction.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0013";
@@ -2127,12 +2126,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1400
-     * @tc.name       : testSpecial0014
-     * @tc.desc       : Testing URLSearchParams for additional special characters extraction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1400
+     * @tc.name testSpecial0014
+     * @tc.desc Testing URLSearchParams for additional special characters extraction.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSpecial0014";
@@ -2165,12 +2164,12 @@ export default function urlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SYMBOL_1300
-     * @tc.name       : testSymbol0001
-     * @tc.desc       : Testing URLSearchParams for special characters extraction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SYMBOL_1300
+     * @tc.name testSymbol0001
+     * @tc.desc Testing URLSearchParams for special characters extraction.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSymbol0001";
@@ -2193,12 +2192,12 @@ export default function urlTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SYMBOL_1300
-     * @tc.name       : testSymbol0002
-     * @tc.desc       : Testing URLSearchParams for special characters extraction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_1300
+     * @tc.name testSymbol0002
+     * @tc.desc Testing URLSearchParams for special characters extraction.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSymbol0002";
@@ -2219,12 +2218,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0100
-     * @tc.name       : testForeach0001
-     * @tc.desc       : Test the function of the interface foreach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0100
+     * @tc.name testForeach0001
+     * @tc.desc Test the function of the interface foreach.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testForeach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testForeach0001';
@@ -2241,12 +2240,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0200
-     * @tc.name       : testForeach0002
-     * @tc.desc       : Test the function of the interface foreach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0200
+     * @tc.name testForeach0002
+     * @tc.desc Test the function of the interface foreach.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testForeach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testForeach0002';
@@ -2265,12 +2264,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0300
-     * @tc.name       : testSymbol.iterator0001
-     * @tc.desc       : Test the function of the interface Symbol.iterator.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0300
+     * @tc.name testSymbol.iterator0001
+     * @tc.desc Test the function of the interface Symbol.iterator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSymbol.iterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSymbol.iterator0001';
@@ -2288,12 +2287,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0400
-     * @tc.name       : testParseURL90001
-     * @tc.desc       : Test the function of the interface parseURL9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0400
+     * @tc.name testParseURL90001
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseURL90001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testParseURL90001';
@@ -2308,12 +2307,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0500
-     * @tc.name       : testParseURL90002
-     * @tc.desc       : Test the function of the interface parseURL9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0500
+     * @tc.name testParseURL90002
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseURL90002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testParseURL90002';
@@ -2330,12 +2329,12 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0600
-     * @tc.name       : testParseURL90003
-     * @tc.desc       : Test the function of the interface parseURL9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0600
+     * @tc.name testParseURL90003
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseURL90003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testParseURL90003';
@@ -2351,21 +2350,62 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URL_0700
-     * @tc.name       : testParseURL90004
-     * @tc.desc       : Test the function of the interface parseURL9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0700
+     * @tc.name testParseURL90004
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseURL90004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = 'testParseURL90004';
+      try {
+        let urlObject = url.URL.parseURL('https://developer.exampleUrl/');
+        let params = new url.URLParams(urlObject.search.slice(1));
+        params.append('fod', '3');
+        let res = params.getAll('foe');
+        expect(res.toString()).assertEqual("")
+      } catch (e) {
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0800
+     * @tc.name testParseURL90005
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseURL90005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testParseURL90005';
       try {
         let url5 = url.URL.parseURL('https://www.example.com/test/test1', '');
         expect().assertFail();
       } catch (e) {
         console.error(`${TAG} failed: ${e.message}`);
         expect(e.message).assertEqual('Parameter error. The type of  must be string');
+      }
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0900
+     * @tc.name testParseURL90006
+     * @tc.desc Test the function of the interface parseURL9.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseURL90006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testParseURL90006';
+      try {
+        let urlObject = url.URL.parseURL('https://developer.exampleUrl/');
+        let params = new url.URLParams(urlObject.search.slice(1));
+        params.append('fod', '3');
+        let res = params.get('foe');
+        expect(res === undefined).assertEqual(true)
+      } catch (e) {
+        expect().assertFail();
       }
     });
   })
