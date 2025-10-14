@@ -1775,7 +1775,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8400'
         console.info(`${caseName}, test start`);
         const testValue = 42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();
@@ -1794,7 +1794,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8500'
         console.info(`${caseName}, test start`);
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();
@@ -1813,7 +1813,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8600'
         console.info(`${caseName}, test start`);
         const testValue = -42;
-        const byte1 = new Byte(testValue);
+        const byte1 = new Byte(testValue.toByte());
         expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();

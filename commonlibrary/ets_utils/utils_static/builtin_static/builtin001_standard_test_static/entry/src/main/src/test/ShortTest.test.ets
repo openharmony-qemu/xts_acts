@@ -352,7 +352,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest1600'
         console.info(`${caseName}, test start`);
         const value = 12345;
-        const shortObj = new Short(value);
+        const shortObj = new Short(value.toShort());
         const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
@@ -372,7 +372,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest1700'
         console.info(`${caseName}, test start`);
         const value = -12345;
-        const shortObj = new Short(value);
+        const shortObj = new Short(value.toShort());
         const result = shortObj;
         expect(result).assertEqual(value);
         console.info(`${caseName}, test end`);
@@ -432,7 +432,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest2000'
         console.info(`${caseName}, test start`);
         const value = 100;
-        const shortObj = new Short(value);
+        const shortObj = new Short(value.toShort());
         const result = shortObj.add(new Short(50));
         expect(result).assertEqual(150);
         console.info(`${caseName}, test end`);
@@ -452,8 +452,8 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest2100'
         console.info(`${caseName}, test start`);
         const value = 200;
-        const short1 = new Short(value);
-        const short2 = new Short(value);
+        const short1 = new Short(value.toShort());
+        const short2 = new Short(value.toShort());
         const result = short1.equals(short2);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
@@ -493,7 +493,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest2300'
         console.info(`${caseName}, test start`);
         const value = 12345;
-        const shortObj = new Short(value);
+        const shortObj = new Short(value.toShort());
         expect(shortObj.toByte()).assertEqual(value & 0xFF);
         console.info(`${caseName}, test end`);
         Done();
