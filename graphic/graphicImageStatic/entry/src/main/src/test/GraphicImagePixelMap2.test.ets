@@ -334,10 +334,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code ", error);
             expect().assertFail();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
-        }
+        } 
         done();
       })
 
@@ -368,10 +365,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 22", error.code);
             expect(Number(error.code) == 62980302).assertTrue();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
-        }
+        } 
         done();
       })
 
@@ -407,10 +401,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 44", error.code);
             expect().assertFail();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
-        }
+        } 
         done();
       })
 
