@@ -195,9 +195,11 @@ struct WebIndex {
               try {
                 let driver: Driver = Driver.create();
                 let webRect = Utils.getComponentRect('onNativeEmbedMouseEventButton');
+                await Utils.sleep(2000);
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
                 await driver.mouseClick({x:downX, y:downY}, MouseButton.MOUSE_BUTTON_LEFT);
+                await Utils.sleep(1000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
