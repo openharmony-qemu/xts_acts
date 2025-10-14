@@ -37,6 +37,8 @@ struct FontExample {
         .onClick(()=>{
           this.fontList = font.getSystemFontList()
           this.value = this.fontList.toString()
+          AppStorage.setOrCreate('fontList',this.fontList.length)
+          console.log('fontListLength'+this.fontList.length)
         }).margin({top:20}).key("getSystemFontList")
 
       Button("getgetFontByName")

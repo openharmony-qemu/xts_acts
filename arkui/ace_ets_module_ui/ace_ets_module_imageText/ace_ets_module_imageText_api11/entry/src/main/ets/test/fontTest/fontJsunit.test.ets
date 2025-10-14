@@ -56,9 +56,12 @@ export default function fontJsunit() {
         console.info("[GridColOffsetJsunit_0100] component  strJson:" + JSON.stringify(obj.$attrs.content));
         if (obj.$attrs.content == "") {
             expect(obj.$attrs.content).assertEqual("");
+            expect(AppStorage.get('fontListLength')).assertEqual(00)
         } else {
             expect(obj.$attrs.content).assertContain("书宋-简");
+            expect(AppStorage.get('fontListLength')>0).assertTrue
         }
+        AppStorage.delete('fontListLength')
       }
       done();
     });
@@ -83,6 +86,11 @@ export default function fontJsunit() {
       try {
         let font: Object | null = globalThis.uiContext.getFont().getSystemFontList()
         expect(font !=null).assertTrue();
+        if(font.length){
+          expect(font.length>0).assertTrue
+        }else{
+          expect(font.length).assertEqual(00)
+        }
       } catch (err) {
         console.error("fontJsunit_0300 error " + JSON.stringify(err));
       }
