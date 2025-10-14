@@ -58,7 +58,7 @@ struct onScrollIndexFlow3 {
         Button('scroll 200')
           .id('onScrollIndex_scroller')
           .onClick((e: ClickEvent) => { 
-            const yOffset: number = this.scroller.currentOffset().yOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
             const uiContext = new UIContext();
             this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + UIContext.getFocusedUIContext()!.vp2px(200) })
           })
