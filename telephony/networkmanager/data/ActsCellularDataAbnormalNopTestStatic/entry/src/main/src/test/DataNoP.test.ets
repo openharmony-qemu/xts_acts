@@ -40,7 +40,7 @@ export default function dataNoPTest() {
         /*
           * @tc.number:SUB_telephony_data_nop0100
           * @tc.name: testTelephonyDataNop_static_0100
-          * @tc.desc:Using the isCellularDataEnabled (callback) method without permission
+          * @tc.desc:Using the isCellularDataEnabled (Promise) method without permission
           * @tc.level:Level 0
           * @tc.type:Function
           * @tc.size:MediumTest
@@ -101,13 +101,13 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_QueryAllApns_NoP_0300
-          * @tc.name: testTelephonyDataQueryAllApnsNoP_static_0300
-          * @tc.desc:Using the queryAllApns (callback) method without permission
-          * @tc.level:Level 0
-          * @tc.type:Function
-          * @tc.size:MediumTest
-          */
+         * @tc.number:SUB_Telephony_Data_QueryAllApns_NoP_0300
+         * @tc.name: testTelephonyDataQueryAllApnsNoP_static_0300
+         * @tc.desc:Using the queryAllApns (Promise) method without permission
+         * @tc.level:Level 0
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
         it("testTelephonyDataQueryAllApnsNoP_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataQueryAllApnsNoP_static_0300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -132,13 +132,13 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_QueryApnIds_NoP_0400
-          * @tc.name: testTelephonyDataQueryApnIdsNoP_static_0400
-          * @tc.desc:Using the queryApnIds (callback) method without permission
-          * @tc.level:Level 0
-          * @tc.type:Function
-          * @tc.size:MediumTest
-          */
+         * @tc.number:SUB_Telephony_Data_QueryApnIds_NoP_0400
+         * @tc.name: testTelephonyDataQueryApnIdsNoP_static_0400
+         * @tc.desc:Using the queryApnIds (Promise) method without permission
+         * @tc.level:Level 0
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
         it("testTelephonyDataQueryApnIdsNoP_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataQueryApnIdsNoP_static_0400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -163,18 +163,73 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_SetPreferredApn_NoP_0500
-          * @tc.name: testTelephonyDataSetPreferredApnNoP_static_0500
-          * @tc.desc:Using the setPreferredApn (callback) method without permission
-          * @tc.level:Level 0
-          * @tc.type:Function
-          * @tc.size:MediumTest
-          */
+         * @tc.number:SUB_Telephony_Data_SetPreferredApn_NoP_0500
+         * @tc.name: testTelephonyDataSetPreferredApnNoP_static_0500
+         * @tc.desc:Using the setPreferredApn (Promise) method without permission
+         * @tc.level:Level 0
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
         it("testTelephonyDataSetPreferredApnNoP_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataSetPreferredApnNoP_static_0500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 await data.setPreferredApn(1).then(() => {
+                    ExpectTrue(false);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 201);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_NoP_0100
+         * @tc.name   : testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_static_0100
+         * @tc.desc   : isCellularDataRoamingEnabledSync No permission
+         * @tc.level  : Level 0
+         * @tc.type   : Function
+         * @tc.size   : MediumTest
+         */
+        it("testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let isEnabled: boolean = data.isCellularDataRoamingEnabledSync(1);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled = ' + isEnabled);
+                ExpectTrue(false);
+                done();
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
+
+        /**
+        * @tc.number:SUB_Telephony_Data_GetActiveApnName_NoP_0100
+        * @tc.name: testTelephonyDataGetActiveApnNameNoP_static_0100
+        * @tc.desc:Using the getActiveApnName (Promise) method without permission
+        * @tc.level:Level 0
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("testTelephonyDataGetActiveApnNameNoP_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataGetActiveApnNameNoP_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                await data.getActiveApnName().then((ret:string) => {
                     ExpectTrue(false);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
