@@ -79,7 +79,7 @@ class MyNodeController extends NodeController {
 @Component
 struct frameNodeApi {
   @State buttonShow: boolean = true
-  @State buttonIndex: number = 0
+  @State buttonIndex: Int = 0
   public buttonController : MyNodeController = new MyNodeController()
   private buttonNull: null = null
   private buttonControllerArray : Array<MyNodeController | null> = [this.buttonController, this.buttonNull]
@@ -101,7 +101,7 @@ struct frameNodeApi {
         .id('frameNodeApi_onAttach')
 
       if (this.buttonShow) {
-        NodeContainer(this.buttonControllerArray[this.buttonIndex.toInt() % this.buttonControllerArray.length]!)
+        NodeContainer(this.buttonControllerArray[(this.buttonIndex % this.buttonControllerArray.length) as Int]!)
       }
     }
     .padding({ left: 35, right: 35} as Padding)

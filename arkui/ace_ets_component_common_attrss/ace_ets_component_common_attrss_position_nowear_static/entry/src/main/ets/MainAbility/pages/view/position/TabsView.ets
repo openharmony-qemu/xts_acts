@@ -30,7 +30,6 @@ import {
   BarPosition
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
 
 @Component
 export struct TabsView {
@@ -38,7 +37,7 @@ export struct TabsView {
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
-  @Link _position!: SetValue;
+  @Link _position!: Position;
   private componentKey: string = '';
 
   @Builder
@@ -59,21 +58,7 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+ 
     }
     .vertical(false)
     .barMode(BarMode.Fixed)
@@ -86,7 +71,7 @@ export struct TabsView {
     .width(360)
     .height(296)
     .backgroundColor('#F1F3F5')
-    .position({x:this._position.x, y:this._position.y} as Position)
+    .position(this._position)
     .key(this.componentKey)
   }
 }
