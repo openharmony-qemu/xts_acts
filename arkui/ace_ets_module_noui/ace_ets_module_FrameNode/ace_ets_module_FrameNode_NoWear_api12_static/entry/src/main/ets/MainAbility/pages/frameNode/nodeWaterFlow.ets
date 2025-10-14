@@ -50,7 +50,7 @@ class MyNodeController extends NodeController {
     node.commonAttribute
       .width('80%')
       .height('70%')
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize()
       .width('100%')
       .height('100%')

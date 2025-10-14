@@ -69,7 +69,7 @@ class NodeControllerTest1 extends NodeController {
   createAnimationButtons(uiContext: UIContext): FrameNode {
     this.frameNode1 = new FrameNode(uiContext);
     this.frameNode1?.commonAttribute.width(100).height('10%').backgroundColor(Color.Red);
-    let row = typeNode.createNode(uiContext, 'Row');
+    let row = typeNode.createRowNode(uiContext);
     // let startButton = typeNode.createNode(uiContext, 'Button');
     // startButton.initialize('start');
     // startButton.attribute.id('start')
@@ -148,7 +148,7 @@ class NodeControllerTest1 extends NodeController {
     rootTypeNode.initialize();
     rootTypeNode.attribute.scrollable(ScrollDirection.Vertical).width('100%');
     this.rootNode = rootTypeNode;
-    let column = typeNode.createNode(uiContext, 'Column');
+    let column = typeNode.createColumnNode(uiContext);
     column.initialize({ space: 15 } as ColumnOptions);
     column.attribute.padding({ top: 50, bottom: 50 } as Padding);
     // this.rootNode.appendChild(column);

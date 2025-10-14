@@ -39,20 +39,20 @@ class MyNodeController extends NodeController {
       .borderColor(Color.Gray)
       .borderWidth(1)
       .margin({ left: 10 } as Margin);
-    let col = typeNode.createColumnNode(uiContext, 'Column');
+    let col = typeNode.createColumnNode(uiContext);
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    let relativeContainer = typeNode.createRelativeContainerNode(uiContext, 'RelativeContainer');
+    let relativeContainer = typeNode.createRelativeContainerNode(uiContext);
     relativeContainer.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).backgroundColor(Color.Red);
     col.appendChild(relativeContainer);
     storage.set('RelativeContainerType', '' + relativeContainer.getNodeType());
 
-    let row1 = typeNode.createRowNode(uiContext, 'Row');
+    let row1 = typeNode.createRowNode(uiContext);
     row1.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).borderWidth(1).backgroundColor(Color.Red);
     relativeContainer.appendChild(row1);
 
-    let row2 = typeNode.createRowNode(uiContext, 'Row');
+    let row2 = typeNode.createRowNode(uiContext);
     row2.initialize().width('100%').height('100%').margin({ top: 5 } as Margin).borderWidth(1).backgroundColor(Color.Blue);
     relativeContainer.appendChild(row2);
     return node;
