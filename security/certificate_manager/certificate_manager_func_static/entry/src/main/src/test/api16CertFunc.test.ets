@@ -399,7 +399,7 @@ export default function api16CertFuncTestUnit() {
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 userCACurrentPath: ${userCACurrentPath}`);
         expect(userCACurrentPath).assertEqual('/etc/security/certificates');
       } catch (err:BusinessError) {
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 e.code: ${err.code}`);
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 err.code: ${err.code}`);
         expect(null).assertFail();
       }
       done();
@@ -586,7 +586,7 @@ export default function api16CertFuncTestUnit() {
         await signVerifyPromise.signVerifyNormalProcess(keyUri, credData, signspec, verifySpec).then(result1 => {
           expect(result1.outData == null).assertTrue();
         }).catch((err: BusinessError) => {
-          hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010 error.code: ${error.code}, message: ${error.message}`);
+          hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010 error.code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         });
         await certManager.uninstallPrivateCertificate(keyUri);
@@ -608,7 +608,7 @@ export default function api16CertFuncTestUnit() {
      * @tc.type Function
      */
     it('SUB_Security_CertManager_getCertificateStorePath_Static_0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('SUB_Security_CertManager_getCertificateStorePath_Static_0154 start');
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getCertificateStorePath_Static_0154 start');
       let property : certManager.CertStoreProperty = {
         certType: certManager.CertType.CA_CERT_USER,
         certScope: certManager.CertScope.CURRENT_USER,
@@ -619,7 +619,7 @@ export default function api16CertFuncTestUnit() {
         let userCACurrentPath = certManager.getCertificateStorePath(property);
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_getCertificateStorePath_Static_0154 userCACurrentPath: ${userCACurrentPath}`);
         expect(userCACurrentPath).assertEqual('/data/certificates/user_cacerts/100');
-      } catch (err) {
+      } catch (err: BusinessError) {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_getCertificateStorePath_Static_0154 e.code: ${err.code}, message: ${err.message}`);
         expect(null).assertFail();
       }
