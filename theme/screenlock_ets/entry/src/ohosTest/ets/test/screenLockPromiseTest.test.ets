@@ -84,21 +84,19 @@ export default function ScreenLockPromiseTest(){
      */
     it("SUB_MISC_THEME_screenLock_API_Promise_003", Level.LEVEL2, async (done: Function) => {
       console.info("------------------start SUB_MISC_THEME_screenLock_API_Promise_003-------------------");
+      let data = true;
       try {
-        let data = await screenLock.isSecureMode();
-        if (data) {
-          expect(data).assertEqual(true);
-        } else {
-          expect(data == false).assertTrue();
-        }
+        data = await screenLock.isSecureMode();
         console.info("SUB_MISC_THEME_screenLock_API_Promise_003 isScreenLocked result is " + data);
+        expect(data == false).assertTrue()
         console.info("------------------end SUB_MISC_THEME_screenLock_API_Promise_003-------------------");
         done();
       } catch (error) {
+        expect(data).assertTrue();
         console.info("SUB_MISC_THEME_screenLock_API_Promise_003 isScreenLocked TRUE: error = " + error);
         expect().assertFail();
         done();
-      }
+      }      
     });
 
     /*
