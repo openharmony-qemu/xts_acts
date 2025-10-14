@@ -25,9 +25,10 @@
 #include "ImageEffectErrorCodeTest.h"
 #include "ImageReceiverMdk1Test.h"
 #include "ImageKitErrorCodeTest.h"
+#include "ImageProcessingTest.h"
 EXTERN_C_START
 
-napi_property_descriptor desc[] = {
+std::vector<napi_property_descriptor> desc = {
     {"ImagePackerCreate1", nullptr, ImagePackerCreate1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"ImagePackerRelease", nullptr, ImagePackerRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"PictureMetadataCreate1", nullptr, PictureMetadataCreate1, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -952,18 +953,82 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"jsImageSoureNativeDecodingOptionsForPictureRelease", nullptr, JSImageSoureNativeDecodingOptionsForPictureRelease,
      nullptr, nullptr, nullptr, napi_default, nullptr},
-
     {"jsImageSoureNativeDecodingOptionsForPictureReleaseBadParameter", nullptr,
      JSImageSoureNativeDecodingOptionsForPictureReleaseBadParameter, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"jsImageSoureNativeGetSupportedFormats", nullptr, JSImageSoureNativeGetSupportedFormats, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"jsImageSoureNativeGetSupportedFormatsInvalidParameter", nullptr,
      JSImageSoureNativeGetSupportedFormatsInvalidParameter, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_CreatePicture", nullptr,
+     Test_PictureNative_CreatePicture, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_GetMainPixelmap", nullptr,
+     Test_OH_PictureNative_GetMainPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_GetHdrComposedPixelmap", nullptr,
+     Test_OH_PictureNative_GetHdrComposedPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_GetGainmapPixelmap", nullptr,
+     Test_OH_PictureNative_GetGainmapPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_SetAuxiliaryPicture", nullptr,
+     Test_OH_PictureNative_SetAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_GetAuxiliaryPicture", nullptr,
+     Test_OH_PictureNative_GetAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_GetMetadata", nullptr,
+     Test_OH_PictureNative_GetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_SetMetadata", nullptr,
+     Test_OH_PictureNative_SetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testPictureNative_Release", nullptr,
+     Test_OH_PictureNative_Release, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNativeWritePixelsImage", nullptr,
+     Test_OH_AuxiliaryPictureNativeWritePixelsImage, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_ReadPixels", nullptr,
+     Test_OH_AuxiliaryPictureNative_ReadPixels, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_GetType", nullptr,
+     Test_OH_AuxiliaryPictureNative_GetType, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_GetInfo", nullptr,
+     Test_OH_AuxiliaryPictureNative_GetInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_SetInfo", nullptr,
+     Test_OH_AuxiliaryPictureNative_SetInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_GetMetadata", nullptr,
+     Test_OH_AuxiliaryPictureNative_GetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testAuxiliaryPictureNative_SetMetadata", nullptr,
+     Test_OH_AuxiliaryPictureNative_SetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PixelMapCreatePixelMapResultSuccess", nullptr, PixelMapCreatePixelMapResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapGetBytesNumberPerRowResultSuccess", nullptr, PixelMapGetBytesNumberPerRowResultSuccess, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"PixelMapGetIsEditableResultSuccess", nullptr, PixelMapGetIsEditableResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapIsSupportAlphaResultSuccess", nullptr, PixelMapIsSupportAlphaResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapSetAlphaAbleResultSuccess", nullptr, PixelMapSetAlphaAbleResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapGetDensityResultSuccess", nullptr, PixelMapGetDensityResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapSetOpacityResultSuccess", nullptr, PixelMapSetOpacityResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapScaleResultSuccess", nullptr, PixelMapScaleResultSuccess, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"PixelMapScaleWithAntiAliasingResultSuccess", nullptr, PixelMapScaleWithAntiAliasingResultSuccess, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"PixelMapTranslateResultSuccess", nullptr, PixelMapTranslateResultSuccess, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"PixelMapRotateResultSuccess", nullptr, PixelMapRotateResultSuccess, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"PixelMapFlipResultSuccess", nullptr, PixelMapFlipResultSuccess, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PixelMapCropResultSuccess", nullptr, PixelMapCropResultSuccess, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"PixelMapGetImageInfoResultSuccess", nullptr, PixelMapGetImageInfoResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapAccessPixelsResultSuccess", nullptr, PixelMapAccessPixelsResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapUnAccessPixelsResultSuccess", nullptr, PixelMapUnAccessPixelsResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"PixelMapSetDensityResultSuccess", nullptr, PixelMapSetDensityResultSuccess, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
     };
 
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    addImageProcessingTest(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

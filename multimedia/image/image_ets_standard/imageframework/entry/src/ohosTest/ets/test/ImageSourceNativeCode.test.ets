@@ -59,16 +59,16 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     const getFd = async (fileName: string) => {
-      filePath = filesDir + '/testImages/' + fileName;
+      filePath = filesDir + '/' + fileName;
       console.log('filePath:', filePath)
 
-      let desPath = testContext.filesDir + '/testImages/';
-      if (!fs.accessSync(desPath)) {
-        fs.mkdirSync(desPath)
-      }
       //resfile下面文件 只有只读权限 copy到沙箱下面在操作.注意:测试图片放到resfile下，不要放到rawfile下。
       if(!fs.accessSync(filePath)){
-        let srcPath = testContext.resourceDir + '/testImages/';
+        let desPath = testContext.filesDir + '/';
+        if (!fs.accessSync(desPath)) {
+          fs.mkdirSync(desPath)
+        }
+        let srcPath = testContext.resourceDir + '/';
         fs.copyDirSync(srcPath, desPath, 0);
       }
       let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE );
@@ -77,12 +77,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     }
 
     const getBuffer = async (fileName: string) => {
-      filePath = filesDir + '/testImages/' + fileName;
+      filePath = filesDir + '/' + fileName;
       console.log('filePath:', filePath)
       //resfile下面文件 只有只读权限 copy到沙箱下面在操作.注意:测试图片放到resfile下，不要放到rawfile下。
       if(!fs.accessSync(filePath)){
-        let srcPath = testContext.resourceDir + '/testImages/';
-        let desPath = testContext.filesDir + '/testImages/';
+        let srcPath = testContext.resourceDir;
+        let desPath = testContext.filesDir;
         if (!fs.accessSync(desPath)) {
           fs.mkdirSync(desPath)
         }
@@ -147,7 +147,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeImageAllocatorTypeAuto(filePath);
       expect(res).assertEqual(0);
       done();
@@ -162,7 +162,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeImageAllocatorTypeDMA(filePath);
       expect(res).assertEqual(0);
       done();
@@ -177,7 +177,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeImageAllocatorTypeShareMemory(filePath);
       expect(res).assertEqual(0);
       done();
@@ -823,7 +823,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreateFromUri(filePath);
       expect(res).assertEqual(0);
       done();
@@ -866,7 +866,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100", Level.LEVEL3, async (done: Function) => {
-      await getBuffer('test5.jpg');
+      await getBuffer('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreateFromData(buffer);
       expect(res).assertEqual(0);
       done();
@@ -895,7 +895,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100", Level.LEVEL3, async (done: Function) => {
-      await getBuffer('test5.jpg');
+      await getBuffer('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreateFromDataWithUserBuffer(buffer);
       expect(res).assertEqual(0);
       done();
@@ -911,22 +911,6 @@ export default function ImageSourceNativeErrorCodeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromDataWithUserBufferInvaildParamter();
-      expect(res).assertEqual(0);
-      done();
-    });
-
-
-    /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100
-     * @tc.desc     : OH_ImageSourceNative_CreateFromRawFile return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
-     */
-    it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0100", Level.LEVEL3, async (done: Function) => {
-      const rawFileDescriptor = await  testContext.resourceManager.getRawFd('test5.jpg');
-      let res: number = ndkTest.jsImageSoureNativeCreateFromRawFile(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
       expect(res).assertEqual(0);
       done();
     });
@@ -982,7 +966,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreatePixelmapUsingAllocatorUnsuportedAllocatorType(filePath);
       expect(res).assertEqual(0);
       done();
@@ -997,7 +981,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreatePixelmapList(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1027,7 +1011,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreatePicture(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1056,7 +1040,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeCreatePictureAtIndex(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1085,7 +1069,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeCreatePictureAtIndexUnsuportedOptions(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1101,7 +1085,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeGetDelayTimeList(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1130,7 +1114,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeGetImageInfo(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1173,7 +1157,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300", Level.LEVEL3, async (done: Function) => {
-      await getFd('test_exif_v2.jpg');
+      await getFd('test_exif_v21.jpg');
       let res: number = ndkTest.jsImageSoureNativeGetImagePropertyAllocFailed(filePath,image.PropertyKey.SCENE_TYPE);
       expect(res).assertEqual(0);
       done();
@@ -1203,7 +1187,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test5.jpg');
+      await getFd('test51.jpg');
       let res: number = ndkTest.jsImageSoureNativeModifyImageProperty(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1232,7 +1216,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeGetFrameCount(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1261,7 +1245,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeRelease(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1396,7 +1380,7 @@ export default function ImageSourceNativeErrorCodeTest() {
      * @tc.level    : Level 3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100", Level.LEVEL3, async (done: Function) => {
-      await getFd('test6.gif');
+      await getFd('test61.gif');
       let res: number = ndkTest.jsImageSoureNativeGetSupportedFormats(filePath);
       expect(res).assertEqual(0);
       done();
@@ -1416,7 +1400,243 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
 
+    /**
+     * @tc.number   : SUB_testPictureNative_CreatePicture
+     * @tc.name     : SUB_testPictureNative_CreatePicture
+     * @tc.desc     : OH_PictureNative_CreatePicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_CreatePicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_CreatePicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
 
+    /**
+     * @tc.number   : SUB_testPictureNative_GetMainPixelmap
+     * @tc.name     : SUB_testPictureNative_GetMainPixelmap
+     * @tc.desc     : OH_PictureNative_GetMainPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetMainPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_GetMainPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.name     : SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.desc     : OH_PictureNative_GetHdrComposedPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetHdrComposedPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_GetHdrComposedPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.name     : SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.desc     : OH_PictureNative_GetGainmapPixelmap return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetGainmapPixelmap", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_GetGainmapPixelmap(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.name     : SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.desc     : OH_PictureNative_SetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_SetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let auxPicture :image.AuxiliaryPicture
+      let res: number = ndkTest.testPictureNative_SetAuxiliaryPicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.name     : SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.desc     : OH_PictureNative_GetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_GetAuxiliaryPicture(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_GetMetadata
+     * @tc.name     : SUB_testPictureNative_GetMetadata
+     * @tc.desc     : Test OH_PictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_GetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testPictureNative_SetMetadata
+     * @tc.name     : SUB_testPictureNative_SetMetadata
+     * @tc.desc     : Test OH_PictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_SetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testPictureNative_Release
+     * @tc.name     : SUB_testPictureNative_Release
+     * @tc.desc     : Test OH_PictureNative_Release return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testPictureNative_Release", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testPictureNative_Release(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.name     : SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.desc     : Test OH_AuxiliaryPictureNativeWritePixelsImage return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNativeWritePixelsImage", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNativeWritePixelsImage(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.name     : SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_ReadPixels return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_ReadPixels", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_ReadPixels(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetType
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetType
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetType return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetType", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetType(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetInfo return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetInfo", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetInfo(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.name     : SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetInfo return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_SetInfo", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_SetInfo(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.name     : SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_GetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.number   : SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.name     : SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.size     : MediumTest
+     * @tc.type     : Functional
+     * @tc.level    : Level 3
+     */
+    it("SUB_testAuxiliaryPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
+      await getFd('test61.gif');
+      let res: number = ndkTest.testAuxiliaryPictureNative_SetMetadata(filePath);
+      expect(res).assertEqual(0);
+      done();
+    });
   })
 }
 

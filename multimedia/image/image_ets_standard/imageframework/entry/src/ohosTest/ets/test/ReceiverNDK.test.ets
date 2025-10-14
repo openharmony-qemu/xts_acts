@@ -198,21 +198,6 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0300
-         * @tc.desc      : OH_Image_GetComponent, error code is IMAGE_RESULT_BAD_PARAMETER
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
-         */
-        // it('SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0300', Level.LEVEL3, async (done: ESObject) => {
-        //     let result: number = ndkTest.imageGetComponentBadParameter();
-        //     expect(result).assertEqual(0);
-        //     done();
-        // });
-
-
-        /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
          * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
          * @tc.desc      : OH_Image_Format error code is IMAGE_RESULT_SUCCESS
@@ -265,22 +250,6 @@ export default function ImageReceiverNDKTest() {
             expect(result).assertEqual(0);
             done();
         });
-
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0300
-         * @tc.desc      : OH_Image_Format error code is IMAGE_RESULT_BAD_PARAMETER
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
-         */
-        // it('SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0300', Level.LEVEL3, async (done: ESObject) => {
-        //
-        //     let result: number = ndkTest.imageFormatBadParameter();
-        //     expect(result).assertEqual(0);
-        //
-        // });
-
 
         /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100
