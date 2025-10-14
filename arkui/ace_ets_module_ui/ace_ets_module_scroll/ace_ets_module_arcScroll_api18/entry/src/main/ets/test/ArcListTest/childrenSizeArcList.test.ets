@@ -53,16 +53,33 @@ export default function childrenSizeArcList() {
     it('childrenSizeArcList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[childrenSizeArcList_0100] START');
       let driver = await Driver.create()
+      let listItem0_0 = CommonFunc.getComponentRectOnScreen('arcList_size_0');
+      let listItem0_1 = CommonFunc.getComponentRectOnScreen('arcList_size_1');
+      await CommonFunc.sleep(500);
+      let size_0 = listItem0_1.top - listItem0_0.bottom
+      console.info("[childrenSizeArcList_0100] size_0 is: " + size_0);
+
       let btn1: Component = await driver.findComponent(ON.id('arcList_splice'));
       await btn1.click();
       await CommonFunc.sleep(1500);
+      let listItem1_0 = CommonFunc.getComponentRectOnScreen('arcList_size_0');
+      let listItem1_1 = CommonFunc.getComponentRectOnScreen('arcList_size_1');
+      await CommonFunc.sleep(500);
+      let size_1 = listItem1_1.top - listItem1_0.bottom
+      console.info("[childrenSizeArcList_0100] size_1 is: " + size_1);
+      await CommonFunc.sleep(500);
+      expect(Math.floor(size_1 - size_0) < 0).assertEqual(true);
+
       let btn2: Component = await driver.findComponent(ON.id('arcList_update'));
       await btn2.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('arcList_Count');
-      console.info("[childrenSizeArcList_0100] component obj1 is: " + JSON.stringify(JSON.parse(strJson)));
-      console.info("[childrenSizeArcList_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
-      expect(JSON.parse(strJson).$attrs.content).assertEqual('4');
+      let listItem2_0 = CommonFunc.getComponentRectOnScreen('arcList_size_0');
+      let listItem2_1 = CommonFunc.getComponentRectOnScreen('arcList_size_1');
+      await CommonFunc.sleep(500);
+      let size_2 = listItem2_1.top - listItem2_0.bottom
+      console.info("[childrenSizeArcList_0100] size_2 is: " + size_2);
+      await CommonFunc.sleep(500);
+      expect(Math.floor(size_2 - size_0) > 0).assertEqual(true);
       console.info('[childrenSizeArcList_0100] END');
       done();
     });
