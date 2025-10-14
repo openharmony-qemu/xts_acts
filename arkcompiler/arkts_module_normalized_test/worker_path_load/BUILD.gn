@@ -13,8 +13,8 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ModuleNormalizedWorkerPathLoadLibTest") {
-  hap_name = "ModuleNormalizedWorkerPathLoadLibTest"
+ohos_app_assist_suite("module_normalized_worker_path_load_lib_test") {
+  hap_name = "ActsModuleNormalizedWorkerPathLoadLibTest"
   testonly = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
@@ -22,11 +22,11 @@ ohos_app_assist_suite("ModuleNormalizedWorkerPathLoadLibTest") {
 }
 
 ohos_js_app_suite("module_normalized_worker_path_load_test") {
-  hap_name = "ModuleNormalizedWorkerPathLoadTest"
+  hap_name = "ActsModuleNormalizedWorkerPathLoadTest"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
-  deps = [ ":ModuleNormalizedWorkerPathLoadLibTest" ]
+  deps = [ ":module_normalized_worker_path_load_lib_test" ]
 }

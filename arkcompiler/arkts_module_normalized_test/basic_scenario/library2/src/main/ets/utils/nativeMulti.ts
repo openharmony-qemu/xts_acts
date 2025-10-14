@@ -15,6 +15,6 @@
 
 import { add } from 'liblibrary2.so';
 
-export function nativeAdd(a: number, b: number) {
+export function nativeAdd(a: number, b: number): number {
   return add(a, b);
 }

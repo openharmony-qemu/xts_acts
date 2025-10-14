@@ -13,8 +13,8 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ModuleNormalizedExecutePromiseLibTest") {
-  hap_name = "ModuleNormalizedExecutePromiseLibTest"
+ohos_app_assist_suite("module_normalized_execute_promise_lib_test") {
+  hap_name = "ActsModuleNormalizedExecutePromiseLibTest"
   testonly = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
@@ -22,11 +22,11 @@ ohos_app_assist_suite("ModuleNormalizedExecutePromiseLibTest") {
 }
 
 ohos_js_app_suite("module_normalized_execute_promise_test") {
-  hap_name = "ModuleNormalizedExecutePromiseTest"
+  hap_name = "ActsModuleNormalizedExecutePromiseTest"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
-  deps = [ ":ModuleNormalizedExecutePromiseLibTest" ]
+  deps = [ ":module_normalized_execute_promise_lib_test" ]
 }

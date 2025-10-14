@@ -13,8 +13,8 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ModuleNormalizedStaticLoadLibTest") {
-  hap_name = "ModuleNormalizedStaticLoadLibTest"
+ohos_app_assist_suite("module_normalized_static_load_lib_test") {
+  hap_name = "ActsModuleNormalizedStaticLoadLibTest"
   testonly = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
@@ -22,11 +22,11 @@ ohos_app_assist_suite("ModuleNormalizedStaticLoadLibTest") {
 }
 
 ohos_js_app_suite("module_normalized_static_load_test") {
-  hap_name = "ModuleNormalizedStaticLoadTest"
+  hap_name = "ActsModuleNormalizedStaticLoadTest"
   testonly = true
   test_hap = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
-  deps = [ ":ModuleNormalizedStaticLoadLibTest" ]
+  deps = [ ":module_normalized_static_load_lib_test" ]
 }

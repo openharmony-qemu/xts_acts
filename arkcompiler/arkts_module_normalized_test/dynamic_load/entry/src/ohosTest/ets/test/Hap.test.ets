@@ -48,7 +48,7 @@ export default function dynamicLoadHap() {
      */
     it('testConstantExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions02";
-      import('../testSubtract').then(m => {
+      import('../TestSubtract.test').then(m => {
         expect(m.subtract(3, 2)).assertEqual(1);
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
@@ -67,7 +67,7 @@ export default function dynamicLoadHap() {
      */
     it('testConstantExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions03";
-      import('./fileTest').then(m => {
+      import('./fileTest/Index.test').then(m => {
         expect(m.multiply(3, 2)).assertEqual(6);
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
@@ -86,7 +86,7 @@ export default function dynamicLoadHap() {
      */
     it('testConstantExpressions04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions04";
-      import('./fileTest/中文').then(m => {
+      import('./fileTest/Chinese.test').then(m => {
         expect(m.getInfo()).assertEqual("CN");
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
@@ -125,7 +125,7 @@ export default function dynamicLoadHap() {
      */
     it('testVariableExpressions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions02";
-      let libname = '../testSubtract';
+      let libname = '../TestSubtract.test';
       import(libname).then((m: ESObject) => {
         expect(m.subtract(3, 2)).assertEqual(1);
       }).catch((error: BusinessError) => {
@@ -145,7 +145,7 @@ export default function dynamicLoadHap() {
      */
     it('testVariableExpressions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions03";
-      let libname = './fileTest';
+      let libname = './fileTest/Index.test';
       import(libname).then((m: ESObject) => {
         expect(m.multiply(3, 2)).assertEqual(6);
       }).catch((error: BusinessError) => {
@@ -165,7 +165,7 @@ export default function dynamicLoadHap() {
      */
     it('testVariableExpressions04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions04";
-      let libname = './fileTest/中文';
+      let libname = './fileTest/Chinese.test';
       import(libname).then((m: ESObject) => {
         expect(m.getInfo()).assertEqual("CN");
       }).catch((error: BusinessError) => {

@@ -15,6 +15,6 @@
 
 export { add } from './testAdd';
 
-export { subtract } from './src/test';
+export { subtract } from './src/test/TestSubtract.test';
 
-export { multiply } from './src/test';
+export { multiply } from './src/test/Index.test';

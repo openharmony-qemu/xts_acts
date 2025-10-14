@@ -11,9 +11,9 @@
     "kits": [
         {
             "test-file-name": [
-                "ModuleNormalizedWorkerPathLoadLibTest-hsp-default-signed.hsp",
-                "ModuleNormalizedWorkerPathLoadLibTest-entry-default-signed.hap",
-                "ModuleNormalizedWorkerPathLoadTest.hap"
+                "ActsModuleNormalizedWorkerPathLoadLibTest-hsp-default-signed.hsp",
+                "ActsModuleNormalizedWorkerPathLoadLibTest-entry-default-signed.hap",
+                "ActsModuleNormalizedWorkerPathLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

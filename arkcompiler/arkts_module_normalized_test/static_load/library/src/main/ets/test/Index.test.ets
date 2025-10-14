@@ -17,4 +17,4 @@ export function multiply(a: number, b: number) {
   return a * b;
 }
 
-export { subtract } from '../testSubtract';
+export { subtract } from '../TestSubtract.test';

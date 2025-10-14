@@ -15,9 +15,9 @@
 
 import { describe, it, expect ,TestType, Size, Level } from "@ohos/hypium";
 import { add as testAdd } from './TestAdd.test';
-import { subtract as testSubtract } from '../testSubtract';
-import { multiply as testMultiply } from './fileTest';
-import { getInfo as testGetCNInfo } from './fileTest/中文';
+import { subtract as testSubtract } from '../TestSubtract.test';
+import { multiply as testMultiply } from './fileTest/Index.test';
+import { getInfo as testGetCNInfo } from './fileTest/Chinese.test';
 import { add as napiAdd } from 'libentry.so';
 import testJson from './fileTest/1.json';
 import { ArrayList } from '@kit.ArkTS';
@@ -117,24 +117,6 @@ export default function staticLoadHap() {
         expect().assertFail();
       }
       expect(length).assertEqual(1);
-    })
-
-    /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0600
-     * @tc.name      : testStaticLoadHap06
-     * @tc.desc      : In this project hap, load the system so, @ohos.xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("testStaticLoadHap06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const caseName: string = "testStaticLoadHap06";
-      try {
-        expect(true).assertTrue();
-      } catch (error) {
-        console.error(`${caseName} catch error: ${error}`);
-        expect().assertFail();
-      }
     })
 
     /**

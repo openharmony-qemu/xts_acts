@@ -14,5 +14,5 @@
  */
 
 export function getModuleDescription(): string {
-  return "This is library3";
+  return 'This is library3';
 }

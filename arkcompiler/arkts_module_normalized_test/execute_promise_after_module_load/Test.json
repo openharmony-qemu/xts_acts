@@ -11,8 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "ModuleNormalizedExecutePromiseLibTest.hap",
-                "ModuleNormalizedExecutePromiseTest.hap"
+                "ActsModuleNormalizedExecutePromiseLibTest.hap",
+                "ActsModuleNormalizedExecutePromiseTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

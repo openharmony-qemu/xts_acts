@@ -39,24 +39,6 @@ export default function staticLoadRemoteHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0200
-     * @tc.name      : testRemoteHar02
-     * @tc.desc      : Remote har, two-level package name @xxx/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("testRemoteHar02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const caseName: string = "testRemoteHar02";
-      try {
-        expect(true).assertTrue();
-      } catch (error) {
-        console.error(`${caseName} catch error: ${error}`);
-        expect().assertFail();
-      }
-    })
-
-    /**
      * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0300
      * @tc.name      : testRemoteHar03
      * @tc.desc      : Remote har, package name + path xxx/file/xxx.

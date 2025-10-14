@@ -39,9 +39,9 @@
         ],
         "sources": [
           "./src/ohosTest/ets/test/TestAdd.test.ets",
-          "./src/ohosTest/ets/testSubtract.ets",
+          "./src/ohosTest/ets/TestSubtract.test.ets",
           "./src/ohosTest/ets/test/fileTest",
-          "./src/ohosTest/ets/test/fileTest/中文.ets",
+          "./src/ohosTest/ets/test/fileTest/Chinese.test.ets",
           "./src/main/ets/testDivide.ets"
         ]
       }

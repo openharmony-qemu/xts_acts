@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import hspImport from './hsp.test';
+import hspImport from './Hsp.test';
 import staticImport from './StaticImport.test';
 import dynamicImport from './DynamicImport.test';
 import workerImport from './WorkerImport.test';

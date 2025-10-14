@@ -26,19 +26,19 @@ export { add } from 'ets/testAdd';
 
 export { add as add1 } from './testAdd';
 
-export { subtract } from './src/main/ets/test';
+export { subtract } from './src/main/ets/test/TestSubtract.test';
 
-export { multiply } from './src/main/ets/test';
+export { multiply } from './src/main/ets/test/Index.test';
 
-export { getInfo as testGetCNInfo } from './src/main/ets/test/中文';
+export { getInfo as testGetCNInfo } from './src/main/ets/test/Chinese.test';
 
 export { addTest } from 'loadHar';
 
-export { getHarName } from 'loadHar/src/main/ets/getHarNameTest';
+export { getHarName } from 'loadHar/src/main/ets/GetHarNameTest.test';
 
 export { addTest as addTest2 } from 'library';
 
-export { getHarName as getHarName2 } from 'library/src/main/ets/getHarNameTest';
+export { getHarName as getHarName2 } from 'library/src/main/ets/GetHarNameTest.test';
 
 export { expect as expect2 } from '@ohos/hypium';
 
@@ -50,4 +50,4 @@ export { add as hspAdd2 } from 'library1';
 
 export { subtract as hspSubtract } from 'loadHsp/src/test/TestSubtract.test';
 
-export { subtract as hspSubtract2 } from 'library1/src/test/testSubtract';
+export { subtract as hspSubtract2 } from 'library1/src/test/TestSubtract.test';

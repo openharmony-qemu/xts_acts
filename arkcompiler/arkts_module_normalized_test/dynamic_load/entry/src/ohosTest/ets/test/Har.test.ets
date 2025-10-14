@@ -235,7 +235,7 @@ export default function dynamicLoadHar() {
       const caseName: string = "testVariableExpressionsOhpm01";
       let libname = '@ohos/hypium';
       import(libname).then((m: ESObject) => {
-        m.expect(true).assertTrue();
+        expect(m !== null).assertTrue();
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();

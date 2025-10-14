@@ -11,10 +11,10 @@
     "kits": [
         {
             "test-file-name": [
-                "ModuleNormalizedDynamicLoadLibTest-loadHsp-default-signed.hsp",
-                "ModuleNormalizedDynamicLoadLibTest-hsp-default-signed.hsp",
-                "ModuleNormalizedDynamicLoadLibTest-entry-default-signed.hap",
-                "ModuleNormalizedDynamicLoadTest.hap"
+                "ActsModuleNormalizedDynamicLoadLibTest-loadHsp-default-signed.hsp",
+                "ActsModuleNormalizedDynamicLoadLibTest-hsp-default-signed.hsp",
+                "ActsModuleNormalizedDynamicLoadLibTest-entry-default-signed.hap",
+                "ActsModuleNormalizedDynamicLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

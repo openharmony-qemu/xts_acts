@@ -23,8 +23,8 @@ export { addTest };
 
 export { add } from './testAdd';
 
-export { subtract } from './src/main/ets/test';
+export { subtract } from './src/main/ets/test/Index.test';
 
-export { multiply } from './src/main/ets/test';
+export { multiply } from './src/main/ets/test/Index.test';
 
-export { getInfo as testGetCNInfo } from './src/main/ets/test/中文.test';
+export { getInfo as testGetCNInfo } from './src/main/ets/test/Chinese.test';

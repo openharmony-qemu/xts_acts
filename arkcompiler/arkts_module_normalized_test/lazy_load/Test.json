@@ -11,9 +11,9 @@
     "kits": [
         {
             "test-file-name": [
-                "ModuleNormalizedLazyLoadLibTest-lazyhsp-default-signed.hsp",
-                "ModuleNormalizedLazyLoadLibTest-entry-default-signed.hap",
-                "ModuleNormalizedLazyLoadTest.hap"
+                "ActsModuleNormalizedLazyLoadLibTest-lazyhsp-default-signed.hsp",
+                "ActsModuleNormalizedLazyLoadLibTest-entry-default-signed.hap",
+                "ActsModuleNormalizedLazyLoadTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

@@ -71,12 +71,13 @@ export default class OpenHarmonyTestRunner implements TestRunner {
   }
 }
 
-async function checkMock(abilityDelegator: abilityDelegatorRegistry.AbilityDelegator, resourceManager: resourceManager.ResourceManager) {
+async function checkMock(abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
+                         resourceManager: resourceManager.ResourceManager) {
   let rawFile: Uint8Array;
   try {
     rawFile = resourceManager.getRawFileContentSync(jsonPath);
     hilog.info(0x0000, tag, 'MockList file exists');
-    let mockStr: string = util.TextDecoder.create("utf-8", { ignoreBOM: true }).decodeWithStream(rawFile);
+    let mockStr: string = util.TextDecoder.create('utf-8', { ignoreBOM: true }).decodeWithStream(rawFile);
     let mockMap: Record<string, string> = getMockList(mockStr);
     try {
       abilityDelegator.setMockList(mockMap)
