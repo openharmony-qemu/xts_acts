@@ -364,8 +364,8 @@ export default function abilityTest() {
     /**
      * @tc.number: ACTS_AddAbilityMonitor_Promise_0300
      * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityBackground (promise).
+     * @tc.desc: Use addAbilityMonitor to add a monitor with onAbilityBackground callback,
+     * then use startAbility to start the target ability and verify the monitor is triggered (promise).
      */
     it('ACTS_AddAbilityMonitor_Promise_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0300";
@@ -566,7 +566,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -606,7 +606,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -646,7 +646,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -686,7 +686,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -726,7 +726,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -766,7 +766,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -836,7 +836,7 @@ export default function abilityTest() {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
             done();
-          }, 500)
+          }, 2000)
         })
       })
     })
@@ -875,7 +875,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -915,7 +915,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -955,7 +955,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -995,7 +995,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -1035,7 +1035,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 500)
+            }, 2000)
           })
         })
       }))
@@ -1075,7 +1075,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 1000)
+            }, 2000)
           })
         })
       }))
@@ -1105,13 +1105,13 @@ export default function abilityTest() {
         console.log(TAG + "====>0700 removeAbilityMonitorPromise====>")
         setTimeout(() => {
           done();
-        }, 500)
+        }, 2000)
       }).catch((err: BusinessError) => {
         console.log(TAG + "====>0700removeAbilityMonitorPromise success====>" + err);
         expect().assertFail()
         setTimeout(() => {
           done();
-        }, 500)
+        }, 1500)
       })
     })
 
@@ -1150,7 +1150,7 @@ export default function abilityTest() {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
             done();
-          }, 500)
+          }, 2000)
         })
       })
     })
