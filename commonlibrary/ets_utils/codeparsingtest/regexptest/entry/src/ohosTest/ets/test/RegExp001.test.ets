@@ -33,7 +33,7 @@ import { testRegCtrJs0006, testRegCtrJs0007, testRegCtrJs0018, testRegCtrJs0021,
   testRegCtrJs0080,
   testRegExecJs0133,
   testRegExecJs0134
-} from './RegExp001';
+} from './RegExp.test';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -5049,7 +5049,6 @@ export default function RegExpTest001() {
         "Let my heart be still a moment and this mystery explore; -" +
         "'Tis the wind and nothing more!'" +
         "\n" +
-        "Open here I flung the shutter, when, with many a flirt and flutter," +
         "In there stepped a stately raven of the saintly days of yore." +
         "Not the least obeisance made he; not a minute stopped or stayed he;" +
         "But, with mien of lord or lady, perched above my chamber door -" +
@@ -5058,7 +5057,6 @@ export default function RegExpTest001() {
         "\n" +
         "Then this ebony bird beguiling my sad fancy into smiling," +
         "By the grave and stern decorum of the countenance it wore," +
-        "`Though thy crest be shorn and shaven, thou,' I said, `art sure no craven." +
         "Ghastly grim and ancient raven wandering from the nightly shore -" +
         "Tell me what thy lordly name is on the Night's Plutonian shore!'" +
         "Quoth the raven, `Nevermore.'" +
@@ -5079,7 +5077,6 @@ export default function RegExpTest001() {
         "\n" +
         "Startled at the stillness broken by reply so aptly spoken," +
         "`Doubtless,' said I, `what it utters is its only stock and store," +
-        "Caught from some unhappy master whom unmerciful disaster" +
         "Followed fast and followed faster till his songs one burden bore -" +
         "Till the dirges of his hope that melancholy burden bore" +
         "Of \"Never-nevermore.\"'" +
@@ -5195,7 +5192,6 @@ export default function RegExpTest001() {
         "Let my heart be still a moment and this mystery explore; -" +
         "'Tis the wind and nothing more!'" +
         "\n" +
-        "Open here I flung the shutter, when, with many a flirt and flutter," +
         "In there stepped a stately raven of the saintly days of yore." +
         "Not the least obeisance made he; not a minute stopped or stayed he;" +
         "But, with mien of lord or lady, perched above my chamber door -" +
@@ -5204,7 +5200,6 @@ export default function RegExpTest001() {
         "\n" +
         "Then this ebony bird beguiling my sad fancy into smiling," +
         "By the grave and stern decorum of the countenance it wore," +
-        "`Though thy crest be shorn and shaven, thou,' I said, `art sure no craven." +
         "Ghastly grim and ancient raven wandering from the nightly shore -" +
         "Tell me what thy lordly name is on the Night's Plutonian shore!'" +
         "Quoth the raven, `Nevermore.'" +
@@ -5225,7 +5220,6 @@ export default function RegExpTest001() {
         "\n" +
         "Startled at the stillness broken by reply so aptly spoken," +
         "`Doubtless,' said I, `what it utters is its only stock and store," +
-        "Caught from some unhappy master whom unmerciful disaster" +
         "Followed fast and followed faster till his songs one burden bore -" +
         "Till the dirges of his hope that melancholy burden bore" +
         "Of \"Never-nevermore.\"'" +
@@ -5342,7 +5336,6 @@ export default function RegExpTest001() {
         "Let my heart be still a moment and this mystery explore; -" +
         "'Tis the wind and nothing more!'" +
         "\n" +
-        "Open here I flung the shutter, when, with many a flirt and flutter," +
         "In there stepped a stately raven of the saintly days of yore." +
         "Not the least obeisance made he; not a minute stopped or stayed he;" +
         "But, with mien of lord or lady, perched above my chamber door -" +
@@ -5351,7 +5344,6 @@ export default function RegExpTest001() {
         "\n" +
         "Then this ebony bird beguiling my sad fancy into smiling," +
         "By the grave and stern decorum of the countenance it wore," +
-        "`Though thy crest be shorn and shaven, thou,' I said, `art sure no craven." +
         "Ghastly grim and ancient raven wandering from the nightly shore -" +
         "Tell me what thy lordly name is on the Night's Plutonian shore!'" +
         "Quoth the raven, `Nevermore.'" +
@@ -5372,7 +5364,6 @@ export default function RegExpTest001() {
         "\n" +
         "Startled at the stillness broken by reply so aptly spoken," +
         "`Doubtless,' said I, `what it utters is its only stock and store," +
-        "Caught from some unhappy master whom unmerciful disaster" +
         "Followed fast and followed faster till his songs one burden bore -" +
         "Till the dirges of his hope that melancholy burden bore" +
         "Of \"Never-nevermore.\"'" +

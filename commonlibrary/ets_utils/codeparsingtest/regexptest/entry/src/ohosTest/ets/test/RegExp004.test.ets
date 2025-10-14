@@ -28,7 +28,7 @@ import { testRegSearchJs0053, testRegSearchJs0054, testRegSearchJs0055, testRegS
   testRegSplitJs0085,
   testRegSplitJs0086,
   testRegSplitJs0087,
-  testRegSplitJs0088} from './RegExp001';
+  testRegSplitJs0088} from './RegExp.test';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -645,19 +645,15 @@ export default function RegExpTest004() {
     /**
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_0042
      * @tc.name testRegSearch0042
-     * @tc.desc Regex with invalid escape sequence throws
+     * @tc.desc Regex with invalid escape sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
     it('testRegSearch0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
-      try {
-        const result: number = str.search(new RegExp("\\x")); // invalid escape
-        expect(result).assertEqual(-1);
-      } catch (e) {
-        expect(true).assertEqual(true);
-      }
+      const result: number = str.search(new RegExp("\\x")); // invalid escape
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -1211,11 +1207,8 @@ export default function RegExpTest004() {
      */
     it('testRegSearch0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
-      try {
-        str.search(/[/]/); // invalid regex
-      } catch (e) {
-        expect((e as Error).message.includes("Invalid")).assertEqual(true);
-      }
+      const result: number = str.search(/[/]/);
+      expect(result).assertEqual(-1);
     });
 
     /**
