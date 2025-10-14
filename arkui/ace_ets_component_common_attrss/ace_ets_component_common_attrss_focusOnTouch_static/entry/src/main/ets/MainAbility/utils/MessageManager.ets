@@ -37,7 +37,7 @@ export class MessageManager {
       return
     }
 
-    let tmpCallback: Callback|undefined = this.callbacks.get(type)
+    let tmpCallback: Callback | undefined = this.callbacks.get(type)
     if (tmpCallback === undefined) {
       console.error('callbacks has no callback for type ' + type)
       return

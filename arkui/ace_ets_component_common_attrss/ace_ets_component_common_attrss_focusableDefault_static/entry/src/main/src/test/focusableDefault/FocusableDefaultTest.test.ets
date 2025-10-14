@@ -12,19 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {  Color, $r } from '@ohos.arkui.component'
-import Utils, {
-  CurrentRatio,
-  BasePageConfig,
-  PageConfig,
-  TestValue,
-  RectValue,
-  SetValue,
-  StrJsonObj
-} from '../../../ets/MainAbility/common/Utils';
+import {Color,$r} from '@ohos.arkui.component'
+import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect,beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -35,164 +26,157 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
-interface Attrs {
-  $attrs: SetValue
-}
-
+let testAbilityContext:common.UIAbilityContext;
 
 export default function FocusableDefaultTest() {
-  
-  let supportView = [
-    "Button",
-    "TextInput",
-    "TextArea",
-    "Search",
-    "Text",
-    "Image",
-    "Grid",
-    "List",
-    "Checkbox",
-
-    "DatePicker",
-    "ImageAnimator",
-    "Menu",
-    "MenuItem",
-
-    "Radio",
-    "Rating",
-
-    "Slider",
-
-    "Toggle",
-
-    "AlphabetIndexer",
-    "Column",
-
-    "Flex",
-
-    "GridItem",
-    "ListItem",
-
-    "Row",
-
-    "Scroll",
-
-    "Stack",
-    "Swiper",
-    "Tabs",
-  ]
-
-  
-  let pageConfig: PageConfig = {
-    testName: "testFocusableDefault",
-    pageName: "FocusableDefaultPage",
-    pageUrl: "MainAbility/pages/focusableDefault/FocusableDefaultPage",
-    referenceComponentKey: "referenceComponentKey",
-  }
-  
-  let testValues: TestValue[] = [
-    {
-      describe: "InitialValue",
-    },
-  ]
-
-  /**
-   * Create test suite.
-   */
-
-  describe("FocusableDefaultTest", () => {
-    beforeAll(() => {
-      console.info("FocusableDefaultTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     
-    CommonTest.initTest(
-      pageConfig,
-      supportView,
-      testValues,
-      async (data: BasePageConfig): Promise<void> => {
-        
-        let res = Utils.requestFocus(
-          data.pageConfig.componentKey ?? ''
-        )
-        if (
-          data.pageConfig.targetView == "TextInput" ||
-            data.pageConfig.targetView == "TextArea"
-        ) {
-          await Utils.sleep(4000)
-        } else {
-          await Utils.sleep(1000)
-        }
-        console.info(
-          "[" + data.caseTag + "] FocusControlCallback is " + res
-        )
+    let supportView = [
+        "Button",
+        "TextInput",
+        "TextArea",
+        "Search",
+        "Text",
+        "Image",
+        "Grid",
+        "List",
+        "Checkbox",
 
-        if (
-          "Text" == data.pageConfig.targetView ||
-            "Image" == data.pageConfig.targetView ||
-            "ImageAnimator" == data.pageConfig.targetView
-        ) {
-          
-          expect(res).assertEqual(false)
-          console.info(
-            "[" + data.caseTag + "] FocusControlCallback is " + res
-          )
-          
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
-            data.pageConfig.referenceComponentKey ?? ''
-          )
-          console.info(
-            "[" +
-            data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
-          )
-          expect(referenceComponent.$attrs.label).assertEqual("")
-          
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
-            data.pageConfig.componentKey ?? ''
-          )
-          expect(viewObj.$attrs.focusable).assertEqual(false)
-        } else {
-          
-          expect(res).assertEqual(true)
-          console.info(
-            "[" + data.caseTag + "] FocusControlCallback is " + res
-          )
-          
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
-            data.pageConfig.referenceComponentKey ?? ''
-          )
-          console.info(
-            "[" +
-            data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
-          )
-          expect(referenceComponent.$attrs.label).assertEqual(
-            "onFocus"
-          )
-          
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
-            data.pageConfig.componentKey ?? ''
-          )
-          console.info(
-            "[" +
-            data.caseTag +
-              "] DefaultFocusable is " +
-            viewObj.$attrs.focusable
-          )
-          expect(viewObj.$attrs.focusable).assertEqual(true)
-        }
-      }
-    )
-  })
+        "DatePicker",
+        "ImageAnimator",
+        "Menu",
+        "MenuItem",
+
+        "Radio",
+        "Rating",
+
+        "Slider",
+
+        "Toggle",
+
+        "AlphabetIndexer",
+        "Column",
+
+        "Flex",
+
+        "GridItem",
+        "ListItem",
+
+        "Row",
+
+        "Scroll",
+
+        "Stack",
+        "Swiper",
+        "Tabs",
+    ]
+
+    
+    let pageConfig: PageConfig = {
+        testName: "testFocusableDefault",
+        pageName: "FocusableDefaultPage",
+        pageUrl: "MainAbility/pages/focusableDefault/FocusableDefaultPage",
+        referenceComponentKey: "referenceComponentKey",
+    }
+    
+    let testValues: TestValue[] = [
+        {
+            describe: "InitialValue",
+        },
+    ]
+
+    /**
+     * Create test suite.
+     */
+
+    describe("FocusableDefaultTest", () => {
+        beforeAll(() => {
+            console.info("FocusableDefaultTest beforeEach start");
+            await UtilsTest.msSleep(4000)
+            await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+            await UtilsTest.msSleep(4000)
+        });
+        
+CommonTest.initTest(
+            pageConfig,
+            supportView,
+            testValues,
+            async (data: BasePageConfig): Promise<void> => {
+                
+                let res = Utils.requestFocus(
+                    data.pageConfig.componentKey??''
+                )
+                if (
+                    data.pageConfig.targetView == "TextInput" ||
+                    data.pageConfig.targetView == "TextArea"
+                ) {
+                    await Utils.sleep(4000)
+                } else {
+                    await Utils.sleep(1000)
+                }
+                console.info(
+                    "[" + data.caseTag + "] FocusControlCallback is " + res
+                )
+
+                if (
+                    "Text" == data.pageConfig.targetView ||
+                    "Image" == data.pageConfig.targetView ||
+                    "ImageAnimator" == data.pageConfig.targetView
+                ) {
+                    
+                    expect(res).assertEqual(false)
+                    console.info(
+                        "[" + data.caseTag + "] FocusControlCallback is " + res
+                    )
+                    
+                    let referenceComponent = Utils.getComponentByKey(
+                        data.pageConfig.referenceComponentKey??''
+                    )
+                    console.info(
+                        "[" +
+                            data.caseTag +
+                            "] referenceComponent.$attrs.label: " +
+                            referenceComponent.getElement('$attrs').getString('label')
+                    )
+                    expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
+                    
+                    let viewObj = Utils.getComponentByKey(
+                        data.pageConfig.componentKey??''
+                    )
+                    expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(false)
+                } else {
+                    
+                    expect(res).assertEqual(true)
+                    console.info(
+                        "[" + data.caseTag + "] FocusControlCallback is " + res
+                    )
+                    
+                    let referenceComponent = Utils.getComponentByKey(
+                        data.pageConfig.referenceComponentKey??''
+                    )
+                    console.info(
+                        "[" +
+                            data.caseTag +
+                            "] referenceComponent.$attrs.label: " +
+                            referenceComponent.getElement('$attrs').getString('label')
+                    )
+                    expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual(
+                        "onFocus"
+                    )
+                    
+                    let viewObj = Utils.getComponentByKey(
+                        data.pageConfig.componentKey??''
+                    )
+                    console.info(
+                        "[" +
+                            data.caseTag +
+                            "] DefaultFocusable is " +
+                            viewObj.getElement('$attrs').getBoolean('focusable')
+                    )
+                    expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(true)
+                }
+            }
+        )
+    })
 }

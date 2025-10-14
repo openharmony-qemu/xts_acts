@@ -29,11 +29,8 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
-
 export default function FocusControlTest() {
 
-  
   let supportView = [
     'Button',
     'TextInput',
@@ -59,7 +56,7 @@ export default function FocusControlTest() {
     'TextPicker',
     'TimePicker',
     'Toggle',
-    'Web',
+    
     'AlphabetIndexer',
     'Column',
     
@@ -87,12 +84,12 @@ export default function FocusControlTest() {
     pageUrl: 'MainAbility/pages/focusControl/FocusControlPage',
     referenceComponentKey: 'referenceComponentKey',
   }
-  
+
   let testValues: TestValue[] = [{
     describe: 'SetFocusableTrue',
   }, {
     describe: 'SetFocusableFalse',
-    
+    setValue: false
   }, {
     describe: 'SetAbsentComponent',
   }]
@@ -104,29 +101,20 @@ export default function FocusControlTest() {
   describe('FocusControlTest', () => {
     beforeAll(() => {
       console.info("FocusControlTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs3.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-
       if ('SetFocusableTrue' == data.testValue.describe) {
-        
-        
         let res = focusControl.requestFocus(data.pageConfig.componentKey!);
         expect(res).assertEqual(true);
         console.info('[' + data.caseTag + '] FocusControlCallback is ' + res);
       } else if ('SetFocusableFalse' == data.testValue.describe) {
-        
-        
         let res = focusControl.requestFocus(data.pageConfig.componentKey!);
         expect(res).assertEqual(false);
         console.info('[' + data.caseTag + '] FocusControlCallback is ' + res);
       } else if ('SetAbsentComponent' == data.testValue.describe) {
-        
-        
         let res = focusControl.requestFocus('nullKey');
         expect(res).assertEqual(false);
         console.info('[' + data.caseTag + '] FocusControlCallback is ' + res);

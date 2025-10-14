@@ -14,12 +14,15 @@
  */
 {
   "app": {
+    "signingConfigs": [
+
+    ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
         "arkTSVersion": "1.2",
-        "compatibleSdkVersion": "20",
+        "compatibleSdkVersion": "21",
         "compileSdkVersion": "21",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -27,18 +30,17 @@
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        }
+        },
       }
     ],
     "buildModeSet": [
       {
-        "name": "debug"
+        "name": "debug",
       },
       {
         "name": "release"
       }
-    ],
-    "signingConfigs": []
+    ]
   },
   "modules": [
     {

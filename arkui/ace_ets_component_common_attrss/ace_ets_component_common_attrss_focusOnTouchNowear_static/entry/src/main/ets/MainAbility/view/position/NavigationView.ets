@@ -12,89 +12,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
-  FlexDirection,
-  FlowItem,
-  WaterFlow,
-  ColumnOptions,
-  IndexerAlign,
-  FontWeight,
-  AlphabetIndexer,
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
   Component,
-  StepperItem,
+  Text,
+  Row,
   ClickEvent,
   Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
+  List,
+  ListItem,
+  Image,
+  ForEach,
+  Position,
+  Margin,
+  Navigation,
+  TextAlign,
+  Color,
+  NavDestination,
+  $r,
+  Padding,
+  NavigationMode,
+  NavPathStack,
+} from '@ohos.arkui.component';
+import { Link, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavigationView {
-  private arr: number[] = new Array<number>(0, 1, 2, 3)
+  private arr: number[] = [0, 1, 2, 3] as number[]
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _position: Position = { x: 0, y: 0 };
+  @Link _position!: Position;
   private componentKey: string = '';
 
   build() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    Navigation(new NavPathStack()) {
+      List({ space: 12, initialIndex: 0 }) {
+        ForEach(this.arr, (item: number, index: Int) => {
+          ListItem() {
+
+          }
+        }, (item: number,index:Int) => String(item))
+      }
+      .height('100%')
+      .width('100%')
+      .margin({ top: 12, left: 12 } as Margin)
+    }
+    .mode(NavigationMode.Split)
+    .hideTitleBar(true)
+    .hideToolBar(true)
+    .position(this._position)
+    .key(this.componentKey)
   }
 }

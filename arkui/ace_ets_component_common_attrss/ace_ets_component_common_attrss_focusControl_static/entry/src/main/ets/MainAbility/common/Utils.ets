@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {
+  Color,
+  Length,
   TouchType,
   KeyType,
   MouseButton,
@@ -31,8 +33,12 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
+
+export class RouterParams {
+  view: PageConfig = new PageConfig()
+}
 
 export class RectValue {
   left: number = 0;
@@ -41,14 +47,35 @@ export class RectValue {
   bottom: number = 0;
 }
 
-export class RouterParams {
-  view: PageConfig = new PageConfig()
+export class AttrContent {
+  content: string = ''
+  label: string = ''
+  focusable: boolean = false
+}
+
+export class StrJsonObj {
+  $attrs: AttrContent = new AttrContent()
+}
+
+export interface CurrentRatio {
+  currentRatio: number
+  isVisible: boolean
+}
+;
+
+export class ExpectValue {
+  margin: Length = 0
+  top: Length = 0
+  right: Length = 0
+  bottom: Length = 0
+  left: Length = 0
 }
 
 export class TestValue {
   describe: string = '';
-  setValue: boolean = true;
+  setValue: boolean = false;
   exceptView: string = '';
+  expectValue: ExpectValue = new ExpectValue()
 }
 
 export class BasePageConfig {
@@ -60,6 +87,10 @@ export class BasePageConfig {
 }
 
 export class PageConfig {
+  childWidth: number
+  childHeight: number
+  parentBackGroundColor: Color = Color.Red
+  BackGroundColor: Color = Color.Red
   testName: string = '';
   pageName: string = '';
   pageUrl: string = '';
@@ -72,9 +103,21 @@ export class PageConfig {
   referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
-  componentKey: string = '';
+  componentKey?: string = '';
   sharePage?: boolean;
   containerView?: string;
+  targetGroupView: string = ''
+  compareTextKey: string = ''
+  compareTextWidth: number
+  compareTextHeight: number
+  scrollWidth: number
+  scrollHeight: number
+  columnWidth: number
+  columnHeight: number
+  buttonWidth: number
+  buttonHeight: number
+  componentWidth: number
+  componentHeight: number
 }
 
 export default class Utils {
@@ -110,15 +153,15 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams = router.getParams();
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      
-      
-      
-      
-      
-      
-      
+      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+        console.info('targetView: ' + obj.targetView);
+        await Utils.back();
+        pages = router.getState();
+      }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
@@ -129,7 +172,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        console.info('push ' + obj.pageName);
+        console.info('push ' + obj.pageName );
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -138,8 +181,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    console.info('back ' + JSON.stringify(router));
-    if (!router.getState().name.endsWith("/index")) {
+    if (!('index' == router.getState().name)) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -155,12 +197,12 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
@@ -171,12 +213,33 @@ export default class Utils {
     } as RectValue
   }
 
-  static getRectHorizontalCenterX(rect: RectValue) {
-    (rect.right - rect.left) / 2 + rect.left;
+  static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
+    console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
+    
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    let rect_value: RectValue = {
+      left:Number(rectInfo[0][0] ?? 0),
+      top:Number(rectInfo[0][1] ?? 0),
+      right:Number(rectInfo[1][0] ?? 0),
+      bottom:Number(rectInfo[1][1] ?? 0),
+    };
+    console.info(JSON.stringify(rect_value));
+    return rect_value;
   }
 
-  static getRectVerticalCenterY(rect: RectValue) {
-    (rect.bottom - rect.top) / 2 + rect.top;
+  static getComponentByKey(componentKey: string): jsonx.JsonElement {
+    let strJson = inspector.getInspectorByKey(componentKey);
+    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
+    return JSON.parseJsonElement(strJson);
+  }
+
+  static getRectHorizontalCenterX(rect: RectValue): number {
+    return (rect.right - rect.left) / 2 + rect.left;
+  }
+
+  static getRectVerticalCenterY(rect: RectValue): number {
+    return (rect.bottom - rect.top) / 2 + rect.top;
   }
 
   static requestFocus(id: string): boolean {
@@ -279,7 +342,7 @@ export default class Utils {
       timestamp: new Date().getTime().toLong(),
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -336,7 +399,7 @@ export default class Utils {
       pressure: 0,
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -345,27 +408,5 @@ export default class Utils {
     console.info('performMouseEvent result : ' + result);
 
     return result;
-  }
-
-  static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
-    console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    let rect_value: RectValue = {
-      left: Number(rectInfo[0][0] ?? 0),
-      top: Number(rectInfo[0][1] ?? 0),
-      right: Number(rectInfo[1][0] ?? 0),
-      bottom: Number(rectInfo[1][1] ?? 0),
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
-  }
-
-  static getComponentByKey(componentKey: string): jsonx.JsonElement {
-    let strJson = inspector.getInspectorByKey(componentKey);
-    console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
-    return JSON.parseJsonElement(strJson);
   }
 }

@@ -12,38 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FontWeight
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import common2D from '@ohos.graphics.displaySync'
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
+
+  aboutToAppear(){
     try {
       let router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router);
@@ -53,14 +32,20 @@ struct Index {
   }
 
   build() {
-    Flex({
-      direction: FlexDirection.Column,
-      alignItems: ItemAlign.Center,
-      justifyContent: FlexAlign.Center
-    }) {
-      Text('ACE ETS TEST')
+    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Hello World')
         .fontSize(50)
-        .fontWeight(FontWeight.Bold)
+      Button(' ') {
+        Text('next page')
+          .fontSize(25)
+      }
+      .margin({
+        top: 20
+      } as Margin)
+      .backgroundColor('#0D9FFB')
+      .onClick((e:ClickEvent) => {
+
+      })
     }
     .width('100%')
     .height('100%')

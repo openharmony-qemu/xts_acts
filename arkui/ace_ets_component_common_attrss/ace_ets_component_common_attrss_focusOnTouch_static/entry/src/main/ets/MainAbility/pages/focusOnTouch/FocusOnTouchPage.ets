@@ -14,117 +14,169 @@
  */
 
 import { attrsManager } from '../../common/AttrsManager';
-import { AlignValue } from '../../common/Utils';
-import router from '@ohos.router'
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
+import animator, { AnimatorResult, AnimatorOptions } from '@ohos.animator';
 import {
-  Entry,
-  Text,
-  Column,
-  Button,
-  Component,
+  BreakpointsReference,
+  GutterOption,
+  GridRowOptions,
+  TabContent,
+  FlowItem,
+  ColumnOptions,
+  SideBarContainerType,
+  HorizontalAlign,
+  VerticalAlign,
   AlignRuleOption,
+  BadgeParam,
+  BadgeStyle,
+  GridColColumnOption,
+  GridColOptions,
+  GridItem,
+  GridCol,
+  GridRowDirection,
+  MenuItemGroup,
+  ToggleType,
+  TimePicker,
+  StepperItem,
+  SliderStyle,
   FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
+  ProgressType,
+  Divider,
+  ScrollBar,
+  BadgeParamWithNumber,
+  MenuItemOptions,
+  MenuItem,
   $r,
-  TextInput,
-  TextArea,
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  ForEach,
+  Text,
+  Row,
   List,
   ListItem,
-  Image,
-  Grid,
-  GridItem,
-  Rating,
-  MenuItemGroup,
-  MenuItem,
-  Menu,
-  ImageAnimator,
-  DatePicker,
-  CheckboxGroup,
-  Checkbox,
-  Search,
-  Counter,
-  ColumnSplit,
-  AlphabetIndexer,
+  Color,
+  FlexAlign,
+  ExpectedFrameRateRange,
+  Scroll,
+  Margin,
+
   Web,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  StepperItem,
-  Stepper,
-  Slider,
+  WebviewController,
+  AlphabetIndexer,
+  Axis,
+  Blank,
+  ListItemGroup,
+  Checkbox,
+  CheckboxGroup,
+  DataPanel,
+  DatePicker,
+  Gauge,
+  Image,
+  ImageAnimator,
+  LoadingProgress,
+  Marquee,
+  Menu,
+  Navigation,
+  Progress,
+  QRCode,
+  Radio,
+  Rating,
+  RichText,
+  Scroller,
+  Flex,
+  BarState,
+  ScrollDirection,
+  Search,
   Select,
+  Slider,
+  Stepper,
+  TextArea,
+  TextClock,
+  ImageFit,
+  TextInput,
+  TextPicker,
+  BreakPoints,
+  TextTimer,
+  Toggle,
+  Web,
+  Circle,
+  Ellipse,
+  Line,
+  Polyline,
+  Polygon,
+  Path,
+  Rect,
+  Shape,
+  Badge,
+  ColumnSplit,
+  Counter,
+  GridRow,
+  Grid,
+  Refresh,
+  RelativeContainer,
+  RowSplit,
+  TextAlign,
+  SideBarContainer,
+  Stack,
   Swiper,
   Tabs,
-  TabContent,
-  SideBarContainer,
-  Scroll,
-  RowSplit,
-  GridCol,
-  ForEach,
-  Row,
-  GridRow,
-  Flex,
-  Color,
-  ColumnOptions,
-  Scroller,
-  Margin,
-  TextAlign,
-  MenuItemOptions,
-  Radio,
-  ToggleType,
-  GridRowDirection,
-  Axis,
-  ListItemGroup,
-  SideBarContainerType,
-  Stack,
-  BreakPoints,
-  GridRowOptions,
-  GutterOption,
-  BreakpointsReference,
-  GridColColumnOption
+  WaterFlow,
+  DataPanelType,
+  CommonMethod,
+  applyStyles
 } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 /**
- * Test page of common attribute: focusOnTouch
+ * Test page of common attribute: focusable
  */
 
 @Entry
 @Component
-struct FocusOnTouchPage {
-  private scroller: Scroller = new Scroller() //For Scroll and Scroll
-  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
-  @State _focusOnTouch: boolean = false;
+struct FocusablePage {
+  private scroller: Scroller = new Scroller() 
+  private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) 
+  @StoragePropRef('_focusOnTouch') _focusOnTouch : boolean = false;
   @State callback: string = '';
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey?.toString() ?? ""
-  @State referenceComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
+  @State targetView: string | undefined = ''
+  @State componentKey: string | undefined = ''
+  @State referenceComponentKey: string | undefined = ''
 
   onPageShow() {
-    console.info('[FocusOnTouchPage] page show called ');
+    console.info('[FocusablePage] page show called ');
+    AppStorage.setOrCreate<boolean>('_focusable',  false)
+    AppStorage.setOrCreate<string>('callback',  '')
 
-    //Register data change call back.
-    attrsManager.registerDataChange((value: Boolean | AlignValue) => {
-      this._focusOnTouch = value as boolean;
-    })
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this.targetView = routerParamOptions.view.targetView
+    this.componentKey = routerParamOptions.view.componentKey
+    this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+    console.info('[FocusablePage] page show called componentKey is  ' + routerParamOptions.view.componentKey);
   }
 
   /**
    * Set common style.
    */
-  // @Styles
-  //.commonStyle(){
-  //   .focusOnTouch(this._focusOnTouch)
-  //   .key(this.componentKey)
-  //   .onFocus(() => {
-  //     this.callback = 'onFocus'
-  //   })
-  //   .focusable(true)
-  // }
+  commonStyle(instance: CommonMethod){
+    instance.focusOnTouch(this._focusOnTouch)
+    instance.key(this.componentKey)
+    instance.onFocus(() => {
+      if (this._focusOnTouch) {
+        this.callback = 'onFocus'
+      } else {
+        this.callback = ''
+      }
+      console.info('[FocusablePage] targetComponent onFocus called');
+    })
+    instance.focusable(true)
+  }
 
   build() {
     Column() {
@@ -135,20 +187,32 @@ struct FocusOnTouchPage {
         .fontSize(30)
         .fontColor(Color.Blue)
         .onFocus(() => {
-          console.info('[FocusOnTouchPage] referenceComponent onFocus called');
+          console.info('[FocusablePage] referenceComponent onFocus called');
         })
       if (this.targetView == 'Button') {
-        Button('Button').width(200).height(100)//.commonStyle()
+        Button('Button').width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'TextInput') {
-        TextInput().width(200).height(100)//.commonStyle()
+        TextInput().width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'TextArea') {
-        TextArea().width(200).height(100)//.commonStyle()
+        TextArea().width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Search') {
-        Search().width(200).height(100)//.commonStyle()
+        Search().width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Text') {
-        Text('Text').width(200).height(100)//.commonStyle()
+        Text('Text').width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Image') {
-        Image($r('app.media.icon')).width(200).height(100)//.commonStyle()
+        Image($r('app.media.icon')).width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'List') {
         List() {
           ListItem() {
@@ -158,7 +222,10 @@ struct FocusOnTouchPage {
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
           }
-        }.width(200).height(100).backgroundColor(Color.Blue)//.commonStyle()
+        }.width(200).height(100).backgroundColor(Color.Blue)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Grid') {
         Grid() {
           GridItem() {
@@ -170,54 +237,81 @@ struct FocusOnTouchPage {
               .textAlign(TextAlign.Center)
           }
         }
-        .width(200).height(100)//.commonStyle()
+        .width(200).height(100)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Checkbox') {
-        Checkbox({ name: 'checkbox1' }).width(200).height(100)//.commonStyle()
+        Checkbox({ name: 'checkbox1' }).width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'CheckboxGroup') {
-        CheckboxGroup().width(200).height(100)//.commonStyle()
+        CheckboxGroup().width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'DatePicker') {
-        DatePicker({}).width(200).height(100)//.commonStyle()
+        DatePicker({}).width(200).height(100)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .backgroundColor(Color.Blue).width(200).height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
         }.backgroundColor(Color.Yellow).width(200)
-        .height(300)//.commonStyle()
+        .height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'MenuItem') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-            .width(200).height(300)//.commonStyle()
+            .width(200).height(300)
+          .applyStyles(this.commonStyle)
+
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'MenuItemGroup') {
         Menu() {
           MenuItemGroup({ header: 'MenuItemGroup' }) {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300)
+
+          .applyStyles(this.commonStyle)
+
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Rating') {
         Rating({ rating: 3.5 })
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
           { value: 'bbb', icon: '/common/public_icon.svg' }])
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Slider') {
         Slider()
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem() {
@@ -225,15 +319,21 @@ struct FocusOnTouchPage {
               Text('Page One').focusable(true)
             }
           }
-        }//.commonStyle()
+        }
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
           StepperItem() {
             Column() {
-              Text('Page One').focusable(true)
+              Text('Page One')
+                .focusable(true)
             }
           }
-          //.commonStyle()
+
+          .applyStyles(this.commonStyle)
+
           .backgroundColor(Color.Red)
           .width('100%')
           .height('100%')
@@ -242,26 +342,38 @@ struct FocusOnTouchPage {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'TimePicker') {
-        TimePicker().width(200).height(300)//.commonStyle()
+        TimePicker().width(200).height(300)
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Toggle') {
         Toggle({ type: ToggleType.Switch }).width(200).height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Web') {
-        //Web({ src: '', controller: new WebController() })//.commonStyle()
+        Web({ src: '', controller: new WebviewController() })
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
           .width(200)
           .height(300)
-          //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Column') {
         Column() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1')
@@ -276,21 +388,28 @@ struct FocusOnTouchPage {
             .backgroundColor(0xD2B48C)
             .textAlign(TextAlign.Center)
             .focusable(true)
-        }.width(200).height(300)//.commonStyle()
+        }.width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Counter') {
         Counter() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Flex') {
         Flex() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,
@@ -301,7 +420,9 @@ struct FocusOnTouchPage {
               Button('Button')
             }.width('100%').height('20vp')
           }
-          //.commonStyle()
+
+          .applyStyles(this.commonStyle)
+
           .backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
@@ -310,18 +431,32 @@ struct FocusOnTouchPage {
         GridRow({
           columns: 5,
           gutter: { x: 5, y: 10 } as GutterOption,
-          breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
+          breakpoints: {
+            value: ['400vp', '600vp', '800vp'],
+            reference: BreakpointsReference.WindowSize
+          } as BreakPoints,
           direction: GridRowDirection.Row
-        } as GridRowOptions) {
-          ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue,],
+        }) {
+          ForEach(new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey,
+            Color.Blue),
             (color: Color) => {
-              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                } as GridColColumnOption
+              } as GridColOptions) {
                 Row() {
                   Button('Button')
                 }.width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-        }//.commonStyle()
+        }
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'GridItem') {
         Grid() {
           GridItem() {
@@ -331,7 +466,10 @@ struct FocusOnTouchPage {
               .width('100%')
               .height('100%')
               .textAlign(TextAlign.Center)
-          }.width(200).height(300)//.commonStyle()
+          }.width(200).height(300)
+
+          .applyStyles(this.commonStyle)
+
         }
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -346,7 +484,10 @@ struct FocusOnTouchPage {
               .width('100%')
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
-          }//.commonStyle()
+          }
+
+          .applyStyles(this.commonStyle)
+
         }.width(200).height(300).listDirection(Axis.Vertical)
       } else if (this.targetView == 'ListItemGroup') {
         List({ space: 0, initialIndex: 0 }) {
@@ -358,7 +499,10 @@ struct FocusOnTouchPage {
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
             }
-          }.backgroundColor(Color.Yellow)//.commonStyle()
+          }.backgroundColor(Color.Yellow)
+
+          .applyStyles(this.commonStyle)
+
         }
         .backgroundColor(Color.Pink)
         .width(300)
@@ -368,7 +512,10 @@ struct FocusOnTouchPage {
         Row() {
           Button('Button')
         }
-        .backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+        .backgroundColor(Color.Blue).width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1')
@@ -383,11 +530,14 @@ struct FocusOnTouchPage {
             .backgroundColor(0xD2B48C)
             .textAlign(TextAlign.Center)
             .focusable(true)
-        }.width(200).height(300)//.commonStyle()
+        }.width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
-            ForEach(this.arr, (item: number, index:int):void => {
+            ForEach(this.arr, (item: number) => {
               Row() {
                 Text(String(item))
                   .width(80)
@@ -399,13 +549,16 @@ struct FocusOnTouchPage {
                   .margin({ top: 5 } as Margin)
                   .focusable(true)
               }
-            }, (item: number, index:int):string => String(item))
+            }, (item: number) => String(item))
           }.margin({ right: 15 } as Margin)
-        }.width(200).height(300)//.commonStyle()
+        }.width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: Int, index:int):void => {
+            ForEach(new Array<number>(1, 2, 3), (item: number) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon')).width(64).height(64).focusable(true)
                 Text('Index0' + item).fontSize(25).focusable(true)
@@ -418,38 +571,57 @@ struct FocusOnTouchPage {
           Column() {
             Text('SideBarContainer content').fontSize(25)
           }.backgroundColor(Color.Orange)
-        }.width(200).height(300)//.commonStyle()
+        }.width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Stack') {
         Stack() {
           Button('Button')
         }
-        .backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+        .backgroundColor(Color.Blue).width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: Int, index:int):void => {
+          ForEach(new Array<number>(1, 2, 3), (item: number) => {
             Text('Swiper' + item).width('90%').height(160).focusable(true)
-          }, (item: Int, index:int):String => String(item))
+          }, (item: number) => String(item))
         }
         .indicator(true)
         .backgroundColor(Color.White)
         .width(200)
         .height(300)
-        //.commonStyle()
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'Tabs') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
           }.tabBar('Tabs1')
-        }.backgroundColor(Color.Blue).width(200).height(300)//.commonStyle()
+        }.backgroundColor(Color.Blue).width(200).height(300)
+
+        .applyStyles(this.commonStyle)
+
       } else if (this.targetView == 'TabContent') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
-          }.tabBar('Tabs1')//.commonStyle()
+          }.tabBar('Tabs1')
+
+          .applyStyles(this.commonStyle)
+
         }.width(200).height(300)
       }
     }
+    .focusable(true)
     .width('100%')
     .height('100%')
+    .onFocus(() => {
+      this.callback = 'onFocus'
+      console.info('[FocusablePage] rootView onFocus called');
+    })
   }
 }

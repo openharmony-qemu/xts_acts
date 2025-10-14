@@ -34,22 +34,32 @@ let testAbilityContext:common.UIAbilityContext;
 
 
 export default function FocusOnTouchTest() {
-    //A list of components that support the position attribute, which is required.
+
     let supportView = [
-        "Select",
-        "DatePicker",
-        "TextInput",
-        "Stepper",
-        "StepperItem",
-        "TextPicker",
-        "TimePicker",
-        "Scroll",
-        "Stack",
-        "Swiper",
-        "Tabs",
+        "Button",
+        "TextArea",
+        "Search",
+        "Text",
+        "Image",
+        "Grid",
+        "List",
+        "Checkbox",
+        "CheckboxGroup",
+        "Menu",
+        "MenuItem",
+        "Radio",
+        "Rating",
+        "Slider",
+        "Toggle",
+        "AlphabetIndexer",
+        "Column",
+        "Counter",
+        "Flex",
+        "GridItem",
+        "ListItem",
+        "Row",
     ]
 
-    //Page config, this param is required.
     let pageConfig: PageConfig = {
         testName: "testFocusOnTouch",
         pageName: "FocusOnTouchPage",
@@ -57,7 +67,6 @@ export default function FocusOnTouchTest() {
         referenceComponentKey: "referenceComponentKey",
         sharePage: false,
     }
-    //Test values, looped to create cases, this param is required.
     let testValues: TestValue[] = [
         {
             describe: "SetTrue",
@@ -81,13 +90,15 @@ export default function FocusOnTouchTest() {
             await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
             await UtilsTest.msSleep(4000)
         });
-        //Generate test cases (it) through a loop based on the support view * test values.
+
             CommonTest.initTest(
             pageConfig,
             supportView,
             testValues,
             async (data: BasePageConfig): Promise<void> => {
-                //Click on the target component
+
+                AppStorage.setOrCreate<boolean>('_focusOnTouch',  data.testValue.setValue)
+
                 console.info("[" + data.caseTag + "] verify onClick.")
                 let clickResult = Utils.performClick(
                     data.pageConfig.componentKey !== null ? data.pageConfig.componentKey as string : ''
@@ -96,7 +107,7 @@ export default function FocusOnTouchTest() {
                 await Utils.sleep(1000)
 
                 if ("SetTrue" == data.testValue.describe) {
-                    //Confirm reference component text
+
                     let referenceComponent = Utils.getComponentByKey(
                         data.pageConfig.referenceComponentKey??''
                     )
@@ -110,7 +121,7 @@ export default function FocusOnTouchTest() {
                         "onFocus"
                     )
 
-                    //Confirm target component properties
+
                     let viewObj = Utils.getComponentByKey(
                         data.pageConfig.componentKey !== null ? data.pageConfig.componentKey as string : ''
                     )
@@ -118,11 +129,11 @@ export default function FocusOnTouchTest() {
                         "[" +
                             data.caseTag +
                             "] focusOnTouch is " +
-                            viewObj.getElement('$attrs').getString('focusOnTouch')
+                            viewObj.getElement('$attrs').getBoolean('focusOnTouch')
                     )
-                    expect(viewObj.getElement('$attrs').getString('focusOnTouch')).assertEqual(true)
+                    expect(viewObj.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(true)
                 } else if ("SetFalse" == data.testValue.describe) {
-                    //Confirm reference component text
+
                     let referenceComponent = Utils.getComponentByKey(
                         data.pageConfig.referenceComponentKey??''
                     )
@@ -139,7 +150,7 @@ export default function FocusOnTouchTest() {
                     } else {
                         expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
                     }
-                    //Confirm target component properties
+
                     let viewObj = Utils.getComponentByKey(
                         data.pageConfig.componentKey !== null ? data.pageConfig.componentKey as string : ''
                     )
@@ -147,9 +158,9 @@ export default function FocusOnTouchTest() {
                         "[" +
                             data.caseTag +
                             "] focusOnTouch is " +
-                            viewObj.getElement('$attrs').getString('focusOnTouch')
+                            viewObj.getElement('$attrs').getBoolean('focusOnTouch')
                     )
-                    expect(viewObj.getElement('$attrs').getString('focusOnTouch')).assertEqual(false)
+                    expect(viewObj.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(false)
                 }
             }
         )

@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "ace.ets.module.Image01.static",
+    "bundleName": "com.acts.arkui.component.common.attrs.flex.two.nowear.test.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
