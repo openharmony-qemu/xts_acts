@@ -48,7 +48,16 @@ let audioConfig: media.AudioRecorderConfig = {
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
-
+let audioAacProfileConfig: media.AudioRecorderConfig = {
+  audioEncodeBitRate: 48000,
+  audioSampleRate: 48000,
+  numberOfChannels: CHANNEL_TWO,
+  uri: 'fd://',
+  location: ({ latitude: 30, longitude: 30 } as GeneratedObjectLiteralInterface_1),
+  audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
+  aacProfile: media.AacProfile.AAC_HE,
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
+}
 function initAudioRecorder() {
   if (audioRecorder != null) {
     audioRecorder.release();
@@ -1011,6 +1020,50 @@ export default function RecorderLocalTestAudioAPI() {
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
       audioRecorder?.prepare(audioConfig);
+    });
+        /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
+        * @tc.name      : 01.reset->set
+        * @tc.desc      : Reliability Test
+        * @tc.size      : MediumTest
+        * @tc.type      : Reliability
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL0,async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      audioRecorder?.prepare(audioAacProfileConfig);
+    });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002
+        * @tc.name      : 01.reset->set
+        * @tc.desc      : Reliability Test
+        * @tc.size      : MediumTest
+        * @tc.type      : Reliability
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002', Level.LEVEL0,async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      audioAacProfileConfig.aacProfile = aacProfile: media.AacProfile.AAC_HE;
+      audioRecorder?.prepare(audioAacProfileConfig);
+    });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003
+        * @tc.name      : 01.reset->set
+        * @tc.desc      : Reliability Test
+        * @tc.size      : MediumTest
+        * @tc.type      : Reliability
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003', Level.LEVEL0,async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      audioAacProfileConfig.aacProfile = aacProfile: media.AacProfile.AAC_HE;
+      audioRecorder?.prepare(audioAacProfileConfig);
     });
   })
 }
