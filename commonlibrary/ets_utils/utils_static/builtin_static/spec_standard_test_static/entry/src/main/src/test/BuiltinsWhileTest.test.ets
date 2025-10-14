@@ -860,7 +860,8 @@ export default function builtinsWhileTest() {
           console.log(`The current value of count1: ${count1}`);
           count1++;
         }
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`Exception caught: ${error.message}`);
       } finally {
         console.log('The finally block executes regardless of whether there is an exception');
@@ -874,7 +875,8 @@ export default function builtinsWhileTest() {
           console.log(`The current value of count2: ${count2}`);
           count2++;
         } while (count2 < 5);
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`Exception caught: ${error.message}`);
       } finally {
         console.log('The finally block executes regardless of whether there is an exception');

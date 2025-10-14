@@ -39,7 +39,7 @@ struct WaterFlowSectionDemo20 {
   @State minSize: number = 80
   @State maxSize: number = 180
   @State fontSize: number = 24
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   @State columns: string = '1fr'
   scroller: Scroller = new Scroller()
   dataCount: number = 7
@@ -52,14 +52,14 @@ struct WaterFlowSectionDemo20 {
     columnsGap: 0,
     rowsGap: 0,
     margin: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 80.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 100.0
     }
   } as SectionOptions
@@ -69,7 +69,7 @@ struct WaterFlowSectionDemo20 {
     let count = 0
     while (count < this.dataCount) {
       sectionOptions.push(this.twoColumnSection)
-      this.lastSection.itemsCount = this.dataCount - this.twoColumnSection.itemsCount
+      this.lastSection.itemsCount = Double.toInt(this.dataCount - this.twoColumnSection.itemsCount)
       sectionOptions.push(this.lastSection)
       break;
     }
@@ -87,7 +87,7 @@ struct WaterFlowSectionDemo20 {
           .width('100%')
           .height(100)
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .columnsTemplate('1fr')
       .columnsGap(10)

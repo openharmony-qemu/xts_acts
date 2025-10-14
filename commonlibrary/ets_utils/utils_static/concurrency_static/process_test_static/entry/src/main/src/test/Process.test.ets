@@ -63,7 +63,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.isAppUid(currentUid);
           expect(isApp).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -88,7 +89,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.isAppUid(uidNumber);
           expect(isApp).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -114,7 +116,8 @@ export default function ProcessTest() {
             const isApp = processManager.isAppUid(22);
             expect(isApp).assertEqual(false);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -145,7 +148,8 @@ export default function ProcessTest() {
             }
           }))
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -176,7 +180,8 @@ export default function ProcessTest() {
               expect(typeof currentUid).assertEqual('number');
               expect(isApp).assertEqual(true);
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -203,7 +208,8 @@ export default function ProcessTest() {
           const isApp = processManager.getUidForName(forName);
           // 移除对未定义变量 currentUid 的检查
           expect(isApp).assertEqual(-1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -228,7 +234,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.getUidForName(forName);
           expect(isApp).assertEqual(-1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -252,7 +259,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.getUidForName(forName);
           expect(isApp).assertEqual(-1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -276,7 +284,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.getUidForName(uidForName);
           expect(isApp).assertEqual(0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -301,7 +310,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.getUidForName(uidForName);
           expect(isApp).assertEqual(-1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -328,7 +338,8 @@ export default function ProcessTest() {
             const isApp = processManager.getUidForName(uidForName);
             expect(isApp).assertEqual(-1);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -359,7 +370,8 @@ export default function ProcessTest() {
           })).then((res: Array<number>): void => {
             res.forEach(item => expect(item).assertEqual(-1));
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           expect(false).assertFail();
         }
         done();
@@ -386,7 +398,8 @@ export default function ProcessTest() {
               const isApp = processManager.getUidForName(uidForName);
               expect(isApp).assertEqual(-1);
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -420,7 +433,8 @@ export default function ProcessTest() {
           }), taskpool.Priority.LOW).then((res: Number): void => {
             expect(res).assertEqual(100);
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -465,7 +479,8 @@ export default function ProcessTest() {
           worker1.join();
           worker2.join();
           expect(count).assertEqual(200);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`)
           expect(false).assertFail();
         }
@@ -492,7 +507,8 @@ export default function ProcessTest() {
             const isApp = processManager.getThreadPriority(tid);
             expect(String(isApp)).assertEqual('-20');
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -516,7 +532,8 @@ export default function ProcessTest() {
           let processManager = new StdProcess.ProcessManager();
           let pres = processManager.getSystemConfig(0);
           expect(pres != -1).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -540,7 +557,8 @@ export default function ProcessTest() {
           let processManager = new StdProcess.ProcessManager();
           let pres = processManager.getSystemConfig(_SC_ARG_MAX);
           expect(pres).assertEqual(-1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -570,7 +588,8 @@ export default function ProcessTest() {
             }
           }))
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -600,12 +619,14 @@ export default function ProcessTest() {
                 const pres = processManager.getSystemConfig(_SC_ARG_MAX);
                 expect(pres != -1).assertEqual(true);
               }
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               expect(false).assertFail();
             }
           });
           worker.join()
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -630,7 +651,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const pres = processManager.getEnvironmentVar(pathName);
           expect(pres).assertEqual("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -654,7 +676,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const pres = processManager.getEnvironmentVar(pathName);
           expect(pres).assertEqual('');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -686,7 +709,8 @@ export default function ProcessTest() {
             }
           }))
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -718,7 +742,8 @@ export default function ProcessTest() {
             }
             worker.join()
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -743,7 +768,8 @@ export default function ProcessTest() {
             const uid = StdProcess.uid();
             expect(typeof uid).assertEqual('number')
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -770,7 +796,8 @@ export default function ProcessTest() {
               const uid = StdProcess.uid();
               count++;
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -778,7 +805,8 @@ export default function ProcessTest() {
         try {
           await taskpool.execute(testFunction);
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -808,7 +836,8 @@ export default function ProcessTest() {
               const uid = StdProcess.uid();
               count++;
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -816,7 +845,8 @@ export default function ProcessTest() {
         try {
           job.Await()
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -843,7 +873,8 @@ export default function ProcessTest() {
             const pid = StdProcess.pid();
             expect(typeof pid).assertEqual('number')
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -870,7 +901,8 @@ export default function ProcessTest() {
               const pid = StdProcess.pid();
               count++;
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -878,7 +910,8 @@ export default function ProcessTest() {
         try {
           await taskpool.execute(testFunction);
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -908,7 +941,8 @@ export default function ProcessTest() {
               const pid = StdProcess.pid();
               count++;
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -916,7 +950,8 @@ export default function ProcessTest() {
         try {
           job.Await();
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -943,7 +978,8 @@ export default function ProcessTest() {
             const tid = StdProcess.tid();
             expect(typeof tid).assertEqual('number')
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -970,7 +1006,8 @@ export default function ProcessTest() {
               const tid = StdProcess.tid();
               count++;
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -978,7 +1015,8 @@ export default function ProcessTest() {
         try {
           await taskpool.execute(testFunction);
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1008,7 +1046,8 @@ export default function ProcessTest() {
               const tid = StdProcess.tid();
               count++
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -1016,7 +1055,8 @@ export default function ProcessTest() {
         try {
           job.Await();
           expect(count).assertEqual(100)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1045,7 +1085,8 @@ export default function ProcessTest() {
             count++
           }
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1077,7 +1118,8 @@ export default function ProcessTest() {
         try {
           await taskpool.execute(testFunction);
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1110,7 +1152,8 @@ export default function ProcessTest() {
           });
           job.Await();
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1135,7 +1178,8 @@ export default function ProcessTest() {
         try {
           const isIsolated = StdProcess.is64Bit();
           expect(isIsolated).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1159,14 +1203,16 @@ export default function ProcessTest() {
         const testFunction = (): void => {
           try {
             isIsolated = StdProcess.is64Bit();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           }
         };
         try {
           await taskpool.execute(testFunction);
           expect(isIsolated).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1201,7 +1247,8 @@ export default function ProcessTest() {
           job.Await();
           expect(count).assertEqual(100);
           worker.join();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1229,7 +1276,8 @@ export default function ProcessTest() {
             expect(typeof currentTime).assertEqual('number');
             expect(currentTime).assertEqual(initialTime);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1260,7 +1308,8 @@ export default function ProcessTest() {
               expect(typeof currentTime).assertEqual('number');
               expect(currentTime).assertEqual(initialTime);
             }
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             throw err;
           }
@@ -1268,7 +1317,8 @@ export default function ProcessTest() {
         try {
           await taskpool.execute(testFunction);
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1304,7 +1354,8 @@ export default function ProcessTest() {
           });
           job.Await();
           expect(count).assertEqual(100)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1335,7 +1386,8 @@ export default function ProcessTest() {
             expect(currentTime >= previousTime).assertEqual(true);
             previousTime = currentTime;
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1369,7 +1421,8 @@ export default function ProcessTest() {
             }
           });
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1412,7 +1465,8 @@ export default function ProcessTest() {
           job.Await();
           expect(typeof currentCpuTime).assertEqual('number');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1443,7 +1497,8 @@ export default function ProcessTest() {
             expect(currentTime >= previousTime).assertEqual(true);
             previousTime = currentTime;
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1478,7 +1533,8 @@ export default function ProcessTest() {
             }
           });
           expect(count).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1522,7 +1578,8 @@ export default function ProcessTest() {
           job.Await();
           expect(typeof currentCpuTime).assertEqual('number');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {

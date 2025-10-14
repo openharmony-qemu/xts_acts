@@ -56,7 +56,7 @@ struct DigitIndicatorDemo1 {
   build() {
     Column() {
       Swiper(this.swiperController) {
-        ForEach(this.list, (item: number, i: number) => {
+        ForEach(this.list, (item: number, i: int) => {
           Text(item.toString())
             .width('100%')
             .height(160)
@@ -73,7 +73,7 @@ struct DigitIndicatorDemo1 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: number) => {
+      .onChange((index: Int) => {
         console.info(index.toString())
       })
 
@@ -88,7 +88,7 @@ struct DigitIndicatorDemo1 {
         .count(6)
         .vertical(true)
         .loop(false)
-        .onChange((index: number) => {
+        .onChange((index: Int) => {
           console.log('current index: ' + index)
         })
     }

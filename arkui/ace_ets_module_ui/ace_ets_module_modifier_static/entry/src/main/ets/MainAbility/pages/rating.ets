@@ -34,10 +34,10 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct RatingPage {
-  @State rating: number = 3.5
+  @State rating: double = 3.5
   @State indicator: boolean = true
-  @State stars: number = 5
-  @State stepSize: number = 0.5
+  @State stars: int = 5
+  @State stepSize: double = 0.5
   @State text: string = 'no change'
   @State backgroundUri: string = 'resources/base/media/star_1.png'
   @State foregroundUri: string = 'resources/base/media/star_2.png'

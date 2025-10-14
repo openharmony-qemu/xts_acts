@@ -123,7 +123,7 @@ struct ListItem_Visibility {
       .key('ListItemVisibility1')
       .backgroundColor(0xAFEEEE)
       .scrollBar(BarState.On)
-      .onScrollIndex((firstIndex: number, lastIndex: number):void => {
+      .onScrollIndex((firstIndex: int, lastIndex: int):void => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })

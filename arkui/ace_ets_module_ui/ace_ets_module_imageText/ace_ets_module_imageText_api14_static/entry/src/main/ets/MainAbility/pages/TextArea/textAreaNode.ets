@@ -40,10 +40,10 @@ let data2: TextAreaOptions = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    let col = typeNode.createNode(uiContext, 'List')
+    let col = typeNode.createListNode(uiContext)
     
 
-    let textArea = typeNode.createNode(uiContext, 'List')
+    let textArea = typeNode.createListNode(uiContext)
     textArea.initialize(undefined)
     
     
@@ -57,9 +57,9 @@ class MyNodeController extends NodeController {
     
     
     
-    let bt1 = typeNode.createNode(uiContext, 'List')
-    let bt2 = typeNode.createNode(uiContext, 'List')
-    let bt3 = typeNode.createNode(uiContext, 'List')
+    let bt1 = typeNode.createListNode(uiContext)
+    let bt2 = typeNode.createListNode(uiContext)
+    let bt3 = typeNode.createListNode(uiContext)
     
     
     
@@ -69,7 +69,7 @@ class MyNodeController extends NodeController {
     
     
     
-    let row = typeNode.createNode(uiContext, 'List')
+    let row = typeNode.createListNode(uiContext)
     row.initialize().width('100%')
     row.appendChild(bt1);
     row.appendChild(bt2);

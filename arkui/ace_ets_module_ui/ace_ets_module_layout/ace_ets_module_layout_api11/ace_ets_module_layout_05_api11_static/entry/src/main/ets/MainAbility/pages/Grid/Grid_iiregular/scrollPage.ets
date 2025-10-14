@@ -45,9 +45,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -80,10 +77,10 @@ struct scrollPage {
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .onScrollIndex((first: number,last: number):void => {
+      .onScrollIndex((first: int,last: int):void => {
         console.info(String(first))
       })
-      .onScrollBarUpdate((index: number, offset: number):ComputedBarAttribute => {
+      .onScrollBarUpdate((index: int, offset: double):ComputedBarAttribute => {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')

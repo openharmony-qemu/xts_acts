@@ -39,7 +39,7 @@ import events_emitter from '@ohos.events.emitter'
 @Entry
 @Component
 struct RatingExample {
-  @State rating: number = 1
+  @State rating: double = 1
   @State indicator: boolean = false
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("rating page stateChangCallBack");
@@ -47,7 +47,7 @@ struct RatingExample {
       console.info("rating page state change called:" + JSON.stringify(eventData));
       const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
       if (data.getProperty('rating') != null) {
-        this.rating = data.getProperty('rating').toNumber();
+        this.rating = data.getProperty('rating').toNumber() as double;
       }
     }
   }
@@ -109,7 +109,7 @@ struct RatingExample {
       Rating({ rating: this.rating, indicator: this.indicator })
         .stars(5).key('Rating')
         .stepSize(0.5)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
         })
     }.width(350).height(200).padding(35)

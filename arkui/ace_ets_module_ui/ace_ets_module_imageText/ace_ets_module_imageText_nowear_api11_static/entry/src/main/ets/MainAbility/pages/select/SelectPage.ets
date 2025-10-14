@@ -14,7 +14,7 @@
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { Entry, Text, Column, Component, Select, Font, Color } from '@ohos.arkui.component'  
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
+import { State } from '@ohos.arkui.stateManagement' 
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 class MyClass {
@@ -34,7 +34,7 @@ class MyClass {
 struct SelectPage {
   @State optionValue: string = 'aaa'
   @State icon: string = "/resources/base/media/star_1.png"
-  @State selected: number = 0
+  @State selected: int = 0
   @State selectValue: string = 'SelectButton'
   @State selectFont: Font = { size: 16, weight: 500 } as Font
   @State fontColor: Color = Color.Black
@@ -63,7 +63,7 @@ struct SelectPage {
         this.icon = message.value as String
       }
       if (message.name == 'selected') {
-        this.selected = Number.parseInt(message.value.toString())
+        this.selected = Number.parseInt(message.value.toString()) as int
       }
       if (message.name == 'selectValue') {
         this.selectValue = message.value as String
@@ -108,7 +108,7 @@ struct SelectPage {
         .optionBgColor(this.optionBgColor)
         .optionFont(this.optionFont)
         .optionFontColor(this.optionFontColor)
-        .onSelect((index: number) :void => {
+        .onSelect((index: int) :void => {
           this.indexValue = index
           console.info('Select:' + index)
         })

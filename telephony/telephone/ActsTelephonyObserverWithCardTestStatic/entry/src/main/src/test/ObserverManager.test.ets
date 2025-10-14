@@ -21,7 +21,6 @@ import radio from '@ohos.telephony.radio';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
-
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -39,6 +38,27 @@ const ExpectTrue = (n: boolean) => {
     hilog.info(domain, tag, '%{public}s', 'test failed');
   }
 }
+
+async function runTestCaseWithJudgeHasSimCard(testCaseName: string, done:  ()=>void, runTest: () => Promise<void>) {
+  try {
+    hilog.info(domain, tag, `${testCaseName} test start`);
+    let hasSim = await sim.hasSimCard(0);
+    if (hasSim) {
+      runTest();
+    } else {
+      hilog.info(domain, tag, `${testCaseName}. Do not have sim card but this test case must be need.`);
+      ExpectTrue(false);
+      done();
+    }
+  } catch (error) {
+    hilog.info(domain, tag, `${testCaseName} error->${JSON.stringify(error)}.`);
+    ExpectTrue(false);
+    done();
+  }
+  hilog.info(domain, tag, `${testCaseName} test end`);
+}
+
+
 
 export default function ObserverManagerTest() {
   describe("ObserverManagerTest", (): void => {
@@ -459,7 +479,7 @@ export default function ObserverManagerTest() {
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -486,7 +506,7 @@ export default function ObserverManagerTest() {
         ExpectTrue(true);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -514,7 +534,7 @@ export default function ObserverManagerTest() {
         ExpectTrue(true);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -543,12 +563,11 @@ export default function ObserverManagerTest() {
         ExpectTrue(true);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end `);
     });
-
-  })
+  });
 }

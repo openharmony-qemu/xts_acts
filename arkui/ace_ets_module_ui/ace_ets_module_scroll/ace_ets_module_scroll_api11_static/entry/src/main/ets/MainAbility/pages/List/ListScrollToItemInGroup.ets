@@ -105,8 +105,8 @@ struct WordListSample {
                   console.info('WordListSample group:' + this.wordsGroup.indexOf(item) + ' ' +
                     'index:' + item.words.indexOf(word))
                   this.listScroller.scrollToItemInGroup(
-                    this.wordsGroup.indexOf(item),
-                    item.words.indexOf(word), true,
+                    Double.toInt(this.wordsGroup.indexOf(item)),
+                    Double.toInt(item.words.indexOf(word)), true,
                     this.scrollAlignStyle[this.wordsGroup.indexOf(item).toInt()])
                 })
                 .key('Btn_' + this.wordsGroup.indexOf(item) + '_' + item.words.indexOf(word))
@@ -119,8 +119,8 @@ struct WordListSample {
             .backgroundColor(Color.Red)
             .onClick((e: ClickEvent) => {
               this.listScroller.scrollToItemInGroup(
-                this.illegalGroupNo[0],
-                this.illegalGroupNo[1], true,
+                Double.toInt(this.illegalGroupNo[0]),
+                Double.toInt(this.illegalGroupNo[1]), true,
                 ScrollAlign.AUTO)
             })
             .key('Btn_' + 'Err_' + 'Group')
@@ -132,8 +132,8 @@ struct WordListSample {
             .backgroundColor(Color.Red)
             .onClick((e: ClickEvent) => {
               this.listScroller.scrollToItemInGroup(
-                this.illegalIndexNo[0],
-                this.illegalIndexNo[1], true,
+                Double.toInt(this.illegalIndexNo[0]),
+                Double.toInt(this.illegalIndexNo[1]), true,
                 ScrollAlign.AUTO)
             })
             .key('Btn_' + 'Err_' + 'Index')
@@ -149,7 +149,7 @@ struct WordListSample {
 
       Stack() {
         List({ initialIndex: 0, scroller: this.listScroller }) {
-          ForEach(this.wordsGroup, (item: WordGroup, index: number) => {
+          ForEach(this.wordsGroup, (item: WordGroup, index: int) => {
             
             
             

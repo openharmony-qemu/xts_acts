@@ -54,7 +54,7 @@ struct singleListHorizontalDiffHeight {
           this.scroller.scrollToItemInGroup(1, 2)
         })
       List({ scroller: this.scroller }) {
-        ForEach(this.arr, (item0: number, groupIndex: number) => {
+        ForEach(this.arr, (item0: number, groupIndex: int) => {
           
           
           
@@ -78,7 +78,7 @@ struct singleListHorizontalDiffHeight {
       .friction(0.6)
       .backgroundColor(0xDCDCDC)
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

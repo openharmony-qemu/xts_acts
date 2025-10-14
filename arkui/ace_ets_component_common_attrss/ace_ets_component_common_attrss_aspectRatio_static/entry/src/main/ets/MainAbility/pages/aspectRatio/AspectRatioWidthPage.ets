@@ -81,7 +81,7 @@ struct AspectRatioWidthPage {
   build() {
     Row() {
       if (this.targetView == 'AlphabetIndexer') {
-        AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
           .backgroundColor(Color.Pink)
           
 

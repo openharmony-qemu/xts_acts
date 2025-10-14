@@ -71,12 +71,12 @@ struct TabsCustomAnimationExample1 {
       text: 'Blue',
       backgroundColor: Color.Blue
     } as itemType]
-  private timeoutList: number[] = [] as number[]
+  private timeoutList: int[] = [] as int[]
   @State opacityListOri: number[] = [] as number[]
   @State scaleListOri: number[] = [] as number[]
   private durationListOri: number[] = [] as number[]
-  private customTransitionOri: (from: number, to: number) => TabContentAnimatedTransition =
-    (from: number, to: number) => {
+  private customTransitionOri: (from: int, to: int) => TabContentAnimatedTransition =
+    (from: int, to: int) => {
       let tabContentAnimatedTransition = {
         timeout: this.timeoutList[from.toInt()],
         transition: (proxy: TabContentTransitionProxy): void => {
@@ -85,7 +85,7 @@ struct TabsCustomAnimationExample1 {
           this.opacityListOri[from.toInt()] = 1.0
           this.opacityListOri[to.toInt()] = 0.5
           animateTo({
-            duration: this.durationListOri[from.toInt()],
+            duration: this.durationListOri[from.toInt()].toInt(),
             onFinish: () => {
               proxy.finishTransition()
             }
@@ -99,7 +99,7 @@ struct TabsCustomAnimationExample1 {
       } as TabContentAnimatedTransition
       return tabContentAnimatedTransition
     }
-  @State currentIndexOri: number = 0
+  @State currentIndexOri: int = 0
   private controllerOri: TabsController = new TabsController()
   @State noMinHeightLimit1: boolean = true;
 
@@ -110,7 +110,7 @@ struct TabsCustomAnimationExample1 {
         .margin({ top: 10 } as Margin)
 
       Tabs({ index: this.currentIndexOri, controller: this.controllerOri }) {
-        ForEach(this.data, (item: itemType, index: number) => {
+        ForEach(this.data, (item: itemType, index: int) => {
           TabContent() {
           }
           .tabBar(item.text)
@@ -129,7 +129,7 @@ struct TabsCustomAnimationExample1 {
       .backgroundColor(0xf1f3f5)
       
       .customContentTransition(this.customTransitionOri)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndexOri = index
       })
     }

@@ -37,7 +37,7 @@ import inspector from '@ohos.arkui.inspector';
 struct SliderTest {
   @State message: string = 'Hello Worlds'
   @State str: string = '200'
-  @State inSetValueOne: number = 40;
+  @State inSetValueOne: double = 40;
 
 
 

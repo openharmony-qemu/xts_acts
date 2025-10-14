@@ -40,7 +40,7 @@ let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let surfaceId: string;
 let mIsVideoCodecTypeModeSupportedArray: Array<boolean>;
 

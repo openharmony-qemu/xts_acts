@@ -14,7 +14,7 @@
  */
 import observer from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Row, Image, Color, TextAlign, Padding, Button, ClickEvent, ColumnOptions, Scroller, Margin, ForEach, Scroll} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollEventScrollIndex {
@@ -37,7 +37,7 @@ struct scrollEventScrollIndex {
           Button('ObserverId on')
             .id('scroll_observer_on')
             .onClick((e: ClickEvent) => {
-              observer.on('scrollEvent', this.options, (info: observer.ScrollEventInfo) => {
+              observer.onScrollEvent(this.options, (info: observer.ScrollEventInfo) => {
                 this.Id1 = info.id
                 this.uniqueId1 = info.uniqueId
                 this.text1 = info.scrollEvent
@@ -52,7 +52,7 @@ struct scrollEventScrollIndex {
           Button('ObserverId off')
             .id('scroll_observer_off')
             .onClick((e: ClickEvent) => {
-              observer.off('scrollEvent', this.options);
+              observer.offScrollEvent(this.options);
             })
         }
       }.margin({top:5} as Margin)

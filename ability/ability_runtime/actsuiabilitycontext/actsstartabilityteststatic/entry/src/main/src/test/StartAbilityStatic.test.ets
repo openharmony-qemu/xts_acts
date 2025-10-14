@@ -25,6 +25,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from "@ohos.app.ability.contextConstant";
 import bundleManager from '@ohos.bundle.bundleManager';
 import fileIo from '@ohos.file.fs';
+import CompletionHandler from "@ohos.app.ability.CompletionHandler";
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -139,6 +140,23 @@ export default function startAbilityTestStatic() {
         flags: 1,
       };
 
+      let handler: CompletionHandler = {
+        onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(domain, tag,  '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestSuccess called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+          expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
+          expect(element.abilityName).assertEqual('EntryAbility');
+          expect(message).assertContain('Succeeded');
+          done();
+        },
+        onRequestFailure: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(domain, tag,  '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestFailure called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+          expect().assertFail();
+          done();
+        }
+      }
+
       let options: StartOptions = {
         windowMode: 0,
         displayId: 0,
@@ -157,7 +175,9 @@ export default function startAbilityTestStatic() {
         minWindowWidth: 100,
         minWindowHeight: 100,
         maxWindowWidth: 100,
-        maxWindowHeight: 100
+        maxWindowHeight: 100,
+        completionHandler: handler,
+        hideStartWindow: true
       };
       let options1: StartOptions = {
         displayId: 0,

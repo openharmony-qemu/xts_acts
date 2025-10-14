@@ -123,7 +123,7 @@ struct ListItem_InSertChange {
       .key('ListItemInSertChange1')
       .backgroundColor(0xAFEEEE)
       .scrollBar(BarState.On)
-      .onScrollIndex((first: number,last: number):void => {
+      .onScrollIndex((first: int,last: int):void => {
         console.info('first' + first)
         console.info('last' + last)
       })

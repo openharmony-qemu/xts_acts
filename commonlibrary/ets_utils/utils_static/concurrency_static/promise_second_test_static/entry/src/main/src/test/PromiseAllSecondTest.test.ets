@@ -757,7 +757,8 @@ export default function PromiseAllSecondTest() {
         arr.push(10);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', error.message);
         }
         await sleep(300);
@@ -836,7 +837,8 @@ export default function PromiseAllSecondTest() {
         arr.push(10);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);
@@ -900,7 +902,8 @@ export default function PromiseAllSecondTest() {
         arr.push(8);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);
@@ -972,7 +975,8 @@ export default function PromiseAllSecondTest() {
         }, 200);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);
@@ -1048,7 +1052,8 @@ export default function PromiseAllSecondTest() {
         }, 200);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);
@@ -1124,7 +1129,8 @@ export default function PromiseAllSecondTest() {
         }, 200);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);
@@ -1202,7 +1208,8 @@ export default function PromiseAllSecondTest() {
         }, 200);
         try {
           await Promise.all(taskPromises);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.log('Caught error in Promise.all:', (error as Error).message);
         }
         await sleep(300);

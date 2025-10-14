@@ -157,7 +157,7 @@ struct List_scrollToIndex2 {
         }
       }
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')
@@ -166,7 +166,7 @@ struct List_scrollToIndex2 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.id('List_scrollToIndex2_ListItem' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .id('List_scrollToIndex2_List')
       .width('80%')

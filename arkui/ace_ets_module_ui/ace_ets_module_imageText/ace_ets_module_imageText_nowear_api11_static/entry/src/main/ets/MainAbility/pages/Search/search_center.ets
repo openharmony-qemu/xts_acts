@@ -16,7 +16,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   Image, ImageFit, Scroller, Row, Scroll, VerticalAlign, ForEach, Search, SafeAreaType, ScrollDirection,
   BarState, Color, EdgeEffect, TextAlign, Margin, IconOptions, CancelButtonStyle, CancelButtonOptions, $r,
   CaretStyle, Font} from '@ohos.arkui.component'  
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
+import { State } from '@ohos.arkui.stateManagement' 
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';

@@ -50,7 +50,7 @@ let promptAction = new PromptAction()
 @Entry
 @ComponentV2
 struct DialogOptions0 {
-  private customDialogComponentId: number = 0
+  private customDialogComponentId: int = 0
 
   @Builder
   customDialogComponent() {
@@ -90,7 +90,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error:Error) => {
@@ -129,7 +129,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -155,7 +155,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -191,7 +191,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -226,7 +226,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -262,7 +262,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -289,7 +289,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -318,7 +318,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -344,7 +344,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -373,7 +373,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -399,7 +399,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -428,7 +428,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {
@@ -454,7 +454,7 @@ struct DialogOptions0 {
                   dismissDialogAction.dismiss()
                 }
               }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
               .catch((error: Error) => {

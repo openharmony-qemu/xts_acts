@@ -114,12 +114,12 @@ struct noBarrierComponents {
   @State start: boolean = false;
   @State passwords: Array<number> = [] as Array<number>;
   @State message: string = 'please input password!';
-  @State rating: number = 3.5;
+  @State rating: double = 3.5;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: number = 40;
+  @State outSetValueOne: double = 40.0;
   @State isMilitaryTime: boolean = false;
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
@@ -134,7 +134,7 @@ struct noBarrierComponents {
   private selectedDate: Date = new Date('2021-08-08');
   private fromStart: boolean = true;
   private step: number = 50;
-  private loop: number = Infinity;
+  private loop: int = Infinity as int;
   private src: string = "Running Marquee starts rolling";
   private patternLockController: PatternLockController = new PatternLockController();
   private value1: string = 'hello world';
@@ -163,7 +163,7 @@ struct noBarrierComponents {
           .accessibilityText("我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件我是无障碍组件")
 
         List({ space: 20, initialIndex: 0 } as ListOptions) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -173,7 +173,7 @@ struct noBarrierComponents {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-          }, (item: number, index: number) => item + '')
+          }, (item: number, index: int) => item + '')
         }
         .key("list")
         .listDirection(Axis.Vertical)
@@ -184,7 +184,7 @@ struct noBarrierComponents {
           endMargin: 20
         })
         .edgeEffect(EdgeEffect.Spring)
-        .onScrollIndex((firstIndex: number, lastIndex: number): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })
@@ -261,7 +261,7 @@ struct noBarrierComponents {
             .width('50%')
             .height('100%')
 
-            AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 as int } as AlphabetIndexerOptions)
               .selectedColor(0xFFFFFF)
               .popupColor(0xFFFAF0)
               .selectedBackgroundColor(0xCCCCCC)
@@ -271,10 +271,10 @@ struct noBarrierComponents {
               .popupFont({ size: 30, weight: FontWeight.Bolder })
               .itemSize(28)
               .alignStyle(IndexerAlign.Left)
-              .onSelect((index: Double): void => {
+              .onSelect((index: int): void => {
 
               })
-              .onRequestPopupData(((index: number): Array<String> | undefined => {
+              .onRequestPopupData(((index: int): Array<String> | undefined => {
                 if (this.value[index as int] == 'A') {
                   return this.arrayA
                 } else if (this.value[index as int] == 'B') {
@@ -287,7 +287,7 @@ struct noBarrierComponents {
                   return undefined
                 }
               }) as OnAlphabetIndexerRequestPopupDataCallback)
-              .onPopupSelect((index: Double): void => {
+              .onPopupSelect((index: int): void => {
                 console.info('onPopupSelected:' + index)
               })
           }
@@ -455,7 +455,7 @@ struct noBarrierComponents {
           .margin({ top: 24 } as Margin)
           .key("Rating")
           .accessibilityText("我是无障碍组件")
-          .onChange((value: number): void => {
+          .onChange((value: double): void => {
             this.rating = value
           })
 
@@ -492,12 +492,12 @@ struct noBarrierComponents {
           .margin(20)
         Slider({
           value: this.outSetValueOne,
-          min: 0,
-          max: 100,
+          min: 0.0,
+          max: 100.0,
           style: SliderStyle.OutSet
         })
           .showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -509,7 +509,7 @@ struct noBarrierComponents {
         })
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult): void => {
-            this.selectedTime.setHours(value.hour, value.minute)
+            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           })
           .key("TimePicker")

@@ -64,7 +64,7 @@ struct ListSwipe {
         .transition({ type: TransitionType.Delete, opacity: 0 })
         .swipeAction({
           end: {
-            builderComponent: new ComponentContent<Params>(this.uiContext, wrapBuilder<[Params]>(itemEnd)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<[]>(itemEnd)),
             // without onAction, no deleteArea
             onStateChange: (state: SwipeActionState) => {
               if (state == SwipeActionState.COLLAPSED) {
@@ -107,7 +107,7 @@ struct ListSwipe {
         .transition({ type: TransitionType.Delete, opacity: 0 })
         .swipeAction({
           end: {
-            builderComponent: new ComponentContent<Params>(this.uiContext, wrapBuilder<[Params]>(itemEnd)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<[]>(itemEnd)),
             // without onAction, no deleteArea
           },
           edgeEffect: SwipeEdgeEffect.Spring,
@@ -141,7 +141,7 @@ struct ListSwipe {
         .transition({ type: TransitionType.Delete, opacity: 0 })
         .swipeAction({
           start: {
-            builderComponent: new ComponentContent<Params>(this.uiContext, wrapBuilder<[Params]>(itemStart)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<[]>(itemStart)),
             actionAreaDistance: 5,
             onStateChange: (state: SwipeActionState) => {
               if (state == SwipeActionState.COLLAPSED) {
@@ -182,7 +182,7 @@ struct ListSwipe {
         .transition({ type: TransitionType.Delete, opacity: 0 })
         .swipeAction({
           start: {
-            builderComponent: new ComponentContent<Params>(this.uiContext, wrapBuilder<[Params]>(itemEnd)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<[]>(itemEnd)),
             actionAreaDistance: 5,
             // with onAction
             onAction: () => {

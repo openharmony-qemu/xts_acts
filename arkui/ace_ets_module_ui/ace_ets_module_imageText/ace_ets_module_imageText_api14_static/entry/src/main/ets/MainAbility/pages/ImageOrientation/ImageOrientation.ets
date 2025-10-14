@@ -14,7 +14,7 @@
  */
 import { image } from '@kit.ImageKit'
 import { Entry, Component, ImageRotateOrientation, ImageFit, Resource, $r, Column, Image, Color, ImageRepeat, Padding, Button, ClickEvent} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component

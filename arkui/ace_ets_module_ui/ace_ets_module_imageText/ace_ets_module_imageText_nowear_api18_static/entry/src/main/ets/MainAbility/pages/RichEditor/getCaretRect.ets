@@ -49,7 +49,7 @@ struct getCaretRectDemo {
             style:
             {
               fontColor: Color.Orange,
-              fontSize: 50
+              fontSize: 50.0
             }
           })
         })

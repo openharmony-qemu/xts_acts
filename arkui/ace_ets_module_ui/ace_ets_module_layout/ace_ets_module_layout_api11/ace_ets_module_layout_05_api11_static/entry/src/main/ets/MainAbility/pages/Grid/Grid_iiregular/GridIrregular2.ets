@@ -44,9 +44,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -57,11 +54,11 @@ struct GridIrregular2 {
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
     irregularIndexes: [3],
-    onGetIrregularSizeByIndex: (index: number) => {
+    onGetIrregularSizeByIndex: (index: int) => {
       if (index === 3) {
-        return [1, 5] as [number, number];
+        return [1, 5] as [int, int];
       }
-      return [1, index % 6 + 1] as [number, number];
+      return [1, index % 6 + 1] as [int, int];
     }
   } as GridLayoutOptions;
 

@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 interface DataI {
-  duration: number
+  duration: int
   curve: string
   iterations: number
   tempo: number

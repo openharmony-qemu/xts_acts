@@ -56,11 +56,11 @@ struct ScrollToIndexForGrid03 {
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
     irregularIndexes: [0, 7, 9], 
-    onGetIrregularSizeByIndex: (index: number) => {
+    onGetIrregularSizeByIndex: (index: int) => {
       if (index === 0) {
-        return [1, 5] as [number, number]
+        return [1, 5] as [int, int]
       }
-      return [1, index % 6 + 1] as [number, number]
+      return [1, index % 6 + 1] as [int, int]
     }
   } as GridLayoutOptions
 

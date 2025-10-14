@@ -14,18 +14,18 @@
  */
 import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Color, ProgressMask, Padding, Image, $r,Button, ClickEvent, Margin, Builder, TabsController,
   Divider, Tabs, TabContent, BarPosition, AnimationMode, BarMode} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct TabsExample_CONTENT_FIRST {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
   @Builder
-  tabBuilder(index: number, name: string) {
+  tabBuilder(index: int, name: string) {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
@@ -52,7 +52,7 @@ struct TabsExample_CONTENT_FIRST {
       .barWidth(360)
       .barHeight(56)
       .animationDuration(400)
-      .onChange((index: number) => {
+      .onChange((index: int) => {
         this.currentIndex = index
       })
       .width(360)

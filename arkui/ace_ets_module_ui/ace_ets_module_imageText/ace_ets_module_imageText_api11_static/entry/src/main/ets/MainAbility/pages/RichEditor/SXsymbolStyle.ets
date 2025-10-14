@@ -49,7 +49,7 @@ struct SXsymbolStyle {
             {
               style:
               {
-                fontSize: 30,
+                fontSize: 30.0,
               }
             })
         })
@@ -63,7 +63,7 @@ struct SXsymbolStyle {
           symbolStyle:
           {
             fontWeight: FontWeight.Bolder,
-            fontSize: 16
+            fontSize: 16.0
           }
         } as RichEditorUpdateSymbolSpanStyleOptions)
       }).key('SXsymbolStylesymbolStyleButton').height('10%')

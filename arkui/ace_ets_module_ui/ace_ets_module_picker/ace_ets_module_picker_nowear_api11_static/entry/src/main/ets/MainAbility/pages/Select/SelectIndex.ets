@@ -105,7 +105,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('selectTest')
-        .onSelect((index: number, text?: undefined | string) => {
+        .onSelect((index: int, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValue)
@@ -134,7 +134,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('selectTest2')
-        .onSelect((index: number, text?: undefined | string) => {
+        .onSelect((index: int, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValueString)
@@ -162,7 +162,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('selectTest3')
-        .onSelect((index: number, text?: undefined | string) => {
+        .onSelect((index: int, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValueResource)

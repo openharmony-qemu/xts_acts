@@ -54,7 +54,7 @@ struct SwiperDrag0710 {
       .id('swiperdrag0710')
       .loop(false)
       .autoPlay(true, undefined)
-      .onChange((index: Number): void => {
+      .onChange((index: Int): void => {
         this.indexstr = index + ''
       })
 

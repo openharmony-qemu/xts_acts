@@ -37,9 +37,6 @@ import { Entry,
 import {
   State,
   
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement'

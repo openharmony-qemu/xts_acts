@@ -45,7 +45,7 @@ struct Grid_Row_Length_String {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 1 }) {
 
           }.borderColor(color).borderWidth(2).key("Length_String_0" + index).height(50)

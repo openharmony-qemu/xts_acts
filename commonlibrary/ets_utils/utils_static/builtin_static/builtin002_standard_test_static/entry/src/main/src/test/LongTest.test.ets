@@ -353,7 +353,8 @@ export default function builtinsLongPrototypebTest() {
             value: Long.MAX_VALUE + 1
           };
           const result = longInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Long from JSON');
         }
         console.info(`${caseName}, test end`);
@@ -378,7 +379,8 @@ export default function builtinsLongPrototypebTest() {
             value: Long.MIN_VALUE - 1
           };
           const result = longInstance.createFromJSONValue(jsonValue);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           expect(e.message).assertEqual('Cannot create Long from JSON');
         }
         console.info(`${caseName}, test end`);

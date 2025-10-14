@@ -41,11 +41,11 @@ class MyDataColor implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: double): Double {
+  getData(index: int): Double {
     return this.list[index.toInt()]
   }
 

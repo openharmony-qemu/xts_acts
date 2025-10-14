@@ -49,11 +49,11 @@ class MyDataSourceList07 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -88,7 +88,7 @@ struct List07 {
   build() {
     Column() {
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -111,7 +111,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -122,7 +122,7 @@ struct List07 {
       
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -145,7 +145,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -156,7 +156,7 @@ struct List07 {
       
 
       List({ space: 20, initialIndex: 0 } as ListOptions) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -179,7 +179,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -190,7 +190,7 @@ struct List07 {
       
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -213,7 +213,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
@@ -224,7 +224,7 @@ struct List07 {
       
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -247,7 +247,7 @@ struct List07 {
         endMargin: 2
       }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, center: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, center: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })

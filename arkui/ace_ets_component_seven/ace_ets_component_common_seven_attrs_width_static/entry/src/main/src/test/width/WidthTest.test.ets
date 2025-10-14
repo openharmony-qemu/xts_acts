@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,6 +23,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
  */
 export default function widthTest() {
   
+  console.info('WidthTest  ======= list+start')
   let supportView = [
     'Button',
   ]
@@ -52,14 +53,15 @@ export default function widthTest() {
     
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
+      console.info('WidthTest  ======= start')
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       
       console.info('[' + data.caseTag + '] widthTest');
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
-      console.info('[' + data.caseTag + '] check width.' + ` ${data.testValue.setValue.width}`);
+      console.info('[' + data.caseTag + '] check width_value' + ` ${data.testValue.expectValue.width}`);
+      console.info('[' + data.caseTag + '] check width.' + data.viewObj!.getElement('$attrs').getString('width'));
       expect(data.viewObj!.getElement('$attrs').getString('width')).assertEqual(data.testValue.expectValue.width);
     })
   })

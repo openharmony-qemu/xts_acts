@@ -46,11 +46,11 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct SliderContentModifierTest {
-  @State sliderValue: number = 0
-  @State sliderMin: number = 0
-  @State sliderMax: number = 100
-  @State sliderStep: number = 1
-  @State sliderChangeMode: number = 0
+  @State sliderValue: double = 0
+  @State sliderMin: double = 0
+  @State sliderMax: double = 100
+  @State sliderStep: double = 1
+  @State sliderChangeMode: int = 0
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -60,7 +60,7 @@ struct SliderContentModifierTest {
         max: this.sliderMax,
         step:this.sliderStep,
       })
-        .onChange((value: number, mode: SliderChangeMode):void => {
+        .onChange((value: double, mode: SliderChangeMode):void => {
           this.sliderValue = value
           this.sliderChangeMode = mode
         })

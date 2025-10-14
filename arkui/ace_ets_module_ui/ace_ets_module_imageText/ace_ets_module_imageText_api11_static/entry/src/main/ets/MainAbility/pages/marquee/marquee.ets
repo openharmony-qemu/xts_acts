@@ -38,7 +38,7 @@ struct MarqueeExample {
   @State start: boolean = false
   @State fromStart: boolean = true
   @State step: number = 50
-  @State loop: number = 3
+  @State loop: int = 3
   @State src: string = "Running Marquee starts rolling"
   @State fontColor: Color = Color.Blue;
   @State fontSize: number = 50;

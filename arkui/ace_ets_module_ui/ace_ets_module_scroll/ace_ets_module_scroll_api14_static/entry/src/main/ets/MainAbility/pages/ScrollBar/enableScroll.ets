@@ -61,7 +61,7 @@ struct StickyNestedScroll {
               }
 
               
-            }, (item: number, index: number) => String(item))
+            }, (item: number, index: int) => String(item))
           }
           .scrollBar(BarState.Off)
           .nestedScroll({

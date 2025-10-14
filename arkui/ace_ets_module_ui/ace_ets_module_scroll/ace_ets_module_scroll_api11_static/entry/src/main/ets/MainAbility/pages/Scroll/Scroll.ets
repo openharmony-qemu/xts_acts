@@ -56,7 +56,7 @@ struct ScrollTest {
     Scroll(this.scroller) {
       Column() {
         Text(this.scrollText).id('scrollText')
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           Text(item.toString())
             .width('90%')
             .height(200)

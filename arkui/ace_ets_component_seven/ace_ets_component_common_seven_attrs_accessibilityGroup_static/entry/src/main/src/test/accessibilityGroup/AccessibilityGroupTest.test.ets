@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,7 +19,8 @@ import Utils, {
   PageConfig,
   TestValue,
   RectValue,
-  ExpectValue
+  ExpectValue,
+  SetValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, beforeAll, expect } from '../../../../hypium/index';
@@ -82,7 +83,7 @@ export default function AccessibilityGroupTest() {
    */
   describe('accessibilityGroupTest', () => {
     beforeAll(() => {
-      console.info("accessibilityGroupTest beforeAll start");
+      console.info("markAnchorTest beforeAll start");
       
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

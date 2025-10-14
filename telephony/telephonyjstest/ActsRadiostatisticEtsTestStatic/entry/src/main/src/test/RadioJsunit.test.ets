@@ -28,7 +28,7 @@ export default function radioJsunit() {
      */
     it('Telephony_NetworkSearch_getPrimarySlotId_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       radio.getPrimarySlotId((err, data) => {
-        if (err) {
+        if (err?.code !== 0) {
           console.log("Telephony_NetworkSearch_getPrimarySlotId_Async_0200 err:" + JSON.stringify(err));
           expect(false).assertTrue();
           done();

@@ -22,24 +22,24 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 export default function builtinsLongSecondPrototypebTest() {
-  describe('builtinsLongSecondPrototypebTest', ():void => {
+  describe('builtinsLongSecondPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(():void => {
+    beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(():void => {
+    afterEach((): void => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(():void => {
+    afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -53,7 +53,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0100'
         console.info(`${caseName}, test start`);
         const zero = new Long(0);
@@ -72,7 +72,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0200'
         console.info(`${caseName}, test start`);
         const num = new Long(123);
@@ -91,7 +91,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0300'
         console.info(`${caseName}, test start`);
         const num = new Long(-456);
@@ -110,7 +110,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0400'
         console.info(`${caseName}, test start`);
         const bigNum = new Long(16777215);
@@ -129,7 +129,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0500'
         console.info(`${caseName}, test start`);
         const hugeNum = new Long(16777217);
@@ -148,7 +148,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0600'
         console.info(`${caseName}, test start`);
         const max = new Long(Long.MAX_VALUE);
@@ -167,7 +167,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0700'
         console.info(`${caseName}, test start`);
         const min = new Long(Long.MIN_VALUE);
@@ -186,7 +186,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0701'
         console.info(`${caseName}, test start`);
         const precisionTest = new Long(123456789);
@@ -205,7 +205,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0800'
         console.info(`${caseName}, test start`);
         const longValue = new Long(2147483647);
@@ -224,7 +224,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest0900'
         console.info(`${caseName}, test start`);
         const longValue = new Long(2147483647);
@@ -243,7 +243,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1000'
         console.info(`${caseName}, test start`);
         const longValue = new Long(-2147483648);
@@ -262,7 +262,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1100'
         console.info(`${caseName}, test start`);
         const longValue = new Long(-2147483648);
@@ -281,7 +281,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1200'
         console.info(`${caseName}, test start`);
         const longValue = new Long(2147483648);
@@ -300,7 +300,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1500'
         console.info(`${caseName}, test start`);
         const longValue = new Long(-9223372036854775808);
@@ -319,7 +319,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1600'
         console.info(`${caseName}, test start`);
         const longObj = new Long();
@@ -338,7 +338,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1700'
         console.info(`${caseName}, test start`);
         const testValue = 123456789012345 as long;
@@ -358,7 +358,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1800'
         console.info(`${caseName}, test start`);
         const testValue = -98765432109876 as long;
@@ -378,7 +378,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1900'
         console.info(`${caseName}, test start`);
         const testValue = Long.MAX_VALUE;
@@ -398,7 +398,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest1901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest1901'
         console.info(`${caseName}, test start`);
         const testValue = Long.MIN_VALUE;
@@ -418,7 +418,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2000'
         console.info(`${caseName}, test start`);
         const testValue = 555555555555 as long;
@@ -438,7 +438,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2100'
         console.info(`${caseName}, test start`);
         const testValue = 0 as long;
@@ -458,7 +458,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2200'
         console.info(`${caseName}, test start`);
         const testValue = 0 as long;
@@ -478,7 +478,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2300'
         console.info(`${caseName}, test start`);
         const testValue = 9007199254740991 as long;
@@ -498,7 +498,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2400'
         console.info(`${caseName}, test start`);
         const testValue = 9007199254740991 as long;
@@ -518,7 +518,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2500'
         console.info(`${caseName}, test start`);
         const longObj = new Long();
@@ -537,7 +537,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2600'
         console.info(`${caseName}, test start`);
         const testValue = 12345 as long;
@@ -558,7 +558,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2700'
         console.info(`${caseName}, test start`);
         const testValue = -12345 as long;
@@ -579,7 +579,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2800'
         console.info(`${caseName}, test start`);
         const testValue = 32767 as long;
@@ -600,7 +600,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest2900'
         console.info(`${caseName}, test start`);
         const testValue = -32768 as long;
@@ -621,7 +621,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3000'
         console.info(`${caseName}, test start`);
         const testValue = 32768 as long;
@@ -642,7 +642,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3100'
         console.info(`${caseName}, test start`);
         const testValue = 123456789 as long;
@@ -663,7 +663,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3200'
         console.info(`${caseName}, test start`);
         const testValue = -9876543210 as long;
@@ -684,7 +684,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3300'
         console.info(`${caseName}, test start`);
         const longObj = new Long();
@@ -703,7 +703,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3400'
         console.info(`${caseName}, test start`);
         const testValue = 123456789 as long;
@@ -723,7 +723,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3500'
         console.info(`${caseName}, test start`);
         const testValue = -987654321 as long;
@@ -743,7 +743,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3600'
         console.info(`${caseName}, test start`);
         const testValue = Long.MAX_VALUE;
@@ -763,7 +763,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3700'
         console.info(`${caseName}, test start`);
         const testValue = Long.MIN_VALUE;
@@ -783,7 +783,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest3800'
         console.info(`${caseName}, test start`);
         const testValue = 0 as long;
@@ -803,7 +803,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4000'
         console.info(`${caseName}, test start`);
         const testValue = -555555555555555555 as long;
@@ -823,7 +823,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4100'
         console.info(`${caseName}, test start`);
         const testValue = 7 as long;
@@ -843,7 +843,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4200'
         console.info(`${caseName}, test start`);
         const testValue = -3 as long;
@@ -863,7 +863,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4300'
         console.info(`${caseName}, test start`);
         const result = Long.valueOf(0 as long);
@@ -881,7 +881,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4301'
         console.info(`${caseName}, test start`);
         const result = Long.valueOf(0 as long);
@@ -899,7 +899,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4400'
         console.info(`${caseName}, test start`);
         const testValue = 123456789 as long;
@@ -918,7 +918,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4500'
         console.info(`${caseName}, test start`);
         const testValue = -987654321 as long;
@@ -937,7 +937,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4600'
         console.info(`${caseName}, test start`);
         const testValue = Long.MAX_VALUE;
@@ -956,7 +956,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4700'
         console.info(`${caseName}, test start`);
         const testValue = Long.MAX_VALUE;
@@ -975,7 +975,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4800'
         console.info(`${caseName}, test start`);
         const testValue = Long.MIN_VALUE;
@@ -994,7 +994,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest04901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest04901'
         console.info(`${caseName}, test start`);
         const testValue = 999999999999999999 as long;
@@ -1013,7 +1013,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest04900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest4900'
         console.info(`${caseName}, test start`);
         const testValue = -555555555555555555 as long;
@@ -1033,7 +1033,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5000'
         console.info(`${caseName}, test start`);
         const testValue = 7 as long;
@@ -1052,7 +1052,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5100'
         console.info(`${caseName}, test start`);
         const value1 = Long.valueOf(42 as long);
@@ -1071,7 +1071,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5200'
         console.info(`${caseName}, test start`);
         const long1 = new Long(0 as long);
@@ -1091,7 +1091,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5300'
         console.info(`${caseName}, test start`);
         const long1 = new Long(10 as long);
@@ -1111,7 +1111,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5400'
         console.info(`${caseName}, test start`);
         const long1 = new Long(5 as long);
@@ -1131,7 +1131,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5500'
         console.info(`${caseName}, test start`);
         const long1 = new Long(-5 as long);
@@ -1151,7 +1151,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5600'
         console.info(`${caseName}, test start`);
         const long1 = new Long(-5 as long);
@@ -1171,7 +1171,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5700'
         console.info(`${caseName}, test start`);
         const long1 = new Long(Long.MAX_VALUE);
@@ -1191,7 +1191,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5800'
         console.info(`${caseName}, test start`);
         const long1 = new Long(Long.MAX_VALUE);
@@ -1211,7 +1211,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest5900'
         console.info(`${caseName}, test start`);
         const long1 = new Long(Long.MIN_VALUE);
@@ -1231,7 +1231,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6000'
         console.info(`${caseName}, test start`);
         const long1 = new Long(123456789012345 as long);
@@ -1251,7 +1251,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6100'
         console.info(`${caseName}, test start`);
         const long1 = new Long(0 as long);
@@ -1270,7 +1270,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6200'
         console.info(`${caseName}, test start`);
         const long1 = new Long(0 as long);
@@ -1289,7 +1289,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6300'
         console.info(`${caseName}, test start`);
         const long1 = new Long(12345 as long);
@@ -1308,7 +1308,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6400'
         console.info(`${caseName}, test start`);
         const long1 = new Long(-6789 as long);
@@ -1327,7 +1327,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6500'
         console.info(`${caseName}, test start`);
         const long1 = new Long(10 as long);
@@ -1346,7 +1346,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6600'
         console.info(`${caseName}, test start`);
         const long1 = new Long(255 as long);
@@ -1365,7 +1365,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6700'
         console.info(`${caseName}, test start`);
         const long1 = new Long(35 as long);
@@ -1384,7 +1384,7 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6800'
         console.info(`${caseName}, test start`);
         const long1 = new Long(Long.MAX_VALUE);
@@ -1403,30 +1403,12 @@ export default function builtinsLongSecondPrototypebTest() {
      * @tc.level Level 2
      */
     it('builtinsLongSecondPrototypebTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
+      async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsLongSecondPrototypebTest6900'
         console.info(`${caseName}, test start`);
         const long1 = new Long(Long.MIN_VALUE);
         const result = long1.toString(16);
         expect(result).assertEqual('-8000000000000000');
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_SECOND_TEST_7000
-     * @tc.name builtinsLongSecondPrototypebTest7000
-     * @tc.desc test unboxed(): long return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsLongSecondPrototypebTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsLongSecondPrototypebTest7000'
-        console.info(`${caseName}, test start`);
-        const byte1 = new Byte(0);
-        expect(byte1).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })

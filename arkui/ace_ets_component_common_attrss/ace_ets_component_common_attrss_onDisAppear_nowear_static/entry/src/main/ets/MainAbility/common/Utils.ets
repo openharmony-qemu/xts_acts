@@ -275,7 +275,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -285,7 +285,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: number, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);
@@ -298,7 +298,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime().toLong(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -338,7 +338,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime().toLong(),
       target: {
         area: {
           width: width,

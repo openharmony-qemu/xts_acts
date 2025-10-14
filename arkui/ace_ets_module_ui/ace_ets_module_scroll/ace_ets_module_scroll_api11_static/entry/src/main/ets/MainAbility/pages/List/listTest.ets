@@ -47,7 +47,7 @@ struct ListExample {
   build() {
     Column() {
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -66,7 +66,7 @@ struct ListExample {
       .contentStartOffset(10)
       .contentEndOffset(10)
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

@@ -80,7 +80,7 @@ struct ListScroll {
       }.margin({ top: 10 } as Margin)
 
       List({ space: 5, initialIndex: 23, scroller: this.scrollerForList }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text("ListItem" + item)
               .width("100%")
@@ -100,7 +100,7 @@ struct ListScroll {
       .margin({ top: 10 } as Margin)
       .edgeEffect(EdgeEffect.None)
       .alignListItem(ListItemAlign.Center)
-      .onScrollIndex((start: number, end: number, center: number): void => {
+      .onScrollIndex((start: int, end: int, center: int): void => {
         let eventData: events_emitter.EventData = {
           data: {
             'start': start,

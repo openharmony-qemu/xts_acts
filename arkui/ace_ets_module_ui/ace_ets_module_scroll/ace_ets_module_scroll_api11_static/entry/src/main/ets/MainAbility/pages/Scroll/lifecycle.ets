@@ -42,7 +42,7 @@ struct lifeCycle {
 
 @Builder
 function ColumnChildren() {
-  ForEach([1, 2, 3], (item: Int, index: number) => { 
+  ForEach([1, 2, 3], (item: Int, index: int) => { 
     Text('S' + index)
       .fontSize(30)
       .width(100)

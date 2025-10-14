@@ -24,7 +24,7 @@ struct WaterFlow3 {
   @State maxSize: number = 180
   @State num: number = 0
   scroller: Scroller = new Scroller()
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
   @State layoutdir1: FlexDirection = FlexDirection.ColumnReverse
   private itemWidthArray: number[] = new Array<number>()
@@ -86,7 +86,7 @@ struct WaterFlow3 {
           .width('100%')
           .height(this.itemHeightArray[item.toInt() % 100])
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .layoutDirection(this.layoutdir1)
       .direction(Direction.Rtl)

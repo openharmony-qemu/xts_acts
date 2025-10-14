@@ -91,8 +91,8 @@ struct ListRebound {
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string, index: number) => {
-              ForEach(this.Number, (day2: string, index: number) => {
+            ForEach(this.Number, (day1: string, index: int) => {
+              ForEach(this.Number, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)
@@ -126,8 +126,8 @@ struct ListRebound {
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string, index: number) => {
-              ForEach(this.Number, (day2: string, index: number) => {
+            ForEach(this.Number, (day1: string, index: int) => {
+              ForEach(this.Number, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)

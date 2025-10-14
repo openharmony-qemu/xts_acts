@@ -112,7 +112,7 @@ struct getVisibleListError {
       }
 
       List({ initialIndex: 0, scroller: this.listScroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
               .width('80%')

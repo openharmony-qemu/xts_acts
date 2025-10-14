@@ -54,8 +54,8 @@ struct onGetIrregular9 {
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
     irregularIndexes: [0, 4], 
-    onGetIrregularSizeByIndex: (index: number) => {
-      return [3, 1] as [number, number];
+    onGetIrregularSizeByIndex: (index: int) => {
+      return [3, 1] as [int, int];
     }
   } as GridLayoutOptions;
 

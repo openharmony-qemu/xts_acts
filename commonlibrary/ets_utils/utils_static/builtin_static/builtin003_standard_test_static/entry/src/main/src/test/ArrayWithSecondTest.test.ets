@@ -44,8 +44,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const index: number = 1;
-        const result = with(arr, index, -2.2 as float);
+        const index = 1;
+        const result = with(arr, index, -2);
         const expected: FixedArray<float> = [1.1 as float, -2.2 as float, 3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -69,8 +69,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const index: number = -3;
-        const result = with(arr, index, 1.1 as float);
+        const index = -3;
+        const result = with(arr, index, 1);
         const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -94,8 +94,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const index: number = -1;
-        const result = with(arr, index, 5.5 as float);
+        const index = -1;
+        const result = with(arr, index, 5);
         const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.5 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -119,8 +119,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
-        const index: number = -1;
-        const result = with(arr, index, 33.3 as float);
+        const index = -1;
+        const result = with(arr, index, 33);
         const expected: FixedArray<float> = [-1.1 as float, -2.2 as float, 33.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -144,8 +144,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
-        const index: number = 0;
-        const result = with(arr, index, 11.1 as float);
+        const index = 0;
+        const result = with(arr, index, 11);
         const expected: FixedArray<float> = [11.1 as float, -2.2 as float, -3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -169,8 +169,8 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_0600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [100.0 as float, 90.0 as float, 80.0 as float, 70.0 as float];
-        const index: number = 0;
-        const result = with(arr, index, 60.0 as float);
+        const index = 0;
+        const result = with(arr, index, 60);
         const expected: FixedArray<float> = [60.0 as float, 90.0 as float, 80.0 as float, 70.0 as float];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
@@ -198,8 +198,8 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<float> = [1.1 as float, 11.1 as float, 111.1 as float];
-          const index: number = 3;
-          with(arr, index, 1.1 as float);
+          const index = 3;
+          with(arr, index, 1);
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');
@@ -227,8 +227,8 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<float> = [1.1 as float, 11.1 as float, 111.1 as float];
-          const index: number = 6;
-          with(arr, index, 0.0 as float);
+          const index = 6;
+          with(arr, index, 0);
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('Invalid index');
@@ -469,7 +469,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_1700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3, 4, 5];
-        const index: number = 2;
+        const index = 2;
         const result = with(arr, index, 10);
         const expected: FixedArray<int> = [1, 2, 10, 4, 5];
         expect(result.length).assertEqual(5);
@@ -496,7 +496,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_1800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3, 4, 5];
-        const index: number = 3;
+        const index = 3;
         const result = with(arr, index, 0);
         const expected: FixedArray<int> = [1, 2, 3, 0, 5];
         expect(result.length).assertEqual(5);
@@ -523,7 +523,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_1900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3, 4, 5];
-        const index: number = -5;
+        const index = -5;
         const result = with(arr, index, 6);
         const expected: FixedArray<int> = [6, 2, 3, 4, 5];
         expect(result.length).assertEqual(5);
@@ -550,7 +550,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_2000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [10];
-        const index: number = 0;
+        const index = 0;
         const result = with(arr, index, 100);
         const expected: FixedArray<int> = [100];
         expect(result.length).assertEqual(1);
@@ -573,7 +573,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_2100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [-1, 5, 6, 3, -2];
-        const index: number = 4;
+        const index = 4;
         const result = with(arr, index, -7);
         const expected: FixedArray<int> = [-1, 5, 6, 3, -7];
         expect(result.length).assertEqual(5);
@@ -600,7 +600,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_2200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [-1, 5, 6, 3, -2];
-        const index: number = -3;
+        const index = -3;
         const result = with(arr, index, 0);
         const expected: FixedArray<int> = [-1, 5, 0, 3, -2];
         expect(result.length).assertEqual(5);
@@ -630,7 +630,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<int> = [1, 2, 3];
-          const index: number = 3;
+          const index = 3;
           with(arr, index, 6);
         } catch (e) {
           errorOccurred = true;
@@ -659,7 +659,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<int> = [1, 2, 3];
-          const index: number = 10;
+          const index = 10;
           with(arr, index, 4);
         } catch (e) {
           errorOccurred = true;
@@ -895,7 +895,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [10, 20, 30];
-        const index: number = 1;
+        const index = 1;
         const result = with(arr, index, 15);
         const expected: FixedArray<long> = [10, 15, 30];
         expect(result.length).assertEqual(3);
@@ -920,7 +920,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [10, 20, 30];
-        const index: number = 0;
+        const index = 0;
         const result = with(arr, index, 10);
         const expected: FixedArray<long> = [10, 20, 30];
         expect(result.length).assertEqual(3);
@@ -945,7 +945,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [-10, -20, -30, -40, -50];
-        const index: number = 1;
+        const index = 1;
         const result = with(arr, index, 100);
         const expected: FixedArray<long> = [-10, 100, -30, -40, -50];
         expect(result.length).assertEqual(5);
@@ -972,7 +972,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [0, 10, 10, 20];
-        const index: number = 2;
+        const index = 2;
         const result = with(arr, index, 20);
         const expected: FixedArray<long> = [0, 10, 20, 20];
         expect(result.length).assertEqual(4);
@@ -998,7 +998,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [500];
-        const index: number = 0;
+        const index = 0;
         const result = with(arr, index, 300);
         const expected: FixedArray<long> = [300];
         expect(result.length).assertEqual(1);
@@ -1021,7 +1021,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_3800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [10, 50, -40, 20];
-        const index: number = -2;
+        const index = -2;
         const result = with(arr, index, 40);
         const expected: FixedArray<long> = [10, 50, 40, 20];
         expect(result.length).assertEqual(4);
@@ -1050,7 +1050,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<long> = [100, 100, 100, 100, 100, 100, 100];
-          const index: number = 7;
+          const index = 7;
           with(arr, index, 100);
         } catch (e) {
           errorOccurred = true;
@@ -1079,7 +1079,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<long> = [100, 100, 100, 100, 100, 100, 100];
-          const index: number = 8;
+          const index = 8;
           with(arr, index, 700);
         } catch (e) {
           errorOccurred = true;
@@ -1320,7 +1320,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_4900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [2, 4, 6, 8];
-        const index: number = -2;
+        const index = -2;
         const result = with(arr, index, 7);
         const expected: FixedArray<short> = [2, 4, 7, 8];
         expect(result.length).assertEqual(4);
@@ -1346,7 +1346,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_5000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [2, 4, 6, 8];
-        const index: number = 3;
+        const index = 3;
         const result = with(arr, index, 10);
         const expected: FixedArray<short> = [2, 4, 6, 10];
         expect(result.length).assertEqual(4);
@@ -1372,7 +1372,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_5100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [2, 4, 6, 8];
-        const index: number = 0;
+        const index = 0;
         const result = with(arr, index, 0);
         const expected: FixedArray<short> = [0, 4, 6, 8];
         expect(result.length).assertEqual(4);
@@ -1398,7 +1398,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_5200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [-18, -17, -35, -12, -17];
-        const index: number = 1;
+        const index = 1;
         const result = with(arr, index, 17);
         const expected: FixedArray<short> = [-18, 17, -35, -12, -17];
         expect(result.length).assertEqual(5);
@@ -1425,7 +1425,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_5300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [-18, -17, -35, -12, -17];
-        const index: number = -4;
+        const index = -4;
         const result = with(arr, index, 17);
         const expected: FixedArray<short> = [-18, 17, -35, -12, -17];
         expect(result.length).assertEqual(5);
@@ -1452,7 +1452,7 @@ export default function Array_With_Second_Test_static() {
         const caseName = 'Array_With_Second_Test_static_5400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [2, 2, 2];
-        const index: number = 1;
+        const index = 1;
         const result = with(arr, index, 6);
         const expected: FixedArray<short> = [2, 6, 2];
         expect(result.length).assertEqual(3);
@@ -1480,7 +1480,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<short> = [1, 3, 6, 8, 4, 3];
-          const index: number = 6;
+          const index = 6;
           with(arr, index, 2);
         } catch (e) {
           errorOccurred = true;
@@ -1509,7 +1509,7 @@ export default function Array_With_Second_Test_static() {
         let errorContainsKeyword: boolean = false;
         try {
           const arr: FixedArray<short> = [1, 3, 6, 8, 4, 3];
-          const index: number = 9;
+          const index = 9;
           with(arr, index, 2);
         } catch (e) {
           errorOccurred = true;

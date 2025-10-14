@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,16 +29,16 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
-  MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
+  MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,applyStyles,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,CommonMethod,
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RichText } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -263,17 +263,6 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     instance.width(this.mWidth)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mWidth: number | string = 10
@@ -506,10 +495,579 @@ class CircleModifier implements AttributeModifier<CircleAttribute>{
 
 
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
+function commonStyleButton(this: ButtonAttribute, componentKey: string,_width: string|number): this {
+  this.width(_width)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EffectComponentAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormComponentAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.width(50)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
 @Entry
 @Component
@@ -522,7 +1080,9 @@ struct WidthPage {
   private value: string[] = ['#', 'A', 'B']
   
   public valueArr: number[] = [5, 10, 10, 7, 9, 10, 10, 10, 10] as number[]
-  @State _width: number | string = 0.0
+  @StoragePropRef('_widthObj') _width: SetValue = {
+    height: 0,width: 0
+  }
   
   @State _widthCircleMod: CircleModifier = new CircleModifier()
   @State _widthProgressMod: ProgressModifier = new ProgressModifier()
@@ -532,6 +1092,7 @@ struct WidthPage {
   
   @State _widthBlankMod: BlankModifier = new BlankModifier()
   @State _widthButtonMod: ButtonModifier = new ButtonModifier()
+  
   
   @State _widthCalendarPickerMod: CalendarPickerModifier = new CalendarPickerModifier()
   @State _widthCheckboxMod: CheckboxModifier = new CheckboxModifier()
@@ -618,274 +1179,201 @@ struct WidthPage {
   @State _widthWebMod: WebModifier = new WebModifier()
   
   @State _widthXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? ''
-  @State BackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.BackGroundColor ?? ''
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? ''
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns ?? 0
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter ?? 0
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
+  @State parentBackGroundColor: string = '';
+  @State BackGroundColor: string = '';
 
 
-  onPageShow() {
+    onPageShow() {
     console.info('[WidthPage] page show called ')
-    
-    attrsManager.registerDataChange((value: SetValue) => {
-      console.info('[registerDataChange2] ' + value.width)
-      this._widthCircleMod.mWidth = value.width
-      this._widthProgressMod.mWidth = value.width
+      const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+        .getElement("view")
+      this.targetView = viewElement.getString("targetView")
+      this.componentKey = viewElement.getString("componentKey")
+      this.parentWidth = viewElement.getDouble("parentWidth")
+      this.parentHeight = viewElement.getDouble("parentHeight")
+      this.columns = viewElement.getDouble("columns")
+      this.gutter = viewElement.getDouble("gutter")
+      this.parentComponentKey = viewElement.getString("parentComponentKey")
+      this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
+      this.BackGroundColor = viewElement.getString("BackGroundColor")
       
-      this._widthAlphabetIndexerMod.mWidth = value.width
-      this._widthBadgeMod.mWidth = value.width
-      this._widthBlankMod.mWidth = value.width
-      this._widthButtonMod.mWidth = value.width
-      this._widthCalendarPickerMod.mWidth = value.width
-      this._widthCheckboxMod.mWidth = value.width
-      this._widthCheckboxGroupMod.mWidth = value.width
-      this._widthColumnMod.mWidth = value.width
-      this._widthColumnSplitMod.mWidth = value.width
-      this._widthCounterMod.mWidth = value.width
-      this._widthDataPanelMod.mWidth = value.width
-      this._widthDatePickerMod.mWidth = value.width
-      this._widthDividerMod.mWidth = value.width
-      this._widthEffectComponentMod.mWidth = value.width
-      this._widthFlexMod.mWidth = value.width
-      this._widthFlowItemMod.mWidth = value.width
-      this._widthFormComponentMod.mWidth = value.width
-      this._widthFormLinkMod.mWidth = value.width
-      this._widthGaugeMod.mWidth = value.width
-      this._widthGridMod.mWidth = value.width
-      this._widthGridColMod.mWidth = value.width
-      this._widthGridItemMod.mWidth = value.width
-      this._widthGridRowMod.mWidth = value.width
-      this._widthHyperlinkMod.mWidth = value.width
-      this._widthImageAnimatorMod.mWidth = value.width
-      this._widthImageSpanMod.mWidth = value.width
-      this._widthImageMod.mWidth = value.width
-      this._widthListMod.mWidth = value.width
-      this._widthListItemMod.mWidth = value.width
-      this._widthListItemGroupMod.mWidth = value.width
-      this._widthLoadingProgressMod.mWidth = value.width
-      this._widthMarqueeMod.mWidth = value.width
-      this._widthMenuMod.mWidth = value.width
-      this._widthMenuItemMod.mWidth = value.width
-      this._widthMenuItemGroupMod.mWidth = value.width
-      this._widthNavDestinationMod.mWidth = value.width
-      
-      this._widthNavigationMod.mWidth = value.width
-      
-      this._widthPatternLockMod.mWidth = value.width
-      this._widthPluginComponentMod.mWidth = value.width
-      this._widthQRCodeMod.mWidth = value.width
-      this._widthRadioMod.mWidth = value.width
-      this._widthRatingMod.mWidth = value.width
-      this._widthRefreshMod.mWidth = value.width
-      this._widthRelativeContainerMod.mWidth = value.width
-      this._widthRemoteWindowMod.mWidth = value.width
-      this._widthRichEditorMod.mWidth = value.width
-      this._widthRichTextMod.mWidth = value.width
-      this._widthRowMod.mWidth = value.width
-      this._widthRowSplitMod.mWidth = value.width
-      this._widthScrollMod.mWidth = value.width
-      this._widthScrollBarMod.mWidth = value.width
-      this._widthSearchMod.mWidth = value.width
-      this._widthSelectMod.mWidth = value.width
-      this._widthSideBarContainerMod.mWidth = value.width
-      this._widthSliderMod.mWidth = value.width
-      this._widthStackMod.mWidth = value.width
-      this._widthStepperMod.mWidth = value.width
-      this._widthStepperItemMod.mWidth = value.width
-      this._widthSwiperMod.mWidth = value.width
-      this._widthTabContentMod.mWidth = value.width
-      this._widthTabsMod.mWidth = value.width
-      this._widthTextMod.mWidth = value.width
-      this._widthTextAreaMod.mWidth = value.width
-      this._widthTextClockMod.mWidth = value.width
-      this._widthTextInputMod.mWidth = value.width
-      this._widthTextPickerMod.mWidth = value.width
-      this._widthTextTimerMod.mWidth = value.width
-      this._widthTimePickerMod.mWidth = value.width
-      this._widthToggleMod.mWidth = value.width
-      this._widthUIExtensionComponentMod.mWidth = value.width
-      this._widthWaterFlowMod.mWidth = value.width
-      this._widthWebMod.mWidth = value.width
-      this._widthXComponentMod.mWidth = value.width
-    })
   }
 
-  
-  
-  
-  
-  
 
   build() {
     Row() {
       if (this.targetView == 'Button') {
-        Button('button1').height(100).attributeModifier(this._widthButtonMod)
+        Button('button1')
+          .commonStyleButton(this.componentKey,this._width.width)
+        .height(100).attributeModifier(this._widthButtonMod)
       } else if (this.targetView == 'Text') {
-        Text('text1').height(100).attributeModifier(this._widthTextMod)
+        Text('text1').commonStyle(this.componentKey).height(100).attributeModifier(this._widthTextMod)
       } else if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-        .height(100).attributeModifier(this._widthAlphabetIndexerMod)
+        .commonStyle(this.componentKey).height(100).attributeModifier(this._widthAlphabetIndexerMod)
       } else if (this.targetView == 'BlankRow') {
-        Blank().color(this.BackGroundColor).height(100)
+        Blank().color(this.BackGroundColor).commonStyle(this.componentKey).height(100)
       } else if (this.targetView == 'BlankColumn') {
         Column() {
-          Blank().color(this.BackGroundColor)
+          Blank().color(this.BackGroundColor).commonStyle(this.componentKey)
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'Checkbox') {
-        Checkbox().backgroundColor(this.BackGroundColor).height(100).margin(0).attributeModifier(this._widthCheckboxMod)
+        Checkbox().backgroundColor(this.BackGroundColor).commonStyle(this.componentKey).height(100).margin(0).attributeModifier(this._widthCheckboxMod)
       } else if (this.targetView == 'CheckboxGroup') {
-        CheckboxGroup({ group: 'checkboxGroup' }).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthCheckboxGroupMod)
+        CheckboxGroup({ group: 'checkboxGroup' }).commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthCheckboxGroupMod)
           .margin(0)
       } else if (this.targetView == 'DataPanel') {
-        DataPanel({ values: this.valueArr }).height(100).attributeModifier(this._widthDataPanelMod)
+        DataPanel({ values: this.valueArr }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthDataPanelMod)
       } else if (this.targetView == 'DatePicker') {
         DatePicker({
           start: new Date('1970-1-1'),
           end: new Date('2100-1-1')
-        }).height(100).attributeModifier(this._widthDatePickerMod)
+        }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthDatePickerMod)
       } else if (this.targetView == 'Divider') {
-        Divider().strokeWidth(8).color(Color.Red).height(100).attributeModifier(this._widthDividerMod)
+        Divider().strokeWidth(8).color(Color.Red).commonStyle(this.componentKey).height(100).attributeModifier(this._widthDividerMod)
       } else if (this.targetView == 'Gauge') {
-        Gauge({ value: 105 }).attributeModifier(this._widthGaugeMod).colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+        Gauge({ value: 105 }).commonStyle(this.componentKey).attributeModifier(this._widthGaugeMod).colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
           .height(100)
       } else if (this.targetView == 'Image') {
-        Image($r('app.media.icon')).height(110).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthImageMod)
+        Image($r('app.media.icon')).commonStyle(this.componentKey).height(110).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthImageMod)
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .images([
             {
               src: $r('app.media.icon')
             }
-          ]).height(100).attributeModifier(this._widthImageAnimatorMod)
+          ]).commonStyle(this.componentKey).height(100).attributeModifier(this._widthImageAnimatorMod)
       } else if (this.targetView == 'LoadingProgress') {
-        LoadingProgress().backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthLoadingProgressMod)
+        LoadingProgress().backgroundColor(this.BackGroundColor).commonStyle(this.componentKey).height(100).attributeModifier(this._widthLoadingProgressMod)
       } else if (this.targetView == 'Marquee') {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
-        }).attributeModifier(this._widthMarqueeMod)
+        }).commonStyle(this.componentKey).attributeModifier(this._widthMarqueeMod)
           .height(100)
       } else if (this.targetView == 'Navigation') {
-        Navigation().height(100)
+        Navigation().commonStyle(this.componentKey).height(100).attributeModifier(this._widthNavigationMod)
       } else if (this.targetView == 'NavRouter') {
         
       } else if (this.targetView == 'Progress') {
-        Progress({ value: 10, type: ProgressType.Eclipse }).height(100).attributeModifier(this._widthProgressMod)
+        Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthProgressMod)
       } else if (this.targetView == 'QRCode') {
-        QRCode(this.src).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthQRCodeMod)
+        QRCode(this.src).commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthQRCodeMod)
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .height(100)
-          .attributeModifier(this._widthRadioMod)
+          .commonStyle(this.componentKey).attributeModifier(this._widthRadioMod)
           .backgroundColor(this.BackGroundColor)
           .margin(0)
       } else if (this.targetView == 'Rating') {
-        Rating({ rating: 3.5 }).height(100).attributeModifier(this._widthRatingMod)
+        Rating({ rating: 3.5 }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthRatingMod)
       } else if (this.targetView == 'RichText') {
-        RichText('RichText').height(100).backgroundColor(this.BackGroundColor).attributeModifier(this._widthRichTextMod)
+        RichText('RichText').commonStyle(this.componentKey).height(100).backgroundColor(this.BackGroundColor).attributeModifier(this._widthRichTextMod)
       } else if (this.targetView == 'ScrollBar') {
         ScrollBar({ scroller: new Scroller() }) {
           Text().width(10).height(50).backgroundColor('#C0C0C0')
-        }.backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthScrollBarMod)
+        }.commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthScrollBarMod)
       } else if (this.targetView == 'Search') {
-        Search().height(100).attributeModifier(this._widthSearchMod)
+        Search().commonStyle(this.componentKey).height(100).attributeModifier(this._widthSearchMod)
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa' },
-        { value: 'bbb' }]).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthSelectMod)
+        { value: 'bbb' }]).backgroundColor(this.BackGroundColor).commonStyle(this.componentKey).height(100).attributeModifier(this._widthSelectMod)
       } else if (this.targetView == 'Slider') {
         Slider({
           value: 50
-        }).showTips(true).height(100).attributeModifier(this._widthSliderMod)
+        }).showTips(true).commonStyle(this.componentKey).height(100).attributeModifier(this._widthSliderMod)
       } else if (this.targetView == 'TextArea') {
-        TextArea({ placeholder: 'TextArea' }).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthTextAreaMod)
+        TextArea({ placeholder: 'TextArea' }).backgroundColor(this.BackGroundColor).commonStyle(this.componentKey).height(100).attributeModifier(this._widthTextAreaMod)
       } else if (this.targetView == 'TextClock') {
-        TextClock({ timeZoneOffset: -8 }).format('hms').backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthTextClockMod)
+        TextClock({ timeZoneOffset: -8 }).format('hms').commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthTextClockMod)
       } else if (this.targetView == 'TextInput') {
-        TextInput({ placeholder: 'input your word...' }).height(100).attributeModifier(this._widthTextInputMod)
+        TextInput({ placeholder: 'input your word...' }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthTextInputMod)
       } else if (this.targetView == 'TextPicker') {
-        TextPicker({ range: this.value }).height(100).attributeModifier(this._widthTextPickerMod)
+        TextPicker({ range: this.value }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthTextPickerMod)
       } else if (this.targetView == 'TextTimer') {
         TextTimer({ isCountDown: true, count: 30000 })
           .format('mm:ss.SS')
-          .attributeModifier(this._widthTextTimerMod)
+          .commonStyle(this.componentKey).attributeModifier(this._widthTextTimerMod)
           .height(100)
           .backgroundColor(this.BackGroundColor)
       } else if (this.targetView == 'TimePicker') {
         TimePicker({
           selected: this.selectedTime
-        }).useMilitaryTime(true).height(100).attributeModifier(this._widthTimePickerMod)
+        }).useMilitaryTime(true).commonStyle(this.componentKey).height(100).attributeModifier(this._widthTimePickerMod)
       } else if (this.targetView == 'Toggle') {
-        Toggle({ type: ToggleType.Switch }).backgroundColor(this.BackGroundColor).height(100).margin(0).attributeModifier(this._widthToggleMod)
+        Toggle({ type: ToggleType.Switch }).commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).margin(0).attributeModifier(this._widthToggleMod)
       } else if (this.targetView == 'Web') {
-        Web({ src: 'www.example.com', controller: new WebviewController() }).height(100).attributeModifier(this._widthWebMod)
+        Web({ src: 'www.example.com', controller: new WebviewController() }).commonStyle(this.componentKey).height(100).attributeModifier(this._widthWebMod)
       } else if (this.targetView == 'Circle') {
-        Circle().height(100).attributeModifier(this._widthCircleMod)
+        Circle().commonStyle(this.componentKey).height(100).attributeModifier(this._widthCircleMod)
       } else if (this.targetView == 'Ellipse') {
-        Ellipse().height(100)
+        Ellipse().commonStyle(this.componentKey).height(100)
       } else if (this.targetView == 'Line') {
         Line()
           .startPoint([0, 0])
           .endPoint([50, 100])
-          
+          .commonStyle(this.componentKey)
           .height(100)
           .backgroundColor(this.BackGroundColor)
       } else if (this.targetView == 'Polyline') {
         Polyline()
-        .height(200).points([[20, 0], [0, 100], [100, 90]]).backgroundColor(this.BackGroundColor)
+        .commonStyle(this.componentKey).height(200).points([[20, 0], [0, 100], [100, 90]]).backgroundColor(this.BackGroundColor)
       } else if (this.targetView == 'Polygon') {
         Polygon()
-        
+        .commonStyle(this.componentKey)
           .height(100)
           .points([[0, 0], [0, 100], [100, 100], [100, 0]])
           .backgroundColor(this.BackGroundColor)
       } else if (this.targetView == 'Path') {
         Path()
-        
+        .commonStyle(this.componentKey)
           .height(100)
           .backgroundColor(this.BackGroundColor)
       } else if (this.targetView == 'Rect') {
         Rect()
-        
+        .commonStyle(this.componentKey)
           .height(100)
       } else if (this.targetView == 'Shape') {
         Shape() {
           Rect().width(100).height(50)
-        }
+        }.commonStyle(this.componentKey)
           .backgroundColor(this.BackGroundColor)
           .height(100)
       } else if (this.targetView == 'WaterFlow') {
-        WaterFlow().backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthWaterFlowMod)
+        WaterFlow().commonStyle(this.componentKey).backgroundColor(this.BackGroundColor).height(100).attributeModifier(this._widthWaterFlowMod)
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem()
-        }.height(100)
+        }.commonStyle(this.componentKey).height(100).attributeModifier(this._widthStepperMod)
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
           StepperItem() {
             Text('Page One')
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._widthStepperItemMod)
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
-          FlowItem().attributeModifier(this._widthFlowItemMod)
+          FlowItem().commonStyle(this.componentKey).attributeModifier(this._widthFlowItemMod)
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'GridCol') {
         GridRow() {
           GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } }) {
             Row().width('100%').height('20vp')
-          }.attributeModifier(this._widthGridColMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._widthGridColMod)
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'GridItem') {
         Grid() {
-          GridItem()
+          GridItem().commonStyle(this.componentKey)
         }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'RelativeContainer') {
         RelativeContainer() {
@@ -897,7 +1385,7 @@ struct WidthPage {
               center: { anchor: '__container__', align: VerticalAlign.Center },
               middle: { anchor: '__container__', align: HorizontalAlign.Center }
             })
-        }.backgroundColor(Color.Green).height(100)
+        }.backgroundColor(Color.Green).commonStyle(this.componentKey).height(100)
       } else if (this.targetView == 'Navigator') {
         
       } else if (this.targetView == 'Badge') {
@@ -907,23 +1395,23 @@ struct WidthPage {
           } as BadgeParamWithNumber) {
           Button('message')
             .width(100).height(50).backgroundColor(0x317aff)
-        }.attributeModifier(this._widthBadgeMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthBadgeMod)
 
       } else if (this.targetView == 'Column') {
         Column() {
           Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-        }.attributeModifier(this._widthColumnMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthColumnMod)
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-        }.attributeModifier(this._widthColumnSplitMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthColumnSplitMod)
       } else if (this.targetView == 'Counter') {
         Counter() {
-        }.attributeModifier(this._widthCounterMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthCounterMod)
       } else if (this.targetView == 'Flex') {
         Flex() {
           Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-        }.attributeModifier(this._widthFlexMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthFlexMod)
       } else if (this.targetView == 'GridRow') {
         GridRow({
           columns: 1,
@@ -935,7 +1423,7 @@ struct WidthPage {
               Row().width('100%').height('20vp')
             }.borderColor(color).borderWidth(2)
           })
-        }.attributeModifier(this._widthGridRowMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthGridRowMod)
       } else if (this.targetView == 'Grid') {
         Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -949,23 +1437,23 @@ struct WidthPage {
         }
             .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          .attributeModifier(this._widthGridMod)
+          .commonStyle(this.componentKey).attributeModifier(this._widthGridMod)
           .backgroundColor(0xFAEEE0)
       }
       else if (this.targetView == 'List') {
         List() {
-        }.height('100%').width('100%').attributeModifier(this._widthListMod)
+        }.commonStyle(this.componentKey).height('100%').width('100%').attributeModifier(this._widthListMod)
       } else if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {
           Text('123')
-        }.attributeModifier(this._widthRefreshMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthRefreshMod)
       }
       else if (this.targetView == 'Row') {
-        Row().attributeModifier(this._widthRowMod)
+        Row().commonStyle(this.componentKey).attributeModifier(this._widthRowMod)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('Text')
-        }.attributeModifier(this._widthRowSplitMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthRowSplitMod)
       } else if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
@@ -977,7 +1465,7 @@ struct WidthPage {
                 .textAlign(TextAlign.Center)
             }, (item: int) => item.toString())
           }.width('100%')
-        }.scrollBar(BarState.On).attributeModifier(this._widthScrollMod)
+        }.scrollBar(BarState.On).commonStyle(this.componentKey).attributeModifier(this._widthScrollMod)
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
@@ -992,10 +1480,10 @@ struct WidthPage {
           Column() {
             Text('SideBarContainer content').fontSize(25)
           }.backgroundColor(Color.Orange)
-        }
+        }.commonStyle(this.componentKey).attributeModifier(this._widthSideBarContainerMod)
       } else if (this.targetView == 'Stack') {
         Stack() {
-        }.attributeModifier(this._widthStackMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthStackMod)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
           ForEach([1, 2, 3], (item: int) => {
@@ -1004,13 +1492,13 @@ struct WidthPage {
         }
           .indicator(true)
           .backgroundColor(Color.White)
-          
+          .commonStyle(this.componentKey).attributeModifier(this._widthSwiperMod)
       } else if (this.targetView == 'Tabs') {
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#00CB87')
           }
-        }.attributeModifier(this._widthTabsMod)
+        }.commonStyle(this.componentKey).attributeModifier(this._widthTabsMod)
       } else if (this.targetView == 'ListItem') {
         List({ space: 20, initialIndex: 0 }) {
           ListItem() {
@@ -1018,7 +1506,7 @@ struct WidthPage {
               .width('100%')
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
-          }.attributeModifier(this._widthListItemMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._widthListItemMod)
         }
           .width('100%')
           .height('100%')

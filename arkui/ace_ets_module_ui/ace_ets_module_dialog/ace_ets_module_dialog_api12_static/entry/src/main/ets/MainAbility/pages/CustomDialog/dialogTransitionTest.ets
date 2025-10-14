@@ -15,7 +15,8 @@
 // import { ComponentContent, PromptAction, LevelOrder, promptAction, UIContext } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 import { PromptAction,UIContext } from '@ohos.arkui.UIContext';
-import  promptAction  from '@ohos.promptAction';
+import promptAction from '@ohos.promptAction';
+import { LevelOrder } from '@ohos.promptAction';
 import {
   Entry,
   Component,
@@ -33,7 +34,7 @@ import {
   Week,
   FontWeight,
   Axis,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,LevelOrder,
+  Margin,TransitionEffect,FlexAlign,TransitionEdge,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';

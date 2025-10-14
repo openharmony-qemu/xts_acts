@@ -108,7 +108,7 @@ struct canOverScrollGrid {
       }
 
       Grid(this.scroller) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           GridItem() {
             Text(item.toString())
               .id('canOverScroll_grid_' + item)
@@ -137,11 +137,11 @@ struct canOverScrollGrid {
       .width('90%')
       .height('50%')
       .backgroundColor(0xFAEEE0)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())
       })
-      .onScrollBarUpdate((index: number, offset: number) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         console.info('XXX' + 'Grid onScrollBarUpdate,index : ' + index.toString() + ',offset' + offset.toString())
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })

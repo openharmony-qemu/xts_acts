@@ -12,33 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
-  Component,
-  StepperItem,
-  ClickEvent,
-  Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
-
+import {StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link} from '@ohos.arkui.stateManagement'
 @Component
 export struct ListItemGroupView {
-  @Link _markAnchor: Position = { x: 10, y: 10 };
+  @Link _markAnchor: Position =  {x: 10, y:10};
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;
@@ -75,33 +53,33 @@ export struct ListItemGroupView {
   }
 
   build() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   }
 }

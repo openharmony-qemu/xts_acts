@@ -26,6 +26,7 @@ import {
   Color,
   Text,
   Canvas,
+  VoidCallback,
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -41,22 +42,22 @@ struct AttachDetachTest {
   @State message2: string = ''
   @State message3: string = ''
   @State message4: string = ''
-  private attachCallback: Callback<void> = () => {
+  private attachCallback: VoidCallback = () => {
     console.info('onAttach 2')
     this.message3 = 'onAttach 2'
   }
-  private detachCallback: Callback<void> = () => {
+  private detachCallback: VoidCallback = () => {
     console.info('onDetach 2')
     this.message4 = 'onDetach 2'
   }
 
   aboutToAppear(): void {
-    this.context.on('onAttach', () => {
+    this.context.onAttach(() => {
       console.info('onAttach 1')
       this.message1 = 'onAttach 1'
     })
 
-    this.context.on('onDetach', () => {
+    this.context.onDetach(() => {
       console.info('onDetach 1')
       this.message2 = 'onDetach 1'
     })
@@ -67,36 +68,36 @@ struct AttachDetachTest {
       Row() {
         Button('on onAttach').id('on_onAttach')
           .onClick((e:ClickEvent) => {
-            this.context.on('onAttach', this.attachCallback)
+            this.context.onAttach(this.attachCallback)
           })
 
         Button('off onAttach').id('off_onAttach')
           .onClick((e:ClickEvent) => {
-            this.context.off('onAttach', this.attachCallback)
+            this.context.offAttach(this.attachCallback)
           })
       }
 
       Row() {
         Button('on onDetach').id('on_onDetach')
           .onClick((e:ClickEvent) => {
-            this.context.on('onDetach', this.detachCallback)
+            this.context.onDetach(this.detachCallback)
           })
 
         Button('off onDetach').id('off_onDetach')
           .onClick((e:ClickEvent) => {
-            this.context.off('onDetach', this.detachCallback)
+            this.context.offDetach(this.detachCallback)
           })
       }
 
       Row() {
         Button('off onAttach all').id('off_onAttach_all')
           .onClick((e:ClickEvent) => {
-            this.context.off('onAttach')
+            this.context.offAttach()
           })
 
         Button('off onDetach all').id('off_onDetach_all')
           .onClick((e:ClickEvent) => {
-            this.context.off('onDetach')
+            this.context.offDetach()
           })
       }
 

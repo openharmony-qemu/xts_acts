@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('MainAbility/pages/index/Index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
@@ -67,8 +67,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void>|undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined
   }
 
   onWindowStageDestroy() {

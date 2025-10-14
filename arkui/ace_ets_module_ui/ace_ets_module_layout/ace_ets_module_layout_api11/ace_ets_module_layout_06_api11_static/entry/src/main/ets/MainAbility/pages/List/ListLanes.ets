@@ -84,14 +84,14 @@ struct ListLanes {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width('100%').height(100).fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey')
       .listDirection(this.listDirection) 

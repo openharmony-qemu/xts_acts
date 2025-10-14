@@ -813,7 +813,7 @@ async function applyLockJob(lockName: string, mode: AsyncLockMode, tidBuf: Int32
   }, mode);
 }
 
-function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<Promise<NullishType>>> {
+function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<NullishType>> {
   let lockName = "fourThreadsApplyForSameLock" + (mode == AsyncLockMode.EXCLUSIVE ? "_exclusive" : "shared");
   let tidBuf = createInt();
   tidBuf[0] = 0;

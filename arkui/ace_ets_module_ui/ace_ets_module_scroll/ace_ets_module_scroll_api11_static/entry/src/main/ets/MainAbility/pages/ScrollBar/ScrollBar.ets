@@ -104,7 +104,7 @@ struct ScrollBarExample {
       Flex({ direction: FlexDirection.Column }) {
         Scroll(this.scroller2) {
           Flex({ direction: FlexDirection.Row }) {
-            ForEach(this.arr2, (item: String, index: number) => {
+            ForEach(this.arr2, (item: String, index: int) => {
               Row() {
                 Text(item.toString())
                   .width('10%')
@@ -114,7 +114,7 @@ struct ScrollBarExample {
                   .textAlign(TextAlign.Center)
                   .margin(5)
               }
-            }, (item: String, index: number) => String(item))
+            }, (item: String, index: int) => String(item))
           }.margin({ left: 15 } as Margin)
         }
         .scrollable(ScrollDirection.Horizontal)

@@ -3,8 +3,7 @@
     {
       "name": "page_text_font_size",
       "value": "50fp"
-    },
-    {
+    }, {
       "name": "300vp",
       "value": "300vp"
     },
@@ -19,8 +18,8 @@
     {
       "name": "50vp",
       "value": "50vp"
-    },
-    {
+    }
+  ,{
       "name": "10vp",
       "value": "10vp"
     }

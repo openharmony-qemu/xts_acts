@@ -128,7 +128,7 @@ struct GridExample {
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
-      .onScrollIndex((first: number): void => {
+      .onScrollIndex((first: int): void => {
         console.info(first.toString())
       })
       .width('90%')

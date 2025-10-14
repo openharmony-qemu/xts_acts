@@ -247,10 +247,10 @@ struct getWaterFlowItemRect3 {
       .height('50%')
 
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(this.index).x
-        this.y = this.scroller.getItemRect(this.index).y
-        this.width1 = this.scroller.getItemRect(this.index).width
-        this.height1 = this.scroller.getItemRect(this.index).height
+        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
+        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
+        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
+        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
       }).id('getWaterFlowItemRect3_button')
       Text('' + this.x).key('getWaterFlowItemRect3_text1')
       Text('' + this.y).key('getWaterFlowItemRect3_text2')

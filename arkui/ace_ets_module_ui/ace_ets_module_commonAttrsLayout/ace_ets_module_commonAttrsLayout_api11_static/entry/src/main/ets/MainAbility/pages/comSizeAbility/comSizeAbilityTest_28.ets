@@ -102,11 +102,11 @@ class MyDataSource1 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): Double {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index as Int]
   }
 

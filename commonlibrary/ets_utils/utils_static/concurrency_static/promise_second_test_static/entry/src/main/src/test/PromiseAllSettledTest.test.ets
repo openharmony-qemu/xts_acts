@@ -254,8 +254,8 @@ export default function PromiseAllSettledTest() {
         arr.push(8);
         try {
           await Promise.all(taskPromises);
-        } catch (e: Error) {
-          console.log('e:' + e.message);
+        } catch (e) {
+          console.log('e:' + (e as Error).message);
         }
         await sleep(300);
         expect(JSON.stringify(arr)).assertEqual('[1,5,8,6]');

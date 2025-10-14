@@ -612,7 +612,7 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on('1', EmitterCallback)
+        emitter.onEventData('1', EmitterCallback)
         expect(emitter.getListenerCount('1')).assertEqual(1);
 
         emitter.emit('1', eventData)
@@ -649,8 +649,8 @@ export default function EmitterTest() {
           }
           console.info(`${TAG}` + ' test case end');
         }
-        emitter.on('2', EmitterCallback)
-        emitter.on('2', EmitterCallback)
+        emitter.onEventData('2', EmitterCallback)
+        emitter.onEventData('2', EmitterCallback)
         expect(emitter.getListenerCount('2')).assertEqual(1);
 
         emitter.emit('2', eventData)
@@ -662,7 +662,7 @@ export default function EmitterTest() {
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
-     * @tc.desc      : emitter.on(''),emitter.emit(''),emitter.off('')
+     * @tc.desc      : emitter.onEventData(''),emitter.emit(''),emitter.off('')
      */
     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -690,7 +690,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
     
         }
-        emitter.on('', EmitterCallback)
+        emitter.onEventData('', EmitterCallback)
         expect(emitter.getListenerCount('')).assertEqual(0);
     
         emitter.emit('', eventData)
@@ -702,7 +702,7 @@ export default function EmitterTest() {
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
-     * @tc.desc      : emitter.on(' '),emitter.emit(' '),emitter.off(' ')
+     * @tc.desc      : emitter.onEventData(' '),emitter.emit(' '),emitter.off(' ')
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -728,7 +728,7 @@ export default function EmitterTest() {
           }
           console.info(`${TAG}` + ' test case end');
         }
-        emitter.on(' ', EmitterCallback)
+        emitter.onEventData(' ', EmitterCallback)
         expect(emitter.getListenerCount(' ')).assertEqual(1);
 
         emitter.emit(' ', eventData)
@@ -766,7 +766,7 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on('14', EmitterCallback)
+        emitter.onEventData('14', EmitterCallback)
         console.info(` ${TAG} test getListenerCount 14  ` + emitter.getListenerCount('14'));
         expect(emitter.getListenerCount('14')).assertEqual(1);
 
@@ -810,7 +810,7 @@ export default function EmitterTest() {
           console.info(` ${TAG} test case end`);
           done()
         }
-        emitter.on('19', EmitterCallback)
+        emitter.onEventData('19', EmitterCallback)
         expect(emitter.getListenerCount('19')).assertEqual(1);
 
         innerEvent.eventId = 19
@@ -877,7 +877,7 @@ export default function EmitterTest() {
         innerEvent.eventId = 1
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        emitter.on('22', EmitterCallback1)
+        emitter.onEventData('22', EmitterCallback1)
         emitter.on(innerEvent, EmitterCallback2)
         emitter.off('22')
         emitter.off(22)
@@ -903,7 +903,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('23', EmitterCallback)
+        emitter.onEventData('23', EmitterCallback)
         emitter.off('23')
         emitter.emit('23')
         await Utils.msSleep(1000)
@@ -960,7 +960,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('25', EmitterCallback)
+        emitter.onEventData('25', EmitterCallback)
         emitter.off(25)
         emitter.emit(innerEvent)
         await Utils.msSleep(1000)
@@ -984,7 +984,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('26', EmitterCallback)
+        emitter.onEventData('26', EmitterCallback)
         await Utils.msSleep(1000)
         expect(emitter.getListenerCount('26')).assertEqual(1)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2500 END`)
@@ -1006,9 +1006,9 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('27', EmitterCallback)
-        emitter.on('27', EmitterCallback)
-        emitter.on('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
 
         emitter.emit('27')
         emitter.emit('27')
@@ -1035,9 +1035,9 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('280', EmitterCallback)
-        emitter.on('281', EmitterCallback)
-        emitter.on('282', EmitterCallback)
+        emitter.onEventData('280', EmitterCallback)
+        emitter.onEventData('281', EmitterCallback)
+        emitter.onEventData('282', EmitterCallback)
         emitter.emit('280')
         emitter.emit('281')
         emitter.emit('282')
@@ -1119,9 +1119,9 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on('290', EmitterCallback1)
-        emitter.on('291', EmitterCallback2)
-        emitter.on('292', EmitterCallback3)
+        emitter.onEventData('290', EmitterCallback1)
+        emitter.onEventData('291', EmitterCallback2)
+        emitter.onEventData('292', EmitterCallback3)
         emitter.emit('290')
         emitter.emit('291')
         emitter.emit('292')
@@ -1187,10 +1187,10 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on('300', EmitterCallback1)
-        emitter.on('301', EmitterCallback2)
-        emitter.on('302', EmitterCallback3)
-        emitter.on('303', EmitterCallback4)
+        emitter.onEventData('300', EmitterCallback1)
+        emitter.onEventData('301', EmitterCallback2)
+        emitter.onEventData('302', EmitterCallback3)
+        emitter.onEventData('303', EmitterCallback4)
         emitter.emit('300')
         emitter.emit('301')
         emitter.emit('302')
@@ -1278,7 +1278,7 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on("340000", EmitterCallback)
+        emitter.onEventData("340000", EmitterCallback)
         for (let i: number = 34000; i < 35000; i++) {
           emitter.emit("340000")
         }
@@ -1315,7 +1315,7 @@ export default function EmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
         emitter.on(innerEvent, EmitterCallback1)
-        emitter.on("35", EmitterCallback2)
+        emitter.onEventData("35", EmitterCallback2)
         for (let i: number = 35000; i < 36000; i++) {
           emitter.emit(innerEvent)
         }

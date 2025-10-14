@@ -106,7 +106,7 @@ struct ScrollExample {
             }
           })
 
-          ForEach(this.arr, (item: number, index: number): void => {
+          ForEach(this.arr, (item: number, index: int): void => {
             Text(String(item))
               .width('90%')
               .height(150)

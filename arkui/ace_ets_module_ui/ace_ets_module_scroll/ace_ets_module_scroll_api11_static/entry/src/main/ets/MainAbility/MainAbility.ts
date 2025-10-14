@@ -25,9 +25,10 @@ export default class MainAbility extends Ability {
     globalThis.abilityWant = want;
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     
     console.log("[Demo] MainAbility onDestroy")
+    return undefined;
   }
 
   onWindowStageCreate(windowStage) {

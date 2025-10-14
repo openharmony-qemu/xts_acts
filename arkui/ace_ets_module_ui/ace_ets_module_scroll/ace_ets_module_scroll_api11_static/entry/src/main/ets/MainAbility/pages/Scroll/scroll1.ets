@@ -96,7 +96,7 @@ struct ScrollOnScrollBegin {
         .key("onScrollBeginText")
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height(150)
@@ -105,7 +105,7 @@ struct ScrollOnScrollBegin {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 } as Margin)
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
       }
       .scrollable(ScrollDirection.Vertical)

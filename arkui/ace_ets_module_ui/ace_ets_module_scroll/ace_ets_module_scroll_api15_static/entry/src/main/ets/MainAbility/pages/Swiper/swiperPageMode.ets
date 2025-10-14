@@ -59,7 +59,7 @@ struct SwiperDemo1 {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource();
   @State onChange: number = 0;
-  private currentIndex: number = 0
+  private currentIndex: Int = 0
   @State text1: string = '连续'
   @State PageFlipMode1: PageFlipMode = PageFlipMode.CONTINUOUS
 
@@ -128,17 +128,17 @@ struct SwiperDemo1 {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.onChange = index
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('targetIndex: ' + targetIndex)
         console.info('current offset: ' + extraInfo.currentOffset)
         console.info('target offset: ' + extraInfo.targetOffset)
         console.info('velocity: ' + extraInfo.velocity)
       })
-      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('current offset: ' + extraInfo.currentOffset)
       })

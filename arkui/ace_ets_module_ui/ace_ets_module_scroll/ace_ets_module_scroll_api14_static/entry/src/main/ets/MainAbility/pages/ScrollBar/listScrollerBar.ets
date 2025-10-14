@@ -87,7 +87,7 @@ struct listScrollerPage {
 
               ListItem() {
                 List({ space: 5, scroller: this.listScroller }) {
-                  ForEach(this.arr, (item: number, index: number) => {
+                  ForEach(this.arr, (item: number, index: int) => {
                     ListItem() {
                       Text('item' + item + index)
                         .fontSize(16)
@@ -97,7 +97,7 @@ struct listScrollerPage {
                     .height(72)
                     .borderRadius(12)
                     .visibility(index % 2 == 0 ? this.mvisiblity : Visibility.Visible)
-                  }, (item: number, index: number) => String(item))
+                  }, (item: number, index: int) => String(item))
                 }
                 .onReachStart(() => {
                   this.onText += 'reachStart3-'

@@ -47,7 +47,7 @@ struct RatingContentModifierTest {
       })
         .stars(5)
         .width('100%')
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           console.info('Rating change is'+ value);
         })
         // .contentModifier(new MyRatingStyle())

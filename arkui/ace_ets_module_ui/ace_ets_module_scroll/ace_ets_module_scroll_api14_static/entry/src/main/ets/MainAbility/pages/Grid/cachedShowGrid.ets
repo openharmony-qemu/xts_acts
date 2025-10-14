@@ -62,7 +62,7 @@ struct cachedCountShowGridExample {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.arr, (item: string, index: number) => {
+        ForEach(this.arr, (item: string, index: int) => {
           GridItem({ style: GridItemStyle.PLAIN }) {
             Text('' + item)
               .id('show_grid_' + item)
@@ -86,7 +86,7 @@ struct cachedCountShowGridExample {
       .height('40%')
       .scrollBar(BarState.On)
       .backgroundColor(0xFAEEE0)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())
       })

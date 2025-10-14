@@ -34,19 +34,19 @@ struct GridExampleindex {
   @State numbers: String[] = ['0', '1', '2', '3', '4', '5']
   layoutOptions3: GridLayoutOptions = {
     regularSize: [1, 1],
-    onGetRectByIndex: (index: number) => {
+    onGetRectByIndex: (index: int) => {
       if (index == 0) {
-        return [0, 0, 1, 1] as [number, number, number, number]
+        return [0, 0, 1, 1] as [int, int, int, int]
       } else if (index == 1) {
-        return [0, 1, 2, 2] as [number, number, number, number]
+        return [0, 1, 2, 2] as [int, int, int, int]
       } else if (index == 2) {
-        return [0, 3, 3, 3] as [number, number, number, number]
+        return [0, 3, 3, 3] as [int, int, int, int]
       } else if (index == 3) {
-        return [3, 0, 3, 3] as [number, number, number, number]
+        return [3, 0, 3, 3] as [int, int, int, int]
       } else if (index == 4) {
-        return [4, 3, 2, 2] as [number, number, number, number]
+        return [4, 3, 2, 2] as [int, int, int, int]
       } else {
-        return [5, 5, 1, 1] as [number, number, number, number]
+        return [5, 5, 1, 1] as [int, int, int, int]
       }
     }
   } as GridLayoutOptions

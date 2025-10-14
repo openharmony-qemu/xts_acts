@@ -55,7 +55,7 @@ struct AlphabetIndexerSample {
           .popupUnselectedColor(0x0000FF)
           .popupItemFont({ size: 30, style: FontStyle.Normal })
           .popupItemBackgroundColor(0xCCCCCC)
-          .onSelect((index: number): void => {
+          .onSelect((index: int): void => {
             console.info(this.value[index.toInt()] + ' Selected!')
           })
       }

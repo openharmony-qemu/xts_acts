@@ -790,7 +790,7 @@ struct brightnessPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity,
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._brightnessMarqueeMod)
@@ -1001,19 +1001,19 @@ struct brightnessPage {
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
-              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+              ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
                 Text('Scroll' + item.toString())
                   .width('90%')
                   .height(50)
                   .backgroundColor(Color.White)
                   .textAlign(TextAlign.Center)
-              }, (item: int, index: number) => item.toString())
+              }, (item: int, index: int) => item.toString())
             }.width('100%')
           }.scrollBar(BarState.On).attributeModifier(this._brightnessScrollMod)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
-              ForEach([1, 2, 3], (item: int, index: number) => {
+              ForEach([1, 2, 3], (item: int, index: int) => {
                 Column({ space: 5 } as ColumnOptions) {
                   Image($r('app.media.icon')).width(50).height(50)
                   Text('Index0' + item).fontSize(25)
@@ -1032,7 +1032,7 @@ struct brightnessPage {
           Swiper() {
             ForEach([1, 2, 3], (item: int) => {
               Text('Swiper' + item).width('90%').height(50)
-            }, (item: int, index: number) => item.toString())
+            }, (item: int, index: int) => item.toString())
           }
           .indicator(true)
           .backgroundColor(Color.White)
@@ -1051,7 +1051,7 @@ struct brightnessPage {
           }.width('100%').height('100%')
         } else if (this.targetView == 'WaterFlow') {
           WaterFlow() {
-            ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+            ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
               FlowItem() {
                 Column() {
                   Text('WaterFlow' + item).fontSize(12).height('16')
@@ -1061,7 +1061,7 @@ struct brightnessPage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-            }, (item: int, index: number) => item.toString())
+            }, (item: int, index: int) => item.toString())
           }.attributeModifier(this._brightnessWaterFlowMod)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
@@ -1092,7 +1092,7 @@ struct brightnessPage {
           .height('100%')
         } else if (this.targetView == 'FlowItem') {
           WaterFlow() {
-            ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: number) => {
+            ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
               FlowItem() {
                 Column() {
                   Text('WaterFlow' + item).fontSize(12).height('16')
@@ -1104,7 +1104,7 @@ struct brightnessPage {
               }
               .attributeModifier(this._brightnessFlowItemMod)
               .backgroundColor(Color.Yellow)
-            }, (item: int, index: number) => item.toString())
+            }, (item: int, index: int) => item.toString())
           }
           .backgroundColor(Color.Pink)
           .width('100%')

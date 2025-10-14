@@ -41,11 +41,11 @@ class MyDataSourceSwiperVisibility implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -110,7 +110,7 @@ struct SwiperVisibilityTest {
       .duration(100)
       .itemSpace(0)
       .displayArrow(true, false)
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.swiperValue = index + ''
       })
 

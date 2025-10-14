@@ -52,7 +52,7 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Entry
 @Component
 struct comSizeAbilityTest_27 {
-  @State currentIndex: number = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal

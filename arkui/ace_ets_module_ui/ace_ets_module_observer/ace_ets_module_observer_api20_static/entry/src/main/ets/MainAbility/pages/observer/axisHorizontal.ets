@@ -35,14 +35,14 @@ struct scrollAxisHorizontalIndex {
         Row() {
           Button('observer on')
             .onClick((e: ClickEvent) => {
-              uiObserver.on('scrollEvent', (info: uiObserver.ScrollEventInfo) => {
+              uiObserver.onScrollEvent((info: uiObserver.ScrollEventInfo) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
                 
               });
             })
           Button('observer off')
             .onClick((e: ClickEvent) => {
-              uiObserver.off('scrollEvent');
+              uiObserver.offScrollEvent();
             })
         }
 
@@ -50,7 +50,7 @@ struct scrollAxisHorizontalIndex {
           Button('observerWithId on')
             .id('axisHorizontal_on')
             .onClick((e: ClickEvent) => {
-              uiObserver.on('scrollEvent', this.options, (info: uiObserver.ScrollEventInfo) => {
+              uiObserver.onScrollEvent(this.options, (info: uiObserver.ScrollEventInfo) => {
                 this.Id1 = info.id
                 console.info('scrollEventInfo', JSON.stringify(info));
               });
@@ -58,7 +58,7 @@ struct scrollAxisHorizontalIndex {
           Button('observerWithId off')
             .id('axisHorizontal_off')
             .onClick((e: ClickEvent) => {
-              uiObserver.off('scrollEvent', this.options);
+              uiObserver.offScrollEvent(this.options);
             })
         }
       }.margin({top:5} as Margin)

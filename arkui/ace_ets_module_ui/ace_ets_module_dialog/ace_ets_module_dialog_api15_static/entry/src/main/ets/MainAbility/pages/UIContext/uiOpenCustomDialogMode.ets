@@ -133,7 +133,7 @@
 //   @State levelMode: LevelMode | undefined = undefined
 //   node: BuilderNode<Object[]> | null = null;
 //   frameNode: FrameNode | null = null;
-//   @State levelUniqueId: number | undefined | Int = this.getUniqueId()
+//   @State levelUniqueId: undefined | Int = this.getUniqueId()
 //   @State immersiveMode: ImmersiveMode | undefined = undefined
 //   @State isModal: boolean = true
 //   @State maskRect: Rectangle = {

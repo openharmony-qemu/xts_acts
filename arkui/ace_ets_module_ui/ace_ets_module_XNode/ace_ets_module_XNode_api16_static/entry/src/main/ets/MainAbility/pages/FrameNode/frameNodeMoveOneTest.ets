@@ -48,7 +48,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.uiContext = uiContext
     this.rootNode = new FrameNode(uiContext)
-    this?.rootNode?.commonAttribute.width('100%').id('root_id1')
+    this.rootNode?.commonAttribute.width('100%').id('root_id1')
     return this.rootNode
   }
 
@@ -62,13 +62,13 @@ class MyNodeController extends NodeController {
   operate(): void {
     const node = new FrameNode(this.uiContext!)
     this.node1 = new FrameNode(this.uiContext!)
-    this?.node1?.commonAttribute.width(150)
+    this.node1?.commonAttribute.width(150)
       .height(150)
       .backgroundColor(Color.Gray)
       .borderWidth(1)
       .id('node1_sally')
     this.node2 = new FrameNode(this.uiContext!)
-    this?.node2?.commonAttribute.width(150)
+    this.node2?.commonAttribute.width(150)
       .height(150)
       .backgroundColor(Color.Grey)
       .position({ x: 200, y: 0 } as Position)
@@ -83,7 +83,7 @@ class MyNodeController extends NodeController {
     
     
     
-    this?.stackBlue?.commonAttribute.width(30)
+    this.stackBlue?.commonAttribute.width(30)
       .height(30)
       .backgroundColor(Color.Blue)
       .offset({ x: 40 } as Position)

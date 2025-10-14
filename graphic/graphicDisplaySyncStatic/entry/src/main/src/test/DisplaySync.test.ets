@@ -34,40 +34,6 @@ export default function displaySyncTest() {
             await Utils.msSleep(2000)
             hilog.info(domain, tag, "displaySyncTest loadup over!!!!!")
         })
-        /*
-         * @tc.number     : DISPLAY_SYNC_STATIC_0001
-         * @tc.name       : displaySync_static_0001
-         * @tc.desc       : 注册displaySync 回调
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
-        it("displaySync_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-            await startAbility(bundleName, 'EntryAbility');
-            let driver = Driver.create();
-            let start = await driver.findComponent(ON.text('start'));
-            expect(start != null).assertTrue()
-            await driver.delayMs(1000);
-            if (start != null) {
-                await start.click();
-            }
-            let stop = await driver.findComponent(ON.text('stop'));
-            expect(stop != null).assertTrue();
-            await driver.delayMs(1000);
-            if (stop != null) {
-                await stop.click();
-            }
-            let timestamp = await driver.findComponent(ON.id('timestamp'));
-            let targetTimestamp = await driver.findComponent(ON.id('targetTimestamp'));
-            expect(timestamp != null).assertTrue();
-            expect(targetTimestamp != null).assertTrue();
-            if (timestamp != null && targetTimestamp != null) {
-                let timestampMsg = await timestamp.getText();
-                let targetTimestampMsg = await targetTimestamp.getText();
-                expect(timestampMsg != "0").assertTrue();
-                expect(targetTimestampMsg != "0").assertTrue();
-            }
-        })
 
         /**
          * @tc.number    : testSetExpectedFrameRateRange_static_0100

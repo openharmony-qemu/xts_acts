@@ -196,8 +196,8 @@ struct overlayManagerTest {
         .onClick(() : void => {
           let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
           if (topOrder !== undefined) {
-            AppStorage.setOrCreate<number>('myTop', topOrder.getOrder());
-            this.top = AppStorage.get<number>('myTop') as number
+            AppStorage.setOrCreate<double>('myTop', topOrder.getOrder());
+            this.top = AppStorage.get<double>('myTop') as number
             console.error('[test] topOrder: ' + topOrder.getOrder());
           }
         })
@@ -207,8 +207,8 @@ struct overlayManagerTest {
         .onClick(() : void => {
           let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
           if (bottomOrder !== undefined) {
-            AppStorage.setOrCreate<number>('myBottom', bottomOrder.getOrder());
-            this.bottom = AppStorage.get<number>('myBottom') as number
+            AppStorage.setOrCreate<double>('myBottom', bottomOrder.getOrder());
+            this.bottom = AppStorage.get<double>('myBottom') as number
             console.error('[test] bottomOrder: ' + bottomOrder.getOrder());
           }
         })

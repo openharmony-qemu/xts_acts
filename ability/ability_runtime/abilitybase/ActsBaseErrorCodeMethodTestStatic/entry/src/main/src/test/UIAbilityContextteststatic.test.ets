@@ -63,10 +63,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_0100 end');
       });
@@ -93,10 +95,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 ${err?.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 ${err?.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 end');
       })
@@ -131,10 +135,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 ${err?.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 ${err?.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 end');
       })
@@ -163,10 +169,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_1100 end');
       });
@@ -196,10 +204,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_1100 end');
       });
@@ -238,10 +248,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2000`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2000`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_2000 end');
       });
@@ -277,10 +289,12 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000004);
               done();
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 end');
       });
@@ -316,10 +330,12 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000019);
               done();
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 end');
       });
@@ -363,10 +379,12 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000050);
               done();
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 end');
       });
@@ -400,10 +418,12 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000001);
             done();
           });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 end');
       });
@@ -444,10 +464,12 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000050);
             done();
           });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 end');
       });
@@ -476,10 +498,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1100 end');
       });
@@ -505,10 +529,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1100 end');
       });
@@ -544,10 +570,12 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000005);
               done();
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2100 end');
       });
@@ -578,10 +606,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1100 end');
       });
@@ -609,10 +639,12 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1100 end');
       });
@@ -650,10 +682,12 @@ export default function UIAbilityContextteststatic() {
               expect(err?.code).assertEqual(201);
               done();
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2100 end');
       });
@@ -692,10 +726,12 @@ export default function UIAbilityContextteststatic() {
               done();
             }
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1100 end');
       });
@@ -740,10 +776,12 @@ export default function UIAbilityContextteststatic() {
                 done();
               }
             });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
-          expect().assertFail();
-          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
+            expect().assertFail();
+            done();
+          }
         }
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2100 end');
       });

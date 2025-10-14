@@ -17,6 +17,7 @@ group("ActsWebOpenWebPageTest") {
     deps = [
       "ace_open_web_page_dev:ActsWebOpenWebPageDevTest",
       "ace_open_web_page_dev_four:ActsWebOpenWebPageDevFourTest",
+      "ace_open_web_page_dev_four_static:ActsWebOpenWebPageDevFourStaticTest",
       "ace_open_web_page_dev_three:ActsWebOpenWebPageDevThreeTest",
       "ace_open_web_page_dev_two:ActsWebOpenWebPageDevTwoTest",
       "ace_open_web_page_dev_webviewController:ActsWebOpenWebPageDevWebViewControllerTest",

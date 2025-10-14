@@ -56,10 +56,12 @@ export default function inputMethodAttachTest() {
             };
             try {
                 inputMethod.getController().attach(true, ATTRIBUTE, CallBack);
-            } catch (error: BusinessError) {
-                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
-                expect().assertFail();
-                done();
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
 
@@ -87,10 +89,12 @@ export default function inputMethodAttachTest() {
             };
             try {
                 inputMethod.getController().attach(false, ATTRIBUTE, CallBack);
-            } catch (error: BusinessError) {
-                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
-                expect().assertFail();
-                done();
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
 
@@ -112,10 +116,12 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
-                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
-                expect().assertFail();
-                done();
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
 
@@ -137,10 +143,12 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
-                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
-                expect().assertFail();
-                done();
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
 
@@ -163,10 +171,12 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
-                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
-                expect().assertFail();
-                done();
+            } catch (error) {
+                if (error instanceof BusinessError) {
+                    console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                    done();
+                }
             }
         });
     })

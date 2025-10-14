@@ -60,7 +60,8 @@ export default function PromiseErrorTest() {
       const testFunction = async () => {
         try {
           await asyncFunction();
-        } catch (error:Error) {
+        } catch (error) {
+          error = error as Error;
           expect(error.message).assertEqual('42');
           console.error('发生错误：', error);
         }
@@ -105,7 +106,8 @@ export default function PromiseErrorTest() {
         await asyncFunction1();
         await asyncFunction2();
         await asyncFunction3();
-      } catch (error:Error) {
+      } catch (error) {
+        error = error as Error;
         expect(error.message).assertEqual('42');
         console.error('发生错误：', error);
       }

@@ -86,7 +86,8 @@ export default function ProcessSupplementSecondTest() {
             failureCount++;
             console.error(`${caseName}, main thread call ${i} failed: invalid return type`);
           }
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           exceptionCount++;
           console.error(`${caseName}, main thread call ${i} exception: ${error.message}`);
         }
@@ -228,7 +229,8 @@ export default function ProcessSupplementSecondTest() {
             failureCount++;
             console.error(`${caseName}, main thread call ${i} failed: invalid return type`);
           }
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           exceptionCount++;
           console.error(`${caseName}, main thread call ${i} exception: ${error.message}`);
         }

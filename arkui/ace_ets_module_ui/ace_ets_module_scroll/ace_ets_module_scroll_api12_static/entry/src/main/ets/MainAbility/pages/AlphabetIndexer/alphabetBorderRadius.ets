@@ -101,10 +101,10 @@ struct AlphabetIndexerBorderRadius {
           .popupItemBorderRadius(10)
           .itemBorderRadius(10)
           .enableHapticFeedback(true)
-          .onSelect((index: number): void => {
+          .onSelect((index: int): void => {
             console.info(this.value[index.toInt()] + ' Selected!')
           })
-          .onRequestPopupData((index: number): string[] => {
+          .onRequestPopupData((index: int): string[] => {
             if (this.value[index.toInt()] == 'A') {
               return this.arrayA 
             } else if (this.value[index.toInt()] == 'B') {
@@ -117,7 +117,7 @@ struct AlphabetIndexerBorderRadius {
               return [''] 
             }
           })
-          .onPopupSelect((index: number): void => {
+          .onPopupSelect((index: int): void => {
             console.info('onPopupSelected:' + index)
           })
 

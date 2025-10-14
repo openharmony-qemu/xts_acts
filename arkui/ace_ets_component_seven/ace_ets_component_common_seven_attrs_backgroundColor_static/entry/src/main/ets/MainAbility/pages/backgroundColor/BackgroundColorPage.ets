@@ -42,259 +42,259 @@ import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class BadgeModifier implements AttributeModifier<BadgeAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class BlankModifier implements AttributeModifier<BlankAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ButtonModifier implements AttributeModifier<ButtonAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ColumnModifier implements AttributeModifier<ColumnAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class CounterModifier implements AttributeModifier<CounterAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class DividerModifier implements AttributeModifier<DividerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class FlexModifier implements AttributeModifier<FlexAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class GaugeModifier implements AttributeModifier<GaugeAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class GridModifier implements AttributeModifier<GridAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class GridColModifier implements AttributeModifier<GridColAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class GridItemModifier implements AttributeModifier<GridItemAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class GridRowModifier implements AttributeModifier<GridRowAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ImageModifier implements AttributeModifier<ImageAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ListModifier implements AttributeModifier<ListAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ListItemModifier implements AttributeModifier<ListItemAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class MenuModifier implements AttributeModifier<MenuAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class NavigationModifier implements AttributeModifier<NavigationAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
@@ -315,252 +315,252 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RadioModifier implements AttributeModifier<RadioAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RatingModifier implements AttributeModifier<RatingAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RefreshModifier implements AttributeModifier<RefreshAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RichTextModifier implements AttributeModifier<RichTextAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RowModifier implements AttributeModifier<RowAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class SearchModifier implements AttributeModifier<SearchAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class SelectModifier implements AttributeModifier<SelectAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class SliderModifier implements AttributeModifier<SliderAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class StackModifier implements AttributeModifier<StackAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: StepperAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: StepperItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TabContentModifier implements AttributeModifier<TabContentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TabsModifier implements AttributeModifier<TabsAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextModifier implements AttributeModifier<TextAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextClockModifier implements AttributeModifier<TextClockAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextInputModifier implements AttributeModifier<TextInputAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class ToggleModifier implements AttributeModifier<ToggleAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class WebModifier implements AttributeModifier<WebAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
 class XComponentModifier implements AttributeModifier<XComponentAttribute> {
-  mBackgroundColor: number | string = 0
+  mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
@@ -822,7 +822,7 @@ struct BackroundColorPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity,
+            loop: Infinity as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._backgroundColorMarqueeMod)

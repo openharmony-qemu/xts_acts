@@ -26,10 +26,7 @@ import {
 } from '@ohos.arkui.component';
 import {
   State,
-  MutableState,
-  stateOf,
   LocalStorage,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement';
 

@@ -25,7 +25,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  @State rating: number = 3.5
+  @State rating: double = 3.5
   @State mRadio1Value: String = ''
   
   

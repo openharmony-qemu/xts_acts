@@ -35,6 +35,13 @@ function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
 }
 
+function onReceiveEvent1(data: baseProfile.StateChangeParam) {
+    hilog.info(domain, tag, 'connection StateChangeParam:'+ JSON.stringify(data));
+    hilog.info(domain, tag, 'connection StateChangeParam deviceId:'+ data.deviceId);
+    hilog.info(domain, tag, 'connection StateChangeParam state:'+ data.state);
+    hilog.info(domain, tag, 'connection StateChangeParam cause:'+ data.cause);
+}
+
 export default function bluetoothProfilesTest() {
 
     describe("bluetoothProfilesTest", (): void => {
@@ -420,6 +427,59 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, "testOffConnectionStateChange_002 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertFalse();
             }
+            done();
+        })
+
+        /**
+         * @tc.number  testDisconnectCause
+         * @tc.name    testDisconnectCause
+         * @tc.desc    Test testDisconnectCause API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testDisconnectCause", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let userDisconnect = baseProfile.DisconnectCause.USER_DISCONNECT;
+                let connectFromKeyboard = baseProfile.DisconnectCause.CONNECT_FROM_KEYBOARD;
+                let connectFromMouse = baseProfile.DisconnectCause.CONNECT_FROM_MOUSE;
+                let connectFromCar = baseProfile.DisconnectCause.CONNECT_FROM_CAR;
+                let tooManyConnectedDevices = baseProfile.DisconnectCause.TOO_MANY_CONNECTED_DEVICES;
+                let connectFailInternal = baseProfile.DisconnectCause.CONNECT_FAIL_INTERNAL;
+
+                expect(userDisconnect).assertEqual(0);
+                expect(connectFromKeyboard).assertEqual(1);
+                expect(connectFromMouse).assertEqual(2);
+                expect(connectFromCar).assertEqual(3);
+                expect(tooManyConnectedDevices).assertEqual(4);
+                expect(connectFailInternal).assertEqual(5);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "DisconnectCause get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnConnectionStateChange_003
+         * @tc.name    testOnConnectionStateChange_003
+         * @tc.desc    Test testOnConnectionStateChange_003 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnConnectionStateChange_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            try {
+                hfpProfile.on('connectionStateChange', onReceiveEvent1);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnConnectionStateChange_003 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            hfpProfile.off('connectionStateChange', onReceiveEvent1);
             done();
         })
     })

@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct rating01 {
-  @State rating: number = 2
+  @State rating: double = 2
 
   build() {
     Column() {

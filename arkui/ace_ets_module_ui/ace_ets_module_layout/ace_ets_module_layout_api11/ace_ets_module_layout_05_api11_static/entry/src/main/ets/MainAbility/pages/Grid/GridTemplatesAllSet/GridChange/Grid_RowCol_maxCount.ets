@@ -79,7 +79,7 @@ struct Grid_RowCol_maxCount {
       .height(300)
       .backgroundColor(0xFAEEE0)
       .key('Grid_RowCol_maxCount_01')
-      .maxCount(this.addMaxCount)
+      .maxCount(Double.toInt(this.addMaxCount))
     }.width('100%')
   }
 }

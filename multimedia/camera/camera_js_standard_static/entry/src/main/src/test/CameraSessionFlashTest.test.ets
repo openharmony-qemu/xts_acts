@@ -39,7 +39,7 @@ let AVRecorder: media.AVRecorder;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let mHasFlashArray: Array<boolean>;
 let mIsFlashModeSupportedArray: Array<boolean>;
 

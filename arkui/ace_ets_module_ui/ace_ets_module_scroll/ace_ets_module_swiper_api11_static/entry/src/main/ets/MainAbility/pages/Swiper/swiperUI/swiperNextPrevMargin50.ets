@@ -55,11 +55,11 @@ class MyDataSource50 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -79,7 +79,7 @@ struct SwiperNextPrevMarginExample50 {
   @State nextMargin: number = 0;
   @State vertical: boolean = false;
   @State itemSpace: number = 0;
-  @State displayCount: number = 0;
+  @State displayCount: Int = 0;
   @State loop: boolean = false;
 
   aboutToAppear(): void {
@@ -113,7 +113,7 @@ struct SwiperNextPrevMarginExample50 {
         this.itemSpace = Number(message.value?.toString()) ?? 0
       }
       if (message.name == 'displayCount') {
-        this.displayCount = Number(message.value?.toString()) ?? 0
+        this.displayCount = Number(message.value?.toString()).toInt() ?? 0
       }
       if (message.name == 'loop') {
         this.loop = message.value ? message.value as boolean : false
@@ -125,7 +125,7 @@ struct SwiperNextPrevMarginExample50 {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width('100%')
             .height(160)

@@ -41,7 +41,7 @@ struct AttachDetachRebindTest {
 
 
   aboutToAppear(): void {
-    this.context.on('onAttach', () => {
+    this.context.onAttach(() => {
       console.info('onAttach')
       if (this.message == '') {
         this.message = 'onAttach'
@@ -50,7 +50,7 @@ struct AttachDetachRebindTest {
       }
     })
 
-    this.context.on('onDetach', () => {
+    this.context.onDetach(() => {
       console.info('onDetach')
       if (this.message == '') {
         this.message = 'onDetach'
