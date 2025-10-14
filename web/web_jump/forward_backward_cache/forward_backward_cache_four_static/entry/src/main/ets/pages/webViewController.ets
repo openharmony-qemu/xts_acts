@@ -47,14 +47,11 @@ struct Index {
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
         console.info('this.str has been updated to: ' + this.stringObj.str);
       }
@@ -67,21 +64,6 @@ struct Index {
         Button("web click").key('webcomponent').onClick((e: ClickEvent) => {
           console.info("key==>" + this.stringObj.str)
           switch (this.stringObj.str) {
-            case "emitFetchCookieSync": {
-              try {
-                web_webview.WebCookieManager.configCookie('https://www.example.com', "a=b", (error) => {
-                  if (error) {
-                    console.log("error: " + JSON.stringify(error));
-                  }
-                })
-                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
-                console.log("fetchCookieSync cookie = " + this.cookieResult);
-                Utils.emitEvent(this.cookieResult, 126)
-              } catch (error:BusinessError) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
             case "emitFetchCookieCallback": {
               try {
                 web_webview.WebCookieManager.configCookie('https://www.example.com', "a=c", (error) => {

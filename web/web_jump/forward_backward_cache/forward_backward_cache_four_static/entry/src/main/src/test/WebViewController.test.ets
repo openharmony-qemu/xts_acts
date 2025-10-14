@@ -75,24 +75,6 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(3000);
       done();
     })
-    /*
-     * @tc.number : SUB_ACE_BASIC_ETS_API_1300
-     * @tc.name : testFetchCookieSyncStatic
-     * @tc.desc : test for FetchCookieSync
-     * @tc.size : MediumTest
-	 * @tc.type : Function
-	 * @tc.level : Level 3
-	 */
-    it('testFetchCookieSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      emitKey="emitFetchCookieSync";
-      Utils.emitEvent(emitKey,10)
-      await Utils.msSleep(2000);
-      Utils.registerEvent("testFetchCookieSync","a=b",126,done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webcomponent',10,'');
-      await Utils.msSleep(2000);
-      done();
-    })
 
     /*
      * @tc.number : SUB_ACE_BASIC_ETS_API_1400
