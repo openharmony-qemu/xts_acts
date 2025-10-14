@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import dynamicLoadHap from './hap.test';
-import dynamicLoadHar from './har.test';
-import dynamicLoadHsp from './hsp.test';
+import dynamicLoadHap from './Hap.test';
+import dynamicLoadHar from './Har.test';
+import dynamicLoadHsp from './Hsp.test';
 
 export default function testsuite() {
   dynamicLoadHap();

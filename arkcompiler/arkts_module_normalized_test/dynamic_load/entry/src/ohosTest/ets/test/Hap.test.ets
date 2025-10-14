@@ -29,7 +29,7 @@ export default function dynamicLoadHap() {
      */
     it('testConstantExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressions01";
-      import('./testAdd').then(m => {
+      import('./TestAdd.test').then(m => {
         expect(m.add(3, 2)).assertEqual(5);
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
@@ -105,7 +105,7 @@ export default function dynamicLoadHap() {
      */
     it('testVariableExpressions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressions01";
-      let libname = './testAdd';
+      let libname = './TestAdd.test';
       import(libname).then((m: ESObject) => {
         expect(m.add(3, 2)).assertEqual(5);
       }).catch((error: BusinessError) => {

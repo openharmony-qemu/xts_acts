@@ -38,7 +38,7 @@
           "@ohos/hypium"
         ],
         "sources": [
-          "./src/ohosTest/ets/test/testAdd.ets",
+          "./src/ohosTest/ets/test/TestAdd.test.ets",
           "./src/ohosTest/ets/testSubtract.ets",
           "./src/ohosTest/ets/test/fileTest",
           "./src/ohosTest/ets/test/fileTest/中文.ets",
