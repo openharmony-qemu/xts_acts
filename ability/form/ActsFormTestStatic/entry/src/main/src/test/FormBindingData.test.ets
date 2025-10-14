@@ -19,7 +19,7 @@ import formBindingData from '@ohos.app.form.formBindingData';
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formBindingDataTest() {
@@ -62,6 +62,31 @@ export default function formBindingDataTest() {
 
             done();
             hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest001 end');
+        })
+
+         /**
+         * @tc.number: FormBindingDataStaticTest002
+         * @tc.name: FormBindingDataStaticTest002
+         * @tc.desc: check formBindingData
+         */
+        it("FormBindingDataStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(1000);
+            hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest002 start');
+
+            // with number values
+            let dataObjWithNumbers: Record<string, number> = {
+                'temperature': 11,
+                'humidity': 65
+            };
+            let formBinding: formBindingData.FormBindingData = formBindingData.createFormBindingData(dataObjWithNumbers);
+            expect('temperature,11,humidity,65').assertEqual(formBinding.data + '');
+
+            let boolData: boolean = true;
+            let formBinding2: formBindingData.FormBindingData = formBindingData.createFormBindingData(boolData);
+            expect(true).assertEqual(formBinding2.data as boolean);
+
+            done();
+            hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest002 end');
         })
     })
 }
