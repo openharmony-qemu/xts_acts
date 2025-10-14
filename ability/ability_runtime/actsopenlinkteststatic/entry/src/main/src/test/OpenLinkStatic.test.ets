@@ -82,7 +82,7 @@ export default function openLinkStaticTest() {
         })
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open fail: ` + err.code + err.message);
-        expect().assertFail();
+        expect(err.code).assertEqual(invalidParamErrNo);
         done();
       }
     });
