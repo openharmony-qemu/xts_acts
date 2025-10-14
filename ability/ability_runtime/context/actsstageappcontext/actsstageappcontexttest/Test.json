@@ -2,10 +2,10 @@
     "description": "Configuration for aceceshi Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "1200000",
+        "test-timeout": "600000",
         "bundle-name": "com.example.stageappcontexttest",
         "module-name": "entry_test",
-        "shell-timeout": "1200000",
+        "shell-timeout": "600000",
         "testcase-timeout": "30000"
     },
     "kits": [
@@ -22,7 +22,8 @@
         {
           "type": "ShellKit",
           "run-command": [
-              "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+              "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
+              "power-shell timeout -o 86400000"
           ],
           "teardown-command": [
               "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"
