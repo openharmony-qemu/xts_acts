@@ -1601,5 +1601,81 @@ export default function proxyChannelMgr() {
       }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900----------------");
     });
+
+     /**
+     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
+     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
+     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr使用macHash失效
+     * @tc.size       : MediumTest
+     * @tc.type       : Compatibility
+     * @tc.level      : Level 3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100----------------");
+      let flag = false;
+      let chlId: number = -1;
+      let channelInfo: proxyChannelManager.ChannelInfo = {
+        linkType: 0,
+        peerDevAddr: "00000000000000000000000000000000",
+        peerUuid: "00000000-0000-0000-0000-000000000000",
+      }
+      try {
+       await proxyChannelManager.openProxyChannel(channelInfo)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 openProxyChannel chlId:" + chlId);
+          })
+          .catch((error: BusinessError) => {
+            flag = true;
+            console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.code is " + error.code);
+            console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.message is " + error.message);
+            expect(error.code == 32390101).assertTrue();
+            expect(error.message != null).assertTrue();
+          })
+          .finally(() => {
+            expect(flag).assertTrue();
+          })
+          await sleep(3000);
+      }catch (error) {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.message is " + error.message);
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100----------------");
+    });
+
+    /**
+     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
+     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
+     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr的长度超过限制
+     * @tc.size       : MediumTest
+     * @tc.type       : Compatibility
+     * @tc.level      : Level 3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200----------------");
+      let flag = false;
+      let chlId: number = -1;
+      let channelInfo: proxyChannelManager.ChannelInfo = {
+        linkType: proxyChannelManager.LinkType.LINK_BR,
+        peerDevAddr: "000000000000000000000000000000000",
+        peerUuid: "00000000-0000-0000-0000-000000000000",
+      }
+      try {
+        await proxyChannelManager.openProxyChannel(channelInfo)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 openProxyChannel chlId:" + chlId);
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      }finally {
+        expect(flag).assertTrue();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200----------------");
+    });
   })
 }
