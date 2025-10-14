@@ -76,4 +76,7 @@ export default function testsuite() {
   StackCNodeTest();
   RelativeContainerTypeNodeTest();
   RelativeContainerCNodeTest();
+  CapiPostAsyncUITask();
+  CapiPostUITask();
+  CapiPostUITaskAndWait();
 }

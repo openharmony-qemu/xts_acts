@@ -33,6 +33,8 @@ add_library(nativerender SHARED
     Flex/FlexCrossLanguageTest.cpp
     Stack/StackCrossLanguageTest.cpp
     RelativeContainer/RelativeContainerCrossLanguageTest.cpp
+    node/NodeCreatorTest.cpp
+    card/CardCreatorTest.cpp
 )
 
 add_library(nativefunc SHARED
