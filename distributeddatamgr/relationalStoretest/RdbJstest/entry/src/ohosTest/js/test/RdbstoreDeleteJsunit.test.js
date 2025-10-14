@@ -821,7 +821,7 @@ describe('rdbStoreDeleteTest', function () {
      */
      it('dataRdbTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* dataRdbTest013 start *************");
-      let predicates = new relationalStore.RdbPredicates("test");
+      let predicates = new dataRdb.RdbPredicates("test");
       let resultSet = await rdbStore.query(predicates);
       try{
         let bool1 = resultSet.goToFirstRow();
@@ -846,7 +846,7 @@ describe('rdbStoreDeleteTest', function () {
      */
      it('dataRdbTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* dataRdbTest014 start *************");
-      let predicates = new relationalStore.RdbPredicates("test");
+      let predicates = new dataRdb.RdbPredicates("test");
       let resultSet = await rdbStore.query(predicates);
       try{
         let bool1 = resultSet.goToNextRow();
