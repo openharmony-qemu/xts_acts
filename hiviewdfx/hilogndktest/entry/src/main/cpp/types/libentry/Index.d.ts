@@ -20,3 +20,6 @@ export const getMsg: () => number;
 export const ohPrintMsgTest: () => number;
 export const ohPrintMsgByLenTest: () => number;
 export const ohVPrintTest: () => number;
+export const ohSetLogLevelTest1: () => number;
+export const ohSetLogLevelTest2: () => number;
+export const ohSetLogLevelTest3: () => number;

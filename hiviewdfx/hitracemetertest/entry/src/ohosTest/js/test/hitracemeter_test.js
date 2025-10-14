@@ -234,7 +234,9 @@ describe("HitraceMeterTest", function () {
         flag = false;
         try {
             console.info("DFX_DFR_HitraceMeter_0600 3 start")
-            if (hiTraceMeter.isTraceEnabled()) {
+            let istrace = hiTraceMeter.isTraceEnabled()
+            expect(istrace).assertTrue();
+            if (istrace) {
                 let customArgs = 'key0=value0';
                 for(let index = 1; index < 10; index++) {
                   customArgs += `,key${index}=value${index}`
@@ -277,7 +279,6 @@ describe("HitraceMeterTest", function () {
             hiTraceMeter.startAsyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL, 'myTestAsyncTrace', 1003, 'categoryTest');
             hilog.info(0x0000, 'testTrace', 'myTraceTest running, taskId: 1003');
             hiTraceMeter.finishAsyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL, 'myTestAsyncTrace', 1003);    
-
             expect(flag).assertFalse();
         } catch (err) {
             flag = true;
