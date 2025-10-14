@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function onAppearTest() {
 
-  //Component to be tested
+  
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
     'Blank',
@@ -47,45 +47,27 @@ export default function onAppearTest() {
     'Divider',
     'Gauge',
     'Image',
-    //'ImageAnimator',
-    //'LoadingProgress',
     'Marquee',
-    //'Menu',
-    //'MenuItem',
-    //'MenuItemGroup',
-    //'Navigation',
-    //'NavRouter',
-    //'NavDestination',
-    //'PatternLock',
     'Progress',
     'QRCode',
     'Radio',
     'Rating',
-    //'RichText',
     'ScrollBar',
     'Search',
     'Slider',
-    //'Stepper',
     'Text',
     'TextArea',
     'TextClock',
     'TextInput',
     'TextPicker',
-    //'TextTimer',
     'TimePicker',
     'Toggle',
-    //'Badge',
     'Column',
     'Flex',
-    //'GridRow',
-    //'GridCol',
     'Grid',
     'GridItem',
     'List',
     'ListItem',
-    //'ListItemGroup',
-    'Navigator',
-    //'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -93,7 +75,6 @@ export default function onAppearTest() {
     'Stack',
     'Swiper',
     'Tabs',
-    //'TabContent',
     'Circle',
     'Ellipse',
     'Line',
@@ -105,7 +86,7 @@ export default function onAppearTest() {
     'Counter'
   )
 
-  //Custom params.
+  
   let compareTextKey = 'compareTextKey';
   let targetWidth = 60;
   let targetHeight = 60;
@@ -120,7 +101,7 @@ export default function onAppearTest() {
     targetHeight: targetHeight
   }
 
-  //Test content and expected results
+  
   let testValues: TestValue[] = [{
     describe: '',
     expectValue: {
@@ -136,7 +117,7 @@ export default function onAppearTest() {
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
-      //Get text content,check content is onAppear
+      
       let compareTextObj = Utils.getComponentByKey(data.pageConfig.compareTextKey);
       console.info('compareTextObj.getElement($attrs).getString(content): ' +
       compareTextObj.getElement('$attrs').getString('content'));

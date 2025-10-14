@@ -14,18 +14,16 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Position } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core"
 
-import { jsonx } from "std/core";
 export class RectValue {
   left: number = 0;
   top: number = 0;
@@ -71,7 +69,7 @@ export class PageConfig {
   parentHeight: number = 0;
   subassemblyWidth: number = 0;
   subassemblyHeight: number = 0;
-  subassemblyCenter: AlignRuleOption = {};
+  subassemblyCenter: AlignRuleOption = {} as AlignRuleOption;
   parentComponentKey: string = '';
   referenceComponentKey: string = '';
   targetView: string = '';
@@ -137,7 +135,6 @@ export default class Utils {
     if (!router.getState().name.endsWith("/Index")) {
       router.back()
     }
-    AttrsManager.unRegisterDataChange();
     await Utils.sleep(1000);
     router.clear();
   }
@@ -150,11 +147,14 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
