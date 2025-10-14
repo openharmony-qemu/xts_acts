@@ -25,7 +25,7 @@ const unsubscribeCallback = (tcNumber: string) => {
 }
 let subscriberForm: CommonEventManager.CommonEventSubscriber;
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag Utils';
 
 export default class Utils {

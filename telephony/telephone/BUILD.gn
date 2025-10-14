@@ -30,9 +30,11 @@ group("telephone") {
     "telephonyNDKNoPerTest_C:ActsTelNDK20NoPerTest",
     "ActsTelephonySimHasCardTestStatic:ActsTelephonySimHasCardStaticTest",
     "ActsTelephonySimNoCardTestStatic:ActsTelephonySimNoCardStaticTest",
-    "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
     "ActsTelephonyRadioWithCardTestStatic:ActsTelephonyRadioWithCardStaticTest",
+    "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
+    "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
     "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
-    "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
+    "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest",
+    "ActsTelephonyRadioWithCardTestStatic:ActsTelephonyRadioWithCardStaticTest"
   ]
 }

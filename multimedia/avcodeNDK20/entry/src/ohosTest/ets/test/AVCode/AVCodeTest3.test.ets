@@ -15,11 +15,107 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import libavcode from 'libavcode.so'
+import { BusinessError } from '@ohos.base';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 
 const OS_ACCOUNT_ERR_OK = 0;
 
 export default function AVCodeTest3() {
   describe('AVCodeTest3', () => {
+    let sandboxMp4Path: string = '';
+    // 定义应用上下文（提前获取，避免重复调用）
+    let appContext: Context;
+    beforeAll(async (done: Function) => {
+      try {
+        // 1. 获取应用上下文（关键：确保能访问资源和沙箱目录）
+        appContext = getContext();
+        if (!appContext) {
+          throw new Error("获取应用上下文失败，无法访问资源和沙箱");
+        }
+        // 2. 定义资源路径和沙箱路径
+        const rawMp4Path = 'test.mp4'; // src/main/resources/rawfile/test.mp4（base目录无需显式写）
+        const sandboxDir = appContext.filesDir; // 应用沙箱根目录（如/data/storage/el2/base/haps/xxx/files）
+        sandboxMp4Path = `${sandboxDir}/test.mp4`; // 沙箱中test.mp4的最终路径
+
+        console.info(`[AVCodeTest3] 开始复制：资源路径=${rawMp4Path}，沙箱目标路径=${sandboxMp4Path}`);
+
+        // 3. 读取raw资源中的test.mp4（用Promise封装异步回调，确保复制完成后再执行后续逻辑）
+        const mp4Buffer = await new Promise<ArrayBuffer>((resolve, reject) => {
+          appContext.resourceManager.getRawFileContent(rawMp4Path, (error: BusinessError, buffer: ArrayBuffer) => {
+            if (error) {
+              // 资源读取失败（常见原因：路径错误、文件不存在、资源未打包）
+              const errMsg = `读取test.mp4失败：code=${error.code}，message=${error.message}`;
+              console.error(`[AVCodeTest3] ${errMsg}`);
+              reject(new Error(errMsg));
+              return;
+            }
+            if (!buffer || buffer.byteLength === 0) {
+              const errMsg = "读取的test.mp4内容为空（可能文件损坏）";
+              console.error(`[AVCodeTest3] ${errMsg}`);
+              reject(new Error(errMsg));
+              return;
+            }
+            console.info(`[AVCodeTest3] 成功读取test.mp4，文件大小=${buffer.byteLength}字节`);
+            resolve(buffer);
+          });
+        });
+
+        // 4. 将读取到的文件写入沙箱（覆盖已存在文件，确保最新）
+        // 打开文件：READ_WRITE=可读可写，CREATE=不存在则创建，TRUNCATE=存在则清空内容（避免旧内容残留）
+        const file = fs.openSync(
+          sandboxMp4Path,
+          fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE
+        );
+        if (!file || file.fd === null) {
+          throw new Error("打开沙箱文件失败，文件描述符无效");
+        }
+
+        // 写入文件内容（校验写入大小，确保完整）
+        const writeSize = fs.writeSync(file.fd, mp4Buffer);
+        if (writeSize !== mp4Buffer.byteLength) {
+          throw new Error(`文件写入不完整：预期${mp4Buffer.byteLength}字节，实际${writeSize}字节`);
+        }
+
+        // 5. 关闭文件（避免资源泄漏）
+        fs.closeSync(file);
+        console.info(`[AVCodeTest3] test.mp4成功写入沙箱，路径=${sandboxMp4Path}`);
+
+        // 6. 通知beforeAll执行完成（必须调用，否则测试用例会阻塞）
+        done();
+
+      } catch (error) {
+        // 捕获全流程错误，确保测试框架能感知失败
+        const errMsg = `[AVCodeTest3] beforeAll执行失败：${(error as Error).message}`;
+        console.error(errMsg);
+        done(error); // 传递错误，标记前置操作失败
+      }
+    });
+
+    // beforeEach：在每个测试用例前执行，校验沙箱中test.mp4是否有效
+    beforeEach(async () => {
+      try {
+        if (!appContext || !sandboxMp4Path) {
+          throw new Error("应用上下文或沙箱路径未初始化，无法校验文件");
+        }
+
+        console.info(`[AVCodeTest3] 校验沙箱文件：${sandboxMp4Path}`);
+
+        // 读取沙箱中test.mp4的状态（判断是否存在、是否为文件、大小是否合法）
+        const fileStat = await fs.stat(sandboxMp4Path);
+        if (fileStat.isFile() && fileStat.size > 0) {
+          console.info(`[AVCodeTest3] test.mp4校验通过：存在，大小=${fileStat.size}字节`);
+        } else {
+          throw new Error(`test.mp4校验失败：非有效文件（大小=${fileStat.size}字节）`);
+        }
+      } catch (error) {
+        // 校验失败时明确提示（便于定位问题）
+        const err = error as BusinessError;
+        const errMsg = `[AVCodeTest3] beforeEach校验失败：${err.message}，code=${err.code}`;
+        console.error(errMsg);
+      }
+    });
+
     /**
      * @tc.number SUB_AVCode_OH_AudioEncoderDestroy_001
      * @tc.name testAVCodeOHAudioEncoderDestroy001
@@ -396,6 +492,386 @@ export default function AVCodeTest3() {
           done()
         } catch (err) {
           console.error("====>testAVCodeOHAudioCodecPushInputBuffer002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_AACProfile_001
+     * @tc.name testAVCodeOHAACProfile001
+     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHAACProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAACPROFILEHE();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAACProfile001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_AACProfile_002
+     * @tc.name testAVCodeOHAACProfile002
+     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHAACProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumAACPROFILEHE1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAACProfile002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_HEVCProfile_001
+     * @tc.name testAVCodeOHHEVCProfile001
+     * @tc.desc Verify that EnumHEVCProfile1 function correctly enumerates HEVC_PROFILE_MAIN_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHHEVCProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumHEVCProfile1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHHEVCProfile001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_HEVCProfile_002
+     * @tc.name testAVCodeOHHEVCProfile002
+     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHHEVCProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumHEVCProfile2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHHEVCProfile002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_001
+     * @tc.name testAVCodeOHVVCProfile001
+     * @tc.desc Verify that EnumVVCProfile1 function correctly enumerates VVC_PROFILE_MAIN_10
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_002
+     * @tc.name testAVCodeOHVVCProfile002
+     * @tc.desc Verify that EnumVVCProfile2 function correctly enumerates VVC_PROFILE_MAIN_12
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_003
+     * @tc.name testAVCodeOHVVCProfile003
+     * @tc.desc Verify that EnumVVCProfile3 function correctly enumerates VVC_PROFILE_MAIN_12_INTRA
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_004
+     * @tc.name testAVCodeOHVVCProfile004
+     * @tc.desc Verify that EnumVVCProfile4 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_005
+     * @tc.name testAVCodeOHVVCProfile005
+     * @tc.desc Verify that EnumVVCProfile5 function correctly enumerates VVC_PROFILE_MAIN_10_444
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_006
+     * @tc.name testAVCodeOHVVCProfile006
+     * @tc.desc Verify that EnumVVCProfile6 function correctly enumerates VVC_PROFILE_MAIN_12_444
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_007
+     * @tc.name testAVCodeOHVVCProfile007
+     * @tc.desc Verify that EnumVVCProfile7 function correctly enumerates VVC_PROFILE_MAIN_16_444
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_008
+     * @tc.name testAVCodeOHVVCProfile008
+     * @tc.desc Verify that EnumVVCProfile8 function correctly enumerates VVC_PROFILE_MAIN_12_444_INTRA
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile8();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile008 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_009
+     * @tc.name testAVCodeOHVVCProfile009
+     * @tc.desc Verify that EnumVVCProfile9 function correctly enumerates VVC_PROFILE_MAIN_16_444_INTRA
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile9();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile009 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_010
+     * @tc.name testAVCodeOHVVCProfile010
+     * @tc.desc Verify that EnumVVCProfile10 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10_444
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile10();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile010 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_011
+     * @tc.name testAVCodeOHVVCProfile011
+     * @tc.desc Verify that EnumVVCProfile11 function correctly enumerates VVC_PROFILE_MAIN_10_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile11();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile011 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_012
+     * @tc.name testAVCodeOHVVCProfile012
+     * @tc.desc Verify that EnumVVCProfile12 function correctly enumerates VVC_PROFILE_MAIN_12_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile12();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile012 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_013
+     * @tc.name testAVCodeOHVVCProfile013
+     * @tc.desc Verify that EnumVVCProfile13 function correctly enumerates VVC_PROFILE_MAIN_10_444_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile13();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile013 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_014
+     * @tc.name testAVCodeOHVVCProfile014
+     * @tc.desc Verify that EnumVVCProfile14 function correctly enumerates VVC_PROFILE_MAIN_12_444_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile14();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile014 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.number SUB_AVCode_OH_VVCProfile_015
+     * @tc.name testAVCodeOHVVCProfile015
+     * @tc.desc Verify that EnumVVCProfile15 function correctly enumerates VVC_PROFILE_MAIN_16_444_STILL
+     * @tc.level Level1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('testAVCodeOHVVCProfile015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumVVCProfile15();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHVVCProfile015 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
@@ -816,6 +1292,1026 @@ export default function AVCodeTest3() {
           done()
         } catch (err) {
           console.error("====>testAVCodeOHMPEG2Profile021 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_H263Profile_001
+     @tc.name testAVCodeOHH263Profile001
+     @tc.desc Verify that EnumOHH263Profile1 function correctly enumerates MPEG2 profile 21
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHH263Profile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHH263Profile1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHH263Profile001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_H263Profile_002
+     @tc.name testAVCodeOHH263Profile002
+     @tc.desc Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHH263Profile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHH263Profile2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHH263Profile002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_001
+     @tc.name testAVCodeOHAVOutputFormat001
+     @tc.desc Verify that EnumOHAVOutputFormat1 function correctly enumerates AV output format 1
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_002
+     @tc.name testAVCodeOHAVOutputFormat002
+     @tc.desc Verify that EnumOHAVOutputFormat2 function correctly enumerates AV output format 2
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_003
+     @tc.name testAVCodeOHAVOutputFormat003
+     @tc.desc Verify that EnumOHAVOutputFormat3 function correctly enumerates AV output format 3
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_004
+     @tc.name testAVCodeOHAVOutputFormat004
+     @tc.desc Verify that EnumOHAVOutputFormat4 function correctly enumerates AV output format 4
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_005
+     @tc.name testAVCodeOHAVOutputFormat005
+     @tc.desc Verify that EnumOHAVOutputFormat5 function correctly enumerates AV output format 5
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVOutputFormat_006
+     @tc.name testAVCodeOHAVOutputFormat006
+     @tc.desc Verify that EnumOHAVOutputFormat6 function correctly enumerates AV output format 6
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVOutputFormat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_001
+     @tc.name testAVCodeColorPrimary001
+     @tc.desc Verify that EnumOHAVColorPrimary1 function correctly enumerates OH_ColorPrimary 1
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_002
+     @tc.name testAVCodeColorPrimary002
+     @tc.desc Verify that EnumOHAVColorPrimary2 function correctly enumerates OH_ColorPrimary 2
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_003
+     @tc.name testAVCodeColorPrimary003
+     @tc.desc Verify that EnumOHAVColorPrimary3 function correctly enumerates OH_ColorPrimary 3
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_004
+     @tc.name testAVCodeColorPrimary004
+     @tc.desc Verify that EnumOHAVColorPrimary4 function correctly enumerates OH_ColorPrimary 4
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_005
+     @tc.name testAVCodeColorPrimary005
+     @tc.desc Verify that EnumOHAVColorPrimary5 function correctly enumerates OH_ColorPrimary 5
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_006
+     @tc.name testAVCodeColorPrimary006
+     @tc.desc Verify that EnumOHAVColorPrimary6 function correctly enumerates OH_ColorPrimary 6
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_007
+     @tc.name testAVCodeColorPrimary007
+     @tc.desc Verify that EnumOHAVColorPrimary7 function correctly enumerates OH_ColorPrimary 7
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_COLOR_PRIMARY_008
+     @tc.name testAVCodeColorPrimary008
+     @tc.desc Verify that EnumOHAVColorPrimary8 function correctly enumerates OH_ColorPrimary 8
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeColorPrimary008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVColorPrimary8();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeColorPrimary008 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_001
+     @tc.name testAVCodeOHTransferCharacteristic001
+     @tc.desc Verify that EnumOHTransferCharacteristic1 function correctly enumerates OH_TransferCharacteristic 1
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_002
+     @tc.name testAVCodeOHTransferCharacteristic002
+     @tc.desc Verify that EnumOHTransferCharacteristic2 function correctly enumerates OH_TransferCharacteristic 2
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_003
+     @tc.name testAVCodeOHTransferCharacteristic003
+     @tc.desc Verify that EnumOHTransferCharacteristic3 function correctly enumerates OH_TransferCharacteristic 3
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_004
+     @tc.name testAVCodeOHTransferCharacteristic004
+     @tc.desc Verify that EnumOHTransferCharacteristic4 function correctly enumerates OH_TransferCharacteristic 4
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_005
+     @tc.name testAVCodeOHTransferCharacteristic005
+     @tc.desc Verify that EnumOHTransferCharacteristic5 function correctly enumerates OH_TransferCharacteristic 5
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_006
+     @tc.name testAVCodeOHTransferCharacteristic006
+     @tc.desc Verify that EnumOHTransferCharacteristic6 function correctly enumerates OH_TransferCharacteristic 6
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_007
+     @tc.name testAVCodeOHTransferCharacteristic007
+     @tc.desc Verify that EnumOHTransferCharacteristic7 function correctly enumerates OH_TransferCharacteristic 7
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_008
+     @tc.name testAVCodeOHTransferCharacteristic008
+     @tc.desc Verify that EnumOHTransferCharacteristic8 function correctly enumerates OH_TransferCharacteristic 8
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic8();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic008 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_009
+     @tc.name testAVCodeOHTransferCharacteristic009
+     @tc.desc Verify that EnumOHTransferCharacteristic9 function correctly enumerates OH_TransferCharacteristic 9
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic9();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic009 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_010
+     @tc.name testAVCodeOHTransferCharacteristic010
+     @tc.desc Verify that EnumOHTransferCharacteristic10 function correctly enumerates OH_TransferCharacteristic 10
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic10();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic010 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_011
+     @tc.name testAVCodeOHTransferCharacteristic011
+     @tc.desc Verify that EnumOHTransferCharacteristic11 function correctly enumerates OH_TransferCharacteristic 11
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic11();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic011 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_012
+     @tc.name testAVCodeOHTransferCharacteristic012
+     @tc.desc Verify that EnumOHTransferCharacteristic12 function correctly enumerates OH_TransferCharacteristic 12
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic12();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic012 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_TransferCharacteristic_013
+     @tc.name testAVCodeOHTransferCharacteristic013
+     @tc.desc Verify that EnumOHTransferCharacteristic13 function correctly enumerates OH_TransferCharacteristic 13
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHTransferCharacteristic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHTransferCharacteristic13();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHTransferCharacteristic013 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_001
+     @tc.name testAVCodeOHMatrixCoefficient001
+     @tc.desc Verify that EnumOHMatrixCoefficient1 function correctly enumerates OH_MatrixCoefficient 1
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_002
+     @tc.name testAVCodeOHMatrixCoefficient002
+     @tc.desc Verify that EnumOHMatrixCoefficient2 function correctly enumerates OH_MatrixCoefficient 2
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_003
+     @tc.name testAVCodeOHMatrixCoefficient003
+     @tc.desc Verify that EnumOHMatrixCoefficient3 function correctly enumerates OH_MatrixCoefficient 3
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_004
+     @tc.name testAVCodeOHMatrixCoefficient004
+     @tc.desc Verify that EnumOHMatrixCoefficient4 function correctly enumerates OH_MatrixCoefficient 4
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_005
+     @tc.name testAVCodeOHMatrixCoefficient005
+     @tc.desc Verify that EnumOHMatrixCoefficient5 function correctly enumerates OH_MatrixCoefficient 5
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_006
+     @tc.name testAVCodeOHMatrixCoefficient006
+     @tc.desc Verify that EnumOHMatrixCoefficient6 function correctly enumerates OH_MatrixCoefficient 6
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_007
+     @tc.name testAVCodeOHMatrixCoefficient007
+     @tc.desc Verify that EnumOHMatrixCoefficient7 function correctly enumerates OH_MatrixCoefficient 7
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_008
+     @tc.name testAVCodeOHMatrixCoefficient008
+     @tc.desc Verify that EnumOHMatrixCoefficient8 function correctly enumerates OH_MatrixCoefficient 8
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient8();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient008 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_009
+     @tc.name testAVCodeOHMatrixCoefficient009
+     @tc.desc Verify that EnumOHMatrixCoefficient9 function correctly enumerates OH_MatrixCoefficient 9
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient9();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient009 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_MatrixCoefficient_010
+     @tc.name testAVCodeOHMatrixCoefficient010
+     @tc.desc Verify that EnumOHMatrixCoefficient10 function correctly enumerates OH_MatrixCoefficient 10
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHMatrixCoefficient010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHMatrixCoefficient10();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHMatrixCoefficient010 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_001
+     @tc.name testAVCodeOHBitsPerSample001
+     @tc.desc Verify that EnumOHBitsPerSample1 function correctly enumerates OH_BitsPerSample 1
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_002
+     @tc.name testAVCodeOHBitsPerSample002
+     @tc.desc Verify that EnumOHBitsPerSample2 function correctly enumerates OH_BitsPerSample 2
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_003
+     @tc.name testAVCodeOHBitsPerSample003
+     @tc.desc Verify that EnumOHBitsPerSample3 function correctly enumerates OH_BitsPerSample 3
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample3();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_004
+     @tc.name testAVCodeOHBitsPerSample004
+     @tc.desc Verify that EnumOHBitsPerSample4 function correctly enumerates OH_BitsPerSample 4
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample4();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_005
+     @tc.name testAVCodeOHBitsPerSample005
+     @tc.desc Verify that EnumOHBitsPerSample5 function correctly enumerates OH_BitsPerSample 5
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample5();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample005 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_006
+     @tc.name testAVCodeOHBitsPerSample006
+     @tc.desc Verify that EnumOHBitsPerSample6 function correctly enumerates OH_BitsPerSample 6
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample6();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample006 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_BitsPerSample_007
+     @tc.name testAVCodeOHBitsPerSample007
+     @tc.desc Verify that EnumOHBitsPerSample7 function correctly enumerates OH_BitsPerSample 7
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHBitsPerSample007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHBitsPerSample7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHBitsPerSample007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_Core_HdrType_001
+     @tc.name testAVCodeOHCoreHdrType001
+     @tc.desc Verify that EnumOHCoreHdrType1 function correctly enumerates OH_CORE_HDR_TYPE_NONE
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHCoreHdrType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHCoreHdrType1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHCoreHdrType001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_Core_HdrType_002
+     @tc.name testAVCodeOHCoreHdrType002
+     @tc.desc Verify that EnumOHCoreHdrType2 function correctly enumerates OH_CORE_HDR_TYPE_VIVID
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHCoreHdrType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHCoreHdrType2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHCoreHdrType002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_AVDataSource_001
+     @tc.name testAVCodeOHAVDataSource001
+     @tc.desc Verify that EnumOHCoreHdrType2 function correctly OH_AVDataSource size readAt
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHAVDataSource001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.AVCodeOHAVDataSource();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVDataSource001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_ScalingMode_001
+     @tc.name testAVCodeOHScalingMode001
+     @tc.desc Verify that EnumOHScalingMode1 function correctly enumerates SCALING_MODE_SCALE_TO_WINDOW
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHScalingMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHScalingMode1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHScalingMode001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     @tc.number SUB_AVCode_OH_ScalingMode_002
+     @tc.name testAVCodeOHScalingMode002
+     @tc.desc Verify that EnumOHScalingMode2 function correctly enumerates SCALING_MODE_SCALE_CROP
+     @tc.level Level1
+     @tc.size MediumTest
+     @tc.type Function
+     */
+    it('testAVCodeOHScalingMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHScalingMode2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHScalingMode002 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });

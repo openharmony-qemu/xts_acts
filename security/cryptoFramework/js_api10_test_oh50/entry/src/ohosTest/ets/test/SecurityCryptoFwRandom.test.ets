@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import { taskpool } from '@kit.ArkTS';
-import { CallbackType, intervalTime, random, stressTimeout } from './utils/random/random';
+import { CallbackType, intervalTime, stressTimeout } from './utils/random/random';
 
 
 @Concurrent
@@ -23,6 +23,7 @@ async function getRandomWithPthread(length: number, type: CallbackType): Promise
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let secret: cryptoFramework.DataBlob = {data: new Uint8Array()};
+  let random: cryptoFramework.Random = cryptoFramework.createRandom();
   let timeoutId: number = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);

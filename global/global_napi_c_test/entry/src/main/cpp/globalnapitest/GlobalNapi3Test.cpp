@@ -137,7 +137,7 @@ napi_value GetDirectionVertical0100(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "GetDirectionVertical0100", "GetDirectionVertical0100: %{public}d", res);
     OH_ResourceManager_ReleaseConfiguration(&config);
     napi_value value = nullptr;
-    napi_create_int32(env, res == DIRECTION_VERTICAL ? 0 : 1, &value);
+    napi_create_int32(env, res, &value);
     return value;
 }
 
@@ -213,7 +213,7 @@ napi_value GetConfigurations0100(napi_env env, napi_callback_info info)
     OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
     int32_t res = config.direction;
     napi_value value = nullptr;
-    napi_create_int32(env, res == DIRECTION_VERTICAL ? 0 : 1, &value);
+    napi_create_int32(env, res, &value);
     return value;
 }
 
@@ -223,7 +223,7 @@ napi_value GetConfigurations0200(napi_env env, napi_callback_info info)
     OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
     int32_t res = config.deviceType;
     napi_value value = nullptr;
-    napi_create_int32(env, res == DEVICE_TYPE_PHONE ? 0 : 1, &value);
+    napi_create_int32(env, res, &value);
     return value;
 }
 

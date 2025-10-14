@@ -20,7 +20,7 @@ import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function ActsNotificationWantAgentStaticTest() {

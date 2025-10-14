@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
+import { Callback } from '@kit.BasicServicesKit';
 
 const TAG = 'Notification';
 const TEST_SUITE_NAME = 'ActsEmitterPublishTest'
@@ -37,7 +38,7 @@ export default function ActsNotificationEmitterPublishTest() {
       let eventId01: emitter.InnerEvent = {
         eventId: 1
       };
-      let callback01 = (): void => {
+      let callback01:Callback<emitter.EventData> = (eventData: emitter.EventData) => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback01 success');
         expect().assertFail();
         done();
@@ -83,7 +84,7 @@ export default function ActsNotificationEmitterPublishTest() {
       let eventId02: emitter.InnerEvent = {
         eventId: 2
       };
-      let callback02 = (): void => {
+      let callback02:Callback<emitter.EventData> = (eventData: emitter.EventData) => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback02 success');
         expect(false).assertTrue();
         done();
@@ -98,7 +99,7 @@ export default function ActsNotificationEmitterPublishTest() {
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'off callback begin');
-        emitter.off(2);
+        emitter.off(2, callback02);
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'off callback success');
       }catch(err){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));

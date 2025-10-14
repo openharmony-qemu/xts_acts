@@ -1025,6 +1025,23 @@ export const jsImageSoureNativeGetSupportedFormats: (uri: string) => number;
 
 export const jsImageSoureNativeGetSupportedFormatsInvalidParameter: () => number;
 
+export const testPictureNative_CreatePicture: (uri: string) => number;
+export const testPictureNative_GetMainPixelmap: (uri: string) => number;
+export const testPictureNative_GetHdrComposedPixelmap: (uri: string) => number;
+export const testPictureNative_GetGainmapPixelmap: (uri: string) => number;
+export const testPictureNative_SetAuxiliaryPicture: (uri: string) => number;
+export const testPictureNative_GetAuxiliaryPicture: (uri: string) => number;
+export const testPictureNative_GetMetadata: (uri: string) => number;
+export const testPictureNative_SetMetadata: (uri: string) => number;
+export const testPictureNative_Release: (uri: string) => number;
+export const testAuxiliaryPictureNativeWritePixelsImage: (uri: string) => number;
+export const testAuxiliaryPictureNative_ReadPixels: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetType: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetInfo: (uri: string) => number;
+export const testAuxiliaryPictureNative_SetInfo: (uri: string) => number;
+export const testAuxiliaryPictureNative_GetMetadata: (uri: string) => number;
+export const testAuxiliaryPictureNative_SetMetadata: (uri: string) => number;
+
 export const pixelmapNative_AntiAliasingLevel_NONE: () => number;
 
 export const pixelmapNative_AntiAliasingLevel_LOW: () => number;
@@ -1122,3 +1139,44 @@ export const JSImagePixelmapHdrMetadataValueStaticMetadataCode: () => number;
 export const JSImagePixelmapHdrMetadataValueDynamicMetadataCode: () => number;
 
 export const JSImagePixelmapHdrMetadataValueGainmapMetadataCode: () => number;
+
+export const PixelMapCreatePixelMapResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetBytesNumberPerRowResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetIsEditableResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapIsSupportAlphaResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetAlphaAbleResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetDensityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetOpacityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapScaleResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapScaleWithAntiAliasingResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapTranslateResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapRotateResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapFlipResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapCropResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapGetImageInfoResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapUnAccessPixelsResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+
+export const PixelMapSetDensityResultSuccess: (a: ArrayBuffer, b: pixelMapPots) => number;
+export const test_COLOR_SPACE_CONVERSION: () => number;
+export const test_DETAIL_ENHANCER: () => number;
+export const test_COMPOSITION: () => number;
+export const test_DECOMPOSITION: () => number;
+export const test_METADATA_GENERATION: () => number;
+
+

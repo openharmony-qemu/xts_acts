@@ -23,15 +23,17 @@ struct MyStateSample {
   @State stateVar: string = 'state var';
   message: string = 'var';
   changeValue() {
-    this.stateVar+='~'
+
   }
   build() {
     Column(undefined) {
       Text('Hello World').fontSize(20)
-      Button(this.message).backgroundColor('#FFFF00FF')
+      Button('getImsRegInfo')
+        .margin(8)
+        .width('40%')
+        .height('5%')
+        .backgroundColor('#0ddffb')
         .onClick((e: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'On Click');
-          this.changeValue();
         })
       Text(this.stateVar).fontSize(20)
       Child({stateVar: this.stateVar} as __Options_Child)

@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function moveAbilityToBackgroundTestStatic() {

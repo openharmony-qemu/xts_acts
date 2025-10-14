@@ -16,7 +16,6 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 let stressTimeout: number = 1000 * 1;
 let intervalTime: number = 1000;
-let random: cryptoFramework.Random = cryptoFramework.createRandom();
 
 enum CallbackType {
   TYPE_IS_SYNC = 0,
@@ -27,6 +26,5 @@ enum CallbackType {
 export {
   stressTimeout,
   intervalTime,
-  random,
   CallbackType
 }

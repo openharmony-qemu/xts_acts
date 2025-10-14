@@ -39,7 +39,7 @@ interface ParametersObj  {
   acts_startupVisibility: number | undefined
   targetPid: string
 }
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let testTag: string = 'testTag';
 
 function getCount(str: string, substring: string): number {

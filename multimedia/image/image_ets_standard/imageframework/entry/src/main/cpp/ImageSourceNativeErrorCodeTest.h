@@ -142,5 +142,20 @@ napi_value JSImageSoureNativeDecodingOptionsForPictureReleaseBadParameter(napi_e
 
 napi_value JSImageSoureNativeGetSupportedFormats(napi_env env, napi_callback_info info);
 napi_value JSImageSoureNativeGetSupportedFormatsInvalidParameter(napi_env env, napi_callback_info info);
-
+napi_value Test_PictureNative_CreatePicture(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_GetMainPixelmap(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_GetHdrComposedPixelmap(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_GetGainmapPixelmap(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_SetAuxiliaryPicture(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_GetAuxiliaryPicture(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_GetMetadata(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_SetMetadata(napi_env env, napi_callback_info info);
+napi_value Test_OH_PictureNative_Release(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNativeWritePixelsImage(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_ReadPixels(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_GetType(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_GetInfo(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_SetInfo(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_GetMetadata(napi_env env, napi_callback_info info);
+napi_value Test_OH_AuxiliaryPictureNative_SetMetadata(napi_env env, napi_callback_info info);
 #endif // IMAGE_SOURCE_NATIVE_ERROR_CODE_TEST_H

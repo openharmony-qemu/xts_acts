@@ -24,6 +24,7 @@ import ImagePackerNativeTest1 from './ImagePackerNative1.test'
 import ImageSourceNativeCodeTest from './ImageSourceNativeCode.test'
 import  ImageEffectErrorCodeTest from  './ImageEffectErrorCode.test'
 import ImageKitErrorCodeTest from './ImageKitErroerCodeTest.test.ets'
+import ImageProcessingTest from './ImageProcessingTest.test.ets'
 export default function testsuite() {
   imagepixelmapmdk()
   imagereceivermdk()
@@ -37,4 +38,5 @@ export default function testsuite() {
   ImageSourceNativeCodeTest();
   ImageEffectErrorCodeTest();
   ImageKitErrorCodeTest();
+  ImageProcessingTest();
 }

@@ -53,7 +53,7 @@ class ConnectOptions implements common.ConnectOptions {
   }
 }
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 let array: string[] = new Array<string>();

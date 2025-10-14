@@ -19,7 +19,7 @@ import abilityConstant from '@ohos.app.ability.AbilityConstant';
 import wantConstant from "@ohos.app.ability.wantConstant";
 import wantAgent from '@ohos.app.ability.wantAgent';
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function EnumerationStaticTest() {
