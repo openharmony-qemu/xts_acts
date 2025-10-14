@@ -576,7 +576,7 @@ export default function api16CertFuncTestUnit() {
 
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priSM2CredData), pwd, alias);
-        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri)');
+        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri));
         keyUri = result.uri;
       } catch (e: BusinessError) {
         hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010  e.code: ${e.code}`);
