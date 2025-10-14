@@ -81,10 +81,10 @@ export default function abilityTest() {
                 sessionType: 'video',
             }
             let avCastPicker = new avSession.AVCastPickerHelper(context);
-            avCastPicker.on('pickerStateChange',(state: AVCastPickerState) => {
+            avCastPicker.onPickerStateChange((state: AVCastPickerState) => {
                 console.info(`${TAG}: pickerStateChange received picker state change: ${state}`);
                 if (state == AVCastPickerState.STATE_APPEARING || state == AVCastPickerState.STATE_DISAPPEARING) {
-                    expect(true).assertTrue();
+                    console.info('${TAG}: on pickerStateChange successfully');
                 } else {
                     expect(false).assertTrue();
                 }
@@ -115,7 +115,7 @@ export default function abilityTest() {
                     sessionType: 'video',
                 }
                 let avCastPicker = new avSession.AVCastPickerHelper(context);
-                avCastPicker.on('pickerStateChange',(state: AVCastPickerState) => {
+                avCastPicker.onPickerStateChange((state: AVCastPickerState) => {
                     console.info(`${TAG}: pickerStateChange received picker state change: ${state}`);
                     if (state == AVCastPickerState.STATE_APPEARING || state == AVCastPickerState.STATE_DISAPPEARING) {
                         flag = true;
@@ -123,7 +123,7 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     }
                 });
-                avCastPicker.off('pickerStateChange');
+                avCastPicker.offPickerStateChange();
                 await avCastPicker.select(avCastPickerOptions);
                 if (flag) {
                     console.info(`${TAG}: pickerStateChange off pickerStateChange fail`);

@@ -1162,7 +1162,7 @@ export default function abilityTest() {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR
             if (err_code == 6616100) {
-                expect(true).assertTrue();
+                console.info("SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_STATIC_0100 success");
             } else {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();

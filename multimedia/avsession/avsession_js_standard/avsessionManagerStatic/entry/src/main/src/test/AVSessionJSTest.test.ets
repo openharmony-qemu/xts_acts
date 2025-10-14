@@ -211,7 +211,7 @@ export default function abilityTest() {
          * @tc.level       Level0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('commonCommand', commonCommandCallback1);
+            session!.onCommonCommand(commonCommandCallback1);
             try {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
@@ -244,8 +244,8 @@ export default function abilityTest() {
          * @tc.level       Level0
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('commonCommand', commonCommandCallback1);
-            session!.on('commonCommand', commonCommandCallback2);
+            session!.onCommonCommand(commonCommandCallback1);
+            session!.onCommonCommand(commonCommandCallback2);
             try {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
@@ -283,9 +283,9 @@ export default function abilityTest() {
          * @tc.level       Level0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('commonCommand', commonCommandCallback1);
-            session!.on('commonCommand', commonCommandCallback2);
-            session!.off('commonCommand', commonCommandCallback2);
+            session!.onCommonCommand(commonCommandCallback1);
+            session!.onCommonCommand(commonCommandCallback2);
+            session!.offCommonCommand(commonCommandCallback2);
             try {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
@@ -312,17 +312,17 @@ export default function abilityTest() {
         /**
          * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200
          * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200
-         *@tc.desc        bind two callbacks on commonCommand event, off two of them
+         * @tc.desc        bind two callbacks on commonCommand event, off two of them
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('commonCommand', commonCommandCallback1);
-            session!.on('commonCommand', commonCommandCallback2);
-            session!.off('commonCommand', commonCommandCallback1);
-            session!.off('commonCommand', commonCommandCallback2);
+            session!.onCommonCommand(commonCommandCallback1);
+            session!.onCommonCommand(commonCommandCallback2);
+            session!.offCommonCommand(commonCommandCallback1);
+            session!.offCommonCommand(commonCommandCallback2);
             try {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
@@ -352,9 +352,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('commonCommand', commonCommandCallback1);
-            session!.on('commonCommand', commonCommandCallback2);
-            session!.off('commonCommand');
+            session!.onCommonCommand(commonCommandCallback1);
+            session!.onCommonCommand(commonCommandCallback2);
+            session!.offCommonCommand();
             try {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
@@ -365,7 +365,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0300 finished");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0300 failed");
                 expect(true).assertFalse();
@@ -407,7 +406,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                session!.on('castDisplayChange', (display) => {
+                session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
                         if (typeof castDisplay.id === 'number'){
@@ -438,7 +437,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                session!.on('castDisplayChange', (display) => {
+                session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
                         if (typeof castDisplay.name === 'string'){
@@ -469,7 +468,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                session!.on('castDisplayChange', (display) => {
+                session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
                         if (typeof castDisplay.width === 'number'){
@@ -500,7 +499,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                session!.on('castDisplayChange', (display) => {
+                session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
                         if (typeof castDisplay.height === 'number'){

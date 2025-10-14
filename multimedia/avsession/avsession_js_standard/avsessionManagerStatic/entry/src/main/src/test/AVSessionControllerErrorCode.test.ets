@@ -352,6 +352,28 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400
+         * @tc.desc        test on('sessionEvent') errcode 6600103
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller.destroy();
+            try{
+                controller.onSessionEvent((command: string, args: Record<string, Object>) => {
+                    console.info(`controller on_sessionEvent Successfully`);
+                });
+            } catch(err: BusinessError) {
+                console.info(`controller on_sessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600103);
+            };
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
          * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
          * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
          * @tc.desc        sendCommonCommand(promise) with avsession does not active(errcode 6600106)
@@ -455,6 +477,27 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100
+         * @tc.desc        test getExtras(promise) errcode 6600102
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await invalidSession(async () => {
+                await controller.getExtras().then(() => {
+                    console.info('getExtras Successfully');
+                    expect().assertFail();
+                }).catch(async(err: BusinessError) => {
+                    console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600102);
+                });
+            });
+            done();
+        })
+
+        /**
          * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
          * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
          * @tc.desc        getExtras(promise) with controller does not exist(errcode 6600103)
@@ -475,6 +518,35 @@ export default function abilityTest() {
             };
             Utils.msSleep(800);
             done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.desc        test getExtras(callback) errcode 6600102
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await invalidSession(async (): Promise<void> => {
+                try {
+                    controller.getExtras(err => {
+                        if (err) {
+                            console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                            expect(err.code).assertEqual(6600102);
+                        } else {
+                            console.info('getExtras Successfully');
+                            expect().assertFail();
+                        }
+                        done();
+                    });
+                } catch (err: BusinessError) {
+                    console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
         })
 
         /**
@@ -504,6 +576,28 @@ export default function abilityTest() {
                 expect(true).assertFalse();
                 done();
             }
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400
+         * @tc.desc        test on('extrasChange') errcode 6600103
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller.destroy();
+            try{
+                controller.onExtrasChange((extras: Record<string,Object>) => {
+                    console.info(`controller on_extrasChange Successfully`);
+                });
+            } catch(err: BusinessError) {
+                console.info(`controller on_extrasChange BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600103);
+            };
+            await Utils.msSleep(300);
+            done();
         })
 
         /**
