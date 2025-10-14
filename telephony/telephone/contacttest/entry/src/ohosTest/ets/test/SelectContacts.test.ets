@@ -77,7 +77,7 @@ export default function SelectContactsTest() {
         let context: Context = AppStorage.get('context') as Context;
         let contactList: contact.Contact[] = [];
         try {
-          contactList = await contact.queryContacts(context);
+          contactList = await contact.queryContactsByPhoneNumber(context,"13800000000");
         } catch (queryErr) {
           console.info(`afterEach queryContacts catch err: ${JSON.stringify(queryErr)}`);
           done();
