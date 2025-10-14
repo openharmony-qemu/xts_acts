@@ -37,6 +37,8 @@
         "MainAbility/pages/Shape/shape",
         "MainAbility/pages/Circle/circle",
         "MainAbility/pages/common",
-        "MainAbility/pages/Matrix2D/Matrix2DPage"
+        "MainAbility/pages/Matrix2D/Matrix2DPage",
+
+        "MainAbility/pages/CanvasReturn/CanvasGetLineDash"
     ]
 }
