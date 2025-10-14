@@ -99,12 +99,12 @@ export default function settingUiJsunit() {
      */
     it('settings_get_value_static_119',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness119';//关键字
-      let default = '323445.00';//值
+      let defaultValue = '323445.00';//值
       let domainName = 'secure';
       try{
-        let value = settings.getValueSync(abilityContext, name, default, domainName);
+        let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
-        expect(default).assertEqual(value);
+        expect(defaultValue).assertEqual(value);
       } catch (err) {
         console.error("[settings_set_value_119] error = " + err);
         expect().assertFail();
