@@ -17,7 +17,7 @@ import ServiceExtensionAbility from '@ohos.app.ability.ServiceExtensionAbility';
 import Want from '@ohos.app.ability.Want';
 import hilog from '@ohos.hilog';
 
-const domain = 0x0000;
+const domain: int = 0x0000;
 const tag = 'testTag EntryAbility';
 
 class ServiceExt extends ServiceExtensionAbility {

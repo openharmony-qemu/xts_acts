@@ -23,7 +23,7 @@ import ApplicationStateChangeCallback from '@ohos.app.ability.ApplicationStateCh
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
-const domain = 0x0000;
+const domain: int = 0x0000;
 const tag = 'testTag';
 
 class CustomApplicationStateChangeCallback implements ApplicationStateChangeCallback {

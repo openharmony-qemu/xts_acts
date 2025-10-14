@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import application from '@ohos.app.ability.application'
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context:common.UIAbilityContext;
 

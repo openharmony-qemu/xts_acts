@@ -25,7 +25,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import { Caller } from '@ohos.app.ability.UIAbility';
 import contextConstant from '@ohos.app.ability.contextConstant';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context:common.UIAbilityContext;
 

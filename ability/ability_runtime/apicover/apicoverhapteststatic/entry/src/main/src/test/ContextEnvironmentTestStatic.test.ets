@@ -26,7 +26,7 @@ import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import { BusinessError } from '@ohos.base';
 
 
-const domain = 0x0000;
+const domain: int = 0x0000;
 const tag = 'testTag'
 
 class CustomEnvironmentCallback implements EnvironmentCallback {

@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import UIAbility from '@ohos.app.ability.UIAbility';
 
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function AbilityDelegatorStageStaticTest() {

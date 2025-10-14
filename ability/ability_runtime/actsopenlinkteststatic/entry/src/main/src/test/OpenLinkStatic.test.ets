@@ -22,7 +22,7 @@ import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
 let link = 'example://www.example.com';

@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 

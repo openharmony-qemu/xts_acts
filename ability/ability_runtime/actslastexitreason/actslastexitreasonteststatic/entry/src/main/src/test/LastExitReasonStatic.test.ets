@@ -20,7 +20,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Utils from './Util.test';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function lastExitReasonStaticTest() {

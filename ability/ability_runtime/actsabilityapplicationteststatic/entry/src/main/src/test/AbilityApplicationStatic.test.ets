@@ -17,7 +17,7 @@ import { describe, it, expect, Level } from '../../../hypium/index';
 import application from '@ohos.app.ability.application';
 import hilog from '@ohos.hilog';
 
-const domain: Int = 0x0000;
+const domain: int = 0x0000;
 const tag: string = 'AbilityApplicationStaticTest';
 
 export default function AbilityApplicationStaticTest() {
