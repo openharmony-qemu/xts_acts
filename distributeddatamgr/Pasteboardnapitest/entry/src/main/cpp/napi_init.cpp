@@ -371,7 +371,7 @@ static napi_value OH_Pasteboard_HasType0100(napi_env env, napi_callback_info inf
     OH_Pasteboard_SetData(pasteboard, setData);
     char type[] = "general.plain-text";
     bool res = OH_Pasteboard_HasType(pasteboard, type);
-    napi_create_int32(env, res == false, &result);
+    napi_create_int32(env, res == true, &result);
     OH_Pasteboard_Destroy(pasteboard);
 
     return result;
