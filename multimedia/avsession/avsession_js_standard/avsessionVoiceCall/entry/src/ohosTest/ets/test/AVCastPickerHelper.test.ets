@@ -282,17 +282,17 @@ export default function abilityTest() {
     /* *
      * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
      * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800
-     * @tc.desc      : restoreDefaultCommunicationDevice()
+     * @tc.desc      : resetCommunicationDevice()
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level2
      */
     it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avCastPicker = new avSession.AVCastPickerHelper(context);
-      await avCastPicker.restoreDefaultCommunicationDevice().then(() => {
-        console.info('${TAG}: avCastPicker restoreDefaultCommunicationDevice successfully');
+      await avCastPicker.resetCommunicationDevice().then(() => {
+        console.info('${TAG}: avCastPicker resetCommunicationDevice successfully');
       }).catch((err: BusinessError) => {
-        console.info(`${TAG}: avCastPicker restoreDefaultCommunicationDevice failed with err: ${err.code}, ${err.message}`);
+        console.info(`${TAG}: avCastPicker resetCommunicationDevice failed with err: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
       })
       done();
