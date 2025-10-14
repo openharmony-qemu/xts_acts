@@ -29,6 +29,7 @@ group("codeparsingtest") {
       "proxytest:ActsProxyTest",
       "objecttest:ActsObjectTest",
       "arraytest:ActsArrayTest",
+      "regexptest:ActsRegExpTest",
     ]
   }
 }
