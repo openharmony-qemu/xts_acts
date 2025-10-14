@@ -28,8 +28,10 @@ group("telephone") {
     "telephonyNDKTest:ActsTelephonyNdkTest",
     "telephonyNDKTest_C:ActsTelephonyNdk20Test",
     "telephonyNDKNoPerTest_C:ActsTelNDK20NoPerTest",
-    "ActsTelephonyRadioWithCardTestStatic:ActsTelephonyRadioWithCardStaticTest",
+    "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
+    "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
     "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
-    "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
+    "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest",
+    "ActsTelephonyRadioWithCardTestStatic:ActsTelephonyRadioWithCardStaticTest"
   ]
 }
