@@ -159,31 +159,31 @@ export default function settingUiJsunit() {
       }
     });
     /**
-     * @tc.number: settings_get_value_static_117
-     * @tc.name: settings_get_value_static_117
+     * @tc.number: settings_get_value_static_035
+     * @tc.name: settings_get_value_static_035
      * @tc.desc: check getValue value
      */
-    it('settings_get_value_static_117',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
-      let name = 'settings.screen.brightness117';//关键字
-      let value = 'brightness117';//值
+    it('settings_get_value_static_035',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness35';//关键字
+      let value = 'brightness35';//值
       let domainName = 'secure';
       try{
         settings.setValue(abilityContext, name, value, domainName)
           .then((data)=>{
-            console.info("[settings_get_value_117] value is:" + data);
+            console.info("[settings_get_value_35] value is:" + data);
             settings.getValue(abilityContext, name, domainName).then(ret => {
-              console.info("[settings_get_value_117] value is:" + ret);
+              console.info("[settings_get_value_35] value is:" + ret);
               expect(ret).assertEqual(value);
               done();
             })
           })
           .catch((err)=>{
-            console.info("[settings_get_value_117] 1252 error is:" + String(err));
+            console.info("[settings_get_value_35] 1252 error is:" + String(err));
             expect().assertFail();
             done();
           })
       }catch (err) {
-        console.error("[settings_set_value_118] error = " + err);
+        console.error("[settings_set_value_35] error = " + err);
         expect().assertFail();
         done();
       }
