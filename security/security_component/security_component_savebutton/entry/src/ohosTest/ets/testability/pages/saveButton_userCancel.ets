@@ -189,7 +189,7 @@ struct saveButton_userCancel {
               try {
                 let clickData:events_emitter.EventData = {
                   data: {
-                    "clickResult": result,
+                    'clickResult': result,
                   }
                 }
                 let clickEvent:events_emitter.InnerEvent = {
