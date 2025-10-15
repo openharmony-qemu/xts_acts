@@ -30,6 +30,7 @@ group("bundlemanager") {
       "actsbmsgetlauncherabilityinfoenterprisetest:ActsBmsGetLauncherAbilityInfoEnterpriseTest",
       "actsbmsgetlauncherabilityinfo2teststatic:ActsBmsGetLauncherAbilityInfo2StaticTest",
       "actsbmsgetlauncherabilityinfoteststatic:ActsBmsGetLauncherAbilityInfoStaticTest",
+      "actsbmsgetpluginbundlepathforselftest:ActsBmsGetPluginBundlePathForSelfTest",
       "actsbmshapmoduletest:ActsBmsHapModuleTest",
       "actsbmsjstest:ActsBmsJsTest",
       "actsbmsjsunpermissiontest:ActsBmsJsUnPermissionTest",
