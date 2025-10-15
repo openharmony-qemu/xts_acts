@@ -122,7 +122,7 @@ export default function appStorageV2() {
       console.info("[appStorageV2_003] component res2 is: " + JSON.stringify(res2));
       console.info("[appStorageV2_003] component AppStorageV2.keys is: " + JSON.stringify(AppStorageV2.keys()));
       expect(res1.length > 0).assertTrue();
-      expect(res1.length).assertEqual(0);
+      expect(res2.length).assertEqual(0);
       let res3: undefined = AppStorage.get<undefined>('AppStorageV2Connect001');
       expect(res3).assertEqual(undefined);
       console.info("[appStorageV2_003] component appstorage.clear is: " + JSON.stringify(AppStorage.clear()));

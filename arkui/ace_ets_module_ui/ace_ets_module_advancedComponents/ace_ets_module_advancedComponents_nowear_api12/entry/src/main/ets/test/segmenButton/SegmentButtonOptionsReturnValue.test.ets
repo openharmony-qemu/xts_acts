@@ -69,7 +69,7 @@ export default function SegmentButtonOptionsReturnValue() {
       let res_0011: undefined | SegmentButtonItemOptions = AppStorage.get<undefined | SegmentButtonItemOptions>('SBOShift');
       console.info("[SegmentButtonOptionsReturnValue_001] component res_0011 is: " + JSON.stringify(res_0011));
       expect(res_0011).assertEqual(undefined);
-      console.info("[SegmentButtonOptionsReturnValue_003] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
+      console.info("[SegmentButtonOptionsReturnValue_001] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[SegmentButtonOptionsReturnValue_001] END');
       done();
     });
@@ -94,7 +94,7 @@ export default function SegmentButtonOptionsReturnValue() {
       let res_0021: undefined | SegmentButtonItemOptions = AppStorage.get<undefined | SegmentButtonItemOptions>('SBOPop');
       console.info("[SegmentButtonOptionsReturnValue_002] component res_0021 is: " + JSON.stringify(res_0021));
       expect(res_0021).assertEqual(undefined);
-      console.info("[SegmentButtonOptionsReturnValue_003] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
+      console.info("[SegmentButtonOptionsReturnValue_002] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[SegmentButtonOptionsReturnValue_002] END');
       done();
     });
@@ -111,7 +111,7 @@ export default function SegmentButtonOptionsReturnValue() {
       console.info('[SegmentButtonOptionsReturnValue_003] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
-      let btn: Component = await driver.findComponent(ON.id("SegmentButtonOptionsReturnValue03"));
+      let btn: Component = await driver.findComponent(ON.id("SBOSplice"));
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);

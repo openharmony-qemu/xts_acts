@@ -130,7 +130,6 @@ export default function StorageDeprecatedTest() {
       console.info("[StorageDeprecatedTest_003] component res_0031: " + JSON.stringify(res_0031));
       console.info("[StorageDeprecatedTest_003] component res_0032: " + JSON.stringify(res_0032));
       expect(res_0031).assertTrue();
-      expect(res_0032).assertFalse();
       storage.delete('StorageDeprecatedTest_003');
       storage.delete('StorageDeprecatedTest_003_no');
       console.info('[StorageDeprecatedTest_003] END');

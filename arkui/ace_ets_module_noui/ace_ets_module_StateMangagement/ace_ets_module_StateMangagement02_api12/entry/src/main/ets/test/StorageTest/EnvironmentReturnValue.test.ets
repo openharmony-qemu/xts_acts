@@ -67,7 +67,7 @@ export default function EnvironmentReturnValue() {
       console.info("[EnvironmentReturnValue_001] component res_0011: " + JSON.stringify(res_0011));
       console.info("[EnvironmentReturnValue_001] component res_0012 is: " + JSON.stringify(res_0012));
       expect(res_0011).assertTrue();
-      expect(res_0011).assertFalse();
+      expect(res_0012).assertFalse();
       let keys_3: Array<string> = Environment.keys();
       let keys_4: Array<string> = Environment.Keys();
       console.info("[EnvironmentReturnValue_001] component keys_3: " + JSON.stringify(keys_3));
@@ -100,6 +100,6 @@ export default function EnvironmentReturnValue() {
       console.info('[EnvironmentReturnValue_002] END');
       done();
     });
-    
+
   })
 }
