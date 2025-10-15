@@ -29,22 +29,22 @@ struct TextPickerExample {
           Column({ space: 10 } as ColumnOptions) {
             TextPicker({ range: this.apfruits })
               .id('columnWidths_001')
-              .onChange((value: string | string[], index: number | number[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
             TextPicker({ range: this.multi })
               .id('columnWidths_002')
-              .onChange((value: string | string[], index: number | number[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
             TextPicker({ range: this.multi, columnWidths: undefined })
               .id('columnWidths_003')
-              .onChange((value: string | string[], index: number | number[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
             TextPicker({ range: this.multi })
               .id('columnWidths_004')
-              .onChange((value: string | string[], index: number | number[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
           }

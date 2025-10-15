@@ -32,8 +32,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialogOptions111 {
-  private select: number | number[] = 2.0
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[]
+  private select: int | int[] = 2;
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[];
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {

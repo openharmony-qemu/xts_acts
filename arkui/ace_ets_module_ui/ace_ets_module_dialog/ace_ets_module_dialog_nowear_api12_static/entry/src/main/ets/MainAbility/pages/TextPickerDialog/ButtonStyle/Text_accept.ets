@@ -43,11 +43,12 @@ import { UIContext } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct Text_accept {
-  uiContext: UIContext = this.getUIContext()
+  uiContext: UIContext = this.getUIContext();
   @State v: string = '';
   @State acceptButtonStyle_Text: string = '';
-  private select: number = 0
-  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5')
+  private select: int = 0;
+  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5');
+
   @State Text_Options: TextPickerDialogOptions = {
     range: this.fruits,
     selected: this.select,

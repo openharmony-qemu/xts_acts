@@ -36,7 +36,7 @@ import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct Second {
-  @State accumulateTime: number = 0;
+  @State accumulateTime: long = 0;
   @State fontSize: number = 20;
   @State fontColor: Color = Color.Red;
   @State format: string = "hhmmss";
@@ -99,7 +99,7 @@ struct Second {
         .format(this.format)
         .fontSize(this.fontSize)
         .fontColor(this.fontColor)
-        .onDateChange((value: number) => {
+        .onDateChange((value: long) => {
           this.accumulateTime = value
           this.onActionCalled = true;
           console.info('onChange current action state is: ' + this.onActionCalled);

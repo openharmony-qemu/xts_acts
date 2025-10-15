@@ -36,7 +36,7 @@ import hilog from '@ohos.hilog'
 @Entry
 @Component
 struct PatternLockExample {
-  @State passwords: number[] = [] as number[]
+  @State passwords: int[] = [] as int[];
   @State message: string = '绘制您的图案'
   @State numberMessage: string = '请牢记您的解锁图案，忘记后无法找回'
   @State change: number = 9
@@ -68,9 +68,9 @@ struct PatternLockExample {
         .key('lock')
         .backgroundColor(this.bgColor)
         .autoReset(true)
-        .onDotConnect((index: number): void => {
-        } as Callback<number>)
-        .onPatternComplete((input: Array<number>) => {
+        .onDotConnect((index: int): void => {
+        } as Callback<int>)
+        .onPatternComplete((input: Array<int>) => {
 
           
           if (input === null || input === undefined || input.length < 5) {

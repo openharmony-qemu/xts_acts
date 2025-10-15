@@ -30,7 +30,7 @@ import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
-struct ImageAnimatorExampleu {
+struct ImageAnimatorExample {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State reverse: boolean = false;
   @State iterations: int = 1;

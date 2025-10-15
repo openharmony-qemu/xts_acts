@@ -18,13 +18,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerPage {
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
-  private select: number = 0
-  @State parameterValue: string = 'orange2'
-  @State defaultPickerItemHeight: number = 20
-  @State getValue: string|string[] = 'value'
-  @State getIndex: int|double|double[] = 0
-  messageManager:MessageManager = new MessageManager()
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+  private select: int = 0;
+  @State parameterValue: string = 'orange2';
+  @State defaultPickerItemHeight: double = 20.0;
+  @State getValue: string|string[] = 'value';
+  @State getIndex: int | int[] = 0;
+  messageManager:MessageManager = new MessageManager();
 
   onPageShow() {
     console.info('TextPicker onPageShow')
@@ -40,7 +40,7 @@ struct TextPickerPage {
         .width("100%")
         .height("80%")
         .defaultPickerItemHeight(this.defaultPickerItemHeight)
-        .onChange((value: string|string[], index: number|number[]):void => {
+        .onChange((value: string|string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
           this.getValue = value
           this.getIndex = index

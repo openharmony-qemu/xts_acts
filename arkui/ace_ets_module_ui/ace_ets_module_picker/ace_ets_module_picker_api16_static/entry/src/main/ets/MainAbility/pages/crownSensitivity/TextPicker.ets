@@ -22,17 +22,17 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TextPickerExample {
-  @State sensitivity: CrownSensitivity = CrownSensitivity.HIGH
-  private select: number = 1
-  private apfruits: string[] = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11']
-  private orfruits: string[] = ['o1', 'o2', 'o3', 'o4']
-  private pefruits: string[] = ['p1', 'p2', 'p3', 'p4']
-  private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits]
+  @State sensitivity: CrownSensitivity = CrownSensitivity.HIGH;
+  private select: int = 1;
+  private apfruits: string[] = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11'];
+  private orfruits: string[] = ['o1', 'o2', 'o3', 'o4'];
+  private pefruits: string[] = ['p1', 'p2', 'p3', 'p4'];
+  private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits];
 
   build() {
     Column() {
       TextPicker({ range: this.multi })
-        .onChange((value: string | string[], index: number | number[]) => {
+        .onChange((value: string | string[], index: int | int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index))
         })
         .key('textpicker01')

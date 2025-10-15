@@ -21,7 +21,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 @Entry
 @Component
 struct TextPickerPage {
-  @State selectedIndex: number = 0;
+  @State selectedIndex: int = 0;
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4'];

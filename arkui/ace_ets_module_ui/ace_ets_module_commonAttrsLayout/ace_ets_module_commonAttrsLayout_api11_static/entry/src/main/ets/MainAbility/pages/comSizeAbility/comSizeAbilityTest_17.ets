@@ -84,9 +84,9 @@ let bott: bottom = new bottom()
 @Entry
 @Component
 struct comSizeAbilityTest_17 {
-  scroller: Scroller = new Scroller()
-  private select: number = 1
-  private apfruits: string[] = ['选项1', '选项2', '选项3', '选项4']
+  scroller: Scroller = new Scroller();
+  private select: int = 1;
+  private apfruits: string[] = ['选项1', '选项2', '选项3', '选项4'];
 
   build() {
     Column() {
