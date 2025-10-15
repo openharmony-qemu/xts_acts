@@ -89,6 +89,14 @@ export default function graphicImagePixelMap2() {
               console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
+          await pixelMap.createScaledPixelMap(scaleX, scaleY)
+            .then((scaledPixelMap: image.PixelMap) => {
+              console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
+              expect(scaledPixelMap !== undefined).assertTrue();
+            }).catch((error) => {
+              console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
+              expect().assertFail();
+            })
         }
         done();
       })
@@ -126,6 +134,12 @@ export default function graphicImagePixelMap2() {
           }
           try {
             let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+            expect(scaledPixelMap !== undefined).assertTrue();
+          } catch (err) {
+            expect().assertFail();
+          }
+          try {
+            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
