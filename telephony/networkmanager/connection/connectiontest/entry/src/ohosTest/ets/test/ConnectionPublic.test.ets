@@ -5982,6 +5982,76 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.number : SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0100
+     * @tc.name   : testNetworkMgrConnectionGetAddressesByNameCallback0100
+     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.level  : Level 1
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it('testNetworkMgrConnectionGetAddressesByNameCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNameCallback0100';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getAddressesByName("127.0.0.1",(error:BusinessError,data:connection.NetAddress[]) => {
+          if(error) {
+            console.info(`${caseName} error: ${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          }
+          else {
+            console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+            console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+            ExpectTrue(data.length > 0);
+            ExpectTrue(data[0].address == "127.0.0.1");
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number : SUB_NetworkMgr_Connection_GetAddressesByNamePromise_0100
+     * @tc.name   : testNetworkMgrConnectionGetAddressesByNamePromise0100
+     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.level  : Level 1
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromise0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let host:string = "127.0.0.1";
+        connection.getAddressesByName(host).then((data:connection.NetAddress[]) => {
+          console.info(`${caseName} success to get data: ${JSON.stringify(data)}`);
+          console.info(`${caseName} data.length: ${JSON.stringify(data.length)}`);
+          ExpectTrue(data.length > 0);
+          ExpectTrue(data[0].address == "127.0.0.1");
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error:BusinessError) => {
+          console.info(`${caseName} failed to getAddressesByName error:${error.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.number : SUB_NetworkMgr_Connection_SetAppHttpProxy_0100
      * @tc.name   : testNetworkMgrConnectionSetAppHttpProxy0100
      * @tc.desc   : Set network application level HTTP proxy configuration information.
