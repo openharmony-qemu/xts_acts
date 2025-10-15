@@ -41,7 +41,7 @@ struct selectApi1 {
           { value: 'item1' }
         ])
           .value(this.text)
-          .onSelect((index:number, text?: string)=>{
+          .onSelect((index:int, text?: string)=>{
           })
           .focusBox({
             strokeColor:ColorMetrics.rgba(255,0,0)

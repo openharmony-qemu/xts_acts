@@ -76,10 +76,8 @@ struct Index {
   @State canLoop: boolean = true
   @State flag: boolean = true
   @State errFlag: boolean = true
-  private select: number = 1
-  private select2: number = 1
-  private select3: number = 1
-  private select4: int|number|number[] = 1
+  private select2: int = 1;
+  private select3: int = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
   private fruits2: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
 
@@ -90,12 +88,12 @@ struct Index {
           .height(50)
         TextPicker({ range: this.fruits, selected: this.select2 })
           .key("TextPickerErr")
-          .onChange((value: string|string[], index: number|number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed, value: ' + value + ', index: ' + index)
           })
         TextPicker({ range: this.fruits, selected: this.select3 })
           .key("TextPickerNoCanLoop")
-          .onChange((value: string|string[], index: number|number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed, value: ' + value + ', index: ' + index)
           })
 

@@ -36,7 +36,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct PatternLockTest {
-  @State passwords: Number[] = [] as Number[];
+  @State passwords: int[] = [] as int[];
   @State length: number = 200;
   @State redius: number = 10;
   @State color1: string = '#DB7093';

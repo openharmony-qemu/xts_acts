@@ -41,8 +41,8 @@ struct tabsApi1 {
   @State tabContent1Opacity: number = 1.0
   @State tabContent2Opacity: number = 1.0
   tabsController: TabsController = new TabsController()
-  private firstTimeout: number = 3000
-  private secondTimeout: number = 5000
+  private firstTimeout: int = 3000
+  private secondTimeout: int = 5000
   private first2secondDuration: number = 3000
   private second2thirdDuration: number = 5000
   private first2thirdDuration: number = 2000
@@ -90,7 +90,7 @@ struct tabsApi1 {
       .width('100%')
       .height('60%')
       .margin({ top: 5 } as Margin)
-      .customContentTransition((from: number, to: number): TabContentAnimatedTransition => {
+      .customContentTransition((from: int, to: int): TabContentAnimatedTransition => {
         this.text1 = '222'
         if ((from === 0 && to === 1) || (from === 1 && to === 0)) {
           
@@ -106,7 +106,7 @@ struct tabsApi1 {
               }
 
               animateTo({
-                duration: this.first2secondDuration,
+                duration: this.first2secondDuration.toInt(),
                 onFinish: () => {
                   proxy.finishTransition()
                 }
@@ -136,7 +136,7 @@ struct tabsApi1 {
                   this.tabContent2Opacity = 1.0
                 }
                 animateTo({
-                  duration: this.second2thirdDuration,
+                  duration: this.second2thirdDuration.toInt(),
                   onFinish: () => {
                     proxy.finishTransition()
                   }
@@ -158,7 +158,7 @@ struct tabsApi1 {
                   this.tabContent2Opacity = 1.0
                 }
                 animateTo({
-                  duration: this.first2thirdDuration,
+                  duration: this.first2thirdDuration.toInt(),
                   onFinish: () => {
                     proxy.finishTransition()
                   }
@@ -179,10 +179,10 @@ struct tabsApi1 {
         }
       })
       .barMode(BarMode.Scrollable)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info("onChange index: " + index)
       })
-      .onTabBarClick((index: number): void => {
+      .onTabBarClick((index: int): void => {
         console.info("onTabBarClick index: " + index)
       })
 

@@ -20,13 +20,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Gauge3Example {
-  @State startAngle:number = 0;
-  @State endAngle:number = 0;
-  @State colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient , number]> = [[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]] as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient , number]>
+  @State startAngle:double = 0;
+  @State endAngle:double = 0;
+  @State colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]> = [[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]] as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
   @State strokeWidth:number = 0;
-  @State value:number = 30;
-  @State min:number = 0;
-  @State max:number = 100;
+  @State value:double = 30;
+  @State min:double = 0;
+  @State max:double = 100;
   @State wth:number = 100;
 
   messageManager:MessageManager<Object> = new MessageManager<Object>()
@@ -37,25 +37,25 @@ struct Gauge3Example {
     let callback:Callback<Object> = (message:Message<Object>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'startAngle') {
-          this.startAngle = message.value as number
+          this.startAngle = message.value as double
       }
       if (message.name == 'endAngle') {
-          this.endAngle = message.value as number
+          this.endAngle = message.value as double
       }
       if (message.name == 'colors') {
-          this.colors = message.value as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, number]>
+          this.colors = message.value as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
       }
       if (message.name == 'strokeWidth') {
           this.strokeWidth = message.value as number
       }
       if (message.name == 'value') {
-          this.value = message.value as number
+          this.value = message.value as double
       }
       if (message.name == 'min') {
-          this.min = message.value as number
+          this.min = message.value as double
       }
       if (message.name == 'max') {
-          this.max = message.value as number
+          this.max = message.value as double
       }
       if (message.name == 'wth') {
           this.wth = message.value as number

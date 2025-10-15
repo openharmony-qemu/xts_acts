@@ -50,15 +50,15 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RatingPage {
-  @State rating: number = 3.5
-  @State rating1: number = 3.5
+  @State rating: double = 3.5
+  @State rating1: double = 3.5
 
   @State indicator: boolean = true
   @State indicator1: boolean = true
-  @State stars: number = 5
-  @State stepSize: number = 0.5
-  @State stars1: number = 5
-  @State stepSize1: number = 0.5
+  @State stars: int = 5
+  @State stepSize: double = 0.5
+  @State stars1: int = 5
+  @State stepSize1: double = 0.5
   @State text: string = 'no change'
   @State backgroundUri: string = 'resources/base/media/star_1.png'
   @State foregroundUri: string = 'resources/base/media/star_2.png'
@@ -85,7 +85,7 @@ struct RatingPage {
           .key('rating1')
           .starStyle({ backgroundUri: this.backgroundUri,foregroundUri: this.foregroundUri,secondaryUri: this.secondaryUri })
           .margin({ top: 24 } as Margin)
-          .onChange((value: number):void => {
+          .onChange((value: double):void => {
             this.text = 'change succ'
             this.rating = value
           })
@@ -99,7 +99,7 @@ struct RatingPage {
           .id('ratingBtn')
           .starStyle({ backgroundUri: this.backgroundUri,foregroundUri: this.foregroundUri,secondaryUri: this.secondaryUri })
           .margin({ top: 24 } as Margin)
-          .onChange((value: number):void => {
+          .onChange((value: double):void => {
             this.text = 'change succ'
             this.rating1 = value
           })

@@ -97,8 +97,8 @@ struct UniqueIdPageOne {
         .id('onId')
       Button('uiObserver.off')
         .onClick((e: ClickEvent) => {
-          uiObserver.off('navDestinationUpdate');
-          uiObserver.off('navDestinationUpdate', { navigationId: 'testId' });
+          uiObserver.offNavDestinationUpdate();
+          uiObserver.offNavDestinationUpdate({ navigationId: 'testId' });
           
           console.info('close getNavigationInfoByUniqueId: ', this.uniqueId);
         })

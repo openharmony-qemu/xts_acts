@@ -68,10 +68,10 @@ struct scrollTo {
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .onScrollIndex((first: number,last: number):void=> {
+      .onScrollIndex((first: int,last: int):void=> {
         console.info(first.toString())
       })
-      .onScrollBarUpdate((index: number, offset: number) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')
@@ -82,7 +82,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo1')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 90 })
         })
 
@@ -91,7 +91,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo2')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset - 100 })
         })
 
@@ -100,7 +100,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo3')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 0 })
         })
 
@@ -123,7 +123,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo6')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 270 })
         })
 
@@ -132,7 +132,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo7')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa100%' })
         })
 
@@ -141,7 +141,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo8')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
+          const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa' })
         })
 

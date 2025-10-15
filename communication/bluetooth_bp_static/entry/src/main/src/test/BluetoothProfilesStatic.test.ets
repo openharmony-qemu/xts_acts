@@ -35,6 +35,13 @@ function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
 }
 
+function onReceiveEvent1(data: baseProfile.StateChangeParam) {
+    hilog.info(domain, tag, 'connection StateChangeParam:'+ JSON.stringify(data));
+    hilog.info(domain, tag, 'connection StateChangeParam deviceId:'+ data.deviceId);
+    hilog.info(domain, tag, 'connection StateChangeParam state:'+ data.state);
+    hilog.info(domain, tag, 'connection StateChangeParam cause:'+ data.cause);
+}
+
 export default function bluetoothProfilesTest() {
 
     describe("bluetoothProfilesTest", (): void => {
@@ -144,52 +151,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  testOnConnectionStateChange
-         * @tc.name    testOnConnectionStateChange
-         * @tc.desc    Test testOnConnectionStateChange API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
-         */
-        it("testOnConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            try {
-                a2dpProfile.on('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: on");
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOnConnectionStateChange get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
-            }
-            a2dpProfile.off('connectionStateChange', onReceiveEvent);
-            done();
-        })
-
-        /**
-         * @tc.number  testOffConnectionStateChange
-         * @tc.name    testOffConnectionStateChange
-         * @tc.desc    Test testOffConnectionStateChange API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
-         */
-        it("testOffConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            a2dpProfile.on('connectionStateChange', onReceiveEvent);
-            try {
-                a2dpProfile.off('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: off");
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOffConnectionStateChange get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
-            }
-            done();
-        })
-
-        /**
          * @tc.number  createHfpAgProfileTest
          * @tc.name    createHfpAgProfileTest
          * @tc.desc    Test createHfpAgProfileTest API functionality
@@ -256,52 +217,6 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStateTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
-            }
-            done();
-        })
-
-        /**
-         * @tc.number  testOnConnectionStateChange_001
-         * @tc.name    testOnConnectionStateChange_001
-         * @tc.desc    Test testOnConnectionStateChange_001 API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
-         */
-        it("testOnConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
-            expect(true).assertEqual(hfpProfile != null);
-            try {
-                hfpProfile.on('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: on");
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOnConnectionStateChange_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
-            }
-            hfpProfile.off('connectionStateChange', onReceiveEvent);
-            done();
-        })
-
-        /**
-         * @tc.number  testOffConnectionStateChange_001
-         * @tc.name    testOffConnectionStateChange_001
-         * @tc.desc    Test testOffConnectionStateChange_001 API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
-         */
-        it("testOffConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
-            expect(true).assertEqual(hfpProfile != null);
-            hfpProfile.on('connectionStateChange', onReceiveEvent);
-            try {
-                hfpProfile.off('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: off");
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOffConnectionStateChange_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
             }
             done();
         })
@@ -378,46 +293,31 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  testOnConnectionStateChange_002
-         * @tc.name    testOnConnectionStateChange_002
-         * @tc.desc    Test testOnConnectionStateChange_002 API functionality
+         * @tc.number  testDisconnectCause
+         * @tc.name    testDisconnectCause
+         * @tc.desc    Test testDisconnectCause API functionality
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("testOnConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
-            expect(true).assertEqual(hidProfile != null);
+        it("testDisconnectCause", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                hidProfile.on('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: on");
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOnConnectionStateChange_002 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
-            }
-            hidProfile.off('connectionStateChange', onReceiveEvent);
-            done();
-        })
+                let userDisconnect = baseProfile.DisconnectCause.USER_DISCONNECT;
+                let connectFromKeyboard = baseProfile.DisconnectCause.CONNECT_FROM_KEYBOARD;
+                let connectFromMouse = baseProfile.DisconnectCause.CONNECT_FROM_MOUSE;
+                let connectFromCar = baseProfile.DisconnectCause.CONNECT_FROM_CAR;
+                let tooManyConnectedDevices = baseProfile.DisconnectCause.TOO_MANY_CONNECTED_DEVICES;
+                let connectFailInternal = baseProfile.DisconnectCause.CONNECT_FAIL_INTERNAL;
 
-        /**
-         * @tc.number  testOffConnectionStateChange_002
-         * @tc.name    testOffConnectionStateChange_002
-         * @tc.desc    Test testOffConnectionStateChange_002 API functionality
-         * @tc.level   Level 0
-         * @tc.type    Function
-         * @tc.size    MEDIUMTEST
-         */
-        it("testOffConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
-            expect(true).assertEqual(hidProfile != null);
-            hidProfile.on('connectionStateChange', onReceiveEvent);
-            try {
-                hidProfile.off('connectionStateChange', onReceiveEvent);
-                hilog.info(domain, tag, "the connection state: off");
+                expect(userDisconnect).assertEqual(0);
+                expect(connectFromKeyboard).assertEqual(1);
+                expect(connectFromMouse).assertEqual(2);
+                expect(connectFromCar).assertEqual(3);
+                expect(tooManyConnectedDevices).assertEqual(4);
+                expect(connectFailInternal).assertEqual(5);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "testOffConnectionStateChange_002 get errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.info(domain, tag, "DisconnectCause get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertFalse();
             }
             done();

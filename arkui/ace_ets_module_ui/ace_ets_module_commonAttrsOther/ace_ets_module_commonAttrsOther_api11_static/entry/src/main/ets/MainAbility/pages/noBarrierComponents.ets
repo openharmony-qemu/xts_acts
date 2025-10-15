@@ -108,18 +108,18 @@ const uiContext = new UIContext();
 struct noBarrierComponents {
   scroller: Scroller = new Scroller();
   @State Number: Array<string> = ['0', '1'] as Array<string>;
-  public valueArr: Array<number> = [10, 10] as Array<number>;
+  public valueArr: Array<double> = [10.0, 10.0] as Array<double>;
   @State isLunar: boolean = false;
   @State formId: number = 0;
   @State start: boolean = false;
-  @State passwords: Array<number> = [] as Array<number>;
+  @State passwords: Array<int> = [] as Array<int>;
   @State message: string = 'please input password!';
-  @State rating: number = 3.5;
+  @State rating: double = 3.5;
   @State data: string = '<h1 style="text-align: center;">h1标题</h1>';
   @State changeValue: string = '';
   @State submitValue: string = '';
   controller: SearchController = new SearchController();
-  @State outSetValueOne: number = 40;
+  @State outSetValueOne: double = 40.0;
   @State isMilitaryTime: boolean = false;
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
   xcomponentController: XComponentController = new XComponentController();
@@ -184,7 +184,7 @@ struct noBarrierComponents {
           endMargin: 20
         })
         .edgeEffect(EdgeEffect.Spring)
-        .onScrollIndex((firstIndex: number, lastIndex: number): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })
@@ -261,7 +261,7 @@ struct noBarrierComponents {
             .width('50%')
             .height('100%')
 
-            AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 as int } as AlphabetIndexerOptions)
               .selectedColor(0xFFFFFF)
               .popupColor(0xFFFAF0)
               .selectedBackgroundColor(0xCCCCCC)
@@ -271,10 +271,10 @@ struct noBarrierComponents {
               .popupFont({ size: 30, weight: FontWeight.Bolder })
               .itemSize(28)
               .alignStyle(IndexerAlign.Left)
-              .onSelect((index: Double): void => {
+              .onSelect((index: int): void => {
 
               })
-              .onRequestPopupData(((index: number): Array<String> | undefined => {
+              .onRequestPopupData(((index: int): Array<String> | undefined => {
                 if (this.value[index as int] == 'A') {
                   return this.arrayA
                 } else if (this.value[index as int] == 'B') {
@@ -287,7 +287,7 @@ struct noBarrierComponents {
                   return undefined
                 }
               }) as OnAlphabetIndexerRequestPopupDataCallback)
-              .onPopupSelect((index: Double): void => {
+              .onPopupSelect((index: int): void => {
                 console.info('onPopupSelected:' + index)
               })
           }
@@ -407,7 +407,7 @@ struct noBarrierComponents {
           .key("PatternLock")
           .accessibilityText("我是无障碍组件")
           .autoReset(true)
-          .onPatternComplete((input: Array<number>) => {
+          .onPatternComplete((input: Array<int>) => {
             if (input === null || input === undefined || input.length < 5) {
               this.message = 'The password length needs to be greater than 5, please enter again.'
               return
@@ -455,7 +455,7 @@ struct noBarrierComponents {
           .margin({ top: 24 } as Margin)
           .key("Rating")
           .accessibilityText("我是无障碍组件")
-          .onChange((value: number): void => {
+          .onChange((value: double): void => {
             this.rating = value
           })
 
@@ -492,12 +492,12 @@ struct noBarrierComponents {
           .margin(20)
         Slider({
           value: this.outSetValueOne,
-          min: 0,
-          max: 100,
+          min: 0.0,
+          max: 100.0,
           style: SliderStyle.OutSet
         })
           .showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -509,7 +509,7 @@ struct noBarrierComponents {
         })
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult): void => {
-            this.selectedTime.setHours(value.hour, value.minute)
+            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           })
           .key("TimePicker")

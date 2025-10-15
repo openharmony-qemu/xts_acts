@@ -378,7 +378,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), '');
         expect(result).assertEqual('321');
         console.info(`${caseName}, test end`);
@@ -398,7 +398,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), ' ');
         expect(result).assertEqual(' 321');
         console.info(`${caseName}, test end`);
@@ -418,7 +418,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), '6');
         expect(result).assertEqual('6321');
         console.info(`${caseName}, test end`);
@@ -438,7 +438,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x41.toChar(), 0x61.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), '');
         expect(result).assertEqual('aA1');
         console.info(`${caseName}, test end`);
@@ -458,7 +458,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x41.toChar(), 0x61.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), 'A');
         expect(result).assertEqual('AaA1');
         console.info(`${caseName}, test end`);
@@ -498,7 +498,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x41, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x41.toChar(), 0x41.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), '');
         expect(result).assertEqual('AAA');
         console.info(`${caseName}, test end`);
@@ -518,7 +518,7 @@ export default function Array_Reduce_Right_U_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Right_U_Test_static_2400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x31, 0x31];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x31.toChar(), 0x31.toChar()];
         const result = reduceRight<string>(arr, (prev, curr) => prev + String.fromCharCode(curr), '');
         expect(result).assertEqual('111');
         console.info(`${caseName}, test end`);

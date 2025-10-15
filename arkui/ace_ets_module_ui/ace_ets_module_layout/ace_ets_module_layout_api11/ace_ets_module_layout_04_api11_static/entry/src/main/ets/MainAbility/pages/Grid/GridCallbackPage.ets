@@ -202,11 +202,11 @@ struct GridCallbackPage {
       .columnsGap(this.columnsGap)
       .rowsGap(this.rowsGap)
       .scrollBar(this.scrollBar)
-      .cachedCount(this.cachedCount)
+      .cachedCount(Double.toInt(this.cachedCount))
       .editMode(this.editMode)
       .layoutDirection(this.layoutDirection)
-      .maxCount(this.maxCount)
-      .minCount(this.minCount)
+      .maxCount(Double.toInt(this.maxCount))
+      .minCount(Double.toInt(this.minCount))
       .cellLength(this.cellLength)
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
@@ -215,7 +215,7 @@ struct GridCallbackPage {
       .backgroundColor(0xFAEEE0)
       .height('7%')
       .edgeEffect(EdgeEffect.Spring)
-      .onItemDragStart((event: ItemDragInfo, itemIndex: number): undefined => {
+      .onItemDragStart((event: ItemDragInfo, itemIndex: int): undefined => {
         this.onItemDragStart = 'onItemDragStart:succ'
         console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y)
         console.info(itemIndex)
@@ -225,15 +225,15 @@ struct GridCallbackPage {
         this.onItemDragEnter = 'onItemDragEnter:succ'
         console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y)
       })
-      .onItemDragMove((event: ItemDragInfo, itemIndex: number, insertIndex: number) => {
+      .onItemDragMove((event: ItemDragInfo, itemIndex: int, insertIndex: int) => {
         this.onItemDragMove = 'onItemDragMove:succ'
         console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex + ' insertIndex: ' + insertIndex)
       })
-      .onItemDragLeave((event: ItemDragInfo, itemIndex: number) => {
+      .onItemDragLeave((event: ItemDragInfo, itemIndex: int) => {
         this.onItemDragLeave = 'onItemDragLeave:succ'
         console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex)
       })
-      .onItemDrop((event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => {
+      .onItemDrop((event: ItemDragInfo, itemIndex: int, insertIndex: int, isSuccess: boolean) => {
         this.onItemDrop = 'onItemDrop:succ'
         console.info('DragInfo_x: ' + event.x + ' DragInfo_y: ' + event.y + ' itemIndex: ' + itemIndex + ' insertIndex: ' + insertIndex + ' isSuccess: ' + isSuccess)
       })
@@ -260,7 +260,7 @@ struct GridCallbackPage {
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)
-      .onScrollIndex((first: number,last: number) => {
+      .onScrollIndex((first: int,last: int) => {
         this.onScrollIndex = first
         console.info(first)
       })
@@ -271,7 +271,7 @@ struct GridCallbackPage {
       
       
       
-      .onScrollIndex((first: number,last: number) => {
+      .onScrollIndex((first: int,last: int) => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + first + ' last:' + last)
       })

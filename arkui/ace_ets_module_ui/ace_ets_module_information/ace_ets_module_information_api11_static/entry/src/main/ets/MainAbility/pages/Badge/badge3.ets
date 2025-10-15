@@ -19,9 +19,9 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Badge3Example {
-  @State counts: number = 1;
+  @State counts: int = 1;
   @State message: string = 'new';
-  @State fontSizeValue: number = 20;
+  @State fontSizeValue: double = 20;
   @State colorValue: Color = Color.Red;
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {

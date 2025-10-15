@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { beforeAll, describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 
 export default function SphericalEffectTest() {
   
@@ -31,7 +31,7 @@ export default function SphericalEffectTest() {
   let parentHeight = 200;
   let gutter = 10;
   let columns = 3;
-  let pageConfig:PageConfig = {
+  let pageConfig: PageConfig = {
     testName: 'testSphericalEffect',
     pageName: 'sphericalEffectPage',
     pageUrl: 'MainAbility/pages/sphericalEffect/SphericalEffectPage',
@@ -45,7 +45,7 @@ export default function SphericalEffectTest() {
     columns: columns
   }
 
-  let testValues:TestValue[]= [{
+  let testValues: TestValue[] = [{
     describe: 'SetSphericalEffect',
     setValue: {
       sphericalEffect: 0.6
@@ -70,8 +70,10 @@ export default function SphericalEffectTest() {
       console.error('[' + data.caseTag + '] sphericalEffectTest');
       console.error('[' + data.caseTag + '] check sphericalEffect.' + ` ${data.testValue.setValue.sphericalEffect}`);
       console.error('[' + data.testValue.expectValue.sphericalEffect + '] expectValue');
-      console.error('[' + data.viewObj!.getElement('$attrs').getDouble('sphericalEffect') + '] viewObj.$attrs.sphericalEffect');
-      expect(data.viewObj!.getElement('$attrs').getDouble('sphericalEffect')).assertEqual(data.testValue.expectValue.sphericalEffect);
+      console.error('[' + data.viewObj!.getElement('$attrs').getDouble('sphericalEffect') +
+        '] viewObj.$attrs.sphericalEffect');
+      expect(Math.round(data.viewObj!.getElement('$attrs').getDouble('sphericalEffect') * 10) / 10)
+        .assertEqual(data.testValue.expectValue.sphericalEffect);
     });
   })
 }

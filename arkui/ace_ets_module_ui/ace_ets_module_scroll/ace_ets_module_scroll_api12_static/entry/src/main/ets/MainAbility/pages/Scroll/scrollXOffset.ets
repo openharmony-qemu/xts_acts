@@ -58,7 +58,7 @@ struct scrollXOffsetExample {
       Text(this.message1).id('scroll_mess')
       Button('scroll x:10').id('scroll_x')
         .onClick((e: ClickEvent) => { 
-          const xOffset: number = this.scroller.currentOffset().xOffset;
+          const xOffset: number = this.scroller.currentOffset()!.xOffset;
           this.scroller.scrollTo({
             xOffset: xOffset + 10,
             yOffset: 0,
@@ -89,7 +89,7 @@ struct scrollXOffsetExample {
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(10)
       .onDidScroll((): void => {
-        this.message1 = 'x:' + Math.round(this.scroller.currentOffset().xOffset)
+        this.message1 = 'x:' + Math.round(this.scroller.currentOffset()!.xOffset)
       })
     }
     .width('100%')

@@ -58,7 +58,7 @@ import {
 @Entry
 @Component
 struct requestFocus23 {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State text1: string = ''
   @State text2: string = 'TextInput'
   private controller: TabsController = new TabsController()
@@ -96,7 +96,7 @@ struct requestFocus23 {
       .barWidth(360)
       .barHeight(56)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width(360)

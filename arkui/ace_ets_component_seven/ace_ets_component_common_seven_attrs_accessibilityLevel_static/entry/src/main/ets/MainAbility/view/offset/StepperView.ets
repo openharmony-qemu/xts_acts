@@ -36,26 +36,10 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Component
 export struct StepperView {
-  @State prevIndex: number = 0
-  @State currentIndex: number = 0
+  @State prevIndex: Int = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
@@ -122,7 +106,7 @@ export struct StepperView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: number, index: number) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

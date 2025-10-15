@@ -67,11 +67,11 @@ struct ObserverNavDestinationState {
   }
 
   aboutToAppear(){
-    observer.on('navDestinationUpdate', this.testFunc);
+    observer.onNavDestinationUpdate(this.testFunc);
   }
 
   aboutToDisappear(){
-    observer.off('navDestinationUpdate',  this.testFunc);
+    observer.offNavDestinationUpdate(this.testFunc);
   }
 
 

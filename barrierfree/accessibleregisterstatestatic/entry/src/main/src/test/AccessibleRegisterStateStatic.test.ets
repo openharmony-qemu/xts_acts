@@ -39,6 +39,7 @@ export default function abilityTest() {
       try {
         accessibility.onAccessibilityStateChange(callbackdata);
         accessibility.offAccessibilityStateChange(callbackdata);
+        accessibility.offAccessibilityStateChange();
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100 failed');
@@ -63,6 +64,7 @@ export default function abilityTest() {
       try {
         accessibility.onTouchGuideStateChange(callbackdata);
         accessibility.offTouchGuideStateChange(callbackdata);
+        accessibility.offTouchGuideStateChange();
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200 failed');
@@ -88,6 +90,7 @@ export default function abilityTest() {
       try {
         accessibility.onScreenReaderStateChange(callbackdata);
         accessibility.offScreenReaderStateChange(callbackdata);
+        accessibility.offScreenReaderStateChange();
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300 failed');

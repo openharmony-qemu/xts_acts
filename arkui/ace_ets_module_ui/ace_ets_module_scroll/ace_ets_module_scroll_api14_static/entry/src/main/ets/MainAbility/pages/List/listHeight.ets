@@ -89,7 +89,7 @@ struct listAnimationHeightExample {
         startMargin: 20,
         endMargin: 20
       })
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

@@ -28,6 +28,7 @@ let context: common.AbilityStageContext
 let addMonitor = false;
 let removeMonitor = false;
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let AbilityStageContext: common.AbilityStageContext
 
 export default function AbilityStageContextStatic() {
   describe('AbilityStageContextStatic', () => {
@@ -66,6 +67,12 @@ export default function AbilityStageContextStatic() {
         expect().assertFail()
         done()
       });
+      AbilityStageContext = AppStorage.get<common.AbilityStageContext>("AbilityStageContext") as common.AbilityStageContext
+      expect(AbilityStageContext.currentHapModuleInfo).not().assertUndefined();
+      expect(AbilityStageContext.currentHapModuleInfo).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.colorMode: ' + context.config.colorMode);
+      expect(AbilityStageContext.config).not().assertUndefined();
+      expect(AbilityStageContext.config).not().assertNull();
       hilog.info(domain, tag, "SUB_AA_AbilityStageMonitor_0700 removeAbilityStageMonitor");
       await abilityDelegator.removeAbilityStageMonitor(stageMonitor).then(() => {
         hilog.info(domain, tag, "stageMonitor addAbilityStageMonitor promise success");

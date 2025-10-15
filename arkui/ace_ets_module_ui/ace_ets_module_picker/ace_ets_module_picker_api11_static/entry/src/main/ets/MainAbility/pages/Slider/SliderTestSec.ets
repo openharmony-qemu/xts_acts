@@ -115,13 +115,13 @@ struct Index {
         this.isStr = false
         this.isNum = true
         this.value = true
-        this.num = Number(data.getProperty('content').toString());
+        this.num = Number(data.getProperty('content').toString()) as double;
       }
       if(data.getProperty('value').toString() =="falseNum") {
         this.value = false
         this.isStr = false
         this.isNum = true
-        this.num = Number(data.getProperty('content').toString());
+        this.num = Number(data.getProperty('content').toString()) as double;
       }
     }
 
@@ -130,10 +130,10 @@ struct Index {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
 
-  @State ValueOne: number = 40;
-  @State ValueTwo: number = 40;
-  @State ValueThi: number = 40;
-  @State ValueFour: number = 40;
+  @State ValueOne: double = 40;
+  @State ValueTwo: double = 40;
+  @State ValueThi: double = 40;
+  @State ValueFour: double = 40;
   @State value:boolean = false;
   @State isStr:boolean = false;
   @State isNum:boolean = false;
@@ -143,7 +143,7 @@ struct Index {
   @State content:string = "";
   @State style:SliderStyle = SliderStyle.InSet;
   @State direction_:Axis =Axis.Vertical;
-  @State num: number = 0;
+  @State num: double = 0;
 
   build() {
     Row() {
@@ -155,7 +155,7 @@ struct Index {
           style: this.style
         })
           .showTips(this.value,this.isStr?this.content:fakeString(this.isNum?this.num:(this.isNUll? null:undefined)))
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.ValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -167,7 +167,7 @@ struct Index {
           style: this.style
         })
           .showTips(this.valueNo)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.ValueTwo = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -182,7 +182,7 @@ struct Index {
               .height(300)
               .showSteps(true)
               .showTips(this.resFalg,$r("app.string.sliderTest"))
-              .onChange((value: number, mode: SliderChangeMode) => {
+              .onChange((value: double, mode: SliderChangeMode) => {
                 this.ValueThi = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -195,7 +195,7 @@ struct Index {
             })
               .height(300)
               .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
+              .onChange((value: double, mode: SliderChangeMode) => {
                 this.ValueFour = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -208,6 +208,6 @@ struct Index {
   }
 }
 
-function fakeString(val: string|number|null|undefined) {
+function fakeString(val: string|double|null|undefined) {
   return val as string
 }

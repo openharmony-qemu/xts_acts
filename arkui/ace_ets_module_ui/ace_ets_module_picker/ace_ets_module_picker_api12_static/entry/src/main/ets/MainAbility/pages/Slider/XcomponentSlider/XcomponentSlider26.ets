@@ -49,7 +49,7 @@ import { State } from '@ohos.arkui.stateManagement';
         .width(config.max)
         // .visibility((config.contentModifier as MySliderStyle26).showSlider?Visibility.Visible:Visibility.Hidden)
         .showSteps(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           // config.triggerChange(undefined, undefined)
         })
       // Text('当前状态：'+ ((config.contentModifier as MySliderStyle26).sliderChangeMode==0?'Begin'
@@ -88,11 +88,11 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct XSlider26 {
   @State showSlider:boolean=true
-  @State sliderValue: number = 10
-  @State sliderMin: number = 0
-  @State sliderMax: number = 100
-  @State sliderStep: number = 10
-  @State sliderChangeMode: number = 0
+  @State sliderValue: double = 10
+  @State sliderMin: double = 0
+  @State sliderMax: double = 100
+  @State sliderStep: double = 10
+  @State sliderChangeMode: int = 0
 
   build() {
     Column({ space: 8 } as ColumnOptions) {
@@ -106,7 +106,7 @@ struct XSlider26 {
         })
           .id('XSlider26')
           .showSteps(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.sliderValue = value
             this.sliderChangeMode=mode
             console.info('【SliderLog】value:' + value + 'mode:' + mode.toString())

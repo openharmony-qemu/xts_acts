@@ -51,7 +51,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
     this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
-    let col = typeNode.createBlankNode(uiContext, "Blank")
+    let col = typeNode.createBlankNode(uiContext)
     col.attribute.width(200)
       .height(100)
       .borderWidth(1)

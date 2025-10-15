@@ -72,7 +72,7 @@ struct SelectMenuTest {
               })
               .key('selectTest1')
               .menuAlign(MenuAlignType.START)
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -100,7 +100,7 @@ struct SelectMenuTest {
               })
               .key('selectTest2')
               .menuAlign(MenuAlignType.CENTER)
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -128,7 +128,7 @@ struct SelectMenuTest {
               })
               .key('selectTest3')
               .menuAlign(MenuAlignType.END)
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -156,7 +156,7 @@ struct SelectMenuTest {
               })
               .key('selectTest4')
               .menuAlign(MenuAlignType.START, { dx: 10, dy: 10 })
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -184,7 +184,7 @@ struct SelectMenuTest {
               })
               .key('selectTest5')
               .menuAlign(MenuAlignType.CENTER, { dx: -10, dy: 0 })
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -212,7 +212,7 @@ struct SelectMenuTest {
               })
               .key('selectTest6')
               .menuAlign(MenuAlignType.END, { dx: -20, dy: -50 })
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -240,7 +240,7 @@ struct SelectMenuTest {
               })
               .key('selectTest7')
               .menuAlign(MenuAlignType.END, { dx: 0, dy: 0 })
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -268,7 +268,7 @@ struct SelectMenuTest {
               })
               .key('selectTest8')
               .menuAlign(fakeMenuAlignType(null))
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -296,7 +296,7 @@ struct SelectMenuTest {
               })
               .key('selectTest9')
               .menuAlign(fakeMenuAlignType(undefined))
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -324,7 +324,7 @@ struct SelectMenuTest {
               })
               .key('selectTest10')
               .menuAlign(fakeMenuAlignType('menuAlign'))
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -351,7 +351,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest11')
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -380,7 +380,7 @@ struct SelectMenuTest {
               .key('selectTest12')
               .menuAlign(MenuAlignType.CENTER)
               .menuAlign(MenuAlignType.END)
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -409,7 +409,7 @@ struct SelectMenuTest {
               .key('selectTest13')
               .menuAlign(MenuAlignType.CENTER)
               .menuAlign(fakeMenuAlignType(null))
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -438,7 +438,7 @@ struct SelectMenuTest {
               .key('selectTest14')
               .menuAlign(fakeMenuAlignType(null))
               .menuAlign(MenuAlignType.CENTER, { dx: -5, dy: -5 })
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }
@@ -465,7 +465,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest15')
-              .onSelect((index: number, text?: undefined | String) => {
+              .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
           }

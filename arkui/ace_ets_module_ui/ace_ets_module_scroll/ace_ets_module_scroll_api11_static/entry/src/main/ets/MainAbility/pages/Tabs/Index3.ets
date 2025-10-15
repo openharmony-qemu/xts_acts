@@ -49,7 +49,7 @@ struct TabsExample {
   @State endMarginStr: string = '5px'
   @State nullFlag: boolean = false
   @State strokeWidthNum: number = 10
-  @State dividerColorNum: number = 0xFF0000
+  @State dividerColorNum: int = 0xFF0000
   @State startMarginNum: number = 5
   @State endMarginNum: number = 5
   @State strokeWidthRes: Resource = $r("app.string.Divider_Stroke_Width")
@@ -307,7 +307,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -340,7 +340,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -372,7 +372,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -405,7 +405,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -437,7 +437,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .height('200vp')
@@ -477,7 +477,7 @@ struct TabsExample {
       .barWidth(70)
       .barHeight('100%')
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .divider({

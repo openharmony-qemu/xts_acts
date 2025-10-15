@@ -378,7 +378,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_1700';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x31, 0x35, 0x32, 0x33];
+        const array: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = some(array, (value) => value > 0x30);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
@@ -398,7 +398,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_1800';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x31, 0x35, 0x32, 0x33];
+        const array: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = some(array, (value) => value > 0x30);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
@@ -418,7 +418,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_1900';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x31, 0x35, 0x32, 0x33];
+        const array: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = some(array, (value) => value < 0x34);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
@@ -438,7 +438,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_2000';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x31, 0x35, 0x32, 0x33];
+        const array: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x32.toChar(), 0x33.toChar()];
         const result = some(array, (value) => value > 0x36);
         expect(result).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -478,7 +478,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_2200';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x48, 0x45, 0x4C, 0x4C, 0x4F];
+        const array: FixedArray<char> = [0x48.toChar(), 0x45.toChar(), 0x4C.toChar(), 0x4C.toChar(), 0x4F.toChar()];
         const result = some(array, (value) => value === 0x4C);
         expect(result).assertEqual(true);
         console.info(`${caseName}, test end`);
@@ -498,7 +498,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_2300';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x48, 0x45, 0x4C, 0x4C, 0x4F];
+        const array: FixedArray<char> = [0x48.toChar(), 0x45.toChar(), 0x4C.toChar(), 0x4C.toChar(), 0x4F.toChar()];
         const result = some(array, (value) => value > 0x53);
         expect(result).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -518,7 +518,7 @@ export default function Array_Some_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Some_Test_static_2400';
         console.info(`${caseName}, test start`);
-        const array: FixedArray<char> = [0x48, 0x45, 0x4C, 0x4C, 0x4F];
+        const array: FixedArray<char> = [0x48.toChar(), 0x45.toChar(), 0x4C.toChar(), 0x4C.toChar(), 0x4F.toChar()];
         const result = some(array, (value, index) => value < 0x4B && index > 1);
         expect(result).assertEqual(false);
         console.info(`${caseName}, test end`);

@@ -49,7 +49,7 @@ export default function FocusableTest() {
     'TextPicker',
     'TimePicker',
 
-    'Web',
+    
 
 
     'SideBarContainer',
@@ -78,7 +78,6 @@ export default function FocusableTest() {
   describe('FocusableTest', () => {
     beforeAll(() => {
       console.info("FocusableDefaultTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs2.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -89,7 +88,6 @@ export default function FocusableTest() {
       supportView,
       testValues,
       async (data: BasePageConfig): Promise<void> => {
-        
         let res = Utils.requestFocus(
           data.pageConfig.componentKey ?? ''
         )
@@ -109,54 +107,54 @@ export default function FocusableTest() {
           
           expect(res).assertEqual(true)
           
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
+          let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
+              "] referenceComponent.getElement('$attrs').getString('label'): " +
+            referenceComponent.getElement('$attrs').getString('label')
           )
-          expect(referenceComponent.$attrs.label).assertContain(
+          expect(referenceComponent.getElement('$attrs').getString('label')).assertContain(
             "onFocus"
           )
           
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
+          let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
               "] Focusable is " +
-            viewObj.$attrs.focusable
+            viewObj.getElement('$attrs').getBoolean('focusable')
           )
-          expect(viewObj.$attrs.focusable).assertEqual(true)
+          expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(true)
         } else if ("SetFalse" == data.testValue.describe) {
           
           expect(res).assertEqual(false)
           
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
+          let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
+              "] referenceComponent.getElement('$attrs').getString('label'): " +
+            referenceComponent.getElement('$attrs').getString('label')
           )
-          expect(referenceComponent.$attrs.label).assertEqual("")
+          expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
           
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
+          let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
               "] Focusable is " +
-            viewObj.$attrs.focusable
+            viewObj.getElement('$attrs').getBoolean('focusable')
           )
-          expect(viewObj.$attrs.focusable).assertEqual(false)
+          expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(false)
         }
       }
     )

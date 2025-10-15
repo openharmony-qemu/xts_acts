@@ -58,8 +58,8 @@ struct canOverScrollScroll {
           .margin({ right: 10 } as Margin)
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -71,8 +71,8 @@ struct canOverScrollScroll {
           .id('canOver_scroll_false')
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -88,8 +88,8 @@ struct canOverScrollScroll {
           .margin({ right: 10 } as Margin)
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -101,8 +101,8 @@ struct canOverScrollScroll {
           .id('canOver_scroll_ude')
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,

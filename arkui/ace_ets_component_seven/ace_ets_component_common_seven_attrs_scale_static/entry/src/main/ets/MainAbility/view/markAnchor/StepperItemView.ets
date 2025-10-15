@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,25 +36,10 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Component
 export struct StepperItemView {
-  @State prevIndex: number = 0
-  @State currentIndex: number = 0
+  @State prevIndex: Int = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _markAnchor!: Position;
@@ -73,13 +58,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+          
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        } 
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)
@@ -91,13 +76,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+          
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        } 
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)
@@ -113,7 +98,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: number, index: number) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

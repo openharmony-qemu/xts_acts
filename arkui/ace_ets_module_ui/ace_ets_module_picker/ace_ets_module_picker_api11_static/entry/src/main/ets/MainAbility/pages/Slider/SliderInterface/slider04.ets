@@ -54,7 +54,7 @@ import {
 @Entry
 @Component
 struct Slider04 {
-  @State outSetValueOne: number = 20
+  @State outSetValueOne: double = 20
 
   build() {
     Row() {
@@ -67,7 +67,7 @@ struct Slider04 {
         .id('Slider04')
         .width('400px')
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           this.outSetValueOne = value
           console.info('value:' + value + 'mode:' + mode.toString())
         })

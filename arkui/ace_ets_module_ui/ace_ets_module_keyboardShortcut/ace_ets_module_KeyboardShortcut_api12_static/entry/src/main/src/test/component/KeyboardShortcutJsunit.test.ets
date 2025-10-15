@@ -38,12 +38,12 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -55,12 +55,12 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+const SUITE = 'keyboardShortcut'
+const baseEvent1 = 35872
+const baseEvent2 = 35873
 
 export default function KeyboardShortcutJsunit() {
 
-  const SUITE = 'keyboardShortcut'
-  const baseEvent1 = 35872
-  const baseEvent2 = 35873
 
   describe('KeyboardShortcutJsunit', () => {
     beforeAll(async () => {
@@ -79,10 +79,8 @@ export default function KeyboardShortcutJsunit() {
         console.info("get KeyboardShortcut state pages:" + JSON.stringify(pages));
         if (!("KeyboardShortcut" == pages.name)) {
           console.info("get KeyboardShortcut pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
@@ -102,8 +100,8 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<String, RecordData>)?.['msg']).assertEqual('Ctrl_TAB');
-        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<String, RecordData>)?.['msg']);
+        expect(((event.data) as Record<String,undefined|null|Object>)?.['msg']).assertEqual('Ctrl_TAB');
+        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<String,undefined|null|Object>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -112,7 +110,7 @@ export default function KeyboardShortcutJsunit() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create();
-      
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_TAB);
       done();
     });
 
@@ -128,9 +126,9 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<String, RecordData>)?.['msg']).assertEqual('Shift_left');
-        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<String, RecordData>).msg:` +
-          ((event.data) as Record<String, RecordData>)?.['msg']);
+        expect(((event.data) as Record<String,undefined|null|Object>)?.['msg']).assertEqual('Shift_left');
+        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<string, Object>).msg:` +
+          ((event.data) as Record<String,undefined|null|Object>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -139,7 +137,7 @@ export default function KeyboardShortcutJsunit() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create();
-      
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
       done();
     });
   })

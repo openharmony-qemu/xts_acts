@@ -88,7 +88,7 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 struct comSizeAbilityTest_23 {
   @State state: AnimationStatus = AnimationStatus.Initial
   @State reverse: boolean = false
-  @State iterations: number = 1
+  @State iterations: int = 1
 
   build() {
     Scroll() {

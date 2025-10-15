@@ -58,7 +58,7 @@ class MyNodeController extends NodeController {
     
     
     
-    let row4 = typeNode.createRelativeContainerNode(uiContext, "RelativeContainer")
+    let row4 = typeNode.createRelativeContainerNode(uiContext)
     row4.attribute.width(100)
       .height(100)
       .borderWidth(1)

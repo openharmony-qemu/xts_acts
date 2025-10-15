@@ -48,14 +48,14 @@ struct SliderExample {
   @State caretWidthString: undefined | string = '15px'
   @State caretWidthResource: undefined | Resource = $r('sys.float.ohos_id_text_margin_vertical')
   @State caretColorColor: undefined | Color = Color.Red
-  @State caretColorNumber: undefined | number = 0x000000
+  @State caretColorNumber: undefined | int = 0x000000
   @State caretColorString: undefined | string = '#ff9a35'
   @State caretColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State leftSearchIconSizeNumber: undefined | number = 20
   @State leftSearchIconSizeString: undefined | string = '50px'
   @State leftSearchIconSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
   @State leftSearchIconColorColor: undefined | Color = Color.Red
-  @State leftSearchIconColorNumber: undefined | number = 0x000000
+  @State leftSearchIconColorNumber: undefined | int = 0x000000
   @State leftSearchIconColorString: undefined | string = '#ff9a35'
   @State leftSearchIconColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State searchSrcPath: undefined | string = 'common/icon.png'
@@ -65,7 +65,7 @@ struct SliderExample {
   @State rightCancelIconSizeString: undefined | string = '50px'
   @State rightCancelIconSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
   @State rightCancelIconColorColor: undefined | Color = Color.Red
-  @State rightCancelIconColorNumber: undefined | number = 0x000000
+  @State rightCancelIconColorNumber: undefined | int = 0x000000
   @State rightCancelIconColorString: undefined | string = '#ff9a35'
   @State rightCancelIconColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State rightIconSrcPath: undefined | string = 'common/icon.png'
@@ -74,11 +74,11 @@ struct SliderExample {
   @State searchButtonFontSizeString: undefined | string = '10vp'
   @State searchButtonFontSizeResource: undefined | Resource = $r('sys.float.ohos_id_text_paragraph_margin_m')
   @State searchButtonFontColorColor: undefined | Color = Color.Blue
-  @State searchButtonFontColorNumber: undefined | number = 0x000000
+  @State searchButtonFontColorNumber: undefined | int = 0x000000
   @State searchButtonFontColorString: undefined | string = '#ff9a35'
   @State searchButtonFontColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State textColorColor: undefined | Color = Color.Red
-  @State textColorNumber: undefined | number = 0x000000
+  @State textColorNumber: undefined | int = 0x000000
   @State textColorString: undefined | string = '#ff9a35'
   @State textColorResource: undefined | Resource = $r('sys.color.ohos_id_color_connected')
   @State placeholderFont: undefined | Font = { size: '16sp', weight: FontWeight.Normal } as Font
@@ -94,7 +94,7 @@ struct SliderExample {
     this.caretWidthResource = ((eventData.data) as ESObject).getProperty('caretWidthResource').toStaticObject() as Resource;
     this.caretColorColor = ((eventData.data) as ESObject).getProperty('caretColorColor') .toStaticObject() as Color;
     this.caretColorNumber =
-      ((eventData.data) as ESObject).getProperty('caretColorNumber') === -1 ? undefined : ((eventData.data) as ESObject).getProperty('caretColorNumber').toNumber();
+      ((eventData.data) as ESObject).getProperty('caretColorNumber') === -1 ? undefined : Double.toInt(((eventData.data) as ESObject).getProperty('caretColorNumber').toNumber());
     this.caretColorString = ((eventData.data) as ESObject).getProperty('caretColorString').toString();
     this.caretColorResource = ((eventData.data) as ESObject).getProperty('caretColorResource').toStaticObject() as Resource;
     this.leftSearchIconSizeNumber =
@@ -103,7 +103,7 @@ struct SliderExample {
     this.leftSearchIconSizeResource = ((eventData.data) as ESObject).getProperty('leftSearchIconSizeResource').toStaticObject() as Resource;
     this.leftSearchIconColorColor = ((eventData.data) as ESObject).getProperty('leftSearchIconColorColor') .toStaticObject() as Color;
     this.leftSearchIconColorNumber = ((eventData.data) as ESObject).getProperty('leftSearchIconColorNumber') === -1 ? undefined :
-      ((eventData.data) as ESObject).getProperty('leftSearchIconColorNumber') .toNumber();
+      Double.toInt(((eventData.data) as ESObject).getProperty('leftSearchIconColorNumber') .toNumber());
     this.leftSearchIconColorString = ((eventData.data) as ESObject).getProperty('leftSearchIconColorString').toString();
     this.leftSearchIconColorResource = ((eventData.data) as ESObject).getProperty('leftSearchIconColorResource').toStaticObject() as Resource;
     this.searchSrcPath =
@@ -117,7 +117,7 @@ struct SliderExample {
     this.rightCancelIconSizeResource = ((eventData.data) as ESObject).getProperty('rightCancelIconSizeResource').toStaticObject() as Resource;
     this.rightCancelIconColorColor = ((eventData.data) as ESObject).getProperty('rightCancelIconColorColor') .toStaticObject() as Color;
     this.rightCancelIconColorNumber = ((eventData.data) as ESObject).getProperty('rightCancelIconColorNumber') === -1 ? undefined :
-      ((eventData.data) as ESObject).getProperty('rightCancelIconColorNumber').toNumber();
+      Double.toInt(((eventData.data) as ESObject).getProperty('rightCancelIconColorNumber').toNumber());
     this.rightCancelIconColorString = ((eventData.data) as ESObject).getProperty('rightCancelIconColorString').toString();
     this.rightCancelIconColorResource = ((eventData.data) as ESObject).getProperty('rightCancelIconColorResource').toStaticObject() as Resource;
     this.rightIconSrcPath =
@@ -129,12 +129,12 @@ struct SliderExample {
     this.searchButtonFontSizeResource = ((eventData.data) as ESObject).getProperty('searchButtonFontSizeResource').toStaticObject() as Resource;
     this.searchButtonFontColorColor = ((eventData.data) as ESObject).getProperty('searchButtonFontColorColor') .toStaticObject() as Color;
     this.searchButtonFontColorNumber = ((eventData.data) as ESObject).getProperty('searchButtonFontColorNumber') === -1 ? undefined :
-      ((eventData.data) as ESObject).getProperty('searchButtonFontColorNumber').toNumber();
+      Double.toInt(((eventData.data) as ESObject).getProperty('searchButtonFontColorNumber').toNumber());
     this.searchButtonFontColorString = ((eventData.data) as ESObject).getProperty('searchButtonFontColorString').toString();
     this.searchButtonFontColorResource = ((eventData.data) as ESObject).getProperty('searchButtonFontColorResource').toStaticObject() as Resource;
     this.textColorColor = ((eventData.data) as ESObject).getProperty('textColorColor') .toStaticObject() as Color;
     this.textColorNumber =
-      ((eventData.data) as ESObject).getProperty('textColorNumber') === -1 ? undefined : ((eventData.data) as ESObject).getProperty('textColorNumber').toNumber();
+      ((eventData.data) as ESObject).getProperty('textColorNumber') === -1 ? undefined : Double.toInt(((eventData.data) as ESObject).getProperty('textColorNumber').toNumber());
     this.textColorString = ((eventData.data) as ESObject).getProperty('textColorString').toString();
     this.textColorResource = ((eventData.data) as ESObject).getProperty('textColorResource').toStaticObject() as Resource;
   }

@@ -97,7 +97,7 @@ struct Grid_ScrollAndScrollIndex {
         .backgroundColor(0xFAEEE0)
         .height(300)
         .scrollBar(BarState.Off)
-        .onScrollIndex((first: number,last: number):void => {
+        .onScrollIndex((first: int,last: int):void => {
           this.index++
         })
         

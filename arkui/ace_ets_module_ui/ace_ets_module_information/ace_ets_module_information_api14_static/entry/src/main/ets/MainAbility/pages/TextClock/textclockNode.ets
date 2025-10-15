@@ -32,7 +32,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
     
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
       .width('100%')
 

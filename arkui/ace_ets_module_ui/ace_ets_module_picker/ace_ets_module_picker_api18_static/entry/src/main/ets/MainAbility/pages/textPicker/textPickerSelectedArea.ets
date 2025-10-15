@@ -23,9 +23,10 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerSelectedAreaExample {
-  private select: number = 1
-  private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
-  @State textFlag: string = ''
+  private select: int = 1;
+  private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
+  @State textFlag: string = '';
+
   build() {
     Column() {
       Text(this.textFlag).id('textFlag').height('5%').width('90%').margin({ top: 10, bottom: 10 } as Margin).textAlign(TextAlign.Center)
@@ -35,15 +36,15 @@ struct TextPickerSelectedAreaExample {
       }).id('textPicker')
         .width('90%')
         .height('80%')
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index)
+        .onChange((value: string | string[], index: int | int[]) => {
+          console.info('Picker item changed, value: ' + value + ', index: ' + JSON.stringify(index))
         })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index)
+        .onScrollStop((value: string | string[], index: int | int[]) => {
+          console.info('Picker scroll stopped, value: ' + value + ', index: ' + JSON.stringify(index))
         })
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+        .onEnterSelectedArea((value: string | string[], index: int | int[]) => {
           this.textFlag = 'enter'
-          console.info('Picker item enter selected area, value: ' + value + ', index: ' + index)
+          console.info('Picker item enter selected area, value: ' + value + ', index: ' + JSON.stringify(index))
         })
         .id('textPicker')
     }.alignItems(HorizontalAlign.Center).width('100%').height('90%')

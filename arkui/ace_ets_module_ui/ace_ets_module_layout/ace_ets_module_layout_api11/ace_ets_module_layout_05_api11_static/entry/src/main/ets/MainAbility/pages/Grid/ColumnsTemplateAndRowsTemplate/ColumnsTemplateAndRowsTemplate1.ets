@@ -87,10 +87,10 @@ struct ColumnsTemplateAndRowsTemplate1 {
         .borderColor(0x000000)
         
         
-        .columnStart(this.columnStart1)
-        .columnEnd(this.columnEnd1)
-        .rowStart(this.rowStart1)
-        .rowEnd(this.rowEnd1)
+        .columnStart(Double.toInt(this.columnStart1))
+        .columnEnd(Double.toInt(this.columnEnd1))
+        .rowStart(Double.toInt(this.rowStart1))
+        .rowEnd(Double.toInt(this.rowEnd1))
         .key('ColumnsTemplateAndRowsTemplate1_GridItem_01')
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')

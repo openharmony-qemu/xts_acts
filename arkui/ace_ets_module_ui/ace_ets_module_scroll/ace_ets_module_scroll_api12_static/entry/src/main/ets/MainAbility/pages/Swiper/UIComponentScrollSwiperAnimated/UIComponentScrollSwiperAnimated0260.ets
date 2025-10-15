@@ -36,7 +36,7 @@ struct UIComponentScrollSwiperAnimated0260 {
   @State opacityList: number[] = new Array<number>()
   @State scaleList: number[] = new Array<number>()
   @State translateList: number[] = new Array<number>()
-  @State zIndexList: number[] = new Array<number>()
+  @State zIndexList: int[] = new Array<int>()
 
   aboutToAppear(): void {
     for (let i = 0; i < this.backgroundColors.length; i++) {

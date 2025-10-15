@@ -54,9 +54,9 @@ import testsuite from '../../../../src/test/List.test'
 @Entry
 @Component
 struct sliderInterractionModeTest {
-  @State inSetValue: number = 10
-  @State inSetValue1: number = 10
-  @State inSetValue2: number = 10
+  @State inSetValue: double = 10
+  @State inSetValue1: double = 10
+  @State inSetValue2: double = 10
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
@@ -72,7 +72,7 @@ struct sliderInterractionModeTest {
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           this.inSetValue = value
         })
       Divider()
@@ -88,7 +88,7 @@ struct sliderInterractionModeTest {
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           this.inSetValue1 = value
         })
       Divider()
@@ -104,7 +104,7 @@ struct sliderInterractionModeTest {
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           this.inSetValue2 = value
         })
     }

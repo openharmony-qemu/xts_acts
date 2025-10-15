@@ -1,5 +1,8 @@
 {
   "src": [
-    "pages/webViewController"
+    "pages/webViewController",
+    "pages/terminateRenderProcess",
+    "pages/webOnFirstContFour",
+    "pages/wholeWebPageDrawing"
   ]
 }

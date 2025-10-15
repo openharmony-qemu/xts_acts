@@ -20,8 +20,9 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 
 struct DividerTest {
-  private select: number = 1
-  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4')
+  private select: int = 1;
+  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4');
+
   build() {
     Row() {
       Column() {

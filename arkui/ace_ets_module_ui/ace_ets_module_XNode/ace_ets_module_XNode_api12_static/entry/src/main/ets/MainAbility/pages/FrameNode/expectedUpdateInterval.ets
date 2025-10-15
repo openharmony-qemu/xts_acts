@@ -51,10 +51,10 @@ class MyNodeController extends NodeController {
     return this.rootNode
   }
 
-  addCommonEvent(frameNode: FrameNode, ratios: Array<number>, expectedUpdateInterval?: number) {
+  addCommonEvent(frameNode: FrameNode, ratios: Array<double>, expectedUpdateInterval?: int) {
     frameNode.commonEvent.setOnVisibleAreaApproximateChange({
-      ratios, expectedUpdateInterval: expectedUpdateInterval
-    }, (isVisible: boolean, currentRatio: number):void => {
+      ratios: ratios, expectedUpdateInterval: expectedUpdateInterval
+    }, (isVisible: boolean, currentRatio: double):void => {
       console.info('Test FrameNode isVisible:' + isVisible + ', currentRatio:' + currentRatio)
       if(isVisible && currentRatio >= 1.0) {
         console.info('Test FrameNode is fully visible')

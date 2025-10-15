@@ -62,14 +62,9 @@ struct CanvasAttrsTest {
     this.node = null
   }
 
-  
-  
-  
-  
-
   aboutToDisappear(): void {
-    this.context.off('onAttach', this.attachCallback)
-    this.context.off('onDetach', this.detachCallback)
+    this.context.offAttach(this.attachCallback)
+    this.context.offDetach(this.detachCallback)
   }
 
   build() {
@@ -77,13 +72,13 @@ struct CanvasAttrsTest {
       Row() {
         Button('Swipe to Top').id('swipe_top')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex) 
+            let rect = this.scroller.getItemRect(Double.toInt(this.swipeStartIndex)) 
             this.scroller.scrollToIndex(0) 
             this.scroller.scrollBy(0, -rect.y) 
           })
         Button('Swipe to Bottom').id('swipe_bottom')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex) 
+            let rect = this.scroller.getItemRect(Double.toInt(this.swipeStartIndex)) 
             this.scroller.scrollToIndex(this.arr.length - 1) 
             this.scroller.scrollBy(0, -rect.y) 
           })
@@ -128,7 +123,7 @@ struct CanvasAttrsTest {
           }
         }, (item: number) => item.toString())
       }
-      .onScrollIndex((start: number, end: number):void => {
+      .onScrollIndex((start: int, end: int):void => {
         this.swipeStartIndex = start
       })
     }

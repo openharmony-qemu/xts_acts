@@ -38,11 +38,11 @@ class MyNodeController extends NodeController {
       .borderColor(Color.Gray)
       .borderWidth(1)
       .margin({ left: 10 } as Margin);
-    let col = typeNode.createColumnNode(uiContext, 'Column');
+    let col = typeNode.createColumnNode(uiContext);
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
 
-    let divider = typeNode.createDividerNode(uiContext, 'Divider');
+    let divider = typeNode.createDividerNode(uiContext);
     divider.initialize().strokeWidth(5).margin({ top: 5 } as Margin);
     col.appendChild(divider);
     storage.set('DividerType', '' + divider.getNodeType());

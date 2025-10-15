@@ -937,7 +937,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x48, 0x69]
+        const arr: FixedArray<char> = [0x48.toChar(), 0x69.toChar()]
         const result = toLocaleString(arr);
         const expected: string = '"H","i"';
         expect(result).assertEqual(expected);
@@ -958,7 +958,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x42, 0x43]
+        const arr: FixedArray<char> = [0x41.toChar(), 0x42.toChar(), 0x43.toChar()]
         const result = toLocaleString(arr);
         const expected: string = '"A","B","C"';
         expect(result).assertEqual(expected);
@@ -1000,7 +1000,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33]
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()]
         const result = toLocaleString(arr);
         const expected: string = '"1","2","3"';
         expect(result).assertEqual(expected);
@@ -1021,7 +1021,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x21, 0x3F, 0x40]
+        const arr: FixedArray<char> = [0x21.toChar(), 0x3F.toChar(), 0x40.toChar()]
         const result = toLocaleString(arr);
         const expected: string = '"!","?","@"';
         expect(result).assertEqual(expected);
@@ -1042,7 +1042,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x48, 0x69];
+        const arr: FixedArray<char> = [0x48.toChar(), 0x69.toChar()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -1071,7 +1071,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x0041, 0x0042, 0x0043];
+        const arr: FixedArray<char> = [0x0041.toChar(), 0x0042.toChar(), 0x0043.toChar()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -1129,7 +1129,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -1158,7 +1158,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x21, 0x3F, 0x40];
+        const arr: FixedArray<char> = [0x21.toChar(), 0x3F.toChar(), 0x40.toChar()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -1187,7 +1187,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x48, 0x69];
+        const arr: FixedArray<char> = [0x48.toChar(), 0x69.toChar()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -1217,7 +1217,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x42, 0x43];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x42.toChar(), 0x43.toChar()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -1277,7 +1277,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -1307,7 +1307,7 @@ export default function ArrayToLocaleStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest4800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x21, 0x3F, 0x40];
+        const arr: FixedArray<char> = [0x21.toChar(), 0x3F.toChar(), 0x40.toChar()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;

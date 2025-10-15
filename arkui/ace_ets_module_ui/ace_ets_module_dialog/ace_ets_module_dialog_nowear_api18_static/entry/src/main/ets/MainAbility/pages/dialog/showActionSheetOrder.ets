@@ -173,7 +173,7 @@ struct showActionSheetOrder {
         .onClick((e: ClickEvent) => {
           let showActionSheetOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showActionSheetOrder !== undefined) {
-            AppStorage.setOrCreate<number>('showActionSheetOrder', showActionSheetOrder.getOrder())
+            AppStorage.setOrCreate<double>('showActionSheetOrder', showActionSheetOrder.getOrder())
           }
         })
     }

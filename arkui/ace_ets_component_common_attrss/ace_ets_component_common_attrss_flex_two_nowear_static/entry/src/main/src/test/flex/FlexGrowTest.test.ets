@@ -35,38 +35,6 @@ let flexGrow = 3;
 let compareFlexGrow = 1;
 const uiContext = new UIContext();
 
-
-
-
-
-
-
-
-
-
-
-
-class SetValue {
-  parentWidth: number = 0;
-  parentHeight: number = 0;
-  flexGrow: number = 0;
-  compareFlexGrow: number = 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function expectForFlexGrow(space: number, countFlexGrow: number, realRect: number, targetSize: number,
   data: BasePageConfig) {
   console.info('[' + data.caseTag + '] call the expectForFlexGrow function.');
@@ -84,14 +52,14 @@ function expectForFlexGrow(space: number, countFlexGrow: number, realRect: numbe
 
 export default function flexGrowTest() {
 
-  let supportView: Array<string> = new Array<string>(
+  let supportView = [
     'RowSplit',
     'ColumnSplit',
     'Stepper',
     'Select',
     'SideBarContainer',
     'WaterFlow'
-  )
+  ]
 
   let containerView = ['Row', 'Column', 'FlexRow', 'FlexRowReverse', 'FlexColumn', 'FlexColumnReverse']
 
@@ -145,7 +113,6 @@ export default function flexGrowTest() {
   describe('FlexGrowTest', () => {
     beforeAll(() => {
       console.info("flexGrowTest beforeAll start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.two.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -155,7 +122,11 @@ export default function flexGrowTest() {
       async (data: BasePageConfig): Promise<void> => {
         
         let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
-        AttrsManager.change(data.caseTag, data.testValue.setValue);
+        AppStorage.setOrCreate('_flexGrow', data.testValue.setValue.flexGrow)
+        AppStorage.setOrCreate('_parentWidth', data.testValue.setValue.parentWidth)
+        AppStorage.setOrCreate('_parentHeight', data.testValue.setValue.parentHeight)
+        AppStorage.setOrCreate('_compareFlexGrow', data.testValue.setValue.compareFlexGrow)
+
         await Utils.sleep(1000);
 
         
@@ -169,7 +140,7 @@ export default function flexGrowTest() {
 
         
         let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
-        expect(Math.abs(Number(viewObj.getElement('$attrs').getString('flexGrow')) -
+        expect(Math.abs(Number(viewObj.getElement('$attrs').getDouble('flexGrow')) -
         data.testValue.expectValue.flexGrow) <= 1).assertTrue();
 
         
@@ -180,7 +151,7 @@ export default function flexGrowTest() {
             
             
           } else {
-            console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
+            
             
             
           }

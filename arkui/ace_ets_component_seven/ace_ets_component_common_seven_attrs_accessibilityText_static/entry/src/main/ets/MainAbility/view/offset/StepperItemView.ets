@@ -28,32 +28,27 @@ import {
   Position,
   TextAlign,
   Color,
-  ItemState
+  ItemState,
+  TextAttribute,
+  Margin,
+  CommonMethod,
+  applyStyles
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function superFancyText(this: TextAttribute): this {
+  this.fontSize(36);
+  this.fontColor('#182431')
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: number = 0
-  @State currentIndex: number = 0
+  @State prevIndex: Int = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _offset!: Position;
@@ -63,6 +58,14 @@ export struct StepperItemView {
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
 
+  fancy(instance: CommonMethod) {
+    instance.width(336);
+    instance.height(621);
+    instance.backgroundColor(Color.White);
+    instance.margin({ top: 48, left: 12 } as Margin)
+    instance.borderRadius(24)
+  }
+
   build() {
     Stepper({
       index: this.currentIndex
@@ -71,13 +74,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-            
+  .superFancyText()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -88,13 +91,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+  .superFancyText()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        }.applyStyles(this.fancy)
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -108,7 +111,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: number, index: number) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

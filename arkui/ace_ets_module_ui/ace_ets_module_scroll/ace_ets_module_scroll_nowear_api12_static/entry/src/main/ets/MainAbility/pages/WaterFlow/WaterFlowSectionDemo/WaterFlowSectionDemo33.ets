@@ -39,7 +39,7 @@ struct WaterFlowSectionDemo33 {
   @State minSize: number = 80
   @State maxSize: number = 180
   @State fontSize: number = 24
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   @State columns: string = '1fr'
   scroller: Scroller = new Scroller()
   dataCount: number = 40
@@ -50,7 +50,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 1,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 30.0
     }
   } as SectionOptions
@@ -59,7 +59,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 2,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 30.0
     }
   } as SectionOptions
@@ -68,7 +68,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 4,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 30.0
     }
   } as SectionOptions
@@ -77,14 +77,14 @@ struct WaterFlowSectionDemo33 {
     crossCount: 8,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 30.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,
-    onGetItemMainSizeByIndex: (index: number) => {
+    onGetItemMainSizeByIndex: (index: int) => {
       return 30.0
     }
   } as SectionOptions
@@ -97,7 +97,9 @@ struct WaterFlowSectionDemo33 {
       sectionOptions.push(this.twoColumnSection)
       sectionOptions.push(this.threeColumnSection)
       sectionOptions.push(this.fourColumnSection)
-      this.lastSection.itemsCount = this.dataCount -this.oneColumnSection.itemsCount - this.twoColumnSection.itemsCount - this.threeColumnSection.itemsCount - this.fourColumnSection.itemsCount
+      this.lastSection.itemsCount = Double.toInt(
+        this.dataCount -this.oneColumnSection.itemsCount - this.twoColumnSection.itemsCount - this.threeColumnSection.itemsCount - this.fourColumnSection.itemsCount
+      )
       sectionOptions.push(this.lastSection)
       break;
     }

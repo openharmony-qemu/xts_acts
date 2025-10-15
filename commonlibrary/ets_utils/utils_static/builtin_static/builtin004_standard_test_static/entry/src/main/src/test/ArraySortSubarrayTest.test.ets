@@ -1285,9 +1285,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_4900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x36, 0x33, 0x32, 0x38];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x36.toChar(), 0x33.toChar(), 0x32.toChar(), 0x38.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x33, 0x36, 0x38];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x36.toChar(), 0x38.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1311,9 +1311,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x36, 0x33, 0x32, 0x38];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x36.toChar(), 0x33.toChar(), 0x32.toChar(), 0x38.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x38, 0x36, 0x33, 0x32, 0x31];
+        const expected: FixedArray<char> = [0x38.toChar(), 0x36.toChar(), 0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1337,9 +1337,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x33, 0x33, 0x33];
+        const arr: FixedArray<char> = [0x33.toChar(), 0x33.toChar(), 0x33.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x33, 0x33, 0x33];
+        const expected: FixedArray<char> = [0x33.toChar(), 0x33.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1361,9 +1361,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x33, 0x33, 0x33];
+        const arr: FixedArray<char> = [0x33.toChar(), 0x33.toChar(), 0x33.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x33, 0x33, 0x33];
+        const expected: FixedArray<char> = [0x33.toChar(), 0x33.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1385,9 +1385,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4F, 0x4D, 0x41, 0x58];
+        const arr: FixedArray<char> = [0x4F.toChar(), 0x4D.toChar(), 0x41.toChar(), 0x58.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x58, 0x4F, 0x4D, 0x41];
+        const expected: FixedArray<char> = [0x58.toChar(), 0x4F.toChar(), 0x4D.toChar(), 0x41.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1410,9 +1410,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4F, 0x4D, 0x41, 0x58];
+        const arr: FixedArray<char> = [0x4F.toChar(), 0x4D.toChar(), 0x41.toChar(), 0x58.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x41, 0x4D, 0x4F, 0x58];
+        const expected: FixedArray<char> = [0x41.toChar(), 0x4D.toChar(), 0x4F.toChar(), 0x58.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1435,9 +1435,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar(), 0x61.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x41, 0x41, 0x61, 0x61];
+        const expected: FixedArray<char> = [0x41.toChar(), 0x41.toChar(), 0x61.toChar(), 0x61.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1460,9 +1460,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x57, 0x57, 0x57, 0x57];
+        const arr: FixedArray<char> = [0x57.toChar(), 0x57.toChar(), 0x57.toChar(), 0x57.toChar()];
         sort_subarray(arr, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x57, 0x57, 0x57, 0x57];
+        const expected: FixedArray<char> = [0x57.toChar(), 0x57.toChar(), 0x57.toChar(), 0x57.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1485,9 +1485,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x33, 0x37, 0x33];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x33.toChar(), 0x37.toChar(), 0x33.toChar()];
         sort_subarray(arr, 1, 3, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x36, 0x33, 0x37, 0x33];
+        const expected: FixedArray<char> = [0x36.toChar(), 0x33.toChar(), 0x37.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1510,9 +1510,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x33, 0x37, 0x33];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x33.toChar(), 0x37.toChar(), 0x33.toChar()];
         sort_subarray(arr, 0, 4, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x37, 0x36, 0x33, 0x33];
+        const expected: FixedArray<char> = [0x37.toChar(), 0x36.toChar(), 0x33.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1535,9 +1535,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_5900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0X31, 0x31, 0x31];
+        const arr: FixedArray<char> = [0X31.toChar(), 0x31.toChar(), 0x31.toChar()];
         sort_subarray(arr, 1, 3, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0X31, 0x31, 0x31];
+        const expected: FixedArray<char> = [0X31.toChar(), 0x31.toChar(), 0x31.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1559,9 +1559,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0X6F, 0x4F, 0x4F, 0x6F, 0x4F];
+        const arr: FixedArray<char> = [0X6F.toChar(), 0x4F.toChar(), 0x4F.toChar(), 0x6F.toChar(), 0x4F.toChar()];
         sort_subarray(arr, 1, 5, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x6F, 0x6F, 0x4F, 0x4F, 0x4F];
+        const expected: FixedArray<char> = [0x6F.toChar(), 0x6F.toChar(), 0x4F.toChar(), 0x4F.toChar(), 0x4F.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1585,9 +1585,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x4F, 0x4E, 0x45, 0x43];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x4F.toChar(), 0x4E.toChar(), 0x45.toChar(), 0x43.toChar()];
         sort_subarray(arr, 2, 2, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x4D, 0x4F, 0x4E, 0x45, 0x43];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x4F.toChar(), 0x4E.toChar(), 0x45.toChar(), 0x43.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1611,9 +1611,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x4F, 0x4E, 0x45, 0x43];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x4F.toChar(), 0x4E.toChar(), 0x45.toChar(), 0x43.toChar()];
         sort_subarray(arr, 2, 3, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x4D, 0x4F, 0x4E, 0x45, 0x43];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x4F.toChar(), 0x4E.toChar(), 0x45.toChar(), 0x43.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1640,7 +1640,7 @@ export default function Array_Sort_Subarray_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x64, 0x63, 0x62, 0x65];
+          const arr: FixedArray<char> = [0x64.toChar(), 0x63.toChar(), 0x62.toChar(), 0x65.toChar()];
           sort_subarray(arr, -2, 2, (lhs: char, rhs: char): boolean => lhs < rhs);
         } catch (e) {
           errorOccurred = true;
@@ -1668,7 +1668,7 @@ export default function Array_Sort_Subarray_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x64, 0x63, 0x62, 0x65];
+          const arr: FixedArray<char> = [0x64.toChar(), 0x63.toChar(), 0x62.toChar(), 0x65.toChar()];
           sort_subarray(arr, 0, 6, (lhs: char, rhs: char): boolean => lhs < rhs);
         } catch (e) {
           errorOccurred = true;
@@ -1693,9 +1693,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33, 0x32, 0x31];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         sort_subarray(arr, 0, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x31, 0x31, 0x32, 0x32, 0x33];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x31.toChar(), 0x32.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1719,9 +1719,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33, 0x32, 0x31];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         sort_subarray(arr, 0, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x33, 0x32, 0x32, 0x31, 0x31];
+        const expected: FixedArray<char> = [0x33.toChar(), 0x32.toChar(), 0x32.toChar(), 0x31.toChar(), 0x31.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1745,9 +1745,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33, 0x32, 0x31];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         sort_subarray(arr, 4, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x33, 0x32, 0x31];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1771,9 +1771,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x39, 0x39, 0x39];
+        const arr: FixedArray<char> = [0x39.toChar(), 0x39.toChar(), 0x39.toChar()];
         sort_subarray(arr, 1, (lhs: char, rhs: char): boolean => lhs > rhs);
-        const expected: FixedArray<char> = [0x39, 0x39, 0x39];
+        const expected: FixedArray<char> = [0x39.toChar(), 0x39.toChar(), 0x39.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1795,9 +1795,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_6900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x39, 0x39, 0x39];
+        const arr: FixedArray<char> = [0x39.toChar(), 0x39.toChar(), 0x39.toChar()];
         sort_subarray(arr, 1, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x39, 0x39, 0x39];
+        const expected: FixedArray<char> = [0x39.toChar(), 0x39.toChar(), 0x39.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1819,9 +1819,9 @@ export default function Array_Sort_Subarray_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Subarray_Test_static_7000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6F, 0x6E, 0x6D, 0x6C, 0x6B];
+        const arr: FixedArray<char> = [0x6F.toChar(), 0x6E.toChar(), 0x6D.toChar(), 0x6C.toChar(), 0x6B.toChar()];
         sort_subarray(arr, 1, (lhs: char, rhs: char): boolean => lhs < rhs);
-        const expected: FixedArray<char> = [0x6F, 0x6B, 0x6C, 0x6D, 0x6E];
+        const expected: FixedArray<char> = [0x6F.toChar(), 0x6B.toChar(), 0x6C.toChar(), 0x6D.toChar(), 0x6E.toChar()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -1848,7 +1848,7 @@ export default function Array_Sort_Subarray_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x5A, 0x59, 0x6A, 0x6B];
+          const arr: FixedArray<char> = [0x5A.toChar(), 0x59.toChar(), 0x6A.toChar(), 0x6B.toChar()];
           sort_subarray(arr, 5, (lhs: char, rhs: char): boolean => lhs > rhs);
         } catch (e) {
           errorOccurred = true;
@@ -1876,7 +1876,7 @@ export default function Array_Sort_Subarray_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<char> = [0x5A, 0x59, 0x6A, 0x6B];
+          const arr: FixedArray<char> = [0x5A.toChar(), 0x59.toChar(), 0x6A.toChar(), 0x6B.toChar()];
           sort_subarray(arr, -1, (lhs: char, rhs: char): boolean => lhs > rhs);
         } catch (e) {
           errorOccurred = true;

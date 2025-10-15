@@ -245,8 +245,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_0900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
-        const start = new Number(1);
-        const end = new Number(4);
+        const start = 1;
+        const end = 4;
         const result = slice(arr, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.length).assertEqual(3);
@@ -271,7 +271,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
-        const start = new Number(1);
+        const start = 1;
         const result = slice(arr, start);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4, 5.5];
         expect(result.length).assertEqual(4);
@@ -323,8 +323,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
-        const start = new Number(2);
-        const end = new Number(8);
+        const start = 2;
+        const end = 8;
         const result = slice(arr, start, end);
         const expected: FixedArray<double> = [3.3, 4.4, 5.5];
         expect(result.length).assertEqual(3);
@@ -349,7 +349,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
-        const end = new Number(4);
+        const end = 4;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
         expect(result.length).assertEqual(4);
@@ -375,7 +375,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [-1.1, -2.2, -3.3, -4.4, -5.5];
-        const start = new Number(-3);
+        const start = -3;
         const result = slice(arr, start);
         const expected: FixedArray<double> = [-3.3, -4.4, -5.5];
         expect(result.length).assertEqual(3);
@@ -400,7 +400,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [0.0, 0.0, 0.0, 0.0, 0.0];
-        const start = new Number(6);
+        const start = 6;
         const result = slice(arr, start);
         const expected: FixedArray<double> = [];
         expect(result.length).assertEqual(0);
@@ -422,7 +422,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_1600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [100.1, 200.2, -100.1, 0.0];
-        const end = new Number(-2);
+        const end = -2;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<double> = [100.1, 200.2];
         expect(result.length).assertEqual(2);
@@ -840,8 +840,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const start = new Number(3);
-        const end = new Number(5);
+        const start = 3;
+        const end = 5;
         const result = slice(arr, start, end);
         const expected: FixedArray<float> = [4.4 as float, 5.5 as float];
         expect(result.length).assertEqual(2);
@@ -865,8 +865,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const start = new Number(2);
-        const end = new Number(8);
+        const start = 2;
+        const end = 8;
         const result = slice(arr, start, end);
         const expected: FixedArray<float> = [3.3 as float, 4.4 as float, 5.5 as float];
         expect(result.length).assertEqual(3);
@@ -891,7 +891,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const start = new Number(4);
+        const start = 4;
         const result = slice(arr, start);
         const expected: FixedArray<float> = [5.5 as float];
         expect(result.length).assertEqual(1);
@@ -914,7 +914,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const end = new Number(4);
+        const end = 4;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float];
         expect(result.length).assertEqual(4);
@@ -940,7 +940,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const end = new Number(10);
+        const end = 10;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
         expect(result.length).assertEqual(5);
@@ -967,7 +967,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [11.1 as float, 12.2 as float, 13.3 as float, 14.4 as float];
-        const end = new Number(-2);
+        const end = -2;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<float> = [11.1 as float, 12.2 as float];
         expect(result.length).assertEqual(2);
@@ -991,7 +991,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_3900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [11.1 as float, 12.2 as float, 13.3 as float, 14.4 as float];
-        const end = new Number(0);
+        const end = 0;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<float> = [];
         expect(result.length).assertEqual(0);
@@ -1013,8 +1013,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_4000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [0.0 as float, 0.0 as float, 0.0 as float, 0.0 as float];
-        const start = new Number(0);
-        const end = new Number(2);
+        const start = 0;
+        const end = 2;
         const result = slice(arr, start, end);
         const expected: FixedArray<float> = [0.0 as float, 0.0 as float];
         expect(result.length).assertEqual(2);
@@ -1407,8 +1407,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_5700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [51, 52, 53, 54, 55, 54, 53];
-        const start = new Number(2);
-        const end = new Number(6);
+        const start = 2;
+        const end = 6;
         const result = slice(arr, start, end);
         const expected: FixedArray<int> = [53, 54, 55, 54];
         expect(result.length).assertEqual(4);
@@ -1434,8 +1434,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [51, 52, 53, 54, 55, 54, 53];
-        const start = new Number(3);
-        const end = new Number(3);
+        const start = 3;
+        const end = 3;
         const result = slice(arr, start, end);
         const expected: FixedArray<int> = [];
         expect(result.length).assertEqual(0);
@@ -1457,8 +1457,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [51, 52, 53, 54, 55, 54, 53];
-        const start = new Number(4);
-        const end = new Number(15);
+        const start = 4;
+        const end = 15;
         const result = slice(arr, start, end);
         const expected: FixedArray<int> = [55, 54, 53];
         expect(result.length).assertEqual(3);
@@ -1483,8 +1483,8 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_6000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [51, 52, 53, 54, 55, 54, 53];
-        const start = new Number(-2);
-        const end = new Number(15);
+        const start = -2;
+        const end = 15;
         const result = slice(arr, start, end);
         const expected: FixedArray<int> = [54, 53];
         expect(result.length).assertEqual(2);
@@ -1508,7 +1508,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_6100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [0, 3, 6, 0, 3];
-        const start = new Number(1);
+        const start = 1;
         const result = slice(arr, start);
         const expected: FixedArray<int> = [3, 6, 0, 3];
         expect(result.length).assertEqual(4);
@@ -1534,7 +1534,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_6200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [0, 3, 6, 0, 3];
-        const start = new Number(-3);
+        const start = -3;
         const result = slice(arr, start);
         const expected: FixedArray<int> = [6, 0, 3];
         expect(result.length).assertEqual(3);
@@ -1559,7 +1559,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [0, 3, 6, 0, 3];
-        const end = new Number(-3);
+        const end = -3;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<int> = [0, 3];
         expect(result.length).assertEqual(2);
@@ -1583,7 +1583,7 @@ export default function Array_Slice_Second_Test_static() {
         const caseName = 'Array_Slice_Second_Test_static_6400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [0, 3, 6, 0, 3];
-        const end = new Number(4);
+        const end = 4;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<int> = [0, 3, 6, 0];
         expect(result.length).assertEqual(4);

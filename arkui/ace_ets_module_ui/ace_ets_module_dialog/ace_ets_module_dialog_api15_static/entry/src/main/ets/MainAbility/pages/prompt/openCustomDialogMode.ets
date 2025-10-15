@@ -103,7 +103,7 @@ struct openCustomDialogMode {
     @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: number | undefined |Int = this.getUniqueId()
+  @State levelUniqueId: long | undefined |Int = this.getUniqueId()
   @State immersiveMode: ImmersiveMode | undefined   = undefined
   @State isModal: boolean = true
   @State maskRect: Rectangle = {
@@ -112,7 +112,7 @@ struct openCustomDialogMode {
     width: '100%',
     height: '100%'
   } as Rectangle
-  @State customDialogComponentId: number = 0
+  @State customDialogComponentId: int = 0
   WillAppear: ()=>void = () => {
     console.info('---1237---    dialog onWillAppear')
   }
@@ -249,7 +249,7 @@ struct openCustomDialogMode {
                 maskRect: this.maskRect,
                 alignment: DialogAlignment.Bottom
               } as promptAction.CustomDialogOptions)
-                .then((dialogId: number) => {
+                .then((dialogId: int) => {
                   this.customDialogComponentId = dialogId
                 })
             })

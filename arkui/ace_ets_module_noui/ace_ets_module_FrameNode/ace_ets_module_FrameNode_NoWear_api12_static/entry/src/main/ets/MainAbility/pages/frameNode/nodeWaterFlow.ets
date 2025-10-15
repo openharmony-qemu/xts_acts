@@ -21,7 +21,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 class MyNodeController extends NodeController {
   minSize: number = 80
   maxSize: number = 180
-  colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
   scroller: Scroller = new Scroller()
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   dataCount: number = this.dataSource.totalCount()
@@ -50,7 +50,7 @@ class MyNodeController extends NodeController {
     node.commonAttribute
       .width('80%')
       .height('70%')
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize()
       .width('100%')
       .height('100%')
@@ -60,7 +60,7 @@ class MyNodeController extends NodeController {
 
     for (let i = 0; i < this.dataSource.totalCount(); i++) {
 
-      let flowItem = typeNode.createNode(uiContext, 'FlowItem')
+      let flowItem = typeNode.createFlowItemNode(uiContext)
       flowItem.initialize().id('flowItem_node')
         .width('100%')
         .height(this.itemHeightArray[i.toInt() % 100])

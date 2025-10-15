@@ -86,7 +86,7 @@ struct cachedCountShowGridExample {
       .height('40%')
       .scrollBar(BarState.On)
       .backgroundColor(0xFAEEE0)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())
       })

@@ -17,6 +17,7 @@ group("uploadAndDownload") {
     deps = [
       "upload_and_download_one:ActsWebUploadAndDownloadOneTest",
       "upload_and_download_three:ActsWebUploadAndDownloadThreeTest",
+      "upload_and_download_three_static:ActsWebUploadAndDownloadThreeStaticTest",
       "upload_and_download_two:ActsWebUploadAndDownloadTwoTest",
     ]
   }

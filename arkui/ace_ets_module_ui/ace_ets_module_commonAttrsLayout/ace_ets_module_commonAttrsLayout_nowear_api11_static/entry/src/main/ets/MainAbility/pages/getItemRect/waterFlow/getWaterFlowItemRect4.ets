@@ -116,10 +116,10 @@ struct getWaterFlowItemRect4 {
   build() {
     Column({ space: 2 } as ColumnOptions) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.scroller.getItemRect(this.index).x
-        this.y = this.scroller.getItemRect(this.index).y
-        this.width1 = this.scroller.getItemRect(this.index).width
-        this.height1 = this.scroller.getItemRect(this.index).height
+        this.x = this.scroller.getItemRect(Double.toInt(this.index)).x
+        this.y = this.scroller.getItemRect(Double.toInt(this.index)).y
+        this.width1 = this.scroller.getItemRect(Double.toInt(this.index)).width
+        this.height1 = this.scroller.getItemRect(Double.toInt(this.index)).height
       }).id('getWaterFlowItemRect4_button')
       Text('' + this.x).key('getWaterFlowItemRect4_text1')
       Text('' + this.y).key('getWaterFlowItemRect4_text2')

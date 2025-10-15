@@ -51,7 +51,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
     this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
-    let col = typeNode.createStackNode(uiContext, "Stack")
+    let col = typeNode.createStackNode(uiContext)
     col.attribute.width(200)
       .height(200)
       .borderWidth(1)

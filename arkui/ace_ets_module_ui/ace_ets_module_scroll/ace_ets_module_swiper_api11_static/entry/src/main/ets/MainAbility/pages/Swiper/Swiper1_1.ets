@@ -123,7 +123,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: 34, weight: '800' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -148,7 +148,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '20px', weight: 200 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -173,7 +173,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '48%', weight: 900 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -198,7 +198,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '', weight: FontWeight.Bolder }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -223,7 +223,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: -2, weight: 1000 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -249,7 +249,7 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -274,7 +274,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '1000%', weight: '' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -299,7 +299,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '100vp', weight: 'adf@$5' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -326,7 +326,7 @@ struct SwiperTest_1 {
               .selectedDigitFont({ size: 10, weight: 200 }))
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '40lpx', weight: 500 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -354,7 +354,7 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -381,7 +381,7 @@ struct SwiperTest_1 {
               .selectedDigitFont({ size: 10, weight: 600 }))
             
             
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -406,7 +406,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: 34, weight: '800' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -431,7 +431,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '20px', weight: 200 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -456,7 +456,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '48%', weight: 900 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -481,7 +481,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '', weight: FontWeight.Bolder }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -506,7 +506,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: -2, weight: 1000 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -532,7 +532,7 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -557,7 +557,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '1000%', weight: '' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -582,7 +582,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '100vp', weight: 'adf@$5' }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -609,7 +609,7 @@ struct SwiperTest_1 {
               .digitFont({ size: 10, weight: 200 }))
             .indicator(Indicator.digit()
               .digitFont({ size: '40lpx', weight: 500 }))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -637,7 +637,7 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
@@ -664,7 +664,7 @@ struct SwiperTest_1 {
               .digitFont({ size: 10, weight: 600 }))
             
             
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }

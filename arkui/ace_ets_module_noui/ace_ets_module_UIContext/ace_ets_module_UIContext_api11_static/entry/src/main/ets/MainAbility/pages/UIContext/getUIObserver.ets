@@ -28,7 +28,7 @@ struct NavRouterExample {
     let context:UIContext | undefined = this.getUIContext?.()
     if(context!=undefined){
       let contextObserver = context.getUIObserver();
-      contextObserver.on("navDestinationUpdate",(e)=>{
+      contextObserver.onNavDestinationUpdate((e)=>{
         this.showFlag = '30'
       });
     }

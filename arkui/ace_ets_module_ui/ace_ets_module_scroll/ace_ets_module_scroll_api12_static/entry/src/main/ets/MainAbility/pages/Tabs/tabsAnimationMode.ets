@@ -32,7 +32,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct animationModeTabs {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
   
@@ -68,7 +68,7 @@ struct animationModeTabs {
         .barWidth(360)
         .barHeight(56)
         .animationDuration(400)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           this.currentIndex = index
         })
         .animationMode(AnimationMode.CONTENT_FIRST)
@@ -93,7 +93,7 @@ struct animationModeTabs {
         .barWidth(360)
         .barHeight(56)
         .animationDuration(400)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           this.currentIndex = index
         })
         .animationMode(AnimationMode.ACTION_FIRST)
@@ -119,7 +119,7 @@ struct animationModeTabs {
         .barWidth(360)
         .barHeight(56)
         .animationDuration(400)
-        .onChange((index: number): void => {
+        .onChange((index: int): void => {
           this.currentIndex = index
         })
         .animationMode(AnimationMode.NO_ANIMATION)

@@ -22,7 +22,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct WaterFlowStart1 {
   @State minSize: number = 80
   @State maxSize: number = 180
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
   scroller: Scroller = new Scroller()
   private itemWidthArray: number[] = new Array<number>()
@@ -69,7 +69,7 @@ struct WaterFlowStart1 {
       .columnsGap(10)
       .rowsGap(5)
       .height('60%')
-      .onScrollIndex((first: number,last: number) => {
+      .onScrollIndex((first: int,last: int) => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })

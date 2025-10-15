@@ -107,10 +107,10 @@ struct ScrollToIndexForGrid02 {
               .backgroundColor(0x317aff)
               .onClick((e: ClickEvent) => {
                 this.isSmooth = false
-                const yOffsetStart: number = this.scrollerItemForGrid.currentOffset().yOffset;
+                const yOffsetStart: number = this.scrollerItemForGrid.currentOffset()!.yOffset;
                 this.scrollerItemForGrid.scrollToIndex(66, true, ScrollAlign.START)
                 setTimeout(() => {
-                  const yOffsetEnd: number = this.scrollerItemForGrid.currentOffset().yOffset;
+                  const yOffsetEnd: number = this.scrollerItemForGrid.currentOffset()!.yOffset;
                   console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                   this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                   console.info(this.isSmooth + 'isSmooth')
@@ -134,10 +134,10 @@ struct ScrollToIndexForGrid02 {
               .backgroundColor(0x317aff)
               .onClick((e: ClickEvent) => {
                 this.isSmooth = false
-                const yOffsetStart: number = this.scrollerItemForGrid.currentOffset().yOffset;
+                const yOffsetStart: number = this.scrollerItemForGrid.currentOffset()!.yOffset;
                 this.scrollerItemForGrid.scrollToIndex(178, true, ScrollAlign.START)
                 setTimeout(() => {
-                  const yOffsetEnd: number = this.scrollerItemForGrid.currentOffset().yOffset;
+                  const yOffsetEnd: number = this.scrollerItemForGrid.currentOffset()!.yOffset;
                   console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                   this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                   console.info(this.isSmooth + 'isSmooth')

@@ -46,7 +46,7 @@ let promptAction = new PromptAction()
 @Entry
 @Component
 struct showToastOptions {
-  @State toastId: number = 0;
+  @State toastId: int = 0;
 
   build() {
     Column() {
@@ -63,7 +63,7 @@ struct showToastOptions {
               textColor: Color.White,
               backgroundBlurStyle: BlurStyle.Thick,
               shadow: ShadowStyle.OUTER_DEFAULT_MD,
-            }).then((toastId: number) => {
+            }).then((toastId: int) => {
               this.toastId = toastId;
             })
               .catch((error: Error) => {

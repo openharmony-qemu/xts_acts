@@ -51,7 +51,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct onSelectTabsExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State selectedIndex: number = -1
   @State tIndex: number = -1
@@ -86,25 +86,25 @@ struct onSelectTabsExample {
       .edgeEffect(EdgeEffect.Spring)
       .animationMode(AnimationMode.CONTENT_FIRST)
       .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.log('onChange index:' + index);
         this.currentIndex = index
       })
-      .onSelected((index: number): void => {
+      .onSelected((index: int): void => {
         console.log('onSelected index:' + index);
         this.selectedIndex = index
       })
-      .onUnselected((index: number): void => {
+      .onUnselected((index: int): void => {
         this.tIndex = index
         console.log('onUnselected: ' + index)
       })
-      .onGestureSwipe((index: number, extraInfo: TabsAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: TabsAnimationEvent): void => {
         console.info('onGestureSwipe index: ' + index)
         console.info('onGestureSwipe current offset: ' + extraInfo.currentOffset)
         console.info('onGestureSwipe target offset: ' + extraInfo.targetOffset)
         console.info('onGestureSwipe velocity: ' + extraInfo.velocity)
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: TabsAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: TabsAnimationEvent): void => {
         console.info('onAnimationStart index: ' + index)
         console.info('onAnimationStart current offset: ' + extraInfo.currentOffset)
         console.info('onAnimationStart target offset: ' + extraInfo.targetOffset)

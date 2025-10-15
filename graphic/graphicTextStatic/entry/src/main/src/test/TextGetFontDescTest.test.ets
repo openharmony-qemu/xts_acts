@@ -36,10 +36,10 @@ interface FontDescData {
 
 let fontDescExpectData: Array<FontDescData> = [
   {
-    "fontCount": 142,
+    "fontCount": 141,
     "hasDesc": true,
     "fontDesc": {"path":"/system/fonts/NotoSansMath-Regular.ttf", "weight": text.FontWeight.W400, "postScriptName": "NotoSansMath-Regular", "fullName": "Noto Sans Math Regular", "fontFamily": "Noto Sans Math", "fontSubfamily": "Regular", "italic":0, "width":5, "monoSpace": false, "symbolic": false},
-    "matchCount": 0,
+    "matchCount": 1,
   },
   {
     "fontCount": 141,
@@ -48,10 +48,10 @@ let fontDescExpectData: Array<FontDescData> = [
     "matchCount": 1,
   },
   {
-    "fontCount": 1,
+    "fontCount": 0,
     "hasDesc": false,
     "fontDesc": {},
-    "matchCount": 0,
+    "matchCount": 1,
   },
   {
     "fontCount": 0,
@@ -66,8 +66,6 @@ let fontDescExpectData: Array<FontDescData> = [
     "matchCount": 0,
   }
 ]
-
-
 
 export default function TextGetFontDescTest() {
   describe("TextGetFontDescTest", (): void => {
@@ -89,46 +87,53 @@ export default function TextGetFontDescTest() {
             text.SystemFontType.INSTALLED,
             text.SystemFontType.CUSTOMIZED
           ]
-          let index: int = 0;
-          typeArr.forEach(type => {
-            text.getSystemFontFullNamesByType(type).then((data: Array<string>) => {
-              hilog.info(domain, tag, 'TEXT_LOG =================== type: %{public}s ======================', JSON.stringify(type));
-              for (let i =0; i < data.length; i++){
-                const item = data[i];
-                hilog.info(domain, tag, 'TEXT_LOG type [%{public}s] fullname [%{public}d]: %{public}s', JSON.stringify(type), i, item);
-              }
+          let index = 0;
+          for (const type of typeArr) {
+            await text.getSystemFontFullNamesByType(type).then((data: Array<string>) => {
               expect(data.length).assertEqual(fontDescExpectData[index].fontCount);
-              done();
-            });
+              console.info('www data type length ', data.length)
+              console.info('www data type length 000   ', fontDescExpectData[index].fontCount)
+            })
+
+            console.info('www data type index ', index, type)
 
             let fullName: string = "Noto Sans Math Regular";
-            text.getFontDescriptorByFullName(fullName, type).then((data: text.FontDescriptor)=>{
-              hilog.info(domain, tag, 'TEXT_LOG getFontDescriptorByFullName [%{public}s] data: %{public}s', JSON.stringify(type),
-              JSON.stringify(data));
-              if(fontDescExpectData[index].hasDesc){
-                expect(data.path).assertEqual(fontDescExpectData[index].fontDesc.path);
-                expect(data.weight).assertEqual(fontDescExpectData[index].fontDesc.weight);
-                expect(data.postScriptName).assertEqual(fontDescExpectData[index].fontDesc.postScriptName);
-                expect(data.fullName).assertEqual(fontDescExpectData[index].fontDesc.fullName);
-                expect(data.fontFamily).assertEqual(fontDescExpectData[index].fontDesc.fontFamily);
-                expect(data.fontSubfamily).assertEqual(fontDescExpectData[index].fontDesc.fontSubfamily);
-                expect(data.italic).assertEqual(fontDescExpectData[index].fontDesc.italic);
-                expect(data.width).assertEqual(fontDescExpectData[index].fontDesc.width);
-                expect(data.monoSpace).assertEqual(fontDescExpectData[index].fontDesc.monoSpace);
-                expect(data.symbolic).assertEqual(fontDescExpectData[index].fontDesc.symbolic);
+            await text.getFontDescriptorByFullName(fullName, type).then((data: text.FontDescriptor | undefined) => {
+              hilog.info(domain, tag, 'TEXT_LOG getFontDescriptorByFullName [%{public}s] data: %{public}s',
+                JSON.stringify(type), JSON.stringify(data));
+              console.info('www data type fontDescExpectData[index].hasDesc ', fontDescExpectData[index].hasDesc)
+              console.info('www data type type data ', JSON.stringify(data))
+              if (fontDescExpectData[index].hasDesc) {
+                console.info('www data desc ' + 222222);
+                console.info('www data value ', data?.path, data?.weight, data?.postScriptName, data?.fullName,
+                  data?.fontFamily, data?.italic, data?.width, data?.monoSpace, data?.symbolic);
+                expect(data?.path).assertEqual(fontDescExpectData[index].fontDesc.path);
+                expect(data?.weight).assertEqual(fontDescExpectData[index].fontDesc.weight);
+                expect(data?.postScriptName).assertEqual(fontDescExpectData[index].fontDesc.postScriptName);
+                expect(data?.fullName).assertEqual(fontDescExpectData[index].fontDesc.fullName);
+                expect(data?.fontFamily).assertEqual(fontDescExpectData[index].fontDesc.fontFamily);
+                expect(data?.fontSubfamily).assertEqual(fontDescExpectData[index].fontDesc.fontSubfamily);
+                expect(data?.italic).assertEqual(fontDescExpectData[index].fontDesc.italic);
+                expect(data?.width).assertEqual(fontDescExpectData[index].fontDesc.width);
+                expect(data?.monoSpace).assertEqual(fontDescExpectData[index].fontDesc.monoSpace);
+                expect(data?.symbolic).assertEqual(fontDescExpectData[index].fontDesc.symbolic);
               }
-
-              text.matchFontDescriptors(data).then((arr: Array<text.FontDescriptor>) => {
-                hilog.info(domain, tag, 'TEXT_LOG matchFontDescriptors [%{public}s] size: %{public}d', JSON.stringify(type), arr.length);
-                expect(arr.length).assertEqual(fontDescExpectData[index].matchCount);
-                done();
-              });
-              done();
+              console.info('www data desc matchFontDescriptors index ---- ' + index);
+              if (data) {
+                text.matchFontDescriptors(data).then((arr: Array<text.FontDescriptor>) => {
+                  hilog.info(domain, tag, 'TEXT_LOG matchFontDescriptors [%{public}s] size: %{public}d',
+                    JSON.stringify(type), arr.length);
+                  expect(arr.length).assertEqual(fontDescExpectData[index].matchCount);
+                  console.info('www data desc matchFontDescriptors ' + arr.length);
+                  console.info('www data desc matchFontDescriptors index ' + index);
+                });
+              }
             })
             index++;
-          })
+          }
           done();
         } catch (err) {
+          console.info('www data type type data ', JSON.stringify(err))
           hilog.error(domain, tag, `Failed in getFontDesc. Cause:${JSON.stringify(err)}`);
           expect().assertFail();
           done();

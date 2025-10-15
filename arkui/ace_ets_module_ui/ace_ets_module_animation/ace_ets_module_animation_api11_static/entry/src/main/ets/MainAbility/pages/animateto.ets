@@ -59,9 +59,9 @@ interface ParamName {
 struct animateto {
   @State show: string = "btShow";
   @State btn1: boolean = false;
-  @State duration: number = 100;
+  @State duration: int = 100;
   @State curve: string = 'Ease';
-  @State iteration: number = 1;
+  @State iteration: int = 1;
   @State tempo: number = 1000;
   @State playmode: PlayMode = PlayMode.Normal;
   @State finishCallbackType: FinishCallbackType = FinishCallbackType.REMOVED;
@@ -76,13 +76,13 @@ struct animateto {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'duration') {
-        this.duration = message.value
+        this.duration = message.value.toInt()
       }
       if (message.name == 'curve') {
         this.curve = (message as Message<string>).value
       }
       if (message.name == 'iteration') {
-        this.iteration = message.value
+        this.iteration = message.value.toInt()
       }
       if (message.name == 'tempo') {
         this.tempo = message.value

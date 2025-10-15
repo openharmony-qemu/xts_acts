@@ -34,7 +34,7 @@ struct Tabs_barWidHei {
   @State selectedFontColor: string = '#007DFF';
   @State setBarWidth: number = -10;
   @State setBarHeight: number = 56;
-  @State currentIndex: number = 0;
+  @State currentIndex: int = 0;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number> = new MessageManager<number>();
 
@@ -50,7 +50,7 @@ struct Tabs_barWidHei {
         this.setBarHeight = message.value;
       }
       if (message.name == 'currentIndex') {
-        this.currentIndex = message.value;
+        this.currentIndex = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -87,7 +87,7 @@ struct Tabs_barWidHei {
       .barWidth(this.setBarWidth)
       .barHeight(this.setBarHeight)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width(330)

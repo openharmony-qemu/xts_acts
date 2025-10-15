@@ -707,8 +707,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33, 0x34];
-        const result = upperBoundSearch(arr, 0X31);
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x34.toChar()];
+        const result = upperBoundSearch(arr, 0X31.toChar());
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -727,8 +727,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33, 0x34];
-        const result = upperBoundSearch(arr, 0x35);
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x34.toChar()];
+        const result = upperBoundSearch(arr, 0x35.toChar());
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
@@ -747,8 +747,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x31, 0x32, 0x33, 0x34];
-        const result = upperBoundSearch(arr, 0x34);
+        const arr: FixedArray<char> = [0x30.toChar(), 0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x34.toChar()];
+        const result = upperBoundSearch(arr, 0x34.toChar());
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
@@ -767,8 +767,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33, 0x34];
-        const result = upperBoundSearch(arr, 0x30);
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x34.toChar()];
+        const result = upperBoundSearch(arr, 0x30.toChar());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -787,8 +787,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33, 0x34, 0x35];
-        const result = upperBoundSearch(arr, 0x30);
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar(), 0x34.toChar(), 0x35.toChar()];
+        const result = upperBoundSearch(arr, 0x30.toChar());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -807,8 +807,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x42, 0x43, 0x45, 0x46, 0x47];
-        const result = upperBoundSearch(arr, 0x44);
+        const arr: FixedArray<char> = [0x42.toChar(), 0x43.toChar(), 0x45.toChar(), 0x46.toChar(), 0x47.toChar()];
+        const result = upperBoundSearch(arr, 0x44.toChar());
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -827,8 +827,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x42, 0x43, 0x45, 0x46, 0x47];
-        const result = upperBoundSearch(arr, 0x41);
+        const arr: FixedArray<char> = [0x42.toChar(), 0x43.toChar(), 0x45.toChar(), 0x46.toChar(), 0x47.toChar()];
+        const result = upperBoundSearch(arr, 0x41.toChar());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -847,8 +847,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x42, 0x43, 0x45, 0x46, 0x47];
-        const result = upperBoundSearch(arr, 0x49);
+        const arr: FixedArray<char> = [0x42.toChar(), 0x43.toChar(), 0x45.toChar(), 0x46.toChar(), 0x47.toChar()];
+        const result = upperBoundSearch(arr, 0x49.toChar());
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
@@ -867,8 +867,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x33, 0x34, 0x37, 0x38];
-        const result = upperBoundSearch(arr, 0x31, 1, 3);
+        const arr: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x34.toChar(), 0x37.toChar(), 0x38.toChar()];
+        const result = upperBoundSearch(arr, 0x31.toChar(), 1, 3);
         expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
@@ -887,8 +887,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x33, 0x34, 0x37, 0x38];
-        const result = upperBoundSearch(arr, 0x36, 1, 4);
+        const arr: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x34.toChar(), 0x37.toChar(), 0x38.toChar()];
+        const result = upperBoundSearch(arr, 0x36.toChar(), 1, 4);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -907,8 +907,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x33, 0x34, 0x37, 0x38];
-        const result = upperBoundSearch(arr, 0x36, 1, 2);
+        const arr: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x34.toChar(), 0x37.toChar(), 0x38.toChar()];
+        const result = upperBoundSearch(arr, 0x36.toChar(), 1, 2);
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -927,8 +927,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x32, 0x33, 0x34, 0x37, 0x38];
-        const result = upperBoundSearch(arr, 0x39, 1, 4);
+        const arr: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x34.toChar(), 0x37.toChar(), 0x38.toChar()];
+        const result = upperBoundSearch(arr, 0x39.toChar(), 1, 4);
         expect(result).assertEqual(4);
         console.info(`${caseName}, test end`);
         Done();
@@ -947,8 +947,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D, 0x6E, 0x6F, 0x77, 0x78, 0x79, 0x7A];
-        const result = upperBoundSearch(arr, 0x75, 2, 6);
+        const arr: FixedArray<char> = [0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar(), 0x77.toChar(), 0x78.toChar(), 0x79.toChar(), 0x7A.toChar()];
+        const result = upperBoundSearch(arr, 0x75.toChar(), 2, 6);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -967,8 +967,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D, 0x6E, 0x6F, 0x77, 0x78, 0x79, 0x7A];
-        const result = upperBoundSearch(arr, 0x75, 2, 7);
+        const arr: FixedArray<char> = [0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar(), 0x77.toChar(), 0x78.toChar(), 0x79.toChar(), 0x7A.toChar()];
+        const result = upperBoundSearch(arr, 0x75.toChar(), 2, 7);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -987,8 +987,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D, 0x6E, 0x6F, 0x77, 0x78, 0x79, 0x7A];
-        const result = upperBoundSearch(arr, 0x6B, 1, 5);
+        const arr: FixedArray<char> = [0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar(), 0x77.toChar(), 0x78.toChar(), 0x79.toChar(), 0x7A.toChar()];
+        const result = upperBoundSearch(arr, 0x6B.toChar(), 1, 5);
         expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
@@ -1007,8 +1007,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest4800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D, 0x6E, 0x6F, 0x77, 0x78, 0x79, 0x7A];
-        const result = upperBoundSearch(arr, 0x7B, 1, 5);
+        const arr: FixedArray<char> = [0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar(), 0x77.toChar(), 0x78.toChar(), 0x79.toChar(), 0x7A.toChar()];
+        const result = upperBoundSearch(arr, 0x7B.toChar(), 1, 5);
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();

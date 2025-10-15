@@ -89,6 +89,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("finishWithResultText")
         .onClick((e: ClickEvent) => {
+          
         })
 
       Text("featureAbility-GetDeviceList")
@@ -105,6 +106,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("getDeviceListText")
         .onClick((e: ClickEvent) => {
+          
         })
 
       Text("featureAbility-CallAbility")
@@ -121,6 +123,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("callAbilityText")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-ContinueAbility")
@@ -137,6 +145,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("continueAbilityText")
         .onClick((e: ClickEvent) => {
+          
         })
 
       Text("featureAbility-SubscribeAbilityEvent")
@@ -153,6 +162,13 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("subscribeAbilityEventText")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-UnsubscribeAbilityEvent")
@@ -169,6 +185,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("unsubscribeAbilityEventText")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-SendMsg")
@@ -185,6 +207,21 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("sendMsgText")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-SubscribeMsg")
@@ -201,6 +238,14 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("subscribeMsgText")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-UnsubscribeMsg")
@@ -217,7 +262,7 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("unsubscribeMsgText")
         .onClick((e: ClickEvent) => {
-
+          
         })
 
       Text("featureAbility-StartAbility")
@@ -234,6 +279,17 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-StartAbility")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-startAbilityForResult")
@@ -250,6 +306,16 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-startAbilityForResult")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-finishWithResult")
@@ -266,6 +332,12 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-getDeviceList")
@@ -282,6 +354,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
+          
+          
+          
         })
 
       Text("featureAbility-getDeviceList")
@@ -298,6 +373,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-finishWithResult")
         .onClick((e: ClickEvent) => {
+          
+          
+          
         })
 
       Text("featureAbility-callAbility")
@@ -314,6 +392,14 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-callAbility")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
         })
 
       Text("featureAbility-continueAbility")
@@ -330,6 +416,9 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-continueAbility")
         .onClick((e: ClickEvent) => {
+          
+          
+          
         })
       Text("featureAbility-subscribeAbilityEvent")
         .width(320)
@@ -345,6 +434,17 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-subscribeAbilityEvent")
         .onClick((e: ClickEvent) => {
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         })
       Text("featureAbility-unsubscribeAbilityEvent")
         .width(320)
@@ -360,6 +460,15 @@ struct FeatureAbilityStartAbility {
         .textOverflow({ overflow: TextOverflow.None })
         .key("featureAbility-unsubscribeAbilityEvent")
         .onClick((e: ClickEvent) => {
+        
+        
+        
+        
+        
+        
+        
+        
+        
         })
 
     }

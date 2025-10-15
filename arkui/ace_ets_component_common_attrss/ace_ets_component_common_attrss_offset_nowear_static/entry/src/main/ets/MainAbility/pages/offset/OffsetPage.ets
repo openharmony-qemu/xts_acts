@@ -16,118 +16,19 @@
 import { ListItemGroupView } from "../../view/offset/ListItemGroupView";
 import { StepperView } from '../../view/offset/StepperView';
 import { StepperItemView } from '../../view/offset/StepperItemView';
-import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import {
-  Entry,
-  Component,
-  $r,
-  AlignRuleOption,
-  Row,
-  Button,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  SwiperController,
-  Column,
-  ColumnOptions,
-  ClickEvent,
-  RowOptions,
-  LazyForEach,
-  Text,
-  FlexAlign,
-  TextCase,
-  TextDecorationType,
-  Resource,
-  VerticalAlign,
-  HorizontalAlign,
-  RelativeContainer,
-  Color,
-  Scroller,
-  Menu,
-  ScrollBar,
-  TextTimer,
-
-  ColumnSplit,
-  RowSplit,
-  Refresh,
-
-  Shape,
-  Rect,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Ellipse,
-  Circle,
-  WaterFlow,
-  Tabs,
-  Swiper,
-  Stack,
-  SideBarContainer,
-  Scroll,
-  List,
-  GridRow,
-  Grid,
-  Flex,
-  Counter,
-  Badge,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  TextInput,
-  TextClock,
-  TextArea,
-  Slider,
-  Search,
-  Rating,
-  QRCode,
-  Progress,
-  AlphabetIndexer,
-  ImageAnimator,
-  Image,
-  Navigation,
-  Marquee,
-  LoadingProgress,
-  Gauge,
-  Divider,
-  DatePicker,
-  DataPanel,
-  CheckboxGroup,
-  Checkbox,
-  Select,
-  Radio,
-  MenuItem,
-  ProgressType,
-  ToggleType,
-  ForEach,
-  GridRowDirection,
-  BarState,
-  SideBarContainerType,
-  TextAlign,
-  GridItem,
-  BadgeStyle,
-  BadgeParamWithString,
-  GutterOption,
-  BreakPoints,
-  BreakpointsReference,
-  GridCol,
-  GridColOptions,
-  GridColColumnOption,
-  ColumnOptions,
-  MenuItemOptions,
-  Position,
-  TabContent,
-  Axis,
-  ListItem,
-  FlowItem,
-  FlexDirection,
-  MenuItemGroup,
-  Blank
+  Entry,CommonMethod,Component,$r,AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ClickEvent,
+  RowOptions,LazyForEach,Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,Color,Scroller,Menu,ScrollBar,TextTimer,
+  ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,
+  GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,Search,Rating,QRCode,Progress,
+  AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,
+  GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,MenuItemOptions,Position,TabContent,Axis,
+  ListItem,FlowItem,FlexDirection,MenuItemGroup,Blank,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 /**
@@ -140,37 +41,50 @@ struct Offset {
   private scroller: Scroller = new Scroller() 
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) 
   @State show: boolean = false 
-  @State _offset: Position = { x: 0, y: 0 } as Position;
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? ""
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State subassemblyWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.subassemblyWidth
-  @State subassemblyHeight: number =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.subassemblyHeight
-  @State parentComponentKey: string =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
-  @State referenceComponentKey: string =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
-
+  @StoragePropRef("_offset") _offset: Position = { x: 0, y: 0 } as Position;
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @State parentWidth: number = 200
+  @State parentHeight: number = 200
+  @State subassemblyWidth: number = 200
+  @State subassemblyHeight: number =200
+  @State parentComponentKey: string = ''
+  @State referenceComponentKey: string = ''
+  @Builder
+  myBuilder() {
+    Column() {
+      Text("bindSheet")
+        .fontSize(20)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+  }
   onPageShow() {
     console.info('[Offset] page show called ')
 
-    
-    attrsManager.registerDataChange((value: Position) => {
-      this._offset = value
-    })
+    try {
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey= routerParamOptions.view.componentKey
+      this.parentWidth= routerParamOptions.view.parentWidth
+      this.parentHeight= routerParamOptions.view.parentHeight
+      this.subassemblyWidth= routerParamOptions.view.subassemblyWidth
+      this.subassemblyHeight= routerParamOptions.view.subassemblyHeight
+      this.parentComponentKey= routerParamOptions.view.parentComponentKey
+      this.referenceComponentKey= routerParamOptions.view.referenceComponentKey
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
   /**
    * Set common style.
    */
-  
-  
-  
-  
-  
-
+  commonStyle(instance: CommonMethod) {
+    instance.offset(this._offset)
+    instance.key(this.componentKey)
+  }
   build() {
     Row() {
       Column() {
@@ -182,7 +96,7 @@ struct Offset {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+            }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
 
             ListItem() {
               Text('referenceComponent')
@@ -198,7 +112,7 @@ struct Offset {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
             }.tabBar('Tabs1')
 
-            
+            .applyStyles(this.commonStyle).width(this.subassemblyWidth).height(this.subassemblyHeight)
 
             TabContent() {
               Text('referenceComponent').width('100%').height('100%').backgroundColor(Color.Orange)
@@ -225,7 +139,7 @@ struct Offset {
               } as GridColColumnOption
             }) {
               Row().width('100%').height('20vp')
-            }.borderColor(Color.Green).borderWidth(2) 
+            }.borderColor(Color.Green).borderWidth(2).applyStyles(this.commonStyle)
 
             GridCol({
               span: {
@@ -242,7 +156,7 @@ struct Offset {
           WaterFlow() {
             FlowItem() {
               Text('text').fontSize(12).height('16')
-            }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+            }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
 
             FlowItem() {
               Text('text').fontSize(12).height('16')
@@ -262,7 +176,7 @@ struct Offset {
             GridItem() {
               Text('GridItem1').backgroundColor(Color.White)
                 .width('100%').height('100%').textAlign(TextAlign.Center)
-            } 
+            }.applyStyles(this.commonStyle)
 
             GridItem() {
               Text('GridItem2').backgroundColor(Color.White)
@@ -278,7 +192,7 @@ struct Offset {
         } else if (this.targetView == 'MenuItem') {
           Row() {
             Menu() {
-              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions) 
+              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).applyStyles(this.commonStyle)
               MenuItem({ startIcon: $r('app.media.icon'), content: 'referenceComponent' } as MenuItemOptions)
                 .key(this.referenceComponentKey)
             }
@@ -293,7 +207,7 @@ struct Offset {
             Menu() {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
 
               MenuItem({ startIcon: $r('app.media.icon'), content: 'referenceComponent' } as MenuItemOptions)
                 .key(this.referenceComponentKey)
@@ -308,28 +222,28 @@ struct Offset {
           Row() {
             
             if (this.targetView == 'Button') {
-              Button('button1').width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Button('button1').width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Radio') {
               Radio({ value: 'Radio1', group: 'radioGroup' })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Select') {
               Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
                 { value: 'bbb', icon: '/common/public_icon.svg' }])
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Blank') {
-              Blank().color(Color.Black) 
+              Blank().color(Color.Black).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Checkbox') {
               Checkbox({ name: 'checkbox1' }).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'CheckboxGroup') {
               CheckboxGroup().width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'DataPanel') {
               DataPanel({ values: [25] }).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'DatePicker') {
               DatePicker({}).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Divider') {
               Divider()
                 .strokeWidth(10)
@@ -337,74 +251,74 @@ struct Offset {
                 .vertical(false)
                 .width(this.subassemblyWidth)
                 .height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Gauge') {
               Gauge({ value: 0 })
                 .colors([[0x317AF7, 1], [0x9C554B, 1]])
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'LoadingProgress') {
-              LoadingProgress().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              LoadingProgress().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Marquee') {
               Marquee({ start: true, src: 'Marquee' })
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Navigation') {
               Navigation({})
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Image') {
               Image($r('app.media.icon'))
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'ImageAnimator') {
               ImageAnimator()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'AlphabetIndexer') {
               AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Progress') {
               Progress({ value: 10, type: ProgressType.Ring })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'QRCode') {
               QRCode('Hello Harmony').width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Rating') {
               Rating({ rating: 3.5 }).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Search') {
-              Search().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Search().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Slider') {
-              Slider().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Slider().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Text') {
-              Text('Text').width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Text('Text').width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'TextArea') {
-              TextArea().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              TextArea().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'TextClock') {
-              TextClock().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              TextClock().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'TextInput') {
-              TextInput().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              TextInput().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'TextPicker') {
               TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'TimePicker') {
-              TimePicker().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              TimePicker().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Toggle') {
               Toggle({ type: ToggleType.Switch })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Badge') {
               Badge({ value: '', style: { badgeSize: 6, badgeColor: Color.Red } } as BadgeParamWithString) {
                 Button('BadgeContent')
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Column') {
-              Column().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Column().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Counter') {
-              Counter().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Counter().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Flex') {
-              Flex().width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              Flex().width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Grid') {
               Grid() {
-                ForEach(new Array<string>('0', '1', '2', '3', '4'), (s: string) => {
+                ForEach(new Array<string>('0', '1', '2', '3', '4'), (r: string) => {
                   ForEach(new Array<string>('0', '1', '2', '3', '4'), (day: string) => {
                     GridItem() {
                       Text(day).backgroundColor(Color.White)
@@ -412,7 +326,7 @@ struct Offset {
                     }
                   })
                 })
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'GridRow') {
               GridRow({
                 columns: 5,
@@ -436,15 +350,15 @@ struct Offset {
                       Row().width('100%').height('20vp')
                     }.borderColor(color).borderWidth(2)
                   })
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'List') {
               List()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Row') {
               Row()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Scroll') {
               Scroll(this.scroller) {
                 Flex({ direction: FlexDirection.Column }) {
@@ -461,11 +375,11 @@ struct Offset {
                     }
                   }, (item: number) => String(item))
                 }.margin({ right: 15 } as Margin)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index: Int): void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon')).width(64).height(64)
                       Text('Index0' + item).fontSize(25)
@@ -476,93 +390,93 @@ struct Offset {
                 Column() {
                   Text('SideBarContainer content').fontSize(25)
                 }.backgroundColor(Color.Orange)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Stack') {
               Stack()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index: int): void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index: Int): void => {
                   Text('Swiper' + item).width('90%').height(160)
-                }, (item: number, index: int): string => String(item))
+                }, (item: number, index: Int): string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)
               .width(this.subassemblyWidth)
               .height(this.subassemblyHeight)
 
-              
+              .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Tabs') {
               Tabs()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'WaterFlow') {
               WaterFlow()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Circle') {
               Circle()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Ellipse') {
               Ellipse()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Line') {
               Line()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Polyline') {
               Polyline()
                 .points([[50, 10], [50, 50], [90, 90]])
                 .backgroundColor(Color.Blue)
                 .width(this.subassemblyWidth)
                 .height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Polygon') {
               Polygon()
                 .points([[50, 10], [50, 50], [90, 90]])
                 .backgroundColor(Color.Blue)
                 .width(this.subassemblyWidth)
                 .height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Path') {
               Path()
                 .commands('M100 0 L200 240 L0 240 Z')
                 .backgroundColor(Color.Blue)
                 .width(this.subassemblyWidth)
                 .height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Rect') {
               Rect()
                 .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+                .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Shape') {
               Shape() {
                 Rect().width('100%').height('100%')
               }
               .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
-              
+              .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Panel') {
-              
-              
-              
-              
+              Column(){
+              }
+              .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
+              .bindSheet(true,this.myBuilder)
             } else if (this.targetView == 'Refresh') {
               Refresh({ refreshing: true }) {
                 Text('Refresh').fontSize(30)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'RowSplit') {
               RowSplit() {
                 Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
                 Text('2').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'ColumnSplit') {
               ColumnSplit() {
                 Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
                 Text('2').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-              }.width(this.subassemblyWidth).height(this.subassemblyHeight) 
+              }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'RelativeContainer') {
               RelativeContainer() {
                 Row()
@@ -577,17 +491,10 @@ struct Offset {
               }
               .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)
 
-              
-            } else if (this.targetView == 'Navigator') {
-              
-              
-              
-              
-            } else if (this.targetView == 'NavRouter') {
-              
+              .applyStyles(this.commonStyle)
             } else if (this.targetView == 'TextTimer') {
               TextTimer({ isCountDown: true, count: 30000 })
-                .width(this.subassemblyWidth).height(this.subassemblyHeight) 
+                .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
             } else if (this.targetView == 'Stepper') {
               StepperView({ _offset: this._offset, componentKey: this.componentKey });
             } else if (this.targetView == 'ScrollBar') {
@@ -596,7 +503,7 @@ struct Offset {
                   .backgroundColor('#C0C0C0')
               }.width(this.subassemblyWidth).height(this.subassemblyHeight).backgroundColor('#ededed')
 
-              
+              .applyStyles(this.commonStyle)
             } else if (this.targetView == 'ListItemGroup') {
               ListItemGroupView({
                 _offset: this._offset,
@@ -612,7 +519,7 @@ struct Offset {
               Menu() {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
               }.backgroundColor(Color.Yellow).width(this.subassemblyWidth)
-              .height(this.subassemblyHeight) 
+              .height(this.subassemblyHeight).applyStyles(this.commonStyle)
             }
             Button('Button').width(this.subassemblyWidth).height(this.subassemblyHeight)
               .key(this.referenceComponentKey)

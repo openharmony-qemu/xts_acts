@@ -17,7 +17,7 @@ function TaskGroup001(): void {
 function TaskGroup002(): Promise<Char> {
   return new Promise<Char>(resolve => {
     setTimeout(() => {
-      resolve(2);
+      resolve(Int.toChar(2));
     }, 1000);
   })
 }

@@ -1,0 +1,7 @@
+{
+  "src": [
+    "pages/webResourceHandlerTest",
+    "pages/webErrorCode",
+    "pages/jsMessageExtErrorCode"
+  ]
+}

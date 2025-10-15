@@ -1517,6 +1517,76 @@ export default function WindowLifeCycleTest() {
 
         })
 
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_API_REMOVE_STARTING_WINDOW_static_0100
+         * @tc.name      testRemoveStartingWindow_Promise_static
+         * @tc.desc      testRemoveStartingWindow_Promise_static
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testRemoveStartingWindow_Promise_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testRemoveStartingWindow_Promise_static";
+            hilog.info(domain, tag,msgStr + "begin");
+            try {
+                windowStage.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,'Succeeded in removing starting window.');
+                    expect(true).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`Failed to remove starting window. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code != 801) {
+                        hilog.error(domain, tag,msgStr + 'Failed testRemoveStartingWindow_Promise. Cause:' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                        expect(err.code).assertEqual(801);
+                        done();
+                    }
+                });
+
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + 'Failed to testRemoveStartingWindow_Promise. Cause: ' + JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number     testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.name       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.desc       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testRemoveStartingWindowPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testRemoveStartingWindowPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call removeStartingWindow. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                    done()
+                });
+
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
+        })
+
     })
 
 }

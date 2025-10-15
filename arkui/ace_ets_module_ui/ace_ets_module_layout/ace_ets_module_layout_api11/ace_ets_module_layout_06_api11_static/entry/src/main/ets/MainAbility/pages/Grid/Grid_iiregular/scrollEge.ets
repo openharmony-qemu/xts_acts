@@ -77,10 +77,10 @@ struct scrollEge {
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .onScrollIndex((first: number,last: number):void => {
+      .onScrollIndex((first: int,last: int):void => {
         console.info(first.toString())
       })
-      .onScrollBarUpdate((index: number, offset: number) =>  {
+      .onScrollBarUpdate((index: int, offset: number) =>  {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')

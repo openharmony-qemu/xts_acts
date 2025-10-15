@@ -205,9 +205,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0100';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [97 as char, 98 as char, 99 as char, 100 as char];
+        const src: FixedArray<char> = [Int.toChar(97), Int.toChar(98), Int.toChar(99), Int.toChar(100)];
         const result = copyOf(src);
-        expect([...result]).assertDeepEquals([97 as char, 98 as char, 99 as char, 100 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(97), Int.toChar(98), Int.toChar(99), Int.toChar(100)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -237,9 +237,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0300';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [90 as char];
+        const src: FixedArray<char> = [Int.toChar(90)];
         const result = copyOf(src);
-        expect([...result]).assertDeepEquals([90 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(90)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -253,9 +253,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0400';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [33 as char, 64 as char, 35 as char, 8242 as char];
+        const src: FixedArray<char> = [Int.toChar(33), Int.toChar(64), Int.toChar(35), Int.toChar(8242)];
         const result = copyOf(src); // 修正：添加空格，规范格式
-        expect([...result]).assertDeepEquals([33 as char, 64 as char, 35 as char, 8242 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(33), Int.toChar(64), Int.toChar(35), Int.toChar(8242)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -269,9 +269,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0500';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [115 as char, 115 as char, 115 as char];
+        const src: FixedArray<char> = [Int.toChar(115), Int.toChar(115), Int.toChar(115)];
         const result = copyOf(src);
-        expect([...result]).assertDeepEquals([115 as char, 115 as char, 115 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(115), Int.toChar(115), Int.toChar(115)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -285,9 +285,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0600';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [110 as char, 111 as char, 112 as char, 113 as char];
+        const src: FixedArray<char> = [Int.toChar(110), Int.toChar(111), Int.toChar(112), Int.toChar(113)];
         const result = copyOf(src);
-        expect([...result]).assertDeepEquals([110 as char, 111 as char, 112 as char, 113 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(110), Int.toChar(111), Int.toChar(112), Int.toChar(113)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -301,9 +301,9 @@ export default function builtinsArrayCopyOfTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayCopyOfCharTest0700';
         console.info(`${caseName}, test start`);
-        const src: FixedArray<char> = [88 as char, 80 as char, 104 as char, 105 as char];
+        const src: FixedArray<char> = [Int.toChar(88), Int.toChar(80), Int.toChar(104), Int.toChar(105)];
         const result = copyOf(src);
-        expect([...result]).assertDeepEquals([88 as char, 80 as char, 104 as char, 105 as char]);
+        expect([...result]).assertDeepEquals([Int.toChar(88), Int.toChar(80), Int.toChar(104), Int.toChar(105)]);
         console.info(`${caseName}, test end`);
         Done();
       });
@@ -318,11 +318,11 @@ export default function builtinsArrayCopyOfTest(){
         const caseName = 'builtinsArrayCopyOfCharTest0800';
         console.info(`${caseName}, test start`);
         const src: FixedArray<char> =
-          [110 as char, 111 as char, 112 as char, 113 as char, 88 as char, 80 as char, 104 as char, 105 as char];
+          [Int.toChar(110), Int.toChar(111), Int.toChar(112), Int.toChar(113), Int.toChar(88), Int.toChar(80), Int.toChar(104), Int.toChar(105)];
         const result = copyOf(src);
         expect([...result])
-          .assertDeepEquals([110 as char, 111 as char, 112 as char, 113 as char, 88 as char, 80 as char, 104 as char,
-            105 as char]);
+          .assertDeepEquals([Int.toChar(110), Int.toChar(111), Int.toChar(112), Int.toChar(113), Int.toChar(88), Int.toChar(80), Int.toChar(104),
+            Int.toChar(105)]);
         console.info(`${caseName}, test end`);
         Done();
       });

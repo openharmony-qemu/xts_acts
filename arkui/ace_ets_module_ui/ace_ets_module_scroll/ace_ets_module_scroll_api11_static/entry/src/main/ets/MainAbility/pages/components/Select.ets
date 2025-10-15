@@ -74,7 +74,7 @@ struct SlelectExample {
         .selectedOptionBgColor(0xCCCCCC)
         .selectedOptionFontColor(0x000000)
         .key('select')
-        .onSelect((index: number, selectStr: string): void => {
+        .onSelect((index: int, selectStr: string): void => {
           console.info("Select:" + index)
         })
     }

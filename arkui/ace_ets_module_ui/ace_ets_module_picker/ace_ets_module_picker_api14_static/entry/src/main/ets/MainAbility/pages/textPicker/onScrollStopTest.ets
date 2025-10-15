@@ -20,12 +20,12 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct onScrollStopTest {
-  private fruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
-  private select: undefined|Double|Array<Double> = 0 as undefined|Double|Array<Double>
-  @State v: string = ''
-  @State canLoop: boolean = true
-  @State message: string = ''
-  @State message1: string = ''
+  private fruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
+  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
+  @State v: string = '';
+  @State canLoop: boolean = true;
+  @State message: string = '';
+  @State message1: string = '';
 
   build() {
     Column({ space: 20 }  as ColumnOptions) {
@@ -33,7 +33,7 @@ struct onScrollStopTest {
       TextPicker({ range: this.fruits })
         .id('myTextPicker')
         .canLoop(this.canLoop)
-        .onScrollStop((value: string | string[], index: number | number[]) => {
+        .onScrollStop((value: string | string[], index: int | int[]) => {
           this.message = 'stop'
         })
         .height('50%')

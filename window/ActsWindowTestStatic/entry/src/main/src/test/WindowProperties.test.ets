@@ -24,6 +24,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import { ColorMetrics, screenshot } from '@kit.ArkUI';
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -1175,6 +1176,119 @@ export default function WindowPropertiesTest() {
                 done()
             }
         });
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_SetStatusBarColor_static_0300
+         * @tc.name       test_setStatusBarColor_normal1_static
+         * @tc.desc       验证设置正常状态栏颜色
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_setStatusBarColor_normal1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = "test_setStatusBarColor_normal1_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                 windowClass!.setStatusBarColor(ColorMetrics.numeric(0x112233)).then(async () => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling setStatusBarColor.');
+                    let res: window.StatusBarProperty = windowClass.getStatusBarProperty();
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling getStatusBarProperty, color: ' + res.contentColor);
+                    expect(res.contentColor).assertEqual("#FF112233")
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call setStatusBarColor. Cause: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed2 to set the call setStatusBarColor. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_setExclusivelyHighlighted_1300004_static_0200
+         * @tc.name       testsetExclusivelyHighlighted_1300004_static
+         * @tc.desc       testsetExclusivelyHighlighted_1300004
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testsetExclusivelyHighlighted_1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testsetExclusivelyHighlighted_1300004_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                let promise = windowClass.setExclusivelyHighlighted(true);
+                promise.then(() => {
+                    hilog.info(domain, tag,msgStr +'Succeeded in setting the window to be exclusively highlight.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr +`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300004);
+                        done()
+                    }
+
+                });
+
+            } catch (e: BusinessError) {
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                expect(false).assertTrue();
+                done()
+            }
+
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_setExclusivelyHighlighted_1300002_static_0300
+         * @tc.name       testsetExclusivelyHighlighted_1300002_static
+         * @tc.desc       testsetExclusivelyHighlighted_1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testsetExclusivelyHighlighted_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testsetExclusivelyHighlighted_1300002_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "test",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let windowClass:window.Window = await window.createWindow(config);
+            await Utils.msSleep(300);
+            try {
+                await windowClass.destroyWindow();
+                let promise = windowClass.setExclusivelyHighlighted(true);
+                promise.then(() => {
+                    hilog.info(domain, tag,'Succeeded in setting the window to be exclusively highlight.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                        done()
+                    }
+                });
+
+            } catch (e: BusinessError) {
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                expect(false).assertTrue();
+                done()
+            }
+
+        })
 
 
     })

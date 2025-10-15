@@ -13,15 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("RefreshStaticTest") {
+ohos_js_app_static_suite("ActsRefreshStaticTest") {
 #  test_hap = true
 #  testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsRefreshStaticTest"
-
-  # 部件名称，真实数据，需要子系统对应
   part_name = "ace_engine"
-
-  # 子系统名称，真实数据，需要部件对应
   subsystem_name = "arkui"
 }

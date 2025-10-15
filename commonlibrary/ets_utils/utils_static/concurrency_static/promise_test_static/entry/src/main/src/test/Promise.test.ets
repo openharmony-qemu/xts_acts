@@ -523,7 +523,7 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest017';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = Promise.resolve<Char>(1);
+          const promise1 = Promise.resolve<Char>(Int.toChar(1));
           const result = await promise1 as Char;
           expect(result).assertEqual(1);
         } catch (err) {

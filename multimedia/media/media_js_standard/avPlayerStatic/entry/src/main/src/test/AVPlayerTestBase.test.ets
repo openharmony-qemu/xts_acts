@@ -96,10 +96,10 @@ async function preparePromise(avPlayer: media.AVPlayer | null) {
     console.info('case avPlayer is null');
   } else {
     await avPlayer!!.prepare()
-    .then(() => {
-      console.info('case prepare called');
-      console.info('case avPlayer.duration: ' + avPlayer.duration);
-    }).catch(mediaTestBase.catchCallback);
+      .then(() => {
+        console.info('case prepare called');
+        console.info('case avPlayer.duration: ' + avPlayer.duration);
+      }).catch(mediaTestBase.catchCallback);
   }
 }
 
@@ -999,18 +999,18 @@ export async function createToRelease2(src: string | media.AVFileDescriptor, avP
 
 let createLoopTime: number = 0;
 let createTotalTime: number = 0;
-let createStart: number = 0;
+let createStart: long = 0;
 
 export async function createTimeWithCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
   avPlayer = await idle(src, avPlayer!)
-  createStart = Date.now();
+  createStart = Date.now()
   console.info(`createTimeWithCallback createStart time is : ${createStart}`)
   createTimeCallback(src, avPlayer!, done)
 }
 
 function createTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: () => void) {
-  let end: number;
-  let execution: number;
+  let end: long;
+  let execution: long;
   avPlayer?.on('stateChange', (state, reason) => {
     console.info(`createTimeCallback stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`createTimeCallback state is ${state}`);
@@ -1077,7 +1077,7 @@ export async function prepareTimeWithoutCallback(src: string | media.AVFileDescr
     }
     let start = Date.now();
     console.info(`prepareTimeWithoutCallback start time is : ${start}`)
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.prepare().then(() => {
       expect(avPlayer?.state).assertEqual(PREPARED);
       console.info('prepareTimeWithoutCallback avPlayer state is prepared')
@@ -1106,9 +1106,9 @@ export async function prepareTimeWithCallback(src: string | media.AVFileDescript
 
 async function prepareTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number;
-  let end: number;
-  let execution: number;
+  let start: long;
+  let end: long;
+  let execution: long;
   let loopTime = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1136,14 +1136,14 @@ async function prepareTimeCallback(src: string | media.AVFileDescriptor, avPlaye
         }
         console.info('prepareTimeWithCallback play state is INITIALIZED')
         // step 1: initialized -> prepared
-        start = Date.now();
+        start = Date.now()
         console.info(`prepareTimeWithCallback start time is : ${start}`)
         avPlayer?.prepare()
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('prepareTimeWithCallback avPlayer state is prepared')
-        end = Date.now();
+        end = Date.now()
         console.info(`prepareTimeWithCallback end time is : ${end}`)
         execution = (end - start)
         console.info("prepareTimeWithCallback execution time  is :" + execution)
@@ -1157,7 +1157,7 @@ async function prepareTimeCallback(src: string | media.AVFileDescriptor, avPlaye
   });
 }
 
-export async function playTimeWithoutCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null |undefined, done: () => void) {
+export async function playTimeWithoutCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null | undefined, done: () => void) {
   let totalTime: number = 0;
   let surfaceID: string = globalThis.value;
   for (let i = 0; i < 10; i++) {
@@ -1173,7 +1173,7 @@ export async function playTimeWithoutCallback(src: string | media.AVFileDescript
       console.info('playTimeWithoutCallback avPlayer state is prepared')
     }).catch(mediaTestBase.catchCallback);
     let start = Date.now();
-    let end: number = 0;
+    let end: long = 0;
     console.info(`playTimeWithoutCallback start time is : ${start}`)
     await avPlayer!!.play().then(() => {
       end = Date.now();
@@ -1203,9 +1203,9 @@ export async function playTimeWithCallback(src: string | media.AVFileDescriptor,
 
 export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1232,7 +1232,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('playTimeCallback avPlayer state is prepared')
-        start = Date.now();
+        start = Date.now()
         console.info(`playTimeCallback start time is : ${start}`)
         // step 2: prapared -> play
         avPlayer?.play()
@@ -1240,7 +1240,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
       case PLAYING:
         console.info('playTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
-        end = Date.now();
+        end = Date.now()
         console.info(`playTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("playTimeCallback execution time  is :" + execution)
@@ -1264,8 +1264,8 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
         break;
       case PAUSED:
         console.info('playTimeWithCallback play state is PAUSED')
-        expect(avPlayer?.state).assertEqual('paused');
-        start = Date.now();
+        expect(avPlayer?.state).assertEqual('paused')
+        start = Date.now()
         console.info(`playTimeCallback start time is : ${start}`)
         avPlayer?.play()
         break;
@@ -1279,8 +1279,8 @@ export async function pauseTimeWithoutCallback(src: string | media.AVFileDescrip
   let totalTime: number = 0;
   let surfaceID: string = globalThis.value;
   for (let i = 0; i < 10; i++) {
-    let execution: number = 0;
-    let end: number = 0;
+    let execution: long = 0;
+    let end: long = 0;
     avPlayer = await idle(src, avPlayer!)
     await setSource(avPlayer!, src);
     console.info('pauseTimeWithoutCallback setSource');
@@ -1326,9 +1326,9 @@ export async function pauseTimeWithCallback(src: string | media.AVFileDescriptor
 
 async function pauseTimeCallback(avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1361,14 +1361,14 @@ async function pauseTimeCallback(avPlayer: media.AVPlayer | undefined | null, do
         console.info('pauseTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         setTimeout(() => {
-          start = Date.now();
+          start = Date.now()
           console.info(`pauseTimeCallback start time is : ${start}`)
           avPlayer?.pause()
         }, 200);
         break;
       case PAUSED:
         expect(avPlayer?.state).assertEqual(PAUSED);
-        end = Date.now();
+        end = Date.now()
         console.info(`pauseTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("pauseTimeCallback execution time  is :" + execution)
@@ -1412,11 +1412,11 @@ export async function stopTimeWithoutCallback(src: string | media.AVFileDescript
       console.info('stopTimeWithoutCallback play success');
       expect(avPlayer?.state).assertEqual(PLAYING);
     }).catch(mediaTestBase.catchCallback);
-    let start = Date.now();
+    let start = Date.now()
     console.info(`stopTimeWithoutCallback start time is : ${start}`)
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.stop().then(() => {
-      end = Date.now();
+      end = Date.now()
       console.info(`stopTimeWithoutCallback end time is : ${end}`)
       expect(avPlayer?.state).assertEqual(STOPPED);
       console.info('stopTimeWithoutCallback avPlayer state is stop')
@@ -1442,9 +1442,9 @@ export async function stopTimeWithCallback(src: string | media.AVFileDescriptor,
 
 async function stopTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1474,7 +1474,7 @@ async function stopTimeCallback(src: string | media.AVFileDescriptor, avPlayer: 
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('stopTimeCallback avPlayer state is prepared')
-        start = Date.now();
+        start = Date.now()
         console.info(`stopTimeCallback start time is : ${start}`)
         loopTime++;
         avPlayer?.stop()
@@ -1520,7 +1520,7 @@ export async function resetTimeWithoutCallback(src: string | media.AVFileDescrip
       expect(avPlayer?.state).assertEqual(PREPARED);
       console.info('resetTimeWithoutCallback avPlayer state is prepared')
     }).catch(mediaTestBase.catchCallback);
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.play().then(() => {
       console.info('resetTimeWithoutCallback play success');
       expect(avPlayer?.state).assertEqual(PLAYING);
@@ -1554,9 +1554,9 @@ export async function resetTimeWithCallback(src: string | media.AVFileDescriptor
 
 async function resetTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1590,7 +1590,7 @@ async function resetTimeCallback(src: string | media.AVFileDescriptor, avPlayer:
           avPlayer!!.surfaceId = surfaceID;
         }
         console.info('resetTimeCallback play state is INITIALIZED')
-        start = Date.now();
+        start = Date.now()
         console.info(`resetTimeCallback start time is : ${start}`)
         avPlayer?.reset().then(() => {
           console.info('reset success');
@@ -1615,7 +1615,7 @@ export async function releaseTimeWithoutCallback(src: string | media.AVFileDescr
     }
     let start = Date.now();
     console.info(`releaseTimeWithoutCallback start time is : ${start}`)
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.release().then(() => {
       console.info('releaseTimeWithoutCallback avPlayer is release')
       expect(avPlayer?.state).assertEqual(RELEASED);
@@ -1642,9 +1642,9 @@ export async function releaseTimeWithCallback(src: string | media.AVFileDescript
 
 async function releaseTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
   avPlayer?.on('stateChange', (state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
@@ -1704,7 +1704,7 @@ export async function seekTimeWithoutCallback(src: string | media.AVFileDescript
       expect(avPlayer?.state).assertEqual(PREPARED);
       console.info('seekTimeWithoutCallback avPlayer state is prepared')
     }).catch(mediaTestBase.catchCallback);
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.play().then(() => {
       console.info('seekTimeWithoutCallback play success');
       expect(avPlayer?.state).assertEqual(PLAYING);
@@ -1735,9 +1735,9 @@ export async function seekTimeWithCallback(src: string | media.AVFileDescriptor,
 
 async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -1828,7 +1828,7 @@ export async function getTrackDescriptionTimeWithoutCallback(src: string | media
     let arrayDescription: Array<media.MediaDescription>;
     let start = Date.now();
     console.info(`getTrackDescriptionTimeWithoutCallback start time is : ${start}`)
-    let end: number = 0;
+    let end: long = 0;
     await avPlayer!!.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
       if (arrList != null) {
         arrayDescription = arrList;
@@ -1861,9 +1861,9 @@ export async function getTrackDescriptionTimeWithCallback(src: string | media.AV
 
 async function getTrackDescriptionTimeCallback(avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   let arrayDescription: Array<media.MediaDescription>;
@@ -1982,9 +1982,9 @@ export async function setSpeedTimeWithCallback(src: string | media.AVFileDescrip
 
 async function setSpeedTimeCallback(avPlayer: media.AVPlayer | undefined, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -2129,9 +2129,9 @@ export async function setVolumeTimeWithCallback(src: string | media.AVFileDescri
 
 async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
-  let end: number = 0;
-  let execution: number = 0;
+  let start: long = 0;
+  let end: long = 0;
+  let execution: long = 0;
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
@@ -2203,7 +2203,7 @@ async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done:
 
 export async function firstFrameTime(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
-  let start: number = 0;
+  let start: long = 0;
   avPlayer = await idle(src, avPlayer!)
   await setSource(avPlayer!, src);
   console.info('firstFrameTime setSource');

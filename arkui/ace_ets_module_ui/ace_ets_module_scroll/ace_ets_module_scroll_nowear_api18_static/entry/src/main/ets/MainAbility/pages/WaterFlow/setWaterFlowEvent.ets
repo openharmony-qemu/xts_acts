@@ -195,7 +195,7 @@ struct setOnWaterFlowIndex04 {
         console.log(`WaterFlow:: onScrollFrameBegin 1 off=${off}, state=${state}`)
         
       })
-      .onScrollIndex((first: number, last: number): void => {
+      .onScrollIndex((first: int, last: int): void => {
         console.log(`WaterFlow:: onScrollIndex 1 start=${first}, end=${last}`)
       })
       

@@ -64,7 +64,7 @@ import {
             { value: 'bbb', icon: "/common/public_icon.svg" },
             { value: 'ccc', icon: "/common/public_icon.svg" },
             { value: 'ddd', icon: "/common/public_icon.svg" }])
-                .onSelect((index: number): void => {
+                .onSelect((index: int): void => {
                     console.info("Select:" + index)
                 })
                 .key('selectTest')

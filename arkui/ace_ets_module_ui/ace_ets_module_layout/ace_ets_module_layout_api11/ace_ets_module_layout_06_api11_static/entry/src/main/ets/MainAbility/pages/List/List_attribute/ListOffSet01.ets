@@ -147,7 +147,7 @@ struct ListOffSet01 {
           .key('ListoffSet01_Get')
           .height('6%')
           .onClick((e:ClickEvent) => {
-            this.t = this.scroller.currentOffset().yOffset
+            this.t = this.scroller.currentOffset()!.yOffset
           })
           .backgroundColor(Color.Orange)
 

@@ -14,11 +14,12 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, TestValue, SetV } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
   /**
@@ -33,13 +34,13 @@ export default class CommonTest {
 
       
       let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
+      testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: Int) => {
 
         
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -50,7 +51,7 @@ export default class CommonTest {
           }
 
           
-          let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
+          let caseTag = pageConfig.testName + targetView+'_static_' + testValue.describe;
 
           
           let containerView = '';
@@ -74,7 +75,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            try {
+            
               
               if (functions.length === 0) {
                 done();
@@ -93,32 +94,24 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-                
-                if (customParams) {
-                  data.customParams = customParams;
-                }
-              } else {
-                
-                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
-                await Utils.sleep(1000);
-              }
 
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              AppStorage.setOrCreate<SetV>('_zIndexButtonModifier', data.testValue.setValue);
+              await Utils.sleep(1000);
               
-              data.viewObj = Utils.getComponentByKey(pageConfig.componentKey ?? '');
-              await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err: Error) {
-              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-              console.error(msg);
-              console.error(err.stack);
-              if (err.name != 'AssertException') {
-                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
-              }
-            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

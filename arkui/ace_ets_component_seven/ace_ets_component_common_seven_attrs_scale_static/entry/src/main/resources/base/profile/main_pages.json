@@ -1,6 +1,6 @@
 {
   "src": [
     "MainAbility/pages/index/Index",
-    "MainAbility/pages/scale/ScalePage"
+    "MainAbility/pages/blur/BlurPage"
   ]
 }

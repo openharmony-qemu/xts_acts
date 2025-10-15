@@ -23,7 +23,7 @@ struct onScrollIndexFlow1 {
   @State maxSize: number = 180
   @State temp: number = 0;
   scroller: Scroller = new Scroller()
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
   @State layoutMode1: WaterFlowLayoutMode = WaterFlowLayoutMode.ALWAYS_TOP_DOWN
   private itemWidthArray: number[] = new Array<number>()
@@ -77,7 +77,7 @@ struct onScrollIndexFlow1 {
       .backgroundColor(0xFAEEE0)
       .width('100%')
       .height('60%')
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         if (first !== 0) {
           this.temp = 5
         }

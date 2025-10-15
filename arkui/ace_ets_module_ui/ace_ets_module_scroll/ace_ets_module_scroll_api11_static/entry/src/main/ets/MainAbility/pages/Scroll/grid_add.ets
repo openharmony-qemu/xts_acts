@@ -69,8 +69,8 @@ struct GridExampleAdd {
 
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
       Grid(this.scroller, {
-        regularSize: [12, 12], irregularIndexes: [10, 5, 7], onGetIrregularSizeByIndex: (index: number) => {
-          return [index, index] as [number, number]
+        regularSize: [12, 12], irregularIndexes: [10, 5, 7], onGetIrregularSizeByIndex: (index: int) => {
+          return [index, index] as [int, int]
         }
       }) {
         ForEach(this.Number, (day: string, index: int) => {
@@ -97,10 +97,10 @@ struct GridExampleAdd {
       })
       .edgeEffect(EdgeEffect.Spring)
 
-      .onScrollIndex((first: number): void => {
+      .onScrollIndex((first: int): void => {
         console.info(first.toString())
       })
-      .onScrollBarUpdate((index: number, offset: number) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return {
           totalOffset: (index / 5) * (80 + 10) - 10 - offset,
           totalLength: 80 * 5 + 10 * 4

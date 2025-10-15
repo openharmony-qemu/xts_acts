@@ -18,7 +18,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct observerTabsExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State uniqueId: number = 0
   @State uniqueId1: number = 0
@@ -83,7 +83,7 @@ struct observerTabsExample {
         }
         return true
       })
-      .onChange((index: number) => {
+      .onChange((index: int) => {
         console.info('onChange index: '+ index)
         this.currentIndex = index
       })

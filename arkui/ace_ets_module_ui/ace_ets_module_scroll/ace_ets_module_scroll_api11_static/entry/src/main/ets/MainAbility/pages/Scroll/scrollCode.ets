@@ -144,7 +144,7 @@ struct scrollCode {
 
       Button('scroll 100')
         .onClick((e: ClickEvent) => {
-          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset().yOffset + 100 })
+          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
         }).margin({ top: 170, left: 20 } as Margin)
       Button('back top')
         .onClick((e: ClickEvent) => {

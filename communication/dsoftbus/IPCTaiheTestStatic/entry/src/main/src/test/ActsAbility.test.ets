@@ -91,8 +91,17 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 }
 
 class TestOption extends rpc.MessageOption{
-    constructor(syncFlags?: int, waitTime?: int) {
+    constructor(syncFlags: int, waitTime: int) {
         super(syncFlags, waitTime);
+    }
+    constructor(isAsync: boolean) {
+        super(isAsync);
+    }
+    constructor(syncFlags: int) {
+        super(syncFlags);
+    }
+    constructor() {
+        super();
     }
 }
 

@@ -53,7 +53,7 @@ import { BusinessError } from '@ohos.base';
 @Component
 struct iconTextTabsExample {
   private controller: TabsController = new TabsController()
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State selectedIndex: number = 0
   @State cachedCount: TabsCacheMode = TabsCacheMode.CACHE_BOTH_SIDE
 
@@ -88,21 +88,21 @@ struct iconTextTabsExample {
       .edgeEffect(EdgeEffect.Spring)
       .animationMode(AnimationMode.CONTENT_FIRST)
       .cachedMaxCount(2, this.cachedCount)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.log('onChange index:' + index);
         this.currentIndex = index
       })
-      .onSelected((index: number): void => {
+      .onSelected((index: int): void => {
         console.log('onSelected index:' + index);
         this.selectedIndex = index
       })
-      .onGestureSwipe((index: number, extraInfo: TabsAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: TabsAnimationEvent): void => {
         console.info('onGestureSwipe index: ' + index)
         console.info('onGestureSwipe current offset: ' + extraInfo.currentOffset)
         console.info('onGestureSwipe target offset: ' + extraInfo.targetOffset)
         console.info('onGestureSwipe velocity: ' + extraInfo.velocity)
       })
-      .onAnimationStart((index: number, targetIndex: number, extraInfo: TabsAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: TabsAnimationEvent): void => {
         console.info('onAnimationStart index: ' + index)
         console.info('onAnimationStart current offset: ' + extraInfo.currentOffset)
         console.info('onAnimationStart target offset: ' + extraInfo.targetOffset)
@@ -112,7 +112,7 @@ struct iconTextTabsExample {
         }
         this.selectedIndex = targetIndex
       })
-      .onAnimationEnd((index: number, extraInfo: TabsAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: TabsAnimationEvent): void => {
         console.info(String(index))
         console.info('onAnimationEnd index: ' + index)
         console.info('onAnimationEnd current offset: ' + extraInfo.currentOffset)

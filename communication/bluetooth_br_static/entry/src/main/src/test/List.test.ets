@@ -14,6 +14,8 @@
  */
 
 import bluetoothAccessTest from "./BluetoothAccessStatic.test";
+import bluetoothConstantTest from "./BluetoothConstantStatic.test";
 export default function testsuite() {
   bluetoothAccessTest();
+  bluetoothConstantTest();
 }
