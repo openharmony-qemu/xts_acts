@@ -1075,7 +1075,7 @@ export default function preferenceTest() {
         mPreferences.flushSync();
         const testObserver = (obj: Record<string, dataPreferences.ValueType>): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnDatachangePromiseTest0001 value:" + obj.get(KEY_TEST_STRING_ELEMENT));
-          expect("abc").assertEqual(obj.get(KEY_TEST_STRING_ELEMENT));
+          expect().assertFail();
           done();
         }
         let keys = new Array<string>(KEY_TEST_STRING_ELEMENT);
@@ -1083,6 +1083,7 @@ export default function preferenceTest() {
         mPreferences.off('dataChange', keys, testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
+        done();
       } catch (err : BusinessError) {
         expect().assertFail();
         done();
