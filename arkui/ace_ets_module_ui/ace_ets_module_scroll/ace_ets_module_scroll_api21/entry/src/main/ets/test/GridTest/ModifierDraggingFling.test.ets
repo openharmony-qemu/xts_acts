@@ -52,7 +52,7 @@ export default function ModifierDraggingFling() {
     /**
      * @tc.number    ModifierDraggingFling_001
      * @tc.name      ModifierDraggingFling_0100
-     * @tc.desc      The callback triggered when the scrolling component is dragged.
+     * @tc.desc      Callback triggered when the component scrolls using the mouse wheel.
      * @tc.level     Level 2
      * @tc.type
      * @tc.size
@@ -68,7 +68,7 @@ export default function ModifierDraggingFling() {
       console.info("ModifierDraggingFling_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.drag(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.mouseScroll({x:Math.round(left + width/2), y:Math.round(top + height*0.4)}, true, 2);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('grid_modifier_startDragging');
