@@ -812,7 +812,7 @@ export default function rdbDecryptTest() {
         cryptoParam: {
           encryptionKey: new Uint8Array([1,2,3,4,5,6,7]),
           iterationCount: 25000,
-          encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC+1,
+          encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC+2,
           hmacAlgo: data_relationalStore.HmacAlgo.SHA256+1,
           kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA256+1,
           cryptoPageSize: 1024
