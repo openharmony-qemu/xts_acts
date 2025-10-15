@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
 import avSession from '@ohos.multimedia.avsession';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
@@ -51,13 +52,13 @@ export default function AVSessionManager() {
             console.info('TestLog: End testing describe');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
-         * @tc.desc      : Testing createAVSession with right parameter audio - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
+         * @tc.desc        Testing createAVSession with right parameter audio - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -80,13 +81,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
-         * @tc.desc      : createAVSession(promise) with invalid param(errcode 401) - empty string
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
+         * @tc.desc        createAVSession(promise) with invalid param(errcode 401) - empty string
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -102,13 +103,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
-         * @tc.desc      : Testing createAVSession with right parameter video - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
+         * @tc.desc        Testing createAVSession with right parameter video - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -131,13 +132,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call getavcastcontroller(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call getavcastcontroller(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -160,13 +161,14 @@ export default function AVSessionManager() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
-         * @tc.desc      : Testing call getavcastcontroller(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
+         * @tc.desc        Testing call getavcastcontroller(promise)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -195,13 +197,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call stopCasting(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call stopCasting(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -232,13 +234,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
-         * @tc.desc      : Testing call stopCasting(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
+         * @tc.desc        Testing call stopCasting(promise)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -267,13 +269,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call getCurrentItem(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call getCurrentItem(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -308,13 +310,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
-         * @tc.desc      : Testing call getCurrentItem(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
+         * @tc.desc        Testing call getCurrentItem(promise)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -342,7 +344,6 @@ export default function AVSessionManager() {
                 console.error(`getAVCastController BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getCurrentItem promise successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();

@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import avSession from '@ohos.multimedia.avsession';
 import media from '@ohos.multimedia.media';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
@@ -97,11 +98,8 @@ export default function abilityTest() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try{
                 session = await avSession.createAVSession(context, "AVSessionDemo", 'video_call');
-                console.info(`TestLog: ghg, avSession create success`);
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -155,7 +153,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback1 received args: " + JSON.stringify(args));
             if (sessionEvent != UPDATE_LYRICS_EVENT) {
                 console.error(TAG + "Callback1 lyrics event unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
             receivedString = sessionEvent;
@@ -167,7 +165,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback2 received args: " + JSON.stringify(args));
             if (sessionEvent != UPDATE_LYRICS_EVENT) {
                 console.error(TAG + "Callback2 lyrics event unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
             receivedString2 = sessionEvent;
@@ -178,7 +176,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback1 received args: " + String(extras));
             if (extras['extrasKey'] != CUSTOM_EXTRAS['extrasKey']) {
                 console.error(TAG + "Callback1 extras unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
             receivedExtras = extras;
@@ -188,7 +186,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback2 received args: " + String(extras));
             if (extras['extrasKey'] != CUSTOM_EXTRAS['extrasKey']) {
                 console.error(TAG + "Callback2 extras unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
             receivedExtras2 = extras;
@@ -198,7 +196,7 @@ export default function abilityTest() {
             console.log(TAG + "queueTitleCallback1 received Title " + JSON.stringify(title as string));
             if (title != QUEUE_TITLE) {
                 console.error(TAG + "queueTitleCallback1 received Title unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
         }
@@ -207,7 +205,7 @@ export default function abilityTest() {
             console.log(TAG + "queueTitleCallback2 received Title " + JSON.stringify(title as string));
             if (title != QUEUE_TITLE) {
                 console.error(TAG + "queueTitleCallback2 received Title unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
         }
@@ -218,17 +216,17 @@ export default function abilityTest() {
             console.log(TAG + "queueItemsCallback1 received items title: " + items[0].description?.title);
             if (items.length != QUEUE_ITEM_LENGTH) {
                 console.error(TAG + "queueItemsCallback1 received items length unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].itemId != QUEUE_ITEM_ID) {
                 console.error(TAG + "queueItemsCallback1 received items id unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].description?.title != QUEUE_ITEM_KEY_WORD) {
                 console.error(TAG + "queueItemsCallback1 received items key word unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             receivedCallback = true;
@@ -240,17 +238,17 @@ export default function abilityTest() {
             console.log(TAG + "queueItemsCallback2 received items title: " + items[0].description?.title);
             if (items.length != QUEUE_ITEM_LENGTH) {
                 console.error(TAG + "queueItemsCallback2 received items length unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].itemId != QUEUE_ITEM_ID) {
                 console.error(TAG + "queueItemsCallback2 received items id unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].description?.title != QUEUE_ITEM_KEY_WORD) {
                 console.error(TAG + "queueItemsCallback2 received items key word unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             receivedCallback2 = true;
@@ -260,7 +258,7 @@ export default function abilityTest() {
             console.log(TAG + "skipToQueueItemCallback1 received itemid " + itemId);
             if (itemId != SKIP_ITEM_ID) {
                 console.error(TAG + "skipToQueueItemCallback1 received uid unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
         }
@@ -269,21 +267,21 @@ export default function abilityTest() {
             console.log(TAG + "skipToQueueItemCallback2 received itemid " + itemId);
             if (itemId != SKIP_ITEM_ID) {
                 console.error(TAG + "skipToQueueItemCallback2 received uid unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
         }
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
-        * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
-        * @tc.desc      : bind one callback on sessionEvent event
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level2
-        */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
+         * @tc.desc        bind one callback on sessionEvent event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.on('sessionEvent', dynamicLyricsCallback1);
+            controller.onSessionEvent(dynamicLyricsCallback1);
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS);
             } catch (err: BusinessError) {
@@ -307,17 +305,17 @@ export default function abilityTest() {
             });
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200
-         * @tc.desc      : bind two callback on sessionEvent event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200
+         * @tc.desc        bind two callback on sessionEvent event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.on('sessionEvent', dynamicLyricsCallback1);
-            controller.on('sessionEvent', dynamicLyricsCallback2);
+            controller.onSessionEvent(dynamicLyricsCallback1);
+            controller.onSessionEvent(dynamicLyricsCallback2);
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -344,18 +342,18 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100
-		     * @tc.desc      : bind two callbacks on sessionEvent event, off one of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100
+		     * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100
+		     * @tc.desc        bind two callbacks on sessionEvent event, off one of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
 	     */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('sessionEvent', dynamicLyricsCallback1);
-            controller.on('sessionEvent', dynamicLyricsCallback2);
-            controller.off('sessionEvent', dynamicLyricsCallback2);
+            controller.onSessionEvent(dynamicLyricsCallback1);
+            controller.onSessionEvent(dynamicLyricsCallback2);
+            controller.offSessionEvent(dynamicLyricsCallback2);
             try{
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -379,20 +377,20 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200
-		     * @tc.desc      : bind two callbacks on sessionEvent event, off two of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200
+         * @tc.desc        bind two callbacks on sessionEvent event, off two of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('sessionEvent', dynamicLyricsCallback1);
-            controller.on('sessionEvent', dynamicLyricsCallback2);
-            controller.off('sessionEvent', dynamicLyricsCallback1);
-            controller.off('sessionEvent', dynamicLyricsCallback2);
-        
+            controller.onSessionEvent(dynamicLyricsCallback1);
+            controller.onSessionEvent(dynamicLyricsCallback2);
+            controller.offSessionEvent(dynamicLyricsCallback1);
+            controller.offSessionEvent(dynamicLyricsCallback2);
+
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -412,19 +410,19 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300
-		     * @tc.desc      : bind two callbacks on sessionEvent event, off all of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300
+         * @tc.desc        bind two callbacks on sessionEvent event, off all of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('sessionEvent', dynamicLyricsCallback1);
-            controller.on('sessionEvent', dynamicLyricsCallback2);
-            controller.off('sessionEvent');
-        
+            controller.onSessionEvent(dynamicLyricsCallback1);
+            controller.onSessionEvent(dynamicLyricsCallback2);
+            controller.offSessionEvent();
+
             try{
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -444,20 +442,20 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100
-         * @tc.desc      : controller send common command - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100
+         * @tc.desc        controller send common command - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 finished");
@@ -466,13 +464,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200
-         * @tc.desc      : controller send common command - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200
+         * @tc.desc        controller send common command - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -480,20 +478,20 @@ export default function abilityTest() {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100
-         * @tc.desc      : controller get extras - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100
+         * @tc.desc        controller get extras - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 start");
@@ -501,13 +499,13 @@ export default function abilityTest() {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
             let extras: Record<string, Object>|undefined;
             controller.getExtras((err, extras) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 expect(extras!['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
@@ -516,13 +514,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200
-         * @tc.desc      : controller get extras - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200
+         * @tc.desc        controller get extras - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 start");
@@ -530,7 +528,7 @@ export default function abilityTest() {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
 
             let extras: Record<string, Object>;
@@ -538,7 +536,7 @@ export default function abilityTest() {
                 extras = await controller.getExtras()
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
             expect(extras['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
@@ -546,17 +544,17 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100
-         * @tc.desc      : bind one callback on extrasChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100
+         * @tc.desc        bind one callback on extrasChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100 start");
-            controller.on('extrasChange', extrasChangeCallback1);
+            controller.onExtrasChange(extrasChangeCallback1);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
@@ -579,18 +577,18 @@ export default function abilityTest() {
             })
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200
-         * @tc.desc      : bind two callback on extrasChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200
+         * @tc.desc        bind two callback on extrasChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200 start");
-            controller.on('extrasChange', extrasChangeCallback1);
-            controller.on('extrasChange', extrasChangeCallback2);
+            controller.onExtrasChange(extrasChangeCallback1);
+            controller.onExtrasChange(extrasChangeCallback2);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
@@ -616,18 +614,18 @@ export default function abilityTest() {
             })
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100
-		     * @tc.desc      : bind two callbacks on extrasChange event, off one of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100
+         * @tc.desc        bind two callbacks on extrasChange event, off one of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('extrasChange', extrasChangeCallback1);
-            controller.on('extrasChange', extrasChangeCallback2);
-            controller.off('extrasChange', extrasChangeCallback2);
+            controller.onExtrasChange(extrasChangeCallback1);
+            controller.onExtrasChange(extrasChangeCallback2);
+            controller.offExtrasChange(extrasChangeCallback2);
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
@@ -650,19 +648,19 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200
-		     * @tc.desc      : bind two callbacks on extrasChange event, off two of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200
+         * @tc.desc        bind two callbacks on extrasChange event, off two of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('extrasChange', extrasChangeCallback1);
-            controller.on('extrasChange', extrasChangeCallback2);
-            controller.off('extrasChange', extrasChangeCallback1);
-            controller.off('extrasChange', extrasChangeCallback2);
+            controller.onExtrasChange(extrasChangeCallback1);
+            controller.onExtrasChange(extrasChangeCallback2);
+            controller.offExtrasChange(extrasChangeCallback1);
+            controller.offExtrasChange(extrasChangeCallback2);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
@@ -682,18 +680,18 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300
-	     	 * @tc.desc      : bind two callbacks on extrasChange event, off all of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300
+         * @tc.desc        bind two callbacks on extrasChange event, off all of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.on('extrasChange', extrasChangeCallback1);
-            controller.on('extrasChange', extrasChangeCallback2);
-            controller.off('extrasChange');
+            controller.onExtrasChange(extrasChangeCallback1);
+            controller.onExtrasChange(extrasChangeCallback2);
+            controller.offExtrasChange();
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
@@ -713,22 +711,22 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100
-         * @tc.desc      : bind one callback on queueItemsChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100
+         * @tc.desc        bind one callback on queueItemsChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.on('queueItemsChange', queueItemsCallback1);
+            controller.onQueueItemsChange(queueItemsCallback1);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             Utils.msSleep(200).then(() => {
@@ -737,25 +735,25 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }
                 receivedCallback = false;
                 done();
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200
-         * @tc.desc      : bind two callback on queueItemsChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200
+         * @tc.desc        bind two callback on queueItemsChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.on('queueItemsChange', queueItemsCallback1);
-            controller.on('queueItemsChange', queueItemsCallback2);
+            controller.onQueueItemsChange(queueItemsCallback1);
+            controller.onQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
@@ -776,22 +774,22 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
-         * @tc.desc      : bind one callback on queueTitleChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
+         * @tc.desc        bind one callback on queueTitleChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.on('queueTitleChange', queueTitleCallback1);
+            controller.onQueueTitleChange(queueTitleCallback1);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             Utils.msSleep(200).then(() => {
@@ -800,25 +798,25 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }
                 receivedCallback = false;
                 done();
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
-         * @tc.desc      : bind two callback on queueTitleChange event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
+         * @tc.desc        bind two callback on queueTitleChange event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.on('queueTitleChange', queueTitleCallback1);
-            controller.on('queueTitleChange', queueTitleCallback2);
+            controller.onQueueTitleChange(queueTitleCallback1);
+            controller.onQueueTitleChange(queueTitleCallback2);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
@@ -839,24 +837,24 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100
-		     * @tc.desc      : bind two callbacks on queueItemsChange event, off one of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100
+         * @tc.desc        bind two callbacks on queueItemsChange event, off one of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueItemsChange', queueItemsCallback1);
-            controller.on('queueItemsChange', queueItemsCallback2);
-            controller.off('queueItemsChange', queueItemsCallback2);
+            controller.onQueueItemsChange(queueItemsCallback1);
+            controller.onQueueItemsChange(queueItemsCallback2);
+            controller.offQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -865,31 +863,31 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200
-		     * @tc.desc      : bind two callbacks on queueItemsChange event, off two of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200
+         * @tc.desc        bind two callbacks on queueItemsChange event, off two of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueItemsChange', queueItemsCallback1);
-            controller.on('queueItemsChange', queueItemsCallback2);
-            controller.off('queueItemsChange', queueItemsCallback1);
-            controller.off('queueItemsChange', queueItemsCallback2);
+            controller.onQueueItemsChange(queueItemsCallback1);
+            controller.onQueueItemsChange(queueItemsCallback2);
+            controller.offQueueItemsChange(queueItemsCallback1);
+            controller.offQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -898,30 +896,30 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300
-		     * @tc.desc      : bind two callbacks on queueItemsChange event, off all of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300
+         * @tc.desc        bind two callbacks on queueItemsChange event, off all of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueItemsChange', queueItemsCallback1);
-            controller.on('queueItemsChange', queueItemsCallback2);
-            controller.off('queueItemsChange');
+            controller.onQueueItemsChange(queueItemsCallback1);
+            controller.onQueueItemsChange(queueItemsCallback2);
+            controller.offQueueItemsChange();
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -930,30 +928,30 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100
-		     * @tc.desc      : bind two callbacks on queueTitleChange event, off one of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100
+         * @tc.desc        bind two callbacks on queueTitleChange event, off one of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueTitleChange', queueTitleCallback1);
-            controller.on('queueTitleChange', queueTitleCallback2);
-            controller.off('queueTitleChange', queueTitleCallback2);
+            controller.onQueueTitleChange(queueTitleCallback1);
+            controller.onQueueTitleChange(queueTitleCallback2);
+            controller.offQueueTitleChange(queueTitleCallback2);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -962,26 +960,26 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200
-		     * @tc.desc      : bind two callbacks on queueTitleChange event, off two of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200
+         * @tc.desc        bind two callbacks on queueTitleChange event, off two of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueTitleChange', queueTitleCallback1);
-            controller.on('queueTitleChange', queueTitleCallback2);
-            controller.off('queueTitleChange', queueTitleCallback1);
-            controller.off('queueTitleChange', queueTitleCallback2);
+            controller.onQueueTitleChange(queueTitleCallback1);
+            controller.onQueueTitleChange(queueTitleCallback2);
+            controller.offQueueTitleChange(queueTitleCallback1);
+            controller.offQueueTitleChange(queueTitleCallback2);
 
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
@@ -1002,25 +1000,25 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300
-		     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300
-		     * @tc.desc      : bind two callbacks on queueTitleChange event, off all of them
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		     */
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300
+         * @tc.desc        bind two callbacks on queueTitleChange event, off all of them
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.on('queueTitleChange', queueTitleCallback1);
-            controller.on('queueTitleChange', queueTitleCallback2);
-            controller.off('queueTitleChange');
+            controller.onQueueTitleChange(queueTitleCallback1);
+            controller.onQueueTitleChange(queueTitleCallback2);
+            controller.offQueueTitleChange();
 
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -1029,26 +1027,26 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Session queue Title change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100
-         * @tc.desc      : session set Items of AVQueue - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100
+         * @tc.desc        session set Items of AVQueue - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             session!.setAVQueueItems(ITEMS_ARRAY, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 finished");
@@ -1057,13 +1055,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200
-         * @tc.desc      : session set Items of AVQueue - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200
+         * @tc.desc        session set Items of AVQueue - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1071,27 +1069,27 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100
-         * @tc.desc      : session set title of AVQueue - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100
+         * @tc.desc        session set title of AVQueue - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             session!.setAVQueueTitle(QUEUE_TITLE, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 finished");
@@ -1100,13 +1098,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200
-         * @tc.desc      : session set title of AVQueue - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200
+         * @tc.desc        session set title of AVQueue - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1114,27 +1112,27 @@ export default function abilityTest() {
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100
-         * @tc.desc      : controller skip to QueueItem by queue item id - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100
+         * @tc.desc        controller skip to QueueItem by queue item id - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             controller.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 finished");
@@ -1143,13 +1141,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200
-         * @tc.desc      : controller skip to QueueItem by queue item id - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200
+         * @tc.desc        controller skip to QueueItem by queue item id - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1157,29 +1155,29 @@ export default function abilityTest() {
                 await controller.skipToQueueItem(QUEUE_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100
-         * @tc.desc      : bind one callback on skipToQueueItem event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100
+         * @tc.desc        bind one callback on skipToQueueItem event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('skipToQueueItem', skipToQueueItemCallback1);
+            session!.onSkipToQueueItem(skipToQueueItemCallback1);
             try{
                 await controller.skipToQueueItem(SKIP_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200)
@@ -1188,29 +1186,29 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 skipToQueueItem not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200
-         * @tc.desc      : bind two callback on skipToQueueItem event
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200
+         * @tc.desc        bind two callback on skipToQueueItem event
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('skipToQueueItem', skipToQueueItemCallback1);
-            session!.on('skipToQueueItem', skipToQueueItemCallback2);
+            session!.onSkipToQueueItem(skipToQueueItemCallback1);
+            session!.onSkipToQueueItem(skipToQueueItemCallback2);
             try{
                 await controller.skipToQueueItem(SKIP_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -1219,33 +1217,33 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200skipToQueueItem not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             receivedCallback2 = false;
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100
-         * @tc.desc      : controller get items of AVQueue - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100
+         * @tc.desc        controller get items of AVQueue - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             session!.setAVQueueItems(ITEMS_ARRAY, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 } else {
                     controller.getAVQueueItems((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 finished");
                             expect(true).assertTrue();
@@ -1256,13 +1254,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200
-         * @tc.desc      : controller get items of AVQueue - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200
+         * @tc.desc        controller get items of AVQueue - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1272,36 +1270,36 @@ export default function abilityTest() {
                     await controller.getAVQueueItems()
                 } catch (err: BusinessError) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 };
                 done();
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100
-         * @tc.desc      : controller get title of AVQueue - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100
+         * @tc.desc        controller get title of AVQueue - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             session!.setAVQueueTitle(QUEUE_TITLE, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 } else {
                     controller.getAVQueueTitle((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 finished");
                             expect(true).assertTrue();
@@ -1312,13 +1310,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200
-         * @tc.desc      : controller get title of AVQueue - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200
+         * @tc.desc        controller get title of AVQueue - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1328,23 +1326,23 @@ export default function abilityTest() {
                     await controller.getAVQueueTitle()
                 } catch (err: BusinessError) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 };
                 done();
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100
-         * @tc.desc      : controller get Playback State - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100
+         * @tc.desc        controller get Playback State - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1358,19 +1356,19 @@ export default function abilityTest() {
                 console.log(`Get playback state: ${playbackState}`);
                 expect(currentPlaybackState.state).assertEqual(0);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100
-         * @tc.desc      : controller get metadata - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100
+         * @tc.desc        controller get metadata - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1384,19 +1382,19 @@ export default function abilityTest() {
                 console.log(`Get metadata: ${currentMetaData}`);
                 expect(currentMetaData.assetId).assertEqual("0");
             }catch(err: BusinessError){
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100
-         * @tc.desc      : controller get title of avqueue - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100
+         * @tc.desc        controller get title of avqueue - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1407,19 +1405,19 @@ export default function abilityTest() {
                 console.log(`Get queue title: ${currentQueueTitle}`);
                 expect(currentQueueTitle).assertEqual(QUEUE_TITLE);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100
-         * @tc.desc      : controller get items of avqueue - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100
+         * @tc.desc        controller get items of avqueue - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1430,19 +1428,19 @@ export default function abilityTest() {
                 console.log(`Get queue item: ${currentQueueItem}`);
                 expect(currentQueueItem[0].itemId).assertEqual(ITEMS_ARRAY[0].itemId);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100
-         * @tc.desc      : controller get output devices info - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100
+         * @tc.desc        controller get output devices info - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1451,19 +1449,19 @@ export default function abilityTest() {
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100
-         * @tc.desc      : controller get session isActive - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100
+         * @tc.desc        controller get session isActive - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1474,42 +1472,42 @@ export default function abilityTest() {
                 console.log(`Get session active state: ${isActive}`);
                 expect(isActive).assertEqual(true);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100
-         * @tc.desc      : controller get session support command - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100
+         * @tc.desc        controller get session support command - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                session!.on('play', () => { });
+                session!.onPlay(() => { });
                 Utils.msSleep(200);
                 let validCommands = controller.getValidCommandsSync();
                 console.log(`Get valid commands: ${validCommands}`);
                 expect(validCommands[0]).assertEqual('play');
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100 finished");
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300
-         * @tc.desc      : controller get items of AVQueue - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300
+         * @tc.desc        controller get items of AVQueue - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1518,16 +1516,16 @@ export default function abilityTest() {
                 await controller.getAVQueueItems().then((items: Array<avSession.AVQueueItem>) => {
                     console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 data " + String(items));
                     if (items[0].description?.drmScheme === ITEMS_ARRAY[0].description?.drmScheme){
-                        expect(true).assertTrue();
+                        console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 data success");
                     }else{
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                         done();
                     }
                     done();
                 });
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })
