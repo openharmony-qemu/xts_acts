@@ -3041,5 +3041,177 @@ export default function pasteBoardJEtsunitTest() {
         });
       });
     })
+
+    /**
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0100
+     * @tc.name       pasteboard_function_test71
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('pasteboard_function_test71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7100 start')
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test71: Open the infor for pasteboard content changes')
+        systemPasteboard.onRemoteUpdate(contentChanges);
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+        console.info('f_test71: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test71: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test71: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test71: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7100 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0200
+     * @tc.name       pasteboard_function_test72
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('pasteboard_function_test72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7200 start')
+      let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      let listener = () => {
+        console.info('The system pasteboard has changed.');
+      };
+      try {
+        systemPasteboard.onRemoteUpdate('');
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
+        expect(err.code).assertEqual('401');
+      }
+      console.info('SUB_pasteBoard_function_JS_API_7200 end')
+    })
+
+    /**
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0100
+     * @tc.name       pasteboard_function_test73
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('pasteboard_function_test73', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7300 start')
+
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test73: Close the infor for pasteboard content changes')
+        systemPasteboard.offRemoteUpdate(contentChanges)
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+
+        console.info('f_test73: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test73: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test73: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test73: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7300 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0200
+     * @tc.name       pasteboard_function_test74
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('pasteboard_function_test74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7400 start')
+
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test74: Close the infor for pasteboard content changes')
+        systemPasteboard.offRemoteUpdate()
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+
+        console.info('f_test74: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test74: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test74: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test74: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7400 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0300
+     * @tc.name       pasteboard_function_test75
+     * @tc.desc       Test pasteBoard API functionality.
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('pasteboard_function_test75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7500 start')
+      let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      let listener = () => {
+        console.info('The system pasteboard has changed.');
+      };
+      try {
+        systemPasteboard.offRemoteUpdate('');
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
+        expect(err.code).assertEqual('401');
+      }
+      console.info('SUB_pasteBoard_function_JS_API_7500 end')
+    })
   });
 }
