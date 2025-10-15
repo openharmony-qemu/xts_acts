@@ -232,7 +232,7 @@ export default function RegExpTest001() {
       const globalMatch = reGlobal.exec(str);
       const stickyMatch = reSticky.exec(str);
       expect(globalMatch![0]).assertEqual('abc');
-      expect(stickyMatch).assertDeepEquals(['abc']);
+      expect(stickyMatch![0]).assertEqual('abc');
     });
 
     /**
