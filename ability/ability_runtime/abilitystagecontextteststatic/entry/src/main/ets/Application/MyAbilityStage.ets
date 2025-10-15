@@ -14,7 +14,7 @@
  */
 
 import AbilityStage from '@ohos.app.ability.AbilityStage'
-import { Configuration } from '@ohos.app.ability.Configuration'
+import { Configuration } from  '@ohos.app.ability.Configuration'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog'
@@ -22,17 +22,18 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
 
 export default class MyAbilityStage extends AbilityStage {
+
   onCreate() {
     let abilityStageContext = this.context;
-    hilog.info(0x0000, 'testTag EntryAbility', `onCreate, abilityStageContext: ${abilityStageContext}`);
+    hilog.info(0x0000, 'testTag EntryAbility',`onCreate, abilityStageContext: ${abilityStageContext}`);
   }
 
   onConfigurationUpdate(config: Configuration) {
-    hilog.info(0x0000, 'testTag EntryAbility', `onConfigurationUpdate, language: ${config.language}`);
+    hilog.info(0x0000, 'testTag EntryAbility',`onConfigurationUpdate, language: ${config.language}`);
   }
 
   onDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility.onDestroy is called');
+    hilog.info(0x0000, 'testTag EntryAbility','EntryAbility.onDestroy is called');
   }
 
   onForeground() {
