@@ -1030,5 +1030,39 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.desc         OH_AVScreenCapture_SetPickerMode
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
+      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenOnly();
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow();
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.desc         OH_AVScreenCapture_ExcludePickerWindows
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
+      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
   })
 }
