@@ -43,6 +43,9 @@ import StackTypeNodeTest from './Stack/StackTypeNodeTest.test'
 import StackCNodeTest from './Stack/StackCNodeTest.test'
 import RelativeContainerTypeNodeTest from './RelativeContainer/RelativeContainerTypeNodeTest.test'
 import RelativeContainerCNodeTest from './RelativeContainer/RelativeContainerCNodeTest.test'
+import CapiPostAsyncUITask from './capi/CapiPostAsyncUITask.test'
+import CapiPostUITask from './capi/CapiPostUITask.test'
+import CapiPostUITaskAndWait from './capi/CapiPostUITaskAndWait.test'
 
 export default function testsuite() {
   PostOnIdleTest();
