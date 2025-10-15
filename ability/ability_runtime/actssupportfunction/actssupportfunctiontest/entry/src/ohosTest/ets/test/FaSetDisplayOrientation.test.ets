@@ -26,8 +26,6 @@ export default function FaSetDisplayOrientationTest() {
   describe('FaSetDisplayOrientationTest', () => {
     let TAG = "";
     let TAG1 = "SUB_AA_OpenHarmony == FaSetDisplayOrientationTest : ";
-    let sleepTimeOne = 1000;
-    let sleepTimeTwo = 2000;
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     afterEach(async (done: Function) => {
@@ -65,9 +63,7 @@ export default function FaSetDisplayOrientationTest() {
           console.log(TAG1 + "executeShellCommand error : " + JSON.stringify(error));
         })
 
-      setTimeout(() => {
-        done();
-      }, sleepTimeOne);
+      done();
     })
 
     /*
@@ -116,8 +112,7 @@ export default function FaSetDisplayOrientationTest() {
               displayOrientationAfter = data?.parameters?.displayOrientationAfter;
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -125,7 +120,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -180,8 +174,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -189,7 +182,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -248,8 +240,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -257,7 +248,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -327,8 +317,7 @@ export default function FaSetDisplayOrientationTest() {
               displayOrientationAfter2 = data?.parameters?.displayOrientationAfter;
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -340,7 +329,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -412,8 +400,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -425,7 +412,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -497,8 +483,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -510,7 +495,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -583,8 +567,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -596,7 +579,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -671,8 +653,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -684,7 +665,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -758,11 +738,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-              }, 1000);
-
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -774,7 +750,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -835,14 +810,12 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(status1).assertTrue();
                   done();
                 });
-              }, sleepTimeTwo);
             }
           });
         })
@@ -903,14 +876,12 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(status1).assertTrue();
                   done();
                 });
-              }, sleepTimeTwo);
             }
           });
         })
@@ -971,14 +942,12 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(status1).assertTrue();
                   done();
                 });
-              }, sleepTimeTwo);
             }
           });
         })
