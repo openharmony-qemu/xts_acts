@@ -336,12 +336,16 @@ napi_value CstandardLibrary_malloc_check_from_ptr(napi_env env, napi_callback_in
     int retValue = 0;
     size_t size = 10;
     void *ptr = nullptr;
-    if (malloc_check_from_ptr(ptr) == 0) {
+    if (malloc_check_from_ptr(ptr) == 0 || malloc_check_from_ptr(ptr) == -1) {
         retValue += 1;
     }
     ptr = malloc(size);
-    if (malloc_check_from_ptr(ptr) == 1) {
+    if (malloc_check_from_ptr(ptr) == 1 || malloc_check_from_ptr(ptr) == -1) {
         retValue += 1;
+    }
+    char* src = "test";
+    if (malloc_check_from_ptr(src) == 0 || malloc_check_from_ptr(ptr) == -1) {
+        retValue  += 1;
     }
     napi_create_int32(env, retValue, &result);
     return result;

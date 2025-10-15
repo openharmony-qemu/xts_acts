@@ -520,7 +520,7 @@ export default function KernelEnhanceKitTest() {
     it('SUB_CstandardLibrary_malloc_check_from_ptr', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.cstandardLibrary_malloc_check_from_ptr();
-        expect(c).assertEqual(2);
+        expect(c).assertEqual(3);
       } catch (err) {
         console.error("====>SUB_CstandardLibrary_malloc_check_from_ptr catch err: " + err);
         expect(false).assertEqual(0);
