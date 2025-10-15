@@ -516,7 +516,7 @@ export default function concurrencyReturnCoveredTest() {
      * @tc.level Level 1
      */
     it('concurrencyReturnCoveredTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let arr = new collections.Uint8Array(2)
+      let arr = new collections.Uint8ClampedArray(2)
       const result = arr.at(3);
       expect(result).assertEqual(undefined);
     });
