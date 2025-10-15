@@ -72,7 +72,7 @@ static napi_value OH_Rdb_CreateCryptoParam0400(napi_env env, napi_callback_info)
 {
     OH_Rdb_CryptoParam *obj = OH_Rdb_CreateCryptoParam();
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
-    auto ret = OH_Crypto_SetEncryptionAlgo(obj, 2);
+    auto ret = OH_Crypto_SetEncryptionAlgo(obj, 3);
     NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
     ret = OH_Crypto_SetEncryptionAlgo(obj, RDB_AES_256_CBC);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
