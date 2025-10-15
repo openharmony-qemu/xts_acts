@@ -71,7 +71,8 @@ ArkUI_NodeHandle CreateColumnWrapContentNodeHandle(const std::string &tag)
     nodeAPI->setAttribute(column2, NODE_WIDTH, &item);
     nodeAPI->setAttribute(column2, NODE_HEIGHT, &item);
 
-    nodeAPI->addChild(column0, column1, column2);
+    nodeAPI->addChild(column0, column1);
+    nodeAPI->addChild(column1, column2);
 
     return column0;
 }
