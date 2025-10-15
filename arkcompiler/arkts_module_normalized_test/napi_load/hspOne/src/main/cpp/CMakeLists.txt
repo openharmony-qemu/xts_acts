@@ -11,5 +11,5 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(hspone SHARED hello.cpp)
+add_library(hspone SHARED HelloTest.cpp)
 target_link_libraries(hspone PUBLIC libace_napi.z.so)

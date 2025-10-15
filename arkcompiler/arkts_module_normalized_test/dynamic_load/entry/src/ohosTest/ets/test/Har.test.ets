@@ -122,7 +122,7 @@ export default function dynamicLoadHar() {
     it("testConstantExpressionsOhpm03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsOhpm03";
       import('@ohos/hypium').then(m => {
-        m.expect(true).assertTrue();
+        expect(m !== null).assertTrue();
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();

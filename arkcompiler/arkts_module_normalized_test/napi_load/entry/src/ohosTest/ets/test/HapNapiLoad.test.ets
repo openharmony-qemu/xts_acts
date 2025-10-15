@@ -190,7 +190,7 @@ export default function HapNapiLoadTest() {
       let myLog: ESObject = testNapi.loadModuleWithInfo('@ohos.hilog', '');
       try {
         myLog.info(0x0000, 'SystemModule', TAG + ' hilog print success');
-        expect(5).assertEqual(5);
+        expect(myLog !== null).assertTrue();
       } catch (err) {
         expect().assertFail();
       }
