@@ -92,7 +92,7 @@ export default function SegmentButtonOptionsReturnValue() {
       await btn.click();
       await CommonFunc.sleep(1000);
       let res_0021: undefined | SegmentButtonItemOptions = AppStorage.get<undefined | SegmentButtonItemOptions>('SBOPop');
-      console.info("[SegmentButtonOptionsReturnValue_002] component obj is: " + JSON.stringify(obj));
+      console.info("[SegmentButtonOptionsReturnValue_002] component res_0021 is: " + JSON.stringify(res_0021));
       expect(res_0021).assertEqual(undefined);
       console.info("[SegmentButtonOptionsReturnValue_003] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[SegmentButtonOptionsReturnValue_002] END');
@@ -115,12 +115,12 @@ export default function SegmentButtonOptionsReturnValue() {
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let res_0031: SegmentButtonItemOptions[] = AppStorage.get<SegmentButtonItemOptions[]>('SBOSplice');
-      let res_0032: SegmentButtonItemOptions[] = AppStorage.get<SegmentButtonItemOptions[]>('SBOSpliceEmpty');
+      let res_0031 = AppStorage.get<SegmentButtonItemOptions[]>('SBOSplice');
+      let res_0032 = AppStorage.get<SegmentButtonItemOptions[]>('SBOSpliceEmpty');
       console.info("[SegmentButtonOptionsReturnValue_003] component res_0031 is: " + JSON.stringify(res_0031));
       console.info("[SegmentButtonOptionsReturnValue_003] component res_0032 is: " + JSON.stringify(res_0032));
-      expect(res_0031.length > 0).assertTrue();
-      expect(res_0032.length).assertEqual(0);
+      expect(res_0031!.length > 0).assertTrue();
+      expect(res_0032!.length).assertEqual(0);
       console.info("[SegmentButtonOptionsReturnValue_003] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[SegmentButtonOptionsReturnValue_003] END');
       done();

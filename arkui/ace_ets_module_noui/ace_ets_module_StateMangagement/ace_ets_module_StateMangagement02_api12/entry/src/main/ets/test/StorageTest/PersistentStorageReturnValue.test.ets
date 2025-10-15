@@ -81,18 +81,18 @@ export default function PersistentStorageReturnValue() {
     it('PersistentStorageReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentStorageReturnValue_003] START');
       await CommonFunc.sleep(1000);
-      let res_0031: boolean = storage.set('PersistentStorageReturnValue_003', 48);
-      let res_0032: boolean = storage.set('PersistentStorageReturnValue_003_no', 50);
+      let res_0031: Array<string> = PersistentStorage.Keys();
+      PersistentStorage.persistProp('PersistentStorageReturnValue_003', 47);
+      let res_0032: Array<string> = PersistentStorage.Keys();
       console.info("[PersistentStorageReturnValue_003] component res_0031: " + JSON.stringify(res_0031));
       console.info("[PersistentStorageReturnValue_003] component res_0032: " + JSON.stringify(res_0032));
-      expect(res_0031).assertTrue();
-      expect(res_0032).assertFalse();
-      storage.delete('PersistentStorageReturnValue_003');
+      expect(res_0031.length).assertEqual(0);
+      expect(res_0032.length > 0).assertTrue();
+      console.info("[PersistentStorageReturnValue_003] component PersistentStorage.deleteProp: " + JSON.stringify(PersistentStorage.deleteProp('PersistentStorageReturnValue_003')));
+      console.info("[PersistentStorageReturnValue_003] component AppStorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[PersistentStorageReturnValue_003] END');
       done();
     });
-
-
 
   })
 }
