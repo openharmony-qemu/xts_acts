@@ -49,5 +49,6 @@ napi_value CstandardLibrary_mallinfo2_fsmblks(napi_env env, napi_callback_info i
 napi_value CstandardLibrary_mallinfo2_uordblks(napi_env env, napi_callback_info info);
 napi_value CstandardLibrary_mallinfo2_fordblks(napi_env env, napi_callback_info info);
 napi_value CstandardLibrary_mallinfo2_keepcost(napi_env env, napi_callback_info info);
+napi_value CstandardLibrary_malloc_check_from_ptr(napi_env env, napi_callback_info info);
 
 #endif //DRM_KIT_TEST_H

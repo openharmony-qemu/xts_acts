@@ -33,6 +33,8 @@ void addKernelEnhanceKitOneTest(std::vector<napi_property_descriptor>& descData)
         CstandardLibrary_mallinfo_arena, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"cstandardLibrary_mallinfo_ordblks", nullptr,
         CstandardLibrary_mallinfo_ordblks, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"cstandardLibrary_malloc_check_from_ptr", nullptr,
+        CstandardLibrary_malloc_check_from_ptr, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void addKernelEnhanceKitTest(std::vector<napi_property_descriptor>& descData)
@@ -122,7 +124,7 @@ napi_value CstandardLibrary_memalign(napi_env env, napi_callback_info info)
 
 napi_value CstandardLibrary_mallinfo(napi_env env, napi_callback_info info)
 {
-    napi_value result = 0;
+    napi_value result;
     mallinfo2();
     struct mallinfo pr = mallinfo();
     napi_create_int32(env, true, &result);
@@ -325,5 +327,22 @@ napi_value CstandardLibrary_mallinfo2_keepcost(napi_env env, napi_callback_info 
     struct mallinfo2 pr = mallinfo2();
     pr.keepcost = 0;
     napi_create_int32(env, pr.keepcost == 0, &result);
+    return result;
+}
+
+napi_value CstandardLibrary_malloc_check_from_ptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int retValue = 0;
+    size_t size = 10;
+    void *ptr = nullptr;
+    if (malloc_check_from_ptr(ptr) == 0) {
+        retValue += 1;
+    }
+    ptr = malloc(size);
+    if (malloc_check_from_ptr(ptr) == 1) {
+        retValue += 1;
+    }
+    napi_create_int32(env, retValue, &result);
     return result;
 }

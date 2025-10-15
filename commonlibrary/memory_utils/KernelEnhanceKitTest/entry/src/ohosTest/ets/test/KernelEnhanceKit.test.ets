@@ -509,6 +509,22 @@ export default function KernelEnhanceKitTest() {
         expect(false).assertEqual(0);
       }
     });
-
+    /**
+     * @tc.number    SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.name      SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.desc      test CstandardLibrary_mallinfo2_keepcost
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_CstandardLibrary_malloc_check_from_ptr', Level.LEVEL1, () => {
+      try {
+        let c: number = testNapi.cstandardLibrary_malloc_check_from_ptr();
+        expect(c).assertEqual(2);
+      } catch (err) {
+        console.error("====>SUB_CstandardLibrary_malloc_check_from_ptr catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    });
   })
 }
