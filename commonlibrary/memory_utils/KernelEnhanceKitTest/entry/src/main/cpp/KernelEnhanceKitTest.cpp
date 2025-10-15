@@ -122,7 +122,8 @@ napi_value CstandardLibrary_memalign(napi_env env, napi_callback_info info)
 
 napi_value CstandardLibrary_mallinfo(napi_env env, napi_callback_info info)
 {
-    napi_value result;
+    napi_value result = 0;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     napi_create_int32(env, true, &result);
     return result;
@@ -131,6 +132,7 @@ napi_value CstandardLibrary_mallinfo(napi_env env, napi_callback_info info)
 napi_value CstandardLibrary_mallinfo_arena(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.arena = 0;
     napi_create_int32(env, pr.arena == 0, &result);
@@ -140,6 +142,7 @@ napi_value CstandardLibrary_mallinfo_arena(napi_env env, napi_callback_info info
 napi_value CstandardLibrary_mallinfo_ordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.ordblks = 0;
     napi_create_int32(env, pr.ordblks == 0, &result);
@@ -149,6 +152,7 @@ napi_value CstandardLibrary_mallinfo_ordblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_smblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.smblks = 0;
     napi_create_int32(env, pr.smblks == 0, &result);
@@ -158,6 +162,7 @@ napi_value CstandardLibrary_mallinfo_smblks(napi_env env, napi_callback_info inf
 napi_value CstandardLibrary_mallinfo_hblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.hblks = 0;
     napi_create_int32(env, pr.hblks == 0, &result);
@@ -167,6 +172,7 @@ napi_value CstandardLibrary_mallinfo_hblks(napi_env env, napi_callback_info info
 napi_value CstandardLibrary_mallinfo_hblkhd(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.hblkhd = 0;
     napi_create_int32(env, pr.hblkhd == 0, &result);
@@ -176,6 +182,7 @@ napi_value CstandardLibrary_mallinfo_hblkhd(napi_env env, napi_callback_info inf
 napi_value CstandardLibrary_mallinfo_usmblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.usmblks = 0;
     napi_create_int32(env, pr.usmblks == 0, &result);
@@ -185,6 +192,7 @@ napi_value CstandardLibrary_mallinfo_usmblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_fsmblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.fsmblks = 0;
     napi_create_int32(env, pr.fsmblks == 0, &result);
@@ -194,6 +202,7 @@ napi_value CstandardLibrary_mallinfo_fsmblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_uordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.uordblks = 0;
     napi_create_int32(env, pr.uordblks == 0, &result);
@@ -203,6 +212,7 @@ napi_value CstandardLibrary_mallinfo_uordblks(napi_env env, napi_callback_info i
 napi_value CstandardLibrary_mallinfo_fordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.fordblks = 0;
     napi_create_int32(env, pr.fordblks == 0, &result);
@@ -212,6 +222,7 @@ napi_value CstandardLibrary_mallinfo_fordblks(napi_env env, napi_callback_info i
 napi_value CstandardLibrary_mallinfo_keepcost(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.keepcost = 0;
     napi_create_int32(env, pr.keepcost == 0, &result);
