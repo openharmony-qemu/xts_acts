@@ -43,12 +43,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 0;
         const d: int = 0;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x47, 0x41, 0x4D, 0x50, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x47.toChar(), 0x41.toChar(), 0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -73,12 +73,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 1;
         const d: int = 0;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x47, 0x41, 0x50, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x47.toChar(), 0x41.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -103,12 +103,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 1;
         const d: int = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x47, 0x41, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x47.toChar(), 0x41.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -132,12 +132,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 3;
         const d: int = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x47, 0x41];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x47.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -161,12 +161,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 2;
         const d: int = -6;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x47, 0x41, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x47.toChar(), 0x41.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -191,12 +191,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s: int = 2;
         const d: int = 5;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x47, 0x41];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x47.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -219,12 +219,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x38, 0x33];
-        const items: FixedArray<char> = [0x32, 0x33, 0x37];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x33.toChar()];
+        const items: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         const s: int = 2;
         const d: int = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x31, 0x38, 0x32, 0x33, 0x37];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -248,12 +248,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x38, 0x33];
-        const items: FixedArray<char> = [0x32, 0x33, 0x37];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x33.toChar()];
+        const items: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         const s: int = 0;
         const d: int = 3;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x32, 0x33, 0x37];
+        const expected: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -275,12 +275,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest0900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 0;
         const d = 0;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x47, 0x41, 0x4D, 0x50, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x47.toChar(), 0x41.toChar(), 0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -305,12 +305,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 1;
         const d = 0;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x47, 0x41, 0x50, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x47.toChar(), 0x41.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -335,12 +335,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 1;
         const d = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x47, 0x41, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x47.toChar(), 0x41.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -364,12 +364,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 3;
         const d = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x47, 0x41];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x47.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -393,12 +393,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 2;
         const d = -6;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x47, 0x41, 0x4F, 0x44];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x47.toChar(), 0x41.toChar(), 0x4F.toChar(), 0x44.toChar()];
         expect(result.length).assertEqual(6);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -423,12 +423,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4D, 0x50, 0x4F, 0x44];
-        const items: FixedArray<char> = [0x47, 0x41];
+        const arr: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x4F.toChar(), 0x44.toChar()];
+        const items: FixedArray<char> = [0x47.toChar(), 0x41.toChar()];
         const s = 2;
         const d = 5;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x4D, 0x50, 0x47, 0x41];
+        const expected: FixedArray<char> = [0x4D.toChar(), 0x50.toChar(), 0x47.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -451,12 +451,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x38, 0x33];
-        const items: FixedArray<char> = [0x32, 0x33, 0x37];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x33.toChar()];
+        const items: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         const s = 2;
         const d = 1;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x31, 0x38, 0x32, 0x33, 0x37];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -480,12 +480,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x38, 0x33];
-        const items: FixedArray<char> = [0x32, 0x33, 0x37];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x38.toChar(), 0x33.toChar()];
+        const items: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         const s = 0;
         const d = 3;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<char> = [0x32, 0x33, 0x37];
+        const expected: FixedArray<char> = [0x32.toChar(), 0x33.toChar(), 0x37.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -508,11 +508,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4E, 0x4D, 0x4C, 0x51, 0x52];
+        const arr: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar(), 0x51.toChar(), 0x52.toChar()];
         const s = 1;
         const d = 2;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x4E, 0x51, 0x52];
+        const expected: FixedArray<char> = [0x4E.toChar(), 0x51.toChar(), 0x52.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -534,11 +534,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4E, 0x4D, 0x4C, 0x51, 0x52];
+        const arr: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar(), 0x51.toChar(), 0x52.toChar()];
         const s = 4;
         const d = 0;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x4E, 0x4D, 0x4C, 0x51, 0x52];
+        const expected: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar(), 0x51.toChar(), 0x52.toChar()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -562,11 +562,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4E, 0x4D, 0x4C, 0x51, 0x52];
+        const arr: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar(), 0x51.toChar(), 0x52.toChar()];
         const s = 0;
         const d = 4;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x52];
+        const expected: FixedArray<char> = [0x52.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -586,11 +586,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4E, 0x4D, 0x4C, 0x51, 0x52];
+        const arr: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar(), 0x51.toChar(), 0x52.toChar()];
         const s = 2;
         const d = 6;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x4E, 0x4D];
+        const expected: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -611,11 +611,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x39, 0x38, 0x37, 0x36];
+        const arr: FixedArray<char> = [0x39.toChar(), 0x38.toChar(), 0x37.toChar(), 0x36.toChar()];
         const s = 2;
         const d = 1;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x39, 0x38, 0x36];
+        const expected: FixedArray<char> = [0x39.toChar(), 0x38.toChar(), 0x36.toChar()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -637,11 +637,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest2200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x38, 0x38, 0x38, 0x38];
+        const arr: FixedArray<char> = [0x38.toChar(), 0x38.toChar(), 0x38.toChar(), 0x38.toChar()];
         const s = 0;
         const d = 3;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x38];
+        const expected: FixedArray<char> = [0x38.toChar()];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -661,7 +661,7 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x38, 0x38, 0x38, 0x38];
+        const arr: FixedArray<char> = [0x38.toChar(), 0x38.toChar(), 0x38.toChar(), 0x38.toChar()];
         const s = 0;
         const d = 4;
         const result = toSpliced(arr, s, d);
@@ -683,11 +683,11 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest2400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x38, 0x5A, 0x38, 0x41];
+        const arr: FixedArray<char> = [0x38.toChar(), 0x5A.toChar(), 0x38.toChar(), 0x41.toChar()];
         const s = 1;
         const d = 2;
         const result = toSpliced(arr, s, d);
-        const expected: FixedArray<char> = [0x38, 0x41];
+        const expected: FixedArray<char> = [0x38.toChar(), 0x41.toChar()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);

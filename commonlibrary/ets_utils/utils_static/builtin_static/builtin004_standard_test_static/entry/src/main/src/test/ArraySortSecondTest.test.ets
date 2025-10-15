@@ -628,9 +628,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_2600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x32, 0x33];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x33];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -652,9 +652,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_2700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x33, 0x32, 0x31];
+        const arr: FixedArray<char> = [0x33.toChar(), 0x32.toChar(), 0x31.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x33];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -676,9 +676,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_2800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x33, 0x31, 0x32];
+        const arr: FixedArray<char> = [0x33.toChar(), 0x31.toChar(), 0x32.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x31, 0x32, 0x33];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -700,9 +700,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_2900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x45, 0x65, 0x45];
+        const arr: FixedArray<char> = [0x45.toChar(), 0x65.toChar(), 0x45.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x45, 0x45, 0x65];
+        const expected: FixedArray<char> = [0x45.toChar(), 0x45.toChar(), 0x65.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -724,9 +724,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x45, 0x45, 0x45];
+        const arr: FixedArray<char> = [0x45.toChar(), 0x45.toChar(), 0x45.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x45, 0x45, 0x45];
+        const expected: FixedArray<char> = [0x45.toChar(), 0x45.toChar(), 0x45.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -748,9 +748,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x41.toChar(), 0x61.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x31, 0x41, 0x61];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x41.toChar(), 0x61.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -772,9 +772,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x61, 0x41, 0x31];
+        const arr: FixedArray<char> = [0x61.toChar(), 0x41.toChar(), 0x31.toChar()];
         sort(arr);
-        const expected: FixedArray<char> = [0x31, 0x41, 0x61];
+        const expected: FixedArray<char> = [0x31.toChar(), 0x41.toChar(), 0x61.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -797,7 +797,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_3300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [];
-        sort(arr, (a: char, b: char) => a - b);
+        sort(arr, (a: char, b: char) => a.toInt() - b.toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -816,9 +816,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x35];
-        sort(arr, (a: char, b: char) => a - b);
-        const expected: FixedArray<char> = [0x35];
+        const arr: FixedArray<char> = [0x35.toChar()];
+        sort(arr, (a: char, b: char) => a.toInt() - b.toInt());
+        const expected: FixedArray<char> = [0x35.toChar()];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -838,9 +838,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x35];
-        sort(arr, (a: char, b: char) => b - a);
-        const expected: FixedArray<char> = [0x35];
+        const arr: FixedArray<char> = [0x35.toChar()];
+        sort(arr, (a: char, b: char) => b.toInt() - a.toInt());
+        const expected: FixedArray<char> = [0x35.toChar()];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -860,9 +860,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x35, 0x36];
-        sort(arr, (a: char, b: char) => a - b);
-        const expected: FixedArray<char> = [0x31, 0x35, 0x36];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x36.toChar()];
+        sort(arr, (a: char, b: char) => a.toInt() - b.toInt());
+        const expected: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x36.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -884,9 +884,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x31, 0x35, 0x36];
-        sort(arr, (a: char, b: char) => b - a);
-        const expected: FixedArray<char> = [0x36, 0x35, 0x31];
+        const arr: FixedArray<char> = [0x31.toChar(), 0x35.toChar(), 0x36.toChar()];
+        sort(arr, (a: char, b: char) => b.toInt() - a.toInt());
+        const expected: FixedArray<char> = [0x36.toChar(), 0x35.toChar(), 0x31.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -908,9 +908,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x41, 0x41];
-        sort(arr, (a: char, b: char) => a - b);
-        const expected: FixedArray<char> = [0x41, 0x41, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x41.toChar(), 0x41.toChar()];
+        sort(arr, (a: char, b: char) => a.toInt() - b.toInt());
+        const expected: FixedArray<char> = [0x41.toChar(), 0x41.toChar(), 0x41.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -932,9 +932,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x41];
-        sort(arr, (a: char, b: char) => a - b);
-        const expected: FixedArray<char> = [0x41, 0x41, 0x61];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar()];
+        sort(arr, (a: char, b: char) => a.toInt() - b.toInt());
+        const expected: FixedArray<char> = [0x41.toChar(), 0x41.toChar(), 0x61.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);
@@ -956,9 +956,9 @@ export default function Array_Sort_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Sort_Second_Test_static_4000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x41];
-        sort(arr, (a: char, b: char) => b - a);
-        const expected: FixedArray<char> = [0x61, 0x41, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x41.toChar()];
+        sort(arr, (a: char, b: char) => b.toInt() - a.toInt());
+        const expected: FixedArray<char> = [0x61.toChar(), 0x41.toChar(), 0x41.toChar()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
         expect(arr[1]).assertEqual(expected[1]);

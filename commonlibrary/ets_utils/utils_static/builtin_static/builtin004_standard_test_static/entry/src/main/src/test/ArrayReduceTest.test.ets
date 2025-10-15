@@ -393,9 +393,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x35, 0x33];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x35.toChar(), 0x33.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr > prev) ? curr : prev as char);
-        expect(result).assertEqual(0x36);
+        expect(result).assertEqual(0x36.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -413,9 +413,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x35, 0x33];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x35.toChar(), 0x33.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr > prev) ? curr : prev as char);
-        expect(result).assertEqual(0x36);
+        expect(result).assertEqual(0x36.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -433,9 +433,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x36, 0x36];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x36.toChar(), 0x36.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr > prev) ? curr : prev as char);
-        expect(result).assertEqual(0x36);
+        expect(result).assertEqual(0x36.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -453,9 +453,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x36, 0x36];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x36.toChar(), 0x36.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr < prev) ? curr : prev as char);
-        expect(result).assertEqual(0x36);
+        expect(result).assertEqual(0x36.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -473,9 +473,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x61, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x61.toChar(), 0x41.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr < prev) ? curr : prev as char);
-        expect(result).assertEqual(0x41);
+        expect(result).assertEqual(0x41.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -493,9 +493,9 @@ export default function Array_Reduce_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Reduce_Test_static_2200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x61, 0x61, 0x41];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x61.toChar(), 0x61.toChar(), 0x41.toChar()];
         const result = reduce(arr, (prev: char, curr: char): char => (curr > prev) ? curr : prev as char);
-        expect(result).assertEqual(0x61);
+        expect(result).assertEqual(0x61.toChar());
         console.info(`${caseName}, test end`);
         Done();
       })
