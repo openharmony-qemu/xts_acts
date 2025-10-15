@@ -862,8 +862,6 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_PROMISE_THEN_TEST_4500
      * @tc.name PromiseThenTest045
-     * @tc.number SUB_BUILTINS_PROMISE_THEN_TEST_4500
-     * @tc.name PromiseThenTest045
      * @tc.desc missing onRejected lets error propagate to catch
      * @tc.size MediumTest
      * @tc.type Function

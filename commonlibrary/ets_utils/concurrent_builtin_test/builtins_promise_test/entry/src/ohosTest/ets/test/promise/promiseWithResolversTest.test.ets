@@ -71,7 +71,9 @@ import {
   PromiseWithResolversTest067,
   PromiseWithResolversTest068,
   PromiseWithResolversTest069,
-  PromiseWithResolversTest070,
+  PromiseWithResolversTest070
+} from './promiseWithResolversJs';
+import {
   PromiseWithResolversTest071,
   PromiseWithResolversTest072,
   PromiseWithResolversTest073,
@@ -102,7 +104,7 @@ import {
   PromiseWithResolversTest098,
   PromiseWithResolversTest099,
   PromiseWithResolversTest100
-} from './promiseWithResolversJs';
+} from './promiseWithResolversJs2';
 import { sleep } from './utils';
 
 export default function promiseWithResolversTest() {

@@ -448,7 +448,7 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1019
      * @tc.name PromiseRejectTest019
-     * @desc new Promise with Promise.reject vs direct reject, compare behaviors
+     * @tc.desc new Promise with Promise.reject vs direct reject, compare behaviors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
@@ -831,7 +831,7 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1034
      * @tc.name PromiseRejectTest034
-     * @desc Timing race: early Promise.reject vs delayed resolve in nested all
+     * @tc.desc Timing race: early Promise.reject vs delayed resolve in nested all
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 4
@@ -1122,14 +1122,7 @@ export default function promiseRejectTest() {
       expect(isCleaned).assertEqual(true);
       expect((await Promise.allSettled([chain]))[0].status).assertEqual('rejected');
     });
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1044
-     * @tc.name PromiseRejectTest044
-     * @tc.desc Nested async allSettled with Promise.reject and resolve timing
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
+
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1044
      * @tc.name PromiseRejectTest044
@@ -1319,14 +1312,6 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1051
      * @tc.name PromiseRejectTest051
-     * @tc.desc Async Promise.reject with object reason and nested property access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1051
-     * @tc.name PromiseRejectTest051
      * @tc.desc Async Promise.reject with typed ApiError, verify nested property access
      * @tc.size MediumTest
      * @tc.type Function
@@ -1366,7 +1351,7 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1052
      * @tc.name PromiseRejectTest052
-     * @desc Async cascade: Promise.reject in Promise.all triggers outer catch
+     * @tc.desc Async cascade: Promise.reject in Promise.all triggers outer catch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 4
@@ -1616,14 +1601,7 @@ export default function promiseRejectTest() {
       const result = await outerAny;
       expect(result).assertEqual(100);
     });
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1061
-     * @tc.name PromiseRejectTest061
-     * @tc.desc 5-level async cascade with incremental delays and Promise.reject propagation
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
+
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1061
      * @tc.name PromiseRejectTest061
@@ -1709,14 +1687,6 @@ export default function promiseRejectTest() {
       expect(timeLog).assertDeepEquals(['L3-resolve(5ms)', 'L3-reject(15ms)', 'L2-reject(25ms)']);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1064
-     * @tc.name PromiseRejectTest064
-     * @tc.desc Async cascade: Promise.reject → catch → resolve → re-reject with timing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1064
      * @tc.name PromiseRejectTest064
@@ -2003,14 +1973,6 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1071
      * @tc.name PromiseRejectTest071
-     * @tc.desc Async Promise.reject in Promise.any with all-reject timing and AggregateError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1071
-     * @tc.name PromiseRejectTest071
      * @tc.desc Promise.any with all rejects, verify AggregateError order
      * @tc.size MediumTest
      * @tc.type Function
@@ -2137,14 +2099,6 @@ export default function promiseRejectTest() {
       expect(result).assertEqual(true);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1075
-     * @tc.name PromiseRejectTest075
-     * @tc.desc Async Promise.reject with typed error and nested propagation timing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1075
      * @tc.name PromiseRejectTest075
@@ -2496,14 +2450,6 @@ export default function promiseRejectTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1085
      * @tc.name PromiseRejectTest085
-     * @tc.desc Async Promise.reject with typed object reason and nested propagation timing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1085
-     * @tc.name PromiseRejectTest085
      * @tc.desc Typed NetworkError propagation through nested promises with timing
      * @tc.size MediumTest
      * @tc.type Function
@@ -2614,14 +2560,6 @@ export default function promiseRejectTest() {
         .assertDeepEquals(['Inner-reject1(5ms)', 'Outer-reject(8ms)', 'Inner-reject2(10ms)', 'Inner-resolve(12ms)']);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1088
-     * @tc.name PromiseRejectTest088
-     * @tc.desc Async nested allSettled with Promise.reject and timed result aggregation
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1088
      * @tc.name PromiseRejectTest088
@@ -2887,14 +2825,6 @@ export default function promiseRejectTest() {
       expect(result).assertEqual(100);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1096
-     * @tc.name PromiseRejectTest096
-     * @tc.desc Promise.reject + Promise.allSettled in nested then chain, verify step-by-step aggregation
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
     /**
      * @tc.number SUB_BUILTINS_Promise_reject_TEST_1096
      * @tc.name PromiseRejectTest096

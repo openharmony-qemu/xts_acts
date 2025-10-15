@@ -2568,6 +2568,15 @@ export default function promiseAnyTest() {
       const result = await Promise.any([combine1, combine2]);
       expect(result).assertEqual("fallback2");
     });
+
+    /**
+     * @tc.number SUB_BUILTINS_Promise_any_TEST_037
+     * @tc.name PromiseAnyTest037
+     * @tc.desc Promise.any with mixed combinators and error handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
     it('PromiseAnySecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseAnySecondTest3700';
       const executionOrder: string[] = [];
