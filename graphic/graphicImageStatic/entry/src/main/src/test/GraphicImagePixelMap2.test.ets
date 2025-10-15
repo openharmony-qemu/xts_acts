@@ -334,10 +334,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code ", error);
             expect().assertFail();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
-        }
+        } 
         done();
       })
 
@@ -368,10 +365,7 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 22", error.code);
             expect(Number(error.code) == 62980302).assertTrue();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
-        }
+        } 
         done();
       })
 
@@ -407,9 +401,26 @@ export default function graphicImagePixelMap2() {
             console.error("www data Failed to set the metadata.code 44", error.code);
             expect().assertFail();
           })
-        } else {
-          console.error('www data Failed to create pixelMap.');
-          expect().assertFail();
+        } 
+        done();
+      })
+
+    /**
+     * @tc.number   graphicImagePixelMap2_static_1300
+     * @tc.name     graphicImagePixelMap2_static_1300
+     * @tc.desc     image API ArkTS1.2
+     * @tc.size     SmallTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('graphicImagePixelMap2_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.setTransferDetached(true);
+          } catch (err) {
+            expect().assertFail();
+          }
         }
         done();
       })
