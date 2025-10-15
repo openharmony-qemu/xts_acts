@@ -187,7 +187,7 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMsg", nullptr, GetMsg,
             nullptr, nullptr, nullptr, napi_default, nullptr },
-		{ "ohPrintMsgTest", nullptr, OhPrintMsgTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohPrintMsgTest", nullptr, OhPrintMsgTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ohPrintMsgByLenTest", nullptr, OhPrintMsgByLenTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ohVPrintTest", nullptr, OhVPrintTest,
             nullptr, nullptr, nullptr, napi_default, nullptr },
