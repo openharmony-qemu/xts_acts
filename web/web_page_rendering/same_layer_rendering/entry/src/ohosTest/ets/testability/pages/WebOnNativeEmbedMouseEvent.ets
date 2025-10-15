@@ -199,7 +199,7 @@ struct WebIndex {
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
                 let driver: Driver = Driver.create();
                 await driver.mouseClick({x:downX, y:downY}, MouseButton.MOUSE_BUTTON_LEFT);
-                await driver.delayMs(1000);
+                await Utils.sleep(2000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
