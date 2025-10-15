@@ -4,6 +4,9 @@
     "MainAbility/pages/testgesture",
     "MainAbility/pages/position/EdgesPositionPage",
     "MainAbility/pages/textContentAlign/TextContentAlignTest",
-    "MainAbility/pages/PixelRound/PixelRoundPage"
+    "MainAbility/pages/PixelRound/PixelRoundPage",
+    "MainAbility/pages/Column/ColumnMatchParent",
+    "MainAbility/pages/Column/ColumnWrapContent",
+    "MainAbility/pages/Column/ColumnFixAtiDealSize"
   ]
 }
