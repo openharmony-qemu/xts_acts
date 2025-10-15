@@ -37,7 +37,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 struct TapGestureExample {
   @State value: string = ''
   @State count: number = 2;
-  @State fingers: number = 1
+  @State fingers: int = 1
   @State distanceThreshold: number = 100;
 
   build() {
