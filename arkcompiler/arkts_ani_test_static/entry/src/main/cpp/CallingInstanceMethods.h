@@ -201,7 +201,7 @@ ani_boolean test_Object_CallMethod_Boolean([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "booleanMethod", "II:Z", &obj, &method);
+    GetMethodAndObject(env, "booleanMethod", "ii:z", &obj, &method);
     ani_boolean res = ANI_FALSE;
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
@@ -214,7 +214,7 @@ ani_boolean test_Object_CallMethod_Boolean_A([[maybe_unused]] ani_env *env, [[ma
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "booleanMethod", "II:Z", &obj, &method);
+    GetMethodAndObject(env, "booleanMethod", "ii:z", &obj, &method);
     ani_value args[2];
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
@@ -240,7 +240,7 @@ ani_boolean test_Object_CallMethod_Boolean_V([[maybe_unused]] ani_env *env, [[ma
 {
     ani_object obj{};
     ani_method method{};
-    GetMethodAndObject(env, "booleanMethod", "II:Z", &obj, &method);
+    GetMethodAndObject(env, "booleanMethod", "ii:z", &obj, &method);
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     ani_boolean res = ANI_FALSE;
@@ -388,7 +388,7 @@ ani_boolean test_Module_BindNativeFunctions([[maybe_unused]] ani_env *env, [[may
     };
     ASSERT_EQ(env->Module_BindNativeFunctions(module, functions.data(), functions.size()), ANI_OK);
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "checkSum", ":Z", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "checkSum", ":z", &fn);
     ani_boolean result = ANI_FALSE;
     ASSERT_EQ(env->Function_Call_Boolean(fn, &result), ANI_OK);
     ASSERT_EQ(result, ANI_TRUE);
@@ -417,7 +417,7 @@ ani_boolean test_Namespace_BindNativeFunctions([[maybe_unused]] ani_env *env, [[
 ani_boolean test_Function_Call_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    ASSERT_EQ(GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "I:Z", &fn), ANI_TRUE);
+    ASSERT_EQ(GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "i:z", &fn), ANI_TRUE);
     ani_boolean value = ANI_FALSE;
     ani_int arg1 = 2;
     ASSERT_EQ(env->Function_Call_Boolean(fn, &value, arg1), ANI_OK);
@@ -428,7 +428,7 @@ ani_boolean test_Function_Call_Boolean([[maybe_unused]] ani_env *env, [[maybe_un
 ani_boolean test_Function_Call_Boolean_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "I:Z", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "i:z", &fn);
     ani_value args[1U];
     ani_int arg1 = 2;
     args[0U].i = arg1;
@@ -450,7 +450,7 @@ ani_boolean TestFunctionCallBooleanV([[maybe_unused]] ani_env *env, ani_function
 ani_boolean test_Function_Call_Boolean_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_function fn{};
-    GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "I:Z", &fn);
+    GetFunction(env, CALLINSTMETH_MOD_NAME, "booleanModuleFunction", "i:z", &fn);
     ani_boolean value = ANI_FALSE;
     ani_int arg1 = 2;
     TestFunctionCallBooleanV(env, fn, &value, arg1);
@@ -1184,11 +1184,11 @@ ani_boolean test_Object_CallMethodByName_Boolean([[maybe_unused]] ani_env *env, 
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "II:Z", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "ii:z", &obj, &method), ANI_TRUE);
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     ani_boolean res = ANI_FALSE;
-    ASSERT_EQ(env->Object_CallMethodByName_Boolean(obj, "booleanByNameMethod", "II:Z", &res, arg1, arg2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Boolean(obj, "booleanByNameMethod", "ii:z", &res, arg1, arg2), ANI_OK);
     ASSERT_EQ(res, ANI_TRUE);
     return ANI_TRUE;
 }
@@ -1197,12 +1197,12 @@ ani_boolean test_Object_CallMethodByName_Boolean_A([[maybe_unused]] ani_env *env
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "II:Z", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "ii:z", &obj, &method), ANI_TRUE);
     ani_value args[2U];
     args[0U].i = 5U;
     args[1U].i = 6U;
     ani_boolean res = ANI_FALSE;
-    ASSERT_EQ(env->Object_CallMethodByName_Boolean_A(obj, "booleanByNameMethod", "II:Z", &res, args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Boolean_A(obj, "booleanByNameMethod", "ii:z", &res, args), ANI_OK);
     ASSERT_EQ(res, ANI_TRUE);
     return ANI_TRUE;
 }
@@ -1212,7 +1212,7 @@ ani_boolean TestObjectCallMethodByNameBooleanV([[maybe_unused]] ani_env *env, an
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "II:Z", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "ii:z", &obj, &method), ANI_TRUE);
     va_list args{};
     va_start(args, value);
     ASSERT_EQ(env->Object_CallMethodByName_Boolean_V(obj, methodName, signature, value, args), ANI_OK);
@@ -1224,11 +1224,11 @@ ani_boolean test_Object_CallMethodByName_Boolean_V([[maybe_unused]] ani_env *env
 {
     ani_object obj{};
     ani_method method{};
-    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "II:Z", &obj, &method), ANI_TRUE);
+    ASSERT_EQ(GetMethodAndObject(env, "booleanByNameMethod", "ii:z", &obj, &method), ANI_TRUE);
     ani_int arg1 = 5U;
     ani_int arg2 = 6U;
     ani_boolean res = ANI_FALSE;
-    TestObjectCallMethodByNameBooleanV(env, obj, "booleanByNameMethod", "II:Z", &res, arg1, arg2);
+    TestObjectCallMethodByNameBooleanV(env, obj, "booleanByNameMethod", "ii:z", &res, arg1, arg2);
     ASSERT_EQ(res, ANI_TRUE);
     return ANI_TRUE;
 }
