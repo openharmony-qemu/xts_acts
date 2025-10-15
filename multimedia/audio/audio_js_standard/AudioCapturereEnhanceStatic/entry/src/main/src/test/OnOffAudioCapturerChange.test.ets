@@ -102,12 +102,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0600
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0600
-     * @tc.desc      : AudioCapturer - on-MULTI_ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0600
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0600
+     * @tc.desc        AudioCapturer - on-MULTI_ON
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -138,8 +138,8 @@ export default function onOffAudioCapturerChangeTest() {
       flag1 = false;
       flag2 = false;
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
         console.log(`flag1: ${flag1}, flag2: ${flag2}`)
@@ -158,12 +158,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0700
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0700
-     * @tc.desc      : AudioCapturer - off-MULTI_ON_AND_OFF_ONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0700
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0700
+     * @tc.desc        AudioCapturer - off-MULTI_ON_AND_OFF_ONE
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -192,11 +192,11 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
-        audioCap.off('audioCapturerChange', callback1);
+        audioCap.offAudioCapturerChange(callback1);
         flag1 = false;
         flag2 = false;
         await audioCap.stop();
@@ -216,12 +216,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0800
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0800
-     * @tc.desc      : AudioCapturer - off-MULTI_ON_AND_OFF_ALL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0800
+     * @tc.desc        AudioCapturer - off-MULTI_ON_AND_OFF_ALL
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -250,11 +250,11 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
-        audioCap.off('audioCapturerChange');
+        audioCap.offAudioCapturerChange();
         flag1 = false;
         flag2 = false;
         await audioCap.stop();

@@ -57,12 +57,12 @@ export default function audioEventManagement() {
 
 
     /**
-     *@tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100
-     *@tc.name      : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100
-     *@tc.desc      : DeviceChangeType - CONNECT
-     *@tc.size      : MEDIUM
-     *@tc.type      : Function
-     *@tc.level     : Level 2
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100
+     *@tc.desc        DeviceChangeType - CONNECT
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DeviceChangeType.CONNECT == 0).assertTrue();
@@ -71,12 +71,12 @@ export default function audioEventManagement() {
     })
 
     /**
-     *@tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200
-     *@tc.name      : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200
-     *@tc.desc      : DeviceChangeType - DISCONNECT
-     *@tc.size      : MEDIUM
-     *@tc.type      : Function
-     *@tc.level     : Level 2
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200
+     *@tc.desc        DeviceChangeType - DISCONNECT
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DeviceChangeType.DISCONNECT == 1).assertTrue();

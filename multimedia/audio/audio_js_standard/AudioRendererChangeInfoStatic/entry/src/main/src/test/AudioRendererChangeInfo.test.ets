@@ -74,12 +74,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc      : AudioRendererChange - ON_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc        AudioRendererChange - ON_STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -102,7 +102,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ##`);
           console.info(`${Tag} : StreamId for ${i}  is: ${AudioRendererChangeInfoArray[i].streamId}`);
@@ -142,7 +142,7 @@ export default function audioCapturerChange() {
       }
 
       await Utils.msSleep(100);
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-001] ######### RendererChange Off is called #########`);
 
@@ -157,12 +157,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc      : AudioRendererChange - ON_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc        AudioRendererChange - ON_STATE_RUNNING
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -192,7 +192,7 @@ export default function audioCapturerChange() {
       }
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -217,7 +217,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-002] ######### RendererChange Off is called #########`);
 
@@ -239,12 +239,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc      : AudioRendererChange - ON_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc        AudioRendererChange - ON_STATE_STOPPED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -283,7 +283,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -308,7 +308,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-003] ######### RendererChange Off is called #########`);
 
@@ -324,12 +324,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc      : AudioRendererChange - ON_STATE_RELEASED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc        AudioRendererChange - ON_STATE_RELEASED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -375,7 +375,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ##}`);
           // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
@@ -401,7 +401,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-004] ######### RendererChange Off is called #########`);
 
@@ -410,12 +410,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc      : AudioRendererChange - ON_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc        AudioRendererChange - ON_STATE_PAUSED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -453,7 +453,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ##}`);
           // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
@@ -479,7 +479,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-005] ######### RendererChange Off is called #########`);
 
@@ -502,12 +502,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -528,7 +528,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -552,7 +552,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-012] ######### RendererChange Off is called #########`);
 
@@ -569,12 +569,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -595,7 +595,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${AudioRendererChangeInfoArray[i]}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -619,7 +619,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-013] ######### RendererChange Off is called #########`);
 
@@ -636,12 +636,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -663,7 +663,7 @@ export default function audioCapturerChange() {
       let resultFlag = false;
 
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${AudioRendererChangeInfoArray[i]}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -687,7 +687,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-014] ######### RendererChange Off is called #########`);
 
@@ -704,12 +704,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -730,7 +730,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${AudioRendererChangeInfoArray[i]}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -753,7 +753,7 @@ export default function audioCapturerChange() {
       }
 
       await Utils.msSleep(100);
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
@@ -770,12 +770,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.desc      : AudioRendererChange - STREAMID
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.desc        AudioRendererChange - STREAMID
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -796,7 +796,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${AudioRendererChangeInfoArray[i]}`);
           let devDescriptor: audio.AudioDeviceDescriptors = AudioRendererChangeInfoArray[i].deviceDescriptors;
@@ -821,7 +821,7 @@ export default function audioCapturerChange() {
       }
 
       await Utils.msSleep(100);
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
@@ -838,12 +838,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.desc      : AudioRendererChange - CLIENTUID & RENDERERFLAG
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.desc        AudioRendererChange - CLIENTUID & RENDERERFLAG
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -864,7 +864,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let clientUid: number = AudioRendererChangeInfoArray[i].clientUid;
@@ -892,7 +892,7 @@ export default function audioCapturerChange() {
       }
 
       await Utils.msSleep(100);
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
@@ -908,12 +908,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -934,7 +934,7 @@ export default function audioCapturerChange() {
       }
       let resultFlag = false;
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -968,7 +968,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-ON-018] ######### RendererChange Off is called #########`);
 
@@ -984,12 +984,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc      : AudioRendererChange - OFF_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc        AudioRendererChange - OFF_STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1012,7 +1012,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = true;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1023,7 +1023,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-001] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-001] ResultFlag is:  ${resultFlag}`);
@@ -1047,12 +1047,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc      : AudioRendererChange - OFF_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc        AudioRendererChange - OFF_STATE_RUNNING
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1084,7 +1084,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1095,7 +1095,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-002] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-002] ResultFlag is:  ${resultFlag}`);
@@ -1119,12 +1119,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc      : AudioRenderer - OFF_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc        AudioRenderer - OFF_STATE_STOPPED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1162,7 +1162,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1173,7 +1173,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-003] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-003] ResultFlag is:  ${resultFlag}`);
@@ -1197,12 +1197,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc      : AudioRendererChange - OFF_STATE_RELEASED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc        AudioRendererChange - OFF_STATE_RELEASED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1249,7 +1249,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : [RENDERER-CHANGE-OFF-004] ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1260,7 +1260,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-004] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-004] ResultFlag is:  ${resultFlag}`);
@@ -1277,12 +1277,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc      : AudioRendererChange - OFF_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc        AudioRendererChange - OFF_STATE_PAUSED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1321,7 +1321,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1332,7 +1332,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-005] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-005] ResultFlag is:  ${resultFlag}`);
@@ -1364,12 +1364,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1392,7 +1392,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = true;
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1411,7 +1411,7 @@ export default function audioCapturerChange() {
       });
       await Utils.msSleep(100);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-006] ######### RendererChange Off is called #########`);
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-006] ResultFlag is:  ${resultFlag}`);
@@ -1435,12 +1435,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.desc      : getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.desc        getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1462,7 +1462,7 @@ export default function audioCapturerChange() {
       }
 
       let resultFlag = false;
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1502,7 +1502,7 @@ export default function audioCapturerChange() {
         resultFlag = false;
       }
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag}: [GET_RENDERER_STATE_1_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1517,12 +1517,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.desc      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1544,7 +1544,7 @@ export default function audioCapturerChange() {
       }
 
       let resultFlag = false;
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1585,7 +1585,7 @@ export default function audioCapturerChange() {
         resultFlag = false;
       }
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_1_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1601,12 +1601,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.desc      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1640,7 +1640,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1680,7 +1680,7 @@ export default function audioCapturerChange() {
           console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
       }
 
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_2_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1696,12 +1696,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.desc      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1742,7 +1742,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1783,7 +1783,7 @@ export default function audioCapturerChange() {
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_3_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1799,12 +1799,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.desc      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1843,7 +1843,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1885,7 +1885,7 @@ export default function audioCapturerChange() {
         resultFlag = false;
       }
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_5_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1908,12 +1908,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1935,7 +1935,7 @@ export default function audioCapturerChange() {
       }
 
       let resultFlag = false;
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -1980,7 +1980,7 @@ export default function audioCapturerChange() {
         resultFlag = false;
       }
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_DD_PROMISE] ######### RendererChange Off is called #########`);
 
@@ -1996,12 +1996,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.desc      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -2023,7 +2023,7 @@ export default function audioCapturerChange() {
       }
 
       let resultFlag = false;
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -2068,7 +2068,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(1000);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_1_CALLBACK] ######### RendererChange Off is called #########`);
 
@@ -2084,12 +2084,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.desc      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2123,7 +2123,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManagerCB.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -2168,7 +2168,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(1000);
 
-      audioStreamManagerCB.off('audioRendererChange');
+      audioStreamManagerCB.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_2_CALLBACK] ######### RendererChange Off is called #########`);
 
@@ -2184,12 +2184,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.desc      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2229,7 +2229,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -2274,7 +2274,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(1000);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_STATE_3_CALLBACK] ######### RendererChange Off is called #########`);
 
@@ -2290,12 +2290,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.desc      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2333,7 +2333,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -2379,7 +2379,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(1000);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info('AFRendLog: [GET_REN_STA_5_CB] ## RenCh Off is called ##');
 
@@ -2402,12 +2402,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -2429,7 +2429,7 @@ export default function audioCapturerChange() {
       }
 
       let resultFlag = false;
-      audioStreamManager.on('audioRendererChange', (AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
+      audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo>) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
           // console.info(`${Tag} : ## RendererChange on is called for ${i}  ## ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -2478,7 +2478,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(1000);
 
-      audioStreamManager.off('audioRendererChange');
+      audioStreamManager.offAudioRendererChange();
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_DD_CALLBACK] ######### RendererChange Off is called #########`);
 

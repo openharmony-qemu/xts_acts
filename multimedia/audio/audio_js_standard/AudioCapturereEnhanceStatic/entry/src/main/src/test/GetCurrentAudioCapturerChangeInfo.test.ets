@@ -166,7 +166,7 @@ export default function audioCapturerEnhanceTest() {
             numBuffersToCapture--;
           }
         }
-        audioCap.on('readData', readDataCallback);
+        audioCap.onReadData(readDataCallback);
 
         console.log(`${Tag} read ok`);
 
@@ -179,12 +179,12 @@ export default function audioCapturerEnhanceTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0100
-     * @tc.desc      : AudioCapturer - getCurrentAudioCapturerChangeInfo-MIC-STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0100
+     * @tc.desc        AudioCapturer - getCurrentAudioCapturerChangeInfo-MIC-STATE_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -228,19 +228,18 @@ export default function audioCapturerEnhanceTest() {
           expect(false).assertTrue();
           done();
         } else {
-          expect(true).assertTrue();
           done();
         }
       }
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0200
-     * @tc.desc      : AudioCapturer - getCurrentAudioCapturerChangeInfo-MIC-SOURCE-RECOGNITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0200
+     * @tc.desc        AudioCapturer - getCurrentAudioCapturerChangeInfo-MIC-SOURCE-RECOGNITION
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -289,12 +288,12 @@ export default function audioCapturerEnhanceTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0400
-     * @tc.desc      : AudioCapturer - getCurrentAudioCapturerChangeInfo-SOURCE_TYPE_SOURCE_TYPE_VOICE_COMMUNICATION_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0400
+     * @tc.desc        AudioCapturer - getCurrentAudioCapturerChangeInfo-SOURCE_TYPE_SOURCE_TYPE_VOICE_COMMUNICATION_PREPARED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
