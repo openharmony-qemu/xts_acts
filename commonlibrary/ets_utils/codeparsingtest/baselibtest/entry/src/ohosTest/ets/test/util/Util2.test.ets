@@ -31,7 +31,8 @@ import {
   TreeMap,
   TreeSet,
   uri,
-  url
+  url,
+  Vector
 } from '@kit.ArkTS';
 import * as nameSpace from './util';
 import { foo, generator } from './util';
@@ -1043,7 +1044,7 @@ export default function util2Test() {
       let result3 = res.remove(1);
       expect(result3).assertEqual(true);
       let result: Array<number> = res.convertToArray();
-      expect(result.toString()).assertEqual("");
+      expect(result.length).assertEqual(0);
     });
 
     /**
@@ -1093,7 +1094,7 @@ export default function util2Test() {
       expect(result1).assertEqual(true);
       let result2 = res.remove(1);
       expect(result2).assertEqual(1);
-      expect(res.toArray().toString()).assertEqual("");
+      expect(res.length).assertEqual(0);
     });
 
     /**
@@ -1112,7 +1113,7 @@ export default function util2Test() {
       expect(result2).assertEqual(true);
       let result3 = res.remove(31);
       expect(result3).assertEqual(false);
-      expect(res.convertToArray().toString()).assertEqual("");
+      expect(res.length).assertEqual(0);
     });
 
     /**
@@ -1131,7 +1132,7 @@ export default function util2Test() {
       expect(result2).assertEqual(true);
       let result3 = res.remove(31);
       expect(result3).assertEqual(false);
-      expect(res.convertToArray().toString()).assertEqual("");
+      expect(res.convertToArray().length).assertEqual(0);
     });
 
     /**
@@ -1161,6 +1162,172 @@ export default function util2Test() {
       let result1 = res.add(1);
       expect(result1).assertEqual(true);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3521
+     * @tc.name testGetHash_056
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number | string, number | string>();
+      let result = pro.values();
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3522
+     * @tc.name testGetHash_057
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number | string, number | string>();
+      pro.put(2, 10);
+      pro.put(2, "anhu");
+      pro.put("afaf", "grfb");
+      let result = pro.values();
+      expect(result.toString()).assertEqual("anhu,grfb");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3523
+     * @tc.name testGetHash_058
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      pro.put(2, 10);
+      pro.put(3, 1);
+      let result = pro.keys();
+      expect(result.toString()).assertEqual("2,3");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3524
+     * @tc.name testGetHash_059
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      let result = pro.keys();
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3525
+     * @tc.name testGetHash_060
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let list = new List<number>();
+      let res = list.convertToArray();
+      expect(res.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3526
+     * @tc.name testGetHash_061
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro: util.LruBuffer<number, number> = new util.LruBuffer();
+      let result = pro.length;
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3527
+     * @tc.name testGetHash_062
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro: util.LruBuffer<number, number> = new util.LruBuffer();
+      let result = pro.keys();
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3528
+     * @tc.name testGetHash_063
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro: util.LruBuffer<number, number> = new util.LruBuffer();
+      let result = pro.values();
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3529
+     * @tc.name testGetHash_064
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let urlObject = new url.URL('https://developer.exampleUrl/?fod=1&bard=2');
+      let params = new url.URLSearchParams(urlObject.search.slice(1));
+      params.append('fod', '3');
+      expect(params.getAll('fod').toString()).assertEqual("1,3");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3530
+     * @tc.name testGetHash_065
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let urlObject = new url.URL('https://developer.exampleUrl/');
+      let params = new url.URLSearchParams(urlObject.search.slice(1));
+      expect(params.getAll('fod').length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3531
+     * @tc.name testGetHash_066
+     * @tc.desc Testing the getHash interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testGetHash_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let vector: Vector<string | number | Array<number>> = new Vector();
+      let result = vector.add("a");
+      expect(result).assertEqual(true);
+      let result2 = vector.remove("b");
+      expect(result2).assertEqual(false);
+      let result3 = vector.remove("a");
+      expect(result3).assertEqual(true);
+      let res = vector.convertToArray();
+      expect(res.length).assertEqual(0);
+    });
+
   })
 }
-
