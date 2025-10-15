@@ -164,7 +164,7 @@ export default function abilityTest() {
                     done();
                 });
             } catch (error: BusinessError) {
-                console.info(`ghg, SUB_MULTIMEDIA_AVSESSION_ON_PAUSE_STATIC_1300 on pause entry11 error,error code: ${error.code}, message: ${error.message}`);
+                console.info(`SUB_MULTIMEDIA_AVSESSION_ON_PAUSE_STATIC_1300 on pause entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
             done();

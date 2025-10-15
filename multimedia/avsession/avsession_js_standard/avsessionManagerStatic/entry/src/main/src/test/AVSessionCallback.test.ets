@@ -48,11 +48,8 @@ export default function abilityTest() {
         })
 
         beforeEach(async () => {
-            console.info(`${TAG}: ghg, beforeEach in`);
-            console.info(`${TAG}: ghg, createAVSession begin`);
             try{
                 session = await avSession.createAVSession(context, tag, 'audio');
-                console.info(`${TAG}: ghg, avSession create success`);
                 console.info(`${session!.sessionType}`);
             }catch(err: BusinessError){
                 console.info(`${TAG}: Session create error: code: ${err?.code}, message: ${err?.message}`);

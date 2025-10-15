@@ -105,12 +105,9 @@ export default function AVSessionErrorCode() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try{
                 console.info(`TestLog: createAVSession 1111`);
                 session = await avSession.createAVSession(context, tag, 'video_call');
-                console.info(`TestLog: ghg, avSession create success`);
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
