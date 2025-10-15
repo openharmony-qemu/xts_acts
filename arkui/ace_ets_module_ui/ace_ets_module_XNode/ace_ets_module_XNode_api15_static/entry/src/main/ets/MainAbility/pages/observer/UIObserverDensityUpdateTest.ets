@@ -35,12 +35,12 @@ struct DensityInfoIndex {
 
       Button('densityUpdate on').id('densityUpdate_on_id')
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().on('densityUpdate', this.densityUpdateCallback);
+          this.getUIContext().getUIObserver().onDensityUpdate(this.densityUpdateCallback);
           this.densityUpdate1 = 'DensityInfo succ';
         })
       Button('densityUpdate off').id("densityUpdate_off_id")
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().off('densityUpdate', this.densityUpdateCallback);
+          this.getUIContext().getUIObserver().offDensityUpdate(this.densityUpdateCallback);
           this.densityUpdate2 = 'DensityInfo succ';
         })
 
