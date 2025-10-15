@@ -984,7 +984,27 @@ export default function HttpResponseCodeTest() {
             }
         })
 
-
+        /**
+         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_4000
+         * @tc.name   : testNetworkMgrHttpResponseCode_static_4000
+         * @tc.desc   : Test ResponseCode property.
+         * @tc.level  : Level 2
+         * @tc.type   : Function
+         * @tc.size   : SmallTest
+         */
+        it("testNetworkMgrHttpResponseCode_static_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrHttpResponseCode_static_4000';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                ExpectTrue(http.ResponseCode.RANGE_NOT_SATISFIABLE == 416);
+                done();
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
 
     })
 
