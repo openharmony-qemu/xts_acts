@@ -54,14 +54,15 @@ export default function fontJsunit() {
         let strJson = getInspectorByKey('fontlist');
         let obj: ESObject = JSON.parse(strJson);
         console.info("[GridColOffsetJsunit_0100] component  strJson:" + JSON.stringify(obj.$attrs.content));
+        let fontList:string[]|undefined = AppStorage.get('fontList')
         if (obj.$attrs.content == "") {
             expect(obj.$attrs.content).assertEqual("");
-            expect(AppStorage.get('fontListLength')).assertEqual(00)
+            expect(fontList && fontList.length==0).assertTrue()
         } else {
             expect(obj.$attrs.content).assertContain("书宋-简");
-            expect(AppStorage.get('fontListLength')>0).assertTrue
+            expect(fontList && fontList.length>0).assertTrue()
         }
-        AppStorage.delete('fontListLength')
+        AppStorage.delete('fontList')
       }
       done();
     });
@@ -84,12 +85,12 @@ export default function fontJsunit() {
       // Get the information of the font
       console.info('fontJsunit_0300 START');
       try {
-        let font: Object | null = globalThis.uiContext.getFont().getSystemFontList()
+        let font: string[] | null = globalThis.uiContext.getFont().getSystemFontList()
         expect(font !=null).assertTrue();
-        if(font.length){
-          expect(font.length>0).assertTrue
+        if(font && font.length){
+          expect(font && font.length>0).assertTrue
         }else{
-          expect(font.length).assertEqual(00)
+          expect(font && font.length).assertEqual(0)
         }
       } catch (err) {
         console.error("fontJsunit_0300 error " + JSON.stringify(err));
