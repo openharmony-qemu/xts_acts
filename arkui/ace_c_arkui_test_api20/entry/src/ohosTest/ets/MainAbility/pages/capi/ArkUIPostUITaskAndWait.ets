@@ -14,7 +14,7 @@
  */
 
 import { NodeContent, router } from '@kit.ArkUI';
-import entry from 'libentry.so';
+import entry from 'libnativerender.so';
 
 @Component
 struct CAPIComponent {

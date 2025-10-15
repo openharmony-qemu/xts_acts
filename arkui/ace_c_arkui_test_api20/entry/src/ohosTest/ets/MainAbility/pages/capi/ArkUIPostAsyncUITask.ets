@@ -14,7 +14,7 @@
  */
 
 import { NodeContent, router } from '@kit.ArkUI';
-import entry from 'libentry.so';
+import entry from 'libnativerender.so';
 
 @Component
 struct CAPIComponent {
@@ -77,7 +77,7 @@ struct Page {
   @State message: string = 'CreateNodeTreeOnMultiThread';
 
   aboutToAppear(): void {
-    this.postType = 1;
+    this.postType = 0;
     if (this.postType) {
       this.message = 'ArkUIPostAsyncUITask';
     } else if (this.postType == 1) {
