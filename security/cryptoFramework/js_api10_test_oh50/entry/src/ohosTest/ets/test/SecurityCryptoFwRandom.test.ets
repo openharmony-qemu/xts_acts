@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import cryptoFramework from '@ohos.security.cryptoFramework';
-import { CallbackType, intervalTime, stressTimeout } from './utils/random/random';
+import { CallbackType, intervalTime, stressTimeout, enableHardwareEntropyRandom } from './utils/random/random';
 
 
 @Concurrent
