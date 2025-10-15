@@ -17,6 +17,7 @@ import certManager from '@ohos.security.certManager';
 import type { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
+import signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -380,6 +381,32 @@ export default function api16CertFuncTestUnit() {
     });
 
     /**
+     * @tc.number SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012
+     * @tc.name SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012
+     * @tc.desc normal test
+     * @tc.size SmallTest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 start');
+      let property: certManager.CertStoreProperty = {
+        certType: certManager.CertType.CA_CERT_SYSTEM,
+        certScope: certManager.CertScope.CURRENT_USER,
+        certAlg: certManager.CertAlgorithm.INTERNATIONAL,
+      }
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(property);
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 userCACurrentPath: ${userCACurrentPath}`);
+        expect(userCACurrentPath).assertEqual('/etc/security/certificates');
+      } catch (err:BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0012 err.code: ${err.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.number SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0014
      * @tc.name SUB_Security_CertManager_GetCertificateStorePath_Func_Static_0014
      * @tc.desc normal test
@@ -521,6 +548,83 @@ export default function api16CertFuncTestUnit() {
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INCORRECT_FORMAT);
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0012 end');
+      done();
+    });
+
+    /**
+     * @tc.number Security_CertManager_VerifyPromiseSM3_Func_Static_0010
+     * @tc.name Security_CertManager_VerifyPromiseSM3_Func_Static_0010
+     * @tc.desc normal test
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('Security_CertManager_VerifyPromiseSM3_Func_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 start');
+      let keyUri: string | undefined;
+      let pwd = '12345678';
+      let alias = 'appCertAliasDemoSM2';
+      let credData: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05, 0x06 ]);
+      let signspec: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SM3,
+      }
+
+      let verifySpec: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SM3,
+      }
+
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priSM2CredData), pwd, alias);
+        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri));
+        keyUri = result.uri;
+      } catch (e: BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010  e.code: ${e.code}`);
+      }
+
+      if (keyUri != undefined) {
+        await signVerifyPromise.signVerifyNormalProcess(keyUri, credData, signspec, verifySpec).then((result1: certManager.CMResult) => {
+        expect(result1.outData == null).assertTrue();
+        }).catch((err: BusinessError): void => {
+          hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010 error.code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        });
+        await certManager.uninstallPrivateCertificate(keyUri);
+        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010  uninstallPrivateCertificate promise success!');
+      } else {
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010 keyUri is undefined!`);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 end');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_getCertificateStorePath_Static_0154
+     * @tc.name SUB_Security_CertManager_getCertificateStorePath_Static_0154
+     * @tc.desc abnormal test
+     * @tc.size SmallTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_getCertificateStorePath_Static_0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getCertificateStorePath_Static_0154 start');
+      let property : certManager.CertStoreProperty = {
+        certType: certManager.CertType.CA_CERT_USER,
+        certScope: certManager.CertScope.CURRENT_USER,
+        certAlg: certManager.CertAlgorithm.SM,
+      };
+
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(property);
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_getCertificateStorePath_Static_0154 userCACurrentPath: ${userCACurrentPath}`);
+        expect(userCACurrentPath).assertEqual('/data/certificates/user_cacerts/100');
+      } catch (err: BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_getCertificateStorePath_Static_0154 e.code: ${err.code}, message: ${err.message}`);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getCertificateStorePath_Static_0154 end');
       done();
     });
   })
