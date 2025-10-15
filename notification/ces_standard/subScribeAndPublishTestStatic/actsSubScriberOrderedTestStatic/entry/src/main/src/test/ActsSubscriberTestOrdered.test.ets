@@ -638,37 +638,6 @@ export default function ActsSubscriberTestOrder() {
       hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 END`)
     })
 
-    // /*
-    //  * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700
-    //  * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700
-    //  * @tc.desc: createSubscriber
-    //  */
-    //
-    // it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700'
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700 START`)
-    //
-    //   let subscriber:commonEventManager.CommonEventSubscriber
-    //
-    //   let subscribeInfo:commonEventManager.CommonEventSubscribeInfo = {
-    //     events:new Array<string> ("event07")
-    //   }
-    //
-    //   commonEventManager.createSubscriber(subscribeInfo, undefined).then((commonEventSubscriber:commonEventManager.CommonEventSubscriber) => {
-    //     console.info(TAG+`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 success ${commonEventSubscriber}`)
-    //     subscriber = commonEventSubscriber
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err:BusinessError):void => {
-    //     console.info(TAG+
-    //       `SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 err, error code: ${err.code}, message: ${err.message}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700 END`)
-    //
-    // })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST END`)
   })
 }
