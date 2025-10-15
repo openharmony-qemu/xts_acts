@@ -225,9 +225,9 @@ class TestWorker extends EAWorker {
   override start(): void{
     super.start();
   }
-  override join(): void {
+  override join(): Job<void> {
     this.joinCalled = true;
-    super.join();
+    return super.join();
   }
 
   override toString(): string {
