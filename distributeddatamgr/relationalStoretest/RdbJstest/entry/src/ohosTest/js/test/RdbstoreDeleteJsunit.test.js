@@ -811,5 +811,55 @@ describe('rdbStoreDeleteTest', function () {
         }
         console.info(TAG + "************* dataRdbTest012 end *************");
     })
+     /**
+     * @tc.name   dataRdbTest013
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1008
+     * @tc.desc   goToFirstRow test
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+     it('dataRdbTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(TAG + "************* dataRdbTest013 start *************");
+      let predicates = new dataRdb.RdbPredicates("test");
+      let resultSet = await rdbStore.query(predicates);
+      try{
+        let bool1 = resultSet.goToFirstRow();
+        console.log(TAG + "resultSet.goToFirstRow():" + bool1);
+        expect(bool1).assertEqual(false);
+        resultSet.close();
+        done();
+      }catch(err){
+        console.log(TAG + "err.code:" + err.code + err.message);
+        expect().assertFail();
+        done();
+      }
+      console.info(TAG + "************* dataRdbTest013 end *************");
+    })
+     /**
+     * @tc.name   dataRdbTest014
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1009
+     * @tc.desc   goToNextRow test
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+     it('dataRdbTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(TAG + "************* dataRdbTest014 start *************");
+      let predicates = new dataRdb.RdbPredicates("test");
+      let resultSet = await rdbStore.query(predicates);
+      try{
+        let bool1 = resultSet.goToNextRow();
+        console.log(TAG + "resultSet.goToNextRow():" + bool1);
+        expect(bool1).assertEqual(false);
+        resultSet.close();
+        done();
+      }catch(err){
+        console.log(TAG + "err.code:" + err.code + err.message);
+        expect().assertFail();
+        done();
+      }
+      console.info(TAG + "************* dataRdbTest014 end *************");
+    })
     console.info(TAG + '*************Unit Test End*************');
 })}
