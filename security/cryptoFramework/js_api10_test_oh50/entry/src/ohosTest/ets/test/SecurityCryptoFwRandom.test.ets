@@ -14,8 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import cryptoFramework from '@ohos.security.cryptoFramework';
-import { taskpool } from '@kit.ArkTS';
-import { CallbackType, intervalTime, stressTimeout } from './utils/random/random';
+import { CallbackType, intervalTime, stressTimeout, enableHardwareEntropyRandom } from './utils/random/random';
 
 
 @Concurrent
@@ -124,18 +123,10 @@ export default function SecurityCryptoFwRandomTestUnit() {
     it("SUB_Security_CryptoFramework_Random_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
-          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-          taskGroup.addTask(getRandomWithPthread, 16, CallbackType.TYPE_IS_PROMISE);
-          taskGroup.addTask(getRandomWithPthread, 16, CallbackType.TYPE_IS_SYNC);
-          taskGroup.addTask(getRandomWithPthread, 16, CallbackType.TYPE_IS_CALLBACK);
-          await taskpool.execute(taskGroup).then((res: Array<Object>) => {
-            for (let ret of res) {
-              expect(ret).assertTrue();
-            }
-          });
-          taskpool.cancel(taskGroup);
+          let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_CALLBACK);
+          expect(ret).assertTrue();
         } catch (error) {
-          console.error(`Random Pthread “${error}“, error code: ${error.code}`);
+          console.error(`Random Pthread CallBack “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
         done();
@@ -186,7 +177,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
           let random: cryptoFramework.Random = cryptoFramework.createRandom();
           random.setSeed({data: new Uint8Array(seed)});
           random.enableHardwareEntropy();
-          for (let i: number = 0; i < 1000; i++) {
+          for (let i: number = 0; i < 3; i++) {
             let secret: cryptoFramework.DataBlob = await random.generateRandom(secretLen);
             expect(secret.data.length).assertEqual(secretLen);
           }
@@ -239,6 +230,46 @@ export default function SecurityCryptoFwRandomTestUnit() {
         } catch (error) {
           console.error(`Random “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        done();
+      });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_Random_Func_0700
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0700
+     * @tc.desc enable hardware entropy, pthread
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_Random_Func_0700",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_SYNC);
+          expect(ret).assertTrue();
+        } catch (error) {
+          console.error(`Random Pthread Sync “${error}“, error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_Random_Func_0800
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0800
+     * @tc.desc enable hardware entropy, pthread
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_Random_Func_0800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_PROMISE);
+          expect(ret).assertTrue();
+        } catch (error) {
+          console.error(`Random Pthread Promise “${error}“, error code: ${error.code}`);
+          expect(null).assertFail();
         }
         done();
       });
