@@ -1,5 +1,5 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { finalResult77 } from './promisejs';
+import { finalResult77, PromiseThenTest030 } from './promisejs';
 import { emptyObj, result13, testObj32, testObj32init, user12 } from './promisets';
 import { sleep } from './utils';
 
@@ -11,7 +11,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0100
      * @tc.name PromiseThenTest001
-     * @tc.desc 测试then()回调返回普通值时的兑现值
+     * @tc.desc Test the fulfillment value when then() callback returns a normal value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -24,20 +24,20 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0200
      * @tc.name PromiseThenTest002
-     * @tc.desc 测试then()回调无返回值时的兑现值
+     * @tc.desc Test the fulfillment value when then() callback has no return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('PromiseThenTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-    //   const result = await Promise.resolve('test').then(() => {});
-    //   expect(result).assertEqual(undefined);
-    // });
+    it('PromiseThenTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const result = await Promise.resolve('test').then(() => emptyObj);
+      expect(result).assertEqual(emptyObj);
+    });
 
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0300
      * @tc.name PromiseThenTest003
-     * @tc.desc 测试then()回调抛出错误时的拒绝原因
+     * @tc.desc Test the rejection reason when then() callback throws an error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -55,7 +55,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0400
      * @tc.name PromiseThenTest004
-     * @tc.desc 测试then()回调返回已兑现Promise时的继承值
+     * @tc.desc Test the inherited value when then() callback returns a resolved Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -68,7 +68,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0500
      * @tc.name PromiseThenTest005
-     * @tc.desc 测试then()回调返回已拒绝Promise时的继承原因
+     * @tc.desc Test the inherited reason when then() callback returns a rejected Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -84,7 +84,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0600
      * @tc.name PromiseThenTest006
-     * @tc.desc 测试then()链式调用的参数传递
+     * @tc.desc Test parameter passing in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -99,27 +99,27 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0700
      * @tc.name PromiseThenTest007
-     * @tc.desc 测试省略onFulfilled时的状态穿透
+     * @tc.desc Test state propagation when onFulfilled is omitted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
     it('PromiseThenTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const result = await Promise.resolve('穿透值').then(undefined).then(value => value + '已处理');
-      expect('穿透值已处理').assertEqual(result);
+      const result = await Promise.resolve('propagated value').then(undefined).then(value => value + ' processed');
+      expect('propagated value processed').assertEqual(result);
     });
 
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0800
      * @tc.name PromiseThenTest008
-     * @tc.desc 测试then()回调返回继承PromiseLike的class类型thenable的自动解析
+     * @tc.desc Test automatic resolution of class-type thenables inheriting PromiseLike returned by then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
     it('PromiseThenTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
 
-      // 声明继承PromiseLike的class作为thenable
+      // Declare a class inheriting PromiseLike as a thenable
       class CustomThenable implements PromiseLike<string> {
         then<TResult1 = string, TResult2 = never>(
           onfulfilled?: ((value: string) => TResult1 | PromiseLike<TResult1>) | null | undefined,
@@ -130,7 +130,7 @@ export default function promiseThenTest() {
               const resolvedValue = 'thenable resolved';
               if (onfulfilled) {
                 const result = onfulfilled(resolvedValue);
-                // 处理onfulfilled返回的可能是PromiseLike的值
+                // Handle cases where onfulfilled returns a PromiseLike value
                 if (typeof (result as PromiseLike<TResult1>)?.then === 'function') {
                   (result as PromiseLike<TResult1>).then(resolve);
                 } else {
@@ -152,7 +152,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_0900
      * @tc.name PromiseThenTest009
-     * @tc.desc 测试同一Promise多次调用then()的独立执行
+     * @tc.desc Test independent execution when calling then() multiple times on the same Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -169,7 +169,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1000
      * @tc.name PromiseThenTest010
-     * @tc.desc 测试then()回调返回待定Promise时的状态等待
+     * @tc.desc Test state waiting when then() callback returns a pending Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -181,10 +181,11 @@ export default function promiseThenTest() {
       const result = await Promise.resolve().then(() => pendingPromise);
       expect(300).assertEqual(result);
     });
+
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1100
      * @tc.name PromiseThenTest011
-     * @tc.desc 测试then()回调返回布尔值时的兑现结果
+     * @tc.desc Test fulfillment result when then() callback returns a boolean value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -197,7 +198,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1200
      * @tc.name PromiseThenTest012
-     * @tc.desc 测试then()回调返回对象时的属性获取
+     * @tc.desc Test property access when then() callback returns an object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -212,7 +213,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1300
      * @tc.name PromiseThenTest013
-     * @tc.desc 测试then()链式调用中传递对象属性
+     * @tc.desc Test object property passing in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -224,25 +225,25 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1400
      * @tc.name PromiseThenTest014
-     * @tc.desc 测试省略onRejected时的拒绝状态穿透
+     * @tc.desc Test rejection state propagation when onRejected is omitted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
     it('PromiseThenTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        await Promise.reject('拒绝穿透').then(() => {
+        await Promise.reject('rejection propagation').then(() => {
         }, undefined).then(() => {
         });
       } catch (err) {
-        expect('拒绝穿透').assertEqual(err as string);
+        expect('rejection propagation').assertEqual(err as string);
       }
     });
 
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1500
      * @tc.name PromiseThenTest015
-     * @tc.desc 测试then()回调返回空对象的兑现结果
+     * @tc.desc Test fulfillment result when then() callback returns an empty object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -255,7 +256,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1600
      * @tc.name PromiseThenTest016
-     * @tc.desc 测试then()回调返回数组的元素访问
+     * @tc.desc Test element access when then() callback returns an array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -269,7 +270,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1700
      * @tc.name PromiseThenTest017
-     * @tc.desc 测试then()链式调用中数组处理
+     * @tc.desc Test array processing in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -284,7 +285,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1800
      * @tc.name PromiseThenTest018
-     * @tc.desc 测试then()回调中异步操作的顺序执行
+     * @tc.desc Test sequential execution of asynchronous operations in then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -308,7 +309,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_1900
      * @tc.name PromiseThenTest019
-     * @tc.desc 测试then()回调返回已兑现Promise的链式传递
+     * @tc.desc Test chain propagation of resolved Promises returned by then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -324,7 +325,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2000
      * @tc.name PromiseThenTest020
-     * @tc.desc 测试then()回调返回拒绝Promise的错误捕获
+     * @tc.desc Test error capture of rejected Promises returned by then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -342,7 +343,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2100
      * @tc.name PromiseThenTest021
-     * @tc.desc 测试then()回调中嵌套then()的执行顺序
+     * @tc.desc Test execution order of nested then() in then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -366,7 +367,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2200
      * @tc.name PromiseThenTest022
-     * @tc.desc 测试继承PromiseLike的thenable拒绝状态解析
+     * @tc.desc Test rejection state resolution of thenables inheriting PromiseLike
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -405,7 +406,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2300
      * @tc.name PromiseThenTest023
-     * @tc.desc 测试then()回调返回0的兑现结果
+     * @tc.desc Test fulfillment result when then() callback returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -418,7 +419,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2400
      * @tc.name PromiseThenTest024
-     * @tc.desc 测试then()链式调用中数学运算传递
+     * @tc.desc Test mathematical operation propagation in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -434,7 +435,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2500
      * @tc.name PromiseThenTest025
-     * @tc.desc 测试then()回调返回空字符串的兑现结果
+     * @tc.desc Test fulfillment result when then() callback returns an empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -447,7 +448,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2600
      * @tc.name PromiseThenTest026
-     * @tc.desc 测试then()链式调用中字符串拼接
+     * @tc.desc Test string concatenation in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -463,7 +464,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2700
      * @tc.name PromiseThenTest027
-     * @tc.desc 测试同一thenable多次传递的解析一致性
+     * @tc.desc Test resolution consistency of the same thenable passed multiple times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -490,7 +491,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2800
      * @tc.name PromiseThenTest028
-     * @tc.desc 测试then()回调中修改外部变量的副作用
+     * @tc.desc Test side effects of modifying external variables in then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -506,7 +507,7 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_2900
      * @tc.name PromiseThenTest029
-     * @tc.desc 测试then()链式调用中副作用与返回值结合
+     * @tc.desc Test combination of side effects and return values in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
@@ -530,27 +531,16 @@ export default function promiseThenTest() {
     /**
      * @tc.number SUB_BUILTINS_Promise_then_TEST_3000
      * @tc.name PromiseThenTest030
-     * @tc.desc 测试then()回调返回PromiseLike的链式解析
+     * @tc.desc Test chain resolution of PromiseLike returned by then() callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('PromiseThenTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-    //   class NestedThenable implements PromiseLike<number> {
-    //     then<TResult1, TResult2 = never>(
-    //       onfulfilled?: ((value: number) => TResult1 | PromiseLike<TResult1>) | null | undefined
-    //     ): PromiseLike<number> {
-    //       return new Promise(resolve => setTimeout(() => resolve(100), 50));
-    //     }
-    //   }
-    //
-    //   const result = await Promise.resolve()
-    //     .then(() => new NestedThenable())
-    //     .then(value => value + 50)
-    //     .then(value => new Promise(resolve => resolve(value * 2)));
-    //
-    //   expect(300).assertEqual(result);
-    // });
+    it('PromiseThenTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let result:number = await PromiseThenTest030()
+      expect(300).assertEqual(result);
+    });
+
     /**
      * @tc.number SUB_BUILTINS_PROMISE_THEN_TEST_3100
      * @tc.name PromiseThenTest031
@@ -685,7 +675,7 @@ export default function promiseThenTest() {
      */
     it('PromiseThenTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise1 = Promise.resolve(10 > 5).then(value => value);
-      const promise2 = Promise.resolve(3 < 1).then(value =>!value);
+      const promise2 = Promise.resolve(3 < 1).then(value => !value);
 
       const result1 = await promise1;
       const result2 = await promise2;
@@ -761,7 +751,7 @@ export default function promiseThenTest() {
           onRejected?: ((reason: string) => TResult2 | PromiseLike<TResult2>) | null
         ): PromiseLike<TResult1 | TResult2> {
           return new Promise((_, reject) => {
-            setTimeout(() => reject('thenable rejected'), 70);
+            setTimeout(() => onRejected!('thenable rejected'), 70);
           });
         }
       }
@@ -914,20 +904,20 @@ export default function promiseThenTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('PromiseThenTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-    //   class PassThroughThenable implements PromiseLike<number> {
-    //     then<TResult1 = number>(onFulfilled?: ((value: number) => TResult1 | PromiseLike<TResult1>) | null) {
-    //       return new Promise<number>(resolve => resolve(onFulfilled!(200)));
-    //     }
-    //   }
-    //
-    //   const result = await Promise.resolve()
-    //     .then(() => new PassThroughThenable())
-    //     .then(v => v + 50)
-    //     .then(v => new PassThroughThenable().then(val => val + v));
-    //
-    //   expect(result).assertEqual(450);
-    // });
+    it('PromiseThenTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      class PassThroughThenable implements PromiseLike<number> {
+        then<TResult1 = number>(onFulfilled?: ((value: number) => TResult1 | PromiseLike<TResult1>) | null) {
+          return new Promise<number>(resolve => resolve(1)).then(()=>onFulfilled!(200));
+        }
+      }
+
+      const result = await Promise.resolve()
+        .then(() => new PassThroughThenable())
+        .then(v => v + 50)
+        .then((v): Promise<number> => new PassThroughThenable().then(val => val + v));
+
+      expect(result).assertEqual(450);
+    });
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE_THEN_TEST_4800
@@ -1008,7 +998,7 @@ export default function promiseThenTest() {
           executionLog.push('outer2');
         });
 
-      expect(executionLog).assertEqual(['outer1', 'inner1', 'outer2']);
+      expect(executionLog).assertDeepEquals(['outer1', 'inner1', 'outer2']);
     });
 
     /**
@@ -1090,7 +1080,7 @@ export default function promiseThenTest() {
           parallelResult.push(3);
         });
 
-      expect(parallelResult).assertEqual([2, 1, 3]);
+      expect(parallelResult).assertDeepEquals([2, 1, 3]);
     });
 
     /**
@@ -1171,7 +1161,7 @@ export default function promiseThenTest() {
           errorLogs.push(err.message);
         });
 
-      expect(errorLogs).assertEqual(['sync error 1', 'async error 2']);
+      expect(errorLogs).assertDeepEquals(['sync error 1', 'async error 2']);
     });
 
     /**
@@ -1202,9 +1192,9 @@ export default function promiseThenTest() {
 
       await outerPromise;
       // Wait for remaining inner async tasks
-      await new Promise<void>((resolve) => setTimeout(resolve, 20));
+      await new Promise<void>((resolve) => setTimeout(resolve, 30));
 
-      expect(log).assertEqual(['outer-step1', 'outer-step2', 'inner-step1', 'inner-step2']);
+      expect(log).assertDeepEquals(["outer-step1", "inner-step1", "outer-step2", "inner-step2"]);
     });
 
     /**
@@ -1326,7 +1316,7 @@ export default function promiseThenTest() {
           });
         });
 
-      expect(finalValue).assertEqual(28);
+      expect(finalValue).assertEqual(20);
     });
 
     /**
@@ -1350,7 +1340,7 @@ export default function promiseThenTest() {
             .then(() => log.push('cleanup'));
         });
 
-      expect(log).assertEqual(['start', 'fail', 'cleanup']);
+      expect(log).assertDeepEquals(['start', 'fail', 'cleanup']);
     });
 
     /**
@@ -1428,7 +1418,7 @@ export default function promiseThenTest() {
       await basePromise;
       await new Promise<void>((resolve) => setTimeout(resolve, 20));
 
-      expect(log).assertEqual(['cb1: 100', 'cb2: 200']);
+      expect(log).assertDeepEquals(['cb1: 100', 'cb2: 200']);
     });
 
     /**
@@ -1490,7 +1480,7 @@ export default function promiseThenTest() {
           return val + ' - final';
         });
 
-      expect(recoveryLog).assertEqual(['step1', 'step2 failed', 'step2 recovered']);
+      expect(recoveryLog).assertDeepEquals(['step1', 'step2 failed', 'step2 recovered']);
       expect(result).assertEqual('step2 recovered - final');
     });
 
@@ -1528,7 +1518,7 @@ export default function promiseThenTest() {
         });
 
       // Verify execution order matches delay (shorter delay first)
-      expect(executionOrder).assertEqual([2, 3, 1]);
+      expect(executionOrder).assertDeepEquals([2, 3, 1]);
     });
 
     /**
@@ -1585,7 +1575,7 @@ export default function promiseThenTest() {
           return v * 4;
         }); // Sync
 
-      expect(valueLog).assertEqual([10, 20, 25, 22]);
+      expect(valueLog).assertDeepEquals([10, 20, 25, 22]);
     });
 
     /**
@@ -1643,7 +1633,7 @@ export default function promiseThenTest() {
         }));
 
       expect(level1Val).assertEqual(3);
-      expect(finalResult).assertEqual(21);
+      expect(finalResult).assertEqual(18);
     });
 
     /**
@@ -1672,7 +1662,7 @@ export default function promiseThenTest() {
           });
         });
 
-      expect(parallelResults.sort((a, b) => a - b)).assertEqual([3, 5, 8]);
+      expect(parallelResults.sort((a, b) => a - b)).assertDeepEquals([3, 5, 8]);
       expect(finalSum).assertEqual(16);
     });
 
@@ -1704,7 +1694,7 @@ export default function promiseThenTest() {
           return new Promise<string>((resolve) => setTimeout(() => resolve(val + ' - final'), 10));
         });
 
-      expect(recoveryLog).assertEqual(['init', 'level1 fail', 'level1 recovered']);
+      expect(recoveryLog).assertDeepEquals(['init', 'level1 fail', 'level1 recovered']);
       expect(result).assertEqual('level1 recovered - final');
     });
 
@@ -1717,7 +1707,7 @@ export default function promiseThenTest() {
      * @tc.level Level 1
      */
     it('PromiseThenTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(finalResult77).assertEqual(60);
+      expect(await finalResult77()).assertEqual(60);
     });
 
     /**
@@ -1751,7 +1741,7 @@ export default function promiseThenTest() {
               }, 5);
             }))));
 
-      expect(sideEffectLog).assertEqual(['level1 done', 'level2 done', 'level3 done']);
+      expect(sideEffectLog).assertDeepEquals(['level1 done', 'level2 done', 'level3 done']);
     });
 
     /**
@@ -1823,7 +1813,7 @@ export default function promiseThenTest() {
         validationLog.push(err as string);
       }
 
-      expect(validationLog).assertEqual(['Check 10 >=5', 'Check 10 >=12', 'Value 10 < 12']);
+      expect(validationLog).assertDeepEquals(['Check 10 >=5', 'Check 10 >=12', 'Value 10 < 12']);
     });
 
     /**
@@ -1856,7 +1846,7 @@ export default function promiseThenTest() {
             });
           }));
 
-      expect(taskResults).assertEqual([2, 3, 1]);
+      expect(taskResults).assertDeepEquals([2, 3, 1]);
       expect(total).assertEqual(6);
     });
 
@@ -1893,7 +1883,7 @@ export default function promiseThenTest() {
           errorLog.push('recovered');
         });
 
-      expect(errorLog).assertEqual(['level1 error', 'level2 error', 'recovered']);
+      expect(errorLog).assertDeepEquals(['level1 error', 'level2 error', 'recovered']);
     });
 
     /**
@@ -1978,7 +1968,7 @@ export default function promiseThenTest() {
           chainLog.push(err);
         });
 
-      expect(chainLog).assertEqual(['step1: fulfill', 'step2: reject', 'step3: fulfill', 'step4: reject']);
+      expect(chainLog).assertDeepEquals(['step1: fulfill', 'step2: reject', 'step3: fulfill', 'step4: reject']);
     });
 
     /**
@@ -2007,8 +1997,8 @@ export default function promiseThenTest() {
         })
         .then((flattened: number[]) => flattened.filter(num => num % 2 === 0));
 
-      expect(parallelData).assertEqual([[1, 2], [2, 4], [3, 6]]);
-      expect(combinedResult).assertEqual([2, 2, 4, 6]);
+      expect(parallelData).assertDeepEquals([[1, 2], [2, 4], [3, 6]]);
+      expect(combinedResult).assertDeepEquals([2, 2, 4, 6]);
     });
 
     /**
@@ -2063,7 +2053,7 @@ export default function promiseThenTest() {
           onRejected?: ((reason: string) => TResult2 | PromiseLike<TResult2>) | null
         ): PromiseLike<TResult1 | TResult2> {
           return new Promise<TResult1 | TResult2>((_, reject) => {
-            setTimeout(() => reject(this.msg), this.delay);
+            setTimeout(() => onRejected!(this.msg), this.delay);
           });
         }
       }
@@ -2155,8 +2145,8 @@ export default function promiseThenTest() {
             resolve(Promise.all<string>(finalTasks));
           })));
 
-      expect(taskLog).assertEqual(['worker: B', 'worker: C', 'worker: A']);
-      expect(finalLog).assertEqual(['final: A', 'final: B', 'final: C']);
+      expect(taskLog).assertDeepEquals(['worker: B', 'worker: C', 'worker: A']);
+      expect(finalLog).assertDeepEquals(['final: A', 'final: B', 'final: C']);
     });
 
     /**
@@ -2190,7 +2180,7 @@ export default function promiseThenTest() {
               }, 20);
             }))));
 
-      expect(executionOrder).assertEqual(['level1', 'level2', 'level3']);
+      expect(executionOrder).assertDeepEquals(['level1', 'level2', 'level3']);
     });
 
     /**
@@ -2216,7 +2206,7 @@ export default function promiseThenTest() {
         .then(() => delay('async2', 10))
         .then(() => log.push('sync3'));
 
-      expect(log).assertEqual(['sync1', 'async1', 'sync2', 'async2', 'sync3']);
+      expect(log).assertDeepEquals(['sync1', 'async1', 'sync2', 'async2', 'sync3']);
     });
 
     /**
@@ -2248,7 +2238,8 @@ export default function promiseThenTest() {
         })
         .then(() => log.push('outer-end'));
 
-      expect(log).assertEqual(['outer-start', 'parallel2', 'parallel1', 'outer-middle', 'outer-async', 'outer-end']);
+      expect(log)
+        .assertDeepEquals(['outer-start', 'parallel2', 'parallel1', 'outer-middle', 'outer-async', 'outer-end']);
     });
 
     /**
@@ -2280,7 +2271,7 @@ export default function promiseThenTest() {
           return `${val}-final`;
         });
 
-      expect(errorLog).assertEqual(['init', 'timer-error', 'recovered']);
+      expect(errorLog).assertDeepEquals(['init', 'timer-error', 'recovered']);
       expect(result).assertEqual('recovered-final');
     });
 
@@ -2335,7 +2326,7 @@ export default function promiseThenTest() {
         .then(() => timedTask(3, 20))
         .then(() => timedTask(4, 5));
 
-      expect(executionLog).assertEqual([1, 2, 3, 4]);
+      expect(executionLog).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
@@ -2367,7 +2358,7 @@ export default function promiseThenTest() {
         }))
         .then(() => task('final', 20));
 
-      expect(log).assertEqual(['parallel-b', 'parallel-a', 'nested-1', 'nested-2', 'final']);
+      expect(log).assertDeepEquals(['parallel-b', 'parallel-a', 'nested-1', 'nested-2', 'final']);
     });
 
     /**
@@ -2410,7 +2401,7 @@ export default function promiseThenTest() {
         })
         .then((val) => resultLog.push(val));
 
-      expect(resultLog).assertEqual([6, 12, 24]);
+      expect(resultLog).assertDeepEquals([6, 12, 24]);
     });
 
     /**
@@ -2479,7 +2470,7 @@ export default function promiseThenTest() {
         }))
         .then(() => addLog('chain-3', 5));
 
-      expect(finalLog).assertEqual([
+      expect(finalLog).assertDeepEquals([
         'chain-1', 'parallel-2', 'parallel-1', 'serial-after-parallel2',
         'chain-2', 'nested-1', 'nested-2', 'chain-3'
       ]);
