@@ -1648,9 +1648,9 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @tc.number wifiStateChangeTest
-         * @tc.name wifiStateChangeTest
-         * @tc.desc Test wifiStateChangeTest API functionality
+         * @tc.number wifiStateChangeTest2
+         * @tc.name wifiStateChangeTest2
+         * @tc.desc Test wifiStateChangeTest2 API functionality
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
