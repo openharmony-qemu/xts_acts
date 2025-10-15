@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { OverScrollMode, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
+import { OverScrollMode, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -60,7 +61,7 @@ struct Index {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webcomponent').onClick((e: ClickEvent) => {
+        Button('web click1').key('webcomponent').onClick((e: ClickEvent) => {
           console.info('key==>' + this.str)
           switch (this.str) {
             case 'emitGetWebId': {
@@ -76,11 +77,19 @@ struct Index {
               Utils.emitEvent(this.webIdTol, 100)
               break;
             }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/terminateRenderProcess' })
+              console.log('push URL success')
+            }
+
           }
         })
       }
 
-      Web({ src: "resource://rawfile/indexCopy.html", controller: this.controller })
+      Web({ src: 'resource://rawfile/indexCopy.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -88,7 +97,7 @@ struct Index {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .overScrollMode(OverScrollMode.NEVER)
-      Web({ src: "resource://rawfile/indexTwo.html", controller: this.controllerTwo })
+      Web({ src: 'resource://rawfile/indexTwo.html', controller: this.controllerTwo })
         .id('2')
         .key('web2')
         .javaScriptAccess(this.javaScriptAccess)
@@ -97,7 +106,7 @@ struct Index {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-      Web({ src: "resource://indexThree.html", controller: this.controllerThree })
+      Web({ src: 'resource://indexThree.html', controller: this.controllerThree })
         .id('3')
         .key('web3')
         .javaScriptAccess(this.javaScriptAccess)
