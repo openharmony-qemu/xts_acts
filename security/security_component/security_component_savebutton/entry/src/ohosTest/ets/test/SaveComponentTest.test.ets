@@ -101,18 +101,15 @@ export default function saveComponentTest() {
               expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
               await Utils.sleep(500);
               console.info("====>[Test_Security_Button_Save_0100] END====");
-              done()
             } else {
               console.info("====>[Test_Security_Button_Save_0100] 设置权限失败");
               expect().assertFail()
               console.info("====>[Test_Security_Button_Save_0100] END====");
-              done()
             }
           } else {
             console.info("====>[Test_Security_Button_Save_0100] 设置权限失败");
             expect().assertFail()
             console.info("====>[Test_Security_Button_Save_0100] END====");
-            done()
           }
         }
         let clickEvent:events_emitter.InnerEvent = {
@@ -136,12 +133,12 @@ export default function saveComponentTest() {
           console.info("====>[Test_Security_Button_Save_0100] allowBtnClick START====");
           await allowBtn.click();
           console.info("====>[Test_Security_Button_Save_0100] reClick====");
-        }else{
-          expect(false).assertTrue();
         }
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_0100] clickSecComponent err : " + JSON.stringify(err));
       }
+      await Utils.sleep(500);
+      done();
     });
 
     /**

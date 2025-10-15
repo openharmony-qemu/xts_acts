@@ -16,8 +16,10 @@
 import saveComponentTest from './SaveComponentTest.test';
 import saveComponentTest_1 from './SaveComponentTest_1.test';
 import saveComponentTest_2 from './SaveComponentTest_2.test';
+import saveComponentUserCancelTest from './SaveComponentUserCancelTest.test';
 
 export default function testsuite() {
+  saveComponentUserCancelTest();
   saveComponentTest();
   saveComponentTest_1();
   saveComponentTest_2();
