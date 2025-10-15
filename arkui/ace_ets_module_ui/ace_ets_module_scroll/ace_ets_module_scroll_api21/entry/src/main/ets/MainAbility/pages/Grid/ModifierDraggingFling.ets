@@ -26,9 +26,9 @@ struct GridModifierDraggingFling {
   @State isSelectable: boolean = true;
   @State isSelected: boolean = false;
   @State startDragging: string = 'start'
-  @State StopDragging: string = 'start'
-  @State StartFling: string = 'start'
-  @State StopFling: string = 'start'
+  @State stopDragging: string = 'start'
+  @State startFling: string = 'start'
+  @State stopFling: string = 'start'
   @State modifier:GridModifier = new CustomModifier()
     .edgeEffect(EdgeEffect.Spring)
     .onWillStopDragging((velocity: number)=>{
@@ -39,15 +39,15 @@ struct GridModifierDraggingFling {
       console.log('hslog callback1 onWillStartDragging')
     })
     .onDidStopDragging((willFling : boolean)=>{
-      this.StopDragging = 'onDidStopDragging willFling: ' + willFling
+      this.stopDragging = 'onDidStopDragging willFling: ' + willFling
       console.log('hslog callback2 onDidStopDragging willFling = ' + willFling)
     })
     .onWillStartFling(()=>{
-      this.StartFling = 'onWillStartFling'
+      this.startFling = 'onWillStartFling'
       console.log('hslog callback3 onWillStartFling')
     })
     .onDidStopFling(()=>{
-      this.StopFling = 'onDidStopFling'
+      this.stopFling = 'onDidStopFling'
       console.log('hslog callback4 onDidStopFling')
     })
 
@@ -60,18 +60,18 @@ struct GridModifierDraggingFling {
   build() {
     Column({ space: 5 }){
       Text(this.startDragging).key('grid_modifier_startDragging')
-      Text(this.StopDragging).key('grid_modifier_stopDragging')
+      Text(this.stopDragging).key('grid_modifier_stopDragging')
       Row(){
-        Text(this.StartFling).key('grid_modifier_startFling').margin({right:5})
-        Text(this.StopFling).key('grid_modifier_stopFling')
+        Text(this.startFling).key('grid_modifier_startFling').margin({right:5})
+        Text(this.stopFling).key('grid_modifier_stopFling')
       }
       Button('reset')
         .id('grid_modifier_dragging_reset')
         .onClick(() => {
           this.startDragging = 'start'
-          this.StopDragging = 'start'
-          this.StartFling = 'start'
-          this.StopFling = 'start'
+          this.stopDragging = 'start'
+          this.startFling = 'start'
+          this.stopFling = 'start'
         })
       Grid() {
         ForEach(this.numbers, (day: string) => {
