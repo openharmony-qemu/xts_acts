@@ -24,10 +24,52 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import Want from '@ohos.app.ability.Want';
+import bundleManager from '@ohos.bundle.bundleManager';
+import StartOptions from '@ohos.app.ability.StartOptions'
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+    return new Promise<window.WindowStage>((resolve, reject) => {
+        let want: Want = {
+            bundleName: "com.example.actswindowtest.static",
+            abilityName: 'StartAbility'
+        };
+        if (options) {
+            context.startAbility(want, options).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        } else {
+            context.startAbility(want).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        }
+        await Utils.msSleep(1000)
+        let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        resolve(windowStageStart);
+    })
+}
+async function terminateAbility(caseName: string) {
+    let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    try {
+        if (pageContext !== null && pageContext !== undefined) {
+            console.log(`${caseName} terminateSelf begin`);
+        }
+        pageContext.terminateSelf().then(() => {
+            console.log(`${caseName} terminateSelf success`);
+        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+        });
+    } catch (e: BusinessError) {
+        console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+    }
+    await Utils.msSleep(1000)
+}
 export default function WindowPCTest() {
 
     describe("WindowPCTest", (): void => {
@@ -322,6 +364,94 @@ export default function WindowPCTest() {
                 done()
             }
             
+        })
+
+        /**
+         * @tc.number     testisWindowRectAutoSave_static_0100
+         * @tc.name       testisWindowRectAutoSave_static
+         * @tc.desc       Test the function value of setWindowTitleMoveEnabled
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testisWindowRectAutoSave_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let message:string = 'testisWindowRectAutoSave_static';
+            try {
+                await windowStage.setWindowRectAutoSave(true);
+                await Utils.msSleep(1000);
+                windowStage.isWindowRectAutoSave().then((result:boolean) => {
+                    hilog.info(domain, tag,`${message} isWindowRectAutoSave = ${result}, expect true.`)
+                    expect(result).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code == 801) {
+                        done();
+                    } else {
+                        expect(false).assertFalse();
+                        done();
+                    }
+                })
+                await windowStage.setWindowRectAutoSave(false);
+                await Utils.msSleep(1000);
+                windowStage.isWindowRectAutoSave().then((result:boolean) => {
+                    hilog.info(domain, tag,`${message} isWindowRectAutoSave = ${result}, expect false.`)
+                    expect(result).assertFalse();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code == 801) {
+                        done();
+                    } else {
+
+                        expect(true).assertTrue();
+                        done();
+                    }
+                })
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
+                if (exception.code == 801) {
+                    done();
+                } else {
+
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+
+        })
+        /**
+         * @tc.number     testIsWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.name       testIsWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.desc       testIsWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testIsWindowRectAutoSavePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testIsWindowRectAutoSavePromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.isWindowRectAutoSave().then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling isWindowRectAutoSave.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call isWindowRectAutoSave. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                    done()
+                });
+
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
         })
 
 
