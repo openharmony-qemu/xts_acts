@@ -16,6 +16,7 @@ group("ActsWebLoadMetricTest") {
   if (is_standard_system) {
     deps = [
       "ace_load_metric_dev:ActsWebLoadMetricDevTest",
+      "ace_load_metric_dev_static:ActsWebLoadMetricDevStaticTest",
       "ace_load_metric_dev_two:ActsWebLoadMetricDevTwoTest",
       "ace_load_metric_enhanced_three:ActsWebLoadMetricEnhancedThreeTest",
       "ace_load_metric_enhanced_two:ActsWebLoadMetricEnhancedTwoTest",
