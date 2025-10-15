@@ -5285,6 +5285,40 @@ export default function ConnectionPublicTest() {
       }
     });
 
+    /**
+     * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_0600
+     * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressByName_static_0600
+     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.level  : Level 3
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressByName_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressByName_static_0600';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          let host: string = "xxxx";
+          netHandle.getAddressByName(host).then((data: connection.NetAddress) => {
+            hilog.info(domain, tag, `${caseName} data: ${JSON.stringify(data)}`);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.error(domain, tag, `${caseName} Failed to get addresses. error:${JSON.stringify(err)}`);
+            ExpectTrue(err?.code === 2100002);
+            hilog.error(domain, tag, `${caseName}---End`);
+            done();
+          });
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
     /*
      * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_0900
      * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressByName_static_0900
