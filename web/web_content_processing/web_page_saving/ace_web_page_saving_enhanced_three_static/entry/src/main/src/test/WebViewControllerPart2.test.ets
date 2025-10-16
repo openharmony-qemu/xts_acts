@@ -44,7 +44,7 @@ export default function webViewControllerPart2() {
           console.log('BusinessError  end')
         });
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.uploadanddownloadonetest.static')
+        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsacewebpagesavingenhancedtestthree.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', 'Succeed!')
       } catch (error: Error) {
