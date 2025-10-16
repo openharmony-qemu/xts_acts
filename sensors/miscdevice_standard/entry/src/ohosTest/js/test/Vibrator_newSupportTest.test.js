@@ -100,7 +100,7 @@ describe("VibratorJsTest_misc_6", function () {
                     done();
                 } else {
                     console.info(TAG + 'isSupportEffect success');
-                    expect(!state).assertTrue();
+                    expect(state == false).assertTrue();
                     done();
                 }
             });
@@ -397,7 +397,72 @@ describe("VibratorJsTest_misc_6", function () {
         try {
             await vibrator.isSupportEffect(INVALID_EFFECT_ID).then((state) => {
                 console.info(TAG + "isSupportEffect success");
-                expect(!state).assertTrue();
+                expect(state == false).assertTrue();
+            }, (error) => {
+                console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            });
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /*
+     * @tc.name:VibratorJsTest077
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0791
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("VibratorJsTest077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>VibratorJsTest077"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect('haptic.effect.soft', (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + "isSupportEffect success");
+                    if (state == false){
+                        console.info(TAG + " Device not supported haptic.effect.soft");
+                    } else {
+                        expect(state).assertTrue();
+                    }
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /*
+     * @tc.name:VibratorJsTest078
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0831
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("VibratorJsTest078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>VibratorJsTest078"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            await vibrator.isSupportEffect('haptic.effect.soft').then((state) => {
+                console.info(TAG + "isSupportEffect success");
+                if (state == false){
+                    console.info(TAG + " Device not supported haptic.effect.soft");
+                } else {
+                    expect(state).assertTrue();
+                }
             }, (error) => {
                 console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
                 expect(false).assertTrue();
