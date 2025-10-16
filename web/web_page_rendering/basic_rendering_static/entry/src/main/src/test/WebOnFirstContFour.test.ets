@@ -39,7 +39,6 @@ export default function webOnFirstContFour() {
 
 
     beforeEach(async () => {
-      await Utils.msSleep(3000);
       console.info('webOnFirstContFour beforeEach start');
     })
 
@@ -52,7 +51,7 @@ export default function webOnFirstContFour() {
      * @tc.level : Level 3
      */
     it('testOnfirstcontentfulpaintrefreshWebcStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(5000);
+      await Utils.msSleep(3000);
       Utils.emitEvent('emitRefreshOnfirstcontentfulpaintWebc', 10)
       await Utils.msSleep(3000);
       Utils.registerEvent('testOnfirstcontentfulpaintrefreshWebc', true, 428, done);

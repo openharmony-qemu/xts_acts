@@ -30,7 +30,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, Callback } from '@ohos.base';
-import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import { FontWeight } from 'arkui.component.enums';
