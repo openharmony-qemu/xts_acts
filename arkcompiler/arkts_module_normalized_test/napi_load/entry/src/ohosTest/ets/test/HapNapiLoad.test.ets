@@ -46,12 +46,13 @@ function sharedHspOne(value: number): void {
   expect(obj.test ? obj.test(2, 3) : -1).assertEqual(value);
 }
 
-async function testNapiTaskPool(): Promise<void> {
+async function testNapiTaskPool(): Promise<boolean> {
   for (let i = 0; i < 10; i++) {
     taskpool.execute(new taskpool.Task(sharedHarOne, 1))
     taskpool.execute(new taskpool.Task(sharedHarOnePath, 0))
     taskpool.execute(new taskpool.Task(sharedHspOne, 6))
   }
+  return true
 }
 
 @Concurrent
@@ -61,8 +62,9 @@ function reSharedHarOne(): void {
   expect(sharedHarOne.add ? sharedHarOne.add(2, 3) : -1).assertEqual(5);
 }
 
-async function testReNapiTaskPool(): Promise<void> {
+async function testReNapiTaskPool(): Promise<boolean> {
   taskpool.execute(new taskpool.Task(reSharedHarOne))
+  return true
 }
 
 export default function HapNapiLoadTest() {
@@ -309,7 +311,8 @@ export default function HapNapiLoadTest() {
      * @tc.level: Level 1
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      await testNapiTaskPool()
+      let res = await testNapiTaskPool()
+      expect(res).assertEqual(true)
     })
 
     /**
@@ -321,7 +324,8 @@ export default function HapNapiLoadTest() {
      * @tc.level: Level 1
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      await testReNapiTaskPool()
+      let res = await testReNapiTaskPool()
+      expect(res).assertEqual(true)
     })
 
     /**
