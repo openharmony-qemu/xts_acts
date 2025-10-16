@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.example.export01",
+    "bundleName": "com.example.normalized_export01",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

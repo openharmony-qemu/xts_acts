@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.example.execute_promise_after_module_load",
+    "bundleName": "com.example.normalized_execute_promise_after_module_load",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
