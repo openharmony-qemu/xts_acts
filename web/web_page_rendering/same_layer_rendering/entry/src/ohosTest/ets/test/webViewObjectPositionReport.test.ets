@@ -59,7 +59,7 @@ export default function ActsAceWebViewObjectPositionReport() {
       emitKey = "emitWebViewObjectPositionReport"
       Utils.emitEvent(emitKey, 153820);
       Utils.registerEvent("testWebViewObjectPositionReport", 'success', 153830, done);
-      waitAndClickComponent("webViewObjectPositionReportButton",driver);
+      await waitAndClickComponent("webViewObjectPositionReportButton",driver);
     })
 
   })
