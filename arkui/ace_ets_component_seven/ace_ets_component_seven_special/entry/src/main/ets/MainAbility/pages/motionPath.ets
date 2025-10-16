@@ -94,7 +94,7 @@ struct MotionPath7Example {
     events_emitter.on(stateChangeEvent, this.stateChangeCallBack)
   }
 
-  private stateChangeCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('motionPath page state change called:' + JSON.stringify(eventData));
       if (eventData.data?.fromX != null) {

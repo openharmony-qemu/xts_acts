@@ -34,7 +34,7 @@ function overlayBuilder() {
 @Component
 struct OverlayTest {
   pathStack: NavPathStack = new NavPathStack();
-  builderComponent = new ComponentContent<never>(this.getUIContext(), wrapBuilder(overlayBuilder))
+  builderComponent: ComponentContent<never> = new ComponentContent<never>(this.getUIContext(), wrapBuilder(overlayBuilder))
   clickItems: Array<ClickItem> = [{
     name: 'push pageOne',
     callback: () => {

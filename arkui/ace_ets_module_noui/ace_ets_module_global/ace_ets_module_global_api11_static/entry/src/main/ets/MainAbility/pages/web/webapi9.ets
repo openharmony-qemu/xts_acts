@@ -57,7 +57,7 @@ struct Index {
     }
   } as MyTestObject
   
-  message = new ConsoleMessage();
+  message: ConsoleMessage = new ConsoleMessage();
   controller: webview.WebviewController = new webview.WebviewController();
   controllerTwo: webview.WebviewController = new webview.WebviewController();
   @State str: string = "emitStoreWebArchive"
@@ -70,10 +70,10 @@ struct Index {
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData: emitter.EventData) => {
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if ((eventData.data as ESObject).getProperty('ACTION') != null) {
         this.str = (eventData.data as ESObject).getProperty('ACTION').toString() as String;
       }

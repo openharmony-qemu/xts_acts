@@ -42,10 +42,10 @@ struct PatternLockExample {
 
   }
 
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("[PatternLock] page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
-      console.info("[PatternLock] page state change called:" + JSON.stringify(eventData));
+      console.info('[PatternLock] page state change called:' + JSON.stringify(eventData));
       if (((eventData.data) as ESObject).getProperty('sideLength') != null) {
         this.sideLength = ((eventData.data) as ESObject).getProperty('sideLength').toNumber();
       }

@@ -47,10 +47,10 @@ struct Index {
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData: emitter.EventData) => {
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if ((eventData.data as ESObject).getProperty('ACTION') != null) {
         this.str = (eventData.data as ESObject).getProperty('ACTION').toString() as string;
       }

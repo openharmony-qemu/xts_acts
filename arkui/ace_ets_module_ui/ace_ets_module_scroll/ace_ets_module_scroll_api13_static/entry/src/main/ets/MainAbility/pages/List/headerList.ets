@@ -90,8 +90,8 @@ struct MyItemGroup {
   item: TimeTable = { title: '', projects: [] } as TimeTable
   header ?: ComponentContent<HeadBuilderParams> = undefined
   footer ?: ComponentContent<FootBuilderParams> = undefined
-  headerParam = new HeadBuilderParams(this.item.title)
-  footerParam = new FootBuilderParams(this.item.projects.length)
+  headerParam: HeadBuilderParams = new HeadBuilderParams(this.item.title)
+  footerParam: FootBuilderParams = new FootBuilderParams(this.item.projects.length)
 
   aboutToAppear(): void {
 
