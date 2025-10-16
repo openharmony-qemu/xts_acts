@@ -1949,9 +1949,9 @@ export default function SetClearTest() {
      */
     it('SetClearTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
-        '∀', '�?, '�?, '�?', '�?, '�?'',
-        '�?, '�?', '�?, '�?, '�?, '�?,
-        '�?, '�?, '�?, '�?, '�?, '�?
+        '∀', '�?', '�?', '�?', '�?', '�?',
+        '�?', '�?', '�?', '�?', '�?', '�?',
+        '�?', '�?', '�?', '�?', '�?', '�?'
       ]);
 
       set.clear();
@@ -1975,7 +1975,7 @@ export default function SetClearTest() {
         '𝓐',
         '𝔹',
         '😀',
-        '🅰�?
+        '🅰�?'
       ]);
 
       set.clear();
