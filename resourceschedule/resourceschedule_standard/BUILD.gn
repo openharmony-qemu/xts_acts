@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Huawei Device Co., Ltd.
+# Copyright (C) 2021-2025 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -17,6 +17,7 @@ group("resourceschedule_standard") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "backgroundprocessmanager_static:ActsResourcescheduleBackgroundProcessMgrStaticTest",
       "backgroundtaskmanager:resourceschedule_backgroundtaskmanager_js_test",
       "backgroundtaskmanager_ndk:backgroundtaskmanager_ndk_test",
       "backgroundtaskmanager_new:backgroundtaskmanager_new_test",
@@ -27,7 +28,7 @@ group("resourceschedule_standard") {
       "reminderagent:resourceschedule_reminderagent_js_test",
       "reminderagentManager:resourceschedule_reminderagentmgr_js_test",
       "reminderagent_nop:resourceschedule_reminderagent_nop_test",
-      "workscheduler:resourceschedule_workscheduler_js_test",
+      "workscheduler:resourceschedule_workscheduler_js_test"
     ]
   }
 }
