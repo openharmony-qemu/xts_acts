@@ -546,10 +546,14 @@ export default function bundleManagerTest() {
     it("test_add_installation_allowed_app_distribution_types_0100", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
       try {
+        let resBefor: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
+        expect(resBefor.length == 0).assertTrue();
         let allowedAppDistributionTypes:
           Array<bundleManager.AppDistributionType>  = [bundleManager.AppDistributionType.APP_GALLERY];
         bundleManager.addInstallationAllowedAppDistributionTypes(SELFWANT, allowedAppDistributionTypes);
         expect(false).assertTrue();
+        let resAfter: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
+        expect(resAfter.length == 1 && resAfter[0] == bundleManager.AppDistributionType.APP_GALLERY).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();
       } finally {
@@ -569,10 +573,14 @@ export default function bundleManagerTest() {
     it("test_remove_installation_allowed_app_distribution_types_0100", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
       try {
+        let resBefor: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
+        expect(resBefor.length == 0).assertTrue();
         let allowedAppDistributionTypes:
           Array<bundleManager.AppDistributionType>  = [bundleManager.AppDistributionType.APP_GALLERY];
         bundleManager.removeInstallationAllowedAppDistributionTypes(SELFWANT, allowedAppDistributionTypes);
         expect(false).assertTrue();
+        let resAfter: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
+        expect(resAfter.length == 0).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();
       } finally {
