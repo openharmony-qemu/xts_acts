@@ -182,6 +182,7 @@ export default function settingUiJsunit() {
             expect().assertFail();
             done();
           })
+        done();
       }catch (err) {
         console.error("[settings_set_value_35] error = " + err);
         expect().assertFail();
