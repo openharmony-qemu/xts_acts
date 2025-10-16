@@ -1,5 +1,5 @@
 /*
-  * Copyright (C) 2024 HiHope Open Source Organization.
+  * Copyright (C) 2024-2025 HiHope Open Source Organization.
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License.
   * You may obtain a copy of the License at
@@ -18,12 +18,8 @@ import hilog from '@ohos.hilog';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { common, wantConstant } from '@kit.AbilityKit';
-import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
-let bundleName = 'com.example.actsapplicationstartabilityauxiliary'
-let abilityName = 'EntryAbility1'
-let startAbilityNoModuleNameCmd = `aa start -a ${abilityName} -b ${bundleName} `;
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceType:string;
@@ -33,7 +29,6 @@ export default function actsApplicationStartAbilityTest() {
     let expectErrCode = 16000001;
     const PARAM_ERRCODE = 401;
     let context: common.UIAbilityContext;
-    let driver = Driver.create();
     beforeAll(async (done: Function) => {
       deviceType = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
       hilog.info(0x0000, 'testTag', '%{public}s',
@@ -47,12 +42,10 @@ export default function actsApplicationStartAbilityTest() {
     });
 
     beforeEach(async () => {
-      await sleep(2000);
       let startAbilityNoModuleNameCmd1 = 'aa force-stop com.example.actsapplicationstartabilityauxiliary';
       let startAbilityNoModuleNameCmd2 = 'aa force-stop com.example.actsapplicationstartabilityauxiliary2';
       await abilityDelegator.executeShellCommand(startAbilityNoModuleNameCmd1);
       await abilityDelegator.executeShellCommand(startAbilityNoModuleNameCmd2);
-      await sleep(2000);
     });
 
     /**
@@ -124,16 +117,6 @@ export default function actsApplicationStartAbilityTest() {
           `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
         done();
       });
-      await sleep(1000);
-      let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-      hilog.info(0x0000, 'testTag', '%{public}s',
-        `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-      if (allowed) {
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if (buttons && buttons.length > 0) {
-          buttons[buttons.length - 1].click();
-        }
-      }
     });
 
     /**
@@ -166,16 +149,6 @@ export default function actsApplicationStartAbilityTest() {
           `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
         done();
       });
-      await sleep(1000);
-      let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-      hilog.info(0x0000, 'testTag', '%{public}s',
-        `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-      if (allowed) {
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if (buttons && buttons.length > 0) {
-          buttons[buttons.length - 1].click();
-        }
-      }
     });
 
     /**
@@ -242,16 +215,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -319,16 +282,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         })
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -407,16 +360,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -477,16 +420,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -549,16 +482,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -590,16 +513,6 @@ export default function actsApplicationStartAbilityTest() {
         hilog.info(0x0000, 'testTag', '%{public}s', ` SpecifiedAbility err ${JSON.stringify(err)}`);
         done();
       });
-      await sleep(1000);
-      let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-      hilog.info(0x0000, 'testTag', '%{public}s',
-        `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-      if (allowed) {
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if (buttons && buttons.length > 0) {
-          buttons[buttons.length - 1].click();
-        }
-      }
     });
 
     /**
@@ -664,16 +577,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -740,16 +643,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -807,16 +700,6 @@ export default function actsApplicationStartAbilityTest() {
                     `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
                   done();
                 });
-                await sleep(1000);
-                let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-                hilog.info(0x0000, 'testTag', '%{public}s',
-                  `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-                if (allowed) {
-                  let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-                  if (buttons && buttons.length > 0) {
-                    buttons[buttons.length - 1].click();
-                  }
-                }
               }
               if (onForegroundFlagNumber == 2) {
                 expect(onCreateFlag).assertTrue();
@@ -848,16 +731,6 @@ export default function actsApplicationStartAbilityTest() {
             `${TEST_CASE_NAME} Failed to start SpecifiedAbility. Code is ${error.code}, message is ${error.message}`);
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -942,16 +815,6 @@ export default function actsApplicationStartAbilityTest() {
           expect().assertFail();
           done();
         })
-        await sleep(2000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
 
@@ -1050,16 +913,6 @@ export default function actsApplicationStartAbilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(2000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `${TEST_CASE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       });
     });
   });
