@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, lang } from '@kit.ArkTS'
+import { collections, lang, ArkTSUtils } from '@kit.ArkTS'
 'use shared'
 
 @Sendable
@@ -91,4 +91,101 @@ export function sendableFunc() {
   let arr = new sendableArrayClass().arr;
   num += arr[0]
   return num;
+}
+
+@Sendable
+export class TaskInfoClass {
+  private count: number = 0;
+  private errCount: number = 0;
+  private enqueue: number = 0;
+  private onReceicve: number = 0;
+  private startExecute: number = 0;
+  private executeFailed: number = 0;
+  private executeSuccess: number = 0;
+
+  lock_: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+
+  public async getCount(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.count;
+    })
+  }
+
+  public async increaseCount() {
+    await this.lock_.lockAsync(() => {
+      this.count++;
+    })
+  }
+
+  public async getErrCount(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.errCount;
+    })
+  }
+
+  public async increaseErrCount() {
+    await this.lock_.lockAsync(() => {
+      this.errCount++;
+    })
+  }
+
+  public async getEnqueue(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.enqueue;
+    })
+  }
+
+  public async increaseEnqueue() {
+    await this.lock_.lockAsync(() => {
+      this.enqueue++;
+    })
+  }
+
+  public async getOnReceicve(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.onReceicve;
+    })
+  }
+
+  public async increaseOnReceicve() {
+    await this.lock_.lockAsync(() => {
+      this.onReceicve++;
+    })
+  }
+
+  public async getStartExecute(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.startExecute;
+    })
+  }
+
+  public async increaseStartExecute() {
+    await this.lock_.lockAsync(() => {
+      this.startExecute++;
+    })
+  }
+
+  public async getExecuteFailed(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.executeFailed;
+    })
+  }
+
+  public async increaseExecuteFailed() {
+    await this.lock_.lockAsync(() => {
+      this.executeFailed++;
+    })
+  }
+
+  public async getExecuteSuccess(): Promise<number> {
+    return this.lock_.lockAsync(() => {
+      return this.executeSuccess;
+    })
+  }
+
+  public async increaseExecuteSuccess() {
+    await this.lock_.lockAsync(() => {
+      this.executeSuccess++;
+    })
+  }
 }
