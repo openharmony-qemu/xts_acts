@@ -1782,22 +1782,22 @@ export default function promiseRaceTest() {
      */
     it('PromiseRaceTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1: Promise<number> = new Promise<number>((resolve, reject) =>
-      setTimeout(() => reject(new Error('First fail')), 10)
+      setTimeout(() => reject(new Error('First fail')), 100)
       ).catch((error: Error) => {
         return new Promise<number>((resolve, reject) =>
-        setTimeout(() => resolve(10), 20)
+        setTimeout(() => resolve(10), 200)
         );
       });
 
       const p2: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => resolve(5), 10)
+      setTimeout(() => resolve(5), 100)
       ).then(num => {
         return new Promise<number>((resolve, reject) =>
-        setTimeout(() => reject(new Error('Second fail')), 10)
+        setTimeout(() => reject(new Error('Second fail')), 100)
         );
       }).catch((error: Error) => {
         return new Promise<number>(resolve =>
-        setTimeout(() => resolve(15), 5)
+        setTimeout(() => resolve(15), 50)
         );
       });
 
@@ -2175,18 +2175,18 @@ export default function promiseRaceTest() {
         });
       };
 
-      const p1: Promise<number> = acquireResource('res1', 10)
-        .then(name => releaseResource(name, 10))
+      const p1: Promise<number> = acquireResource('res1', 100)
+        .then(name => releaseResource(name, 100))
         .then(() => 1);
 
-      const p2: Promise<number> = acquireResource('res2', 5)
-        .then(name => releaseResource(name, 25))
+      const p2: Promise<number> = acquireResource('res2', 50)
+        .then(name => releaseResource(name, 250))
         .then(() => 2);
 
       const result = await Promise.race([p1, p2]);
       expect(result).assertEqual(1);
       // Verify all resources are released after both complete
-      await new Promise<number>(resolve => setTimeout(resolve, 10));
+      await new Promise<number>(resolve => setTimeout(resolve, 100));
       expect(resources).assertDeepEquals([]);
     });
 
