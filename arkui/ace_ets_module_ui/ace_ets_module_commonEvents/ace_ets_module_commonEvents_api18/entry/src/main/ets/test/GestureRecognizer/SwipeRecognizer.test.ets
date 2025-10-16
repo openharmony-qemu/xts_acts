@@ -58,7 +58,7 @@ export default function SwipeRecognizerTest() {
       let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(globalThis.winLeft + 100), Math.round(top + 100), Math.round(globalThis.winLeft + 500), Math.round(top + 500), 600)
+      await driver.swipe(Math.round(globalThis.winLeft + 100), Math.round(top + 100), Math.round(globalThis.winLeft + 500), Math.round(top + 500), 1200)
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('value');
       let obj: ESObject = JSON.parse(strJson);
