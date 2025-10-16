@@ -881,5 +881,99 @@ export default function ConnectionPublicNopTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMetered_Callback_0600
+     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredCallback_static_0600
+     * @tc.desc       : test check if the data traffic usage on the current network is being measured and use the callback method as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNetworkMgrConnectionIsDefaultNetMeteredCallback_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredCallback_static_0600";
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        connection.isDefaultNetMetered((err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (err?.code) {
+            hilog.info(domain, tag, `${caseName} isDefaultNetMetered callback err:`, JSON.stringify(err))
+            expect(true).assertEqual(err?.code === PERMISSION_DENIED_CODE);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isDefaultNetMetered callback data:`, JSON.stringify(data))
+            expect(true).assertEqual(false);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
+        expect(true).assertEqual(false);
+        hilog.error(domain, tag, `${caseName} --test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMetered_Promise_0600
+     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredPromise_static_0600
+     * @tc.desc       : test check if the data traffic usage on the current network is being measured and use Promise as an asynchronous method
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNetworkMgrConnectionIsDefaultNetMeteredPromise_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredPromise_static_0600";
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        connection.isDefaultNetMetered().then((data: boolean | undefined) => {
+          hilog.info(domain, tag, `${caseName} isDefaultNetMetered data:`, JSON.stringify(data))
+          expect(true).assertEqual(false);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} isDefaultNetMetered catch err is `,JSON.stringify(error));
+          expect(true).assertEqual(error?.code === PERMISSION_DENIED_CODE);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
+        expect(true).assertEqual(false);
+        hilog.error(domain, tag, `${caseName} --test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMeteredSync_0200
+     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredSync_static_0200
+     * @tc.desc       : test check if the data traffic usage on the current network is being measured and return it using synchronous mode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNetworkMgrConnectionIsDefaultNetMeteredSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredSync_static_0200";
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        let isMetered: boolean = connection.isDefaultNetMeteredSync();
+        hilog.info(domain, tag, `${caseName} isMetered ->:`, JSON.stringify(isMetered))
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (err: Error) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(error));
+        expect(true).assertEqual(error?.code === PERMISSION_DENIED_CODE);
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
   })
 }
