@@ -513,5 +513,95 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3000
+     * @tc.name OH_Pasteboard_HasType0200
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0200' );
+      let data = testndk.OH_Pasteboard_HasType0200();
+      console.info( TAG + 'OH_Pasteboard_HasType0200 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3100
+     * @tc.name OH_Pasteboard_HasType0300
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0300' );
+      let data = testndk.OH_Pasteboard_HasType0300();
+      console.info( TAG + 'OH_Pasteboard_HasType0300 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3200
+     * @tc.name OH_Pasteboard_HasType0400
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0400' );
+      let data = testndk.OH_Pasteboard_HasType0400();
+      console.info( TAG + 'OH_Pasteboard_HasType0400 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3300
+     * @tc.name OH_Pasteboard_HasType0500
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0500' );
+      let data = testndk.OH_Pasteboard_HasType0500();
+      console.info( TAG + 'OH_Pasteboard_HasType0500 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3400
+     * @tc.name OH_Pasteboard_HasType0600
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0600' );
+      let data = testndk.OH_Pasteboard_HasType0600();
+      console.info( TAG + 'OH_Pasteboard_HasType0600 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3500
+     * @tc.name OH_Pasteboard_HasType0700
+     * @tc.desc OH_Pasteboard_HasType test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_HasType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0700' );
+      let data = testndk.OH_Pasteboard_HasType0700();
+      console.info( TAG + 'OH_Pasteboard_HasType0700 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
   })
 }
