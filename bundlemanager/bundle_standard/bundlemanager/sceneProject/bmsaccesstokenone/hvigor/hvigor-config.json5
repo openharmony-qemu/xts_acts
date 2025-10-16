@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 {
-  "modelVersion": "5.0.0",
+  "hvigorVersion": "4.0.9",
   "dependencies": {
+    "@ohos/hvigor-ohos-plugin": "4.0.9"
   },
   "execution": {
     "parallel": false
