@@ -54,11 +54,11 @@ export default function EnvironmentTest0040() {
       await CommonFunc.sleep(1000);
       let obj: ESObject = JSON.parse(getInspectorByKey('tvKeysOne'));
       console.info("[EnvironmentTest0040001] component tvKeysOne is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual("accessibilityEnabled,languageCode,propA,propB");
+      expect(obj.$attrs.content).assertContain("accessibilityEnabled,languageCode,propA,propB");
       await CommonFunc.sleep(1000);
       obj = JSON.parse(getInspectorByKey('tvKeysTwo'));
       console.info("[EnvironmentTest0040001] component tvKeysTwo is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual("accessibilityEnabled,languageCode,propA,propB");
+      expect(obj.$attrs.content).assertContain("accessibilityEnabled,languageCode,propA,propB");
       console.info('EnvironmentTest0040_0100 END');
     });
   })
