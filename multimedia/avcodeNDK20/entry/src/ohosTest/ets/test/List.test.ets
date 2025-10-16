@@ -21,10 +21,10 @@ import AVCodeBaseTwoTest from "./AVCode/AVCodeBaseTwo.test";
 import AVCodeBaseThreeTest from "./AVCode/AVCodeBaseThree.test";
 
 export default function testsuite() {
+  AVCodeBaseThreeTest()
+  AVCodeBaseTwoTest()
   AVCodeTest()
   AVCodeTest2()
   AVCodeTest3()
   AVCodeBaseTest()
-  AVCodeBaseTwoTest()
-  AVCodeBaseThreeTest()
 }
