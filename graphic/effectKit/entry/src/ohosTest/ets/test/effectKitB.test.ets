@@ -305,7 +305,7 @@ export default function effectKitBTest() {
      * @tc.level      Level1
      */
     it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      let msg = 'testGetTopProportionColors_2'
+      let msgStr = 'testGetTopProportionColors_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
       imageSource.createPixelMap().then(pixelMap => {
@@ -340,15 +340,25 @@ export default function effectKitBTest() {
      * @tc.level      Level1
      */
     it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      let msg = 'isBlackOrWhiteOrGrayColor_2'
+      let msgStr = 'isBlackOrWhiteOrGrayColor_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
+      const color = new ArrayBuffer(96);
+      let opts : image.InitializationOptions = {
+        editable: true,
+        pixelFormat: 3,
+        size: {
+          height: 4,
+          width: 6
+        }
+      };
+      let pixelMap = image.createPixelMapSync(color, opts);
       effectKit.createColorPicker(pixelMap).then((colorPicker) => {
         let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
         expect(color_white == true).assertTrue();
         let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
         expect(color_blue == false).assertTrue();
-        console.info(msg + '  ' + color_white + ' ' + color_blue);
+        console.info(msgStr + '  ' + color_white + ' ' + color_blue);
       })
 
     })
