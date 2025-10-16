@@ -17,6 +17,7 @@ group("webPermissions") {
     deps = [
       "web_permissions_one:ActsWebPermissionsOneTest",
       "web_permissions_three:ActsWebPermissionsThreeTest",
+      "web_permissions_three_static:ActsWebPermissionsThreeStaticTest",
       "web_permissions_two:ActsWebPermissionsTwoTest",
     ]
   }
