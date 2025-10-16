@@ -230,6 +230,8 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         let gamma = 2.875;
         let colorSpaceMgr = colorSpaceManager.create(primaries, gamma);
         expect(colorSpaceMgr != null).assertTrue();
+        let colorSpaceName = colorSpaceMgr.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.CUSTOM);
         let ga = colorSpaceMgr.getGamma();
         let gap = ga - gamma;
         let wp: number[] = colorSpaceMgr.getWhitePoint();
@@ -338,6 +340,180 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         let colorSpaceName = colorSpace.getColorSpaceName();
         console.info("the name is " + colorSpaceName);
         expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect.assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     getColorSpaceEnum_0100
+     * @tc.name       getColorSpaceEnum_0100
+     * @tc.desc       the get colorSpace Enum
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('getColorSpaceEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('test getColorSpaceEnum_0100 begin');
+      try {
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DCI_P3);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT709);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT709);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_EBU);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT601_EBU);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_SMPTE_C);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT601_SMPTE_C);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT2020_HLG);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_PQ);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT2020_PQ);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_HLG);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.P3_HLG);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect.assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     getColorSpaceEnum_0200
+     * @tc.name       getColorSpaceEnum_0200
+     * @tc.desc       the get colorSpace Enum
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('getColorSpaceEnum_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('test getColorSpaceEnum_0200 begin');
+      try {
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.P3_PQ);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.ADOBE_RGB_1998_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.SRGB_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT709_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT709_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_EBU_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT601_EBU_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_SMPTE_C_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT601_SMPTE_C_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_PQ_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT2020_PQ_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_HLG_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.P3_HLG_LIMIT);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect.assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     getColorSpaceEnum_0300
+     * @tc.name       getColorSpaceEnum_0300
+     * @tc.desc       the get colorSpace Enum
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('getColorSpaceEnum_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('test getColorSpaceEnum_0300 begin');
+      try {
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_P3);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.LINEAR_P3);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_SRGB);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.LINEAR_SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_BT709);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT709);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_BT2020);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT2020);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.H_LOG);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.H_LOG);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_SRGB);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_SRGB);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_HLG);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_HLG);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_PQ);
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_PQ);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect.assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     testGetWhitePoint_0100
+     * @tc.name       testGetWhitePoint_0100
+     * @tc.desc       test getWhitePoint
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testGetWhitePoint_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('test getColorSpaceEnum_0300 begin');
+      try {
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let point = colorSpace.getWhitePoint();
+        expect(point.length > 0).assertTrue();
+        expect(point[0] > 0).assertTrue();
+        expect(point[1] > 0).assertTrue();
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));

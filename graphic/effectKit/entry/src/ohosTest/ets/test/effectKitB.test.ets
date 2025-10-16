@@ -295,5 +295,63 @@ export default function effectKitBTest() {
         })
       })
     })
+    
+    /**
+     * @tc.number     testGetTopProportionColors_2
+     * @tc.name       testGetTopProportionColors_2
+     * @tc.desc       test getTopProportionColors
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let msg = 'testGetTopProportionColors_2'
+      let imageSource = image.createImageSource(testPng.buffer);
+      console.info(msgStr + "promise create pixmap.start");
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create ColorPicker.start");
+        effectKit.createColorPicker(pixelMap).then(colorPicker => {
+          let color1 = colorPicker.getTopProportionColors(2);
+          console.info(msgStr + JSON.stringify(color1));
+          expect(color1.length > 0).assertTrue();
+          let color2 = colorPicker.getTopProportionColors(-1);
+          console.info(msgStr + JSON.stringify(color2));
+          if(color2[0] == undefined){
+            color2.pop();
+            expect(color2.length == 0).assertTrue();
+          } else {
+            expect(color2.length > 0).assertTrue();
+          }
+          done();
+        }).catch((error) => {
+          console.error(msgStr + "Napi colorPicker.error=" + error);
+          expect().assertFail();
+          done();
+        })
+      })
+    })
+    
+    /**
+     * @tc.number     isBlackOrWhiteOrGrayColor_2
+     * @tc.name       isBlackOrWhiteOrGrayColor_2
+     * @tc.desc       test isBlackOrWhiteOrGrayColor
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let msg = 'isBlackOrWhiteOrGrayColor_2'
+      let imageSource = image.createImageSource(testPng.buffer);
+      console.info(msgStr + "promise create pixmap.start");
+      effectKit.createColorPicker(pixelMap).then((colorPicker) => {
+        let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+        expect(color_white == true).assertTrue();
+        let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
+        expect(color_blue == false).assertTrue();
+        console.info(msg + '  ' + color_white + ' ' + color_blue);
+      })
+
+    })
+
   })
 }
