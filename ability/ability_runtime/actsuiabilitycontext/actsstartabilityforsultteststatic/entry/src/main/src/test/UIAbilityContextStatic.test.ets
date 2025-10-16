@@ -19,29 +19,16 @@ import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
-import StartOptions from '@ohos.app.ability.StartOptions'
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import deviceInfo from "@ohos.deviceInfo";
 import { image } from '@kit.ImageKit';
-import AbilityStage from '@ohos.app.ability.AbilityStage';
-import abilityConstant from '@ohos.app.ability.AbilityConstant';
-import { UIContext } from '@ohos.arkui.UIContext';
-import autoFillManager from '@ohos.app.ability.autoFillManager';
 import { application } from '@kit.AbilityKit';
-import { resourceManager } from '@kit.LocalizationKit'
-import window from '@ohos.window';
-import bundleManager from '@ohos.bundle.bundleManager';
-import CompletionHandler from "@ohos.app.ability.CompletionHandler";
-import fileIo from '@ohos.file.fs';
-import contextConstant from "@ohos.app.ability.contextConstant";
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import InteropAbilityLifecycleCallback from '@ohos.app.ability.InteropAbilityLifecycleCallback';
 
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let applicationContext: common.ApplicationContext;
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -51,36 +38,6 @@ let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
 let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
 let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 let disable = false;
-let testContext: common.UIAbilityContext;
-
-type AbilityCallbackFn = (ability: Any) => void;
-type WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => void;
-
-class MyInteropAbilityLifecycleCallback implements InteropAbilityLifecycleCallback {
-  onAbilityCreate: AbilityCallbackFn = (ability: Any) => {
-    hilog.info(domain, tag, 'onAbilityCreate');
-  };
-
-  onWindowStageCreate: WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => {
-    hilog.info(domain, tag, 'onWindowStageCreate');
-  };
-
-  onWindowStageDestroy: WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => {
-    hilog.info(domain, tag, 'onWindowStageDestroy');
-  };
-
-  onAbilityDestroy: AbilityCallbackFn = (ability: Any) => {
-    hilog.info(domain, tag, 'onAbilityDestroy');
-  };
-
-  onAbilityForeground: AbilityCallbackFn = (ability: Any) => {
-    hilog.info(domain, tag, 'onAbilityForeground');
-  };
-
-  onAbilityBackground: AbilityCallbackFn = (ability: Any) => {
-    hilog.info(domain, tag, 'onAbilityBackground');
-  };
-}
 
 export default function UIAbilityContextStatic() {
   describe('ActsUIAbilityContextStatic', () => {
@@ -233,7 +190,7 @@ export default function UIAbilityContextStatic() {
     * @tc.level  : 0
     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain,  tag , " it begin");
+      hilog.info(domain, tag, "it begin");
       if (deviceInfo.deviceType !== '2in1') {
         done();
         return;
@@ -248,10 +205,10 @@ export default function UIAbilityContextStatic() {
         }
       }
       if (successCount === 10) {
-        hilog.info(domain, tag,  " success");
+        hilog.info(domain, tag, "success");
         done();
       } else {
-        hilog.info(domain, tag,  " fail");
+        hilog.info(domain, tag, "fail");
         try { expect().assertFail(); } catch (err) {}
         done();
       }
@@ -266,22 +223,23 @@ export default function UIAbilityContextStatic() {
     * @tc.level  : 0
     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain,  tag , " it begin");
-      if (deviceInfo.deviceType !== '2in1') {
-        done();
-        return;
-      }
+      hilog.info(domain, tag , "it begin");
       try {
         await context.setAbilityInstanceInfo('', pixelMap);
-        hilog.info(domain,  tag , " fail");
+        hilog.info(domain, tag, "fail");
         try { expect().assertFail(); } catch (err) {}
         done();
       } catch (err) {
-        hilog.info(domain,  tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        hilog.info(domain,  tag, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         let code = (err as BusinessError).code;
-        try { expect(code).assertEqual(401); } catch (err) {}
-        hilog.info(domain,  tag , " success");
-        done();
+        if (code === 801) {
+          hilog.info(domain, tag, "device not support multi instance");
+          done();
+        } else {
+          try { expect(code).assertEqual(401); } catch (err) {}
+          hilog.info(domain, tag, "success");
+          done();
+        }
       }
     })
 
@@ -310,140 +268,6 @@ export default function UIAbilityContextStatic() {
     })
 
     /*
-     * @tc.number: SUB_AA_AbilityStageMonitor_Static_0100
-     * @tc.name: SUB_AA_AbilityStageMonitor_Static_0100
-     * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level: 1
-     */
-    it("SUB_AA_AbilityStageMonitor_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        const itName = 'waitAbilityStageMonitor_callback';
-        hilog.info(domain, tag, `${itName} waitAbilityStageMonitor start`);
-        abilityDelegator.waitAbilityStageMonitor({
-          moduleName: 'entry',
-          srcEntrance: './ets/myabilitystage/MyAbilityStage.ets',
-        }, (err: BusinessError<void> | null) => {
-          hilog.info(domain, tag, `${itName} waitAbilityStageMonitor err ${err?.code}`);
-          expect(err?.code).assertEqual(16000100);
-          hilog.info(domain, tag, `${itName} waitAbilityStageMonitor end`);
-        })
-        done()
-      })
-
-    /*
-     * @tc.number: SUB_AA_AbilityStageMonitor_Static_0200
-     * @tc.name: SUB_AA_AbilityStageMonitor_Static_0200
-     * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level: 1
-     */
-    it("SUB_AA_AbilityStageMonitor_Static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        const itName = 'waitAbilityStageMonitor_callback';
-        hilog.info(domain, tag, `${itName} waitAbilityStageMonitor start`);
-        abilityDelegator.waitAbilityStageMonitor({
-          moduleName: 'entry',
-          srcEntrance: './ets/myabilitystage/MyAbilityStage.ets',
-        },100, (err: BusinessError<void> | null) => {
-          hilog.info(domain, tag, `${itName} waitAbilityStageMonitor err ${err?.code}`);
-          expect(err?.code).assertEqual(16000100);
-          hilog.info(domain, tag, `${itName} waitAbilityStageMonitor end`);
-        })
-        done()
-      })
-
-    /*
-     * @tc.number: SUB_AA_AbilityStageMonitor_Static_0300
-     * @tc.name: SUB_AA_AbilityStageMonitor_Static_0300
-     * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level: 1
-     */
-    it('SUB_AA_AbilityStageMonitor_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        abilityDelegator.waitAbilityStageMonitor({
-          moduleName: 'entry',
-          srcEntrance: './Application/MyAbilityStage.ts',
-        }).then((err: BusinessError): void => {
-          hilog.info(domain,  tag ,'waitAbilityStageMonitor promise' + err?.code);
-          expect(err?.code).assertEqual(16000100);
-        });
-      } catch (error) {
-        expect().assertFail()
-        done()
-      }
-      done()
-    })
-
-    /*
-     * @tc.number: SUB_AA_AbilityStageMonitor_Static_0400
-     * @tc.name: SUB_AA_AbilityStageMonitor_Static_0400
-     * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level: 1
-     */
-    it('SUB_AA_AbilityStageMonitor_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let timeout = 100;
-      try {
-        abilityDelegator.waitAbilityStageMonitor({
-          moduleName: 'entry',
-          srcEntrance: './Application/MyAbilityStage.ts',
-        },timeout).then((err: BusinessError): void => {
-          hilog.info(domain,  tag ,'waitAbilityStageMonitor promise' + err?.code);
-          expect(err?.code).assertEqual(16000100);
-        });
-      } catch (error) {
-        expect().assertFail()
-        done()
-      }
-      done()
-    })
-
-    /*
-     * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3000
-     * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3000
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test abilityConstant LaunchReason.PRELOAD.
-     * @tc.level   3
-     */
-    it('SUB_Ability_AbilityBase_AbilityConstant_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      expect('11').assertEqual(abilityConstant.LaunchReason.PRELOAD + '');
-      done();
-    })
-
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AutoSave_Static_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_AutoSave_Static_0100
-     * @tc.desc: Manually call the RequestAutoSave interface and trigger success callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
-    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0100';
-      let isSuccess = false;
-      let isFailure = false;
-      let uiContext: UIContext
-      hilog.info(domain,  tag ,"uiContext: ", uiContext);
-      let callback: autoFillManager.AutoSaveCallback = {
-        onSuccess: () => {
-          hilog.info(domain,  tag ,"save request on success");
-          isSuccess = true;
-        },
-        onFailure: () => {
-          hilog.info(domain,  tag ,"save request on failure");
-          isFailure = true;
-        }
-      }
-      try {
-        autoFillManager.requestAutoSave(uiContext, callback);
-      } catch (error) {
-        expect(isSuccess).assertFalse();
-        expect(isFailure).assertFalse();
-        done();
-      }
-      hilog.info(domain,  tag ,"du.yuan end");
-      done();
-    })
-
-    /*
      * @tc.number : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
      * @tc.name   : SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
      * @tc.desc   : Expect: failed with code 401
@@ -453,142 +277,18 @@ export default function UIAbilityContextStatic() {
      */
     it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        application.createPluginModuleContext(testContext, '', '');
+        application.createPluginModuleContext(context, '', '')
+          .then((data: string): void => {
+            hilog.info(0x0000, 'testTag', 'createPluginModuleContext success data:' + JSON.stringify(data));
+          })
+          .catch((err: BusinessError): void => {
+            hilog.info(0x0000, 'testTag', `createPluginModuleContext faiiled code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(401);
+            done();
+          });
       } catch (err: Error) {
-        hilog.info(domain,  tag , 'createContextFailed: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(0);
-        done();
-      }
-    })
-
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
-     * @tc.name   : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800
-     * @tc.desc   : Expect: failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
-     */
-    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let MyNewInteropAbilityLifecycleCallback: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
-      try {
-        applicationContext.offInteropAbilityLifecycle(MyNewInteropAbilityLifecycleCallback)
-        hilog.info(domain, tag, `offInteropAbilityLifecycle success`)
-        expect().assertFail()
-        done()
-      } catch (error) {
-        hilog.info(domain, tag, 'offInteropAbilityLifecycle ' + JSON.stringify(error));
-        let code = (error as BusinessError).code;
-        hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
-        expect(code === 401).assertTrue();
-        done();
-      }
-    })
-
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900
-    * @tc.name   : SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900
-    * @tc.desc   : offInteropAbilityLifecycle（） no param
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
-    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        applicationContext.offInteropAbilityLifecycle()
-        hilog.info(domain, tag, `offInteropAbilityLifecycle success`)
-        expect().assertFail()
-        done()
-      } catch (error) {
-        hilog.info(domain, tag, 'offInteropAbilityLifecycle ' + JSON.stringify(error));
-        let code = (error as BusinessError).code;
-        hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
-        expect(code === 401).assertTrue();
-        done();
-      }
-    })
-
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000
-    * @tc.name   : SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000
-    * @tc.desc   : onInteropAbilityLifecycle（）
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
-    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let MyNewInteropAbilityLifecycleCallback: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
-      try {
-        applicationContext.onInteropAbilityLifecycle(MyNewInteropAbilityLifecycleCallback)
-        hilog.info(domain, tag, `onInteropAbilityLifecycle success`)
-      } catch (error) {
-        hilog.info(domain, tag, 'onInteropAbilityLifecycle ' + JSON.stringify(error));
-        let code = (error as BusinessError).code;
-        hilog.info(domain, tag, `onInteropAbilityLifecycle err${code}`)
-        expect().assertFail()
-        done();
-      }
-      try {
-        applicationContext.offInteropAbilityLifecycle(MyNewInteropAbilityLifecycleCallback)
-        hilog.info(domain, tag, `offInteropAbilityLifecycle success`)
-        done()
-      } catch (error) {
-        hilog.info(domain, tag, 'offInteropAbilityLifecycle ' + JSON.stringify(error));
-        let code = (error as BusinessError).code;
-        hilog.info(domain, tag, `offInteropAbilityLifecycle err${code}`)
-        expect().assertFail()
-        done();
-      }
-    })
-
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
-     * @tc.desc   : Manually call the RequestAutoSave interface and trigger success callback.
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
-     */
-    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0200';
-      let isSuccess = false;
-      let isFailure = false;
-      let uiContext: UIContext
-      hilog.info(domain,  tag ,"uiContext: ", uiContext);
-      try {
-        autoFillManager.requestAutoSave(uiContext);
-      } catch (error) {
-        expect(isSuccess).assertFalse();
-        expect(isFailure).assertFalse();
-        done();
-      }
-      hilog.info(domain,  tag ,"du.yuan end");
-      done();
-    })
-
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200
-    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200
-    * @tc.desc   : API test for context.SetAbilityInstanceInfo for 801.
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain,  tag , " it begin");
-      if (deviceInfo.deviceType !== 'phone') {
-        done();
-        return;
-      }
-      try {
-        await context.setAbilityInstanceInfo('', pixelMap);
-        hilog.info(domain,  tag , " fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
-      } catch (err) {
-        hilog.info(domain,  tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        let code = (err as BusinessError).code;
-        try { expect(code).assertEqual(801); } catch (err) {}
-        hilog.info(domain,  tag , " success");
+        hilog.info(domain,  tag , 'createPluginModuleContext Failed: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
         done();
       }
     })

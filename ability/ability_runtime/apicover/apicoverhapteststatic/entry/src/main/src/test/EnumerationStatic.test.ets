@@ -545,6 +545,19 @@ export default function EnumerationStaticTest() {
     })
 
     /*
+     * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_4200
+     * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_4200
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test abilityConstant LaunchReason.PRELOAD.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('11').assertEqual(abilityConstant.LaunchReason.PRELOAD + '');
+      done();
+    })
+
+    /*
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.size:   MediumTest
