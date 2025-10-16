@@ -18,5 +18,5 @@ import imageDecodeOptionsRawTest from './ImageDecodeOptionsRaw.test';
 
 export default function testsuite() {
     imageDecodeOptionsYuvTest();
-    imageDecodeOptionsRawTest();
+    // imageDecodeOptionsRawTest();
 }

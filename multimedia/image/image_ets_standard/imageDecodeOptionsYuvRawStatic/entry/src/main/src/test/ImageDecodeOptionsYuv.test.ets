@@ -99,6 +99,7 @@ export default function imageDecodeOptionsYuvTest() {
       try{
         let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
         globalPixelMap = pixelMap;
+        await imageSourceApi.release();
         if (pixelMap == undefined) {
           return undefined;
         }
@@ -132,8 +133,10 @@ export default function imageDecodeOptionsYuvTest() {
       imageSourceApi.createPixelMap(decodingOptions, (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
         if (err && err.code) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+          await imageSourceApi.release();
         } else {
           globalPixelMap = pixelMap!;
+          await imageSourceApi.release();
           let imageInfo = await pixelMap!.getImageInfo();
           if (imageInfo != undefined) {
             g_callbackResult = true;
@@ -160,6 +163,7 @@ export default function imageDecodeOptionsYuvTest() {
       decodingOptions: image.DecodingOptions
     ) => {
       globalPixelMap = imageSourceApi.createPixelMapSync(decodingOptions);
+      await imageSourceApi.release();
       if (globalPixelMap == undefined) {
         return undefined;
       }
@@ -270,6 +274,7 @@ export default function imageDecodeOptionsYuvTest() {
         decodingOptions: image.DecodingOptions
     ) => {
       globalPixelMap = imageSourceApi.createPixelMapSync(decodingOptions)
+      await imageSourceApi.release();
       if (globalPixelMap == undefined) {
         return undefined;
       }
@@ -321,7 +326,7 @@ export default function imageDecodeOptionsYuvTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       if (globalPixelMap != undefined) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'globalPixelMap release start');
         try {
