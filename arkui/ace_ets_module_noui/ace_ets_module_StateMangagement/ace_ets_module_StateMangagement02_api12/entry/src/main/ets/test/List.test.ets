@@ -96,12 +96,12 @@ export default function testsuite() {
     PersistentStorageReturnValue();
     LocalStorageReturnValue();
     localStorageRefJsunit();
+    EnvironmentReturnValue();
     appStorageV2();
     persistenceV2();
     AbstractPropertyRefTest();
     SubAbstractPropertyLinkTest();
     EnvironmentTest0040();
-    EnvironmentReturnValue();
     LocalStorageDeleteTest0120();
     Local1Jsunit();
     Local2Jsunit();
