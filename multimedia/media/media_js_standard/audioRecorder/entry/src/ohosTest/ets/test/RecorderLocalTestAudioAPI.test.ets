@@ -49,13 +49,11 @@ let audioConfig: media.AudioRecorderConfig = {
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
 let audioAacProfileConfig: media.AVRecorderProfile = {
-  audioEncodeBitRate: 48000,
-  audioSampleRate: 48000,
-  numberOfChannels: CHANNEL_TWO,
-  uri: 'fd://',
-  location: ({ latitude: 30, longitude: 30 } as GeneratedObjectLiteralInterface_1),
+  audioBitrate: 64000,
+  audioChannels: 1,
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
   aacProfile: media.AacProfile.AAC_HE,
+  audioSampleRate: 8000,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
 function initAudioRecorder() {
