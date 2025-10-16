@@ -48,13 +48,18 @@ let audioConfig: media.AudioRecorderConfig = {
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
-let audioAacProfileConfig: media.AVRecorderProfile = {
+let avProfile: media.AVRecorderProfile = {
   audioBitrate: 64000,
   audioChannels: 1,
-  audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
-  aacProfile: 1,
+  aacProfile: 1
+  audioCodec: media.CodecMimeType.AUDIO_AAC,
   audioSampleRate: 8000,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
+}
+let audioAacProfileConfig: media.AVRecorderConfig = {
+  audioSourceType: media.audioSourceType.AUDIO_SOURCE_TYPE_MIC,
+  profile: avProfile,
+  uri: 'fd://',
 }
 function initAudioRecorder() {
   if (audioRecorder != null) {
@@ -1045,7 +1050,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.aacProfile = 1;
+      audioAacProfileConfig.profile.aacProfile = 1;
       audioRecorder?.prepare(audioAacProfileConfig);
     });
     /* *
@@ -1060,7 +1065,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.aacProfile = 2;
+      audioAacProfileConfig.profile.aacProfile = 2;
       audioRecorder?.prepare(audioAacProfileConfig);
     });
   })
