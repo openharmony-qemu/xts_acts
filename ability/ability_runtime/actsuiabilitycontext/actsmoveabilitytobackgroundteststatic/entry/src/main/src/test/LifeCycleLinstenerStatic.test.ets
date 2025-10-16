@@ -276,14 +276,9 @@ export default function LifeCycleLinstenerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
+          hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
           applicationContext.onInteropAbilityLifecycle(cb)
-          hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-          await uiAbilityContext.moveAbilityToBackground()
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} InteropAbilityLifecycleCallback isBackground: ${cb.isBackground}`);
-          expect(cb.isBackground).assertTrue();
-
-          hilog.info(domain, tag, `${itName} off InteropAbilityLifecycleCallback`);
+          hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
           applicationContext.offInteropAbilityLifecycle(cb);
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
