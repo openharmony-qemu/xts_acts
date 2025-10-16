@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "1800000",
-        "bundle-name": "com.example.arkts_module",
+        "bundle-name": "com.example.normalized_basic_load",
         "module-name": "entry_test",
         "shell-timeout": "180000",
         "compile-mode": "esmodule"
