@@ -39,7 +39,7 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     beforeEach(async (done: Function) => {
       setTimeout(() => {
         done();
-      }, 3000)
+      }, 2000)
     })
     beforeAll(async (done: Function) => {
       console.log("ActsStageContextPropertiesTest afterAll called");
@@ -58,7 +58,7 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
       setTimeout(() => {
         console.log("ActsStageContextPropertiesTest afterAll end");
         done();
-      }, 3000);
+      }, 2000);
     })
 
     afterEach(async (done: Function) => {
@@ -76,7 +76,7 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
       setTimeout(() => {
         console.log("ActsStageContextPropertiesTest afterEach end");
         done();
-      }, 1500);
+      }, 1000);
     })
 
     /**
