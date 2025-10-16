@@ -33,14 +33,14 @@ import { AppStorage, Link, State, StorageLink, Watch } from '@ohos.arkui.stateMa
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 class ExpectedFrameRate implements ExpectedFrameRateRange {
-  min: number = 0
-  max: number = 0
-  expected: number = 0
+  min: int = 0
+  max: int = 0
+  expected: int = 0
 
   constructor(min: number, max: number, expected: number) {
-    this.min = min;
-    this.max = max;
-    this.expected = expected;
+    this.min = min.toInt();
+    this.max = max.toInt();
+    this.expected = expected.toInt();
   }
 }
 
