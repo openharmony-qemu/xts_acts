@@ -14,6 +14,9 @@
 group("advertisingFiltering") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "advertising_filtering_one:ActsWebAdvertisingFilteringOneTest" ]
+    deps = [ 
+      "advertising_filtering_one:ActsWebAdvertisingFilteringOneTest",
+      "advertising_filtering_one_static:ActsWebAdvertisingFilteringOneStaticTest",
+      ]
   }
 }

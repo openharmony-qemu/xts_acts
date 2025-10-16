@@ -16,27 +16,27 @@
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
-import {AlignValue} from './Utils'
+
 export interface Message {
-  value: Boolean | AlignValue
+  value: boolean
 }
 
 interface EventMessage {
   src: Message
 }
 
-export type Callback = (message: Boolean | AlignValue) => void;
+export type Callback = (message: boolean) => void;
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
-  static change(caseName: string, setValue: Boolean | AlignValue) {
+  static change(caseName: string, setValue: boolean) {
     const message: Message = { value: setValue };
 
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, Object>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }

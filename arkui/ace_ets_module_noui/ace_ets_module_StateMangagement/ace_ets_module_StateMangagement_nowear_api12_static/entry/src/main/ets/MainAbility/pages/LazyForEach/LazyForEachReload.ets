@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {DataReloadOperation, DataOperationType,  Entry, Text, TextAttribute, Column, Component, Stack, WaterFlow, LazyForEach, FlowItem, DataOperation, Color, TextAlign, DataChangeListener, IDataSource, Button, ButtonAttribute, ClickEvent, UserView, Image, Search, Row, Column, SearchController, ColumnOptions} from '@ohos.arkui.component'
+import {DataReloadOperation, DataOperationType,  Entry, Text, TextAttribute, Column, Component, Stack, WaterFlow, LazyForEach, FlowItem, DataOperation, Color, TextAlign, DataChangeListener, IDataSource, Button, ButtonAttribute, ClickEvent, Image, Search, Row, Column, SearchController, ColumnOptions} from '@ohos.arkui.component'
 import {
   State,
   Link,
@@ -46,11 +46,11 @@ class WaterFlowDataSource implements IDataSource<string> {
     })
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.dataArray.length;
   }
 
-  getData(index: number): string {
+  getData(index: int): string {
     return `${this.dataArray[index.toInt()]}`
   }
 
@@ -94,7 +94,7 @@ struct ViewHolder {
 @Component
 struct WaterFlowDemo {
   @State disAppearCount: number = 0
-  colors: Array<number> = new Array<number>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
+  colors: Array<int> = new Array<int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F);
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
 
   aboutToAppear(){

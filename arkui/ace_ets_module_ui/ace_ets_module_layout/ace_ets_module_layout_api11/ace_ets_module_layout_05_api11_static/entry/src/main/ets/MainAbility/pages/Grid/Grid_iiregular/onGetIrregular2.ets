@@ -23,7 +23,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -46,9 +45,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -59,8 +55,8 @@ struct onGetIrregular2 {
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
     irregularIndexes: [0, 3],
-    onGetIrregularSizeByIndex: (index: number) => {
-      return [1, 2] as [number, number];
+    onGetIrregularSizeByIndex: (index: int) => {
+      return [1, 2] as [int, int];
     }
   } as GridLayoutOptions;
 

@@ -34,7 +34,8 @@ async function errorTask2(args: String): Promise<void> {
   try {
     // 执行抛异常任务
     taskpool.executeDelayed(100, eTask)
-  } catch (err: Error) {
+  } catch (err) {
+    err = err as Error;
     console.error(`${args} executing error task failed, error: ${err.message}`);
   }
 }
@@ -48,7 +49,8 @@ async function errorTaskThen2(args: string): Promise<void> {
       console.log(`errorTaskThen2 then Task ${args} executed`);
       throw new Error(`Error in task ${args}`)
     })
-  } catch (err: Error) {
+  } catch (err) {
+    err = err as Error;
     console.error(`${args} executing error task failed, error: ${err.message}`);
   }
 }
@@ -62,7 +64,8 @@ async function errorTaskCatch2(args: string): Promise<void> {
       console.log(`errorTaskCatch2 then Task ${args} executed`);
       throw new Error(`Error in task ${args}`)
     })
-  } catch (err: Error) {
+  } catch (err) {
+    err = err as Error;
     console.error(`${args} executing error task failed, error: ${err.message}`);
   }
 }
@@ -77,7 +80,8 @@ async function errorTaskFinally2(args: string): Promise<void> {
         console.log(`errorTaskFinally2 then Task ${args} executed`);
         throw new Error(`Error in task ${args}`)
       })
-  } catch (err: Error) {
+  } catch (err) {
+    err = err as Error;
     console.error(`${args} executing error task failed, error: ${err.message}`);
   }
 }
@@ -126,7 +130,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -161,7 +166,8 @@ export default function executeDelayedTaskErrorTest() {
         console.log(`onEnqueued Task ${caseName} executed`);
         try {
           throw new Error(`Error in task ${caseName}`)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -173,7 +179,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -208,7 +215,8 @@ export default function executeDelayedTaskErrorTest() {
         console.log(`onStartExecution Task ${caseName} executed`);
         try {
           throw new Error(`Error in task ${caseName}`)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -220,7 +228,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -261,7 +270,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -295,7 +305,8 @@ export default function executeDelayedTaskErrorTest() {
         console.log(`onExecutionSucceeded Task ${caseName} executed`);
         try {
           throw new Error(`Error in task ${caseName}`)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -307,7 +318,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -347,7 +359,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -386,12 +399,14 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${caseName} executing error task failed, error: ${err.message}`);
               expect(err.message).assertContain(`Error in task ${caseName}`);
             }
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -431,7 +446,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -468,7 +484,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -508,7 +525,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`asyncLockNormalTask then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -548,12 +566,14 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`asyncLockNormalTask catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${caseName} executing error task failed, error: ${err.message}`);
               expect(err.message).assertContain(`Error in task ${caseName}`);
             }
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -593,7 +613,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`asyncLockNormalTask finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -629,7 +650,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -669,7 +691,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`promiseNormalTask then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -707,12 +730,14 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`promiseNormalTask catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${caseName} executing error task failed, error: ${err.message}`);
               expect(err.message).assertContain(`Error in task ${caseName}`);
             }
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -752,7 +777,8 @@ export default function executeDelayedTaskErrorTest() {
             console.log(`promiseNormalTask finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -789,7 +815,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -827,7 +854,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -864,7 +892,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -901,7 +930,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
@@ -938,7 +968,8 @@ export default function executeDelayedTaskErrorTest() {
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }

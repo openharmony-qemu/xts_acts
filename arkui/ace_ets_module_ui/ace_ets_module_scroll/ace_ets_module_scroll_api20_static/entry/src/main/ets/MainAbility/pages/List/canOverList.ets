@@ -55,8 +55,8 @@ struct canOverScrollList {
           .margin({ right: 10 } as Margin)
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -68,8 +68,8 @@ struct canOverScrollList {
           .id('canOver_list_false')
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -85,8 +85,8 @@ struct canOverScrollList {
           .margin({ right: 10 } as Margin)
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -98,8 +98,8 @@ struct canOverScrollList {
           .id('canOver_list_ude')
           .onClick((e: ClickEvent) => {
             let curve = curves.interpolatingSpring(0.5, 5, 10, 15)
-            const yOffset: number = this.scroller.currentOffset().yOffset;
-            const xOffset: number = this.scroller.currentOffset().xOffset;
+            const yOffset: number = this.scroller.currentOffset()!.yOffset;
+            const xOffset: number = this.scroller.currentOffset()!.xOffset;
             this.scroller.scrollTo({
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
@@ -110,7 +110,7 @@ struct canOverScrollList {
       }
 
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
               .id('canOverScroll_list_' + item)

@@ -31,8 +31,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Component
 struct TextPickerDialogExample {
   @State v: string = '';
-  private select: number | number[] = 0.0
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[]
+  private select: int | int[] = 0;
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'] as string[];
 
   build() {
     Row() {

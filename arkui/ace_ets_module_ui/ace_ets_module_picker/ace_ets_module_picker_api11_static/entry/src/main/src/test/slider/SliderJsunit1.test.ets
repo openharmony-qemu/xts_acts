@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 import Utils from '../../../ets/MainAbility/common/Utils'
@@ -104,7 +104,7 @@ export default function sliderJsunit1() {
         let eventData: events_emitter.EventData = {
           data: {
             "decorationValue": Axis.Horizontal
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -153,7 +153,7 @@ export default function sliderJsunit1() {
         let eventData: events_emitter.EventData = {
           data: {
             "value": "10",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 196,
@@ -201,7 +201,7 @@ export default function sliderJsunit1() {
         let eventData: events_emitter.EventData = {
           data: {
             "stepValue": "10",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 196,

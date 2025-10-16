@@ -14,7 +14,7 @@
  */
 import observer  from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, NavPathStack} from '@ohos.arkui.component'
-import { State, Link, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, Link, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ObserverPageId {
@@ -29,11 +29,11 @@ struct ObserverPageId {
   }
 
   aboutToAppear(): void {
-    observer.on('routerPageUpdate', this.getUIContext(), this.testFunc)
+    observer.onRouterPageUpdate(this.getUIContext(), this.testFunc)
   }
 
   aboutToDisappear(): void {
-    observer.off('routerPageUpdate', this.getUIContext(), this.testFunc)
+    observer.offRouterPageUpdate(this.getUIContext(), this.testFunc)
   }
 
 

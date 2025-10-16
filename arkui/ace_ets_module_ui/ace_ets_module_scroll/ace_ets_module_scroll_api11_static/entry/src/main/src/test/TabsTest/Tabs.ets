@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -102,7 +102,7 @@ export default function tabs() {
             "selfIndicatorBorderRadiusStr": "5vp",
             "selfSubTabBorderRadiusStr": "20vp",
             "selfMarginTopStr": "10vp",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -237,7 +237,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -285,7 +285,7 @@ export default function tabs() {
             "dividerColorStr": 'xxxxxxxx',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -333,7 +333,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -371,7 +371,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": 'xxxxxxxx',
             "endMarginStr": '5px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -409,7 +409,7 @@ export default function tabs() {
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": 'xxxxxxxx',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -448,7 +448,7 @@ export default function tabs() {
             "startMarginStr": '5px',
             "endMarginStr": '5px',
             "selfSelectedMode": SelectedMode.BOARD,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -494,7 +494,7 @@ export default function tabs() {
             "strokeWidthStr": '10vp',
             "startMarginStr": '10vp',
             "endMarginStr": '10vp',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -521,7 +521,7 @@ export default function tabs() {
             "strokeWidthStr": '10px',
             "startMarginStr": '10px',
             "endMarginStr": '10px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -548,7 +548,7 @@ export default function tabs() {
             "strokeWidthStr": '10fp',
             "startMarginStr": '10fp',
             "endMarginStr": '10fp',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -575,7 +575,7 @@ export default function tabs() {
             "strokeWidthStr": '10lpx',
             "startMarginStr": '10lpx',
             "endMarginStr": '10lpx',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -864,7 +864,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -898,7 +898,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": false
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1036,7 +1036,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorColor": "xxxxxxxx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1083,7 +1083,7 @@ export default function tabs() {
             "selfIndicatorWidth": 20,
             "selfIndicatorBorderRadius": 5,
             "selfMarginTop": 10
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1214,7 +1214,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeight": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1257,7 +1257,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1281,7 +1281,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1304,7 +1304,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1415,7 +1415,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidth": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1451,7 +1451,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1475,7 +1475,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1498,7 +1498,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1609,7 +1609,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadius": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1645,7 +1645,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1669,7 +1669,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1693,7 +1693,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1808,7 +1808,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadius": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1850,7 +1850,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1873,7 +1873,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1896,7 +1896,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1931,7 +1931,7 @@ export default function tabs() {
           data: {
             "selfSubTabBorderRadius": 20,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2005,7 +2005,7 @@ export default function tabs() {
           data: {
             "selfIndicatorHeight": 10,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2123,7 +2123,7 @@ export default function tabs() {
           data: {
             "selfIndicatorHeight": 10,
             "selfMarginTop": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2166,7 +2166,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2190,7 +2190,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2213,7 +2213,7 @@ export default function tabs() {
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

@@ -41,7 +41,6 @@ import {
   Text,
   TextAlign,
   TextAttribute,
-  UserView,
   Builder,
   Row,
   List,
@@ -52,7 +51,7 @@ import {
   SwipeEdgeEffect,
   SwipeActionState
 } from '@ohos.arkui.component'
-import { AppStorage, MutableState, observableProxy, State, stateOf } from '@ohos.arkui.stateManagement'
+import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { UIContext} from '@ohos.arkui.UIContext';
 @Entry
 @Component
@@ -102,7 +101,7 @@ struct ListItemExample36 {
           this.arr = [0, 1, 2, 3, 4];
         })
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('60%')
@@ -172,7 +171,7 @@ struct ListItemExample36 {
 
           })
           .key('lSwipe36Action' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }.listDirection(Axis.Horizontal).height('80%')
       .width('90%')
 

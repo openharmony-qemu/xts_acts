@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -21,14 +36,14 @@ export default function SupportWindowModeStaticTest() {
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.startAbility({
         abilityName: "EntryAbility",
-        bundleName: "com.example.actsabilitybmsenumtest.static"
+        bundleName: "com.example.actsbmsenumtest.static"
       }).then(async (): Promise<void> =>{
         hilog.info(domain, tag, 'startAbility success');
         await Utils.msSleep(2000);
         context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
-      }).catch(()=>{
-        hilog.info(domain, tag, 'startAbility fail');
+      }).catch((err :Error)=>{
+        hilog.info(domain, tag, 'startAbility fail '+ err.message + err.code);
       })
     });
 
@@ -45,7 +60,7 @@ export default function SupportWindowModeStaticTest() {
         const subTag: string = 'SUB_BMS_SupportWindowMode_Static_0100';
         let want: Want = {
           deviceId: '',
-          bundleName: 'com.example.actsabilitybmsenumtest.static',
+          bundleName: 'com.example.actsbmsenumtest.static',
           abilityName: 'EntryAbility'
         };
         let options: StartOptions = {

@@ -48,7 +48,7 @@ struct ScrollExample {
     Stack({ alignContent: Alignment.TopStart }) {
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height('10%')
@@ -58,7 +58,7 @@ struct ScrollExample {
               .key(item.toString())
               .textAlign(TextAlign.Center)
               .margin({ top: 10 } as Margin)
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
       }
       .scrollable(ScrollDirection.Vertical) 
@@ -93,7 +93,7 @@ struct ScrollExample {
       Button('scroll 100')
         .height('5%')
         .onClick((e: ClickEvent) => { 
-          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset().yOffset + 100 })
+          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
         })
         .margin({ top: 60, left: 20 } as Margin)
       Button('scroll 100')
@@ -102,7 +102,7 @@ struct ScrollExample {
           let curve = Curves.interpolatingSpring(100, 1, 228, 30) as ICurve 
           this.scroller.scrollTo({
             xOffset: 0,
-            yOffset: this.scroller.currentOffset().yOffset + 100,
+            yOffset: this.scroller.currentOffset()!.yOffset + 100,
             animation: { duration: 1000, curve: curve }
           })
         })

@@ -22,6 +22,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { RouteType } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function pageTransitionJsunit() {
   describe('pageTransitionJsunit', () => {
@@ -125,7 +126,7 @@ export default function pageTransitionJsunit() {
           data: {
             "scale": 6,
             "opacity": 5
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 145,

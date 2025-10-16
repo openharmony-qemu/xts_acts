@@ -30,12 +30,12 @@ const TAG = "CameraVideoMirrorTest: ";
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.VideoSession;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoRecorder: media.AVRecorder | undefined;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
@@ -110,7 +110,7 @@ export default function cameraVideoMirrorTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')

@@ -52,11 +52,11 @@ class MyDataSource1 implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -127,7 +127,7 @@ struct SwiperMinSize {
     Column({ space: 5 } as ColumnOptions) {
 
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .height(160)
             .backgroundColor(0xAFEEEE)
@@ -150,7 +150,7 @@ struct SwiperMinSize {
       } as ArrowStyle, false)
 
       Swiper(this.swiperController) {
-        LazyForEach(this.data, (item: number, index: number) => {
+        LazyForEach(this.data, (item: number, index: int) => {
           Text(item.toString())
             .width(this.swiperTextWidth)
             .height(160)

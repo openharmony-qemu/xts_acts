@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -88,7 +88,7 @@ it('testRichEditorCopyOptions_static_01', Level.LEVEL0, async (done: ()=>void) =
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": CopyOptions.None
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 301,
@@ -128,7 +128,7 @@ it('testRichEditorCopyOptions_static_02', Level.LEVEL0, async (done: ()=>void) =
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": CopyOptions.InApp
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 302,
@@ -164,7 +164,7 @@ it('testRichEditorCopyOptions_static_03', Level.LEVEL0, async (done: ()=>void) =
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": CopyOptions.LocalDevice
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 303,
@@ -201,7 +201,7 @@ it('testRichEditorCopyOptions_static_04', Level.LEVEL0, async (done: ()=>void) =
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": CopyOptions.None
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 304,

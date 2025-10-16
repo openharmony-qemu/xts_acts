@@ -26,9 +26,9 @@ import {
 abstract class BasicDataSource<T> implements IDataSource<T> {
   private listeners: DataChangeListener[] = []
 
-  abstract totalCount(): number
+  abstract totalCount(): int
 
-  abstract getData(index: number): T
+  abstract getData(index: int): T
 
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
@@ -38,7 +38,7 @@ abstract class BasicDataSource<T> implements IDataSource<T> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -51,25 +51,25 @@ abstract class BasicDataSource<T> implements IDataSource<T> {
     })
   }
 
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange([{ type: DataOperationType.ADD, index: index } as DataChangeOperation]);
     })
   }
 
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange([{ type: DataOperationType.CHANGE, index: index } as DataChangeOperation]);
     })
   }
 
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange([{ type: DataOperationType.DELETE, index: index } as DataChangeOperation]);
     })
   }
 
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange([{
         type: DataOperationType.MOVE,
@@ -88,16 +88,16 @@ abstract class BasicDataSource<T> implements IDataSource<T> {
 export class MyDataSource<T> extends BasicDataSource<T> {
   private dataArray: T[] = [] as T[]
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length
   }
 
-  public getData(index: number): T {
+  public getData(index: int): T {
     console.log("zxy List cacheCountTest3 getData = " + index)
     return this.dataArray[index.toInt()]
   }
 
-  public addData(index: number, data: T): void {
+  public addData(index: int, data: T): void {
     this.dataArray.splice(index, 0, data) 
     
     this.notifyDatasetChange([
@@ -116,7 +116,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
     
   }
 
-  public deleteIndex(index: number): void {
+  public deleteIndex(index: int): void {
     this.dataArray.splice(index, 1) 
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
@@ -124,16 +124,16 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 
   public deleteData(data: T): void {
     let index = this.dataArray.indexOf(data)
-    this.dataArray.splice(index, 1) 
+    this.dataArray.splice(index.toInt(), 1) 
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
   }
 
-  public moveData(from: number, to: number) {
+  public moveData(from: int, to: int) {
     this.notifyDataMove(from, to)
   }
 
-  public changeData(index: number, data: T) {
+  public changeData(index: int, data: T) {
     this.dataArray[index.toInt()] = data
     this.notifyDataChange(index)
   }
@@ -143,13 +143,13 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public addOperateData(items: T[]): void {
-    this.dataArray.splice(20.0, 0.0, ...items);
+    this.dataArray.splice(20, 0, ...items);
     this.notifyDatasetChange([
       { type: DataOperationType.ADD, index: 20, count: 100 } as DataAddOperation]);
   }
 
   public DeloperateData(): void {
-    this.dataArray.splice(20.0, 100.0);
+    this.dataArray.splice(20, 100);
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: 20, count: 100 } as DataAddOperation]);
   }

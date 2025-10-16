@@ -22,7 +22,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -50,9 +49,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -101,7 +97,7 @@ struct Grid_ScrollAndScrollIndex {
         .backgroundColor(0xFAEEE0)
         .height(300)
         .scrollBar(BarState.Off)
-        .onScrollIndex((first: number,last: number):void => {
+        .onScrollIndex((first: int,last: int):void => {
           this.index++
         })
         

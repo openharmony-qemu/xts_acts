@@ -22,7 +22,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -48,8 +47,8 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error: Error) {
-      console.log('error ' + error);
+    } catch (e) {
+      console.log('e' + e);
     }
   }
 

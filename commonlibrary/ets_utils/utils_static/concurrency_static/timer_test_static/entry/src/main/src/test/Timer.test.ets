@@ -67,7 +67,8 @@ export default function TimerTest1() {
           expect(elapsed > 0).assertTrue();
           clearTimeout(timer);
         }, 0);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -96,7 +97,8 @@ export default function TimerTest1() {
         try {
           expect(executed).assertTrue();
           clearTimeout(timerId);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           console.error(`${TAG} catch error: code =>  message => ${e.message}`);
           clearTimeout(timerId);
           expect(false).assertFail();
@@ -132,12 +134,14 @@ export default function TimerTest1() {
             clearTimeout(timer);
             expect(executed).assertTrue();
             expect(receivedArg).assertEqual("test");
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch1 error: code =>  message => ${err.message}`);
           }
 
         }, 150);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
         done();
@@ -164,12 +168,14 @@ export default function TimerTest1() {
             clearTimeout(timer);
 
             done();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 250);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -194,12 +200,14 @@ export default function TimerTest1() {
           try {
             clearTimeout(timer);
 
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch1 error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 250);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -226,7 +234,8 @@ export default function TimerTest1() {
           expect(elapsed > 99).assertTrue();
           clearTimeout(timer);
         }, 150);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -253,7 +262,8 @@ export default function TimerTest1() {
           expect(elapsed > 99).assertTrue();
           clearTimeout(timer);
         }, 150);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -283,12 +293,14 @@ export default function TimerTest1() {
           try {
             clearTimeout(timer);
             expect(executed).assertFalse();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 50);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -316,7 +328,8 @@ export default function TimerTest1() {
       setTimeout(() => {
         try {
           expect(executed).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -345,7 +358,8 @@ export default function TimerTest1() {
         setTimeout(() => {
           try {
             expect(executed).assertTrue();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -374,7 +388,8 @@ export default function TimerTest1() {
         clearTimeout(timer);
         try {
           expect(executed).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -404,7 +419,8 @@ export default function TimerTest1() {
         try {
           expect(validTimerExecuted).assertTrue();
           clearTimeout(validTimer);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           clearTimeout(validTimer);
           expect(false).assertFail();
@@ -432,7 +448,8 @@ export default function TimerTest1() {
         clearTimeout(-1);
         clearTimeout(0);
         // clearTimeout(1.1);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -460,7 +477,8 @@ export default function TimerTest1() {
         expect(intervalExecuted).assertFalse();
         clearInterval(intervalId);
         expect(intervalExecuted).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -485,7 +503,8 @@ export default function TimerTest1() {
         await Utils.msSleep(100);
         expect(typeof timer).assertEqual(typeof a);
         clearInterval(timer);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -525,12 +544,14 @@ export default function TimerTest1() {
             expect(typeof argReceived).assertEqual("function");
             const result = (argReceived as () => string)();
             expect(result).assertEqual("The parameter function is called");
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 250);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -560,7 +581,8 @@ export default function TimerTest1() {
         }
         clearInterval(timer);
         expect(callCount).assertTrue();
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -590,12 +612,14 @@ export default function TimerTest1() {
           try {
             expect(callCount).assertTrue();
             clearInterval(timer)
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 250);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -627,12 +651,14 @@ export default function TimerTest1() {
           try {
             expect(callCount).assertTrue();
             clearInterval(timer);
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 250);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -662,12 +688,14 @@ export default function TimerTest1() {
             clearInterval(intervalId);
             clearInterval(checkInterval);
             expect(executionCount > 0).assertTrue();
-          } catch (e: Error) {
+          } catch (e) {
+            e = e as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${e.message}`);
             expect(false).assertFail();
           }
         }, 150);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code1 =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -700,13 +728,15 @@ export default function TimerTest1() {
             clearInterval(checkInterval);
 
             expect(executionCount > 0).assertTrue();
-          } catch (e: Error) {
+          } catch (e) {
+            e = e as Error;
             clearInterval(checkInterval);
             console.error(`${TAG} catch error: code1 =>  message => ${e.message}`);
             expect(false).assertFail();
           }
         }, 150);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -731,7 +761,8 @@ export default function TimerTest1() {
         const intervalId = setInterval(() => {
         }, 100);
         clearInterval(intervalId);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -759,7 +790,8 @@ export default function TimerTest1() {
         await Utils.msSleep(1000);
         clearInterval(timer);
         expect(executed).assertTrue();
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -788,7 +820,8 @@ export default function TimerTest1() {
         setTimeout(() => {
           try {
             expect(executionCount).assertEqual(countBeforeClear);
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail();
           }
@@ -825,12 +858,14 @@ export default function TimerTest1() {
           try {
             clearInterval(intervalId as int);
             expect(executionCount).assertEqual(1);
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 150);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -874,12 +909,14 @@ export default function TimerTest1() {
             expect(executionCount > 1).assertTrue();
             expect(isContinuousExecution).assertEqual(false);
             done();
-          } catch (e: Error) {
+          } catch (e) {
+            e = e as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${e.message}`);
             expect(false).assertFail();
           }
         }, 350);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         console.error(`${TAG} catch error: code =>  message => ${e.message}`);
         expect(false).assertFail();
       }
@@ -903,7 +940,8 @@ export default function TimerTest1() {
         clearInterval();
         clearInterval(-1);
         clearInterval(0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -925,7 +963,8 @@ export default function TimerTest1() {
         const timer = setTimeout(() => {
         }, 100);
         clearInterval(timer);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -953,12 +992,14 @@ export default function TimerTest1() {
         setTimeout(() => {
           try {
             expect(taskCompleted).assertTrue();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 1500);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -990,7 +1031,8 @@ export default function TimerTest1() {
             expect(TimerTest3500).assertTrue();
           });
         }, 100);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1023,13 +1065,15 @@ export default function TimerTest1() {
             try {
               expect(outerTimerFired).assertTrue();
               expect(innerTimerFired).assertTrue();
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
               expect(false).assertFail();
             }
           }, 50);
         }, 100);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1065,7 +1109,8 @@ export default function TimerTest1() {
             });
           })();
         }, 150);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1088,12 +1133,14 @@ export default function TimerTest1() {
         const timer = setTimeout(() => {
           try {
             throw new Error("Uncaught error in timer");
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(err.message).assertEqual("Uncaught error in timer");
           }
         }, 100);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1148,7 +1195,8 @@ export default function TimerTest1() {
         setTimeout(() => {
           try {
             throw new Error('Exception in setTimeout');
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             exceptionCaught = true;
           }
@@ -1163,12 +1211,14 @@ export default function TimerTest1() {
             expect(clearedIntervalExecuted).assertFalse();
             expect(exceptionCaught).assertTrue();
             done();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
             expect(false).assertFail();
           }
         }, 400);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1199,7 +1249,8 @@ export default function TimerTest1() {
           resultTimer = value as string;
         })
         expect(resultTimer).assertEqual('timerFired');
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1245,7 +1296,8 @@ export default function TimerTest1() {
         const result3 = (await task3) as boolean;
         expect(result1).assertEqual(false);
         expect(result3).assertEqual(false);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1290,7 +1342,8 @@ export default function TimerTest1() {
             });
           });
         expect(JSON.stringify(executionOrder)).assertEqual(JSON.stringify(['timer1', 'timer2', 'timer3']));
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1353,7 +1406,8 @@ export default function TimerTest1() {
         console.info(TAG, `Execution order: ${executionOrder}`);
         expect(JSON.stringify(executionOrder)).assertEqual
         (JSON.stringify(['timer1', 'timer2', 'timer3', 'timer4', 'timer5']));
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1388,7 +1442,8 @@ export default function TimerTest1() {
             }
           }, delay);
         }
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -1439,7 +1494,8 @@ export default function TimerTest1() {
             clearInterval(intervalId as int);
           }
         }, 500);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         if (intervalId !== 0) {
           clearInterval(intervalId as int);
@@ -1506,7 +1562,8 @@ export default function TimerTest1() {
             clearInterval(innerIntervalId as int);
           }
         }, 1000);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         if (outerTimerId !== 0) {
           clearTimeout(outerTimerId as int);
         }

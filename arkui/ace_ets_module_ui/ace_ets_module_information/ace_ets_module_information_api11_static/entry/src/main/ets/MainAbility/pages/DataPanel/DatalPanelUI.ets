@@ -15,7 +15,7 @@
  */
 import {MessageManager,Callback, Message, } from '../../common/MessageManager';
 import { Entry, Component, DataPanelType, Position, Column, ColumnOptions, Row, Stack, DataPanel, Text, Margin, } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -23,7 +23,7 @@ struct DataPanelExample {
   public valueArr: Array<Double> = new Array<Double>(10, 10, 10, 10, 10, 10, 10, 10, 10)
   messageManager:MessageManager<Object> = new MessageManager<Object>()
 
-  @State maxValue:number = 0
+  @State maxValue:double = 0
   @State dataPanelType:DataPanelType = 0 as DataPanelType
   @State values: Array<Double> = new Array<Double>(25,1);
 
@@ -35,7 +35,7 @@ struct DataPanelExample {
     let callback:Callback<Object> = (message: Message<Object>): void => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'maxValue') {
-          this.maxValue = message.value as number
+          this.maxValue = message.value as double
       }
       if (message.name == 'dataPanelType') {
           this.dataPanelType = message.value as DataPanelType

@@ -62,7 +62,7 @@ struct alphabetIndexer {
         .popupFont({ size: 30, weight: FontWeight.Bolder, style: FontStyle.Normal })
         .itemSize(28)
         .alignStyle(IndexerAlign.Left)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' on selected')
         })
       Text("AlphabetIndexer1")
@@ -78,7 +78,7 @@ struct alphabetIndexer {
         .itemSize(28)
         .alignStyle(IndexerAlign.Right)
         .margin({ left: 50 } as Margin)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' on selected')
         })
     }

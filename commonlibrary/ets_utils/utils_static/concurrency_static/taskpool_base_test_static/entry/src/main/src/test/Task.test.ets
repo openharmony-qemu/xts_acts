@@ -117,7 +117,8 @@ export default function taskTest() {
           expect(result < 100).assertTrue();
           let Fun = task.taskFunction;
           expect(await (Fun.unsafeCall() as Promise<number>) < 100).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -144,7 +145,8 @@ export default function taskTest() {
             let arguments = task.arguments;
             expect(arguments?.length).assertEqual(1);
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -171,7 +173,8 @@ export default function taskTest() {
         await taskpool.execute(task).then((value: NullishType) => {
           expect(value as string).assertEqual('20');
         });
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -198,7 +201,8 @@ export default function taskTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as string).assertEqual('20');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -225,7 +229,8 @@ export default function taskTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as string).assertEqual('20');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -252,7 +257,8 @@ export default function taskTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as string).assertEqual('20');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -281,7 +287,8 @@ export default function taskTest() {
           let Fun = task.taskFunction as Object;
           ;
           expect(Fun != 0).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -310,7 +317,8 @@ export default function taskTest() {
           expect(result < 100).assertTrue();
           let args = task.arguments;
           expect(args?.length != 0).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -337,7 +345,8 @@ export default function taskTest() {
           let name = task.name as string;
           expect(String(name)).assertEqual(taskName);
         });
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();
       }
@@ -364,7 +373,8 @@ export default function taskTest() {
             let totalDuration: Number = task.totalDuration;
             expect(totalDuration >= 0).assertEqual(true);
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -391,7 +401,8 @@ export default function taskTest() {
             expect(cpuDuration >= 0).assertEqual(true);
             expect(value as string).assertEqual('20');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -418,7 +429,8 @@ export default function taskTest() {
             expect(value as string).assertEqual('test');
             expect(executedFlag).assertEqual(true);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -446,7 +458,8 @@ export default function taskTest() {
             taskValue = true;
           });
           expect(taskValue).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -474,7 +487,8 @@ export default function taskTest() {
           await taskpool.execute(task).then((value:NullishType) => {
             expect(true).assertEqual(true);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -502,7 +516,8 @@ export default function taskTest() {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -531,7 +546,8 @@ export default function taskTest() {
             expect(taskFlag).assertEqual(true);
             expect(value as number).assertEqual(1);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -561,7 +577,8 @@ export default function taskTest() {
             expect(taskValue).assertEqual(10);
             expect(value as number).assertEqual(1);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -592,7 +609,8 @@ export default function taskTest() {
             expect(value).assertEqual(1);
           });
           expect(taskValue).assertEqual(11);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -619,7 +637,8 @@ export default function taskTest() {
           await taskpool.execute(task).then((res:NullishType) => {
             expect(true).assertEqual(true);;
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -648,7 +667,8 @@ export default function taskTest() {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -676,7 +696,8 @@ export default function taskTest() {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-      } catch (error: Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
         expect(false).assertFail();
       }
@@ -704,7 +725,8 @@ export default function taskTest() {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-      } catch (error: Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
         expect(false).assertFail();
       }
@@ -733,7 +755,8 @@ export default function taskTest() {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-      } catch (error: Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
         expect(false).assertFail();
       }
@@ -761,7 +784,8 @@ export default function taskTest() {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-      } catch (error: Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
         expect(false).assertFail();
       }
@@ -789,7 +813,8 @@ export default function taskTest() {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-      } catch (error: Error) {
+      } catch (error) {
+        error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
         expect(false).assertFail();
       }

@@ -34,11 +34,11 @@ let mVideoRecorder: media.AVRecorder | undefined;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
-let mCameraNum: number;
+let mCameraNum: int;
 let mIsVideoStabilizationModeSupportedArray: Array<boolean>;
 let mPicWidthMax = 8192;
 let mPicHeightMax = 8192;
@@ -108,7 +108,7 @@ export default function cameraSessionVideoStabilizationTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')

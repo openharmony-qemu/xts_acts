@@ -30,11 +30,10 @@ import {
   ListItemGroupOptions
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
 
 @Component
 export struct ListItemGroupView {
-  @Link _position!: SetValue;
+  @Link _position!: Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;
@@ -72,28 +71,7 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

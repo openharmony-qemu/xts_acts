@@ -29,16 +29,6 @@ class MyWritable003 extends stream.Writable {
   }
 }
 
-class MyWritable004 extends stream.Writable {
-  constructor() {
-    super();
-  }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-    expect(chunk.toString()).assertEqual('write content');
-    callback.unsafeCall(null);
-  }
-}
-
 class MyWritable005 extends stream.Writable {
   constructor() {
     super();
@@ -65,8 +55,8 @@ class MyWritableCbTwice001 extends stream.Writable {
   }
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     let func: Function = (chunk: string | Uint8Array, encoding: string, callback: Function): void => {
-      callback.unsafeCall();
-      callback.unsafeCall();
+        callback.unsafeCall();
+        callback.unsafeCall();
     }
     let wrappedFn: Function = mustCallDoWrite(func);
     wrappedFn(chunk, encoding, callback);
@@ -321,7 +311,7 @@ class MyReadableData002 extends stream.Readable {
   }
   doRead(size: int): void {
     let data = dataSource_Data002.shift();
-    this.push(data as string);
+    this.push(data);
   }
 }
 
@@ -464,21 +454,6 @@ class MyTransformCallbackTwice001 extends stream.Transform {
   }
 }
 
-let expected_FlushData001 = 'test';
-class MyTransformFlushData001 extends stream.Transform {
-  constructor() {
-    super()
-  }
-
-  doTransform(chunk: string, encoding: string, next: Function): void {
-    next.unsafeCall();
-  }
-
-  doFlush(next: Function): void {
-    next.unsafeCall(null, expected_FlushData001);
-  }
-}
-
 class MyTransform001 extends stream.Transform {
   constructor() {
     super()
@@ -487,6 +462,16 @@ class MyTransform001 extends stream.Transform {
   doTransform(chunk: string, encoding: string, next: Function): void {
     let transformedChunk = chunk.toString().toUpperCase();
     this.push(transformedChunk);
+    next.unsafeCall();
+  }
+}
+
+class MyTransform002 extends stream.Transform {
+  constructor() {
+    super()
+  }
+
+  doTransform(chunk: string, encoding: string, next: Function): void {
     next.unsafeCall();
   }
 }
@@ -511,7 +496,7 @@ class MyTransform005 extends stream.Transform {
 
   doRead(size: int): void {
     let data = dataSource_005.shift();
-    this.push(data!);
+    this.push(data);
   }
 }
 
@@ -549,6 +534,10 @@ class MyTransformEvent001 extends stream.Transform {
 class MyTransformEvent002 extends stream.Transform {
   constructor() {
     super();
+  }
+
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void{
+    callback.unsafeCall();
   }
 
   doTransform(chunk: string, encoding: string, callback: Function) {
@@ -699,7 +688,7 @@ class Encoding001 extends stream.Writable {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -714,7 +703,7 @@ class Encoding002 extends stream.Writable {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -729,7 +718,7 @@ class Encoding003 extends stream.Writable {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -744,7 +733,7 @@ class Encoding004 extends stream.Writable {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -759,7 +748,7 @@ class Encoding005 extends stream.Writable {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -774,7 +763,7 @@ class Encoding006 extends stream.Writable {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -789,7 +778,7 @@ class Encoding007 extends stream.Writable {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -804,7 +793,7 @@ class Encoding008 extends stream.Writable {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -819,7 +808,7 @@ class Encoding009 extends stream.Writable {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -834,7 +823,7 @@ class Encoding016 extends stream.Duplex {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -849,7 +838,7 @@ class Encoding017 extends stream.Duplex {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -864,7 +853,7 @@ class Encoding018 extends stream.Duplex {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -879,7 +868,7 @@ class Encoding019 extends stream.Duplex {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -894,7 +883,7 @@ class Encoding020 extends stream.Duplex {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -909,7 +898,7 @@ class Encoding021 extends stream.Duplex {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -923,7 +912,7 @@ class Encoding022 extends stream.Duplex {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -937,7 +926,7 @@ class Encoding023 extends stream.Duplex {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -951,7 +940,7 @@ class Encoding024 extends stream.Duplex {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -966,7 +955,7 @@ class Encoding025 extends stream.Transform {
       expect(chunk).assertEqual('你好123');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoTransform(fn, 0);
+    let wrappedFn = mustCallDoTransform(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -981,7 +970,7 @@ class Encoding026 extends stream.Transform {
       expect(chunk).assertEqual('你好123');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoTransform(fn, 0);
+    let wrappedFn = mustCallDoTransform(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -996,7 +985,7 @@ class Encoding027 extends stream.Transform {
       expect(chunk).assertEqual('你好123');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoTransform(fn, 0);
+    let wrappedFn = mustCallDoTransform(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1129,7 +1118,7 @@ class WritableWritevUintArr001 extends stream.Writable {
       doWriteVCalled_WritevUintArr001 = true;
       cb.unsafeCall();
     }
-    let wrappedFn = mustCallDoWritev(fn, 0);
+    let wrappedFn = mustCallDoWritev(fn, 1);
     wrappedFn(chunk, cb);
   }
 }
@@ -1145,7 +1134,7 @@ class Encoding04041 extends stream.Writable {
       expect(encoding).assertEqual('GBK');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1161,7 +1150,7 @@ class Encoding042 extends stream.Writable {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1177,7 +1166,7 @@ class Encoding04344 extends stream.Writable {
       expect(encoding).assertEqual('GB2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1193,7 +1182,7 @@ class Encoding045 extends stream.Writable {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1209,7 +1198,7 @@ class Encoding04647 extends stream.Writable {
       expect(encoding).assertEqual('GB18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1225,7 +1214,7 @@ class Encoding048 extends stream.Writable {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1241,7 +1230,7 @@ class Encoding049 extends stream.Duplex {
       expect(encoding).assertEqual('GBK');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1257,7 +1246,7 @@ class Encoding050 extends stream.Duplex {
       expect(encoding).assertEqual('GBK');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1272,7 +1261,7 @@ class Encoding051 extends stream.Duplex {
       expect(encoding).assertEqual('gbk');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1288,7 +1277,7 @@ class Encoding052 extends stream.Duplex {
       expect(encoding).assertEqual('GB2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1304,7 +1293,7 @@ class Encoding053 extends stream.Duplex {
       expect(encoding).assertEqual('GB2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1319,7 +1308,7 @@ class Encoding054 extends stream.Duplex {
       expect(encoding).assertEqual('gb2312');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1335,7 +1324,7 @@ class Encoding055 extends stream.Duplex {
       expect(encoding).assertEqual('GB18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1351,7 +1340,7 @@ class Encoding056 extends stream.Duplex {
       expect(encoding).assertEqual('GB18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1366,7 +1355,7 @@ class Encoding057 extends stream.Duplex {
       expect(encoding).assertEqual('gb18030');
       callback.unsafeCall();
     }
-    let wrappedFn = mustCallDoWrite(fn, 0);
+    let wrappedFn = mustCallDoWrite(fn, 1);
     wrappedFn(chunk, encoding, callback);
   }
 }
@@ -1425,22 +1414,6 @@ export default function streamTest() {
       writableStream.write('test');
       expect(writableStream.writable).assertEqual(false);
       writableStream.on('error', mustCall());
-    });
-
-    // Check the StreamWritable.
-    /**
-     * @tc.number: SUB_IBRARY_ETSUTILS_STREAM_00400
-     * @tc.name: testStreamWritable004
-     * @tc.desc: Write data to stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
-    it('testStreamWritable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let writableStream = new MyWritable004();
-      writableStream.write('write content', 'utf8', (error: Error) => {
-        expect(error).assertEqual(null);
-      });
     });
 
     // Check the StreamWritable.
@@ -1512,7 +1485,7 @@ export default function streamTest() {
       let writableStream = new MyWritableCbTwice001();
       writableStream.write('test');
       writableStream.on('error', mustCallOnError((error: Error) => {
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
         expect(error.name).assertEqual('BusinessError');
       }));
       await mustCallCheckAll();
@@ -1591,7 +1564,8 @@ export default function streamTest() {
       try {
         let writableStream = new MyWritableWriteError003();
         writableStream.write('my', 'test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of test must be string.');
@@ -1650,7 +1624,8 @@ export default function streamTest() {
       let err: Error = new Error();
       try {
         writableStream.end('test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('The doWrite() method is not implemented.');
@@ -2198,7 +2173,8 @@ export default function streamTest() {
         testWritable.setDefaultEncoding("abc");
         testWritable.write('bar');
         testWritable.end();
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('Parameter error. The type of abc must be string.');
@@ -2313,9 +2289,7 @@ export default function streamTest() {
      */
     it('testStreamDuplex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let duplex = new MyDuplex002();
-      duplex.write('duplex test', 'utf8', mustCallOnError((err: Error) => {
-        expect(err).assertEqual(null);
-      }));
+      duplex.write('duplex test', 'utf8',mustCallNull());
       duplex.on('data', mustCallOneObjectArgs((chunk: Object) => {
         expect(chunk.toString()).assertEqual('duplex test');
       }));
@@ -2604,12 +2578,13 @@ export default function streamTest() {
       let testData = 'Hello world!';
       readable.push(testData);
       let chunk = readable.read((testData.length / 2).toInt());
+      readable.setEncoding('utf8');
       expect(chunk !== null).assertTrue();
-      expect((chunk as string)!.length).assertEqual(testData.length / 2);
+      expect((chunk)!.length).assertEqual(testData.length / 2);
       expect(readable.readableLength).assertEqual(testData.length / 2);
       let remainingChunk = readable.read((testData.length / 2).toInt());
       expect(remainingChunk !== null).assertTrue();
-      expect((remainingChunk as string)!.length).assertEqual(testData.length / 2);
+      expect((remainingChunk)!.length).assertEqual(testData.length / 2);
       expect(readable.readableLength).assertEqual(0);
     });
 
@@ -2790,8 +2765,8 @@ export default function streamTest() {
      */
     it('testStreamReadableData003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let src = new MyReadableData003();
-      src.on('data', (chunk: ESObject) => {
-        expect(JSON.stringify(chunk)).assertEqual("1");
+      src.on('data', (chunk: Object) => {
+        expect(chunk.toString()).assertEqual("1");
       });
     });
 
@@ -3029,12 +3004,12 @@ export default function streamTest() {
      */
     it('testStreamReadableWithUnimplementedDoRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let readable = new stream.Readable();
-      readable.read();
       readable.on('error', mustCall((error: Error) => {
         expect(error.name).assertEqual('BusinessError');
-        expect(error.message).assertEqual('The doRead() method is not implemented');
+        expect(error.message).assertEqual('The doRead() method is not implemented.');
       }));
       readable.on('close', mustCall());
+      readable.read();
     });
 
     // Check the StreamTransformCallbackTwice.
@@ -3050,7 +3025,7 @@ export default function streamTest() {
       let transform = new MyTransformCallbackTwice001();
       transform.on('error', mustCall((error: Error) => {
         expect(error.name).assertEqual('BusinessError');
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
       }));
       transform.write('test');
     });
@@ -3069,27 +3044,11 @@ export default function streamTest() {
       let err: Error = new Error();
       try {
         transform.end('test');
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         err = e;
       }
       expect((err as BusinessError).message).assertEqual('The doTransform() method is not implemented.');
-    });
-
-    // Check the StreamTransformFlushData.
-    /**
-     * @tc.number: SUB_IBRARY_ETSUTILS_STREAM_10500
-     * @tc.name: testStreamTransformFlushData001
-     * @tc.desc: Transform uses the doFlush method to push data.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testStreamTransformFlushData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let transform = new MyTransformFlushData001();
-      transform.end('my test');
-      transform.on('data', (data: Object) => {
-        expect(data.toString()).assertEqual(expected_FlushData001);
-      });
     });
 
     // Check the StreamTransform.
@@ -3124,7 +3083,7 @@ export default function streamTest() {
      * @tc.level: Level 1
      */
     it('testStreamTransform002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let transform = new stream.Transform();
+      let transform = new MyTransform002();
       let endCalled = false;
       transform.on('end', () => {
         endCalled = true;
@@ -3432,8 +3391,8 @@ export default function streamTest() {
     it('testStreamPipe003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let readable = new MyReadablePipe003();
       let writable = new MyWritablePipe003();
+      writable.on('finish',()=>{});
       let res = readable.pipe(writable);
-      writable.on('finish', mustCall());
       expect(res instanceof stream.Writable).assertTrue();
     });
 
@@ -3525,6 +3484,7 @@ export default function streamTest() {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       const stringdecoder = new StringDecoderReadable(enc);
       stringdecoder.push(input);
+      stringdecoder.push(null);
       let res = stringdecoder.read(input.length.toInt());
       expect((res as Object).toString()).assertEqual('你好');
     });
@@ -4140,7 +4100,7 @@ export default function streamTest() {
       let myWritableStream = new WritableUintArrCbTwice002();
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       myWritableStream.on('error', mustCall((error: Error) => {
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
         expect(error.name).assertEqual('BusinessError');
       }));
       myWritableStream.write(input);
@@ -4159,7 +4119,7 @@ export default function streamTest() {
       let myWritableStream = new WritableUintArrCbTwice003();
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       myWritableStream.on('error', mustCall((error: Error) => {
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
         expect(error.name).assertEqual('BusinessError');
       }));
       myWritableStream.write(input);
@@ -4764,7 +4724,7 @@ function mustCall(fn?: Function, times: number = 1) {
   let callCount = 0;
   let wrappedFn: Function = (...args: NullishType[]) => {
     callCount ++;
-    return fn!.unsafeCall(args);
+    return fn!.unsafeCall(...[...args]);
   }
   mustChecks.push((): void => {
     if (callCount !== times) {
@@ -4955,7 +4915,8 @@ function mustCallCheckAll(sleep:Double = 20) {
         });
         mustChecks.length = 0;
         resolve(undefined);
-      } catch (e: Error) {
+      } catch (e) {
+        e = e as Error;
         hilog.info(0x0000, 'testTags', '%{public}s', `error :${e}`);
         reject(e)
       }

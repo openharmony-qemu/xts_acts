@@ -20,17 +20,19 @@ import {
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
+
 interface EventD {
-  duration?: number
-  delay?: number
+  duration?: int
+  delay?: int
   type?: SharedTransitionEffectType
 }
 @Entry
 @Component
 struct SharedTransition7Example {
   @State active: boolean = false
-  @State duration: number = 1000
-  @State delay: number = 0
+  @State duration: int = 1000
+  @State delay: int = 0
   @State type: SharedTransitionEffectType = SharedTransitionEffectType.Static
 
   build() {
@@ -53,7 +55,7 @@ struct SharedTransition7Example {
                   "duration": this.duration,
                   "delay": this.delay,
                   "type": this.type
-                } as Record<string,Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 193,

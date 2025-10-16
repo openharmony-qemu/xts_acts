@@ -52,7 +52,7 @@ struct ListExample {
     Stack({ alignContent: Alignment.TopStart }) {
       Column() {
         List({ space: 20, initialIndex: 0 }) {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             ListItem() {
               Text('' + item)
                 .width('100%')
@@ -76,7 +76,7 @@ struct ListExample {
         }) 
         .edgeEffect(this.edgeEffect) 
         .chainAnimation(false) 
-        .onScrollIndex((firstIndex: number, lastIndex: number, center: number): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int, center: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })

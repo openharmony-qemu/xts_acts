@@ -68,7 +68,7 @@ struct onChild {
       .listDirection(Axis.Vertical)
       .scrollBar(BarState.Off)
       .edgeEffect(EdgeEffect.Spring)
-      .onScrollIndex((start: number, end: number): void => {
+      .onScrollIndex((start: int, end: int): void => {
         console.info('first' + start)
         console.info('last' + end)
       })

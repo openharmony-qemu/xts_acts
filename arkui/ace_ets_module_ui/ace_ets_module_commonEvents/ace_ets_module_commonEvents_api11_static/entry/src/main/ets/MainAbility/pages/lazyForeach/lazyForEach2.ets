@@ -51,15 +51,16 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
-  public totalCount(): number {
+  public totalCount(): int {
     return 0
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return ''
   }
 
@@ -71,7 +72,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -84,25 +85,25 @@ class BasicDataSource implements IDataSource<string> {
     })
   }
 
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
@@ -112,7 +113,7 @@ class BasicDataSource implements IDataSource<string> {
 class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['/path/image0']
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length
   }
 
@@ -120,7 +121,7 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray[index]
   }
 
-  public addData(index: number, data: string): void {
+  public addData(index: int, data: string): void {
     this.dataArray.splice(index, 0, data)
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
@@ -273,7 +274,7 @@ struct LazyForEachOnDataAdd {
                     let backData2: events_emitter.EventData = {
                       data: {
                         "result2": this.result_102,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent2: events_emitter.InnerEvent = {
                       eventId: 60213,
@@ -325,7 +326,7 @@ struct LazyForEachOnDataAdd {
                     let backData3: events_emitter.EventData = {
                       data: {
                         "result3": this.result_103,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent3: events_emitter.InnerEvent = {
                       eventId: 60214,
@@ -378,7 +379,7 @@ struct LazyForEachOnDataAdd {
                     let backData4: events_emitter.EventData = {
                       data: {
                         "result4": this.result_104,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent4: events_emitter.InnerEvent = {
                       eventId: 60215,

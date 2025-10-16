@@ -58,28 +58,14 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
     }
     .vertical(false)
     .barMode(BarMode.Fixed)
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: number): void => {
+    .onChange((index: int): void => {
       this.currentIndex = index
     })
     .width(360)

@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement'
 class SelectTime{
   private selectTime: Date = new Date('2020-12-25T08:30:00')
   hours(h:number,m:number){
-    this.selectTime.setHours(h,m)
+    this.selectTime.setHours(h.toInt(), m.toInt())
   }
 }
 

@@ -102,10 +102,12 @@ struct getListItemGroupRect4 {
   build() {
     Column() {
       Button('点击获取信息').onClick((event: ClickEvent) => {
-        this.x = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).x
-        this.y = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).y
-        this.width1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).width
-        this.height1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).height
+        this.x = this.listScroller.getItemRectInGroup(Double.toInt(this.index), Double.toInt(this.indexInGroup)).x
+        this.y = this.listScroller.getItemRectInGroup(Double.toInt(this.index), Double.toInt(this.indexInGroup)).y
+        this.width1 = this.listScroller.getItemRectInGroup(
+          Double.toInt(this.index), Double.toInt(this.indexInGroup)).width
+        this.height1 = this.listScroller.getItemRectInGroup(
+          Double.toInt(this.index), Double.toInt(this.indexInGroup)).height
       }).id('getListItemGroupRect4_button')
       Text('' + this.x).key('getListItemGroupRect4_text1')
       Text('' + this.y).key('getListItemGroupRect4_text2')

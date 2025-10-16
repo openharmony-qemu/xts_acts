@@ -16,15 +16,17 @@
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, LoadingProgressStyle, FlexDirection, ItemAlign, FlexAlign, Flex, FlexOptions, Text,
   PatternLock, PatternLockController, Alignment, TextAlign, TextOverflow, LoadingProgress, Color, ClickEvent, Button} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
+
 @Entry
 @Component
 struct PatternLockExample {
-  @State passwords: Array<number> = new Array<number>();
+  @State passwords: Array<int> = new Array<int>();
   @State message: string = 'please input password';
   @State sideLength: number = 150;
   @State circleRadius: number = 7;
-  @State pathStrokeWidth: number = 17;
+  @State pathStrokeWidth: double = 17;
   @State backgroundColor1: string = "#FF008000";
   @State autoReset: boolean = true;
   private patternLockController: PatternLockController = new PatternLockController();
@@ -72,7 +74,7 @@ struct PatternLockExample {
         .backgroundColor(`${this.backgroundColor1}`)
         .autoReset(this.autoReset)
         .key('PatternLock')
-        .onPatternComplete((input: Array<number>) => {
+        .onPatternComplete((input: Array<int>) => {
           console.log('PatternLock onPatternComplete')
           if (input == null || input == undefined || input.length < 5) {
             this.message = 'The password length needs to be greater than 5.';
@@ -104,7 +106,7 @@ struct PatternLockExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": this.onActionCalled,
-            } as Record<String,Object>
+            } as Record<String, RecordData>
           } as events_emitter.EventData
           let backEvent: events_emitter.InnerEvent = {
             eventId: 153,

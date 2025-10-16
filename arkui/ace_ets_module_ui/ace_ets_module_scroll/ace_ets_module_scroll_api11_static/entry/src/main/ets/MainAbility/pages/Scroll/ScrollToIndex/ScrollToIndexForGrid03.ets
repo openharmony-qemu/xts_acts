@@ -56,11 +56,11 @@ struct ScrollToIndexForGrid03 {
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
     irregularIndexes: [0, 7, 9], 
-    onGetIrregularSizeByIndex: (index: number) => {
+    onGetIrregularSizeByIndex: (index: int) => {
       if (index === 0) {
-        return [1, 5] as [number, number]
+        return [1, 5] as [int, int]
       }
-      return [1, index % 6 + 1] as [number, number]
+      return [1, index % 6 + 1] as [int, int]
     }
   } as GridLayoutOptions
 
@@ -94,10 +94,10 @@ struct ScrollToIndexForGrid03 {
             .backgroundColor(0x317aff)
             .onClick((e: ClickEvent) => {
               this.isSmooth = false
-              const yOffsetStart: number = this.scrollerForGrid.currentOffset().yOffset;
+              const yOffsetStart: number = this.scrollerForGrid.currentOffset()!.yOffset;
               this.scrollerForGrid.scrollToIndex(10, true, ScrollAlign.END)
               setTimeout(() => {
-                const yOffsetEnd: number = this.scrollerForGrid.currentOffset().yOffset;
+                const yOffsetEnd: number = this.scrollerForGrid.currentOffset()!.yOffset;
                 console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                 this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                 console.info(this.isSmooth + 'isSmooth')
@@ -111,10 +111,10 @@ struct ScrollToIndexForGrid03 {
             .backgroundColor(0x317aff)
             .onClick((e: ClickEvent) => {
               this.isSmooth = false
-              const yOffsetStart: number = this.scrollerForGrid.currentOffset().yOffset;
+              const yOffsetStart: number = this.scrollerForGrid.currentOffset()!.yOffset;
               this.scrollerForGrid.scrollToIndex(98, true, ScrollAlign.START)
               setTimeout(() => {
-                const yOffsetEnd: number = this.scrollerForGrid.currentOffset().yOffset;
+                const yOffsetEnd: number = this.scrollerForGrid.currentOffset()!.yOffset;
                 console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                 this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                 console.info(this.isSmooth + 'isSmooth')
@@ -128,10 +128,10 @@ struct ScrollToIndexForGrid03 {
             .backgroundColor(0x317aff)
             .onClick((e: ClickEvent) => {
               this.isSmooth = false
-              const yOffsetStart: number = this.scrollerForGrid.currentOffset().yOffset;
+              const yOffsetStart: number = this.scrollerForGrid.currentOffset()!.yOffset;
               this.scrollerForGrid.scrollToIndex(128, true, ScrollAlign.END)
               setTimeout(() => {
-                const yOffsetEnd: number = this.scrollerForGrid.currentOffset().yOffset;
+                const yOffsetEnd: number = this.scrollerForGrid.currentOffset()!.yOffset;
                 console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>' + yOffsetEnd)
                 this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                 console.info(this.isSmooth + 'isSmooth')

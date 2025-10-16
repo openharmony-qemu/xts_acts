@@ -46,7 +46,7 @@ struct TimePickerDialogExample {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour, value.minute)
+                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                 console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
               }
             },

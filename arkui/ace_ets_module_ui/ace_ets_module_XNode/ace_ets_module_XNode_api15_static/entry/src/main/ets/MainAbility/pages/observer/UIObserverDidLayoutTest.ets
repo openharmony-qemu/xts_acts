@@ -31,11 +31,11 @@ struct DidLayoutIndex {
       Button('didLayout on').id('didLayout_on_id')
         .margin({ bottom: 10 } as Margin)
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().on('didLayout', this.didLayoutCallback);
+          this.getUIContext().getUIObserver().onDidLayout(this.didLayoutCallback);
         })
       Button('didLayout off').id('didLayout_off_id')
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getUIObserver().off('didLayout', this.didLayoutCallback);
+          this.getUIContext().getUIObserver().offDidLayout(this.didLayoutCallback);
         })
     }
     .height('100%')

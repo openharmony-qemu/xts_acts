@@ -26,14 +26,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
-
-
-
-
-
-
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -45,9 +38,9 @@ struct SearchEnterKeyType {
     if (eventData != null) {
       console.info("SearchEnterKeyTypeModifier page state change called:" + JSON.stringify(eventData));
 
-      if (((eventData.data) as Record<string, Object>)?.['enterKeyType'] != null) {
+      if (((eventData.data) as Record<string, RecordData>)?.['enterKeyType'] != null) {
         console.info("[SearchEnterKeyTypeModifier page] enterKeyType change data is " +
-          ((eventData.data) as Record<string, Object>)?.['enterKeyType']);
+          ((eventData.data) as Record<string, RecordData>)?.['enterKeyType']);
         
         
       }

@@ -22,7 +22,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -43,9 +42,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -83,8 +79,8 @@ struct ColumnsTemplateAndRowsTemplate2 {
         }
         .border({ width: 1 })
         .borderColor(0x000000)
-        .columnStart(this.columnStart1)
-        .columnEnd(this.columnEnd1)
+        .columnStart(Double.toInt(this.columnStart1))
+        .columnEnd(Double.toInt(this.columnEnd1))
         .key('ColumnsTemplateAndRowsTemplate2_GridItem_01')
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')

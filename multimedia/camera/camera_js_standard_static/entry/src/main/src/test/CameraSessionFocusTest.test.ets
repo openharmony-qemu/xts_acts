@@ -31,7 +31,7 @@ const TAG: string = "CameraSessionFocusTest: ";
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.PhotoSession;
-let mCameraNum: number;
+let mCameraNum: int;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
@@ -87,14 +87,14 @@ let mFocusPointInvalidRB: cameraObj.Point = {
 }
 
 let mEnableCheckInvalidFocusPoint: boolean = false;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraSessionFocusTest() {
   let mVideoRecorder: media.AVRecorder | undefined;
   let fdNumber: int;
   let fdPath: string = "";
   let mVideoSurface: string | undefined;
-  let receiver: image.ImageReceiver;
+  let receiver: image.ImageReceiver | undefined;
   let mPhotoSurface: string = "";
   let surfaceId: string = '';
 
@@ -124,7 +124,7 @@ export default function cameraSessionFocusTest() {
       console.log(TAG + 'before receiver check')
       if (receiver !== undefined) {
           console.log(TAG + 'Photo receiver is created successfully')
-          mPhotoSurface= await receiver.getReceivingSurfaceId()
+          mPhotoSurface= await receiver!.getReceivingSurfaceId()
           console.log(TAG + 'Photo received id: ' + mPhotoSurface)
       } else {
               console.log(TAG + 'Photo receiver is created failed')

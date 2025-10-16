@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -87,7 +87,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 2
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -139,7 +139,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 3
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 174,
@@ -175,7 +175,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 4
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 175,
@@ -209,7 +209,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 5
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 176,
@@ -243,7 +243,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 0
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 177,
@@ -277,7 +277,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 178,
@@ -311,7 +311,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1027,
@@ -345,7 +345,7 @@ export default function rating3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 'a'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1028,

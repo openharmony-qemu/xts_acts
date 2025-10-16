@@ -24,7 +24,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -213,7 +212,7 @@ struct setOnGridIndex01 {
         console.log(`Grid:: onScrollFrameBegin 1 off=${offset}, state=${state}`)
         
       })
-      .onScrollIndex((first: number, last: number): void => {
+      .onScrollIndex((first: int, last: int): void => {
         console.log(`Grid:: onScrollIndex 1 start=${first}, end=${last}`)
       })
 

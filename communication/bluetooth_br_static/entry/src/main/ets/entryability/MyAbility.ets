@@ -32,8 +32,9 @@ class MyAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {
@@ -60,8 +61,8 @@ class MyAbility extends UIAbility {
         }
         hilog.info(0x0000, 'testTag', 'loadContent ok');
       });
-    } catch (e: Error) {
-      hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + e.message);
+    } catch (e) {
+      hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + (e as Error).message);
     }
   }
 

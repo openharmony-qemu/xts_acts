@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import {BusinessError} from '@ohos.base';
 
 const TAG: string = 'BmsZlibChecksumTestTag';
-const Domain: Int = 0x0000;
+const Domain: int = 0x0000;
 
 export default function bmsZlibChecksumAdler32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
@@ -65,11 +65,13 @@ export default function bmsZlibChecksumAdler32CombineTest() {
             `Sub_Bms_Zlib_Checksum_Check_static_1200 adler32Combine:(${adler1},${adler2},${len2})=>${num}`);
           expect(num).assertEqual(648678913);
           done();
-        } catch (e: BusinessError) {
-          hilog.error(Domain, TAG,
-            `Sub_Bms_Zlib_Checksum_Check_static_1200 error, error code is: ${e.code}, error message is: ${e.message}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(Domain, TAG,
+              `Sub_Bms_Zlib_Checksum_Check_static_1200 error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect().assertFail();
+            done();
+          }
         }
       });
   })

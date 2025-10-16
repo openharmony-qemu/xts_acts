@@ -17,6 +17,10 @@ function getBooleanTuple(): [boolean, boolean, boolean, boolean, boolean] {
   return [true, false, true, true, false];
 }
 
+function getBooleanTupleForGetNum(): [boolean, boolean, boolean, boolean, boolean] {
+  return [true, false, true, false, true];
+}
+
 function getCharTuple(): [char, char, char, char, char] {
   return [c'H', c'e', c'l', c'l', c'o'];
 }
@@ -37,6 +41,10 @@ function getLongTuple(): [long, long, long, long, long] {
   return [300, 200, 100, 50, 1000];
 }
 
+function getLongTupleForGetNum(): [long, long, long, long, long] {
+  return [30000, 20000, 10000, 5000, 100000];
+}
+
 function getFloatTuple(): [float, float, float, float, float] {
   return [3.14f, 2.71f, 1.61f, 0.59f, 10.0f];
 }
@@ -45,6 +53,9 @@ function getDoubleTuple(): [double, double, double, double, double] {
   return [3.14, 2.71, 1.61, 0.59, 10.0];
 }
 
+function getDoubleTupleForGetNum(): [double, double, double, double, double] {
+  return [3.145, 2.716, 1.611, 0.594, 10.08];
+}
 function getReferenceTuple(): [String, double[], String] {
   return [new String("Hello"), [1.0, 2.0, 3.0, 4.0, 5.0], "world"];
 }
@@ -52,3 +63,13 @@ function getReferenceTuple(): [String, double[], String] {
 function getTestPrimitiveTuple(): [boolean, char, byte, short, int, long, float, double] {
   return [true, c'x', 127, 300, 500, 600, 100.0f, 400.0];
 }
+
+function getArray(): double[] {
+  let a: double[] = [100.1, 200.2, 300.3, 400.4, 500.5]
+  return a
+}
+
+function getEmptyTuple(): [] {
+  return [];
+}
+

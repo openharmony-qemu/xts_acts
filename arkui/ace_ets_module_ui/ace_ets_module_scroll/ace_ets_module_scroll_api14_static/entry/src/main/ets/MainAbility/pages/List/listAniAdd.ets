@@ -82,7 +82,7 @@ struct animationListAddExample {
       }
 
       List({ space: 10, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('item-' + item)
               .width('100%')
@@ -98,7 +98,7 @@ struct animationListAddExample {
       .height('40%')
       .scrollBar(BarState.On)
       .divider({ strokeWidth: 1, color: Color.Blue })
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

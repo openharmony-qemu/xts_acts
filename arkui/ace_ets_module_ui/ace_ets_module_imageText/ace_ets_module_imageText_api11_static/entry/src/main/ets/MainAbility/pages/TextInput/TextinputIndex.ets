@@ -33,8 +33,8 @@ import { Hypium } from '../../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import testsuite from '../../../../src/test/List.test'
 
-function asNumber(value: number | string | Resource) {
-  return value as number;
+function asNumber(value: int | string | Resource) {
+  return value as int;
 }
 
 @Entry

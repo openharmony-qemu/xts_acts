@@ -68,7 +68,7 @@ struct KeyboardShortcutTest {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, Object>
+      } as Record<String,undefined|null|Object>
     } as events_emitter.EventData
     let event: events_emitter.InnerEvent = {
       eventId: eventId as Long,

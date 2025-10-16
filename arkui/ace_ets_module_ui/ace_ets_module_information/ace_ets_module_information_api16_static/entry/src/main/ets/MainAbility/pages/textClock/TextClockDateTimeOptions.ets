@@ -17,9 +17,6 @@ import { Column, Row, Text, Alignment, Color, FontStyle,Entry, Component, Paddin
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 

@@ -64,7 +64,7 @@ export default function imageGetImageProperty() {
       LOOP_ONE: "1",
       LOOP_ZERO: "0",
       LOOP_NO: null
-    }
+    };
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
@@ -119,7 +119,7 @@ export default function imageGetImageProperty() {
       type: string
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buf") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -157,7 +157,7 @@ export default function imageGetImageProperty() {
       propsValue: string
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buf") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -191,7 +191,7 @@ export default function imageGetImageProperty() {
       loopCase: string | null,
       args: image.PropertyKey
     ) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       let fd: int;
       if (loopCase == LOOPCASE.LOOP_FIVE) {
         fd = getFd("moving_test_loop5.gif");
@@ -230,7 +230,7 @@ export default function imageGetImageProperty() {
       loopCase: string | null,
       arrayArgs: Array<image.PropertyKey>
     ) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       let fd: int;
       if (loopCase == LOOPCASE.LOOP_FIVE) {
         fd = getFd("moving_test_loop5.gif");

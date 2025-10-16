@@ -48,7 +48,7 @@ struct SwiperImplicitanimation0050 {
               .height(160)
           })
       }
-      .onChange((index: number): void => {
+      .onChange((index: Int): void => {
         this.onAnimationStart = index + ''
       })
 

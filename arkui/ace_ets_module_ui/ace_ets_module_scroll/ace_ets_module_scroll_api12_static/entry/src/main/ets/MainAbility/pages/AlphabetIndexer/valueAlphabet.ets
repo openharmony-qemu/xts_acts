@@ -100,12 +100,12 @@ struct AlphabetIndexerValueIndex {
             .itemSize(28)
             .alignStyle(IndexerAlign.Left)
             .itemBorderRadius(-10)
-            .onSelect((index: number): void => {
+            .onSelect((index: int): void => {
               console.info(this.value[index.toInt()] + ' Selected!')
               this.num = index
               this.t = this.value[index.toInt()]
             })
-            .onRequestPopupData((index: number): string[] => {
+            .onRequestPopupData((index: int): string[] => {
               if (this.value[index.toInt()] == 'A') {
                 return this.arrayA
               } else if (this.value[index.toInt()] == 'B') {
@@ -118,7 +118,7 @@ struct AlphabetIndexerValueIndex {
                 return [''] 
               }
             })
-            .onPopupSelect((index: number): void => {
+            .onPopupSelect((index: int): void => {
               console.info('onPopupSelected:' + index)
             })
         }

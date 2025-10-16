@@ -15,7 +15,7 @@
 
 import observer from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, FontWeight, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -35,7 +35,7 @@ struct DensityInfo1 {
         .fontWeight(FontWeight.Bold)
       Button(this.message).id("DensityInfo_id")
         .onClick((e: ClickEvent) => {
-          observer.on('densityUpdate', this.getUIContext(), this.densityUpdateCallback);
+          observer.onDensityUpdate(this.getUIContext(), this.densityUpdateCallback);
           this.message = 'DensityInfo succ'
         })
     }

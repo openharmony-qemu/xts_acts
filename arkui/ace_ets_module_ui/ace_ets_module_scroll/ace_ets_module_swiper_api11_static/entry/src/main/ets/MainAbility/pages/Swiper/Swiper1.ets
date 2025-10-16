@@ -61,11 +61,11 @@ export class MyDataSource implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -105,7 +105,7 @@ struct SwiperTest {
         List({ space: 5, initialIndex: 0 }) {
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -123,14 +123,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth(5))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -148,14 +148,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -173,14 +173,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth("9999vp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -198,14 +198,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth(-1))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -223,14 +223,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth("abc"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -248,14 +248,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth(0))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -273,14 +273,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth("8fp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -298,14 +298,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemWidth("8lpx"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -323,14 +323,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight(3))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -348,14 +348,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -373,14 +373,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight("9999fp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -398,14 +398,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight(-1))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -423,14 +423,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight("abc"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -448,14 +448,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight(0))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -473,14 +473,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight("8vp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -498,14 +498,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .selectedItemHeight("8lpx"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -523,14 +523,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth(3))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -548,14 +548,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -573,14 +573,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth("9999lpx"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -598,14 +598,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth(-1))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -623,14 +623,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth("abc"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -648,14 +648,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth("8px"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -673,14 +673,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemWidth("8fp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -698,14 +698,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight(3))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -723,14 +723,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -748,14 +748,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight("9999vp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -773,14 +773,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight(-1))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -798,14 +798,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight("abc"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -823,14 +823,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight("8fp"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -848,14 +848,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.dot()
               .itemHeight("8lpx"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -873,14 +873,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor(0x00ff00))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -898,14 +898,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor("#FFFF0000"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -923,14 +923,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor("rgb(138,43,226)"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -948,14 +948,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor(Color.Pink))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -974,14 +974,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1001,14 +1001,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1026,14 +1026,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor($r("app.color.selected_font_color_test")))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1052,14 +1052,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedFontColor("bgr(138,43,226)"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1079,14 +1079,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1106,14 +1106,14 @@ struct SwiperTest {
               .selectedFontColor("rgb(138,43,226)"))
             .indicator(Indicator.digit()
               .selectedFontColor(Color.Gray))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1132,14 +1132,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               .selectedFontColor(0x00ff00))
             .backgroundColor(Color.Pink)
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1161,14 +1161,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1187,14 +1187,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               .fontColor(0x00ff00)
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1212,14 +1212,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor("#FFFF0000"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1237,14 +1237,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor("rgb(138,43,226)"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1262,14 +1262,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor(Color.Pink))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1288,14 +1288,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor(""))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1315,14 +1315,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1340,14 +1340,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor($r("app.color.font_color_test")))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1366,14 +1366,14 @@ struct SwiperTest {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .fontColor("bgr(138,43,226)"))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1393,14 +1393,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1420,14 +1420,14 @@ struct SwiperTest {
               .fontColor("rgb(138,43,226)"))
             .indicator(Indicator.digit()
               .fontColor(Color.Gray))
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1446,14 +1446,14 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               .fontColor(0x00ff00))
             .backgroundColor(Color.Pink)
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }
 
           ListItem() {
             Swiper(this.swiperController) {
-              LazyForEach(this.data, (item: number, index: number) => {
+              LazyForEach(this.data, (item: number, index: int) => {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
@@ -1475,7 +1475,7 @@ struct SwiperTest {
             .indicator(Indicator.digit()
               
             )
-            .onChange((index: number): void => {
+            .onChange((index: Int): void => {
               console.info(index.toString())
             })
           }

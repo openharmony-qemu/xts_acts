@@ -127,27 +127,27 @@ struct assemblyCallback {
     }
     let Func11layout = layout11
     let Func11draw = draw11
-    this.listener11.on('layout', Func11layout)
-    this.listener11.on('draw', Func11draw)
+    this.listener11.onLayout(Func11layout)
+    this.listener11.onDraw(Func11draw)
     let Func12layout = layout12
     let Func12draw = draw12
-    this.listener12.on('layout', Func12layout)
-    this.listener12.on('draw', Func12draw)
+    this.listener12.onLayout(Func12layout)
+    this.listener12.onDraw(Func12draw)
     let Func13layout = layout13
     let Func13draw = draw13
-    this.listener13.on('layout', Func13layout)
-    this.listener13.on('draw', Func13draw)
+    this.listener13.onLayout(Func13layout)
+    this.listener13.onDraw(Func13draw)
     let Func14layout = layout14
     let Func14draw = draw14
-    this.listener14.on('layout', Func14layout)
-    this.listener14.on('draw', Func14draw)
+    this.listener14.onLayout(Func14layout)
+    this.listener14.onDraw(Func14draw)
     let Func15layout = layout15
     let Func15draw = draw15
-    this.listener15.on('layout', Func15layout)
-    this.listener15.on('draw', Func15draw)
+    this.listener15.onLayout(Func15layout)
+    this.listener15.onDraw(Func15draw)
     let Func16layout = layout16
     let Func16draw = draw16
-    this.listener16.on('layout', Func16layout)
-    this.listener16.on('draw', Func16draw)
+    this.listener16.onLayout(Func16layout)
+    this.listener16.onDraw(Func16draw)
   }
 }

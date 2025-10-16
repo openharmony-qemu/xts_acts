@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size, Position } from '@ohos.arkui.node';
+import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size, NodePosition } from '@ohos.arkui.node';
 import drawing from '@ohos.graphics.drawing';
 import {
   Entry,
@@ -84,7 +84,7 @@ class MyFrameNode extends FrameNode {
     this.setMeasuredSize(sizeRes);
   }
 
-  onLayout(position: Position): void {
+  onLayout(position: NodePosition): void {
     let y = 0;
     for (let i = 0;i < this.getChildrenCount();i++) {
       let child = this.getChild(i);

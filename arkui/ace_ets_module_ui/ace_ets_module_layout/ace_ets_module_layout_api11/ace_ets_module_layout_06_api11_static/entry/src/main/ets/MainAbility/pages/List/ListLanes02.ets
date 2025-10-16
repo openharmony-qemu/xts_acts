@@ -82,14 +82,14 @@ struct ListLanes02 {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text('' + item)
               .width('100%').height(100).fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem02_' + item).borderWidth(1)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
       .key('ListLanesKey02')
       .listDirection(this.listDirection) 

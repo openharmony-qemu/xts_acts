@@ -34,8 +34,8 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct TextClockPage {
-  @State accumulateTime: number = 0
-  @State timeZoneOffset: number = -8
+  @State accumulateTime: long = 0;
+  @State timeZoneOffset: double = -8.0;
   @State format: string = 'hms'
   @State status: string = 'run'
   @State change: string = 'no change'
@@ -63,7 +63,7 @@ struct TextClockPage {
         .margin(20)
         .key('TextClockKey1')
         
-        .onDateChange((value: number) => {
+        .onDateChange((value: long) => {
           this.change = 'change'
           this.accumulateTime = value
         })

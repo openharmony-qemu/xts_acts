@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, ScaleOptions } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -541,6 +541,499 @@ class LineModifier implements AttributeModifier<LineAttribute>{
     instance.scale(this.scale)
   }
 }
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {  this.key(componentKey)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyleButton(this: ButtonAttribute, componentKey: string, _scale: ScaleOptions | undefined): this {
+  this.scale(_scale)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EffectComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
 @Entry
 @Component
 struct scalePage {
@@ -627,168 +1120,86 @@ struct scalePage {
   @State _scaleWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _scaleWebMod: WebModifier = new WebModifier()
   @State _scaleXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns ?? 0
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
+  @StoragePropRef('_scale') _scale: SetValue = {
+    height: 0,scale: {}
+  }
 
   onPageShow() {
     console.info('22222 translate page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      console.info('22222 [registerDataChange] ' + JSON.stringify(value.scale))
-      this._scaleLineMod.scale = value.scale
-      this._scaleEllipseMod.scale = value.scale
-      this._scalePolylineMod.scale = value.scale
-      this._scaleShapeMod.scale = value.scale
-      this._scaleRectMod.scale = value.scale
-      this._scalePathMod.scale = value.scale
-      this._scalePolygonMod.scale = value.scale
-      
-      this._scaleAlphabetIndexerMod.scale = value.scale
-      this._scaleBadgeMod.scale = value.scale
-      this._scaleBlankMod.scale = value.scale
-      this._scaleButttonMod.scale = value.scale
-      this._scaleCalendarPickerMod.scale = value.scale
-      this._scaleCheckboxMod.scale = value.scale
-      this._scaleCheckboxGroupMod.scale = value.scale
-      this._scaleColumnMod.scale = value.scale
-      this._scaleColumnSplitMod.scale = value.scale
-      this._scaleCounterMod.scale = value.scale
-      this._scaleDataPanelMod.scale = value.scale
-      this._scaleDatePickerMod.scale = value.scale
-      this._scaleDividerMod.scale = value.scale
-      this._scaleEffectComponentMod.scale = value.scale
-      this._scaleFlexMod.scale = value.scale
-      this._scaleFlowItemMod.scale = value.scale
-      this._scaleFormComponentMod.scale = value.scale
-      this._scaleFormLinkMod.scale = value.scale
-      this._scaleGaugeMod.scale = value.scale
-      this._scaleGridMod.scale = value.scale
-      this._scaleGridColMod.scale = value.scale
-      this._scaleGridItemMod.scale = value.scale
-      this._scaleGridRowMod.scale = value.scale
-      this._scaleHyperlinkMod.scale = value.scale
-      this._scaleImageAnimatorMod.scale = value.scale
-      this._scaleImageSpanMod.scale = value.scale
-      this._scaleImageMod.scale = value.scale
-      this._scaleListMod.scale = value.scale
-      this._scaleListItemMod.scale = value.scale
-      this._scaleListItemGroupMod.scale = value.scale
-      this._scaleLoadingProgressMod.scale = value.scale
-      this._scaleMarqueeMod.scale = value.scale
-      this._scaleMenuMod.scale = value.scale
-      this._scaleMenuItemMod.scale = value.scale
-      this._scaleMenuItemGroupMod.scale = value.scale
-      this._scaleNavDestinationMod.scale = value.scale
-      
-      this._scaleNavigationMod.scale = value.scale
-      
-      this._scalePatternLockMod.scale = value.scale
-      this._scalePluginComponentMod.scale = value.scale
-      this._scaleQRCodeMod.scale = value.scale
-      this._scaleRadioMod.scale = value.scale
-      this._scaleRatingMod.scale = value.scale
-      this._scaleRefreshMod.scale = value.scale
-      this._scaleRelativeContainerMod.scale = value.scale
-      this._scaleRemoteWindowMod.scale = value.scale
-      this._scaleRichEditorMod.scale = value.scale
-      this._scaleRichTextMod.scale = value.scale
-      this._scaleRowMod.scale = value.scale
-      this._scaleRowSplitMod.scale = value.scale
-      this._scaleScrollMod.scale = value.scale
-      this._scaleScrollBarMod.scale = value.scale
-      this._scaleSearchMod.scale = value.scale
-      this._scaleSelectMod.scale = value.scale
-      this._scaleSideBarContainerMod.scale = value.scale
-      this._scaleSliderMod.scale = value.scale
-      this._scaleStackMod.scale = value.scale
-      this._scaleStepperMod.scale = value.scale
-      this._scaleStepperItemMod.scale = value.scale
-      this._scaleSwiperMod.scale = value.scale
-      this._scaleTabContentMod.scale = value.scale
-      this._scaleTabsMod.scale = value.scale
-      this._scaleTextMod.scale = value.scale
-      this._scaleTextAreaMod.scale = value.scale
-      this._scaleTextClockMod.scale = value.scale
-      this._scaleTextInputMod.scale = value.scale
-      this._scaleTextPickerMod.scale = value.scale
-      this._scaleTextTimerMod.scale = value.scale
-      this._scaleTimePickerMod.scale = value.scale
-      this._scaleToggleMod.scale = value.scale
-      this._scaleUIExtensionComponentMod.scale = value.scale
-      this._scaleWaterFlowMod.scale = value.scale
-      this._scaleWebMod.scale = value.scale
-      this._scaleXComponentMod.scale = value.scale
-  
-    })
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+      .getElement("view")
+    this.targetView = viewElement.getString("targetView")
+    this.componentKey = viewElement.getString("componentKey")
+    this.parentWidth = viewElement.getDouble("parentWidth")
+    this.parentHeight = viewElement.getDouble("parentHeight")
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
+    this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
-
-
-
-
-
-
-
 
   build() {
     GridRow({ columns: this.columns, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._scaleButttonMod)
+          Button('button1').commonStyleButton(this.componentKey, this._scale.scale).attributeModifier(this._scaleButttonMod)
         } else if (this.targetView == 'Text') {
-          Text('text1').attributeModifier(this._scaleTextMod)
+          Text('text1').commonStyle(this.componentKey).attributeModifier(this._scaleTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          .attributeModifier(this._scaleAlphabetIndexerMod)
+          .commonStyle(this.componentKey).attributeModifier(this._scaleAlphabetIndexerMod)
         } else if (this.targetView == 'Blank') {
-          Blank().backgroundColor(Color.Yellow).attributeModifier(this._scaleBlankMod)
+          Blank().backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._scaleBlankMod)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox().attributeModifier(this._scaleCheckboxMod)
+          Checkbox().commonStyle(this.componentKey).attributeModifier(this._scaleCheckboxMod)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).attributeModifier(this._scaleCheckboxGroupMod)
+          CheckboxGroup({ group: 'checkboxGroup' }).commonStyle(this.componentKey).attributeModifier(this._scaleCheckboxGroupMod)
         } else if (this.targetView == 'DataPanel') {
           DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-          .attributeModifier(this._scaleDataPanelMod)
+          .commonStyle(this.componentKey).attributeModifier(this._scaleDataPanelMod)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          }).attributeModifier(this._scaleDatePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._scaleDatePickerMod)
         } else if (this.targetView == 'Divider') {
-          Divider().attributeModifier(this._scaleDividerMod)
+          Divider().commonStyle(this.componentKey).attributeModifier(this._scaleDividerMod)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            .attributeModifier(this._scaleGaugeMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleGaugeMod)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon')).attributeModifier(this._scaleImageMod)
+          Image($r('app.media.icon')).commonStyle(this.componentKey).attributeModifier(this._scaleImageMod)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ]).attributeModifier(this._scaleImageAnimatorMod)
+            ]).commonStyle(this.componentKey).attributeModifier(this._scaleImageAnimatorMod)
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress().attributeModifier(this._scaleLoadingProgressMod)
+          LoadingProgress().commonStyle(this.componentKey).attributeModifier(this._scaleLoadingProgressMod)
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          }).attributeModifier(this._scaleMarqueeMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._scaleMarqueeMod)
         } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleNavigationMod)
         } else if (this.targetView == 'Menu') {
           Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-          }.backgroundColor(Color.Yellow).attributeModifier(this._scaleMenuMod)
+          }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._scaleMenuMod)
         } else if (this.targetView == 'NavRouter') {
           
           
@@ -800,13 +1211,13 @@ struct scalePage {
           
           
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })
+          Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling').attributeModifier(this._scaleQRCodeMod)
+          QRCode('Running Marquee starts rolling').commonStyle(this.componentKey).attributeModifier(this._scaleQRCodeMod)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).attributeModifier(this._scaleRadioMod)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).commonStyle(this.componentKey).attributeModifier(this._scaleRadioMod)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false }).attributeModifier(this._scaleRatingMod)
+          Rating({ rating: 3.5, indicator: false }).commonStyle(this.componentKey).attributeModifier(this._scaleRatingMod)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -814,12 +1225,12 @@ struct scalePage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }.attributeModifier(this._scaleScrollBarMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleScrollBarMod)
         } else if (this.targetView == 'Search') {
-          Search().attributeModifier(this._scaleSearchMod)
+          Search().commonStyle(this.componentKey).attributeModifier(this._scaleSearchMod)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa' },
-            { value: 'bbb' }]).attributeModifier(this._scaleSelectMod)
+            { value: 'bbb' }]).commonStyle(this.componentKey).attributeModifier(this._scaleSelectMod)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -828,7 +1239,7 @@ struct scalePage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            .attributeModifier(this._scaleSliderMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleSliderMod)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -836,54 +1247,54 @@ struct scalePage {
                 Text('Page One')
               }
             }
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          }).attributeModifier(this._scaleTextAreaMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._scaleTextAreaMod)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            .attributeModifier(this._scaleTextClockMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleTextClockMod)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).commonStyle(this.componentKey)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            .attributeModifier(this._scaleTextTimerMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleTextTimerMod)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          }).attributeModifier(this._scaleTimePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._scaleTimePickerMod)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: false })
-          .attributeModifier(this._scaleToggleMod)
+          .commonStyle(this.componentKey).attributeModifier(this._scaleToggleMod)
         } else if (this.targetView == 'Web') {
-          Web({ src: 'www.example.com', controller: new WebviewController() })
+          Web({ src: 'www.example.com', controller: new WebviewController() }).commonStyle(this.componentKey)
           .attributeModifier(this._scaleWebMod)
         } else if (this.targetView == 'Circle') {
-          Circle()
+          Circle().commonStyle(this.componentKey)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse().attributeModifier(this._scaleEllipseMod)
+          Ellipse().commonStyle(this.componentKey).attributeModifier(this._scaleEllipseMod)
         } else if (this.targetView == 'Line') {
           Line()
-            
+            .commonStyle(this.componentKey)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black).attributeModifier(this._scaleLineMod)
         } else if (this.targetView == 'Polyline') {
-          Polyline().attributeModifier(this._scalePolylineMod)
+          Polyline().commonStyle(this.componentKey).attributeModifier(this._scalePolylineMod)
         } else if (this.targetView == 'Polygon') {
-          Polygon().attributeModifier(this._scalePolygonMod)
+          Polygon().commonStyle(this.componentKey).attributeModifier(this._scalePolygonMod)
         } else if (this.targetView == 'Path') {
-          Path().attributeModifier(this._scalePathMod)
+          Path().commonStyle(this.componentKey).attributeModifier(this._scalePathMod)
         } else if (this.targetView == 'Rect') {
-          Rect().attributeModifier(this._scaleRectMod)
+          Rect().commonStyle(this.componentKey).attributeModifier(this._scaleRectMod)
         } else if (this.targetView == 'Shape') {
           Shape() {
             Rect().width(100).height(50)
-          }.attributeModifier(this._scaleShapeMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleShapeMod)
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
@@ -891,22 +1302,22 @@ struct scalePage {
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100).height(50).backgroundColor(0x317aff)
-          }.attributeModifier(this._scaleBadgeMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleBadgeMod)
         } else if (this.targetView == 'Column') {
           Column() {
             Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-          }.attributeModifier(this._scaleColumnMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleColumnMod)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-          }.attributeModifier(this._scaleColumnSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleColumnSplitMod)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }.attributeModifier(this._scaleCounterMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleCounterMod)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          }.attributeModifier(this._scaleFlexMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleFlexMod)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -918,7 +1329,7 @@ struct scalePage {
                 Row().width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-          }.attributeModifier(this._scaleGridRowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleGridRowMod)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -932,11 +1343,11 @@ struct scalePage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          .attributeModifier(this._scaleGridMod)
+          .commonStyle(this.componentKey).attributeModifier(this._scaleGridMod)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'List') {
           List() {
-          }.height('100%').width('100%').attributeModifier(this._scaleListMod)
+          }.commonStyle(this.componentKey).height('100%').width('100%').attributeModifier(this._scaleListMod)
         } else if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -944,7 +1355,7 @@ struct scalePage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }.attributeModifier(this._scaleListItemMod)
+            }.commonStyle(this.componentKey).attributeModifier(this._scaleListItemMod)
           }
           .width('100%')
           .height('100%')
@@ -952,7 +1363,7 @@ struct scalePage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              .attributeModifier(this._scaleListItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._scaleListItemGroupMod)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
@@ -967,7 +1378,7 @@ struct scalePage {
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }.attributeModifier(this._scaleRefreshMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleRefreshMod)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -979,13 +1390,13 @@ struct scalePage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               })
               .id('constraintSize')
-          }.attributeModifier(this._scaleRelativeContainerMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleRelativeContainerMod)
         } else if (this.targetView == 'Row') {
-          Row().attributeModifier(this._scaleRowMod)
+          Row().commonStyle(this.componentKey).attributeModifier(this._scaleRowMod)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }.attributeModifier(this._scaleRowSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleRowSplitMod)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -997,7 +1408,7 @@ struct scalePage {
                   .textAlign(TextAlign.Center)
               }, (item: int) => item.toString())
             }.width('100%')
-          }.scrollBar(BarState.On).attributeModifier(this._scaleScrollMod)
+          }.scrollBar(BarState.On).commonStyle(this.componentKey).attributeModifier(this._scaleScrollMod)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -1012,10 +1423,10 @@ struct scalePage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleSideBarContainerMod)
         } else if (this.targetView == 'Stack') {
           Stack() {
-          }.attributeModifier(this._scaleStackMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleStackMod)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach([1, 2, 3], (item: int) => {
@@ -1024,18 +1435,18 @@ struct scalePage {
           }
           .indicator(true)
           .backgroundColor(Color.White)
-          
+          .commonStyle(this.componentKey).attributeModifier(this._scaleSwiperMod)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Column().width('100%').height('100%').backgroundColor('#00CB87')
             }
-          }.attributeModifier(this._scaleTabsMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleTabsMod)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-            }.tabBar('Tabs1').attributeModifier(this._scaleTabContentMod)
+            }.tabBar('Tabs1').commonStyle(this.componentKey).attributeModifier(this._scaleTabContentMod)
           }.width('100%').height('100%')
         } else if (this.targetView == 'WaterFlow') {
           WaterFlow() {
@@ -1050,7 +1461,7 @@ struct scalePage {
                 }
               }
             }, (item: int) => item.toString())
-          }.attributeModifier(this._scaleWaterFlowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._scaleWaterFlowMod)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -1059,7 +1470,7 @@ struct scalePage {
               }
             }
             .backgroundColor(Color.Red)
-            
+            .commonStyle(this.componentKey).attributeModifier(this._scaleStepperItemMod)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -1072,7 +1483,7 @@ struct scalePage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            .attributeModifier(this._scaleGridColMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleGridColMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1090,7 +1501,7 @@ struct scalePage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-              .attributeModifier(this._scaleFlowItemMod)
+              .commonStyle(this.componentKey).attributeModifier(this._scaleFlowItemMod)
               .backgroundColor(Color.Yellow)
             }, (item: int) => item.toString())
           }
@@ -1106,7 +1517,7 @@ struct scalePage {
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }.rowStart(1).rowEnd(4)
-            .attributeModifier(this._scaleGridItemMod)
+            .commonStyle(this.componentKey).attributeModifier(this._scaleGridItemMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1116,7 +1527,7 @@ struct scalePage {
           Row() {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .attributeModifier(this._scaleMenuItemMod)
+                .commonStyle(this.componentKey).attributeModifier(this._scaleMenuItemMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
@@ -1127,7 +1538,7 @@ struct scalePage {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
               }
-              .attributeModifier(this._scaleMenuItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._scaleMenuItemGroupMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')

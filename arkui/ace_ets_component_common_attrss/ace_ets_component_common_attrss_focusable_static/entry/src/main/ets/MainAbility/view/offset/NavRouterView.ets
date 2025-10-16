@@ -12,66 +12,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
   Component,
-  StepperItem,
+  Text,
+  Row,
   ClickEvent,
   Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
+  List,
+  Image,
+  ForEach,
+  Position,
+  Margin,
+  Padding,
+  TextAlign,
+  Color,
+  NavDestination,
+  $r,
+  Padding,
+  Flex,
+  FlexDirection
+} from '@ohos.arkui.component';
+import { Link, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _offset: Position = { x: 0, y: 0 };
+  @Link _offset!: Position;
   private componentKey: string = '';
 
   build() {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      Row() {
+        Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+        Text(`NavRouter`)
+          .fontSize(22)
+          .fontWeight(500)
+          .textAlign(TextAlign.Center)
+      }
+      .width(180)
+      .height(72)
+      .backgroundColor('#fff')
+      .borderRadius(24)
+
+      NavDestination() {
+        Text(`Page 1 Content`).fontSize(50)
+        Flex({ direction: FlexDirection.Row }) {
+          Row() {
+            Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+            Text('Seven classes in total').fontSize(30)
+          }.padding({ left: 15 } as Padding)
+        }
+      }.backgroundColor('#ccc')
+      .title(`NavDestination`)
+
   }
 }

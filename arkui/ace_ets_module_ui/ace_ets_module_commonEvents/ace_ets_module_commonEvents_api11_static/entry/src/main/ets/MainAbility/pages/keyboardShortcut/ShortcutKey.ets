@@ -45,6 +45,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -71,7 +72,7 @@ struct ShortcutKey {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, Object>
+      } as Record<string, RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId,
@@ -90,7 +91,7 @@ struct ShortcutKey {
           })
           .key('ShortcutKey_Button_0')
 
-        ForEach(this.functionKey, (item: FunctionKey, index: Number): void => {
+        ForEach(this.functionKey, (item: FunctionKey, index: int): void => {
           Button("CTRL + " + item)
             .keyboardShortcut(item, [ModifierKey.CTRL])
             .onClick((e: ClickEvent) => {

@@ -41,12 +41,12 @@ import { UIContext, Router } from "@ohos.arkui.UIContext";
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { sendEventByKey } from '@internal.full.global';
+import { sendEventByKey } from '@kit.ArkUI';
 import { UtilsTest, startAbility } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -196,7 +196,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "index": 3
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -229,7 +229,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "autoPlay": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -261,7 +261,7 @@ export default function swiperJsunit() {
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_0800 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String, RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -290,7 +290,7 @@ export default function swiperJsunit() {
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_0900 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String, RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -318,7 +318,7 @@ export default function swiperJsunit() {
       await CommonFunc.sleep(1500);
       let callbackOne = (InnerEventOne: events_emitter.EventData) => {
         console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEventOne));
-        expect(((InnerEventOne.data) as Record<string, Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEventOne.data) as Record<String, RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let innerEvent: events_emitter.InnerEvent = {
@@ -334,7 +334,7 @@ export default function swiperJsunit() {
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String, RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -361,7 +361,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "loop": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -394,7 +394,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -427,7 +427,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "interval": "3000"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 209,
@@ -460,7 +460,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "indicator": false
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 209,
@@ -492,7 +492,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "duration": 500
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -525,7 +525,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "itemSpace": "1"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -558,7 +558,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "loop": "true123"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -591,7 +591,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "autoPlay": "false123"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -624,7 +624,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "duration": 0
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -657,7 +657,7 @@ export default function swiperJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "duration": "abc"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,

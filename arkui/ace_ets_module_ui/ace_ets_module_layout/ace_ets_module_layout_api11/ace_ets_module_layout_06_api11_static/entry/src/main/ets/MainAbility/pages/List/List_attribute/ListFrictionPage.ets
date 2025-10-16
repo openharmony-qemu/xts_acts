@@ -22,7 +22,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -50,9 +49,6 @@ import {
 } from '@ohos.arkui.component'
 import{
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback,Message } from '../../../common/MessageManager';
@@ -78,7 +74,7 @@ struct ListFrictionPage {
   build() {
     Column() {
       List({ initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -93,7 +89,7 @@ struct ListFrictionPage {
       .key('list_friction_default')
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -108,7 +104,7 @@ struct ListFrictionPage {
       .listDirection(Axis.Vertical) 
       .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 }) 
       .edgeEffect(EdgeEffect.Spring) 
-      .onScrollIndex((firstIndex: number, lastIndex: number):void => {
+      .onScrollIndex((firstIndex: int, lastIndex: int):void => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })

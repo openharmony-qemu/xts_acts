@@ -14,12 +14,12 @@
  */
 import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Progress, EffectScope, Color, ProgressMask, Padding, Image, $r, SymbolGlyph, EffectDirection,
   Button, ClickEvent, Margin, BounceSymbolEffect, ReplaceSymbolEffect, } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ReplaceSymbolEffectText {
   @State isActive: boolean = true;
-  @State triggerValueReplace: number = 0;
+  @State triggerValueReplace: int = 0;
   replaceFlag: boolean = true;
   @State BounceSymbolEffect_Scope: EffectScope = EffectScope.LAYER
   @State ReplaceSymbolEffect_Scope: EffectScope = EffectScope.WHOLE

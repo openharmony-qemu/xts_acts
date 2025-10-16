@@ -25,8 +25,8 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  @State mOutSetValueOne: number = 40
-  @State mOutSetValueTwo: number = 40
+  @State mOutSetValueOne: double = 40
+  @State mOutSetValueTwo: double = 40
   
   
   

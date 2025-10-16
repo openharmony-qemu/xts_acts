@@ -56,7 +56,7 @@ export default function ActsAllowTest() {
     const TAG = 'SUB_ACTS_ALLOW_TEST ===>';
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      
+
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
@@ -213,7 +213,7 @@ export default function ActsAllowTest() {
         }
         await Utils.msSleep(1500)
 
-        subscriber.getSubscribeInfo().then((subscribeInfo) => {
+        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
           console.info(`${TAG} Succeeded in getting subscribe info, subscribe info is ` + JSON.stringify(subscribeInfo));
           if (subscribeInfo !== null) {
             let info = subscribeInfo as commonEventManager.CommonEventSubscribeInfo;

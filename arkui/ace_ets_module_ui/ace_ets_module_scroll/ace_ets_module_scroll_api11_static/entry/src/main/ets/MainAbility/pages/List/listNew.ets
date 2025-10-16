@@ -49,6 +49,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
+import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -135,7 +136,7 @@ struct ListLanes {
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           List({ space: 20, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number, index: number) => {
+            ForEach(this.arr, (item: number, index: int) => {
               ListItem() {
                 Text('' + item)
                   .width('100%')
@@ -166,7 +167,7 @@ struct ListLanes {
               let backData: events_emitter.EventData = {
                 data: {
                   "result": "success"
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60216,
@@ -196,7 +197,7 @@ struct ListLanes {
         Button('scroll 100')
 
           .onClick((e: ClickEvent) => { 
-            this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset().yOffset + 100 })
+            this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
           })
           .margin({ top: 10, left: 20 } as Margin)
         Button('back top')

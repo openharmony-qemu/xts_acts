@@ -436,6 +436,7 @@ struct CommonColorMode {
         .key("keyCodeText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keyCode: ' + event.keyCode)
+          return false
         })
 
       Text("common-KeyText")
@@ -453,6 +454,7 @@ struct CommonColorMode {
         .key("keyTextText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keyText: ' + event.keyText)
+          return false
         })
 
       Text("common-KeySource")
@@ -470,6 +472,7 @@ struct CommonColorMode {
         .key("keySourceText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'keySource: ' + event.keySource)
+          return false
         })
 
       Text("common-DeviceId")
@@ -487,6 +490,7 @@ struct CommonColorMode {
         .key("deviceIdText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'deviceId: ' + event.deviceId)
+          return false
         })
 
       Text("common-MetaKey")
@@ -504,6 +508,7 @@ struct CommonColorMode {
         .key("metaKeyText")
         .onKeyEvent((event: KeyEvent) => {
           Log.showInfo(TAG, 'metaKey: ' + event.metaKey)
+          return false
         })
 
       Text("common-Normal")

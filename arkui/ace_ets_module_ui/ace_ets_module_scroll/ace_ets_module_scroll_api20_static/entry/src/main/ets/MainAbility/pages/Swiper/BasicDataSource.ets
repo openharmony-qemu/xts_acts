@@ -24,11 +24,11 @@ import {
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
 
-  public totalCount(): number {
+  public totalCount(): int {
     return 0;
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return '';
   }
 
@@ -40,7 +40,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
@@ -53,25 +53,25 @@ class BasicDataSource implements IDataSource<string> {
     })
   }
 
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     })
   }
 
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     })
   }
 
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     })
   }
 
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
     })
@@ -87,16 +87,16 @@ class BasicDataSource implements IDataSource<string> {
 export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length;
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return this.dataArray[index.toInt()];
   }
 
   
-  public addData(index: number, data: string): void {
+  public addData(index: int, data: string): void {
     this.dataArray.splice(index, 0, data);
     this.notifyDataAdd(index);
   }
@@ -108,19 +108,19 @@ export class MyDataSource extends BasicDataSource {
   }
 
   
-  public deleteData(index: number): void {
+  public deleteData(index: int): void {
     this.dataArray.splice(index, 1);
     this.notifyDataDelete(index);
   }
 
-  public moveData(from: number, to: number) {
+  public moveData(from: int, to: int) {
     let temp = this.dataArray[from.toInt()];
-    this.dataArray[from.toInt()] = this.dataArray[to.toInt()];
-    this.dataArray[to.toInt()] = temp;
+    this.dataArray[from] = this.dataArray[to];
+    this.dataArray[to] = temp;
     this.notifyDataMove(from, to);
   }
 
-  public changeData(index: number, data: string) {
+  public changeData(index: int, data: string) {
     this.dataArray[index.toInt()] = data;
     this.notifyDataChange(index);
   }
@@ -133,7 +133,7 @@ export class MyDataSource extends BasicDataSource {
     this.notifyDataReload();
   }
 
-  public datasetChangeAdd(index: number, key: string) {
+  public datasetChangeAdd(index: int, key: string) {
     this.dataArray.splice(index, 0, key, key);
     this.notifyDatasetChange([{
       type: DataOperationType.ADD,
@@ -144,7 +144,7 @@ export class MyDataSource extends BasicDataSource {
     }]);
   }
 
-  public datasetChangeDelete(index: number) {
+  public datasetChangeDelete(index: int) {
     this.dataArray.splice(index, 2);
     this.notifyDatasetChange([{
       type: DataOperationType.DELETE,

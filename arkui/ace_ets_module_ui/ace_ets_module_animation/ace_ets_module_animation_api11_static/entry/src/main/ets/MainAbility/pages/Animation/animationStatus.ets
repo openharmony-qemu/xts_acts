@@ -26,13 +26,14 @@ import {
   Row
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
-struct ImageAnimatorExampleu {
+struct ImageAnimatorExample {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State reverse: boolean = false;
-  @State iterations: number = 1;
+  @State iterations: int = 1;
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -113,7 +114,7 @@ struct ImageAnimatorExampleu {
               let backData: events_emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, object>
+                } as Record<string, RecordData>
               } as events_emitter.EventData
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 56,
@@ -136,7 +137,7 @@ struct ImageAnimatorExampleu {
               let backData: events_emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, object>
+                } as Record<string, RecordData>
               } as events_emitter.EventData
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 57,

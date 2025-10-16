@@ -88,7 +88,7 @@ struct ListItemGroupExample {
   build() {
     Column() {
       List({ space: 20 }) {
-        ForEach(this.timetable, (item: TimeTable, index: number) => {
+        ForEach(this.timetable, (item: TimeTable, index: int) => {
           
           
           

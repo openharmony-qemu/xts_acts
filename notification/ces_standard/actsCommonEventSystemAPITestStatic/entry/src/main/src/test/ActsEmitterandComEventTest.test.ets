@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {BusinessError} from '@ohos.base';
+import {BusinessError, RecordData} from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
@@ -55,13 +55,13 @@ export default function ActsEmitterandComEventTest() {
       // 调用持续订阅指定事件接口
       let result : number = 0
       //调用发送指定事件接口
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let eventId01 :String = "eventId1"
-      emitter.on(eventId01, ():void => {
+      emitter.onEventData(eventId01, ():void => {
         console.info(`${Tag} callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -92,7 +92,7 @@ export default function ActsEmitterandComEventTest() {
     it('Sub_NotificationAns_Emitter_Basic_Static_0002',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0002==>'
 
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -100,7 +100,7 @@ export default function ActsEmitterandComEventTest() {
       let onConsume_number : number = 0
       let emit_number : number = 0
 
-      emitter.once("eventId2", () :void=> {
+      emitter.onceEventData("eventId2", () :void=> {
         console.info(Tag+'once callback success'+onConsume_number);
         onConsume_number += 1
         // return onConsume_number
@@ -410,7 +410,7 @@ export default function ActsEmitterandComEventTest() {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0100==>'
       // 调用持续订阅指定事件接口
       let result = 0
-      emitter.on("eventId1", () :void => {
+      emitter.onEventData("eventId1", () :void => {
         console.info(`${Tag}  callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -418,7 +418,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId2");
       console.info(`${Tag}  emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -448,7 +448,7 @@ export default function ActsEmitterandComEventTest() {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0200==>'
       // 调用持续订阅指定事件接口
       let result = 0
-      emitter.on("eventId3", ():void => {
+      emitter.onEventData("eventId3", ():void => {
         console.info(`${Tag} callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -456,7 +456,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId3");
       console.info(`${Tag} emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -483,14 +483,14 @@ export default function ActsEmitterandComEventTest() {
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0300==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let onConsume_number : number = 0
       let emit_number : number = 0
-      emitter.once("eventId5", ():void => {
+      emitter.onceEventData("eventId5", ():void => {
         console.info(Tag +'once callback success'+onConsume_number);
         onConsume_number += 1
         // return onConsume_number
@@ -527,13 +527,13 @@ export default function ActsEmitterandComEventTest() {
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0400==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let onConsume_number : number = 0
-      emitter.once("eventId7", ():void => {
+      emitter.onceEventData("eventId7", ():void => {
         console.info(Tag +'once callback success'+onConsume_number);
         onConsume_number += 1
         // return onConsume_number
@@ -580,7 +580,7 @@ export default function ActsEmitterandComEventTest() {
         console.info(Tag +' on GenericEventData' + result);
         result += 1
       }
-      emitter.on<Sample>("eventId111", callback1);
+      emitter.onGenericEventData<Sample>("eventId111", callback1);
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
       emitter.emit<Sample>("eventId", eventData);
@@ -624,11 +624,11 @@ export default function ActsEmitterandComEventTest() {
         storage.printCount();
         onConsume_number += 1
       }
-      emitter.once<Sample>("eventId222", callback);
+      emitter.onceGenericEventData<Sample>("eventId222", callback);
 
       //调用取消订阅事件接口
       await Utils.msSleep(2000)
-      emitter.off("eventId222",callback);
+      emitter.offGenericEventData("eventId222",callback);
       console.info(Tag +'emitterOff success');
       await Utils.msSleep(100)
       expect(onConsume_number).assertEqual(0)
@@ -653,7 +653,7 @@ export default function ActsEmitterandComEventTest() {
         storage.printCount();
         onConsume_number += 1
       }
-      emitter.once<Sample>("eventId333", callback);
+      emitter.onceGenericEventData<Sample>("eventId333", callback);
       await Utils.msSleep(100)
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
@@ -686,7 +686,7 @@ export default function ActsEmitterandComEventTest() {
         storage.printCount();
         onConsume_number += 1
       }
-      emitter.once<Sample>("eventId444", callback);
+      emitter.onceGenericEventData<Sample>("eventId444", callback);
       await Utils.msSleep(100)
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};

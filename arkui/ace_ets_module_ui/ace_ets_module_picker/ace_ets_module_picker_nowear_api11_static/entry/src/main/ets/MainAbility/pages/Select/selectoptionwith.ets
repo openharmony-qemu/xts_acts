@@ -32,11 +32,11 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct Selectoptionwith {
   @State text: string = "TTTTT1"
-  @State index: number = 2
+  @State index: int = 2
   @State space: number = 8
   @State arrowPosition: ArrowPosition = ArrowPosition.END
   @State text2: string = "TTTTT2"
-  @State index2: number = 2
+  @State index2: int = 2
   @State space2: number = 8
   @State arrowPosition2: ArrowPosition = ArrowPosition.END
 
@@ -59,7 +59,7 @@ struct Selectoptionwith {
         .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
         .optionWidth(OptionWidthMode.FIT_CONTENT)
         .optionHeight(100)
-        .onSelect((index: number, text?: string | undefined) => {
+        .onSelect((index: int, text?: string | undefined) => {
           console.info('Select:' + index)
           this.index = index;
           if (text) {
@@ -83,7 +83,7 @@ struct Selectoptionwith {
         .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
         .optionWidth(OptionWidthMode.FIT_TRIGGER)
         .optionHeight(100)
-        .onSelect((index2: number, text2?: string | undefined) => {
+        .onSelect((index2: int, text2?: string | undefined) => {
           console.info('Select:' + index2)
           this.index2 = index2;
           if (text2) {

@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -155,7 +155,7 @@ export default function LineJsunit() {
           data: {
             "startPoint": 50,
             "startPointOne": 50,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 131,
@@ -193,7 +193,7 @@ export default function LineJsunit() {
           data: {
             "endPoint": 100,
             "endPointOne": 150,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 131,
@@ -231,7 +231,7 @@ export default function LineJsunit() {
           data: {
             "startPoint": 'A',
             "startPointOne": 'B',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 131,
@@ -269,7 +269,7 @@ export default function LineJsunit() {
           data: {
             "endPoint": 'A',
             "endPointOne": 'B',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 131,

@@ -16,7 +16,7 @@
 import router from '@ohos.router'
 import { Entry, Component, DataPanelType,  Column, ColumnOptions, Row, Stack, DataPanel, Text, Margin, FlexOptions, Flex, ClickEvent, FlexDirection, ItemAlign,
   FlexAlign, } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, Context } from '@ohos.arkui.UIContext';
 
 @Entry

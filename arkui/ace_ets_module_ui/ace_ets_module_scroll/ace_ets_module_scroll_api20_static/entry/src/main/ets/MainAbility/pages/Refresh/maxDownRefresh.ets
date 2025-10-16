@@ -100,7 +100,7 @@ struct maxPullDownRefresh {
 
         Refresh({ refreshing: $$(this.isRefreshing) }) {
           List() {
-            ForEach(this.arr, (item: string, i: number) => {
+            ForEach(this.arr, (item: string, i: int) => {
               ListItem() {
                 Text('' + item)
                   .width('80%')
@@ -113,7 +113,7 @@ struct maxPullDownRefresh {
               }
             }, (item: string) => item)
           }
-          .onScrollIndex((start: number, end: number, center: number) => {
+          .onScrollIndex((start: int, end: int, center: int) => {
             console.info(start.toString())
           })
           .alignListItem(ListItemAlign.Center)

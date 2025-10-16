@@ -31,6 +31,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log.ets';
 import { PromptAction } from "@ohos.arkui.UIContext";
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -78,7 +79,7 @@ struct AlphabetIndexerOnSelect {
         .width(100)
         .height(300)
         .alignStyle(IndexerAlign.Left)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + 'on onSelect')
           this.showToast("onSelect() " + index)
           this.onSelectStatus = true;
@@ -86,7 +87,7 @@ struct AlphabetIndexerOnSelect {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": this.onSelectStatus
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60201,
@@ -98,11 +99,11 @@ struct AlphabetIndexerOnSelect {
             console.info("onSelect emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info(this.value[index.toInt()] + 'on onPopupSelect')
           this.showToast("onPopupSelect() " + index)
         })
-        .onRequestPopupData((index: number): Array<String> => {
+        .onRequestPopupData((index: int): Array<String> => {
           console.info(this.value[index.toInt()] + 'on onRequestPopupData')
           this.showToast("onRequestPopupData() " + index)
           this.onRequestPopupDataStatus = true
@@ -110,7 +111,7 @@ struct AlphabetIndexerOnSelect {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": this.onRequestPopupDataStatus
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60202,

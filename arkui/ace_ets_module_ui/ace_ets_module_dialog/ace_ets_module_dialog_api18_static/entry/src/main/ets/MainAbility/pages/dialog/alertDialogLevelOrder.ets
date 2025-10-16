@@ -151,7 +151,7 @@ struct alertDialogLevelOrder {
         .onClick(() : void => {
           let alertDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (alertDialogOrder !== undefined) {
-            AppStorage.setOrCreate<number>('alertDialogOrder', alertDialogOrder.getOrder())
+            AppStorage.setOrCreate<double>('alertDialogOrder', alertDialogOrder.getOrder())
           }
         })
     }

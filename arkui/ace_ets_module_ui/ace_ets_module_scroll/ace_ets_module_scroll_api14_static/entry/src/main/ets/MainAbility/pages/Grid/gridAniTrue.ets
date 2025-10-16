@@ -83,7 +83,7 @@ struct gridNextAnimationTrueExample {
       .scrollBarColor(Color.Grey)
       .scrollBarWidth(4)
       .backgroundColor(0xFAEEE0)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())
       })

@@ -58,13 +58,14 @@ import {
   Link,
   PropRef,
 } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
 @Entry
 @Component
 struct SliderMoving {
-  @State outSetValue: number = 40;
+  @State outSetValue: double = 40;
   @State move: SliderChangeMode = SliderChangeMode.Moving;
 
   slide() {
@@ -110,14 +111,14 @@ struct SliderMoving {
         .selectedColor(Color.Blue)
         .showSteps(true)
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           Log.showInfo(TAG, 'SliderChangeMode.Moving: ' + SliderChangeMode.Moving.toString())
           Log.showInfo(TAG, 'value:' + value + 'mode:' + mode.toString())
           try {
             let backData: events_emitter.EventData = {
               data: {
                 "Mode": 0
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60307,

@@ -17,8 +17,7 @@ import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, ItemAlign, FlexWrap, FlexDirection,
   VerticalAlign, HorizontalAlign, ConstraintSizeOptions } from '@ohos.arkui.component';
-
-
+import { RecordData } from '@ohos.base';
 
 export class AlignItems {
   Row: VerticalAlign = VerticalAlign.Center;
@@ -45,7 +44,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, Object>
+      } as Record<String, RecordData>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }

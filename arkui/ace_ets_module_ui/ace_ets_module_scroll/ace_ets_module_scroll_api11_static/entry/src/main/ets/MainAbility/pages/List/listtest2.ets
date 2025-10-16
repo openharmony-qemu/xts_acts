@@ -48,6 +48,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -115,7 +116,7 @@ struct ListIdle {
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           List({ space: 20, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number, index: number) => {
+            ForEach(this.arr, (item: number, index: int) => {
               ListItem() {
                 Text('' + item)
                   .width('100%')
@@ -152,7 +153,7 @@ struct ListIdle {
               let backData: events_emitter.EventData = {
                 data: {
                   "State": this.onScroll
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60303,

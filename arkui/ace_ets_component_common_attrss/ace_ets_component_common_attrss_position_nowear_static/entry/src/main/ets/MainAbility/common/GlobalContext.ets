@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2025 Hunan OpenValley Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
 *
-*     http:
+*     http://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing, software
 * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,11 +28,11 @@ export class GlobalContext {
     return GlobalContext.instance;
   }
 
-  getObject(value: string): Object | undefined {
+  getObject(value: string, tType: Type): Object | undefined {
     return AppStorage.get(value);
   }
 
-  setObject(key: string, objectClass: Object): void {
+  setObject(key: string, objectClass: Object, tType: Type): void {
     AppStorage.setOrCreate(key, objectClass);
   }
 }

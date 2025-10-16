@@ -22,12 +22,12 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
 
 let domain: number = 0x0000;
@@ -89,7 +89,7 @@ export default function PanGesture3Jsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 23,

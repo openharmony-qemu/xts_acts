@@ -81,7 +81,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardDidShow', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.onKeyboardDidShow((keyboardInfo: window.KeyboardInfo) => {
                     hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.beginRect));
                     hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.endRect));
                 });
@@ -121,7 +121,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardDidShow', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.offKeyboardDidShow((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
@@ -161,7 +161,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardDidHide', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.onKeyboardDidHide((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -200,7 +200,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardDidHide', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.offKeyboardDidHide((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -238,7 +238,7 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardHeightChange', (data) => {
+                tempWnd.onKeyboardHeightChange((data) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
                 });
                 await tempWnd.destroyWindow();
@@ -269,7 +269,7 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardHeightChange', (data) => {
+                tempWnd.offKeyboardHeightChange((data) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
                 });
                 await tempWnd.destroyWindow();

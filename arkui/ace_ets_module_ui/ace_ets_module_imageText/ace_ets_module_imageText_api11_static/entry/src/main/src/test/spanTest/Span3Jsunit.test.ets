@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -116,7 +116,7 @@ it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "textCaseValue": TextCase.UpperCase
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -169,7 +169,7 @@ it('testSpan_static_005', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "fontColorValue": '#FF000990'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 201,
@@ -202,7 +202,7 @@ it('testSpan_static_006', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "textCaseValue": undefined!
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1029,
@@ -235,7 +235,7 @@ it('testSpan_static_007', Level.LEVEL1, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "textCaseValue": -1
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1030,

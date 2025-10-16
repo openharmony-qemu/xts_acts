@@ -53,9 +53,9 @@ struct TabsExampleThird {
   @State barGridAlignMarginString: FP = '0.00fp'
   @State barGridAlignGutterNumber: number = 0
   @State barGridAlignGutterString: FP = '0.00fp'
-  @State barGridAlignSmNumber: number = 0
-  @State barGridAlignMdNumber: number = 0
-  @State barGridAlignLgNumber: number = 0
+  @State barGridAlignSmNumber: int = 0
+  @State barGridAlignMdNumber: int = 0
+  @State barGridAlignLgNumber: int = 0
   
   @State barHeightString: string = '0.00vp'
   @State barModeMode: BarMode = BarMode.Fixed
@@ -86,7 +86,7 @@ struct TabsExampleThird {
   @State bottomTabBarStyleLayoutMode: LayoutMode = LayoutMode.VERTICAL
   @State bottomTabBarStyleSymmetricExtensible: boolean = false
   @State bottomTabBarStyleLabelStyleOverflow: TextOverflow = TextOverflow.Ellipsis
-  @State bottomTabBarStyleLabelStyleMaxLines: number = 0
+  @State bottomTabBarStyleLabelStyleMaxLines: int = 0
   @State bottomTabBarStyleLabelStyleMinFontSizeNumber: number = 0
   @State bottomTabBarStyleLabelStyleMinFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleMaxFontSizeNumber: number = 0
@@ -96,7 +96,7 @@ struct TabsExampleThird {
   @State bottomTabBarStyleLabelStyleFontSizeNumber: number = 0
   @State bottomTabBarStyleLabelStyleFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontWeight: FontWeight = FontWeight.Normal
-  @State bottomTabBarStyleLabelStyleFontWeightNumber: number = 0
+  @State bottomTabBarStyleLabelStyleFontWeightNumber: int = 0
   @State bottomTabBarStyleLabelStyleFontWeightString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontFamilyString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontStyle: FontStyle = FontStyle.Normal
@@ -183,7 +183,7 @@ struct TabsExampleThird {
         .key('bottomTabBarDefaultTest')
       }
       .vertical(false)
-      .onTabBarClick((index: number): void => {
+      .onTabBarClick((index: int): void => {
       })
       .barMode(BarMode.Fixed)
       .key('tabsDefaultTest')
@@ -209,7 +209,7 @@ struct TabsExampleThird {
       .animationDuration(200)
       .height('90%')
       .width('90%')
-      .onTabBarClick((index: number): void => {
+      .onTabBarClick((index: int): void => {
       })
       .key('onTabBarClickTest')
 

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@internal.full.global";
-import RectValue from '../Rect.test';
+import { sendTouchEvent } from "@kit.ArkUI";
 import { TouchObject, TouchType } from '@ohos.arkui.component'
+
 export class RectValue {
   left: number = 0;
   top: number = 0;

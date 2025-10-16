@@ -21,7 +21,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import wantagent from '@ohos.app.ability.wantAgent';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { Component, Driver, ON } from '@ohos.UiTest'
@@ -409,7 +409,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
 
-        let data1: Record<string, Object> = {
+        let data1: Record<string, RecordData> = {
           "title": 'file',
           "fileName": 'music.mp4',
           "progressValue": 45

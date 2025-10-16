@@ -43,7 +43,7 @@ struct TextAreaExample {
   @State placeholderFont:string ="#FFAACCEE"
   @State placeholderColor:string ="#FFAACCEE"
   @State textAlign:TextAlign = TextAlign.End
-  @State caretColor:string|number|Resource = "#ACDEFF"
+  @State caretColor:string|int|Resource = "#ACDEFF"
   @State fontSize:number = 16
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   @State placeholder:string ="The text area can hold an unlimited amount of text. input your word..."
@@ -117,7 +117,7 @@ struct TextAreaExample {
         controller: this.controller,
         text: this.text
       })
-        .placeholderFont({ size: this.sizeT, weight: this.weightT })
+        .placeholderFont({ size: this.sizeT, weight: this.weightT as int })
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea')

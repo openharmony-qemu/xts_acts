@@ -79,8 +79,8 @@ struct RichEditorMenuType1 {
   @State message: string = 'Hello World'
   @State textSize: number = 40
   @State sliderShow: boolean = false
-  @State start: number = -1
-  @State end: number = -1
+  @State start: int = -1
+  @State end: int = -1
   @State colorTransparent: Color = Color.Transparent
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions
@@ -125,7 +125,7 @@ struct RichEditorMenuType1 {
           Column(){
             RichEditor(this.options)
              .onReady(():void => {
-                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
+                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30.0 } })
               })
               .onSelect((value: RichEditorSelection):void => {
                 if (value.selection[0] == -1 && value.selection[1] == -1) {
@@ -150,7 +150,7 @@ struct RichEditorMenuType1 {
           Column(){
             RichEditor(this.options)
              .onReady(():void => {
-                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
+                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30.0 } })
               })
               .onSelect((value: RichEditorSelection):void => {
                 if (value.selection[0] == -1 && value.selection[1] == -1) {
@@ -229,7 +229,7 @@ struct RichEditorMenuType1 {
       for (let i = 0; i < count; i++) {
         const element = data!.getRecord(i);
         let tex: RichEditorTextStyle = {
-          fontSize: 16,
+          fontSize: 16.0,
           fontColor: Color.Black,
           fontWeight: FontWeight.Normal,
           fontFamily: "HarmonyOS Sans",
@@ -300,7 +300,7 @@ struct RichEditorMenuType1 {
   @Builder iconPanel() {
     Column() {
       Row({ space: 2 } as RowOptions) {
-        ForEach(this.iconArr, (item:Resource, index ?: number) => {
+        ForEach(this.iconArr, (item:Resource, index: int) => {
           Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
             Image(item)
              .fillColor(this.theme.imageFillColor)
@@ -311,7 +311,7 @@ struct RichEditorMenuType1 {
           .width(this.theme.buttonSize)
           .height(this.theme.buttonSize)
           .onClick((e:ClickEvent)=> {
-            if (index as number == 0) {
+            if (index == 0) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection();
@@ -336,7 +336,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 1) {
+            } else if (index == 1) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection();
@@ -361,7 +361,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 2) {
+            } else if (index == 2) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection();
@@ -393,9 +393,9 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 3) {
+            } else if (index == 3) {
               this.sliderShow = !this.sliderShow
-            } else if (index as number == 4) {
+            } else if (index == 4) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection();

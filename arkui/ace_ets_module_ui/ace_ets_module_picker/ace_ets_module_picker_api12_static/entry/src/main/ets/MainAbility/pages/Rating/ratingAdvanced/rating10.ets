@@ -157,10 +157,10 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct rating10 {
-  @State rating: number = 0;
+  @State rating: double = 0;
   @State ratingIndicator: boolean = true;
-  @State ratingStars: number = 0;
-  @State ratingStepsize: number = 0.5;
+  @State ratingStars: int = 0;
+  @State ratingStepsize: double = 0.5;
   @State ratingEnabled: boolean = true;
   @State ratingClick:string = "can't click rating"
   build(){
@@ -182,7 +182,7 @@ struct rating10 {
           .backgroundColor(Color.Transparent)
           .width('100%')
           .height(50)
-          .onChange((value: number):void => {
+          .onChange((value: double):void => {
             console.info('Rating change is' + value);
             this.rating = value
           })

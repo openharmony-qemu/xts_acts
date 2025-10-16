@@ -14,7 +14,7 @@
  */
 import { Entry, Component, Row, Column, Text, TextController, TextOptions, CopyOptions, TextSpanType, TextResponseType,
   TextAlign, ImageSpanAlignment, ImageFit, Builder, Color, Span, ImageSpan, $r} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -47,7 +47,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
       })
       .height('15%')
       .textAlign(TextAlign.Center)
@@ -77,7 +77,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
         console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
       })
       .height('15%')
@@ -107,7 +107,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
       })
       .height('15%')
       .textAlign(TextAlign.Center)

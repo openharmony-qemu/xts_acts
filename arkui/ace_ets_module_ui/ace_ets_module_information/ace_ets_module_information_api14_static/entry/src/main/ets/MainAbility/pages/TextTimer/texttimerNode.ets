@@ -17,7 +17,7 @@ import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, $r,
   Text, Badge, Image, $r, Row, QRCode, TextClockController, Scroll, FlexOptions, TextClock, Margin, ClickEvent, FlexDirection, ItemAlign,
   FlexAlign, TextTimerController, TextTimerOptions, TextTimer, Button} from '@ohos.arkui.component'
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 let timerController = new TextTimerController()
 let data: TextTimerOptions = {
@@ -29,10 +29,10 @@ let data: TextTimerOptions = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    let col = typeNode.createNode(uiContext, 'Column')
+    let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
 
-    let row = typeNode.createNode(uiContext, 'Row')
+    let row = typeNode.createRowNode(uiContext)
     row.initialize().width('100%')
    
     col.appendChild(row)

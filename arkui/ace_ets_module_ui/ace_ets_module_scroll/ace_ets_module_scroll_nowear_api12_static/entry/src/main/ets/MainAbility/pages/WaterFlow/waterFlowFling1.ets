@@ -23,7 +23,7 @@ struct WaterFlowFling1 {
   minSize: number = 80
   maxSize: number = 180
   fontSize: number = 24
-  colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
   private itemWidthArray: number[] = new Array<number>()
@@ -75,7 +75,7 @@ struct WaterFlowFling1 {
           .width('100%')
           .height(this.itemHeightArray[item.toInt() % 100])
           .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: number) => String(item))
+        }, (item: number, index: int) => String(item))
       }
       .columnsTemplate('1fr 1fr')
       .columnsGap(10)
@@ -84,7 +84,7 @@ struct WaterFlowFling1 {
       .width('100%')
       .height('40%')
       .layoutWeight(1)
-      .onScrollIndex((first: number, last: number) => {
+      .onScrollIndex((first: int, last: int) => {
         this.onText += 'onScrollIndex-'
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })

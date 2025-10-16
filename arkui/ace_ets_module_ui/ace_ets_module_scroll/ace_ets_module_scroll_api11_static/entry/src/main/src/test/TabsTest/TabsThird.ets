@@ -33,7 +33,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -118,7 +118,7 @@ export default function tabsThird() {
             "bottomTabBarStyleVerticalAlign": VerticalAlign.Center,
             "bottomTabBarStyleLayoutMode": LayoutMode.VERTICAL,
             "bottomTabBarStyleSymmetricExtensible": false,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -182,7 +182,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -220,7 +220,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10vp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -258,7 +258,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": 10
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -297,7 +297,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": -2
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -336,7 +336,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginNumber": Math.pow(2, 16)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -375,7 +375,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -414,7 +414,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignMarginString": '10lpx'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -473,7 +473,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -512,7 +512,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -551,7 +551,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -590,7 +590,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10vp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -629,7 +629,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": 10
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -668,7 +668,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": -2
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -707,7 +707,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterNumber": Math.pow(2, 16)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -746,7 +746,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -785,7 +785,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignGutterString": '10lpx'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -846,7 +846,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -885,7 +885,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -926,7 +926,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -973,7 +973,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 3,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1020,7 +1020,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": -2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1067,7 +1067,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 100000,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1114,7 +1114,7 @@ export default function tabsThird() {
             
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1161,7 +1161,7 @@ export default function tabsThird() {
             
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1208,7 +1208,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 3,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1255,7 +1255,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": -2,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1302,7 +1302,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 100000,
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1349,7 +1349,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1396,7 +1396,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             
             "barGridAlignLgNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1443,7 +1443,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 5
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1490,7 +1490,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": -2
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1537,7 +1537,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             "barGridAlignLgNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1584,7 +1584,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1631,7 +1631,7 @@ export default function tabsThird() {
             "barGridAlignSmNumber": 2,
             "barGridAlignMdNumber": 4,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1676,7 +1676,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barHeightString": "auto"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1732,7 +1732,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Fixed
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1769,7 +1769,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1808,7 +1808,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1847,7 +1847,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10vp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1886,7 +1886,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": 10
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1925,7 +1925,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1964,7 +1964,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2003,7 +2003,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2042,7 +2042,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeMarginString": '10lpx'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2079,7 +2079,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "barModeMode": BarMode.Scrollable
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2117,7 +2117,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2155,7 +2155,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2193,7 +2193,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_CENTER
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2231,7 +2231,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_AVERAGE_SPLIT
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2269,7 +2269,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             "barModeNonScrollableLayoutStyle": LayoutStyle.SPACE_BETWEEN_OR_CENTER
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2307,7 +2307,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2345,7 +2345,7 @@ export default function tabsThird() {
           data: {
             "barModeMode": BarMode.Scrollable,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2384,7 +2384,7 @@ export default function tabsThird() {
             "barModeMode": BarMode.Fixed,
             "barModeMarginString": '10px',
             "barModeNonScrollableLayoutStyle": LayoutStyle.ALWAYS_CENTER
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2454,7 +2454,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": 10
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2493,7 +2493,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingString": '10.00px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2554,7 +2554,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2605,7 +2605,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "subTabBarStylePaddingNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2644,7 +2644,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2749,7 +2749,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2791,7 +2791,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightString": '10.00px',
             "subTabBarStylePaddingBottomString": '10.00px',
             "subTabBarStylePaddingLeftString": '10.00px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2855,7 +2855,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2901,7 +2901,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2944,7 +2944,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2990,7 +2990,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3036,7 +3036,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": -1,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3082,7 +3082,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 100000,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3125,7 +3125,7 @@ export default function tabsThird() {
             
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3171,7 +3171,7 @@ export default function tabsThird() {
             
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3217,7 +3217,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": -1,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3264,7 +3264,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 100000,
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3307,7 +3307,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3354,7 +3354,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             
             "subTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3401,7 +3401,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3447,7 +3447,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             "subTabBarStylePaddingLeftNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3490,7 +3490,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3536,7 +3536,7 @@ export default function tabsThird() {
             "subTabBarStylePaddingRightNumber": 6,
             "subTabBarStylePaddingBottomNumber": 6,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3604,7 +3604,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": 10,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3643,7 +3643,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingString": '10.00px',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3704,7 +3704,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": -1,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3744,7 +3744,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStylePaddingNumber": 100000,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3783,7 +3783,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3866,7 +3866,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3908,7 +3908,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightString": '10.00px',
             "bottomTabBarStylePaddingBottomString": '10.00px',
             "bottomTabBarStylePaddingLeftString": '10.00px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3972,7 +3972,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4015,7 +4015,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4058,7 +4058,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4101,7 +4101,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4144,7 +4144,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": -1,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4187,7 +4187,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 100000,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4230,7 +4230,7 @@ export default function tabsThird() {
             
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4273,7 +4273,7 @@ export default function tabsThird() {
             
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4316,7 +4316,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": -1,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4359,7 +4359,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 100000,
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4402,7 +4402,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4445,7 +4445,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             
             "bottomTabBarStylePaddingLeftNumber": 6
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4488,7 +4488,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4531,7 +4531,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             "bottomTabBarStylePaddingLeftNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4574,7 +4574,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4617,7 +4617,7 @@ export default function tabsThird() {
             "bottomTabBarStylePaddingRightNumber": 6,
             "bottomTabBarStylePaddingBottomNumber": 6,
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4682,7 +4682,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Top
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4724,7 +4724,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Center
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4766,7 +4766,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleVerticalAlign": VerticalAlign.Bottom
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4808,7 +4808,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -4915,7 +4915,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.HORIZONTAL
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4955,7 +4955,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.VERTICAL
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4994,7 +4994,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLayoutMode": LayoutMode.AUTO
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5033,7 +5033,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5135,7 +5135,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleSymmetricExtensible": true
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5176,7 +5176,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               "bottomTabBarStyleSymmetricExtensible": false
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5217,7 +5217,7 @@ export default function tabsThird() {
           let eventData: events_emitter.EventData = {
             data: {
               
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 183,
@@ -5393,7 +5393,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.None
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5435,7 +5435,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.Clip
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5477,7 +5477,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.Ellipsis
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5519,7 +5519,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleOverflow": TextOverflow.MARQUEE
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5561,7 +5561,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5645,7 +5645,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": 2
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5687,7 +5687,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5729,7 +5729,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxLines": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5771,7 +5771,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5855,7 +5855,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": 3
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5897,7 +5897,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeString": '3.00fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5964,7 +5964,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6006,7 +6006,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMinFontSizeNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6048,7 +6048,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6132,7 +6132,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 3
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6174,7 +6174,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeString": '3.00fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6241,7 +6241,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6283,7 +6283,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleMaxFontSizeNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6325,7 +6325,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6409,7 +6409,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.MAX_LINES_FIRST
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6453,7 +6453,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6497,7 +6497,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleHeightAdaptivePolicy": TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6541,7 +6541,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6629,7 +6629,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": 15.0
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6679,7 +6679,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeString": '17.0fp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6762,7 +6762,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6820,7 +6820,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontSizeNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6870,7 +6870,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6986,7 +6986,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Lighter
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7036,7 +7036,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Normal
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7086,7 +7086,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Regular
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7136,7 +7136,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Medium
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7186,7 +7186,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Bold
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7236,7 +7236,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeight": FontWeight.Bolder
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7286,7 +7286,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 500
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7336,7 +7336,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightString": '200'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7386,7 +7386,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 150
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7436,7 +7436,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7486,7 +7486,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontWeightNumber": 100000
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7536,7 +7536,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7636,7 +7636,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontFamilyString": 'HarmonyOS Sans'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7719,7 +7719,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7819,7 +7819,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontStyle": FontStyle.Normal
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7869,7 +7869,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             "bottomTabBarStyleLabelStyleFontStyle": FontStyle.Italic
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7919,7 +7919,7 @@ export default function tabsThird() {
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

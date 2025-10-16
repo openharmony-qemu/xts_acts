@@ -74,8 +74,8 @@ struct GridItemPage {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.rowStart(this.rowStart)
-        .rowEnd(this.rowEnd)
+        }.rowStart(Double.toInt(this.rowStart))
+        .rowEnd(Double.toInt(this.rowEnd))
         .key("gridItem1")
         .selectable(this.selectable)
         .onSelect((isSelected: boolean) =>{
@@ -103,7 +103,7 @@ struct GridItemPage {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.columnStart(this.columnStart).columnEnd(this.columnEnd).key("gridItem3")
+        }.columnStart(Double.toInt(this.columnStart)).columnEnd(Double.toInt(this.columnEnd)).key("gridItem3")
       }
       .key('grid1')
       .columnsGap("4")

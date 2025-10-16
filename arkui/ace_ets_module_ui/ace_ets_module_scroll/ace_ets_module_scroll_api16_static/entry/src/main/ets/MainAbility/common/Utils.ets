@@ -15,11 +15,6 @@
 
 import RectValue from './Rect';
 import {
-  memo,
-  __memo_context_type,
-  __memo_id_type
-} from '@ohos.arkui.stateManagement' 
-import {
   Entry,
   Text,
   TextAttribute,
@@ -28,21 +23,18 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   TouchObject,
   TouchType
 } from '@ohos.arkui.component' 
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy
 } from '@ohos.arkui.stateManagement' 
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -155,7 +147,7 @@ export default class Utils {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, Object>
+      } as Record<string, RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId.toLong(),

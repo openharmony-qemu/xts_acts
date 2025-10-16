@@ -62,7 +62,7 @@ struct borderStylesExample {
           
           renderNode.borderStyle = borderStyles(BorderStyle.Dotted)
           renderNode.invalidate()
-          this.borderStyleValue = renderNode.borderStyle.left
+          this.borderStyleValue = renderNode.borderStyle!.left
         })
     }
   }

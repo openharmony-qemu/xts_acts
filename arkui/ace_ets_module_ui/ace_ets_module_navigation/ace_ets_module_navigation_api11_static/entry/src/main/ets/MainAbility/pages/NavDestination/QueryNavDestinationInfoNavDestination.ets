@@ -31,11 +31,11 @@ struct QueryNavDestinationInfoNavDestination {
   @State tState: string|Resource|ResourceStr = 'YYYYY'
   // 可删
   aboutToAppear() {
-    observer.on('navDestinationUpdate', (info) => {
+    observer.onNavDestinationUpdate((info) => {
       this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
     });
     // if (typeof this.queryNavDestinationInfo === 'function') {
-    //   observer.on('navDestinationUpdate', (info) => {
+    //   observer.onNavDestinationUpdate((info) => {
     //     this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
     //   });
     //   let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
@@ -44,7 +44,7 @@ struct QueryNavDestinationInfoNavDestination {
   }
 
   onPageShow() {
-    observer.on('navDestinationUpdate', (info) => {
+    observer.onNavDestinationUpdate((info) => {
       this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
     });
   }

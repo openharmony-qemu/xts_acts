@@ -21,7 +21,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -52,9 +51,6 @@ import {
 } from '@ohos.arkui.component'
 import{
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -87,7 +83,7 @@ struct ListItemExample43 {
   build() {
     Column() {
       List({ space: 2, scroller: this.listScroller }) {
-        ForEach(this.arr, (item: number,index:number) =>  {
+        ForEach(this.arr, (item: number,index:int) =>  {
           ListItem() {
             Text("item" + item)
               .width('100%')
@@ -128,7 +124,7 @@ struct ListItemExample43 {
           })
 
           .key('lSwipe43Action' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
       }
 
       Text(this.swipeActionState).fontSize(20).margin({ top: 20 } as Margin).key('swipe43State')

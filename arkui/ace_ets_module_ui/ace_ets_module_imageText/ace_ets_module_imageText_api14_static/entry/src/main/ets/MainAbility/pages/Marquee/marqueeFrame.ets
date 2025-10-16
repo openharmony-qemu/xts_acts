@@ -14,8 +14,8 @@
  */
 
 import { MarqueeDynamicSyncScene,DynamicSyncScene } from '@ohos.arkui.UIContext'
-import { Entry, Flex, Text, TextAttribute, Column, Marquee,Margin,FontWeight, Component,Button, Padding, ButtonAttribute, ClickEvent, UserView, Image, ImageFit, FlexDirection, ItemAlign, FlexAlign, UIContext } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Flex, Text, TextAttribute, Column, Marquee,Margin,FontWeight, Component,Button, Padding, ButtonAttribute, ClickEvent, Image, ImageFit, FlexDirection, ItemAlign, FlexAlign, UIContext } from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from "@ohos.arkui.UIContext";
 
 const uiContext = new UIContext();
@@ -36,7 +36,7 @@ struct Frame {
         .backgroundColor('#FFFFCC')
       Marquee({
         start: this.start,
-        loop: Number.POSITIVE_INFINITY,
+        loop: Number.POSITIVE_INFINITY as int,
         src: 'ABCDEFGHIJKLMNabcdefghijklmn',
       })
         .key('maquee_frame')

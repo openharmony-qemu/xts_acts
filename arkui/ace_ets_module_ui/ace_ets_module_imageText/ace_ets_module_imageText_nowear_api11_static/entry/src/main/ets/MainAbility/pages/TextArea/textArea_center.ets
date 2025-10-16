@@ -46,8 +46,8 @@ struct textArea_center {
   
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5)
   @State height1:string = '58%'
-  @State fontSize1:number = 17
-  @State fontWeight1:number = 400
+  @State fontSize1:int = 17
+  @State fontWeight1:int = 400
   controller: TextAreaController = new TextAreaController()
   scroll: Scroller = new Scroller()
   messageManager:MessageManager= new MessageManager()

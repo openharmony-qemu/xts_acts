@@ -161,7 +161,7 @@ struct AlignSelfStretchPage {
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }) 
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 as int }) 
     } else if (this.targetView == 'Button') {
       Button('button1') 
     } else if (this.targetView == 'Checkbox') {
@@ -292,8 +292,8 @@ struct AlignSelfStretchPage {
       } 
     } else if (this.targetView == 'Grid') {
       Grid() {
-        ForEach(['0', '1', '2', '3', '4'], (d: string, i: number) => {
-          ForEach(['0', '1', '2', '3', '4'], (day: string, index: number) => {
+        ForEach(['0', '1', '2', '3', '4'], (d: string, i: int) => {
+          ForEach(['0', '1', '2', '3', '4'], (day: string, index: int) => {
             GridItem() {
               Text(day)
                 .width('100%').height('100%').textAlign(TextAlign.Center)
@@ -307,13 +307,13 @@ struct AlignSelfStretchPage {
       
     } else if (this.targetView == 'List') {
       List({ space: 20, initialIndex: 0 }) {
-        ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: number) => {
+        ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
               .textAlign(TextAlign.Center)
           }
-        }, (item: Int, index: number) => String(item))
+        }, (item: Int, index: int) => String(item))
       }
       .listDirection(Axis.Vertical)
 
@@ -352,12 +352,12 @@ struct AlignSelfStretchPage {
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
-          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: number) => {
+          ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
             Text('Scroll' + item)
               .width('90%')
               .height(10)
               .textAlign(TextAlign.Center)
-          }, (item: Int, index: number) => String(item))
+          }, (item: Int, index: int) => String(item))
         }.width('100%')
       }
       .scrollBar(BarState.On)
@@ -366,7 +366,7 @@ struct AlignSelfStretchPage {
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
-          ForEach([1, 2, 3], (item: Int, index: number) => {
+          ForEach([1, 2, 3], (item: Int, index: int) => {
             Column({ space: 5 } as ColumnOptions) {
               Image($r('app.media.icon')).width(64).height(64)
               Text('Index0' + item).fontSize(25)
@@ -385,9 +385,9 @@ struct AlignSelfStretchPage {
       } 
     } else if (this.targetView == 'Swiper') {
       Swiper() {
-        ForEach([1, 2, 3], (item: Int, index: number) => {
+        ForEach([1, 2, 3], (item: Int, index: int) => {
           Text('Swiper' + item).width('90%').height(160)
-        }, (item: Int, index: number) => String(item))
+        }, (item: Int, index: int) => String(item))
       }
       .indicator(true)
 
@@ -400,14 +400,14 @@ struct AlignSelfStretchPage {
       } 
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: number) => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
           FlowItem() {
             Column() {
               Text('WaterFlow' + item).fontSize(12).height('16')
               Image($r('app.media.icon')).width(50).height(50).objectFit(ImageFit.Fill)
             }
           }
-        }, (item: Int, index: number) => String(item))
+        }, (item: Int, index: int) => String(item))
       } 
     } else if (this.targetView == 'Circle') {
       Circle({ width: 150, height: 150 }) 

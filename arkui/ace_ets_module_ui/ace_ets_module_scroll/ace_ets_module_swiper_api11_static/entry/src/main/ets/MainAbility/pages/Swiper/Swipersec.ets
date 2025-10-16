@@ -58,6 +58,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 class MyDataSourceSwiper implements IDataSource<number> {
   private list: number[] = []
@@ -66,11 +67,11 @@ class MyDataSourceSwiper implements IDataSource<number> {
     this.list = list
   }
 
-  totalCount(): number {
+  totalCount(): int {
     return this.list.length
   }
 
-  getData(index: number): number {
+  getData(index: int): number {
     return this.list[index.toInt()]
   }
 
@@ -119,47 +120,47 @@ struct SwiperExample3 {
       console.info("key==> page valueChangeCallBack");
       console.info("valueChangeCallBack eventData:" + JSON.stringify(eventData));
       console.info("valueChangeCallBack eventData.data?.['type']:" +
-      JSON.stringify(((eventData.data) as Record<string, Object>)?.['type']));
+      JSON.stringify(((eventData.data) as Record<String, RecordData>)?.['type']));
       if (eventData != null && eventData.data != null) {
         console.info("swiper page state change called:" + JSON.stringify(eventData));
         const jsonElementInstance = JSON.parseJsonElement(JSON.stringify(eventData))
         const jsonElementData = jsonElementInstance.tryGetElement('data')
-        if (((eventData.data) as Record<string, Object>)?.['type'] == undefined) {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == undefined) {
           this.arrowStyle = jsonElementData?.tryGetElement('arrowStyle') != null ?
             (jsonElementData?.tryGetElement('arrowStyle') as ArrowStyle) : {} as ArrowStyle;
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolTrue") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolTrue") {
           console.info("valueChangeCallBack BoolTrue:" + JSON.stringify(eventData));
           this.boolFlag = true
           this.bool = true
           console.info("valueChangeCallBack this.bool:" + JSON.stringify(this.bool));
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolFalse") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolFalse") {
           console.info("valueChangeCallBack BoolFalse:" + JSON.stringify(eventData));
           this.boolFlag = true
           this.bool = false
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrNum") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNum") {
           console.info("valueChangeCallBack BoolErrNum:" + JSON.stringify(eventData));
           this.boolFlag = false
           this.boolIsNum = true
-          this.boolNum = Number(((eventData.data) as Record<string, Object>)?.['displayArrow']?.toString() ?? '0')
+          this.boolNum = Number(((eventData.data) as Record<String, RecordData>)?.['displayArrow']?.toString() ?? '0')
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrStr") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrStr") {
           console.info("valueChangeCallBack BoolErrStr:" + JSON.stringify(eventData));
           this.boolFlag = false
           this.boolIsNum = false
           this.boolIsStr = true
-          this.boolStr = ((eventData?.data) as Record<string, Object>)?.['displayArrow']?.toString() ?? ''
+          this.boolStr = ((eventData?.data) as Record<String, RecordData>)?.['displayArrow']?.toString() ?? ''
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrNull") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNull") {
           console.info("valueChangeCallBack BoolErrNull:" + JSON.stringify(eventData));
           this.boolFlag = false
           this.boolIsNum = false
           this.boolIsStr = false
           this.boolIsNull = true
         }
-        if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrUndefined") {
+        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrUndefined") {
           console.info("valueChangeCallBack BoolErrUndefined:" + JSON.stringify(eventData));
           this.boolFlag = false
           this.boolIsNum = false
@@ -181,7 +182,7 @@ struct SwiperExample3 {
     Column({ space: 5 } as ColumnOptions) {
       Column() {
         Swiper(this.swiperController) {
-          ForEach(this.colorList, (item: ColorObject, index: number) => {
+          ForEach(this.colorList, (item: ColorObject, index: int) => {
             Text("第" + (item.cardId).toString() + "页")
               .width('90%')
               .height('15%')
@@ -199,7 +200,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle, true)
@@ -207,7 +208,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          ForEach(this.colorList, (item: ColorObject, index: number) => {
+          ForEach(this.colorList, (item: ColorObject, index: int) => {
             Text("第" + (item.cardId).toString() + "页")
               .width('90%')
               .height('15%')
@@ -223,7 +224,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -233,7 +234,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          ForEach(this.colorList, (item: ColorObject, index: number) => {
+          ForEach(this.colorList, (item: ColorObject, index: int) => {
             Text("第" + (item.cardId).toString() + "页")
               .width('90%')
               .height('15%')
@@ -249,7 +250,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -259,7 +260,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          ForEach(this.colorList, (item: ColorObject, index: number) => {
+          ForEach(this.colorList, (item: ColorObject, index: int) => {
             Text("第" + (item.cardId).toString() + "页")
               .width('90%')
               .height('15%')
@@ -275,7 +276,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
 
@@ -286,7 +287,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: number, index: number) => {
+          LazyForEach(this.data, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height('15%')
@@ -303,7 +304,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle)
@@ -311,7 +312,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: number, index: number) => {
+          LazyForEach(this.data, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height('15%')
@@ -328,7 +329,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
         .displayArrow(true)
@@ -336,7 +337,7 @@ struct SwiperExample3 {
 
       Column() {
         Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: number, index: number) => {
+          LazyForEach(this.data, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height('15%')
@@ -352,7 +353,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: number): void => {
+        .onChange((index: Int): void => {
           console.info(index.toString())
         })
       }

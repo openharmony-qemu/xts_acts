@@ -21,7 +21,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -121,7 +121,7 @@ export default function gridSettingsJsunit() {
           data: {
             "span": 1,
             "offset": 2
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 9,
@@ -165,7 +165,7 @@ export default function gridSettingsJsunit() {
           data: {
             "span": 0x80000000,
             "offset": 0x80000000
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 9,
@@ -208,7 +208,7 @@ export default function gridSettingsJsunit() {
           data: {
             "span": 0x7FFFFFFF,
             "offset": 0x7FFFFFFF
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 9,
@@ -251,7 +251,7 @@ export default function gridSettingsJsunit() {
           data: {
             "span": 'error',
             "offset": 'error'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 9,
@@ -311,7 +311,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridOffset": 1
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 10,
@@ -344,7 +344,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridOffset": 0x80000000
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 10,
@@ -377,7 +377,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridOffset": 0x7FFFFFFF
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 10,
@@ -410,7 +410,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridOffset": 'error'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 10,
@@ -459,7 +459,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridSpan": 2
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 11,
@@ -491,7 +491,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridSpan": 0x80000000
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 11,
@@ -523,7 +523,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridSpan": 0x7FFFFFFF
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 11,
@@ -555,7 +555,7 @@ export default function gridSettingsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridSpan": 'error'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 11,

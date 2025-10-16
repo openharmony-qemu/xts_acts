@@ -14,13 +14,8 @@
  */
 import RectValue from './Rect';
 import {
-  __memo_context_type,
-  __memo_id_type,
   memo,
-  MutableState,
-  observableProxy,
   State,
-  stateOf
 } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
 import {
   Button,
@@ -33,10 +28,9 @@ import {
   TextAttribute,
   TouchObject,
   TouchType,
-  UserView
 } from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 
 export default class Utils {
   static rect_left: number = 0;

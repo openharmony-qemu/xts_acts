@@ -176,7 +176,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString2 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | Double>('StyledString2_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString2 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | Double>('StyledString2_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString2_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString2 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString2_wordBreak', paraAttr.wordBreak);
                   console.info(i + '  paragraphStyledString2 leadingMargin:' + paraAttr.leadingMargin)
@@ -201,7 +201,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString3 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | Double>('StyledString3_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString3 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | Double>('StyledString3_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString3_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString3 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString3_wordBreak', paraAttr.wordBreak);
                   console.info(i + '  paragraphStyledString3 leadingMargin:' + paraAttr.leadingMargin)
@@ -226,7 +226,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString4 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | Double>('StyledString4_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString4 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | Double>('StyledString4_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString4_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString4 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString4_wordBreak', paraAttr.wordBreak);
                   console.info(i + '  paragraphStyledString4 leadingMargin:' + paraAttr.leadingMargin)

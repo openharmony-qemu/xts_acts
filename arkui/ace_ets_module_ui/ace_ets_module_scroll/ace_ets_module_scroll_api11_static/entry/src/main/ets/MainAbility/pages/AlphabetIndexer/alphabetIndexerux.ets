@@ -51,11 +51,11 @@ struct AlphabetIndexerTestux {
   @State popupSelectedColor: Color = Color.Orange
   @State popupUnselectedColor: Color = Color.Green
   @State popupItemBackgroundColor: Color = Color.Pink
-  @State popupSelectedColorNum: number = 0x00CED1
-  @State popupUnselectedColorNum: number = 0xC0FF3E
-  @State popupItemBackgroundNum: number = 0x8470FF
+  @State popupSelectedColorNum: int = 0x00CED1
+  @State popupUnselectedColorNum: int = 0xC0FF3E
+  @State popupItemBackgroundNum: int = 0x8470FF
   @State popupItemFontSizeNum: number = 30
-  @State popupItemFontWeightNum: number = FontWeight.Normal
+  @State popupItemFontWeightNum: int = FontWeight.Normal as int
   @State popupSpaceNum: number = 50
   @State popupSelectedColorRes: Resource = $r('app.color.popupSelectedColor')
   @State popupUnselectedColorRes: Resource = $r('app.color.popupUnselectedColor')
@@ -109,15 +109,15 @@ struct AlphabetIndexerTestux {
       }
       const popupSelectedColorNum = (eventData.data as ESObject).getPropertySafe('popupSelectedColorNum')
       if (popupSelectedColorNum.isNumber()) {
-        this.popupSelectedColorNum = popupSelectedColorNum.toNumber();
+        this.popupSelectedColorNum = Double.toInt(popupSelectedColorNum.toNumber());
       }
       const popupUnselectedColorNum = (eventData.data as ESObject).getPropertySafe('popupUnselectedColorNum')
       if (popupUnselectedColorNum.isNumber()) {
-        this.popupUnselectedColorNum = popupUnselectedColorNum.toNumber();
+        this.popupUnselectedColorNum = Double.toInt(popupUnselectedColorNum.toNumber());
       }
       const popupItemBackgroundNum = (eventData.data as ESObject).getPropertySafe('popupItemBackgroundNum')
       if (popupItemBackgroundNum.isNumber()) {
-        this.popupItemBackgroundNum = popupItemBackgroundNum.toNumber();
+        this.popupItemBackgroundNum = Double.toInt(popupItemBackgroundNum.toNumber());
       }
       const popupItemFontSizeNum = (eventData.data as ESObject).getPropertySafe('popupItemFontSizeNum')
       if (popupItemFontSizeNum.isNumber()) {
@@ -199,7 +199,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -207,7 +207,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -222,7 +222,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20 } as Margin)
@@ -236,14 +236,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -258,7 +258,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -278,14 +278,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -300,7 +300,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -320,14 +320,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor($r("sys.color.ohos_id_color_primary"))
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -342,7 +342,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -351,7 +351,7 @@ struct AlphabetIndexerTestux {
         .popupUnselectedColor(this.nullFlag2 ? undefined : this.popupUnselectedColorRes)
         .popupItemBackgroundColor(this.nullFlag3 ? undefined : this.popupItemBackgroundRes)
         .popupItemFont(this.nullFlag4 ? undefined :
-          { size: this.popupItemFontSizeRes, weight: this.popupItemFontWeightFont } as Font)
+          { size: this.popupItemFontSizeRes, weight: this.popupItemFontWeightFont as int } as Font)
 
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .key('alphabetIndexerTest5')
@@ -362,14 +362,14 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -384,7 +384,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -403,7 +403,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -411,7 +411,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -426,7 +426,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)
@@ -441,7 +441,7 @@ struct AlphabetIndexerTestux {
         .backgroundColor(0xF8F8FF)
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
-        .onSelect((index: number): void => {
+        .onSelect((index: int): void => {
           console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
@@ -449,7 +449,7 @@ struct AlphabetIndexerTestux {
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
-        .onRequestPopupData((index: number): Array<string> => {
+        .onRequestPopupData((index: int): Array<string> => {
           if (this.value[index.toInt()] == 'A') {
             return this.arrayA
           } else if (this.value[index.toInt()] == 'B') {
@@ -464,7 +464,7 @@ struct AlphabetIndexerTestux {
             return []
           }
         })
-        .onPopupSelect((index: number): void => {
+        .onPopupSelect((index: int): void => {
           console.info('onPopupSelected label :' + index)
         })
         .margin({ top: 20, left: 20 } as Margin)

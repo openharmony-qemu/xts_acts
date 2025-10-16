@@ -31,19 +31,18 @@ import {
   Scroller
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
-import { SetValue } from "../../../common/Utils"
 
 @Component
 export struct WaterFlowView {
-  @Link _position!: SetValue;
+  private _position: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
   @State minSize: number = 50
   @State maxSize: number = 100
   @State fontSize: number = 24
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
-  private itemWidthArray: number[] = [] as number[]
-  private itemHeightArray: number[] = [] as number[]
+  private itemWidthArray: int[] = []
+  private itemHeightArray: int[] = []
 
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
@@ -52,8 +51,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize())
-      this.itemHeightArray.push(this.getSize())
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
@@ -76,16 +75,16 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: number) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as int[], (item: int, index: Int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12).height('16')
           }
         }
-        .width(this.itemWidthArray[item.toInt()])
-        .height(this.itemHeightArray[item.toInt()])
-        .backgroundColor(this.colors[item.toInt() % 5])
-      }, (item: number) => String(item))
+        .width(this.itemWidthArray[item])
+        .height(this.itemHeightArray[item])
+        .backgroundColor(this.colors[item % 5])
+      }, (item: int,index:Int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
     .itemConstraintSize({
@@ -106,7 +105,7 @@ export struct WaterFlowView {
     .width('100%')
     .height('80%')
     .layoutDirection(FlexDirection.Column)
-    .position({x:this._position.x, y:this._position.y} as Position)
+    .position(this._position)
     .key(this.componentKey)
   }
 }

@@ -24,6 +24,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import { ColorMetrics, screenshot } from '@kit.ArkUI';
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -459,7 +460,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('displayIdChange', (id) => {
+                tempWnd.onDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -499,7 +500,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('displayIdChange', (id) => {
+                tempWnd.offDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -538,7 +539,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("windowVisibilityChange", (res: boolean) => {
+                        subWin!.onWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
@@ -576,7 +577,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("windowVisibilityChange", (res: boolean) => {
+                        subWin!.offWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
@@ -614,7 +615,7 @@ export default function WindowPropertiesTest() {
                         expect(!!win).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                         try {
-                            (win as window.Window).off('windowVisibilityChange');
+                            win.offWindowVisibilityChange();
                             await (win as window.Window).destroyWindow();
                             expect(true).assertTrue();
                             done();
@@ -653,7 +654,7 @@ export default function WindowPropertiesTest() {
                     expect(!!win).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     try {
-                        (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
+                        win.onWindowVisibilityChange((flag:boolean) => {
                             hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
                         });
                     } catch (exception:BusinessError) {
@@ -669,7 +670,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                     } catch (exception:BusinessError) {
                         if (exception!.code != 801) {
                             hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -683,7 +684,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                         await (win as window.Window).destroyWindow();
                         done();
                     } catch (exception:BusinessError) {
@@ -715,11 +716,11 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.on('windowVisibilityChange', (flag:boolean) => {
+                windowClass.onWindowVisibilityChange((flag:boolean) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
                 });
                 expect(true).assertTrue();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 done();
             } catch (error:BusinessError) {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -749,7 +750,7 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
                 expect(true).assertTrue();
                 done();
@@ -787,7 +788,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("systemDensityChange", (res: number) => {
+                        subWin!.onSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
                         expect(false).assertTrue();
@@ -825,7 +826,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("systemDensityChange", (res: number) => {
+                        subWin!.offSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
                         expect(false).assertTrue();
@@ -869,10 +870,10 @@ export default function WindowPropertiesTest() {
                 expect(density).assertEqual(2);
             }
             try {
-                windowClass.on("systemDensityChange", callback1);
-                windowClass.on("systemDensityChange", callback2);
+                windowClass.onSystemDensityChange(callback1);
+                windowClass.onSystemDensityChange(callback2);
                 hilog.info(0x0000, '[ANI]', msgStr +`Succeeded on systemDensityChange twice.`);
-                windowClass.off("systemDensityChange");
+                windowClass.offSystemDensityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + `off all systemDensityChange success`);
             } catch (exception:BusinessError) {
                 hilog.error(0x0000, '[ANI]', msgStr +`Failed to on systemDensityChange. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -904,9 +905,9 @@ export default function WindowPropertiesTest() {
             let mainWin:window.Window = windowStage.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             try {
-                mainWin.on('noInteractionDetected', 1, () => {
+                mainWin.onNoInteractionDetected(1, () => {
                     hilog.info(0x0000, '[ANI]', msgStr + 'no interaction in 10s');
-                    mainWin.off('noInteractionDetected');
+                    mainWin.offNoInteractionDetected();
                     done();
                 });
                 hilog.info(0x0000, '[ANI]', msgStr +  ' register noInteractionDetected successed');
@@ -1175,6 +1176,119 @@ export default function WindowPropertiesTest() {
                 done()
             }
         });
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_SetStatusBarColor_static_0300
+         * @tc.name       test_setStatusBarColor_normal1_static
+         * @tc.desc       验证设置正常状态栏颜色
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_setStatusBarColor_normal1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = "test_setStatusBarColor_normal1_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                 windowClass!.setStatusBarColor(ColorMetrics.numeric(0x112233)).then(async () => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling setStatusBarColor.');
+                    let res: window.StatusBarProperty = windowClass.getStatusBarProperty();
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling getStatusBarProperty, color: ' + res.contentColor);
+                    expect(res.contentColor).assertEqual("#FF112233")
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call setStatusBarColor. Cause: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed2 to set the call setStatusBarColor. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_setExclusivelyHighlighted_1300004_static_0200
+         * @tc.name       testsetExclusivelyHighlighted_1300004_static
+         * @tc.desc       testsetExclusivelyHighlighted_1300004
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testsetExclusivelyHighlighted_1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testsetExclusivelyHighlighted_1300004_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                let promise = windowClass.setExclusivelyHighlighted(true);
+                promise.then(() => {
+                    hilog.info(domain, tag,msgStr +'Succeeded in setting the window to be exclusively highlight.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr +`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300004);
+                        done()
+                    }
+
+                });
+
+            } catch (e: BusinessError) {
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                expect(false).assertTrue();
+                done()
+            }
+
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_setExclusivelyHighlighted_1300002_static_0300
+         * @tc.name       testsetExclusivelyHighlighted_1300002_static
+         * @tc.desc       testsetExclusivelyHighlighted_1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testsetExclusivelyHighlighted_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testsetExclusivelyHighlighted_1300002_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "test",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let windowClass:window.Window = await window.createWindow(config);
+            await Utils.msSleep(300);
+            try {
+                await windowClass.destroyWindow();
+                let promise = windowClass.setExclusivelyHighlighted(true);
+                promise.then(() => {
+                    hilog.info(domain, tag,'Succeeded in setting the window to be exclusively highlight.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                        done()
+                    }
+                });
+
+            } catch (e: BusinessError) {
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                expect(false).assertTrue();
+                done()
+            }
+
+        })
 
 
     })

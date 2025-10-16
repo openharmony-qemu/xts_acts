@@ -230,10 +230,9 @@ export default function queueTest1() {
       try {
         let queue: Queue<number | string | object> = new Queue<number | string | object>();
         let result = queue.getFirst();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 

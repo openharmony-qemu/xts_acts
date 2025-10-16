@@ -16,7 +16,7 @@ import events_emitter from '@ohos.events.emitter'
 
 
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,
   ForEach,
   Search,
@@ -31,11 +31,9 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
 
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct PlacementExample {
@@ -79,7 +77,7 @@ struct PlacementExample {
             let backData: events_emitter.EventData = {
               data:{
                 "placement":this.placement
-              } as Record<string,Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 157,
@@ -113,7 +111,7 @@ struct PlacementExample {
             let backDataOne: events_emitter.EventData = {
               data:{
                 "placement":this.placementOne
-              } as Record<string,Object>
+              } as Record<string, RecordData>
             }
             let backEventOne: events_emitter.InnerEvent = {
               eventId: 158,
@@ -147,7 +145,7 @@ struct PlacementExample {
             let backDataTwo: events_emitter.EventData = {
               data:{
                 "placement":this.placementTwo
-              } as Record<string,Object>
+              } as Record<string, RecordData>
             }
             let backEventTwo: events_emitter.InnerEvent = {
               eventId: 159,
@@ -181,7 +179,7 @@ struct PlacementExample {
             let backDataThree: events_emitter.EventData = {
               data:{
                 "placement":this.placementThree
-              } as Record<string,Object>
+              } as Record<string, RecordData>
             }
             let backEventThree: events_emitter.InnerEvent = {
               eventId: 160,

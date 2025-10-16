@@ -23,7 +23,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -46,9 +45,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -111,10 +107,10 @@ struct GridFrictionPage {
       .columnsGap(10)
       .rowsGap(10)
       .edgeEffect(EdgeEffect.Spring)
-      .onScrollIndex((first: number,last: number):void => {
+      .onScrollIndex((first: int,last: int):void => {
         console.info(String(first))
       })
-      .onScrollBarUpdate((index: number, offset: number) => {
+      .onScrollBarUpdate((index: int, offset: double) => {
         return { totalOffset: (index / 5) * (80 + 10) - 10 + offset, totalLength: 80 * 5 + 10 * 4 } as ComputedBarAttribute
       })
       .width('90%')

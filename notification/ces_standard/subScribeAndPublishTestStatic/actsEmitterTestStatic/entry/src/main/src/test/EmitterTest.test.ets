@@ -16,7 +16,7 @@ import emitter from '@ohos.events.emitter'
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData} from '@ohos.base';
 import { Component, Driver, ON } from '@ohos.UiTest'
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -60,7 +60,7 @@ export default function EmitterTest() {
           eventId: 1,
           priority: emitter.EventPriority.IDLE
         }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "0",
           "content": "message_0"
         }
@@ -68,7 +68,7 @@ export default function EmitterTest() {
         console.info(`${TAG} myDate:${JSON.stringify(myDate)}`);
         let EmitterCallback = (): void => {
           console.info(`${TAG} eventData0:${JSON.stringify(eventData)}`);
-          let eventData_0: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_0: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId: String = eventData_0["id"] as String
           if (testId == "0") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0100 Test0 Success`);
@@ -85,14 +85,14 @@ export default function EmitterTest() {
 
         innerEvent.priority = emitter.EventPriority.HIGH
         innerEvent.eventId = 1
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           "id": "1",
           "content": "message_1"
         }
         let eventData1: emitter.EventData = { data: myDate1 }
         let EmitterCallback1: Callback<emitter.EventData> = (eventData1: emitter.EventData) => {
           console.info(`${TAG} eventData1:${JSON.stringify(eventData1)}`);
-          let eventData_1: Record<String, Object> = eventData1.data as Record<String, Object>
+          let eventData_1: Record<String, RecordData> = eventData1.data as Record<String, RecordData>
           let testId1: String = eventData_1["id"] as String
           if (testId1 == "1") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0100 Test1 Success`);
@@ -124,14 +124,14 @@ export default function EmitterTest() {
           priority: emitter.EventPriority.LOW
         }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "2",
           "content": "message_2"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData2: ${JSON.stringify(eventData)}`);
-          let eventData_2: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_2: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId2: String = eventData_2["id"] as String
           if (testId2 == "2") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0200 Test Success`);
@@ -141,7 +141,7 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
         emitter.off(2)
@@ -160,14 +160,14 @@ export default function EmitterTest() {
         console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0300 START`)
         innerEvent.eventId = 3
         innerEvent.priority = emitter.EventPriority.HIGH
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "3",
           "content": "message_3"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_3: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_3: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId3: String = eventData_3["id"] as String
           if (testId3 == "3") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0300 Test Success`);
@@ -179,7 +179,7 @@ export default function EmitterTest() {
           }
         }
 
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
         emitter.off(3)
@@ -199,14 +199,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 4
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "4",
           "content": "message_4"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_4: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_4: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId4: String = eventData_4["id"] as String
           if (testId4 == "4") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0400 Test Success`);
@@ -217,7 +217,7 @@ export default function EmitterTest() {
           }
         }
 
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
         emitter.off(4)
@@ -237,14 +237,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 5
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "5",
           "content": "message_5"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_5: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_5: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId5: String = eventData_5["id"] as String
           if (testId5 == "5") {
             console.info(`${TAG} Sub_Notification_Emitter_Subscribe_Once_Static_0500 Test Success`);
@@ -255,7 +255,7 @@ export default function EmitterTest() {
           }
         }
 
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
         emitter.off(4)
@@ -273,14 +273,14 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 START`)
         innerEvent.eventId = 6
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "6",
           "content": "message_6"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_6: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_6: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId6: String = eventData_6["id"] as String
           if (testId6 == "6") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 Test Success`);
@@ -291,7 +291,7 @@ export default function EmitterTest() {
           }
         }
         let EmitterCallbackDummy: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-          let eventData6: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData6: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId6_1: String = eventData6["id"] as String
           let content6: string = eventData6["content"] as string
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.id: ' + JSON.stringify(testId6_1));
@@ -317,14 +317,14 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700 START`)
         innerEvent.eventId = 7
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "7",
           "content": "message_7"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_7: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_7: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId7: String = eventData_7["id"] as String
           if (testId7 == "7") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700 Test Success`);
@@ -335,7 +335,7 @@ export default function EmitterTest() {
           }
         }
         let EmitterCallbackDummy: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-          let eventData7: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData7: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId7_1: String = eventData7["id"] as String
           let content7: string = eventData7["content"] as string
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.id: ' + JSON.stringify(testId7_1));
@@ -362,14 +362,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 8
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "8",
           "content": "message_8"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_8: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_8: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId8: String = eventData_8["id"] as String
           if (testId8 == "8") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800 Test Success`);
@@ -380,14 +380,14 @@ export default function EmitterTest() {
           }
         }
         let EmitterCallbackDummy: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-          let eventData8: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData8: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId8_1: String = eventData8["id"] as String
           let content8: string = eventData8["content"] as string
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.id: ' + JSON.stringify(testId8_1));
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.content: ' + JSON.stringify(content8));
           expect(content8).assertFalse();
         }
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.off(8, EmitterCallbackDummy)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
@@ -407,14 +407,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 9
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "9",
           "content": "message_9"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`);
-          let eventData_9: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_9: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId9: String = eventData_9["id"] as String
           if (testId9 == "9") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900 Test Success`);
@@ -426,14 +426,14 @@ export default function EmitterTest() {
           }
         }
         let EmitterCallbackDummy: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-          let eventData9: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData9: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId9_1: String = eventData9["id"] as String
           let content9: string = eventData9["content"] as string
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.id: ' + JSON.stringify(testId9_1));
           console.info('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600 eventData.content: ' + JSON.stringify(content9));
           expect(content9).assertFalse();
         }
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.off(9, EmitterCallbackDummy)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
@@ -452,14 +452,14 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000 START`)
         innerEvent.eventId = 10
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "10",
           "content": "message_10"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`)
-          let eventData_10: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_10: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId10: String = eventData_10["id"] as String
           console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000 Test Success`);
           expect(eventData_10["content"]).assertEqual('message_10');
@@ -483,14 +483,14 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100 START`)
         innerEvent.eventId = 11
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "11",
           "content": "message_11"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`)
-          let eventData_11: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_11: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId11: String = eventData_11["id"] as String
           if (testId11 == "11") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100 Test Success`);
@@ -501,7 +501,7 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on(innerEvent, EmitterCallback)
+        emitter.once(innerEvent, EmitterCallback)
         emitter.off(11)
         emitter.emit(innerEvent, eventData)
         await Utils.msSleep(1000)
@@ -521,14 +521,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 12
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "12",
           "content": "message_12"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`)
-          let eventData_12: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_12: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId12: String = eventData_12["id"] as String
           if (testId12 == "12") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200 Test Success`);
@@ -559,14 +559,14 @@ export default function EmitterTest() {
         innerEvent.eventId = 13
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "13",
           "content": "message_13"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG} eventData: ${JSON.stringify(eventData)}`)
-          let eventData_13: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_13: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId13: String = eventData_13["id"] as String
           if (testId13 == "13") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300 Test Success`);
@@ -594,14 +594,14 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400'
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1400 START`)
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "1",
           "content": "message_14"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG}` + ' on success');
-          let eventData_14: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_14: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId14: String = eventData_14["id"] as String
           if (testId14 == "1") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400 Test Success`);
@@ -612,7 +612,7 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on('1', EmitterCallback)
+        emitter.onEventData('1', EmitterCallback)
         expect(emitter.getListenerCount('1')).assertEqual(1);
 
         emitter.emit('1', eventData)
@@ -630,14 +630,14 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500'
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1500 START`)
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": '2',
           "content": "message_15"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(`${TAG}` + ' on success');
-          let eventData_15: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_15: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId15: String = eventData_15["id"] as String
           if (testId15 == "2") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500 Test Success`);
@@ -649,8 +649,8 @@ export default function EmitterTest() {
           }
           console.info(`${TAG}` + ' test case end');
         }
-        emitter.on('2', EmitterCallback)
-        emitter.on('2', EmitterCallback)
+        emitter.onEventData('2', EmitterCallback)
+        emitter.onEventData('2', EmitterCallback)
         expect(emitter.getListenerCount('2')).assertEqual(1);
 
         emitter.emit('2', eventData)
@@ -662,61 +662,61 @@ export default function EmitterTest() {
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
-     * @tc.desc      : emitter.on(''),emitter.emit(''),emitter.off('')
+     * @tc.desc      : emitter.onEventData(''),emitter.emit(''),emitter.off('')
      */
     
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600'
-    //     console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1600 START`)
-    //
-    //     let myDate: Record<String, Object> = {
-    //       "id": '',
-    //       "content": "message_16"
-    //     }
-    //     let eventData: emitter.EventData = { data: myDate }
-    //     let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-    //       console.info(`${TAG}` + ' on success');
-    //        let eventData_16: Record<String, Object> = eventData.data as Record<String, Object>
-    //           let testId16: String = eventData_16["id"] as String
-    //           if (testId16 == "") {
-    //             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 Test Success`);
-    //             expect(eventData_16["content"]).assertEqual('message_16');
-    //             done()
-    //           }else{
-    //             expect(false).assertTrue()
-    //             done()
-    //           }
-    //       console.info(`${TAG}` + ' test case end');
-    //
-    //     }
-    //     emitter.on('', EmitterCallback)
-    //     expect(emitter.getListenerCount('')).assertEqual(undefined);
-    //
-    //     emitter.emit('', eventData)
-    //     emitter.off('');
-    //     console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1600 END`)
-    //     done()
-    //   })
+    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600'
+        console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 START`)
+    
+        let myDate: Record<String, RecordData> = {
+          "id": '',
+          "content": "message_16"
+        }
+        let eventData: emitter.EventData = { data: myDate }
+        let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
+          console.info(`${TAG}` + ' on success');
+           let eventData_16: Record<String, RecordData> = eventData.data as Record<String, RecordData>
+              let testId16: String = eventData_16["id"] as String
+              if (testId16 == "") {
+                console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 Test Success`);
+                expect(eventData_16["content"]).assertEqual('message_16');
+                done()
+              }else{
+                expect(false).assertTrue()
+                done()
+              }
+          console.info(`${TAG}` + ' test case end');
+    
+        }
+        emitter.onEventData('', EmitterCallback)
+        expect(emitter.getListenerCount('')).assertEqual(0);
+    
+        emitter.emit('', eventData)
+        emitter.off('');
+        console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 END`)
+        done()
+      })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
-     * @tc.desc      : emitter.on(' '),emitter.emit(' '),emitter.off(' ')
+     * @tc.desc      : emitter.onEventData(' '),emitter.emit(' '),emitter.off(' ')
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700'
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1700 START`)
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": ' ',
           "content": "message_17"
         }
         let eventData: emitter.EventData = { data: myDate }
         let EmitterCallback = () => {
           console.info(`${TAG}` + ' on success');
-          let eventData_17: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_17: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId17: String = eventData_17["id"] as String
           if (testId17 == " ") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700 Test Success`);
@@ -728,7 +728,7 @@ export default function EmitterTest() {
           }
           console.info(`${TAG}` + ' test case end');
         }
-        emitter.on(' ', EmitterCallback)
+        emitter.onEventData(' ', EmitterCallback)
         expect(emitter.getListenerCount(' ')).assertEqual(1);
 
         emitter.emit(' ', eventData)
@@ -748,7 +748,7 @@ export default function EmitterTest() {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800'
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1800 START`)
 
-        let myDate18: Record<String, Object> = {
+        let myDate18: Record<String, RecordData> = {
           "id": '14',
           "content": "message_14"
         }
@@ -756,7 +756,7 @@ export default function EmitterTest() {
 
         let EmitterCallback = (): void => {
           console.info(`${TAG}  on success`);
-          let eventData_14: Record<String, Object> = eventData.data as Record<String, Object>
+          let eventData_14: Record<String, RecordData> = eventData.data as Record<String, RecordData>
           let testId14: String = eventData_14["id"] as String
           if (testId14 == "14") {
             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800 Test Success`);
@@ -766,14 +766,14 @@ export default function EmitterTest() {
             done()
           }
         }
-        emitter.on('14', EmitterCallback)
+        emitter.onEventData('14', EmitterCallback)
         console.info(` ${TAG} test getListenerCount 14  ` + emitter.getListenerCount('14'));
         expect(emitter.getListenerCount('14')).assertEqual(1);
 
         innerEvent.eventId = 14
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        let myDate18_1: Record<String, Object> = {
+        let myDate18_1: Record<String, RecordData> = {
           "id": '14',
           "content": "message_14"
         }
@@ -799,7 +799,7 @@ export default function EmitterTest() {
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900'
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1900 START`)
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": '19',
           "content": "message_19"
         }
@@ -810,7 +810,7 @@ export default function EmitterTest() {
           console.info(` ${TAG} test case end`);
           done()
         }
-        emitter.on('19', EmitterCallback)
+        emitter.onEventData('19', EmitterCallback)
         expect(emitter.getListenerCount('19')).assertEqual(1);
 
         innerEvent.eventId = 19
@@ -832,7 +832,7 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2000 START`)
         innerEvent.eventId = 20
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": '20',
           "content": "message_20"
         }
@@ -877,7 +877,7 @@ export default function EmitterTest() {
         innerEvent.eventId = 1
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
 
-        emitter.on('22', EmitterCallback1)
+        emitter.onEventData('22', EmitterCallback1)
         emitter.on(innerEvent, EmitterCallback2)
         emitter.off('22')
         emitter.off(22)
@@ -903,7 +903,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('23', EmitterCallback)
+        emitter.onEventData('23', EmitterCallback)
         emitter.off('23')
         emitter.emit('23')
         await Utils.msSleep(1000)
@@ -949,7 +949,7 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2400 START`)
         innerEvent.eventId = 25
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": '25',
           "content": "message_25"
         }
@@ -960,7 +960,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('25', EmitterCallback)
+        emitter.onEventData('25', EmitterCallback)
         emitter.off(25)
         emitter.emit(innerEvent)
         await Utils.msSleep(1000)
@@ -984,7 +984,7 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('26', EmitterCallback)
+        emitter.onEventData('26', EmitterCallback)
         await Utils.msSleep(1000)
         expect(emitter.getListenerCount('26')).assertEqual(1)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2500 END`)
@@ -1006,9 +1006,9 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('27', EmitterCallback)
-        emitter.on('27', EmitterCallback)
-        emitter.on('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
+        emitter.onEventData('27', EmitterCallback)
 
         emitter.emit('27')
         emitter.emit('27')
@@ -1035,9 +1035,9 @@ export default function EmitterTest() {
           console.info(`${TAG}` + ' test case end');
           done();
         }
-        emitter.on('280', EmitterCallback)
-        emitter.on('281', EmitterCallback)
-        emitter.on('282', EmitterCallback)
+        emitter.onEventData('280', EmitterCallback)
+        emitter.onEventData('281', EmitterCallback)
+        emitter.onEventData('282', EmitterCallback)
         emitter.emit('280')
         emitter.emit('281')
         emitter.emit('282')
@@ -1048,6 +1048,48 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2700 END`)
         done()
       })
+
+        /*
+    * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+    * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+    * @tc.desc      : emitter.EventPriority.IMMEDIATE
+    */
+    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      let TEST_CASE_NAME: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600'
+      console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 START`)
+      innerEvent.eventId = 36
+      innerEvent.priority = emitter.EventPriority.IMMEDIATE
+      let options: emitter.Options = {
+        priority: emitter.EventPriority.HIGH
+      }
+      let myDate: Record<String, RecordData> = {
+        "id": 36,
+        "content": 'c'
+      }
+      let eventData: emitter.EventData = { data: myDate }
+      let EmitterCallback = (): void => {
+        console.info(`${TEST_CASE_NAME}` + ' once success');
+        expect(false).assertTrue();
+        console.info(`${TEST_CASE_NAME}` + ' test case end');
+        done()
+      }
+      emitter.once(innerEvent, EmitterCallback)
+      await Utils.msSleep(1000)
+      emitter.emit("36", options, eventData)
+      await Utils.msSleep(1000)
+      console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
+      let num: number = emitter.getListenerCount(innerEvent.eventId)
+      expect(num).assertEqual(1)
+      emitter.off(innerEvent.eventId, EmitterCallback)
+      await Utils.msSleep(1000)
+      emitter.emit("36", options, eventData)
+      console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
+      let num2: number = emitter.getListenerCount(innerEvent.eventId)
+      expect(num2).assertEqual(0)
+      console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 END`)
+      done()
+    })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
@@ -1077,9 +1119,9 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on('290', EmitterCallback1)
-        emitter.on('291', EmitterCallback2)
-        emitter.on('292', EmitterCallback3)
+        emitter.onEventData('290', EmitterCallback1)
+        emitter.onEventData('291', EmitterCallback2)
+        emitter.onEventData('292', EmitterCallback3)
         emitter.emit('290')
         emitter.emit('291')
         emitter.emit('292')
@@ -1087,7 +1129,7 @@ export default function EmitterTest() {
         for (let i: long = 290; i < 293; i++) {
           innerEvent.eventId = i
           innerEvent.priority = emitter.EventPriority.IMMEDIATE
-          let myDate: Record<String, Object> = {
+          let myDate: Record<String, RecordData> = {
             "id": i,
             "content": "message_29"
           }
@@ -1145,10 +1187,10 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on('300', EmitterCallback1)
-        emitter.on('301', EmitterCallback2)
-        emitter.on('302', EmitterCallback3)
-        emitter.on('303', EmitterCallback4)
+        emitter.onEventData('300', EmitterCallback1)
+        emitter.onEventData('301', EmitterCallback2)
+        emitter.onEventData('302', EmitterCallback3)
+        emitter.onEventData('303', EmitterCallback4)
         emitter.emit('300')
         emitter.emit('301')
         emitter.emit('302')
@@ -1162,7 +1204,7 @@ export default function EmitterTest() {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
           }
-          let myDate: Record<String, Object> = {
+          let myDate: Record<String, RecordData> = {
             "id": i,
             "content": "message_30"
           }
@@ -1188,63 +1230,6 @@ export default function EmitterTest() {
         done()
       })
 
-
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3000
-    //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
-    //  * @tc.desc      : priority: emitter.EventPriority.HIGH
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3000', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   innerEvent.eventId = 31
-    //   eventData.data.id = 31
-    //   emitter.on(innerEvent, EmitterCallback)
-    //   emitter.emit(innerEvent, options)
-    //   expect(emitter.getListenerCount(null)).assertEqual(undefined)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 END`)
-    //   done()
-    // })
-
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3100
-    //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
-    //  * @tc.desc      : priority: emitter.EventPriority.HIGH
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3100', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   innerEvent.eventId = 31
-    //   eventData.data.id = 31
-    //   emitter.on(innerEvent, EmitterCallback)
-    //   emitter.emit(innerEvent, options, null)
-    //   expect(emitter.getListenerCount(31)).assertEqual(1)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 END`)
-    //   done()
-    // })
-
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3200
-    //  * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_3200
-    //  * @tc.desc      : The parameter op in Emit is empty
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3200 START`)
-    //   eventData.data.id = '32'
-    //   eventData.data.content = 'message_32'
-    //   emitter.on('32', EmitterCallback)
-    //   emitter.emit('32', null, eventData)
-    //   expect(emitter.getListenerCount('32')).assertEqual(1)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3200 END`)
-    //   done()
-    // })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
@@ -1293,7 +1278,7 @@ export default function EmitterTest() {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           done()
         }
-        emitter.on("340000", EmitterCallback)
+        emitter.onEventData("340000", EmitterCallback)
         for (let i: number = 34000; i < 35000; i++) {
           emitter.emit("340000")
         }
@@ -1330,7 +1315,7 @@ export default function EmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
         emitter.on(innerEvent, EmitterCallback1)
-        emitter.on("35", EmitterCallback2)
+        emitter.onEventData("35", EmitterCallback2)
         for (let i: number = 35000; i < 36000; i++) {
           emitter.emit(innerEvent)
         }
@@ -1344,75 +1329,8 @@ export default function EmitterTest() {
         done()
       })
 
-    /*
-    * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-    * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-    * @tc.desc      : emitter.EventPriority.IMMEDIATE
-    */
-    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let TEST_CASE_NAME: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600'
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 START`)
-        innerEvent.eventId = 36
-        innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let options: emitter.Options = {
-          priority: emitter.EventPriority.HIGH
-        }
-        let myDate: Record<String, Object> = {
-          "id": 36,
-          "content": 'c'
-        }
-        let eventData: emitter.EventData = { data: myDate }
-        let EmitterCallback = (): void => {
-          console.info(`${TEST_CASE_NAME}` + ' once success');
-          expect(false).assertTrue();
-          console.info(`${TEST_CASE_NAME}` + ' test case end');
-          done()
-        }
-        emitter.once(innerEvent, EmitterCallback)
-        await Utils.msSleep(1000)
-        emitter.emit("36", options, eventData)
-        await Utils.msSleep(1000)
-        console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
-        let num: number = emitter.getListenerCount(innerEvent.eventId)
-        expect(num).assertEqual(1)
-        emitter.off(innerEvent.eventId, EmitterCallback)
-        await Utils.msSleep(1000)
-        emitter.emit("36", options, eventData)
-        console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
-        let num2: number = emitter.getListenerCount(innerEvent.eventId)
-        expect(num2).assertEqual(0)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 END`)
-        done()
-      })
+  
 
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3700
-    //  * @tc.name      : verify on : emit(eventId: string, options: Options, data?: EventData): void
-    //  * @tc.desc      : emitter.EventPriority.IMMEDIATE
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3700', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3700 START`)
-    //   innerEvent.eventId = 37
-    //   innerEvent.priority = emitter.EventPriority.IMMEDIATE
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   let eventData = {
-    //     data: {
-    //       'content': 'c',
-    //       'id': 37,
-    //     }
-    //   }
-    //   emitter.on(null, null)
-    //   emitter.once('37', EmitterCallback)
-    //   emitter.off('37', EmitterCallback)
-    //   emitter.emit(innerEvent, options, eventData)
-    //   expect(emitter.getListenerCount('37')).assertEqual(0)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3700 END`)
-    //   done()
-    // })
     hilog.info(domain, tag, '%{public}s', ` SUB_NOTIFICATION_CES_EMITTER_TEST END`)
   })
 }

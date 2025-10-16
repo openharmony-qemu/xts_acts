@@ -19,14 +19,14 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct gradientHeightExample {
-  private select: number = 1
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
+  private select: int = 1;
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
 
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
         .id("gradientHeightXTS")
-        .onChange((value: string | string[], index: number | number[]):void => {
+        .onChange((value: string | string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
         .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})

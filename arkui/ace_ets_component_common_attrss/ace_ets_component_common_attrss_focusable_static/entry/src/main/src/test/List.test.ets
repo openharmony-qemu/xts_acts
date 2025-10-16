@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import focusableTest from './focusable/FocusableTest.test';
+import FocusableTest from './focusable/FocusableTest.test';
 
 export default function testsuite() {
-  focusableTest();
-
+  FocusableTest();
 }

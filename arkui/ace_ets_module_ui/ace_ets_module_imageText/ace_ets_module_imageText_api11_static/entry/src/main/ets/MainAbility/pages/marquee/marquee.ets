@@ -30,6 +30,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -37,7 +38,7 @@ struct MarqueeExample {
   @State start: boolean = false
   @State fromStart: boolean = true
   @State step: number = 50
-  @State loop: number = 3
+  @State loop: int = 3
   @State src: string = "Running Marquee starts rolling"
   @State fontColor: Color = Color.Blue;
   @State fontSize: number = 50;
@@ -67,7 +68,7 @@ struct MarqueeExample {
             let backData: events_emitter.EventData = {
               data: {
                 "fontColor": this.fontColor,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 127,
@@ -86,7 +87,7 @@ struct MarqueeExample {
             let backData: events_emitter.EventData = {
               data: {
                 "fontSize": this.fontSize,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 128,
@@ -106,7 +107,7 @@ struct MarqueeExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledThree,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 129,
@@ -126,7 +127,7 @@ struct MarqueeExample {
             let backData: events_emitter.EventData = {
               data: {
                 "start": this.start,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 130,

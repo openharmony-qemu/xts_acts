@@ -158,7 +158,7 @@ struct getcomponentadd {
         .listDirection(Axis.Vertical)
         .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 })
         .edgeEffect(EdgeEffect.Spring)
-        .onScrollIndex((firstIndex: Double, lastIndex: Double): void => {
+        .onScrollIndex((firstIndex: int, lastIndex: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })

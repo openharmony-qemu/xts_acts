@@ -379,7 +379,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x41, 0x42, 0x43];
+        const arr: FixedArray<char> = [0x41.toChar(), 0x42.toChar(), 0x43.toChar()];
         const result = toString(arr);
         const expected: string = 'A,B,C';
         expect(result).assertEqual(expected);
@@ -400,7 +400,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x35, 0x36, 0x37];
+        const arr: FixedArray<char> = [0x35.toChar(), 0x36.toChar(), 0x37.toChar()];
         const result = toString(arr);
         const expected: string = '5,6,7';
         expect(result).assertEqual(expected);
@@ -421,7 +421,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x6D, 0x6E, 0x6F];
+        const arr: FixedArray<char> = [0x6D.toChar(), 0x6E.toChar(), 0x6F.toChar()];
         const result = toString(arr);
         const expected: string = 'm,n,o';
         expect(result).assertEqual(expected);
@@ -442,7 +442,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x53, 0x32, 0x32];
+        const arr: FixedArray<char> = [0x53.toChar(), 0x32.toChar(), 0x32.toChar()];
         const result = toString(arr);
         const expected: string = 'S,2,2';
         expect(result).assertEqual(expected);
@@ -463,7 +463,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x39, 0x38, 0x37];
+        const arr: FixedArray<char> = [0x39.toChar(), 0x38.toChar(), 0x37.toChar()];
         const result = toString(arr);
         const expected: string = '9,8,7';
         expect(result).assertEqual(expected);
@@ -484,7 +484,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest2200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x5A, 0x59, 0x58];
+        const arr: FixedArray<char> = [0x5A.toChar(), 0x59.toChar(), 0x58.toChar()];
         const result = toString(arr);
         const expected: string = 'Z,Y,X';
         expect(result).assertEqual(expected);
@@ -505,7 +505,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x30, 0x30, 0x30, 0x30];
+        const arr: FixedArray<char> = [0x30.toChar(), 0x30.toChar(), 0x30.toChar(), 0x30.toChar()];
         const result = toString(arr);
         const expected: string = '0,0,0,0';
         expect(result).assertEqual(expected);
@@ -526,7 +526,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest2400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x68, 0x48, 0x68, 0x48];
+        const arr: FixedArray<char> = [0x68.toChar(), 0x48.toChar(), 0x68.toChar(), 0x48.toChar()];
         const result = toString(arr);
         const expected: string = 'h,H,h,H';
         expect(result).assertEqual(expected);

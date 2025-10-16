@@ -17,7 +17,9 @@ group("ActsWebForwardBackwardCacheTest") {
     deps = [
       "forward_backward_cache_five:ActsWebForwardBackwardCacheFiveTest",
       "forward_backward_cache_four:ActsWebForwardBackwardCacheFourTest",
+      "forward_backward_cache_four_static:ActsWebForwardBackwardCacheFourStaticTest",
       "forward_backward_cache_one:ActsWebForwardBackwardCacheOneTest",
+      "forward_backward_cache_one_static:ActsWebForwardBackwardCacheOneStaticTest",
       "forward_backward_cache_seven:ActsWebForwardBackwardCacheSevenTest",
       "forward_backward_cache_six:ActsWebForwardBackwardCacheSixTest",
       "forward_backward_cache_three:ActsWebForwardBackwardCacheThreeTest",

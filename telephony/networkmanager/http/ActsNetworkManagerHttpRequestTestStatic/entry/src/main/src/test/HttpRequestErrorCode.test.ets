@@ -301,6 +301,254 @@ export default function httpRequestErrorCodeTest() {
             }
         })
 
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0900
+         * @tc.name   testHttpRequestMethodErrorCode_static_0900
+         * @tc.desc   test http request(url, options, Promise) with request error code 2300001
+         * @tc.size   MEDIUMTEST
+         * @tc.type   Function
+         * @tc.level  level 3
+         */
+        it("testHttpRequestMethodErrorCode_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = "testHttpRequestMethodErrorCode_static_0900";
+            hilog.info(domain, tag, `${caseName} test Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        let promise = httpRequest.request('ws://baidu.com', {
+                            method: http.RequestMethod.GET,
+                        });
+                        promise.then((data:http.HttpResponse) => {
+                            hilog.info(domain, tag, 'Result:' + data.result);
+                        }).catch((error: Error) => {
+                            let err = error as BusinessError;
+                            hilog.info(domain, tag, 'error:' + JSON.stringify(err));
+                            ExpectTrue(err?.code == 2300001);
+                            httpRequest.destroy();
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} test End`);
+        });
+
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1700
+         * @tc.name   testHttpRequestMethodErrorCode_static_1700
+         * @tc.desc   test http request(url, options, callback) with request error code 2300007
+         * @tc.size   smallTest
+         * @tc.type   Function
+         * @tc.level  level 3
+         */
+        it("testHttpRequestMethodErrorCode_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = "testHttpRequestMethodErrorCode_static_1700";
+            hilog.info(domain, tag, `${caseName} test Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let httpRequest = http.createHttp();
+                        httpRequest.request('127.0.0.1', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse|undefined) => {
+                            hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                            ExpectTrue(err?.code == 2300007);
+                            httpRequest.destroy();
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} test End`);
+        });
+
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1800
+         * @tc.name   testHttpRequestMethodErrorCode_static_1800
+         * @tc.desc   test http request(url, options, Promise) with request error code 2300007
+         * @tc.size   smallTest
+         * @tc.type   Function
+         * @tc.level  level 3
+         */
+        it("testHttpRequestMethodErrorCode_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = "testHttpRequestMethodErrorCode_static_1800";
+            hilog.info(domain, tag, `${caseName} test Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        let promise = httpRequest.request('127.0.0.1', {
+                            method: http.RequestMethod.GET,
+                        });
+                        promise.then((data:http.HttpResponse) => {
+                            hilog.info(domain, tag, 'Result:' + data.result);
+                        }).catch((error: Error) => {
+                            let err = error as BusinessError;
+                            hilog.info(domain, tag, 'error:' + JSON.stringify(err));
+                            ExpectTrue(err?.code == 2300007);
+                            httpRequest.destroy();
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} test End`);
+        });
+
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3400
+         * @tc.name   testHttpRequestMethod_ErrorCode_3400
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.level  Level 3
+         * @tc.type   Function
+         * @tc.size   MediumTest
+         */
+        it("testHttpRequestMethod_ErrorCode_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = 'testHttpRequestMethod_ErrorCode_3400';
+            hilog.info(domain, tag, `${caseName}---Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let remoteValidation_system :http.RemoteValidation = 'system'
+
+                        let httpRequestOptions: http.HttpRequestOptions = {
+                            method: http.RequestMethod.GET,
+                            resumeFrom: 9999,
+                            resumeTo: 333,
+                            remoteValidation: remoteValidation_system,
+                            tlsOptions: tlsOptions_config_01
+                        }
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+                            hilog.info(domain, tag, `${caseName} data:--- ${JSON.stringify(data)}`);
+                            ExpectTrue(data.responseCode == 200);
+                            httpRequest.destroy();
+                            done();
+                        }).catch((error: Error) => {
+                            let err = error as BusinessError;
+                            hilog.info(domain, tag, `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                            ExpectTrue(false);
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName}---End `);
+        });
+
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3500
+         * @tc.name   testHttpRequestMethodErrorCode_static_3500
+         * @tc.desc   test http request(url, options, callback) with request error code 2300060
+         * @tc.size   smallTest
+         * @tc.type   Function
+         * @tc.level  level 3
+         */
+        it("testHttpRequestMethodErrorCode_static_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = "testHttpRequestMethodErrorCode_static_3500";
+            hilog.info(domain, tag, `${caseName} test Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        httpRequest.request('https://hao123.com', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse|undefined) => {
+                            hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                            ExpectTrue(err?.code == 2300060);
+                            httpRequest.destroy();
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} test End`);
+        });
+
+        /**
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3600
+         * @tc.name   testHttpRequestMethodErrorCode_static_3600
+         * @tc.desc   test http request(url, options, Promise) with request error code 2300060
+         * @tc.size   smallTest
+         * @tc.type   Function
+         * @tc.level  level 3
+         */
+        it("testHttpRequestMethodErrorCode_static_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const caseName: string = "testHttpRequestMethodErrorCode_static_3600";
+            hilog.info(domain, tag, `${caseName} test Start`);
+            try {
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, `${caseName} Please connect to the network`);
+                        ExpectTrue(false);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, `${caseName} Network connected`);
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        let promise = httpRequest.request('https://hao123.com', {
+                            method: http.RequestMethod.GET,
+                        });
+                        promise.then((data:http.HttpResponse) => {
+                            hilog.info(domain, tag, 'Result:' + data.result);
+                        }).catch((error: Error) => {
+                            let err = error as BusinessError;
+                            hilog.info(domain, tag, 'error:' + JSON.stringify(err));
+                            ExpectTrue(err?.code == 2300060);
+                            httpRequest.destroy();
+                            done();
+                        });
+                    }
+                });
+            } catch (err) {
+                hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+                ExpectTrue(false);
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} test End`);
+        });
+
 
     })
 

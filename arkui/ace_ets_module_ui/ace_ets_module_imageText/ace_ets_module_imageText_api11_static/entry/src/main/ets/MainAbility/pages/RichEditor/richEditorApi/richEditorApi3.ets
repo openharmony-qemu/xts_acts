@@ -52,7 +52,7 @@ struct richEditorApi3 {
         this.controller.addTextSpan('1023456789\n',{
           style:{
             fontColor:Color.Pink,
-            fontSize:"32"
+            fontSize:32.0
           },
           paragraphStyle:{
             textAlign:TextAlign.Start,

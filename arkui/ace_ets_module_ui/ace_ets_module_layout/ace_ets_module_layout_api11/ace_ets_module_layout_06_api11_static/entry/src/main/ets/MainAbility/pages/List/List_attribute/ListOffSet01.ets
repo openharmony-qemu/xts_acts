@@ -147,7 +147,7 @@ struct ListOffSet01 {
           .key('ListoffSet01_Get')
           .height('6%')
           .onClick((e:ClickEvent) => {
-            this.t = this.scroller.currentOffset().yOffset
+            this.t = this.scroller.currentOffset()!.yOffset
           })
           .backgroundColor(Color.Orange)
 
@@ -179,7 +179,7 @@ struct ListOffSet01 {
       Stack({ alignContent: Alignment.TopStart }) {
         Column() {
           List({ scroller: this.scroller }) {
-            ForEach(this.arr, (item: number,index:number) =>  {
+            ForEach(this.arr, (item: number,index:int) =>  {
               ListItem() {
                 Text('item' + item)
                   .width('100%')
@@ -197,7 +197,7 @@ struct ListOffSet01 {
                 }
                 this.objtext = JSON.stringify(newValue)
               })
-            }, (item: number,index:number) => item.toString())
+            }, (item: number,index:int) => item.toString())
           }
           .height(200)
           .listDirection(Axis.Vertical) 

@@ -22,7 +22,7 @@ import {
   Text,Builder,Grid,GridItem,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,KeyboardAvoidMode,Dimension,DismissDialogAction,DismissReason,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
 import {
   State,
@@ -43,7 +43,7 @@ let promptAction = new PromptAction()
 @Entry
 @Component
 struct promptKeyboard {
-  private customDialogComponentId: number = 0
+  private customDialogComponentId: int = 0
   @State textValue: string = 'click me'
   @State modal: boolean = true
   @State mode: KeyboardAvoidMode = KeyboardAvoidMode.DEFAULT
@@ -58,7 +58,7 @@ struct promptKeyboard {
         this.controller1.stopEditing()
       })
       Grid() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string, index: number):void => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item:Int|string, index: int):void => {
           GridItem() {
             Button(item + '')
               .width('30%').onClick(():void => {
@@ -121,7 +121,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })
@@ -151,7 +151,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })
@@ -181,7 +181,7 @@ struct promptKeyboard {
               //     //dismissDialogAction.dismiss()
               //   }
               // }
-            } as promptAction.CustomDialogOptions).then((dialogId: number) => {
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
           })

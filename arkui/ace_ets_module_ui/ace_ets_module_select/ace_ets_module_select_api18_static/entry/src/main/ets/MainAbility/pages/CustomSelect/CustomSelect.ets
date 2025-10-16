@@ -107,7 +107,7 @@ function menuItemBuilder(configuration: MenuItemConfiguration) {
 @Component
 export struct CustomSelectionPage {
   @State text: string = 'ddddd';
-  @State index: number = 2;
+  @State index: int = 2;
   @State space: number = 8;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
   @State positionX: number = 0;
@@ -273,7 +273,7 @@ export struct CustomSelectionPage {
           .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
           .menuItemContentModifier(new MyMenuItemContentModifier('ddd'))
           .avoidance(this.avoidanceModeArr[this.modeIndex])
-          .onSelect((index: number, text?: string | undefined) => {
+          .onSelect((index: int, text?: string | undefined) => {
             console.info('Select:' + index);
             this.index = index;
             if (text) {

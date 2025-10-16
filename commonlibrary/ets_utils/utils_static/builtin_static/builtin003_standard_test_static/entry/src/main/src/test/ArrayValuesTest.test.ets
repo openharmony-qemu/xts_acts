@@ -491,7 +491,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x30, 0x32];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x30.toChar(), 0x32.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x36);
@@ -544,7 +544,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_1900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x36, 0x36];
+        const arr: FixedArray<char> = [0x36.toChar(), 0x36.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x36);
@@ -572,7 +572,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_2000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x4E, 0x4D, 0x4C];
+        const arr: FixedArray<char> = [0x4E.toChar(), 0x4D.toChar(), 0x4C.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x4E);
@@ -603,7 +603,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_2100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x72, 0x73, 0x74];
+        const arr: FixedArray<char> = [0x72.toChar(), 0x73.toChar(), 0x74.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x72);
@@ -634,7 +634,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_2200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x77, 0x77, 0x77];
+        const arr: FixedArray<char> = [0x77.toChar(), 0x77.toChar(), 0x77.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x77);
@@ -665,7 +665,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x61, 0x41];
+        const arr: FixedArray<char> = [0x61.toChar(), 0x41.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x61);
@@ -693,7 +693,7 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_2400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [0x35, 0x49, 0x6E];
+        const arr: FixedArray<char> = [0x35.toChar(), 0x49.toChar(), 0x6E.toChar()];
         const iterator = values(arr);
         let result = iterator.next();
         expect(result.value).assertEqual(0x35);

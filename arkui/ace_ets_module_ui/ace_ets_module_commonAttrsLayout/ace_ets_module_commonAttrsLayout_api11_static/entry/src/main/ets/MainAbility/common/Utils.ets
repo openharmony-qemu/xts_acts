@@ -14,13 +14,8 @@
  */
 import RectValue from './Rect';
 import {
-  __memo_context_type,
-  __memo_id_type,
   memo,
-  MutableState,
-  observableProxy,
   State,
-  stateOf
 } from '@ohos.arkui.stateManagement'
 import {
   Button,
@@ -33,10 +28,9 @@ import {
   TextAttribute,
   TouchObject,
   TouchType,
-  UserView
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 import common from '@ohos.app.ability.common';
 
 export default class Utils {

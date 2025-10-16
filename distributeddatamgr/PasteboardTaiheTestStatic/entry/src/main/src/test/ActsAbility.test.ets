@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
@@ -7,6 +7,14 @@ import pasteboard from '@ohos.pasteboard'
 import { BusinessError } from '@ohos.base';
 import image from '@ohos.multimedia.image';
 import Want from '@ohos.app.ability.Want';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
+import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
+
+import { fileIo as fs, fileUri } from '@kit.CoreFileKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
+const context = delegator.getAppContext().getApplicationContext();
+let dstDir: string = context.distributedFilesDir + '/dst';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -14,10 +22,12 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let num = pasteboard.Pattern.NUMBER;
 let url = pasteboard.Pattern.URL;
 const ARRAY_BUFFER = new ArrayBuffer(256);
+const color = new ArrayBuffer(128);
 const WANT: Want = {
     bundleName: "com.acts.distributeddatamgr.pasteboardtest",
     abilityName: "com.acts.distributeddatamgr.pasteboardtest.MainAbility"
 };
+
 let HTML = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
 let URI = 'dataability:///com.example.myapplication1/user.txt';
 
@@ -31,6 +41,86 @@ export default function abilityTest() {
         hilog.info(domain, tag, 'describe      : Start');
 
         /**
+         * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0070
+         * @tc.number    : PasteBoard_PasteDataRecord_0070
+         * @tc.desc      : Test pasteBoard variety createData PixelMap
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0070----------");
+            try{
+                let pasteData = pasteboard.createData("ArrayBuffer", ARRAY_BUFFER);
+                let record = pasteData.getRecord(0);
+                let data =  record.data;
+                let str = record.toPlainText();
+                expect(str).assertEqual("");
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0070----------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0390
+         * @tc.number    : PasteBoard_SystemPasteboard_0390
+         * @tc.desc      : Test pasteBoard SetProperty API functionality.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0390----------");
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+            try{
+                await systemPasteBoard.clearData();
+                let prop = pasteData.getProperty();
+                expect(prop.timestamp != null).assertTrue();
+                let mimeTypes = prop.mimeTypes;
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0390----------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0380
+         * @tc.number    : PasteBoard_SystemPasteboard_0380
+         * @tc.desc      : Test pasteBoard API functionality.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0380----------");
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                await systemPasteboard.clearData();
+                systemPasteboard.offUpdate();
+                let textData = 'Hello World!';
+                let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+                await systemPasteboard.setData(pasteData);
+                let hasData = await systemPasteboard.hasData();
+                expect(hasData).assertTrue();
+                let data: pasteboard.PasteData = await systemPasteboard.getData();
+                expect(data.getRecordCount() == 1).assertTrue();
+                systemPasteboard.clearDataSync();
+                done();
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0380----------");
+            done();
+        })
+
+        /**
          * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0010
          * @tc.number    : PasteBoard_PasteDataRecord_0010
          * @tc.desc      : Successfully cast string record to text
@@ -40,7 +130,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0010----------");
-            try{
+            try {
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType");
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
@@ -73,7 +163,7 @@ export default function abilityTest() {
                 scaleMode: image.ScaleMode.CENTER_CROP
             };
             const pixelMap = image.createPixelMapSync(buffer, opt);
-            try{
+            try {
                 let pasteData = pasteboard.createData('pixelMap', pixelMap);
                 let record = pasteData.getRecord(0);
                 let data = record.pixelMap;
@@ -97,7 +187,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0030----------");
-            try{
+            try {
                 let pasteData = pasteboard.createData('text/want', WANT);
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
@@ -120,7 +210,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteDataRecord_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0040----------");
-            try{
+            try {
                 let pasteData = pasteboard.createData("ArrayBuffer", ARRAY_BUFFER);
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
@@ -155,13 +245,13 @@ export default function abilityTest() {
             let record: Record<string, pasteboard.ValueType> = {};
             record['pixelMap'] = image.createPixelMapSync(buffer, opt);
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pixelMapRecord = pasteData.getRecord(0);
                 let value: pasteboard.ValueType = await pixelMapRecord.getData('pixelMap');
                 let pixelMap = value as image.PixelMap;
                 let imageInfo = pixelMap.getImageInfoSync();
                 expect(imageInfo != null).assertTrue();
-               done();
+                done();
             } catch (err: BusinessError) {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
@@ -188,7 +278,7 @@ export default function abilityTest() {
                 alphaType: image.AlphaType.OPAQUE,
                 scaleMode: image.ScaleMode.CENTER_CROP
             };
-            let pixelMap:image.PixelMap = image.createPixelMapSync(buffer, opt);
+            let pixelMap: image.PixelMap = image.createPixelMapSync(buffer, opt);
             let record: Record<string, pasteboard.ValueType> = {};
             record[pasteboard.MIMETYPE_TEXT_PLAIN] = 'hello';
             record[pasteboard.MIMETYPE_TEXT_HTML] = HTML;
@@ -224,7 +314,6 @@ export default function abilityTest() {
             }
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0060----------");
         })
-        
 
         /**
          * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0010
@@ -239,7 +328,7 @@ export default function abilityTest() {
             let record: Record<string, pasteboard.ValueType> = {};
             record[pasteboard.MIMETYPE_TEXT_PLAIN] = 'hello';
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('hello');
                 done();
@@ -263,7 +352,7 @@ export default function abilityTest() {
             let record: Record<string, pasteboard.ValueType> = {};
             record[pasteboard.MIMETYPE_TEXT_PLAIN] = '';
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('');
                 done();
@@ -287,7 +376,7 @@ export default function abilityTest() {
             let record: Record<string, pasteboard.ValueType> = {};
             record[pasteboard.MIMETYPE_TEXT_PLAIN] = 'Hello 中国!@#$%^&*()_+{}\\?.';
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('Hello 中国!@#$%^&*()_+{}\\?.');
                 done();
@@ -315,7 +404,7 @@ export default function abilityTest() {
             }
             record[pasteboard.MIMETYPE_TEXT_PLAIN] = textData;
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual(textData);
                 done();
@@ -342,7 +431,7 @@ export default function abilityTest() {
                 abilityName: 'testAbilityName'
             } as Want;
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataWant = pasteData.getPrimaryWant();
                 expect(JSON.stringify(pasteDataWant)).assertContain('"bundleName":"bundleName","abilityName":"testAbilityName"');
                 done();
@@ -366,7 +455,7 @@ export default function abilityTest() {
             let record: Record<string, pasteboard.ValueType> = {};
             record['app/xml'] = new ArrayBuffer(256);
             try {
-                let pasteData:pasteboard.PasteData = pasteboard.createData(record);
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
                 let pasteDataType = pasteData.getMimeTypes();
                 expect(String(pasteDataType)).assertEqual('app/xml');
                 done();
@@ -558,7 +647,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0120----------");
-            try{
+            try {
                 let uri = "www.baidu.com";
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uri);
                 expect(pasteData.getRecord(0).uri).assertEqual(uri);
@@ -581,7 +670,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0130----------");
-            try{
+            try {
                 let text = "hello";
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
                 expect(pasteData.getRecord(0).plainText).assertEqual(text);
@@ -603,7 +692,7 @@ export default function abilityTest() {
          */
         it('SUB_PasteBoard_ETS_PasteData_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteData_Static_0140----------");
-            try{
+            try {
                 let text = "hello";
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
                 expect(pasteData.getRecord(0).plainText).assertEqual(text);
@@ -639,7 +728,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch(err) {
+            } catch (err) {
                 hilog.info(domain, tag, "System pasteBoard set pastedata error,error: " + err);
                 expect(false).assertTrue();
                 done();
@@ -750,7 +839,7 @@ export default function abilityTest() {
                 let hasDataType = systemPasteboard.hasDataType('text/want');
                 expect(hasDataType).assertTrue();
                 done();
-            }  catch (err: BusinessError) {
+            } catch (err: BusinessError) {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -986,7 +1075,7 @@ export default function abilityTest() {
         it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0130----------");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
-            try{
+            try {
                 await systemPasteBoard.clearData();
                 systemPasteBoard.hasData((err: BusinessError | null, data) => {
                     if (err?.message) {
@@ -1016,7 +1105,7 @@ export default function abilityTest() {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, 'application/xml');
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0140----------");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
-            try{
+            try {
                 await systemPasteBoard.clearData();
                 let prop = pasteData.getProperty();
                 expect(prop.timestamp != null).assertTrue();
@@ -1028,7 +1117,7 @@ export default function abilityTest() {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
-            
+
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0140----------");
             done();
         })
@@ -1045,7 +1134,7 @@ export default function abilityTest() {
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0150----------");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
-            try{
+            try {
                 await systemPasteBoard.clearData();
                 let prop = pasteData.getProperty();
                 expect(prop.timestamp != null).assertTrue();
@@ -1124,7 +1213,7 @@ export default function abilityTest() {
          */
         it("SUB_PasteBoard_ETS_SystemPasteboard_Static_0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0180----------");
-            try{
+            try {
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "");
                 let systemPasteBoard = pasteboard.getSystemPasteboard();
                 systemPasteBoard.clearDataSync();
@@ -1336,7 +1425,7 @@ export default function abilityTest() {
             try {
                 await systemPasteboard.clearData();
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
-                expect(data.length).assertEqual(0); 
+                expect(data.length).assertEqual(0);
                 done();
             } catch (err: BusinessError) {
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
@@ -1358,7 +1447,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1387,7 +1476,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let htmlText = '<html><head></head><body>Hello World!</body></html>';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
                 await systemPasteboard.setData(pasteData);
@@ -1416,7 +1505,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let uriText = 'https://www.baidu.com/';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uriText);
                 await systemPasteboard.setData(pasteData);
@@ -1445,7 +1534,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let record: Record<string, pasteboard.ValueType> = {};
                 let want = {
                     bundleName: "com.example.myapplication45",
@@ -1479,7 +1568,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1509,7 +1598,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges)
+                systemPasteboard.offUpdate(contentChanges)
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1538,7 +1627,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let htmlText = '<html><head></head><body>Hello World!</body></html>';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
                 await systemPasteboard.setData(pasteData);
@@ -1567,7 +1656,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let uriText = 'https://www.baidu.com/';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uriText);
                 await systemPasteboard.setData(pasteData);
@@ -1596,7 +1685,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges)
+                systemPasteboard.offUpdate(contentChanges)
                 let record: Record<string, pasteboard.ValueType> = {};
                 let want = {
                     bundleName: "com.example.myapplication45",
@@ -1630,7 +1719,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1672,6 +1761,2001 @@ export default function abilityTest() {
                 expect(err).assertEqual(null);
             }
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0370----------");
+        })
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010
+         * @tc.desc      : getDataWithProgress with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010 start------");
+
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            hilog.info(domain, tag, "------getSystemPasteboard start------");
+            systemPasteboard.clearDataSync();
+            hilog.info(domain, tag, "------clearDataSync start------");
+            try {
+                fs.mkdirSync(dstDir);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, `Failed to create dir: ${err.message}`);
+            }
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            console.info(tag + 'dstUri:' + dstUri + 'length:' + dstUri.length);
+
+            let params: pasteboard.GetDataParams = {
+                destUri: dstUri,
+                progressIndicator: pasteboard.ProgressIndicator.NONE
+            };
+            try {
+                await systemPasteboard.getDataWithProgress(params);
+                hilog.info(domain, tag, "getDataWithProgress success");
+            } catch (err: BusinessError) {
+                //涉及到权限问题，权限不足就会报错误码12900010
+                hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
+                expect(err.code).assertEqual(12900010)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0010 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020
+         * @tc.desc      : getDataWithProgress fail,err：12900010,message: System error occurred during paste execution.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020 start------");
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            let params: pasteboard.GetDataParams = {
+                destUri: "",
+                progressIndicator: pasteboard.ProgressIndicator.NONE
+            };
+            try {
+                await systemPasteboard.getDataWithProgress(params);
+                hilog.info(domain, tag, "getDataWithProgress params assertFail");
+                expect().assertFail();
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'getDataWithProgress fail,err:' + err.code + ',message: ' + err.message);
+                expect(err.code).assertEqual(12900010)
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetDataWithProgress_Static_0020 end-------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetChangeCount_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_GetChangeCount_Static_0010
+         * @tc.desc      : getChangeCount with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetChangeCount_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetChangeCount_Static_0010 start------");
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                let result1: Long = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, "Succeeded in getting the change count.Result0: " + result1);
+
+                let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'content1');
+                await systemPasteboard.setData(pasteData);
+                hilog.info(domain, tag, "Succeeded in setting pasteData");
+
+                let result2: Long = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, "Succeeded in getting the change count.Result1: " + result2);
+                expect(result2).assertEqual(result1 + 1);
+                hilog.info(domain, tag, "Pasteboard change success.");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "Failed to get the change count.Cause: " + err.message);
+                expect().assertFail();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetChangeCount_Static_0010 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0010
+         * @tc.desc      : createRecord with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0010 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+            let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
+            pasteData.replaceRecord(0, pasteDataRecord)
+            let result = pasteData.hasType("arrayBuffer")
+            expect(result).assertTrue();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0010 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0020
+         * @tc.desc      : createRecord with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0020 start------");
+            let buffer = new ArrayBuffer(128);
+            let realSize: image.Size = { height: 3, width: 5 };
+            let opt: image.InitializationOptions = {
+                size: realSize,
+                pixelFormat: image.PixelMapFormat.RGBA_8888,
+                editable: true,
+                alphaType: image.AlphaType.OPAQUE,
+                scaleMode: image.ScaleMode.CENTER_CROP
+            };
+            let pixelMap: image.PixelMap = image.createPixelMapSync(buffer, opt);
+            let htmlText: string = 'dataability:///com.example.myapplication1/user.txt';
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URI');
+                record.addEntry(pasteboard.MIMETYPE_PIXELMAP, pixelMap)
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT)
+                record.addEntry('app/xml', new ArrayBuffer(256),)
+                let types: string[] = record.getValidTypes([
+                    pasteboard.MIMETYPE_TEXT_PLAIN,
+                    pasteboard.MIMETYPE_TEXT_HTML,
+                    pasteboard.MIMETYPE_TEXT_URI,
+                    pasteboard.MIMETYPE_TEXT_WANT,
+                    pasteboard.MIMETYPE_PIXELMAP,
+                    'app/xml'
+                ]);
+                hilog.info(domain, tag, "addEntry success,getValidTypes success.types:" + types);
+                hilog.info(domain, tag, "htmlText:" + record.htmlText);
+                expect(String(htmlText)).assertEqual(record.htmlText);
+                expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0030
+         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0030
+         * @tc.desc      : createRecord with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0030 start------");
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URL');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+                record.addEntry('app/xml', new ArrayBuffer(256),);
+
+                hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
+                hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
+                expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0030 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_CreateRecord_Static_0040
+         * @tc.number    : SUB_PasteBoard_ETS_CreateRecord_Static_0040
+         * @tc.desc      : createRecord with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0040 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+            let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
+            try {
+                pasteData.replaceRecord(1, pasteDataRecord)
+            } catch (err: BusinessError) {
+                console.info("Replace specified record fail,error code is: " + err.code)
+                expect(err.code).assertEqual(12900001)
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0040 end-------");
+            done();
+        })
+
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_ReplaceRecord_Static_0010
+         * @tc.desc      : replaceRecord with invalid params.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_ReplaceRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0010 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+            let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
+            pasteData.replaceRecord(0, pasteDataRecord)
+            let result = pasteData.hasType("arrayBuffer")
+            expect(result).assertTrue();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0010 end-------");
+            done();
+        })
+
+        /**
+        * @tc.name      : SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
+        * @tc.number    : SUB_PasteBoard_ETS_ReplaceRecord_Static_0020
+        * @tc.desc      : replaceRecord with invalid params.
+        * @tc.size      : MEDIUM
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('SUB_PasteBoard_ETS_ReplaceRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0020 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+            let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
+            try {
+                pasteData.replaceRecord(1, pasteDataRecord)
+            } catch (err: BusinessError) {
+                console.info("Replace specified record fail,error code is: " + err.code)
+                expect(err.code).assertEqual(12900001)
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ReplaceRecord_Static_0020 end-------");
+            done();
+        })
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_RemoveRecord_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_RemoveRecord_Static_0010
+         * @tc.desc      : Remove specified removeRecord from pasteData failed,index out of range
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_RemoveRecord_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0010 start------");
+            let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
+            hilog.info(domain, tag, "pasteData createData");
+            expect(pasteData.getRecordCount()).assertEqual(1)
+            hilog.info(domain, tag, "pasteData.getRecordCount(): " + pasteData.getRecordCount());
+            try {
+                pasteData.removeRecord(2)
+                hilog.info(domain, tag, "removeRecord");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "Remove specified removeRecord fail,error code is: " + err.message)
+                expect(err.code).assertEqual(12900001)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0010 end-------");
+            done();
+        })
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_RemoveRecord_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_RemoveRecord_Static_0020
+         * @tc.desc      : Remove specified removeRecord from pasteData success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_RemoveRecord_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0020 start------");
+            let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
+            hilog.info(domain, tag, "pasteData createData");
+            expect(pasteData.getRecordCount()).assertEqual(1)
+            hilog.info(domain, tag, "pasteData.getRecordCount(): " + pasteData.getRecordCount());
+            try {
+                pasteData.removeRecord(0)
+                hilog.info(domain, tag, "Remove specified removeRecord from pasteData success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "Remove specified removeRecord fail,error code is: " + err.message)
+                expect(err.code).assertEqual(12900001)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveRecord_Static_0020 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0010
+         * @tc.desc      : Pasteboard setData and hasType.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_HasType_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0010 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+            let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
+            pasteData.replaceRecord(0, pasteDataRecord)
+            let result = pasteData.hasType("arrayBuffer")
+            expect(result).assertTrue();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0010 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0020
+         * @tc.desc      : Pasteboard setData and hasType.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_HasType_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0020 start------");
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URL');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+                record.addEntry('app/xml', new ArrayBuffer(256),);
+
+                hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
+                hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
+                expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0030
+         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0030
+         * @tc.desc      : Test pasteBoard hasType data result == false
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_HasType_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0030 start------");
+            let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
+            pasteData.removeRecord(0)
+            let result = pasteData.hasType("string")
+            expect(result == false).assertTrue();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0030 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_HasType_Static_0040
+         * @tc.number    : SUB_PasteBoard_ETS_HasType_Static_0040
+         * @tc.desc      : hasType result: false
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_HasType_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0040 start------");
+            let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
+            pasteData.removeRecord(0)
+            try {
+                let result = pasteData.hasType('')
+                hilog.info(domain, tag, "hasType result: " + result);
+                expect(result).assertFalse();
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasType_Static_0040 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010
+         * @tc.desc      : Test pasteBoard getPrimaryPixelMap data success
+         * @tc.size      : MEDIUMTEST
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010 start------");
+            let pasteData: pasteboard.PasteData
+            let realSize: image.Size = { height: 3, width: 5 };
+            let opt: image.InitializationOptions = {
+                size: realSize,
+                pixelFormat: image.PixelMapFormat.RGBA_8888,
+                editable: true,
+                alphaType: image.AlphaType.OPAQUE,
+                scaleMode: image.ScaleMode.CENTER_CROP
+            };
+            await image.createPixelMap(color, opt).then((pixelMap) => {
+                pasteData = pasteboard.createData(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+            })
+            let pixelMapRecord = pasteData.getPrimaryPixelMap()
+            expect(pixelMapRecord != null).assertTrue();
+            expect(pixelMapRecord.getPixelBytesNumber()).assertEqual(60);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_PasteStart_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_PasteStart_Static_0010
+         * @tc.desc      : Test pasteBoard pasteStart success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_PasteStart_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteStart_Static_0010 start------");
+            let uri = "www.baidu.com"
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uri)
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+            await systemPasteBoard.setData(pasteData);
+            let data = await systemPasteBoard.getData();
+
+            try {
+                data.pasteStart();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteStart fail" + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            try {
+                data.pasteComplete();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteComplete fail" + err.message);
+                expect().assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteStart_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetValidTypes_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_GetValidTypes_Static_0010
+         * @tc.desc      : Test pasteBoard variety createData Variety and getValidTypes
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetValidTypes_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0010 start------");
+            let buffer = new ArrayBuffer(128);
+            let realSize: image.Size = { height: 3, width: 5 };
+            let opt: image.InitializationOptions = {
+                size: realSize,
+                pixelFormat: image.PixelMapFormat.RGBA_8888,
+                editable: true,
+                alphaType: image.AlphaType.OPAQUE,
+                scaleMode: image.ScaleMode.CENTER_CROP
+            };
+            let pixelMap: image.PixelMap = image.createPixelMapSync(buffer, opt);
+            let htmlText: string = 'dataability:///com.example.myapplication1/user.txt';
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URI');
+                record.addEntry(pasteboard.MIMETYPE_PIXELMAP, pixelMap)
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT)
+                record.addEntry('app/xml', new ArrayBuffer(256),)
+                let types: string[] = record.getValidTypes([
+                    pasteboard.MIMETYPE_TEXT_PLAIN,
+                    pasteboard.MIMETYPE_TEXT_HTML,
+                    pasteboard.MIMETYPE_TEXT_URI,
+                    pasteboard.MIMETYPE_TEXT_WANT,
+                    pasteboard.MIMETYPE_PIXELMAP,
+                    'app/xml'
+                ]);
+                hilog.info(domain, tag, "addEntry success,getValidTypes success.types:" + types);
+                hilog.info(domain, tag, "htmlText:" + record.htmlText);
+                expect(String(htmlText)).assertEqual(record.htmlText);
+                expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0010 end------");
+            done();
+        })
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetValidTypes_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_GetValidTypes_Static_0020
+         * @tc.desc      : getValidTypes Failed types.length === 0
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetValidTypes_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0020 start------");
+            let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+            record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+            record.addEntry(pasteboard.MIMETYPE_TEXT_HTML, html);
+            try {
+                let types: string[] = record.getValidTypes([]);
+                hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
+                expect(types.length === 0).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0010
+         * @tc.desc      : Pasteboard setData and hasType.
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_AddEntry_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0010 start------");
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URL');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT);
+                record.addEntry('app/xml', new ArrayBuffer(256),);
+
+                hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
+                hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
+                expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0020
+         * @tc.desc      : Test pasteBoard addEntry data success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_AddEntry_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0020 start------");
+            let buffer = new ArrayBuffer(128);
+            let realSize: image.Size = { height: 3, width: 5 };
+            let opt: image.InitializationOptions = {
+                size: realSize,
+                pixelFormat: image.PixelMapFormat.RGBA_8888,
+                editable: true,
+                alphaType: image.AlphaType.OPAQUE,
+                scaleMode: image.ScaleMode.CENTER_CROP
+            };
+            let pixelMap: image.PixelMap = image.createPixelMapSync(buffer, opt);
+            let htmlText: string = 'dataability:///com.example.myapplication1/user.txt';
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
+            try {
+                record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+                record.addEntry(pasteboard.MIMETYPE_TEXT_URI, 'URI');
+                record.addEntry(pasteboard.MIMETYPE_PIXELMAP, pixelMap)
+                record.addEntry(pasteboard.MIMETYPE_TEXT_WANT, WANT)
+                record.addEntry('app/xml', new ArrayBuffer(256),)
+                let types: string[] = record.getValidTypes([
+                    pasteboard.MIMETYPE_TEXT_PLAIN,
+                    pasteboard.MIMETYPE_TEXT_HTML,
+                    pasteboard.MIMETYPE_TEXT_URI,
+                    pasteboard.MIMETYPE_TEXT_WANT,
+                    pasteboard.MIMETYPE_PIXELMAP,
+                    'app/xml'
+                ]);
+                hilog.info(domain, tag, "addEntry success,getValidTypes success.types:" + types);
+                hilog.info(domain, tag, "htmlText:" + record.htmlText);
+                expect(String(htmlText)).assertEqual(record.htmlText);
+                expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "message: " + err.message);
+                expect().assertFail()
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_AddEntry_Static_0030
+         * @tc.number    : SUB_PasteBoard_ETS_AddEntry_Static_0030
+         * @tc.desc      : addEntry Failed types.length === 0
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_AddEntry_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0030 start------");
+            let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+            record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+            record.addEntry(pasteboard.MIMETYPE_TEXT_HTML, html);
+            try {
+                let types: string[] = record.getValidTypes([]);
+                hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
+                expect(types.length === 0).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_AddEntry_Static_0030 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_Cancel_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_Cancel_Static_0010
+         * @tc.desc      : Test pasteBoard cancel success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_Cancel_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_Cancel_Static_0010 start ************')
+            try {
+                let signal = new pasteboard.ProgressSignal;
+                hilog.info(domain, tag, 'success, progress:' + signal);
+                try {
+                    signal.cancel();
+                    hilog.info(domain, tag, 'Test pasteBoard cancel success');
+                } catch (err: BusinessError) {
+                    hilog.info(domain, tag, "Test pasteBoard cancel fail" + err.message);
+                    hilog.info(domain, tag, "err.code " + err.code);
+                    expect().assertFail();
+                    done();
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteboard.ProgressSignal constructor fail" + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect().assertFail();
+                done();
+            }
+            done();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_Cancel_Static_0010 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010
+         * @tc.desc      : setAppShareOptions fail,code 201
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010 start------");
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+            try {
+                systemPasteboard.removeAppShareOptions();
+                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+            done();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0010 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020
+         * @tc.desc      : setAppShareOptions fail,code 401
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020 start------");
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                systemPasteboard.setAppShareOptions(pasteboard.ShareOption.LOCALDEVICE);
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions localDevice success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions localDevice fail " + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+            done();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetAppShareOptions_Static_0020 end------");
+        })
+
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010
+         * @tc.desc      : removeAppShareOptions fail,code 201
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010 start------");
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+            try {
+                systemPasteboard.removeAppShareOptions();
+                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+            done();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_RemoveAppShareOptions_Static_0010 end------");
+        })
+
+
+        /**
+       * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
+       * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedData_Static_0010
+       * @tc.desc      : Test pasteBoard getUnifiedData success
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+        it('SUB_PasteBoard_ETS_GetUnifiedData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0010 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "result:" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                expect(result2).assertEqual(result1 + 1);
+                console.info(domain, tag, 'Pasteboard change success.');
+                try {
+                    let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                    hilog.info(domain, tag, "data:" + data);
+                    try {
+                        let records = data.getRecords();
+                        hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                        expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                        let record = records[0] as unifiedDataChannel.PlainText;
+                        expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                        hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                    } catch (err: BusinessError) {
+                        hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                        expect().assertFail();
+                        done();
+                    }
+                } catch (err: BusinessError) {
+                    hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                    expect().assertFail();
+                    done();
+                }
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0010 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedData_Static_0020
+         * @tc.desc      : Test pasteBoard getUnifiedData success
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_GetUnifiedData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0020 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            expect(result).assertFalse();
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedData_Static_0020 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0010
+         * @tc.desc      : Test pasteBoard setUnifiedData data success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0010 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "hasDataSync result" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            console.info(domain, tag, `Succeeded in getting the change count.Result0:${result1}`);
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                console.info(domain, tag, `Succeeded in getting the change count.Result1:${result2}`);
+                expect(result2).assertEqual(result1 + 1);
+                console.info(domain, tag, 'Pasteboard change success.');
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0010 end------");
+        })
+
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0020
+         * @tc.desc      : Test pasteBoard setUnifiedData data success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0020 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "result:" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                expect(result2).assertEqual(result1 + 1);
+                console.info(domain, tag, 'Pasteboard change success.');
+                try {
+                    let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                    hilog.info(domain, tag, "data:" + data);
+                    try {
+                        let records = data.getRecords();
+                        hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                        expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                        let record = records[0] as unifiedDataChannel.PlainText;
+                        expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                        hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                    } catch (err: BusinessError) {
+                        hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                        expect().assertFail();
+                        done();
+                    }
+                } catch (err: BusinessError) {
+                    hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                    expect().assertFail();
+                    done();
+                }
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0020 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
+         * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedData_Static_0030
+         * @tc.desc      : Test pasteBoard setUnifiedData data success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('SUB_PasteBoard_ETS_SetUnifiedData_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0030 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            expect(result).assertFalse();
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data: unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedData_Static_0030 end------");
+        })
+
+        /**
+       * @tc.name      : SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
+       * @tc.number    : SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010
+       * @tc.desc      : Test pasteBoard getUnifiedDataSync data success
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+        it('SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "result:" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
+            try {
+                systemPasteboard.setUnifiedDataSync(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data: unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                hilog.info(domain, tag, "Succeeded in getting the change count.Result2:" + result2);
+                expect(result2).assertEqual(result1 + 1);
+                hilog.info(domain, tag, 'Pasteboard change success.');
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetUnifiedDataSync_Static_0010 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_PasteComplete_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_PasteComplete_Static_0010
+         * @tc.desc      : Test pasteBoard pasteComplete success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_PasteComplete_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteComplete_Static_0010 start------");
+            let uri = "www.baidu.com"
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uri)
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+            await systemPasteBoard.setData(pasteData);
+            let data = await systemPasteBoard.getData();
+
+            try {
+                data.pasteStart();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteStart fail" + err.message);
+                expect().assertFail();
+            }
+
+            try {
+                data.pasteComplete();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteComplete fail" + err.message);
+                expect().assertFail();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteComplete_Static_0010 end------");
+            done();
+        })
+        /**
+           * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
+           * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010
+           * @tc.desc      : Test pasteBoard setUnifiedDataSync data success
+           * @tc.size      : MEDIUM
+           * @tc.type      : Function
+           * @tc.level     : Level 0
+           */
+        it('SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "hasDataSync result" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            console.info(domain, tag, `Succeeded in getting the change count.Result0:${result1}`);
+            try {
+                systemPasteboard.setUnifiedDataSync(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                console.info(domain, tag, `Succeeded in getting the change count.Result1:${result2}`);
+                expect(result2).assertEqual(result1 + 1);
+                console.info(domain, tag, 'Pasteboard change success.');
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0010 end------");
+        })
+
+
+        /**
+       * @tc.name      : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
+       * @tc.number    : SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020
+       * @tc.desc      : Test pasteBoard setUnifiedDataSync data success
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+        it('SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key": 'delayPlaintext',
+                "Value": 'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "result:" + result);
+            expect(result).assertFalse();
+
+            let result1: number = systemPasteboard.getChangeCount();
+            hilog.info(domain, tag, "Succeeded in getting the change count.Result0:" + result1);
+            try {
+                systemPasteboard.setUnifiedDataSync(plainTextData);
+                let result2: number = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data: unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                hilog.info(domain, tag, "Succeeded in getting the change count.Result2:" + result2);
+                expect(result2).assertEqual(result1 + 1);
+                hilog.info(domain, tag, 'Pasteboard change success.');
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetUnifiedDataSync_Static_0020 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_DetectPatterns_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_DetectPatterns_Static_0010
+         * @tc.desc      : Test pasteBoard detectPatterns data success
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_DetectPatterns_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0010 start------");
+            const textData = "<!DOCTYPE html><html><head><title>" +
+                "的厚爱hi哦</title></head><body><h2>恶风无关痛痒和</h2>" +
+                "<p>Greg任何人https://exampsaole.com问我的<a href=\"https://exaeqdwerfmple.com\">" +
+                "如果qwiuyhw@huedqw.dsh站</a>。</p></body></html>";
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            await systemPasteboard.setData(pasteData);
+            let res = await systemPasteboard.hasData();
+            hilog.info(domain, tag, 'res' + res);
+            expect(res).assertEqual(true);
+            let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.NUMBER];
+            try {
+                await systemPasteboard.detectPatterns(patterns).then((data) => {
+                    hilog.info(domain, tag, "----detectPatterns callback----");
+                    expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+                })
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "error.message:" + err.message);
+                expect(null).assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0010
+         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0010
+         * @tc.desc   : Test pasteBoard setDataSync data success
+         * @tc.size   : MediumTest
+         * @tc.type   : Function
+         * @tc.level  : Level 2
+         */
+        it("SUB_PasteBoard_ETS_SetDataSync_Static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0010 start------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "pasteboard");
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+
+            systemPasteBoard.setDataSync(pasteData);
+            expect(systemPasteBoard.hasDataSync()).assertEqual(true);
+            hilog.info(domain, tag, "Succeeded in setting PasteData");
+
+            systemPasteBoard.clearDataSync();
+
+            let result = systemPasteBoard.hasDataSync();
+            hilog.info(domain, tag, "Succeed in checking the PasteBoard. Result: " + result);
+            expect(result).assertEqual(false);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0020
+         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0020
+         * @tc.desc   : TgetDataWithProgress fail,err：401,message: Parameter error. mimeType cannot be empty.
+         * @tc.size   : MediumTest
+         * @tc.type   : Function
+         * @tc.level  : Level 2
+         */
+        it('SUB_PasteBoard_ETS_SetDataSync_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0020 start------");
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+
+            console.info(tag + `${systemPasteBoard}`)
+            try {
+                // 空MIME类型和空内容
+                let invalidPasteData = pasteboard.createData("", "");
+                systemPasteBoard.setDataSync(invalidPasteData);
+                hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
+                console.info(tag + "Succeeded in setting PasteData");
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'getDataWithProgress fail,err：' + err.code + ',message: ' + err.message);
+                expect(err.code == 401).assertTrue();
+                done();
+            }
+            console.info(tag + "SUB_PasteBoard_ETS_SetDataSync_Static_0020 ---------end")
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_IsRemoteData_Static_0010
+         * @tc.number    : SUB_PasteBoard_ETS_IsRemoteData_Static_0010
+         * @tc.desc      : Test pasteBoard isRemoteData success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_IsRemoteData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_IsRemoteData_Static_0010 start------");
+            let systemPasteboard = pasteboard.getSystemPasteboard()
+            await systemPasteboard.clearData().then(async () => {
+                try {
+                    let isRemote = systemPasteboard.isRemoteData()
+                    expect(isRemote == false).assertTrue();
+                } catch (err: BusinessError) {
+                    hilog.info(domain, tag, "test isRemoteData err:" + err)
+                    expect().assertFail();
+                }
+            })
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_IsRemoteData_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_IsRemoteData_Static_0020
+         * @tc.number    : SUB_PasteBoard_ETS_IsRemoteData_Static_0020
+         * @tc.desc      : Test pasteBoard isRemoteData success
+         * @tc.size      : MEDIUM
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_IsRemoteData_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_IsRemoteData_Static_0020 start------");
+            let systemPasteBoard = pasteboard.getSystemPasteboard();
+            try {
+                let result = systemPasteBoard.isRemoteData();
+                hilog.info(domain, tag, "Succeed in checking the PasteBoard. Result: " + result);
+                expect(result).assertEqual(false);
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'getDataWithProgress fail,err：' + err.code + ',message: ' + err.message);
+                expect(err.code).assertEqual(12900005)
+                done();
+            }
+            console.info(tag + "SUB_PasteBoard_ETS_IsRemoteData_Static_0020 ---------end")
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_CreateRecord_Static_0050
+         * @tc.number      SUB_PasteBoard_ETS_CreateRecord_Static_0050
+         * @tc.desc        createRecord with invalid params.
+         * @tc.size        MEDIUM
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0050 start------");
+            let mimeType = "x".repeat(1025)
+            try {
+                let pasteDataRecord = pasteboard.createRecord(mimeType, ARRAY_BUFFER)
+                hilog.info(domain, tag, "---- createRecord success----");
+            } catch (err: BusinessError) {
+                console.info("Create record error, err code is: " + err.code)
+                expect(err.code).assertEqual(401)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0050 end------");
+            done();
+        })
+
+
+        /**
+           * @tc.name        SUB_PasteBoard_ETS_CreateRecord_Static_0060
+           * @tc.number      SUB_PasteBoard_ETS_CreateRecord_Static_0060
+           * @tc.desc        Create record error, err code is: 401
+           * @tc.size        MEDIUM
+           * @tc.type        Function
+           * @tc.level       Level 2
+           */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0060 start------");
+            try {
+                let pasteDataRecord = pasteboard.createRecord("", "String")
+                hilog.info(domain, tag, "---- createRecord success----");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "Create record error, err code is: " + err.code)
+                expect(err.code).assertEqual(401)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0060 end------");
+            done();
+        })
+
+        /**
+        * @tc.name     SUB_PasteBoard_ETS_CreateRecord_Static_0070
+        * @tc.number   SUB_PasteBoard_ETS_CreateRecord_Static_0070
+        * @tc.desc     捕获到预期错误码：401
+        * @tc.size     MediumTest
+        * @tc.type     Function
+        * @tc.level    Level 2
+        */
+        it('SUB_PasteBoard_ETS_CreateRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
+            try {
+                // mimeType为空字符串
+                let invalidRecord = pasteboard.createRecord("", "");
+                expect().assertFail();
+                done();
+            } catch (err: BusinessError) {
+                expect(err.code).assertEqual(401);
+                hilog.info(domain, tag, `捕获到预期错误码：${err.code}`);
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
+            done();
+        });
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_DetectPatterns_Static_0020
+         * @tc.number      SUB_PasteBoard_ETS_DetectPatterns_Static_0020
+         * @tc.desc        Test EMAIL_ADDRESS pattern detection
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_DetectPatterns_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0020 start------");
+            const textData = "<!DOCTYPE html><html><head><title>" +
+                "的厚爱hi哦</title></head><body><h2>恶风无关痛痒和</h2>" +
+                "<p>Greg任何人https://exampsaole.com问我的<a href=\"https://exaeqdwerfmple.com\">" +
+                "如果qwiuyhw@huedqw.dsh站</a>。</p></body></html>";
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            await systemPasteboard.setData(pasteData);
+            let res = await systemPasteboard.hasData();
+            hilog.info(domain, tag, 'res' + res);
+            expect(res).assertEqual(true);
+            let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.EMAIL_ADDRESS];
+            try {
+                await systemPasteboard.detectPatterns(patterns).then((data) => {
+                    hilog.info(domain, tag, "----detectPatterns callback----");
+                    expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+                })
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "error.message:" + err.message);
+                expect(null).assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_Additions_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_Additions_Static_0010
+         * @tc.desc        Test additions with null, undefined
+         * @tc.size        MEDIUM
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_Additions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0010----------");
+            try {
+                let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "test");
+                let prop = pasteData.getProperty();
+        
+                prop.additions = {
+                    "nullValue": null,
+                    "undefinedValue": undefined
+                };
+                pasteData.setProperty(prop);
+        
+                let newProp = pasteData.getProperty();
+                expect(newProp.additions["nullValue"]).assertEqual(null);
+                expect(newProp.additions["undefinedValue"]).assertEqual(undefined);
+                done();
+            } catch (err: BusinessError) {
+                console.error("Error in complex additions test: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0010----------");
+        });
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_Additions_Static_0020
+         * @tc.number      SUB_PasteBoard_ETS_Additions_Static_0020
+         * @tc.desc        Test clearing additions property
+         * @tc.size        MEDIUM
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_Additions_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0020----------");
+            let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "test");
+            let prop = pasteData.getProperty();
+
+            try {
+                hilog.info(domain, tag, "----------Setting additions----------");
+                // 设置 additions
+                prop.additions = { "key": "value", "userKey": "userValue" };
+                pasteData.setProperty(prop);
+
+                let tempProp = pasteData.getProperty();
+                hilog.info(domain, tag, "Additions after setting: " + JSON.stringify(tempProp.additions));
+                hilog.info(domain, tag, "Additions count: " + Object.keys(tempProp.additions).length);
+
+                // 属性是否存在
+                expect(tempProp.additions["key"]).assertEqual("value");
+                expect(tempProp.additions["userKey"]).assertEqual("userValue");
+                hilog.info(domain, tag, "----------Clearing additions----------");
+                prop.additions = {};
+                pasteData.setProperty(prop);
+
+                // 添加短暂延迟确保更新生效
+                setTimeout(() => {
+                    try {
+                        let newProp = pasteData.getProperty();
+                        hilog.info(domain, tag, "Additions after clearing: " + JSON.stringify(newProp.additions));
+                        // 检查设置的属性是否被清除
+                        expect(newProp.additions["key"]).assertUndefined();
+                        expect(newProp.additions["userKey"]).assertUndefined();
+
+                        hilog.info(domain, tag, "----------Test passed----------");
+                        done();
+                    } catch (err: BusinessError) {
+                        console.error("Error in clearing additions test: " + err.message + "; " + err.code);
+                        done();
+                    }
+                }, 100);
+            } catch (err: BusinessError) {
+                console.error("Error in clearing additions test: " + err.message + "; " + err.code);
+                done();
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0020----------");
+        });
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_MimeTypes_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_MimeTypes_Static_0010
+         * @tc.desc        Test pasteBoard mimeTypes data success
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_MimeTypes_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0010----------");
+            let record: Record<string, pasteboard.ValueType> = {};
+            record['app/xml'] = new ArrayBuffer(256);
+            try {
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
+                let pasteDataType = pasteData.getMimeTypes();
+                expect(String(pasteDataType)).assertEqual('app/xml');
+                done();
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0010----------");
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_MimeTypes_Static_0020
+         * @tc.number      SUB_PasteBoard_ETS_MimeTypes_Static_0020
+         * @tc.desc        Test pasteBoard detectPatterns data success
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_MimeTypes_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0020----------");
+            let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, 'hello');
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+                await systemPasteboard.setData(pasteData);
+                expect(systemPasteboard.hasDataSync()).assertTrue();
+                let data: Array<String> = await systemPasteboard.getMimeTypes();
+                expect(data[0]).assertEqual('text/uri');
+                done();
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_MimeTypes_Static_0020----------");
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_LocalOnly_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_LocalOnly_Static_0010
+         * @tc.desc        Test pasteBoard localOnly data success
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_LocalOnly_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_LocalOnly_Static_0010----------");
+            try {
+                hilog.info(domain, tag, 'Checks PasteDataProperty.localOnly');
+                let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "valueType")
+                let pasteDataProperty = pasteData.getProperty();
+                hilog.info(domain, tag, 'Checks: localOnly = ' + pasteDataProperty.localOnly);
+                expect(pasteDataProperty.localOnly == false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_LocalOnly_Static error is: " + err.message + "; " + err.code);
+                expect().assertFail();
+                done();
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_LocalOnly_Static_0010----------");
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_Data_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_Data_Static_0010
+         * @tc.desc        Test pasteBoard createData with Record<string, ArrayBuffer> and getData
+         * @tc.size        MEDIUM
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_Data_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Data_Static_0010----------");
+            // 构造 ArrayBuffer 数据
+            let buffer1 = new ArrayBuffer(16);
+            let buffer2 = new ArrayBuffer(32);
+            let record: Record<string, pasteboard.ValueType> = {};
+            record['custom/type1'] = buffer1;
+            record['custom/type2'] = buffer2;
+            try {
+                let pasteData: pasteboard.PasteData = pasteboard.createData(record);
+                let pasteDataRecord = pasteData.getRecord(0);
+                let value1 = await pasteDataRecord.getData('custom/type1');
+                expect(value1 instanceof ArrayBuffer).assertTrue();
+                hilog.info(domain, tag, "value1.byteLength:" + (value1 as ArrayBuffer).byteLength);
+                expect((value1 as ArrayBuffer).byteLength).assertEqual(16);
+                let value2 = await pasteDataRecord.getData('custom/type2');
+                expect(value2 instanceof ArrayBuffer).assertTrue();
+                hilog.info(domain, tag, "value2.byteLength:" + (value2 as ArrayBuffer).byteLength);
+                expect((value2 as ArrayBuffer).byteLength).assertEqual(32);
+                done();
+            } catch (err: BusinessError) {
+                console.error("SUB_PasteBoard_ETS_Data_Static_0010 error is: " + err.message + "; " + err.code);
+                expect(err).assertEqual(null);
+            }
+            hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Data_Static_0010----------");
+        })
+
+        /**
+        * @tc.name     SUB_PasteBoard_ETS_AddEntry_Static_0040
+        * @tc.number   SUB_PasteBoard_ETS_AddEntry_Static_0040
+        * @tc.desc     Failed to addEntry. Cause: Parameter error. the first param should be object or string.401
+        * @tc.size     MediumTest
+        * @tc.type     Function
+        * @tc.level    Level 2
+        */
+        it('SUB_PasteBoard_ETS_AddEntry_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 start ************')
+            let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
+            let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+            try {
+                //为空字符串
+                record.addEntry("", "");
+                expect().assertFail();
+            } catch (err: BusinessError) {
+                expect(err.code).assertEqual(401);
+                hilog.info(domain, tag, `Failed to addEntry. Cause: ${err.message + err.code}`);
+                done();
+            }
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 end ************');
+            done();
+        })
+
+        /**
+        * @tc.name        SUB_PasteBoard_ETS_OVERWRITE_Static_0010
+        * @tc.number      SUB_PasteBoard_ETS_OVERWRITE_Static_0010
+        * @tc.desc        Test pasteBoard OVERWRITE data success.obj.result is fileConflictOptions_OVERWRITE:0
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 2
+        */
+        it('SUB_PasteBoard_ETS_OVERWRITE_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_OVERWRITE_Static_0010 start------");
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            systemPasteboard.clearDataSync();
+            let resProgressInfo:pasteboard.ProgressInfo;
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            let progressListener = (progressInfo: pasteboard.ProgressInfo) => {
+                resProgressInfo = progressInfo;
+            };
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                progressListener: progressListener,
+                destUri: dstUri,
+                fileConflictOptions: pasteboard.FileConflictOptions.OVERWRITE
+            }
+            let obj = getDataParams;
+            progressListener(progressInfo);
+            expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+            expect(obj.destUri).assertEqual(getDataParams.destUri);
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+
+            hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
+            hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
+            hilog.info(domain, tag, "obj.fileConflictOptions_OVERWRITE:" + getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "resProgressInfo.progress:" + progressInfo.progress);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_OVERWRITE_Static_0010 end------");
+            done();
+        })
+
+        /**
+        * @tc.name        SUB_PasteBoard_ETS_SKIP_Static_0010
+        * @tc.number      SUB_PasteBoard_ETS_SKIP_Static_0010
+        * @tc.desc        Test pasteBoard SKIP data success.result is obj.fileConflictOptions_SKIP:1
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 2
+        */
+        it('SUB_PasteBoard_ETS_SKIP_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SKIP_Static_0010 start------");
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            systemPasteboard.clearDataSync();
+            let resProgressInfo:pasteboard.ProgressInfo;
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            let progressListener = (progressInfo: pasteboard.ProgressInfo) => {
+                resProgressInfo = progressInfo;
+            };
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                progressListener: progressListener,
+                destUri: dstUri,
+                fileConflictOptions: pasteboard.FileConflictOptions.SKIP
+            }
+            let obj = getDataParams;
+            progressListener(progressInfo);
+            expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+            expect(obj.destUri).assertEqual(getDataParams.destUri);
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+
+            hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
+            hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
+            hilog.info(domain, tag, "obj.fileConflictOptions_SKIP:" + getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "resProgressInfo.progress:" + progressInfo.progress);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SKIP_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_DEFAULT_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_DEFAULT_Static_0010
+         * @tc.desc        Test pasteBoard DEFAULT data success.obj.result is obj.progressIndicator_DEFAULT:1  
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_DEFAULT_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DEFAULT_Static_0010 start------");
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            systemPasteboard.clearDataSync();
+            let resProgressInfo:pasteboard.ProgressInfo;
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            let progressListener = (progressInfo: pasteboard.ProgressInfo) => {
+                resProgressInfo = progressInfo;
+            };
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.DEFAULT,
+                progressListener: progressListener,
+                destUri: dstUri,
+                fileConflictOptions: pasteboard.FileConflictOptions.OVERWRITE
+            }
+            let obj = getDataParams;
+            progressListener(progressInfo);
+            expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+            expect(obj.destUri).assertEqual(getDataParams.destUri);
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+
+            hilog.info(domain, tag, "obj.progressIndicator_DEFAULT:" + getDataParams.progressIndicator);
+            hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
+            hilog.info(domain, tag, "obj.fileConflictOptions_OVERWRITE:" + getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "resProgressInfo.progress:" + progressInfo.progress);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DEFAULT_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_ProGress_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_ProGress_Static_0010
+         * @tc.desc        Test pasteBoard fileConflictOptions data success.Data transfer progress: 10%
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_ProGress_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0010 start------");
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                destUri: "/data/files",
+                fileConflictOptions: pasteboard.FileConflictOptions.SKIP,
+                progressListener: (progressInfo: pasteboard.ProgressInfo) => {
+                    hilog.info(domain, tag, `Data transfer progress: ${progressInfo.progress}%`);
+                }
+            }
+            hilog.info(domain, tag, `Data transfer progress: ${progressInfo.progress}%`);
+            let obj = getDataParams;
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_ProGress_Static_0020
+         * @tc.number      SUB_PasteBoard_ETS_ProGress_Static_0020
+         * @tc.desc        Test pasteBoard progress data success.result is resProgressInfo.progress:20
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_ProGress_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0020 start------");
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            systemPasteboard.clearDataSync();
+            let resProgressInfo:pasteboard.ProgressInfo;
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 20,
+            }
+            let progressListener = (progressInfo: pasteboard.ProgressInfo) => {
+                resProgressInfo = progressInfo;
+            };
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                progressListener: progressListener,
+                destUri: dstUri,
+                fileConflictOptions: pasteboard.FileConflictOptions.SKIP
+            }
+            let obj = getDataParams;
+            progressListener(progressInfo);
+            expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+            expect(obj.destUri).assertEqual(getDataParams.destUri);
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+
+            hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
+            hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
+            hilog.info(domain, tag, "obj.fileConflictOptions_SKIP:" + getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "resProgressInfo.progress:" + progressInfo.progress);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0020 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_FileConflictOptions_Static_0010
+         * @tc.desc        Test pasteBoard fileConflictOptions data success, result is obj.fileConflictOptions_SKIP:1
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_FileConflictOptions_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_FileConflictOptions_Static_0010 start------");
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                destUri: "/data/files",
+                fileConflictOptions: pasteboard.FileConflictOptions.SKIP,
+                progressListener: (progressInfo: pasteboard.ProgressInfo) => {
+                    hilog.info(domain, tag, `Data transfer progress: ${progressInfo.progress}%`);
+                }
+            }
+            let obj = getDataParams;
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "obj.fileConflictOptions_SKIP:" + obj.fileConflictOptions);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_FileConflictOptions_Static_0010 end------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_ProgressSignal_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_ProgressSignal_Static_0010
+         * @tc.desc        Test pasteBoard ProgressSignal success
+         * @tc.size        MEDIUM
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_ProgressSignal_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_ProgressSignal_Static_0010 start ************')
+            try {
+                let signal = new pasteboard.ProgressSignal;
+                hilog.info(domain, tag, 'success, progress:' + signal);
+                try {
+                    signal.cancel();
+                    hilog.info(domain, tag, 'Test pasteBoard cancel success');
+                } catch (err: BusinessError) {
+                    hilog.info(domain, tag, "Test pasteBoard cancel fail" + err.message);
+                    hilog.info(domain, tag, "err.code " + err.code);
+                    expect().assertFail();
+                    done();
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pasteboard.ProgressSignal constructor fail" + err.message);
+                hilog.info(domain, tag, "err.code " + err.code);
+                expect().assertFail();
+                done();
+            }
+            done();
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressSignal_Static_0010 end------");
+        })
+
+        /**
+         * @tc.name     SUB_PasteBoard_ETS_ProgressSignal_Static_0020
+         * @tc.number   SUB_PasteBoard_ETS_ProgressSignal_Static_0020
+         * @tc.desc     Test pasteBoard progressSignal success.Remove specified record fail,error code is:System error occurred during paste execution.12900010
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 2
+         */
+        it('SUB_PasteBoard_ETS_ProgressSignal_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressSignal_Static_0020 start------");
+
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            hilog.info(domain, tag, "------getSystemPasteboard start------");
+            systemPasteboard.clearDataSync();
+            hilog.info(domain, tag, "------clearDataSync start------");
+            try {
+                fs.mkdirSync(dstDir);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, `Failed to create dir: ${err.message}`);
+            }
+            let dstUri: string = fileUri.getUriFromPath(dstDir);
+            console.info(tag + 'dstUri:' + dstUri + 'length:' + dstUri.length);
+
+            let params: pasteboard.GetDataParams = {
+                destUri: dstUri,
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                progressSignal: undefined
+            };
+            try {
+                await systemPasteboard.getDataWithProgress(params);
+                hilog.info(domain, tag, "getDataWithProgress success");
+                // expect().assertFail();
+            } catch (err: BusinessError) {
+                //涉及到权限问题，权限不足就会报错误码12900010
+                hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
+                expect(err.code).assertEqual(12900010)
+            }
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressSignal_Static_0020 end-------");
+            done();
+        })
+
+        /**
+         * @tc.name        SUB_PasteBoard_ETS_ProgressListener_Static_0010
+         * @tc.number      SUB_PasteBoard_ETS_ProgressListener_Static_0010
+         * @tc.desc        Test pasteBoard progressListener data success
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('SUB_PasteBoard_ETS_ProgressListener_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressListener_Static_0010 start------");
+            let resProgressInfo:pasteboard.ProgressInfo;
+            const progressInfo:pasteboard.ProgressInfo = {
+                progress: 10,
+            }
+            let progressListener = (progressInfo: pasteboard.ProgressInfo) => {
+                resProgressInfo = progressInfo;
+            };
+            const getDataParams:pasteboard.GetDataParams  = {
+                progressIndicator: pasteboard.ProgressIndicator.NONE,
+                progressListener: progressListener,
+                destUri: "/data/files",
+                fileConflictOptions: pasteboard.FileConflictOptions.SKIP
+            }
+            let obj = getDataParams;
+            progressListener(progressInfo);
+            expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+            expect(obj.destUri).assertEqual(getDataParams.destUri);
+            expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+            expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+
+            hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
+            hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
+            hilog.info(domain, tag, "obj.fileConflictOptions_SKIP:" + getDataParams.fileConflictOptions);
+            hilog.info(domain, tag, "resProgressInfo.progress:" + progressInfo.progress);
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressListener_Static_0010 end------");
+            done();
         })
     })
 }

@@ -53,10 +53,10 @@ struct gridScrollBar {
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
-      .onScrollIndex((first: number): void => {
+      .onScrollIndex((first: int): void => {
         console.info(first.toString())
       })
-      .onScrollBarUpdate((index: number, offset: number) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return ({ totalOffset: 10, totalLength: 200 } as ComputedBarAttribute)
       })
       .width('90%')

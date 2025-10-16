@@ -36,7 +36,7 @@ struct finishTransitionSwiperAnimated {
   @State opacityList: number[] = new Array<number>()
   @State scaleList: number[] = new Array<number>()
   @State translateList: number[] = new Array<number>()
-  @State zIndexList: number[] = new Array<number>()
+  @State zIndexList: int[] = new Array<int>()
   @State strindex: string = '111'
   @State selectedIndex: number = -1
 
@@ -56,7 +56,7 @@ struct finishTransitionSwiperAnimated {
       Text('selectedIndex: ' + this.selectedIndex).id('selectedIndexSwiper_text')
         .margin(5)
       Swiper() {
-        ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+        ForEach(this.backgroundColors, (backgroundColor: Color, index: int) => {
           Text(index.toString())
             .width('100%')
             .height('100%')

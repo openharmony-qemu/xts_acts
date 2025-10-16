@@ -31,11 +31,12 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
 struct Second {
-  @State accumulateTime: number = 0;
+  @State accumulateTime: long = 0;
   @State fontSize: number = 20;
   @State fontColor: Color = Color.Red;
   @State format: string = "hhmmss";
@@ -98,7 +99,7 @@ struct Second {
         .format(this.format)
         .fontSize(this.fontSize)
         .fontColor(this.fontColor)
-        .onDateChange((value: number) => {
+        .onDateChange((value: long) => {
           this.accumulateTime = value
           this.onActionCalled = true;
           console.info('onChange current action state is: ' + this.onActionCalled);
@@ -106,7 +107,7 @@ struct Second {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<string, object>
+              } as Record<string, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 223,
@@ -135,7 +136,7 @@ struct Second {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledOne,
-              }  as Record<string, object>
+              }  as Record<string, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 224,

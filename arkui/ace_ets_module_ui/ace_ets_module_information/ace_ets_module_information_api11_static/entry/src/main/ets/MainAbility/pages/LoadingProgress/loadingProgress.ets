@@ -15,7 +15,7 @@
 
 import Log from '../../common/Log';
 import { Entry, Component, Column, LoadingProgressStyle, FlexDirection, ItemAlign, FlexAlign, Flex, FlexOptions, Text, Alignment, TextAlign, TextOverflow, LoadingProgress, Color} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 const TAG = 'ets_apiLack_add';
 
 @Entry

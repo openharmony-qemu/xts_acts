@@ -14,7 +14,7 @@
  */
 import observer from '@ohos.arkui.observer'
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll, ForEach, Margin, Row} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollEvent1 {
@@ -32,7 +32,7 @@ struct scrollEvent1 {
           Button('UIObserver on')
             .id('scrollEvent_3')
             .onClick((e: ClickEvent) => {
-              observer.on('scrollEvent', (info) => {
+              observer.onScrollEvent((info) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
                 if (observer.ScrollEventType.SCROLL_START == info.scrollEvent) {
                   this.message1 = 'SCROLL_START'
@@ -45,7 +45,7 @@ struct scrollEvent1 {
           Button('UIObserver off')
             .id('scrollEvent_5')
             .onClick((e: ClickEvent) => {
-              observer.off('scrollEvent', (info) => {
+              observer.offScrollEvent((info) => {
                 console.info('off scrollEvent', JSON.stringify(info));
               })
             })

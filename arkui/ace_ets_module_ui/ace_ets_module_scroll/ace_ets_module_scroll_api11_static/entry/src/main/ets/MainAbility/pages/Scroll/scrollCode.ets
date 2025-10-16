@@ -32,6 +32,7 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -113,7 +114,7 @@ struct scrollCode {
     Stack({ alignContent: Alignment.TopStart }) {
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: number, index: number) => {
+          ForEach(this.arr, (item: number, index: int) => {
             Text(item.toString())
               .width('90%')
               .height(150)
@@ -122,7 +123,7 @@ struct scrollCode {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 } as Margin)
-          }, (item: number, index: number) => String(item))
+          }, (item: number, index: int) => String(item))
         }.width('100%')
       }
       .key("ScrollCode")
@@ -143,7 +144,7 @@ struct scrollCode {
 
       Button('scroll 100')
         .onClick((e: ClickEvent) => {
-          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset().yOffset + 100 })
+          this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
         }).margin({ top: 170, left: 20 } as Margin)
       Button('back top')
         .onClick((e: ClickEvent) => {
@@ -158,7 +159,7 @@ struct scrollCode {
             let backData: events_emitter.EventData = {
               data: {
                 "scrollToIndex": 10,
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 189,

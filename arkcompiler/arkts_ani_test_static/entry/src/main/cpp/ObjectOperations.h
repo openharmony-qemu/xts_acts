@@ -118,7 +118,7 @@ ani_int test_Object_New_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
     ani_class cls {};
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.MobilePhone", &cls), ANI_OK);
     ani_method ctor {};
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "Lstd/core/String;I:V", &ctor), ANI_OK);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}i:", &ctor), ANI_OK);
     ani_string model {};
     ASSERT_EQ(env->String_NewUTF8(m, strlen(m), &model), ANI_OK);
     ani_value args[2U];

@@ -32,7 +32,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -117,7 +117,7 @@ export default function visibilityJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": Visibility.Hidden,
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 47,
@@ -151,7 +151,7 @@ export default function visibilityJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": Visibility.None,
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 48,
@@ -185,7 +185,7 @@ export default function visibilityJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": 0.11111
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1116,
@@ -218,7 +218,7 @@ export default function visibilityJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "visibility": 'nothing',
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1116,

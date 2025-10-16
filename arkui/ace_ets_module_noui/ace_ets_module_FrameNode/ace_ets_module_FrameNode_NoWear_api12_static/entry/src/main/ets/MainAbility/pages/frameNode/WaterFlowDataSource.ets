@@ -26,7 +26,7 @@ import { State } from '@ohos.arkui.stateManagement'
   }
 
   // 获取索引对应的数据
-  public getData(index: number): number {
+  public getData(index: int): number {
     return this.dataArray[index.toInt()]
   }
 
@@ -38,28 +38,28 @@ import { State } from '@ohos.arkui.stateManagement'
   }
 
   // 通知控制器数据增加
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
   // 通知控制器数据变化
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
   // 通知控制器数据删除
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
   // 通知控制器数据位置变化
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
@@ -73,7 +73,7 @@ import { State } from '@ohos.arkui.stateManagement'
   }
 
   // 获取数据总数
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length
   }
 
@@ -86,7 +86,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
   // 注销改变数据的控制器
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener)
+    const pos = this.listeners.indexOf(listener).toInt()
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }
@@ -103,7 +103,7 @@ import { State } from '@ohos.arkui.stateManagement'
   }
 
   // 在指定索引位置增加一个元素
-  public addItem(index: number): void {
+  public addItem(index: int): void {
     this.notifyDataAdd(index)
   }
 
@@ -123,7 +123,7 @@ import { State } from '@ohos.arkui.stateManagement'
   }
 
   // 在指定索引位置删除一个元素
-  public deleteItem(index: number): void {
+  public deleteItem(index: int): void {
     this.notifyDataDelete(index)
   }
 

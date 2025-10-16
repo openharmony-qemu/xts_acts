@@ -40,7 +40,7 @@ struct onKeyEventExample7 {
 
           console.info("the keyEvent is " + JSON.stringify(event))
           this.keyText = "keyTrigger"
-
+          return false
         }).key('keyResponse')
 
 

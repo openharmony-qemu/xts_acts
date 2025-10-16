@@ -39,8 +39,8 @@ let data2: BadgeParamWithString = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    let col = typeNode.createNode(uiContext, 'Column')
-    let row = typeNode.createNode(uiContext, 'Row')
+    let col = typeNode.createColumnNode(uiContext)
+    let row = typeNode.createRowNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
    
     node.appendChild(col)

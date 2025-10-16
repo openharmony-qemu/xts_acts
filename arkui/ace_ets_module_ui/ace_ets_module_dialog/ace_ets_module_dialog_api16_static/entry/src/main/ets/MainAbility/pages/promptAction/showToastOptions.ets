@@ -22,7 +22,7 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,ShadowStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
 import {
   State,
@@ -46,7 +46,7 @@ let promptAction = new PromptAction()
 @Entry
 @Component
 struct showToastOptions {
-  @State toastId: number = 0;
+  @State toastId: int = 0;
 
   build() {
     Column() {
@@ -63,7 +63,7 @@ struct showToastOptions {
               textColor: Color.White,
               backgroundBlurStyle: BlurStyle.Thick,
               shadow: ShadowStyle.OUTER_DEFAULT_MD,
-            }).then((toastId: number) => {
+            }).then((toastId: int) => {
               this.toastId = toastId;
             })
               .catch((error: Error) => {

@@ -14,12 +14,12 @@
  */
 import observer from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Tabs, TabContent, TabsController, Row} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct observerIndexTabsExample {
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @State index1: number = -1
 
@@ -81,7 +81,7 @@ struct observerIndexTabsExample {
         }
         return true
       })
-      .onChange((index: number) => {
+      .onChange((index: int) => {
         console.info('onChange index: '+ index)
         this.currentIndex = index
       })

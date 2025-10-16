@@ -22,7 +22,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -50,7 +49,7 @@ import {
   HorizontalAlign,
   FlexAlign
 } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
 

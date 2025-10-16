@@ -14,7 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter'
 import {Entry, Component, CopyOptions, SearchController, CaretOffset, FontStyle, Font, Column, Text, Search, SearchOptions, ClickEvent, Button, Color } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -28,7 +28,7 @@ struct SearchExample {
           style: FontStyle.Normal
         } as Font
   @State searchButton:string = "10"
-  @State maxLength: number = 19
+  @State maxLength: int = 19
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   controller: SearchController= new SearchController()
   controller2: SearchController= new SearchController()
@@ -49,7 +49,7 @@ struct SearchExample {
         this.text = ((eventData.data) as ESObject ).getProperty('text').toString();
       }
       if (((eventData.data) as ESObject ).getProperty('maxLength') != null) {
-        this.maxLength = ((eventData.data) as ESObject ).getProperty('maxLength').toNumber();
+        this.maxLength = Double.toInt(((eventData.data) as ESObject ).getProperty('maxLength').toNumber());
       }
       if (((eventData.data) as ESObject ).getProperty('copyOption') != null) {
         this.copyOption = ((eventData.data) as ESObject ).getProperty('copyOption').toStaticObject() as CopyOptions;

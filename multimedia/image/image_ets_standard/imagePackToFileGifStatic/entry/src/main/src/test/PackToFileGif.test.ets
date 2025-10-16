@@ -51,7 +51,7 @@ export default function imagePackToFileGif() {
       isSupportGifEncode = image.createImagePacker().supportedFormats.includes("image/gif");
     });
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.info("beforeEach case");
     });
 
@@ -59,13 +59,13 @@ export default function imagePackToFileGif() {
       console.info("afterEach case");
     });
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info("afterAll case");
     });
 
     const getImageSourceData = (fileName: string) => {
       let filePath = ""
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         filePath = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(filePath);
@@ -105,7 +105,7 @@ export default function imagePackToFileGif() {
     const isSupportImageFormat = (fileName: string, format: string) => {
       let filePath = ""
       let isSupportFormat = false;
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         filePath = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(filePath);
@@ -165,44 +165,49 @@ export default function imagePackToFileGif() {
       let loopCount = await imageSource.getImageProperties([image.PropertyKey.GIF_LOOP_COUNT]);
       expect(loopCount[image.PropertyKey.GIF_LOOP_COUNT] != null).assertTrue();
       let GIFloopCount = loopCount[image.PropertyKey.GIF_LOOP_COUNT] as string;
-      let imageInfo: image.ImageInfo = imageSource.getImageInfoSync();
-      console.log(`checkPackToFileForSequenceResult delayTimes ${delayTimes}`);
-      console.log(`checkPackToFileForSequenceResult disposalTypes ${disposalTypes}`);
-      console.log(`checkPackToFileForSequenceResult loopCount ${loopCount}`);
-      console.log(`checkPackToFileForSequenceResult width ${imageInfo.size.width}`);
-      console.log(`checkPackToFileForSequenceResult height ${imageInfo.size.height}`);
-      expect(imageInfo.size.width == testFile.size.width).assertTrue();
-      expect(imageInfo.size.height == testFile.size.height).assertTrue();
-      expect(imageInfo.mimeType == "image/gif").assertTrue();
-      //对比编码前后�?loopCount
-      //GIF编码中设定输出图片循环播放次数的参数，取值范围为[0�?5535]�?表示无限循环, 如果没有此字�? 则设置为默认�?�?
-      if (packingOptions.loopCount != undefined) {
-        expect(GIFloopCount == `${packingOptions.loopCount}`).assertTrue();
+      let imageInfo: image.ImageInfo | undefined = imageSource.getImageInfoSync();
+      if (imageInfo == undefined) {
+        console.log(`getImageInfoSync failed.`);
+        expect().assertFail();
       } else {
-        expect(GIFloopCount == `1`).assertTrue();
-      }
-      //对比编码前后�?delayTimesList。delayTimes 的值编码和解码的单位差10�?
-      //GIF编码中设定输出图片每一帧的延迟时间。如果不�?，则此字段指定等待时间为参数�?0.01秒�?
-      //如果长度小于frameCount，则缺失的部分将用delayTimeList最后一个值填充�?
-      for (let i = 0; i < packingOptions.frameCount; i++) {
-        if (i < delayTimeListLength) {
-          expect(delayTimes[i] == packingOptions.delayTimeList[i] * 10).assertTrue();
+        console.log(`checkPackToFileForSequenceResult delayTimes ${delayTimes}`);
+        console.log(`checkPackToFileForSequenceResult disposalTypes ${disposalTypes}`);
+        console.log(`checkPackToFileForSequenceResult loopCount ${loopCount}`);
+        console.log(`checkPackToFileForSequenceResult width ${imageInfo.size.width}`);
+        console.log(`checkPackToFileForSequenceResult height ${imageInfo.size.height}`);
+        expect(imageInfo.size.width == testFile.size.width).assertTrue();
+        expect(imageInfo.size.height == testFile.size.height).assertTrue();
+        expect(imageInfo.mimeType == "image/gif").assertTrue();
+        //对比编码前后�?loopCount
+        //GIF编码中设定输出图片循环播放次数的参数，取值范围为[0�?5535]�?表示无限循环, 如果没有此字�? 则设置为默认�?�?
+        if (packingOptions.loopCount != undefined) {
+          expect(GIFloopCount == `${packingOptions.loopCount}`).assertTrue();
         } else {
-          expect(delayTimes[i] == packingOptions.delayTimeList[delayTimeListLength -1] * 10).assertTrue();
+          expect(GIFloopCount == `1`).assertTrue();
         }
-      }
-      //对比编码前后�?disposalTypes。disposalTypes的有效值是0�?，解码的时�?会变�?�?
-      //0：不需要任何操�? 1：保持图形不�? 2：恢复背景色  3：恢复到之前的状态�?
-      if (packingOptions.disposalTypes != undefined) {
+        //对比编码前后�?delayTimesList。delayTimes 的值编码和解码的单位差10�?
+        //GIF编码中设定输出图片每一帧的延迟时间。如果不�?，则此字段指定等待时间为参数�?0.01秒�?
+        //如果长度小于frameCount，则缺失的部分将用delayTimeList最后一个值填充�?
         for (let i = 0; i < packingOptions.frameCount; i++) {
-          if (i < packingOptions.disposalTypes!!.length) {
-            if (packingOptions.disposalTypes!![i] == 0) {
-              expect(disposalTypes[i] == 1).assertTrue();
-            } else {
-              expect(disposalTypes[i] == packingOptions.disposalTypes!![i]).assertTrue();
-            }
+          if (i < delayTimeListLength) {
+            expect(delayTimes[i] == packingOptions.delayTimeList[i] * 10).assertTrue();
           } else {
-            expect(disposalTypes[i] == 1).assertTrue();
+            expect(delayTimes[i] == packingOptions.delayTimeList[delayTimeListLength -1] * 10).assertTrue();
+          }
+        }
+        //对比编码前后�?disposalTypes。disposalTypes的有效值是0�?，解码的时�?会变�?�?
+        //0：不需要任何操�? 1：保持图形不�? 2：恢复背景色  3：恢复到之前的状态�?
+        if (packingOptions.disposalTypes != undefined) {
+          for (let i = 0; i < packingOptions.frameCount; i++) {
+            if (i < packingOptions.disposalTypes!!.length) {
+              if (packingOptions.disposalTypes!![i] == 0) {
+                expect(disposalTypes[i] == 1).assertTrue();
+              } else {
+                expect(disposalTypes[i] == packingOptions.disposalTypes!![i]).assertTrue();
+              }
+            } else {
+              expect(disposalTypes[i] == 1).assertTrue();
+            }
           }
         }
       }
@@ -301,7 +306,11 @@ export default function imagePackToFileGif() {
         let disposalTypes: Array<int> = await imageSource.getDisposalTypeList();
         let loopCount = await imageSource.getImageProperties([image.PropertyKey.GIF_LOOP_COUNT]);
         let GIFLoopCount = loopCount[image.PropertyKey.GIF_LOOP_COUNT];
-        let imageInfo: image.ImageInfo = imageSource.getImageInfoSync();
+        let imageInfo = imageSource.getImageInfoSync();
+        if (imageInfo == undefined) {
+          console.log(`getImageInfoSync failed.`);
+          return false;
+        }
         console.log(`packGifToFile delayTimes ${delayTimes}`);
         console.log(`packGifToFile disposalTypes ${disposalTypes}`);
         console.log(`packGifToFile loopCount ${loopCount}`);
@@ -382,13 +391,15 @@ export default function imagePackToFileGif() {
       type: string, testFilePack: TestFilePack) => {
       let imageSource: image.ImageSource | undefined = getImageSourceData(testFilePack.fileName);
       expect(imageSource != undefined).assertTrue();
-      let source: image.ImageSource = imageSource as image.ImageSource;
+      let source: image.ImageSource = imageSource! as image.ImageSource;
       let fpath: string = cacheDir + "/" + testFilePack.packTarget;
       let writeFd = getWriteFd(testFilePack.packTarget);
       expect(writeFd != INVALID_FD).assertTrue();
       if (testFilePack.packSource == "PixelMap") {
-        let globalpixelmap: image.PixelMap = await source.createPixelMap();
-        await packGifToFile(done, testNum, globalpixelmap, writeFd, packingOptions, fpath, type, testFilePack);
+        let globalpixelmap = await source.createPixelMap();
+        if (globalpixelmap != undefined) {
+          await packGifToFile(done, testNum, globalpixelmap, writeFd, packingOptions, fpath, type, testFilePack);
+        }
       } else {
         await packGifToFile(done, testNum, source, writeFd, packingOptions, fpath, type, testFilePack);
       }

@@ -41,13 +41,15 @@ class EntryAbility extends UIAbility {
         }
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
+      e = e as Error;
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {

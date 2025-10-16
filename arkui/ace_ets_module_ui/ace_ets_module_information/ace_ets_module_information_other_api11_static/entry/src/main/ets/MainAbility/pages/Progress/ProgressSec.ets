@@ -30,18 +30,18 @@ struct progressSecTest {
   @State progress_capsule_borderWidth_number: number = 1
   @State progress_capsule_borderWidth_string: string = '1vp'
   @State progress_capsule_borderWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_capsule_borderColor_number: number = 0xFF000000
+  @State progress_capsule_borderColor_number: int = 0xFF000000
   @State progress_capsule_borderColor_string: string = '#FFFF9535'
   @State progress_capsule_borderColor_color: Color = Color.Red
   @State progress_capsule_borderColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
   @State progress_capsule_fontSize_number: number = 12
   @State progress_capsule_fontSize_string: string = '12vp'
   @State progress_capsule_fontSize_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_capsule_fontWeight_number: number = 400
+  @State progress_capsule_fontWeight_number: int = 400
   @State progress_capsule_fontWeight_string: string = '400'
   @State progress_capsule_fontWeight_fontWeight: FontWeight = FontWeight.Normal
   @State progress_capsule_fontStyle_fontStyle: FontStyle = FontStyle.Normal
-  @State progress_capsule_fontColor_number: number = 0xFF000000
+  @State progress_capsule_fontColor_number: int = 0xFF000000
   @State progress_capsule_fontColor_string: string = '#FFFF9535'
   @State progress_capsule_fontColor_color: Color = Color.Red
   @State progress_capsule_fontColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
@@ -54,7 +54,7 @@ struct progressSecTest {
   @State progress_ring_strokeWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
   @State progress_ring_shadow_bool: boolean = false
   @State progress_ring_status_progressStatus: ProgressStatus = ProgressStatus.PROGRESSING
-  @State progress_ring_color_purity: number = 0x000000
+  @State progress_ring_color_purity: int = 0x000000
   @State progress_ring_color_linear_number: LinearGradient = new LinearGradient([{ color: 0xFFFF0000, offset: 0 }, {
     color: 0xFFFFFFFF,
     offset: 1
@@ -90,18 +90,18 @@ struct progressSecTest {
     this.progress_capsule_borderWidth_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_string').toString();
     this.progress_capsule_borderWidth_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource').toStaticObject() as Resource;
     console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 " + this.progress_capsule_borderWidth_resource);
-    this.progress_capsule_borderColor_number = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_number').toNumber();
+    this.progress_capsule_borderColor_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_number').toNumber());
     this.progress_capsule_borderColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_string').toString();
     this.progress_capsule_borderColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_color').toStaticObject() as Color;
     this.progress_capsule_borderColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_resource').toStaticObject() as Resource;
     this.progress_capsule_fontSize_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_number').toNumber();
     this.progress_capsule_fontSize_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_string').toString();
     this.progress_capsule_fontSize_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_resource').toStaticObject() as Resource;
-    this.progress_capsule_fontWeight_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber();
+    this.progress_capsule_fontWeight_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber());
     this.progress_capsule_fontWeight_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_string').toString();
     this.progress_capsule_fontWeight_fontWeight = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_fontWeight').toStaticObject() as FontWeight;
     this.progress_capsule_fontStyle_fontStyle = ((eventData.data) as ESObject).getProperty('progress_capsule_fontStyle_fontStyle').toStaticObject() as FontStyle;
-    this.progress_capsule_fontColor_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_number').toNumber();
+    this.progress_capsule_fontColor_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_number').toNumber());
     this.progress_capsule_fontColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_string').toString();
     this.progress_capsule_fontColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_color').toStaticObject() as Color;
     this.progress_capsule_fontColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_resource').toStaticObject() as Resource;
@@ -116,7 +116,7 @@ struct progressSecTest {
     this.progress_ring_strokeWidth_resource = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_resource').toStaticObject() as Resource;
     this.progress_ring_shadow_bool = ((eventData.data) as ESObject).getProperty('progress_ring_shadow_bool').toBoolean();
     this.progress_ring_status_progressStatus = ((eventData.data) as ESObject).getProperty('progress_ring_status_progressStatus').toStaticObject() as ProgressStatus;
-    this.progress_ring_color_purity = ((eventData.data) as ESObject).getProperty('progress_ring_color_purity').toNumber();
+    this.progress_ring_color_purity = Double.toInt(((eventData.data) as ESObject).getProperty('progress_ring_color_purity').toNumber());
     this.progress_ring_color_linear_number = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_number').toStaticObject() as LinearGradient;
     this.progress_ring_color_linear_string = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_string').toStaticObject() as LinearGradient;
     this.progress_ring_color_linear_color = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_color').toStaticObject() as LinearGradient;

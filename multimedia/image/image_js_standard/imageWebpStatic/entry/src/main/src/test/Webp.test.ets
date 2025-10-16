@@ -182,6 +182,12 @@ export default function imageWebp() {
           try {
             let pixelmap = await imageSourceApi.createPixelMap(arg)
             try {
+              if (pixelmap == undefined) {
+                console.info(`${testNum} createPixelMap failed, pixelmap is undefined!`);
+                expect(false).assertTrue();
+                done();
+                return undefined;
+              }
               let imageInfo = await pixelmap.getImageInfo()
               expect(imageInfo.size.height == 2).assertTrue();
               expect(imageInfo.size.width == 1).assertTrue();
@@ -191,7 +197,6 @@ export default function imageWebp() {
               done();
             } catch (err) {
               console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
-
             }
           } catch (error) {
             console.log(`${testNum} fail `);
@@ -597,8 +602,8 @@ export default function imageWebp() {
 
           try {
             let pixelmap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelmap;
             expect(pixelmap != undefined).assertTrue();
+            globalpixelmap = pixelmap!;
             console.info("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200 success ");
             done();
           } catch (error) {

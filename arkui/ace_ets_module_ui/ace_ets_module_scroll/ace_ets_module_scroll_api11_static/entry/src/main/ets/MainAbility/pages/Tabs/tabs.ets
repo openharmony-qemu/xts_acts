@@ -27,12 +27,13 @@ import {
   Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
 struct Tabs3Example {
   @State barPosition: BarPosition = BarPosition.Start
-  @State index: number = 0
+  @State index: int = 0
   @State vertical: boolean = true
   @State scrollable: boolean = true
   @State barMode: BarMode = BarMode.Fixed
@@ -55,7 +56,7 @@ struct Tabs3Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 212,
@@ -87,7 +88,7 @@ struct Tabs3Example {
       .barHeight(150)
       .animationDuration(400)
       .key('tabs')
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .width('90%')

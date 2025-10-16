@@ -178,7 +178,7 @@ struct ConstraintSizePage {
         } else if (this.targetView == 'Text') {
           Text('text1')
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 as int })
         } else if (this.targetView == 'Blank') {
           Blank().backgroundColor(Color.Yellow)
         } else if (this.targetView == 'Checkbox') {
@@ -213,7 +213,7 @@ struct ConstraintSizePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Number.MAX_VALUE,
+            loop: Number.MAX_VALUE as int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })

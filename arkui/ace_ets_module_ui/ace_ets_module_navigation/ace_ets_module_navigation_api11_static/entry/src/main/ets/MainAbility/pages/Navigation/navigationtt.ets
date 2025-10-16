@@ -25,7 +25,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 interface EventMsg {
   titleMode: NavigationTitleMode
   hideToolBar: string
@@ -110,7 +110,7 @@ struct NavigationExamplett {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.hideBar,
-                } as Record<string,Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 1366,

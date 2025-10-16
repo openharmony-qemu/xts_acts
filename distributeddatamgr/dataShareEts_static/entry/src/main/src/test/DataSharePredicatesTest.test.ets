@@ -54,7 +54,8 @@ export default function dataSharePredicatesTest() {
         predicates.equalTo("name", "zhangSan");
         predicates.orderByAsc("id");
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -75,7 +76,8 @@ export default function dataSharePredicatesTest() {
         predicates.orderByDesc("id");
         hilog.info(domain, tag, "update predicates " + predicates)
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -96,7 +98,8 @@ export default function dataSharePredicatesTest() {
         predicates.and();
         predicates.equalTo("age", 18);
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -117,7 +120,8 @@ export default function dataSharePredicatesTest() {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.inValues("age", numbersArr);
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -136,7 +140,8 @@ export default function dataSharePredicatesTest() {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan").limit(10, 3);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }

@@ -81,6 +81,7 @@ struct ShortcutKey {
         }).keyboardShortcut(FunctionKey.TAB, [ModifierKey.SHIFT])
           .onKeyEvent((event: KeyEvent) => {
             console.info("event.keyCode: " + JSON.stringify(event));
+            return false
           })
       }
       .width('100%')

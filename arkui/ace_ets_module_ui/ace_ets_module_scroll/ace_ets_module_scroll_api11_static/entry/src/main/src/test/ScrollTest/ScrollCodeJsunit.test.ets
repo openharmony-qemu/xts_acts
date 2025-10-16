@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -99,7 +99,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "Vertical"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -133,7 +133,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBar": "Off"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 186,
@@ -166,7 +166,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarColor": "#FFB6C1"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 187,
@@ -199,7 +199,7 @@ export default function scrollCodeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollBarWidth": 40
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 188,

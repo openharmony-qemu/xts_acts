@@ -74,12 +74,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
-     * @tc.name      : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
-     * @tc.desc      : test removeAbilityMonitor(callback)
-     * @tc.size      : MediumTest
-     * @tc.level     : Level 3
-     * @tc.type      : Function
+     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.desc       test removeAbilityMonitor(callback)
+     * @tc.size       MediumTest
+     * @tc.level      Level 3
+     * @tc.type       Function
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -113,19 +113,21 @@ export default function AbilityDelegatorStageStaticTest() {
               return;
             }
             hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
-            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
-            await Utils.msSleep(2000);
-
-            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-            await context.moveAbilityToBackground();
-            await Utils.msSleep(2000);
-
-            expect(isOnBackground).assertFalse();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
           })
+          await Utils.msSleep(2000);
+
+          hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+          await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+          await Utils.msSleep(2000);
+
+          hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+          await context.moveAbilityToBackground();
+          await Utils.msSleep(2000);
+
+          expect(isOnBackground).assertFalse();
+          done();
+          hilog.info(domain, tag, `${itName} end`);
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
           expect().assertFail();

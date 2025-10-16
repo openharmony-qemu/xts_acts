@@ -35,6 +35,14 @@ class Logger {
   }
 }
 
+function sleep(count:int) : Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
+
 export default function imagePixelmap() {
   let filesDir: string | undefined | null;
   let cacheDir: string | undefined | null;
@@ -75,7 +83,7 @@ export default function imagePixelmap() {
       cacheDir = Hypium.get('cacheDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
       isSupportHEIFDecode =
-        image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+        image.createImageSource(filesDir + '/' + "test.jpg")!.supportedFormats.includes("image/heic");
       // isSupportHdr = 
       //   !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
       //     display.getDefaultDisplaySync().hdrFormats.length != 0;
@@ -89,6 +97,7 @@ export default function imagePixelmap() {
 
     afterEach(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
+      await sleep(3000);
     });
 
     const getBuffer = (fileName: string) => {
@@ -104,14 +113,23 @@ export default function imagePixelmap() {
 
     const getImageInfo = (logger: Logger, buffer: ArrayBuffer, decodingOptions?: image.DecodingOptions) => {
       let imageSource = image.createImageSource(buffer);
+      if (imageSource == undefined) {
+        logger.log("create imageSource failed.")
+        return undefined;
+      }
       let pixelMap: image.PixelMap | undefined = undefined;
+      let imageInfo: image.ImageInfo | undefined = undefined;
       if (decodingOptions != undefined) {
         pixelMap = await imageSource.createPixelMap(decodingOptions);
       } else {
         pixelMap = await imageSource.createPixelMap();
       }
       await imageSource.release();
-      let imageInfo = await pixelMap.getImageInfo();
+      if (pixelMap == undefined) {
+        logger.log("create pixelMap failed.")
+        return undefined;
+      }
+      imageInfo = await pixelMap.getImageInfo();
       await pixelMap.release();
       return imageInfo;
     }
@@ -123,9 +141,12 @@ export default function imagePixelmap() {
       decodingOptions?: image.DecodingOptions,
       allocatorType?: image.AllocatorType
     ): image.ImageInfo | undefined => {
-      let pixelMap: image.PixelMap;
+      let pixelMap: image.PixelMap | undefined;
       try {
         let imageSource = image.createImageSource(buffer);
+        if (imageSource == undefined) {
+          return undefined;
+        }
         if (type == "sync") {
           if (decodingOptions != undefined && allocatorType == undefined) {
             pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
@@ -183,11 +204,11 @@ export default function imagePixelmap() {
       done: () => void,
       logger: Logger,
       dstImageInfo: image.ImageInfo | undefined,
-      originImageInfo: image.ImageInfo,
+      originImageInfo: image.ImageInfo | undefined,
       allocatorType: image.AllocatorType = AUTO
     ): boolean => {
       let ret = false;
-      if(dstImageInfo != undefined) {
+      if(dstImageInfo != undefined && originImageInfo != undefined) {
         logger.log("originImageInfo is:" + JSON.stringify(originImageInfo));
         logger.log("dstImageInfo is:" + JSON.stringify(dstImageInfo));
         ret = (dstImageInfo != undefined) &&
@@ -3186,9 +3207,12 @@ export default function imagePixelmap() {
             desiredDynamicRange: RANGE_HDR
           };
           let imageSource = image.createImageSource(buffer);
-          let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions, SHARE_MEMORY);
+          expect(imageSource != undefined).assertTrue();
+          let pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, SHARE_MEMORY);
           expect(false).assertTrue();
-          await pixelMap.release();
+          if(pixelMap != undefined) {
+            await pixelMap!.release();
+          }
           done();
         } catch (error: BusinessError) {
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
@@ -3226,9 +3250,12 @@ export default function imagePixelmap() {
             desiredDynamicRange: RANGE_HDR
           };
           let imageSource = image.createImageSource(buffer);
-          let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, SHARE_MEMORY);
+          expect(imageSource != undefined).assertTrue();
+          let pixelMap = imageSource!.createPixelMapUsingAllocatorSync(decodingOptions, SHARE_MEMORY);
           expect(false).assertTrue();
-          await pixelMap.release();
+          if(pixelMap != undefined) {
+            await pixelMap.release();
+          }
           done();
         } catch (error: BusinessError) {
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
@@ -3252,7 +3279,8 @@ export default function imagePixelmap() {
       try {
         const buffer = getBuffer("SIZE_0_0.jpg");
         let imageSource = image.createImageSource(buffer);
-        let pixelMap = await imageSource.createPixelMapUsingAllocator();
+        expect(imageSource != undefined).assertTrue();
+        let pixelMap = await imageSource!.createPixelMapUsingAllocator();
         expect(false).assertTrue();
         done();
       } catch (error: BusinessError) {
@@ -3276,7 +3304,8 @@ export default function imagePixelmap() {
       try {
         const buffer = getBuffer("SIZE_0_0.jpg");
         let imageSource = image.createImageSource(buffer);
-        let pixelMap = imageSource.createPixelMapUsingAllocatorSync();
+        expect(imageSource != undefined).assertTrue();
+        let pixelMap = imageSource!.createPixelMapUsingAllocatorSync();
         expect(false).assertTrue();
         done();
       } catch (error: BusinessError) {

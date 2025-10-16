@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import HashMap from '@ohos.util.HashMap';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -61,7 +61,7 @@ class Utils{
       let callBack = (backData: emitter.EventData) => {
         try {
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " get result is: " + JSON.stringify(backData));
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           expect(action).assertEqual(expectedValue);
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " END");
@@ -81,7 +81,7 @@ class Utils{
 
   static emitEvent(actVal: boolean | string | number | object, eId: Long) {
     try {
-      let recordData: Record<string, object> = {
+      let recordData: Record<string, RecordData> = {
         "ACTION": actVal
       }
       let backData: emitter.EventData = {

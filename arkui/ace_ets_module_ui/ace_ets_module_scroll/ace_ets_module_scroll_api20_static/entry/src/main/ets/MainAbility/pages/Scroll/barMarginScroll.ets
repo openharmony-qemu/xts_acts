@@ -57,7 +57,7 @@ struct scrollBarMarginScroll {
     Column() {
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.arr, (item: string, i: number) => {
+          ForEach(this.arr, (item: string, i: int) => {
             Text(item.toString())
               .width('80%')
               .height('20%')

@@ -15,7 +15,7 @@
 import observer  from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, NavPathStack,
   NavDestinationContext, Builder, NavDestinationInfo, Builder, NavDestination, Navigation, NavPathInfo} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -67,11 +67,11 @@ struct ObserverNavDestinationState {
   }
 
   aboutToAppear(){
-    observer.on('navDestinationUpdate', this.testFunc);
+    observer.onNavDestinationUpdate(this.testFunc);
   }
 
   aboutToDisappear(){
-    observer.off('navDestinationUpdate',  this.testFunc);
+    observer.offNavDestinationUpdate(this.testFunc);
   }
 
 

@@ -51,7 +51,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
     this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
-    let col = typeNode.createDividerNode(uiContext, "Divider")
+    let col = typeNode.createDividerNode(uiContext)
     col.attribute.strokeWidth(20)
     this.node?.appendChild(col)
     return this.node

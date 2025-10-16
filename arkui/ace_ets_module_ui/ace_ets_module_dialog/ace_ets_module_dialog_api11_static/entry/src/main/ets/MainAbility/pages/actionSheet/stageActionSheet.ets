@@ -40,6 +40,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -102,7 +103,7 @@ struct stageActionSheet {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -171,7 +172,7 @@ struct stageActionSheet {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -240,7 +241,7 @@ struct stageActionSheet {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

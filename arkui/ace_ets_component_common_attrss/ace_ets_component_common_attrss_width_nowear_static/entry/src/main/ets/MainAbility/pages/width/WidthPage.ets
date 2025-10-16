@@ -137,7 +137,7 @@ struct WidthPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Number.MAX_VALUE,
+          loop: Number.MAX_VALUE as int,
           fromStart: true,
           src: this.src
         })

@@ -29,7 +29,7 @@ import {
   Week,
   FontWeight,
   Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,LevelOrder,
+  Margin,TransitionEffect,FlexAlign,TransitionEdge,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';
@@ -38,6 +38,7 @@ import {
   Link,
   PropRef,AppStorage
 } from '@ohos.arkui.stateManagement';
+import { LevelOrder } from '@ohos.promptAction';
 
 @Entry
 @Component

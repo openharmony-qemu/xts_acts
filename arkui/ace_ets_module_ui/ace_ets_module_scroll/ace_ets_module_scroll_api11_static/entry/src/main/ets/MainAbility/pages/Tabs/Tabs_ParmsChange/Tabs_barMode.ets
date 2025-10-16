@@ -33,7 +33,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct Tabs_barMode {
   @State fontColor: string = '#182431';
   @State selectedFontColor: string = '#007DFF';
-  @State currentIndex: number = 0;
+  @State currentIndex: int = 0;
   @State changeBarMode: BarMode = BarMode.Fixed;
   private controller: TabsController = new TabsController();
   messageManager: MessageManager<number | BarMode> = new MessageManager<number | BarMode>();
@@ -44,7 +44,7 @@ struct Tabs_barMode {
     let callback: Callback<number | BarMode> = (message: Message<number | BarMode>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'currentIndex') {
-        this.currentIndex = message.value as number;
+        this.currentIndex = (message.value as number).toInt();
       }
       if (message.name == 'changeBarMode') {
         this.changeBarMode = message.value as BarMode;
@@ -85,7 +85,7 @@ struct Tabs_barMode {
       .barHeight(56)
       .barMode(this.changeBarMode)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width(330)

@@ -106,7 +106,7 @@ struct TimePickerPage {
       icon:$r('sys.media.ohos_ic_public_more')
     } as TextPickerRangeContent
   ]
-  private select: number = 1
+  private select: int = 1;
 
 
   build() {

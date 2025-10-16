@@ -23,11 +23,11 @@ import { LengthMetrics } from '@kit.ArkUI'
 @Entry
 @Component
 struct TextPickerTextStyleAnimation {
-  private select: number = 1
-  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE']
-  @State textStyleAnimation: boolean | undefined = true
-  @State minFontSize: undefined|number|string|Resource = 18 as undefined|number|string|Resource
-  @State maxFontSize: undefined|number|string|Resource = 28 as undefined|number|string|Resource
+  private select: int = 1;
+  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
+  @State textStyleAnimation: boolean | undefined = true;
+  @State minFontSize: undefined | double | string | Resource = 18 as undefined | double | string | Resource;
+  @State maxFontSize: undefined | double | string | Resource = 28 as undefined | double | string | Resource;
   @State overflow: TextOverflow | undefined = TextOverflow.Ellipsis
 
   build() {
@@ -35,7 +35,7 @@ struct TextPickerTextStyleAnimation {
       TextPicker({
         range: this.fruits,
         selected: this.select,
-        value: this.fruits[this.select.toInt()]
+        value: this.fruits[this.select]
       })
         .key('TextPickerAnimation')
         .disableTextStyleAnimation(this.textStyleAnimation)

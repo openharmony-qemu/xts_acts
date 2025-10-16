@@ -221,7 +221,7 @@ struct setOnListIndex02 {
         console.log(`List:: onScrollFrameBegin 1 off=${off}, state=${state}`)
         return { offsetRemain: 0 } as OnScrollFrameBeginHandlerResult;
       })
-      .onScrollIndex((start: number, end: number, center: number) => {
+      .onScrollIndex((start: int, end: int, center: int) => {
         console.log(`List:: onScrollIndex 1 start=${start}, end=${end}, center=${center}`)
       })
       .onScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo) => {

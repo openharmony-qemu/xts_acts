@@ -19,6 +19,7 @@ import {
   PropRef,
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 
 
@@ -43,7 +44,7 @@ struct geometryTransition7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<string,Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 104,

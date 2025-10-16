@@ -170,11 +170,13 @@ export default function ConnectionTest() {
             done();
           }
         })
-      } catch(err:BusinessError){
-        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-        done();
+      } catch(err){
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+          done();
+        }
       }
     });
 
@@ -310,11 +312,13 @@ export default function ConnectionTest() {
             done()
           }
         })
-      } catch(err:BusinessError){
-        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-        done();
+      } catch(err){
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+          done();
+        }
       }
     });
 
@@ -351,11 +355,13 @@ export default function ConnectionTest() {
             done();
           }
         })
-      } catch(err:BusinessError){
-        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-        done();
+      } catch(err){
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+          done();
+        }
       }
     });
 
@@ -374,7 +380,7 @@ export default function ConnectionTest() {
         let pacUrl = ""
         connection.setPacUrl(pacUrl);
         done();
-      } catch (err: Error) {
+      } catch (err) {
         let error = err as BusinessError;
         ExpectTrue(error?.code === 201)
         hilog.error(domain, tag, `${caseName} Error: ${JSON.stringify(error)}`);
@@ -398,7 +404,7 @@ export default function ConnectionTest() {
         hilog.info(domain, tag, `${caseName} pacUrl is `, pacUrl);
         ExpectTrue(true);
         done();
-      } catch (err: Error) {
+      } catch (err) {
         let error = err as BusinessError;
         if (error?.code) {
           hilog.info(domain, tag, `${caseName}} getPac fail error: `, JSON.stringify(error));
@@ -426,7 +432,7 @@ export default function ConnectionTest() {
         let pacUrl = "https://www.baidu.com";
         connection.setPacUrl(pacUrl);
         done();
-      } catch (err: Error) {
+      } catch (err) {
         let error = err as BusinessError;
         ExpectTrue(error?.code === 201)
         hilog.error(domain, tag, `${caseName} error: ${JSON.stringify(error)}`);

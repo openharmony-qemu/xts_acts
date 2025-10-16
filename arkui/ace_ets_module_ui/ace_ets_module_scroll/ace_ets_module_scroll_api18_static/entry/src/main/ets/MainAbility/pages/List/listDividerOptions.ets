@@ -60,7 +60,7 @@ struct ListDividerOptionsExample {
           }
         })
       List({ initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, i: number) => {
+        ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -80,7 +80,7 @@ struct ListDividerOptionsExample {
       .friction(0.6)
       .divider(this.mDivider) 
       .edgeEffect(EdgeEffect.Spring)
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

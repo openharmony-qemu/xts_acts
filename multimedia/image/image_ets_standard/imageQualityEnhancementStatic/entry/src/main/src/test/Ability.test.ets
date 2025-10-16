@@ -57,20 +57,21 @@ export default function abilityTest() {
         };
         try {
           let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
-          globalPixelMap = pixelMap;
-          // TODO
-          // let csm: colorSpaceManager.ColorSpaceManager = pixelMap.getColorSpace();
-          try {
-            let imageInfo = await pixelMap.getImageInfo();
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-            let isHDR = imageInfo.isHdr;
-            let pixelmapFormat = imageInfo.pixelFormat;
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' isHDR value: ' + JSON.stringify(isHDR));
-            // hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' colorSpace value: ' + JSON.stringify(csm.getColorSpaceName()));
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelmapFormat value: ' + JSON.stringify(pixelmapFormat));
-            result = true;
-          } catch (err: BusinessError) {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+          if (pixelMap == undefined) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' createPixelMap failed, pixelMap is undefined!');
+          } else {
+            globalPixelMap = pixelMap!;
+            try {
+              let imageInfo = await pixelMap.getImageInfo();
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+              let isHDR = imageInfo.isHdr;
+              let pixelmapFormat = imageInfo.pixelFormat;
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' isHDR value: ' + JSON.stringify(isHDR));
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelmapFormat value: ' + JSON.stringify(pixelmapFormat));
+              result = true;
+            } catch (err: BusinessError) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+            }
           }
         } catch (error: BusinessError) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' createPixelMap err ' + JSON.stringify(error));

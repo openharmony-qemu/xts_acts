@@ -42,11 +42,10 @@ export default function frameNodeApi() {
         console.info("get frameNodeApi state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupOnChangeModifier" == pages.name)) {
           console.info("get frameNodeApi pages.name:" + '');
-          
-          
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push frameNodeApi page error:" + err);
@@ -73,12 +72,12 @@ it('frameNodeApi_static_0100', Level.LEVEL3, async (done: () => void): Promise<v
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('frameNodeApi_Bind'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
       let button2 = await driver.findComponent(ON.id('frameNodeApi_Bind'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(AppStorage.get<number>('reuse')).assertEqual(1);
-      expect(AppStorage.get<number>('recycle')).assertEqual(1);
+      await CommonFunc.sleep(4000);
+      expect(AppStorage.get<Int>('reuse')!).assertEqual(1);
+      expect(AppStorage.get<Int>('recycle')!).assertEqual(1);
       done();
     });
   })

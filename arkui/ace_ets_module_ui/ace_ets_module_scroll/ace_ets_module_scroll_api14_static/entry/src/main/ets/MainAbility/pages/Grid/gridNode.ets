@@ -36,25 +36,25 @@ let scroller: Scroller = new Scroller()
 let layoutOptions1: GridLayoutOptions = {
   regularSize: [1, 1],
   irregularIndexes: [0, 8],
-  onGetIrregularSizeByIndex: (index: number) => {
+  onGetIrregularSizeByIndex: (index: int) => {
     if (index === 0) {
-      return [1, 5] as [number, number]
+      return [1, 5] as [int, int]
     }
-    return [1, index % 6 + 1] as [number, number]
+    return [1, index % 6 + 1] as [int, int]
   },
-  onGetRectByIndex: (index: number) => {
+  onGetRectByIndex: (index: int) => {
     if (index == 0) {
-      return [0, 0, 1, 1] as [number, number, number, number]
+      return [0, 0, 1, 1] as [int, int, int, int]
     } else if (index == 1) {
-      return [0, 1, 2, 2] as [number, number, number, number]
+      return [0, 1, 2, 2] as [int, int, int, int]
     } else if (index == 2) {
-      return [0, 3, 3, 3] as [number, number, number, number]
+      return [0, 3, 3, 3] as [int, int, int, int]
     } else if (index == 3) {
-      return [3, 0, 3, 3] as [number, number, number, number]
+      return [3, 0, 3, 3] as [int, int, int, int]
     } else if (index == 4) {
-      return [4, 3, 2, 2] as [number, number, number, number]
+      return [4, 3, 2, 2] as [int, int, int, int]
     } else {
-      return [5, 5, 1, 1] as [number, number, number, number]
+      return [5, 5, 1, 1] as [int, int, int, int]
     }
   }
 } as GridLayoutOptions
@@ -110,8 +110,8 @@ struct grid {
       Text('origin')
 
       Grid(scroller, layoutOptions1) {
-        ForEach(this.number1, (day: string, index: number) => {
-          ForEach(this.number1, (day: string, index: number) => {
+        ForEach(this.number1, (day: string, index: int) => {
+          ForEach(this.number1, (day: string, index: int) => {
             GridItem({ style: GridItemStyle.NONE }) {
               Text(day)
                 .fontSize(16)

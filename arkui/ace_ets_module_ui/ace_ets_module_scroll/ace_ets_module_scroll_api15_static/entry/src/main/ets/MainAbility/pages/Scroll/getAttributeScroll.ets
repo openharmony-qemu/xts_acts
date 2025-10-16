@@ -104,7 +104,7 @@ struct ScrollAttribute1 {
             try {
               
               this.scroller.fling(-1000)
-              console.info('bindController TypeNode currentOffset:' + this.scroller.currentOffset().yOffset)
+              console.info('bindController TypeNode currentOffset:' + this.scroller.currentOffset()!.yOffset)
             } catch (e) {
               console.error('TypeNode error:' + e)
             }
@@ -117,7 +117,7 @@ struct ScrollAttribute1 {
       Text('ScrollFling: ' + this.num1)
         .id('scroll_fling_text')
         .onClick((e: ClickEvent) => {
-          this.num1 = Math.round(this.scroller.currentOffset().yOffset)
+          this.num1 = Math.round(this.scroller.currentOffset()!.yOffset)
         })
       NodeContainer(this.myNodeController)
 

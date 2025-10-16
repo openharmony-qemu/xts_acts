@@ -62,6 +62,7 @@ struct KeyEventExample {
           console.info(this.text =
             'KeyType:' + this.eventType + '\nkeyCode:' + event.keyCode + '\nkeyText:' + event.keyText +
               '\nKeyboard:' + event.keySource.Keyboard)
+          return false
         })
       Text(this.text).padding(15)
     }.height(300).width('100%').padding(35)

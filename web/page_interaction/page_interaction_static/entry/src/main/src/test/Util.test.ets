@@ -18,7 +18,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 export default class Utils {
   static async sleep(count: int): Promise<int> {
@@ -46,7 +46,7 @@ export default class Utils {
       let backData: events_emitter.EventData = {
         data: {
           'ACTION': actualValue
-        } as Record<string, Object>
+        } as Record<string, RecordData>
       }
 
       let backEvent: events_emitter.InnerEvent = {
@@ -85,7 +85,7 @@ export default class Utils {
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
       (backData: events_emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, boolean | string | Int | object>;
+        const data = backData?.data as Record<string, RecordData>;
         const action = data['ACTION'];
         console.info(`Begin to assert [${action}] Equal [${expected}]`);
         expect(action).assertEqual(expected);

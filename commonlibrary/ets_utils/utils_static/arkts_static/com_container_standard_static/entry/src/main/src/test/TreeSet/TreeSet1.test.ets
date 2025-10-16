@@ -326,8 +326,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getFirstValue();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getFirstValue();
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -357,8 +361,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getLastValue();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLastValue();
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -390,8 +398,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getLowerValue(2);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLowerValue(2);
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -423,8 +435,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getHigherValue(3);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getHigherValue(3);
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -456,8 +472,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.popFirst();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.popFirst();
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -489,8 +509,12 @@ describe("TreeSetTest1", (): void => {
    */
   it("testTreeSet027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.popLast();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.popLast();
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -527,8 +551,12 @@ describe("TreeSetTest1", (): void => {
     treeSet.clear();
     let res = treeSet.length;
     expect(String(res)).assertEqual('0');
-    let res1 = treeSet.popFirst();
-    expect(String(res1)).assertEqual('undefined');
+    try {
+      let res1 = treeSet.popFirst();
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -790,8 +818,12 @@ describe("TreeSetTest1", (): void => {
    */
   it('testTreeSet042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let  treeSet = new TreeSet<null>();
-    let res = treeSet.getLowerValue(null);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLowerValue(null);
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
@@ -804,8 +836,12 @@ describe("TreeSetTest1", (): void => {
    */
   it('testTreeSet043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let  treeSet = new TreeSet<null>();
-    let res = treeSet.getHigherValue(null);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getHigherValue(null);
+      expect(false).assertFail();
+    } catch (err: BusinessError) {
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**

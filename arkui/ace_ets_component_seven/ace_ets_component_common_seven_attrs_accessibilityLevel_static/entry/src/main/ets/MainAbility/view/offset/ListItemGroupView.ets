@@ -77,36 +77,7 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

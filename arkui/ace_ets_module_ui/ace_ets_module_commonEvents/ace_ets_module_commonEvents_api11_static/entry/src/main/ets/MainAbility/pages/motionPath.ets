@@ -44,6 +44,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -73,7 +74,7 @@ struct MotionPathExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 132,
@@ -97,7 +98,7 @@ struct MotionPathExample {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 133,

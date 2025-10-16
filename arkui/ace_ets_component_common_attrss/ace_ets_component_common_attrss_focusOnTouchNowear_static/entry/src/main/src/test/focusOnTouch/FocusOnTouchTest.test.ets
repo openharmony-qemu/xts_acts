@@ -39,8 +39,6 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
-
 export default function FocusOnTouchTest() {
   
   let supportView = [
@@ -56,7 +54,6 @@ export default function FocusOnTouchTest() {
     "Swiper",
     "Tabs",
   ]
-
   
   let pageConfig: PageConfig = {
     testName: "testFocusOnTouch",
@@ -84,7 +81,6 @@ export default function FocusOnTouchTest() {
   describe("FocusOnTouchTest", () => {
     beforeAll(() => {
       console.info("FocusOnTouchTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs4.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -95,7 +91,7 @@ export default function FocusOnTouchTest() {
       supportView,
       testValues,
       async (data: BasePageConfig): Promise<void> => {
-        
+        AppStorage.setOrCreate<boolean>('_focusOnTouch',  data.testValue.setValue)
         console.info("[" + data.caseTag + "] verify onClick.")
         let clickResult = Utils.performClick(
           data.pageConfig.componentKey ?? ''
@@ -105,59 +101,59 @@ export default function FocusOnTouchTest() {
 
         if ("SetTrue" == data.testValue.describe) {
           
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
+          let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
+              "] referenceComponent.getElement('$attrs').getString('label'): " +
+            referenceComponent.getElement('$attrs').getString('label')
           )
-          expect(referenceComponent.$attrs.label).assertContain(
+          expect(referenceComponent.getElement('$attrs').getString('label')).assertContain(
             "onFocus"
           )
 
           
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
+          let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
               "] focusOnTouch is " +
-            viewObj.$attrs.focusOnTouch
+            viewObj.getElement('$attrs').getBoolean('focusOnTouch')
           )
-          expect(viewObj.$attrs.focusOnTouch).assertEqual(true)
+          expect(viewObj.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(true)
         } else if ("SetFalse" == data.testValue.describe) {
           
-          let referenceComponent: StrJsonObj = Utils.getComponentByKey(
+          let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
-              "] referenceComponent.$attrs.label: " +
-            referenceComponent.$attrs.label
+              "] referenceComponent.getElement('$attrs').getString('label'): " +
+            referenceComponent.getElement('$attrs').getString('label')
           )
           if ("Web" == data.pageConfig.targetView) {
-            expect(referenceComponent.$attrs.label).assertContain(
+            expect(referenceComponent.getElement('$attrs').getString('label')).assertContain(
               "onFocus"
             )
           } else {
-            expect(referenceComponent.$attrs.label).assertEqual("")
+            expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
           }
           
-          let viewObj: StrJsonObj = Utils.getComponentByKey(
+          let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
           console.info(
             "[" +
             data.caseTag +
               "] focusOnTouch is " +
-            viewObj.$attrs.focusOnTouch
+            viewObj.getElement('$attrs').getBoolean('focusOnTouch')
           )
-          expect(viewObj.$attrs.focusOnTouch).assertEqual(false)
+          expect(viewObj.getElement('$attrs').getBoolean('focusOnTouch')).assertEqual(false)
         }
       }
     )

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -8,7 +8,7 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or impligetProfileByAbilityEmptyAbilityCalled.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
@@ -260,10 +260,12 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('INVALID_NAME', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -278,10 +280,12 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, 'INVALID_NAME', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -296,10 +300,12 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByAbilitySyncNoProfile_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByAbilitySyncNoProfile_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -314,10 +320,12 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
+          done();
+        }
       }
     })
 
@@ -332,10 +340,12 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, '', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
-        expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
+          expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
+          done();
+        }
       }
     })
 

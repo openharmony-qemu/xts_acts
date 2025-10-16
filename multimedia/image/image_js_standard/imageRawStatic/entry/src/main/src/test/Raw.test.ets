@@ -120,7 +120,7 @@ export default function imageRaw() {
     let createPixelMapPromise =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -131,7 +131,7 @@ export default function imageRaw() {
           } else {
             globalImagesource = imageSourceApi;
             console.info(`${testNum} createPixelMapPromise create imagesource success`);
-            let pixelmap: image.PixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+            let pixelmap = await imageSourceApi.createPixelMap(decodeOpts);
             if (pixelmap != undefined) {
               globalpixelmap = pixelmap;
               console.info(`${testNum} createPixelMap create pixelmap success`);
@@ -154,7 +154,7 @@ export default function imageRaw() {
     let createPixelMapCallBack =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -187,7 +187,7 @@ export default function imageRaw() {
 
     let createPixelMapCallBackErr =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -219,7 +219,7 @@ export default function imageRaw() {
 
     let createPixelMapPromiseErr =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);

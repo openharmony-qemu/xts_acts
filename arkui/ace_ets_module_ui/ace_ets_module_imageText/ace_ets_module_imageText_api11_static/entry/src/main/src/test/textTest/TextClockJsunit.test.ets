@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -102,7 +102,7 @@ it('textClockTest_static_02', Level.LEVEL2, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": 30
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 219,
@@ -151,7 +151,7 @@ it('textClockTest_static_04', Level.LEVEL2, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": '#FF000990'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 220,
@@ -202,7 +202,7 @@ it('textClockTest_static_06', Level.LEVEL2, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "format": '20',
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 221,

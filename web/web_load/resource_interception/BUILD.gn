@@ -20,6 +20,7 @@ group("ActsWebResourceInterceptionTest") {
       "resource_interception_cloudservice_webController_one:ActsWebResourceInterceptionCloudServiceWebControllerOneTest",
       "resource_interception_cloudservice_webController_seven:ActsWebResourceInterceptionCloudServiceWebControllerSevenTest",
       "resource_interception_cloudservice_webController_six:ActsWebResourceInterceptionCloudServiceWebControllerSixTest",
+      "resource_interception_cloudservice_webController_six_static:ActsWebResourceInterceptionCloudServiceWebControllerSixStaticTest",
       "resource_interception_cloudservice_webController_three:ActsWebResourceInterceptionCloudServiceWebControllerThreeTest",
       "resource_interception_cloudservice_webController_two:ActsWebResourceInterceptionCloudServiceWebControllerTwoTest",
     ]

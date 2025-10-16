@@ -35,8 +35,8 @@ export async function createTimer(interval: number, counter: number): Promise<Ti
 export function attemptClearTimer(timerId: number): void {
   try {
     clearInterval(timerId as int);
-  } catch (err: Error) {
-    throw err;
+  } catch (err) {
+    throw err as Error;
   }
 }
 

@@ -99,7 +99,7 @@ export default function imageModifyProperty() {
       checkKey: Array<image.PropertyKey>
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buffer") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -117,16 +117,13 @@ export default function imageModifyProperty() {
           await imageSourceApi.modifyImageProperties(props);
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
-            logger.log("dhs 111");
             for (let i = 0; i < checkKey.length; i++) {
               logger.log("getImageProperties data: " + data[checkKey[i]]);
               logger.log("getImageProperties props: " + props[checkKey[i]]);
             }
-            logger.log("dhs 222");
             checkKey.forEach((item: image.PropertyKey) => {
               expect(data[item] == props[item]).assertTrue();
             })
-            logger.log("dhs 333");
             done();
           } catch (error: BusinessError) {
             logger.log("getImageProperties failed error: " + error.code);
@@ -161,7 +158,7 @@ export default function imageModifyProperty() {
       checkProps: (result: string) => void
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buffer") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -180,11 +177,14 @@ export default function imageModifyProperty() {
           try {
             let fd = getFd(fileName);
             let imageSourceApi2 = image.createImageSource(fd);
-            let data = await imageSourceApi2.getImageProperty(key);
-            logger.log('getImageProperty key ' + key + ": " + data);
-            checkProps(data);
             if (imageSourceApi2 != undefined) {
+              let data = await imageSourceApi2.getImageProperty(key);
+              logger.log('getImageProperty key ' + key + ": " + data);
+              checkProps(data);
               await imageSourceApi2.release();
+            } else {
+              expect(false).assertTrue();
+              logger.log('create image source failed');
             }
             done();
           } catch (error: BusinessError) {
@@ -248,7 +248,7 @@ export default function imageModifyProperty() {
       isBatch: boolean,
       done: () => void
     ) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       try {
         if (type == "gif") {
           getFd("moving_test_loop1.gif");
@@ -748,6 +748,11 @@ export default function imageModifyProperty() {
       ];
       let buffer = getBuffer("test_exif.jpg");
       let imageSource = image.createImageSource(buffer);
+      if (imageSource == undefined) {
+        console.info(`create image source failed`);
+        expect().assertFail();
+        return undefined;
+      }
       let props = await imageSource.getImageProperties(checkKey);
       await imageSource.release();
       await testModifyImageProperties(

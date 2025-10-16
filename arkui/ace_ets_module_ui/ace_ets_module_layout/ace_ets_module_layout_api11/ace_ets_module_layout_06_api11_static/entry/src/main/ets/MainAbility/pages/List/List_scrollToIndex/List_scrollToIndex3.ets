@@ -21,7 +21,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -54,9 +53,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -138,7 +134,7 @@ struct List_scrollToIndex3 {
       }
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
         ListItemGroup() {
-          ForEach(this.arr2, (item: number, index?: number) => {
+          ForEach(this.arr2, (item: number, index?: int) => {
             ListItem() {
               Text('ListItemGroup' + item)
                 .width('90%')
@@ -147,11 +143,11 @@ struct List_scrollToIndex3 {
                 .borderRadius(10)
                 .backgroundColor(Color.Orange)
             }
-          }, (item: number,index:number) => item.toString())
+          }, (item: number,index:int) => item.toString())
         }.visibility(this.visibe)
         .id('List_scrollToIndex3_ListItemGroup')
 
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: int) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')
@@ -160,7 +156,7 @@ struct List_scrollToIndex3 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.id('List_scrollToIndex3_ListItem' + item)
-        }, (item: number,index:number) => item.toString())
+        }, (item: number,index:int) => item.toString())
 
       }
       .id('List_scrollToIndex3_List')

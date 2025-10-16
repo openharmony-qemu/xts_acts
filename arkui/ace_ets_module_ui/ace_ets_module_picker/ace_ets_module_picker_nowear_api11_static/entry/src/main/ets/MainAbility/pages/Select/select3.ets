@@ -32,13 +32,14 @@ import {
   FontStyle
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
 @Entry
 @Component
 struct SelectOnSelect {
-  @State selectIndex: number = 1
+  @State selectIndex: int = 1
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear SelectOnSelect start`)
@@ -76,14 +77,14 @@ struct SelectOnSelect {
             family: 'serif',
             style: FontStyle.Normal
           })
-          .onSelect((index: number, text?: string | undefined) => {
+          .onSelect((index: int, text?: string | undefined) => {
             console.info("Select:" + index)
             this.selectIndex = index
             try {
               let backData: events_emitter.EventData = {
                 data: {
                   "selectIndex": this.selectIndex
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               } as events_emitter.EventData
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60222,

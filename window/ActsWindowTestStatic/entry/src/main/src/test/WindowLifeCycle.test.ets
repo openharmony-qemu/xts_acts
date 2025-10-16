@@ -437,7 +437,7 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
                 expect(!!win).assertTrue();
                 try {
-                    win.on('windowEvent', (data:window.WindowEventType) => {
+                    win.onWindowEvent((data:window.WindowEventType) => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Window event happened. Event:' + JSON.stringify(data));
                     });
                 } catch (exception:BusinessError) {
@@ -447,7 +447,7 @@ export default function WindowLifeCycleTest() {
                     done();
                 }
                 try {
-                    win.off('windowEvent');
+                    win.offWindowEvent();
                     expect(true).assertTrue();
                 } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -456,7 +456,7 @@ export default function WindowLifeCycleTest() {
                     done();
                 }
                 try {
-                    win.off('windowEvent');
+                    win.offWindowEvent();
                     await win.destroyWindow();
                     expect(true).assertTrue();
                     done();
@@ -837,7 +837,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("noInteractionDetected", 1, () => {
+                        subWin!.onNoInteractionDetected(1, () => {
                         });
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
@@ -874,7 +874,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("noInteractionDetected");
+                        subWin!.offNoInteractionDetected();
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
                         done()
@@ -905,7 +905,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.on('noInteractionDetected', 60, () => {
+                windowClass.onNoInteractionDetected(60, () => {
                     hilog.info(0x0000, '[ANI]', msgStr +  'no interaction in 60s');
                 });
                 expect(true).assertTrue();
@@ -938,7 +938,7 @@ export default function WindowLifeCycleTest() {
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass: window.Window = await window.getLastWindow(context);
-                windowClass.off('noInteractionDetected');
+                windowClass.offNoInteractionDetected();
                 expect(true).assertTrue();
                 done();
             } catch (error:BusinessError) {
@@ -1384,7 +1384,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = (res: window.WindowStageEventType) => {
                 };
-                windowStageStart.on("windowStageEvent", callback);
+                windowStageStart.onWindowStageEvent(callback);
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageEvent.');
                 expect(false).assertTrue();
                 done()
@@ -1413,7 +1413,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = (res: window.WindowStageEventType) => {
                 };
-                windowStageStart.off("windowStageEvent", callback);
+                windowStageStart.offWindowStageEvent(callback);
                 hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageEvent.');
                 expect(false).assertTrue();
                 done()
@@ -1515,6 +1515,76 @@ export default function WindowLifeCycleTest() {
                     done()
                 });
 
+        })
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_API_REMOVE_STARTING_WINDOW_static_0100
+         * @tc.name      testRemoveStartingWindow_Promise_static
+         * @tc.desc      testRemoveStartingWindow_Promise_static
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testRemoveStartingWindow_Promise_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testRemoveStartingWindow_Promise_static";
+            hilog.info(domain, tag,msgStr + "begin");
+            try {
+                windowStage.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,'Succeeded in removing starting window.');
+                    expect(true).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`Failed to remove starting window. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code != 801) {
+                        hilog.error(domain, tag,msgStr + 'Failed testRemoveStartingWindow_Promise. Cause:' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                        expect(err.code).assertEqual(801);
+                        done();
+                    }
+                });
+
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + 'Failed to testRemoveStartingWindow_Promise. Cause: ' + JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number     testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.name       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.desc       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testRemoveStartingWindowPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testRemoveStartingWindowPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call removeStartingWindow. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                    done()
+                });
+
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
         })
 
     })

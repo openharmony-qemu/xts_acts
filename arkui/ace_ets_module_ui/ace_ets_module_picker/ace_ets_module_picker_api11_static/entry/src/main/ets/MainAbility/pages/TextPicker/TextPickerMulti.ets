@@ -49,51 +49,51 @@ struct TextPickerMultiTest {
         TextPicker({ range: this.multi })
           .key('textpicker_1')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade })
           .key('textpicker_2')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade, selected: [1, 1, 2] })
           .key('textpicker_3')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade, value: ["辽宁省", "大连市", "中山区"] })
           .key('textpicker_4')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade })
           .key('textpicker_5')
           .selectedIndex([2, 1, 2])
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade, value: ["辽宁省", "大连市", "中山区"], selected: [1, 1, 1] })
           .key('textpicker_6')
           .selectedIndex([0, 1, 2])
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade, selected: [1, 0,] })
           .key('textpicker_10')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
         TextPicker({ range: this.cascade, value: ['辽宁省', '大连市',] })
           .key('textpicker_11')
           .width('300')
-          .onChange((value: string | string[], index: number | number[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
       }

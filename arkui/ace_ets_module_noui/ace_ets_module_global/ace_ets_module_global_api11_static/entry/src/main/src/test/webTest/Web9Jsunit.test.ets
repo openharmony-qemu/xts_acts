@@ -19,7 +19,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils'
@@ -64,7 +64,7 @@ export default function web9Jsunit() {
         let backData: emitter.EventData = {
           data: {
             "ACTION": emitKey
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let backEvent: emitter.InnerEvent = {
           eventId: 10,

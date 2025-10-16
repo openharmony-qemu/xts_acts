@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -109,7 +109,7 @@ export default function bindMenuTesttt() {
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("bindMenuTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, Object>)?.['ACTION']).assertEqual(true);
+        expect(((indexEvent.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true);
         done();
       }
       let indexEvent: events_emitter.InnerEvent = {

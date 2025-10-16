@@ -38,6 +38,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -79,7 +80,7 @@ struct ListScroll {
       }.margin({ top: 10 } as Margin)
 
       List({ space: 5, initialIndex: 23, scroller: this.scrollerForList }) {
-        ForEach(this.arr, (item: number, index: number) => {
+        ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
             Text("ListItem" + item)
               .width("100%")
@@ -99,12 +100,12 @@ struct ListScroll {
       .margin({ top: 10 } as Margin)
       .edgeEffect(EdgeEffect.None)
       .alignListItem(ListItemAlign.Center)
-      .onScrollIndex((start: number, end: number, center: number): void => {
+      .onScrollIndex((start: int, end: int, center: int): void => {
         let eventData: events_emitter.EventData = {
           data: {
             'start': start,
             'end': end
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         if (start === 14) {
           let event: events_emitter.InnerEvent = {

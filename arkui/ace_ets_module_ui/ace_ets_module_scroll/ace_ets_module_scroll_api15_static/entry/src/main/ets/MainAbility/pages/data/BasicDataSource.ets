@@ -19,11 +19,11 @@ abstract class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
-  public totalCount(): number {
+  public totalCount(): int {
     return 0;
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return this.originDataArray[index.toInt()];
   }
 
@@ -37,7 +37,7 @@ abstract class BasicDataSource implements IDataSource<string> {
 
   
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
@@ -52,7 +52,7 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
       
@@ -60,7 +60,7 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
       
@@ -68,7 +68,7 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
       
@@ -76,7 +76,7 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
       
@@ -95,15 +95,15 @@ abstract class BasicDataSource implements IDataSource<string> {
 export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = [];
 
-  public totalCount(): number {
+  public totalCount(): int {
     return this.dataArray.length;
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return this.dataArray[index.toInt()];
   }
 
-  public addData(index: number, data: string): void {
+  public addData(index: int, data: string): void {
     this.dataArray.splice(index, 0, data);
     this.notifyDataAdd(index);
   }

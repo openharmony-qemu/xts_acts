@@ -123,8 +123,7 @@ struct comSizeAbilityTest_19 {
           }
           .width('30%')
           .backgroundColor('green')
-
-          AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+          AlphabetIndexer({ arrayValue: this.value, selected: 0 as int })
             .size({ width: 80, height: 80 })
             .translate({ x: 1, y: 1, z: 1 })
             .scale({
@@ -154,21 +153,21 @@ struct comSizeAbilityTest_19 {
             .popupFont({ size: 30, weight: FontWeight.Bolder })
             .itemSize(28)
             .alignStyle(IndexerAlign.Left)
-            .onSelect((index: Double): void => {
+            .onSelect((index: int): void => {
             
             })
-            .onRequestPopupData(((index: Double): Array<String> | undefined => {
-              if (this.value[index as Int] == 'A') {
+            .onRequestPopupData(((index: int): Array<String> | undefined => {
+              if (this.value[index as int] == 'A') {
                 return this.arrayA
-              } else if (this.value[index as Int] == 'B') {
+              } else if (this.value[index as int] == 'B') {
                 return this.arrayB
-              } else if (this.value[index as Int] == 'C') {
+              } else if (this.value[index as int] == 'C') {
                 return this.arrayC
               } else {
                 return []
               }
             }) as OnAlphabetIndexerRequestPopupDataCallback)
-            .onPopupSelect((index: Double): void => {
+            .onPopupSelect((index: int): void => {
               console.info('onPopupSelected:' + index)
             })
         }

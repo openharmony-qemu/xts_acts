@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import { startAbility, UtilsTest } from '../Util.test';
 
 /**
  * Test of common attribute: radialGradient
@@ -33,7 +32,7 @@ export default function radialGradientTest() {
   let parentHeight = 200;
   let gutter = 10;
   let columns = 3;
-  let pageConfig:PageConfig = {
+  let pageConfig: PageConfig = {
     testName: 'testRadialGradient',
     pageName: 'radialGradientPage',
     pageUrl: 'MainAbility/pages/radialGradient/RadialGradientPage',
@@ -48,23 +47,23 @@ export default function radialGradientTest() {
   }
 
   
-  let testValues:TestValue[]= [{
+  let testValues: TestValue[] = [{
     describe: 'SetRadialGradient',
     setValue: {
       radialGradient: ({
-			center: [50, 50],
-			radius: 60,
-			repeating: true,
-			colors: [[0xff0000, 0.0], [0x0000ff, 0.3], [0xffff00, 1.0]]
-		})
+        center: [50, 50],
+        radius: 60,
+        repeating: true,
+        colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]]
+      })
     },
     expectValue: {
       radialGradient: ({
-			center: ['50.00vp','50.00vp'],
-			radius: '60.00vp',
-			repeating: true,
-			colors: []
-		})
+        center: ['50.00vp', '50.00vp'],
+        radius: '60.00vp',
+        repeating: 'true',
+        colors: [['#FFFF0000', '0.000000'], ['#FF0000FF', '0.300000'], ['#FFFFFF00', '0.500000']]
+      })
     }
   }]
 
@@ -79,14 +78,29 @@ export default function radialGradientTest() {
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.error('[' + data.caseTag + '] radialGradientTest.');
-      console.error('[' + data.caseTag + '] radialGradientTest. data.testValue.setValue.radialGradient : ' + data.testValue.setValue.radialGradient);
+      console.error('[' + data.caseTag + '] radialGradientTest. data.testValue.setValue.radialGradient : ' +
+      data.testValue.setValue.radialGradient);
       console.info('[' + JSON.stringify(data.testValue.expectValue.radialGradient) + '] expectValue');
-      console.info('[' + JSON.stringify(data.viewObj!.getElement('$attrs').getElement('radialGradient')) + '] viewObj.$attrs.radialGradient');
-      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('center')[0]).assertEqual(data.testValue.expectValue.radialGradient.center[0]);
-      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('center')[1]).assertEqual(data.testValue.expectValue.radialGradient.center[1]);
-      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getDouble('radius')).assertEqual(data.testValue.expectValue.radialGradient.radius);
-      
-      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getBoolean('repeating')).assertEqual(data.testValue.expectValue.radialGradient.repeating);
+      console.info('[' + JSON.stringify(data.viewObj!.getElement('$attrs').getElement('radialGradient')) +
+        '] viewObj.$attrs.radialGradient');
+      console.info('[' +
+      JSON.stringify(data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('colors')) +
+        '] viewObj.$attrs.radialGradient11');
+
+
+      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('center')[0].asString())
+        .assertEqual(data.testValue.expectValue.radialGradient.center[0]);
+      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('center')[1].asString())
+        .assertEqual(data.testValue.expectValue.radialGradient.center[1]);
+      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getString('radius'))
+        .assertEqual(data.testValue.expectValue.radialGradient.radius);
+      const colors1 = data.viewObj!.getElement('$attrs').getElement('radialGradient').getArray('colors')[0].asArray()
+      const color = colors1[0].asString()
+      const Transparency = colors1[1].asString()
+      expect(color)
+        .assertEqual(data.testValue.expectValue.radialGradient.colors[0][0]);
+      expect(data.viewObj!.getElement('$attrs').getElement('radialGradient').getString('repeating'))
+        .assertEqual(data.testValue.expectValue.radialGradient.repeating);
 
     });
   })

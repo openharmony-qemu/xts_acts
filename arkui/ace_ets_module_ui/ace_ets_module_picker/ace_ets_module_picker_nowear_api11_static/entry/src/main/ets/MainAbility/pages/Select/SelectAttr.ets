@@ -32,7 +32,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct SelectAttrExample {
   @State text: string = "TTTTT"
-  @State index: number = 2
+  @State index: int = 2
   @State space: number = 8
   @State arrowPosition: ArrowPosition = ArrowPosition.END
 
@@ -53,7 +53,7 @@ struct SelectAttrExample {
         .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
         .optionWidth(OptionWidthMode.FIT_TRIGGER)
         .optionHeight('100vp')
-        .onSelect((index: number, text?: string | undefined) => {
+        .onSelect((index: int, text?: string | undefined) => {
           console.info('Select:' + index)
           this.index = index;
           if (text) {

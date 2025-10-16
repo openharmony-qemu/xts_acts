@@ -43,7 +43,7 @@ struct NavDestinationInfoState {
   infoSta1t:observer.NavDestinationState = observer.NavDestinationState.ON_HIDDEN
 
   onPageShow() {
-    observer.on('navDestinationUpdate', (info) => {
+    observer.onNavDestinationUpdate((info) => {
 
       if (info.state == this.infoStat) {
            this.tState = "ON_SHOWN"

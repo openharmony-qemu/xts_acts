@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, Flex, BadgeParamWithNumber, FlexDirection, Scroll, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct badge {
-  @State counts: number = 33
+  @State counts: int = 33
   @State message: string = 'new'
   @State active: boolean = false
   private content: string = "badge Page";

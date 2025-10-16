@@ -13,14 +13,11 @@
  * limitations under the License.
  */
 import { MarqueeDynamicSyncSceneType, MarqueeDynamicSyncScene ,DynamicSyncScene } from '@ohos.arkui.UIContext';
-import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit } from '@ohos.arkui.component'
+import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit } from '@ohos.arkui.component'
 
 
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -31,10 +28,10 @@ struct MarqueeDynamicSyncSceneTypeExample {
   @State marqueeText: string = 'Running Marquee'
   private fromStart: boolean = true
   private step: number = 10
-  private loop: number = Number.POSITIVE_INFINITY
+  private loop: int = Number.POSITIVE_INFINITY as int
   controller: TextClockController = new TextClockController()
-  convert2time(value: number): string{
-    let date = new Date(Number(value+'000'));
+  convert2time(value: long): string{
+    let date = new Date(Number(value+'000').toLong());
     let hours = String(date.getHours()).padStart(2, '0');
     let minutes = String(date.getMinutes()).padStart(2, '0');
     let seconds = String(date.getSeconds()).padStart(2, '0');
@@ -83,7 +80,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
 
       TextClock({ timeZoneOffset: -8, controller: this.controller } )
         .format('hms')
-        .onDateChange((value: number) => {
+        .onDateChange((value: long) => {
           this.src = this.convert2time(value) + AppStorage.get('MarqueeDynamicSyncSceneType');
         })
         .margin(1)

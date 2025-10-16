@@ -22,6 +22,7 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -74,7 +75,7 @@ struct MediaQueryOff {
               let backData: emitter.EventData = {
                 data: {
                   "STATUS": result
-                } as Record<string,object>
+                } as Record<string, RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 60218,
@@ -108,7 +109,7 @@ struct MediaQueryOff {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": result
-              } as Record<string,object>
+              } as Record<string, RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60219,

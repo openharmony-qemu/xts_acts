@@ -16,24 +16,25 @@ import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, Click
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectedValue{
-  private select: number = 2
-  set(val:number){
+  private select: int = 2
+  set(val: int){
     this.select = val
   }
 }
 class SelectedArray{
-  private select: number[] = []
-  set(val:number[]){
+  private select: int[] = []
+  set(val: int[]){
     this.select = val
   }
 }
+
 @Entry
 @Component
 struct TextPickerDialogSelectedAreaExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
-  private select: number  = 0.0;
-  @State selectedFlag: string = ''
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
+  private select: int = 0;
+  @State selectedFlag: string = '';
   build() {
     Column() {
       Button('showTextPickerDialog ' + this.selectedFlag)

@@ -54,9 +54,9 @@ struct groupAnimationHeightExample {
           this.scroller.scrollPage({ next: true, animation: true })
         })
       List({ space: 5, scroller: this.scroller }) {
-        ForEach(this.arr, (item0: number, groupIndex: number) => {
+        ForEach(this.arr, (item0: number, groupIndex: int) => {
           ListItemGroup() {
-            ForEach(this.arr2, (item: number, itemIndex: number) => {
+            ForEach(this.arr2, (item: number, itemIndex: int) => {
               ListItem() {
                 Text('Group:' + groupIndex + ', Item:' + item)
                   .width('100%')

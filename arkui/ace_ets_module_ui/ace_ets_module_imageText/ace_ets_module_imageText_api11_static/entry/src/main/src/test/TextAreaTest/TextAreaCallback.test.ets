@@ -25,7 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { UtilsTest } from '../Util.test';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -79,7 +79,7 @@ it('ArkUI_TextArea_Callback_static_0100', Level.LEVEL1, async (done: () => void)
 
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<string,Object>)?.['isEditing']).assertEqual(true);
+        expect(((event.data) as Record<String, RecordData>)?.['isEditing']).assertEqual(true);
         step2()
       }
       let event: events_emitter.InnerEvent = {
@@ -99,7 +99,7 @@ it('ArkUI_TextArea_Callback_static_0100', Level.LEVEL1, async (done: () => void)
 
 async function step2() {
   let callback = (event: events_emitter.EventData) => {
-    expect(((event.data) as Record<string,Object>)?.['isEditing']).assertEqual(false);
+    expect(((event.data) as Record<String, RecordData>)?.['isEditing']).assertEqual(false);
   }
   let event: events_emitter.InnerEvent = {
     eventId: 60201,

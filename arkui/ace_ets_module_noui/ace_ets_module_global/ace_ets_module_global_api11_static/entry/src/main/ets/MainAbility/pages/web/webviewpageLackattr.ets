@@ -17,7 +17,7 @@
 import prompt from '@ohos.prompt'
 import emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import {
   Entry, Component,
   Column, ColumnOptions, List, ListItem, ListOptions,
@@ -66,7 +66,7 @@ struct WebComponent {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": this.isLoad
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90201,
@@ -90,7 +90,7 @@ struct WebComponent {
             let backData: emitter.EventData = {
               data: {
                 
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90202,
@@ -114,7 +114,7 @@ struct WebComponent {
             let backData: emitter.EventData = {
               data: {
                 
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90203,
@@ -162,7 +162,7 @@ struct WebComponent {
                 let backData: emitter.EventData = {
                   data: {
                     "STATUS": this.webStorage.origin
-                  } as Record<String, Object>
+                  } as Record<String, RecordData>
                 }
                 let backEvent: emitter.InnerEvent = {
                   eventId: 90204,
@@ -208,7 +208,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": usage
-                    } as Record<String, Object>
+                    } as Record<String, RecordData>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90206,
@@ -242,7 +242,7 @@ struct WebComponent {
               let backData: emitter.EventData = {
                 data: {
                   "STATUS": this.isLoad
-                } as Record<String, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 90207,
@@ -271,7 +271,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": filename
-                    } as Record<String, Object>
+                    } as Record<String, RecordData>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90208,
@@ -303,7 +303,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": result
-                    } as Record<String, Object>
+                    } as Record<String, RecordData>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90209,

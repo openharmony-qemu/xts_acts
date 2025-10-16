@@ -21,6 +21,7 @@ function certificateEnumTypeTest(): void {
   expect(cert.CertResult.NOT_SUPPORT).assertEqual(801);
   expect(cert.CertResult.ERR_OUT_OF_MEMORY).assertEqual(19020001);
   expect(cert.CertResult.ERR_RUNTIME_ERROR).assertEqual(19020002);
+  expect(cert.CertResult.ERR_PARAMETER_CHECK_FAILED).assertEqual(19020003);
   expect(cert.CertResult.ERR_CRYPTO_OPERATION).assertEqual(19030001);
   expect(cert.CertResult.ERR_CERT_SIGNATURE_FAILURE).assertEqual(19030002);
   expect(cert.CertResult.ERR_CERT_NOT_YET_VALID).assertEqual(19030003);

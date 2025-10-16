@@ -13,14 +13,15 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, describe, beforeEach, afterEach, it } from "../../../hypium/index";
+import { Level, Size, TestType, beforeAll, describe, beforeEach, afterEach, it } from '../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext:common.UIAbilityContext;
 let emitKey = 'emitGetWebId';
@@ -30,8 +31,8 @@ export default function webViewControllerJsunit() {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
         onAbilityCreate: (abilitys : UIAbility) : void => {
           testAbilityContext = abilitys.context
         },
@@ -42,14 +43,14 @@ export default function webViewControllerJsunit() {
         console.log('BusinessError  end')
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.basicrenderingtest.static")
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.basicrenderingtest.static')
       await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
     afterEach(async () => {
       console.info('web afterEach start:'+emitKey);
       try {
-            let tempData: Record<string, Object> = {};
+            let tempData: Record<string, RecordData> = {};
             tempData['ACTION'] = emitKey;
             let backData: events_emitter.EventData = {
               data: tempData
@@ -74,11 +75,29 @@ export default function webViewControllerJsunit() {
      */
     it('testGetWebIdStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      emitKey="emitFetchCookieSync";
-      Utils.registerEvent("testGetWebId",6,100,done); //3个Web页面的id之和(6)会根据此用例之前的测试套及用例的运行发生变化
+      emitKey='emitFetchCookieSync';
+      Utils.registerEvent('testGetWebId',6,100,done); //3个Web页面的id之和(6)会根据此用例之前的测试套及用例的运行发生变化
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(5000);
       done();
     })
+	
+    /*
+     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0200
+     * @tc.name: emitonSwitchNextPage
+     * @tc.desc: Get the WebId
+     */
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webcomponent'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(5000)
+        done()
+      })
   })
 }

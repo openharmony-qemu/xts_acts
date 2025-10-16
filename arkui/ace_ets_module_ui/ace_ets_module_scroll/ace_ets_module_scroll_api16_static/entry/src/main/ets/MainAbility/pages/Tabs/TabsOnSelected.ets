@@ -44,7 +44,7 @@ import inspector from '@ohos.arkui.inspector';
 struct TabsExample1 {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   @State selectedIndex: number = 0
   @State message: string = ''
   private controller: TabsController = new TabsController()
@@ -93,11 +93,11 @@ struct TabsExample1 {
       .barWidth('auto')
       .barHeight('auto')
       .animationDuration(400)
-      .onSelected((index: number): void => {
+      .onSelected((index: int): void => {
         this.message = 'onSelected'
         this.selectedIndex = index
       })
-      .onChange((index: number): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .width('60%')

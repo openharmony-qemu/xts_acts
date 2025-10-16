@@ -24,10 +24,10 @@ import { LengthMetrics } from '@kit.ArkUI'
 @Entry
 @Component
 struct TextPickerTextStyleExample {
-  private select: number = 1
-  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE']
-  @State minFontSize: undefined|number|string|Resource = 18 as undefined|number|string|Resource
-  @State maxFontSize: undefined|number|string|Resource = 28 as undefined|number|string|Resource
+  private select: int = 1;
+  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
+  @State minFontSize: undefined | double | string | Resource = 18 as undefined | double | string | Resource;
+  @State maxFontSize: undefined | double | string | Resource = 28 as undefined | double | string | Resource;
   @State overflow: TextOverflow | undefined = TextOverflow.Ellipsis
 
   build() {

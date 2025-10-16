@@ -43,7 +43,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -106,7 +106,7 @@ export default function ohosPromptJsunit() {
       await Utils.sleep(1000)
       let callback = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, Object>)?.['matrix1']).assertEqual("[100, 10]")
+        expect(((eventData.data) as Record<string, RecordData>)?.['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 142,

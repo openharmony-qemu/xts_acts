@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import {
   Entry,
   Column,
@@ -67,7 +67,7 @@ struct stagePrompt {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -96,32 +96,10 @@ struct stagePrompt {
           .key("showDialogText")
           .onClick((e: ClickEvent) => {
             try {
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -174,7 +152,7 @@ struct stagePrompt {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,
@@ -202,31 +180,10 @@ struct stagePrompt {
           .key("showDialogTextTwo")
           .onClick((e: ClickEvent) => {
             try {
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
               let backData3: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent3: events_emitter.InnerEvent = {
                 eventId: 60223,
@@ -254,30 +211,10 @@ struct stagePrompt {
           .key("showActionMenuTextTwo")
           .onClick((e: ClickEvent) => {
             try {
-
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
               let backData4: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent4: events_emitter.InnerEvent = {
                 eventId: 60224,

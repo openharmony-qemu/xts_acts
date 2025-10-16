@@ -34,6 +34,7 @@ import {
   Margin,
 } from '@ohos.arkui.component';
 import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -56,11 +57,11 @@ struct CircleExample {
       console.info("[circle] page stateChangCallBack");
       if (eventData != null) {
         console.info("[circle] page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, Object>)?.['height'] != null) {
-          this.theHeight = ((eventData.data) as Record<string, Object>)?.['height'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
+          this.theHeight = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['width'] != null) {
-          this.theWidth = ((eventData.data) as Record<string, Object>)?.['width'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
+          this.theWidth = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
         }
       }
     }

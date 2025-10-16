@@ -58,7 +58,7 @@ class MyNodeAdapter extends NodeAdapter {
   constructor(uiContext: UIContext, count: number) {
     super();
     this.uiContext = uiContext;
-    this.totalNodeCount = count;
+    this.totalNodeCount = Double.toInt(count);
     this.loadData();
   }
 
@@ -66,7 +66,7 @@ class MyNodeAdapter extends NodeAdapter {
     this.reloadTimes++;
     NodeAdapter.attachNodeAdapter(this, this.hostNode!);
     storage.set('attachNodeAdapter', this.hostNode?.getChildrenCount().toString());
-    this.totalNodeCount = count;
+    this.totalNodeCount = Double.toInt(count);
     this.loadData();
     this.reloadAllItems();
   }
@@ -95,30 +95,30 @@ class MyNodeAdapter extends NodeAdapter {
       let index = i + from.toInt();
       this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + " r:" + this.reloadTimes;
     }
-    this.reloadItem(from, count);
+    this.reloadItem(Double.toInt(from), Double.toInt(count));
   }
 
   insertData(from: number, count: number): void {
     for (let i = 0; i < count; i++) {
-      let index = i + from;
+      let index = i + from.toInt();
       this.data.splice(index, 0, 'Adapter ListItem ' + from + '-' + i);
     }
-    this.insertItem(from, count);
+    this.insertItem(Double.toInt(from), Double.toInt(count));
     this.totalNodeCount += count;
     console.log('UINodeAdapter after insert count:' + this.totalNodeCount);
   }
 
   removeData(from: number, count: number): void {
-    let arr = this.data.splice(from, count);
-    this.removeItem(from, count);
+    let arr = this.data.splice(from.toInt(), count.toInt());
+    this.removeItem(Double.toInt(from), Double.toInt(count));
     this.totalNodeCount -= arr.length;
     console.log('UINodeAdapter after remove count:' + this.totalNodeCount);
   }
 
-  moveData(from: number, to: number): void {
+  moveData(from: int, to: int): void {
     let tmp = this.data.splice(from, 1);
     this.data.splice(to, 0, tmp[0]);
-    this.moveItem(from, to);
+    this.moveItem(Double.toInt(from), Double.toInt(to));
   }
 
   onAttachToNode(target: FrameNode): void {
@@ -186,7 +186,7 @@ class MyNodeAdapterController extends NodeController {
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
-    let listNode = typeNode.createListNode(uiContext, 'List');
+    let listNode = typeNode.createListNode(uiContext);
     listNode.initialize({ space: 3 } as ListOptions).borderWidth(2).borderColor(Color.Black);
     this.rootNode?.appendChild(listNode);
     this.nodeAdapter = new MyNodeAdapter(uiContext, 100);

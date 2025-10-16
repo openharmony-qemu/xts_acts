@@ -55,7 +55,7 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Component
 struct comSizeAbilityTest_29 {
   @State text1: string = "Select下拉框"
-  @State index: number = 2
+  @State index: int = 2
 
   build() {
     Scroll() {
@@ -116,7 +116,7 @@ struct comSizeAbilityTest_29 {
             .font({ size: 16, weight: 500 })
             .selectedOptionFont({ size: 16, weight: 400 })
             .optionFont({ size: 16, weight: 400 })
-            .onSelect((index: number, text?: string | undefined): void => {
+            .onSelect((index: int, text?: string | undefined): void => {
               console.info('Select:' + index)
               this.index = index;
               if (text) {

@@ -16,7 +16,7 @@ import uiObserver from '@ohos.arkui.observer';
 import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ObserverApiTest {
@@ -68,14 +68,14 @@ struct ObserverApiTest {
       Button('ObserverOn')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.on('routerPageUpdate', this.context, this.testFunc)
+          uiObserver.onRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOn')
 
       Button('ObserverOff')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.off('routerPageUpdate', this.context, this.testFunc)
+          uiObserver.offRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOff')
 

@@ -13,18 +13,17 @@
  * limitations under the License.
  */
 
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { Entry, Web, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,
+import { Entry, Web, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, 
   OnProgressChangeEvent, WebResourceResponse, WebResourceRequest, WebResourceError, SslErrorHandler,
   JsResult, HttpAuthHandler, DataResubmissionHandler, ConsoleMessage, ClientAuthenticationHandler,
   OnLoadInterceptEvent, OnErrorReceiveEvent, OnPageBeginEvent, OnPageEndEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 import webView from '@ohos.web.webview';
 import { Utils } from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
-
+import { RecordData } from '@ohos.base';
 class TestObj {
   constructor() {
   }
@@ -68,7 +67,7 @@ struct MyStateSample {
       hilog.info(0x0000, 'testTag', "web page valueChangeCallBack");
       if (eventData != null) {
         hilog.info(0x0000, 'testTag', "valueChangeCallBack=" + JSON.stringify(eventData));
-        const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+        const data = eventData.data as Record<string, RecordData>;
         if (data != null && data['ACTION'] != null) {
           try {
             this.clickEvent = String(data['ACTION']);

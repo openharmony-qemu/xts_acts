@@ -74,7 +74,7 @@ struct listAnimationVisibleExample {
         })
 
       List({ scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, itemIndex: number) => {
+        ForEach(this.arr, (item: number, itemIndex: int) => {
           ListItem() {
             Text('Item:' + item + ', itemIndex:' + itemIndex)
               .width('100%')
@@ -92,7 +92,7 @@ struct listAnimationVisibleExample {
           .borderColor(Color.Pink)
           .borderWidth(2)
           .visibility(itemIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex.toInt()] : Visibility.Visible)
-        }, (item: number, itemIndex: number) => item + itemIndex + '')
+        }, (item: number, itemIndex: int) => item + itemIndex + '')
       }
       .width('90%')
       .height('40%')
@@ -103,7 +103,7 @@ struct listAnimationVisibleExample {
         startMargin: 20,
         endMargin: 20
       })
-      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+      .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
         console.info('center' + centerIndex)

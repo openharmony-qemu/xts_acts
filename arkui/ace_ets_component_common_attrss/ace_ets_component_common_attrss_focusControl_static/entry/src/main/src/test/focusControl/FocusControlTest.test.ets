@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign,  focusControl } from '@ohos.arkui.component';
+import { AlignRuleOption, VerticalAlign, HorizontalAlign,focusControl } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -25,22 +25,9 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
-
-
-
-
-
-
-
-
-
-
-
+let testAbilityContext:common.UIAbilityContext;
 
 export default function FocusControlTest() {
 
@@ -96,6 +83,7 @@ export default function FocusControlTest() {
   
   let testValues: TestValue[] = [{
     describe: 'SetFocusableTrue',
+    setValue: true
   }, {
     describe: 'SetFocusableFalse',
     setValue: false
@@ -110,24 +98,22 @@ export default function FocusControlTest() {
   describe('FocusControlTest', () => {
     beforeAll(() => {
       console.info("FocusControlTest beforeEach start");
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     
-    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig):Promise<void> => {
       if ('SetFocusableTrue' == data.testValue.describe) {
         
         
-        let res = focusControl.requestFocus(data.pageConfig.componentKey);
+        let res = focusControl.requestFocus(data.pageConfig.componentKey ?? '');
         expect(res).assertEqual(true);
         console.info('[' + data.caseTag + '] FocusControlCallback is ' + res);
       } else if ('SetFocusableFalse' == data.testValue.describe) {
         
         
-        let res = focusControl.requestFocus(data.pageConfig.componentKey);
+        let res = focusControl.requestFocus(data.pageConfig.componentKey ?? '');
         expect(res).assertEqual(false);
         console.info('[' + data.caseTag + '] FocusControlCallback is ' + res);
       } else if ('SetAbsentComponent' == data.testValue.describe) {

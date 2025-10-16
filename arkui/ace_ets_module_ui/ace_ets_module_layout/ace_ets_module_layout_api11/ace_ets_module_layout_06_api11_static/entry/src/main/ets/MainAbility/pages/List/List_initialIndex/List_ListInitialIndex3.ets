@@ -46,7 +46,7 @@ struct List_ListInitialIndex3 {
   build() {
     Scroll(){
       Column({ space: 30 } as ColumnOptions) {
-        List({ space: 20, initialIndex: this.testInitialIndex }) {
+        List({ space: 20, initialIndex: Double.toInt(this.testInitialIndex) }) {
           ForEach(this.arr, (item: string) => {
             ListItem() {
               Text('' + item)
@@ -55,7 +55,7 @@ struct List_ListInitialIndex3 {
             .width(100)
             .height(100)
             .key('List_ListInitialIndex3_' + item)
-          }, (item: string,index:number) => item)
+          }, (item: string,index:int) => item)
         }
         .cachedCount(0)
         .width('80%')
@@ -63,7 +63,7 @@ struct List_ListInitialIndex3 {
         .listDirection(Axis.Vertical)
         .edgeEffect(EdgeEffect.Spring)
         .scrollBar(BarState.On)
-        .lanes(this.testLanes)
+        .lanes(Double.toInt(this.testLanes))
         .backgroundColor(0xAFEEEE)
         .key('List_ListInitialIndex3_Container01')
       }

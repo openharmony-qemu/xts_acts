@@ -19,7 +19,7 @@ import {State,AppStorage} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Stack_ZIndex {
-  @State addZIndex: number = 1;
+  @State addZIndex: int = 1;
   @State addAlignContent: Alignment = Alignment.TopStart;
   messageManager: MessageManager<object> = new MessageManager<object>();
 
@@ -32,7 +32,7 @@ struct Stack_ZIndex {
     let callback: Callback<object> = (message: Message<object>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'addZIndex') {
-        this.addZIndex = message.value as number;
+        this.addZIndex = message.value as int;
       }
       if (message.name == 'addAlignContent') {
         this.addAlignContent = message.value as Alignment;

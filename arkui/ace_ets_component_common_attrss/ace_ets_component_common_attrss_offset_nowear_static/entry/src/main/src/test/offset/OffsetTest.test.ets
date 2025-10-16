@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, beforeAll, expect } from '../../../../hypium/index';
@@ -33,13 +32,13 @@ import {UtilsTest} from '../Util.test'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
-
 
 export default function OffsetTest() {
   
   let supportView: Array<string> = new Array<string>(
-	'Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper', 'FlowItem', 'StepperItem')
+	'Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper', 'FlowItem',
+    'StepperItem'
+  )
 
   
   let parentWidth = 200;
@@ -61,15 +60,15 @@ export default function OffsetTest() {
   }
 
   
-  let testValues: TestValue[] = [{
+  let testValues: TestValue[] = [
+    {
     describe: 'Number',
     setValue: {
       x: 50, y: 50
     } as Position,
     expectValue: {
       x: '50.00vp', y: '50.00vp',
-      
-      
+      left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50),
     } as ExpectValue
   }, {
     describe: 'StringPx',
@@ -78,9 +77,10 @@ export default function OffsetTest() {
     } as Position,
     expectValue: {
       x: '150.00px', y: '150.00px',
-      
+      left: 150, top: 150,
     } as ExpectValue
-  }, {
+  },
+    {
     describe: 'StringPercent',
     setValue: {
       x: '50.00%', y: '50.00%'
@@ -88,17 +88,18 @@ export default function OffsetTest() {
     expectValue: {
       x: '50.00%', y: '50.00%'
     } as ExpectValue
-  }, {
+  },
+    {
     describe: 'Resource',
     setValue: {
-      x: String($r('app.float.50vp')), y: String($r('app.float.50vp'))
+      x: $r('app.float.50vp'), y: $r('app.float.50vp')
     } as Position,
     expectValue: {
       x: '50.00vp', y: '50.00vp',
-      
-      
+      left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50),
     } as ExpectValue
-  }]
+  }
+  ]
 
   /**
    * Create test suite.
@@ -114,67 +115,104 @@ export default function OffsetTest() {
     
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       
-      console.info('[' + data.caseTag + '] restore the target component to its original position');
-      AttrsManager.change(data.caseTag, {
-        x: 0, y: 0
-      });
+
+      AppStorage.setOrCreate<Position>('_offset', { x: 0, y: 0 } as Position);
+      await Utils.sleep(1000);
+      let testData: BasePageConfig = data
+      if(testData.testValue.describe == 'Number'){
+        testData = {
+          pageConfig: data.pageConfig,
+          testValue: {
+            describe: data.testValue.describe,
+            setValue: data.testValue.setValue,
+            exceptView: data.testValue.exceptView,
+            expectValue:{
+              x: '50.00vp', y: '50.00vp',
+              left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50),
+            }
+          },
+          caseTag: data.caseTag,
+          customParams: data.customParams,
+          viewObj: data.viewObj
+        }
+      }
+      if(testData.testValue.describe == 'Resource'){
+        testData = {
+          pageConfig: data.pageConfig,
+          testValue: {
+            describe: data.testValue.describe,
+            setValue: data.testValue.setValue,
+            exceptView: data.testValue.exceptView,
+            expectValue:{
+              x: '50.00vp', y: '50.00vp',
+              left: AppStorage.get<UIContext>('uiContext')?.vp2px(50), top: AppStorage.get<UIContext>('uiContext')?.vp2px(50),
+            }
+          },
+          caseTag: data.caseTag,
+          customParams: data.customParams,
+          viewObj: data.viewObj
+        }
+      }
+      
+      console.info('[' + testData.caseTag + '] get target Component rect before position changed.');
+      let initialPosition = Utils.getComponentRect(testData.pageConfig.componentKey ?? '');
+
+      
+      console.info('[' + testData.caseTag + '] get Reference Component rect before position changed.');
+      let ReferenceRectBefore = Utils.getComponentRect(testData.pageConfig.referenceComponentKey ?? '');
+
+      
+      console.info('[' + testData.caseTag + '] get Parent Component rect before position changed.');
+      let parentRectBefore = Utils.getComponentRect(testData.pageConfig.parentComponentKey ?? '');
+
+      console.info('[' + testData.caseTag + '] setValue : ' + JSON.stringify(testData.testValue.setValue));
+      AppStorage.setOrCreate<Position>('_offset', testData.testValue.setValue);
       await Utils.sleep(1000);
 
       
-      console.info('[' + data.caseTag + '] get target Component rect before position changed.');
-      let initialPosition = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
+      console.info('[' + testData.caseTag + '] get targetComponent rect after position changed.');
+      let targetRectAfter = Utils.getComponentRect(testData.pageConfig.componentKey ?? '');
 
       
-      console.info('[' + data.caseTag + '] get Reference Component rect before position changed.');
-      let ReferenceRectBefore = Utils.getComponentRect(data.pageConfig.referenceComponentKey ?? '');
+      console.info('[' + testData.caseTag + '] get referenceComponent rect after position changed.');
+      let ReferenceRectAfter = Utils.getComponentRect(testData.pageConfig.referenceComponentKey);
+      console.info('[' + testData.caseTag + '] get parentComponent rect after position changed.');
 
       
-      console.info('[' + data.caseTag + '] get Parent Component rect before position changed.');
-      let parentRectBefore = Utils.getComponentRect(data.pageConfig.parentComponentKey ?? '');
+      let parentRectAfter = Utils.getComponentRect(testData.pageConfig.parentComponentKey);
+      let rectParent = Utils.getComponentRect(testData.pageConfig.parentComponentKey);
+      console.info('[' + testData.caseTag + '] check offset value.');
 
-      console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      
+      
+      let strJsonComponentKey = inspector.getInspectorByKey(testData.pageConfig.componentKey);
       await Utils.sleep(1000);
+      let viewObj = JSON.parseJsonElement(strJsonComponentKey);
+      console.log('getStringx',viewObj.getElement('$attrs').getElement('offset').getString('x'))
+      console.log('expectValuex',testData.testValue.expectValue.x)
+      expect(viewObj.getElement('$attrs').getElement('offset').getString('x')).assertEqual(testData.testValue.expectValue.x);
+      expect(viewObj.getElement('$attrs').getElement('offset').getString('y')).assertEqual(testData.testValue.expectValue.y);
 
-      
-      console.info('[' + data.caseTag + '] get targetComponent rect after position changed.');
-      let targetRectAfter = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
-
-      
-      console.info('[' + data.caseTag + '] get referenceComponent rect after position changed.');
-      let ReferenceRectAfter = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
-      console.info('[' + data.caseTag + '] get parentComponent rect after position changed.');
-
-      
-      let parentRectAfter = Utils.getComponentRect(data.pageConfig.parentComponentKey);
-      let rectParent = Utils.getComponentRect(data.pageConfig.parentComponentKey);
-      console.info('[' + data.caseTag + '] check offset value.');
-
-      
-      
-      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? '');
-      expect(viewObj.getElement('$attrs').getElement('offset').getString('x')).assertEqual(data.testValue.expectValue.x);
-      expect(viewObj.getElement('$attrs').getElement('offset').getString('y')).assertEqual(data.testValue.expectValue.y);
-
-      if ('TabContent' == data.pageConfig.targetView || 'StepperItem' == data.pageConfig.targetView) {
+      if ('TabContent' == testData.pageConfig.targetView || 'StepperItem' == testData.pageConfig.targetView) {
+        console.log('testData.pageConfig.targetView',testData.pageConfig.targetView)
         
         
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('children')[0]
-          .getArray('children')[0]
-          .getArray('children')[0];
-        parentComponent.getArray('children').forEach((element: jsonx.JsonElement) => {
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0];
+        parentComponent.getArray('$children').forEach((element: jsonx.JsonElement) => {
           if ('Swiper' == element.getString('$type')) {
             rectParent = Utils.getComponentRectByObj(element)
           }
         });
       }
 
-      console.info('[' + data.caseTag + '] check actual position.');
+      console.info('[' + testData.caseTag + '] check actual position.');
       
       
-      if ('StringPercent' == data.testValue.describe) {
-        if ('GridItem' == data.pageConfig.targetView) {
+      if ('StringPercent' == testData.testValue.describe) {
+        if ('GridItem' == testData.pageConfig.targetView) {
           
           let targetWight = targetRectAfter.right - targetRectAfter.left;
           
@@ -192,21 +230,23 @@ export default function OffsetTest() {
         }
       } else {
         
-        expect(Math.abs(Number(Number((targetRectAfter.left - initialPosition.left)).toFixed(2)) - Number(Number(data.testValue.expectValue.left).toFixed(2))) <= 1)
+        expect(Math.abs(Number(Number((targetRectAfter.left - initialPosition.left)).toFixed(2)) - Number(Number(testData.testValue.expectValue.left).toFixed(2))) <= 1)
           .assertTrue();
-        expect(Math.abs(Number(Number((targetRectAfter.top - initialPosition.top)).toFixed(2)) - Number(Number(data.testValue.expectValue.top).toFixed(2))) <= 1)
+        expect(Math.abs(Number(Number((targetRectAfter.top - initialPosition.top)).toFixed(2)) - Number(Number(testData.testValue.expectValue.top).toFixed(2))) <= 1)
           .assertTrue();
       }
 
       
-      console.info('[' + data.caseTag + '] check parentComponent layout not changed.');
+      console.info('[' + testData.caseTag + '] check parentComponent layout not changed.');
+      console.log('parentRectBefore.left',parentRectBefore.left)
+      console.log('parentRectAfter.left',parentRectAfter.left)
       expect(parentRectBefore.left).assertEqual(parentRectAfter.left);
       expect(parentRectBefore.top).assertEqual(parentRectAfter.top);
       expect(parentRectBefore.right).assertEqual(parentRectAfter.right);
       expect(parentRectBefore.bottom).assertEqual(parentRectAfter.bottom);
 
       
-      console.info('[' + data.caseTag + '] check referenceComponent layout not changed.');
+      console.info('[' + testData.caseTag + '] check referenceComponent layout not changed.');
       expect(ReferenceRectAfter.left).assertEqual(ReferenceRectBefore.left);
       expect(ReferenceRectAfter.top).assertEqual(ReferenceRectBefore.top);
       expect(ReferenceRectAfter.right).assertEqual(ReferenceRectBefore.right);

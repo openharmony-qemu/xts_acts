@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 
 import { Entry, Component, DataPanelType, Resource, Column, ColumnOptions, Row, Stack, Text, Margin, FlexOptions, Flex, ClickEvent, ResourceColor, LinearGradient,
   Color, DataPanel, $r, DataPanelOptions} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 function fakeNumber( val: number | string): number {
   return val as number;

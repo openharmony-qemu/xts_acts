@@ -81,7 +81,7 @@ struct OverlayExample_001 {
         .id('removeComponentContent')
         .onClick((e: ClickEvent) => {
           if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
-            let componentContent = this.contentArray.splice(this.arrayIndex, 1)
+            let componentContent = this.contentArray.splice(this.arrayIndex.toInt(), 1)
 
           } else {
             console.log("arrayIndex有误")

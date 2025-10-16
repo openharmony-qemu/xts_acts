@@ -15,9 +15,6 @@
 import { Entry, Component, Column, Marquee, MarqueeUpdateStrategy, ButtonType, Flex, FontWeight, ClickEvent, Margin, FlexDirection, ItemAlign, FlexAlign, Button, Text } from '@ohos.arkui.component'
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage,
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';

@@ -126,8 +126,10 @@ export function nestedTryFinally(resourceMessage: string): string {
       console.log('Release the inner layer resources');
       resourceMessage = resourceMessage + '\nRelease the inner layer resources'
     }
-  } catch (error : BusinessError) {
-    console.error('An exception was caught:', error.message);
+  } catch (error) {
+    if (error instanceof BusinessError) {
+      console.error('An exception was caught:', error.message);
+    }
   } finally {
     console.log('Release outer resources');
     resourceMessage = resourceMessage + '\nRelease outer resources'
@@ -155,8 +157,10 @@ export function bubbleSort(arr: Array<number>): Array<number> {
       n--;
     } while (swapped);
     console.log('Sorted array:', arr);
-  } catch (error : BusinessError) {
-    console.error('An error occurred during sorting:', error.message);
+  } catch (error) {
+    if (error instanceof BusinessError) {
+      console.error('An error occurred during sorting:', error.message);
+    }
   } finally {
     console.info('===========Cleaning up resources...');
   }
@@ -190,7 +194,8 @@ export function processString(input: string | undefined | null): string {
         joinedString += ch;
       }
     }
-  } catch (error:Error) {
+  } catch (error) {
+    error = error as Error;
     console.error('An error occurred while processing the string:', error);
   }
   return joinedString;

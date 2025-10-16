@@ -14,7 +14,7 @@
  */
 import { Entry, Component, TextController, MutableStyledString, StyledStringKey, Row, Text,Column, Color, Button, ClickEvent, FlexDirection,
   TextArea, BackgroundColorStyle, StyledStringValue, UrlStyle, Flex,FlexOptions, TextOverflow, CopyOptions, ItemAlign, Padding} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component

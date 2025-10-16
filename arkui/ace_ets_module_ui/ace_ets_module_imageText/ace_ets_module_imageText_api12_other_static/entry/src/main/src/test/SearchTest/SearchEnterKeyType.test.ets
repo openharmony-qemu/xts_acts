@@ -22,7 +22,7 @@ import router from '@ohos.router'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -87,7 +87,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Go
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -126,7 +126,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Search
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 811,
@@ -165,7 +165,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Send
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 812,
@@ -204,7 +204,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Next
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 813,
@@ -243,7 +243,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.Done
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 814,
@@ -282,7 +282,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.PREVIOUS
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 815,
@@ -320,7 +320,7 @@ export default function searchEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType": EnterKeyType.NEW_LINE
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 816,

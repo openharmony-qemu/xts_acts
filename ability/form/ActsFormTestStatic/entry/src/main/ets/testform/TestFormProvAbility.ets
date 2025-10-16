@@ -45,8 +45,10 @@ class TestFormProvAbility extends UIAbility {
         }
         hilog.info(DOMAIN, TAG, 'loadContent ok');
       });
-    } catch (e: BusinessError) {
-      hilog.error(DOMAIN, TAG, `loadContent catch error: ${e?.message}`);
+    } catch (e) {
+      if (e instanceof BusinessError) {
+        hilog.error(DOMAIN, TAG, `loadContent catch error: ${e?.message}`);
+      }
     }
   }
 }

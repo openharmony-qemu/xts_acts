@@ -225,9 +225,9 @@ class TestWorker extends EAWorker {
   override start(): void{
     super.start();
   }
-  override join(): void {
+  override join(): Job<void> {
     this.joinCalled = true;
-    super.join();
+    return super.join();
   }
 
   override toString(): string {
@@ -263,7 +263,8 @@ export default function EAWorkerTest() {
         try {
           worker.run<void>(ThrowExceptionWorkerTest).Await();
           expect(EAWorkerTest001).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Worker function exception');
         } finally {
@@ -290,7 +291,8 @@ export default function EAWorkerTest() {
         try {
           let worker1 = worker.run<undefined>(EAWorkerTestUn).Await();
           expect(worker1).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -318,7 +320,8 @@ export default function EAWorkerTest() {
         try {
           worker.run<void>(EAWorkerTestWithNull, null).Await();
           expect(EAWorkerTest003).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -348,7 +351,8 @@ export default function EAWorkerTest() {
         try {
           const result = worker.run<int>(EAWorkerTestWithLong, INITIAL_VALUE).Await();
           expect(result).assertEqual(EXPECTED_VALUE);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -383,7 +387,8 @@ export default function EAWorkerTest() {
           }
           ).Await();
 
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -413,7 +418,8 @@ export default function EAWorkerTest() {
           };
           let job = worker.run<Promise<never>>(failingTask);
           await job.Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual("Intentional error");
         } finally {
@@ -455,7 +461,8 @@ export default function EAWorkerTest() {
           ).Await();
 
           expect(result).assertEqual('222');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -484,7 +491,8 @@ export default function EAWorkerTest() {
           expect(worker instanceof EAWorker).assertTrue();
           const result = worker.run<number>(() => 42.0).Await();
           expect(result).assertEqual(42.0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -517,7 +525,8 @@ export default function EAWorkerTest() {
             testInput
           ).Await();
           expect(result).assertEqual(42.0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -545,7 +554,8 @@ export default function EAWorkerTest() {
         try {
           worker.run<void>(TestUtils.voidStaticTask).Await();
           expect(EAWorkerTest010).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -579,7 +589,8 @@ export default function EAWorkerTest() {
           }).Await();
           expect(result).assertEqual(EXPECTED_RESULT);
           expect(typeof result).assertEqual('number');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -609,7 +620,8 @@ export default function EAWorkerTest() {
             instance.throwError();
           }).Await();
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Class method exception');
         } finally {
@@ -644,7 +656,8 @@ export default function EAWorkerTest() {
           }).Await();
           expect(result).assertEqual(EXPECTED_RESULT);
           expect(typeof result).assertEqual('number');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -674,7 +687,8 @@ export default function EAWorkerTest() {
             return processData(INVALID_INPUT);
           }).Await();
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('length must be > 5');
         } finally {
@@ -701,7 +715,8 @@ export default function EAWorkerTest() {
         try {
           worker.run<void>(SafeContainerOperation).Await();
           expect(EAWorkerTest015).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -728,7 +743,8 @@ export default function EAWorkerTest() {
         worker.start()
         try {
           worker.run<void>(promiseThrowException).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('fail');
         } finally {
@@ -769,7 +785,8 @@ export default function EAWorkerTest() {
                 });
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -807,7 +824,8 @@ export default function EAWorkerTest() {
                 });
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -844,13 +862,15 @@ export default function EAWorkerTest() {
                 try {
                   expect(err.message).assertEqual(EXPECTED_ERROR_MSG);
                   resolve(undefined);
-                } catch (err: Error) {
+                } catch (err) {
+                  err = err as Error;
                   reject(new Error('fail'));
                 }
               });
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -886,13 +906,15 @@ export default function EAWorkerTest() {
                 try {
                   expect(err.message).assertEqual(EXPECTED_ERROR_MSG);
                   resolve(undefined);
-                } catch (err: Error) {
+                } catch (err) {
+                  err = err as Error;
                   reject(new Error('fail'));
                 }
               });
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -926,7 +948,8 @@ export default function EAWorkerTest() {
                 try {
                   expect(result).assertEqual(SUCCESS_MSG);
                   resolve(undefined);
-                } catch (err: Error) {
+                } catch (err) {
+                  err = err as Error;
                   reject(new Error(err.message));
                 }
               }).catch((err: Error) => {
@@ -934,7 +957,8 @@ export default function EAWorkerTest() {
               });
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -965,7 +989,8 @@ export default function EAWorkerTest() {
             return SUCCESS_RESULT;
           }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -996,7 +1021,8 @@ export default function EAWorkerTest() {
             throw new Error(ERROR_MESSAGE);
           }).Await();
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual(ERROR_MESSAGE);
         } finally {
@@ -1027,7 +1053,8 @@ export default function EAWorkerTest() {
             return SUCCESS_RESULT;
           }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1058,7 +1085,8 @@ export default function EAWorkerTest() {
             throw new Error(ERROR_MESSAGE);
           }).Await();
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual(ERROR_MESSAGE);
         } finally {
@@ -1095,7 +1123,8 @@ export default function EAWorkerTest() {
             });
           }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1128,7 +1157,8 @@ export default function EAWorkerTest() {
               }, 50);
             });
           }).Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual(ERROR_MESSAGE);
         } finally {
@@ -1165,13 +1195,15 @@ export default function EAWorkerTest() {
               }).Await();
               expect(result).assertEqual(`${SUCCESS_RESULT}_${i}`);
               successCount++;
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} [Iteration ${i}] : ${(err as Error).message}`);
               throw err;
             }
           }
           expect(successCount).assertEqual(TEST_COUNT);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1215,7 +1247,8 @@ export default function EAWorkerTest() {
             nestedTask.Await();
           });
           task.Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1259,7 +1292,8 @@ export default function EAWorkerTest() {
             nestedTask.Await();
           });
           task.Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1304,7 +1338,8 @@ export default function EAWorkerTest() {
             nestedTask.Await();
           });
           task.Await();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1344,7 +1379,8 @@ export default function EAWorkerTest() {
             expect(executedFlag).assertTrue();
             console.info(`${TAG} test end`);
             done();
-          } catch (err: Error) {
+          } catch (err) {
+            err = err as Error;
             console.error(`${TAG} catch error: code =>  message => ${err.message}`);
             expect(false).assertFail()
             console.info(`${TAG} test end`);
@@ -1380,7 +1416,8 @@ export default function EAWorkerTest() {
           expect(executedFlag).assertTrue();
           console.info(`${TAG} test end`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
           console.info(`${TAG} test end`);
@@ -1406,7 +1443,8 @@ export default function EAWorkerTest() {
         try {
           let worker1 = worker.run<undefined>(EAWorkerTest).Await();
           expect(worker1).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1438,7 +1476,8 @@ export default function EAWorkerTest() {
             return "SUCCESS_RESULT";
           }).Await();
           expect(joinCalledInTask).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1470,7 +1509,8 @@ export default function EAWorkerTest() {
             return "SUCCESS_RESULT";
           }).Await();
           expect(joinCalledInTask).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1513,7 +1553,8 @@ export default function EAWorkerTest() {
           }).Await();
           successCount++;
           expect(successCount).assertEqual(RUN_TIMES + 1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           hilog.error(0x0000, TAG, `Execution failed: ${err.message}`);
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
@@ -1545,7 +1586,8 @@ export default function EAWorkerTest() {
           worker.join();
           worker.join();
           expect(worker1).assertEqual(undefined);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1579,7 +1621,8 @@ export default function EAWorkerTest() {
           expect(worker1).assertEqual(undefined);
           expect(workerThreadId != mainThreadId).assertTrue();
           worker.join();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1620,7 +1663,8 @@ export default function EAWorkerTest() {
           });
           task.Await();
           expect(worker1ThreadId != worker2ThreadId).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1654,7 +1698,8 @@ export default function EAWorkerTest() {
           worker1.join();
           worker2.join();
           worker3.join();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1683,7 +1728,8 @@ export default function EAWorkerTest() {
         worker3.start();
         try {
           const worker4 = new EAWorker();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('The limit of Exclusive Workers has been reached');
         } finally {
@@ -1716,7 +1762,8 @@ export default function EAWorkerTest() {
               try {
                 person.age = 25;
                 resolve(person)
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             });
@@ -1725,7 +1772,8 @@ export default function EAWorkerTest() {
             .then((person: Person) => {
               expect(person.age).assertEqual(25);
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1754,7 +1802,8 @@ export default function EAWorkerTest() {
             return String(0)
           }).Await();
           expect(result).assertEqual('0');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1784,7 +1833,8 @@ export default function EAWorkerTest() {
             throw new Error('Custom worker error')
           }, inputPerson).Await();
           worker.join()
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual('Custom worker error');
         } finally {
@@ -1815,7 +1865,8 @@ export default function EAWorkerTest() {
           }, inputNum).Await();
           expect(result).assertEqual(2);
           worker.join()
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1846,7 +1897,8 @@ export default function EAWorkerTest() {
               try {
                 const result: [number, string] = [input[0] + 2, input[1].toUpperCase()];
                 resolve(result);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputTuple);
@@ -1856,7 +1908,8 @@ export default function EAWorkerTest() {
               expect(result[0]).assertEqual(3);
               expect(result[1]).assertEqual('TEST');
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1893,7 +1946,8 @@ export default function EAWorkerTest() {
                 const value = await input();
                 const additionalValue = await Promise.resolve(10);
                 resolve((): Promise<number> => Promise.resolve(value + additionalValue))
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputFunction);
@@ -1901,7 +1955,8 @@ export default function EAWorkerTest() {
           const resultFunc = await workerPromise;
           const result = await resultFunc();
           expect(result).assertEqual(15);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1932,7 +1987,8 @@ export default function EAWorkerTest() {
               try {
                 input.age = 25;
                 resolve(input);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputPerson);
@@ -1941,7 +1997,8 @@ export default function EAWorkerTest() {
             .then((input: Person) => {
               expect(input.age).assertEqual(25);
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1985,7 +2042,8 @@ export default function EAWorkerTest() {
           console.log(`${TAG}: - Avg time: ${timeTotal / count}ms`);
           hilog.info(1, TAG, '%{public}s', 'Total time:' + timeTotal + ' Avg time:' + (timeTotal / count))
           expect(status[0]).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2023,7 +2081,8 @@ export default function EAWorkerTest() {
           console.log(`${TAG}: - Avg time: ${timeTotal / count}ms`);
           hilog.info(1, TAG, '%{public}s', 'Total time:' + timeTotal + ' Avg time:' + (timeTotal / count));
           expect(status[0]).assertEqual(100);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2053,7 +2112,8 @@ export default function EAWorkerTest() {
               try {
                 const result = BigInt(inputNum)
                 resolve(result);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             });
@@ -2062,7 +2122,8 @@ export default function EAWorkerTest() {
             .then((result: bigint) => {
               expect(result).assertEqual(1n);
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2094,14 +2155,16 @@ export default function EAWorkerTest() {
                   input = 'success';
                 }
                 resolve(input);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputLiteral);
           });
           const result = await workerPromise;
           expect(result).assertEqual('success');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG}: Expected error caught: ${err.message}`);
         } finally {
           worker.join();
@@ -2131,7 +2194,8 @@ export default function EAWorkerTest() {
               try {
                 input.age = 25;
                 resolve(input);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputPerson);
@@ -2141,7 +2205,8 @@ export default function EAWorkerTest() {
               expect(input.age).assertEqual(25);
             })
 
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2173,7 +2238,8 @@ export default function EAWorkerTest() {
               try {
                 inputDouble = 1;
                 resolve(null);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputUndefined);
@@ -2181,7 +2247,8 @@ export default function EAWorkerTest() {
 
           const result = await workerPromise;
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2212,7 +2279,8 @@ export default function EAWorkerTest() {
               try {
                 input = Status.SUCCESS;
                 resolve(input);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputPerson.status);
@@ -2220,7 +2288,8 @@ export default function EAWorkerTest() {
 
           const result = await workerPromise;
           expect(result).assertEqual(Status.SUCCESS);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2257,7 +2326,8 @@ export default function EAWorkerTest() {
                 const value = await input();
                 const additionalValue = await Promise.resolve(10);
                 resolve((): Promise<number> => Promise.resolve(value + additionalValue))
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputFunction);
@@ -2266,7 +2336,8 @@ export default function EAWorkerTest() {
           hilog.info(1, TAG, '%{public}s', 'BuiltinsEAWorkerTest015:' + 4);
           const result = await resultFunc();
           expect(result).assertEqual(15);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2303,7 +2374,8 @@ export default function EAWorkerTest() {
                 const taskName: string = input !== undefined ? input : 'taskName';
                 let task: taskpool.Task = new taskpool.Task(taskName, taskFunc, 20);
                 resolve(task);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, taskName);
@@ -2312,7 +2384,8 @@ export default function EAWorkerTest() {
           const taskInstance = await workerPromise;
           await taskpool.execute(taskInstance, taskpool.Priority.HIGH);
           expect(array[0]).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2342,14 +2415,16 @@ export default function EAWorkerTest() {
               try {
                 const age: number = input();
                 resolve((): number => age);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, Person.getAge);
           });
           const resultFunc = await workerPromise;
           expect(resultFunc()).assertEqual(28);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2380,7 +2455,8 @@ export default function EAWorkerTest() {
               try {
                 person.age = 25;
                 resolve(person);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             });
@@ -2388,7 +2464,8 @@ export default function EAWorkerTest() {
 
           const result = await workerPromise;
           expect(person.age).assertEqual(25);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2420,7 +2497,8 @@ export default function EAWorkerTest() {
               try {
                 arr[2] = input;
                 resolve(arr);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             }, inputChar);
@@ -2429,7 +2507,8 @@ export default function EAWorkerTest() {
             .then((res: Char[]) => {
               expect(res[2]).assertEqual(c'4');
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2460,7 +2539,8 @@ export default function EAWorkerTest() {
           worker.join();
           const joinResult: boolean = worker.isJoinCalled();
           expect(joinResult).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2495,7 +2575,8 @@ export default function EAWorkerTest() {
                   console.info('delay 1s');
                 }, 1000);
                 array[0] = 1;
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
               resolve(array);
@@ -2509,7 +2590,8 @@ export default function EAWorkerTest() {
           })
           expect(array[0]).assertEqual(1);
           expect(array[1]).assertEqual(2);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2549,7 +2631,8 @@ export default function EAWorkerTest() {
                 }, 3000);
                 worker.join();
                 await taskpool.execute(taskFunc, 2.0);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
               resolve(array);
@@ -2557,7 +2640,8 @@ export default function EAWorkerTest() {
           });
           await workerPromise;
           expect(array[0]).assertEqual(2.0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2597,7 +2681,8 @@ export default function EAWorkerTest() {
                   console.info('delay 3s');
                 }, 3000);
                 await taskpool.execute(taskFunc, 2.0);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
               resolve(array);
@@ -2605,7 +2690,8 @@ export default function EAWorkerTest() {
           });
           await workerPromise;
           expect(array[0]).assertEqual(2.0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -2644,7 +2730,8 @@ export default function EAWorkerTest() {
                   console.info('delay 3s');
                 }, 3000);
                 await taskpool.execute(taskFunc, 2.0);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
               resolve(array);
@@ -2652,7 +2739,8 @@ export default function EAWorkerTest() {
           });
           await workerPromise;
           expect(array[0]).assertEqual(2.0);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {

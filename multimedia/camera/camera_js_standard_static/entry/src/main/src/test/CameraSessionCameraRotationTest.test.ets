@@ -71,7 +71,7 @@ let mVideoConfig: media.AVRecorderConfig = {
   url: 'file:///data/media/CameraSessionCameraRotationTest.mp4',
 }
 
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
 export default function cameraSessionCameraRotationTest() {
@@ -117,7 +117,7 @@ export default function cameraSessionCameraRotationTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')

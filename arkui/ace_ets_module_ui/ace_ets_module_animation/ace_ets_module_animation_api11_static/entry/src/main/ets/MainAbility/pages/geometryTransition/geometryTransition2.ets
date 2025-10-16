@@ -31,6 +31,7 @@ import {
   Padding
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -51,7 +52,7 @@ struct geometryTransitionExample {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<string, object>
+              } as Record<string, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 104,
