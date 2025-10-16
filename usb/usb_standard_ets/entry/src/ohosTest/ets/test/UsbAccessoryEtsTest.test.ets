@@ -58,6 +58,23 @@ async function driveFn() {
   }
 }
 
+async function driveFalse() {
+  console.info('**************driveFalse**************');
+  try {
+    let driver = await UiDriver.create();
+    console.info(TAG, ` come in driveFalse`);
+    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
+    CheckEmptyUtils.sleep(1000);
+    let button = await driver.findComponent(BY.text('不允许'));
+    console.info(TAG, `button is ${JSON.stringify(button)}`);
+    CheckEmptyUtils.sleep(1000);
+    await button.click();
+  } catch (err) {
+    console.info(TAG, 'err is ' + err);
+    return
+  }
+}
+
 async function getAccPermission() {
   console.info('**************getAccPermission**************');
   try {
@@ -181,6 +198,30 @@ export default function UsbAccessoryEtsTest() {
       } catch (err) {
         console.info(TAG, 'testRequestAccessoryRight002 err : ', err);
         expect(isDevAccessoryFunc).assertFalse();
+        if (!isDevAccessoryFunc) {
+          expect(err.code).assertEqual(401);
+        } else {
+          expect(err.code).assertEqual(14401001);
+        }
+      }
+    })
+
+    /**
+     * @tc.number     SUB_USB_DeviceManager_ReValue_Accessory_0100
+     * @tc.name       testRequestAccessoryRight003
+     * @tc.desc       verify requestAccessoryRight result
+     */
+    it("testRequestAccessoryRight003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG, '----------------------testRequestAccessoryRight003---------------------------');
+      try {
+        await usbMgr.requestAccessoryRight(accessInfo).then(data => {
+          console.info(TAG, 'testRequestAccessoryRight003 ret : ', JSON.stringify(data));
+          expect(data).assertFalse();
+        });
+        await driveFalse();
+        CheckEmptyUtils.sleep(1000);
+      } catch (err) {
+        console.info(TAG, 'testRequestAccessoryRight003 err : ', err);
         if (!isDevAccessoryFunc) {
           expect(err.code).assertEqual(401);
         } else {
