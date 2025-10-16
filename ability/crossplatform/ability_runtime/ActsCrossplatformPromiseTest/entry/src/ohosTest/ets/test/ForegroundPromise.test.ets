@@ -17,15 +17,17 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
+let driver = Driver.create();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
 const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function ForegroundPromise() {
   describe("ForegroundPromise", () => {
-    beforeEach((done: Function) => {
+    beforeEach(async (done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
@@ -34,7 +36,7 @@ export default function ForegroundPromise() {
       });
       setTimeout(() => {
         done();
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+      }, 200);
     });
 
 
@@ -47,9 +49,7 @@ export default function ForegroundPromise() {
      * @tc.level Level 2
      */
     it("ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
-
-      setTimeout(() => {
-        abilityDelegator.printSync(
+      abilityDelegator.printSync(
           "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 start"
         );
         if (deviceSupport === 'false') {
@@ -60,71 +60,68 @@ export default function ForegroundPromise() {
           abilityName: "Main4Ability",
           bundleName: "com.example.crossplatformpromise",
           moduleName: "entry_test",
-        }, () => {
-          setTimeout(() => {
-            abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
-              abilityDelegator.printSync(
-                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main4Ability: " +
-                ability1.context.abilityInfo.name
-              );
-              abilityDelegator.startAbility({
-                abilityName: "Main3Ability",
-                bundleName: "com.example.crossplatformpromise",
-                moduleName: "entry_test",
-              }, () => {
-                setTimeout(() => {
-                  abilityDelegator.getCurrentTopAbility(
-                    (err:BusinessError, ability2: UIAbility) => {
-                      abilityDelegator.printSync(
-                        "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main3Ability: " +
-                        ability2.context.abilityInfo.name
-                      );
-                      abilityDelegator
-                        .doAbilityForeground(ability1)
-                        .then(() => {
-                          setTimeout(() => {
-                            abilityDelegator.getCurrentTopAbility(
-                              (err:BusinessError, ability3: UIAbility) => {
-                                try {
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main4Ability: " +
-                                    ability3.context.abilityInfo.name
-                                  );
-                                  let stateNum =
-                                    abilityDelegator.getAbilityState(ability3);
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 getAbilityState stateNum :" +
-                                      stateNum
-                                  );
-                                  expect(stateNum).assertEqual(2);
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 pass"
-                                  );
-                                } catch (error) {
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 error:" +
-                                      error
-                                  );
-                                }
-                                done();
-                              }
-                            );
-                          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-                        })
-                        .catch((error:BusinessError) => {
-                          abilityDelegator.printSync(
-                            "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 catch error: " +
-                              error
-                          );
-                        });
-                    }
+        }, async () => {
+          await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
+            abilityDelegator.printSync(
+              "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main4Ability: " +
+              ability1.context.abilityInfo.name
+            );
+            abilityDelegator.startAbility({
+              abilityName: "Main3Ability",
+              bundleName: "com.example.crossplatformpromise",
+              moduleName: "entry_test",
+            }, async () => {
+              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              abilityDelegator.getCurrentTopAbility(
+                (err:BusinessError, ability2: UIAbility) => {
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main3Ability: " +
+                    ability2.context.abilityInfo.name
                   );
-                }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-              });
+                  abilityDelegator
+                    .doAbilityForeground(ability1)
+                    .then(() => {
+                      setTimeout(() => {
+                        abilityDelegator.getCurrentTopAbility(
+                          (err:BusinessError, ability3: UIAbility) => {
+                            try {
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main4Ability: " +
+                                ability3.context.abilityInfo.name
+                              );
+                              let stateNum =
+                                abilityDelegator.getAbilityState(ability3);
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 getAbilityState stateNum :" +
+                                  stateNum
+                              );
+                              expect(stateNum).assertEqual(2);
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 pass"
+                              );
+                            } catch (error) {
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 error:" +
+                                  error
+                              );
+                            }
+                            done();
+                          }
+                        );
+                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                    })
+                    .catch((error:BusinessError) => {
+                      abilityDelegator.printSync(
+                        "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 catch error: " +
+                          error
+                      );
+                    });
+                }
+              );
             });
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          });
         });
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
@@ -155,140 +152,58 @@ export default function ForegroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, () => {
+          }, async () => {
+            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 startAbility"
             );
-            setTimeout(() => {
-              try {
-                abilityDelegator
-                  .doAbilityForeground(undefined)
-                  .then(() => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 fail"
-                    );
-                    expect().assertFail();
-                    done();
-                  })
-                  .catch((error:BusinessError) => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 catch error: " +
-                        error
-                    );
-                  });
-              } catch {
-                abilityDelegator.printSync(
-                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 doAbilityForeground meet an error: ability is wrong"
-                );
-                abilityDelegator.getCurrentTopAbility(
-                  (err:BusinessError, ability2: UIAbility) => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 Main3Ability : " +
-                      ability2.context.abilityInfo.name
-                    );
-                    let stateNum = abilityDelegator.getAbilityState(ability1);
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 getAbilityState: " +
-                        stateNum
-                    );
-                    expect(stateNum).assertEqual(3);
-                    expect(ability2.context.abilityInfo.name).assertEqual(
-                      "Main3Ability"
-                    );
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 pass."
-                    );
-                    done();
-                  }
-                );
-              }
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            try {
+              abilityDelegator
+                .doAbilityForeground(undefined)
+                .then(() => {
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 fail"
+                  );
+                  expect().assertFail();
+                  done();
+                })
+                .catch((error:BusinessError) => {
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 catch error: " +
+                      error
+                  );
+                });
+            } catch {
+              abilityDelegator.printSync(
+                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 doAbilityForeground meet an error: ability is wrong"
+              );
+              abilityDelegator.getCurrentTopAbility(
+                (err:BusinessError, ability2: UIAbility) => {
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 Main3Ability : " +
+                    ability2.context.abilityInfo.name
+                  );
+                  let stateNum = abilityDelegator.getAbilityState(ability1);
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 getAbilityState: " +
+                      stateNum
+                  );
+                  expect(stateNum).assertEqual(3);
+                  expect(ability2.context.abilityInfo.name).assertEqual(
+                    "Main3Ability"
+                  );
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 pass."
+                  );
+                  done();
+                }
+              );
+            }
           });
         });
       }
     );
 
-    /**
-     * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003
-     * @tc.name actsDoAbilityForegroundPromiseError0003
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-   /* it(
-      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003",
-      0,
-      async (done: Function) => {
-        abilityDelegator.printSync(
-          "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 start"
-        );
-        if (deviceSupport === 'false') {
-          done();
-          return;
-        }
-        abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
-          abilityDelegator.printSync(
-            "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 Main3Ability: " +
-            ability1.context.abilityInfo.name
-          );
-          abilityDelegator.startAbility({
-            abilityName: "Main4Ability",
-            bundleName: "com.example.crossplatformpromise",
-            moduleName: "entry_test",
-          }, () => {
-            abilityDelegator.printSync(
-              "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 startAbility"
-            );
-            setTimeout(() => {
-              try {
-                abilityDelegator
-                  .doAbilityForeground("")
-                  .then(() => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 fail"
-                    );
-                    expect().assertFail();
-                    done();
-                  })
-                  .catch((error:BusinessError) => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 catch error: " +
-                        error
-                    );
-                  });
-              } catch {
-                abilityDelegator.printSync(
-                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 doAbilityForeground meet an error: ability is null"
-                );
-                abilityDelegator.getCurrentTopAbility(
-                  (err:BusinessError, ability2: UIAbility) => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 Main4Ability : " +
-                      ability2.context.abilityInfo.name
-                    );
-                    let stateNum = abilityDelegator.getAbilityState(ability1);
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 getAbilityState: " +
-                        stateNum
-                    );
-                    expect(stateNum).assertEqual(3);
-                    expect(ability2.context.abilityInfo.name).assertEqual(
-                      "Main4Ability"
-                    );
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 pass."
-                    );
-                    done();
-                  }
-                );
-              }
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-          });
-        });
-      }
-    );
-    */
     /**
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004
      * @tc.name actsDoAbilityForegroundPromise004
@@ -310,9 +225,9 @@ export default function ForegroundPromise() {
         abilityName: "Main4Ability",
         bundleName: "com.example.crossplatformpromise",
         moduleName: "entry_test",
-      }, () => {
-        setTimeout(() => {
-          abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
+      }, async () => {
+        await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main4Ability: " +
               ability1.context.abilityInfo.name
@@ -321,60 +236,58 @@ export default function ForegroundPromise() {
               abilityName: "Main3Ability",
               bundleName: "com.example.crossplatformpromise",
               moduleName: "entry_test",
-            }, () => {
-              setTimeout(() => {
-                abilityDelegator.getCurrentTopAbility(
-                  (err:BusinessError, ability2: UIAbility) => {
-                    abilityDelegator.printSync(
-                      "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main3Ability: " +
-                      ability2.context.abilityInfo.name
-                    );
-                    abilityDelegator
-                      .doAbilityForeground(ability2)
-                      .then(() => {
-                        setTimeout(() => {
-                          abilityDelegator.getCurrentTopAbility(
-                            (err:BusinessError, ability3: UIAbility) => {
-                              try {
-                                abilityDelegator.printSync(
-                                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main3Ability: " +
-                                  ability3.context.abilityInfo.name
-                                );
-                                let stateNum =
-                                  abilityDelegator.getAbilityState(ability3);
-                                abilityDelegator.printSync(
-                                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 getAbilityState stateNum :" +
-                                    stateNum
-                                );
-                                expect(
-                                  ability3.context.abilityInfo.name
-                                ).assertEqual("Main3Ability");
-                                expect(stateNum).assertEqual(2);
-                                abilityDelegator.printSync(
-                                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 pass"
-                                );
-                              } catch {
-                                abilityDelegator.printSync(
-                                  "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 fail"
-                                );
-                              }
-                              done();
+            }, async () => {
+              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              abilityDelegator.getCurrentTopAbility(
+                (err:BusinessError, ability2: UIAbility) => {
+                  abilityDelegator.printSync(
+                    "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main3Ability: " +
+                    ability2.context.abilityInfo.name
+                  );
+                  abilityDelegator
+                    .doAbilityForeground(ability2)
+                    .then(() => {
+                      setTimeout(() => {
+                        abilityDelegator.getCurrentTopAbility(
+                          (err:BusinessError, ability3: UIAbility) => {
+                            try {
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main3Ability: " +
+                                ability3.context.abilityInfo.name
+                              );
+                              let stateNum =
+                                abilityDelegator.getAbilityState(ability3);
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 getAbilityState stateNum :" +
+                                  stateNum
+                              );
+                              expect(
+                                ability3.context.abilityInfo.name
+                              ).assertEqual("Main3Ability");
+                              expect(stateNum).assertEqual(2);
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 pass"
+                              );
+                            } catch {
+                              abilityDelegator.printSync(
+                                "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 fail"
+                              );
                             }
-                          );
-                        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-                      })
-                      .catch((error:BusinessError) => {
-                        abilityDelegator.printSync(
-                          "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 catch error: " +
-                            error
+                            done();
+                          }
                         );
-                      });
-                  }
-                );
-              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                    })
+                    .catch((error:BusinessError) => {
+                      abilityDelegator.printSync(
+                        "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0003 catch error: " +
+                          error
+                      );
+                    });
+                }
+              );
             });
           });
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
       });
     });
 
@@ -406,35 +319,34 @@ export default function ForegroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, () => {
+          }, async () => {
+            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005 startAbility"
             );
-            setTimeout(() => {
-              abilityDelegator.getCurrentTopAbility(
-                (err:BusinessError, ability2: UIAbility) => {
-                  ability2.context.terminateSelf(() => {
-                    setTimeout(() => {
-                      try {
-                        abilityDelegator
-                          .doAbilityForeground(ability2)
-                          .then(() => {
-                          });
-                      } catch (error) {
-                        expect(error.message).assertContain(
-                          "Parse"
-                        );
-                        abilityDelegator.printSync(
-                          "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005 doAbilityBackground meet an error: " +
-                            error
-                        );
-                      }
-                      done();
-                    }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-                  });
-                }
-              );
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            abilityDelegator.getCurrentTopAbility(
+              (err:BusinessError, ability2: UIAbility) => {
+                ability2.context.terminateSelf(() => {
+                  setTimeout(() => {
+                    try {
+                      abilityDelegator
+                        .doAbilityForeground(ability2)
+                        .then(() => {
+                        });
+                    } catch (error) {
+                      expect(error.message).assertContain(
+                        "Parse"
+                      );
+                      abilityDelegator.printSync(
+                        "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005 doAbilityBackground meet an error: " +
+                          error
+                      );
+                    }
+                    done();
+                  }, START_ABILITY_TIMEOUT_THOUSAND);
+                });
+              }
+            );
           });
         });
       }
