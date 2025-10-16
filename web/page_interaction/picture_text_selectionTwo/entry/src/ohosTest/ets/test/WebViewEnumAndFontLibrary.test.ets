@@ -271,12 +271,12 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('emitWebContextMenuParamIsEditableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebContextMenuParamIsEditableFalse", EVENT_ID_SET_SUITE_KEY);
+    it('emitWebContextMenuParamIsEditableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebContextMenuParamIsEditableTrue", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("emitWebContextMenuParamIsEditableFalse", true, 20251016, () => { isReturn = true });
+      Utils.registerEvent("emitWebContextMenuParamIsEditableTrue", true, 20251016, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamIsEditable001");
-      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditableFalse" + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditableTrue" + '_returnCheck', true, 500);
       done();
     })
 

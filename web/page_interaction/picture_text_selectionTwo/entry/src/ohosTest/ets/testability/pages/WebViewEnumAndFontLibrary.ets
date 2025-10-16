@@ -246,7 +246,7 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(this.isEditable, 183320)
               break;
             }
-            case "emitWebContextMenuParamIsEditableFalse": {
+            case "emitWebContextMenuParamIsEditableTrue": {
               let buttonOne = await driver.findComponent(ON.text('87643'));
               let point = await buttonOne.getBoundsCenter();
               await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
