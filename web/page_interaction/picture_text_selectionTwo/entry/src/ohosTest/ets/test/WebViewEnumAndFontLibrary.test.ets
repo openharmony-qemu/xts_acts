@@ -264,9 +264,9 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0100
-    * @tc.name       : testWebContextMenuParamIsEditable001
-    * @tc.desc       : test WebContextMenuParamIsEditable
+    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0200
+    * @tc.name       : emitWebContextMenuParamIsEditableTrue
+    * @tc.desc       : emitWebContextMenuParamIsEditableTrue
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1
