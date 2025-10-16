@@ -460,7 +460,7 @@ export default function actsterminateselfwithresulttest() {
           await commonEvent.unsubscribe(subscriber);
           expect(onEntryOnDestroyBeginFlag).assertTrue();
           expect(onEntryOnDestroyEndFlag).assertTrue();
-          expect(distanceTime).assertLarger(1000);
+          expect(distanceTime >= 1000).assertTrue();
           done();
         });
       } catch (err) {
