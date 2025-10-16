@@ -483,7 +483,7 @@ static napi_value OH_Pasteboard_HasType0500(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     res = OH_Pasteboard_HasType(pasteboard, PASTEBOARD_MIMETYPE_TEXT_WANT);
     napi_create_int32(env, res == false, &result);
-    
+
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }
@@ -519,7 +519,7 @@ static napi_value OH_Pasteboard_HasType0600(napi_env env, napi_callback_info inf
     res = OH_Pasteboard_HasType(pasteboard, udmfWant);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     res = OH_Pasteboard_HasType(pasteboard, udmfPixeLmap);
-    NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
+    napi_create_int32(env, res == false, &result);
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }
@@ -555,7 +555,7 @@ static napi_value OH_Pasteboard_HasType0700(napi_env env, napi_callback_info inf
     res = OH_Pasteboard_HasType(pasteboard, udmfWant);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     res = OH_Pasteboard_HasType(pasteboard, udmfPixeLmap);
-    NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
+    napi_create_int32(env, res == false, &result);
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }

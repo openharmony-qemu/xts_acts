@@ -3094,9 +3094,6 @@ export default function pasteBoardJEtsunitTest() {
     it('pasteboard_function_test72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_7200 start')
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      let listener = () => {
-        console.info('The system pasteboard has changed.');
-      };
       try {
         systemPasteboard.onRemoteUpdate(undefined);
         expect().assertFail();
@@ -3202,9 +3199,6 @@ export default function pasteBoardJEtsunitTest() {
     it('pasteboard_function_test75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_7500 start')
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      let listener = () => {
-        console.info('The system pasteboard has changed.');
-      };
       try {
         systemPasteboard.offRemoteUpdate(undefined);
         expect().assertFail();
