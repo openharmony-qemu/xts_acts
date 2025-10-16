@@ -31,7 +31,9 @@ import { ArrayConstructor0014, ArrayConstructor0019, ArrayConstructor0029,
   ArrayConstructor0108,
   ArrayConstructor0109,
   ArrayConstructor0110} from './Symboliterator';
-
+export async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 interface GeneratedObjectLiteralInterface_2 {}
 
 interface GeneratedObjectLiteralInterface_1 {}
@@ -43,7 +45,8 @@ export default function SetSymbolIteratorTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

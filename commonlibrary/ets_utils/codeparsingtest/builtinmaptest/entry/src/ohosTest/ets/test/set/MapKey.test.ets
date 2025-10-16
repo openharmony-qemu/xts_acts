@@ -74,15 +74,16 @@ import {
   MapKeysTest099,
 } from './MapKey';
 
-export function sleep(time: number) {
-  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+export async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function MapKeyTest() {
   describe('MapKeyTest', () => {
     beforeAll(() => {
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30)
     })
     afterEach(() => {
     })

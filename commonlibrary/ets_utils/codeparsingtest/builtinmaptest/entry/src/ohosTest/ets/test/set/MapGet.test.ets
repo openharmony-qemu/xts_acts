@@ -53,8 +53,8 @@ interface GeneratedTypeLiteralInterface_1 {
 
 interface GeneratedObjectLiteralInterface_2 {}
 
-export function sleep(time: number) {
-  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+export async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function MapGetTest() {
@@ -64,7 +64,8 @@ export default function MapGetTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

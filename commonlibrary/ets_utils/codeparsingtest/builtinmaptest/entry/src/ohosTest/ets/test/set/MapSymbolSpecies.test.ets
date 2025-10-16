@@ -82,8 +82,8 @@ import {
   SymbolSpecies
 } from './MapSymbolSpecies'
 
-export function sleep(time: number) {
-  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+export async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function MapSymbolSpeciesTest() {
@@ -94,7 +94,7 @@ export default function MapSymbolSpeciesTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      // await sleep(100)
+      await sleep(30)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

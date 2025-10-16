@@ -32,7 +32,9 @@ import { MapSetTest007, MapSetTest009, MapSetTest010, MapSetTest016, MapSetTest0
   MapSetTest095,
   MapSetTest096,
   MapSetTest097} from './set';
-
+export async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 export default function SetSetTest() {
   describe('SetSetTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -40,7 +42,8 @@ export default function SetSetTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
