@@ -67,28 +67,28 @@ export default function nfcCardEmulationTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_Card_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        try {
-            let hasHceCap: boolean = cardEmulation.hasHceCapability();
-            if (hasHceCap == true) {
-                expect(hasHceCap).assertTrue();
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 support HCE cardEmulation:  ' + hasHceCap);
-            } else {
-                expect(hasHceCap).assertFalse();
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 support HCE cardEmulation:  ' + hasHceCap);
-            }
-        } catch (error:BusinessError) {
-            if (error.code == 201) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 Permission denied.:  ' + error + " - " + error.code);
-                expect(201).assertEqual(error.code);
-            } else if (error.code == 801) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 Capability not supported.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 failed.:  ' + error + " - " + error.code);
-                expect().assertFail();
-            }
+      try {
+        let hasHceCap: boolean = cardEmulation.hasHceCapability();
+        if (hasHceCap == true) {
+            expect(hasHceCap).assertTrue();
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 support HCE cardEmulation:  ' + hasHceCap);
+        } else {
+            expect(hasHceCap).assertFalse();
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 support HCE cardEmulation:  ' + hasHceCap);
         }
-        done();
+      } catch (error:BusinessError) {
+        if (error.code == 201) {
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 Permission denied.:  ' + error + " - " + error.code);
+            expect(201).assertEqual(error.code);
+        } else if (error.code == 801) {
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 Capability not supported.:  ' + error + " - " + error.code);
+            expect(801).assertEqual(error.code);
+        } else {
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0200 failed.:  ' + error + " - " + error.code);
+            expect().assertFail();
+        }
+      }
+      done();
     })
 
     /**
@@ -100,40 +100,39 @@ export default function nfcCardEmulationTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_Card_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let elementName: ElementName = {
-            bundleName: "com.example.myapplication",
-            moduleName: "entry",
-            abilityName: "EntryAbility"
-        };
-        try {
-            let isDefaultService: boolean = cardEmulation.isDefaultService(elementName, cardEmulation.CardType.PAYMENT);
-            if (isDefaultService == true) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 support HCE cardEmulation:  ' + isDefaultService);
-                expect(isDefaultService).assertTrue();
-            } else {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 support HCE cardEmulation:  ' + isDefaultService);
-                expect(isDefaultService).assertFalse();
-            }
-        } catch(error:BusinessError) {
-            if (error.code == 201) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 Permission denied.:  ' + error + " - " + error.code);
-                expect(201).assertEqual(error.code);
-            } else if (error.code == 401) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 The parameter check failed.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else if (error.code == 801) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 Capability not supported.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 failed.:  ' + error + " - " + error.code);
-                expect().assertFail();
-            }
+      let elementName: ElementName = {
+          bundleName: "com.example.myapplication",
+          moduleName: "entry",
+          abilityName: "EntryAbility"
+      };
+      try {
+        let isDefaultService: boolean = cardEmulation.isDefaultService(elementName, cardEmulation.CardType.PAYMENT);
+        if (isDefaultService == true) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 support HCE cardEmulation:  ' + isDefaultService);
+          expect(isDefaultService).assertTrue();
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 support HCE cardEmulation:  ' + isDefaultService);
+          expect(isDefaultService).assertFalse();
         }
+      } catch(error:BusinessError) {
+        if (error.code == 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 Permission denied.:  ' + error + " - " + error.code);
+          expect(201).assertEqual(error.code);
+        } else if (error.code == 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 The parameter check failed.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 Capability not supported.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0300 failed.:  ' + error + " - " + error.code);
+          expect().assertFail();
+        }
+      }
+      done();
+    })
 
-        done();
-      })
-
-      /**
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Card_static_0400
      * @tc.name start
      * @tc.desc Check whether the NFC function is enabled.
@@ -142,79 +141,79 @@ export default function nfcCardEmulationTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_Card_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-          let hceService: cardEmulation.HceService = new cardEmulation.HceService();
-          if (hceService == null || hceService == undefined) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400  HCE undefined ' + hceService);
-          }
-          let elementName: ElementName = {
-            bundleName: "ohos.acts.communication.nfc.nfcdevice",
-            abilityName: ".TestAbility",
-            moduleName: "nfc_standard_test"
-          };
-          let aidList: Array<string> = ["A0000000031010", "A0000000031011"];
-          try {
-            hceService.start(elementName, aidList);
-          } catch (error:BusinessError) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400  HCE5 ');
-              if (error.code == 201) {
-                  hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Permission denied.:  ' + error + " - " + error.code);
-                  expect(201).assertEqual(error.code);
-              } else if (error.code == 401) {
-                  hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 The parameter check failed.:  ' + error + " - " + error.code);
-                  expect(801).assertEqual(error.code);
-              } else if (error.code == 801) {
-                  hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Capability not supported.:  ' + error + " - " + error.code);
-                  expect(801).assertEqual(error.code);
-              } else if (error.code == 3100301) {
-                  hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Card emulation running state is abnormal in service. not supported.:  ' + error + " - " + error.code);
-                  expect(801).assertEqual(error.code);
-              } else {
-                  hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 failed.:  ' + error + " - " + error.code);
-                  expect().assertFail();
-              }
-          }
-          done();
-      })
+      let hceService: cardEmulation.HceService = new cardEmulation.HceService();
+      if (hceService == null || hceService == undefined) {
+        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400  HCE undefined ' + hceService);
+      }
+      let elementName: ElementName = {
+        bundleName: "ohos.acts.communication.nfc.nfcdevice",
+        abilityName: ".TestAbility",
+        moduleName: "nfc_standard_test"
+      };
+      let aidList: Array<string> = ["A0000000031010", "A0000000031011"];
+      try {
+        hceService.start(elementName, aidList);
+      } catch (error:BusinessError) {
+        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400  HCE5 ');
+        if (error.code == 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Permission denied.:  ' + error + " - " + error.code);
+          expect(201).assertEqual(error.code);
+        } else if (error.code == 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 The parameter check failed.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Capability not supported.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 3100301) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 Card emulation running state is abnormal in service. not supported.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 failed.:  ' + error + " - " + error.code);
+          expect().assertFail();
+        }
+      } 
+      done();
+    })
   
-      /**
-       * @tc.number SUB_COMMUNICATION_NFC_Card_static_0500
-       * @tc.name stop
-       * @tc.desc Check whether the NFC function is enabled.
-       * @tc.size since 7
-       * @tc.type Function
-       * @tc.level Level 1
-       */
-      it('SUB_COMMUNICATION_NFC_Card_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-          let hceService: cardEmulation.HceService = new cardEmulation.HceService();
-          let elementName: ElementName = {
-              bundleName: "com.example.myapplication",
-              moduleName: "entry",
-              abilityName: "EntryAbility"
-          };
-          try {
-            hceService.stop(elementName);
-          } catch (error:BusinessError) {
-            if (error.code == 201) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Permission denied.:  ' + error + " - " + error.code);
-                expect(201).assertEqual(error.code);
-            } else if (error.code == 401) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 The parameter check failed.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else if (error.code == 801) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Capability not supported.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else if (error.code == 3100301) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Card emulation running state is abnormal in service. not supported.:  ' + error + " - " + error.code);
-                expect(801).assertEqual(error.code);
-            } else {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 failed.:  ' + error + " - " + error.code);
-                expect().assertFail();
-            }
-          }
-          done();
-        })
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Card_static_0500
+     * @tc.name stop
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Card_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let hceService: cardEmulation.HceService = new cardEmulation.HceService();
+      let elementName: ElementName = {
+          bundleName: "com.example.myapplication",
+          moduleName: "entry",
+          abilityName: "EntryAbility"
+      };
+      try {
+        hceService.stop(elementName);
+      } catch (error:BusinessError) {
+        if (error.code == 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Permission denied.:  ' + error + " - " + error.code);
+          expect(201).assertEqual(error.code);
+        } else if (error.code == 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 The parameter check failed.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Capability not supported.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 3100301) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 Card emulation running state is abnormal in service. not supported.:  ' + error + " - " + error.code);
+          expect(801).assertEqual(error.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0500 failed.:  ' + error + " - " + error.code);
+          expect().assertFail();
+        }
+      }
+      done();
+    })
 
-        /**
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Card_static_0700
      * @tc.name transmit
      * @tc.desc Check whether the NFC function is enabled.
@@ -223,75 +222,74 @@ export default function nfcCardEmulationTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_Card_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let hceService: cardEmulation.HceService = new cardEmulation.HceService();
-        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 sucess. ');
-        let responseData:Array<int> = [0x1, 0x2];
+      let hceService: cardEmulation.HceService = new cardEmulation.HceService();
+      hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 sucess. ');
+      let responseData:Array<int> = [0x1, 0x2];
+      try {
+        await hceService.transmit(responseData).then(() =>{
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 ');
+          done();
+        });
+      } catch (err:BusinessError) {
+        if (err.code == 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Permission denied. ' + err + " - " + err.code);
+          expect(201).assertEqual(err.code);
+        } else if (err.code == 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Invalid parameter. ' + err + " - " + err.code);
+          expect(401).assertEqual(err.code);
+        } else if (err.code == 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Capability not supported. ' + err + " - " + err.code);
+          expect(801).assertEqual(err.code);
+        } else if (err.code == 3100301) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Capability not supported. ' + err + " - " + err.code);
+          expect(3100301).assertEqual(err.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 failed.:  ' + err + " - " + err.code);
+          expect().assertFail();
+        }
+        done();
+      }
+      done();
+    })
   
-        try {
-          await hceService.transmit(responseData).then(() =>{
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 ');
-            done();
-          });
-        } catch (err:BusinessError) {
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Card_static_0800
+     * @tc.name transmit
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Card_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let hceService: cardEmulation.HceService = new cardEmulation.HceService();
+      hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Permission denied. ');
+      let responseData:Array<int> = [0x1, 0x2];
+      hceService.transmit(responseData, (err, data) => {
+        if (err){
           if (err.code == 201) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Permission denied. ' + err + " - " + err.code);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Permission denied. ' + err + " - " + err.code);
             expect(201).assertEqual(err.code);
           } else if (err.code == 401) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Invalid parameter. ' + err + " - " + err.code);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Invalid parameter. ' + err + " - " + err.code);
             expect(401).assertEqual(err.code);
           } else if (err.code == 801) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Capability not supported. ' + err + " - " + err.code);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Capability not supported. ' + err + " - " + err.code);
             expect(801).assertEqual(err.code);
           } else if (err.code == 3100301) {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 Capability not supported. ' + err + " - " + err.code);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Capability not supported. ' + err + " - " + err.code);
             expect(3100301).assertEqual(err.code);
           } else {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0700 failed.:  ' + err + " - " + err.code);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 failed.:  ' + err + " - " + err.code);
             expect().assertFail();
           }
           done();
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 data.:  ' + data);
+          done();
         }
-        done();
       })
-  
-      /**
-       * @tc.number SUB_COMMUNICATION_NFC_Card_static_0800
-       * @tc.name transmit
-       * @tc.desc Check whether the NFC function is enabled.
-       * @tc.size since 7
-       * @tc.type Function
-       * @tc.level Level 1
-       */
-      it('SUB_COMMUNICATION_NFC_Card_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let hceService: cardEmulation.HceService = new cardEmulation.HceService();
-        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Permission denied. ');
-        let responseData:Array<int> = [0x1, 0x2];
-        hceService.transmit(responseData, (err, data) => {
-          if (err){
-            if (err.code == 201) {
-              hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Permission denied. ' + err + " - " + err.code);
-              expect(201).assertEqual(err.code);
-            } else if (err.code == 401) {
-              hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Invalid parameter. ' + err + " - " + err.code);
-              expect(401).assertEqual(err.code);
-            } else if (err.code == 801) {
-              hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Capability not supported. ' + err + " - " + err.code);
-              expect(801).assertEqual(err.code);
-            } else if (err.code == 3100301) {
-              hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 Capability not supported. ' + err + " - " + err.code);
-              expect(3100301).assertEqual(err.code);
-            } else {
-              hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 failed.:  ' + err + " - " + err.code);
-              expect().assertFail();
-            }
-            done();
-          } else {
-            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0800 data.:  ' + data);
-            done();
-          }
-        })
-        done();
-      })
+      done();
+    })
 
     console.info("*************[nfc_test] start nfc js unit test end*************");
   })
