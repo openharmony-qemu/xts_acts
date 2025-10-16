@@ -1036,7 +1036,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioAacProfileConfig);
+      audioRecorder.prepare(audioAacProfileConfig);
     });
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002
@@ -1051,7 +1051,7 @@ export default function RecorderLocalTestAudioAPI() {
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
       audioAacProfileConfig.profile.aacProfile = 1;
-      audioRecorder?.prepare(audioAacProfileConfig);
+      audioRecorder.prepare(audioAacProfileConfig);
     });
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003
@@ -1066,7 +1066,7 @@ export default function RecorderLocalTestAudioAPI() {
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
       audioAacProfileConfig.profile.aacProfile = 2;
-      audioRecorder?.prepare(audioAacProfileConfig);
+      audioRecorder.prepare(audioAacProfileConfig);
     });
   })
 }
