@@ -52,7 +52,7 @@ let audioAacProfileConfig: media.AVRecorderProfile = {
   audioBitrate: 64000,
   audioChannels: 1,
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
-  aacProfile: media.AacProfile.AAC_HE,
+  aacProfile: 1,
   audioSampleRate: 8000,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
@@ -1045,7 +1045,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.aacProfile = media.AacProfile.AAC_HE;
+      audioAacProfileConfig.aacProfile = 1;
       audioRecorder?.prepare(audioAacProfileConfig);
     });
     /* *
@@ -1060,7 +1060,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.aacProfile = media.AacProfile.AAC_HE;
+      audioAacProfileConfig.aacProfile = 2;
       audioRecorder?.prepare(audioAacProfileConfig);
     });
   })
