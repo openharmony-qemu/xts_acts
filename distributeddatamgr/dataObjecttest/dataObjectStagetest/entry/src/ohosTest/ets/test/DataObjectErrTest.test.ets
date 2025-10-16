@@ -1710,7 +1710,7 @@ export default function DataObjectErrTest() {
         }
       }
       let source: SourceObject = new SourceObject('jack', 18, false);
-      let g_object: distributedDataObject.distributedObject = distributedDataObject.createDistributedObject(source);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
       let result = g_object.setSessionId(distributedDataObject.genSessionId());
       expect(result).assertEqual(true);
       console.info(TAG + '************ DataObjectErrTest70 end ************');
@@ -1738,7 +1738,7 @@ export default function DataObjectErrTest() {
         }
       }
       let source: SourceObject = new SourceObject('jack', 18, false);
-      let g_object: distributedDataObject.distributedObject = distributedDataObject.createDistributedObject(source);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
       let result = g_object.setSessionId('123456@123');
       expect(result).assertEqual(false);
       console.info(TAG + '************ DataObjectErrTest71 end ************');
