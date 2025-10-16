@@ -264,6 +264,23 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
     /*
+    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0200
+    * @tc.name       : emitWebContextMenuParamIsEditableTrue
+    * @tc.desc       : emitWebContextMenuParamIsEditableTrue
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('emitWebContextMenuParamIsEditableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebContextMenuParamIsEditableTrue", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitWebContextMenuParamIsEditableTrue", true, 20251016, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamIsEditable001");
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditableTrue" + '_returnCheck', true, 500);
+      done();
+    })
+
+    /*
     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETEDITSTATEFLAGS_0100
     * @tc.name       : testWebContextMenuParamGetEditStateFlags001
     * @tc.desc       : test WebContextMenuParamGetEditStateFlags

@@ -16,8 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import { Driver, MouseButton, UiWindow, ON, On } from '@ohos.UiTest';
 
 class TestObj {
   constructor() {
@@ -240,11 +240,18 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
             case "emitWebContextMenuParamIsEditable": {
-
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.isEditable, 183320)
+              break;
+            }
+            case "emitWebContextMenuParamIsEditableTrue": {
+              let buttonOne = await driver.findComponent(ON.text('87643'));
+              let point = await buttonOne.getBoundsCenter();
+              await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.isEditable, 20251016)
               break;
             }
             case "emitWebContextMenuParamGetEditStateFlags": {
