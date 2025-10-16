@@ -238,6 +238,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_RIGHT_BUTTON == 1);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
+          ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP_OR_LEFT_BUTTON == 5);
           done();
         } catch (error: BusinessError) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -270,6 +271,293 @@ export default function MultimodalInputPointerTest() {
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+          /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
+     * @tc.desc: Test callback isPointerVisible interface to get the display or hide status of the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0100";
+        try {
+          pointer.isPointerVisible((error: BusinessError | null, visible: boolean | undefined) => {
+            if (error) {
+              console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error,
+                [`code`, `message`])}`);
+              ExpectFalse(true);
+              done();
+            } else {
+              console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+              ExpectTrue(typeof (visible) == 'boolean');
+              done();
+            }
+          });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
+     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
+     * @tc.desc: Test promise isPointerVisible interface to get the display or hide status of the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0200";
+        try {
+          pointer.isPointerVisible().then((visible: boolean) => {
+            console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+            ExpectTrue(typeof (visible) == 'boolean');
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
+     * @tc.desc: Test isPointerVisibleSync interface to get the display or hide status of the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100";
+        try {
+          let visible: boolean = pointer.isPointerVisibleSync();
+          console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+          ExpectTrue(typeof (visible) == 'boolean');
+          done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
+     * @tc.desc: Test callback setPointerVisible interface to show or hide the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0100";
+        try {
+          let flag: number = 0;
+          pointer.setPointerVisible(true, (err, data) => {
+            if (err) {
+              console.info(`${caseName} Set pointer visible failed, err=${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 801);
+              done();
+            } else {
+              flag += 1;
+              console.info(`${caseName} Set pointer visible success, data=${JSON.stringify(data)}`);
+              ExpectTrue(flag == 1);
+              done();
+            }
+          });
+        } catch (error) {
+          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
+     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
+     * @tc.desc: Test promise setPointerVisible interface to show or hide the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0200";
+        try {
+          let flag: number = 0;
+          pointer.setPointerVisible(false).then(() => {
+            flag += 1;
+            console.info(`${caseName} Set pointer visible success`);
+            ExpectTrue(flag == 1);
+            done();
+          })
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectTrue(error.code == 801);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
+     * @tc.desc: Test setPointerVisibleSync interface to show or hide the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100";
+        let ifSetPointerVisibleSyncSuccess = 0;
+        try {
+          pointer.setPointerVisibleSync(false);
+          console.info(`${caseName} Set pointer visible success`);
+          ifSetPointerVisibleSyncSuccess++;
+          ExpectTrue(ifSetPointerVisibleSyncSuccess == 1);
+          done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
+     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
+     * @tc.desc: Test setPointerVisibleSync interface to show or hide the mouse pointer.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200";
+        let ifSetPointerVisibleSyncSuccess = 0;
+        try {
+          pointer.setPointerVisibleSync(false);
+          console.info(`${caseName} Set pointer visible success`);
+          ifSetPointerVisibleSyncSuccess++;
+          ExpectTrue(ifSetPointerVisibleSyncSuccess == 1);
+          done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
+     * @tc.desc: Test getPointerStyleSync interface to get the mouse style type, windowId is -1.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100";
+        try {
+          let style: pointer.PointerStyle = pointer.getPointerStyleSync(-1);
+          console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+          ExpectTrue(style >= 0 && style <= 48);
+          done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
+     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
+     * @tc.desc: Test getPointerStyleSync interface to get the mouse style type, windowId is -10000.
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200";
+        try {
+          let windowId = -10000;
+          let style: pointer.PointerStyle = pointer.getPointerStyleSync(windowId);
+          console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+          ExpectFalse(true);
+          done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectTrue(error.code == 401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
+     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
+     * @tc.desc: Test callback getPointerStyle interface to get the mouse style type, windowId is -1.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0100";
+        try {
+          pointer.getPointerStyle(-1, (error: BusinessError | null, style: pointer.PointerStyle | undefined) => {
+            if (style === undefined) {
+              console.error(`${caseName} Get pointer style returned undefined`);
+              ExpectFalse(true);
+              done();
+              return;
+            }
+            console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(Number(style))}`);
+            ExpectTrue(style >= 0 && style <= 48);
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
+     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
+     * @tc.desc: Test promise getPointerStyle interface to get the mouse style type, windowId is -1.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0300";
+        try {
+          pointer.getPointerStyle(-1).then((style: pointer.PointerStyle) => {
+            console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+            ExpectTrue(style>=0 && style<=48);
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
       });
   })
 }
