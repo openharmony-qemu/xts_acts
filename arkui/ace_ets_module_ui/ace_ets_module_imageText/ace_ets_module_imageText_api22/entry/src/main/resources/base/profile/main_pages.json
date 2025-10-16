@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/TextChangeObserver/search",
+    "MainAbility/pages/TextChangeObserver/textArea",
+    "MainAbility/pages/TextChangeObserver/textInput"
+  ]
+}
