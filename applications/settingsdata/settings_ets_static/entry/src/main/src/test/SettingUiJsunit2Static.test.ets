@@ -126,8 +126,8 @@ export default function settingUiJsunit() {
         settings.getValue(abilityContext, name, (err, ret) => {
           console.info("[settings_get_value_033] value is: " + ret);
           expect(ret).assertEqual(value);
-          done();
         })
+        done();
       } catch(err){
         console.info("[settings_get_value_033] error is: " + String(err));
         expect().assertFail();
@@ -150,8 +150,8 @@ export default function settingUiJsunit() {
         settings.getValue(abilityContext, name).then(ret =>{
           console.info("[settings_get_value_034] value is: " + ret);
           expect(ret).assertEqual(value);
-          done();
         })
+        done();
       } catch(err){
         console.info("[settings_get_value_034] error is: " + String(err));
         expect().assertFail();
@@ -1080,9 +1080,8 @@ export default function settingUiJsunit() {
             if ((err as BusinessError).code) {
               expect(err.code).assertEqual(201);
             }
-            done();
           })
-        let ret = settings.setValueSync(abilityContext, name, value, domainName)
+        done();
       }catch (err) {
         // if(err.code == 201) {
         //   console.info('权限错误')
@@ -1182,6 +1181,7 @@ export default function settingUiJsunit() {
             }
             done();
           })
+      done();
     });
   })
 }
