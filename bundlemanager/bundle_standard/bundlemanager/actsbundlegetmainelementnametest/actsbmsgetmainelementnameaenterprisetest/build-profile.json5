@@ -22,8 +22,7 @@
         "signingConfig": "default",
         "compileSdkVersion": 22,
         "compatibleSdkVersion": 14,
-        "targetSdkVersion": 14,
-        "runtimeOS": "OpenHarmony",
+        "targetSdkVersion": 14
       }
     ]
   },
