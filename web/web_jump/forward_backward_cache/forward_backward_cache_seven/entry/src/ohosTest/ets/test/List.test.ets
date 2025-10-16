@@ -15,9 +15,11 @@
 
 import webViewOnWindowNewJsunit from './WebViewOnWindowNewJsunit.test'
 import webViewWebStorageJsunit from './WebViewWebStorageJsunit.test'
+import WebViewGetOriginsJsunit from './WebViewGetOriginsJsunit.test'
 export default function testsuite() {
 
        webViewWebStorageJsunit()
        webViewOnWindowNewJsunit()
+       WebViewGetOriginsJsunit()
 
 }
