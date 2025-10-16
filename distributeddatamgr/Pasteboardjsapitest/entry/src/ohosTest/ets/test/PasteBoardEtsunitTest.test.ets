@@ -3100,6 +3100,7 @@ export default function pasteBoardJEtsunitTest() {
       } catch (err) {
         console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
         expect(err.code).assertEqual('401');
+        done();
       }
       console.info('SUB_pasteBoard_function_JS_API_7200 end')
     })
@@ -3205,6 +3206,7 @@ export default function pasteBoardJEtsunitTest() {
       } catch (err) {
         console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
         expect(err.code).assertEqual('401');
+        done();
       }
       console.info('SUB_pasteBoard_function_JS_API_7500 end')
     })
