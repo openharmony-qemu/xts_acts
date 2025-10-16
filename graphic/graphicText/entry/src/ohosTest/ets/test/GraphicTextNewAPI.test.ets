@@ -541,11 +541,11 @@ export default function graphicTextNewAPI() {
         let range1: text.Range = { start: 0, end: 1};
         let rects1 = paragraph.getRectsForRange(range1, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
         console.info('www data rects 111 ', JSON.stringify(rects1))
-        expect(rect1.length > 0).assertTrue();
+        expect(rects1.length > 0).assertTrue();
         let range2: text.Range = { start: 0, end: 0};
         let rects2 = paragraph.getRectsForRange(range2, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
         console.info('www data rects 222 ', JSON.stringify(rects2))
-        expect(rect2.length == 0).assertTrue();
+        expect(rects2.length == 0).assertTrue();
         let placeholderRects = paragraph.getRectsForPlaceholders();
         expect(placeholderRects.length == 0).assertTrue();
         let didExceed = paragraph.didExceedMaxLines();
@@ -555,7 +555,7 @@ export default function graphicTextNewAPI() {
         let arrLineMetric =  paragraph.getLineMetrics();
         expect(arrLineMetric.length > 0).assertTrue();
         let lineMetrics =  paragraph.getLineMetrics(0);
-        expect(lineMetrics.length > 0).assertTrue();
+        expect(lineMetrics != undefined).assertTrue();
 
         done();
       } catch(err){
