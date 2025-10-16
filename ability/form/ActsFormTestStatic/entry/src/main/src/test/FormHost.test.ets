@@ -145,5 +145,64 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'FormHostStaticTest004 end');
     })
 
+    /**
+     * @tc.number: FormHostStaticTest005
+     * @tc.name: FormHostStaticTest005
+     * @tc.desc: "function onGetFormRect(callback: formInfo.GetFormRectInfoCallback): void;"
+     */
+    it("FormHostStaticTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, 'FormHostStaticTest005 start');
+
+      let callGetFormRect: formInfo.GetFormRectInfoCallback = (formId: string): Promise<formInfo.Rect> => {
+        hilog.info(0x0000, 'testTag', `cbGetFormRect a new form`);
+        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (rect: formInfo.Rect) => void): void => {
+          hilog.info(0x0000, 'testTag', `cbGetFormRect Promise called`);
+          let rect1:formInfo.Rect= {
+            left:1.0,
+            top:1.2,
+            width:1.3,
+            height:1.4
+          }
+        });
+      }
+
+      try {
+        formHost.onGetFormRect(callGetFormRect);
+        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
+        expect().assertFail();
+        done();
+      } catch (error: Error) {
+        let code = (error as BusinessError).code;
+        let message = (error as BusinessError).message;
+        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        expect(code).assertEqual(202);
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, 'FormHostStaticTest005 end');
+    })
+
+    /**
+     * @tc.number: FormHostStaticTest006
+     * @tc.name: FormHostStaticTest006
+     * @tc.desc: "function offGetFormRect(callback?: formInfo.GetFormRectInfoCallback): void;"
+     */
+    it("FormHostStaticTest006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, 'FormHostStaticTest006 start');
+      try {
+        formHost.offGetFormRect();
+        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
+        expect().assertFail();
+        done();
+      } catch (error: Error) {
+        let code = (error as BusinessError).code;
+        let message = (error as BusinessError).message;
+        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        expect(code).assertEqual(202);
+        done();
+      }
+      hilog.info(DOMAIN, TAG, 'FormHostStaticTest006 end');
+    })
+
   })
 }

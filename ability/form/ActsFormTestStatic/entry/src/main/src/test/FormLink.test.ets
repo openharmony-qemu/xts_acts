@@ -44,18 +44,11 @@ export default function formLinkTest() {
             let formLinkTest_Event: CommonEventManager.CommonEventSubscribeInfo = {
                 events: ["XTS_FormLinkTest_commonEvent"],
             };
-            let isChecked: boolean = false;
-            let tmpsubscriber = CommonEventManager.createSubscriberSync(formLinkTest_Event) as CommonEventManager.CommonEventSubscriber;
-            if (tmpsubscriber !== null){
-                subscriberForm = tmpsubscriber
-            }else{
-                console.info(TAG+`tmpsubscriber is null`)
-                expect(false).assertTrue()
-                done()
-            }
-            let formLinkCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
-                isChecked = true;
-                hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 FormLinkCallBack');
+            let isChecked: boolean = false;	
+            subscriberForm = CommonEventManager.createSubscriberSync(formLinkTest_Event);
+            let formLinkCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {	
+                isChecked = true;	
+                hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 FormLinkCallBack' + JSON.stringify(data));	
                 expect(data?.event).assertEqual("XTS_FormLinkTest_commonEvent");
                 CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("FormLinkStaticTest001"));
             }
