@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import MultimodalNoPermissionTest from './MultimodalInputNoPermission.test';
+import MultimodalNoPermissionTest from './MultimodalNoPermission.test';
 
 export default function testsuite() {
   MultimodalNoPermissionTest();
