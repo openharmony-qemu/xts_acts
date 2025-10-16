@@ -323,7 +323,7 @@ export default function effectKitBTest() {
             expect(color2.length > 0).assertTrue();
           }
           done();
-        }).catch((error) => {
+        }).catch((error: BusinessError) => {
           console.error(msgStr + "Napi colorPicker.error=" + error);
           expect().assertFail();
           done();
