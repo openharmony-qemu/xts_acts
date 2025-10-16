@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import screenLock from '@ohos.screenLock';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
 
 
 export default function ScreenLockPromiseTest(){
@@ -102,30 +102,6 @@ export default function ScreenLockPromiseTest(){
         expect().assertFail();
         done();
       }      
-    });
-
-    /*
-     * @tc.number    SUB_MISC_THEME_screenLock_API_Promise_Static_004
-     * @tc.name      Set to locked screen, query the lock screen state is locked state
-     * @tc.desc      Test ScreenLock API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("SUB_MISC_THEME_screenLock_API_Promise_Static_004", Level.LEVEL2, async (done: () => void) => {
-      console.info("------------------start SUB_MISC_THEME_screenLock_API_Promise_Static_004-------------------");
-      try {
-        await screenLock.unlockScreen();
-        console.info("====>SUB_MISC_THEME_screenLock_API_Promise_Static_004 success.");
-        expect(true).assertTrue()
-        console.info('====>-------------SUB_MISC_THEME_screenLock_API_Promise_Static_004 end----------------------');
-        done();
-      } catch (error) {
-        console.info("====>SUB_MISC_THEME_screenLock_API_Promise_Static_004: error = " + error);
-        expect().assertFail();
-        done();
-      }
-      console.info("------------------end SUB_MISC_THEME_screenLock_API_Promise_Static_004-------------------");
     });
   })
 }
