@@ -264,6 +264,23 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
     /*
+    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0100
+    * @tc.name       : testWebContextMenuParamIsEditable001
+    * @tc.desc       : test WebContextMenuParamIsEditable
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('emitWebContextMenuParamIsEditableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebContextMenuParamIsEditableFalse", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitWebContextMenuParamIsEditableFalse", true, 20251016, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamIsEditable001");
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditableFalse" + '_returnCheck', true, 500);
+      done();
+    })
+
+    /*
     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETEDITSTATEFLAGS_0100
     * @tc.name       : testWebContextMenuParamGetEditStateFlags001
     * @tc.desc       : test WebContextMenuParamGetEditStateFlags
@@ -309,7 +326,7 @@ export default function WebViewEnumAndFontLibrary() {
       Utils.emitEvent("emitContextMenuSourceTypeLongPress", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("testContextMenuSourceTypeLongPress001", ContextMenuSourceType.LongPress, 183350, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuSourceTypeLongPress001");
+      Utils.waitAndClickComponent(driver, "emitContextMenuSourceTypeLongPress", "testContextMenuSourceTypeLongPress001");
       await Utils.waitForExist(() => isReturn, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
       done();
     })
