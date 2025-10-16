@@ -1606,12 +1606,12 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
+      const map = new Map<string, string>([['emoji', '😊'], ['symbol', '�?'], ['letter', 'ñ']]);
       const results: string[] = [];
       map.forEach((value) => {
         results.push(value);
       });
-      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
+      expect(results).assertDeepEquals(['😊', '�?', 'ñ']);
     });
 
     /**

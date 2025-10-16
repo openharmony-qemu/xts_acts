@@ -543,7 +543,7 @@ export default function MapHasTest() {
      */
     it('MapHasTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[0.1 + 0.2, 'precision']]);
-      expect(map.has(0.3)).assertEqual(false); // 0.1+0.2â‰?.3 due to floating point precision
+      expect(map.has(0.3)).assertEqual(false); // 0.1+0.2ï¿½?.3 due to floating point precision
       expect(map.has(0.1 + 0.2)).assertEqual(true);
     });
 
@@ -1130,7 +1130,7 @@ export default function MapHasTest() {
      * @tc.level Level 2
      */
     it('MapHasTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const key = 'â‚?; // Unicode character
+      const key = 'ï¿½?'; // Unicode character
       const map = new Map([[key, 'unicode']]);
 
       expect(map.has(key)).assertEqual(true);

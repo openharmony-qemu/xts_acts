@@ -1461,16 +1461,16 @@ export default function MapSymbolSpeciesTest() {
         ['ä', 'a umlaut'],
         ['ñ', 'n tilde'],
         ['ç', 'c cedilla'],
-        ['日本�?, 'Japanese'],
-        ['한국�?, 'Korean']
+        ['日本�?', 'Japanese'],
+        ['한국�?', 'Korean']
       ]);
 
       const Species = MapSymbolSpecies()
       const newMap = new Species(original);
 
       expect(newMap.get('ä')).assertEqual('a umlaut');
-      expect(newMap.get('日本�?)).assertEqual('Japanese');
-      expect(newMap.get('한국�?)).assertEqual('Korean');
+      expect(newMap.get('日本�?')).assertEqual('Japanese');
+      expect(newMap.get('한국�?')).assertEqual('Korean');
     });
 
     /**

@@ -1000,13 +1000,13 @@ export default function MapEntriesTest() {
     it('testMapEntries0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>([
         ['emoji', '😊🎉'],
-        ['math', '∑∫�?],
+        ['math', '∑∫�?'],
         ['cyrillic', 'привет']
       ]);
       const entries = Array.from(map.entries());
       expect(entries).assertDeepEquals([
         ['emoji', '😊🎉'],
-        ['math', '∑∫�?],
+        ['math', '∑∫�?'],
         ['cyrillic', 'привет']
       ]);
     });
