@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import ObserverManagerSimState1 from './ObserverManagerSimState1.test';
 import ObserverManagerTest from "./ObserverManager.test";
 
-
 export default function testsuite() {
+    ObserverManagerSimState1();
     ObserverManagerTest();
 }
