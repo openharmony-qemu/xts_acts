@@ -389,19 +389,19 @@ export default function WindowTitleTest() {
             
         })
         /**
-         * @tc.number     : testSetDecorButtonStyleErrCode1300002_0100
-         * @tc.name       : testSetDecorButtonStyleErrCode1300002_static_0100
-         * @tc.desc       : testSetDecorButtonStyleErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number     testSetDecorButtonStyleErrCode1300002_0100
+         * @tc.name       testSetDecorButtonStyleErrCode1300002_static_0100
+         * @tc.desc       testSetDecorButtonStyleErrCode1300002_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
          */
         it('testSetDecorButtonStyleErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testSetDecorButtonStyleErrCode1300002_0100";
+            let caseName: string = "testSetDecorButtonStyleErrCode1300002_static_0100";
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_SubWindow_Promise')
+            windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -413,7 +413,7 @@ export default function WindowTitleTest() {
                         }
                         subWin!.setDecorButtonStyle(param);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
-                        expect(false).assertTrue();
+                        expect().assertFail();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
@@ -423,10 +423,10 @@ export default function WindowTitleTest() {
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
+                    expect().assertFail();
                     done()
                 });
-
+        
         })
 
         /**
@@ -446,8 +446,8 @@ export default function WindowTitleTest() {
                 buttonBackgroundSize: 28,
                 spacingBetweenButtons: 12,
                 closeButtonRightMargin: 20,
-                // buttonIconSize: 20,
-                // buttonBackgroundCornerRadius: 4
+                buttonIconSize: 20,
+                buttonBackgroundCornerRadius: 4
             };
             let windowConfig: window.Configuration = {
                 name: "testSetDecorButtonStyleErrCode1300004_0100",
@@ -464,7 +464,7 @@ export default function WindowTitleTest() {
                 (tempWnd as window.Window).setDecorButtonStyle(style);
                 hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
                 await (tempWnd! as window.Window).destroyWindow();
-                expect(false).assertTrue();
+                expect().assertFail();
                 done();
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
