@@ -26,6 +26,7 @@ export default class MyAbilityStage extends AbilityStage {
   onCreate() {
     let abilityStageContext = this.context;
     hilog.info(0x0000, 'testTag EntryAbility',`onCreate, abilityStageContext: ${abilityStageContext}`);
+    AppStorage.setOrCreate<common.AbilityStageContext>('AbilityStageContext', this.context)
   }
 
   onConfigurationUpdate(config: Configuration) {
@@ -38,7 +39,6 @@ export default class MyAbilityStage extends AbilityStage {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
-    AppStorage.setOrCreate<common.AbilityStageContext>('AbilityStageContext', this.context)
   }
 
   onAcceptWant(want: Want) {
