@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import dragAdaptationTest from './DragController/dragAdaptationTest.test';
 import onVisiable from './onVisiable/onVisiable.test';
 import panGestureOnOffTest from './PanGesture/panGestureOnOff.test';
 import panGestureDistanceTest from './PanGesture/panGestureDistance.test';
@@ -33,6 +34,7 @@ import SwipeRecognizer from './GestureRecognizer/SwipeRecognizer.test';
 import TapRecognizer from './GestureRecognizer/TapRecognizer.test';
 
 export default function testsuite() {
+  dragAdaptationTest();
   onVisiable();
   panGestureOnOffTest();
   panGestureDistanceTest();
