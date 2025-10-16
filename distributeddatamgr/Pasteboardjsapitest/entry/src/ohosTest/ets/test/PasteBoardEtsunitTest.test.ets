@@ -21,6 +21,7 @@ import { abilityAccessCtrl, common, PermissionRequestResult} from '@kit.AbilityK
 import { Driver, ON } from '@kit.TestKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
+let TAG = "PASTEBOARDSNDK--------------------"
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
@@ -3097,7 +3098,7 @@ export default function pasteBoardJEtsunitTest() {
         console.info('The system pasteboard has changed.');
       };
       try {
-        systemPasteboard.onRemoteUpdate('');
+        systemPasteboard.onRemoteUpdate(undefined);
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
@@ -3205,7 +3206,7 @@ export default function pasteBoardJEtsunitTest() {
         console.info('The system pasteboard has changed.');
       };
       try {
-        systemPasteboard.offRemoteUpdate('');
+        systemPasteboard.offRemoteUpdate(undefined);
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
