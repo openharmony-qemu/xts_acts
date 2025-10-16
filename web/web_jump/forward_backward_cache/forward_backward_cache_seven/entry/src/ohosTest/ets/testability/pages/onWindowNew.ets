@@ -82,16 +82,18 @@ struct OnWindowNew {
                 await waitForExist(() => this.isComplete, this.str, 0);
                 web_webview.WebStorage.getOrigins()
                   .then(origins => {
-                    console.log(`getOrigins call`);
-                    length = origins.length;
-                    console.log(`length is: ${length}`);
-                    for (let i = 0; i < origins.length; i++) {
-                      console.log('origin: ' + origins[i].origin);
-                      console.log('usage: ' + origins[i].usage);
-                      console.log('quota: ' + origins[i].quota);
+                    if (origins) {
+                      console.log(`getOrigins call`);
+                      length = origins.length;
+                      console.log(`length is: ${length}`);
+                      for (let i = 0; i < origins.length; i++) {
+                        console.log('origin: ' + origins[i].origin);
+                        console.log('usage: ' + origins[i].usage);
+                        console.log('quota: ' + origins[i].quota);
+                      }
+                      Utils.emitEvent(length > 0, 137810);
+                      console.log(`getOrigins call end`);
                     }
-                    Utils.emitEvent(length > 0, 137810);
-                    console.log(`getOrigins call end`);
                   })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
