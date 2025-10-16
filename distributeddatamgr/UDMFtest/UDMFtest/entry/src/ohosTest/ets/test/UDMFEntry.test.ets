@@ -2816,15 +2816,15 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
+     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
+     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
      * @tc.desc       Test UDMF unifiedDataChannel queryData callback
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
-      console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600 start');
       let options: unifiedDataChannel.Options = {
         key: 'udmf://DataHub/com.ohos.test/0123456789'
       };
@@ -2832,7 +2832,7 @@ export default function UDMFEntryTest() {
         if (err == null) {
           expect(data.length).assertEqual(0);
           done();
-          console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400 end');
+          console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600 end');
         } else {
           expect().assertFail();
         }
