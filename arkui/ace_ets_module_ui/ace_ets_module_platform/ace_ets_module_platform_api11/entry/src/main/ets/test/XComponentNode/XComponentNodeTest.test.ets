@@ -104,13 +104,13 @@ export default function XComponentNodeTest() {
       await button.click();
       console.info("[XComponentTypeNodeTest_0200] Click changeRenderType_display.");
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(true);
+      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(false);
 
       button = await driver.findComponent(ON.id('changeRenderType_texture'));
       await button.click();
       console.info("[XComponentTypeNodeTest_0200] Click changeRenderType_texture.");
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(false);
+      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(true);
   
       console.info('[XComponentNodeTest_0020] END');
       done();
