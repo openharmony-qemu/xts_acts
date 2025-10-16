@@ -19,6 +19,17 @@ import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window'
 import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+import screenshot from '@ohos.screenshot';
+import { image } from '@kit.ImageKit';
+import { Driver } from '@ohos.UiTest';
+import { ON } from '@ohos.UiTest';
+import { MatchPattern } from '@ohos.UiTest';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { Permissions }  from 'permissions';
+import abilityContext from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import type { AsyncCallback, Callback} from '@ohos.base'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为

@@ -247,13 +247,13 @@ export default function ErrorCode201() {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
-                    hilog.error(domain, tag,domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err.code)+',msg:'+ JSON.stringify(err!.message));
+                    hilog.error(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err.code)+',msg:'+ JSON.stringify(err!.message));
                     expect(err!.code == 201).assertTrue();
                     expect(err!.message!=null).assertTrue();
                     done();
                 })
             } catch (err: BusinessError) {
-                hilog.error(domain, tag,domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
+                hilog.error(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
                 if (err!.code != 801) {
                     expect(err.message!=null).assertTrue();
                     expect(false).assertTrue();
