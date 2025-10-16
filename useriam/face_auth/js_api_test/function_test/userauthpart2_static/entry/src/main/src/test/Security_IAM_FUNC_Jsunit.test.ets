@@ -183,7 +183,163 @@ export default function userauthTest_API9() {
       done();
     })
 
+    /**
+     * @tc.number  SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.name    SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.desc    authWidget
+     * @tc.type    Function
+     * @tc.size    SmallTest
+     * @tc.level   Level3
+     */
+    it('SUB_Security_userIam_authWidget_Func_skip_Static_0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_skip_Static_0190 start');
+      try {
+        //authParam
+        let authParam1:userAuth.AuthParam = {
+          challenge:new Uint8Array([49,49,49,49,49,49]),
+          authType:[userAuth.UserAuthType.PIN],
+          authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+          skipLockedBiometricAuth:false,
+        };
+        let authParam2:userAuth.AuthParam = {
+          challenge:new Uint8Array([49,49,49,49,49,49]),
+          authType:[userAuth.UserAuthType.PIN],
+          authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+          skipLockedBiometricAuth:true,
+        };
+        //widgetParam
+        let widgetParam: userAuth.WidgetParam = {
+          title:"title",
+        };
+        userAuth.getUserAuthInstance(authParam1,widgetParam);
+        userAuth.getUserAuthInstance(authParam2,widgetParam);
+      }
+      catch (err:BusinessError){
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_skip_Static_0190 fail CODE:" + err.code);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_skip_Static_0190 end');
+      done();
+    })
 
+    /**
+     * @tc.number  SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.name    SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.desc    authWidget
+     * @tc.type    Function
+     * @tc.size    SmallTest
+     * @tc.level   Level3
+     */
+    it('SUB_Security_userIam_authWidget_Func_Tip_Static_0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0031 start');
+      expect('1').assertEqual(''+userAuth.UserAuthTipCode.COMPARE_FAILURE);
+      expect('2').assertEqual(''+userAuth.UserAuthTipCode.TIMEOUT);
+      expect('3').assertEqual(''+userAuth.UserAuthTipCode.TEMPORARILY_LOCKED);
+      expect('4').assertEqual(''+userAuth.UserAuthTipCode.PERMANENTLY_LOCKED);
+      expect('5').assertEqual(''+userAuth.UserAuthTipCode.WIDGET_LOADED);
+      expect('6').assertEqual(''+userAuth.UserAuthTipCode.WIDGET_RELEASED);
+      expect('7').assertEqual(''+userAuth.UserAuthTipCode.COMPARE_FAILURE_WITH_FROZEN);
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0031 end');
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.name    SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.desc    authWidget
+     * @tc.type    Function
+     * @tc.size    SmallTest
+     * @tc.level   Level3
+     */
+    it('SUB_Security_userIam_authWidget_Func_Tip_Static_0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0032 start');
+      //authParam
+      let authParam:userAuth.AuthParam = {
+        challenge:new Uint8Array([49,49,49,49,49,49]),
+        authType:[userAuth.UserAuthType.PIN],
+        authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+      };
+      //widgetParam
+      let widgetParam: userAuth.WidgetParam = {
+        title:"title",
+      };
+      try {
+        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 authTipInfo.tipType = " + authTipInfo.tipType);
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 authTipInfo.tipCode = " + authTipInfo.tipCode);
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 on with callback");
+        });
+        userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 off with callback");
+        });
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 on without callback");
+        });
+        userAuthInstance.offAuthTip();
+      }
+      catch (err:BusinessError){
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
+        expect(null).assertFail();
+      }
+      try {
+        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
+        expect(null).assertFail();
+      }
+      catch (err:BusinessError){
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
+        expect(''+12500002).assertEqual(''+err.code);
+      }
+      try {
+        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
+        userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
+        expect(null).assertFail();
+      }
+      catch (err:BusinessError) {
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err1.code "+err.code);
+        expect(''+12500002).assertEqual(''+err.code);
+      }
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0032 end');
+      done();
+    });
+
+    /*
+    * @tc.number     SUB_Security_IAM_UserAuth_FUNC_Static_0110
+    * @tc.name       SUB_Security_IAM_UserAuth_FUNC_Static_0110
+    * @tc.desc       getAuthLockState parameter validity check
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
+    */
+    it('SUB_Security_IAM_UserAuth_FUNC_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_IAM_UserAuth_FUNC_Static_0110 start');
+      let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);
+      let checkPin = checkSupportOrNot(userAuth.UserAuthType.PIN);
+      let checkFingerprint = checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT);
+      let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
+      if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
+        for (let idx0 = 0; idx0 < authType.length; idx0++) {
+          try {
+            hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 authType: ${authType[idx0]}`);
+            userAuth.getAuthLockState(authType[idx0]).then((AuthLockState:userAuth.AuthLockState) => {
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.isLocked : ${AuthLockState.isLocked}`);
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
+            })
+            .catch ((err:BusinessError): void => {
+              hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail1 code: ${err.code} authType: ${authType[idx0]}`);
+              expect(err.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
+            }) 
+          } catch (error:BusinessError) {
+            hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail2 code: ${error.code} authType: ${authType[idx0]}`);
+            expect(error.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
+          }
+        };
+      }
+      done();
+    })
 
   });
 };
