@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/onWindowNew",
-    "testability/pages/webStorage"
+    "testability/pages/webStorage",
+    "testability/pages/WebViewGetOrigins"
   ]
 }
