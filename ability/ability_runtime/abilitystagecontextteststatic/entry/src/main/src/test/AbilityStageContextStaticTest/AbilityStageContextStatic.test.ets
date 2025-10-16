@@ -44,7 +44,7 @@ export default function AbilityStageContextStatic() {
     /**
      * @tc.number    ABILITY_TEST_COLORMODE_Static_0100
      * @tc.name      AbilityStageContextStatic001
-     * @tc.desc      test filed of AbilityStageContext
+     * @tc.desc      test filed of AbilityStageContext.currentHapModuleInfo and AbilityStageContext.config
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
