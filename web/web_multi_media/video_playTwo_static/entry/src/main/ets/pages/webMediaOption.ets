@@ -132,7 +132,6 @@ struct WebMediaOption{
               router.pushUrl({ url: 'pages/WebOnFullScreenEnter' })
               console.log('push URL success')
             }
-
           }
         })
       }

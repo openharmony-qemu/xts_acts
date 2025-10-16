@@ -21,7 +21,7 @@ import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData} from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import inspector from '@ohos.arkui.inspector';
 class StringFields {
   private str: string = '';
 }
@@ -70,10 +70,10 @@ struct WebOnFullScreenEnter {
           switch (this.stringObj.str) {
             case 'emitOnFullScreenEnter': {
               try {
-                Utils.clickComponent('OnFullScreenEnterTestWeb');
+                inspector.sendEventByKey('OnFullScreenEnterTestWeb', 10, '');
 
                 setTimeout(() => {
-                Utils.clickComponent('OnFullScreenEnterTestWeb');
+                  inspector.sendEventByKey('OnFullScreenEnterTestWeb', 10, '');
                 }, 2000)
 
                 setTimeout(() => {

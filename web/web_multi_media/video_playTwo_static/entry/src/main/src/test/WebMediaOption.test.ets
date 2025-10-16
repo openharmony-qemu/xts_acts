@@ -43,11 +43,11 @@ export default function webMediaOption(){
       });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.videoplaybackTwotest.static')
-      await Utils.msSleep(2000)
+      await Utils.msSleep(5000);
       console.log('beforeAll end,%s', 'Succeed!')
     });
     beforeEach(async () => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(3000);
       console.info('web beforeEach start');
     })
 
@@ -61,12 +61,13 @@ export default function webMediaOption(){
     * @tc.level       : Level 3
     */
     it('testMediaOptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
       Utils.emitEvent('emitMediaOptions001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testMediaOptions001', true, 415, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
-      await Utils.msSleep(25000);
+      await Utils.msSleep(3000);
       done()
     })
 
@@ -76,9 +77,8 @@ export default function webMediaOption(){
         Utils.emitEvent('SwitchNextPageStatic', 10)
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
-        await Utils.msSleep(6000);
+        await Utils.msSleep(5000);
         done();
       })
-
   })
 }

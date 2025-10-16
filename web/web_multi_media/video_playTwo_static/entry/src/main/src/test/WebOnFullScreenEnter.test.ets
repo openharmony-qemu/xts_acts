@@ -28,11 +28,12 @@ export default function webJsunitTwo() {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
+      await Utils.msSleep(3000);
       console.log("App start")
     });
 
     beforeEach(async () => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(5000);
       console.info("componentLifeCycleTestOne beforeEach start");
     })
 
@@ -45,14 +46,14 @@ export default function webJsunitTwo() {
     * @tc.level       : Level 3
     */
     it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
       Utils.emitEvent("emitOnFullScreenEnter", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testOnFullScreenEnter001", true, 442, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(6000);
+      await Utils.msSleep(5000);
       done();
     })
-
   })
 }
