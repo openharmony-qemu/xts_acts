@@ -68,7 +68,7 @@ export default function appManagerStaticTest() {
       * @tc.level 3
       */
     it('System_API_Test_App_Manager_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let bundleName = "com.example.systemapitest.static";
+      let bundleName = "com.ohos.application";
       try {
         appManager.killProcessesByBundleName(bundleName, false).then(() => {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
@@ -95,7 +95,7 @@ export default function appManagerStaticTest() {
      * @tc.level 3
      */
     it('System_API_Test_App_Manager_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let bundleName = "com.example.systemapitest.static";
+      let bundleName = "com.ohos.application";
       try {
         appManager.killProcessesByBundleName(bundleName, false, 0).then(() => {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1800 killProcessesByBundleName success.');
