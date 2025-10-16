@@ -462,15 +462,15 @@ static napi_value OH_Pasteboard_HasType0400(napi_env env, napi_callback_info inf
 static napi_value OH_Pasteboard_HasType0500(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    const char udmf_uri = "file://PasteboardNdkTest/data/storage/el2/base/files/file.txt";
+    const char *udmfUri = "file://PasteboardNdkTest/data/storage/el2/base/files/file.txt";
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsFileUri *uFileUri = OH_UdsFileUri_Create();
-    OH_UdsFileUri_SetFileUri(uFileUri, udmf_uri);
+    OH_UdsFileUri_SetFileUri(uFileUri, udmfUri);
     OH_UdmfRecord_AddFileUri(record, uFileUri);
-    OH_UdmfData_AddRecord(setData, record);
 
+    OH_UdmfData_AddRecord(setData, record);
     OH_Pasteboard_SetData(pasteboard, setData);
 
     bool res = OH_Pasteboard_HasType(pasteboard, PASTEBOARD_MIMETYPE_TEXT_PLAIN);
@@ -483,6 +483,7 @@ static napi_value OH_Pasteboard_HasType0500(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     res = OH_Pasteboard_HasType(pasteboard, PASTEBOARD_MIMETYPE_TEXT_WANT);
     napi_create_int32(env, res == false, &result);
+    
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }
@@ -500,24 +501,24 @@ static napi_value OH_Pasteboard_HasType0600(napi_env env, napi_callback_info inf
     OH_UdmfData_AddRecord(setData, record);
 
     OH_Pasteboard_SetData(pasteboard, setData);
-    char udmf_plainText[] = "general.plain-text";
-    char udmf_html[] = "general.html";
-    char udmf_Hyperlink[] = "general.hyperlink";
-    char udmf_uri[] = "general.file-uri";
-    char udmf_want[] = "openharmony.want";
-    char udmf_pixelmap[] = "openharmony.pixel-map";
+    char udmfPlainText[] = "general.plain-text";
+    char udmfHtml[] = "general.html";
+    char udmfHyperLink[] = "general.hyperlink";
+    char udmfUri[] = "general.file-uri";
+    char udmfWant[] = "openharmony.want";
+    char udmfPixeLmap[] = "openharmony.pixel-map";
 
-    bool res = OH_Pasteboard_HasType(pasteboard, udmf_plainText);
+    bool res = OH_Pasteboard_HasType(pasteboard, udmfPlainText);
     NAPI_ASSERT(env, res == true, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_html);
+    res = OH_Pasteboard_HasType(pasteboard, udmfHtml);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_Hyperlink);
+    res = OH_Pasteboard_HasType(pasteboard, udmfHyperLink);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_uri);
+    res = OH_Pasteboard_HasType(pasteboard, udmfUri);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_want);
+    res = OH_Pasteboard_HasType(pasteboard, udmfWant);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_pixelmap);
+    res = OH_Pasteboard_HasType(pasteboard, udmfPixeLmap);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     OH_Pasteboard_Destroy(pasteboard);
     return result;
@@ -536,24 +537,24 @@ static napi_value OH_Pasteboard_HasType0700(napi_env env, napi_callback_info inf
     OH_UdmfData_AddRecord(setData, record);
 
     OH_Pasteboard_SetData(pasteboard, setData);
-    char udmf_plainText[] = "general.plain-text";
-    char udmf_html[] = "general.html";
-    char udmf_Hyperlink[] = "general.hyperlink";
-    char udmf_uri[] = "general.file-uri";
-    char udmf_want[] = "openharmony.want";
-    char udmf_pixelmap[] = "openharmony.pixel-map";
+    char udmfPlainText[] = "general.plain-text";
+    char udmfHtml[] = "general.html";
+    char udmfHyperLink[] = "general.hyperlink";
+    char udmfUri[] = "general.file-uri";
+    char udmfWant[] = "openharmony.want";
+    char udmfPixeLmap[] = "openharmony.pixel-map";
 
-    bool res = OH_Pasteboard_HasType(pasteboard, udmf_plainText);
+    bool res = OH_Pasteboard_HasType(pasteboard, udmfPlainText);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_html);
+    res = OH_Pasteboard_HasType(pasteboard, udmfHtml);
     NAPI_ASSERT(env, res == true, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_Hyperlink);
+    res = OH_Pasteboard_HasType(pasteboard, udmfHyperLink);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_uri);
+    res = OH_Pasteboard_HasType(pasteboard, udmfUri);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_want);
+    res = OH_Pasteboard_HasType(pasteboard, udmfWant);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
-    res = OH_Pasteboard_HasType(pasteboard, udmf_pixelmap);
+    res = OH_Pasteboard_HasType(pasteboard, udmfPixeLmap);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasType is fail.");
     OH_Pasteboard_Destroy(pasteboard);
     return result;
@@ -894,17 +895,17 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_HasType0100", nullptr, OH_Pasteboard_HasType0100, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0200", nullptr, OH_Pasteboard_HasType0200, nullptr,
+        {"OH_Pasteboard_HasType0200", nullptr, OH_Pasteboard_HasType0200, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0300", nullptr, OH_Pasteboard_HasType0300, nullptr,
+        {"OH_Pasteboard_HasType0300", nullptr, OH_Pasteboard_HasType0300, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0400", nullptr, OH_Pasteboard_HasType0400, nullptr,
+        {"OH_Pasteboard_HasType0400", nullptr, OH_Pasteboard_HasType0400, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0500", nullptr, OH_Pasteboard_HasType0500, nullptr,
+        {"OH_Pasteboard_HasType0500", nullptr, OH_Pasteboard_HasType0500, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0600", nullptr, OH_Pasteboard_HasType0600, nullptr,
+        {"OH_Pasteboard_HasType0600", nullptr, OH_Pasteboard_HasType0600, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-         {"OH_Pasteboard_HasType0700", nullptr, OH_Pasteboard_HasType0700, nullptr,
+        {"OH_Pasteboard_HasType0700", nullptr, OH_Pasteboard_HasType0700, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_HasData0100", nullptr, OH_Pasteboard_HasData0100, nullptr,
          nullptr, nullptr, napi_default, nullptr},
