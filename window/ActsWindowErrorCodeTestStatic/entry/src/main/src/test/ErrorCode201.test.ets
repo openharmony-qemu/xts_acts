@@ -23,6 +23,9 @@ import window from '@ohos.window'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import screenshot from '@ohos.screenshot';
+import { image } from '@kit.ImageKit';
+import display from '@ohos.display';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -219,6 +222,77 @@ export default function ErrorCode201() {
                     done();
                 }
             }
+        })
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0200
+         * @tc.name      test_CreateVirtualScreen_ErrorCode201_static
+         * @tc.desc      test_CreateVirtualScreen_ErrorCode201 when without permissions
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_CreateVirtualScreen_ErrorCode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_CreateVirtualScreen_ErrorCode201_static ';
+            let config : display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            };
+            try {
+                display.createVirtualScreen(config).then((screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err.code)+',msg:'+ JSON.stringify(err!.message));
+                    expect(err!.code == 201).assertTrue();
+                    expect(err!.message!=null).assertTrue();
+                    done();
+                })
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
+                if (err!.code != 801) {
+                    expect(err.message!=null).assertTrue();
+                    expect(false).assertTrue();
+                }
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_SCREEN_SHOT_CAPTURE_ERRORCODE_static_0100
+         * @tc.name      : tesScreenShot_Capture_ErrorCode201_static
+         * @tc.desc      : tesScreenShot_Capture_ErrorCode201 when without permission
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('tesScreenShot_Capture_ErrorCode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'tesScreenShot_Capture_ErrorCode201_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            try {
+                let captureOptions: screenshot.CaptureOption = {
+                    "displayId": 0
+                }
+                let promise = screenshot.capture(captureOptions)
+                 promise.then((pixelMap: image.PixelMap) => {
+                    hilog.info(domain, tag,caseName + 'Succeeded in capture')
+                    expect(false).assertTrue()
+                    done()
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                     hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
+                     expect(err.code == 801 || err.code == 201).assertTrue()
+                     done();
+                 })
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
+                expect(exception.message!=null).assertTrue();
+                expect(exception.code == 801 || exception.code == 201).assertTrue()
+                done()
+            };
         })
 
 
