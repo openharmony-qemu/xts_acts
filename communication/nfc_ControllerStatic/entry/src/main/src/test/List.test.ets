@@ -14,10 +14,12 @@
  */
 
 import abilityTest from "./Ability.test";
+import nfcCardEmulationTest from "./NfcCardEmulation.test"
 import nfcControllerTest from "./NfcController.test";
 import nfcTagTest from "./NfcTag.test";
 export default function testsuite() {
   abilityTest();
+  nfcCardEmulationTest();
   nfcControllerTest();
   nfcTagTest();
 }
