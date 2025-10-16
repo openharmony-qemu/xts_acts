@@ -1449,10 +1449,10 @@ struct renderGroupPage {
   @State _renderGroupXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
-  @State parentWidth: number = 0;
-  @State parentHeight: number = 0;
-  @State columns: number = 0;
-  @State gutter: number = 0;
+  @State parentWidth: double = 0;
+  @State parentHeight: double = 0;
+  @State columns: int = 0;
+  @State gutter: int = 0;
   @State parentComponentKey: string = '';
   @StoragePropRef('_renderGroup') _renderGroup: SetValue = {
     height: 0, renderGroup: false
@@ -1466,8 +1466,8 @@ struct renderGroupPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = viewElement.getDouble("columns")
-    this.gutter = viewElement.getDouble("gutter")
+    this.columns = (viewElement.getDouble("columns")).toInt()
+    this.gutter = (viewElement.getDouble("gutter")).toInt()
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 

@@ -1172,14 +1172,14 @@ struct TranslatePage {
 	@State _translateWebModifier: WebModifier = new WebModifier()
 	@State _translateWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _translateXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = '';
-  @State componentKey: string = '';
-  @State parentWidth: number = 0;
-  @State parentHeight: number = 0;
-  @State columns: number =  0
-  @State gutter: number =  0
-  @State parentBackGroundColor: string =  '#FFFF00'
-  @State parentComponentKey: string =  '';
+	@State targetView: string = '';
+	@State componentKey: string = '';
+	@State parentWidth: double = 0;
+	@State parentHeight: double = 0;
+	@State columns: int = 0;
+	@State gutter: int = 0;
+	@State parentBackGroundColor: string =  '#FFFF00'
+	@State parentComponentKey: string =  '';
 	@StoragePropRef('_translateObj') _translate: SetValue = {
 	height: 0, translate: { x: 0, y: 0, z: 0}
 }
@@ -1192,8 +1192,8 @@ struct TranslatePage {
 		this.componentKey = viewElement.getString("componentKey")
 		this.parentWidth = viewElement.getDouble("parentWidth")
 		this.parentHeight = viewElement.getDouble("parentHeight")
-		this.columns = viewElement.getDouble("columns")
-		this.gutter = viewElement.getDouble("gutter")
+		this.columns = (viewElement.getDouble("columns")).toInt()
+		this.gutter = (viewElement.getDouble("gutter")).toInt()
 		this.parentComponentKey = viewElement.getString("parentComponentKey")
 		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
 	}

@@ -31,27 +31,28 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct GridSpanPage {
-  @StoragePropRef('_gridSpan') _gridSpan: number = 1
+  @StoragePropRef('_gridSpan') _gridSpan: int = 1
   @State targetView: string = '';
   @State componentKey: string ='';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: number = 0;
-  @State gutter: number = 0;
+  @State columns: int = 0;
+  @State gutter: int = 0;
 
   onPageShow() {
     console.info('gridSpan page show called ')
-    AppStorage.setOrCreate<number>('_gridSpan', 1)
+    AppStorage.setOrCreate<int>('_gridSpan', 1)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
-      AppStorage.setOrCreate<number>('_gridSpan', routerParamOptions.view.testValue.setValue)
+      let routerParamOptionsSetValue = routerParamOptions.view.testValue.setValue as int;
+      AppStorage.setOrCreate<int>('_gridSpan', routerParamOptionsSetValue)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-      this.columns = routerParamOptions.view.columns
-      this.gutter = routerParamOptions.view.gutter
+      this.columns = routerParamOptions.view.columns as int
+      this.gutter = routerParamOptions.view.gutter as int
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
@@ -67,8 +68,8 @@ struct GridSpanPage {
 
   build() {
     GridRow({
-      columns: this.columns as number,
-      gutter: { x: this.gutter as number, y: this.gutter as number } as GutterOption,
+      columns: this.columns as int,
+      gutter: { x: this.gutter as int, y: this.gutter as int } as GutterOption,
       breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
       direction: GridRowDirection.Row
     } as GridRowOptions) {

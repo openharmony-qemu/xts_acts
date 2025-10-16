@@ -690,10 +690,10 @@ struct accessibilityLevelDropPage {
   @State _accessibilityLevelXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string = ''
-  @State parentWidth: number = 0
-  @State parentHeight: number = 0
-  @State columns: number = 0
-  @State gutter: number = 0
+  @State parentWidth: double = 0
+  @State parentHeight: double = 0
+  @State columns: int = 0
+  @State gutter: int = 0
   @State parentComponentKey: string = ''
   @State isShow: boolean = false
   pathStack: NavPathStack = new NavPathStack()
@@ -709,8 +709,8 @@ struct accessibilityLevelDropPage {
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
-    this.columns = routerParamOptions.view.columns
-    this.gutter = routerParamOptions.view.gutter
+    this.columns = routerParamOptions.view.columns as int
+    this.gutter = routerParamOptions.view.gutter as int
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
     console.log('aboutToAppear routerParamOptions success' + this.targetView)
     console.info('22222 translate page show called ')

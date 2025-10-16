@@ -72,7 +72,7 @@ struct Index {
           let context = this.getUIContext()
           const contentNode = new ComponentContent(context, wrapBuilder(buildText));
           const promptAction = context.getPromptAction();
-          let uniqueId = this.getUniqueId();
+          let uniqueId = (this.getUniqueId()).toLong();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
           let targetId = Long.toInt(frameNode?.getFirstChild()?.getUniqueId()!);
           promptAction.openPopup(contentNode, { id: targetId }, {

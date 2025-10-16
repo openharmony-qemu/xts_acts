@@ -32,22 +32,22 @@ import { Entry, Component, ItemAlign, VerticalAlign, HorizontalAlign, Builder, A
 @Entry
 @Component
 struct DisplayPriorityPage {
-  @State _displayPriority: number = 1.0;
-  @State _compareOneButtonDisplayPriority: number = 2.0;
+  @State _displayPriority: double = 1.0;
+  @State _compareOneButtonDisplayPriority: double = 2.0;
   @State containerView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.containerView ?? ''
   @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
   @State targetGroupView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetGroupView ?? ''
   @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? ''
   @State targetWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetWidth ?? 0.0
   @State targetHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetHeight ?? 0.0
-  @State compareOneButtonWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonWidth ?? 0.0
-  @State compareOneButtonHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonHeight ?? 0.0
+  @State compareOneButtonWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonWidth ?? 0.0
+  @State compareOneButtonHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonHeight ?? 0.0
   @State compareOneButtonDisplayPriority: number =
     (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonDisplayPriority ?? 0.0
   @State compareOneButtonKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareOneButtonKey ?? ''
-  @State compareTwoButtonWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonWidth ?? 0.0
-  @State compareTwoButtonHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonHeight ?? 0.0
-  @State compareTwoButtonDisplayPriority: number =
+  @State compareTwoButtonWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonWidth ?? 0.0
+  @State compareTwoButtonHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonHeight ?? 0.0
+  @State compareTwoButtonDisplayPriority: double =
     (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonDisplayPriority ?? 0.0
   @State compareTwoButtonKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareTwoButtonKey ?? ''
   @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
