@@ -15,12 +15,15 @@
 
 import appStorageRefJsunit from './StorageTest/appStorageRefJsunit.test';
 import AppStorageReturnValue from './StorageTest/AppStorageReturnValue.test';
+import PersistentStorageReturnValue from './StorageTest/PersistentStorageReturnValue.test';
+import LocalStorageReturnValue from './StorageTest/LocalStorageReturnValue.test';
 import localStorageRefJsunit from './StorageTest/localStorageRefJsunit.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
 import persistenceV2 from './StorageTest/persistenceV2.test';
 import AbstractPropertyRefTest from './StorageTest/AbstractPropertyRefTest.test';
 import SubAbstractPropertyLinkTest from './StorageTest/SubAbstractPropertyLinkTest.test';
 import EnvironmentTest0040 from './StorageTest/EnvironmentTest0040.test';
+import EnvironmentReturnValue from './StorageTest/EnvironmentReturnValue.test';
 import LocalStorageDeleteTest0120 from './StorageTest/LocalStorageDeleteTest0120.test';
 import Local1Jsunit from './ComponentV2Test/Local1Jsunit.test';
 import Local2Jsunit from './ComponentV2Test/Local2Jsunit.test';
@@ -90,7 +93,10 @@ import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsun
 export default function testsuite() {
     appStorageRefJsunit();
     AppStorageReturnValue();
+    PersistentStorageReturnValue();
+    LocalStorageReturnValue();
     localStorageRefJsunit();
+    EnvironmentReturnValue();
     appStorageV2();
     persistenceV2();
     AbstractPropertyRefTest();
