@@ -48,7 +48,7 @@ let audioConfig: media.AudioRecorderConfig = {
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
-let audioAacProfileConfig: media.AudioRecorderConfig = {
+let audioAacProfileConfig: media.AVRecorderProfile = {
   audioEncodeBitRate: 48000,
   audioSampleRate: 48000,
   numberOfChannels: CHANNEL_TWO,
