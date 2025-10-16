@@ -258,11 +258,11 @@ export default function abilityTest() {
          * @tc.number: Test_Accuracy_static
          * @tc.name: Test_Accuracy_static
          * @tc.desc:  精度测试示例代码
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_Accuracy_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_Accuracy_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE Test_Accuracy_static test");
 
             let x =[0.55,0.55,0.55,0.55,0.55]
@@ -278,16 +278,840 @@ export default function abilityTest() {
             done();
         })
 
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_001
+         * @tc.name: Test_load_model_from_file_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile错误码1000000
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_001");
+            let model_file = "";
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000000);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_002
+         * @tc.name: Test_load_model_from_file_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_002");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_003
+         * @tc.name: Test_load_model_from_file_error_code_static_003
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile错误码1000002
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_003");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000002);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_004
+         * @tc.name: Test_load_model_from_file_error_code_static_004
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile,callback接口错误码1000000
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_004");
+            let model_file = "";
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000000);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_005
+         * @tc.name: Test_load_model_from_file_error_code_static_005
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile,callback接口错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_005");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_006
+         * @tc.name: Test_load_model_from_file_error_code_static_006
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile,callback接口错误码1000002
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_006");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000002);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_007
+         * @tc.name: Test_load_model_from_file_error_code_static_007
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile,callback接口,context默认，错误码1000000
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_007', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_007");
+            let model_file = "";
+            try {
+                mindSporeLite.loadModelFromFile(model_file, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000000);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_file_error_code_static_008
+         * @tc.name: Test_load_model_from_file_error_code_static_008
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFile,callback接口,context默认，错误码1000002
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_file_error_code_static_008', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_file_error_code_static_008");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            try {
+                mindSporeLite.loadModelFromFile(model_file, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000002);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_001
+         * @tc.name: Test_load_model_from_buffer_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,错误码1000004
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_001");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("test.txt");
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000004);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_002
+         * @tc.name: Test_load_model_from_buffer_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_002");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_face_isface.ms");
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_003
+         * @tc.name: Test_load_model_from_buffer_error_code_static_003
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer错误码1000005
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_003");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_headpose_pb2tflite_0.input");
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000005);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_004
+         * @tc.name: Test_load_model_from_buffer_error_code_static_004
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,callback接口,错误码1000004
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_004");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("test.txt");
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000004);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_005
+         * @tc.name: Test_load_model_from_buffer_error_code_static_005
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,callback接口,错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_005");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_face_isface.ms");
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_006
+         * @tc.name: Test_load_model_from_buffer_error_code_static_006
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,callback接口,错误码1000005
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_006");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_headpose_pb2tflite_0.input");
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000005);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_007
+         * @tc.name: Test_load_model_from_buffer_error_code_static_007
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,callback接口,context默认,错误码1000004
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_007', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_007");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("test.txt");
+            try {
+                mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000004);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_buffer_error_code_static_008
+         * @tc.name: Test_load_model_from_buffer_error_code_static_008
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromBuffer,callback接口,context默认,错误码1000005
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_buffer_error_code_static_008', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_buffer_error_code_static_008");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_headpose_pb2tflite_0.input");
+            try {
+                mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000005);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_fd_error_code_static_001
+         * @tc.name: Test_load_model_from_fd_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFd错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_fd_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_001");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+            }
+            done();
+        });
+
+
+        /*
+         * @tc.number: Test_load_model_from_fd_error_code_static_002
+         * @tc.name: Test_load_model_from_fd_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFd错误码1000007
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_fd_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_002");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000007);
+            }
+            done();
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_fd_error_code_static_003
+         * @tc.name: Test_load_model_from_fd_error_code_static_003
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFd,callback接口,错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_fd_error_code_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_003");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_fd_error_code_static_004
+         * @tc.name: Test_load_model_from_fd_error_code_static_004
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFd,callback接口,错误码1000007
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_fd_error_code_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_004");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_model_from_fd_error_code_static_005
+         * @tc.name: Test_load_model_from_fd_error_code_static_005
+         * @tc.desc: 正常场景：错误码新增看护，看护loadModelFromFd,callback接口,context默认,错误码1000007
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_model_from_fd_error_code_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_005");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.inputt';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            try {
+                mindSporeLite.loadModelFromFd(file.fd, (msliteModel: mindSporeLite.Model) => {
+                hilog.info(domain, tag, '%{public}s', 'loadModel callback api error code test:ERROR');
+                expect().assertFail();
+                done();
+                })
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+                expect(error.code).assertEqual(1000007);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_file_error_code_static_001
+         * @tc.name: Test_load_train_model_from_file_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromFile错误码1000008
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_file_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_file_error_code_static_001");
+            let model_file = "";
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000008);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_file_error_code_static_002
+         * @tc.name: Test_load_train_model_from_file_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromFile错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_file_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_file_error_code_static_002");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_file_error_code_static_003
+         * @tc.name: Test_load_train_model_from_file_error_code_static_003
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromFile错误码1000009
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_file_error_code_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_file_error_code_static_003");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000009);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_buffer_error_code_static_001
+         * @tc.name: Test_load_train_model_from_buffer_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000010
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_buffer_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_buffer_error_code_static_001");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("test.txt");
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000010);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_buffer_error_code_static_002
+         * @tc.name: Test_load_train_model_from_buffer_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_buffer_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_buffer_error_code_static_002");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_face_isface.ms");
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_buffer_error_code_static_003
+         * @tc.name: Test_load_train_model_from_buffer_error_code_static_003
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000011
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_buffer_error_code_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_buffer_error_code_static_003");
+            let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent("ml_headpose_pb2tflite_0.input");
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000011);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_fd_error_code_static_001
+         * @tc.name: Test_load_train_model_from_fd_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000001
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_fd_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_fd_error_code_static_001");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["suv"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000001);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_load_train_model_from_fd_error_code_static_002
+         * @tc.name: Test_load_train_model_from_fd_error_code_static_002
+         * @tc.desc: 正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000012
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_load_train_model_from_fd_error_code_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_train_model_from_fd_error_code_static_002");
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
+            let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+            let cfg: mindSporeLite.TrainCfg = {};
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            try {
+                let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000012);
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: Test_setdata_error_code_static_001
+         * @tc.name: Test_setdata_error_code_static_001
+         * @tc.desc: 正常场景：错误码新增看护，看护setData错误码1000013
+         * @tc.level: LEVEL0
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+        */
+        it('Test_setdata_error_code_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_setdata_error_code_static_001");
+            let modelName = 'ml_face_isface.ms';
+            let inputName = 'ml_face_isface_0.input';
+            let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE success, input bin bytelength: ' + inputBuffer.byteLength);
+            let modelBuffer = await abilityContext.resourceManager.getRawFileContent(modelName);
+            let context: mindSporeLite.Context = {};
+            context.target = ["cpu"];
+            let msliteModel = await mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context);
+            expect(msliteModel !== null).assertTrue();
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+            const modelInputs = msliteModel.getInputs();
+            let input_Buffer = new ArrayBuffer(0);
+            try {
+                modelInputs[0].setData(input_Buffer);
+                hilog.info(domain, tag, '%{public}s', '=========MSLITE predict start=====');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'setData fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'setData fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000013);
+                done();
+            }
+        });
 
         /*
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001
          * @tc.desc: loadTrainModelFromFile参数3个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001")
 
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -361,16 +1185,15 @@ export default function abilityTest() {
             done();
         })
 
-
         /*
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002
          * @tc.desc: loadTrainModelFromFile参数2个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002");
 
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -442,11 +1265,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001
          * @tc.desc: loadTrainModelFromBuffer参数3个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001");
 
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -525,11 +1348,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002
          * @tc.desc: loadTrainModelFromBuffer参数2个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002");
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -602,11 +1425,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001
          * @tc.desc: loadTrainModelFromFd参数3个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001");
 
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -686,11 +1509,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002
          * @tc.desc: loadTrainModelFromFd参数2个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002");
 
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -765,11 +1588,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001
          * @tc.desc: exportModel参数4个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -811,11 +1634,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002
          * @tc.desc: exportModel参数2个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -886,11 +1709,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003
          * @tc.desc: exportModel参数3个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -961,11 +1784,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0001
          * @tc.desc: exportWeightsCollaborateWithMicro参数4个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0001");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1017,11 +1840,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002
          * @tc.desc: exportWeightsCollaborateWithMicro参数2个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1073,11 +1896,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0003
          * @tc.desc: exportWeightsCollaborateWithMicro参数3个
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0003");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1129,11 +1952,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0001
          * @tc.desc:  正常场景：通过path加载模型，执行1轮训练并对比精度
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0001");
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1203,11 +2026,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0002
          * @tc.desc:  异常场景：加载模型文件路径不存在
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0002");
             let model_file = abilityContext.filesDir + '/not_exist/' + 'ml_face_isface_0.input';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE loadModel===========");
@@ -1219,7 +2042,10 @@ export default function abilityTest() {
                 expect(modelInputs).assertUndefined();
                 hilog.info(domain, tag, '%{public}s', "==========MSLITE end===========");
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'loadModel fail!!!' + error);
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000009);
             }
             done();
         })
@@ -1229,22 +2055,27 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0003
          * @tc.desc:  异常场景：加载模型文件路径为空
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0003");
             hilog.info(domain, tag, '%{public}s', "==========MSLITE loadModel===========");
             try {
                 let msliteModel = await mindSporeLite.loadTrainModelFromFile("");
-                hilog.info(domain, tag, '%{public}s', "==========msliteModel："+msliteModel);
-                expect(msliteModel).assertUndefined();
                 hilog.info(domain, tag, '%{public}s', "==========MSLITE end===========");
+                expect().assertFail();
+                done();
+                
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'loadModel fail!!!' + error);
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000008);
+                done();
             }
-            done();
+            
         })
 
 
@@ -1252,11 +2083,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0004
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0004
          * @tc.desc:  异常场景：加载模型文件路径为错误文件
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_static_0004");
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE loadModel===========");
@@ -1268,7 +2099,10 @@ export default function abilityTest() {
                 expect(modelInputs).assertUndefined();
                 hilog.info(domain, tag, '%{public}s', "==========MSLITE end===========");
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'loadModel fail!!!' + error);
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000009);
             }
             done();
         })
@@ -1278,11 +2112,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001
          * @tc.desc:  正常场景：通过path加载模型，执行1轮训练并对比精度
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001");
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1352,11 +2186,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001
          * @tc.desc: 正常场景：通过path加载模型，执行1轮训练并对比精度
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001");
             let inputBuffer0: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array = await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1427,11 +2261,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_learningRate_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_learningRate_static_0001
          * @tc.desc: 正常场景：设置学习率为0.01
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_learningRate_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_learningRate_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_learningRate_static_0001");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1502,11 +2336,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_learningRate_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_learningRate_static_0002
          * @tc.desc: 正常场景：设置学习率为1000.0
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_learningRate_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_learningRate_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_learningRate_static_0002");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1577,11 +2411,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001
          * @tc.desc: 设置虚拟batch_size为2
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -1653,11 +2487,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0001
          * @tc.desc: 正常场景：设置优化等级O0
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0001");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1738,11 +2572,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0002
          * @tc.desc: 正常场景：设置优化等级O2
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0002");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1823,11 +2657,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0003
          * @tc.desc: 正常场景：设置优化等级O3
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0003");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1908,11 +2742,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0004
          * @tc.name: SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0004
          * @tc.desc: 正常场景：设置优化等级AUTO
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_optimizationLevel_static_0004");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -1993,11 +2827,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_lossName_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_lossName_static_0001
          * @tc.desc: 正常场景：设置存在的损失函数名
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_lossName_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_lossName_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_lossName_static_0001");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -2077,11 +2911,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_lossName_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_lossName_static_0002
          * @tc.desc: 正常场景：设置不存在的损失函数名
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_lossName_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_lossName_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_lossName_static_0002");
 
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
@@ -2161,11 +2995,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_updateWeights_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_updateWeights_static_0001
          * @tc.desc: 正常场景：更新权重
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_updateWeights_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_updateWeights_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_updateWeights_static_0001");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2220,11 +3054,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_updateWeights_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_updateWeights_static_0002
          * @tc.desc: 正常场景：更新权重后导出训练图，再获取权重
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_updateWeights_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_updateWeights_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_updateWeights_static_0002");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2297,11 +3131,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0001
          * @tc.desc: 正常场景：训练model导出推理图后对比精度
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0001");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2371,11 +3205,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0002
          * @tc.desc: 正常场景：quantization_type为OH_AI_NO_QUANT
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0002");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2445,11 +3279,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0003
          * @tc.desc: 正常场景：quantization_type为OH_AI_WEIGHT_QUANT
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0003");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2519,11 +3353,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0004
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0004
          * @tc.desc: 正常场景：quantization_type为OH_AI_FULL_QUANT
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0004");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2593,11 +3427,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0005
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0005
          * @tc.desc: 正常场景：export_inference_only为false
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0005");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2689,11 +3523,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0006
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0006
          * @tc.desc: 正常场景：export_inference_only为false，再指定output_tensor_name
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0006");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2786,11 +3620,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0007
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0007
          * @tc.desc: 异常场景：指定导出不存在的output_tensor_name
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0007', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0007', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0007");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2831,11 +3665,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0008
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0008
          * @tc.desc: 异常场景：model_file文件路径不存在
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0008', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0008', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0008");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2873,11 +3707,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0009
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0009
          * @tc.desc: 异常场景：model_file路径为空
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0009', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0009', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0009");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2915,11 +3749,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportModel_static_0010
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportModel_static_0010
          * @tc.desc: 异常场景：model_file路径为文件夹
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportModel_static_0010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportModel_static_0010");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -2957,11 +3791,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001
          * @tc.desc: 正常场景：训练model更新并导出micro权重
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001");
             let inputBuffer0: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_0.input");
             let inputBuffer1: Uint8Array= await abilityContext.resourceManager.getRawFileContent("lenet_train_1.input");
@@ -3009,11 +3843,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0002
          * @tc.desc: 异常场景：weight_file文件路径不存在
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0002");
             let model_file = abilityContext.filesDir + '/' + 'lenet_train.ms';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE Context===========");
@@ -3043,11 +3877,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0003
          * @tc.desc: 异常场景：weight_file路径为空
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0003");
             let model_file = abilityContext.filesDir + '/' + 'lenet_train.ms';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE Context===========");
@@ -3073,11 +3907,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0004
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0004
          * @tc.desc: 异常场景：weight_file路径为文件夹
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0004");
             let model_file = abilityContext.filesDir + '/' + 'lenet_train.ms';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE Context===========");
@@ -3103,11 +3937,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0005
          * @tc.name: SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0005
          * @tc.desc: 异常场景：is_inference为false
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0005");
             let model_file = abilityContext.filesDir + '/' + 'lenet_train.ms';
             hilog.info(domain, tag, '%{public}s', "==========MSLITE Context===========");
@@ -3135,11 +3969,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_static
          * @tc.name: Test_load_model_param_model_buffer_static
          * @tc.desc: 正常场景：ModelBuild，调用buffer方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_buffer_static");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -3200,11 +4034,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_static
          * @tc.name: Test_load_model_param_model_fd_static
          * @tc.desc: 正常场景：ModelBuild，调用fd方法，默认context，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_fd_static");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3256,11 +4090,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_context_static
          * @tc.name: Test_load_model_param_model_fd_context_static
          * @tc.desc: 正常场景：ModelBuild，调用fd方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_fd_context_static");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3322,11 +4156,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_static
          * @tc.name: Test_load_model_param_model_path_static
          * @tc.desc: 正常场景：ModelBuild，调用loadModelFromFile方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_static");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3388,11 +4222,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_static_001
          * @tc.name: Test_load_model_param_model_path_settings_threads_static_001
          * @tc.desc: Context设置CPU，4线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_threads_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3448,11 +4282,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_static_002
          * @tc.name: Test_load_model_param_model_path_settings_threads_static_002
          * @tc.desc: Context设置CPU，2线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_threads_static_002");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3508,11 +4342,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_static_003
          * @tc.name: Test_load_model_param_model_path_settings_threads_static_003
          * @tc.desc: Context设置CPU，1线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_threads_static_003");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3568,11 +4402,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_static_004
          * @tc.name: Test_load_model_param_model_path_settings_threads_static_004
          * @tc.desc: Context设置CPU，0线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_threads_static_004");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3628,11 +4462,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_affinity_static_002
          * @tc.name: Test_load_model_param_model_path_settings_affinity_static_002
          * @tc.desc: 异常场景：Context设置CPU，绑核设置为2，绑小核
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_affinity_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_affinity_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_affinity_static_002");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3689,11 +4523,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_affinity_static_003
          * @tc.name: Test_load_model_param_model_path_settings_affinity_static_003
          * @tc.desc: 异常场景：Context设置CPU，绑核设置为1，绑大核
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_affinity_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_affinity_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_affinity_static_003");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3749,11 +4583,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_affinity_static_004
          * @tc.name: Test_load_model_param_model_path_settings_affinity_static_004
          * @tc.desc: 正常场景：Context设置CPU，绑核设置为0，不绑核
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_affinity_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_affinity_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_affinity_static_004");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3810,11 +4644,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_affinity_list_static_001
          * @tc.name: Test_load_model_param_model_path_settings_affinity_list_static_001
          * @tc.desc: 正常场景：Context设置CPU，绑核列表[0,1,2,3]
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_affinity_list_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_affinity_list_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_settings_affinity_list_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -3869,11 +4703,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_is_None_static_001
          * @tc.name: Test_load_model_param_model_path_is_None_static_001
          * @tc.desc: 异常场景：ModelBuild，调用model path方法，path为空
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_is_None_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_is_None_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_is_None_static_001");
             let model_file = "";
             let context:mindSporeLite.Context={};
@@ -3881,11 +4715,15 @@ export default function abilityTest() {
             try{
                 let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
                 hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
-                expect(msliteModel).assertUndefined();
+                expect().assertFail();
+                done();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'loadModel fail!!!' + error);
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000000);
+                done();
             }
-            done();
         })
             
 
@@ -3893,11 +4731,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_static_001
          * @tc.name: Test_load_model_param_model_path_resize_static_001
          * @tc.desc: 正常场景：ModelResize，shape与之前一致
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_resize_static_001");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -3972,11 +4810,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_static_002
          * @tc.name: Test_load_model_param_model_path_resize_static_002
          * @tc.desc: 正常场景：ModelResize，shape与之前不一致
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_resize_static_002");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -4051,11 +4889,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_static_003
          * @tc.name: Test_load_model_param_model_path_resize_static_003
          * @tc.desc: 异常场景：ModelResize，shape为三维
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_resize_static_003");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -4096,11 +4934,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_static_004
          * @tc.name: Test_load_model_param_model_path_resize_static_004
          * @tc.desc: 异常场景：ModelResize，不支持resize的模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_resize_static_004");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -4139,11 +4977,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_static_005
          * @tc.name: Test_load_model_param_model_path_resize_static_005
          * @tc.desc: 异常场景：ModelResize，shape值有负数
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_resize_static_005");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -4184,11 +5022,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_much_predict_static_001
          * @tc.name: Test_load_model_param_model_path_much_predict_static_001
          * @tc.desc: 正常场景：Build一次，Predict多次
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_much_predict_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_much_predict_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_much_predict_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -4247,11 +5085,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_much_build_static_001
          * @tc.name: Test_load_model_param_model_path_much_build_static_001
          * @tc.desc: 异常场景：Build多次
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_much_build_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_much_build_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_much_build_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -4305,11 +5143,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_static_001
          * @tc.name: Test_load_model_param_model_path_model_static_001
          * @tc.desc: 正常场景：单输入模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_model_static_001");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -4364,11 +5202,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_static_002
          * @tc.name: Test_load_model_param_model_path_model_static_002
          * @tc.desc: 正常场景：多输入模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_model_static_002");
             let modelName = 'ml_video_edit_face_cutout_portraitSeg_deconv.ms';
             let inputName01 = 'ml_video_edit_face_cutout_portraitSeg_deconv_0.input';
@@ -4438,11 +5276,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_static_003
          * @tc.name: Test_load_model_param_model_path_model_static_003
          * @tc.desc: 正常场景：输入为uint8模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_model_static_003");
             let modelName = 'aiy_vision_classifier_plants_V1_3.ms';
             let inputName = 'aiy_vision_classifier_plants_V1_3_0.input';
@@ -4492,11 +5330,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_static_004
          * @tc.name: Test_load_model_param_model_path_model_static_004
          * @tc.desc: 正常场景：多输入单输出
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_model_static_004");
             let modelName = 'ml_headpose_pb2tflite.ms';
             let inputName01 = 'ml_headpose_pb2tflite_0.input';
@@ -4583,11 +5421,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_callback_static
          * @tc.name: Test_load_model_param_model_path_callback_static
          * @tc.desc: 正常场景：调用loadModelFromFile callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_callback_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4640,11 +5478,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_callback_static
          * @tc.name: Test_load_model_param_model_buffer_callback_static
          * @tc.desc: 正常场景：调用loadModelFromBuffer callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_buffer_callback_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4707,11 +5545,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_callback_static
          * @tc.name: Test_load_model_param_model_fd_callback_static
          * @tc.desc: 正常场景：调用loadModelFromFd callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_callback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_fd_callback_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4773,11 +5611,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_callback_no_context_static
          * @tc.name: Test_load_model_param_model_path_callback_no_context_static
          * @tc.desc: 正常场景：调用loadModelFromFile callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_path_callback_no_context_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4829,11 +5667,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_callback_no_context_static
          * @tc.name: Test_load_model_param_model_buffer_callback_no_context_static
          * @tc.desc: 正常场景：调用loadModelFromBuffer callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_buffer_callback_no_context_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4886,11 +5724,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_callback_no_context_static
          * @tc.name: Test_load_model_param_model_fd_callback_no_context_static
          * @tc.desc: 正常场景：调用loadModelFromFd callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_callback_no_context_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_load_model_param_model_fd_callback_no_context_static");
             let inputName = 'ml_face_isface_0.input';
             ;
@@ -4943,11 +5781,11 @@ export default function abilityTest() {
          * @tc.number: Test_enumerated_value_static
          * @tc.name: Test_enumerated_value_static
          * @tc.desc: 正常场景：头文件枚举值测试
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_enumerated_value_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_enumerated_value_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:Test_enumerated_value_static");
             try{
                 expect(mindSporeLite.Format.NCHW).assertEqual(0);
@@ -4986,11 +5824,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0001
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0001
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为npu,PerformanceMode=0，PRIORITY_NONE = 0，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0001");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5062,11 +5900,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0002
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0002
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为npu,PerformanceMode=1，PRIORITY_NONE = 1，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0002");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5137,11 +5975,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0003
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0003
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为npu,PerformanceMode=2，PRIORITY_NONE = 2，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0003");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5212,11 +6050,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0004
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0004
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为npu,PerformanceMode=3，PRIORITY_NONE = 3，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0004");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5287,11 +6125,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0005
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0005
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为npu,PerformanceMode=4，PRIORITY_NONE = 3，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0005");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5362,11 +6200,11 @@ export default function abilityTest() {
          * @tc.number: SUB_AI_MindSpore_ArkTS_NNRT_static_0006
          * @tc.name: SUB_AI_MindSpore_ArkTS_NNRT_static_0006
          * @tc.desc:  获取nnrt设备，context设置nnrt设备为CPU与npu,PerformanceMode=4，PRIORITY_NONE = 3，Extension
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_AI_MindSpore_ArkTS_NNRT_static_0006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "Testcase:SUB_AI_MindSpore_ArkTS_NNRT_static_0006");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5445,11 +6283,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_emulator_static
          * @tc.name: Test_load_model_param_model_buffer_emulator_static
          * @tc.desc: 正常场景：模拟器，ModelBuild，调用buffer方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_buffer_emulator_static");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -5487,11 +6325,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_emulator_static
          * @tc.name: Test_load_model_param_model_fd_emulator_static
          * @tc.desc: 正常场景：模拟器，ModelBuild，调用fd方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_fd_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5522,11 +6360,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_emulator_static
          * @tc.name: Test_load_model_param_model_path_emulator_static
          * @tc.desc: 正常场景：模拟器，ModelBuild，调用loadModelFromFile方法，正常推理
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5563,11 +6401,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_settings_threads_emulator_static_001
          * @tc.desc: 正常场景：模拟器，Context设置CPU，4线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_settings_threads_emulator_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5603,11 +6441,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_emulator_static_002
          * @tc.name: Test_load_model_param_model_path_settings_threads_emulator_static_002
          * @tc.desc: 正常场景：模拟器，Context设置CPU，2线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_settings_threads_emulator_static_002");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5642,11 +6480,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_emulator_static_003
          * @tc.name: Test_load_model_param_model_path_settings_threads_emulator_static_003
          * @tc.desc: 正常场景：模拟器，Context设置CPU，1线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_settings_threads_emulator_static_003");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5681,11 +6519,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_settings_threads_emulator_static_004
          * @tc.name: Test_load_model_param_model_path_settings_threads_emulator_static_004
          * @tc.desc: 正常场景：模拟器，Context设置CPU，0线程
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_settings_threads_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_settings_threads_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_settings_threads_emulator_static_004");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5720,12 +6558,12 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_is_None_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_is_None_emulator_static_001
          * @tc.desc: 异常场景：模拟器，ModelBuild，调用model path方法，path为空
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
         //异常场景：模拟器，ModelBuild，调用model path方法，path为空
-        it('Test_load_model_param_model_path_is_None_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_is_None_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_is_None_emulator_static_001");
             let model_file = "";
             let context: mindSporeLite.Context = {};
@@ -5733,22 +6571,26 @@ export default function abilityTest() {
             try {
                 let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
                 hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
-                expect(msliteModel).assertUndefined();
+                expect().assertFail();
+                done();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'loadModel fail!!!' + error);
-            }
-            done();
+                let err = error as BusinessError
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
+                hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + err.code);
+                expect(err.code).assertEqual(1000000);
+                done();
+            }            
         });
 
         /*
          * @tc.number: Test_load_model_param_model_path_resize_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_resize_emulator_static_001
          * @tc.desc: 正常场景：模拟器，ModelResize，shape与之前一致
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_resize_emulator_static_001");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -5784,11 +6626,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_emulator_static_002
          * @tc.name: Test_load_model_param_model_path_resize_emulator_static_002
          * @tc.desc: 正常场景：模拟器，ModelResize，shape与之前不一致
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_resize_emulator_static_002");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -5854,11 +6696,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_emulator_static_003
          * @tc.name: Test_load_model_param_model_path_resize_emulator_static_003
          * @tc.desc: 异常场景：模拟器，ModelResize，shape为三维
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_resize_emulator_static_003");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -5880,11 +6722,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_emulator_static_004
          * @tc.name: Test_load_model_param_model_path_resize_emulator_static_004
          * @tc.desc: 异常场景：模拟器，ModelResize，不支持resize的模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_resize_emulator_static_004");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5906,11 +6748,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_resize_emulator_static_005
          * @tc.name: Test_load_model_param_model_path_resize_emulator_static_005
          * @tc.desc: 异常场景：模拟器，ModelResize，shape值有负数
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_resize_emulator_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_resize_emulator_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_resize_emulator_static_005");
             let inputName = 'ml_ocr_cn_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
@@ -5932,11 +6774,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_much_predict_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_much_predict_emulator_static_001
          * @tc.desc: 正常场景：模拟器，Build一次，Predict多次
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_much_predict_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_much_predict_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_much_predict_emulator_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -5974,11 +6816,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_much_build_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_much_build_emulator_static_001
          * @tc.desc: 异常场景：模拟器，Build多次
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_much_build_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_much_build_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_much_build_emulator_static_001");
             let inputName = 'ml_face_isface_0.input';
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
@@ -6011,11 +6853,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_emulator_static_001
          * @tc.name: Test_load_model_param_model_path_model_emulator_static_001
          * @tc.desc: 正常场景：模拟器，单输入模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_emulator_static_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_model_emulator_static_001");
             let modelName = 'ml_face_isface.ms';
             let inputName = 'ml_face_isface_0.input';
@@ -6049,11 +6891,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_emulator_static_002
          * @tc.name: Test_load_model_param_model_path_model_emulator_static_002
          * @tc.desc: 正常场景：模拟器，多输入模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_emulator_static_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_model_emulator_static_002");
             let modelName = 'ml_video_edit_face_cutout_portraitSeg_deconv.ms';
             let inputName01 = 'ml_video_edit_face_cutout_portraitSeg_deconv_0.input';
@@ -6114,11 +6956,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_emulator_static_003
          * @tc.name: Test_load_model_param_model_path_model_emulator_static_003
          * @tc.desc: 正常场景：模拟器，输入为uint8模型
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_emulator_static_003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_model_emulator_static_003");
             let modelName = 'aiy_vision_classifier_plants_V1_3.ms';
             let inputName = 'aiy_vision_classifier_plants_V1_3_0.input';
@@ -6164,11 +7006,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_model_emulator_static_004
          * @tc.name: Test_load_model_param_model_path_model_emulator_static_004
          * @tc.desc: 正常场景：模拟器，多输入单输出
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_model_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_model_emulator_static_004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_model_emulator_static_004");
             let modelName = 'ml_headpose_pb2tflite.ms';
             let inputName01 = 'ml_headpose_pb2tflite_0.input';
@@ -6246,11 +7088,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_callback_emulator_static
          * @tc.name: Test_load_model_param_model_path_callback_emulator_static
          * @tc.desc: 正常场景：模拟器，调用loadModelFromFile callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_callback_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
@@ -6296,11 +7138,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_callback_emulator_static
          * @tc.name: Test_load_model_param_model_buffer_callback_emulator_static
          * @tc.desc: 正常场景：模拟器，调用loadModelFromBuffer callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_buffer_callback_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
@@ -6358,11 +7200,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_callback_emulator_static
          * @tc.name: Test_load_model_param_model_fd_callback_emulator_static
          * @tc.desc:  正常场景：模拟器，调用loadModelFromFd callback接口设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_callback_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_fd_callback_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
@@ -6420,11 +7262,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_path_callback_no_context_emulator_static
          * @tc.name: Test_load_model_param_model_path_callback_no_context_emulator_static
          * @tc.desc:  正常场景：模拟器，调用loadModelFromFile callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_path_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_path_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_path_callback_no_context_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
@@ -6476,11 +7318,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_buffer_callback_no_context_emulator_static
          * @tc.name: Test_load_model_param_model_buffer_callback_no_context_emulator_static
          * @tc.desc:  正常场景：模拟器，调用loadModelFromBuffer callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_buffer_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_buffer_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_buffer_callback_no_context_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
@@ -6533,11 +7375,11 @@ export default function abilityTest() {
          * @tc.number: Test_load_model_param_model_fd_callback_no_context_emulator_static
          * @tc.name: Test_load_model_param_model_fd_callback_no_context_emulator_static
          * @tc.desc:  正常场景：模拟器，调用loadModelFromFd callback接口未设置context
-         * @tc.level: LEVEL1
+         * @tc.level: LEVEL0
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
         */
-        it('Test_load_model_param_model_fd_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('Test_load_model_param_model_fd_callback_no_context_emulator_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_param_model_fd_callback_no_context_emulator_static");
             let inputName = 'ml_face_isface_0.input';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
