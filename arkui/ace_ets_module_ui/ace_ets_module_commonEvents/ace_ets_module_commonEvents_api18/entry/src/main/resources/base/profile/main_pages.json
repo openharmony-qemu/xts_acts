@@ -18,6 +18,7 @@
         "MainAbility/pages/GestureRecognizer/PinchRecognizer",
         "MainAbility/pages/GestureRecognizer/RotationRecognizer",
         "MainAbility/pages/GestureRecognizer/SwipeRecognizer",
-        "MainAbility/pages/GestureRecognizer/TapRecognizer"
+        "MainAbility/pages/GestureRecognizer/TapRecognizer",
+        "MainAbility/pages/DragController/dragAdaptation"
     ]
 }
