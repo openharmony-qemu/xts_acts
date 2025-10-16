@@ -20,6 +20,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_api12:ActsAceEtsModuleCommonEventsApi12Test",
       "ace_ets_module_commonEvents_api14:ActsAceEtsModuleCommonEventsApi14Test",
       "ace_ets_module_commonEvents_api21:ActsAceEtsModuleCommonEventsApi21Test",
+      "ace_ets_module_commonEvents_wear_api11:ActsAceEtsModuleCommonEventsApiWear11Test",
     ]
   } else {
     deps = [
