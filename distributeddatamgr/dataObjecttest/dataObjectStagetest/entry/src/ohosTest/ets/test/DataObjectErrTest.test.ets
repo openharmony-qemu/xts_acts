@@ -1687,5 +1687,61 @@ export default function DataObjectErrTest() {
       }
       console.info(TAG + '************ DataObjectErrTest69 end ************');
     })
+
+    /**
+     * @tc.number     SUB_DistributedData_DataObject_JsApiErrTest_7000
+     * @tc.name       DataObjectErrTest70
+     * @tc.desc       Test DataObject SetSessionId Test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('DataObjectErrTest70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest70 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let result = g_object.setSessionId(distributedDataObject.genSessionId());
+      expect(result).assertEqual(true);
+      console.info(TAG + '************ DataObjectErrTest70 end ************');
+    })
+
+    /**
+     * @tc.number     SUB_DistributedData_DataObject_JsApiErrTest_7100
+     * @tc.name       DataObjectErrTest71
+     * @tc.desc       Test DataObject SetSessionId Test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('DataObjectErrTest71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest71 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let result = g_object.setSessionId('123456@123');
+      expect(result).assertEqual(false);
+      console.info(TAG + '************ DataObjectErrTest71 end ************');
+    })
   })
 }
