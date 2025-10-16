@@ -600,6 +600,39 @@ export default function statisticsNoNetTest() {
             }
         });
 
+        /*
+         * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_CallBackErrCo_0500
+         * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo_static_0500
+         * @tc.desc: Function test
+         * @tc.level:Level 3
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
+        it("testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdTxBytes(-1, (error: BusinessError<void>|null, stats: long| undefined) => {
+                    if (error?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                        ExpectTrue(error?.code == 2100001);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
+                        ExpectTrue(false);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    }
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100001);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
         /**
          * @tc.number: SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0800
          * @tc.name  : testNetworkMgrStatisticsgetSockTxBytesErrCo_static_0800
@@ -627,6 +660,38 @@ export default function statisticsNoNetTest() {
             }catch(err: BusinessError){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 2100002);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /*
+         * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0600
+         * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo_static_0600
+         * @tc.desc: Function test
+         * @tc.level:Level 3
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
+        it("testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo_static_0600';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdTxBytes(-1).then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100001);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                })
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }

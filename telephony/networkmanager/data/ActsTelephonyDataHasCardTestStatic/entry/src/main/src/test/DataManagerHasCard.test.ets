@@ -67,7 +67,7 @@ export default function dataManagerTest() {
                 data.isCellularDataEnabled().then((isEnable: boolean )=>{
                     data.getCellularDataState((err: BusinessError<void>|null , data: data.DataConnectState| undefined) => {
                         if (err?.code != 0) {
-                           
+
                             ExpectFail();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -175,7 +175,7 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled((err: BusinessError<void>|null, data: boolean| undefined) => {
                     if (err?.code != 0) {
-                    
+
                         ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
@@ -239,12 +239,12 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled((err: BusinessError<void>|null, data: boolean| undefined ) => {
                     if (err?.code != 0) {
-                        
+
                         ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
-                       
+
                         ExpectTrue(true);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
@@ -282,15 +282,15 @@ export default function dataManagerTest() {
                 done();
             }
         });
-		
-		/* *
-          * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0100
-          * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0100
-          * @tc.desc  : Get the default cellular data card.
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
-         */
+
+        /* *
+              * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0100
+              * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0100
+              * @tc.desc  : Get the default cellular data card.
+              * @tc.size  : MediumTest
+              * @tc.type  : Function
+              * @tc.level : level 3
+             */
         it('testTelephonyDataGetDefaultCellularDataSlotId_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotId_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -312,15 +312,15 @@ export default function dataManagerTest() {
                 done();
             }
         })
-		
-		/* *
-          * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0300
-          * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0300
-          * @tc.desc  : Get the default cellular data card.
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
-         */
+
+        /* *
+              * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0300
+              * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0300
+              * @tc.desc  : Get the default cellular data card.
+              * @tc.size  : MediumTest
+              * @tc.type  : Function
+              * @tc.level : level 3
+             */
         it('testTelephonyDataGetDefaultCellularDataSlotId_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotId_static_0300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -341,15 +341,15 @@ export default function dataManagerTest() {
                 done();
             }
         })
-		
-		/* *
-         * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0400
-         * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0400
-         * @tc.desc  : Get the default cellular data card.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-         */
+
+        /* *
+             * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0400
+             * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0400
+             * @tc.desc  : Get the default cellular data card.
+             * @tc.size  : MediumTest
+             * @tc.type  : Function
+             * @tc.level : level 3
+             */
         it('testTelephonyDataGetDefaultCellularDataSlotId_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotId_static_0400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -373,15 +373,15 @@ export default function dataManagerTest() {
                 done();
             }
         })
-		
-	/* *
-         * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0500
-         * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0500
-         * @tc.desc  : Get the default cellular data card.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-         */
+
+        /* *
+               * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0500
+               * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0500
+               * @tc.desc  : Get the default cellular data card.
+               * @tc.size  : MediumTest
+               * @tc.type  : Function
+               * @tc.level : level 3
+               */
         it('testTelephonyDataGetDefaultCellularDataSlotId_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotId_static_0500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -405,15 +405,15 @@ export default function dataManagerTest() {
                 done();
             }
         })
-		
-	/* *
-         * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0600
-         * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0600
-         * @tc.desc  : Get the default cellular data card.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-         */
+
+        /* *
+               * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotId_0600
+               * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotId_static_0600
+               * @tc.desc  : Get the default cellular data card.
+               * @tc.size  : MediumTest
+               * @tc.type  : Function
+               * @tc.level : level 3
+               */
         it('testTelephonyDataGetDefaultCellularDataSlotId_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotId_static_0600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -528,6 +528,67 @@ export default function dataManagerTest() {
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(false);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabled_0500
+         * @tc.name  : testTelephonyDataIsCellularDataRoamingEnabled_static_0500
+         * @tc.desc  : Check whether roaming is enabled for cellular data services.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it('testTelephonyDataIsCellularDataRoamingEnabled_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.isCellularDataRoamingEnabled(2, (err: BusinessError<void>|null, ret: boolean|undefined) => {
+                    if (err?.code != 0) {
+                        ExpectTrue(err?.code === 8300001);
+                    } else {
+                        ExpectTrue(false);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err?.code === 8300001);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /* *
+         * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabled_1100
+         * @tc.name  : testTelephonyDataIsCellularDataRoamingEnabled_static_1100
+         * @tc.desc  : Check whether roaming is enabled for cellular data services.
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it('testTelephonyDataIsCellularDataRoamingEnabled_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled_static_1100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.isCellularDataRoamingEnabled(2).then((data: boolean) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code === 8300001);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
