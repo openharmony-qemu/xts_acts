@@ -1241,5 +1241,185 @@ export default function bluetoothConnectionTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  setDevicePairingConfirmationTest_001
+         * @tc.name    setDevicePairingConfirmationTest_001
+         * @tc.desc    Test setDevicePairingConfirmationTest_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("setDevicePairingConfirmationTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onPinRequired(onReceivePinRequiredEvent);
+                connection.setDevicePairingConfirmation(deviceId, false);
+                await Utils.msSleep(2000);
+                connection.offPinRequired();
+                hilog.info(domain, tag, "setDevicePairingConfirmation success");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "setDevicePairingConfirmation get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  startOrStopBluetoothDiscoveryTest_001
+         * @tc.name    startOrStopBluetoothDiscoveryTest_001
+         * @tc.desc    Test startOrStopBluetoothDiscoveryTest_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("startOrStopBluetoothDiscoveryTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onBluetoothDeviceFind(onReceiveEvent2);
+                connection.startBluetoothDiscovery();
+                await Utils.msSleep(3000);
+                connection.offBluetoothDeviceFind();
+                connection.stopBluetoothDiscovery();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "startOrStopBluetoothDiscoveryTest errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.offBluetoothDeviceFind();
+            done();
+        })
+
+        /**
+         * @tc.number  pairDeviceTest_callback_001
+         * @tc.name    pairDeviceTest_callback_001
+         * @tc.desc    Test pairDeviceTest_callback_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("pairDeviceTest_callback_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onBondStateChange(BondStateParam);
+                connection.pairDevice('11:22:33:44:55:66', (error) => {
+                    if (error) {
+                        hilog.info(domain, tag, "pairDevice,device name err:" + JSON.stringify(error));
+                    } else {
+                        hilog.info(domain, tag, "pairDevice success");
+                    }
+                });
+                expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pairDeviceTest_callback, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.offBondStateChange();
+            done();
+        })
+
+        /**
+         * @tc.number  pairDeviceTest_promise_001
+         * @tc.name    pairDeviceTest_promise_001
+         * @tc.desc    Test pairDeviceTest_promise_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("pairDeviceTest_promise_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onBondStateChange(BondStateParam);
+                await connection.pairDevice("11:22:55:66:33:44").then(() => {
+                    hilog.info(domain, tag, "pairDevice success");
+                });
+                await Utils.msSleep(900);
+                expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
+                expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            connection.offBondStateChange();
+            done();
+        })
+
+        /**
+         * @tc.number  testOnDiscoveryResult_001
+         * @tc.name    testOnDiscoveryResult_001
+         * @tc.desc    Test testOnDiscoveryResult_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnDiscoveryResult_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onDiscoveryResult(onReceiveEvent);
+                await Utils.msSleep(900);
+                connection.offDiscoveryResult();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "testOnDiscoveryResult, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "pairDevice is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testBatteryChange_001
+         * @tc.name    testBatteryChange_001
+         * @tc.desc    Test testBatteryChange_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testBatteryChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                connection.onBatteryChange(onReceiveEvent1);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "api is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            try {
+                connection.offBatteryChange();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "api is not support");
+                    expect(err.code == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
     })
 }
