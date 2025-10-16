@@ -38,7 +38,7 @@ export default function openLinkPatchStaticTest() {
       hilog.info(domain, tag, "beforeAll start");
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll abilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openlinktest.static")
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openlinknopermissiontest.static")
       await Utils.msSleep(2000);
       context= AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
       hilog.info(domain, tag, "Context: " + context);
