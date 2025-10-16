@@ -75,32 +75,10 @@ struct WebOnDataResubmitted {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick((e: ClickEvent) => {
           console.info("key==>" + this.stringObj.str);
           switch (this.stringObj.str) {
-            case "testBackOrForward001": {
-              try {
-                this.controller.clearHistory()
-                this.controller.loadUrl("resource://rawfile/index.html");
-                this.controller.loadUrl("resource://rawfile/second.html");
-                setTimeout(() => {
-                  this.controller.backward()
-                  this.controller.backOrForward(1)
-                  let title = this.controller.getTitle();
-                  Utils.emitEvent(title, 37005)
-                }, 2000)
-
-
-              } catch (error) {
-                hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
-              }
-              break;
-            }
-
             case "testBackOrForward002": {
               try {
                 this.controller.clearHistory()
-
                 this.controller.loadUrl("resource://rawfile/index.html");
-
-
                 setTimeout(() => {
                   this.controller.loadUrl("resource://rawfile/second.html");
                 }, 2000)
@@ -108,7 +86,6 @@ struct WebOnDataResubmitted {
                   this.controller.backOrForward(-1)
                 }, 4000)
                 setTimeout(() => {
-
                 let title = this.controller.getTitle();
                 Utils.emitEvent(title, 37006)
                 }, 6000)
@@ -129,7 +106,6 @@ struct WebOnDataResubmitted {
                   let title = this.controller.getTitle();
                   Utils.emitEvent(title, 37007)
                 }, 4000)
-
               } catch (error) {
                 hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
               }
@@ -139,7 +115,6 @@ struct WebOnDataResubmitted {
             case "testBackOrForward004": {
               try {
                 this.controller.clearHistory()
-
                 this.controller.loadUrl("resource://rawfile/index.html");
                 setTimeout(() => {
                   this.controller.backOrForward(3)
@@ -148,15 +123,11 @@ struct WebOnDataResubmitted {
                   let title = this.controller.getTitle();
                   Utils.emitEvent(title, 37008)
                 }, 4000)
-
-
-
               } catch (error) {
                 hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
               }
               break;
             }
-
           }
         })
       }
@@ -165,8 +136,6 @@ struct WebOnDataResubmitted {
         .javaScriptAccess(true)
         .fileAccess(true)
         .key("onShowFileSelectorKey")
-
     }
   }
 }
-
