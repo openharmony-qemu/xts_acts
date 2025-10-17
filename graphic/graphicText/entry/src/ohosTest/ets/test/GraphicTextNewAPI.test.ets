@@ -556,11 +556,94 @@ export default function graphicTextNewAPI() {
         expect(arrLineMetric.length > 0).assertTrue();
         let lineMetrics =  paragraph.getLineMetrics(0);
         expect(lineMetrics != undefined).assertTrue();
-
+        let runs = lines[0].getGlyphRuns();
+        expect(runs.length > 0).assertTrue();
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0200
+     * @tc.name       testTextReturnValue_0200
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0200===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let lines = paragraph.getTextLines();
+        expect(lines.length == 0).assertTrue();
+        expect(lines[0] == undefined).assertTrue();
+        let arrLineMetric =  paragraph.getLineMetrics();
+        expect(arrLineMetric.length == 0).assertTrue();
+        let lineMetrics =  paragraph.getLineMetrics(0);
+        expect(lineMetrics == undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0300
+     * @tc.name       testTextReturnValue_0300
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0300===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies,
+          fontSize: 50,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          maxLines: 1,
+        }
+        let myPlaceholderSpan: text.PlaceholderSpan = {
+          width: 100,
+          height: 100,
+          align: text.PlaceholderAlignment.FOLLOW_PARAGRAPH,
+          baseline: text.TextBaseline.ALPHABETIC,
+          baselineOffset: 100
+        };
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        paragraphBuilder.addPlaceholder(myPlaceholderSpan);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf_测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let placeholderRects = paragraph.getRectsForPlaceholders();
+        expect(placeholderRects.length > 0).assertTrue();
+        let didExceed = paragraph.didExceedMaxLines();
+        expect(didExceed == true).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
       }
     })
 
