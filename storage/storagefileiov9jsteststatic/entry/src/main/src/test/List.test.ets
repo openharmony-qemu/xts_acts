@@ -51,6 +51,7 @@ import fscreateReadStream from './class_stream/CreateReadStream.test';
 import fileIOStreamRead from './class_stream/Read.test';
 import fileIOStreamWrite from './class_stream/Write.test';
 import fileIOFdopenStream from './FdopenStream.test';
+import fileIOWatcher from './Watcher.test';
 import fileIORandomAccessFileClose from './class_randomAccessFile/Close.test';
 import fileIORandomAccessFileRead from './class_randomAccessFile/Read.test';
 import fileIORandomAccessFileSetFilePointer from './class_randomAccessFile/SetFilePointer.test';
@@ -95,6 +96,7 @@ export default function testsuite() {
     fileIOStreamRead();
     fileIOStreamWrite();
     fileIOFdopenStream();
+    fileIOWatcher();
     fileIORandomAccessFileClose();
     fileIORandomAccessFileRead();
     fileIORandomAccessFileSetFilePointer();
