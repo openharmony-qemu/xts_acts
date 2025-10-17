@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import sendableResourceManager from '@ohos.sendableResourceManager';
 import { GlobalContext } from '../test/global';
+import { application } from '@Kit.AbilityKit';
 
 export default function globalStageTest() {
   describe("globalStageTest", () => {
@@ -5459,6 +5460,89 @@ export default function globalStageTest() {
         expect(err.code).assertEqual('9001005');
       }
     })
+
+    /**
+     * @tc.number    : SUB_GLOBAL_GetLocales_0030
+     * @tc.name      : getLocales return null
+     * @tc.desc      : getLocales
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_GLOBAL_GetLocales_0030', Level.LEVEL2, async (done: Function) => {
+      application.createModuleContext(resContext, "library").then((data: Context) => {
+        console.log('SUB_GLOBAL_GetLocales_0030' + data.resourceManager.getLocales());
+        expect(data.resourceManager.getLocales().length).assertEqual(0);
+        done();
+      }).catch((e: Error) => {
+        console.log('SUB_GLOBAL_GetLocales_0030' + e.message);
+        assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   : isRawDir_test_0200
+     * @tc.name     : isRawDir_test_0200
+     * @tc.desc     : isRawDir return true
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('isRawDir_test_0200', Level.LEVEL3, () => {
+      let result = res.isRawDir('A');
+      expect(result).assertTrue();
+    })
+
+    /**
+     * @tc.number    : SUB_GLOBAL_GETBOOLEAN_STAGE_0200
+     * @tc.name      : getBoolean with resource object
+     * @tc.desc      : getBoolean
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0200', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBoolean({
+        bundleName: "ohos.acts.globalstage",
+        moduleName: "entry_test",
+        id: $r('app.boolean.boolean_2').id
+      });
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0200 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_GLOBAL_GETBOOLEAN_STAGE_0300
+     * @tc.name      : getBoolean with resource id
+     * @tc.desc      : getBoolean
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0300', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBoolean($r('app.boolean.boolean_2').id);
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0300 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_GLOBAL_GETBOOLEAN_STAGE_0400
+     * @tc.name      : getBoolean by name
+     * @tc.desc      : getBoolean
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0400', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBooleanByName('boolean_2');
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0400 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
     console.log('*************end globalStageTest*************');
   })
 }
