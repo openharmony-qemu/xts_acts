@@ -18,6 +18,7 @@
 #include <multimedia/image_framework/image/pixelmap_native.h>
 #include <multimedia/video_processing_engine/image_processing_types.h>
 #include <multimedia/video_processing_engine/image_processing.h>
+#define NO_TYPE 99999999999
 
 void addImageProcessingTest(std::vector<napi_property_descriptor>& descData)
 {
@@ -37,8 +38,7 @@ napi_value Test_IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION(napi_env env, napi_
 {
     napi_value result;
     OH_ImageProcessing *imageProcessor = nullptr;
-    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor,
-        IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, NO_TYPE);
     napi_create_int32(env, res == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER, &result);
     return result;
 }
@@ -56,7 +56,7 @@ napi_value Test_IMAGE_PROCESSING_TYPE_COMPOSITION(napi_env env, napi_callback_in
 {
     napi_value result;
     OH_ImageProcessing *imageProcessor = nullptr;
-    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, IMAGE_PROCESSING_TYPE_COMPOSITION);
+    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, NO_TYPE);
     napi_create_int32(env, res == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER, &result);
     return result;
 }
@@ -65,7 +65,7 @@ napi_value Test_IMAGE_PROCESSING_TYPE_DECOMPOSITION(napi_env env, napi_callback_
 {
     napi_value result;
     OH_ImageProcessing *imageProcessor = nullptr;
-    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, NO_TYPE);
     napi_create_int32(env, res == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER, &result);
     return result;
 }
@@ -74,8 +74,7 @@ napi_value Test_IMAGE_PROCESSING_TYPE_METADATA_GENERATION(napi_env env, napi_cal
 {
     napi_value result;
     OH_ImageProcessing *imageProcessor = nullptr;
-    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor,
-        IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+    ImageProcessing_ErrorCode res = OH_ImageProcessing_Create(&imageProcessor, NO_TYPE);
     napi_create_int32(env, res == IMAGE_PROCESSING_ERROR_INVALID_PARAMETER, &result);
     return result;
 }

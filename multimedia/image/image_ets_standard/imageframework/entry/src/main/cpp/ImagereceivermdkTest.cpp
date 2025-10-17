@@ -173,9 +173,16 @@ napi_value ImageSourceCreate(napi_env env, napi_callback_info info)
 }
 napi_value ImageSourceCreateFromUri(napi_env env, napi_callback_info info)
 {
-    size_t uriSize;
-    char uri[2048];
-    struct OhosImageSourceOps ops;
+    size_t uriSize = 2;
+    char *uri = "aa";
+    struct OhosImageSourceOps ops={
+        .density=0,
+        .pixelFormat=0,
+        .size={
+            .width=0,
+            .height=0
+        }
+    };
     napi_value imageSource = nullptr;
     int32_t returnValue = OH_ImageSource_CreateFromUri(env, uri, uriSize, &ops, &imageSource);
     int ret = -1;
