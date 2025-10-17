@@ -1889,5 +1889,30 @@ export default function InputConsumerTest() {
           done();
         }
       });
+
+          /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100
+     * @tc.desc: Test promise getAllSystemHotkeys interface to get all the system hotkeys.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100";
+        try {
+          inputConsumer.getAllSystemHotkeys().then((data: Array<inputConsumer.HotkeyOptions>) => {
+            console.info(`${caseName} list of system hotkeys: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length >= 0);
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} failed to get system hotkeys, error: ${JSON.stringify(error,
+            [`code`, `message`])}`);
+          ExpectTrue(error.code == 801);
+          done();
+        }
+      });
   });
 }
