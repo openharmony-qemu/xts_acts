@@ -31,6 +31,7 @@ group("distributeddatamgr") {
       "dataSharejstest:dataShare_js_test",
       "distributedKVStoretest:distributedKVStoretest",
       "kvStoretest:kvStoretest",
+      "pasteboard_errorcode:ActsPasteboardErrorTest",
       "preferencesEtstest:ActsPreferencesEtsTest",
       "preferencesNdktestHvigor:ActsPreferencesNdkTest",
       "preferencesSendabletest:preferencesSendable_ets_test",
