@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "1800000",
-        "bundle-name": "com.acts.normalized_napi_load",
+        "bundle-name": "com.example.normalized_napi_load",
         "module-name": "entry_test",
         "shell-timeout": "180000",
         "compile-mode": "esmodule"

@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.acts.normalized_napi_load",
+    "bundleName": "com.example.normalized_napi_load",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
