@@ -23,7 +23,7 @@ interface TestModule {
   add?: (a: number, b: number) => number
 }
 
-const sharedHarOne: TestModule = testNapi.loadModuleWithInfo('sharedHarOne/Index', 'com.acts.arktsnapiloadtest/entry_test')
+const sharedHarOne: TestModule = testNapi.loadModuleWithInfo('sharedHarOne/Index', 'com.example.normalized_napi_load/entry_test')
 expect(sharedHarOne.value).assertEqual(1);
 
 @Sendable

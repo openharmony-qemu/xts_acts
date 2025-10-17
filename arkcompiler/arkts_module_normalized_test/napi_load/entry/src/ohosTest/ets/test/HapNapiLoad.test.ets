@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import testNapi from 'libentry.so';
 import { taskpool } from '@kit.ArkTS';
 
-const PATH = "com.acts.arktsnapiloadtest/entry_test"
+const PATH = "com.example.normalized_napi_load/entry_test"
 
 interface TestModule {
   value?: number
@@ -27,21 +27,21 @@ interface TestModule {
 
 @Concurrent
 function sharedHarOne(value: number): void {
-  const PATH = "com.acts.arktsnapiloadtest/entry_test"
+  const PATH = "com.example.normalized_napi_load/entry_test"
   const sharedHarOne: TestModule = testNapi.loadModuleWithInfo("sharedHarOne", PATH)
   expect(sharedHarOne.value).assertEqual(value);
 }
 
 @Concurrent
 function sharedHarOnePath(value: number): void {
-  const PATH = "com.acts.arktsnapiloadtest/entry_test"
+  const PATH = "com.example.normalized_napi_load/entry_test"
   const obj: TestModule = testNapi.loadModuleWithInfo("sharedHarOne/Index", PATH)
   expect(obj.test ? obj.test(0, 1) : -1).assertEqual(value);
 }
 
 @Concurrent
 function sharedHspOne(value: number): void {
-  const PATH = "com.acts.arktsnapiloadtest/entry_test"
+  const PATH = "com.example.normalized_napi_load/entry_test"
   const obj: TestModule = testNapi.loadModuleWithInfo("sharedHspOne", PATH)
   expect(obj.test ? obj.test(2, 3) : -1).assertEqual(value);
 }
@@ -57,7 +57,7 @@ async function testNapiTaskPool(): Promise<boolean> {
 
 @Concurrent
 function reSharedHarOne(): void {
-  const PATH = "com.acts.arktsnapiloadtest/entry_test"
+  const PATH = "com.example.normalized_napi_load/entry_test"
   const sharedHarOne: TestModule = testNapi.loadModuleWithInfo("sharedHarOne", PATH)
   expect(sharedHarOne.add ? sharedHarOne.add(2, 3) : -1).assertEqual(5);
 }
