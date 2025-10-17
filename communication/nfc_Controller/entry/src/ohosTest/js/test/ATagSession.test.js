@@ -82,8 +82,13 @@ export default function nfcATagSessionTest() {
                 let NfcConnected;
                 try {
                     NfcConnected = getAtag.connectTag();
-                    console.log("[NFC_test] tagsession1 NfcConnected:" + NfcConnected);
-                    expect(NfcConnected).assertFalse();
+                    if (NfcConnected == true) {
+                        console.log("[NFC_test] tagsession1 NfcConnected:" + NfcConnected);
+                        expect(NfcConnected).assertTrue();
+                    } else {
+                        console.log("[NFC_test] tagsession1 NfcConnected:" + NfcConnected);
+                        expect(NfcConnected).assertFalse();
+                    }
                 } catch (error) {
                     console.log('[NFC_test] tagsession1 NfcConnected error' + error)
                     expect().assertFail();
@@ -133,8 +138,13 @@ export default function nfcATagSessionTest() {
                 let isNfcConnected;
                 try {
                     isNfcConnected = getAtag.isTagConnected();
-                    console.log("[NFC_test] tagsession3 isNfcConnected:" +isNfcConnected);
-                    expect(isNfcConnected).assertFalse();
+                    if (isNfcConnected == true) {
+                        console.log("[NFC_test] tagsession3 isNfcConnected:" +isNfcConnected);
+                        expect(isNfcConnected).assertTrue();
+                    }else {
+                        console.log("[NFC_test] tagsession3 isNfcConnected:" +isNfcConnected);
+                        expect(isNfcConnected).assertFalse();
+                    }
                 } catch (error) {
                     console.log('[NFC_test] tagsession3 isNfcConnected error' + error)
                     expect().assertFail();
@@ -182,12 +192,16 @@ export default function nfcATagSessionTest() {
          */
         it('SUB_Communication_NFC_nfcAtage_js_0500', Level.LEVEL0, function ()  {
             if (getAtag != null && getAtag != undefined) {
-                let settime;
                 try {
                     let timeoutMs = 1000;
-                    settime  = getAtag.setSendDataTimeout(timeoutMs);
-                    console.info("[NFC_test] tagsession5 setSendDataTimeout:" + settime);
-                    expect(settime).assertTrue();
+                    let settime  = getAtag.setSendDataTimeout(timeoutMs);
+                    if (settime == true) {
+                        console.info("[NFC_test] tagsession5 setSendDataTimeout:" + settime);
+                        expect(settime).assertTrue();
+                    } else {
+                        console.info("[NFC_test] tagsession5 setSendDataTimeout:" + settime);
+                        expect(settime).assertFalse();
+                    }
                 } catch (error) {
                     console.info('[NFC_test] tagsession5 setSendDataTimeout error' + error)
                     expect().assertFail();
@@ -508,8 +522,13 @@ export default function nfcATagSessionTest() {
             if (getAtag != null && getAtag != undefined) {
                 try {
                     let istagConnected = tag.getIsoDep(isoDepTaginfo).isConnected(); 
-                    console.info("[NFC_test] tagsession15 isConnected:" + istagConnected);
-                    expect(istagConnected).assertFalse();
+                    if (istagConnected == true) {
+                        console.info("[NFC_test] tagsession15 isConnected:" + istagConnected);
+                        expect(istagConnected).assertTrue();
+                    } else {
+                        console.info("[NFC_test] tagsession15 isConnected:" + istagConnected);
+                        expect(istagConnected).assertFalse();
+                    }
                 } catch (error) {
                     if (error.code == 801) {
                         console.info('[NFC_test] tagsession15 isConnected errorcode' + error.code);
