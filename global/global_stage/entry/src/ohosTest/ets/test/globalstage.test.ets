@@ -19,7 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import sendableResourceManager from '@ohos.sendableResourceManager';
 import { GlobalContext } from '../test/global';
-import { application } from '@Kit.AbilityKit';
+import application from '@ohos.app.ability.application';
 
 export default function globalStageTest() {
   describe("globalStageTest", () => {
@@ -5476,7 +5476,7 @@ export default function globalStageTest() {
         done();
       }).catch((e: Error) => {
         console.log('SUB_GLOBAL_GetLocales_0030' + e.message);
-        assertFail();
+        expect().assertFail();
         done();
       })
     })
