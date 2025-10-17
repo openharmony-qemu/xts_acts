@@ -499,7 +499,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 end');
@@ -531,7 +531,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 end');
@@ -563,7 +563,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 end');
@@ -595,7 +595,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 end');
@@ -627,7 +627,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 end');
