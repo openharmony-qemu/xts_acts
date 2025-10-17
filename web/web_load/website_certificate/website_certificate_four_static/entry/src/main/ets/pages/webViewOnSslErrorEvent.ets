@@ -90,14 +90,14 @@ struct webViewOnSslErrorEvent {
               this.OnSslErrorEventFlagThree = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              this.controller.loadUrl('resource://rawfile/iframe.html')
+              this.controller.loadUrl('https://expired.badssl.com')
               break;
             }
             case 'OnSslErrorEvent0400': {
               this.OnSslErrorEventFlagFour = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              this.controller.loadUrl('resource://rawfile/second.html')
+              this.controller.loadUrl('https://expired.badssl.com')
               break;
             }
           }

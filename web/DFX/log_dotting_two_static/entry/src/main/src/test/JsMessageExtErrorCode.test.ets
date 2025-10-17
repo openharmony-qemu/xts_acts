@@ -357,7 +357,7 @@ export default function jsMessageExtErrorCode() {
       Utils.emitEvent('testJsMessageExtGetArrayError002', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetArrayError002', '17100014', 30441, done);
-      inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+       inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
       await Utils.msSleep(6000);
       done()
     })
@@ -375,7 +375,7 @@ export default function jsMessageExtErrorCode() {
       Utils.emitEvent('testJsMessageExtGetArrayError003', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetArrayError003', '17100014', 30442, done);
-      inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+       inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
       await Utils.msSleep(6000);
       done()
     })
@@ -393,9 +393,20 @@ export default function jsMessageExtErrorCode() {
       Utils.emitEvent('testJsMessageExtGetArrayError004', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetArrayError004', '17100014', 30443, done);
-      inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+       inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
       await Utils.msSleep(6000);
       done()
     })
+
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
+
   })
 }

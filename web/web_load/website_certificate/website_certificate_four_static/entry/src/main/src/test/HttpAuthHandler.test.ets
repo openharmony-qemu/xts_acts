@@ -128,7 +128,6 @@ export default function webViewOnSslErrorEvent() {
         Utils.registerEvent('OnSslErrorEvent0400', 2, 403, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webViewOnSslErrorEvent', 10, '');
-        console.log('click end')
         await Utils.msSleep(10000);
         done()
       })

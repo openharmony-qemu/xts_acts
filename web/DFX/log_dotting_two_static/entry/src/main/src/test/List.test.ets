@@ -15,8 +15,10 @@
 import webResourceHandlerTest from './WebResourceHandlerTest.test'
 import webTwoJsunit from './WebStorageErrorCode.test'
 import jsMessageExtErrorCode from './JsMessageExtErrorCode.test'
+import webViewControllerErrorCodeSecond from './WebViewControllerErrorCodeSecond.test'
 export default function testsuite() {
   webResourceHandlerTest();
   webTwoJsunit();
   jsMessageExtErrorCode();
+  webViewControllerErrorCodeSecond();
 }

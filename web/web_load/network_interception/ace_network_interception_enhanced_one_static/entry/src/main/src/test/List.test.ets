@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 import webController from './WebController.test';
+import httpAuthHandler from './HttpAuthHandler.test';
 
 export default function testsuite() {
+    httpAuthHandler();
     webController();
+
 }
