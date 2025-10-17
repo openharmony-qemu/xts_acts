@@ -1285,7 +1285,7 @@ export default function VibratorJsTest_misc_9() {
     });
 
     /**
-     * @tc.number     UniversalVibratorJsTest20 
+     * @tc.number     UniversalVibratorJsTest20
      * @tc.name       UniversalVibratorJsTest20
      * @tc.desc       test build method with no events (should fail with error code 401)
      * @tc.size       MediumTest
