@@ -136,6 +136,7 @@ describe("VibratorJsTest_misc_8", function () {
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret1:" + ret1);
             if(ret1){
+                expect(ret1).assertTrue();
                 vibrator.startVibration({
                     type: "preset",
                     effectId: EFFECT_IDFAIL,
@@ -157,6 +158,7 @@ describe("VibratorJsTest_misc_8", function () {
                 });
             } else{
                 console.log(TAG + ' is not supported.');
+                expect(ret1 == false).assertTrue();
                 done();
             }
         } catch (error) {
