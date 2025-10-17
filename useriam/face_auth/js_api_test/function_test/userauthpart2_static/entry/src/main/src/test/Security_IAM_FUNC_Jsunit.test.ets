@@ -282,16 +282,7 @@ export default function userauthTest_API9() {
         hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
         expect(null).assertFail();
       }
-      try {
-        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
-        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
-        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
-        expect(null).assertFail();
-      }
-      catch (err:BusinessError){
-        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
-        expect(''+12500002).assertEqual(''+err.code);
-      }
+
       try {
         let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
         userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});

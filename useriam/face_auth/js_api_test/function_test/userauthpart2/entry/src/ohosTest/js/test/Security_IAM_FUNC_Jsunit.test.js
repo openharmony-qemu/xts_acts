@@ -643,7 +643,7 @@ export default function userauthTest() {
             let checkPin = await checkSupportOrNot(userAuthNorth.UserAuthType.PIN);
             let checkFingerprint = await checkSupportOrNot(userAuthNorth.UserAuthType.FINGERPRINT);
             let authTypeParamError = [0, -1];
-            let authType = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
+            let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN];
             if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
                 for (let idx0 = 0; idx0 < authTypeParamError.length; idx0++) {
                     try {
