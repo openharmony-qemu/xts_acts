@@ -2323,6 +2323,7 @@ export default function SensorJsStaticTest() {
         } else {
           hilog.info(domain, tag, TAG + 'getSensorListSync sensors is null');
         }
+        done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
@@ -2382,6 +2383,7 @@ export default function SensorJsStaticTest() {
         } else {
           hilog.info(domain, tag, TAG + 'getSingleSensorSync acclSensor is null');
         }
+        done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
@@ -2414,6 +2416,14 @@ export default function SensorJsStaticTest() {
           altitude: num2
         };
         let timeMillis: long = 1580486400000;
+        const EPS = 0.01; ``
+        const GEOMAGNETIC_COMPONENT_YEAR_RESULT = [
+          [6570.3935546875, -146.3289337158203, 54606.0078125, -1.2758207321166992, 83.13726043701172, 6572.02294921875, 55000.0703125],
+          [6554.17041015625, -87.19947052001953, 54649.078125, -0.7622424364089966, 83.16046905517578, 6554.75048828125, 55040.7734375],
+          [6537.99169921875, -28.231582641601562, 54692.02734375, -0.24740631878376007, 83.18303680419922, 6538.052734375, 55081.4296875],
+          [6521.81201171875, 30.73670768737793, 54734.97265625, 0.2700277864933014, 83.20502471923828, 6521.88427734375, 55122.15625],
+          [6505.6328125, 89.70511627197266, 54777.90625, 0.7899921536445618, 83.22642517089844, 6506.2509765625, 55162.9453125]
+        ];
         sensor.getGeomagneticInfo(locationOptions, timeMillis, (error, data) => {
           if (error) {
             hilog.info(domain, tag, TAG + ` getGeomagneticInfo error, ${error.code} , ${error.message}`);
@@ -2429,16 +2439,26 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' deflectionAngle: ' + data.deflectionAngle);
               hilog.info(domain, tag, TAG + ' levelIntensity: ' + data.levelIntensity);
               hilog.info(domain, tag, TAG + ' totalIntensity: ' + data.totalIntensity);
+
+              expect(Math.abs(data.x - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][0]) < EPS).assertTrue();
+              expect(Math.abs(data.y - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][1]) < EPS).assertTrue();
+              expect(Math.abs(data.z - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][2]) < EPS).assertTrue();
+              expect(Math.abs(data.deflectionAngle - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][3]) < EPS).assertTrue();
+              expect(Math.abs(data.geomagneticDip - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][4]) < EPS).assertTrue();
+              expect(Math.abs(data.levelIntensity - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][5]) < EPS).assertTrue();
+              expect(Math.abs(data.totalIntensity - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][6]) < EPS).assertTrue();
             } else {
               hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
             }
           }
+          done();
         });
       } catch (error) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -2507,12 +2527,14 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
             }
           }
+          done();
         });
       } catch (error) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
       }
-      hilog.info(domain, tag, TAG + "----------end----------");
-      done();
+      hilog.info(domain, tag, TAG + "----------end----------"); 
     })
 
     /**
@@ -2574,12 +2596,14 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
             }
           }
+          done();
         });
       } catch (error) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -2628,12 +2652,14 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
             }
           }
+          done();
         });
       } catch (error) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -2663,12 +2689,14 @@ export default function SensorJsStaticTest() {
           expect(Number.isNaN(data.deflectionAngle) && Number.isNaN(data.geomagneticDip)).assertTrue()
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + Number.isNaN(data.deflectionAngle));
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.geomagneticDip));
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -2696,14 +2724,16 @@ export default function SensorJsStaticTest() {
         90, 2.9950538714314696e+33, Infinity]
       try {
         await sensor.getGeomagneticInfo(locationOptions, timeMillis).then((data) => {
-          hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
           expect(data.totalIntensity).assertEqual(geomagneticComponent[6])
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -2733,12 +2763,15 @@ export default function SensorJsStaticTest() {
           expect(Number.isNaN(data.levelIntensity) && Number.isNaN(data.totalIntensity)).assertTrue()
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + Number.isNaN(data.levelIntensity));
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.totalIntensity));
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
+      
     })
 
     /**
@@ -2758,7 +2791,7 @@ export default function SensorJsStaticTest() {
         await sensor.getDeviceAltitude(0, 100).then((data) => {
           expect(data).assertEqual(getGeomagneticDipResult[2])
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
-
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -2786,7 +2819,7 @@ export default function SensorJsStaticTest() {
         await sensor.getDeviceAltitude(5, 0).then((data) => {
           expect(data).assertEqual(getGeomagneticDipResult[3])
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
-
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -2819,6 +2852,7 @@ export default function SensorJsStaticTest() {
             expect(data).assertEqual(getGeomagneticDipResult[2])
             hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           }
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -2851,6 +2885,7 @@ export default function SensorJsStaticTest() {
             expect(data).assertEqual(getGeomagneticDipResult[3])
             hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           }
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -2893,9 +2928,11 @@ export default function SensorJsStaticTest() {
             expect(data).assertEqual(getGeomagneticDipResult[0])
             hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           }
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
         done()
       }
       hilog.info(domain, tag, TAG + "----------end----------");
@@ -2989,9 +3026,11 @@ export default function SensorJsStaticTest() {
         await sensor.getInclination(inclination).then((data) => {
           expect(data).assertEqual(getGeomagneticDipResult[0])
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
         done()
       }
       hilog.info(domain, tag, TAG + "----------end----------");
@@ -3018,6 +3057,8 @@ export default function SensorJsStaticTest() {
       try {
         await sensor.getInclination(inclination).then((data) => {
           hilog.info(domain, tag, TAG + ' getDeviceAltitude fail');
+          expect(false).assertTrue();
+          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -3047,8 +3088,8 @@ export default function SensorJsStaticTest() {
       try {
         await sensor.getInclination(inclination).then((data) => {
           expect(data).assertEqual(getGeomagneticDipResult[0])
-          // expect(true).assertfalse()
           hilog.info(domain, tag, TAG + ' getDeviceAltitude fail');
+          done()
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
@@ -3993,6 +4034,41 @@ export default function SensorJsStaticTest() {
       }
       hilog.info(domain, tag, TAG + "----------end----------");
     });
+
+    /**
+     *
+     * @tc.number     paramTest_SensorJsTest_static_073
+     * @tc.name       paramTest_SensorJsTest_static_073
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("paramTest_SensorJsTest_static_073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------paramTest_SensorJsTest_static_073--------------');
+        try {
+          let accUnreliable: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_UNRELIABLE;
+          let accLow: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_LOW;
+          let accMedium: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_MEDIUM;
+          let accHigh: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_HIGH;
+          let orientationResponseParam: sensor.OrientationResponse = {
+            accuracy: accUnreliable,
+            timestamp: 100000000,
+            beta: 1.0,
+            gamma: 2.0,
+            alpha: 3.0,
+          };
+          expect(orientationResponseParam !== null).assertTrue();
+          hilog.info(domain, tag, TAG + ' paramTest_SensorJsTest_static_073 success');
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `orientatingParamError_SensorJsTest_static_050 failed error.code: ${e.code} , error.message: ${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
 
   })
 }

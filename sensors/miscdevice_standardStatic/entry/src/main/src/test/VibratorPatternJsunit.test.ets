@@ -1107,6 +1107,7 @@ export default function VibratorJsTest_misc_9() {
       try {
         builder.addContinuousEvent(0, 5000, param);
         hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        expect(false).assertTrue();
         done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
@@ -1173,7 +1174,35 @@ export default function VibratorJsTest_misc_9() {
       };
       try {
         builder.addTransientEvent(0, param);
-        hilog.info(domain, tag, TAG + " builder.build is " + JSON.stringify(builder.build()));
+        let pattern = builder.build();
+        hilog.info(domain, tag, TAG + " pattern.time: " + pattern.time);
+        hilog.info(domain, tag, TAG + " pattern.events.length: " + pattern.events.length);
+
+        if (pattern.events.length > 0) {
+          let event = pattern.events[0];
+          hilog.info(domain, tag, TAG + " event.time: " + event.time);
+          hilog.info(domain, tag, TAG + " event.index: " + event.index);
+          hilog.info(domain, tag, TAG + " event.duration: " + event.duration);
+          hilog.info(domain, tag, TAG + " event.intensity: " + event.intensity);
+          hilog.info(domain, tag, TAG + " event.frequency: " + event.frequency);
+        }
+
+        // 验证基础结构
+        expect(pattern !== null).assertTrue();
+        expect(pattern !== undefined).assertTrue();
+        expect(pattern.time).assertEqual(0);
+        expect(pattern.events !== undefined).assertTrue();
+        expect(pattern.events.length > 0).assertTrue();
+        // 验证事件详情
+        let event = pattern.events[0];
+        expect(event.time).assertEqual(0);
+        expect(event.index).assertEqual(0);
+        expect(event.duration).assertEqual(48);
+        expect(event.intensity).assertEqual(97);
+        expect(event.frequency).assertEqual(34);
+        expect(event.points !== undefined).assertTrue();
+
+        hilog.info(domain, tag, TAG + " all assertions passed");
         done();
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
@@ -1182,7 +1211,6 @@ export default function VibratorJsTest_misc_9() {
         done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
-      done();
     })
 
     /**
@@ -1282,6 +1310,256 @@ export default function VibratorJsTest_misc_9() {
       }
       hilog.info(domain, tag, TAG + "----------end----------");
     });
+
+    /**
+     * @tc.number     UniversalVibratorJsTest21
+     * @tc.name       UniversalVibratorJsTest21
+     * @tc.desc       Test getVibratorInfoSync without parameters, verify the returned vibrator information.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest21", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        TAG = "UniversalVibratorJsTest21"
+        hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+        let vibrators = vibrator.getVibratorInfoSync();
+        if (vibrators && vibrators.length > 0) {
+          try {
+            // 添加对deviceId的断言
+            expect(vibrators[0].deviceId >= -1).assertEqual(true);
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
+            expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+            // 添加对vibratorId的断言
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
+            expect(vibrators[0].vibratorId >= 0).assertEqual(true);
+            expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+            // 添加对deviceName的断言
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
+            expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
+            expect(vibrators[0].deviceName !== undefined).assertEqual(true);
+            expect(vibrators[0].deviceName !== null).assertEqual(true);
+            // 添加对isHdHapticSupported的断言
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync isHdHapticSupported:" + vibrators[0].isHdHapticSupported);
+            expect(typeof vibrators[0].isHdHapticSupported === 'boolean').assertEqual(true);
+            expect(vibrators[0].isHdHapticSupported).assertEqual(false);
+            // 添加对isLocalVibrator的断言
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync isLocalVibrator:" + vibrators[0].isLocalVibrator);
+            expect(typeof vibrators[0].isLocalVibrator === 'boolean').assertEqual(true);
+            expect(vibrators[0].isLocalVibrator).assertEqual(true);
+
+            const freshVibratorsData = vibrator.getVibratorInfoSync();
+            expect(freshVibratorsData[0].deviceId >= -1).assertEqual(true);
+            expect(vibrators[0].deviceId === freshVibratorsData[0].deviceId).assertEqual(true);
+            expect(vibrators.length > 0).assertEqual(true);
+            expect(freshVibratorsData.length > 0).assertEqual(true);
+            done();
+          } catch (error: BusinessError) {
+            hilog.info(domain, tag, TAG + " getVibratorInfoSync error: " + JSON.stringify(error));
+            expect(false).assertEqual(true);
+            done();
+          }
+          hilog.info(domain, tag, TAG + " end");
+        } else {
+          hilog.info(domain, tag, TAG + ' is not supported on this device.');
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number     UniversalVibratorJsTest22
+     * @tc.name       UniversalVibratorJsTest22
+     * @tc.desc       Test getVibratorInfoSync with parameters, verify the returned vibrator information.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest22", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest22"
+      hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+      let vibrators = vibrator.getVibratorInfoSync();
+      if (vibrators && vibrators.length > 0) {
+        try {
+          const vibratorInfoParam: vibrator.VibratorInfoParam = {
+            deviceId: -1,
+            vibratorId: -1
+          };
+
+          const vibrators = vibrator.getVibratorInfoSync(vibratorInfoParam);
+
+          // 添加对deviceId的断言
+          expect(vibrators[0].deviceId >= -1).assertEqual(true);
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
+          expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+          // 添加对vibratorId的断言
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
+          expect(vibrators[0].vibratorId >= 0).assertEqual(true);
+          expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+          // 添加对deviceName的断言
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
+          expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
+          expect(vibrators[0].deviceName !== undefined).assertEqual(true);
+          expect(vibrators[0].deviceName !== null).assertEqual(true);
+          // 添加对isHdHapticSupported的断言
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync isHdHapticSupported:" + vibrators[0].isHdHapticSupported);
+          expect(typeof vibrators[0].isHdHapticSupported === 'boolean').assertEqual(true);
+          expect(vibrators[0].isHdHapticSupported).assertEqual(false);
+          // 添加对isLocalVibrator的断言
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync isLocalVibrator:" + vibrators[0].isLocalVibrator);
+          expect(typeof vibrators[0].isLocalVibrator === 'boolean').assertEqual(true);
+          expect(vibrators[0].isLocalVibrator).assertEqual(true);
+
+          const freshVibratorsData = vibrator.getVibratorInfoSync();
+          expect(freshVibratorsData[0].deviceId >= -1).assertEqual(true);
+          expect(vibrators[0].deviceId === freshVibratorsData[0].deviceId).assertEqual(true);
+          expect(vibrators.length > 0).assertEqual(true);
+          expect(freshVibratorsData.length > 0).assertEqual(true);
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + " getVibratorInfoSync error: " + JSON.stringify(error));
+          expect(false).assertEqual(true);
+          done();
+        }
+        hilog.info(domain, tag, TAG + " end");
+      } else {
+        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     UniversalVibratorJsTest23
+     * @tc.name       UniversalVibratorJsTest23
+     * @tc.desc       Test startVibration with excessive duration (1800001ms) and verify that it returns permission error.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest23", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest23"
+      hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+      let vibrators = vibrator.getVibratorInfoSync();
+      if (vibrators && vibrators.length > 0) {
+        try {
+          const effect: vibrator.VibrateEffect = {
+            type: "time",
+            duration: 1800001
+          };
+          const attribute: vibrator.VibrateAttribute = {
+            usage: "alarm"
+          };
+          await vibrator.startVibration(effect, attribute);
+          expect(false).assertTrue();
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + " startVibration error: " + JSON.stringify(error));
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.message).assertEqual("start vibrator failed");
+          done();
+        }
+        hilog.info(domain, tag, TAG + " end");
+      } else {
+        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     UniversalVibratorJsTest24
+     * @tc.name       UniversalVibratorJsTest24
+     * @tc.desc       Test addContinuousEvent method with valid parameters to verify continuous vibration event can be added successfully
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest24", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest24";
+      if (isAvailable) {
+        let builder = new vibrator.VibratorPatternBuilder();
+        try {
+          expect(builder !== null).assertEqual(true);
+          expect(builder !== undefined).assertEqual(true);
+          builder.addContinuousEvent(0, 272);
+          hilog.info(domain, tag, TAG + " addContinuousEvent success");
+          expect(builder !== null).assertEqual(true);
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + " addContinuousEvent error: " + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     UniversalVibratorJsTest25
+     * @tc.name       UniversalVibratorJsTest25
+     * @tc.desc       Test addTransientEvent method with valid parameters to verify continuous vibration event can be added successfully
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest25", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest25";
+      if (isAvailable) {
+        let builder = new vibrator.VibratorPatternBuilder();
+        try {
+          expect(builder !== null).assertEqual(true);
+          expect(builder !== undefined).assertEqual(true);
+          builder.addTransientEvent(0);
+          hilog.info(domain, tag, TAG + " addTransientEvent success");
+          expect(builder !== null).assertEqual(true);
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + " addTransientEvent error: " + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     UniversalVibratorJsTest26
+     * @tc.name       UniversalVibratorJsTest26
+     * @tc.desc       Test HapticFeedback effect constants to verify all predefined vibration effect types have correct string values
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("UniversalVibratorJsTest26", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest26"
+      hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+      let data1 = vibrator.HapticFeedback.EFFECT_SOFT;
+      hilog.info(domain, tag, TAG + ` data1: ${data1}`);
+      expect(data1).assertEqual('haptic.effect.soft');
+      let data2 = vibrator.HapticFeedback.EFFECT_HARD;
+      hilog.info(domain, tag, TAG + ` data2: ${data2}`);
+      expect(data2).assertEqual('haptic.effect.hard');
+      let data3 = vibrator.HapticFeedback.EFFECT_SHARP;
+      hilog.info(domain, tag, TAG + ` data3: ${data3}`);
+      expect(data3).assertEqual('haptic.effect.sharp');
+      let data4 = vibrator.HapticFeedback.EFFECT_NOTICE_SUCCESS;
+      hilog.info(domain, tag, TAG + ` data4: ${data4}`);
+      expect(data4).assertEqual('haptic.notice.success');
+      let data5 = vibrator.HapticFeedback.EFFECT_NOTICE_FAILURE;
+      hilog.info(domain, tag, TAG + ` data5: ${data5}`);
+      expect(data5).assertEqual('haptic.notice.fail');
+      let data6 = vibrator.HapticFeedback.EFFECT_NOTICE_WARNING;
+      hilog.info(domain, tag, TAG + ` data6: ${data6}`);
+      expect(data6).assertEqual('haptic.notice.warning');
+      done();
+    })
 
   })
 }
