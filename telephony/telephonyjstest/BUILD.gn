@@ -31,5 +31,6 @@ group("telephonyjstest") {
     "ActsSimManagerFunctionTestStatic:ActsSimManagerFunctionStaticTest",
     "ActsNetworkSearchTestStatic:ActsNetworkSearchStaticTest",
     "ActsRadiostatisticEtsTestStatic:ActsRadiostatisticEtsStaticTest",
+    "ActsObserverEtsTestStatic:ActsObserverEtsStaticTest",
   ]
 }
