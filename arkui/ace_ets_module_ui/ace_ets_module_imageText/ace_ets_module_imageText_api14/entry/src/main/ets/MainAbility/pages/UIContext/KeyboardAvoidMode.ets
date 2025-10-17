@@ -37,6 +37,21 @@ struct UIContextKeyboardAvoidMode {
 		uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE_WITH_CARET);
 		this.value = message.value
 	  }
+    if(message.value == 'NONE'){
+		let uiContext :UIContext = this.getUIContext();
+		uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.NONE);
+		this.value = message.value
+	  }
+    if(message.value == 'OFFSET'){
+		let uiContext :UIContext = this.getUIContext();
+		uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.OFFSET);
+		this.value = message.value
+	  }
+    if(message.value == 'RESIZE'){
+		let uiContext :UIContext = this.getUIContext();
+		uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
+		this.value = message.value
+	  }
     };
     this.messageManager.registerCallback(callback);
     

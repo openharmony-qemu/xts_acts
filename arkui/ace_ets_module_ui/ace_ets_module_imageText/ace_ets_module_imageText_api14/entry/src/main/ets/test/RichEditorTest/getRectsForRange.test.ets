@@ -63,7 +63,33 @@ export default function getRectsForRangeTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getRectsForRangeTest_0010] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual('getRectsForRange successful');
+      let rectsForRangeList:TextBox[]|undefined = AppStorage.get('rectsForRangeList1')
+      expect(rectsForRangeList && rectsForRangeList.length>0).assertTrue()
+      AppStorage.delete('rectsForRangeList1')
       console.info('[getRectsForRangeTest_0010] END');
+      done();
+    });
+
+    /**
+     * @tc.number    getRectsForRangeTest_0020
+     * @tc.name      getRectsForRangeTest_0020
+     * @tc.desc      test_getRectsForRange
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('getRectsForRangeTest_0020', Level.LEVEL2, async (done: Function) => {
+      console.info('getRectsForRangeTest_0020 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('getRectsForRange_Key2'));
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let rectsForRangeList:TextBox[]|undefined = AppStorage.get('rectsForRangeList2')
+      expect(rectsForRangeList && rectsForRangeList.length==0).assertTrue()
+      AppStorage.delete('rectsForRangeList2')
+      console.info('[getRectsForRangeTest_0020] END');
       done();
     });
   })
