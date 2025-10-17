@@ -514,5 +514,55 @@ export default function graphicTextNewAPI() {
       }
     })
 
+    /**
+     * @tc.number     testTextReturnValue_0100
+     * @tc.name       testTextReturnValue_0100
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0100===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let range1: text.Range = { start: 0, end: 1};
+        let rects1 = paragraph.getRectsForRange(range1, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+        console.info('www data rects 111 ', JSON.stringify(rects1))
+        expect(rects1.length > 0).assertTrue();
+        let range2: text.Range = { start: 0, end: 0};
+        let rects2 = paragraph.getRectsForRange(range2, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+        console.info('www data rects 222 ', JSON.stringify(rects2))
+        expect(rects2.length == 0).assertTrue();
+        let placeholderRects = paragraph.getRectsForPlaceholders();
+        expect(placeholderRects.length == 0).assertTrue();
+        let didExceed = paragraph.didExceedMaxLines();
+        expect(didExceed == false).assertTrue();
+        let lines = paragraph.getTextLines();
+        expect(lines.length > 0).assertTrue();
+        let arrLineMetric =  paragraph.getLineMetrics();
+        expect(arrLineMetric.length > 0).assertTrue();
+        let lineMetrics =  paragraph.getLineMetrics(0);
+        expect(lineMetrics != undefined).assertTrue();
+
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+      }
+    })
+
   })
 }
