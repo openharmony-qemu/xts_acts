@@ -60,7 +60,7 @@ export default function SecurityHuksQueryKeyJsunit(){
             async function (done) {
                 let srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100';
                 try{
-                    await huks.generateKeyItem(srcKeyAlias, huksOptions);
+                    await huks.generateKey(srcKeyAlias, huksOptions);
                     let res = await huks.isKeyExist(srcKeyAlias, huksOptions);
                     expect(res).assertEqual(true);
                 }
@@ -82,7 +82,7 @@ export default function SecurityHuksQueryKeyJsunit(){
             async function (done) {
                 let srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110';
                 try{
-                    await huksCallback.generateKeyItem(srcKeyAlias, huksOptions);
+                    await huksCallback.generateKey(srcKeyAlias, huksOptions);
                     let res = await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
                     expect(res).assertEqual(true);
                 }
@@ -146,8 +146,8 @@ export default function SecurityHuksQueryKeyJsunit(){
             async function (done) {
                 let srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300';
                 try{
-                    await huksCallback.generateKeyItem(srcKeyAlias, huksOptions);
-                    await huksCallback.deleteKeyItem(srcKeyAlias, huksOptions);
+                    await huksCallback.generateKey(srcKeyAlias, huksOptions);
+                    await huksCallback.deleteKey(srcKeyAlias, huksOptions);
                     let result = await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
                     expect(result).assertEqual(false);
                 }
