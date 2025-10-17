@@ -654,7 +654,30 @@ export default function rdbStoreAttachEtsunitTest() {
             expect(0).assertEqual(await store.detach("attachDB"));
             console.log(TAG + "************* testRdbStoreAttach0018 end *************");
         })
-        
+        /**
+         * @tc.name the attach function
+         * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_2000
+         * @tc.desc non encrypted database attach non encrypted database
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testRdbStoreAttach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            console.log(TAG + "************* testRdbStoreAttach0019 start *************");
+            let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+            await store.executeSql(CREATE_TABLE_TEST);
+            await attachInsert(store, "test");
+            try {
+              let number = await store.attach(dataBaseDir + "rdbstore1.db", "attachDB", 2);
+              expect(1).assertEqual(number);
+            } catch(e) {
+              console.log("testRdbStoreAttach0005 err: failed, err: code=" + e.code + " message=" + e.message);
+              expect().assertFail();
+            }
+            await attachCheck(store);
+            expect(0).assertEqual(await store.detach("attachDB"));
+            console.log(TAG + "************* testRdbStoreAttach0019 end *************");
+        })
         console.log(TAG + "*************Ets Test End*************");
         })
 }
