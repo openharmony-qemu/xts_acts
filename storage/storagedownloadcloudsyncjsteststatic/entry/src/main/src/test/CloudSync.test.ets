@@ -702,7 +702,7 @@ export default function cloudCloudSyncTest() {
         });
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_026 has failed for' + e.message + ', code: ' + e.code);
-        expect(false).assertTrue();
+        expect(e.code == 201 && e.message == 'Permission verification failed').assertTrue();
       }
       done();
     });
