@@ -175,10 +175,10 @@ napi_value ImageSourceCreateFromUri(napi_env env, napi_callback_info info)
 {
     size_t uriSize = 2;
     char *uri = "aa";
-    struct OhosImageSourceOps ops={
+    struct OhosImageSourceOps ops = {
         .density=0,
         .pixelFormat=0,
-        .size={
+        .size = {
             .width=0,
             .height=0
         }

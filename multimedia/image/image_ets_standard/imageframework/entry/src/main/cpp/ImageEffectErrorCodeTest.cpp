@@ -387,11 +387,11 @@ napi_value OHEffectFilterLookupFiltersFilterNames(napi_env env, napi_callback_in
     uint32_t size = filterNames->size;
     const char **nameList = filterNames->nameList;
     OH_EffectFilter_ReleaseFilterNames();
-    if(!size){
-       LOG("filterNames size value: %{public}d", size);
+    if (!size) {
+        LOG("filterNames size value: %{public}d", size);
     }
-    if(!nameList){
-       LOG("filterNames nameList:  %{public}s", *nameList);
+    if (!nameList) {
+        LOG("filterNames nameList:  %{public}s", *nameList);
     }
     int32_t resultValue = *nameList != nullptr ? 0 : -1;
     napi_value ret;
