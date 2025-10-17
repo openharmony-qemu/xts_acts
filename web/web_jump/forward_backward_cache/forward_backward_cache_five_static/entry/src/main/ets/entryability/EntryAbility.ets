@@ -29,6 +29,9 @@ import webview from '@ohos.web.webview';
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Ability is creating, initialize resources for this ability
     let features = new webview.BackForwardCacheSupportedFeatures();
     features.nativeEmbed = true;
@@ -40,9 +43,6 @@ class EntryAbility extends UIAbility {
     GlobalContext.getContext().setObject('enableBackForwardCache', true)
     GlobalContext.getContext().setObject('nativeEmbed', true)
     GlobalContext.getContext().setObject('mediaTakeOver', true)
-  }
-
-  onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
       windowStage.loadContent('pages/webviewEnableBackForwardCache', (err: BusinessError<void> | null): void => {
