@@ -439,7 +439,7 @@ struct WebViewEnumAndFontLibrary {
         .fileAccess(true)
         .imageAccess(true)
         .domStorageAccess(false)
-        .onlineImageAccess(false)
+        .onlineImageAccess(true)
         .databaseAccess(this.databaseAccess)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
