@@ -343,7 +343,7 @@ export default function WebViewEnumAndFontLibrary() {
       Utils.emitEvent("emitContextMenuSourceTypeLongPress", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("testContextMenuSourceTypeLongPress001", ContextMenuSourceType.LongPress, 183350, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "emitContextMenuSourceTypeLongPress", "testContextMenuSourceTypeLongPress001");
+      Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuSourceTypeLongPress001");
       await Utils.waitForExist(() => isReturn, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
       done();
     })
