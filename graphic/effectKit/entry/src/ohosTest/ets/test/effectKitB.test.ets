@@ -343,25 +343,20 @@ export default function effectKitBTest() {
       let msgStr = 'isBlackOrWhiteOrGrayColor_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      const color = new ArrayBuffer(96);
-      let opts : image.InitializationOptions = {
-        editable: true,
-        pixelFormat: 3,
-        size: {
-          height: 4,
-          width: 6
-        }
-      };
-      let pixelMap = image.createPixelMapSync(color, opts);
-      effectKit.createColorPicker(pixelMap).then((colorPicker) => {
-        let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
-        expect(color_white == true).assertTrue();
-        let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
-        expect(color_blue == false).assertTrue();
-        console.info(msgStr + '  ' + color_white + ' ' + color_blue);
+      imageSource.createPixelMap().then(pixelMap => {
+        effectKit.createColorPicker(pixelMap).then((colorPicker) => {
+          let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+          expect(color_white == true).assertTrue();
+          let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
+          expect(color_blue == false).assertTrue();
+          console.info(msgStr + '  ' + color_white + ' ' + color_blue);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(msgStr + "Napi colorPicker.error=" + error);
+          expect().assertFail();
+          done();
+        })
       })
-
     })
-
   })
 }
