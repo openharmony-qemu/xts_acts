@@ -22,7 +22,7 @@
         "name": "default",
         "arkTSVersion": "1.2",
         "compatibleSdkVersion": '20',
-        "compileSdkVersion": '21',
+        "compileSdkVersion": '22',
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
