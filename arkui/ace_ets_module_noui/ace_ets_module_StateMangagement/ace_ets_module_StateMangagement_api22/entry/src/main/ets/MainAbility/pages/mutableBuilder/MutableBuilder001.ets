@@ -35,13 +35,13 @@ function buttonBuilder001(p: MutableTextContent) {
 @Component
 struct MutableBuilder001 {
   @State message: string = 'init';
-  @State text: WrappedBuilder<[MutableTextContent]> = wrapBuilder(textBuilder001); // 使用textBuilder001初始化
+  @State text: MutableBuilder<[MutableTextContent]> = mutableBuilder(textBuilder001); // 使用textBuilder001初始化
 
   build() {
     Column() {
       this.text.builder({ text: this.message })
       Button('change').onClick(() => {
-        this.text = wrapBuilder(buttonBuilder001); // 点击Button，将textBuilder001替换为buttonBuilder001进行二次赋值
+        this.text = mutableBuilder(buttonBuilder001); // 点击Button，将textBuilder001替换为buttonBuilder001进行二次赋值
       })
         .id('MutableBuilder001')
     }
