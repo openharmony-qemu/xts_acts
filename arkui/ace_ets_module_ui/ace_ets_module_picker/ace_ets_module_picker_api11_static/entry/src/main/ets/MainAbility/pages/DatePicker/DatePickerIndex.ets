@@ -36,7 +36,6 @@ import {
     FontWeight,
     ClickEvent,
     Button,
-    DatePickerDialog,
     Font
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'

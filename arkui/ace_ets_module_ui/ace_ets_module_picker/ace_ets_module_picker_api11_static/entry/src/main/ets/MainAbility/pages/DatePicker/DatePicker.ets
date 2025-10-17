@@ -33,8 +33,7 @@ import {
   Color,
   $r,
   DatePicker,
-  Button,
-  DatePickerDialog
+  Button
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 

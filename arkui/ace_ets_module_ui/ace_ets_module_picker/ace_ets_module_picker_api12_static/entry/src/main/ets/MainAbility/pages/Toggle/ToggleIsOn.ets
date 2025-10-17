@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Margin,Builder, Row,TimePicker, Toggle, TimePickerDialog,TimePickerFormat,ClickEvent,
+import { Entry, Column, Component, Margin,Builder, Row,TimePicker, Toggle, TimePickerFormat,ClickEvent,
   Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions,ToggleConfiguration } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
