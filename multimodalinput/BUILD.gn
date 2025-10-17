@@ -19,7 +19,7 @@ group("multimodalinput") {
     deps = [
       "input_js_standard:multimodalinput_js_test",
       "multimodalinput_ets_hvigor/CapsLock:ActsMultimodalInputCapsLockTest",
-      "multimodalinput_ets_hvigor/InfraredEmitter:ActsMultimodalInputInfraredEmitterTest",
+      "multimodalinput_ets_hvigor/InfraredEmitter/InfraredEmitterTest:ActsMultimodalInputInfraredEmitterTest",
       "multimodalinput_ets_hvigor/InputDevice/InputDeviceTest:ActsMultimodalInputDeviceTest",
       "multimodalinput_ets_hvigor/KeyCode/KeyCodeTest:ActsMultimodalInputKeyCodeTest",
       "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest:ActsMultimodalInputNoPermissionTest",
@@ -30,7 +30,7 @@ group("multimodalinput") {
       "multimodalinput_ets_hvigor/InputDevice/InputDeviceTest_static:ActsMultimodalInputDeviceStaticTest",
       "multimodalinput_ets_hvigor/KeyCode/KeyCodeTest_static:ActsMultimodalKeyCodeStaticTest",
       "multimodalinput_ets_hvigor/Pointer/PointerTest_static:ActsMultimodalPointerStaticTest",
-      "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest_static:ActsMultimodalNoPermissionStaticTest",
+      "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest_static:ActsMultimodalNoPermissionStaticTest",      "multimodalinput_ets_hvigor/InfraredEmitter/InfraredEmitterTest_static:ActsMultimodalInfraredEmitterStaticTest",
     ]
   }
 }
