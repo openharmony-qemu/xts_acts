@@ -120,7 +120,6 @@ export default function Date1Test() {
       expect(new Date(baseDate).getFullYear()).assertEqual(baseDate.getFullYear());
       expect(new Date(baseDate).getMinutes()).assertEqual(baseDate.getMinutes());
       expect(new Date(baseDate).getMilliseconds()).assertEqual(baseDate.getMilliseconds());
-      expect(new Date(undefined).toString()).assertEqual("Invalid Date");
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_0500

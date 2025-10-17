@@ -1758,7 +1758,6 @@ export default function Date6Test() {
      */
     it('Date6Test_115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const utcDate = new Date(Date.UTC(-50, 2, 20, 8, 15, 0, 200));
-      expect(utcDate.getUTCDay()).assertEqual(utcDate.getUTCDay());
       expect(utcDate.getUTCHours()).assertEqual(8);
       expect(utcDate.getUTCMinutes()).assertEqual(15);
     });
@@ -2027,7 +2026,6 @@ export default function Date6Test() {
      */
     it('Date6Test_133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const utcDate = new Date(Date.UTC(-900, 10, 5, 23, 45, 20, 800));
-      expect(utcDate.getUTCDay()).assertEqual(utcDate.getUTCDay());
       expect(utcDate.getUTCDate()).assertEqual(5);
       expect(utcDate.getUTCHours()).assertEqual(23);
     });
@@ -2252,7 +2250,6 @@ export default function Date6Test() {
      */
     it('Date6Test_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const utcDate = new Date(Date.UTC(-1100, 11, 31, 23, 59, 59, 500));
-      expect(utcDate.getUTCDay()).assertEqual(utcDate.getUTCDay());
       expect(utcDate.getUTCFullYear()).assertEqual(-1100);
       expect(utcDate.getUTCDate()).assertEqual(31);
     });
