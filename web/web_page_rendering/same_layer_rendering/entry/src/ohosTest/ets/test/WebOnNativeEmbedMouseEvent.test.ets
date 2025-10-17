@@ -66,7 +66,7 @@ export default function webViewControllerPart2() {
     it('emitOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
       Utils.registerEvent("emitOnNativeEmbedMouseEvent001", true, 153540, done);
-      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'emitOnNativeEmbedMouseEvent001');
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton');
     })
   })
 }
