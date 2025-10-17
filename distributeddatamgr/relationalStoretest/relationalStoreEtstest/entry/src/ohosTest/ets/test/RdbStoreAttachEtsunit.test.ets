@@ -671,7 +671,7 @@ export default function rdbStoreAttachEtsunitTest() {
               let number = await store.attach(dataBaseDir + "rdbstore1.db", "attachDB", 2);
               expect(1).assertEqual(number);
             } catch(e) {
-              console.log("testRdbStoreAttach0005 err: failed, err: code=" + e.code + " message=" + e.message);
+              console.log("testRdbStoreAttach0019 err: failed, err: code=" + e.code + " message=" + e.message);
               expect().assertFail();
             }
             await attachCheck(store);
