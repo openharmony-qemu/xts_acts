@@ -65,7 +65,7 @@ function testIsWifiActiveSync() {
    * @tc.size      : MediumTest
    */
   it("test_is_wifi_active_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.isWifiActiveSync(SELFWANT);
       expect(false).assertTrue();
@@ -814,7 +814,7 @@ function testSetWifiProfileSync() {
    * @tc.size      : MediumTest
    */
   it("test_set_wifi_profile_sync_0120", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiProfile: wifiManager.WifiProfile = {
         ssid: 'name',
@@ -899,7 +899,7 @@ function testAddAllowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_add_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1237,7 +1237,7 @@ function testRemoveAllowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_remove_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1401,7 +1401,7 @@ function testGetAllowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_get_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.getAllowedWifiList(SELFWANT);
       expect(false).assertTrue();
@@ -1465,7 +1465,7 @@ function testAddDisallowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_add_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1774,7 +1774,7 @@ function testRemoveDisallowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_remove_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1928,7 +1928,7 @@ function testGetDisallowedWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.getDisallowedWifiList(SELFWANT);
       expect(false).assertTrue();
@@ -2006,7 +2006,7 @@ function testTurnOnWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_turnon_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOnWifi(SELFWANT, true);
       expect(false).assertTrue();
@@ -2027,7 +2027,7 @@ function testTurnOnWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_turnon_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOnWifi(SELFWANT, false);
       expect(false).assertTrue();
@@ -2200,7 +2200,7 @@ function testTurnOffWifiList() {
    * @tc.size      : MediumTest
    */
   it("test_turnoff_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOffWifi(SELFWANT);
       expect(false).assertTrue();

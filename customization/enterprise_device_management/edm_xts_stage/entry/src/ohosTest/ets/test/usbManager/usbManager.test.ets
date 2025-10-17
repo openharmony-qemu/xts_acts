@@ -68,7 +68,7 @@ function testAddAllowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_add_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceId> = [
         {vendorId: 1, productId: 1},
@@ -218,7 +218,7 @@ function testRemoveAllowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_remove_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceId> = [
         {vendorId: 1, productId: 1},
@@ -263,7 +263,7 @@ function testGetAllowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_get_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.getAllowedUsbDevices(SELFWANT);
       expect(false).assertTrue();
@@ -304,7 +304,7 @@ function testSetUsbStorageDeviceAccessPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_usb_device_access_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_ONLY);
       expect(false).assertTrue();
@@ -388,7 +388,7 @@ function testGetUsbStorageDeviceAccessPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_usb_device_access_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -454,7 +454,7 @@ function testAddDisallowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_add_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
@@ -1036,7 +1036,7 @@ function testRemoveDisallowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_remove_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
@@ -1443,7 +1443,7 @@ function testGetDisallowedUsbDevices() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},

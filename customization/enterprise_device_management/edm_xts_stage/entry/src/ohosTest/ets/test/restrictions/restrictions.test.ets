@@ -110,9 +110,17 @@ function testSetDisallowedPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH, false);
-      expect(false).assertTrue();
+      if (sysDeviceInfo.deviceType === '2in1') {
+        expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH)).assertFalse();
+      } else {
+        expect(false).assertTrue();
+      }
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      if (sysDeviceInfo.deviceType === '2in1') {
+        expect(false).assertTrue();
+      } else {
+        expect(error.code == 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -800,7 +808,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0134", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_VPN, false);
       expect(false).assertTrue();
@@ -881,7 +889,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0138", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_MOBILE_DATA, false);
       expect(false).assertTrue();
@@ -962,7 +970,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0142", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_SMS, false);
       expect(false).assertTrue();
@@ -1043,7 +1051,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0146", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_MMS, false);
       expect(false).assertTrue();
@@ -1124,7 +1132,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0150", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_AIRPLANE_MODE, false);
       expect(false).assertTrue();
@@ -1205,7 +1213,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0154", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_NOTIFICATION, false);
       expect(false).assertTrue();
@@ -1307,7 +1315,7 @@ function testSetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_0159", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_TELEPHONY_CALL, false);
       expect(false).assertTrue();
@@ -1647,7 +1655,7 @@ function testSetDisallowedPolicy() {
      * @tc.size      : MediumTest
      */
     it("test_set_disallowed_policy_0175", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
         expect(false).assertTrue();
@@ -1711,10 +1719,18 @@ function testGetDisallowedPolicy() {
   it("test_get_disallowed_policy_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      restrictions.getDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH);
-      expect(false).assertTrue();
+      let res = restrictions.getDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH);
+      if (sysDeviceInfo.deviceType === '2in1') {
+        expect(res).assertFalse();
+      } else {
+        expect(false).assertTrue();
+      }
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      if (sysDeviceInfo.deviceType === '2in1') {
+        expect(false).assertTrue();
+      } else {
+        expect(error.code == 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1812,7 +1828,7 @@ function testGetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_0106", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE);
       expect(false).assertTrue();
@@ -1874,7 +1890,7 @@ function testGetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD);
       expect(false).assertTrue();
@@ -1936,7 +1952,7 @@ function testGetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_0112", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABLE_RANDOM_MAC);
       expect(false).assertTrue();
@@ -1998,7 +2014,7 @@ function testGetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_0115", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_UNMUTE_DEVICE);
       expect(false).assertTrue();
@@ -2038,7 +2054,7 @@ function testGetDisallowedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_0117", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE);
       expect(false).assertTrue();
@@ -2100,7 +2116,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2314,7 +2330,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0904", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_MTP_CLIENT, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2489,7 +2505,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0912", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_RECOVERY_KEY, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2615,7 +2631,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0918", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2860,7 +2876,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0933", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2942,7 +2958,7 @@ function testSetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_disallowed_policy_for_account_0941", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3112,7 +3128,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3214,7 +3230,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0602", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_MTP_CLIENT, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3274,7 +3290,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0702", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_RECOVERY_KEY, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3334,7 +3350,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0705", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3395,7 +3411,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0802", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3455,7 +3471,7 @@ function testGetDisallowedForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_0905", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3581,7 +3597,7 @@ function testAddDisallowedListForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_add_disallowed_list_for_account_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3780,7 +3796,7 @@ function testRemoveDisallowedListForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_remove_disallowed_list_for_account_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -3930,7 +3946,7 @@ function testGetDisallowedListForAccountPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_list_for_account_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -4036,7 +4052,7 @@ function testSetUserRestrictionPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_user_restriction_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setUserRestriction(SELFWANT, LABEL_SET_APN, true);
       expect(false).assertTrue();
@@ -4101,7 +4117,7 @@ function testSetUserRestrictionPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_user_restriction_0401", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setUserRestriction(SELFWANT, LABEL_SET_ETHERNET_IP, true);
       expect(false).assertTrue();
@@ -4193,7 +4209,7 @@ function testSetUserRestrictionPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_user_restriction_0405", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setUserRestriction(SELFWANT, LABEL_POWER_LONG_PRESS, true);
       expect(false).assertTrue();
@@ -4258,7 +4274,7 @@ function testSetUserRestrictionPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_user_restriction_0501", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setUserRestriction(SELFWANT, LABEL_SET_BIOMETRICS_AND_SCREENLOCK, true);
       expect(false).assertTrue();
@@ -4323,7 +4339,7 @@ function testSetUserRestrictionPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_user_restriction_0601", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.setUserRestriction(SELFWANT, LABEL_SET_DEVICE_NAME, true);
       expect(false).assertTrue();
@@ -4390,7 +4406,7 @@ function testGetUserRestrictedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_user_restricted_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getUserRestricted(SELFWANT, LABEL_SET_ETHERNET_IP);
       expect(false).assertTrue();
@@ -4479,7 +4495,7 @@ function testGetUserRestrictedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_user_restricted_0201", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getUserRestricted(SELFWANT, LABEL_SET_BIOMETRICS_AND_SCREENLOCK);
       expect(false).assertTrue();
@@ -4568,7 +4584,7 @@ function testGetUserRestrictedPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_user_restricted_0301", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       restrictions.getUserRestricted(SELFWANT, LABEL_SET_DEVICE_NAME);
       expect(false).assertTrue();

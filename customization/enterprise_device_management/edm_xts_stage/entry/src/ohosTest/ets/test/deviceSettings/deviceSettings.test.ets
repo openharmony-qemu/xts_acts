@@ -54,7 +54,7 @@ export default function deviceSettingsTest() {
      * @tc.size      : MediumTest
      */
     it("test_device_settings_get_value_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         deviceSettings.getValue(SELFWANT, ITEM_SCREEN_OFF);
         expect(false).assertTrue();
@@ -177,7 +177,7 @@ export default function deviceSettingsTest() {
      * @tc.size      : MediumTest
      */
     it("test_device_settings_set_value_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         deviceSettings.setValue(SELFWANT, ITEM_SCREEN_OFF, '30000');
         expect(false).assertTrue();
@@ -548,7 +548,7 @@ export default function deviceSettingsTest() {
      * @tc.size      : MediumTest
      */
     it("test_device_settings_set_home_wall_paper_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       let filePath: string = getContext().resourceDir + '/wallpaper.png';
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setHomeWallpaper(SELFWANT, fd).then(() => {
@@ -574,7 +574,7 @@ export default function deviceSettingsTest() {
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setHomeWallpaper(SELFWANT, fd).then(() => {
       }).catch((error: BusinessError) => {
-        expect(error.code == 9200012).assertTrue();
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });
@@ -608,7 +608,7 @@ export default function deviceSettingsTest() {
      * @tc.size      : MediumTest
      */
     it("test_device_settings_set_unlock_wall_paper_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       let filePath: string = getContext().resourceDir + '/wallpaper.png';
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setUnlockWallpaper(SELFWANT, fd).then(() => {
@@ -634,7 +634,7 @@ export default function deviceSettingsTest() {
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setUnlockWallpaper(SELFWANT, fd).then(() => {
       }).catch((error: BusinessError) => {
-        expect(error.code == 9200012).assertTrue();
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });

@@ -76,7 +76,7 @@ export default function adminManagerTest() {
      */
     it("test_setDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, DELEGATED_POLICIES);
         expect(false).assertTrue();
       } catch (error) {
@@ -97,7 +97,7 @@ export default function adminManagerTest() {
      */
     it("test_getDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.getDelegatedPolicies(SELFWANT, BUNDLENAME1);
         expect(false).assertTrue();
       } catch (error) {
@@ -118,7 +118,7 @@ export default function adminManagerTest() {
      */
     it("test_getDelegatedBundleNames_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
         expect(false).assertTrue();
       } catch (error) {

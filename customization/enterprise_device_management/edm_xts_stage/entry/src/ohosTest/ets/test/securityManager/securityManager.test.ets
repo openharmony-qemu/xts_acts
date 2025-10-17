@@ -179,7 +179,7 @@ function testGetSecurityStatus() {
    * @tc.size      : MediumTest
    */
   it("test_get_security_status_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getSecurityStatus(SELFWANT, PATCH);
       expect(false).assertTrue();
@@ -325,7 +325,7 @@ function testSetPasswordPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_password_policy_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setPasswordPolicy(SELFWANT, PASSWORD_POLICY);
       expect(false).assertTrue();
@@ -471,7 +471,7 @@ function testGetPasswordPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_password_policy_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getPasswordPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -558,7 +558,7 @@ function testInstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_install_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       await securityManager.installUserCertificate(SELFWANT, CERTIFICATE);
       expect(false).assertTrue();
@@ -686,7 +686,7 @@ function testInstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_install_user_certificate_0201", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
@@ -855,7 +855,7 @@ function testGetUserCertificates() {
    * @tc.size      : MediumTest
    */
   it("test_get_user_certificates_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
@@ -956,7 +956,7 @@ function testUninstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_uninstall_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       await securityManager.uninstallUserCertificate(SELFWANT, 'test');
       expect(false).assertTrue();
@@ -1060,7 +1060,7 @@ function testSetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
@@ -1249,7 +1249,7 @@ function testGetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID);
       expect(false).assertTrue();
@@ -1306,7 +1306,7 @@ function testGetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_0500", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -1372,7 +1372,7 @@ function testSetClipboardPolicyByBundleName() {
    * @tc.size      : MediumTest
    */
   it("test_set_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
@@ -1657,7 +1657,7 @@ function testGetClipboardPolicyByBundleName() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID);
       expect(false).assertTrue();
@@ -1758,7 +1758,7 @@ function testSetWatermarkImage() {
    * @tc.size      : MediumTest
    */
   it("test_set_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -1908,7 +1908,7 @@ function testCancelWatermarkImage() {
    * @tc.size      : MediumTest
    */
   it("test_cancel_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2012,7 +2012,7 @@ function testSetPermissionManagedState() {
    * @tc.size      : MediumTest
    */
   it("test_set_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
@@ -2179,7 +2179,7 @@ function testGetPermissionManagedState() {
    * @tc.size      : MediumTest
    */
   it("test_get_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
       expect(false).assertTrue();
