@@ -14,7 +14,7 @@
  */
 
 class MutableTextContent {
-  text: string = '';
+  public text: string = '';
 }
 
 @Builder
