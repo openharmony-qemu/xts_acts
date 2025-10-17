@@ -818,7 +818,7 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation011 start----------------------");
             let token = -1;
             try {
-                continuationManager.registerContinuation()
+                await continuationManager.registerContinuation()
                     .then((data) => {
                         console.log('testRegisterContinuation011 data is' + data);
                         token = data;
@@ -828,7 +828,7 @@ export default function continuationManagerTest() {
                         expect().assertFail();
                     });
                 try {
-                    continuationManager.on("deviceSelected", token, (data) => {
+                    await continuationManager.on("deviceSelected", token, (data) => {
                         console.info('onDeviceSelected len: ' + data.length);
                         expect(data.length == 0).assertTrue()
                     });
@@ -856,7 +856,7 @@ export default function continuationManagerTest() {
             console.log("----------------------testRegisterContinuation012 start----------------------");
             let token = -1;
             try {
-                continuationManager.registerContinuation()
+                await continuationManager.registerContinuation()
                     .then((data) => {
                         console.log('testRegisterContinuation012 data is' + data);
                         token = data;
@@ -866,7 +866,7 @@ export default function continuationManagerTest() {
                         expect().assertFail();
                     });
                 try {
-                    continuationManager.on("deviceSelected", token, (data) => {
+                    await continuationManager.on("deviceSelected", token, (data) => {
                         console.log('testRegisterContinuation012 onDeviceSelected len: ' + data.length);
                         expect(data.length > 0).assertTrue()
                     });
@@ -894,7 +894,7 @@ export default function continuationManagerTest() {
             console.log("----------------------testRegisterContinuation013 start----------------------");
             let token = -1;
             try {
-                continuationManager.registerContinuation()
+                await continuationManager.registerContinuation()
                     .then((data) => {
                         console.log('testRegisterContinuation013 data is' + data);
                         token = data;
@@ -904,7 +904,7 @@ export default function continuationManagerTest() {
                         expect().assertFail();
                     });
                 try {
-                    continuationManager.on("deviceUnselected", token, (data) => {
+                    await continuationManager.on("deviceUnselected", token, (data) => {
                         console.log('testRegisterContinuation013 onDeviceUnselected len: ' + data.length);
                         expect(data.length == 0).assertTrue()
                     });
@@ -932,7 +932,7 @@ export default function continuationManagerTest() {
             console.log("----------------------testRegisterContinuation014 start----------------------");
             let token = -1;
             try {
-                continuationManager.registerContinuation()
+                await continuationManager.registerContinuation()
                     .then((data) => {
                         console.log('testRegisterContinuation014 data is' + data);
                         token = data;
@@ -942,7 +942,7 @@ export default function continuationManagerTest() {
                         expect().assertFail();
                     });
                 try {
-                    continuationManager.on("deviceUnselected", token, (data) => {
+                    await continuationManager.on("deviceUnselected", token, (data) => {
                         console.log('testRegisterContinuation014 onDeviceUnselected len: ' + data.length);
                         expect(data.length > 0).assertTrue()
                     });
