@@ -138,7 +138,7 @@ export default function dynamicLoadHsp() {
      */
     it('testVariableExpressionsHsp03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHsp03";
-      let libname = '@test/loadHsp';
+      let libname = 'loadHsp';
       import(libname).then((m: ESObject) => {
         expect(m.add(3, 2)).assertEqual(5);
       }).catch((error: BusinessError) => {
