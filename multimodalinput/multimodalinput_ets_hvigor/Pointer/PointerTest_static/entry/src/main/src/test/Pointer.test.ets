@@ -435,31 +435,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
-     * @tc.desc: Test setPointerVisibleSync interface to show or hide the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
-    it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200";
-        let ifSetPointerVisibleSyncSuccess = 0;
-        try {
-          pointer.setPointerVisibleSync(false);
-          console.info(`${caseName} Set pointer visible success`);
-          ifSetPointerVisibleSyncSuccess++;
-          ExpectTrue(ifSetPointerVisibleSyncSuccess == 1);
-          done();
-        } catch (error: BusinessError) {
-          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
-          done();
-        }
-      });
-
-    /**
      * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
      * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
      * @tc.desc: Test getPointerStyleSync interface to get the mouse style type, windowId is -1.

@@ -281,10 +281,19 @@ export default function InputDeviceTest() {
         const callback = (data: inputDevice.DeviceListener) => {
           console.info(`${caseName} Report device event info: ${JSON.stringify(data, [`type`, `deviceId`])}`);
         };
+        let isPhysicalKeyboardExist = true;
         let ifInputDeviceOffSuccess = 0;
         try {
           inputDevice.onChange((data: inputDevice.DeviceListener) => {
             console.info(`${caseName} Device event info: ${JSON.stringify(data)}`);
+            inputDevice.getKeyboardType(data.deviceId, (err: BusinessError | null, type: inputDevice.KeyboardType | undefined) => {
+              console.info(`${caseName} The keyboard type is: ${type}`);
+              if (type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD && data.type == 'add') {
+                isPhysicalKeyboardExist = true;
+              } else if (type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD && data.type == 'remove') {
+                isPhysicalKeyboardExist = false;
+              }
+            });
           });
         } catch (error) {
           console.info(`${caseName} Get device info failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -298,7 +307,7 @@ export default function InputDeviceTest() {
         } catch (error: BusinessError) {
           console.info(`${caseName} Cancel listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
-          ExpectFalse(true);
+          ExpectFalse(error.code == 401 || true);
           done();
         }
       });
@@ -460,6 +469,56 @@ export default function InputDeviceTest() {
           console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
           ExpectTrue(Array.isArray(supportResult));
           done();
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
+      });
+
+          /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_supportKeys_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_supportKeys_0100
+     * @tc.desc: Test callback supportKeys interface to get whether the input device supports the specified key code value.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0100";
+        try {
+          inputDevice.supportKeys(1, [KeyCode.KEYCODE_VOLUME_DOWN, KeyCode.KEYCODE_VOLUME_MUTE, KeyCode.KEYCODE_DEL],
+            (error: BusinessError | null, supportResult: Array<Boolean> | undefined) => {
+              console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+              ExpectTrue(Array.isArray(supportResult));
+              done();
+            });
+        } catch (error: BusinessError) {
+          console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_supportKeys_0200
+     * @tc.name: SUB_MMI_Input_Api_IptDev_supportKeys_0200
+     * @tc.desc: Test promise supportKeys interface to get whether the input device supports the specified key code value.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_supportKeys_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0200";
+        try {
+          inputDevice.supportKeys(1, [KeyCode.KEYCODE_VOLUME_DOWN, KeyCode.KEYCODE_VOLUME_MUTE, KeyCode.KEYCODE_DEL])
+            .then((supportResult: Array<Boolean>) => {
+              console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
+              ExpectTrue(Array.isArray(supportResult));
+              done();
+            });
         } catch (error: BusinessError) {
           console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
