@@ -39,15 +39,6 @@ interface GeneratedObjectLiteralInterface_1 {
   longitude: number;
 }
 
-let audioConfig: media.AudioRecorderConfig = {
-  audioEncodeBitRate: 48000,
-  audioSampleRate: 48000,
-  numberOfChannels: CHANNEL_TWO,
-  uri: 'fd://',
-  location: ({ latitude: 30, longitude: 30 } as GeneratedObjectLiteralInterface_1),
-  audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
-  fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
-}
 let avProfile: media.AVRecorderProfile = {
   audioBitrate: 64000, // set audioBitrate according to device ability
   audioChannels: 1, // set audioChannels, valid value 1-8
@@ -56,6 +47,12 @@ let avProfile: media.AVRecorderProfile = {
   audioSampleRate: 8000, // set audioSampleRate according to device ability
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A, // set fileFormat, for video is m4a
 }
+let audioAacProfileConfig: media.AVRecorderConfig = {
+audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
+profile: avProfile,
+url: 'fd://',
+}
+
 let audioAacProfileConfig: media.AVRecorderConfig = {
 audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
 profile: avProfile,
@@ -1024,14 +1021,6 @@ export default function RecorderLocalTestAudioAPI() {
       setCallback(mySteps, done);
       audioRecorder?.prepare(audioConfig);
     });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
-        * @tc.name      : 01.reset->set
-        * @tc.desc      : Reliability Test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level2
-    */
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
         * @tc.name      : 01.reset->set
