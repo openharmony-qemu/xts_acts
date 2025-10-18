@@ -33,6 +33,7 @@ group("telephone") {
     "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
     "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest",
     "ActsTelephonyRadioWithCardTestStatic:ActsTelephonyRadioWithCardStaticTest",
-    "ActsTelephonyEsimTestStatic:ActsTelephonyEsimStaticTest"
+    "ActsTelephonyEsimTestStatic:ActsTelephonyEsimStaticTest",
+    "ActsTelephonyEsimTestWithoutPermissionStatic:ActsTelephonyEsimStaticWithoutPermissionTest"
   ]
 }
