@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
-import { RecordData } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static async msSleep(count: int): Promise<int> {

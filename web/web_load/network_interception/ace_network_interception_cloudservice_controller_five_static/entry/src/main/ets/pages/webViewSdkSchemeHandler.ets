@@ -31,7 +31,6 @@ import { BusinessError } from '@ohos.base';
 import buffer from '@ohos.buffer'
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../src/test/Interfaces';
 import { Callback } from '@ohos.base'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 import emitter from '@ohos.events.emitter';

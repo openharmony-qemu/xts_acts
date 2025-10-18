@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ActsAceWebViewSdkSchemeHandler from './webViewSdkSchemeHandler.test'
+import ActsAceWebViewSdkSchemeHandler from './WebViewSdkSchemeHandler.test'
 import  WebHttpBodyStream from './WebHttpBodyStream.test'
 export default function testsuite() {
     ActsAceWebViewSdkSchemeHandler();
