@@ -775,11 +775,11 @@ ohos_resources("ace_demo_ets_resources") {
 
 FA_JS 模式适配指导请参考
 
-​                  [JS工程目录结构（FA模型）](https://gitcode.com/openharmony/xts_acts/wikis/XTS_%E7%99%BE%E7%A7%91%E6%8C%87%E5%AF%BC/JS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88FA%E6%A8%A1%E5%9E%8B%EF%BC%89)
+​                  [JS工程目录结构（FA模型）](https://gitcode.com/openharmony/xts_acts/wiki/hvigor%20_XTS%E6%8C%87%E5%AF%BC%2FJS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88FA%E6%A8%A1%E5%9E%8B%EF%BC%89.md)
 
 FA_TS 模式适配指导请参考 
 
-​                  [eTS工程目录结构（FA模型）](https://gitcode.com/openharmony/xts_acts/wikis/XTS_%E7%99%BE%E7%A7%91%E6%8C%87%E5%AF%BC/eTS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88FA%E6%A8%A1%E5%9E%8B%EF%BC%89)
+​                  [eTS工程目录结构（FA模型）](https://gitcode.com/openharmony/xts_acts/wiki/hvigor%20_XTS%E6%8C%87%E5%AF%BC%2FeTS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88FA%E6%A8%A1%E5%9E%8B%EF%BC%89.md)
 
 **以Stage 模式为例：**
 
@@ -930,11 +930,11 @@ ohos_resources("edm_resources") {
 
 Stage 模式适配指导请参考 
 
-​                          [eTS工程目录结构（Stage模型）](https://gitcode.com/openharmony/xts_acts/wikis/XTS_%E7%99%BE%E7%A7%91%E6%8C%87%E5%AF%BC/eTS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88Stage%E6%A8%A1%E5%9E%8B%EF%BC%89)
+​                          [eTS工程目录结构（Stage模型）](https://gitcode.com/openharmony/xts_acts/wiki/hvigor%20_XTS%E6%8C%87%E5%AF%BC%2FeTS%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88Stage%E6%A8%A1%E5%9E%8B%EF%BC%89.md)
 
 ### JS语言用例编译打包指导（适用于标准系统）<a name="section445519106559"></a>
 
-hap包编译请参考 [标准系统 JS用例源码编译Hap包指导](https://gitcode.com/openharmony/xts_acts/wikis/%E6%A0%87%E5%87%86%E7%B3%BB%E7%BB%9F%20JS%E7%94%A8%E4%BE%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91Hap%E5%8C%85%E6%8C%87%E5%AF%BC%20?sort_id=4427112)。
+hap包编译请参考 [标准系统 JS用例源码编译Hap包指导](https://gitcode.com/openharmony/xts_acts/wiki/%E6%A0%87%E5%87%86%E7%B3%BB%E7%BB%9F%20JS%E7%94%A8%E4%BE%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91Hap%E5%8C%85%E6%8C%87%E5%AF%BC%20?sort_id=4427112)。
 
 ### Python用例开发编译指导 <a name="section281040146993"></a>
 
