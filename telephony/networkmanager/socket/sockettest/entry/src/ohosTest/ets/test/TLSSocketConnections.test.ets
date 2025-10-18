@@ -932,7 +932,7 @@ export default function TLSSocketConnectionsTest() {
           });
           tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
-            Client.getCipherSuite(async (err: BusinessError, data: Array<string>) => {
+            client.getCipherSuite(async (err: BusinessError, data: Array<string>) => {
               if (err) {
                 console.error(`${caseName} Server getCipherSuite callback error: ${JSON.stringify(err)}`);
                 expectTrue(false);
@@ -994,7 +994,7 @@ export default function TLSSocketConnectionsTest() {
           });
           tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
-            Client.getCipherSuite().then((data: Array<string>) => {
+            client.getCipherSuite().then((data: Array<string>) => {
               console.info(`${caseName} Server getCipherSuite callback =` + data);
               expect(data.length > 0).assertTrue();
             }).catch ((err: BusinessError) => {
@@ -1085,7 +1085,7 @@ export default function TLSSocketConnectionsTest() {
           });
           tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
-            Client.getSignatureAlgorithms(async (err: BusinessError, data: Array<string>) => {
+            client.getSignatureAlgorithms(async (err: BusinessError, data: Array<string>) => {
               if (err) {
                 console.error(`${caseName} Server getSignatureAlgorithms callback error: ${JSON.stringify(err)}`);
                 expectTrue(false);
@@ -1176,7 +1176,7 @@ export default function TLSSocketConnectionsTest() {
           });
           tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
-            Client.getSignatureAlgorithms().then((data: Array<string>) => {
+            client.getSignatureAlgorithms().then((data: Array<string>) => {
               console.info(`${caseName} Server getSignatureAlgorithms callback =` + data);
               expect(data.length > 0).assertTrue();
             }).catch ((err: BusinessError) => {
