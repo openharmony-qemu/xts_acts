@@ -5247,6 +5247,52 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_WriteAndRead_ArrayBuffer_UInt32 --------------------');
         });
 
+        /**
+         * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_Int32
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Int32
+         * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_Int32
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_WriteAndRead_ArrayBuffer_Int32", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_WriteAndRead_ArrayBuffer_Int32 --------------------');
+
+            try {
+                let data = rpc.MessageSequence.create();
+                console.println(`data gen`);
+                let buffer = new ArrayBuffer(4 * 10);
+                let int32View = new Int32Array(buffer);
+                for (let i = 0; i < int32View.length; i++) {
+                    int32View[i] = i * 2 + 1;
+                }
+
+                try {
+                    data.writeArrayBuffer(buffer, rpc.TypeCode.INT32_ARRAY);
+                    console.println(`writeArrayBuffer success`);
+                    console.println(`write ArrayBuffer is :` + int32View);
+                } catch (err) {
+                    let error: BusinessError = err as BusinessError;
+                    console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+                }
+
+                try {
+                    let result = data.readArrayBuffer(rpc.TypeCode.INT32_ARRAY);
+                    let readInt32View = new Int32Array(result);
+                    console.println(`ArrayBuffer success`);
+                    console.println(`read data is :` + readInt32View);
+                } catch (err) {
+                    let error: BusinessError = err as BusinessError;
+                    console.println(`catch error, code is ${error.code}, msg is ${error.message}`);
+                }
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_WriteAndRead_ArrayBuffer_Int32 error is: ' + error);
+                expect(error == null).assertTrue();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_WriteAndRead_ArrayBuffer_Int32 --------------------');
+        });
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_Float32
@@ -6752,6 +6798,53 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 401).assertTrue();
                 expect(err.message != null).assertTrue();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
+        });
+
+        /**
+         * @tc.number    SUB_IPC_ErrorCode_0100
+         * @tc.name      SUB_IPC_ErrorCode
+         * @tc.desc      test ErrorCode
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_ErrorCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_ErrorCode_0100 --------------------');
+            try {
+                let errCode401 = `${rpc.ErrorCode.CHECK_PARAM_ERROR}`;
+                expect(errCode401).assertEqual("401");
+                let errCode1900001 = `${rpc.ErrorCode.OS_MMAP_ERROR}`;
+                expect(errCode1900001).assertEqual("1900001");
+                let errCode1900002 = `${rpc.ErrorCode.OS_IOCTL_ERROR}`;
+                expect(errCode1900002).assertEqual("1900002");
+                let errCode1900003 = `${rpc.ErrorCode.WRITE_TO_ASHMEM_ERROR}`;
+                expect(errCode1900003).assertEqual("1900003");
+                let errCode1900004 = `${rpc.ErrorCode.READ_FROM_ASHMEM_ERROR}`;
+                expect(errCode1900004).assertEqual("1900004");
+                let errCode1900005 = `${rpc.ErrorCode.ONLY_PROXY_OBJECT_PERMITTED_ERROR}`;
+                expect(errCode1900005).assertEqual("1900005");
+                let errCode1900006 = `${rpc.ErrorCode.ONLY_REMOTE_OBJECT_PERMITTED_ERROR}`;
+                expect(errCode1900006).assertEqual("1900006");
+                let errCode1900007 = `${rpc.ErrorCode.COMMUNICATION_ERROR}`;
+                expect(errCode1900007).assertEqual("1900007");
+                let errCode1900008 = `${rpc.ErrorCode.PROXY_OR_REMOTE_OBJECT_INVALID_ERROR}`;
+                expect(errCode1900008).assertEqual("1900008");
+                let errCode1900009 = `${rpc.ErrorCode.WRITE_DATA_TO_MESSAGE_SEQUENCE_ERROR}`;
+                expect(errCode1900009).assertEqual("1900009");
+                let errCode1900010 = `${rpc.ErrorCode.READ_DATA_FROM_MESSAGE_SEQUENCE_ERROR}`;
+                expect(errCode1900010).assertEqual("1900010");
+                let errCode1900011 = `${rpc.ErrorCode.PARCEL_MEMORY_ALLOC_ERROR}`;
+                expect(errCode1900011).assertEqual("1900011");
+                let errCode1900012 = `${rpc.ErrorCode.CALL_JS_METHOD_ERROR}`;
+                expect(errCode1900012).assertEqual("1900012");
+                let errCode1900013 = `${rpc.ErrorCode.OS_DUP_ERROR}`;
+                expect(errCode1900013).assertEqual("1900013");
+            } catch (err: BusinessError) {
+                expect(err.message == null).assertTrue();
             }
             done();
             hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
