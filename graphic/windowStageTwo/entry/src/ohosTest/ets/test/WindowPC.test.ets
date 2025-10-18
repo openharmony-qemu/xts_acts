@@ -3700,7 +3700,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT,
         ]
       };
-      let windowStatusChange:window.WindowStatusType;
+      let windowStatusChange:window.WindowStatusType|undefined = undefined;
       if (isPCStatus != '') {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
@@ -3744,12 +3744,12 @@ export default function windowPCTest() {
      */
     it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0200';
-      let windowStatusChange:window.WindowStatusType;
+      let windowStatusChange:window.WindowStatusType|undefined = undefined;
       if (isPCStatus != '') {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
           let windowStatusType = windowClass.getWindowStatus();
-          console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
+          console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
           if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
             await windowClass.recover();
             await sleep(200);

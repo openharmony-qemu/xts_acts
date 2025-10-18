@@ -2155,7 +2155,7 @@ export default function WindowLifecycle() {
         expect(data).assertEqual(true);
         done();
       }
-      
+      })
     });
 
     /** @tc.number : SUB_BASIC_WMS_XTS_ISSHOWING_0200
@@ -2244,7 +2244,7 @@ export default function WindowLifecycle() {
      */
     it('testWindowEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowEvent_0100';
-      let windoweventChange:Array<window.WindowEventType>;
+      let windoweventChange:Array<window.WindowEventType> = [];
         let windowClass =await  windowStage.createSubWindow('testWindowEvent_0100')
         console.info(caseName + ' createSubWindow success ' + JSON.stringify(windowClass));
         windowClass.on('windowEvent', (data) => {

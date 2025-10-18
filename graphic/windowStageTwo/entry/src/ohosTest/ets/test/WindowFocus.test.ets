@@ -535,7 +535,7 @@ export default function windowFocusTest() {
     it('test_ISWINDOWHIGHLIGHTED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0500';
       console.log(caseName + 'begin');
-      let highlightChange:boolean;
+      let highlightChange:boolean = false;
       let windowClass1 = await windowStage.createSubWindow('test_ISWINDOWHIGHLIGHTED_0500');
       try{
         windowClass1.on('windowHighlightChange', (data: boolean) => {

@@ -139,7 +139,7 @@ export default function windowManageTest() {
      * @tc.type       Function
      * @tc.level      Level3
      */
-    it('testGetWindowsByCoordinatenullWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetWindowsByCoordinatenullWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetWindowsByCoordinatenullWindow';
       let mainWindowClass: window.Window = windowStage.getMainWindowSync();
       let displayId = display.getDefaultDisplaySync().id;
