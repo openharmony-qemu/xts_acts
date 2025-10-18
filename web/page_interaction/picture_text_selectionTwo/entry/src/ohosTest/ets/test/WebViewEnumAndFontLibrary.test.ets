@@ -162,6 +162,23 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
     /*
+    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMEXISTSIMAGECONTENTS_0200
+    * @tc.name       : testWebContextMenuParamExistsImageContents002
+    * @tc.desc       : testWebContextMenuParamExistsImageContents002
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testWebContextMenuParamExistsImageContents002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebContextMenuParamExistsImageTrueContents", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebContextMenuParamExistsImageContents002", true, 20251017, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamExistsImageContents002");
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamExistsImageContents" + '_returnCheck', true, 500);
+      done();
+    })
+
+    /*
     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETMEDIATYPE_0100
     * @tc.name       : testWebContextMenuParamGetMediaType001
     * @tc.desc       : test WebContextMenuParamGetMediaType

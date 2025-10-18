@@ -190,7 +190,22 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(this.ImageContent, 183260)
               break;
             }
+
+            case "emitWebContextMenuParamExistsImageTrueContents": {
+              this.isPageEnd = -1
+              this.controller.loadUrl("resource://rawfile/ParamExistsImageTrue.html")
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              let button = await driver.findComponent(ON.id('webCenter'));
+              await button.longClick();
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.ImageContent, 20251017)
+              break;
+            }
+
             case "emitWebContextMenuParamGetMediaType": {
+              this.isPageEnd = -1
+              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -232,7 +247,6 @@ struct WebViewEnumAndFontLibrary {
             }
 
             case "emitWebContextMenuParamGetInputFieldType": {
-
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -439,7 +453,7 @@ struct WebViewEnumAndFontLibrary {
         .fileAccess(true)
         .imageAccess(true)
         .domStorageAccess(false)
-        .onlineImageAccess(false)
+        .onlineImageAccess(true)
         .databaseAccess(this.databaseAccess)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
