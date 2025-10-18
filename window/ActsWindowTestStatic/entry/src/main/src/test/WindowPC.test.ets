@@ -182,13 +182,13 @@ export default function WindowPCTest() {
                 done();
             }
         })
-         /**
-         * @tc.number     : testMinimizeCallbackErrCode1300002_0100
-         * @tc.name       : testMinimizeCallbackErrCode1300002_static_0100
-         * @tc.desc       : testMinimizeCallbackErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+        /**
+         * @tc.number     testMinimizeCallbackErrCode1300002_0100
+         * @tc.name       testMinimizeCallbackErrCode1300002_static_0100
+         * @tc.desc       testMinimizeCallbackErrCode1300002_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
          */
         it('testMinimizeCallbackErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testMinimizeCallbackErrCode1300002_0100";
@@ -214,34 +214,34 @@ export default function WindowPCTest() {
                                     return;
                                 }
                                 else{
-                                    expect(false).assertTrue();
+                                    expect().assertFail();
                                     done();
                                 }
                             }
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
-                            expect(false).assertTrue();
+                            expect().assertFail();
                             done();
                         });
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
-                        expect(false).assertTrue();
+                        expect().assertFail();
                         done()
                     }
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
+                    expect().assertFail();
                     done()
                 });
-
+        
         })
         /**
-         * @tc.number     : testMinimizePromiseErrCode1300002_0100
-         * @tc.name       : testMinimizePromiseErrCode1300002_static_0100
-         * @tc.desc       : testMinimizePromiseErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number     testMinimizePromiseErrCode1300002_0100
+         * @tc.name       testMinimizePromiseErrCode1300002_static_0100
+         * @tc.desc       testMinimizePromiseErrCode1300002_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
          */
         it('testMinimizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = "testMinimizePromiseErrCode1300002_0100";
@@ -257,7 +257,7 @@ export default function WindowPCTest() {
                     try {
                         (subWin! as window.Window).minimize().then(() => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
-                            expect(false).assertTrue();
+                            expect().assertFail();
                         }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
@@ -265,16 +265,16 @@ export default function WindowPCTest() {
                         done()
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
-                        expect(false).assertTrue();
+                        expect().assertFail();
                         done()
                     }
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
+                    expect().assertFail();
                     done()
                 });
-
+        
         })
 
         /**
@@ -320,12 +320,12 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number     : testMaximizePromiseErrCode1300004_0100
-         * @tc.name       : testMaximizePromiseErrCode1300004_static_0100
-         * @tc.desc       : testMaximizePromiseErrCode1300004_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
+         * @tc.number      testMaximizePromiseErrCode1300004_0100
+         * @tc.name        testMaximizePromiseErrCode1300004_static_0100
+         * @tc.desc        testMaximizePromiseErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testMaximizePromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = "testMaximizePromiseErrCode1300004_0100";
@@ -340,30 +340,24 @@ export default function WindowPCTest() {
             try {
                 win = await window.createWindow(windowConfig);
                 expect(!!win).assertTrue();
-                try {
-                    win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
-                        await (win! as window.Window).destroyWindow();
-                        expect(false).assertTrue();
-                        done()
-                    }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
-                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
-                        await (win! as window.Window).destroyWindow();
-                        expect(err!.code).assertEqual(1300004);
-                        done()
-                    });
-                } catch (exception: BusinessError) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
                     await (win! as window.Window).destroyWindow();
-                    expect(false).assertTrue();
+                    expect().assertFail();
                     done()
-                }
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                    await (win! as window.Window).destroyWindow();
+                    expect(err!.code).assertEqual(1300004);
+                    done()
+                });
             } catch (err: BusinessError) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
-                expect(false).assertTrue();
+                await (win! as window.Window).destroyWindow();
+                expect().assertFail();
                 done()
             }
-            
+
         })
 
         /**

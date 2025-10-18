@@ -791,14 +791,14 @@ struct ObscuredPage {
 	@State _obscuredWebModifier: WebModifier = new WebModifier()
 	@State _obscuredWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _obscuredXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns ?? 0
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter ?? 0
+	@State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
+	@State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
+	@State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+	@State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+	@State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
+	@State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
 	@State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? '#FFFF00'
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  	@State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
 
 	onPageShow() {
 		console.info('obscured translate page show called ')

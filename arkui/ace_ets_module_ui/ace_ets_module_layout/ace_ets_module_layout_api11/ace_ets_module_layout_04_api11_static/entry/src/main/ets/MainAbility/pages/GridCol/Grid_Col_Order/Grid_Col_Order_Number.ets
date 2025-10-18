@@ -23,7 +23,7 @@ type MessageData = number | string
 @Entry
 @Component
 struct Grid_Col_Order_Number {
-  @State addOrder: number = 0;
+  @State addOrder: int = 0;
   @State currentBp: string = 'unknown';
   messageManager: MessageManager<object> = new MessageManager<object>();
 
@@ -37,7 +37,7 @@ struct Grid_Col_Order_Number {
     let callback: Callback<object> = (message: Message<object>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addOrder') {
-        this.addOrder = message.value as number;
+        this.addOrder = (message.value as number).toInt();
       }
     };
     this.messageManager.registerCallback(callback);

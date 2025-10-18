@@ -66,7 +66,7 @@ let rdbStore2 : data_relationalStore.RdbStore
 let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
-  "data2": 10 as long,//
+  "data2": 10 as long,
   "data3": 1.0,
   "data4": new Uint8Array([1, 2, 3]),
 }
@@ -472,9 +472,151 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
+      try{
+        resultSet.goToFirstRow();
+        resultSet.getAsset(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
       await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
       done();
       hilog.info(domain, tag, '%{public}s', '************* errcode004 end *************');
+    })
+
+    /**
+     * @tc.name        getBlobErrCode13
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_3000
+     * @tc.desc        getBlob 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('getBlobErrCode13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* getBlobErrCode13 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      resultSet.goToFirstRow();
+      try{
+        resultSet.getBlob(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* getBlobErrCode13 end *************');
+    })
+
+    /**
+     * @tc.name        getDoubleErrCode13
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_3001
+     * @tc.desc        getDouble 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('getDoubleErrCode13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* getDoubleErrCode13 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      resultSet.goToFirstRow();
+      try{
+        resultSet.getDouble(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* getDoubleErrCode13 end *************');
+    })
+
+    /**
+     * @tc.name        getValueErrCode13
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_3002
+     * @tc.desc        getValue 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('getValueErrCode13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* getValueErrCode13 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      resultSet.goToFirstRow();
+      try{
+        resultSet.getValue(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* getValueErrCode13 end *************');
+    })
+
+    /**
+     * @tc.name        isColumnNullErrCode13
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_3003
+     * @tc.desc        isColumnNull 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('isColumnNullErrCode13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* isColumnNullErrCode13 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      resultSet.goToFirstRow();
+      try{
+        resultSet.isColumnNull(9);
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800013)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* isColumnNullErrCode13 end *************');
+    })
+
+    /**
+     * @tc.name        isColumnNullErrCode12
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_3033
+     * @tc.desc        isColumnNull 14800012 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('isColumnNullErrCode12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* isColumnNullErrCode12 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let num = rdbStore2.batchInsertSync("testerrcode", vbs);
+      hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
+      let resultSet =await rdbStore2.querySql("SELECT * FROM testerrcode");
+      try{
+        resultSet.isColumnNull(resultSet.getColumnIndex("data5"));
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800012)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* isColumnNullErrCode12 end *************');
     })
 
     /**

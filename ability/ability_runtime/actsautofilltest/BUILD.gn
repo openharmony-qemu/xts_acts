@@ -16,6 +16,9 @@ import("//test/xts/tools/build/suite.gni")
 group("actsautofilltest") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "ActsAutoFillAutomaticTest:ActsAutoFillAutomaticTest" ]
+    deps = [
+      "ActsAutoFillAutomaticTest:ActsAutoFillAutomaticTest",
+      "ActsAutoFillAutomaticTestStatic:ActsAutoFillAutomaticStaticTest"
+    ]
   }
 }

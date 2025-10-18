@@ -549,6 +549,145 @@ export default function httpRequestErrorCodeTest() {
             hilog.info(domain, tag, `${caseName} test End`);
         });
 
+   /**
+     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1300
+     * @tc.name  :  testHttpRequestMethodErrorCode_static_1300
+     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300005
+     * @tc.size  :  MEDIUMTEST
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it("testHttpRequestMethodErrorCode_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testHttpRequestMethodErrorCode_static_1300";
+      hilog.info(domain, tag, `${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+          if (data?.netId == 0) {
+            hilog.info(domain, tag, `${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            let ExclusionList = "";
+            let array = ExclusionList.split(',');
+            let httpProxy: http.HttpProxy = {
+              host: "host",
+              port: 1,
+              exclusionList: array
+            };
+            let promise = httpRequest.request('https://www.baidu.com', {
+              usingProxy: httpProxy,
+            });
+            promise.then((data:http.HttpResponse) => {
+              hilog.info(domain, tag, 'Result:' + data.result);
+            }).catch((error: Error) => {
+              let err = error as BusinessError;
+              hilog.info(domain, tag, 'error:' + JSON.stringify(err));
+              ExpectTrue(err?.code == 2300005);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test End`);
+    });
+
+    /**
+     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1400
+     * @tc.name  :  testHttpRequestMethodErrorCode1400
+     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300005
+     * @tc.size  :  MEDIUMTEST
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testHttpRequestMethodErrorCode1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testHttpRequestMethodErrorCode1400";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+          if (data?.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            let ExclusionList = "";
+            let array = ExclusionList.split(',');
+            let httpProxy: http.HttpProxy = {
+              host: "host",
+              port: 1,
+              exclusionList: array
+            };
+            httpRequest.requestInStream('https://www.baidu.com',  {usingProxy: httpProxy,}, (err: BusinessError<void> | null, data: Int | undefined) => {
+              console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+              ExpectTrue(err?.code == 2300005);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+
+    /**
+     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1500
+     * @tc.name  :  testHttpRequestMethodErrorCode1500
+     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300005
+     * @tc.size  :  MEDIUMTEST
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testHttpRequestMethodErrorCode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testHttpRequestMethodErrorCode1500";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+          if (data?.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            let ExclusionList = "";
+            let array = ExclusionList.split(',');
+            let httpProxy: http.HttpProxy = {
+              host: "host",
+              port: 1,
+              exclusionList: array
+            };
+            let promise = httpRequest.requestInStream('https://www.baidu.com', {usingProxy: httpProxy});
+            promise.then((data) => {
+              console.info('Result:' + data);
+            }).catch((error: Error) => {
+              let err = error as BusinessError;
+              console.info('error:' + JSON.stringify(err));
+              ExpectTrue(err?.code == 2300005);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+
 
     })
 

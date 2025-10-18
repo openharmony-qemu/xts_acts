@@ -35,7 +35,7 @@ struct DensityInfo1 {
         .fontWeight(FontWeight.Bold)
       Button(this.message).id("DensityInfo_id")
         .onClick((e: ClickEvent) => {
-          observer.on('densityUpdate', this.getUIContext(), this.densityUpdateCallback);
+          observer.onDensityUpdate(this.getUIContext(), this.densityUpdateCallback);
           this.message = 'DensityInfo succ'
         })
     }

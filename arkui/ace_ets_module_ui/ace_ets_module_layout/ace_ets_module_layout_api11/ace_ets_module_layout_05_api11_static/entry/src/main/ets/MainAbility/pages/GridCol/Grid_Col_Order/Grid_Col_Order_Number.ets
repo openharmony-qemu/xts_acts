@@ -24,7 +24,7 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 @Entry
 @Component
 struct Grid_Col_Order_Number {
-  @State addOrder: number = 0;
+  @State addOrder: int = 0;
   @State currentBp: string = 'unknown';
   messageManager: MessageManager<number | string> = new MessageManager<number | string>();
 
@@ -34,7 +34,7 @@ struct Grid_Col_Order_Number {
     let callback: Callback<number | string> = (message: Message<number | string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addOrder') {
-        this.addOrder = message.value as number;
+        this.addOrder = (message.value as number).toInt();
       }
     };
     this.messageManager.registerCallback(callback);

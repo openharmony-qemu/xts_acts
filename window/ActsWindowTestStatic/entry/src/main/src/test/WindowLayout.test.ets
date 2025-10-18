@@ -501,13 +501,13 @@ export default function WindowLayoutTest() {
                 }
             }
         })
-        /**
-         * @tc.number    : test_startMoving_ErrorCode_1300002
-         * @tc.name      : test_startMoving_ErrorCode_1300002_static_0100
-         * @tc.desc      : test_startMoving_ErrorCode_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+       /**
+         * @tc.number    test_startMoving_ErrorCode_1300002
+         * @tc.name      test_startMoving_ErrorCode_1300002_static_0100
+         * @tc.desc      test_startMoving_ErrorCode_1300002
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
          */
         it('test_startMoving_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let CaseName:string = 'test_startMoving_ErrorCode_1300002_static_0100';

@@ -20,7 +20,7 @@ import {State,AppStorage} from '@ohos.arkui.stateManagement'
 @Component
 struct Grid_Col_Offset_GridColColumnOption {
   @State addWidth: string = '0';
-  @State addSpan: number = 2;
+  @State addSpan: int = 2;
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
   messageManager: MessageManager<string> = new MessageManager<string>();
@@ -36,7 +36,7 @@ struct Grid_Col_Offset_GridColColumnOption {
       if (message.name == 'addWidth') {
         this.addWidth = message.value;
       } else if (message.name == 'addSpan') {
-        this.addSpan = Number.parseInt(message.value);
+        this.addSpan = (Number.parseInt(message.value)).toInt();
       }
     };
     this.messageManager.registerCallback(callback);

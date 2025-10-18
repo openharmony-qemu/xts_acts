@@ -133,7 +133,7 @@ struct SwiperAnimationModeExample {
         )
         .itemSpace(10)
         .displayArrow(true, false)
-        .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number): void => {
+        .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
           
           console.info('onContentDidScroll selectedIndex: ' + selectedIndex + ', index: ' + index + ', position: ' +
             position + ', mainAxisLength: ' + mainAxisLength)

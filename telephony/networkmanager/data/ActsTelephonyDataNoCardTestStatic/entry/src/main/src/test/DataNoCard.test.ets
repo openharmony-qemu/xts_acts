@@ -3,6 +3,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import data from '@ohos.telephony.data';
+import sim from '@ohos.telephony.sim';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'DataTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -87,7 +88,72 @@ export default function dataNoCardTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })        
+        })
+
+        /* *
+        * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabled_0600
+        * @tc.name  : testTelephonyDataIsCellularDataRoamingEnabled_static_0600
+        * @tc.desc  : Check whether roaming is enabled for cellular data services.
+        * @tc.size  : MediumTest
+        * @tc.type  : Function
+        * @tc.level : level 3
+        */
+        it('testTelephonyDataIsCellularDataRoamingEnabled_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled_static_0600';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let hasSim: boolean = sim.hasSimCardSync(0);
+                ExpectTrue(hasSim === false);
+                data.isCellularDataRoamingEnabled(0, (err: BusinessError<void>|null, ret: boolean|undefined) => {
+                    if (err?.code != 0) {
+                        ExpectTrue(err?.code === 8300003);
+                    } else {
+                        ExpectTrue(false);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err?.code === 8300003);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /* *
+        * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabled_1200
+        * @tc.name  : testTelephonyDataIsCellularDataRoamingEnabled_static_1200
+        * @tc.desc  : Check whether roaming is enabled for cellular data services.
+        * @tc.size  : MediumTest
+        * @tc.type  : Function
+        * @tc.level : level 3
+        */
+        it('testTelephonyDataIsCellularDataRoamingEnabled_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled_static_1200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let hasSim: boolean = sim.hasSimCardSync(0);
+                ExpectTrue(hasSim === false);
+                data.isCellularDataRoamingEnabled(0).then((data: boolean) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code === 8300003);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code === 8300003);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
     })
 
 }

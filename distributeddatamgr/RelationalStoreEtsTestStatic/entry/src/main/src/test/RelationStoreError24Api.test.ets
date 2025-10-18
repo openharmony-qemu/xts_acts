@@ -1014,5 +1014,188 @@ export default function ErrorCodeRdbStore24Test() {
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0022 end *************');
     })
+    
+    /**
+     * @tc.name        RelationStoreError24Test0023
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0701
+     * @tc.desc        batchInsert normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('RelationStoreError24Test0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0023 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore.insert("test", valueBucket0);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        let values = new Array<data_relationalStore.ValuesBucket>();
+        predicates.equalTo("data1", "hello");
+        const rdbTrans = await rdbStore.createTransaction(options);
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": name,
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        values.push(valueBucket2);
+        await rdbTrans.insert("test", valueBucket2);
+        try {
+          await rdbStore.batchInsert("test", values);
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'batchInsert errCode: ' + err.code);
+          expect(err.code).assertEqual(14800024);
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0023 end *************');
+      })
+
+    /**
+     * @tc.name        RelationStoreError24Test0024
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0702
+     * @tc.desc        batchInsertSync normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('RelationStoreError24Test0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0024 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore.insert("test", valueBucket0);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        let values = new Array<data_relationalStore.ValuesBucket>();
+        predicates.equalTo("data1", "hello");
+        const rdbTrans = await rdbStore.createTransaction(options);
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": name,
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        values.push(valueBucket2);
+        await rdbTrans.insert("test", valueBucket2);
+        try {
+          rdbStore.batchInsertSync("test", values);
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'batchInsertSync errCode: ' + err.code);
+          expect(err.code).assertEqual(14800024);
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0024 end *************');
+      })
+
+
+    /**
+     * @tc.name        RelationStoreError24Test0025
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0707
+     * @tc.desc        createTransaction normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('RelationStoreError24Test0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0025 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore.insert("test", valueBucket0);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        let values = new Array<data_relationalStore.ValuesBucket>();
+        predicates.equalTo("data1", "hello");
+        const rdbTrans = await rdbStore.createTransaction(options);
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": name,
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        values.push(valueBucket2);
+        await rdbTrans.insert("test", valueBucket2);
+        try {
+          await rdbStore.createTransaction();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'createTransaction errCode: ' + err.code);
+          expect(err.code).assertEqual(14800024);
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0025 end *************');
+      })
+
+    /**
+     * @tc.name        RelationStoreError24Test0026
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0708
+     * @tc.desc        createTransaction normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('RelationStoreError24Test0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0026 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore.insert("test", valueBucket0);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        let values = new Array<data_relationalStore.ValuesBucket>();
+        predicates.equalTo("data1", "hello");
+        const rdbTrans = await rdbStore.createTransaction(options);
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": name,
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        values.push(valueBucket2);
+        await rdbTrans.insert("test", valueBucket2);
+        try {
+          rdbTrans.batchInsertSync("test", values);
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'rdbTrans.batchInsertSync errCode: ' + err.code);
+          expect(err.code).assertEqual(14800024);
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0026 end *************');
+      })
+
+    /**
+     * @tc.name        RelationStoreError24Test0027
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0709
+     * @tc.desc        createTransaction normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('RelationStoreError24Test0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0027 start *************');
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore.insert("test", valueBucket0);
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        let values = new Array<data_relationalStore.ValuesBucket>();
+        predicates.equalTo("data1", "hello");
+        const rdbTrans = await rdbStore.createTransaction(options);
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": name,
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        values.push(valueBucket2);
+        await rdbTrans.insert("test", valueBucket2);
+        try {
+          await rdbTrans.batchInsert("test", values);
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'rdbTrans.batchInsert errCode: ' + err.code);
+          expect(err.code).assertEqual(14800024);
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0027 end *************');
+      })
   })
 }

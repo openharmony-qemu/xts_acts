@@ -52,7 +52,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 struct GridColOffSetExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
-  @State  gridColoffsetValue : number = -3;
+  @State  gridColoffsetValue : int = -3;
   messageManager: MessageManager<number> = new MessageManager<number>()
   onPageShow() {
     console.info('GridColOffset onPageShow')
@@ -60,7 +60,7 @@ struct GridColOffSetExample {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'gridColoffset') {
-          this.gridColoffsetValue = message.value
+          this.gridColoffsetValue = message.value as int
       }
     }
     this.messageManager.registerCallback(callback)

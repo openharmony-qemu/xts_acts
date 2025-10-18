@@ -38,7 +38,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct Grid_Row_Columns_Default {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown];
-  @State GridRowColumns: number = 12;
+  @State GridRowColumns: int = 12;
 
   build() {
     Column() {

@@ -431,5 +431,40 @@ export default function bluetoothAccessTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  testOnStateChange_001
+         * @tc.name    testOnStateChange_001
+         * @tc.desc    Test testOnStateChange_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                access.onStateChange(onReceiveEvent);
+                let state = access.getState();
+                hilog.info(domain, tag, 'get bluetooth state' + JSON.stringify(state));
+                if (state != access.BluetoothState.STATE_ON) {
+                    access.enableBluetooth();
+                    await Utils.clickRequestPermission("开启");
+                    await Utils.msSleep(10000);
+                    let state1 = access.getState();
+                    hilog.info(domain, tag, 'enable state ' + JSON.stringify(state1));
+                    expect(state1).assertEqual(access.BluetoothState.STATE_ON);
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnStateChange get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            access.offStateChange();
+            done();
+        })
     })
 }

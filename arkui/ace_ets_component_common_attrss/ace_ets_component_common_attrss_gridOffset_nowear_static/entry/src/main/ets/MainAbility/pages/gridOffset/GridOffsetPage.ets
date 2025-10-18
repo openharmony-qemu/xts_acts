@@ -150,8 +150,8 @@ struct GridOffsetPage {
   @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? ''
   @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
   @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State columns: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns
-  @State gutter: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter
+  @State columns: int = (this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int
+  @State gutter: int = (this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int
   @State parentComponentKey: string =
     (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
 

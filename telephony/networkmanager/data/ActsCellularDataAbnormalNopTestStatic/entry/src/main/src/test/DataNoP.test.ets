@@ -247,5 +247,92 @@ export default function dataNoPTest() {
                 done();
             }
         })
+
+        /**
+         * @tc.number : SUB_Telephony_Data_IsCellularDataEnabledSync_NoP_0200
+         * @tc.name   : testTelephonyDataIsCellularDataEnabledSyncNoP__static_0200
+         * @tc.desc   : isCellularDataEnabledSync No permission
+         * @tc.level  : Level 3
+         * @tc.type   : Function
+         * @tc.size   : MediumTest
+         */
+        it("testTelephonyDataIsCellularDataEnabledSyncNoP__static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataIsCellularDataEnabledSyncNoP__static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let isEnabled: boolean = data.isCellularDataEnabledSync();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled = ' + isEnabled);
+                ExpectTrue(false);
+                done();
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
+
+        /*
+         * @tc.number:SUB_telephony_data_nop003
+         * @tc.name: testTelephonyDataNop_static_0300
+         * @tc.desc:Using the isCellularDataRoamingEnabled (then) method without permission
+         * @tc.level:Level 0
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
+        it('testTelephonyDataNop_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataNop_static_0300';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.isCellularDataRoamingEnabled(0).then((data: boolean) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 201);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /*
+         * @tc.number:SUB_telephony_data_nop004
+         * @tc.name: testTelephonyDataNop_static_0400
+         * @tc.desc:Using the isCellularDataRoamingEnabled (callback) method without permission
+         * @tc.level:Level 0
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
+        it('testTelephonyDataNop_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataNop_static_0400';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.isCellularDataRoamingEnabled(0, (err: BusinessError<void>|null, enabled: boolean|undefined) => {
+                    if(err?.code != 0){
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err?.code == 201);
+                    }else{
+                        hilog.info(domain, tag, '%{public}s', caseName +' get isCellularDataRoamingEnabled success ');
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
     })
 }

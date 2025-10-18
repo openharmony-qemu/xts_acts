@@ -95,7 +95,7 @@ struct UIComponentScrollSwiperAnimated0260 {
           }
         }
       })
-      .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number): void => {
+      .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
         this.strindex = 'ContentDidScroll'
       })
 

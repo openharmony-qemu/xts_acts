@@ -14,7 +14,9 @@
  */
 
 import smsTextPublic from "./smsTextPublic.test";
+import smsTextNoCardPublic from './SmsTextPublic1.test';
 
 export default function testsuite() {
   smsTextPublic();
+  smsTextNoCardPublic();
 }

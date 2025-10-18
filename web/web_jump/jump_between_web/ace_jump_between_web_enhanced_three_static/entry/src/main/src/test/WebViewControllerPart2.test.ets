@@ -73,7 +73,7 @@ export default function webTwoJsunit() {
       await Utils.msSleep(10000);
       done()
 
-      /*
+    /*
     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
     * @tc.name       : testBackOrForward003
     * @tc.desc       : test backOrForward
@@ -81,31 +81,33 @@ export default function webTwoJsunit() {
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-      it('testBackOrForward_static_003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testBackOrForward003", 10)
-        await Utils.msSleep(2000);
-        Utils.registerEvent("testBackOrForward003", "index", 37007, done);
-        inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
-        await Utils.msSleep(10000);
-        done()
+    it('testBackOrForward_static_003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("testBackOrForward003", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testBackOrForward003", "index", 37007, done);
+      inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+      await Utils.msSleep(10000);
+      done()
       })
 
-      /*
-      * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
-      * @tc.name       : testBackOrForward004
-      * @tc.desc       : test backOrForward
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 3
-      */
-      it('testBackOrForward_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        Utils.emitEvent("testBackOrForward004", 10)
-        await Utils.msSleep(2000);
-        Utils.registerEvent("testBackOrForward004", "index", 37008, done);
-        inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
-        await Utils.msSleep(3000);
-        done()
+    /*
+    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
+    * @tc.name       : testBackOrForward004
+    * @tc.desc       : test backOrForward
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 3
+    */
+    it('testBackOrForward_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+	  await Utils.msSleep(2000);
+      Utils.emitEvent("testBackOrForward004", 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("testBackOrForward004", "index", 37008, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+      await Utils.msSleep(10000);
+      done()
       })
     })
   })
