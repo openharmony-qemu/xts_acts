@@ -610,6 +610,12 @@ export default function ActsDisplayNdkApi14Test() {
         let captureOption: screenshot.CaptureOption = {
           "displayId": 0
         };
+        let isCaptured = false;
+        let callback = (status: boolean) => {
+          console.info(msgStr + 'capture status: ' + status);
+          isCaptured = status;
+        };
+        display.on('captureStatusChange', callback);
         let promise = screenshot.capture(captureOption);
         promise.then((PixelMap: image.PixelMap) => {
           console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
@@ -620,6 +626,7 @@ export default function ActsDisplayNdkApi14Test() {
             expect(PixelMapWidth).assertLarger(0);
             expect(PixelMapHeight).assertLarger(0);
             PixelMap.release(); // PixelMap使用完后及时释放内存
+            expect(isCaptured).assertEqual(true);
             done();
           })
         }).catch((err: BusinessError) => {

@@ -2310,6 +2310,27 @@ export default function displayTest() {
         }
       }
     })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ISFOLDABLE_0100
+     * @tc.name      : testisFoldable
+     * @tc.desc      : Test the function value of getSubWindow
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testisFoldable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testisFoldable';
+      try {
+        let isFoldable = display.isFoldable();
+        console.log(`${caseName} isFoldable. : ${JSON.stringify(idFoldable)}`);
+        expect(isFoldable == true || isFoldable == false).assertEqual(true);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
   })
 }

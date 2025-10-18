@@ -18,6 +18,8 @@ import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import ohosWindow from '@ohos.window';
 import { Driver, ON } from '@ohos.UiTest';
+import settings from '@ohos.settings';
+import display from '@ohos.display';
 
 function createSysSubWindow(context: common.UIAbilityContext, caseName: string): Promise<window.Window> {
   let config: window.Configuration = {
@@ -84,12 +86,24 @@ export default function windowManageTest() {
     let windowStage: ohosWindow.WindowStage;
     let windowClass: window.Window;
     let displayId: number | undefined;
+    let isPCStatus: string = '';
+    let isAutoWindow: string = '';
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       windowClass = windowStage.getMainWindowSync();
       displayId = windowClass.getWindowProperties().displayId;
+      //isAutoWindow == '' 非PAD设备
+      //isAutoWindow == 'true' PAD设备自由多窗模式
+      //isAutoWindow == 'false' PAD设备非自由多窗模式
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
+      console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+      //isPCStatus == '' 非PC设备
+      //isPCStatus == '1' PC设备状态栏dock未融合
+      //isPCStatus == '0' PC设备状态栏dock融合
+      console.info(`beforeAll isPCStatus: `+ isPCStatus);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -116,6 +130,48 @@ export default function windowManageTest() {
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
+    })
+    /**
+     * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.name       testGetWindowsByCoordinatenullWindow
+     * @tc.desc       Get windows by coordinate.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testGetWindowsByCoordinatenullWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testGetWindowsByCoordinatenullWindow';
+      let mainWindowClass: window.Window = windowStage.getMainWindowSync();
+      let displayId = display.getDefaultDisplaySync().id;
+      let width = display.getDefaultDisplaySync().width;
+      let height = display.getDefaultDisplaySync().height;
+      if(isPCStatus != ''){
+        try{
+          await mainWindowClass.minimize();
+          await sleep(1000);
+          window.getWindowsByCoordinate(displayId, 0, width/2,height/2).then(async (data) => {
+            console.info(`${caseName} The window displayId is: ` + displayId);
+            console.info(`${caseName} Succeeded in getting window from point. Data: ` + JSON.stringify(data));
+            expect(data.length).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to get window from point. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        }catch(err){
+           console.error(`${caseName} Error. Cause code: ${err.code}, message: ${err.message}`);
+           if (err.code === 801) {
+            done();
+          } else {
+              expect().assertFail();
+              done();
+          }
+        }
+        
+      }else{
+        done();
+      }
     })
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
@@ -443,6 +499,8 @@ export default function windowManageTest() {
         }
       });
     })
+
+    
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
      * @tc.name      : testOnWindowStageClose

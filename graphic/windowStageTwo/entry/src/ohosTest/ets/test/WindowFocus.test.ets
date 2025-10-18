@@ -396,6 +396,8 @@ export default function windowFocusTest() {
       }
     })
 
+
+
     /**
      * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0100
      * @tc.name      : test_ISWINDOWHIGHLIGHTED_0100
@@ -522,7 +524,49 @@ export default function windowFocusTest() {
         }
       }
     });
-
+ /**
+     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0500
+     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('test_ISWINDOWHIGHLIGHTED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0500';
+      console.log(caseName + 'begin');
+      let highlightChange:boolean;
+      let windowClass1 = await windowStage.createSubWindow('test_ISWINDOWHIGHLIGHTED_0500');
+      try{
+        windowClass1.on('windowHighlightChange', (data: boolean) => {
+          console.info(caseName+` Window highlight Change: ${data}`);
+          highlightChange = data;
+        });
+        await windowClass1.setUIContent('testability/pages/First/index1');
+        await windowClass1.showWindow();
+        await sleep(300);
+        let res = windowClass1.isWindowHighlighted();
+        expect(res).assertEqual(true)
+        expect(highlightChange).assertEqual(true);
+        await windowClass1.minimize();
+        await sleep(300);
+        let res2 = windowClass1.isWindowHighlighted();
+        expect(res2).assertEqual(false)
+        expect(highlightChange).assertEqual(false);
+        windowClass1.off('windowHighlightChange')
+        await windowClass1.destroyWindow();
+        done();
+      } catch(err) {
+        console.log(`${caseName}  fail1:`+err.code);
+        await windowClass1.destroyWindow();
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0100
      * @tc.name      : test_mainWindow_on_noInteractionDetected

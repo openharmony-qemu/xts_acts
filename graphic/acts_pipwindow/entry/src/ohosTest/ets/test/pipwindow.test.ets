@@ -150,6 +150,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         console.info('isPipEnabled:' + enable);
         console.log('www data Succeeded in isPipEnabled ' + enable)
         expect(enable != null).assertTrue();
+        expect(enable == true || enable == false).assertTrue();
         done();
       } catch (error) {
         console.log('www data Succeeded in isPipEnabled ' + error)

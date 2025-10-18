@@ -3683,5 +3683,107 @@ export default function windowPCTest() {
       }
     })
 
+    /**
+     * @tc.number    : testWindowStatusChange_0100
+     * @tc.name      : testWindowStatusChange_0100
+     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testWindowStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowStatusChange_0100';
+      let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
+      let driver = Driver.create()
+      let options: StartOptions = {
+        supportWindowModes: [
+          bundleManager.SupportWindowMode.SPLIT,
+        ]
+      };
+      let windowStatusChange:window.WindowStatusType;
+      if (isPCStatus != '') {
+        // startAbility - SupportWindowMode.SPLIT
+        let windowStageStart = await startAbility(message, context, options)
+        let windowClass = windowStageStart.getMainWindowSync()
+        // 获取窗口状态 - 自由窗口
+        let windowStatus = windowClass.getWindowStatus()
+        console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
+        expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+        windowClass.on('windowStatusChange', (WindowStatusType) => {
+            console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+            windowStatusChange = WindowStatusType;
+        });
+        await sleep(1000)
+        // 模拟用户移动窗口到左边缘，触发分屏
+        let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+        await sleep(1000)
+        let titlePoint = await title.getBounds()
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
+        await sleep(1000)
+        // 获取窗口状态 - 分屏
+        windowStatus = windowClass.getWindowStatus()
+        console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
+        await sleep(1000)
+        expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+        windowClass.off('windowStatusChange')
+        done();
+      } else {
+        console.info(`${message} not support`);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    : testWindowStatusChange_0200
+     * @tc.name      : testWindowStatusChange_0200
+     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowStatusChange_0200';
+      let windowStatusChange:window.WindowStatusType;
+      if (isPCStatus != '') {
+        let windowClass = windowStage.getMainWindowSync()
+        // 获取窗口状态 - 自由窗口
+          let windowStatusType = windowClass.getWindowStatus();
+          console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
+          if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
+            await windowClass.recover();
+            await sleep(200);
+          }
+        windowClass.on('windowStatusChange', (WindowStatusType) => {
+            console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+            windowStatusChange = WindowStatusType;
+        });
+        await sleep(1000)
+        await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE)
+        await sleep(1000)
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.MAXIMIZE);
+        await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+        await sleep(1000)
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.FULL_SCREEN);
+        await windowClass.minimize();
+        await sleep(1000)
+        let windowStatusType2 = windowClass.getWindowStatus();
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.MINIMIZE);
+        expect(windowStatusType2).assertEqual(window.WindowStatusType.MINIMIZE);
+        await windowClass.recover();
+        await sleep(1000)
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.FLOATING);
+        await sleep(1000)
+        windowClass.off('windowStatusChange')
+        done();
+      } else {
+        console.info(`${message} not support`);
+        done()
+      }
+    })
+
+   
+
+
   })
 }
