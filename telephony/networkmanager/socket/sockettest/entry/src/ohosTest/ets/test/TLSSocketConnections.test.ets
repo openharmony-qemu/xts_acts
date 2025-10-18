@@ -898,5 +898,313 @@ export default function TLSSocketConnectionsTest() {
         done();
       }
     });
-  })
+
+    ///
+
+    /* *
+     * @tc.number:  SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0100
+     * @tc.name  :  testetworkMgrTLSSocketConnectionGetCipherSuite0100
+     * @tc.desc  :  Get the cipher suite negotiated by both parties, Use the callback method as the asynchronous method.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testetworkMgrTLSSocketConnectionGetCipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testetworkMgrTLSSocketConnectionGetCipherSuite0100';
+      console.info(`${caseName} test start`);
+      try {
+        tlsClient.bind(addr).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient.connect(tlsConnectOptions).then(() => {
+            console.info(`${caseName} connect successfully`);
+            tlsClient.getCipherSuite(async (err: BusinessError, data: Array<string>) => {
+              if (err) {
+                console.error(`${caseName} Client getCipherSuite callback error: ${JSON.stringify(err)}`);
+                expectTrue(false);
+                done();
+              } else {
+                console.info(`${caseName} Client getCipherSuite callback =` + data);
+                expect(data.length > 0).assertTrue();
+                done();
+              }
+            });
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            done();
+          });
+          tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+            console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
+            Client.getCipherSuite(async (err: BusinessError, data: Array<string>) => {
+              if (err) {
+                console.error(`${caseName} Server getCipherSuite callback error: ${JSON.stringify(err)}`);
+                expectTrue(false);
+                done();
+              } else {
+                console.info(`${caseName} Server getCipherSuite callback =` + data);
+                expect(data.length > 0).assertTrue();
+              }
+            });
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail: ${JSON.stringify(err)}`);
+          done();
+        });
+        tlsServer.listen(ServerOptions).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false);
+        done();
+      }
+    });
+
+    /* *
+     * @tc.number:  SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0200
+     * @tc.name  :  testetworkMgrTLSSocketConnectionGetCipherSuite0200
+     * @tc.desc  :  Get the cipher suite negotiated by both parties, Use the Promise method as the asynchronous method.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testetworkMgrTLSSocketConnectionGetCipherSuite0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testetworkMgrTLSSocketConnectionGetCipherSuite0200';
+      console.info(`${caseName} test start`);
+      try {
+        tlsClient.bind(addr).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient.connect(tlsConnectOptions).then(() => {
+            console.info(`${caseName} connect successfully`);
+            tlsClient.getCipherSuite().then((data: Array<string>) => {
+              console.info(`${caseName} Client getCipherSuite callback =` + data);
+              expect(data.length > 0).assertTrue();
+              done();
+            }).catch ((err: BusinessError) => {
+              console.error(`${caseName} Client getCipherSuite callback error: ${JSON.stringify(err)}`);
+              expectTrue(false);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            done();
+          });
+          tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+            console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
+            Client.getCipherSuite().then((data: Array<string>) => {
+              console.info(`${caseName} Server getCipherSuite callback =` + data);
+              expect(data.length > 0).assertTrue();
+            }).catch ((err: BusinessError) => {
+              console.error(`${caseName} Server getCipherSuite callback error: ${JSON.stringify(err)}`);
+              expectTrue(false);
+              done();
+            });
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail: ${JSON.stringify(err)}`);
+          done();
+        });
+        tlsServer.listen(ServerOptions).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false);
+        done();
+      }
+    });
+
+    /* *
+     * @tc.number:  SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0100
+     * @tc.name  :  testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100
+     * @tc.desc  :  Get the signature algorithms negotiated by both parties, Use the callback method as the asynchronous method.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100';
+      console.info(`${caseName} test start`);
+      try {
+        let tlsConnectOptions_Server: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: client_ca,
+            key: server_key,
+            password: '123456',
+            cert: server_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication: true
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        let tlsConnectOptions_Client: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: server_ca,
+            key: client_key,
+            cert: client_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication: true
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsClient.bind(addr).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient.connect(tlsConnectOptions_Client).then(() => {
+            console.info(`${caseName} connect successfully`);
+            tlsClient.getSignatureAlgorithms(async (err: BusinessError, data: Array<string>) => {
+              if (err) {
+                console.error(`${caseName} Client getSignatureAlgorithms callback error: ${JSON.stringify(err)}`);
+                expectTrue(false);
+                done();
+              } else {
+                console.info(`${caseName} Client getSignatureAlgorithms callback =` + data);
+                expect(data.length > 0).assertTrue();
+                done();
+              }
+            });
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            done();
+          });
+          tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+            console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
+            Client.getSignatureAlgorithms(async (err: BusinessError, data: Array<string>) => {
+              if (err) {
+                console.error(`${caseName} Server getSignatureAlgorithms callback error: ${JSON.stringify(err)}`);
+                expectTrue(false);
+                done();
+              } else {
+                console.info(`${caseName} Server getSignatureAlgorithms callback =` + data);
+                expect(data.length > 0).assertTrue();
+              }
+            });
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail: ${JSON.stringify(err)}`);
+          done();
+        });
+        tlsServer.listen(tlsConnectOptions_Server).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false);
+        done();
+      }
+    });
+
+    /* *
+     * @tc.number:  SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0200
+     * @tc.name  :  testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200
+     * @tc.desc  :  Get the signature algorithms negotiated by both parties, Use the Promise method as the asynchronous method.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200';
+      console.info(`${caseName} test start`);
+      try {
+        let tlsConnectOptions_Server: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: client_ca,
+            key: server_key,
+            password: '123456',
+            cert: server_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication: true
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        let tlsConnectOptions_Client: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: server_ca,
+            key: client_key,
+            cert: client_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication: true
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsClient.bind(addr).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient.connect(tlsConnectOptions_Client).then(() => {
+            console.info(`${caseName} connect successfully`);
+            tlsClient.getSignatureAlgorithms().then((data: Array<string>) => {
+              console.info(`${caseName} Client getSignatureAlgorithms callback =` + data);
+              expect(data.length > 0).assertTrue();
+              done();
+            }).catch ((err: BusinessError) => {
+              console.error(`${caseName} Client getSignatureAlgorithms callback error: ${JSON.stringify(err)}`);
+              expectTrue(false);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            done();
+          });
+          tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+            console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
+            Client.getSignatureAlgorithms().then((data: Array<string>) => {
+              console.info(`${caseName} Server getSignatureAlgorithms callback =` + data);
+              expect(data.length > 0).assertTrue();
+            }).catch ((err: BusinessError) => {
+              console.error(`${caseName} Server getSignatureAlgorithms callback error: ${JSON.stringify(err)}`);
+              expectTrue(false);
+              done();
+            });
+          });
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail: ${JSON.stringify(err)}`);
+          done();
+        });
+        tlsServer.listen(tlsConnectOptions_Server).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false);
+        done();
+      }
+    });
+  });
 }
