@@ -97,6 +97,7 @@ export default function lastExitReasonStaticTest() {
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
         expect(lastExitDetailInfo?.uid).assertEqual(-1);
+        expect(lastExitDetailInfo?.processState).assertLarger(-1);
         let launchReasonMessage = launchParam?.launchReasonMessage as string
         hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchReasonMessage: ' + launchReasonMessage);
         expect(launchReasonMessage).assertEqual("");

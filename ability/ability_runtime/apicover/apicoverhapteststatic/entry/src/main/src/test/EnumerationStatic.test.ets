@@ -926,6 +926,19 @@ export default function EnumerationStaticTest() {
     })
 
     /*
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2900
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2900
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.ABILITY_UNIFIED_DATA_KEY.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.param.ability.udKey').assertEqual(wantConstant.Params.ABILITY_UNIFIED_DATA_KEY + '');
+      done();
+    })
+
+    /*
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.size:   MediumTest
