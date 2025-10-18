@@ -541,6 +541,567 @@ export default function WindowTitleTest() {
             }
         })
 
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0100
+         * @tc.name       test_getWindowDecorVisible_1300002
+         * @tc.desc       test_getWindowDecorVisible_1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it("test_getWindowDecorVisible_1300002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr = "test_getWindowDecorVisible_1300002";
+            console.log(msgStr + "begin");
+            let subWindowClass: window.Window;
+            try {
+                subWindowClass = await windowStage.createSubWindow('test_getWindowDecorVisible_1300002');
+                expect(!!subWindowClass).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWindowClass));
+                await subWindowClass.destroyWindow();
+                subWindowClass.getWindowDecorVisible();
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                console.error(msgStr + `Failed to getWindowDecorVisible. Cause code: ${err.code}, message: ${err.message}`);
+                if (err.code == 801) {
+                    console.log(msgStr + '此设备不支持');
+                    done();
+                } else if(err.code == 1300002){
+                    expect(true).assertTrue();
+                    done();
+                }else {
+                    console.log(msgStr + 'Failed to setWindowMask');
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number      testSetWindowTitleMoveEnabledErrCode1300002_0100
+         * @tc.name        testSetWindowTitleMoveEnabledErrCode1300002_0100
+         * @tc.desc        testSetWindowTitleMoveEnabledErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowTitleMoveEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitleMoveEnabledErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetWindowTitleMoveEnabledErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.setWindowTitleMoveEnabled(true);
+                console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call setWindowTitleMoveEnabled. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number     testSetWindowTitleMoveEnabledErrCode1300004_0100
+         * @tc.name       testSetWindowTitleMoveEnabledErrCode1300004_0100
+         * @tc.desc       testSetWindowTitleMoveEnabledErrCode1300004_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testSetWindowTitleMoveEnabledErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitleMoveEnabledErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testSetWindowTitleMoveEnabledErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let tempWnd: window.Window;
+            try {
+                tempWnd = await window.createWindow(windowConfig);
+                expect(!!tempWnd).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await tempWnd.setUIContent("pages/Index");
+            await tempWnd.showWindow();
+            try {
+                (tempWnd! as window.Window).setWindowTitleMoveEnabled(true);
+                console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
+                expect().assertFail();
+                await (tempWnd! as window.Window).destroyWindow();
+                done();
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call setWindowTitleMoveEnabled. Cause:' +
+                JSON.stringify(exception));
+                await (tempWnd! as window.Window).destroyWindow();
+                if (exception.code == 801) {
+                    console.info(msgStr + '此设备不支持setWindowTitleMoveEnabled能力.');
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                }
+                done();
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetWindowTitlePromiseErrCode1300002_0100
+         * @tc.name        testSetWindowTitlePromiseErrCode1300002_0100
+         * @tc.desc        testSetWindowTitlePromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowTitlePromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitlePromiseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+
+            try {
+                subWin = await windowStage.createSubWindow('testSetWindowTitlePromiseErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                await (subWin! as window.Window).setWindowTitle("titleName").then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setWindowTitle.');
+                    expect().assertFail();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                });
+                done()
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setWindowTitle. Cause:' + JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetWindowTitlePromiseErrCode801_0100
+         * @tc.name        testSetWindowTitlePromiseErrCode801_0100
+         * @tc.desc        testSetWindowTitlePromiseErrCode801_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowTitlePromiseErrCode801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitlePromiseErrCode801_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+
+            try {
+                subWin = await windowStage.createSubWindow('testSetWindowTitlePromiseErrCode801_0100')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            try {
+                await (subWin! as window.Window).setWindowTitle("titleName").then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setWindowTitle.');
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);
+                });
+                done()
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setWindowTitle. Cause:' + JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      testSetDecorButtonStyleErrCode1300002_0100
+         * @tc.name        testSetDecorButtonStyleErrCode1300002_0100
+         * @tc.desc        testSetDecorButtonStyleErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetDecorButtonStyleErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetDecorButtonStyleErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                let param: window.DecorButtonStyle = {
+                    buttonBackgroundSize: 1
+                }
+                subWin!.setDecorButtonStyle(param);
+                console.error(msgStr + 'Succeeded in calling setDecorButtonStyle.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetDecorButtonStyleErrCode1300004_0100
+         * @tc.name        testSetDecorButtonStyleErrCode1300004_0100
+         * @tc.desc        testSetDecorButtonStyleErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetDecorButtonStyleErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetDecorButtonStyleErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testSetDecorButtonStyleErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let tempWnd: window.Window;
+            try {
+                tempWnd = await window.createWindow(windowConfig)
+                expect(!!tempWnd).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            expect(!!tempWnd).assertTrue();
+
+            await (tempWnd as window.Window).setUIContent("pages/Index");
+            await (tempWnd as window.Window).showWindow();
+            try {
+                // let param: window.DecorButtonStyle = {}
+                (tempWnd as window.Window).setDecorButtonStyle((tempWnd as window.Window).getDecorButtonStyle());
+                console.error(msgStr + 'Succeeded in calling setDecorButtonStyle.');
+                await (tempWnd! as window.Window).destroyWindow();
+                expect().assertFail();
+                done();
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
+                await (tempWnd! as window.Window).destroyWindow();
+                if (exception.code == 801) {
+                    console.info(msgStr + '此设备不支持setDecorButtonStyle能力.');
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                }
+                done();
+            }
+        })
+
+
+        /**
+         * @tc.number     testGetDecorButtonStyleErrCode1300002_0100
+         * @tc.name       testGetDecorButtonStyleErrCode1300002_0100
+         * @tc.desc       testGetDecorButtonStyleErrCode1300002_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testGetDecorButtonStyleErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetDecorButtonStyleErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetDecorButtonStyleErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.getDecorButtonStyle();
+                console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call getDecorButtonStyle. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testGetDecorButtonStyleErrCode1300004_0100
+         * @tc.name        testGetDecorButtonStyleErrCode1300004_0100
+         * @tc.desc        testGetDecorButtonStyleErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetDecorButtonStyleErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetDecorButtonStyleErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "test1",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let tempWnd: window.Window;
+            try {
+                tempWnd = await window.createWindow(config)
+                expect(!!tempWnd).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            tempWnd.setUIContent("pages/Index");
+            tempWnd.showWindow();
+            try {
+                (tempWnd! as window.Window).getDecorButtonStyle();
+                console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
+                if (exception.code == 801) {
+                    done();
+                } else if (exception.code == 1300004) {
+                    done()
+                } else {
+                    expect(false).assertFail();
+                    done()
+                }
+            }
+        })
+
+
+        /**
+         * @tc.number      testGetTitleButtonRectErrCode1300002_0100
+         * @tc.name        testGetTitleButtonRectErrCode1300002_0100
+         * @tc.desc        testGetTitleButtonRectErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetTitleButtonRectErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetTitleButtonRectErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testGetTitleButtonRectErrCode1300002_SubWindow_Promise');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                let res: window.TitleButtonRect = subWin!.getTitleButtonRect();
+                console.error(msgStr + 'Succeeded in calling getTitleButtonRect.' + JSON.stringify(res));
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call getTitleButtonRect. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300002_0100
+         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300002_0100
+         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowTitleButtonVisibleErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitleButtonVisibleErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300002_SubWindow_Promise');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.setWindowTitleButtonVisible(true, true, true);
+                console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300004_0100
+         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300004_0100
+         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowTitleButtonVisibleErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitleButtonVisibleErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            expect(!!subWin).assertTrue();
+            await (subWin! as window.Window).setUIContent("pages/Index");
+            await (subWin! as window.Window).showWindow();
+            try {
+                (subWin! as window.Window).setWindowTitleButtonVisible(true, true, true);
+                console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
+                expect().assertFail();
+                await (subWin!! as window.Window).destroyWindow();
+                done();
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
+                JSON.stringify(exception));
+                await (subWin!! as window.Window).destroyWindow();
+                if (exception.code == 801) {
+                    console.info(msgStr + '此设备不支持getDecorButtonStyle能力.');
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                }
+                done();
+            }
+        })
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_WINDOWTITLEBUTTONRE_CHANGE_0200
+         * @tc.name      testWindowTitleButtonRectChange_on_Function_Callback
+         * @tc.desc      testWindowTitleButtonRectChange_on_Function_Callback
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testWindowTitleButtonRectChange_on_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testWindowTitleButtonRectChange_on_Function_Callback';
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('test_startMoving_ErrorCode_1300002');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.onWindowTitleButtonRectChange((titleButtonRect) => {
+                    console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
+                    expect(false).assertTrue();
+                    done();
+                })
+                done()
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+
+        /**
+         * @tc.number    testWindowTitleButtonRectChange_Off_Errcode1300002_0100
+         * @tc.name      testWindowTitleButtonRectChange_Off_Function_Callback
+         * @tc.desc      testWindowTitleButtonRectChange_Off_Function_Callback
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testWindowTitleButtonRectChange_Off_Errcode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testWindowTitleButtonRectChange_Off_Errcode1300002_0100';
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testWindowTitleButtonRectChange_Off_Errcode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.offWindowTitleButtonRectChange((titleButtonRect) => {
+                    console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
+                    expect(false).assertTrue();
+                    done();
+                })
+                done()
+            } catch (exception: BusinessError) {
+                console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+
 
 
 

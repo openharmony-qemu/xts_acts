@@ -2359,11 +2359,417 @@ export default function WindowPropertiesTest() {
             }
         })
 
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0200
+         * @tc.name      : testSetCustomDensityParamCheck_static
+         * @tc.desc      : getWindowDensityInfo, DPI-1 getWindowDensityInfo
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testSetCustomDensityParamCheck_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensityParamCheck_static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                let densityInfo1: window.WindowDensityInfo = windowClass.getWindowDensityInfo();
+                hilog.info(domain, tag,msgStr +`getWindowDensityInfo densityInfo1: `, JSON.stringify(densityInfo1));
+                windowStage.setCustomDensity(-1);
+                hilog.info(domain, tag,msgStr + `setCustomDensity -1 success`);
+                let densityInfo2: window.WindowDensityInfo = windowClass.getWindowDensityInfo();
+                hilog.info(domain, tag,msgStr +`getWindowDensityInfo densityInfo2: `, JSON.stringify(densityInfo2));
+                expect(densityInfo2.systemDensity).assertEqual(densityInfo2.customDensity)
+                expect(densityInfo1.customDensity).assertEqual(densityInfo2.customDensity)
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr +
+                    `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code == 801) {
+                    hilog.info(domain, tag,msgStr + `Current device not support API:setCustomDensity`);
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
+         * @tc.name       test_testSetCustomDensity_1300002_static
+         * @tc.desc       test_testSetCustomDensity_1300002_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_testSetCustomDensity_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensity_1300002_static';
+            hilog.info(domain, tag,caseName + 'begin');
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            let windowStageStart :window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.setCustomDensity(-1);
+                hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
+                expect(false).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+/**
+         * @tc.number     test_mainWindow_setWindowMask_ErrorCode1300004_0100
+         * @tc.name       test_mainWindow_setWindowMask_ErrorCode1300004
+         * @tc.desc       test_mainWindow_setWindowMask_ErrorCode1300004
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+
+        it("test_mainWindow_setWindowMask_ErrorCode1300002_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr = "test_mainWindow_setWindowMask_ErrorCode1300002_0100";
+            console.log(msgStr + "begin");
+            let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
+            for (let i = 0; i < 500; i++) {
+                let arr: Array<Long> = new Array < Long > (500);
+                for (let j = 0; j < 500; j++) {
+                    if (i + j < 500) {
+                        arr[j] = 0;
+                    } else {
+                        arr[j] = 1;
+                    }
+                }
+                windowMask.push(arr);
+            }
+            console.log(msgStr + " windowMask OK ");
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('test_mainWindow_setWindowMask_ErrorCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                let promise = subWin!.setWindowMask(windowMask);
+                promise.then(() => {
+                    console.log(msgStr + 'Succeeded in setting the window mask.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + `Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(1300002);
+                    done();
+                });
+            } catch (error: BusinessError) {
+                console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
+                if (error.code == 801) {
+                    console.log(msgStr + '此设备不支持 setWindowMask');
+                    expect(true).assertTrue();
+                    done();
+                } else {
+                    console.log(msgStr + 'Failed to setWindowMask');
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number     test_mainWindow_setWindowMask_ErrorCode1300002_0100
+         * @tc.name       test_mainWindow_setWindowMask_ErrorCode1300002
+         * @tc.desc       test_mainWindow_setWindowMask_ErrorCode1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it("test_mainWindow_setWindowMask_ErrorCode1300004_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr = "test_mainWindow_setWindowMask_ErrorCode1300004_0100";
+            console.log(msgStr + "begin");
+            let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
+            for (let i = 0; i < 500; i++) {
+                let arr: Array<Long> = new Array < Long > (500);
+                for (let j = 0; j < 500; j++) {
+                    if (i + j < 500) {
+                        arr[j] = 0;
+                    } else {
+                        arr[j] = 1;
+                    }
+                }
+                windowMask.push(arr);
+            }
+            console.log(msgStr + " windowMask OK ");
+            let windowClass = await windowStage.getMainWindow();
+            try {
+                let promise = windowClass.setWindowMask(windowMask);
+                promise.then(() => {
+                    console.log(msgStr + 'Succeeded in setting the window mask.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + `Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(1300004);
+                    done();
+                });
+            } catch (error: BusinessError) {
+                console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
+                if (error.code == 801) {
+                    console.log(msgStr + '此设备不支持 setWindowMask');
+                    expect(true).assertTrue();
+                    done();
+                } else {
+                    console.log(msgStr + 'Failed to setWindowMask');
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
 
 
+        /**
+         * @tc.number      testSetWindowGrayScalePromiseErrCode1300002_0100
+         * @tc.name        testSetWindowGrayScalePromiseErrCode1300002_0100
+         * @tc.desc        testSetWindowGrayScalePromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowGrayScalePromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowGrayScalePromiseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('test_mainWindow_setWindowMask_ErrorCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
+                    expect().assertFail();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                });
+                done()
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
 
+        /**
+         * @tc.number      testSetWindowGrayScalePromiseErrCode801_0100
+         * @tc.name        testSetWindowGrayScalePromiseErrCode801_0100
+         * @tc.desc        testSetWindowGrayScalePromiseErrCode801_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowGrayScalePromiseErrCode801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowGrayScalePromiseErrCode801_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('test_mainWindow_setWindowMask_ErrorCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            try {
+                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
+                    expect().assertFail();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);
+                });
+                done()
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
 
+/**
+         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300002_0200
+         * @tc.name        testsetParentWindow1300002
+         * @tc.desc        testsetParentWindow1300002
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testsetParentWindow1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testsetParentWindow1300002";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let mainWindow = windowStage.getMainWindowSync();
+            let windowId = mainWindow.getWindowProperties().id;
+            console.info(msgStr +'windowId :'+windowId)
+            try {
+                let windowClass = await windowStage.createSubWindow('testsetParentWindow1300002');
+                await windowClass.destroyWindow();
+                windowClass.setParentWindow(windowId).then(() => {
+                    console.info(msgStr +'Succeeded in  setParentWindow window.')
+                    expect(false).assertFail();
+                    done();
+                }).catch(async(e: BusinessError) => {
+                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
 
+                    if(e.code == 801){
+                        done();
+                    }else{
+                        expect(e.code).assertEqual(1300002);
+                        done()
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                expect(false).assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300004_0300
+         * @tc.name        testsetParentWindow1300004
+         * @tc.desc        testsetParentWindow1300004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testsetParentWindow1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testsetParentWindow1300004";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let mainWindow = windowStage.getMainWindowSync();
+            let windowId = mainWindow.getWindowProperties().id;
+            console.info(msgStr +'windowId :'+windowId)
+            try {
+                let config: window.Configuration = {
+                    name: "testsetParentWindow1300004",
+                    windowType: window.WindowType.TYPE_DIALOG,
+                    ctx: context
+                };
+                let windowClass = await window.createWindow(config);
+                windowClass.setParentWindow(windowId).then(() => {
+                    console.info(msgStr +'Succeeded in setParentWindow .')
+                    expect(false).assertFail();
+                    done();
+                }).catch(async(e: BusinessError) => {
+                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
+                    await windowClass.destroyWindow();
+                    if(e.code == 801){
+                        done();
+                    }else{
+                        expect(e.code).assertEqual(1300004);
+                        done()
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                if(e.code == 801){
+                    done();
+                }else{
+                    expect(e.code).assertEqual(1300004);
+                    done()
+                }
+            }
+
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300009_0400
+         * @tc.name        testsetParentWindow1300009
+         * @tc.desc        testsetParentWindow1300009
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testsetParentWindow1300009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testsetParentWindow1300009";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let mainWindow = windowStage.getMainWindowSync();
+            let windowId = mainWindow.getWindowProperties().id;
+            console.info(msgStr +'windowId :'+windowId)
+            try {
+                let windowClass = await windowStage.createSubWindow('testsetParentWindow1300009');
+                windowClass.setParentWindow(100000).then(() => {
+                    console.info(msgStr +'Succeeded in setParentWindow .')
+                    expect(false).assertFail();
+                    done();
+                }).catch(async(e: BusinessError) => {
+                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
+                    await windowClass.destroyWindow();
+                    if(e.code == 801){
+                        done();
+                    }else{
+                        expect(e.code).assertEqual(1300009);
+                        done()
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                if(e.code == 801){
+                    done();
+                }else{
+                    expect(e.code).assertEqual(1300009);
+                    done()
+                }
+            }
+        })
+
+/**
+         * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.name        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.desc        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetDefaultDensityEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetDefaultDensityEnabledErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowStageStart = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.setDefaultDensityEnabled(true);
+                console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
+                if (e.code == 801) {
+                    expect(e.code).assertEqual(801);
+                } else if (e.code == 1300002) {
+                    expect(e.code).assertEqual(1300002);
+                } else {
+                    expect(false).assertTrue();
+                }
+                done()
+            }
+        })
 
 
 
