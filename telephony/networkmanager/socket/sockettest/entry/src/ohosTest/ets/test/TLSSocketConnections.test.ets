@@ -899,8 +899,6 @@ export default function TLSSocketConnectionsTest() {
       }
     });
 
-    ///
-
     /* *
      * @tc.number:  SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0100
      * @tc.name  :  testetworkMgrTLSSocketConnectionGetCipherSuite0100
