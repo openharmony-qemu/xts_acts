@@ -68,6 +68,9 @@ export default function onkeyEventDispatchTest7() {
       console.info("[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0290] obj is: " + obj1.$attrs.content);
       expect(obj2.$attrs.content).assertEqual('distrue');
 
+      expect(AppStorage.get('keyResponse')).assertEqual(true);
+      expect(AppStorage.get('kkey')).assertEqual(false);
+
       console.info('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0290] END');
       done();
     });

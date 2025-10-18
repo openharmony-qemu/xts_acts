@@ -19,7 +19,7 @@ import { JSON } from '@kit.ArkTS'
 @Component
 struct onKeyEventExample7 {
 
- @State disPatchText : string = "";
+  @State disPatchText : string = "";
   @State keyText : string = "";
   EventHandler: Callback<KeyEvent, boolean> = (event:KeyEvent): boolean=> {
 
@@ -33,6 +33,8 @@ struct onKeyEventExample7 {
     console.info("the  disPatchHandler is " + JSON.stringify(event))
     this.getUIContext().getFocusController().requestFocus("keyResponse");
     let isConsumed = this.getUIContext().dispatchKeyEvent("keyResponse",event);
+    AppStorage.setOrCreate('keyResponse', this.getUIContext().dispatchKeyEvent("keyResponse",event))
+    AppStorage.setOrCreate('kkey', this.getUIContext().dispatchKeyEvent("kkey",event))
     this.disPatchText = "dis" + isConsumed;
     return false;
 
@@ -41,7 +43,7 @@ struct onKeyEventExample7 {
 
 
   build() {
-      Column() {
+    Column() {
       Row() {
         Text(this.disPatchText).key("disPatchKey")
         Text(this.keyText).key("kkey")
