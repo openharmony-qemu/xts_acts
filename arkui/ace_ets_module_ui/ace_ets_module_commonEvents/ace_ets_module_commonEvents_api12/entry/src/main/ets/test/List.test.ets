@@ -31,7 +31,9 @@ import SourceToolTest from './GestureHandler/SourceTool.test';
 import initializeModifierTest from './AttributeUpdater/initializeModifier.test';
 import addParallelGestureTest1 from './GestureHandler/addParallelGestureTest1.test';
 
-import getModifierKeyStateTest from './onKeyEventTest/getModifierKeyState.test';
+import getModifierKeyStateTest from "./onKeyEventTest/getModifierKeyState.test";
+import getModifierKeyState2Test from "./onKeyEventTest/getModifierKeyState2.test";
+import getModifierKeyState3Test from "./onKeyEventTest/getModifierKeyState3.test";
 import clearGestureTest from './GestureHandler/clearGesture.test';
 import TapGestureBasicClickTest from './TapGesture/TapGestureBasicClickTest.test';
 import TapGestureBasicDoubleClickTest from './TapGesture/TapGestureBasicDoubleClickTest.test';
@@ -95,6 +97,8 @@ export default function testsuite() {
   clearGestureTest();
   
   getModifierKeyStateTest();
+  getModifierKeyState2Test();
+  getModifierKeyState3Test();
   TapGestureBasicClickTest();
   TapGestureBasicDoubleClickTest();
   LongPressGestureLongClickTest();

@@ -26,25 +26,6 @@ struct getModifierKeyState1 {
           AppStorage.setOrCreate('BaseEventCtrl', event.getModifierKeyState?.(["ctrl"]))
           AppStorage.setOrCreate('BaseEventShift', event.getModifierKeyState?.(["shift"]))
         })
-
-      Button("" + this.KeyEventState).id("getModifierKeyState_KeyEvent")
-        .onKeyEvent((event: KeyEvent) => {
-          if (event.getModifierKeyState?.(["ctrl"]) == true) {
-            AppStorage.setOrCreate('KeyEventCtrl', event.getModifierKeyState?.(["ctrl"]))
-          }
-          AppStorage.setOrCreate('KeyEventShift', event.getModifierKeyState?.(["shift"]))
-        })
-      Column() {
-      }.height('50%')
-
-      Button("" + this.DragEventState).id("getModifierKeyState_DragEvent")
-        .draggable(true)
-        .onDragStart((event: DragEvent) => {
-          if (event.getModifierKeyState?.(["ctrl"]) == true) {
-            AppStorage.setOrCreate('DragEventCtrl', event.getModifierKeyState?.(["ctrl"]))
-          }
-          AppStorage.setOrCreate('DragEventShift', event.getModifierKeyState?.(["shift"]))
-        })
     }
   }
 }
