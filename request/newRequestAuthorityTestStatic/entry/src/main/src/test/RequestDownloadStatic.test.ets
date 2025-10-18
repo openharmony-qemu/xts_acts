@@ -270,6 +270,7 @@ export default function RequestDownloadStaticTest() {
             expect(info.version).assertEqual('HTTP/1.1');
             expect(info.statusCode).assertEqual(200);
             expect(info.reason).assertEqual('OK');
+            expect(typeof(info.headers) === "object").assertTrue();
             done();
           } catch (err) {
             hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 err: " + JSON.stringify(err));
