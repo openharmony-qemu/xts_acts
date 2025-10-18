@@ -14,8 +14,24 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  UiComponent,
+  UiDriver,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  BY,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { KeyCode } from '@kit.InputKit';
+import { MouseButton } from '@kit.TestKit';
+import Utils from '../../MainAbility/common/Utils';
 
 
 export default function getModifierKeyStateTest() {
@@ -31,7 +47,7 @@ export default function getModifierKeyStateTest() {
         console.info("get getModifierKeyStateTest state pages: " + JSON.stringify(pages));
         if (!("getModifierKeyState" == pages.name)) {
           console.info("get getModifierKeyStateTest state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
+          let result = await router.replace(options);
           await CommonFunc.sleep(2000);
           console.info("push getModifierKeyStateTest success: " + JSON.stringify(result));
         }
@@ -45,17 +61,22 @@ export default function getModifierKeyStateTest() {
     /**
      * @tc.number    getModifierKeyStateTest_0010
      * @tc.name      getModifierKeyStateTest_0010
-     * @tc.desc      BaseEvent: getModifierKeyState
+     * @tc.desc      BaseEvent: getModifierKeyState true and false
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
      */
     it('getModifierKeyStateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('getModifierKeyStateTest_0010 START');
-      let strJson = getInspectorByKey('getModifierKeyState_BaseEvent');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getModifierKeyStateTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.label).assertEqual('false');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      let button: Component = await driver.findComponent(ON.id('getModifierKeyState_BaseEvent'));
+      let point = await button.getBoundsCenter();
+      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+      await CommonFunc.sleep(200);
+      expect(AppStorage.get('BaseEventCtrl')).assertEqual(true);
+      expect(AppStorage.get('BaseEventShift')).assertEqual(false);
       console.info('[getModifierKeyStateTest_0010] END');
       done();
     });
@@ -63,7 +84,7 @@ export default function getModifierKeyStateTest() {
     /**
      * @tc.number    getModifierKeyStateTest_0020
      * @tc.name      getModifierKeyStateTest_0020
-     * @tc.desc      DragEvent: getModifierKeyState
+     * @tc.desc      KeyEvent: getModifierKeyState true and false
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
@@ -72,14 +93,46 @@ export default function getModifierKeyStateTest() {
       console.info('getModifierKeyStateTest_0020 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('getModifierKeyState_DragEvent'));
+      let button: Component = await driver.findComponent(ON.id('getModifierKeyState_BaseEvent'));
       await button.click();
-      await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('getModifierKeyState_DragEvent');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getModifierKeyStateTest_0020] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.label).assertEqual('true');
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_CTRL_LEFT)
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('KeyEventCtrl')).assertEqual(true);
+      expect(AppStorage.get('KeyEventShift')).assertEqual(false);
       console.info('[getModifierKeyStateTest_0020] END');
+      done();
+    });
+
+    /**
+     * @tc.number    getModifierKeyStateTest_0030
+     * @tc.name      getModifierKeyStateTest_0030
+     * @tc.desc      DragEvent: getModifierKeyState true and false
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('getModifierKeyStateTest_0030', Level.LEVEL0, async (done: Function) => {
+      console.info('getModifierKeyStateTest_0030 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      let button: Component = await driver.findComponent(ON.id('getModifierKeyState_DragEvent'));
+      let button1: Component = await driver.findComponent(ON.id('getModifierKeyState_KeyEvent'));
+      const ctrlPromise = async () => {
+        await Utils.simulateByShell('uinput -K -l 2072 1000');
+      };
+      const dragPromise = async () => {
+        await button.dragTo(button1);
+      };
+      await ctrlPromise();
+      await dragPromise();
+      expect(AppStorage.get('DragEventCtrl')).assertEqual(undefined);
+      expect(AppStorage.get('DragEventShift')).assertEqual(false);
+      console.info('[getModifierKeyStateTest_0030] END');
       done();
     });
   })

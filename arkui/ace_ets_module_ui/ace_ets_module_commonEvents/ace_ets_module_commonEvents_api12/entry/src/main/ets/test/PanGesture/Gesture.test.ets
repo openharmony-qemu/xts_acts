@@ -14,7 +14,20 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  UiComponent,
+  UiDriver,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  BY,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
@@ -64,6 +77,31 @@ export default function typeNodeGestureTest() {
       console.info('[GestureTest_0100] END');
       done();
     });
+
+    /**
+     * @tc.number    GestureTest_0200
+     * @tc.name      GestureTest_0200
+     * @tc.desc      TypedFrameNode: Gesture
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('GestureTest_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('GestureTest_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('gesture1'));
+      await button.click();
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('All')).assertEqual(15);
+      expect(AppStorage.get('Horizontal')).assertEqual(3);
+      expect(AppStorage.get('Vertical')).assertEqual(12);
+      expect(AppStorage.get('Left')).assertEqual(1);
+      expect(AppStorage.get('Up')).assertEqual(4);
+      expect(AppStorage.get('Down')).assertEqual(8);
+      expect(AppStorage.get('None')).assertEqual(0);
+      console.info('[GestureTest_0200] END');
+      done();
+    });
   })
 }
-
