@@ -118,20 +118,44 @@ export default function Pointer_test() {
         expect(false).assertTrue();
         done();
       }
+
       try {
         await pointer.isPointerVisible().then(data => {
-          console.info(`Pointer_PointerVisibleTest_001 success_2, data=${JSON.stringify(data)}`);
+          console.info(`Pointer_PointerVisibleTest_001 Promise success, data=${JSON.stringify(data)}`);
           expect(data == false).assertTrue();
           done();
-        }).catch((err) => {
-          console.info(`Pointer_PointerVisibleTest_001 failed, err=${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done();
-        });
+        })
       } catch (error) {
-        console.info(`Pointer_SetPointerVisibleTest_001 error`);
+        console.info(`Pointer_SetPointerVisibleTest_001 Promise error`);
         expect(false).assertTrue();
         done();
+      }
+
+      try {
+        await pointer.isPointerVisible((err, data) => {
+          if (err) {
+            console.info(`Pointer_PointerVisibleTest_001 Callback failed, err=${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(`Pointer_PointerVisibleTest_001 Callback success, data=${JSON.stringify(data)}`);
+            expect(data == true).assertTrue();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`Pointer_PointerVisibleTest_001 Callback error`);
+        expect(false).assertTrue();
+        done();
+      }
+
+      try {
+        let visible = pointer.isPointerVisibleSync();
+        expect(visible == true).assertTrue();
+        console.log(`Pointer_PointerVisibleTest_001 isPointerVisibleSync success, visible: ${JSON.stringify(visible)}`);
+      } catch (error) {
+        expect(false).assertTrue();
+        console.log(`Pointer_PointerVisibleTest_001 isPointerVisibleSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
       }
       console.info(`Pointer_PointerVisibleTest_001 exit`);
     })
@@ -154,21 +178,42 @@ export default function Pointer_test() {
             console.info(`Pointer_PointerVisibleTest_002 success_1, data=${JSON.stringify(data)}`);
             expect(true).assertTrue();
             try {
+              pointer.isPointerVisible().then(data => {
+                console.info(`Pointer_PointerVisibleTest_002 Promise success, data=${JSON.stringify(data)}`);
+                expect(data == true).assertTrue();
+                done();
+              })
+            } catch (error) {
+              console.info(`Pointer_SetPointerVisibleTest_002 Promise error`);
+              expect(false).assertTrue();
+              done();
+            }
+
+            try {
               pointer.isPointerVisible((err, data) => {
                 if (err) {
-                  console.info(`Pointer_PointerVisibleTest_002 failed, err=${JSON.stringify(err)}`);
+                  console.info(`Pointer_PointerVisibleTest_002 Callback failed, err=${JSON.stringify(err)}`);
                   expect(false).assertTrue();
                   done();
                 } else {
-                  console.info(`Pointer_PointerVisibleTest_002 success_2, data=${JSON.stringify(data)}`);
+                  console.info(`Pointer_PointerVisibleTest_002 Callback success, data=${JSON.stringify(data)}`);
                   expect(data == true).assertTrue();
                   done();
                 }
               });
             } catch (error) {
-              console.info(`Pointer_PointerVisibleTest_002 error`);
+              console.info(`Pointer_PointerVisibleTest_002 Callback error`);
               expect(false).assertTrue();
               done();
+            }
+
+            try {
+              let visible = pointer.isPointerVisibleSync();
+              expect(visible == true).assertTrue();
+              console.log(`Pointer_PointerVisibleTest_002 isPointerVisibleSync success, visible: ${JSON.stringify(visible)}`);
+            } catch (error) {
+              expect(false).assertTrue();
+              console.log(`Pointer_PointerVisibleTest_002 isPointerVisibleSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             }
           }).catch((err) => {
             console.info(`Pointer_PointerVisibleTest_002 failed, err=${JSON.stringify(err)}`);

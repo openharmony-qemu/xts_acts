@@ -53,6 +53,7 @@ export default function MultimodalInputDeviceTest() {
           } else {
             console.info(`${caseName} Device id list: ${JSON.stringify(ids)}`);
             ExpectTrue(Array.isArray(ids));
+            expect(ids.length > 0).assertTrue;
             done();
           }
         });
@@ -77,6 +78,7 @@ export default function MultimodalInputDeviceTest() {
         inputDevice.getDeviceList().then((ids: Array<Number>) => {
           console.info(`${caseName} Device id list: ${JSON.stringify(ids)}`);
           ExpectTrue(Array.isArray(ids));
+          expect(ids.length > 0).assertTrue;
           done();
         });
       } catch (error) {
@@ -269,6 +271,7 @@ export default function MultimodalInputDeviceTest() {
           } else {
             console.info(`${caseName} Device id list: ${JSON.stringify(ids)}`);
             ExpectTrue(Array.isArray(ids));
+            expect(ids.length > 0).assertTrue;
             done();
           }
         });
@@ -293,6 +296,7 @@ export default function MultimodalInputDeviceTest() {
         inputDevice.getDeviceIds().then((ids: Array<Number>) => {
           console.info(`${caseName} Device id list: ${JSON.stringify(ids)}`);
           ExpectTrue(Array.isArray(ids));
+          expect(ids.length > 0).assertTrue;
           done();
         });
       } catch (error) {
@@ -463,7 +467,13 @@ export default function MultimodalInputDeviceTest() {
             done();
           } else {
             console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-            ExpectTrue(type>=0 && type<=5);
+            expect(type == inputDevice.KeyboardType.None ||
+              type == inputDevice.KeyboardType.UNKNOWN ||
+              type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
+              type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
+              type == inputDevice.KeyboardType.HANDWRITING_PEN ||
+              type == inputDevice.KeyboardType.REMOTE_CONTROL)
+              .assertTrue;
             done();
           }
         });
@@ -487,7 +497,13 @@ export default function MultimodalInputDeviceTest() {
       try {
         inputDevice.getKeyboardType(1).then((type: Number) => {
           console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-          ExpectTrue(type>=0 && type<=5);
+          expect(type == inputDevice.KeyboardType.None ||
+            type == inputDevice.KeyboardType.UNKNOWN ||
+            type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
+            type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
+            type == inputDevice.KeyboardType.HANDWRITING_PEN ||
+            type == inputDevice.KeyboardType.REMOTE_CONTROL)
+            .assertTrue;
           done();
         });
       } catch (error) {
@@ -510,7 +526,13 @@ export default function MultimodalInputDeviceTest() {
       try {
         let type: number = inputDevice.getKeyboardTypeSync(1);
         console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-        ExpectTrue(type>=0 && type<=5);
+        expect(type == inputDevice.KeyboardType.None ||
+          type == inputDevice.KeyboardType.UNKNOWN ||
+          type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
+          type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
+          type == inputDevice.KeyboardType.HANDWRITING_PEN ||
+          type == inputDevice.KeyboardType.REMOTE_CONTROL)
+          .assertTrue;
         done();
       } catch (error) {
         console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
