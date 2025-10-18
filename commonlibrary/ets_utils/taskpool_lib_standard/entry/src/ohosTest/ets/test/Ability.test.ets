@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
-import { taskpool, collections, TreeSet } from '@kit.ArkTS'
+import { taskpool, collections, TreeSet, MessageEvents } from '@kit.ArkTS'
 import worker from '@ohos.worker'
 import { BusinessError } from '@ohos.base'
 import { currentFun, transferArrayBuffer, transferAtomics, setCloneListTest, setTransferListTest,
@@ -24,9 +24,9 @@ import { currentFun, transferArrayBuffer, transferAtomics, setCloneListTest, set
   errorManageTest, dealHashMapTest, noUseConcurrentTest, sendDataTest, sendableClassTestFunc, Int8ArrayTestFunc,
   SetTestFunc, MapTestFunc, simpleSendableClassTestFunc, Uint8ClampedArrayTestFunc, testWithThreeParams, testWithArray,
   sendableFuncTest, sendableClassTest, promiseTest, measureTest, loop, returnError, longString, sendableClassArrFunc,
-  promiseNumber, TreeSetTestFunc } from './testFunclist'
-import { A, B, StrCat, printArgs, printStrArgs, fun, cancelById, getLongString } from './exportFunclist'
-import { SendableClass, SimpleSendable, sendableFunc, SendableClassTest } from './sendable';
+  promiseNumber, TreeSetTestFunc, getCreateTaskId, taskSendManyFunc, taskErrFunc } from './testFunclist'
+import { A, B, StrCat, printArgs, printStrArgs, fun, cancelById, getLongString, getTaskResult } from './exportFunclist'
+import { SendableClass, SimpleSendable, sendableFunc, SendableClassTest, TaskInfoClass } from './sendable';
 import HashMap from '@ohos.util.HashMap';
 
 export default function TaskPoolTest() {
@@ -6283,5 +6283,282 @@ export default function TaskPoolTest() {
       done();
     })
 
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0261
+     * @tc.name       TaskPoolTestClass261
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        taskpool.getTask(null);
+      } catch (e) {
+        expect((e as BusinessError).toString()).assertContain("Parameter error");
+      }
+      try {
+        taskpool.getTask(undefined);
+      } catch (e) {
+        expect((e as BusinessError).toString()).assertContain("Parameter error");
+      }
+
+      let task: taskpool.Task |undefined = taskpool.getTask(0);
+      expect(task).assertEqual(undefined);
+
+      let task2: taskpool.Task |undefined = taskpool.getTask(-1);
+      expect(task2).assertEqual(undefined);
+
+      let task3: taskpool.Task |undefined = taskpool.getTask(1.1);
+      expect(task3).assertEqual(undefined);
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0262
+     * @tc.name       TaskPoolTestClass262
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(promiseNumber, 1000);
+      try {
+        taskpool.getTask(task.taskId, null);
+      } catch (e) {
+        expect((e as BusinessError).toString()).assertContain("Parameter error");
+      }
+
+      let task2: taskpool.Task |undefined = taskpool.getTask(task.taskId, "");
+      expect(task2).assertEqual(undefined);
+
+      let task3: taskpool.Task |undefined = taskpool.getTask(task.taskId, "default");
+      expect(task3).assertEqual(undefined);
+
+      let task4: taskpool.Task |undefined = taskpool.getTask(task.taskId, "PromiseNumber");
+      expect(task4).assertEqual(undefined);
+
+      let task5: taskpool.Task |undefined = taskpool.getTask(task.taskId, "promiseNumber");
+      expect(task5).assertEqual(task);
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0263
+     * @tc.name       TaskPoolTestClass262
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
+      let terminate = false;
+      taskpool.execute(getTaskResult, task.taskId).then((res) => {
+        terminate = true;
+        expect(res).assertFalse();
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0264
+     * @tc.name       TaskPoolTestClass264
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let terminate = false;
+      taskpool.execute(getCreateTaskId).then((res) =>{
+        terminate = true;
+        let task: taskpool.Task | undefined = taskpool.getTask(res as number);
+        expect(task).assertEqual(undefined);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0265
+     * @tc.name       TaskPoolTestClass265
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ss: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker1.ets")
+      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
+      ss.postMessage(task.taskId);
+      let flag:boolean = false;
+      let result:boolean = true;
+      ss.onmessage = (e: MessageEvents) => {
+        flag = true
+        ss.terminate();
+        result = e.data;
+      }
+      while (!flag) {
+        await promiseCase()
+      }
+      expect(result).assertFalse()
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0266
+     * @tc.name       TaskPoolTestClass266
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ss: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker2.ets")
+      ss.postMessage("hello");
+      let flag:boolean = false;
+      let result:boolean = true;
+      ss.onmessage = (e: MessageEvents) => {
+        flag = true
+        ss.terminate();
+        result = e.data;
+      }
+      while (!flag) {
+        await promiseCase()
+      }
+      expect(result).assertFalse()
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0267
+     * @tc.name       TaskPoolTestClass267
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
+      let task1: taskpool.Task | undefined = taskpool.getTask(task.taskId, task.name);
+      expect(task1!.taskId).assertEqual(task.taskId);
+      expect(task1!.name).assertEqual(task.name);
+      expect(task1!.function).assertEqual(task.function);
+      expect(task1!.arguments).assertEqual(task.arguments);
+      expect(task1!.totalDuration).assertEqual(task.totalDuration);
+      expect(task1!.ioDuration).assertEqual(task.ioDuration);
+      expect(task1!.cpuDuration).assertEqual(task.cpuDuration);
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0268
+     * @tc.name       TaskPoolTestClass268
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let class1 = new TaskInfoClass();
+      let task: taskpool.Task = new taskpool.Task(taskSendManyFunc, 10, 20);
+      taskpool.execute(task).then(() => {
+        class1.increaseCount();
+      })
+      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
+      task2?.onReceiveData(() => {
+        class1.increaseOnReceicve();
+      })
+      expect(task2!.isDone()).assertEqual(false);
+      while (await class1.getCount() < 1) {
+        await promiseCase()
+      }
+      expect(await class1.getOnReceicve()).assertEqual(20);
+      expect(task2!.isDone()).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0269
+     * @tc.name       TaskPoolTestClass269
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let class1 = new TaskInfoClass();
+      let task: taskpool.Task = new taskpool.Task(taskSendManyFunc, 10, 20);
+      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
+      task2?.onExecutionSucceeded(() => {
+        class1.increaseExecuteSuccess();
+      })
+      task2?.onEnqueued(() => {
+        class1.increaseEnqueue();
+      })
+      task2?.onStartExecution(() => {
+        class1.increaseStartExecute();
+      })
+      task2?.onReceiveData(() => {
+        class1.increaseOnReceicve();
+      })
+      taskpool.execute(task2).then(() => {
+        class1.increaseCount();
+      }).catch(() => {
+        class1.increaseErrCount()
+      })
+
+      while (await class1.getCount() < 1) {
+        await promiseCase()
+      }
+      expect(await class1.getEnqueue()).assertEqual(1);
+      expect(await class1.getStartExecute()).assertEqual(1);
+      expect(await class1.getExecuteSuccess()).assertEqual(1);
+      expect(await class1.getOnReceicve()).assertEqual(20);
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0270
+     * @tc.name       TaskPoolTestClass270
+     * @tc.desc       taskpool support getTask
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('TaskPoolTestClass270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let class1 = new TaskInfoClass();
+      let task: taskpool.Task = new taskpool.Task(taskErrFunc, 50);
+      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
+      task2?.onExecutionFailed(() => {
+        class1.increaseExecuteFailed();
+      })
+      task2?.onEnqueued(() => {
+        class1.increaseEnqueue();
+      })
+      task2?.onStartExecution(() => {
+        class1.increaseStartExecute();
+      })
+      taskpool.execute(task2).then(() => {
+        class1.increaseCount();
+      }).catch(() => {
+        class1.increaseErrCount()
+      })
+
+      while (await class1.getErrCount() < 1) {
+        await promiseCase()
+      }
+      expect(await class1.getEnqueue()).assertEqual(1);
+      expect(await class1.getStartExecute()).assertEqual(1);
+      expect(await class1.getExecuteFailed()).assertEqual(1);
+      done();
+    })
   })
 }
