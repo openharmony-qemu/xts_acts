@@ -670,8 +670,10 @@ export default function graphicTextNewAPI() {
       console.info(msg + fontDescriptor1.length);
       expect(fontDescriptor1.length > 0).assertTrue();
       let fontDescriptor2 = await text.matchFontDescriptors({
-        weight: 10000,
+        path: '/test_xts',
+        postScriptName: 'AaAa'
       })
+      console.info(msg + JSON.stringify(fontDescriptor2));
       expect(fontDescriptor2.length == 0).assertTrue();
       done();
     })
