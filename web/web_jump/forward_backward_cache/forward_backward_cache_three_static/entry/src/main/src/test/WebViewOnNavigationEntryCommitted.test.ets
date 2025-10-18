@@ -29,6 +29,7 @@ let emitKey = ""
 export default function ActsAceWebViewOnNavigationEntryCommitted() {
   describe('ActsAceWebViewOnNavigationEntryCommitted', ():void => {
     beforeAll(async (): Promise<void> => {
+	  await Utils.msSleep(3000);
       console.log('App start')
     });
     beforeEach(async () => {
@@ -46,16 +47,14 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
      *@tc.level Level 1
      */
     it('testWebViewOnNavigationEntryCommittedStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+	  await Utils.msSleep(3000);
       emitKey = "emitWebViewOnNavigationEntryCommitted01"
       Utils.emitEvent(emitKey, 10);
       Utils.registerEvent("testWebViewOnNavigationEntryCommitted01", 'success', 8009, done);
       await Utils.msSleep(3000);
-
       inspector.sendEventByKey('webViewOnNavigationEntryCommittedButton', 10, '');
-
       await Utils.msSleep(3000);
       done()
-
     })
   })
 }

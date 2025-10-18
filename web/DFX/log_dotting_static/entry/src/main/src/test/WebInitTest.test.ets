@@ -54,9 +54,8 @@ export default function WebInitTest() {
     });
     beforeEach(async () => {
       console.info("web beforeEach start");
-      
+      await Utils.msSleep(3000);
     })
-
 
     /*
     * @tc.number     : SUB_WEB_WEBNETERRORLIST_0100
@@ -67,15 +66,15 @@ export default function WebInitTest() {
     * @tc.level      : Level 3
     */
     it('WebNetErrorList_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(3000);
       Utils.emitEvent("WebNetErrorList_Static_0100", 10)
       await Utils.msSleep(1000);
       Utils.registerEvent("WebNetErrorList_Static_0100", 0, 6600, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
-      
     })
-
 
     /*
    * @tc.number     : SUB_WEB_WEBNETERRORLIST_0200
@@ -86,11 +85,13 @@ export default function WebInitTest() {
    * @tc.level      : Level 3
    */
     it('WebNetErrorList_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(1000);
       Utils.emitEvent("WebNetErrorList_Static_0200", 10)
       await Utils.msSleep(1000);
       Utils.registerEvent("WebNetErrorList_Static_0200", -1, 6601, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
 
     })
@@ -109,6 +110,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0300", -2, 6602, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -125,6 +127,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0400", -3, 6603, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -141,6 +144,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0500", -4, 6604, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -157,6 +161,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0600", -5, 6605, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -173,6 +178,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0700", -6, 6606, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -189,6 +195,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0800", -7, 6607, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -205,6 +212,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_0900", -8, 6608, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -221,6 +229,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_ERR_UNEXPECTED_01000", -9, 6609, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -237,6 +246,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01100", -10, 6610, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -253,6 +263,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01200", -11, 6611, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -269,6 +280,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01300", -12, 6612, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -285,6 +297,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01400", -13, 6613, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -301,6 +314,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01500", -14, 6614, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -317,6 +331,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01600", -15, 6615, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -333,6 +348,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01700", -16, 6616, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -349,6 +365,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01800", -17, 6617, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -365,6 +382,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_01900", -18, 6618, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -381,6 +399,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02000", -19, 6619, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -397,6 +416,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02100", -20, 6620, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -413,6 +433,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02200", -21, 6621, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -429,6 +450,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02300", -22, 6622, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -445,6 +467,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02400", -23, 6623, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -461,6 +484,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02500", -25, 6624, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -477,6 +501,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02600", -26, 6625, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -493,6 +518,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02700", -27, 6626, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -509,6 +535,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02800", -29, 6627, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -525,6 +552,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_02900", -30, 6628, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -541,6 +569,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03000", -31, 6629, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -557,6 +586,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03100", -32, 6630, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -573,6 +603,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03200", -100, 6631, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -589,6 +620,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03300", -101, 6632, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -605,6 +637,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03400", -102, 6633, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -621,6 +654,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03500", -103, 6634, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -637,6 +671,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03600", -104, 6635, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -653,6 +688,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03700", -105, 6636, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -669,6 +705,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03800", -106, 6637, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -685,6 +722,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_03900", -107, 6638, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -701,6 +739,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04000", -108, 6639, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -717,6 +756,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04100", -109, 6640, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -733,6 +773,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04200", -110, 6641, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -749,6 +790,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04300", -111, 6642, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -765,6 +807,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04400", -112, 6643, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -781,6 +824,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04500", -113, 6644, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -797,6 +841,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04600", -114, 6645, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -813,6 +858,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04700", -115, 6646, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -829,6 +875,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04800", -117, 6647, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -845,6 +892,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_04900", -118, 6648, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -861,6 +909,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05000", -119, 6649, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -877,6 +926,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05100", -120, 6650, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -893,6 +943,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05200", -121, 6651, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -909,6 +960,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05300", -122, 6652, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -925,6 +977,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05400", -123, 6653, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -941,6 +994,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05500", -124, 6654, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -957,6 +1011,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05600", -125, 6655, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -973,6 +1028,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05700", -126, 6656, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -989,6 +1045,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05800", -127, 6657, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1005,6 +1062,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_05900", -130, 6658, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1021,6 +1079,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06000", -131, 6659, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1037,6 +1096,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06100", -133, 6660, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1053,6 +1113,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06200", -134, 6661, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1069,6 +1130,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06300", -135, 6662, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1085,6 +1147,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06400", -136, 6663, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1101,6 +1164,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06500", -137, 6664, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1117,6 +1181,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06600", -138, 6665, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1133,6 +1198,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06700", -139, 6666, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1149,6 +1215,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06800", -140, 6668, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1165,6 +1232,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_06900", -141, 6669, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1181,6 +1249,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07000", -142, 6670, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1197,6 +1266,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07100", -145, 6671, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1213,6 +1283,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07200", -147, 6672, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1229,6 +1300,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07300", -148, 6673, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1245,6 +1317,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07400", -149, 6674, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1261,6 +1334,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07500", -150, 6675, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1277,6 +1351,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07600", -151, 6676, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1293,6 +1368,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07700", -153, 6677, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1309,6 +1385,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07800", -154, 6678, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1325,6 +1402,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_07900", -156, 6679, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1341,6 +1419,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08000", -159, 6680, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1357,6 +1436,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08100", -160, 6681, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1373,6 +1453,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08200", -161, 6682, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1389,6 +1470,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08300", -162, 6683, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1405,6 +1487,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08400", -163, 6684, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1421,6 +1504,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08500", -164, 6685, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1437,6 +1521,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08600", -166, 6686, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1453,6 +1538,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08700", -167, 6687, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1469,6 +1555,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08800", -168, 6688, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1485,6 +1572,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_08900", -169, 6689, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1501,6 +1589,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09000", -170, 6690, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1517,6 +1606,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09100", -171, 6691, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1533,6 +1623,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09200", -172, 6692, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1549,6 +1640,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09300", -173, 6693, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1565,6 +1657,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09400", -174, 6694, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1581,6 +1674,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09500", -176, 6695, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1597,6 +1691,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09600", -177, 6696, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1613,6 +1708,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09700", -178, 6697, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1629,6 +1725,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09800", -179, 6698, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1645,6 +1742,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_09900", -180, 6699, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1661,6 +1759,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010000", -181, 6700, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1677,6 +1776,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010100", -182, 6701, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1693,6 +1793,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010200", -183, 6702, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1709,6 +1810,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010300", -184, 6703, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1725,6 +1827,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010400", -200, 6704, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1741,6 +1844,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010500", -201, 6705, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1757,6 +1861,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010600", -202, 6706, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1773,6 +1878,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010700", -203, 6707, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1789,6 +1895,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010800", -204, 6708, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1805,6 +1912,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_010900", -205, 6709, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1821,6 +1929,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011000", -206, 6710, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1837,6 +1946,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011100", -207, 6711, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1853,6 +1963,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011200", -208, 6712, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1869,6 +1980,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011300", -210, 6713, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1885,6 +1997,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011400", -211, 6714, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1901,6 +2014,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011500", -212, 6715, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1917,6 +2031,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011600", -213, 6716, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1933,6 +2048,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011700", -214, 6717, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1949,6 +2065,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011800", -215, 6718, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1965,6 +2082,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_011900", -217, 6719, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1981,6 +2099,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012000", -218, 6720, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -1997,6 +2116,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012100", -219, 6721, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2013,6 +2133,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012200", -300, 6722, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2029,6 +2150,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012300", -301, 6723, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2045,6 +2167,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012400", -302, 6724, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2061,6 +2184,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012500", -303, 6725, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2077,6 +2201,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012600", -310, 6726, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2093,6 +2218,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012700", -311, 6727, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2109,6 +2235,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012800", -312, 6728, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2125,6 +2252,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_012900", -320, 6729, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2141,6 +2269,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013000", -321, 6730, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2157,6 +2286,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013100", -322, 6731, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2173,6 +2303,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013200", -323, 6732, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2189,6 +2320,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013300", -324, 6733, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2205,6 +2337,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013400", -325, 6734, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2221,6 +2354,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013500", -327, 6735, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2237,6 +2371,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013600", -328, 6736, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2253,6 +2388,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013700", -329, 6737, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2269,6 +2405,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013800", -330, 6738, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2285,6 +2422,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_013900", -331, 6739, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2301,6 +2439,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014000", -332, 6740, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2317,6 +2456,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014100", -333, 6741, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2333,6 +2473,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014200", -334, 6742, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2349,6 +2490,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014300", -336, 6743, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2365,6 +2507,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014400", -337, 6744, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2381,6 +2524,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014500", -338, 6745, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2397,6 +2541,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014600", -339, 6746, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2413,6 +2558,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014700", -340, 6747, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2429,6 +2575,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014800", -341, 6748, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2445,6 +2592,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_014900", -342, 6749, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2461,6 +2609,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015000", -343, 6750, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2477,6 +2626,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015100", -344, 6751, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2493,6 +2643,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015200", -345, 6752, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2509,6 +2660,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015300", -346, 6753, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2525,6 +2677,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015400", -347, 6754, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2541,6 +2694,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015500", -348, 6755, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2557,6 +2711,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015600", -349, 6756, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2573,6 +2728,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015700", -350, 6757, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2589,6 +2745,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015800", -351, 6758, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2605,6 +2762,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_015900", -352, 6759, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2621,6 +2779,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016000", -354, 6760, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2637,6 +2796,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016100", -355, 6761, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2653,6 +2813,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016200", -356, 6762, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2669,6 +2830,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016300", -357, 6763, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2685,6 +2847,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016400", -358, 6764, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2701,6 +2864,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016500", -360, 6765, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2717,6 +2881,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016600", -361, 6766, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2733,6 +2898,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016700", -362, 6767, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2749,6 +2915,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016800", -363, 6768, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2765,6 +2932,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_016900", -364, 6769, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2781,6 +2949,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017000", -365, 6770, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2797,6 +2966,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017100", -366, 6771, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2813,6 +2983,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017200", -367, 6772, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2829,6 +3000,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017300", -370, 6773, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2845,6 +3017,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017400", -371, 6774, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2861,6 +3034,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017500", -372, 6775, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2877,6 +3051,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017600", -373, 6776, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2893,6 +3068,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017700", -374, 6777, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2909,6 +3085,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017800", -375, 6778, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2925,6 +3102,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_017900", -376, 6779, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2941,6 +3119,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018000", -377, 6780, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2957,6 +3136,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018100", -378, 6781, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2973,6 +3153,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018200", -379, 6782, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -2989,6 +3170,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018300", -380, 6783, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3005,6 +3187,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018400", -381, 6784, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3021,6 +3204,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018500", -382, 6785, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3037,6 +3221,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018600", -383, 6786, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3053,6 +3238,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018700", -384, 6787, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3069,6 +3255,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018800", -400, 6788, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3085,6 +3272,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_018900", -401, 6789, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3101,6 +3289,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019000", -402, 6790, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3117,6 +3306,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019100", -403, 6791, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3133,6 +3323,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019200", -404, 6792, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3149,6 +3340,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019300", -405, 6793, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3165,6 +3357,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019400", -406, 6794, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3181,6 +3374,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019500", -407, 6795, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3197,6 +3391,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019600", -408, 6796, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3213,6 +3408,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019700", -409, 6797, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3229,6 +3425,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019800", -410, 6798, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3245,6 +3442,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_019900", -411, 6799, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3261,6 +3459,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020000", -412, 6800, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3277,6 +3476,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020100", -413, 6801, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3293,6 +3493,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020200", -501, 6802, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3309,6 +3510,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020300", -502, 6803, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3325,6 +3527,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020400", -503, 6804, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3341,6 +3544,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020500", -504, 6805, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3357,6 +3561,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020600", -505, 6806, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3373,6 +3578,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020700", -506, 6807, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3389,6 +3595,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020800", -507, 6808, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3405,6 +3612,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_020900", -601, 6809, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3421,6 +3629,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021000", -602, 6810, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3437,6 +3646,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021100", -603, 6811, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3453,6 +3663,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021200", -604, 6812, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3469,6 +3680,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021300", -605, 6813, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3485,6 +3697,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021400", -606, 6814, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3501,6 +3714,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021500", -607, 6815, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3517,6 +3731,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021600", -701, 6816, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3533,6 +3748,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021700", -702, 6817, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3549,6 +3765,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021800", -703, 6818, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3565,6 +3782,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_021900", -704, 6819, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3581,6 +3799,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022000", -705, 6820, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3597,6 +3816,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022100", -706, 6821, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3613,6 +3833,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022200", -707, 6822, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3629,6 +3850,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022300", -708, 6823, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3645,6 +3867,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022400", -709, 6824, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3661,6 +3884,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022500", -710, 6825, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3677,6 +3901,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022600", -712, 6826, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3693,6 +3918,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022700", -713, 6827, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3709,6 +3935,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022800", -714, 6828, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3725,6 +3952,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_022900", -716, 6829, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3741,6 +3969,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023000", -800, 6830, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3757,6 +3986,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023100", -801, 6831, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3773,6 +4003,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023200", -802, 6832, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3789,6 +4020,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023300", -803, 6833, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3805,6 +4037,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023400", -804, 6834, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3821,6 +4054,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023500", -805, 6835, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3837,6 +4071,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023600", -806, 6836, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3853,6 +4088,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023700", -808, 6837, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3869,6 +4105,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023800", -809, 6838, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3885,6 +4122,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_023900", -810, 6839, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(2000);
       done()
     })
     /*
@@ -3901,6 +4139,7 @@ export default function WebInitTest() {
       Utils.registerEvent("WebNetErrorList_Static_024000", -811, 6840, done);
       await Utils.msSleep(1000);
       inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      await Utils.msSleep(3000);
       done()
     })
   })

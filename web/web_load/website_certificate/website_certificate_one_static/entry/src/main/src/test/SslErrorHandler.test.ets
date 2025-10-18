@@ -59,13 +59,13 @@ export default function webTwoJsunit() {
 
     /*
     * @tc.number     : SUB_WEB_ONSSLERROREVENTRECEIVE_0100
-    * @tc.name       : testOnSslErrorEventReceive001
+    * @tc.name       : testOnSslErrorEventReceiveStatic001
     * @tc.desc       : test onSslErrorEventReceive handleConfirm
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testOnSslErrorEventReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnSslErrorEventReceiveStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testOnSslErrorEventReceive001", 10)
       Utils.registerEvent("testOnSslErrorEventReceive001", true, 30272, done);
       await Utils.msSleep(2000);
@@ -76,13 +76,13 @@ export default function webTwoJsunit() {
 
     /*
     * @tc.number     : SUB_WEB_SSLERRORHANDLERHANDLECANCEL_0100
-    * @tc.name       : testSslErrorHandlerHandleCancel001
+    * @tc.name       : testSslErrorHandlerHandleCancelStatic001
     * @tc.desc       : test sslErrorHandler handleCancel
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testSslErrorHandlerHandleCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSslErrorHandlerHandleCancelStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testSslErrorHandlerHandleCancel001", 10)
       Utils.registerEvent("testSslErrorHandlerHandleCancel001", 0, 30271, done);
       await Utils.msSleep(2000);
@@ -93,13 +93,13 @@ export default function webTwoJsunit() {
 
     /*
     * @tc.number     : SUB_WEB_SSLERRORHANDLERHANDLECONFIRM_0100
-    * @tc.name       : testSslErrorHandlerHandleConfirm001
+    * @tc.name       : testSslErrorHandlerHandleConfirmStatic001
     * @tc.desc       : test sslErrorHandler handleConfirm
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testSslErrorHandlerHandleConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSslErrorHandlerHandleConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testSslErrorHandlerHandleConfirm001", 10)
       Utils.registerEvent("testSslErrorHandlerHandleConfirm001", true, 30270, done);
       await Utils.msSleep(2000);
@@ -110,13 +110,13 @@ export default function webTwoJsunit() {
 
     /*
     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARSSLCACHE_0100
-    * @tc.name       : testClearSslCache001
+    * @tc.name       : testClearSslCacheStatic001
     * @tc.desc       : test clearSslCache
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testClearSslCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testClearSslCacheStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testClearSslCache001", 10)
       Utils.registerEvent("testClearSslCache001", true, 100073, done);
       await Utils.msSleep(2000);
@@ -124,8 +124,5 @@ export default function webTwoJsunit() {
       await Utils.msSleep(12000);
       done()
     })
-
   })
 }
-
-

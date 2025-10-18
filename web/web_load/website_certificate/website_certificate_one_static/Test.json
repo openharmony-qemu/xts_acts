@@ -5,7 +5,8 @@
         "test-timeout": "180000",
         "shell-timeout": "180000",
         "bundle-name": "com.open.harmony.websitecertificateonetest.static",
-        "module-name": "entry"
+        "module-name": "entry",
+        "testcase-timeout": "180000"
     },
     "kits": [
         {

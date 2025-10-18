@@ -63,7 +63,6 @@ struct webViewController {
               try {
                 webview.WebviewController.setHttpDns(webview.SecureDnsMode.AUTO,
                   "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
-                this.controller.loadUrl("https://www.example.com/");
                 setTimeout(() => {
                   Utils.emitEvent(this.controller.getTitle(), 31036)
                 }, 1000)
@@ -77,7 +76,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+      Web({ src: 'https://www.example.com', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .key("onShowFileSelectorKey")
         .onPageEnd((event) => {

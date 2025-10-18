@@ -44,7 +44,7 @@ export default function webViewController() {
       });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.customdnsonetest.static")
-      await Utils.msSleep(2000)
+      await Utils.msSleep(3000)
       console.log("beforeAll end,%s", "Succeed!")
     });
 
@@ -58,15 +58,14 @@ export default function webViewController() {
     */
     it('testSecureDnsModeAUTOStaticO001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(3000);
       Utils.emitEvent("testSecureDnsModeAUTO001", 10);
-      await Utils.msSleep(2000);
+      await Utils.msSleep(3000);
       Utils.registerEvent("testSecureDnsModeAUTO001", "Example Domain", 31036, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebViewControllerButton', 10, '');
       await Utils.msSleep(2000);
       done();
     })
-
   })
 }
