@@ -68,6 +68,7 @@ export default function wallpaperAuthorityJSUnit() {
                     expect(Number.isInteger(RgbaColors[0].green)).assertTrue();
                     expect(Number.isInteger(RgbaColors[0].blue)).assertTrue();
                     expect(Number.isInteger(RgbaColors[0].alpha)).assertTrue();
+                    expect(RgbaColors[0] !== null).assertTrue();
                     done();
                 } catch (err) {
                     console.info('====>testGetColorsCallbackSystem101  catch err: ' + JSON.stringify(err));
@@ -94,6 +95,7 @@ export default function wallpaperAuthorityJSUnit() {
                 expect(Number.isInteger(RgbaColors[0].green)).assertTrue();
                 expect(Number.isInteger(RgbaColors[0].blue)).assertTrue();
                 expect(Number.isInteger(RgbaColors[0].alpha)).assertTrue();
+                expect(RgbaColors[0] !== null).assertTrue();
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testGetColorsPromiseSystem101 fail: ' + JSON.stringify(error));
@@ -491,6 +493,108 @@ export default function wallpaperAuthorityJSUnit() {
                 done();
             });
             console.info('--------------testGetFilePromise101 end-----------------');
+        });
+
+        /*
+        * @tc.number  testIsChangePermittedCallback102
+        * @tc.name  testIsChangePermittedCallback102
+        * @tc.desc    Test isChangePermitted() to checks whether to allow the application to change the
+                    wallpaper for the current user.
+        * @tc.size    : MediumTest
+        * @tc.type    : Function
+        * @tc.level   3
+        */
+        it('testIsChangePermittedCallback102', Level.LEVEL2, async (done: Function) => {
+            console.info('--------------testIsChangePermittedCallback102 start-----------------');
+            wallpaper.isChangePermitted((err, data) => {
+                try {
+                    if (err) {
+                        console.info('====>testIsChangePermittedCallback102 fail: ' + JSON.stringify(err));
+                        expect().assertFail();
+                        done();
+                    }
+                    console.info('====>testIsChangePermittedCallback102 successful data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(true);
+                    done();
+                } catch (err) {
+                    console.info('====>testIsChangePermittedCallback102 catch err : ' + JSON.stringify(err));
+                    done();
+                }
+            })
+            console.info('--------------testIsChangePermittedCallback102 end-----------------');
+        });
+
+        /*
+        * @tc.number  testIsChangePermittedPromise102
+        * @tc.name  testIsChangePermittedPromise102
+        * @tc.desc    Test isChangePermitted() to checks whether to allow the application to change the
+                    wallpaper for the current user.
+        * @tc.size    : MediumTest
+        * @tc.type    : Function
+        * @tc.level   3
+        */
+        it('testIsChangePermittedPromise102', Level.LEVEL2, async (done: Function) => {
+            console.info('--------------testIsChangePermittedPromise102 start-----------------');
+            await wallpaper.isChangePermitted().then((data) => {
+                console.info('====>testIsChangePermittedPromise102 successful data : ' + JSON.stringify(data));
+                expect(data).assertEqual(true);
+                done();
+            }).catch((error: BusinessError) => {
+                console.info('====>testIsChangePermittedPromise102 err : ' + JSON.stringify(error));
+                expect().assertFail();
+                done();
+            });
+            console.info('--------------testIsChangePermittedPromise102 end-----------------');
+        });
+
+        /*
+        * @tc.number  testIsOperationAllowedCallback102
+        * @tc.name  testIsOperationAllowedCallback102
+        * @tc.desc    Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
+        * @tc.size    : MediumTest
+        * @tc.type    : Function
+        * @tc.level   3
+        */
+        it('testIsOperationAllowedCallback102', Level.LEVEL2, async (done: Function) => {
+            console.info('--------------testIsOperationAllowedCallback102 start-----------------');
+            wallpaper.isOperationAllowed((err, data) => {
+                try {
+                    if (err) {
+                        console.info('====>testIsOperationAllowedCallback102 fail: ' + JSON.stringify(err));
+                        expect().assertFail();
+                        done();
+                    }
+                    console.info('====>testIsOperationAllowedCallback102 successful data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(true);
+                    done();
+                } catch (err) {
+                    console.info('====>testIsOperationAllowedCallback102 catch err : ' + JSON.stringify(err));
+                    done();
+                }
+            })
+            console.info('--------------testIsOperationAllowedCallback102 end-----------------');
+        });
+
+        /*
+        * @tc.number  testIsOperationAllowedPromise102
+        * @tc.name  testIsOperationAllowedPromise102
+        * @tc.desc    Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
+        * @tc.size    : MediumTest
+        * @tc.type    : Function
+        * @tc.level   0
+        */
+        it('testIsOperationAllowedPromise102', Level.LEVEL2, async (done: Function) => {
+            console.info('--------------testIsOperationAllowedPromise102 start-----------------');
+            await wallpaper.isOperationAllowed().then((data) => {
+                console.info('====>testIsOperationAllowedPromise102 successful data : ' + JSON.stringify(data));
+                expect(data).assertEqual(true);
+                done();
+            }).catch((error: BusinessError) => {
+                console.info('====>testIsOperationAllowedPromise102 err : ' + JSON.stringify(error));
+                expect().assertFail();
+                done();
+            });
+            console.info('--------------testIsOperationAllowedPromise102 end-----------------');
         });
 
 

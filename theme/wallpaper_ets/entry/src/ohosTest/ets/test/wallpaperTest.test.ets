@@ -281,6 +281,7 @@ export default function wallpaperJSUnit() {
                     }
                     console.info('====>testIsChangePermittedCallback101 successful data: ' + JSON.stringify(data));
                     expect(typeof data == "boolean").assertTrue();
+                    expect(data).assertEqual(false);
                     done();
                 } catch (err) {
                     console.info('====>testIsChangePermittedCallback101 catch err : ' + JSON.stringify(err));
@@ -304,6 +305,7 @@ export default function wallpaperJSUnit() {
             await wallpaper.isChangePermitted().then((data) => {
                 console.info('====>testIsChangePermittedPromise101 successful data : ' + JSON.stringify(data));
                 expect(typeof data == "boolean").assertTrue();
+                expect(data).assertEqual(false);
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testIsChangePermittedPromise101 err : ' + JSON.stringify(error));
@@ -332,6 +334,7 @@ export default function wallpaperJSUnit() {
                     }
                     console.info('====>testIsOperationAllowedCallback101 successful data: ' + JSON.stringify(data));
                     expect(typeof data == "boolean").assertTrue();
+                    expect(data).assertEqual(false);
                     done();
                 } catch (err) {
                     console.info('====>testIsOperationAllowedCallback101 catch err : ' + JSON.stringify(err));
@@ -354,6 +357,7 @@ export default function wallpaperJSUnit() {
             await wallpaper.isOperationAllowed().then((data) => {
                 console.info('====>testIsOperationAllowedPromise101 successful data : ' + JSON.stringify(data));
                 expect(typeof data == "boolean").assertTrue();
+                expect(data).assertEqual(false);
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testIsOperationAllowedPromise101 err : ' + JSON.stringify(error));
