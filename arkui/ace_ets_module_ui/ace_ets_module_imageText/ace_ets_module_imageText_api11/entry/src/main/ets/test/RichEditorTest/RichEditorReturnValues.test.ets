@@ -49,7 +49,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetFalse_0010
     * @tc.name         RichEditorSetCaretOffsetFalse_0010
-    * @tc.desic        test return value of setCaretOffset: false
+    * @tc.desc        test return value of setCaretOffset: false
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -73,7 +73,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetTrue_0020
     * @tc.name         RichEditorSetCaretOffsetTrue_0020
-    * @tc.desic        test return value of setCaretOffset: true
+    * @tc.desc        test return value of setCaretOffset: true
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -97,7 +97,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_AddImageSpanNumber_0030
     * @tc.name         RichEditorAddImageSpanNumber_0030
-    * @tc.desic        test return value of addImageSpan: number
+    * @tc.desc        test return value of addImageSpan: number
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -122,7 +122,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansEmptyArray_0040
     * @tc.name         RichEditorGetSpansEmptyArray_0040
-    * @tc.desic        test return value of getSpans: Empty array
+    * @tc.desc        test return value of getSpans: Empty array
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -146,7 +146,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansNotEmptyArray_0050
     * @tc.name         RichEditorGetSpansNotEmptyArray_0050
-    * @tc.desic        test return value of getSpans: Not empty array
+    * @tc.desc        test return value of getSpans: Not empty array
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -170,7 +170,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsEmptyArray_0060
     * @tc.name         RichEditorGetParagraphsEmptyArray_0060
-    * @tc.desic        test return value of getParagraphs: Empty array
+    * @tc.desc        test return value of getParagraphs: Empty array
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -194,7 +194,7 @@ export default function RichEditorReturnValuesTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsNotEmptyArray_0070
     * @tc.name         RichEditorGetParagraphsNotEmptyArray_0070
-    * @tc.desic        test return value of getParagraphs: Not empty array
+    * @tc.desc        test return value of getParagraphs: Not empty array
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1

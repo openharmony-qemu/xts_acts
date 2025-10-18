@@ -49,7 +49,7 @@ export default function RichEditorFromStyledStringTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_FromStyledString_0010
     * @tc.name         RichEditorFromStyledStringTest_0010
-    * @tc.desic        test return value of fromStyledString: Not empty array
+    * @tc.desc        test return value of fromStyledString: Not empty array
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1

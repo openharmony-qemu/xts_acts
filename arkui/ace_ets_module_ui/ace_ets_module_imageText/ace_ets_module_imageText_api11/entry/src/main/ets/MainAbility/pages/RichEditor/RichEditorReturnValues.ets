@@ -109,7 +109,7 @@ struct RichEditorReturnValues {
           .height('5%')
           .id('getParagraphs_return_0')
           .onClick(() => {
-            let value: Array<RichEditorParagraphResult> = this.controller1.getParagraphs(this.range)
+            let value: RichEditorParagraphResult[] = this.controller1.getParagraphs(this.range)
             console.log('getParagraphs return []:' + value.length)
             AppStorage.setOrCreate('getParagraphs_return_0', value.length)
           })
@@ -119,7 +119,7 @@ struct RichEditorReturnValues {
           .height('5%')
           .id('getParagraphs_return_1')
           .onClick(() => {
-            let value: Array<RichEditorParagraphResult> = this.controller.getParagraphs(this.range)
+            let value: RichEditorParagraphResult[] = this.controller.getParagraphs(this.range)
             console.log('getParagraphs return [1]:' + value.length)
             AppStorage.setOrCreate('getParagraphs_return_1', value.length)
           })

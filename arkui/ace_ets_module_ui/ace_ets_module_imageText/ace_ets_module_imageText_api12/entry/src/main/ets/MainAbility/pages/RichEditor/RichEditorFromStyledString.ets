@@ -53,13 +53,13 @@ struct RichEditorFromStyledString {
         .id('RichEditorFromStyledString_1')
 
       Button('fromStyledString []').onClick(() => {
-        let array: Array<RichEditorSpan> = this.controller.fromStyledString(this.styleStr);
+        let array: RichEditorSpan[] = this.controller.fromStyledString(this.styleStr);
         console.log('fromStyledString return []:' + array.length)
         AppStorage.setOrCreate('fromStyledString_return_0', array.length)
       }).id('fromStyledString_return_0')
 
       Button('fromStyledString [1]').onClick(() => {
-        let array: Array<RichEditorSpan> = this.controller1.fromStyledString(this.styleStr1);
+        let array: RichEditorSpan[] = this.controller1.fromStyledString(this.styleStr1);
         console.log('fromStyledString return [1]:' + array.length)
         AppStorage.setOrCreate('fromStyledString_return_1', array.length)
       }).id('fromStyledString_return_1')

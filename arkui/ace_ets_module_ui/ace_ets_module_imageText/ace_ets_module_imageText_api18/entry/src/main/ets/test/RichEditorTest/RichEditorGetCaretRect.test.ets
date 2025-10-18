@@ -49,7 +49,7 @@ export default function RichEditorGetCaretRectTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetCaretRect_0010
     * @tc.name         RichEditorGetCaretRectTest_0010
-    * @tc.desic        test return value of getCaretRect: undefined
+    * @tc.desc        test return value of getCaretRect: undefined
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
