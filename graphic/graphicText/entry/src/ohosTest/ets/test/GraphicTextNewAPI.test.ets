@@ -663,7 +663,7 @@ export default function graphicTextNewAPI() {
       console.info(msg + fontTypeNums.length);
       expect(fontTypeNums.length > 0).assertTrue();
       let fontTypeNums1 = await text.getSystemFontFullNamesByType(text.SystemFontType.CUSTOMIZED);
-      expect(fontTypeNums.length == 0).assertTrue();
+      expect(fontTypeNums1.length == 0).assertTrue();
       let fontDescriptor1 = await text.matchFontDescriptors({
         weight: text.FontWeight.W400,
       })
