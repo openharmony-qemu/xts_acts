@@ -1219,7 +1219,7 @@ export default function WindowLayoutTest() {
             }
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_static_0200
+         * @tc.number      SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_static_0300
          * @tc.name        test_setStatusBarColor_1300002_static
          * @tc.desc        test_setStatusBarColor_1300002
          * @tc.size        MediumTest
