@@ -15,7 +15,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
-import { getEnumCount } from './utils';
+import { getEnumCount } from './Util.test';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
@@ -105,12 +105,17 @@ export default function drawingTsPath4Test() {
      */
     it('testPenSetAndGetColor4fNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetAndGetColor4fNormalStatic';
-      let color4f: common2D.Color4f = {
-        alpha: 0.8,
-        red: 0.5,
-        green: 0.4,
-        blue: 0.7
-      };
+      try {
+        let color4f: common2D.Color4f = {
+          alpha: 0.8,
+          red: 0.5,
+          green: 0.4,
+          blue: 0.7
+        };
+      } catch (e: BusinessError) {
+        console.info(msg + `color4f error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
     })
   })
 }

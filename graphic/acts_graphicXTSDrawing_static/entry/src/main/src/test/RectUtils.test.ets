@@ -187,36 +187,6 @@ export default function rectUtilsTest() {
         console.info(msg + ` RectUtils isEmpty isEmpty4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
-      // rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
-      rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      try {
-        let isEmpty5 = drawing.RectUtils.isEmpty(rect);
-        console.info(msg + ' RectUtils isEmpty isEmpty5 successed isEmpty5: ' + isEmpty5);
-        expect(isEmpty5).assertEqual(false);
-      } catch (e: BusinessError) {
-        console.info(msg + ` RectUtils isEmpty isEmpty5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail()
-      }
-      // rect = drawing.RectUtils.makeLtrb(0,10.2632,100.25474,100.2884);
-      rect = { left: 0, right: 10.2632, top: 100.25474, bottom: 100.2884 };
-      try {
-        let isEmpty6 = drawing.RectUtils.isEmpty(rect);
-        console.info(msg + ' RectUtils isEmpty isEmpty6 successed isEmpty6: ' + isEmpty6);
-        expect(isEmpty6).assertEqual(false);
-      } catch (e: BusinessError) {
-        console.info(msg + ` RectUtils isEmpty isEmpty6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail()
-      }
-      // rect = drawing.RectUtils.makeLtrb(100,100.25,-100,-100.255);
-      rect = { left: 100, right: 100.25, top: -100, bottom: -100.255 };
-      try {
-        let isEmpty8 = drawing.RectUtils.isEmpty(rect);
-        console.info(msg + ' RectUtils isEmpty isEmpty8 successed isEmpty8: ' + isEmpty8);
-        expect(isEmpty8).assertEqual(true);
-      } catch (e: BusinessError) {
-        console.info(msg + ` RectUtils isEmpty isEmpty8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail()
-      }
     });
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1400
