@@ -73,7 +73,7 @@ struct sceneTypeFrame {
             if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
               this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][0]
               if (this.frameRateValue !== 6666) {
-                this.frameRate.expected = this.frameRateValue
+                this.frameRate.expected = this.frameRateValue.toInt()
                 scenes.setFrameRateRange(this.frameRate)
                 this.text1 += 'Swiper1: ' + this.frameRateValue
               }
@@ -81,7 +81,7 @@ struct sceneTypeFrame {
             if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
               this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][1]
               if (this.frameRateValue !== 6666) {
-                this.frameRate.expected = this.frameRateValue
+                this.frameRate.expected = this.frameRateValue.toInt()
                 scenes.setFrameRateRange(this.frameRate)
                 this.text1 += 'Swiper11: ' + this.frameRateValue
               }
