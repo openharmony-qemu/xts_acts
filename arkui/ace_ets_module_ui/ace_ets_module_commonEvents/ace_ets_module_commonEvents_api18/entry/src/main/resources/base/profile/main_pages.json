@@ -19,6 +19,7 @@
         "MainAbility/pages/GestureRecognizer/RotationRecognizer",
         "MainAbility/pages/GestureRecognizer/SwipeRecognizer",
         "MainAbility/pages/GestureRecognizer/TapRecognizer",
-        "MainAbility/pages/DragController/dragAdaptation"
+        "MainAbility/pages/onVisiable/onVisibleAreaApproximateChange",
+        "MainAbility/pages/Focus/requestFocus"
     ]
 }
