@@ -304,5 +304,65 @@ export default function ActsAceWebViewIncognitoMode() {
       sendEventByKey('webViewIncognitoModeButton', 10, '');
     })
 
+    /*
+     *@tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0021
+     *@tc.name emitWebViewIncognitoMode21
+     *@tc.desc emitWebViewIncognitoMode21
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
+     */
+    it('emitWebViewIncognitoMode21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'emitWebViewIncognitoMode21'
+      Utils.emitEvent(emitKey, 160310);
+      Utils.registerEvent('emitWebViewIncognitoMode21', true, 20251020, done);
+      sendEventByKey('webViewIncognitoModeButton', 10, '');
+    })
+
+    /*
+     *@tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0022
+     *@tc.name emitWebViewIncognitoMode22
+     *@tc.desc emitWebViewIncognitoMode22
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
+     */
+    it('emitWebViewIncognitoMode22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'emitWebViewIncognitoMode22'
+      Utils.emitEvent(emitKey, 160310);
+      Utils.registerEvent('emitWebViewIncognitoMode22', true, 20251021, done);
+      sendEventByKey('webViewIncognitoModeButton', 10, '');
+    })
+
+    /*
+     *@tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0023
+     *@tc.name emitWebViewIncognitoMode23
+     *@tc.desc emitWebViewIncognitoMode23
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
+     */
+    it('emitWebViewIncognitoMode23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'emitWebViewIncognitoMode23'
+      Utils.emitEvent(emitKey, 160310);
+      Utils.registerEvent('emitWebViewIncognitoMode23', true, 20251022, done);
+      sendEventByKey('webViewIncognitoModeButton', 10, '');
+    })
+
+    /*
+     *@tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0024
+     *@tc.name emitWebViewIncognitoMode24
+     *@tc.desc emitWebViewIncognitoMode24
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
+     */
+    it('emitWebViewIncognitoMode24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'emitWebViewIncognitoMode24'
+      Utils.emitEvent(emitKey, 160310);
+      Utils.registerEvent('emitWebViewIncognitoMode24', true, 20251023, done);
+      sendEventByKey('webViewIncognitoModeButton', 10, '');
+    })
+
   })
 }
