@@ -407,6 +407,33 @@ export default function WindowOrientationTest() {
             done();
         });
 
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_4290
+         * @tc.name       testGetPreferredOrientation_WindowAbnormal_static
+         * @tc.desc       Sets the display direction property of the window
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testGetPreferredOrientation_WindowAbnormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetPreferredOrientation_WindowAbnormal_static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            let windowClass: window.Window = await windowStage.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
+            hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+            expect(!!windowClass).assertTrue();
+            await windowClass.destroyWindow();
+            try {
+                let currentOrientation = windowClass.getPreferredOrientation();
+                expect(false).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,`Failed to get window orientation. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        })
+
 
 
 

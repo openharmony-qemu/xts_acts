@@ -22,6 +22,7 @@ import WindowPropertiesTest from "./WindowProperties.test";
 import WindowPCTest from "./WindowPC.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowZindexTest from "./WindowZindex.test";
+import WindowFocusTest from "./WindowFocus.test";
 export default function testsuite() {
   WindowLifeCycleTest();
   WindowImmersiveTest();
@@ -33,4 +34,5 @@ export default function testsuite() {
   WindowPCTest();
   WindowKeyBoardTest();
   WindowZindexTest();
+  WindowFocusTest();
 }

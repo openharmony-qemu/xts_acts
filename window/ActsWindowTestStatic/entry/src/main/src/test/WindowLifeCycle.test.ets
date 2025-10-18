@@ -1090,7 +1090,7 @@ export default function WindowLifeCycleTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('windowWillClose', () => {
+                tempWnd.onWindowWillClose (() => {
                     console.info(msgStr +  'on windowWillClose callback');
                     return new Promise<boolean>((resolve, reject) => {
                         // 是否关闭该窗口
@@ -1133,7 +1133,7 @@ export default function WindowLifeCycleTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('windowWillClose');
+                tempWnd.offWindowWillClose();
                 hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
                 expect(false).assertTrue();
                 done()
@@ -1148,6 +1148,48 @@ export default function WindowLifeCycleTest() {
                 }
                 done()
             }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_OnWindowWillClose_1300004_static_0300
+         * @tc.name        testonWindowWillClose1300004_static
+         * @tc.desc        testonWindowWillClose1300004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testonWindowWillClose1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testonWindowWillClose1300004_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "test",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let windowClass:window.Window = await window.createWindow(config);
+            const callback = () => {
+                return new Promise<boolean>((resolve, reject) => {
+                    // 是否关闭该窗口
+                    let result: boolean = true;
+                    resolve(result);
+                });
+            }
+            try {
+                windowClass.onWindowWillClose(callback);
+                hilog.info(domain, tag,msgStr  + 'Succeeded on windowWillClose ');
+                expect(false).assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                await windowClass.destroyWindow();
+                if(e.code == 801){
+                    done();
+                }else {
+                    expect(e.code).assertEqual(1300004);
+                    done()
+                }
+            }
+
         })
 
         /**
@@ -1586,6 +1628,113 @@ export default function WindowLifeCycleTest() {
                 done()
             }
         })
+
+/**
+         * @tc.number      testMinimizeCallbackErrCode1300002_static_0100
+         * @tc.name        testMinimizeCallbackErrCode1300002_static_0100
+         * @tc.desc        testMinimizeCallbackErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMinimizeCallbackErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testMinimizeCallbackErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMinimizeCallbackErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await subWin.destroyWindow();
+                    try {
+                        subWin.minimize((err:  BusinessError<void> | null) :void => {
+                            const errCode: number = err!.code;
+                            if (errCode) {
+                                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err!.code)+` message:${err!.message}`);
+                                if(errCode == 801){
+                                    done();
+                                }else{
+                                    expect(err!.code).assertEqual(1300002);
+                                    expect(err!.message!=null).assertTrue();
+                                    done()
+                                }
+                                return;
+                            }else{
+                                hilog.info(domain, tag,msgStr + 'Succeeded in calling minimize.');
+                                expect(false).assertTrue();
+                                done();
+                            }
+
+                        });
+                    } catch (exception:  BusinessError) {
+                        hilog.error(domain, tag,msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
+                        expect(false).assertTrue();
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+
+
+        })
+        /**
+         * @tc.number      testMinimizePromiseErrCode1300002_static_0100
+         * @tc.name        testMinimizePromiseErrCode1300002_static_0100
+         * @tc.desc        testMinimizePromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMinimizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testMinimizePromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMinimizePromiseErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await subWin.destroyWindow();
+                    try {
+                        subWin.minimize().then(() => {
+                            hilog.info(domain, tag,msgStr + 'Succeeded in calling minimize.');
+                            expect(false).assertTrue();
+                            done()
+                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                            if(err.code == 801){
+                                done();
+                            }else{
+                                expect(err.code).assertEqual(1300002);
+                                expect(err.message!=null).assertTrue();
+                                done()
+                            }
+                        });
+
+                    } catch (exception: BusinessError) {
+                        hilog.error(domain, tag,msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
+                        expect(false).assertTrue();
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+
+        })
+
+
+
+
+
 
     })
 
