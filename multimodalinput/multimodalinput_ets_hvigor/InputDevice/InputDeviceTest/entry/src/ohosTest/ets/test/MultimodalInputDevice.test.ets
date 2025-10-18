@@ -467,7 +467,7 @@ export default function MultimodalInputDeviceTest() {
             done();
           } else {
             console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-            expect(type == inputDevice.KeyboardType.None ||
+            expect(type == inputDevice.KeyboardType.NONE ||
               type == inputDevice.KeyboardType.UNKNOWN ||
               type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
               type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
@@ -497,7 +497,7 @@ export default function MultimodalInputDeviceTest() {
       try {
         inputDevice.getKeyboardType(1).then((type: Number) => {
           console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-          expect(type == inputDevice.KeyboardType.None ||
+          expect(type == inputDevice.KeyboardType.NONE ||
             type == inputDevice.KeyboardType.UNKNOWN ||
             type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
             type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
@@ -526,7 +526,7 @@ export default function MultimodalInputDeviceTest() {
       try {
         let type: number = inputDevice.getKeyboardTypeSync(1);
         console.info(`${caseName} Keyboard type: ${JSON.stringify(type)}`);
-        expect(type == inputDevice.KeyboardType.None ||
+        expect(type == inputDevice.KeyboardType.NONE ||
           type == inputDevice.KeyboardType.UNKNOWN ||
           type == inputDevice.KeyboardType.ALPHABETIC_KEYBOARD ||
           type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
