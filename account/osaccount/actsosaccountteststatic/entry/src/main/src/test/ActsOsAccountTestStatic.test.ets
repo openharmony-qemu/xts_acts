@@ -93,7 +93,7 @@ export default function ActsOsAccountTestStatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetOsAccountDomainInfo_0300 start====");
         try {
-          let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(-1);
+          let domainInfo: osAccount.DomainAccountInfo | null = await accountManager.getOsAccountDomainInfo(-1);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0300 domainInfo: " + domainInfo);
           expect().assertFail();
           done();
@@ -117,7 +117,7 @@ export default function ActsOsAccountTestStatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetOsAccountDomainInfo_0400 start====");
         try {
-          let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(100000);
+          let domainInfo: osAccount.DomainAccountInfo | null = await accountManager.getOsAccountDomainInfo(100000);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0400 domainInfo: " + domainInfo);
           expect().assertFail();
           done();
@@ -141,7 +141,7 @@ export default function ActsOsAccountTestStatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetOsAccountDomainInfo_0500 start====");
         try {
-          let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(0);
+          let domainInfo: osAccount.DomainAccountInfo | null = await accountManager.getOsAccountDomainInfo(0);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0500 domainInfo: " + domainInfo);
           expect(domainInfo == null).assertTrue();
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0500 end====");
@@ -165,7 +165,7 @@ export default function ActsOsAccountTestStatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetOsAccountDomainInfo_0600 start====");
         try {
-          let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(100);
+          let domainInfo: osAccount.DomainAccountInfo | null = await accountManager.getOsAccountDomainInfo(100);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0600 domainInfo: " + domainInfo);
           expect(domainInfo == null).assertTrue();
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0600 end====");

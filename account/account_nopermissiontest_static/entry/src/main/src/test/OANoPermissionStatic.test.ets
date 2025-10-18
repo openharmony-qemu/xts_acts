@@ -207,7 +207,7 @@ export default function ActsOANoPermissionTestStatic() {
         let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
         hilog.info(0x0000, tag, logTag + "start getCurrentOsAccount");
         try {
-          let data: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(101);
+          let data: osAccount.DomainAccountInfo | null = await accountManager.getOsAccountDomainInfo(101);
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
         } catch (err: BusinessError<void>) {
