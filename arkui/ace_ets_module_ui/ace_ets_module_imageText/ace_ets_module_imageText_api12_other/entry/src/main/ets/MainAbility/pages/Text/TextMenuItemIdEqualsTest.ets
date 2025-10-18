@@ -36,7 +36,11 @@ struct TextMenuItemIdEqualsTest {
     console.log('TextMenuItemIdEquals2'+AppStorage.get('TextMenuItemIdEquals2'))
     return menuItems
   }
-
+  // 自定义键盘组件
+  @Builder CustomKeyboardBuilder() {
+    Column() {
+    }.backgroundColor(Color.Gray).height(0)
+  }
   build() {
     Column() {
       TextInput({text:this.text})
@@ -60,6 +64,7 @@ struct TextMenuItemIdEqualsTest {
             return false;
           }
         })
+        .customKeyboard(this.CustomKeyboardBuilder)
         .height('10%')
       TextInput({text:this.text})
         .id('TextEditMenuOptions2')
@@ -82,6 +87,7 @@ struct TextMenuItemIdEqualsTest {
             return false;
           }
         })
+        .customKeyboard(this.CustomKeyboardBuilder)
         .height('10%')
     }
     .width('90%')

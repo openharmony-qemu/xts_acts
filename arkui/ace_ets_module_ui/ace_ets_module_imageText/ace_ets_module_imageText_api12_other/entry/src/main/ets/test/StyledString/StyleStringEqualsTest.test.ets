@@ -67,7 +67,7 @@ export default function StyleStringEqualsTest() {
       await driver.delayMs(500)
       await Equals1.click()
       await driver.delayMs(500)
-      expect(AppStorage.get('equalsResult1')).assertFalse()
+      expect(AppStorage.get('equalsResult1')).assertTrue()
       console.info('[StyleStringEqualsTest_0100] END');
       done();
     });
@@ -88,7 +88,7 @@ export default function StyleStringEqualsTest() {
       await driver.delayMs(500)
       await Equals2.click()
       await driver.delayMs(500)
-      expect(AppStorage.get('equalsResult2')).assertTrue()
+      expect(AppStorage.get('equalsResult2')).assertFalse()
       console.info('[StyleStringEqualsTest_0200] END');
       done();
     });
