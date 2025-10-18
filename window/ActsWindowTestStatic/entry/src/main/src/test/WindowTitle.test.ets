@@ -478,6 +478,69 @@ export default function WindowTitleTest() {
             }
         })
 
+        /**
+         * @tc.number     SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_static_3500
+         * @tc.name       testSetDecorButtonStyle_buttonIconSize_static_0100
+         * @tc.desc       testSetDecorButtonStyle_buttonIconSize_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it("testSetDecorButtonStyle_buttonIconSize_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testSetDecorButtonStyle_buttonIconSize_static_0100";
+            hilog.info(domain, tag,msgStr + "begin");
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                let param: window.DecorButtonStyle = {
+                    buttonIconSize: 15
+                }
+                windowClass.setDecorButtonStyle(param);
+                hilog.info(domain, tag,`${msgStr} setDecorButtonStyle success.`);
+            } catch (error: BusinessError) {
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                if (error.code == 801) {
+                    done();
+                } else {
+                    expect(error.code).assertEqual(401);
+                    let result = windowClass.getDecorButtonStyle();
+                    hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
+                    expect(result.buttonIconSize).assertEqual(20);
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_static_3900
+         * @tc.name       testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100
+         * @tc.desc       testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_static_0100";
+            hilog.info(domain, tag,msgStr + "begin");
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            try {
+                let param: window.DecorButtonStyle = {
+                    buttonBackgroundCornerRadius: 3
+                }
+                windowClass.setDecorButtonStyle(param);
+                hilog.error(domain, tag,`${msgStr} setDecorButtonStyle success.`);
+            } catch (error: BusinessError) {
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                if (error.code == 801) {
+                    done();
+                } else {
+                    expect(error.code).assertEqual(401);
+                    let result = windowClass.getDecorButtonStyle();
+                    hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
+                    expect(result.buttonBackgroundCornerRadius).assertEqual(4);
+                    done();
+                }
+            }
+        })
+
 
 
 
