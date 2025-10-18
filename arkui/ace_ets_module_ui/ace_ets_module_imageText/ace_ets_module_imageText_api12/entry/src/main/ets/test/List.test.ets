@@ -277,6 +277,7 @@ import getStyles from './StyledString/getStyles.test';
 import replaceString from './StyledString/replaceString.test';
 import TextAreaTypeTest from "./TextArea/TextAreaType.test";
 import TextInputTypeTest from "./TextInput/TextInputType.test";
+import RichEditorFromStyledStringTest from "./RichEditor/RichEditorFromStyledString.test";
 
 export default function testsuite() {
   TextCommonTextComputing1();
@@ -535,4 +536,5 @@ export default function testsuite() {
   replaceString();
   TextAreaTypeTest();
   TextInputTypeTest();
+  RichEditorFromStyledStringTest();
 }
