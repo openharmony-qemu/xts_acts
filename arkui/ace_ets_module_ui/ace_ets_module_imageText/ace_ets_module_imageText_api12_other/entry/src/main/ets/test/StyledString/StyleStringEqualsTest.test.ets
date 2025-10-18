@@ -22,7 +22,7 @@ export default function StyleStringEqualsTest() {
     beforeEach(async (done: Function) => {
       console.info("StyleStringEqualsTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/StyleString/StyleStringEqualsTest',
+        url: 'MainAbility/pages/StyledString/StyleStringEqualsTest',
       }
       try {
         router.clear();
@@ -67,7 +67,7 @@ export default function StyleStringEqualsTest() {
       await driver.delayMs(500)
       await Equals1.click()
       await driver.delayMs(500)
-      expect(AppStorage.get('equalsResult1')).assertFail()
+      expect(AppStorage.get('equalsResult1')).assertFalse()
       console.info('[StyleStringEqualsTest_0100] END');
       done();
     });

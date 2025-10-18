@@ -39,10 +39,10 @@ struct TextMenuItemIdEqualsTest {
 
   build() {
     Column() {
-      Text(this.text)
+      TextInput({text:this.text})
         .id('TextEditMenuOptions1')
         .fontSize(15)
-        .copyOption(CopyOptions.LocalDevice)
+        .textAlign(TextAlign.Center)
         .editMenuOptions({
           onCreateMenu: this.onCreateMenu1, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
             if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
@@ -61,10 +61,10 @@ struct TextMenuItemIdEqualsTest {
           }
         })
         .height('10%')
-      Text(this.text)
+      TextInput({text:this.text})
         .id('TextEditMenuOptions2')
         .fontSize(15)
-        .copyOption(CopyOptions.LocalDevice)
+        .textAlign(TextAlign.Center)
         .editMenuOptions({
           onCreateMenu: this.onCreateMenu2, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
             if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {

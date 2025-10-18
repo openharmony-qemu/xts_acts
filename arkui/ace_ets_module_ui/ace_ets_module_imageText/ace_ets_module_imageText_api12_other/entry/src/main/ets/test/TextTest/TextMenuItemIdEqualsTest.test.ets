@@ -69,7 +69,7 @@ export default function TextMenuItemIdEqualsTest() {
       await driver.delayMs(500)
       await driver.triggerKey(2070)
       await driver.delayMs(500)
-      expect(AppStorage.get('TextMenuItemIdEquals2')).assertFail()
+      expect(AppStorage.get('TextMenuItemIdEquals2')).assertFalse()
       console.info('[TextMenuItemIdEqualsTest_0100] END');
       done();
     });
