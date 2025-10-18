@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import request from "@ohos.request";
 import common from "@ohos.app.ability.common";
+import fs from "@ohos.file.fs";
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let baseContext: common.UIAbilityContext;
@@ -36,8 +37,14 @@ export default function RequestDownloadStaticTest() {
         abilityName: "EntryAbility",
         moduleName:"entry",
         onAbilityCreate: (abilitys : UIAbility) : void => {
-          baseContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
+          baseContext = abilitys.context;
+          let pathDir: string = baseContext.cacheDir;
+          let filePath = pathDir + `/test.txt`;
+          let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+          let content = ''.padEnd(1 * 1024, 'Hello world');
+          fs.writeSync(file.fd, content);
+          fs.closeSync(file.fd);
+          hilog.info(domain, tag, '%{public}s', '====>onAbilityCreate: text.txt file generate success');
 
         },
       }, (err : BusinessError | null) : void => {
@@ -202,6 +209,7 @@ export default function RequestDownloadStaticTest() {
         url: 'http://127.0.0.1:8080',
         saveas: './SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010.txt',
         method: "POST",
+        data: attachments,
       };
       try {
         let task: request.agent.Task = await request.agent.create(baseContext, config);
@@ -326,7 +334,7 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create success: " + task);
             expect(err == null).assertTrue();
             done();
-          } 
+          }
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 download catch err: " + JSON.stringify(err));
@@ -680,7 +688,7 @@ export default function RequestDownloadStaticTest() {
         done();
       }
     });
-    
+
 
   })
 
