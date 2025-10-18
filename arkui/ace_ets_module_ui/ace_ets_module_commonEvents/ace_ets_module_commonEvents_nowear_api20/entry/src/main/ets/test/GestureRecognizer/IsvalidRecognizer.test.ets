@@ -60,7 +60,7 @@ export default function IsvalidRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : IsvalidRecognizer_0100
      * @tc.name  : IsvalidRecognizer_0100
      * @tc.desc  : To test whether IsvalidRecognizer is effective.
      * @tc.level : Level 0

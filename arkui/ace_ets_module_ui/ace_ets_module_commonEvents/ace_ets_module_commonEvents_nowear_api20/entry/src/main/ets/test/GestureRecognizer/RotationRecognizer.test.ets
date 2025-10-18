@@ -46,7 +46,7 @@ export default function rotationGestureTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : RotationRecognizer_0100
      * @tc.name  : RotationRecognizer_0100
      * @tc.desc  : To test whether RotationRecognizer is effective.
      * @tc.level : Level 0

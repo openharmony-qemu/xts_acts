@@ -60,7 +60,7 @@ export default function DragRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : DragRecognizer_0100
      * @tc.name  : DragRecognizer_0100
      * @tc.desc  : To test whether DragRecognizer is effective.
      * @tc.level : Level 0

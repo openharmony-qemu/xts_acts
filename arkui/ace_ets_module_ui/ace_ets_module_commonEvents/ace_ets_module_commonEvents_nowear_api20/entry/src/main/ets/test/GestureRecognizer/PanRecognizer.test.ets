@@ -219,7 +219,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0800
      * @tc.name  : PanRecognizer_0800
      * @tc.desc  : To test for None
      * @tc.level : Level 0

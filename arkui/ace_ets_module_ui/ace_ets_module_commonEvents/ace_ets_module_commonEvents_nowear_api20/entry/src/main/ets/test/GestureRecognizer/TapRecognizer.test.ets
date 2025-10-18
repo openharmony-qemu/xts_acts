@@ -60,7 +60,7 @@ export default function TapRecognizerTest() {
     });
 
     /* *
-    * @tc.number
+    * @tc.number : TapRecognizer_0100
     * @tc.name  : TapRecognizer_0100
     * @tc.desc  : To test whether TapRecognizer is effective.
     * @tc.level : Level 0

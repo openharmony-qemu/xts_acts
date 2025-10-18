@@ -59,7 +59,7 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : SwipeRecognizer_0100
      * @tc.name  : SwipeRecognizer_0100
      * @tc.desc  : To test whether SwipeRecognizer is effective and getDirection is All.
      * @tc.level : Level 0
@@ -87,7 +87,7 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : SwipeRecognizer_0200
      * @tc.name  : SwipeRecognizer_0200
      * @tc.desc  : To test getDirection is Horizontal.
      * @tc.level : Level 0
@@ -107,7 +107,7 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : SwipeRecognizer_0300
      * @tc.name  : SwipeRecognizer_0300
      * @tc.desc  : To test getDirection is Vertical.
      * @tc.level : Level 0
@@ -127,7 +127,7 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : SwipeRecognizer_0400
      * @tc.name  : SwipeRecognizer_0400
      * @tc.desc  : To test getDirection is None.
      * @tc.level : Level 0

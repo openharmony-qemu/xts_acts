@@ -72,7 +72,7 @@ export default function LongPressRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : LongPressRecognizer_0200
      * @tc.name  : LongPressRecognizer_0200
      * @tc.desc  : To test whether LongPressRecognizer is effective.
      * @tc.level : Level 0

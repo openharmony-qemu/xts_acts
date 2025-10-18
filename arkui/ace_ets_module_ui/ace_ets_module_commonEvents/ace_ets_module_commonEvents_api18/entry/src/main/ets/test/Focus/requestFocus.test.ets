@@ -77,7 +77,7 @@ export default function RequestFocusTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : RequestFocus_0200
      * @tc.name  : RequestFocus_0200
      * @tc.desc  : To test whether RequestFocus is False.
      * @tc.level : Level 0

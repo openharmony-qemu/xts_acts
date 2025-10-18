@@ -60,7 +60,7 @@ export default function ClickRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number ClickRecognizer_0100
      * @tc.name  : ClickRecognizer_0100
      * @tc.desc  : To test whether ClickRecognizer is effective.
      * @tc.level : Level 0

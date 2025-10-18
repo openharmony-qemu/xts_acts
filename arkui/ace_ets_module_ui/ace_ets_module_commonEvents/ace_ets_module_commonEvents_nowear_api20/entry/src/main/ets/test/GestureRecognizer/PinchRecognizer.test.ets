@@ -46,8 +46,8 @@ export default function PinchRecognizerTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name  : PinchRecognizer_0100
+     * @tc.number  PinchRecognizer1_0100
+     * @tc.name  : PinchRecognizer1_0100
      * @tc.desc  : To test whether PinchRecognizer is effective.
      * @tc.level : Level 0
      */
