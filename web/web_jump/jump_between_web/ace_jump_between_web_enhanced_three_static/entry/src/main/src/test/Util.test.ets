@@ -58,7 +58,7 @@ export default class Utils{
         } catch (err) {
           console.info(`[${testCaseName}] err:` + JSON.stringify(err));
         }
-        done()
+
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,

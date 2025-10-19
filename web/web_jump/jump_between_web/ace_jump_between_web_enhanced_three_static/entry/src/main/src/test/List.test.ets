@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import webViewOnViewportFitChange from './webViewControllerPart2.test';
+import webViewOnViewportFitChange from './WebViewControllerPart2.test';
 
 export default function testsuite() {
   webViewOnViewportFitChange();

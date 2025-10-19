@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,13 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
-import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
+
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -41,7 +40,7 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       });
     } catch (e: Error) {
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error:-----------' + e.message);
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 

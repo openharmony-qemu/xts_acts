@@ -12,69 +12,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { Builder, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
-import Utils from '../../src/test/Util.test';
-import web_webview from '@ohos.web.webview';
-import webview from '@ohos.web.webview';
-import webView from '@ohos.web.webview';
+import {
+  OnTitleReceiveEvent,
+  OnDataResubmittedEvent,
+  OnRenderExitedEvent,
+  OnPageBeginEvent,
+  RenderProcessNotRespondingReason,
+  RenderProcessNotRespondingData,
+  Entry,
+  Component,
+  Column,
+  Row,
+  Button,
+  ClickEvent,
+  Web
+} from "@ohos.arkui.component"
+import { State } from "@ohos.arkui.stateManagement"
+import webView from '@ohos.web.webview'
+import { BusinessError } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
+import Utils from '../../src/test/Util.test';
+import events_emitter from '@ohos.events.emitter';
+import { JsProxyObject } from '../../src/test/Interfaces';
+import { Callback } from '@ohos.base'
 import { Callback, RecordData } from '@ohos.base'
-import { State } from "@ohos.arkui.stateManagement";
-import { BusinessError } from '@ohos.base'
-import { Driver, ON } from '@ohos.UiTest';
+import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
-import util from '@ohos.util';
-import { UIContext } from '@ohos.arkui.UIContext';
-import { Hypium } from '../../../hypium';
-import image from '@ohos.multimedia.image';
-
 class StringFields {
-  public str: string = '';
+  private str: string = '';
 }
-
 @Entry
 @Component
-struct webViewControllerPart2 {
-  stringObj: StringFields = new StringFields();
+struct WebOnDataResubmitted {
+  stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
-  @State str: string = ""
-  @State onScrollCallBack: boolean = false
-  @State javaScriptAccess: boolean = true
-  @State icon: image.PixelMap | undefined = undefined;
-  @State onShowFileSelectorCallBack: boolean = false
-  @State FileSelectorParamGetTitle: string = ''
-  @State FileSelectorParamGetGetMode: number = 100
-  @State FileSelectorParamGetGetAcceptType: Array<String> = new Array<String>()
-  @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 " +
-    "(KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
-  @State uri: string = "file://docs/storage/Users/currentUser/Documents/1.json";
-  @State FileSelectorParamGetIsCapture: boolean = true
-  @State FileSelectorResultHandleFileList: Array<String> = new Array<String>()
-  @State enterPageEnd: boolean = false
-  @State numberOfMatches: number = 0
-  @State searchNext: boolean = false
-  no_error: string = "no error happened"
-
+  @State str: string = '';
+  @State onDataResubmittedCalled: boolean = false;
+  @State resend: boolean = true;
+  @State title: string = '';
   aboutToAppear() {
-    console.info("Entry aboutToAppear");
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info("Finish aboutToAppear " + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -83,19 +73,24 @@ struct webViewControllerPart2 {
     Column() {
       Row() {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick((e: ClickEvent) => {
-          console.info("key==>" + this.stringObj.str)
+          console.info("key==>" + this.stringObj.str);
           switch (this.stringObj.str) {
-
             case "testBackOrForward002": {
               try {
                 this.controller.clearHistory()
                 this.controller.loadUrl("resource://rawfile/index.html");
-                this.controller.loadUrl("resource://rawfile/second.html");
-                this.controller.backOrForward(-1)
+                setTimeout(() => {
+                  this.controller.loadUrl("resource://rawfile/second.html");
+                }, 2000)
+                setTimeout(() => {
+                  this.controller.backOrForward(-1)
+                }, 4000)
+                setTimeout(() => {
                 let title = this.controller.getTitle();
                 Utils.emitEvent(title, 37006)
+                }, 6000)
               } catch (error) {
-                hilog.info(0X0000, "testTag", `ErrorCode: ` + error);
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
               }
               break;
             }
@@ -104,11 +99,15 @@ struct webViewControllerPart2 {
               try {
                 this.controller.clearHistory()
                 this.controller.loadUrl("resource://rawfile/index.html");
-                this.controller.backOrForward(-3)
-                let title = this.controller.getTitle();
-                Utils.emitEvent(title, 37007)
+                setTimeout(() => {
+                  this.controller.backOrForward(-3)
+                }, 2000)
+                setTimeout(() => {
+                  let title = this.controller.getTitle();
+                  Utils.emitEvent(title, 37007)
+                }, 4000)
               } catch (error) {
-                hilog.info(0X0000, "testTag", `ErrorCode: ` + error);
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
               }
               break;
             }
@@ -117,11 +116,15 @@ struct webViewControllerPart2 {
               try {
                 this.controller.clearHistory()
                 this.controller.loadUrl("resource://rawfile/index.html");
-                this.controller.backOrForward(3)
-                let title = this.controller.getTitle();
-                Utils.emitEvent(title, 37008)
+                setTimeout(() => {
+                  this.controller.backOrForward(3)
+                }, 2000)
+                setTimeout(() => {
+                  let title = this.controller.getTitle();
+                  Utils.emitEvent(title, 37008)
+                }, 4000)
               } catch (error) {
-                hilog.info(0X0000, "testTag", `ErrorCode: ` + error);
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
               }
               break;
             }
@@ -129,10 +132,8 @@ struct webViewControllerPart2 {
         })
       }
 
-      Web({
-        src: 'resource://rawfile/index.html',
-        controller: this.controller
-      }).javaScriptAccess(this.javaScriptAccess)
+      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+        .javaScriptAccess(true)
         .fileAccess(true)
         .key("onShowFileSelectorKey")
     }
