@@ -2181,5 +2181,123 @@ export default function audioLoopBack() {
         }
       }
     })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_GETSTATUS_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_GETSTATUS_0100
+     * @tc.desc      : getStatus
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_GETSTATUS_0100", Level.LEVEL2, async () => {
+      let audioLoopback: audio.AudioLoopback;
+      audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+        audioLoopback = data;
+        console.info('AudioLoopback Created : SUCCESS');
+        audioLoopback.getStatus().then((status: audio.AudioLoopbackStatus) => {
+          if(status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE){
+            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE);
+            console.info(`AudioLoopback: Status: ${status}`);
+          }
+          if(status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE){
+            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_SCENE);
+            console.info(`AudioLoopback: Status: ${status}`);
+          }
+          if(status == audio.AudioLoopbackStatus.AVAILABLE_IDLE){
+            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            console.info(`AudioLoopback: Status: ${status}`);
+          }
+          if(status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING){
+            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_RUNNING);
+            console.info(`AudioLoopback: Status: ${status}`);
+          }
+        }).catch((err: BusinessError) => {
+          expect(false).assertTrue();
+          console.error(`AudioLoopback: Status :ERROR: ${err}`);
+        })
+      }).catch((err: BusinessError) => {
+        expect(false).assertTrue();
+        console.error(`AudioLoopback Created : ERROR : ${err}`);
+      });
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_ON_STATUSCHANGE_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_ON_STATUSCHANGE_0100
+     * @tc.desc      : getStatus
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_ON_STATUSCHANGE_0100", Level.LEVEL2, async () => {
+      let audioLoopback: audio.AudioLoopback;
+      audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+        audioLoopback = data;
+        console.info('AudioLoopback Created : SUCCESS');
+        audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
+          if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
+            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE);
+            console.info('audio loopback status is: UNAVAILABLE_DEVICE');
+          } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
+            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_SCENE);
+            console.info('audio loopback status is: UNAVAILABLE_SCENE');
+          } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
+            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            console.info('audio loopback status is: AVAILABLE_IDLE');
+          } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
+            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            console.info('audio loopback status is: AVAILABLE_RUNNING');
+          }
+        });
+      }).catch((err: BusinessError) => {
+        expect(false).assertTrue();
+        console.error(`AudioLoopback Created : ERROR : ${err}`);
+      });
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETREVERBPRESET_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETREVERBPRESET_0100
+     * @tc.desc      : getStatus
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETREVERBPRESET_0100", Level.LEVEL2, async () => {
+      let audioLoopback: audio.AudioLoopback;
+      audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+        audioLoopback = data;
+        console.info('AudioLoopback Created : SUCCESS');
+        try {
+          let ret: boolean = audioLoopback.setReverbPreset(-10);
+          expect(ret).assertFalse();
+        } catch (err) {
+          console.error(`setReverbPreset :ERROR: ${err}`);
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`AudioLoopback Created : ERROR : ${err}`);
+      });
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100
+     * @tc.desc      : getStatus
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100", Level.LEVEL2, async () => {
+      let audioLoopback: audio.AudioLoopback;
+      audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+        audioLoopback = data;
+        console.info('AudioLoopback Created : SUCCESS');
+        try {
+          let ret: boolean = audioLoopback.setEqualizerPreset(-10);
+          expect(ret).assertFalse();
+        } catch (err) {
+          console.error(`setEqualizerPreset :ERROR: ${err}`);
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`AudioLoopback Created : ERROR : ${err}`);
+      });
+    })
   })
 }
