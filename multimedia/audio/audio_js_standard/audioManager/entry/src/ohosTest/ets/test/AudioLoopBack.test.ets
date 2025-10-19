@@ -2196,19 +2196,19 @@ export default function audioLoopBack() {
         console.info('AudioLoopback Created : SUCCESS');
         audioLoopback.getStatus().then((status: audio.AudioLoopbackStatus) => {
           if(status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE){
-            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE);
+            expect(status).assertEqual(-2);
             console.info(`AudioLoopback: Status: ${status}`);
           }
           if(status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE){
-            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_SCENE);
+            expect(status).assertEqual(-1);
             console.info(`AudioLoopback: Status: ${status}`);
           }
           if(status == audio.AudioLoopbackStatus.AVAILABLE_IDLE){
-            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            expect(status).assertEqual(0);
             console.info(`AudioLoopback: Status: ${status}`);
           }
           if(status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING){
-            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_RUNNING);
+            expect(status).assertEqual(1);
             console.info(`AudioLoopback: Status: ${status}`);
           }
         }).catch((err: BusinessError) => {
@@ -2235,16 +2235,16 @@ export default function audioLoopBack() {
         console.info('AudioLoopback Created : SUCCESS');
         audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
           if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
-            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE);
+            expect(status).assertEqual(-2);
             console.info('audio loopback status is: UNAVAILABLE_DEVICE');
           } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
-            expect(status).assertEqual(audio.AudioLoopbackStatus.UNAVAILABLE_SCENE);
+            expect(status).assertEqual(-1);
             console.info('audio loopback status is: UNAVAILABLE_SCENE');
           } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
-            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            expect(status).assertEqual(0);
             console.info('audio loopback status is: AVAILABLE_IDLE');
           } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
-            expect(status).assertEqual(audio.AudioLoopbackStatus.AVAILABLE_IDLE);
+            expect(status).assertEqual(1);
             console.info('audio loopback status is: AVAILABLE_RUNNING');
           }
         });

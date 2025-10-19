@@ -14218,11 +14218,11 @@ export default function audioRendererTest() {
                console.error('Failed to get params');
              } else {
              if(effectMode == audio.AudioEffectMode.EFFECT_NONE){
-               expect(effectMode).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+               expect(effectMode).assertEqual(0);
                console.info(`getAudioEffectMode: ${effectMode}`);
               }
               if(effectMode == audio.AudioEffectMode.EFFECT_DEFAULT){
-                expect(effectMode).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+                expect(effectMode).assertEqual(1);
                 console.info(`getAudioEffectMode: ${effectMode}`);
               }
             }
@@ -14268,11 +14268,11 @@ export default function audioRendererTest() {
            audioRenderer = data;
            audioRenderer.getAudioEffectMode().then((effectMode: audio.AudioEffectMode) => {
              if(effectMode == audio.AudioEffectMode.EFFECT_NONE){
-               expect(effectMode).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+               expect(effectMode).assertEqual(0);
                console.info(`getAudioEffectMode: ${effectMode}`);
              }
              if(effectMode == audio.AudioEffectMode.EFFECT_DEFAULT){
-               expect(effectMode).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+               expect(effectMode).assertEqual(1);
                console.info(`getAudioEffectMode: ${effectMode}`);
              }
            }).catch((err: BusinessError) => {
@@ -14400,16 +14400,16 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: Renderer after read`);
       await audioRen.getRenderRate().then((data) => {
         if (data == audio.AudioRendererRate.RENDER_RATE_NORMAL) {
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_NORMAL);
+          expect(data).assertEqual(0);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : PASS : ${data}`);
         }
         else if (data == audio.AudioRendererRate.RENDER_RATE_DOUBLE){
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_DOUBLE);
+          expect(data).assertEqual(1);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : FAIL : ${data}`);
           resultFlag = false;
         }
         else if (data == audio.AudioRendererRate.RENDER_RATE_HALF){
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_HALF);
+          expect(data).assertEqual(2);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : FAIL : ${data}`);
           resultFlag = false;
         }
@@ -14572,16 +14572,16 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: Renderer after read`);
       await audioRen.getRenderRate((err, data) => {
         if (data == audio.AudioRendererRate.RENDER_RATE_NORMAL) {
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_NORMAL);
+          expect(data).assertEqual(0);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : PASS : ${data}`);
         }
         else if (data == audio.AudioRendererRate.RENDER_RATE_DOUBLE){
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_DOUBLE);
+          expect(data).assertEqual(1);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : FAIL : ${data}`);
           resultFlag = false;
         }
         else if (data == audio.AudioRendererRate.RENDER_RATE_HALF){
-          expect(data).assertEqual(audio.AudioRendererRate.RENDER_RATE_HALF);
+          expect(data).assertEqual(2);
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : FAIL : ${data}`);
           resultFlag = false;
         }
@@ -14660,31 +14660,31 @@ export default function audioRendererTest() {
           audioRenderer = data;
           audioRenderer.on('stateChange', (state: audio.AudioState) => {
             if (state == audio.AudioState.STATE_INVALID) {
-              expect(state).assertEqual(audio.AudioState.STATE_INVALID);
-              console.info('audio renderer state is: STATE_PREPARED');
+              expect(state).assertEqual(-1);
+              console.info('audio renderer state is: STATE_INVALID');
             }
             if (state == audio.AudioState.STATE_NEW) {
-              expect(state).assertEqual(audio.AudioState.STATE_NEW);
+              expect(state).assertEqual(0);
               console.info('audio renderer state is: STATE_NEW');
             }
             if (state == audio.AudioState.STATE_PREPARED) {
-              expect(state).assertEqual(audio.AudioState.STATE_PREPARED);
+              expect(state).assertEqual(1);
               console.info('audio renderer state is: STATE_PREPARED');
             }
             if (state == audio.AudioState.STATE_RUNNING) {
-              expect(state).assertEqual(audio.AudioState.STATE_RUNNING);
+              expect(state).assertEqual(2);
               console.info('audio renderer state is: STATE_RUNNING');
             }
             if (state == audio.AudioState.STATE_STOPPED) {
-              expect(state).assertEqual(audio.AudioState.STATE_STOPPED);
+              expect(state).assertEqual(3);
               console.info('audio renderer state is: STATE_STOPPED');
             }
             if (state == audio.AudioState.STATE_RELEASED) {
-              expect(state).assertEqual(audio.AudioState.STATE_RELEASED);
+              expect(state).assertEqual(4);
               console.info('audio renderer state is: STATE_RELEASED');
             }
             if (state == audio.AudioState.STATE_PAUSED) {
-              expect(state).assertEqual(audio.AudioState.STATE_PAUSED);
+              expect(state).assertEqual(5);
               console.info('audio renderer state is: STATE_PAUSED');
             }
           });
@@ -14730,15 +14730,15 @@ export default function audioRendererTest() {
           try {
             let renderRate: audio.AudioRendererRate = audioRenderer.getRenderRateSync();
             if (renderRate == audio.AudioRendererRate.RENDER_RATE_NORMAL){
-              expect(renderRate).assertEqual(audio.AudioRendererRate.RENDER_RATE_NORMAL);
+              expect(renderRate).assertEqual(0);
               console.info(`getRenderRate: ${renderRate}`);
             }
             if (renderRate == audio.AudioRendererRate.RENDER_RATE_DOUBLE){
-              expect(renderRate).assertEqual(audio.AudioRendererRate.RENDER_RATE_DOUBLE);
+              expect(renderRate).assertEqual(1);
               console.info(`getRenderRate: ${renderRate}`);
             }
             if (renderRate == audio.AudioRendererRate.RENDER_RATE_HALF){
-              expect(renderRate).assertEqual(audio.AudioRendererRate.RENDER_RATE_HALF);
+              expect(renderRate).assertEqual(2);
               console.info(`getRenderRate: ${renderRate}`);
             }
           } catch (err) {
