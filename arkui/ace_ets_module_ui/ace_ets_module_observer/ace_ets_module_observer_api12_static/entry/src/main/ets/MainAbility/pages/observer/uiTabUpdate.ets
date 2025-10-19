@@ -39,12 +39,12 @@ struct TabsUIExample {
 
   aboutToAppear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.on('tabContentUpdate', callbackFunc);
+    observer.onTabContentUpdate(callbackFunc);
   }
 
   aboutToDisappear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.off('tabContentUpdate', callbackFunc);
+    observer.offTabContentUpdate(callbackFunc);
   }
 
   build() {
