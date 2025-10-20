@@ -211,7 +211,6 @@ export default function DecimalTest030() {
       test_div_004('03.333', -4, '-0.83325');
       test_div_003(-1, -0.1, '10');
       test_div_005('99999', '1', '99999');
-      expect(true).assertEqual(true);
     });
 
   });

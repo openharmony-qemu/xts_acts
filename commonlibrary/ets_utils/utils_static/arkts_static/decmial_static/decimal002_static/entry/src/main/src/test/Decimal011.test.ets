@@ -83,7 +83,7 @@ export default function DecimalTest011() {
       test_floor_002('-1', '-0.49999999999999994');
     });
     /**
-     * @tc.number    : DECIMAL_TEST10_002
+     * @tc.number    : DECIMAL_TEST11_002
      * @tc.name      : Decimal_floor_Func_002
      * @tc.desc      : Test ln
      * @tc.size      : MediumTest
