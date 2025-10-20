@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import fs from '@ohos.file.fs';
+import { ConflictFiles } from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError } from '@ohos.base';
 
@@ -1108,6 +1109,82 @@ export default function fileIOCopyDir() {
         expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_01')).assertTrue();
         expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_02')).assertTrue();
         fs.rmdirSync(dpath.baseDir);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1700
+     * @tc.name fileIO_test_copyDir_async_static_017
+     * @tc.desc Test copyDir() interface.Promise.
+     * There is no target folder(src) under path dest. Mode is undefined.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_copyDir_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_copyDir_async_static_017');
+      let callfalg = 0;
+
+      try {
+        let dirnet1 = fs.listFileSync(dpath.destDir, {recursion : true});
+        expect(dirnet1.length == 4).assertTrue();
+        fs.copyDirWithConflictFiles(dpath.srcDir, dpath.destDir, 0, (err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_017 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.data && err.code == 13900015 && err.data?.length !== undefined) {
+            let errData = err?.data;
+            if(errData != null){
+              for(let i=0; i<errData.length; i++){
+                hilog.info(domain, tag, '%{public}s', "fileIO_test_copyDir_async_static_017 failed with conflicting files: " + err?.data![i].srcFile + " " + err?.data![i].destFile);
+              }
+            }
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_017 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1700
+     * @tc.name fileIO_test_copyDir_async_static_017
+     * @tc.desc Test copyDir() interface.Promise.
+     * There is no target folder(src) under path dest. Mode is undefined.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_copyDir_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath: Dir = await readyFiles('fileIO_test_copyDir_async_static_018');
+      let callfalg = 0;
+
+      try {
+        let dirnet1 = fs.listFileSync(dpath.destDir, {recursion : true});
+        expect(dirnet1.length == 4).assertTrue();
+        fs.copyDirWithConflictFiles(dpath.srcDir, dpath.destDir,(err: BusinessError<Array<ConflictFiles>>|null) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_018 copyDirWithConflictFiles start ');
+          callfalg = 1;
+          if (err && err.data && err.code == 13900015 && err.data?.length !== undefined) {
+            let errData = err?.data;
+            if(errData != null){
+              for(let i=0; i<errData.length; i++){
+                hilog.info(domain, tag, '%{public}s', "fileIO_test_copyDir_async_static_018 failed with conflicting files: " + err?.data![i].srcFile + " " + err?.data![i].destFile);
+              }
+            }
+            expect(callfalg).assertEqual(1);
+            done();
+          }
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_018 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
         done();
       }
     });
