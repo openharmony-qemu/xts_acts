@@ -180,7 +180,7 @@ export default function EsArrayTest001(){
             expect(a[1]).assertEqual(Number.MIN_VALUE);
             expect(Number.NaN === Number.NaN).assertFalse();
             expect(a[2] === Number.NaN).assertFalse();
-            expect(a[2]).assertEqual(a[2]);
+            expect(a[2] === a[2]).assertFalse();
             expect(a[3]).assertEqual(Number.NEGATIVE_INFINITY);
             expect(a[4]).assertEqual(Number.POSITIVE_INFINITY);
 
@@ -1124,21 +1124,6 @@ export default function EsArrayTest001(){
         });
 
         /**
-         * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE_0027
-         * @tc.name ESArrayPrototypeTest0027
-         * @tc.desc Test ES Builtins-Api in Array.Prototype
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('ESArrayPrototypeTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-            const caseName = 'ESArrayPrototypeTest0027';
-            console.info(`${caseName}, test start`);
-
-            console.info(`${caseName}, test end`);
-        });
-
-        /**
          * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE_0028
          * @tc.name ESArrayPrototypeTest0028
          * @tc.desc Test ES Builtins-Api in Array.Prototype
@@ -1610,21 +1595,6 @@ export default function EsArrayTest001(){
             expect(srcArr[2]).assertEqual(3);
             expect(srcArr[3]).assertEqual(4);
             expect(srcArr[4]).assertEqual(5);
-
-            console.info(`${caseName}, test end`);
-        });
-
-        /**
-         * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE_0052
-         * @tc.name ESArrayPrototypeTest0052
-         * @tc.desc Test ES Builtins-Api in Array.Prototype
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('ESArrayPrototypeTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-            const caseName = 'ESArrayPrototypeTest0052';
-            console.info(`${caseName}, test start`);
 
             console.info(`${caseName}, test end`);
         });
