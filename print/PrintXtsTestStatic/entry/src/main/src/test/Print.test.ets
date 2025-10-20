@@ -20,35 +20,35 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 
 
-const domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+const domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 const tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 function registerPrintTask(printTask: print.PrintTask) {
-  printTask.on('block', () => {
+  printTask.onBlock(() => {
     hilog.info(domain, tag, 'print state is block');
   })
-  printTask.on('succeed', () => {
+  printTask.onSucceed(() => {
     hilog.info(domain, tag, 'print state is succeed');
   })
-  printTask.on('fail', () => {
+  printTask.onFail(() => {
     hilog.info(domain, tag, 'print state is fail');
   })
-  printTask.on('cancel', () => {
+  printTask.onCancel(() => {
     hilog.info(domain, tag, 'print state is cancel');
   })
 }
 
 function UnregisterPrintTask(printTask: print.PrintTask) {
-  printTask.off('block', () => {
+  printTask.offBlock(() => {
     hilog.info(domain, tag, 'unregister print state is blocked');
   })
-  printTask.off('succeed', () => {
+  printTask.offSucceed(() => {
     hilog.info(domain, tag, 'unregister print state is succeed');
   })
-  printTask.off('fail', () => {
+  printTask.offFail(() => {
     hilog.info(domain, tag, 'unregister print state is fail');
   })
-  printTask.off('cancel', () => {
+  printTask.offCancel(() => {
     hilog.info(domain, tag, 'unregister print state is cancel');
   })
 }

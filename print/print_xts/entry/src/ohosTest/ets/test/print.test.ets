@@ -18,35 +18,35 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import print from '@ohos.print';
 import { BusinessError } from '@ohos.base';
 
-const DOMAIN: number = 0x0023
+const DOMAIN: int = 0x0023
 const TAG: string = 'printTestXTS';
 
 function registerPrintTask(printTask: print.PrintTask) {
-  printTask.on('block', () => {
+  printTask.onBlock(() => {
     hilog.info(DOMAIN, TAG, 'print state is block')
   });
-  printTask.on('succeed', () => {
+  printTask.onSucceed(() => {
     hilog.info(DOMAIN, TAG, 'print state is succeed')
   });
-  printTask.on('fail', () => {
+  printTask.onFail(() => {
     hilog.info(DOMAIN, TAG, 'print state is fail')
   });
-  printTask.on('cancel', () => {
+  printTask.onCancel(() => {
     hilog.info(DOMAIN, TAG, 'print state is cancel')
   });
 }
 
 function UnregisterPrintTask(printTask: print.PrintTask) {
-  printTask.off('block', () => {
+  printTask.offBlock(() => {
     hilog.info(DOMAIN, TAG, 'unregister print state is blocked')
   });
-  printTask.off('succeed', () => {
+  printTask.offSucceed(() => {
     hilog.info(DOMAIN, TAG, 'unregister print state is succeed')
   });
-  printTask.off('fail', () => {
+  printTask.offFail(() => {
     hilog.info(DOMAIN, TAG, 'unregister print state is fail')
   });
-  printTask.off('cancel', () => {
+  printTask.offCancel(() => {
     hilog.info(DOMAIN, TAG, 'unregister print state is cancel')
   });
 }
