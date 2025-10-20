@@ -850,5 +850,50 @@ export default function requestUploadConfigTest() {
       }
     });
 
+    /*
+     * @tc.number: SUB_Request_Download_on_faultOccur_1000
+     * @tc.name: SUB_Request_Download_on_faultOccur_1000
+     * @tc.desc: faults of REDIRECT error.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('SUB_Request_Download_on_faultOccur_1000', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_on_faultOccur_1000 is starting-----------------------");
+      let config = uploadConfig;
+      config.data = [{
+        name: 'uploadTest',
+        value: {
+          path: './test/MultiLevel.txt',
+          filename: 'MultiLevel.txt',
+          contentType: "SUB_Request_Download_on_faultOccur_1000"
+        }
+      }]
+      console.info("====>SUB_Request_Download_on_faultOccur_1000 config: " + JSON.stringify(config));
+      try {
+        let on_faultsCallback = async (faults: request.agent.Faults) => {
+          task.off('faultOccur', on_faultsCallback);
+          try {
+            console.info("====>SUB_Request_Download_on_faultOccur_1000 faults is: " + JSON.stringify(faults
+            ));
+            expect(faults).assertEqual(request.agent.Faults.REDIRECT);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_on_faultOccur_1000 response err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        task.on('faultOccur', on_faultsCallback);
+        await task.start();
+        console.info("====>SUB_Request_Download_on_faultOccur_1000 start success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_on_faultOccur_1000 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 };

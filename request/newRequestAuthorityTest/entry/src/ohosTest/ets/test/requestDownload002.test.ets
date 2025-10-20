@@ -912,6 +912,7 @@ export default function requestDownloadTwoUnitTest() {
         };
         request.agent.search(filter).then((data) => {
           expect(data.includes(task.tid)).assertEqual(true);
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info('====>SUB_Misc_REQUEST_Search_Promise_0090 search throw_err:' + JSON.stringify(err));
@@ -1205,6 +1206,7 @@ export default function requestDownloadTwoUnitTest() {
               done();
             }
             expect(data.includes(task.tid)).assertEqual(true);
+            expect(data.length > 0).assertTrue();
             done();
           }catch(err){
             console.info('====>SUB_Misc_REQUEST_Search_Callback_0010 search throw_err:' + JSON.stringify(err));
@@ -1256,6 +1258,7 @@ export default function requestDownloadTwoUnitTest() {
               done();
             }
             expect(data.includes(task.tid)).assertEqual(true);
+            expect(data.length > 0).assertTrue();
             done();
           }catch(err){
             console.info('====>SUB_Misc_REQUEST_Search_Callback_0011 search throw_err:' + JSON.stringify(err));
@@ -1707,6 +1710,69 @@ export default function requestDownloadTwoUnitTest() {
         });
       } catch (error) {
         console.info("====>SUB_Misc_REQUEST_Search_Callback_0110 catch error: " + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.number    SUB_Misc_REQUEST_Search_Promise_0120
+     * @tc.name    SUB_Misc_REQUEST_Search_Promise_0120
+     * @tc.desc      search promise the download task and data is null.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Misc_REQUEST_Search_Promise_0120', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0120 is starting-----------------------");
+      try {
+        let time = new Date().getTime();
+        let filter: request.agent.Filter = {
+          after:time,
+        };
+        let data = await request.agent.search(filter);
+        console.info('====>SUB_Misc_REQUEST_Search_Promise_0120 search data is:' + JSON.stringify(data));
+        expect(data.length === 0).assertTrue();
+        done();
+      } catch (err){
+        console.info('====>SUB_Misc_REQUEST_Search_Promise_0120 create throw_err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.number    SUB_Misc_REQUEST_Search_Callback_0120
+     * @tc.name    SUB_Misc_REQUEST_Search_Callback_0120
+     * @tc.desc      search callback the download task and data is null.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Misc_REQUEST_Search_Callback_0120', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0120 is starting-----------------------");
+      try {
+        let time = new Date().getTime();
+        let filter: request.agent.Filter = {
+          after:time,
+        };
+        request.agent.search(filter, (err, data) => {
+          try {
+            if(err) {
+              console.info('====>SUB_Misc_REQUEST_Search_Callback_0120 err:' + JSON.stringify(err));
+              expect().assertFail();
+              done();
+            }
+            console.info('====>SUB_Misc_REQUEST_Search_Callback_0120 search data is:' + JSON.stringify(data));
+            expect(data.length === 0).assertTrue();
+            done();
+          }catch (err) {
+            console.info('====>SUB_Misc_REQUEST_Search_Callback_0120 search throw_err:' + JSON.stringify(err));
+            done();
+          }
+        });
+      } catch (err){
+        console.info('====>SUB_Misc_REQUEST_Search_Callback_0120 catch search :' + JSON.stringify(err));
         expect().assertFail();
         done();
       };
