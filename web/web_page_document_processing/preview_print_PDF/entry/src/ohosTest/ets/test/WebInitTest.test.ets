@@ -36,9 +36,9 @@ export default function webInitTest() {
       done();
     })
     /*
-     * tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0100
-     * tc.name testSetPrintBackgroundOne
-     * tc.desc Support printing background colors
+     * @tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0100
+     * @tc.name   testSetPrintBackgroundOne
+     * @tc.desc   Support printing background colors
    */
     it('testSetPrintBackgroundOne',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetPrintBackgroundOne", 300530)
@@ -47,9 +47,9 @@ export default function webInitTest() {
     })
 
     /*
-     * tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0200
-     * tc.name testSetPrintBackgroundOne
-     * tc.desc Support printing background colors
+     * @tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0200
+     * @tc.name   testSetPrintBackgroundOne
+     * @tc.desc   Support printing background colors
     */
     it('emitSetPrintBackgroundTwo',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetPrintBackgroundTwo", 300530)
