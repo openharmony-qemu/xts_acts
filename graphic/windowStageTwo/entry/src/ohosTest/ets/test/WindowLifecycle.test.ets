@@ -1743,38 +1743,31 @@ export default function WindowLifecycle() {
         }
       }
     });
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0500
-     * @tc.name      : testWindowVisibilityChange_subWindow
-     * @tc.desc      : testWindowVisibilityChange_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
     it("testWindowVisibilityChange_subWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_subWindow";
       console.log(msgStr + "begin");
       let windowVisable:boolean = false;
       let subwindowClass:window.Window;
-      try {
+      
         console.log(msgStr + "try begin");
         subwindowClass = await windowStage.createSubWindow('testWindowVisibilityChange_subWindow');
+      try {
         subwindowClass.on('windowVisibilityChange', (data) => {
           console.info(msgStr + 'Window visibility changed, isVisible=' + data);
           windowVisable = data;
         });
         await subwindowClass.setUIContent('testability/pages/Index2');
-        await subWindowClass.showWindow();
+        await subwindowClass.showWindow();
         await sleep(300);
         expect(windowVisable).assertEqual(true);
-        await subWindowClass.minimize();
+        await subwindowClass.minimize();
         await sleep(300);
         expect(windowVisable).assertEqual(false);
-        await subWindowClass.destroyWindow();
+        await subwindowClass.destroyWindow();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
-        await subWindowClass.destroyWindow();
+        await subwindowClass.destroyWindow();
         if (error.code != 801) {
           console.error(msgStr + 'Failed to register callback. Cause:' + JSON.stringify(error));
           expect().assertFail();
