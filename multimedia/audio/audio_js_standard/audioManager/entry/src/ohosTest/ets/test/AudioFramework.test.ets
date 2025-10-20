@@ -4115,7 +4115,7 @@ export default function audioFramework() {
       await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
       await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
-      let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+      let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
           console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
           expect().assertFail();
@@ -4147,7 +4147,7 @@ export default function audioFramework() {
       await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
       await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
-      let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+      let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
           console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
           expect().assertFail();
